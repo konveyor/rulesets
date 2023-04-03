@@ -24,6 +24,10 @@ The Konveyor project is working to consolidate learnings from modernization enga
 For those interested, we have a [user group focused on improving the migration experience](https://github.com/konveyor/community/tree/main/ug-migration-experience) which is helping to share information on problems and solutions from their modernization engagements.  
 * Please consider joining the email group: konveyor-ug-mig-exp@googlegroups.com
   * Join URL:  https://groups.google.com/g/konveyor-ug-mig-exp
+* Or chat with us in kubernetes.slack.com:  (Get a slack invite via: https://slack.k8s.io/)
+  * #[konveyor](https://kubernetes.slack.com/archives/CR85S82A2): General questions and discussions
+  * #[konveyor-dev](https://kubernetes.slack.com/archives/C04QZJFQ0UA): Konveyor development related discussions
+
 
 
 ## Background Info
