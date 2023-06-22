@@ -1,0 +1,24 @@
+- category: mandatory
+  customVariables: []
+  description: |-
+    Remove the SpringBoot @SpringBootApplication annotation
+    Remove the SpringBoot @SpringBootApplication annotation.. A Spring Boot application contains a "main" class with the @SpringBootApplication annotation. A Quarkus application does not have such a class. Two different alternatives can be followed - either. to remove the "main" class associated with the annotation, or add the `org.springframework.boot:spring-boot-autoconfigure` dependency as an `optional` Maven dependency. An optional dependency. is available when an application compiles but is not packaged with the application at runtime. Doing this would allow the application to compile without modification, but you. would also need to maintain a Spring version along with the Quarkus application.
+  effort: 1
+  labels:
+  - konveyor.io/source=springboot
+  - konveyor.io/target=quarkus
+  links: []
+  message: Remove the SpringBoot @SpringBootApplication annotation.. A Spring Boot
+    application contains a "main" class with the @SpringBootApplication annotation.
+    A Quarkus application does not have such a class. Two different alternatives can
+    be followed - either. to remove the "main" class associated with the annotation,
+    or add the `org.springframework.boot:spring-boot-autoconfigure` dependency as
+    an `optional` Maven dependency. An optional dependency. is available when an application
+    compiles but is not packaged with the application at runtime. Doing this would
+    allow the application to compile without modification, but you. would also need
+    to maintain a Spring version along with the Quarkus application.
+  ruleID: springboot-annotations-to-quarkus-00000
+  when:
+    java.referenced:
+      location: ANNOTATION
+      pattern: org.springframework.boot.autoconfigure.SpringBootApplication

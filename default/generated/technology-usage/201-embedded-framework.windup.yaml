@@ -1,0 +1,826 @@
+- customVariables: []
+  description: |
+    Embedded framework - Apache Axis
+    The application embeds the Apache Axis framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-01000
+  tag:
+  - Apache Axis
+  - Embedded framework - Apache Axis
+  when:
+    builtin.file:
+      pattern: axis.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Apache Axis2
+    The application embeds the Apache Axis2 framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-01010
+  tag:
+  - Apache Axis2
+  - Embedded framework - Apache Axis2
+  when:
+    builtin.file:
+      pattern: axis2.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Apache CXF
+    The application embeds the Apache CXF framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-01100
+  tag:
+  - Apache CXF
+  - Embedded framework - Apache CXF
+  when:
+    builtin.file:
+      pattern: .*cxf.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - XFire
+    The application embeds the XFire framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-01200
+  tag:
+  - XFire
+  - Embedded framework - XFire
+  when:
+    builtin.file:
+      pattern: .*xfire.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Jersey
+    The application embeds the Jersey framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-01300
+  tag:
+  - Jersey
+  - Embedded framework - Jersey
+  when:
+    builtin.file:
+      pattern: .*jersey.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Unirest
+    The application embeds the Unirest framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-01400
+  tag:
+  - Unirest
+  - Embedded framework - Unirest
+  when:
+    builtin.file:
+      pattern: .*unirest.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Hibernate
+    The application embeds the Hibernate framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-01500
+  tag:
+  - Hibernate
+  - Embedded framework - Hibernate
+  when:
+    builtin.file:
+      pattern: hibernate.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Hibernate OGM
+    The application embeds the Hibernate OGM framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-01600
+  tag:
+  - Hibernate OGM
+  - Embedded framework - Hibernate OGM
+  when:
+    builtin.file:
+      pattern: hibernate-ogm.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - EclipseLink
+    The application embeds the EclipseLink framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-01700
+  tag:
+  - EclipseLink
+  - Embedded framework - EclipseLink
+  when:
+    builtin.file:
+      pattern: .*eclipselink.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Spring Batch
+    The application embeds the Spring Batch framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-02000
+  tag:
+  - Spring Batch
+  - Embedded framework - Spring Batch
+  when:
+    builtin.file:
+      pattern: spring-batch.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - AspectJ
+    The application embeds the AspectJ framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-02200
+  tag:
+  - AspectJ
+  - Embedded framework - AspectJ
+  when:
+    builtin.file:
+      pattern: .*aspectj.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - JBPM
+    The application embeds the JBPM framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-02300
+  tag:
+  - JBPM
+  - Embedded framework - JBPM
+  when:
+    builtin.file:
+      pattern: .*jbpm.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - iLog
+    The application embeds the iLog framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-02400
+  tag:
+  - iLog
+  - Embedded framework - iLog
+  when:
+    builtin.file:
+      pattern: .*jrules.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Camunda
+    The application embeds the Camunda framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-03000
+  tag:
+  - Camunda
+  - Embedded framework - Camunda
+  when:
+    builtin.file:
+      pattern: .*camunda.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Pega
+    The application embeds the Pega framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-03100
+  tag:
+  - Pega
+  - Embedded framework - Pega
+  when:
+    builtin.file:
+      pattern: .*pega.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Blaze
+    The application embeds the Blaze framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-03200
+  tag:
+  - Blaze
+  - Embedded framework - Blaze
+  when:
+    builtin.file:
+      pattern: blaze.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - MRules
+    The application embeds the MRules framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-03300
+  tag:
+  - MRules
+  - Embedded framework - MRules
+  when:
+    builtin.file:
+      pattern: .*MRules.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Easy Rules
+    The application embeds the Easy Rules framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-03400
+  tag:
+  - Easy Rules
+  - Embedded framework - Easy Rules
+  when:
+    builtin.file:
+      pattern: .*easy-rules.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - AOP Alliance
+    The application embeds the AOP Alliance library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-04700
+  tag:
+  - AOP Alliance
+  - Embedded framework - AOP Alliance
+  when:
+    builtin.file:
+      pattern: .*aopalliance.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - SNMP4J
+    The application embeds SNMP4J.
+  labels: []
+  links: []
+  ruleID: embedded-framework-05000
+  tag:
+  - SNMP4J
+  - Embedded framework - SNMP4J
+  when:
+    builtin.file:
+      pattern: .*snmp4j.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - HTTP Client
+    The application embeds a HTTP client.
+  labels: []
+  links: []
+  ruleID: embedded-framework-05100
+  tag:
+  - HTTP Client
+  - Embedded framework - HTTP Client
+  when:
+    builtin.file:
+      pattern: .*http-client.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Javax Inject
+    The application embeds a Javax Inject library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-05300
+  tag:
+  - Javax Inject
+  - Embedded framework - Javax Inject
+  when:
+    or:
+    - builtin.file:
+        pattern: javax\.inject.*\.jar
+    - builtin.file:
+        pattern: .*atinject.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Google Guice
+    The application embeds a Google Guice library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-05400
+  tag:
+  - Google Guice
+  - Embedded framework - Google Guice
+  when:
+    builtin.file:
+      pattern: .*guice.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - CDI
+    The application embeds a CDI library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-05500
+  tag:
+  - CDI
+  - Embedded framework - CDI
+  when:
+    builtin.file:
+      pattern: .*cdi.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Plexus Container
+    The application embeds a Plexus Container library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-05600
+  tag:
+  - Plexus Container
+  - Embedded framework - Plexus Container
+  when:
+    builtin.file:
+      pattern: .*plexus-container.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Weld
+    The application embeds a Weld library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-05700
+  tag:
+  - Weld
+  - Embedded framework - Weld
+  when:
+    builtin.file:
+      pattern: .*weld.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Dagger
+    The application embeds a Dagger library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-05800
+  tag:
+  - Dagger
+  - Embedded framework - Dagger
+  when:
+    builtin.file:
+      pattern: dagger.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - GIN
+    The application embeds a GIN (GWT INjection) library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-05900
+  tag:
+  - GIN
+  - Embedded framework - GIN
+  when:
+    builtin.file:
+      pattern: gin.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - PicoContainer
+    The application embeds a PicoContainer library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-06000
+  tag:
+  - PicoContainer
+  - Embedded framework - PicoContainer
+  when:
+    builtin.file:
+      pattern: .*picocontainer.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Scaldi
+    The application embeds a Scaldi library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-06100
+  tag:
+  - Scaldi
+  - Embedded framework - Scaldi
+  when:
+    builtin.file:
+      pattern: .*scaldi.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Macros
+    The application embeds a Macros library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-06200
+  tag:
+  - Macros
+  - Embedded framework - Macros
+  when:
+    builtin.file:
+      pattern: macros.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Injekt for Kotlin
+    The application embeds a Injekt for Kotlin library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-06300
+  tag:
+  - Injekt for Kotlin
+  - Embedded framework - Injekt for Kotlin
+  when:
+    builtin.file:
+      pattern: injekt-core.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Kodein
+    The application embeds a Kodein library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-06400
+  tag:
+  - Kodein
+  - Embedded framework - Kodein
+  when:
+    builtin.file:
+      pattern: kodein.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Peaberry
+    The application embeds a Peaberry library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-06500
+  tag:
+  - Peaberry
+  - Embedded framework - Peaberry
+  when:
+    builtin.file:
+      pattern: peaberry.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Sticky Configured
+    The application embeds a Sticky Configured library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-06600
+  tag:
+  - Sticky Configured
+  - Embedded framework - Sticky Configured
+  when:
+    builtin.file:
+      pattern: sticky-configured.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Ka DI
+    The application embeds a Ka DI library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-06700
+  tag:
+  - Ka DI
+  - Embedded framework - Ka DI
+  when:
+    builtin.file:
+      pattern: ka-di.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Polyforms DI
+    The application embeds a Polyforms DI library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-06800
+  tag:
+  - Polyforms DI
+  - Embedded framework - Polyforms DI
+  when:
+    builtin.file:
+      pattern: polyforms-di.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - JayWire
+    The application embeds a JayWire library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-06900
+  tag:
+  - JayWire
+  - Embedded framework - JayWire
+  when:
+    builtin.file:
+      pattern: jaywire.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Silk DI
+    The application embeds a Silk DI library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-07000
+  tag:
+  - Silk DI
+  - Embedded framework - Silk DI
+  when:
+    builtin.file:
+      pattern: silk-di.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Grapht DI
+    The application embeds a Grapht DI library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-07100
+  tag:
+  - Grapht DI
+  - Embedded framework - Grapht DI
+  when:
+    builtin.file:
+      pattern: grapht.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Syringe
+    The application embeds a Syringe library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-07200
+  tag:
+  - Syringe
+  - Embedded framework - Syringe
+  when:
+    builtin.file:
+      pattern: syringe.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Cfg Engine
+    The application embeds a Cfg Engine library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-07300
+  tag:
+  - Cfg Engine
+  - Embedded framework - Cfg Engine
+  when:
+    builtin.file:
+      pattern: cfg-engine.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - BeanInject
+    The application embeds a BeanInject library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-07400
+  tag:
+  - BeanInject
+  - Embedded framework - BeanInject
+  when:
+    builtin.file:
+      pattern: beaninject.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Tornado Inject
+    The application embeds a Tornado Inject library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-07500
+  tag:
+  - Tornado Inject
+  - Embedded framework - Tornado Inject
+  when:
+    builtin.file:
+      pattern: inject.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Airframe
+    The application embeds a Airframe library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-07600
+  tag:
+  - Airframe
+  - Embedded framework - Airframe
+  when:
+    builtin.file:
+      pattern: airframe.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Winter
+    The application embeds a Winter library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-07700
+  tag:
+  - Winter
+  - Embedded framework - Winter
+  when:
+    builtin.file:
+      pattern: winter.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - KouInject
+    The application embeds a KouInject library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-07800
+  tag:
+  - KouInject
+  - Embedded framework - KouInject
+  when:
+    builtin.file:
+      pattern: kouinject.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Iroh
+    The application embeds an Iroh library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-07900
+  tag:
+  - Iroh
+  - Embedded framework - Iroh
+  when:
+    builtin.file:
+      pattern: iroh.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Micro DI
+    The application embeds a Micro DI library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-08000
+  tag:
+  - Micro DI
+  - Embedded framework - Micro DI
+  when:
+    builtin.file:
+      pattern: micro-di.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - SubCut
+    The application embeds a SubCut library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-08100
+  tag:
+  - SubCut
+  - Embedded framework - SubCut
+  when:
+    builtin.file:
+      pattern: subcut.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Spring DI
+    The application embeds a Spring DI library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-08200
+  tag:
+  - Spring DI
+  - Embedded framework - Spring DI
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.springframework.spring-beans
+- customVariables: []
+  description: |
+    Embedded framework - Micrometer
+    The application embeds a Micrometer library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-08300
+  tag:
+  - Micrometer
+  - Embedded framework - Micrometer
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: io.micrometer.micrometer-core
+- customVariables: []
+  description: |
+    Embedded framework - Spring Web
+    The application embeds the Spring Web framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-08400
+  tag:
+  - Spring Web
+  - Embedded framework - Spring Web
+  when:
+    or:
+    - java.dependency:
+        lowerbound: 0.0.0
+        name: org.springframework.spring-web
+    - java.dependency:
+        lowerbound: 0.0.0
+        name: org.springframework.boot.spring-boot-starter-web
+    - java.dependency:
+        lowerbound: 0.0.0
+        name: org.springframework.spring-web
+- customVariables: []
+  description: |
+    Embedded framework - Spring Shell
+    The application embeds a Spring Shell library.
+  labels: []
+  links: []
+  ruleID: embedded-framework-08500
+  tag:
+  - Spring Shell
+  - Embedded framework - Spring Shell
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.springframework.shell.spring-shell-core
+- customVariables: []
+  description: |
+    Embedded framework - Spring Boot Flo
+    The application embeds Spring Boot Flo.
+  labels: []
+  links: []
+  ruleID: embedded-framework-08600
+  tag:
+  - Spring Boot Flo
+  - Embedded framework - Spring Boot Flo
+  when:
+    builtin.filecontent:
+      pattern: (<|')flo-editor
+- customVariables: []
+  description: |
+    Embedded framework - Spring Scheduled
+    The application embeds Spring Scheduled.
+  labels: []
+  links: []
+  ruleID: embedded-framework-08700
+  tag:
+  - Spring Scheduled
+  - Embedded framework - Spring Scheduled
+  when:
+    java.referenced:
+      location: ANNOTATION
+      pattern: org.springframework.scheduling.annotation.Scheduled
+- customVariables: []
+  description: |
+    Embedded framework - Spring Cloud Function
+    The application embeds Spring Cloud Function.
+  labels: []
+  links: []
+  ruleID: embedded-framework-08800
+  tag:
+  - Spring Cloud Function
+  - Embedded framework - Spring Cloud Function
+  when:
+    or:
+    - java.dependency:
+        lowerbound: 0.0.0
+        name: org.springframework.cloud.spring-cloud-function-context
+    - java.dependency:
+        lowerbound: 0.0.0
+        name: org.springframework.cloud.spring-cloud-function-context
+- customVariables: []
+  description: |
+    Embedded framework - Quartz
+    The application embeds the Quartz framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-08900
+  tag:
+  - Quartz
+  - Embedded framework - Quartz
+  when:
+    builtin.file:
+      pattern: .*quartz.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Zipkin
+    The application embeds the Zipkin framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-09100
+  tag:
+  - Zipkin
+  - Embedded framework - Zipkin
+  when:
+    builtin.file:
+      pattern: .*zipkin.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Feign
+    The application embeds the Feign framework.
+  labels: []
+  links: []
+  ruleID: embedded-framework-09000
+  tag:
+  - Feign
+  - Embedded framework - Feign
+  when:
+    builtin.file:
+      pattern: feign-.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Redis
+    The application embeds the Redis client.
+  labels: []
+  links: []
+  ruleID: embedded-framework-09200
+  tag:
+  - Redis
+  - Embedded framework - Redis
+  when:
+    builtin.file:
+      pattern: .*redis.*\.jar
+- customVariables: []
+  description: |
+    Embedded framework - Eureka
+    The application embeds the Eureka client.
+  labels: []
+  links: []
+  ruleID: embedded-framework-09300
+  tag:
+  - Eureka
+  - Embedded framework - Eureka
+  when:
+    builtin.file:
+      pattern: .*eureka.*\.jar

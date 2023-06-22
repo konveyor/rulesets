@@ -1,0 +1,53 @@
+- category: mandatory
+  customVariables: []
+  description: |-
+    Replace the Micrometer dependency with Quarkus Microprofile 'metrics' extension
+    Replace the Micrometer dependency with Quarkus Microprofile 'metrics' extension.. Usually this is a transitive dependency brought by `org.springframework.boot:spring-boot-starter-actuator` and has to be replaced by `io.quarkus:quarkus-smallrye-metrics` artifact
+  effort: 5
+  labels:
+  - konveyor.io/source=springboot
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus metrics
+    url: https://quarkus.io/guides/microprofile-metrics
+  message: Replace the Micrometer dependency with Quarkus Microprofile 'metrics' extension..
+    Usually this is a transitive dependency brought by `org.springframework.boot:spring-boot-starter-actuator`
+    and has to be replaced by `io.quarkus:quarkus-smallrye-metrics` artifact
+  ruleID: springboot-metrics-to-quarkus-0100
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: io.micrometer.micrometer-core
+- category: mandatory
+  customVariables: []
+  description: |-
+    Replace the Micrometer code with Microprofile Metrics code
+    Replace the Micrometer code with Microprofile Metrics code
+  effort: 5
+  labels:
+  - konveyor.io/source=springboot
+  - konveyor.io/target=quarkus
+  links: []
+  message: Replace the Micrometer code with Microprofile Metrics code
+  ruleID: springboot-metrics-to-quarkus-0200
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: io.micrometer.micrometer-core
+- category: mandatory
+  customVariables: []
+  description: |-
+    Replace Spring Prometheus Metrics endpoint mapping
+    Replace `management.endpoints.web.exposure.include=prometheus` with `quarkus.micrometer.export.prometheus.path=/actuator/prometheus`
+  effort: 1
+  labels:
+  - konveyor.io/source=springboot
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus Guide - Micrometer Metrics
+    url: https://quarkus.io/guides/micrometer
+  message: Replace `management.endpoints.web.exposure.include=prometheus` with `quarkus.micrometer.export.prometheus.path=/actuator/prometheus`
+  ruleID: springboot-metrics-to-quarkus-0300
+  when:
+    builtin.filecontent:
+      pattern: management.endpoints.web.exposure.include.*prometheus

@@ -1,0 +1,13 @@
+- customVariables: []
+  description: |
+    Embedded framework - Spring
+    The application embeds the Spring framework.
+  labels: []
+  links: []
+  ruleID: spring-catchall-00001
+  tag:
+  - Spring
+  - Embedded framework - Spring
+  when:
+    builtin.file:
+      pattern: spring.*\.jar

@@ -1,0 +1,3 @@
+name: openjdk17/openjdk11
+description: This ruleset provides analysis with respect to Lombok incompatibility
+  between OpenJDK 11 to 17.

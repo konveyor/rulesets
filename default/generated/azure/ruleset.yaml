@@ -1,0 +1,3 @@
+name: azure/springboot
+description: This ruleset identifies message queue connection strings, usernames,
+  or passwords.

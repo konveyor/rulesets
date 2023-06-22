@@ -1,0 +1,351 @@
+- customVariables: []
+  description: |
+    Embedded library - Apache Log4J
+    The application embeds an Apache Log4J library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00010
+  tag:
+  - Apache Log4J
+  - Embedded library - Apache Log4J
+  when:
+    builtin.file:
+      pattern: .*log4j.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - Apache Commons Logging
+    The application embeds an Apache Commons Logging library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00020
+  tag:
+  - Apache Commons Logging
+  - Embedded library - Apache Commons Logging
+  when:
+    builtin.file:
+      pattern: .*commons-logging.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - SLF4J
+    The application embeds a Simple Logging Facade for Java (SLJ4J) library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00030
+  tag:
+  - SLF4J
+  - Embedded library - SLF4J
+  when:
+    builtin.file:
+      pattern: .*slf4j.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - tinylog
+    The application embeds a tinylog library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00040
+  tag:
+  - tinylog
+  - Embedded library - tinylog
+  when:
+    builtin.file:
+      pattern: .*tinylog.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - Logback
+    The application embeds a Logback library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00050
+  tag:
+  - Logback
+  - Embedded library - Logback
+  when:
+    builtin.file:
+      pattern: .*logback.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - JBoss logging
+    The application embeds a JBoss logging library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00080
+  tag:
+  - JBoss logging
+  - Embedded library - JBoss logging
+  when:
+    builtin.file:
+      pattern: .*jboss-logging.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - Monolog
+    The application embeds a Monolog library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00090
+  tag:
+  - Monolog
+  - Embedded library - Monolog
+  when:
+    builtin.file:
+      pattern: .*monolog.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - Jcabi Log
+    The application embeds a Jcabi Log library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00100
+  tag:
+  - Jcabi Log
+  - Embedded library - Jcabi Log
+  when:
+    builtin.file:
+      pattern: .*jcabi-log.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - NLOG4J
+    The application embeds a NLOG4J library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00110
+  tag:
+  - NLOG4J
+  - Embedded library - NLOG4J
+  when:
+    builtin.file:
+      pattern: .*nlog4j.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - Log4s
+    The application embeds a Log4s library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00120
+  tag:
+  - Log4s
+  - Embedded library - Log4s
+  when:
+    builtin.file:
+      pattern: log4s.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - Kotlin Logging
+    The application embeds a Kotlin Logging library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00130
+  tag:
+  - Kotlin Logging
+  - Embedded library - Kotlin Logging
+  when:
+    builtin.file:
+      pattern: .*kotlin-logging.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - Airlift Log Manager
+    The application embeds an Airlift Log Manager library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00140
+  tag:
+  - Airlift Log Manager
+  - Embedded library - Airlift Log Manager
+  when:
+    builtin.file:
+      pattern: log-manager.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - MinLog
+    The application embeds a MinLog library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00150
+  tag:
+  - MinLog
+  - Embedded library - MinLog
+  when:
+    builtin.file:
+      pattern: .*minilog.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - Logging Utils
+    The application embeds a Common Java Logging Utils library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00160
+  tag:
+  - Logging Utils
+  - Embedded library - Logging Utils
+  when:
+    builtin.file:
+      pattern: logging.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - OCPsoft Logging Utils
+    The application embeds an OCPsoft Logging Utils library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00170
+  tag:
+  - OCPsoft Logging Utils
+  - Embedded library - OCPsoft Logging Utils
+  when:
+    builtin.file:
+      pattern: logging-api.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - Scribe
+    The application embeds a Scribe library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00180
+  tag:
+  - Scribe
+  - Embedded library - Scribe
+  when:
+    builtin.file:
+      pattern: .*scribe.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - GFC Logging
+    The application embeds a Git Foundation Classes (GFC) Logging library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00190
+  tag:
+  - GFC Logging
+  - Embedded library - GFC Logging
+  when:
+    builtin.file:
+      pattern: .*gfc-logging.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - Blitz4j
+    The application embeds a Blitz4j library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00200
+  tag:
+  - Blitz4j
+  - Embedded library - Blitz4j
+  when:
+    builtin.file:
+      pattern: .*blitz4j.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - Avalon Logkit
+    The application embeds an Avalon Logkit library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00210
+  tag:
+  - Avalon Logkit
+  - Embedded library - Avalon Logkit
+  when:
+    builtin.file:
+      pattern: .*avalon-logkit.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - KLogger
+    The application embeds a KLogger library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00220
+  tag:
+  - KLogger
+  - Embedded library - KLogger
+  when:
+    builtin.file:
+      pattern: .*klogger.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - Lumberjack
+    The application embeds a Lumberjack library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00230
+  tag:
+  - Lumberjack
+  - Embedded library - Lumberjack
+  when:
+    builtin.file:
+      pattern: .*lumberjack.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - Log.io
+    The application embeds a Log.io library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00240
+  tag:
+  - Log.io
+  - Embedded library - Log.io
+  when:
+    builtin.file:
+      pattern: .*logio.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - OPS4J Pax Logging Service
+    The application embeds an OPS4J Pax Logging Service library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00250
+  tag:
+  - OPS4J Pax Logging Service
+  - Embedded library - OPS4J Pax Logging Service
+  when:
+    builtin.file:
+      pattern: .*pax-logging-service.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - OW2 Log Util
+    The application embeds an OW2 Log Util library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00260
+  tag:
+  - OW2 Log Util
+  - Embedded library - OW2 Log Util
+  when:
+    builtin.file:
+      pattern: util-log.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - Twitter Util Logging
+    The application embeds a Twitter Util Logging library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00270
+  tag:
+  - Twitter Util Logging
+  - Embedded library - Twitter Util Logging
+  when:
+    builtin.file:
+      pattern: util-logging.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - Composite Logging JCL
+    The application embeds a Composite Logging JCL library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00280
+  tag:
+  - Composite Logging JCL
+  - Embedded library - Composite Logging JCL
+  when:
+    builtin.file:
+      pattern: composite-logging-api.*\.jar
+- customVariables: []
+  description: |
+    Embedded library - Apache Flume
+    The application embeds an Apache Flume library.
+  labels: []
+  links: []
+  ruleID: logging-usage-00290
+  tag:
+  - Apache Flume
+  - Embedded library - Apache Flume
+  when:
+    builtin.file:
+      pattern: .*flume.*\.jar

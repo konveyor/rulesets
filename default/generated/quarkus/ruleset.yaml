@@ -1,0 +1,3 @@
+name: quarkus/springboot
+description: This ruleset gives hints to migrate from SpringBoot DI to Quarkus spring-di
+  extension

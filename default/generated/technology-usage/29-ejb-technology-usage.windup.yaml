@@ -1,0 +1,12 @@
+- customVariables: []
+  labels:
+  - phase=PostMigrationRulesPhase
+  links: []
+  ruleID: technology-usage-ejb-01400
+  tag:
+  - Execute=EJB Timer
+  - Processing=EJB Timer
+  - Java EE=EJB Timer
+  when:
+    builtin.hasTags:
+    - EJB Timer
