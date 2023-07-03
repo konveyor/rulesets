@@ -1,0 +1,15 @@
+- category: mandatory
+  customVariables: []
+  description: |-
+    Legacy Vault configuration must be removed
+    Vault support has been removed in EAP8; migration to Elytron credential store is mandatory.
+  effort: 1
+  labels:
+  - konveyor.io/target=eap8
+  links: []
+  message: Vault support has been removed in EAP8; migration to Elytron credential
+    store is mandatory.
+  ruleID: legacy-vault-00010
+  when:
+    builtin.filecontent:
+      pattern: '$\{VAULT::'

@@ -1,0 +1,30 @@
+- category: mandatory
+  customVariables: []
+  description: |-
+    The incorrectly spelled javax.el.MethodExpression.isParmetersProvided() method has been removed
+    The incorrectly spelled `javax.el.MethodExpression.isParmetersProvided()` method has been removed. Use `MethodExpression.isParametersProvided()` instead.
+  effort: 1
+  labels:
+  - konveyor.io/target=eap8
+  links: []
+  message: The incorrectly spelled `javax.el.MethodExpression.isParmetersProvided()`
+    method has been removed. Use `MethodExpression.isParametersProvided()` instead.
+  ruleID: jakarta-el-00010
+  when:
+    java.referenced:
+      pattern: javax.el.MethodExpression.isParmetersProvided*
+- category: mandatory
+  customVariables: []
+  description: |-
+    The incorrectly spelled jakarta.el.MethodExpression.isParmetersProvided() method has been removed
+    The incorrectly spelled `jakarta.el.MethodExpression.isParmetersProvided()` method has been removed. Use `MethodExpression.isParametersProvided()` instead.
+  effort: 1
+  labels:
+  - konveyor.io/target=eap8
+  links: []
+  message: The incorrectly spelled `jakarta.el.MethodExpression.isParmetersProvided()`
+    method has been removed. Use `MethodExpression.isParametersProvided()` instead.
+  ruleID: jakarta-el-00020
+  when:
+    java.referenced:
+      pattern: jakarta.el.MethodExpression.isParmetersProvided*

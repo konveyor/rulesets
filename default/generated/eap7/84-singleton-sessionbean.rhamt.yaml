@@ -1,0 +1,28 @@
+- category: mandatory
+  customVariables: []
+  description: |-
+    Removed SessionBean interface
+    When a singleton EJB bean class implements `javax.ejb.SessionBean` interface, this interface should be removed from the implements clause.. All methods declared in `javax.ejb.SessionBean` interface (see below) that are implemented in the bean class or its super classes should be checked for `@Override` annotation and remove this annotation too if present.. Methods declared by `javax.ejb.SessionBean` interface:. ```. void setSessionContext(SessionContext ctx);. void ejbRemove();. void ejbActivate();. void ejbPassivate();. ```
+  effort: 1
+  labels:
+  - konveyor.io/target=eap7
+  links: []
+  message: When a singleton EJB bean class implements `javax.ejb.SessionBean` interface,
+    this interface should be removed from the implements clause.. All methods declared
+    in `javax.ejb.SessionBean` interface (see below) that are implemented in the bean
+    class or its super classes should be checked for `@Override` annotation and remove
+    this annotation too if present.. Methods declared by `javax.ejb.SessionBean` interface:.
+    ```. void setSessionContext(SessionContext ctx);. void ejbRemove();. void ejbActivate();.
+    void ejbPassivate();. ```
+  ruleID: singleton-sessionbean-00001
+  when:
+    or:
+    - as: singleton
+      java.referenced:
+        location: ANNOTATION
+        pattern: javax.ejb.Singleton
+    - as: sessionbean
+      from: singleton
+      java.referenced:
+        location: IMPLEMENTS_TYPE
+        pattern: javax.ejb.SessionBean

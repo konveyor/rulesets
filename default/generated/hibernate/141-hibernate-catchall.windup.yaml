@@ -1,0 +1,23 @@
+- customVariables:
+  - name: package-remainder
+    nameOfCaptureGroup: package-remainder
+    pattern: org.hibernate.(?P<package-remainder>(.*)?.)?(?P<type>[^.]+)?
+  - name: type
+    nameOfCaptureGroup: type
+    pattern: org.hibernate.(?P<package-remainder>(.*)?.)?(?P<type>[^.]+)?
+  description: |
+    Hibernate
+    This is a Hibernate type and it will need to be verified for compatibility with the latest Hibernate version.
+  labels:
+  - konveyor.io/source=hibernate3.9
+  - konveyor.io/target=hibernate4
+  - konveyor.io/target=eap6
+  - hibernate
+  links: []
+  ruleID: hibernate-catchall-00000
+  tag:
+  - catchall
+  - Hibernate
+  when:
+    java.referenced:
+      pattern: org.hibernate.(*)?*

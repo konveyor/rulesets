@@ -1,0 +1,30 @@
+- customVariables: []
+  labels:
+  - konveyor.io/source=jrun
+  - konveyor.io/target=eap6
+  - web-app
+  - jrun
+  links: []
+  ruleID: jrun-catchall-00000
+  tag:
+  - catchall
+  - jrun
+  - JRun
+  when:
+    java.referenced:
+      pattern: jrun*
+- customVariables: []
+  labels:
+  - konveyor.io/source=jrun
+  - konveyor.io/target=eap6
+  - web-app
+  - jrun
+  links: []
+  ruleID: jrun-catchall-00001
+  tag:
+  - catchall
+  - jrun
+  - JRunX
+  when:
+    java.referenced:
+      pattern: jrunx*

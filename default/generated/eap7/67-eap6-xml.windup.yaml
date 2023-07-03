@@ -1,0 +1,50 @@
+- customVariables: []
+  description: |
+    JMS proprietary resource definitions
+
+                            The proprietary XML descriptors, previously used to setup JMS resources, are deprecated in EAP 7.
+                            An updated version of this file was generated using XSLT transformation.
+  labels:
+  - konveyor.io/source=eap6
+  - konveyor.io/target=eap7
+  - configuration
+  links:
+  - title: JMS migration documentation
+    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_messaging_application_jms_deployment_descriptors
+  ruleID: eap6-xml-05000
+  tag:
+  - jms
+  - JMS proprietary resource definitions
+  when:
+    or:
+    - as: xmlfiles
+      builtin.file:
+        pattern: .*-jms\.xml
+      ignore: true
+    - builtin.xml:
+        filepaths: '{{xmlfiles.filepaths}}'
+        from: xmlfiles
+        namespaces:
+          msg: urn:jboss:messaging-deployment:1.0
+        xpath: /msg:messaging-deployment
+- customVariables: []
+  description: |
+    JBoss deployment structure dependencies (jboss-deployment-structure.xml)
+    Verify in advance that all the modules this application depends on still exist.
+  labels:
+  - konveyor.io/source=eap6
+  - konveyor.io/target=eap7
+  - configuration
+  links: []
+  ruleID: eap6-xml-06000
+  tag:
+  - configuration
+  - JBoss deployment structure dependencies (jboss-deployment-structure.xml)
+  when:
+    or:
+    - builtin.xml:
+        filepaths:
+        - jboss-deployment-structure.xml
+        namespaces: {}
+        xpath: /*[local-name()='jboss-deployment-structure']/*[local-name()='deployment'
+          or local-name()='sub-deployment' or local-name()='module']/*[local-name()='dependencies']

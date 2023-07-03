@@ -1,0 +1,3 @@
+name: fuse
+description: This ruleset provides analysis that may require individual attention
+  when migrating from Sonic classes.

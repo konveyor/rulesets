@@ -1,0 +1,43 @@
+- customVariables: []
+  description: |
+    JRun Web App descriptor
+     JRun web descriptor is a file that is by convention named jrun-web. It is JRun specific configuration file used to configure JRun server. This file is not supported in JBoss EAP 6 and needs to be migrated to web.xml or JBoss-specific jboss-web.xml
+  labels:
+  - konveyor.io/source=jrun
+  - konveyor.io/target=eap6
+  - web-app
+  - jrun
+  - configuration
+  links: []
+  ruleID: xml-jrun-01000
+  tag:
+  - configuration
+  - jrun
+  - JRun Web App descriptor
+  when:
+    or:
+    - builtin.xml:
+        namespaces: {}
+        xpath: /jrun-web-app
+- customVariables: []
+  description: |
+    JRun ejb-jar configuration
+     JRun ejb configuration file used to configure EJBs, map them to jndi names etc.
+  labels:
+  - konveyor.io/source=jrun
+  - konveyor.io/target=eap6
+  - web-app
+  - jrun
+  - configuration
+  links: []
+  ruleID: xml-jrun-02000
+  tag:
+  - configuration
+  - jrun
+  - JRun ejb-jar configuration
+  when:
+    or:
+    - as: default
+      builtin.xml:
+        namespaces: {}
+        xpath: /*[local-name()='jrun-ejb-jar']
