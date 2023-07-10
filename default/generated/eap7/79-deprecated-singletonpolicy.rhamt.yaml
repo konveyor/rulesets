@@ -6,6 +6,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap7
+  - konveyor.io/source=
   links:
   - title: 'Red Hat JBoss EAP 7.3: HA Singleton Service'
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/development_guide/index#clustered_ha_singleton_service

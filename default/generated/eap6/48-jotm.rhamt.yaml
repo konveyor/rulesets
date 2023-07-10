@@ -6,6 +6,7 @@
   effort: 5
   labels:
   - konveyor.io/target=eap6
+  - konveyor.io/source=
   - transactions
   - jta
   links:

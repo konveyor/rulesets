@@ -8,6 +8,7 @@
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/source=
   - JakartaEE
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
@@ -30,6 +31,7 @@
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/source=
   - JakartaEE
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
@@ -53,6 +55,7 @@
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/source=
   - JakartaEE
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
@@ -74,6 +77,7 @@
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/source=
   - JakartaEE
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
@@ -95,6 +99,7 @@
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/source=
   - JakartaEE
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
@@ -117,6 +122,7 @@
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/source=
   - JakartaEE
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
@@ -139,6 +145,7 @@
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/source=
   - JakartaEE
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
@@ -161,6 +168,7 @@
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/source=
   - JakartaEE
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
@@ -183,6 +191,7 @@
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/source=
   - JakartaEE
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
@@ -206,6 +215,7 @@
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/source=
   - JakartaEE
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
@@ -229,6 +239,7 @@
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/source=
   - JakartaEE
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Changes to BOMs for Jakarta EE
@@ -251,6 +262,7 @@
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/source=
   - JakartaEE
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Changes to BOMs for Jakarta EE
@@ -273,6 +285,7 @@
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/source=
   - JakartaEE
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Changes to BOMs for Jakarta EE
@@ -295,6 +308,7 @@
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/source=
   - JakartaEE
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Changes to BOMs for Jakarta EE
@@ -317,6 +331,7 @@
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/source=
   - JakartaEE
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Changes to BOMs for Jakarta EE
@@ -339,6 +354,7 @@
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/source=
   - JakartaEE
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Changes to BOMs for Jakarta EE

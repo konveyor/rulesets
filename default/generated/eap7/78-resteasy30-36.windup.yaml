@@ -7,6 +7,7 @@
   labels:
   - konveyor.io/target=eap7
   - konveyor.io/target=resteasy3
+  - konveyor.io/source=
   - resteasy
   links:
   - title: 'Red Hat JBoss EAP 7.2: RESTEasy Resource Method Algorithm Switch changes'

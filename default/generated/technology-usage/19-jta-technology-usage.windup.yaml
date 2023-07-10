@@ -1,5 +1,7 @@
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00010
@@ -11,6 +13,8 @@
     or: []
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00020
@@ -23,6 +27,8 @@
     - Mycontainer JTA
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00030
@@ -35,6 +41,8 @@
     - Geronimo JTA
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00040
@@ -47,6 +55,8 @@
     - OW2 JTA
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00050
@@ -59,6 +69,8 @@
     - Evo JTA
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00060
@@ -71,6 +83,8 @@
     - AKKA JTA
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00070
@@ -83,6 +97,8 @@
     - KumuluzEE JTA
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00080
@@ -95,6 +111,8 @@
     - Ignite JTA
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00090
@@ -107,6 +125,8 @@
     - Nuxeo JTA/JCA
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00100
@@ -119,6 +139,8 @@
     - Everit JTA
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00110
@@ -131,6 +153,8 @@
     - Demoiselle JTA
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00120
@@ -143,6 +167,8 @@
     - Apache Meecrowave JTA
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00130
@@ -155,6 +181,8 @@
     - Apache Sirona JTA
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00140
@@ -167,6 +195,8 @@
     - Lift JTA
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00150
@@ -179,6 +209,8 @@
     - WF Core JTA
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00160
@@ -191,6 +223,8 @@
     - Java Transaction API
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00170
@@ -203,6 +237,8 @@
     - JBoss Transactions
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00180
@@ -215,6 +251,8 @@
     - GlassFish JTA
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00190
@@ -227,6 +265,8 @@
     - Atomikos JTA
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00200
@@ -239,6 +279,8 @@
     - Narayana Arjuna
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-jta-00210

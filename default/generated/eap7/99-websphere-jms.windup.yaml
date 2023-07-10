@@ -32,14 +32,14 @@
       pattern: com.ibm.*jms*
 - category: mandatory
   customVariables:
+  - name: type
+    nameOfCaptureGroup: type
+    pattern: (?P<package>com.ibm(\.[^.]*)*\.jms.)?(?P<prefix>(Jms|MQeJNDI|MQe|MQ)?)?(?P<type>[^.]*?)?ConnectionFactory
   - name: package
     nameOfCaptureGroup: package
     pattern: (?P<package>com.ibm(\.[^.]*)*\.jms.)?(?P<prefix>(Jms|MQeJNDI|MQe|MQ)?)?(?P<type>[^.]*?)?ConnectionFactory
   - name: prefix
     nameOfCaptureGroup: prefix
-    pattern: (?P<package>com.ibm(\.[^.]*)*\.jms.)?(?P<prefix>(Jms|MQeJNDI|MQe|MQ)?)?(?P<type>[^.]*?)?ConnectionFactory
-  - name: type
-    nameOfCaptureGroup: type
     pattern: (?P<package>com.ibm(\.[^.]*)*\.jms.)?(?P<prefix>(Jms|MQeJNDI|MQe|MQ)?)?(?P<type>[^.]*?)?ConnectionFactory
   description: |
     IBM {prefix}{type}ConnectionFactory reference

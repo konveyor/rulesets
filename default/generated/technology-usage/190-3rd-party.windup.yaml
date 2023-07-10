@@ -2,7 +2,9 @@
   description: |
     Embedded framework - Liferay
     The application embeds the Liferay framework.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: 3rd-party-01000
   tag:
@@ -15,7 +17,9 @@
   description: |
     Embedded framework - Oracle Forms
     The application embeds the Oracle Forms framework.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: 3rd-party-02000
   tag:
@@ -28,7 +32,9 @@
   description: |
     Embedded framework - Spring Boot
     The application embeds the Spring Boot framework.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: 3rd-party-03000
   tag:
@@ -41,7 +47,9 @@
   description: |
     Embedded framework - Elasticsearch
     The application embeds the Elasticsearch framework.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: 3rd-party-04000
   tag:
@@ -54,7 +62,9 @@
   description: |
     Embedded framework - Logstash
     The application embeds the Logstash framework.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: 3rd-party-05000
   tag:
@@ -67,7 +77,9 @@
   description: |
     Embedded framework - Jetty
     The application embeds the Jetty framework.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: 3rd-party-06000
   tag:
@@ -80,7 +92,9 @@
   description: |
     Embedded framework - Tomcat
     The application embeds the Tomcat framework.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: 3rd-party-07000
   tag:
@@ -93,7 +107,9 @@
   description: |
     Embedded framework - Kibana
     The application embeds the Kibana framework.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: 3rd-party-08000
   tag:
@@ -106,7 +122,9 @@
   description: |
     Embedded framework - Apache Karaf
     The application embeds the Apache Karaf framework.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: 3rd-party-09000
   tag:
@@ -119,7 +137,9 @@
   description: |
     Embedded framework - Neo4j
     The application embeds the Neo4j framework.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: 3rd-party-10000
   tag:
@@ -132,7 +152,9 @@
   description: |
     Embedded framework - Spark
     The application embeds the Spark framework.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: 3rd-party-11000
   tag:
@@ -145,7 +167,9 @@
   description: |
     Embedded framework - Apache Hadoop
     The application embeds the Apache Hadoop framework.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: 3rd-party-12000
   tag:
@@ -158,7 +182,9 @@
   description: |
     Embedded framework - Apache Geronimo
     The application embeds the Apache Geronimo framework.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: 3rd-party-13000
   tag:
@@ -171,7 +197,9 @@
   description: |
     Embedded framework - Apache Aries
     The application embeds the Apache Aries framework.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: 3rd-party-14000
   tag:
@@ -184,7 +212,9 @@
   description: |
     Embedded framework - Cloudera
     The application embeds the Cloudera framework.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: 3rd-party-15000
   tag:
@@ -197,7 +227,9 @@
   description: |
     Embedded framework - MapR
     The application embeds the MapR framework.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: 3rd-party-16000
   tag:
@@ -210,7 +242,9 @@
   description: |
     Embedded framework - TensorFlow
     The application embeds the TensorFlow framework.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: 3rd-party-17000
   tag:
@@ -223,7 +257,9 @@
   description: |
     Embedded framework - Weka
     The application embeds the Weka framework.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: 3rd-party-18000
   tag:
@@ -236,7 +272,9 @@
   description: |
     Embedded framework - Apache Mahout
     The application embeds the Apache Mahout framework.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: 3rd-party-19000
   tag:

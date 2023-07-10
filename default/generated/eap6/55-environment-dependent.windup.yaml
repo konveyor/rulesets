@@ -8,6 +8,7 @@
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
   - konveyor.io/target=java-ee6
+  - konveyor.io/source=
   - classloader
   links:
   - title: Class Loading and Modules in JBoss EAP 7
@@ -35,6 +36,7 @@
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
   - konveyor.io/target=java-ee6
+  - konveyor.io/source=
   - jndi
   links: []
   message: This method lookups an object using a JNDI String. During the migration
@@ -58,6 +60,7 @@
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
   - konveyor.io/target=java-ee6
+  - konveyor.io/source=
   - jndi
   links: []
   message: In JBoss EAP, the `InitialContext` should be instantiated with no arguments.
@@ -83,6 +86,7 @@
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
   - konveyor.io/target=java-ee6
+  - konveyor.io/source=
   links: []
   ruleID: environment-dependent-calls-03500
   tag:
@@ -104,6 +108,7 @@
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
   - konveyor.io/target=java-ee6
+  - konveyor.io/source=
   - jmx
   links: []
   message: After migration, some of the JMX beans provided by the previous server
@@ -127,6 +132,7 @@
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
   - konveyor.io/target=java-ee6
+  - konveyor.io/source=
   - jmx
   links: []
   message: After migration, some of the JMX beans provided by the previous server
@@ -148,6 +154,7 @@
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
   - konveyor.io/target=java-ee6
+  - konveyor.io/source=
   - jmx
   links: []
   message: After migration, JMX connection String or parameters may be different than

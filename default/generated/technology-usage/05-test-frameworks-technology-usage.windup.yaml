@@ -1,5 +1,7 @@
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00010
@@ -12,6 +14,8 @@
     - EasyMock
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00020
@@ -24,6 +28,8 @@
     - PowerMock
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00030
@@ -36,6 +42,8 @@
     - Mockito
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00040
@@ -48,6 +56,8 @@
     - TestNG
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00050
@@ -60,6 +70,8 @@
     - Hamcrest
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00060
@@ -72,6 +84,8 @@
     - Spock
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00070
@@ -84,6 +98,8 @@
     - XMLUnit
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00080
@@ -96,6 +112,8 @@
     - Akka Testkit
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00090
@@ -108,6 +126,8 @@
     - REST Assured
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00100
@@ -120,6 +140,8 @@
     - DbUnit
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00110
@@ -132,6 +154,8 @@
     - Mule Functional Test Framework
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00120
@@ -144,6 +168,8 @@
     - Guava Testing
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00130
@@ -156,6 +182,8 @@
     - RandomizedTesting Runner
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00140
@@ -168,6 +196,8 @@
     - HttpUnit
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00150
@@ -180,6 +210,8 @@
     - JCunit
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00160
@@ -192,6 +224,8 @@
     - JPA Matchers
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00170
@@ -204,6 +238,8 @@
     - MultithreadedTC
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00180
@@ -216,6 +252,8 @@
     - Specsy
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00190
@@ -228,6 +266,8 @@
     - JFunk
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00200
@@ -240,6 +280,8 @@
     - Restito
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00210
@@ -252,6 +294,8 @@
     - Test Interface
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00220
@@ -264,6 +308,8 @@
     - Play Test
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00230
@@ -276,6 +322,8 @@
     - Arquillian
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00240
@@ -288,6 +336,8 @@
     - Cactus
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00250
@@ -300,6 +350,8 @@
     - Concordion
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00260
@@ -312,6 +364,8 @@
     - Cucumber
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00270
@@ -324,6 +378,8 @@
     - EtlUnit
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00280
@@ -336,6 +392,8 @@
     - HavaRunner
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00290
@@ -348,6 +406,8 @@
     - JBehave
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00300
@@ -360,6 +420,8 @@
     - JMock
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00310
@@ -372,6 +434,8 @@
     - JMockit
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00320
@@ -384,6 +448,8 @@
     - Jukito
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00330
@@ -396,6 +462,8 @@
     - Needle
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00340
@@ -408,6 +476,8 @@
     - OpenPojo
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00350
@@ -420,6 +490,8 @@
     - Unitils
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00360
@@ -432,6 +504,8 @@
     - Spring Test
 - customVariables: []
   labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-test-frameworks-00370

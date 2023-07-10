@@ -6,6 +6,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap7
+  - konveyor.io/source=
   links: []
   message: When a singleton EJB bean class implements `javax.ejb.SessionBean` interface,
     this interface should be removed from the implements clause.. All methods declared

@@ -2,7 +2,9 @@
   description: |
     Embedded library - Mycontainer JTA
     The application embeds a Mycontainer JTA library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00020
   tag:
@@ -15,7 +17,9 @@
   description: |
     Embedded library - Geronimo JTA
     The application embeds a Geronimo JTA library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00030
   tag:
@@ -28,7 +32,9 @@
   description: |
     Embedded library - OW2 JTA
     The application embeds an OW2 JTA library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00040
   tag:
@@ -41,7 +47,9 @@
   description: |
     Embedded library - Evo JTA
     The application embeds an Evo JTA library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00050
   tag:
@@ -54,7 +62,9 @@
   description: |
     Embedded library - AKKA JTA
     The application embeds an AKKA JTA library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00060
   tag:
@@ -67,7 +77,9 @@
   description: |
     Embedded library - KumuluzEE JTA
     The application embeds a KumuluzEE JTA library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00070
   tag:
@@ -80,7 +92,9 @@
   description: |
     Embedded library - Ignite JTA
     The application embeds an Ignite JTA library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00080
   tag:
@@ -93,7 +107,9 @@
   description: |
     Embedded library - Nuxeo JTA/JCA
     The application embeds a Nuxeo JTA/JCA library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00090
   tag:
@@ -106,7 +122,9 @@
   description: |
     Embedded library - Everit JTA
     The application embeds an Everit JTA library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00100
   tag:
@@ -119,7 +137,9 @@
   description: |
     Embedded library - Demoiselle JTA
     The application embeds a Demoiselle JTA library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00110
   tag:
@@ -132,7 +152,9 @@
   description: |
     Embedded library - Apache Meecrowave JTA
     The application embeds an Apache Meecrowave JTA library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00120
   tag:
@@ -145,7 +167,9 @@
   description: |
     Embedded library - Apache Sirona JTA
     The application embeds an Apache Sirona JTA library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00130
   tag:
@@ -158,7 +182,9 @@
   description: |
     Embedded library - Lift JTA
     The application embeds a Lift JTA library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00140
   tag:
@@ -171,7 +197,9 @@
   description: |
     Embedded library - WF Core JTA
     The application embeds a WF Core JTA library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00150
   tag:
@@ -184,7 +212,9 @@
   description: |
     Embedded library - Java Transaction API (JTA)
     The application embeds a Java Transaction API library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00160
   tag:
@@ -200,7 +230,9 @@
   description: |
     Embedded library - JBoss Transactions
     The application embeds a JBoss Transactions library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00170
   tag:
@@ -228,7 +260,9 @@
   description: |
     Embedded library - GlassFish JTA
     The application embeds a GlassFish JTA library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00180
   tag:
@@ -246,7 +280,9 @@
   description: |
     Embedded library - Atomikos JTA
     The application embeds an Atomikos JTA library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00190
   tag:
@@ -264,7 +300,9 @@
   description: |
     Embedded library - Narayana Arjuna
     The application embeds a Narayana Arjuna library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00200
   tag:
@@ -282,7 +320,9 @@
   description: |
     Embedded library - Spring Transactions
     The application embeds a Spring Transactions library.
-  labels: []
+  labels:
+  - konveyor.io/source=
+  - konveyor.io/target=
   links: []
   ruleID: jta-00210
   tag:
