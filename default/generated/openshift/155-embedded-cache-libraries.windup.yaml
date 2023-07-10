@@ -6,6 +6,7 @@
     service.\n                    \n"
   labels:
   - konveyor.io/target=cloud-readiness
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-01000
@@ -23,6 +24,7 @@
     service.\n                    \n"
   labels:
   - konveyor.io/target=cloud-readiness
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-02000
@@ -40,6 +42,7 @@
     service.\n                    \n"
   labels:
   - konveyor.io/target=cloud-readiness
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-03000
@@ -57,6 +60,7 @@
     service.\n                    \n"
   labels:
   - konveyor.io/target=cloud-readiness
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-04000
@@ -74,6 +78,7 @@
     service.\n                    \n"
   labels:
   - konveyor.io/target=cloud-readiness
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-05000
@@ -91,6 +96,7 @@
     service.\n                    \n"
   labels:
   - konveyor.io/target=cloud-readiness
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-06000
@@ -108,6 +114,7 @@
     service.\n                    \n"
   labels:
   - konveyor.io/target=cloud-readiness
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-07000
@@ -125,6 +132,7 @@
     service.\n                    \n"
   labels:
   - konveyor.io/target=cloud-readiness
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-08000
@@ -142,6 +150,7 @@
     service.\n                    \n"
   labels:
   - konveyor.io/target=cloud-readiness
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-09000
@@ -158,6 +167,7 @@
     \                       Recommendation: Use a cache backing service.\n                    \n"
   labels:
   - konveyor.io/target=cloud-readiness
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-10000
@@ -175,6 +185,7 @@
     service.\n                    \n"
   labels:
   - konveyor.io/target=cloud-readiness
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-11000
@@ -192,6 +203,7 @@
     service.\n                    \n"
   labels:
   - konveyor.io/target=cloud-readiness
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-12000
@@ -209,6 +221,7 @@
     service.\n                    \n"
   labels:
   - konveyor.io/target=cloud-readiness
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-13000
@@ -226,6 +239,7 @@
     service.\n                    \n"
   labels:
   - konveyor.io/target=cloud-readiness
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-14000
@@ -240,6 +254,7 @@
     application embeds the Spring Boot Cache library.\n                    \n"
   labels:
   - konveyor.io/target=cloud-readiness
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-15000

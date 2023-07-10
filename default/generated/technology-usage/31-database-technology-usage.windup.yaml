@@ -1,5 +1,7 @@
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-database-01400
@@ -12,6 +14,8 @@
     - HSQLDB Driver
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-database-01500
@@ -24,6 +28,8 @@
     - MySQL Driver
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-database-01600
@@ -36,6 +42,8 @@
     - Derby Driver
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-database-01700
@@ -48,6 +56,8 @@
     - PostgreSQL Driver
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-database-01800
@@ -60,6 +70,8 @@
     - H2 Driver
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-database-01900
@@ -72,6 +84,8 @@
     - Microsoft SQL Driver
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-database-02000
@@ -84,6 +98,8 @@
     - SQLite Driver
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-database-02100
@@ -96,6 +112,8 @@
     - Oracle DB Driver
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-database-02200
@@ -108,6 +126,8 @@
     - Cassandra Client
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-database-02300
@@ -120,6 +140,8 @@
     - Axion Driver
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-database-02400
@@ -132,6 +154,8 @@
     - MckoiSQLDB Driver
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-database-02500
@@ -144,6 +168,8 @@
     - MongoDB Client
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-database-02600
@@ -156,6 +182,8 @@
     - Spring Data
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-database-02700
@@ -168,6 +196,8 @@
     - Morphia
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-database-02800
@@ -180,6 +210,8 @@
     - LevelDB Client
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-database-02900
@@ -192,6 +224,8 @@
     - Apache HBase Client
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-database-03100
@@ -204,6 +238,8 @@
     - Apache Accumulo Client
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-database-03200

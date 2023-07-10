@@ -6,6 +6,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap7
+  - konveyor.io/source
   - rmi
   links: []
   message: If you migrate your application to JBoss EAP 7.3 (or later), and want to

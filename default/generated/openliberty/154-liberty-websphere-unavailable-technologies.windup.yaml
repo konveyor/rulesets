@@ -1433,11 +1433,11 @@
       pattern: (com.ibm.websphere.webservices*|com.ibm.websphere.websvcs.rm*|com.ibm.websphere.wsaddressing*|com.ibm.websphere.wsrf*|com.ibm.websphere.wssecurity*|com.ibm.websphere.cache.webservices*|com.ibm.ws.webservices*|com.ibm.ws.websvcs*|com.ibm.ws.wssecurity*|com.ibm.wsspi.soapcontainer*|com.ibm.wsspi.webservices*|com.ibm.wsspi.wssecurity*|com.ibm.wsspi.wsaddressing*|com.ibm.wsspi.wsrm*)
 - category: optional
   customVariables:
-  - name: WebSphereWebServicesGeneratedClassesRule_0_packages
-    nameOfCaptureGroup: WebSphereWebServicesGeneratedClassesRule_0_packages
-    pattern: (?P<WebSphereWebServicesGeneratedClassesRule_0_packages>(com.ibm.websphere.webservices\.[^.]+|com.ibm.websphere.websvcs.rm\.[^.]+|com.ibm.websphere.wsaddressing\.[^.]+|com.ibm.websphere.wsrf\.[^.]+|com.ibm.websphere.wssecurity\.[^.]+|com.ibm.websphere.cache.webservices\.[^.]+|com.ibm.ws.webservices\.[^.]+|com.ibm.ws.websvcs\.[^.]+|com.ibm.ws.wssecurity\.[^.]+|com.ibm.wsspi.soapcontainer\.[^.]+|com.ibm.wsspi.webservices\.[^.]+|com.ibm.wsspi.wssecurity\.[^.]+|com.ibm.wsspi.wsaddressing\.[^.]+|com.ibm.wsspi.wsrm\.[^.]+))?
   - name: WebSphereWebServicesGeneratedClassesRule_0_files
     nameOfCaptureGroup: WebSphereWebServicesGeneratedClassesRule_0_files
+    pattern: (?P<WebSphereWebServicesGeneratedClassesRule_0_packages>(com.ibm.websphere.webservices\.[^.]+|com.ibm.websphere.websvcs.rm\.[^.]+|com.ibm.websphere.wsaddressing\.[^.]+|com.ibm.websphere.wsrf\.[^.]+|com.ibm.websphere.wssecurity\.[^.]+|com.ibm.websphere.cache.webservices\.[^.]+|com.ibm.ws.webservices\.[^.]+|com.ibm.ws.websvcs\.[^.]+|com.ibm.ws.wssecurity\.[^.]+|com.ibm.wsspi.soapcontainer\.[^.]+|com.ibm.wsspi.webservices\.[^.]+|com.ibm.wsspi.wssecurity\.[^.]+|com.ibm.wsspi.wsaddressing\.[^.]+|com.ibm.wsspi.wsrm\.[^.]+))?
+  - name: WebSphereWebServicesGeneratedClassesRule_0_packages
+    nameOfCaptureGroup: WebSphereWebServicesGeneratedClassesRule_0_packages
     pattern: (?P<WebSphereWebServicesGeneratedClassesRule_0_packages>(com.ibm.websphere.webservices\.[^.]+|com.ibm.websphere.websvcs.rm\.[^.]+|com.ibm.websphere.wsaddressing\.[^.]+|com.ibm.websphere.wsrf\.[^.]+|com.ibm.websphere.wssecurity\.[^.]+|com.ibm.websphere.cache.webservices\.[^.]+|com.ibm.ws.webservices\.[^.]+|com.ibm.ws.websvcs\.[^.]+|com.ibm.ws.wssecurity\.[^.]+|com.ibm.wsspi.soapcontainer\.[^.]+|com.ibm.wsspi.webservices\.[^.]+|com.ibm.wsspi.wssecurity\.[^.]+|com.ibm.wsspi.wsaddressing\.[^.]+|com.ibm.wsspi.wsrm\.[^.]+))?
   description: |-
     Application contains WSDL2Java generated classes

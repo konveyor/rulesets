@@ -1,5 +1,7 @@
 - customVariables: []
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: clustering-00000
   tag:
@@ -10,7 +12,9 @@
         w: http://java.sun.com/xml/ns/javaee
       xpath: /w:web-app/w:distributable
 - customVariables: []
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: clustering-00001
   tag:

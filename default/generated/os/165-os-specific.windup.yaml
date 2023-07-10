@@ -6,6 +6,7 @@
   effort: 1
   labels:
   - konveyor.io/target=linux
+  - konveyor.io/source
   - ms-windows
   links: []
   message: This file system path is Microsoft Windows platform dependent. It needs
@@ -22,6 +23,7 @@
   effort: 5
   labels:
   - konveyor.io/target=linux
+  - konveyor.io/source
   - ms-windows
   links: []
   message: This Dynamic-Link Library is Microsoft Windows platform dependent. It needs

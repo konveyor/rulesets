@@ -1,7 +1,9 @@
 - customVariables: []
   description: "Embedded library - Apache Camel\n\n                      The application
     embedds an Apache Camel library.\n                  \n"
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: integration-00001
   tag:
@@ -13,7 +15,9 @@
 - customVariables: []
   description: "Embedded library - Teiid\n\n                      The application
     embedds a Teiid library.\n                  \n"
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: integration-00002
   tag:
@@ -26,7 +30,9 @@
   description: |
     Embedded framework - Spring Integration
     The application embeds the Spring Integration framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: integration-00003
   tag:
@@ -39,7 +45,9 @@
   description: |
     Embedded framework - Ikasan
     The application embeds an Ikasan library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: integration-00004
   tag:
@@ -52,7 +60,9 @@
   description: |
     Embedded framework - Swagger
     The application embeds a Swagger library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: integration-00005
   tag:
@@ -65,7 +75,9 @@
   description: |
     Embedded framework - Apiman
     The application embeds an Apiman library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: integration-00006
   tag:
@@ -78,7 +90,9 @@
   description: |
     Embedded framework - 3scale
     The application embeds a 3scale library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: integration-00007
   tag:
@@ -91,7 +105,9 @@
   description: |
     Embedded framework - Istio
     The application embeds an Istio library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: integration-00008
   tag:
@@ -104,7 +120,9 @@
   description: |
     Embedded framework - ServiceMix
     The application embeds a ServiceMix library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: integration-00009
   tag:
@@ -117,7 +135,9 @@
   description: |
     Embedded framework - Mule
     The application embeds a Mule library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: integration-00010
   tag:
@@ -130,7 +150,9 @@
   description: |
     Embedded framework - Petals EIP
     The application embeds a Petals EIP library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: integration-00011
   tag:
@@ -143,7 +165,9 @@
   description: |
     Embedded framework - SwitchYard
     The application embeds a SwitchYard library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: integration-00012
   tag:
@@ -156,7 +180,9 @@
   description: |
     Embedded framework - Apache Synapse
     The application embeds an Apache Synapse library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: integration-00013
   tag:
@@ -169,7 +195,9 @@
   description: |
     Embedded framework - WSO2
     The application embeds a WSO2 library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: integration-00014
   tag:
@@ -182,7 +210,9 @@
   description: |
     Embedded framework - Talend ESB
     The application embeds a Talend ESB library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: integration-00015
   tag:
@@ -195,7 +225,9 @@
   description: |
     Embedded framework - Spring Integration
     The application embeds the Spring Integration framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: integration-00016
   tag:
@@ -210,7 +242,9 @@
   description: |
     Embedded framework - Spring Integration
     The application embeds the Spring Integration framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: integration-00017
   tag:

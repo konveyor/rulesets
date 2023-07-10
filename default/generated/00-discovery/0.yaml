@@ -66,14 +66,10 @@
       xpath: "/(jboss:ejb-jar or ejb-jar)"
 - ruleID: windup-discover-spring-configuration
   tag: ["Spring XML"]
-  labels:
-  - "konveyor.io/fact=Spring Beans"
   when:
     builtin.xml:
       xpath: "/beans"
 - ruleID: windup-discover-jpa-configuration
-  labels:
-  - "konveyor.io/fact=JPA"
   tag: ["JPA XML"]
   message: "Persistence unit"
   when:
@@ -90,92 +86,3 @@
     # TODO extract version as in rules-java-ee/addon/src/main/java/org/jboss/windup/rules/apps/javaee/rules/DiscoverWebXmlRuleProvider.java
     builtin.xml:
       xpath: /web-app
-- ruleID: ejb-stateless-000
-  labels:
-  - "konveyor.io/fact=EJB"
-  message: "Stateless session bean {{name}}"
-  description: Stateless session beans
-  when:
-    or:
-    - java.referenced:
-        location: IMPLEMENTS_TYPE
-        pattern: "(javax|jakarta).ejb.SessionBean"
-    - java.referenced:
-        location: ANNOTATION
-        pattern: "(javax|jakarta).ejb.Stateless"
-- ruleID: ejb-stateful-000
-  labels:
-  - "konveyor.io/fact=EJB"
-  message: "Stateful session bean {{name}}"
-  description: Stateful session beans
-  when:
-    java.referenced:
-      location: ANNOTATION
-      pattern: "(javax|jakarta).ejb.Stateful"
-- ruleID: ejb-entity-000
-  labels:
-  - "konveyor.io/fact=EJB"
-  message: "Entity bean {{name}}"
-  description: "Entity beans"
-  when:
-    java.referenced:
-      location: IMPLEMENTS_TYPE
-      pattern: "(javax|jakarta).ejb.EntityBean"
-- ruleID: ejb-message-driven-000
-  labels:
-  - "konveyor.io/fact=EJB"
-  message: "Message driven bean {{name}}"
-  description: "Message driven beans"
-  when:
-    or:
-    - java.referenced:
-        location: IMPLEMENTS_TYPE
-        pattern: "(javax|jakarta).ejb.MessageDrivenBean"
-    - java.referenced:
-        location: ANNOTATION
-        pattern: "(javax|jakarta).ejb.MessageDriven"
-- ruleID: ejb-home-000
-  labels:
-  - "konveyor.io/fact=EJB"
-  message: "EJB Home {{name}}"
-  description: "EJB Homes"
-  when:
-    java.referenced:
-      location: INHERITANCE
-      pattern: "(javax|jakarta).ejb.(EJBHome|EJBLocalHome)"
-- ruleID: ejb-object-000
-  labels:
-  - "konveyor.io/fact=EJB"
-  message: "EJB Object {{name}}"
-  description: "EJB Objects"
-  when:
-    java.referenced:
-      location: INHERITANCE
-      pattern: "(javax|jakarta).ejb.(EJBObject|EJBLocalObject)"
-- ruleID: jpa-entity-000
-  labels:
-  - "konveyor.io/fact=JPA"
-  message: "JPA Entity {{name}}"
-  description: "JPA Entities"
-  when:
-    java.referenced:
-      location: ANNOTATION
-      pattern: "(javax|jakarta).persistence.Entity"
-- ruleID: jpa-table-000
-  labels:
-  - "konveyor.io/fact=JPA"
-  message: "JPA Table {{name}}"
-  description: "JPA Tables"
-  when:
-    java.referenced:
-      location: ANNOTATION
-      pattern: "(javax|jakarta).persistence.Table"
-- ruleID: jpa-query-000
-  labels:
-  - "konveyor.io/fact=JPA"
-  message: "JPA Named Query {{name}}"
-  description: "JPA Named Queries"
-  when:
-    java.referenced:
-      location: ANNOTATION
-      pattern: "(javax|jakarta).persistence.(NamedQuery|NamedQueries)"

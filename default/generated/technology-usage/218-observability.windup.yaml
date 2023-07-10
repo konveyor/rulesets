@@ -2,7 +2,9 @@
   description: |
     Embedded library - Spring Boot Actuator
     The application embeds Spring Boot Actuator.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: observability-0100
   tag:
@@ -26,7 +28,9 @@
   description: |
     Spring JMX configuration detected
     The application uses Spring JMX.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: observability-0200
   tag:

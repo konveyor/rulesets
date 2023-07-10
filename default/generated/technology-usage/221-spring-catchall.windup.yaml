@@ -2,7 +2,9 @@
   description: |
     Embedded framework - Spring
     The application embeds the Spring framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: spring-catchall-00001
   tag:

@@ -2,7 +2,9 @@
   description: |
     Embedded framework - Apache Axis
     The application embeds the Apache Axis framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-01000
   tag:
@@ -15,7 +17,9 @@
   description: |
     Embedded framework - Apache Axis2
     The application embeds the Apache Axis2 framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-01010
   tag:
@@ -28,7 +32,9 @@
   description: |
     Embedded framework - Apache CXF
     The application embeds the Apache CXF framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-01100
   tag:
@@ -41,7 +47,9 @@
   description: |
     Embedded framework - XFire
     The application embeds the XFire framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-01200
   tag:
@@ -54,7 +62,9 @@
   description: |
     Embedded framework - Jersey
     The application embeds the Jersey framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-01300
   tag:
@@ -67,7 +77,9 @@
   description: |
     Embedded framework - Unirest
     The application embeds the Unirest framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-01400
   tag:
@@ -80,7 +92,9 @@
   description: |
     Embedded framework - Hibernate
     The application embeds the Hibernate framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-01500
   tag:
@@ -93,7 +107,9 @@
   description: |
     Embedded framework - Hibernate OGM
     The application embeds the Hibernate OGM framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-01600
   tag:
@@ -106,7 +122,9 @@
   description: |
     Embedded framework - EclipseLink
     The application embeds the EclipseLink framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-01700
   tag:
@@ -119,7 +137,9 @@
   description: |
     Embedded framework - Spring Batch
     The application embeds the Spring Batch framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-02000
   tag:
@@ -132,7 +152,9 @@
   description: |
     Embedded framework - AspectJ
     The application embeds the AspectJ framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-02200
   tag:
@@ -145,7 +167,9 @@
   description: |
     Embedded framework - JBPM
     The application embeds the JBPM framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-02300
   tag:
@@ -158,7 +182,9 @@
   description: |
     Embedded framework - iLog
     The application embeds the iLog framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-02400
   tag:
@@ -171,7 +197,9 @@
   description: |
     Embedded framework - Camunda
     The application embeds the Camunda framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-03000
   tag:
@@ -184,7 +212,9 @@
   description: |
     Embedded framework - Pega
     The application embeds the Pega framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-03100
   tag:
@@ -197,7 +227,9 @@
   description: |
     Embedded framework - Blaze
     The application embeds the Blaze framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-03200
   tag:
@@ -210,7 +242,9 @@
   description: |
     Embedded framework - MRules
     The application embeds the MRules framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-03300
   tag:
@@ -223,7 +257,9 @@
   description: |
     Embedded framework - Easy Rules
     The application embeds the Easy Rules framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-03400
   tag:
@@ -236,7 +272,9 @@
   description: |
     Embedded framework - AOP Alliance
     The application embeds the AOP Alliance library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-04700
   tag:
@@ -249,7 +287,9 @@
   description: |
     Embedded framework - SNMP4J
     The application embeds SNMP4J.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-05000
   tag:
@@ -262,7 +302,9 @@
   description: |
     Embedded framework - HTTP Client
     The application embeds a HTTP client.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-05100
   tag:
@@ -275,7 +317,9 @@
   description: |
     Embedded framework - Javax Inject
     The application embeds a Javax Inject library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-05300
   tag:
@@ -291,7 +335,9 @@
   description: |
     Embedded framework - Google Guice
     The application embeds a Google Guice library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-05400
   tag:
@@ -304,7 +350,9 @@
   description: |
     Embedded framework - CDI
     The application embeds a CDI library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-05500
   tag:
@@ -317,7 +365,9 @@
   description: |
     Embedded framework - Plexus Container
     The application embeds a Plexus Container library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-05600
   tag:
@@ -330,7 +380,9 @@
   description: |
     Embedded framework - Weld
     The application embeds a Weld library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-05700
   tag:
@@ -343,7 +395,9 @@
   description: |
     Embedded framework - Dagger
     The application embeds a Dagger library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-05800
   tag:
@@ -356,7 +410,9 @@
   description: |
     Embedded framework - GIN
     The application embeds a GIN (GWT INjection) library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-05900
   tag:
@@ -369,7 +425,9 @@
   description: |
     Embedded framework - PicoContainer
     The application embeds a PicoContainer library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-06000
   tag:
@@ -382,7 +440,9 @@
   description: |
     Embedded framework - Scaldi
     The application embeds a Scaldi library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-06100
   tag:
@@ -395,7 +455,9 @@
   description: |
     Embedded framework - Macros
     The application embeds a Macros library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-06200
   tag:
@@ -408,7 +470,9 @@
   description: |
     Embedded framework - Injekt for Kotlin
     The application embeds a Injekt for Kotlin library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-06300
   tag:
@@ -421,7 +485,9 @@
   description: |
     Embedded framework - Kodein
     The application embeds a Kodein library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-06400
   tag:
@@ -434,7 +500,9 @@
   description: |
     Embedded framework - Peaberry
     The application embeds a Peaberry library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-06500
   tag:
@@ -447,7 +515,9 @@
   description: |
     Embedded framework - Sticky Configured
     The application embeds a Sticky Configured library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-06600
   tag:
@@ -460,7 +530,9 @@
   description: |
     Embedded framework - Ka DI
     The application embeds a Ka DI library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-06700
   tag:
@@ -473,7 +545,9 @@
   description: |
     Embedded framework - Polyforms DI
     The application embeds a Polyforms DI library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-06800
   tag:
@@ -486,7 +560,9 @@
   description: |
     Embedded framework - JayWire
     The application embeds a JayWire library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-06900
   tag:
@@ -499,7 +575,9 @@
   description: |
     Embedded framework - Silk DI
     The application embeds a Silk DI library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-07000
   tag:
@@ -512,7 +590,9 @@
   description: |
     Embedded framework - Grapht DI
     The application embeds a Grapht DI library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-07100
   tag:
@@ -525,7 +605,9 @@
   description: |
     Embedded framework - Syringe
     The application embeds a Syringe library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-07200
   tag:
@@ -538,7 +620,9 @@
   description: |
     Embedded framework - Cfg Engine
     The application embeds a Cfg Engine library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-07300
   tag:
@@ -551,7 +635,9 @@
   description: |
     Embedded framework - BeanInject
     The application embeds a BeanInject library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-07400
   tag:
@@ -564,7 +650,9 @@
   description: |
     Embedded framework - Tornado Inject
     The application embeds a Tornado Inject library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-07500
   tag:
@@ -577,7 +665,9 @@
   description: |
     Embedded framework - Airframe
     The application embeds a Airframe library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-07600
   tag:
@@ -590,7 +680,9 @@
   description: |
     Embedded framework - Winter
     The application embeds a Winter library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-07700
   tag:
@@ -603,7 +695,9 @@
   description: |
     Embedded framework - KouInject
     The application embeds a KouInject library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-07800
   tag:
@@ -616,7 +710,9 @@
   description: |
     Embedded framework - Iroh
     The application embeds an Iroh library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-07900
   tag:
@@ -629,7 +725,9 @@
   description: |
     Embedded framework - Micro DI
     The application embeds a Micro DI library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-08000
   tag:
@@ -642,7 +740,9 @@
   description: |
     Embedded framework - SubCut
     The application embeds a SubCut library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-08100
   tag:
@@ -655,7 +755,9 @@
   description: |
     Embedded framework - Spring DI
     The application embeds a Spring DI library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-08200
   tag:
@@ -669,7 +771,9 @@
   description: |
     Embedded framework - Micrometer
     The application embeds a Micrometer library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-08300
   tag:
@@ -683,7 +787,9 @@
   description: |
     Embedded framework - Spring Web
     The application embeds the Spring Web framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-08400
   tag:
@@ -704,7 +810,9 @@
   description: |
     Embedded framework - Spring Shell
     The application embeds a Spring Shell library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-08500
   tag:
@@ -718,7 +826,9 @@
   description: |
     Embedded framework - Spring Boot Flo
     The application embeds Spring Boot Flo.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-08600
   tag:
@@ -731,7 +841,9 @@
   description: |
     Embedded framework - Spring Scheduled
     The application embeds Spring Scheduled.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-08700
   tag:
@@ -745,7 +857,9 @@
   description: |
     Embedded framework - Spring Cloud Function
     The application embeds Spring Cloud Function.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-08800
   tag:
@@ -763,7 +877,9 @@
   description: |
     Embedded framework - Quartz
     The application embeds the Quartz framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-08900
   tag:
@@ -776,7 +892,9 @@
   description: |
     Embedded framework - Zipkin
     The application embeds the Zipkin framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-09100
   tag:
@@ -789,7 +907,9 @@
   description: |
     Embedded framework - Feign
     The application embeds the Feign framework.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-09000
   tag:
@@ -802,7 +922,9 @@
   description: |
     Embedded framework - Redis
     The application embeds the Redis client.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-09200
   tag:
@@ -815,7 +937,9 @@
   description: |
     Embedded framework - Eureka
     The application embeds the Eureka client.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: embedded-framework-09300
   tag:

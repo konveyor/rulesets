@@ -2,7 +2,9 @@
   description: |
     Embedded library - Apache Wicket
     The application embeds an Apache Wicket library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-01000
   tag:
@@ -15,7 +17,9 @@
   description: |
     Embedded library - Apache Struts
     The application embeds an Apache Struts library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-01100
   tag:
@@ -28,7 +32,9 @@
   description: |
     Embedded framework - Spring MVC
     The application embeds a Spring MVC library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-01200
   tag:
@@ -41,7 +47,9 @@
   description: |
     Embedded framework - Spring MVC
     The application embeds a Spring MVC library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-01210
   tag:
@@ -55,7 +63,9 @@
   description: |
     Embedded framework - Spring MVC
     The application embeds a Spring MVC library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-01220
   tag:
@@ -79,7 +89,9 @@
   description: |
     Embedded library - GWT
     The application embeds a GWT library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-01300
   tag:
@@ -92,7 +104,9 @@
   description: |
     Embedded library - MyFaces
     The application embeds a MyFaces library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-01400
   tag:
@@ -105,7 +119,9 @@
   description: |
     Embedded library - RichFaces
     The application embeds a RichFaces library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-01500
   tag:
@@ -118,7 +134,9 @@
   description: |
     Embedded library - JSF
     The application embeds a JSF library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-01600
   tag:
@@ -131,7 +149,9 @@
   description: |
     Embedded library - Apache Tapestry
     The application embeds an Apache Tapestry library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-01700
   tag:
@@ -144,7 +164,9 @@
   description: |
     Embedded library - Stripes
     The application embeds a Stripes library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-01800
   tag:
@@ -157,7 +179,9 @@
   description: |
     Embedded library - Spark
     The application embeds a Spark library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-01900
   tag:
@@ -170,7 +194,9 @@
   description: |
     Embedded library - Vaadin
     The application embeds a Vaadin library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-02000
   tag:
@@ -183,7 +209,9 @@
   description: |
     Embedded library - Grails
     The application embeds a Grails library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-02100
   tag:
@@ -196,7 +224,9 @@
   description: |
     Embedded library - Play
     The application embeds a Play library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-02200
   tag:
@@ -209,7 +239,9 @@
   description: |
     Embedded library - Oracle ADF
     The application embeds an Oracle ADF library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-02300
   tag:
@@ -225,7 +257,9 @@
   description: |
     Embedded library - PrimeFaces
     The application embeds a PrimeFaces library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-02400
   tag:
@@ -238,7 +272,9 @@
   description: |
     Embedded library - JSTL
     The application embeds a JSTL library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-02500
   tag:
@@ -251,7 +287,9 @@
   description: |
     Embedded library - OpenFaces
     The application embeds an OpenFaces library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-02600
   tag:
@@ -264,7 +302,9 @@
   description: |
     Embedded library - JFreeChart
     The application embeds a JFreeChart library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-02700
   tag:
@@ -277,7 +317,9 @@
   description: |
     Embedded library - BootsFaces
     The application embeds a BootsFaces library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-02800
   tag:
@@ -290,7 +332,9 @@
   description: |
     Embedded library - ICEfaces
     The application embeds an ICEfaces library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-02900
   tag:
@@ -303,7 +347,9 @@
   description: |
     Embedded library - BabbageFaces
     The application embeds a BabbageFaces library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-03000
   tag:
@@ -316,7 +362,9 @@
   description: |
     Embedded library - Portlet
     The application embeds a Portlet library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-03100
   tag:
@@ -329,7 +377,9 @@
   description: |
     Embedded library - AngularFaces
     The application embeds an AngularFaces library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-03200
   tag:
@@ -342,7 +392,9 @@
   description: |
     Embedded library - LiferayFaces
     The application embeds a LiferayFaces library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-03300
   tag:
@@ -355,7 +407,9 @@
   description: |
     Embedded library - Liferay
     The application embeds a Liferay library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-03400
   tag:
@@ -368,7 +422,9 @@
   description: |
     Embedded library - ButterFaces
     The application embeds a Larmic ButterFaces library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-03500
   tag:
@@ -381,7 +437,9 @@
   description: |
     Embedded library - HighFaces
     The application embeds a HighFaces library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-03600
   tag:
@@ -394,7 +452,9 @@
   description: |
     Embedded library - TieFaces
     The application embeds a TieFaces library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-03700
   tag:
@@ -407,7 +467,9 @@
   description: |
     Embedded library - OmniFaces
     The application embeds an OmniFaces library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-03800
   tag:
@@ -420,7 +482,9 @@
   description: |
     Embedded library - UberFire
     The application embeds an UberFire library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-03900
   tag:
@@ -433,7 +497,9 @@
   description: |
     Embedded library - Apache Velocity
     The application embeds an Apache Velocity library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-04000
   tag:
@@ -446,7 +512,9 @@
   description: |
     Embedded library - Thymeleaf
     The application embeds a Thymeleaf library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-04100
   tag:
@@ -459,7 +527,9 @@
   description: |
     Embedded library - Apache FreeMarker
     The application embeds an Apache FreeMarker library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-04200
   tag:
@@ -472,7 +542,9 @@
   description: |
     Embedded library - ANTLR StringTemplate
     The application embeds an ANTLR StringTemplate library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-04300
   tag:
@@ -485,7 +557,9 @@
   description: |
     Embedded library - Handlebars
     The application embeds a Handlebars library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-04400
   tag:
@@ -498,7 +572,9 @@
   description: |
     Embedded library - JMustache
     The application embeds a JMustache library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-04500
   tag:
@@ -511,7 +587,9 @@
   description: |
     Embedded library - Jamon
     The application embeds a Jamon library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-04600
   tag:
@@ -524,7 +602,9 @@
   description: |
     Embedded library - Twirl
     The application embeds a Twirl library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-04700
   tag:
@@ -537,7 +617,9 @@
   description: |
     Embedded library - Scalate
     The application embeds a Scalate library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-04800
   tag:
@@ -550,7 +632,9 @@
   description: |
     Embedded library - Rythm Template Engine
     The application embeds a Rythm Template Engine library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-04900
   tag:
@@ -563,7 +647,9 @@
   description: |
     Embedded library - Trimou
     The application embeds a Trimou library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-05000
   tag:
@@ -576,7 +662,9 @@
   description: |
     Embedded library - Jetbrick Template
     The application embeds a Jetbrick Template library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-05100
   tag:
@@ -589,7 +677,9 @@
   description: |
     Embedded library - Chunk Templates
     The application embeds a Chunk Templates library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-05200
   tag:
@@ -602,7 +692,9 @@
   description: |
     Embedded library - JSilver
     The application embeds a JSilver library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-05300
   tag:
@@ -615,7 +707,9 @@
   description: |
     Embedded library - Water Template Engine
     The application embeds a Water Template Engine library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-05400
   tag:
@@ -628,7 +722,9 @@
   description: |
     Embedded library - Ickenham
     The application embeds an Ickenham library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-05500
   tag:
@@ -641,7 +737,9 @@
   description: |
     Embedded library - Mixer
     The application embeds a Mixer library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-05600
   tag:
@@ -654,7 +752,9 @@
   description: |
     Embedded library - Webmacro
     The application embeds a Webmacro library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-05700
   tag:
@@ -667,7 +767,9 @@
   description: |
     Embedded library - DVSL
     The application embeds a DVSL library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-05800
   tag:
@@ -680,7 +782,9 @@
   description: |
     Embedded library - Snippetory Template Engine
     The application embeds a Snippetory Template Engine library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-05900
   tag:
@@ -693,7 +797,9 @@
   description: |
     Embedded library - Anakia
     The application embeds an Anakia library.
-  labels: []
+  labels:
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: mvc-06000
   tag:

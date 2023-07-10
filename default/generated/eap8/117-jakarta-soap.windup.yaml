@@ -6,6 +6,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap8
+  - konveyor.io/source
   links: []
   message: '`javax.xml.soap.SOAPElementFactory.newInstance()` must be replaced with
     `jakarta.xml.soap.SOAPFactory.newInstance()`.'
@@ -21,6 +22,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap8
+  - konveyor.io/source
   links: []
   message: '`javax.xml.soap.SOAPElementFactory.create()` must be replaced with `jakarta.xml.soap.SOAPFactory.createElement()`.
     If `javax.xml.soap.Name` is passed as a parameter, it must be replaced with `jakarta.xml.soap.Name`.'

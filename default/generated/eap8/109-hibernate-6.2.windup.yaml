@@ -7,6 +7,7 @@
   labels:
   - konveyor.io/target=hibernate6.2
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate 6 migration guide - Changes in integration contracts (SPIs)
@@ -31,6 +32,7 @@
   labels:
   - konveyor.io/target=hibernate6.2
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate 6 migration guide - Changes in integration contracts (SPIs)
@@ -54,6 +56,7 @@
   labels:
   - konveyor.io/target=hibernate6.2
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate 6 migration guide - Changes in integration contracts (SPIs)
@@ -77,6 +80,7 @@
   labels:
   - konveyor.io/target=hibernate6.2
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate 6 migration guide - API/SPI/Internal distinction
@@ -99,6 +103,7 @@
   labels:
   - konveyor.io/target=hibernate6.2
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate 6 migration guide - API/SPI/Internal distinction

@@ -9,6 +9,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
+  - konveyor.io/source
   links: []
   message: Replace the `javax.{{renamed}}` import statement with `jakarta.{{renamed}}`
   ruleID: javax-to-jakarta-import-00001

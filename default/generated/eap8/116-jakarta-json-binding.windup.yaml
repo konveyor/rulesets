@@ -6,6 +6,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap8
+  - konveyor.io/source
   links: []
   message: By default, types annotated with the `jakarta.json.bind.annotation.JsonbCreator`
     annotation no longer require all parameters to be present in the JSON content.

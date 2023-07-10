@@ -6,6 +6,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap7
+  - konveyor.io/source
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Changes Required in MicroProfile
       Rest Client Code'

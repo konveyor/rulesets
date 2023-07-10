@@ -1,5 +1,7 @@
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-01000
@@ -12,6 +14,8 @@
     - JSF
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-01100
@@ -24,6 +28,8 @@
     - JSP
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-01200
@@ -36,6 +42,8 @@
     - WebXML
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-01300
@@ -48,6 +56,8 @@
     - WebSocket
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-01400
@@ -61,6 +71,8 @@
       - Applet
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-01500
@@ -73,6 +85,8 @@
     - JNLP
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-01600
@@ -85,6 +99,8 @@
     - JNLP
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-01700
@@ -97,6 +113,8 @@
     - Swing
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-01800
@@ -109,6 +127,8 @@
     - MiGLayout
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-01900
@@ -121,6 +141,8 @@
     - JGoodies
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-02000
@@ -133,6 +155,8 @@
     - FormLayoutMaker
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-02100
@@ -145,6 +169,8 @@
     - Magicgrouplayout
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-02200
@@ -157,6 +183,8 @@
     - SWT
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-02300
@@ -169,6 +197,8 @@
     - JavaFX
 - customVariables: []
   labels:
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-02400

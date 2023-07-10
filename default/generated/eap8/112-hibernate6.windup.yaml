@@ -7,6 +7,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Implicit Identifier Sequence and Table
@@ -39,6 +40,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Type System
@@ -64,6 +66,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Type System
@@ -87,6 +90,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Type System
@@ -108,6 +112,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Basic Types
@@ -127,6 +132,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Type System
@@ -146,6 +152,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Type System
@@ -165,6 +172,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - CompositeUserType
@@ -184,6 +192,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Multi-table Mutation Queries
@@ -204,6 +213,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Stream
@@ -232,6 +242,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Interceptor
@@ -253,6 +264,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Restructuring of org.hibernate.loader
@@ -273,6 +285,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Restructuring of org.hibernate.loader
@@ -292,6 +305,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Restructuring of org.hibernate.loader
@@ -315,6 +329,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Restructuring of the SQL package
@@ -337,6 +352,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Restructuring of the SQL package
@@ -357,6 +373,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - hbm.xml multiple <column/> now disallowed
@@ -386,6 +403,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Legacy hibernate criteria API
@@ -408,6 +426,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Iterate
@@ -427,6 +446,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Callable via NativeQuery
@@ -460,6 +480,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - HQL fetch all properties clause
@@ -487,6 +508,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - JMX integration
@@ -506,6 +528,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - JACC integration
@@ -525,6 +548,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Previously deprecated features
@@ -543,6 +567,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Previously deprecated features
@@ -562,6 +587,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Configuration property renames
@@ -581,6 +607,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Configuration property renames
@@ -599,6 +626,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Configuration property renames
@@ -617,6 +645,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Configuration property renames
@@ -635,6 +664,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Configuration property renames
@@ -653,6 +683,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Configuration property renames
@@ -671,6 +702,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Configuration property renames
@@ -690,6 +722,7 @@
   labels:
   - konveyor.io/target=hibernate6
   - konveyor.io/target=eap8
+  - konveyor.io/source
   - hibernate
   links:
   - title: Hibernate ORM 6 migration guide - Community dialects
