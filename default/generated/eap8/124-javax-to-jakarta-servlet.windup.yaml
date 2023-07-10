@@ -7,7 +7,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -34,7 +34,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -61,7 +61,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -86,7 +86,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -106,7 +106,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -126,7 +126,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -146,7 +146,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -167,7 +167,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -188,7 +188,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -208,7 +208,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -228,7 +228,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -249,7 +249,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -270,7 +270,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -291,7 +291,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -312,7 +312,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -332,7 +332,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -352,7 +352,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -372,7 +372,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -392,7 +392,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -412,7 +412,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -432,7 +432,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -453,7 +453,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -474,7 +474,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -495,7 +495,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet
@@ -516,7 +516,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
       Servlet

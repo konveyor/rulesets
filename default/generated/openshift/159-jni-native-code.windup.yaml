@@ -6,7 +6,7 @@
   effort: 7
   labels:
   - konveyor.io/target=cloud-readiness
-  - konveyor.io/source=
+  - konveyor.io/source
   - jni
   links:
   - title: How to load native libraries and access them via JNI in EAP (with or without

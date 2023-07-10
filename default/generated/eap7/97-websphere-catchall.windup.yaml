@@ -46,11 +46,11 @@
       pattern: (com.)?(websphere|ibm).**
 - category: potential
   customVariables:
-  - name: type
-    nameOfCaptureGroup: type
-    pattern: ilog.(?P<subpackage>.*.)?(?P<type>[^.]+)?
   - name: subpackage
     nameOfCaptureGroup: subpackage
+    pattern: ilog.(?P<subpackage>.*.)?(?P<type>[^.]+)?
+  - name: type
+    nameOfCaptureGroup: type
     pattern: ilog.(?P<subpackage>.*.)?(?P<type>[^.]+)?
   description: |
     IBM ILog proprietary type reference

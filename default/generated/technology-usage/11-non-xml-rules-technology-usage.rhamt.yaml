@@ -1,7 +1,7 @@
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-02000
@@ -14,8 +14,8 @@
     - EJB XML
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-05000
@@ -28,8 +28,8 @@
     - Hibernate Cfg
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-06000
@@ -42,8 +42,8 @@
     - Hibernate Mapping
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-12000
@@ -56,8 +56,8 @@
     - JBoss EJB XML
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-13000
@@ -70,8 +70,8 @@
     - JBoss Web XML
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-14000
@@ -84,8 +84,8 @@
     - JDBC
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-17000
@@ -98,8 +98,8 @@
     - JPA XML
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-18000
@@ -112,8 +112,8 @@
     - Orion EJB XML
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-19000
@@ -126,8 +126,8 @@
     - Orion Web XML
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-20000
@@ -140,8 +140,8 @@
     - Properties
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-21000
@@ -154,8 +154,8 @@
     - Seam
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-22000
@@ -168,8 +168,8 @@
     - WebLogic Web XML
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-23000
@@ -182,8 +182,8 @@
     - WebSphere EJB
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-24000
@@ -196,8 +196,8 @@
     - WebSphere EJB Ext
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-25000
@@ -210,8 +210,8 @@
     - WebSphere Web XML
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-26000
@@ -224,8 +224,8 @@
     - WebSphere WS Binding
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-27000

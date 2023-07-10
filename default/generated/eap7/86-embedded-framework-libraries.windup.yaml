@@ -3,7 +3,7 @@
     embedds a Drools library.\n                    \n"
   labels:
   - konveyor.io/target=eap
-  - konveyor.io/source=
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-framework-libraries-01000
@@ -27,7 +27,7 @@
     the instructions to enable alternative versions for both EAP 6 and 7.\n                    \n"
   labels:
   - konveyor.io/target=eap
-  - konveyor.io/source=
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links:
   - title: 'Red Hat JBoss EAP: Component Details'
@@ -48,7 +48,7 @@
     embeds a JDBC library.\n                    \n"
   labels:
   - konveyor.io/target=eap
-  - konveyor.io/source=
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-framework-libraries-04000
@@ -72,7 +72,7 @@
     versions for both EAP 6 and 7.\n                    \n"
   labels:
   - konveyor.io/target=eap
-  - konveyor.io/source=
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links:
   - title: 'Red Hat JBoss EAP: Component Details'
@@ -109,7 +109,7 @@
     to enable alternatives for both EAP 6 and 7\n                    \n"
   labels:
   - konveyor.io/target=eap
-  - konveyor.io/source=
+  - konveyor.io/source
   - phase=InitialAnalysisPhase
   links:
   - title: EAP 6 - Migrate Seam 2.2 applications

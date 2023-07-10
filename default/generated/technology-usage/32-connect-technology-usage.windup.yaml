@@ -1,7 +1,7 @@
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01100
@@ -25,8 +25,8 @@
     JNA usage
     JNA is used in the application
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01101
@@ -57,8 +57,8 @@
     Mail usage
     Mailing is used in the application
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01200
@@ -82,8 +82,8 @@
     JCA usage
     JCA is used in the application
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01300
@@ -116,8 +116,8 @@
         pattern: ra\.xml
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01400
@@ -130,8 +130,8 @@
     - Resource Adapter
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01500
@@ -144,8 +144,8 @@
     - ActiveMQ
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01600
@@ -158,8 +158,8 @@
     - OpenWS
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01700
@@ -172,8 +172,8 @@
     - WSDL
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01800
@@ -186,8 +186,8 @@
     - RabbitMQ Client
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01900
@@ -200,8 +200,8 @@
     - Spring Messaging Client
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-02000
@@ -214,8 +214,8 @@
     - Camel Messaging Client
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-02100
@@ -228,8 +228,8 @@
     - Amazon SQS Client
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-02200
@@ -242,8 +242,8 @@
     - HornetQ Client
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-02300
@@ -256,8 +256,8 @@
     - AMQP Client
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-02400
@@ -270,8 +270,8 @@
     - RocketMQ Client
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-02500
@@ -284,8 +284,8 @@
     - 0MQ Client
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-02600
@@ -298,8 +298,8 @@
     - JBossMQ Client
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-02700
@@ -312,8 +312,8 @@
     - Zbus Client
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-02800
@@ -326,8 +326,8 @@
     - Qpid Client
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-02900

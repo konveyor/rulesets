@@ -1,7 +1,7 @@
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: clustering-00000
   tag:
@@ -13,8 +13,8 @@
       xpath: /w:web-app/w:distributable
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: clustering-00001
   tag:

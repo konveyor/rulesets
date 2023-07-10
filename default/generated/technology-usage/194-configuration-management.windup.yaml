@@ -3,8 +3,8 @@
     Embedded library - Spring Cloud Config
     The application embeds Spring Cloud Config.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: configuration-management-0100
   tag:
@@ -23,8 +23,8 @@
     Application properties file detected
     Application properties file detected
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: configuration-management-0200
   tag:
@@ -38,8 +38,8 @@
     Spring datasource properties detected
     Spring datasource properties detected
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: configuration-management-0300
   tag:
@@ -53,8 +53,8 @@
     Spring logging properties detected
     Spring logging properties detected
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: configuration-management-0400
   tag:
@@ -68,8 +68,8 @@
     Spring configuration properties annotation detected
     Spring configuration properties annotation detected
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: configuration-management-0500
   tag:

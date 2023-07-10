@@ -6,7 +6,7 @@
   effort: 1
   labels:
   - konveyor.io/target=cloud-readiness
-  - konveyor.io/source=
+  - konveyor.io/source
   - storage
   links:
   - title: 'Twelve-Factor App: Logs'
@@ -56,7 +56,7 @@
   effort: 1
   labels:
   - konveyor.io/target=cloud-readiness
-  - konveyor.io/source=
+  - konveyor.io/source
   - storage
   links:
   - title: 'Twelve-Factor App: Logs'
@@ -93,7 +93,7 @@
   effort: 1
   labels:
   - konveyor.io/target=cloud-readiness
-  - konveyor.io/source=
+  - konveyor.io/source
   - storage
   links:
   - title: 'Twelve-Factor App: Logs'
@@ -129,7 +129,7 @@
   effort: 1
   labels:
   - konveyor.io/target=cloud-readiness
-  - konveyor.io/source=
+  - konveyor.io/source
   - storage
   links:
   - title: 'Twelve-Factor App: Logs'
@@ -165,7 +165,7 @@
   effort: 1
   labels:
   - konveyor.io/target=cloud-readiness
-  - konveyor.io/source=
+  - konveyor.io/source
   - storage
   links: []
   message: 'An application running inside a container could lose access to a file

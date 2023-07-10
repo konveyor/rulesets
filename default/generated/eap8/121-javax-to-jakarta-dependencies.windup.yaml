@@ -6,7 +6,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta EE
     url: https://jakarta.ee/
@@ -24,7 +24,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta EE
     url: https://jakarta.ee/
@@ -43,7 +43,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta EE
     url: https://jakarta.ee/
@@ -61,7 +61,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta EE
     url: https://jakarta.ee/
@@ -80,7 +80,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta EE
     url: https://jakarta.ee/
@@ -98,7 +98,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta EE
     url: https://jakarta.ee/
@@ -116,7 +116,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta EE
     url: https://jakarta.ee/
@@ -135,7 +135,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta EE
     url: https://jakarta.ee/

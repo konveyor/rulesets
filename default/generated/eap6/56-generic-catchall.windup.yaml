@@ -241,14 +241,14 @@
       pattern: org.apache.(activeio|activemq)*
 - category: potential
   customVariables:
+  - name: subpackage
+    nameOfCaptureGroup: subpackage
+    pattern: org.(?P<subpackage>(jboss|jbpm).)?(?P<package-remainder>([a-z]+\.)*)?(?P<type>[^.()]+)?
   - name: package-remainder
     nameOfCaptureGroup: package-remainder
     pattern: org.(?P<subpackage>(jboss|jbpm).)?(?P<package-remainder>([a-z]+\.)*)?(?P<type>[^.()]+)?
   - name: type
     nameOfCaptureGroup: type
-    pattern: org.(?P<subpackage>(jboss|jbpm).)?(?P<package-remainder>([a-z]+\.)*)?(?P<type>[^.()]+)?
-  - name: subpackage
-    nameOfCaptureGroup: subpackage
     pattern: org.(?P<subpackage>(jboss|jbpm).)?(?P<package-remainder>([a-z]+\.)*)?(?P<type>[^.()]+)?
   description: |
     JBoss API reference

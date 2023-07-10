@@ -1,7 +1,7 @@
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: configuration-management-technology-usage-0100
@@ -14,8 +14,8 @@
     - Spring Cloud Config
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: configuration-management-technology-usage-0200
@@ -28,8 +28,8 @@
     - Application Properties File
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: configuration-management-technology-usage-0300

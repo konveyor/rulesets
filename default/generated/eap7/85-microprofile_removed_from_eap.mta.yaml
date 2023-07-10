@@ -6,7 +6,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap7
-  - konveyor.io/source=
+  - konveyor.io/source
   - EclipseMicroProfile
   links:
   - title: 'Red Hat JBoss EAP 7.4 Migration Guide: Review the list of deprecated and
@@ -28,7 +28,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap7
-  - konveyor.io/source=
+  - konveyor.io/source
   - EclipseMicroProfile
   links:
   - title: 'Red Hat JBoss EAP 7.4 Migration Guide: Review the list of deprecated and
@@ -50,7 +50,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap7
-  - konveyor.io/source=
+  - konveyor.io/source
   - EclipseMicroProfile
   links:
   - title: 'Red Hat JBoss EAP 7.4 Migration Guide: Review the list of deprecated and
@@ -72,7 +72,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap7
-  - konveyor.io/source=
+  - konveyor.io/source
   - EclipseMicroProfile
   links:
   - title: 'Red Hat JBoss EAP 7.4 Migration Guide: Review the list of deprecated and
@@ -94,7 +94,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap7
-  - konveyor.io/source=
+  - konveyor.io/source
   - EclipseMicroProfile
   links:
   - title: 'Red Hat JBoss EAP 7.4 Migration Guide: Review the list of deprecated and

@@ -1,7 +1,7 @@
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-3rd-party-01000
@@ -14,8 +14,8 @@
     - Liferay
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-3rd-party-02000
@@ -28,8 +28,8 @@
     - Oracle Forms
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-3rd-party-03000
@@ -42,8 +42,8 @@
     - Spring Boot
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-3rd-party-04000
@@ -56,8 +56,8 @@
     - Elasticsearch
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-3rd-party-05000
@@ -70,8 +70,8 @@
     - Logstash
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-3rd-party-06000
@@ -84,8 +84,8 @@
     - Jetty
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-3rd-party-08000
@@ -98,8 +98,8 @@
     - Tomcat
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-3rd-party-09000
@@ -112,8 +112,8 @@
     - Kibana
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-3rd-party-10000
@@ -126,8 +126,8 @@
     - Apache Karaf
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-3rd-party-11000
@@ -140,8 +140,8 @@
     - Neo4j
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-3rd-party-12000
@@ -154,8 +154,8 @@
     - Spark
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-3rd-party-13000
@@ -168,8 +168,8 @@
     - Apache Hadoop
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-3rd-party-14000
@@ -182,8 +182,8 @@
     - Apache Geronimo
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-3rd-party-15000
@@ -196,8 +196,8 @@
     - Apache Aries
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-3rd-party-16000
@@ -210,8 +210,8 @@
     - Cloudera
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-3rd-party-17000
@@ -224,8 +224,8 @@
     - MapR
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-3rd-party-18000
@@ -238,8 +238,8 @@
     - TensorFlow
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-3rd-party-19000
@@ -252,8 +252,8 @@
     - Weka
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-3rd-party-20000

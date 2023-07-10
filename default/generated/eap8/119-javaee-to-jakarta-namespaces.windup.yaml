@@ -7,7 +7,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta EE XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#10
@@ -26,7 +26,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta Persistence XML Schemas
     url: https://jakarta.ee/xml/ns/persistence/#3
@@ -45,7 +45,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta Bean Validation XML Schemas
     url: https://jakarta.ee/xml/ns/validation/
@@ -64,7 +64,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -83,7 +83,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -101,7 +101,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -120,7 +120,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -139,7 +139,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -158,7 +158,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -177,7 +177,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -196,7 +196,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -215,7 +215,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -234,7 +234,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -253,7 +253,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -272,7 +272,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -291,7 +291,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -310,7 +310,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -329,7 +329,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -348,7 +348,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -367,7 +367,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -386,7 +386,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -405,7 +405,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -424,7 +424,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -443,7 +443,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -462,7 +462,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -480,7 +480,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -498,7 +498,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -517,7 +517,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -536,7 +536,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -555,7 +555,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -574,7 +574,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -593,7 +593,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#9
@@ -612,7 +612,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: In the root tag, replace the `version` attribute value `2.1` with `3.0`
   ruleID: javaee-to-jakarta-namespaces-00033
@@ -636,7 +636,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: In the root tag, replace the `version` attribute value `7` with `9`
   ruleID: javaee-to-jakarta-namespaces-00034
@@ -660,7 +660,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`beans_1_1.xsd`: In the root tag, replace the `version` attribute value
     with `3.0`'
@@ -685,7 +685,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`beans_2_0.xsd`: In the root tag, replace the `version` attribute value
     with `3.0`'
@@ -710,7 +710,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`application_7.xsd`: In the root tag, replace the `version` attribute
     value with `9`'
@@ -735,7 +735,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`application_8.xsd`: In the root tag, replace the `version` attribute
     value with `9`'
@@ -760,7 +760,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`application-client_7.xsd`: In the root tag, replace the `version` attribute
     value with `9`'
@@ -785,7 +785,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`application-client_8.xsd`: In the root tag, replace the `version` attribute
     value with `9`'
@@ -810,7 +810,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`connector_1_7.xsd`: In the root tag, replace the `version` attribute
     value with `2.0`'
@@ -835,7 +835,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`ejb-jar_3_2.xsd`: In the root tag, replace the `version` attribute value
     with `4.0`'
@@ -860,7 +860,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`javaee_web_services_1_4.xsd`: In the root tag, replace the `version`
     attribute value with `2.0`'
@@ -885,7 +885,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`web-app_3_1`: In the root tag, replace the `version` attribute value
     with `5.0`'
@@ -910,7 +910,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`web-app_4_0`: In the root tag, replace the `version` attribute value
     with `5.0`'
@@ -935,7 +935,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`web-fragment_3_1`: In the root tag, replace the `version` attribute value
     with `5.0`'
@@ -960,7 +960,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`web-fragment_4_0`: In the root tag, replace the `version` attribute value
     with `5.0`'
@@ -985,7 +985,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`web-facesconfig_2_2`: In the root tag, replace the `version` attribute
     value with `3.0`'
@@ -1010,7 +1010,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`web-facesconfig_2_3`: In the root tag, replace the `version` attribute
     value with `3.0`'
@@ -1035,7 +1035,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`web-facelettaglibrary_2_2`: In the root tag, replace the `version` attribute
     value with `3.0`'
@@ -1060,7 +1060,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`web-facelettaglibrary_2_3`: In the root tag, replace the `version` attribute
     value with `3.0`'
@@ -1085,7 +1085,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`web-jsptaglibrary_2_1`: In the root tag, replace the `version` attribute
     value with `3.0`'
@@ -1110,7 +1110,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`validation-mapping-2.0`: In the root tag, replace the `version` attribute
     value with `3.0`'
@@ -1135,7 +1135,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`validation-configuration-2.0`: In the root tag, replace the `version`
     attribute value with `3.0`'
@@ -1160,7 +1160,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`orm_2_1`: In the root tag, replace the `version` attribute value with
     `3.0`'
@@ -1185,7 +1185,7 @@
   labels:
   - konveyor.io/target=jakarta-ee9
   - konveyor.io/target=eap8
-  - konveyor.io/source=
+  - konveyor.io/source
   links: []
   message: '`orm_2_2`: In the root tag, replace the `version` attribute value with
     `3.0`'

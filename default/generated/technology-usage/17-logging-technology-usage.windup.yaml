@@ -1,7 +1,7 @@
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-00010
@@ -14,8 +14,8 @@
     - Apache Log4J
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-00020
@@ -28,8 +28,8 @@
     - Apache Commons Logging
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-00030
@@ -42,8 +42,8 @@
     - SLF4J
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-00040
@@ -56,8 +56,8 @@
     - tinylog
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-00050
@@ -70,8 +70,8 @@
     - Logback
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-00060
@@ -84,8 +84,8 @@
     - Logging to file system
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-00070
@@ -98,8 +98,8 @@
     - Logging to Socket Handler
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-00080
@@ -112,8 +112,8 @@
     - JBoss logging
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-00090
@@ -126,8 +126,8 @@
     - Monolog
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000100
@@ -140,8 +140,8 @@
     - Jcabi Log
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000110
@@ -154,8 +154,8 @@
     - NLOG4J
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000120
@@ -168,8 +168,8 @@
     - Log4s
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000130
@@ -182,8 +182,8 @@
     - Kotlin Logging
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000140
@@ -196,8 +196,8 @@
     - Airlift Log Manager
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000150
@@ -210,8 +210,8 @@
     - MinLog
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000160
@@ -224,8 +224,8 @@
     - Logging Utils
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000170
@@ -238,8 +238,8 @@
     - OCPsoft Logging Utils
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000180
@@ -252,8 +252,8 @@
     - Scribe
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000190
@@ -266,8 +266,8 @@
     - GFC Logging
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000200
@@ -280,8 +280,8 @@
     - Blitz4j
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000210
@@ -294,8 +294,8 @@
     - Avalon Logkit
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000220
@@ -308,8 +308,8 @@
     - KLogger
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000230
@@ -322,8 +322,8 @@
     - Lumberjack
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000240
@@ -336,8 +336,8 @@
     - Log.io
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000250
@@ -350,8 +350,8 @@
     - OPS4J Pax Logging Service
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000260
@@ -364,8 +364,8 @@
     - OW2 Log Util
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000270
@@ -378,8 +378,8 @@
     - Twitter Util Logging
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000280
@@ -392,8 +392,8 @@
     - Composite Logging JCL
 - customVariables: []
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-logging-000290

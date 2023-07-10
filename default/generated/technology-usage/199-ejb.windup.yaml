@@ -6,8 +6,8 @@
     EJB Timer
     The application uses EJB timers.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: ejb-01000
   tag:

@@ -7,7 +7,7 @@
   labels:
   - konveyor.io/target=eap8
   - konveyor.io/target=hibernate6.1
-  - konveyor.io/source=
+  - konveyor.io/source
   - hibernate
   - eap8
   links:
@@ -40,7 +40,7 @@
   labels:
   - konveyor.io/target=eap8
   - konveyor.io/target=hibernate6.1
-  - konveyor.io/source=
+  - konveyor.io/source
   - hibernate
   - eap8
   links:
@@ -62,7 +62,7 @@
   labels:
   - konveyor.io/target=eap8
   - konveyor.io/target=hibernate6.1
-  - konveyor.io/source=
+  - konveyor.io/source
   - hibernate
   - eap8
   links:
@@ -85,7 +85,7 @@
   labels:
   - konveyor.io/target=eap8
   - konveyor.io/target=hibernate6.1
-  - konveyor.io/source=
+  - konveyor.io/source
   - hibernate
   - eap8
   links:
@@ -108,7 +108,7 @@
   labels:
   - konveyor.io/target=eap8
   - konveyor.io/target=hibernate6.1
-  - konveyor.io/source=
+  - konveyor.io/source
   - hibernate
   - eap8
   links:
@@ -130,7 +130,7 @@
   labels:
   - konveyor.io/target=eap8
   - konveyor.io/target=hibernate6.1
-  - konveyor.io/source=
+  - konveyor.io/source
   - hibernate
   - eap8
   links:
@@ -152,7 +152,7 @@
   labels:
   - konveyor.io/target=eap8
   - konveyor.io/target=hibernate6.1
-  - konveyor.io/source=
+  - konveyor.io/source
   - hibernate
   - eap8
   links:
@@ -174,7 +174,7 @@
   labels:
   - konveyor.io/target=eap8
   - konveyor.io/target=hibernate6.1
-  - konveyor.io/source=
+  - konveyor.io/source
   - hibernate
   - eap8
   links:
@@ -197,7 +197,7 @@
   labels:
   - konveyor.io/target=eap8
   - konveyor.io/target=hibernate6.1
-  - konveyor.io/source=
+  - konveyor.io/source
   - hibernate
   - eap8
   links:
@@ -220,7 +220,7 @@
   labels:
   - konveyor.io/target=eap8
   - konveyor.io/target=hibernate6.1
-  - konveyor.io/source=
+  - konveyor.io/source
   - hibernate
   - eap8
   links:
@@ -243,7 +243,7 @@
   labels:
   - konveyor.io/target=eap8
   - konveyor.io/target=hibernate6.1
-  - konveyor.io/source=
+  - konveyor.io/source
   - hibernate
   - eap8
   links:
@@ -265,7 +265,7 @@
   labels:
   - konveyor.io/target=eap8
   - konveyor.io/target=hibernate6.1
-  - konveyor.io/source=
+  - konveyor.io/source
   - hibernate
   - eap8
   links:
@@ -287,7 +287,7 @@
   labels:
   - konveyor.io/target=eap8
   - konveyor.io/target=hibernate6.1
-  - konveyor.io/source=
+  - konveyor.io/source
   - hibernate
   - eap8
   links:
@@ -309,7 +309,7 @@
   labels:
   - konveyor.io/target=eap8
   - konveyor.io/target=hibernate6.1
-  - konveyor.io/source=
+  - konveyor.io/source
   - hibernate
   - eap8
   links:
@@ -331,7 +331,7 @@
   labels:
   - konveyor.io/target=eap8
   - konveyor.io/target=hibernate6.1
-  - konveyor.io/source=
+  - konveyor.io/source
   - hibernate
   - eap8
   links:
@@ -353,7 +353,7 @@
   labels:
   - konveyor.io/target=eap8
   - konveyor.io/target=hibernate6.1
-  - konveyor.io/source=
+  - konveyor.io/source
   - hibernate
   - eap8
   links:
@@ -375,7 +375,7 @@
   labels:
   - konveyor.io/target=eap8
   - konveyor.io/target=hibernate6.1
-  - konveyor.io/source=
+  - konveyor.io/source
   - hibernate
   - eap8
   links:
@@ -397,7 +397,7 @@
   labels:
   - konveyor.io/target=eap8
   - konveyor.io/target=hibernate6.1
-  - konveyor.io/source=
+  - konveyor.io/source
   - hibernate
   - eap8
   links:

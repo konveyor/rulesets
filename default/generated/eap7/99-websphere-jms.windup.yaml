@@ -108,14 +108,14 @@
       pattern: com.ibm.mqe.jms.{type}Queue
 - category: mandatory
   customVariables:
-  - name: type
-    nameOfCaptureGroup: type
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
   - name: prefix
     nameOfCaptureGroup: prefix
     pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
   - name: package
     nameOfCaptureGroup: package
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
+  - name: type
+    nameOfCaptureGroup: type
     pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
   description: |
     IBM JMS destination message
@@ -136,14 +136,14 @@
       pattern: com.ibm.*jms.(JMS|MQe|MQ)(Text|Stream|Object|Map|Bytes)?Message
 - category: mandatory
   customVariables:
+  - name: type
+    nameOfCaptureGroup: type
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)?
   - name: package
     nameOfCaptureGroup: package
     pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)?
   - name: prefix
     nameOfCaptureGroup: prefix
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)?
-  - name: type
-    nameOfCaptureGroup: type
     pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)?
   description: |
     IBM JMS interface

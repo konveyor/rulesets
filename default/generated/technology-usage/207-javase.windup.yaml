@@ -6,8 +6,8 @@
     Threads
     The application uses Thread APIs.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: javase-01000
   tag:
@@ -24,8 +24,8 @@
     Threads
     The application uses Concurrent Executors APIs.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: javase-01100
   tag:

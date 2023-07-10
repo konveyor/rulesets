@@ -3,8 +3,8 @@
     Embedded framework - Spring Security
     The application embeds a Spring Security library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-01100
   tag:
@@ -18,8 +18,8 @@
     Embedded library - Apache Shiro
     The application embeds an Apache Shiro library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-01200
   tag:
@@ -33,8 +33,8 @@
     Embedded library - Hdiv
     The application embeds an Hdiv library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-01300
   tag:
@@ -48,8 +48,8 @@
     Embedded library - OACC
     The application embeds an OACC library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-01400
   tag:
@@ -63,8 +63,8 @@
     Embedded library - PicketLink
     The application embeds a PicketLink library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-01500
   tag:
@@ -78,8 +78,8 @@
     Embedded library - PicketBox
     The application embeds a PicketBox library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-01600
   tag:
@@ -93,8 +93,8 @@
     Embedded library - Keyczar
     The application embeds a Keyczar library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-01700
   tag:
@@ -108,8 +108,8 @@
     Embedded library - XACML
     The application embeds an XACML library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-01800
   tag:
@@ -123,8 +123,8 @@
     Embedded library - SAML
     The application embeds a SAML library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-01900
   tag:
@@ -138,8 +138,8 @@
     Embedded library - Bouncy Castle
     The application embeds a Bouncy Castle library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-02000
   tag:
@@ -164,8 +164,8 @@
     Embedded library - Jasypt
     The application embeds a Jasypt library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-02100
   tag:
@@ -179,8 +179,8 @@
     Embedded library - Apache Santuario
     The application embeds a Apache Santuario library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-02200
   tag:
@@ -194,8 +194,8 @@
     Embedded library - SSL
     The application embeds an SSL library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-02300
   tag:
@@ -209,8 +209,8 @@
     Embedded library - Vlad
     The application embeds a Vlad library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-02400
   tag:
@@ -224,8 +224,8 @@
     Embedded library - Apache Commons Validator
     The application embeds an Apache Commons Validator library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-02500
   tag:
@@ -239,8 +239,8 @@
     Embedded library - OWASP ESAPI
     The application embeds an OWASP ESAPI library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-02600
   tag:
@@ -254,8 +254,8 @@
     Embedded library - WSS4J
     The application embeds a WSS4J library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-02700
   tag:
@@ -269,8 +269,8 @@
     Embedded library - OpenSAML
     The application embeds an OpenSAML library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-02800
   tag:
@@ -284,8 +284,8 @@
     Embedded library - OTR4J
     The application embeds an OTR4J library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-02900
   tag:
@@ -299,8 +299,8 @@
     Embedded library - OWASP CSRF Guard
     The application embeds an OWASP CSRF Guard library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-03000
   tag:
@@ -314,8 +314,8 @@
     Embedded library - OAUTH
     The application embeds an OAUTH library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-03100
   tag:
@@ -329,8 +329,8 @@
     Embedded library - Acegi Security
     The application embeds an Acegi Security library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-03200
   tag:
@@ -344,8 +344,8 @@
     Embedded library - JSecurity
     The application embeds a JSecurity library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-03300
   tag:
@@ -359,8 +359,8 @@
     Embedded library - AcrIS Security
     The application embeds an AcrIS Security library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-03400
   tag:
@@ -374,8 +374,8 @@
     Embedded library - Trunk JGuard
     The application embeds a Trunk JGuard library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-03500
   tag:
@@ -389,8 +389,8 @@
     Embedded framework - Spring Security
     The application embeds a Spring Security library.
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: security-03600
   tag:

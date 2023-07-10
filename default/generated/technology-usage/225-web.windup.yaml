@@ -3,8 +3,8 @@
     Embedded technology - Java Server Faces
     The application uses Java Server Faces
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: web-01000
   tag:
@@ -19,8 +19,8 @@
     Embedded technology - Java Server Pages
     The application uses Java Server Pages
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: technology-usage-web-01100
   tag:
@@ -39,8 +39,8 @@
     Embedded technology - WebSocket
     The application uses WebSockets
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: technology-usage-web-01300
   tag:
@@ -55,8 +55,8 @@
     Embedded technology - Applet
     The application uses Java Applets
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: technology-usage-web-01400
   tag:
@@ -74,8 +74,8 @@
     Embedded technology - JNLP
     The application uses JNLP (Java Network Launching Protocol)
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: technology-usage-web-01500
   tag:
@@ -89,8 +89,8 @@
     Embedded technology - JNLP
     The application uses JNLP (Java Network Launching Protocol)
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: technology-usage-web-01600
   tag:
@@ -107,8 +107,8 @@
     Embedded technology - Swing
     The application uses Swing
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: technology-usage-web-01700
   tag:
@@ -122,8 +122,8 @@
     Embedded technology - MiGLayout
     The application uses MyGLayout
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: technology-usage-web-01800
   tag:
@@ -137,8 +137,8 @@
     Embedded technology - JGoodies
     The application uses JGoodies
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: technology-usage-web-01900
   tag:
@@ -152,8 +152,8 @@
     Embedded technology - FormLayoutMaker
     The application uses FormLayouttMaker
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: technology-usage-web-02000
   tag:
@@ -167,8 +167,8 @@
     Embedded technology - MagicGroupLayout
     The application uses MagicGroupLayout
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: technology-usage-web-02100
   tag:
@@ -182,8 +182,8 @@
     Embedded technology - Standard Widget Toolkit (SWT)
     The application uses Standard Widget Toolkit (SWT)
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: technology-usage-web-02200
   tag:
@@ -197,8 +197,8 @@
     Embedded technology - JavaFX
     The application uses JavaFX
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: technology-usage-web-02300
   tag:
@@ -212,8 +212,8 @@
     Embedded technology - Eclipse RCP
     The application uses Eclipse RCP
   labels:
-  - konveyor.io/source=
-  - konveyor.io/target=
+  - konveyor.io/source
+  - konveyor.io/target
   links: []
   ruleID: technology-usage-web-02400
   tag:
