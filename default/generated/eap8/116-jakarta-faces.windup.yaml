@@ -10,14 +10,16 @@
   - konveyor.io/target=eap8
   - JakartaEE
   - eap8
-  links: []
+  links:
+  - title: 'WELD-001409: Ambiguous dependencies for type FacesContext with qualifiers
+      @Default when migrating to EAP 8'
+    url: https://access.redhat.com/solutions/6982900
   message: The `@Produces` annotation for instantiating `FacesContext` is not necessary
     anymore, as CDI injection for `FacesContext` works out of the box.
   ruleID: jakarta-faces-00001
   when:
     and:
-    - as: discard
-      java.referenced:
+    - java.referenced:
         location: FIELD_DECLARATION
         pattern: jakarta.faces.context.FacesContext
     - java.referenced:

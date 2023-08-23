@@ -1,0 +1,32 @@
+- category: potential
+  customVariables: []
+  description: |-
+    eureka
+    The application uses Eureka.. If a setting like this appears in your application configuration, remove it. Azure Spring Apps will automatically inject the connection information of its configuration server. ```. eureka:. client:. serviceUrl:. defaultZone: http://myusername:mysecretpassword@localhost:8761/eureka/. ```
+  effort: 0
+  labels:
+  - konveyor.io/source=springboot
+  - konveyor.io/target=azure-spring-apps
+  - konveyor.io/target=azure-aks
+  - konveyor.io/target=azure-appservice
+  - konveyor.io/target=azure-container-apps
+  - eureka
+  links:
+  - title: Distributed Tracing
+    url: https://learn.microsoft.com/azure/developer/java/migration/migrate-spring-cloud-to-azure-spring-apps?pivots=sc-standard-tier#remove-explicit-configuration-server-settings
+  message: 'The application uses Eureka.. If a setting like this appears in your application
+    configuration, remove it. Azure Spring Apps will automatically inject the connection
+    information of its configuration server. ```. eureka:. client:. serviceUrl:. defaultZone:
+    http://myusername:mysecretpassword@localhost:8761/eureka/. ```'
+  ruleID: spring-boot-to-azure-eureka-01000
+  when:
+    or:
+    - java.dependency:
+        lowerbound: 0.0.0
+        nameregex: org\.springframework\.cloud\.spring-cloud-netflix-eureka.*
+    - java.dependency:
+        lowerbound: 0.0.0
+        nameregex: org\.springframework\.cloud\.spring-cloud-starter-netflix-eureka.*
+    - java.dependency:
+        lowerbound: 0.0.0
+        nameregex: com\.netflix\.eureka\..*

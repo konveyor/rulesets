@@ -1,0 +1,164 @@
+- customVariables:
+  - name: package
+    nameOfCaptureGroup: package
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<type>[^.]+)?
+  - name: type
+    nameOfCaptureGroup: type
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<type>[^.]+)?
+  description: "IBM JMS Client\nWebSphere MQ client API is used to communicate with
+    the MQ server from client-side applications.\n                        For JBoss
+    EAP 6, this needs to be replaced with standard Java EE 6 JMS API, or with HornetQ
+    client API.\n                    \n"
+  labels:
+  - konveyor.io/source=websphere
+  - konveyor.io/target=eap6
+  - konveyor.io/target=java-ee6
+  - jms
+  - websphere
+  links:
+  - title: Java EE 6 JMS Tutorial
+    url: https://docs.oracle.com/javaee/6/tutorial/doc/bnceh.html
+  - title: HornetQ User Manual (from JBoss EAP 5)
+    url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/hornetq_user_guide/
+  - title: HornetQ Core Client API Javadoc
+    url: https://access.redhat.com/webassets/avalon/d/JBoss_Enterprise_Application_Platform-6-API_Documentation-en-US/files/javadoc/org/hornetq/api/core/client/package-summary.html
+  ruleID: websphere-jms-00000
+  tag:
+  - jms
+  - websphere
+  - IBM JMS Client
+  when:
+    java.referenced:
+      pattern: com.ibm.*jms*
+- category: mandatory
+  customVariables:
+  - name: package
+    nameOfCaptureGroup: package
+    pattern: (?P<package>com.ibm(\.[^.]*)*\.jms.)?(?P<prefix>(Jms|MQeJNDI|MQe|MQ)?)?(?P<type>[^.]*?)?ConnectionFactory
+  - name: prefix
+    nameOfCaptureGroup: prefix
+    pattern: (?P<package>com.ibm(\.[^.]*)*\.jms.)?(?P<prefix>(Jms|MQeJNDI|MQe|MQ)?)?(?P<type>[^.]*?)?ConnectionFactory
+  - name: type
+    nameOfCaptureGroup: type
+    pattern: (?P<package>com.ibm(\.[^.]*)*\.jms.)?(?P<prefix>(Jms|MQeJNDI|MQe|MQ)?)?(?P<type>[^.]*?)?ConnectionFactory
+  description: |
+    IBM {prefix}{type}ConnectionFactory reference
+  effort: 1
+  labels:
+  - konveyor.io/source=websphere
+  - konveyor.io/target=eap6
+  - konveyor.io/target=java-ee6
+  - jms
+  - websphere
+  links:
+  - title: Java EE JMS Documentation
+    url: https://docs.oracle.com/javaee/6/tutorial/doc/bnceh.html
+  message: 'IBM {{prefix}}{{type}}ConnectionFactory is a proprietary encapsulation
+    of JMS servers to which Connections can be created for. message distribution.
+    This reference should be replaced with the Java EE standard API: `javax.jms.{{type}}ConnectionFactory`.'
+  ruleID: websphere-jms-01000
+  when:
+    java.referenced:
+      pattern: com.ibm*.jms.(Jms|MQeJNDI|MQe|MQ)?*ConnectionFactory
+- category: mandatory
+  customVariables:
+  - name: package
+    nameOfCaptureGroup: package
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?JmsMsg(?P<type>(Producer|Consumer))?
+  - name: type
+    nameOfCaptureGroup: type
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?JmsMsg(?P<type>(Producer|Consumer))?
+  description: |
+    IBM JMS topic/queue message
+  effort: 1
+  labels:
+  - konveyor.io/source=websphere
+  - konveyor.io/target=eap6
+  - konveyor.io/target=java-ee6
+  - jms
+  - websphere
+  links:
+  - title: Java EE JMS Documentation
+    url: https://docs.oracle.com/javaee/6/tutorial/doc/bnceh.html
+  message: IBM JMS message `{{package}}.JmsMsg{{type}}` are used for sending/reading
+    messages to/from a topic or queue. This reference should be. replaced with the
+    Java EE standard API `javax.jms.Message{{type}}`.
+  ruleID: websphere-jms-02000
+  when:
+    java.referenced:
+      pattern: com.ibm.*jms.JmsMsg(Producer|Consumer)
+- category: mandatory
+  customVariables: []
+  description: |
+    WebSphere implementation MQe{type}Queue of JMS Queue
+  effort: 1
+  labels:
+  - konveyor.io/source=websphere
+  - konveyor.io/target=eap6
+  - konveyor.io/target=java-ee6
+  - jms
+  - websphere
+  links:
+  - title: Java EE 6 JMS Tutorial
+    url: https://docs.oracle.com/javaee/6/tutorial/doc/bnceh.html
+  message: '`MQe{{type}}Queue` is a WebSphere implementation of a JMS `Queue` and
+    should be migrated to. the Java EE 6 JMS standard interface `javax.jms.Queue`.'
+  ruleID: websphere-jms-02500
+  when:
+    java.referenced:
+      pattern: com.ibm.mqe.jms.{type}Queue
+- category: mandatory
+  customVariables:
+  - name: package
+    nameOfCaptureGroup: package
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
+  - name: type
+    nameOfCaptureGroup: type
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
+  - name: prefix
+    nameOfCaptureGroup: prefix
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
+  description: |
+    IBM JMS destination message
+  effort: 1
+  labels:
+  - konveyor.io/source=websphere
+  - konveyor.io/target=eap6
+  - konveyor.io/target=java-ee6
+  - jms
+  - websphere
+  links: []
+  message: JMS `{{package}}.{{prefix}}{{type}}Message` messages represent the actual
+    data passed through JMS destinations. This reference should be. replaced with
+    the Java EE standard API `javax.jms.{{type}}Message`.
+  ruleID: websphere-jms-03000
+  when:
+    java.referenced:
+      pattern: com.ibm.*jms.(JMS|MQe|MQ)(Text|Stream|Object|Map|Bytes)?Message
+- category: mandatory
+  customVariables:
+  - name: package
+    nameOfCaptureGroup: package
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)?
+  - name: prefix
+    nameOfCaptureGroup: prefix
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)?
+  - name: type
+    nameOfCaptureGroup: type
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)?
+  description: |
+    IBM JMS interface
+  effort: 1
+  labels:
+  - konveyor.io/source=websphere
+  - konveyor.io/target=eap6
+  - konveyor.io/target=java-ee6
+  - jms
+  - websphere
+  links: []
+  message: '{{package}}.{{prefix}}{{type}} is an IBM proprietary interface and needs
+    to be migrated to the Java EE standard API `javax.jms.{{type}}`.'
+  ruleID: websphere-jms-04000
+  when:
+    java.referenced:
+      pattern: com.ibm.*jms.(Jms|MQe|MQ)*

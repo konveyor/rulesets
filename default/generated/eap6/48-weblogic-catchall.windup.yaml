@@ -72,14 +72,14 @@
       pattern: com.tangosol.**
 - category: potential
   customVariables:
+  - name: type
+    nameOfCaptureGroup: type
+    pattern: (?P<com>(com\.)?)?oracle(?P<subpackage>(\..*)?.)?(?P<type>[^.]+)?
   - name: com
     nameOfCaptureGroup: com
     pattern: (?P<com>(com\.)?)?oracle(?P<subpackage>(\..*)?.)?(?P<type>[^.]+)?
   - name: subpackage
     nameOfCaptureGroup: subpackage
-    pattern: (?P<com>(com\.)?)?oracle(?P<subpackage>(\..*)?.)?(?P<type>[^.]+)?
-  - name: type
-    nameOfCaptureGroup: type
     pattern: (?P<com>(com\.)?)?oracle(?P<subpackage>(\..*)?.)?(?P<type>[^.]+)?
   description: |
     Oracle proprietary type reference

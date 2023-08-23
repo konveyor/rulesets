@@ -1,3 +1,3 @@
 name: camel3/camel2
-description: This ruleset provides analysis with respect to multiple Camel Context
-  not supported in Apache Camel 3.
+description: This ruleset provides analysis with respect to the missing dependencies
+  in Apache Camel 3 due to Java 11 adoption.

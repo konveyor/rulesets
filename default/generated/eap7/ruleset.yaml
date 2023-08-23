@@ -1,4 +1,3 @@
-name: eap7/weblogic
-description: This ruleset provides analysis of WebLogic proprietary classes and constructs
-  for Enterprise Java Beans that may require individual attention when migrating to
-  JBoss EAP 6+.
+name: eap7/websphere
+description: Provides analysis of WebSphere proprietary classes and constructs that
+  may require individual attention when migrating to JBoss EAP 7+.

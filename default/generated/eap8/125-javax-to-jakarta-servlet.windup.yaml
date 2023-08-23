@@ -507,25 +507,3 @@
     java.referenced:
       location: METHOD_CALL
       pattern: javax.servlet.http.HttpSession.removeValue*
-- category: potential
-  customVariables: []
-  description: |-
-    web.xml element references a javax-prefixed class name
-    web.xml element references a javax-prefixed class name
-  effort: 1
-  labels:
-  - konveyor.io/target=jakarta-ee9
-  - konveyor.io/target=eap8
-  - konveyor.io/source
-  links:
-  - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
-      Servlet
-    url: https://access.redhat.com/articles/6980265#servlet
-  message: web.xml element references a javax-prefixed class name
-  ruleID: javax-to-jakarta-servlet-00130
-  when:
-    builtin.xml:
-      filepaths:
-      - web.xml
-      namespaces: {}
-      xpath: //*[contains(text(),'javax')]
