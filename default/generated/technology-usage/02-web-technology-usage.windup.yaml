@@ -1,31 +1,29 @@
 - customVariables: []
-  description: |
-    Embedded technology - Java Server Faces
-    The application uses Java Server Faces
   labels:
   - konveyor.io/source
   - konveyor.io/target
+  - phase=PostMigrationRulesPhase
   links: []
-  ruleID: web-01000
+  ruleID: technology-usage-web-01000
   tag:
-  - JSF
-  - Embedded technology - Java Server Faces
+  - View=JSF Page
+  - Web=JSF Page
+  - Java EE=JSF Page
   when:
     builtin.filecontent:
       filePattern: .*\.(jsp|xhtml|jspx)
       pattern: (java\.sun\.com/jsf/)|(xmlns\.jcp\.org/jsf)
 - customVariables: []
-  description: |
-    Embedded technology - Java Server Pages
-    The application uses Java Server Pages
   labels:
   - konveyor.io/source
   - konveyor.io/target
+  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-01100
   tag:
-  - JSP
-  - Embedded technology - Java Server Pages
+  - View=JSP Page
+  - Web=JSP Page
+  - Java EE=JSP Page
   when:
     or:
     - builtin.filecontent:
@@ -35,33 +33,31 @@
         filePattern: .*\.(jsp|jspx|tag|tagx)
         pattern: <%@\s*taglib\s+[^>]*\s*uri\s*=\s*['"]([^'"]+)['"].*?%>
 - customVariables: []
-  description: |
-    Embedded technology - WebSocket
-    The application uses WebSockets
   labels:
   - konveyor.io/source
   - konveyor.io/target
+  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-01300
   tag:
-  - WebSocket
-  - Embedded technology - WebSocket
+  - View=WebSocket
+  - Web=WebSocket
+  - Java EE=WebSocket
   when:
     java.referenced:
       location: ANNOTATION
       pattern: javax.websocket.server.ServerEndpoint
 - customVariables: []
-  description: |
-    Embedded technology - Applet
-    The application uses Java Applets
   labels:
   - konveyor.io/source
   - konveyor.io/target
+  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-01400
   tag:
-  - Applet
-  - Embedded technology - Applet
+  - View=Applet
+  - Rich=Applet
+  - Java EE=Applet
   when:
     or:
     - java.referenced:
@@ -70,32 +66,30 @@
     - builtin.file:
         pattern: .*applet.*\.jar
 - customVariables: []
-  description: |
-    Embedded technology - JNLP
-    The application uses JNLP (Java Network Launching Protocol)
   labels:
   - konveyor.io/source
   - konveyor.io/target
+  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-01500
   tag:
-  - JNLP
-  - Embedded technology - JNLP
+  - View=JNLP
+  - Rich=JNLP
+  - Java EE=JNLP
   when:
     builtin.file:
       pattern: .*\.jnlp
 - customVariables: []
-  description: |
-    Embedded technology - JNLP
-    The application uses JNLP (Java Network Launching Protocol)
   labels:
   - konveyor.io/source
   - konveyor.io/target
+  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-01600
   tag:
-  - JNLP
-  - Embedded technology - JNLP
+  - View=JNLP
+  - Rich=JNLP
+  - Embedded=JNLP
   when:
     or:
     - builtin.file:
@@ -103,122 +97,114 @@
     - builtin.file:
         pattern: .*webstart.*\.jar
 - customVariables: []
-  description: |
-    Embedded technology - Swing
-    The application uses Swing
   labels:
   - konveyor.io/source
   - konveyor.io/target
+  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-01700
   tag:
-  - Swing
-  - Embedded technology - Swing
+  - View=Swing
+  - Rich=Swing
+  - Embedded=Swing
   when:
     builtin.file:
       pattern: .*swing.*\.jar
 - customVariables: []
-  description: |
-    Embedded technology - MiGLayout
-    The application uses MyGLayout
   labels:
   - konveyor.io/source
   - konveyor.io/target
+  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-01800
   tag:
-  - MiGLayout
-  - Embedded technology - MiGLayout
+  - View=MiGLayout
+  - Rich=MiGLayout
+  - Embedded=MiGLayout
   when:
     builtin.file:
       pattern: .*miglayout.*\.jar
 - customVariables: []
-  description: |
-    Embedded technology - JGoodies
-    The application uses JGoodies
   labels:
   - konveyor.io/source
   - konveyor.io/target
+  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-01900
   tag:
-  - JGoodies
-  - Embedded technology - JGoodies
+  - View=JGoodies
+  - Rich=JGoodies
+  - Embedded=JGoodies
   when:
     builtin.file:
       pattern: .*jgoodies.*\.jar
 - customVariables: []
-  description: |
-    Embedded technology - FormLayoutMaker
-    The application uses FormLayouttMaker
   labels:
   - konveyor.io/source
   - konveyor.io/target
+  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-02000
   tag:
-  - FormLayoutMaker
-  - Embedded technology - FormLayoutMaker
+  - View=FormLayoutMaker
+  - Rich=FormLayoutMaker
+  - Embedded=FormLayoutMaker
   when:
     builtin.file:
       pattern: .*formlayoutmakerx.*\.jar
 - customVariables: []
-  description: |
-    Embedded technology - MagicGroupLayout
-    The application uses MagicGroupLayout
   labels:
   - konveyor.io/source
   - konveyor.io/target
+  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-02100
   tag:
-  - Magicgrouplayout
-  - Embedded technology - MagicGroupLayout
+  - View=Magicgrouplayout
+  - Rich=Magicgrouplayout
+  - Embedded=Magicgrouplayout
   when:
     builtin.file:
       pattern: .*magicgrouplayout.*\.jar
 - customVariables: []
-  description: |
-    Embedded technology - Standard Widget Toolkit (SWT)
-    The application uses Standard Widget Toolkit (SWT)
   labels:
   - konveyor.io/source
   - konveyor.io/target
+  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-02200
   tag:
-  - SWT
-  - Embedded technology - Standard Widget Toolkit (SWT)
+  - View=Standard Widget Toolkit (SWT)
+  - Rich=Standard Widget Toolkit (SWT)
+  - Embedded=Standard Widget Toolkit (SWT)
   when:
     builtin.file:
       pattern: .*swt.*\.jar
 - customVariables: []
-  description: |
-    Embedded technology - JavaFX
-    The application uses JavaFX
   labels:
   - konveyor.io/source
   - konveyor.io/target
+  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-02300
   tag:
-  - JavaFX
-  - Embedded technology - JavaFX
+  - View=JavaFX
+  - Rich=JavaFX
+  - Embedded=JavaFX
   when:
     builtin.file:
       pattern: .*javafx.*\.jar
 - customVariables: []
-  description: |
-    Embedded technology - Eclipse RCP
-    The application uses Eclipse RCP
   labels:
   - konveyor.io/source
   - konveyor.io/target
+  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-web-02400
   tag:
-  - Eclipse RCP
-  - Embedded technology - Eclipse RCP
+  - View=Eclipse RCP
+  - Rich=Eclipse RCP
+  - Embedded=Eclipse RCP
   when:
     or:
     - builtin.file:

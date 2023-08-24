@@ -12,7 +12,7 @@
     url: https://access.redhat.com/articles/3348731
   message: Spring Boot has to be updated to Spring Boot 2.2.6 before being able to
     be migrated to a version supported by Red Hat Runtimes
-  ruleID: springboot-rhr-00001
+  ruleID: springboot-00001
   when:
     java.dependency:
       nameregex: org\.springframework\.boot\..*
@@ -30,7 +30,7 @@
   - title: RHOAR Component Details Overview
     url: https://access.redhat.com/articles/3348731
   message: Spring Boot has to be updated to a version supported by Red Hat Runtimes
-  ruleID: springboot-rhr-00002
+  ruleID: springboot-00002
   when:
     or:
     - java.dependency:
@@ -70,5 +70,5 @@
         nameregex: org\.springframework\.boot\..*
         upperbound: 2.7.7
     - java.dependency:
-        lowerbound: 3.0.0
+        lowerbound: 2.7.9
         nameregex: org\.springframework\.boot\..*

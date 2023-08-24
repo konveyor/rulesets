@@ -1,9 +1,9 @@
 - customVariables:
-  - name: package
-    nameOfCaptureGroup: package
-    pattern: (?P<package>com.ibm(\..*)?\.(mq|wmq).*.)?(?P<type>[^.]+)?
   - name: type
     nameOfCaptureGroup: type
+    pattern: (?P<package>com.ibm(\..*)?\.(mq|wmq).*.)?(?P<type>[^.]+)?
+  - name: package
+    nameOfCaptureGroup: package
     pattern: (?P<package>com.ibm(\..*)?\.(mq|wmq).*.)?(?P<type>[^.]+)?
   description: "IBM MQ client API\nWebSphere MQ client API is used to communicate
     with the MQ server from client-side applications.\n                        For

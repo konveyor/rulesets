@@ -1,0 +1,52 @@
+- category: mandatory
+  customVariables: []
+  description: |-
+    WebSphere Work Manager
+    WebSphere Asynchronous Work is a Work Manager, whose purpose is to allow the user utilizing threads while letting the container manage them.. For migration to JBoss EAP 6, [replace with JCA Work Manager](https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html/Administration_and_Configuration_Guide/Configure_the_Java_Connector_Architecture_JCA_Subsystem.html).
+  effort: 5
+  labels:
+  - konveyor.io/source=websphere
+  - konveyor.io/target=eap6
+  - konveyor.io/target=java-ee6
+  - websphere
+  - asynchronous
+  links:
+  - title: Configure the Java Connector Architecture (JCA) Subsystem
+    url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html/Administration_and_Configuration_Guide/Configure_the_Java_Connector_Architecture_JCA_Subsystem.html
+  - title: Description of WebSphere Asynchronous Work
+    url: http://www.javaworld.com/article/2077671/build-ci-sdlc/the-wise-work-manager-for-context-based-scoping.html
+  - title: 'JSR 237: Work Manager for Application Servers'
+    url: https://jcp.org/en/jsr/detail?id=237
+  message: WebSphere Asynchronous Work is a Work Manager, whose purpose is to allow
+    the user utilizing threads while letting the container manage them.. For migration
+    to JBoss EAP 6, [replace with JCA Work Manager](https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html/Administration_and_Configuration_Guide/Configure_the_Java_Connector_Architecture_JCA_Subsystem.html).
+  ruleID: websphere-other-01000
+  when:
+    java.referenced:
+      location: INHERITANCE
+      pattern: com.ibm.websphere.asynchbeans.Work
+- category: mandatory
+  customVariables: []
+  description: |-
+    WebSphere Startup Service
+    WebSphere Startup Service serves as a callback to be invoked when the server or application starts.. When migrating to JBoss EAP 6, this has to be replaced with standard EJB 3.1 Startup Bean, using `@Startup @Singleton` class and `@PostConstruct` method.
+  effort: 4
+  labels:
+  - konveyor.io/source=websphere
+  - konveyor.io/target=eap6
+  - konveyor.io/target=java-ee6
+  - websphere
+  - startup
+  links:
+  - title: EJB 3.1 Singleton Bean
+    url: http://docs.oracle.com/javaee/6/api/javax/ejb/Singleton.html
+  - title: EJB 3.1 Startup Bean
+    url: http://docs.oracle.com/javaee/6/api/javax/ejb/Startup.html
+  message: WebSphere Startup Service serves as a callback to be invoked when the server
+    or application starts.. When migrating to JBoss EAP 6, this has to be replaced
+    with standard EJB 3.1 Startup Bean, using `@Startup @Singleton` class and `@PostConstruct`
+    method.
+  ruleID: websphere-other-02000
+  when:
+    java.referenced:
+      pattern: com.ibm.websphere.startupservice*StartUp*

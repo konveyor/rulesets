@@ -1,3 +1,3 @@
 name: openshift
-description: This ruleset detects Java Native Interface (JNI) and Java Native Access
-  (JNA) code, which may be problematic when migrating an application to a cloud environment.
+description: This ruleset detects the Java Mail API, which may be problematic when
+  migrating an application to a cloud environment.

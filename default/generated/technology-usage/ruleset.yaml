@@ -1,3 +1,3 @@
 name: technology-usage
-description: This ruleset provides statistical summaries of the database items that
-  were found during the analysis.
+description: This ruleset adds tags the configuration management technologies so are
+  appropriately categorized on the technology reports.

@@ -1,0 +1,188 @@
+- customVariables: []
+  labels:
+  - konveyor.io/source=weblogic
+  - konveyor.io/target=eap6
+  - jms
+  - weblogic
+  links:
+  - title: Oracle 9i JMS Documentation
+    url: http://docs.oracle.com/cd/B10501_01/appdev.920/a96609/toc.htm
+  - title: Java EE JMS Documentation
+    url: https://docs.oracle.com/javaee/6/tutorial/doc/bnceh.html
+  ruleID: weblogic-jms-00000
+  tag:
+  - jms
+  - weblogic
+  - Oracle JMS
+  when:
+    java.referenced:
+      pattern: oracle.jms*
+- category: mandatory
+  customVariables: []
+  description: |-
+    Oracle JMS Session
+    Oracle JMS sessions are used for producing and consuming messaging API objects such as message producers, message. consumers, messages, queue browsers, and temporary queues and topics.. This reference should be replaced with the Java EE. standard API: `javax.jms.Session`.
+  effort: 1
+  labels:
+  - konveyor.io/source=weblogic
+  - konveyor.io/target=eap6
+  - jms
+  - weblogic
+  links:
+  - title: Java EE JMS Session
+    url: https://docs.oracle.com/javaee/6/tutorial/doc/bnceh.html#bncen
+  message: 'Oracle JMS sessions are used for producing and consuming messaging API
+    objects such as message producers, message. consumers, messages, queue browsers,
+    and temporary queues and topics.. This reference should be replaced with the Java
+    EE. standard API: `javax.jms.Session`.'
+  ruleID: weblogic-jms-01000
+  when:
+    java.referenced:
+      pattern: oracle.jms.AQjmsSession
+- category: mandatory
+  customVariables: []
+  description: |-
+    Oracle JMS Queue Browser
+    Oracle JMS queue browsers are used for browsing messages in a JMS queue.. This reference should be replaced with the Java. EE standard API: `javax.jms.QueueBrowser`.
+  effort: 1
+  labels:
+  - konveyor.io/source=weblogic
+  - konveyor.io/target=eap6
+  - jms
+  - weblogic
+  links:
+  - title: Java EE JMS Queue Browser
+    url: https://docs.oracle.com/javaee/6/tutorial/doc/bnceh.html#bncey
+  message: 'Oracle JMS queue browsers are used for browsing messages in a JMS queue..
+    This reference should be replaced with the Java. EE standard API: `javax.jms.QueueBrowser`.'
+  ruleID: weblogic-jms-02000
+  when:
+    java.referenced:
+      pattern: oracle.jms.AQjmsQueueBrowser
+- category: mandatory
+  customVariables: []
+  description: |-
+    Oracle JMS Producer
+    Oracle JMS producers are used for sending messages to a destination.. This reference should be replaced with the Java. EE. standard API: `javax.jms.MessageProducer`.
+  effort: 1
+  labels:
+  - konveyor.io/source=weblogic
+  - konveyor.io/target=eap6
+  - jms
+  - weblogic
+  links:
+  - title: Java EE JMS Message Producer
+    url: https://docs.oracle.com/javaee/6/tutorial/doc/bnceh.html#bnceo
+  message: 'Oracle JMS producers are used for sending messages to a destination..
+    This reference should be replaced with the Java. EE. standard API: `javax.jms.MessageProducer`.'
+  ruleID: weblogic-jms-03000
+  when:
+    java.referenced:
+      pattern: oracle.jms.AQjmsProducer
+- category: mandatory
+  customVariables: []
+  description: |-
+    Oracle JMS Consumer
+    Oracle JMS consumers are used for receiving messages sent to a destination.. This reference should be replaced with the. Java EE standard API: `javax.jms.MessageConsumer`.
+  effort: 1
+  labels:
+  - konveyor.io/source=weblogic
+  - konveyor.io/target=eap6
+  - jms
+  - weblogic
+  links:
+  - title: Java EE JMS Message Consumer
+    url: https://docs.oracle.com/javaee/6/tutorial/doc/bnceh.html#bnceo
+  message: 'Oracle JMS consumers are used for receiving messages sent to a destination..
+    This reference should be replaced with the. Java EE standard API: `javax.jms.MessageConsumer`.'
+  ruleID: weblogic-jms-04000
+  when:
+    java.referenced:
+      pattern: oracle.jms.AQjmsConsumer
+- category: mandatory
+  customVariables: []
+  description: |-
+    Oracle JMS Consumer
+    Oracle JMS connections represent virtual connections with a JMS provider.. This reference should be replaced with the. Java. EE standard API: `javax.jms.Connection`.
+  effort: 1
+  labels:
+  - konveyor.io/source=weblogic
+  - konveyor.io/target=eap6
+  - jms
+  - weblogic
+  links:
+  - title: Java EE JMS Connections
+    url: https://docs.oracle.com/javaee/6/tutorial/doc/bnceh.html#bncem
+  message: 'Oracle JMS connections represent virtual connections with a JMS provider..
+    This reference should be replaced with the. Java. EE standard API: `javax.jms.Connection`.'
+  ruleID: weblogic-jms-05000
+  when:
+    java.referenced:
+      pattern: oracle.jms.AQjmsConnection
+- category: mandatory
+  customVariables:
+  - name: type
+    nameOfCaptureGroup: type
+    pattern: oracle.jms.AQjms(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
+  description: |
+    Oracle JMS {type}Message
+  effort: 1
+  labels:
+  - konveyor.io/source=weblogic
+  - konveyor.io/target=eap6
+  - jms
+  - weblogic
+  links:
+  - title: Java EE JMS Message API
+    url: https://docs.oracle.com/javaee/6/tutorial/doc/bnceh.html#bnces
+  message: 'Oracle JMS {{type}} messages represent the actual data passed through
+    JMS destinations.. This reference should be replaced. with the. Java. EE standard
+    API: `javax.jms.{{type}}Message`.'
+  ruleID: weblogic-jms-06000
+  when:
+    java.referenced:
+      pattern: oracle.jms.AQjms(Text|Stream|Object|Map|Bytes)?Message
+- category: mandatory
+  customVariables: []
+  description: |-
+    Oracle JMS Destination
+    Oracle JMS destinations are the objects a client uses to specify the target of messages it produces and the source of. messages it consumes.. This reference should be replaced with the. Java. EE standard API: `javax.jms.Destination`.
+  effort: 1
+  labels:
+  - konveyor.io/source=weblogic
+  - konveyor.io/target=eap6
+  - jms
+  - weblogic
+  links:
+  - title: Java EE JMS Destinations
+    url: https://docs.oracle.com/javaee/6/tutorial/doc/bnceh.html#bncel
+  message: 'Oracle JMS destinations are the objects a client uses to specify the target
+    of messages it produces and the source of. messages it consumes.. This reference
+    should be replaced with the. Java. EE standard API: `javax.jms.Destination`.'
+  ruleID: weblogic-jms-07000
+  when:
+    java.referenced:
+      pattern: oracle.jms.AQjmsDestination
+- category: mandatory
+  customVariables:
+  - name: type
+    nameOfCaptureGroup: type
+    pattern: oracle.jms.AQjms(?P<type>(Topic|Queue)?)?ConnectionFactory
+  description: |
+    Oracle JMS {type} Connection Factory
+  effort: 1
+  labels:
+  - konveyor.io/source=weblogic
+  - konveyor.io/target=eap6
+  - jms
+  - weblogic
+  links:
+  - title: Java EE JMS Connection factories
+    url: https://docs.oracle.com/javaee/6/tutorial/doc/bnceh.html#bncek
+  message: 'Oracle {{type}}ConnectionFactory is an encapsulation of JMS servers to
+    which Connections can be created for message distribution.. This reference should
+    be replaced with the. Java. EE standard API: `javax.jms.{{type}}ConnectionFactory`.'
+  ruleID: weblogic-jms-08000
+  when:
+    java.referenced:
+      pattern: oracle.jms.AQjms(Topic|Queue)?ConnectionFactory
