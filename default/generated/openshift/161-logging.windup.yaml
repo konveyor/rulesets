@@ -20,6 +20,7 @@
   when:
     or:
     - builtin.filecontent:
+        filePattern: log4j\.(xml|properties)
         pattern: ((Daily)?Rolling)?FileAppender
     - java.referenced:
         location: IMPORT
@@ -55,4 +56,5 @@
   - Logging to Socket Handler
   when:
     java.referenced:
+      location: PACKAGE
       pattern: java.util.logging.SocketHandler*

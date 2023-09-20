@@ -836,6 +836,7 @@
   - Embedded framework - Spring Boot Flo
   when:
     builtin.filecontent:
+      filePattern: .*\.(html|ts)
       pattern: (<|')flo-editor
 - customVariables: []
   description: |

@@ -444,7 +444,7 @@
   customVariables:
   - name: configure
     nameOfCaptureGroup: configure
-    pattern: org.hibernate.cfg.Configuration.(?P<configure>(configure\([^)]*\)))?
+    pattern: org.hibernate.cfg.Configuration.(?P<configure>(configure\([^)]*\)))
   description: |-
     Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.configure()
     Use `org.hibernate.boot.registry.StandardServiceRegistryBuilder#configure` instead.
@@ -571,7 +571,7 @@
   customVariables:
   - name: type
     nameOfCaptureGroup: type
-    pattern: org.hibernate.metamodel.spi.(?P<type>(TypeContributor|TypeContributions))?
+    pattern: org.hibernate.metamodel.spi.(?P<type>(TypeContributor|TypeContributions))
   description: |
     Hibernate 5 - Moved method org.hibernate.metamodel.spi.{type}
   effort: 1
@@ -620,7 +620,7 @@
   customVariables:
   - name: idclass
     nameOfCaptureGroup: idclass
-    pattern: org.hibernate.id.(?P<idclass>(TableGenerator|TableHiLoGenerator|SequenceGenerator|SequenceIdentityGenerator|SequenceHiLoGenerator))?
+    pattern: org.hibernate.id.(?P<idclass>(TableGenerator|TableHiLoGenerator|SequenceGenerator|SequenceIdentityGenerator|SequenceHiLoGenerator))
   description: |-
     Hibernate 5 - Removed deprecated class org.hibernate.id.{idclass}
     Use `org.hibernate.id.enhanced.SequenceStyleGenerator` instead.
@@ -646,7 +646,7 @@
   customVariables:
   - name: type
     nameOfCaptureGroup: type
-    pattern: org.hibernate.hql.spi.(?P<type>(MultiTableBulkIdStrategy|MultiTableBulkIdStrategy.DeleteHandler|MultiTableBulkIdStrategy.UpdateHandler|AbstractTableBasedBulkIdHandler|AbstractTableBasedBulkIdHandler.ProcessedWhereClause|TableBasedDeleteHandlerImpl|TableBasedUpdateHandlerImpl))?
+    pattern: org.hibernate.hql.spi.(?P<type>(MultiTableBulkIdStrategy|MultiTableBulkIdStrategy.DeleteHandler|MultiTableBulkIdStrategy.UpdateHandler|AbstractTableBasedBulkIdHandler|AbstractTableBasedBulkIdHandler.ProcessedWhereClause|TableBasedDeleteHandlerImpl|TableBasedUpdateHandlerImpl))
   description: |
     Hibernate 5 - Moved class org.hibernate.hql.spi.{type}
   effort: 1
@@ -900,7 +900,7 @@
   customVariables:
   - name: extension
     nameOfCaptureGroup: extension
-    pattern: byte[]
+    pattern: byte\[\]
   description: |-
     Hibernate 5  - Oracle12cDialect maps byte[] and Byte[] to BLOB
     Previous versions of Hibernate have mapped `byte[]` and `Byte[]` to Oracle’s `LONG RAW` data type (via the JDBC `LONGVARBINARY` type). Oracle have deprecated the `LONG RAW` data type for many releases - possibly as far back as 8i.. Therefore it was decided to start having Hibernate map `byte[]` and `Byte[]` to `BLOB` for Oracle.. However, in the interest of backwards compatibility and not breaking existing applications it was also decided to limit this change to just the `Oracle12cDialect`. So starting in 5.1 applications using `Oracle12cDialect` and implicitly mapping `byte[]` and `Byte[]` values will start seeing those handled as `BLOB` data rather than `LONG RAW` data.. For existing applications that want to continue to use `Oracle12cDialect` and still continue to implicitly map `byte[]` and `Byte[]` attributes to `LONG RAW`, there is a new configuration setting you can use to enable that: `hibernate.dialect.oracle.prefer_longvarbinary`, which is `false `by default (map to `BLOB`).
@@ -932,6 +932,7 @@
     or:
     - as: config_files
       builtin.filecontent:
+        filePattern: .*\.(java|properties|xml)
         pattern: org.hibernate.dialect.Oracle12cDialect
     - as: java_entities
       java.referenced:
@@ -941,12 +942,12 @@
       from: java_entities
       java.referenced:
         location: RETURN_TYPE
-        pattern: java.lang.Byte[]
+        pattern: java.lang.Byte*
     - as: mappings2
       from: java_entities
       java.referenced:
         location: RETURN_TYPE
-        pattern: byte[]
+        pattern: byte*
 - category: mandatory
   customVariables:
   - name: param_classes_setfirstresult

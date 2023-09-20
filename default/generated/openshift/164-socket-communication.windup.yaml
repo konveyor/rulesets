@@ -19,18 +19,22 @@
   when:
     or:
     - java.referenced:
+        location: PACKAGE
         pattern: java.net.(Socket|MulticastSocket|DatagramSocket|InetSocketAddress)*
     - java.referenced:
+        location: PACKAGE
         pattern: java.net.ServerSocket*
     - java.referenced:
+        location: PACKAGE
         pattern: java.nio.channels.AsynchronousServerSocketChannel*
     - java.referenced:
+        location: PACKAGE
         pattern: java.nio.channels.ServerSocketChannel*
 - category: optional
   customVariables:
   - name: niochannelclass
     nameOfCaptureGroup: niochannelclass
-    pattern: java.nio.channels.(?P<niochannelclass>(NetworkChannel|MulticastChannel|DatagramChannel|AsynchronousSocketChannel|SocketChannel))?{*}
+    pattern: java.nio.channels.(?P<niochannelclass>(NetworkChannel|MulticastChannel|DatagramChannel|AsynchronousSocketChannel|SocketChannel))?.*
   description: |-
     Java NIO channel
     Java NIO channels provide bulk data transfer to and from NIO buffers. They can be synchronously and asynchronously read and written.. Channels are not suitable for a cloud environment because they are not a reliable or scalable way to interact with other systems.. Recommendation: Use Java EE standard or loosely coupled protocols such as JMS, JAX-RS, or JAX-WS for backing service interactions.
@@ -49,4 +53,5 @@
   ruleID: socket-communication-00001
   when:
     java.referenced:
+      location: PACKAGE
       pattern: java.nio.channels.(NetworkChannel|MulticastChannel|DatagramChannel|AsynchronousSocketChannel|SocketChannel)*

@@ -2,7 +2,7 @@
   customVariables:
   - name: domain
     nameOfCaptureGroup: domain
-    pattern: (?P<domain>(edu|EDU).)?oswego.cs.dl.util.concurrent.*
+    pattern: (?P<domain>(edu|EDU).)?oswego.cs.dl.util.concurrent..*
   description: |-
     Doug Lea Concurrency util
     This is an old Doug Lea Concurrency util type and needs to be migrated to a compatible `java.util.concurrent` API.. There is currently no detailed information about this type.
@@ -49,10 +49,10 @@
   customVariables:
   - name: packageRemainder
     nameOfCaptureGroup: packageRemainder
-    pattern: org.mule.(?P<packageRemainder>([A-Za-z]+\.)*)?(?P<type>[A-Za-z]+);
+    pattern: org.mule.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
   - name: type
     nameOfCaptureGroup: type
-    pattern: org.mule.(?P<packageRemainder>([A-Za-z]+\.)*)?(?P<type>[A-Za-z]+);
+    pattern: org.mule.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
   description: |
     Mule API reference
   effort: 0
@@ -65,21 +65,21 @@
   - catchall
   - mule
   links: []
-  message: Mule API `org.mule.{{packageRemainder}}{{type}}` was used.. You should
+  message: Mule API `org.mule.{{packageRemainder}}.{{type}}` was used.. You should
     convert these types to Apache Camel.
   ruleID: generic-catchall-00002
   when:
     java.referenced:
       location: PACKAGE
-      pattern: org.mule.*
+      pattern: org.mule.(*)?*
 - category: optional
   customVariables:
   - name: packageRemainder
     nameOfCaptureGroup: packageRemainder
-    pattern: mx4j.(?P<packageRemainder>([A-Za-z]+\.)*)?(?P<type>[A-Za-z]+);
+    pattern: mx4j.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
   - name: type
     nameOfCaptureGroup: type
-    pattern: mx4j.(?P<packageRemainder>([A-Za-z]+\.)*)?(?P<type>[A-Za-z]+);
+    pattern: mx4j.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
   description: |
     MX4J type reference
   effort: 0
@@ -92,17 +92,17 @@
   - catchall
   - mx4j
   links: []
-  message: MX4J `mx4j.{{packageRemainder}}{{type}}` reference was used.
+  message: MX4J `mx4j.{{packageRemainder}}.{{type}}` reference was used.
   ruleID: generic-catchall-00003
   when:
     java.referenced:
       location: PACKAGE
-      pattern: mx4j.*
+      pattern: mx4j.(*)?*
 - category: potential
   customVariables:
   - name: type
     nameOfCaptureGroup: type
-    pattern: org.osoa.sca.annotations.(?P<type>[A-Za-z]+);
+    pattern: org.osoa.sca.annotations.(?P<type>[^.]+)
   description: |
     Apache Tuscany type reference
   effort: 0
@@ -141,16 +141,16 @@
   ruleID: generic-catchall-00200
   when:
     java.referenced:
-      location: PACKAGE
-      pattern: amx_.*
+      location: IMPORT
+      pattern: amx_*
 - category: optional
   customVariables:
   - name: packageRemainder
     nameOfCaptureGroup: packageRemainder
-    pattern: com.tibco.(?P<packageRemainder>([A-Za-z]+\.)*)?(?P<type>[A-Za-z]+);
+    pattern: com.tibco.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
   - name: type
     nameOfCaptureGroup: type
-    pattern: com.tibco.(?P<packageRemainder>([A-Za-z]+\.)*)?(?P<type>[A-Za-z]+);
+    pattern: com.tibco.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
   description: |
     Tibco type reference
   effort: 0
@@ -163,21 +163,21 @@
   - catchall
   - tibco
   links: []
-  message: Tibco `com.tibco.{{packageRemainder}}{{type}}` reference found.. No specific
+  message: Tibco `com.tibco.{{packageRemainder}}.{{type}}` reference found.. No specific
     details available.
   ruleID: generic-catchall-00300
   when:
     java.referenced:
       location: PACKAGE
-      pattern: com.tibco.*
+      pattern: com.tibco.(*)?*
 - category: optional
   customVariables:
   - name: packageRemainder
     nameOfCaptureGroup: packageRemainder
-    pattern: com.crystaldecisions.(?P<packageRemainder>([A-Za-z]+\.)*)?(?P<type>[A-Za-z]+);
+    pattern: com.crystaldecisions.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
   - name: type
     nameOfCaptureGroup: type
-    pattern: com.crystaldecisions.(?P<packageRemainder>([A-Za-z]+\.)*)?(?P<type>[A-Za-z]+);
+    pattern: com.crystaldecisions.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
   description: |
     SAP CrystalReports type reference
   effort: 0
@@ -190,21 +190,21 @@
   - catchall
   - sap
   links: []
-  message: SAP CrystalReports `com.crystaldecisions.{{packageRemainder}}{{type}}`
+  message: SAP CrystalReports `com.crystaldecisions.{{packageRemainder}}.{{type}}`
     reference found.. No specific details available.
   ruleID: generic-catchall-00400
   when:
     java.referenced:
       location: PACKAGE
-      pattern: com.crystaldecisions.*
+      pattern: com.crystaldecisions.(*)?*
 - category: optional
   customVariables:
   - name: packageRemainder
     nameOfCaptureGroup: packageRemainder
-    pattern: com.iona.(?P<packageRemainder>([A-Za-z]+\.)*)?(?P<type>[A-Za-z]+);
+    pattern: com.iona.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
   - name: type
     nameOfCaptureGroup: type
-    pattern: com.iona.(?P<packageRemainder>([A-Za-z]+\.)*)?(?P<type>[A-Za-z]+);
+    pattern: com.iona.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
   description: |
     IONA type reference
   effort: 0
@@ -217,18 +217,18 @@
   - catchall
   - iona
   links: []
-  message: IONA `com.iona.{{packageRemainder}}{{type}}` reference found.. No specific
+  message: IONA `com.iona.{{packageRemainder}}.{{type}}` reference found.. No specific
     details available.
   ruleID: generic-catchall-00500
   when:
     java.referenced:
       location: PACKAGE
-      pattern: com.iona.*
+      pattern: com.iona.(*)?*
 - category: optional
   customVariables:
   - name: subpackage
     nameOfCaptureGroup: subpackage
-    pattern: org.apache.(?P<subpackage>(activeio|activemq))?.*
+    pattern: org.apache.(?P<subpackage>(activeio|activemq).)?.*
   description: |
     Apache org.apache.{subpackage} type reference
   effort: 0
@@ -250,15 +250,15 @@
       pattern: org.apache.(activeio|activemq)*
 - category: potential
   customVariables:
-  - name: type
-    nameOfCaptureGroup: type
-    pattern: org.(?P<subpackage>(jboss|jbpm).)?(?P<packageRemainder>([A-Za-z]+\.)*)?(?P<type>[A-Za-z]+);
   - name: subpackage
     nameOfCaptureGroup: subpackage
-    pattern: org.(?P<subpackage>(jboss|jbpm).)?(?P<packageRemainder>([A-Za-z]+\.)*)?(?P<type>[A-Za-z]+);
+    pattern: org.(?P<subpackage>(jboss|jbpm).)?(?P<packageRemainder>([a-z]+\.)*)?(?P<type>[^.()]+)
   - name: packageRemainder
     nameOfCaptureGroup: packageRemainder
-    pattern: org.(?P<subpackage>(jboss|jbpm).)?(?P<packageRemainder>([A-Za-z]+\.)*)?(?P<type>[A-Za-z]+);
+    pattern: org.(?P<subpackage>(jboss|jbpm).)?(?P<packageRemainder>([a-z]+\.)*)?(?P<type>[^.()]+)
+  - name: type
+    nameOfCaptureGroup: type
+    pattern: org.(?P<subpackage>(jboss|jbpm).)?(?P<packageRemainder>([a-z]+\.)*)?(?P<type>[^.()]+)
   description: |
     JBoss API reference
   effort: 0
@@ -271,7 +271,7 @@
   - catchall
   - jboss
   links: []
-  message: '`org.{{subpackage}}{{packageRemainder}}{{type}}` reference found. No
+  message: '`org.{{subpackage}}.{{packageRemainder}}{{type}}` reference found. No
     specific details available.'
   ruleID: generic-catchall-00700
   when:
@@ -297,5 +297,4 @@
   ruleID: generic-catchall-00900
   when:
     java.referenced:
-      location: PACKAGE
       pattern: java.sql.DriverManager

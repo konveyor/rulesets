@@ -16,6 +16,7 @@
   - Hibernate Search - API usage
   when:
     java.referenced:
+      location: PACKAGE
       pattern: org.hibernate.search*
 - category: optional
   customVariables: []
@@ -473,7 +474,7 @@
   customVariables:
   - name: constant
     nameOfCaptureGroup: constant
-    pattern: org.hibernate.search.backend.configuration.impl.IndexWriterSetting.(?P<constant>(MAX_THREAD_STATES|TERM_INDEX_INTERVAL))?
+    pattern: org.hibernate.search.backend.configuration.impl.IndexWriterSetting.(?P<constant>(MAX_THREAD_STATES|TERM_INDEX_INTERVAL))
   description: |-
     Hibernate Search 5 - Deprecated enum constant in IndexWriterSetting
     The `IndexWriterSetting.MAX_THREAD_STATES` and `IndexWriterSetting.TERM_INDEX_INTERVAL` enum constants are deprecated.. They affect which properties are read from the configuration, so the fact they they are missing means that configuration properties such as `hibernate.search.Animals.2.indexwriter.term_index_interval = default` are now ignored.. The only side effect is that the property is not applied.
@@ -1137,7 +1138,7 @@
   customVariables:
   - name: type
     nameOfCaptureGroup: type
-    pattern: org.apache.lucene.queryParser.(?P<type>(CharStream|FastCharStream|MultiFieldQueryParser|ParseException|QueryParser|QueryParserBase|QueryParserConstants|QueryParserTokenManager))?
+    pattern: org.apache.lucene.queryParser.(?P<type>(CharStream|FastCharStream|MultiFieldQueryParser|ParseException|QueryParser|QueryParserBase|QueryParserConstants|QueryParserTokenManager))
   description: |
     Lucene 4.x - Classes repackaged to 'org.apache.lucene.queryparser.classic'
   effort: 1
@@ -1223,7 +1224,7 @@
   customVariables:
   - name: type
     nameOfCaptureGroup: type
-    pattern: org.apache.lucene.analysis.(?P<type>(KeywordAnalyzer|KeywordTokenizer|LetterTokenizer|LowerCaseFilter|LowerCaseTokenizer|SimpleAnalyzer|StopAnalyzer|StopFilter|WhitespaceAnalyzer|WhitespaceTokenizer))?
+    pattern: org.apache.lucene.analysis.(?P<type>(KeywordAnalyzer|KeywordTokenizer|LetterTokenizer|LowerCaseFilter|LowerCaseTokenizer|SimpleAnalyzer|StopAnalyzer|StopFilter|WhitespaceAnalyzer|WhitespaceTokenizer))
   description: |
     Lucene 4.x - Classes repackaged to 'org.apache.lucene.analysis.core'
   effort: 1
@@ -1281,7 +1282,7 @@
   customVariables:
   - name: type
     nameOfCaptureGroup: type
-    pattern: org.apache.lucene.analysis.(?P<type>(ASCIIFoldingFilter|ISOLatin1AccentFilter|KeywordMarkerFilter|LengthFilter|PerFieldAnalyzerWrapper))?
+    pattern: org.apache.lucene.analysis.(?P<type>(ASCIIFoldingFilter|ISOLatin1AccentFilter|KeywordMarkerFilter|LengthFilter|PerFieldAnalyzerWrapper))
   description: |
     Lucene 4.x - Classes repackaged to 'org.apache.lucene.analysis.miscellaneous'
   effort: 1
@@ -1339,7 +1340,7 @@
   customVariables:
   - name: type
     nameOfCaptureGroup: type
-    pattern: org.apache.lucene.analysis.(?P<type>(CharFilter|BaseCharFilter|MappingCharFilter|NormalizeCharMap))?
+    pattern: org.apache.lucene.analysis.(?P<type>(CharFilter|BaseCharFilter|MappingCharFilter|NormalizeCharMap))
   description: |
     Lucene 4.x - Classes repackaged to 'org.apache.lucene.analysis.charfilter'
   effort: 1
@@ -1369,7 +1370,7 @@
   customVariables:
   - name: type
     nameOfCaptureGroup: type
-    pattern: org.apache.lucene.analysis.(?P<type>(CharArraySet|CharArrayMap|StopwordAnalyzerBase|WordlistLoader|CharTokenizer))?
+    pattern: org.apache.lucene.analysis.(?P<type>(CharArraySet|CharArrayMap|StopwordAnalyzerBase|WordlistLoader|CharTokenizer))
   description: |
     Lucene 4.x - Classes repackaged to 'org.apache.lucene.analysis.util'
   effort: 1
@@ -1455,7 +1456,7 @@
   customVariables:
   - name: type
     nameOfCaptureGroup: type
-    pattern: org.apache.lucene.search.function.(?P<type>(CustomScoreQuery|CustomScoreProvider))?
+    pattern: org.apache.lucene.search.function.(?P<type>(CustomScoreQuery|CustomScoreProvider))
   description: |
     Lucene 4.x - Classes repackaged to 'org.apache.lucene.queries'
   effort: 1
@@ -1514,7 +1515,7 @@
   customVariables:
   - name: type
     nameOfCaptureGroup: type
-    pattern: org.apache.lucene.search.function.(?P<type>(DocValues|FieldScoreQuery|ValueSource|ValueSourceQuery))?
+    pattern: org.apache.lucene.search.function.(?P<type>(DocValues|FieldScoreQuery|ValueSource|ValueSourceQuery))
   description: |
     Lucene 4.x - Classes repackaged to 'org.apache.lucene.queries.function'
   effort: 1
@@ -1544,7 +1545,7 @@
   customVariables:
   - name: type
     nameOfCaptureGroup: type
-    pattern: org.apache.lucene.search.function.(?P<type>(ByteFieldSource|FieldCacheSource|FloatFieldSource|IntFieldSource|OrdFieldSource|ReverseOrdFieldSource|ShortFieldSource))?
+    pattern: org.apache.lucene.search.function.(?P<type>(ByteFieldSource|FieldCacheSource|FloatFieldSource|IntFieldSource|OrdFieldSource|ReverseOrdFieldSource|ShortFieldSource))
   description: |
     Lucene 4.x - Classes repackaged to 'org.apache.lucene.queries.function.valuesources'
   effort: 1
@@ -1574,7 +1575,7 @@
   customVariables:
   - name: type
     nameOfCaptureGroup: type
-    pattern: org.apache.solr.analysis.(?P<type>(TokenizerFactory|TokenFilterFactory))?
+    pattern: org.apache.solr.analysis.(?P<type>(TokenizerFactory|TokenFilterFactory))
   description: |
     Lucene 4.x - Solr classes repackaged to 'org.apache.lucene.analysis.util'
   effort: 1

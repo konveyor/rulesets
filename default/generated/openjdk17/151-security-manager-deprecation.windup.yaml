@@ -1,8 +1,8 @@
 - category: mandatory
   customVariables:
-  - name: class-name
-    nameOfCaptureGroup: class-name
-    pattern: java.security.(?P<class-name>(AccessController|AccessControlContext|AccessControlException|DomainCombiner|Policy|PolicySpi|Policy.Parameters))?
+  - name: className
+    nameOfCaptureGroup: className
+    pattern: java.security.(?P<className>(AccessController|AccessControlContext|AccessControlException|DomainCombiner|Policy|PolicySpi|Policy.Parameters))
   description: |-
     The java.security.{class-name} class has been deprecated
     The Java Security Manager API is deprecated in Java 17. Any references to it should be removed.. See the link for further information.
@@ -23,7 +23,7 @@
   customVariables:
   - name: fqcn
     nameOfCaptureGroup: fqcn
-    pattern: (?P<fqcn>(java.lang.SecurityManager|java.rmi.RMISecurityManager|javax.security.auth.SubjectDomainCombiner))?
+    pattern: (?P<fqcn>(java.lang.SecurityManager|java.rmi.RMISecurityManager|javax.security.auth.SubjectDomainCombiner))
   description: |-
     The {fqcn} class has been deprecated
     References to Java Security Manager API classes deprecated in Java 17. Any references to it should be removed.. See the link for further information.
@@ -42,9 +42,9 @@
       pattern: (java.lang.SecurityManager|java.rmi.RMISecurityManager|javax.security.auth.SubjectDomainCombiner)
 - category: mandatory
   customVariables:
-  - name: method-name
-    nameOfCaptureGroup: method-name
-    pattern: java.lang.System.(?P<method-name>(getSecurityManager|setSecurityManager))?({*})
+  - name: methodName
+    nameOfCaptureGroup: methodName
+    pattern: java.lang.System.(?P<methodName>(getSecurityManager|setSecurityManager))?(.*)
   description: |-
     The java.lang.System.{method-name} method has been deprecated
     The java.lang.System::getSecurityManager and java.lang.System::setSecurityManager methods have been deprecated in Java 17.. See the link for further information.
@@ -60,6 +60,7 @@
   ruleID: security-manager-deprecation-00020
   when:
     java.referenced:
+      location: METHOD_CALL
       pattern: java.lang.System.(getSecurityManager|setSecurityManager)*
 - category: mandatory
   customVariables: []
@@ -78,6 +79,7 @@
   ruleID: security-manager-deprecation-00030
   when:
     java.referenced:
+      location: METHOD_CALL
       pattern: java.lang.Thread.checkAccess*
 - category: mandatory
   customVariables: []
@@ -96,6 +98,7 @@
   ruleID: security-manager-deprecation-00040
   when:
     java.referenced:
+      location: METHOD_CALL
       pattern: java.lang.ThreadGroup.checkAccess*
 - category: mandatory
   customVariables: []
@@ -114,12 +117,13 @@
   ruleID: security-manager-deprecation-00050
   when:
     java.referenced:
+      location: METHOD_CALL
       pattern: java.util.logging.LogManager.checkAccess*
 - category: mandatory
   customVariables:
-  - name: method-names
-    nameOfCaptureGroup: method-names
-    pattern: java.util.concurrent.Executors.(?P<method-names>(privilegedCallable|privilegedCallableUsingCurrentClassLoader|privilegedThreadFactory))?({*})
+  - name: methodNames
+    nameOfCaptureGroup: methodNames
+    pattern: java.util.concurrent.Executors.(?P<methodNames>(privilegedCallable|privilegedCallableUsingCurrentClassLoader|privilegedThreadFactory))?(.*)
   description: |
     The java.util.concurrent.Executors.{method-names} method has been deprecated
   effort: 5
@@ -129,17 +133,18 @@
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
-  message: The java.util.concurrent.Executors::{{method-names}} method has been deprecated
+  message: The java.util.concurrent.Executors::{{methodNames}} method has been deprecated
     in Java 17.. See the link for further information.
   ruleID: security-manager-deprecation-00060
   when:
     java.referenced:
+      location: METHOD_CALL
       pattern: java.util.concurrent.Executors.(privilegedCallable|privilegedCallableUsingCurrentClassLoader|privilegedThreadFactory)*
 - category: mandatory
   customVariables:
-  - name: meth-name
-    nameOfCaptureGroup: meth-name
-    pattern: javax.security.auth.Subject.(?P<meth-name>(doAsPrivileged|getSubject))?({*})
+  - name: methName
+    nameOfCaptureGroup: methName
+    pattern: javax.security.auth.Subject.(?P<methName>(doAsPrivileged|getSubject))?(.*)
   description: |
     javax.security.auth.Subject.{meth-name} method has been deprecated
   effort: 5
@@ -149,9 +154,10 @@
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
-  message: The javax.security.auth.Subject::{{meth-name}} method has been deprecated
+  message: The javax.security.auth.Subject::{{methName}} method has been deprecated
     in Java 17.. See the link for further information.
   ruleID: security-manager-deprecation-00070
   when:
     java.referenced:
+      location: METHOD_CALL
       pattern: javax.security.auth.Subject.(doAsPrivileged|getSubject)*

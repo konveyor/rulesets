@@ -26,8 +26,10 @@
     - java.referenced:
         pattern: java.io.(File|FileWriter|FileReader|FileInputStream|FileOutputStream)
     - java.referenced:
+        location: PACKAGE
         pattern: java.nio*
     - java.referenced:
+        location: PACKAGE
         pattern: org.apache.commons.io*
 - category: optional
   customVariables: []
@@ -51,6 +53,7 @@
   ruleID: azure-file-system-02000
   when:
     builtin.filecontent:
+      filePattern: .*\.(java|properties|yaml|yml)
       pattern: \.\/.
 - category: optional
   customVariables: []
@@ -74,4 +77,5 @@
   ruleID: azure-file-system-03000
   when:
     builtin.filecontent:
+      filePattern: .*\.(java|properties|yaml|yml)
       pattern: \/home

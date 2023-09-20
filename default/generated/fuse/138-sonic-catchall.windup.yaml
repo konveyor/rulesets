@@ -2,10 +2,10 @@
   customVariables:
   - name: subpackage
     nameOfCaptureGroup: subpackage
-    pattern: com.(?P<subpackage>(sonic|sonicsw)(\..*)?.)?(?P<classname>[^.]+)?
+    pattern: com.(?P<subpackage>(sonic|sonicsw)(\..*)?.)?(?P<classname>[^.]+)
   - name: classname
     nameOfCaptureGroup: classname
-    pattern: com.(?P<subpackage>(sonic|sonicsw)(\..*)?.)?(?P<classname>[^.]+)?
+    pattern: com.(?P<subpackage>(sonic|sonicsw)(\..*)?.)?(?P<classname>[^.]+)
   description: |
     Sonic proprietary type reference com.{subpackage}.{classname}
   effort: 0
@@ -22,4 +22,5 @@
   ruleID: sonic-catchall-00000
   when:
     java.referenced:
-      pattern: com.(sonic|sonicsw).**
+      location: PACKAGE
+      pattern: com.(sonic|sonicsw).*

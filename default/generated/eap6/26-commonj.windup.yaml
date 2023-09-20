@@ -80,6 +80,7 @@
   - Commonj WorkManager API
   when:
     java.referenced:
+      location: PACKAGE
       pattern: commonj.work*
 - category: mandatory
   customVariables: []
@@ -105,7 +106,7 @@
   customVariables:
   - name: part
     nameOfCaptureGroup: part
-    pattern: commonj.work.Work(?P<part>(Event|Item|Listener)?)?
+    pattern: commonj.work.Work(?P<part>(Event|Item|Listener)?)
   description: |
     Commonj WorkManager API
   effort: 3

@@ -33,7 +33,8 @@
   - Log4j Configuration
   when:
     builtin.filecontent:
-      pattern: '*'
+      filePattern: log4j\.xml
+      pattern: .*
 - category: optional
   customVariables: []
   description: |
@@ -51,4 +52,5 @@
   ruleID: log4j-03000
   when:
     builtin.filecontent:
+      filePattern: log4j\.{suffix}
       pattern: org.apache.log4j.ConsoleAppender

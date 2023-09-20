@@ -50,4 +50,5 @@
   ruleID: springboot-metrics-to-quarkus-0300
   when:
     builtin.filecontent:
+      filePattern: application.*\.(properties|yml|yaml)
       pattern: management.endpoints.web.exposure.include.*prometheus

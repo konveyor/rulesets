@@ -71,4 +71,5 @@
   ruleID: hibernate-xml-03000
   when:
     builtin.filecontent:
+      filePattern: hibernate-configuration\.xml
       pattern: org.hibernate.connection

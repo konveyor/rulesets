@@ -16,6 +16,7 @@
   - Oracle JMS
   when:
     java.referenced:
+      location: PACKAGE
       pattern: oracle.jms*
 - category: mandatory
   customVariables: []

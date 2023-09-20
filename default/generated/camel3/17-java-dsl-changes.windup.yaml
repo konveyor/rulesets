@@ -16,4 +16,4 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: '*.hystrix()'
+      pattern: '*.hystrix*'

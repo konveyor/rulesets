@@ -181,6 +181,7 @@
   ruleID: weblogic-webapp-07000
   when:
     java.referenced:
+      location: PACKAGE
       pattern: weblogic.security*
 - category: mandatory
   customVariables: []

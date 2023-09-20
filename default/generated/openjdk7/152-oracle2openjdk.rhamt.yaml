@@ -51,7 +51,7 @@
         pattern: (java.awt|javafx.scene.text)*Font*
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.swing**Font*
+        pattern: javax.swing*Font*
 - category: potential
   customVariables: []
   description: |-
@@ -71,6 +71,7 @@
   ruleID: oracle2openjdk-00002
   when:
     java.referenced:
+      location: PACKAGE
       pattern: jdk.management.resource*
 - category: potential
   customVariables: []
@@ -100,7 +101,7 @@
   customVariables:
   - name: package
     nameOfCaptureGroup: package
-    pattern: java.awt.(?P<package>(geom|color|font|image|image\.renderable|print))?{*}
+    pattern: java.awt.(?P<package>(geom|color|font|image|image\.renderable|print))?.*
   description: |-
     Java 2D library usage
     OpenJDK has its own 2D library, different from the proprietary JDK. This means that its performance may be different.. Ensure during your tests that the application behaves as expected.
@@ -147,10 +148,10 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.security.KeyPairGenerator.getInstance(*
+        pattern: java.security.KeyPairGenerator.getInstance*
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.crypto.KeyAgreement.getInstance(*
+        pattern: javax.crypto.KeyAgreement.getInstance*
     - java.referenced:
         location: CONSTRUCTOR_CALL
         pattern: java.security.spec.EC*

@@ -298,7 +298,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: com.sonicsw.xq.XQMessage.getPart(*
+      pattern: com.sonicsw.xq.XQMessage.getPart*
 - category: mandatory
   customVariables: []
   description: |-

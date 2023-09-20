@@ -229,6 +229,8 @@
   when:
     or:
     - builtin.filecontent:
+        filePattern: .*\.jsp
         pattern: <jsp
     - builtin.filecontent:
+        filePattern: .*\.jsp
         pattern: <%

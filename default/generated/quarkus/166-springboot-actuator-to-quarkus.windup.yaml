@@ -43,4 +43,5 @@
   ruleID: springboot-actuator-to-quarkus-0200
   when:
     builtin.filecontent:
+      filePattern: application.*\.(properties|yml|yaml)
       pattern: management.endpoints.web.exposure.include.*health

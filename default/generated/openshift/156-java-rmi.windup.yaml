@@ -44,4 +44,5 @@
   - Java Remote Method Invocation (RMI) API
   when:
     java.referenced:
+      location: PACKAGE
       pattern: java.rmi*

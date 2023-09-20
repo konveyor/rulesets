@@ -2,7 +2,7 @@
   customVariables:
   - name: type
     nameOfCaptureGroup: type
-    pattern: com.ibm.db2.jcc.(?P<type>[^.]+)?
+    pattern: com.ibm.db2.jcc.(?P<type>[^.]+)
   description: |
     IBM DB2 driver type reference
   effort: 1
@@ -18,15 +18,16 @@
   ruleID: websphere-catchall-db2-00000
   when:
     java.referenced:
+      location: PACKAGE
       pattern: com.ibm.db2.jcc*
 - category: potential
   customVariables:
   - name: package
     nameOfCaptureGroup: package
-    pattern: (?P<package>(com\.)?(websphere|ibm)(\..*)?.)?(?P<type>[^.]+)?
+    pattern: (?P<package>(com\.)?(websphere|ibm)(\..*)?.)?(?P<type>[^.]+)
   - name: type
     nameOfCaptureGroup: type
-    pattern: (?P<package>(com\.)?(websphere|ibm)(\..*)?.)?(?P<type>[^.]+)?
+    pattern: (?P<package>(com\.)?(websphere|ibm)(\..*)?.)?(?P<type>[^.]+)
   description: |
     IBM proprietary type reference
   effort: 0
@@ -43,15 +44,16 @@
   ruleID: websphere-catchall-00000
   when:
     java.referenced:
-      pattern: (com.)?(websphere|ibm).**
+      location: PACKAGE
+      pattern: (com.)?(websphere|ibm).*
 - category: potential
   customVariables:
   - name: subpackage
     nameOfCaptureGroup: subpackage
-    pattern: ilog.(?P<subpackage>.*.)?(?P<type>[^.]+)?
+    pattern: ilog.(?P<subpackage>.*.)?(?P<type>[^.]+)
   - name: type
     nameOfCaptureGroup: type
-    pattern: ilog.(?P<subpackage>.*.)?(?P<type>[^.]+)?
+    pattern: ilog.(?P<subpackage>.*.)?(?P<type>[^.]+)
   description: |
     IBM ILog proprietary type reference
   effort: 0
@@ -68,4 +70,5 @@
   ruleID: websphere-catchall-00001
   when:
     java.referenced:
-      pattern: ilog.**
+      location: PACKAGE
+      pattern: ilog.*

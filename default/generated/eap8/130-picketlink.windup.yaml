@@ -17,8 +17,10 @@
   when:
     or:
     - builtin.filecontent:
+        filePattern: .*\.xml
         pattern: picketlink
     - builtin.filecontent:
+        filePattern: picketlink\.xml
         pattern: PicketLinkSTS
     - builtin.file:
         pattern: picketlink-sts\.xml

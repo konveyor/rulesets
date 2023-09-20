@@ -2,7 +2,7 @@
   customVariables:
   - name: class
     nameOfCaptureGroup: class
-    pattern: org.apache.camel.(?P<class>(BeanInject|Consume|DynamicRouter|EndpointInject|Produce|PropertyInject|RecipientList|RoutingSlip))?
+    pattern: org.apache.camel.(?P<class>(BeanInject|Consume|DynamicRouter|EndpointInject|Produce|PropertyInject|RecipientList|RoutingSlip))
   description: |
     {class}: `context` attribute removed
   effort: 1
@@ -25,7 +25,7 @@
   customVariables:
   - name: CdiCamelContextName
     nameOfCaptureGroup: CdiCamelContextName
-    pattern: org.apache.camel.cdi.(?P<CdiCamelContextName>(ContextName|ContextNames))?
+    pattern: org.apache.camel.cdi.(?P<CdiCamelContextName>(ContextName|ContextNames))
   description: |
     {CdiCamelContextName} has been removed
   effort: 3

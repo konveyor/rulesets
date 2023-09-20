@@ -14,6 +14,7 @@
   ruleID: os-specific-00001
   when:
     builtin.filecontent:
+      filePattern: .*\.(java|properties|jsp|jspf|tag|xml|txt)
       pattern: '[A-z]:([\\][^\n\t]+)+|(\\\\([^\\\,\n\t]+)\\\S+)+'
 - category: mandatory
   customVariables: []

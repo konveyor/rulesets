@@ -1,10 +1,10 @@
 - customVariables:
-  - name: package-remainder
-    nameOfCaptureGroup: package-remainder
-    pattern: org.hibernate.(?P<package-remainder>(.*)?.)?(?P<type>[^.]+)?
+  - name: packageRemainder
+    nameOfCaptureGroup: packageRemainder
+    pattern: org.hibernate.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
   - name: type
     nameOfCaptureGroup: type
-    pattern: org.hibernate.(?P<package-remainder>(.*)?.)?(?P<type>[^.]+)?
+    pattern: org.hibernate.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
   description: |
     Hibernate
     This is a Hibernate type and it will need to be verified for compatibility with the latest Hibernate version.
@@ -20,4 +20,5 @@
   - Hibernate
   when:
     java.referenced:
+      location: PACKAGE
       pattern: org.hibernate.(*)?*

@@ -49,4 +49,5 @@
   ruleID: websphere-other-eap7-02000
   when:
     java.referenced:
+      location: PACKAGE
       pattern: com.ibm.websphere.startupservice*StartUp*

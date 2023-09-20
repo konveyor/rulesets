@@ -39,6 +39,8 @@
   when:
     or:
     - java.referenced:
+        location: PACKAGE
         pattern: jdk.nashorn.api.scripting*
     - java.referenced:
+        location: PACKAGE
         pattern: jdk.nashorn.api.tree*

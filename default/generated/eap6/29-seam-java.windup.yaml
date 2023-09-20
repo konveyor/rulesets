@@ -45,6 +45,7 @@
   - Seam API
   when:
     java.referenced:
+      location: PACKAGE
       pattern: org.jboss.seam*
 - category: mandatory
   customVariables: []

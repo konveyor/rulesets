@@ -57,6 +57,7 @@
   ruleID: springboot-properties-to-quarkus-00002
   when:
     builtin.filecontent:
+      filePattern: application.*\.(properties|yml|yaml)
       pattern: spring.datasource
 - category: mandatory
   customVariables: []
@@ -76,6 +77,7 @@
   ruleID: springboot-properties-to-quarkus-00003
   when:
     builtin.filecontent:
+      filePattern: application.*\.(properties|yml|yaml)
       pattern: logging.level.org.springframework
 - category: mandatory
   customVariables: []
@@ -93,6 +95,7 @@
   ruleID: springboot-properties-to-quarkus-00004
   when:
     builtin.filecontent:
+      filePattern: application.*\.(properties|yml|yaml)
       pattern: spring.jpa.hibernate.ddl-auto=create-drop
 - category: mandatory
   customVariables: []
@@ -112,6 +115,7 @@
   ruleID: springboot-properties-to-quarkus-00005
   when:
     builtin.filecontent:
+      filePattern: application.*\.(properties|yml|yaml)
       pattern: springdoc.swagger-ui.path
 - category: mandatory
   customVariables: []
@@ -129,4 +133,5 @@
   ruleID: springboot-properties-to-quarkus-00006
   when:
     builtin.filecontent:
+      filePattern: application.*\.(properties|yml|yaml)
       pattern: springdoc.api-docs.path

@@ -17,7 +17,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.enterprise.inject.spi.Bean.isNullable()
+      pattern: javax.enterprise.inject.spi.Bean.isNullable*
 - category: mandatory
   customVariables: []
   description: |-

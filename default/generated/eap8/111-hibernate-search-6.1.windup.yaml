@@ -233,7 +233,7 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlan.executeAndReport(*
+        pattern: org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlan.executeAndReport*
 - category: mandatory
   customVariables: []
   description: |-

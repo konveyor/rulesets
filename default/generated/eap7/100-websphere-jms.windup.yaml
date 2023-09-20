@@ -1,10 +1,10 @@
 - customVariables:
   - name: package
     nameOfCaptureGroup: package
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<type>[^.]+)?
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<type>[^.]+)
   - name: type
     nameOfCaptureGroup: type
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<type>[^.]+)?
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<type>[^.]+)
   description: "IBM JMS Client\nWebSphere MQ client API is used to communicate with
     the MQ server from client-side applications.\n                        For JBoss
     EAP 7, this needs to be replaced with standard Java EE 7 JMS API, or with ActiveMQ
@@ -29,6 +29,7 @@
   - IBM JMS Client
   when:
     java.referenced:
+      location: PACKAGE
       pattern: com.ibm.*jms*
 - category: mandatory
   customVariables:
@@ -62,12 +63,12 @@
       pattern: com.ibm*.jms.(Jms|MQeJNDI|MQe|MQ)?*ConnectionFactory
 - category: mandatory
   customVariables:
-  - name: type
-    nameOfCaptureGroup: type
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?JmsMsg(?P<type>(Producer|Consumer))?
   - name: package
     nameOfCaptureGroup: package
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?JmsMsg(?P<type>(Producer|Consumer))?
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?JmsMsg(?P<type>(Producer|Consumer))
+  - name: type
+    nameOfCaptureGroup: type
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?JmsMsg(?P<type>(Producer|Consumer))
   description: |
     IBM JMS topic/queue message
   effort: 1
@@ -108,14 +109,14 @@
       pattern: com.ibm.mqe.jms.{type}Queue
 - category: mandatory
   customVariables:
+  - name: package
+    nameOfCaptureGroup: package
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
   - name: type
     nameOfCaptureGroup: type
     pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
   - name: prefix
     nameOfCaptureGroup: prefix
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
-  - name: package
-    nameOfCaptureGroup: package
     pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
   description: |
     IBM JMS destination message
@@ -136,15 +137,15 @@
       pattern: com.ibm.*jms.(JMS|MQe|MQ)(Text|Stream|Object|Map|Bytes)?Message
 - category: mandatory
   customVariables:
-  - name: package
-    nameOfCaptureGroup: package
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)?
   - name: prefix
     nameOfCaptureGroup: prefix
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)?
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)
   - name: type
     nameOfCaptureGroup: type
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)?
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)
+  - name: package
+    nameOfCaptureGroup: package
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)
   description: |
     IBM JMS interface
   effort: 1
@@ -160,4 +161,5 @@
   ruleID: websphere-jms-eap7-04000
   when:
     java.referenced:
+      location: PACKAGE
       pattern: com.ibm.*jms.(Jms|MQe|MQ)*

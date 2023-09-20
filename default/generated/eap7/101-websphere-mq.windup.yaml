@@ -1,10 +1,10 @@
 - customVariables:
-  - name: type
-    nameOfCaptureGroup: type
-    pattern: (?P<package>com.ibm(\..*)?\.(mq|wmq).*.)?(?P<type>[^.]+)?
   - name: package
     nameOfCaptureGroup: package
-    pattern: (?P<package>com.ibm(\..*)?\.(mq|wmq).*.)?(?P<type>[^.]+)?
+    pattern: (?P<package>com.ibm(\..*)?\.(mq|wmq).*.)?(?P<type>[^.]+)
+  - name: type
+    nameOfCaptureGroup: type
+    pattern: (?P<package>com.ibm(\..*)?\.(mq|wmq).*.)?(?P<type>[^.]+)
   description: "IBM MQ client API\nWebSphere MQ client API is used to communicate
     with the MQ server from client-side applications.\n                        For
     JBoss EAP 7, this needs to be replaced with standard Java EE 6 JMS API, or with
@@ -28,7 +28,8 @@
   - IBM MQ client API
   when:
     java.referenced:
-      pattern: com.ibm.*(mq|wmq)**
+      location: PACKAGE
+      pattern: com.ibm.*(mq|wmq)*
 - category: mandatory
   customVariables: []
   description: "IBM MQ Configuration\nThe WebSphere MQ client API is used to communicate
@@ -63,6 +64,7 @@
   - IBM MQ Configuration
   when:
     builtin.filecontent:
+      filePattern: .*\.(java|properties|xml)
       pattern: com.ibm.mq.jms.context.WMQInitialContextFactory
 - category: mandatory
   customVariables: []
@@ -92,4 +94,5 @@
   - IBM MQ Configuration
   when:
     builtin.filecontent:
-      pattern: '*'
+      filePattern: .*\.scp
+      pattern: .*

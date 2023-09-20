@@ -75,8 +75,10 @@
   when:
     or:
     - java.referenced:
+        location: PACKAGE
         pattern: javax.enterprise.inject*
     - java.referenced:
+        location: PACKAGE
         pattern: javax.inject*
 - customVariables: []
   labels:
@@ -90,8 +92,10 @@
   when:
     or:
     - java.referenced:
+        location: PACKAGE
         pattern: jakarta.enterprise.inject*
     - java.referenced:
+        location: PACKAGE
         pattern: jakarta.inject*
 - customVariables: []
   labels:
@@ -118,6 +122,7 @@
   - Java EE JSON-P
   when:
     java.referenced:
+      location: PACKAGE
       pattern: javax.json*
 - customVariables: []
   labels:
@@ -203,7 +208,7 @@
 - customVariables:
   - name: annotation
     nameOfCaptureGroup: annotation
-    pattern: javax.annotation.(?P<annotation>PreDestroy|PostConstruct|Resource|Resources)?
+    pattern: javax.annotation.(?P<annotation>PreDestroy|PostConstruct|Resource|Resources)
   description: |
     Common Annotations
     The application uses Common Annotations
@@ -223,7 +228,7 @@
 - customVariables:
   - name: package
     nameOfCaptureGroup: package
-    pattern: (?P<package>java|javax.)?xml.bind.{*}
+    pattern: (?P<package>java|javax.)?xml.bind..*
   description: |
     JAXB
     The application uses JAXB

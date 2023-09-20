@@ -34,6 +34,7 @@
   ruleID: hibernate4-xml-00001
   when:
     builtin.filecontent:
+      filePattern: hibernate\.(cfg\.xml|properties)
       pattern: hibernate.transaction.factory_class
 - category: mandatory
   customVariables: []
@@ -55,6 +56,7 @@
   ruleID: hibernate4-xml-00002
   when:
     builtin.filecontent:
+      filePattern: .*\.hbm\.xml
       pattern: org.hibernate.id.(TableGenerator|TableHiLoGenerator|SequenceGenerator|SequenceIdentityGenerator|SequenceHiLoGenerator)
 - category: mandatory
   customVariables: []
@@ -107,6 +109,7 @@
     or:
     - as: properties
       builtin.filecontent:
+        filePattern: hibernate\.properties
         pattern: hibernate.hql.bulk_id_strategy=org.hibernate.hql.spi.TemporaryTableBulkIdStrategy
     - as: cfg
       builtin.xml:
@@ -135,6 +138,7 @@
     or:
     - as: properties
       builtin.filecontent:
+        filePattern: hibernate\.properties
         pattern: hibernate.hql.bulk_id_strategy=org.hibernate.hql.spi.PersistentTableBulkIdStrategy
     - as: cfg
       builtin.xml:

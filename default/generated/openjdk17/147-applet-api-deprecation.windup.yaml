@@ -17,6 +17,7 @@
   when:
     or:
     - java.referenced:
+        location: PACKAGE
         pattern: java.applet*
     - java.referenced:
         pattern: java.beans.AppletInitializer

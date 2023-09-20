@@ -96,6 +96,7 @@
   when:
     or:
     - java.referenced:
+        location: METHOD_CALL
         pattern: javax.servlet.ServletContext.getServlet*
 - category: mandatory
   customVariables: []
@@ -116,7 +117,8 @@
   when:
     or:
     - java.referenced:
-        pattern: javax.servlet.ServletContext.getServlets()
+        location: METHOD_CALL
+        pattern: javax.servlet.ServletContext.getServlets*
 - category: mandatory
   customVariables: []
   description: |-
@@ -136,7 +138,8 @@
   when:
     or:
     - java.referenced:
-        pattern: javax.servlet.ServletContext.getServletNames()
+        location: METHOD_CALL
+        pattern: javax.servlet.ServletContext.getServletNames*
 - category: mandatory
   customVariables: []
   description: |-

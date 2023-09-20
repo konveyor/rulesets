@@ -13,6 +13,7 @@
   ruleID: jakarta-soap-00010
   when:
     java.referenced:
+      location: METHOD_CALL
       pattern: javax.xml.soap.SOAPElementFactory.newInstance*
 - category: mandatory
   customVariables: []

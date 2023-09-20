@@ -25,7 +25,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: java.lang.Class.forName(*
+      pattern: java.lang.Class.forName*
 - category: mandatory
   customVariables: []
   description: |-
@@ -100,7 +100,7 @@
   customVariables:
   - name: suffix
     nameOfCaptureGroup: suffix
-    pattern: javax.management.(?P<suffix>(ObjectName))?{*}
+    pattern: javax.management.(?P<suffix>(ObjectName))?.*
   description: |
     JMX MBean object name (javax.management.{suffix})
   effort: 1
@@ -124,7 +124,7 @@
   customVariables:
   - name: suffix
     nameOfCaptureGroup: suffix
-    pattern: javax.management.(?P<suffix>(remote.JMXServiceURL))?{*}
+    pattern: javax.management.(?P<suffix>(remote.JMXServiceURL))?.*
   description: |
     JMX API connector server address (javax.management.{suffix})
   effort: 1

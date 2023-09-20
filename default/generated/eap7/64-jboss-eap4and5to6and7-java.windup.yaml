@@ -51,7 +51,7 @@
   customVariables:
   - name: classes
     nameOfCaptureGroup: classes
-    pattern: org.jboss.system.(?P<classes>(ServiceMBean|ServiceMBeanSupport))?
+    pattern: org.jboss.system.(?P<classes>(ServiceMBean|ServiceMBeanSupport))
   description: |-
     Replace ServiceMBean and ServiceMBeanSupport
     JMX / MBeans is still fully supported as it is in the JDK specification.. If your MBeans were extending the old JBoss EAP MBean support classes such as `org.jboss.system.ServiceMBean` and `org.jboss.system.ServiceMBeanSupport`, these do not exist in JBoss EAP 6+.. These classes were hooked into the kernel in previous versions of JBoss EAP where everything was basically turned into an MBean.
