@@ -28,12 +28,13 @@
   ruleID: DetectJavaApplicationDeploymentJava
   when:
     java.referenced:
+      location: PACKAGE
       pattern: javax.enterprise.deploy*
 - category: mandatory
   customVariables:
   - name: DetectJavaPortlet_0_packages
     nameOfCaptureGroup: DetectJavaPortlet_0_packages
-    pattern: (?P<DetectJavaPortlet_0_packages>(javax.portlet\.[^.]+|javax.portlet.filter\.[^.]+))?
+    pattern: (?P<DetectJavaPortlet_0_packages>(javax.portlet\.[^.]+|javax.portlet.filter\.[^.]+))
   description: |-
     Java Portlet is unsupported
     <div class="Text">. <p> This rule flags Java code that has references to the following packages: </p>. <ul>. <li><code>javax.portlet</code></li>. <li><code>javax.portlet.filter</code></li>. </ul>. <p>This rule also flags the following references in the portlet.xml file: </p>. <ul>. <li><code>&lt;portlet-app&gt;&lt;/portlet-app&gt;</code></li>. </ul>. <p>The Java Portlet API and its deployment descriptors are not supported on Liberty. Deploy this part of your application on WebSphere Application Server traditional. </p>. </div>
@@ -59,7 +60,7 @@
   customVariables:
   - name: DetectJAXRJava_0_packages
     nameOfCaptureGroup: DetectJAXRJava_0_packages
-    pattern: (?P<DetectJAXRJava_0_packages>(javax.xml.registry\.[^.]+|javax.xml.registry.infomodel\.[^.]+))?
+    pattern: (?P<DetectJAXRJava_0_packages>(javax.xml.registry\.[^.]+|javax.xml.registry.infomodel\.[^.]+))
   description: |-
     Java API for XML Registries (JAXR) is unavailable
     <div class="Text"> <span class="SubHeader">Java API for XML Registries (JAXR)</span>. <p> This rule flags Java code that has references to the following packages: </p>. <ul>. <li><code>javax.xml.registry</code></li>. <li><code>javax.xml.registry.infomodel</code></li>. </ul>. <p>The Java API for XML Registries (JAXR) is not supported on Liberty or Liberty Core. The API is deprecated in WebSphere Application Server traditional V9.0. If your application uses the JAXR API, you can deploy this part of your application on WebSphere Application Server traditional but the capability might be removed in a later version. It is recommended to migrate to using UDDI Version 3 to replace JAXR technologies. </p>. </div>
@@ -87,7 +88,7 @@
   customVariables:
   - name: DetectRemoteBundleRepositoriesJava_0_packages
     nameOfCaptureGroup: DetectRemoteBundleRepositoriesJava_0_packages
-    pattern: (?P<DetectRemoteBundleRepositoriesJava_0_packages>org.osgi.service.repository\.[^.]+)?
+    pattern: (?P<DetectRemoteBundleRepositoriesJava_0_packages>org.osgi.service.repository\.[^.]+)
   description: |-
     The OSGI remote bundle repository service API is unavailable
     <div class="Text">. <p>The OSGI repository service APIs is not supported in Liberty or Liberty Core.</p>. <p>This rule flags java references to APIs in the <code>org.osgi.service.repository</code> package.</p>. </div>
@@ -104,12 +105,13 @@
   ruleID: DetectRemoteBundleRepositoriesJava
   when:
     java.referenced:
+      location: PACKAGE
       pattern: org.osgi.service.repository*
 - category: mandatory
   customVariables:
   - name: DetectRemoteServicesJava_0_packages
     nameOfCaptureGroup: DetectRemoteServicesJava_0_packages
-    pattern: (?P<DetectRemoteServicesJava_0_packages>org.osgi.service.remoteserviceadmin\.[^.]+)?
+    pattern: (?P<DetectRemoteServicesJava_0_packages>org.osgi.service.remoteserviceadmin\.[^.]+)
   description: |-
     The OSGI Remote Service Admin API is unavailable
     <div class="Text">. <p>The OSGI Remote Service Admin is not supported in Liberty or Liberty Core.</p>. <p>This rule flags java references to APIs in the <code>org.osgi.service.remoteserviceadmin</code> package.</p>. </div>
@@ -126,6 +128,7 @@
   ruleID: DetectRemoteServicesJava
   when:
     java.referenced:
+      location: PACKAGE
       pattern: org.osgi.service.remoteserviceadmin*
 - category: mandatory
   customVariables: []
@@ -148,6 +151,7 @@
   ruleID: DetectWSNotificationJava
   when:
     java.referenced:
+      location: PACKAGE
       pattern: org.oasis_open.docs.wsn*
 - category: mandatory
   customVariables: []
@@ -294,6 +298,7 @@
   when:
     or:
     - java.referenced:
+        location: PACKAGE
         pattern: javax.xml.rpc*
     - builtin.xml:
         filepaths:

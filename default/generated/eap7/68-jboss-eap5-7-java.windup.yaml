@@ -181,6 +181,7 @@
   ruleID: jboss-eap5-7-java-08000
   when:
     java.referenced:
+      location: PACKAGE
       pattern: org.jboss.wsf.spi.annotation*
 - category: mandatory
   customVariables: []
@@ -204,6 +205,7 @@
   ruleID: jboss-eap5-7-java-08100
   when:
     java.referenced:
+      location: PACKAGE
       pattern: org.jboss.wsf.spi.binding*
 - category: mandatory
   customVariables: []
@@ -227,6 +229,7 @@
   ruleID: jboss-eap5-7-java-08200
   when:
     java.referenced:
+      location: PACKAGE
       pattern: org.jboss.wsf.spi.management.recording*
 - category: mandatory
   customVariables: []
@@ -250,6 +253,7 @@
   ruleID: jboss-eap5-7-java-08300
   when:
     java.referenced:
+      location: PACKAGE
       pattern: org.jboss.wsf.spi.tools.ant*
 - category: mandatory
   customVariables: []
@@ -273,6 +277,7 @@
   ruleID: jboss-eap5-7-java-08400
   when:
     java.referenced:
+      location: PACKAGE
       pattern: org.jboss.wsf.spi.tools.cmd*
 - category: mandatory
   customVariables: []
@@ -294,6 +299,7 @@
   ruleID: jboss-eap5-7-java-08500
   when:
     java.referenced:
+      location: PACKAGE
       pattern: org.jboss.wsf.spi.tools*
 - category: mandatory
   customVariables: []
@@ -340,6 +346,7 @@
   ruleID: jboss-eap5-7-java-08700
   when:
     java.referenced:
+      location: PACKAGE
       pattern: org.jboss.wsf.common.handler*
 - category: mandatory
   customVariables: []
@@ -363,6 +370,7 @@
   ruleID: jboss-eap5-7-java-08800
   when:
     java.referenced:
+      location: PACKAGE
       pattern: org.jboss.wsf.common.addressing*
 - category: mandatory
   customVariables: []
@@ -407,6 +415,7 @@
   ruleID: jboss-eap5-7-java-09000
   when:
     java.referenced:
+      location: PACKAGE
       pattern: org.jboss.wsf.common*
 - category: mandatory
   customVariables: []

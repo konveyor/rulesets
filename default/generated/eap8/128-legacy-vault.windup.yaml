@@ -13,4 +13,5 @@
   ruleID: legacy-vault-00010
   when:
     builtin.filecontent:
+      filePattern: .*\.(xml|java)
       pattern: '$\{VAULT::'

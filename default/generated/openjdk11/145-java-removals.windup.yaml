@@ -96,9 +96,9 @@
       pattern: javax.security.auth.Policy
 - category: mandatory
   customVariables:
-  - name: method-name
-    nameOfCaptureGroup: method-name
-    pattern: java.lang.SecurityManager.(?P<method-name>(checkAwtEventQueueAccess|checkSystemClipboardAccess|checkTopLevelWindow))?({*})
+  - name: methodName
+    nameOfCaptureGroup: methodName
+    pattern: java.lang.SecurityManager.(?P<methodName>(checkAwtEventQueueAccess|checkSystemClipboardAccess|checkTopLevelWindow))?(.*)
   description: |-
     AWT SecurityManager method java.lang.SecurityManager.{method-name} has been removed in Java 11
     Due to modularisation, the methods `java.lang.SecurityManager.checkAwtEventQueueAccess()`,. `java.lang.SecurityManager.checkSystemClipboardAccess()` and. `java.lang.SecurityManager.checkTopLevelWindow(java.lang.Object)`. have been removed, so that the core SecurityManager class does not depend on the AWT stack.. Replace with a call to `java.lang.SecurityManager.checkPermission(java.security.Permission)` as follows:. `java.lang.SecurityManager.checkAwtEventQueueAccess()` --> `java.lang.SecurityManager.checkPermission(new AWTPermission("accessEventQueue"))`. `java.lang.SecurityManager.checkSystemClipboardAccess()` --> `java.lang.SecurityManager.checkPermission(new AWTPermission("accessClipboard"))`. `java.lang.SecurityManager.checkTopLevelWindow(java.lang.Object) --> java.lang.SecurityManager.checkPermission(new AWTPermission("showWindowWithoutWarningBanner"))`
@@ -123,6 +123,7 @@
   ruleID: java-removals-00040
   when:
     java.referenced:
+      location: METHOD_CALL
       pattern: java.lang.SecurityManager.(checkAwtEventQueueAccess|checkSystemClipboardAccess|checkTopLevelWindow)*
 - category: mandatory
   customVariables: []
@@ -143,6 +144,7 @@
   ruleID: java-removals-00041
   when:
     java.referenced:
+      location: METHOD_CALL
       pattern: java.lang.SecurityManager.checkMemberAccess*
 - category: mandatory
   customVariables: []
@@ -163,6 +165,7 @@
   ruleID: java-removals-00050
   when:
     java.referenced:
+      location: METHOD_CALL
       pattern: java.util.logging.LogManager.addPropertyChangeListener*
 - category: mandatory
   customVariables: []
@@ -183,6 +186,7 @@
   ruleID: java-removals-00060
   when:
     java.referenced:
+      location: METHOD_CALL
       pattern: java.util.logging.LogManager.removePropertyChangeListener*
 - category: mandatory
   customVariables: []
@@ -205,18 +209,22 @@
   when:
     or:
     - java.referenced:
+        location: METHOD_CALL
         pattern: java.util.jar.Pack200.Packer.addPropertyChangeListener*
     - java.referenced:
+        location: METHOD_CALL
         pattern: java.util.jar.Pack200.Packer.removePropertyChangeListener*
     - java.referenced:
+        location: METHOD_CALL
         pattern: java.util.jar.Pack200.Unpacker.addPropertyChangeListener*
     - java.referenced:
+        location: METHOD_CALL
         pattern: java.util.jar.Pack200.Unpacker.removePropertyChangeListener*
 - category: mandatory
   customVariables:
-  - name: method-name
-    nameOfCaptureGroup: method-name
-    pattern: sun.misc.Unsafe.(?P<method-name>(getInt|putInt|getFloat|putFloat|getDouble|putDouble|getBoolean|putBoolean|getObject|putObject|getByte|putByte|getChar|putChar|getShort|putShort|getLong|putLong|fieldOffset|staticFieldBase|tryMonitorEnter|monitorEnter|monitorExit))?({*})
+  - name: methodName
+    nameOfCaptureGroup: methodName
+    pattern: sun.misc.Unsafe.(?P<methodName>(getInt|putInt|getFloat|putFloat|getDouble|putDouble|getBoolean|putBoolean|getObject|putObject|getByte|putByte|getChar|putChar|getShort|putShort|getLong|putLong|fieldOffset|staticFieldBase|tryMonitorEnter|monitorEnter|monitorExit))?(.*)
   description: |-
     Methods in `sun.misc.Unsafe` have been removed
     The `sun.misc.Unsafe` API is scheduled for removal in the long term, and some of its methods have been removed. In short term, please consider the following:. - The `get` and `put` methods have equivalents that take long offsets (OpenJDK 8's version of the removed methods just casts the int offsets and used the long versions).. - `fieldOffset(Field)` should be replaced by `staticFieldOffset(Field)` and `ObjectFieldOffset(Field)`.. - `staticFieldBase(Class)` should be replaced by asking for a specific field with `staticFieldBase(Field)`. The removed method only returned the address of the first static field in the class and relied on the assumption that the JVM stored all statics together, which may not be true.. - `tryMonitorEnter(Object)` and `monitorExit(Object)` can be replaced with use of the Java synchronized primitives, as illustrated in the test changes for JDK-8054494 (see links below).. In the long term, please consider using Variable Handles (see the link below)
@@ -245,12 +253,13 @@
   ruleID: java-removals-00110
   when:
     java.referenced:
+      location: METHOD_CALL
       pattern: sun.misc.Unsafe.(getInt|putInt|getFloat|putFloat|getDouble|putDouble|getBoolean|putBoolean|getObject|putObject|getByte|putByte|getChar|putChar|getShort|putShort|getLong|putLong|fieldOffset|staticFieldBase|tryMonitorEnter|monitorEnter|monitorExit)*
 - category: mandatory
   customVariables:
-  - name: encoder-decoder
-    nameOfCaptureGroup: encoder-decoder
-    pattern: sun.misc.BASE64(?P<encoder-decoder>(Encoder|Decoder))?{*}
+  - name: encoderDecoder
+    nameOfCaptureGroup: encoderDecoder
+    pattern: sun.misc.BASE64(?P<encoderDecoder>(Encoder|Decoder))?.*
   description: |
     The `sun.misc.BASE64{encoder-decoder}` class has been removed
   effort: 1
@@ -264,14 +273,14 @@
     url: https://hg.openjdk.java.net/jdk8/jdk8/jdk/rev/9078c34437ab
   - title: OpenJDK - Original enhancement request
     url: https://bugs.openjdk.java.net/browse/JDK-8006182
-  message: The `sun.misc.BASE64{{encoder-decoder}}` class has been removed.. It can
-    be replaced with `Base64.{{encoder-decoder}}` class instantiated using `java.util.Base64.getMime{{encoder-decoder}}()`
-    method.. For further examples on how to replace the `BASE64{{encoder-decoder}}`
-    class with `Base64.{{encoder-decoder}}` one, refer to the "Code example" link
-    below.
+  message: The `sun.misc.BASE64{{encoderDecoder}}` class has been removed.. It can
+    be replaced with `Base64.{{encoderDecoder}}` class instantiated using `java.util.Base64.getMime{{encoderDecoder}}()`
+    method.. For further examples on how to replace the `BASE64{{encoderDecoder}}`
+    class with `Base64.{{encoderDecoder}}` one, refer to the "Code example" link below.
   ruleID: java-removals-00120
   when:
     java.referenced:
+      location: PACKAGE
       pattern: sun.misc.BASE64(Encoder|Decoder)*
 - category: mandatory
   customVariables: []
@@ -294,8 +303,10 @@
   when:
     or:
     - java.referenced:
+        location: METHOD_CALL
         pattern: java.lang.System.runFinalizersOnExit*
     - java.referenced:
+        location: METHOD_CALL
         pattern: java.lang.Runtime.runFinalizersOnExit*
 - category: mandatory
   customVariables: []

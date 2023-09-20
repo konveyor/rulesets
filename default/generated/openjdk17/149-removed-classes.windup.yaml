@@ -1,8 +1,8 @@
 - category: mandatory
   customVariables:
-  - name: class-name
-    nameOfCaptureGroup: class-name
-    pattern: java.util.jar.(?P<class-name>(Pack200|Pack200.Packer|Pack200.Unpacker))?
+  - name: className
+    nameOfCaptureGroup: className
+    pattern: java.util.jar.(?P<className>(Pack200|Pack200.Packer|Pack200.Unpacker))
   description: |-
     The java.util.jar.{class-name} class has been removed
     After being deprecated in OpenJDK 11, the pack200,. unpack200 and corresponding java.util.jar.Pack200* classes were removed in OpenJDK 14.. Please look into switching to either the jlink tool or the jpackage tool to create. application-specific runtimes with an optimized factor.

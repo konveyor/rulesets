@@ -16,6 +16,7 @@
   ruleID: javaee-to-jakarta-namespaces-00001
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: http://xmlns.jcp.org/xml/ns/javaee
 - category: mandatory
   customVariables: []
@@ -35,6 +36,7 @@
   ruleID: javaee-to-jakarta-namespaces-00002
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: http://xmlns.jcp.org/xml/ns/persistence
 - category: mandatory
   customVariables: []
@@ -54,6 +56,7 @@
   ruleID: javaee-to-jakarta-namespaces-00003
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: http://xmlns.jcp.org/xml/ns/validation
 - category: mandatory
   customVariables: []
@@ -73,6 +76,7 @@
   ruleID: javaee-to-jakarta-namespaces-00004
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: javaee_web_services_metadata_handler_2_0.xsd
 - category: mandatory
   customVariables: []
@@ -91,6 +95,7 @@
   ruleID: javaee-to-jakarta-namespaces-00005
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: batchXML_1_0.xsd
 - category: mandatory
   customVariables: []
@@ -110,6 +115,7 @@
   ruleID: javaee-to-jakarta-namespaces-00006
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: beans_1_1.xsd
 - category: mandatory
   customVariables: []
@@ -129,6 +135,7 @@
   ruleID: javaee-to-jakarta-namespaces-00007
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: beans_2_0.xsd
 - category: mandatory
   customVariables: []
@@ -148,6 +155,7 @@
   ruleID: javaee-to-jakarta-namespaces-00008
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: jobXML_1_0.xsd
 - category: mandatory
   customVariables: []
@@ -167,6 +175,7 @@
   ruleID: javaee-to-jakarta-namespaces-00009
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: application_7.xsd
 - category: mandatory
   customVariables: []
@@ -186,6 +195,7 @@
   ruleID: javaee-to-jakarta-namespaces-00010
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: application_8.xsd
 - category: mandatory
   customVariables: []
@@ -205,6 +215,7 @@
   ruleID: javaee-to-jakarta-namespaces-00011
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: application-client_7.xsd
 - category: mandatory
   customVariables: []
@@ -224,6 +235,7 @@
   ruleID: javaee-to-jakarta-namespaces-00012
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: application-client_8.xsd
 - category: mandatory
   customVariables: []
@@ -243,6 +255,7 @@
   ruleID: javaee-to-jakarta-namespaces-00013
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: connector_1_7.xsd
 - category: mandatory
   customVariables: []
@@ -262,6 +275,7 @@
   ruleID: javaee-to-jakarta-namespaces-00014
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: ejb-jar_3_2.xsd
 - category: mandatory
   customVariables: []
@@ -281,6 +295,7 @@
   ruleID: javaee-to-jakarta-namespaces-00015
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: javaee_web_services_1_4.xsd
 - category: mandatory
   customVariables: []
@@ -300,6 +315,7 @@
   ruleID: javaee-to-jakarta-namespaces-00016
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: permissions_7.xsd
 - category: mandatory
   customVariables: []
@@ -319,6 +335,7 @@
   ruleID: javaee-to-jakarta-namespaces-00017
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: web-app_3_1.xsd
 - category: mandatory
   customVariables: []
@@ -338,6 +355,7 @@
   ruleID: javaee-to-jakarta-namespaces-00018
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: web-app_4_0.xsd
 - category: mandatory
   customVariables: []
@@ -357,6 +375,7 @@
   ruleID: javaee-to-jakarta-namespaces-00019
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: web-fragment_3_1.xsd
 - category: mandatory
   customVariables: []
@@ -376,6 +395,7 @@
   ruleID: javaee-to-jakarta-namespaces-00020
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: web-fragment_4_0.xsd
 - category: mandatory
   customVariables: []
@@ -395,6 +415,7 @@
   ruleID: javaee-to-jakarta-namespaces-00021
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: web-facesconfig_2_2.xsd
 - category: mandatory
   customVariables: []
@@ -414,6 +435,7 @@
   ruleID: javaee-to-jakarta-namespaces-00022
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: web-facesconfig_2_3.xsd
 - category: mandatory
   customVariables: []
@@ -433,6 +455,7 @@
   ruleID: javaee-to-jakarta-namespaces-00023
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: web-facelettaglibrary_2_2.xsd
 - category: mandatory
   customVariables: []
@@ -452,6 +475,7 @@
   ruleID: javaee-to-jakarta-namespaces-00024
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: web-facelettaglibrary_2_3.xsd
 - category: mandatory
   customVariables: []
@@ -470,6 +494,7 @@
   ruleID: javaee-to-jakarta-namespaces-00025
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: web-partialresponse_2_2.xsd
 - category: mandatory
   customVariables: []
@@ -488,6 +513,7 @@
   ruleID: javaee-to-jakarta-namespaces-00026
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: web-partialresponse_2_3.xsd
 - category: mandatory
   customVariables: []
@@ -507,6 +533,7 @@
   ruleID: javaee-to-jakarta-namespaces-00027
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: web-jsptaglibrary_2_1.xsd
 - category: mandatory
   customVariables: []
@@ -526,6 +553,7 @@
   ruleID: javaee-to-jakarta-namespaces-00028
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: validation-mapping-2.0.xsd
 - category: mandatory
   customVariables: []
@@ -545,6 +573,7 @@
   ruleID: javaee-to-jakarta-namespaces-00029
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: validation-configuration-2.0.xsd
 - category: mandatory
   customVariables: []
@@ -564,6 +593,7 @@
   ruleID: javaee-to-jakarta-namespaces-00030
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: persistence_2_1.xsd
 - category: mandatory
   customVariables: []
@@ -583,6 +613,7 @@
   ruleID: javaee-to-jakarta-namespaces-00031
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: orm_2_1.xsd
 - category: mandatory
   customVariables: []
@@ -602,6 +633,7 @@
   ruleID: javaee-to-jakarta-namespaces-00032
   when:
     builtin.filecontent:
+      filePattern: .*\.xml
       pattern: orm_2_2.xsd
 - category: mandatory
   customVariables: []
@@ -620,6 +652,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')2.1("|')
       from: xml-file
     - as: xml-file
@@ -644,6 +677,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')7("|')
       from: xml-file
     - as: xml-file
@@ -669,6 +703,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')1.1("|')
       from: xml-file
     - as: xml-file
@@ -694,6 +729,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')2.0("|')
       from: xml-file
     - as: xml-file
@@ -719,6 +755,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')7("|')
       from: xml-file
     - as: xml-file
@@ -744,6 +781,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')8("|')
       from: xml-file
     - as: xml-file
@@ -769,6 +807,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')7("|')
       from: xml-file
     - as: xml-file
@@ -794,6 +833,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')8("|')
       from: xml-file
     - as: xml-file
@@ -819,6 +859,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')1.7("|')
       from: xml-file
     - as: xml-file
@@ -844,6 +885,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')3.2("|')
       from: xml-file
     - as: xml-file
@@ -869,6 +911,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')1.4("|')
       from: xml-file
     - as: xml-file
@@ -894,6 +937,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')3.1("|')
       from: xml-file
     - as: xml-file
@@ -919,6 +963,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')4.0("|')
       from: xml-file
     - as: xml-file
@@ -944,6 +989,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')3.1("|')
       from: xml-file
     - as: xml-file
@@ -969,6 +1015,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')4.0("|')
       from: xml-file
     - as: xml-file
@@ -994,6 +1041,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')2.2("|')
       from: xml-file
     - as: xml-file
@@ -1019,6 +1067,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')2.3("|')
       from: xml-file
     - as: xml-file
@@ -1044,6 +1093,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')2.2("|')
       from: xml-file
     - as: xml-file
@@ -1069,6 +1119,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')2.3("|')
       from: xml-file
     - as: xml-file
@@ -1094,6 +1145,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')2.1("|')
       from: xml-file
     - as: xml-file
@@ -1119,6 +1171,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')2.0("|')
       from: xml-file
     - as: xml-file
@@ -1144,6 +1197,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')2.0("|')
       from: xml-file
     - as: xml-file
@@ -1169,6 +1223,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')2.1("|')
       from: xml-file
     - as: xml-file
@@ -1194,6 +1249,7 @@
     or:
     - as: result
       builtin.filecontent:
+        filePattern: ""
         pattern: version=("|')2.2("|')
       from: xml-file
     - as: xml-file

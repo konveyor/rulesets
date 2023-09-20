@@ -21,10 +21,13 @@
     or:
     - as: default
       java.referenced:
+        location: PACKAGE
         pattern: javax.xml.rpc*
     - as: default
       java.referenced:
+        location: PACKAGE
         pattern: org.apache.xmlrpc*
     - as: default
       java.referenced:
+        location: PACKAGE
         pattern: redstone.xmlrpc*

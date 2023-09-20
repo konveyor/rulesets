@@ -69,6 +69,8 @@
   when:
     or:
     - java.referenced:
+        location: METHOD_CALL
         pattern: javax.servlet.http.HttpSession.setAttribute*
     - java.referenced:
+        location: METHOD_CALL
         pattern: javax.servlet.http.HttpSession.putValue*

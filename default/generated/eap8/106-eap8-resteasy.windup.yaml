@@ -16,8 +16,10 @@
   when:
     or:
     - builtin.filecontent:
+        filePattern: jboss-deployment-structure\.xml
         pattern: org.jboss.resteasy.resteasy-jettison-provider
     - builtin.filecontent:
+        filePattern: MANIFEST\.MF
         pattern: org.jboss.resteasy.resteasy-jettison-provider
 - category: mandatory
   customVariables: []
@@ -56,8 +58,10 @@
   when:
     or:
     - builtin.filecontent:
+        filePattern: jboss-deployment-structure\.xml
         pattern: org.jboss.resteasy.resteasy-yaml-provider
     - builtin.filecontent:
+        filePattern: MANIFEST\.MF
         pattern: org.jboss.resteasy.resteasy-yaml-provider
 - category: mandatory
   customVariables: []
@@ -209,6 +213,7 @@
   ruleID: eap8-resteasy-00010
   when:
     java.referenced:
+      location: PACKAGE
       pattern: org.jboss.resteasy.plugins.interceptors.encoding*
 - category: optional
   customVariables: []
@@ -229,6 +234,8 @@
   when:
     or:
     - builtin.filecontent:
+        filePattern: jboss-deployment-structure\.xml
         pattern: org.jboss.resteasy.resteasy-jaxrs
     - builtin.filecontent:
+        filePattern: MANIFEST\.MF
         pattern: org.jboss.resteasy.resteasy-jaxrs

@@ -47,7 +47,7 @@
   customVariables:
   - name: logger
     nameOfCaptureGroup: logger
-    pattern: weblogic.(?P<logger>(i18n.)?logging.[^N])?{*}
+    pattern: weblogic.(?P<logger>(i18n.)?logging.[^N])?.*
   description: |-
     WebLogic proprietary logging classes
     Oracle WebLogic logging classes should be replaced with SLF4J, Log4J, or Java Logging.. Please refer to the [JBoss EAP migration guide](https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html/Migration_Guide/chap-Migrate_Your_Application.html#sect-Logging_Changes) for more information on this.
@@ -66,4 +66,5 @@
   ruleID: weblogic-services-03000
   when:
     java.referenced:
+      location: PACKAGE
       pattern: weblogic.(i18n.)?logging.[^N]*

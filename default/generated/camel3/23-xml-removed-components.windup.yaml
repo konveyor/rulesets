@@ -172,7 +172,8 @@
   when:
     or:
     - builtin.filecontent:
-        pattern: from("twitter-streaming:*
+        filePattern: .*\.java
+        pattern: from("twitter-streaming:.*
     - builtin.xml:
         namespaces:
           c: http://camel.apache.org/schema/spring

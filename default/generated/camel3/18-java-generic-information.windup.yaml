@@ -21,7 +21,7 @@
   customVariables:
   - name: SupportClass
     nameOfCaptureGroup: SupportClass
-    pattern: org.apache.camel.impl.(?P<SupportClass>(BaseSelectorProducer|AsyncCallbackToCompletableFutureAdapter|BridgeExceptionHandlerToErrorHandler|DefaultAsyncProducer|DefaultComponent|DefaultConsumer|DefaultEndpoint|DefaultExchange|DefaultExchangeHolder|DefaultHeaderFilterStrategy|DefaultMessage|DefaultMessageHistory|DefaultPollingConsumerPollStrategy|DefaultPollingEndpoint|DefaultProducer|DefaultScheduledPollConsumer|DefaultScheduledPollConsumerScheduler|DefaultThreadPoolFactory|EventDrivenPollingConsumer|ExpressionAdapter|ExpressionComparator|ExpressionListComparator|ExpressionSupport|HeaderFilterStrategyComponent|HeaderSelectorProducer|LoggingExceptionHandler|MessageSupport|PollingConsumerSupport|ProcessorEndpoint|ProcessorPollingConsumer|ScheduledBatchPollingConsumer|ScheduledPollConsumer|ScheduledPollEndpoint|SimpleRegistry|SimpleUuidGeneratorSynchronizationAdapter|SynchronousDelegateProducer))?
+    pattern: org.apache.camel.impl.(?P<SupportClass>(BaseSelectorProducer|AsyncCallbackToCompletableFutureAdapter|BridgeExceptionHandlerToErrorHandler|DefaultAsyncProducer|DefaultComponent|DefaultConsumer|DefaultEndpoint|DefaultExchange|DefaultExchangeHolder|DefaultHeaderFilterStrategy|DefaultMessage|DefaultMessageHistory|DefaultPollingConsumerPollStrategy|DefaultPollingEndpoint|DefaultProducer|DefaultScheduledPollConsumer|DefaultScheduledPollConsumerScheduler|DefaultThreadPoolFactory|EventDrivenPollingConsumer|ExpressionAdapter|ExpressionComparator|ExpressionListComparator|ExpressionSupport|HeaderFilterStrategyComponent|HeaderSelectorProducer|LoggingExceptionHandler|MessageSupport|PollingConsumerSupport|ProcessorEndpoint|ProcessorPollingConsumer|ScheduledBatchPollingConsumer|ScheduledPollConsumer|ScheduledPollEndpoint|SimpleRegistry|SimpleUuidGeneratorSynchronizationAdapter|SynchronousDelegateProducer))
   description: |
     `org.apache.camel.impl.{SupportClass}` has been moved
   effort: 3
@@ -54,10 +54,12 @@
     or:
     - or:
       - builtin.filecontent:
-          pattern: .zip(*)
+          filePattern: ""
+          pattern: .zip(.*)
         from: routeBuilders
       - builtin.filecontent:
-          pattern: .gzip(*)
+          filePattern: ""
+          pattern: .gzip(.*)
         from: routeBuilders
     - as: routeBuilders
       java.referenced:
@@ -67,7 +69,7 @@
   customVariables:
   - name: registry
     nameOfCaptureGroup: registry
-    pattern: org.apache.camel.impl.(?P<registry>(PropertyPlaceholderDelegateRegistry|CompositeRegistry))?
+    pattern: org.apache.camel.impl.(?P<registry>(PropertyPlaceholderDelegateRegistry|CompositeRegistry))
   description: |
     `org.apache.camel.impl.{registry}` has been removed.
   effort: 1
@@ -108,7 +110,7 @@
   customVariables:
   - name: removed
     nameOfCaptureGroup: removed
-    pattern: org.apache.camel.(?P<removed>(impl.FileWatcherReloadStrategy|support.ReloadStrategySupport))?
+    pattern: org.apache.camel.(?P<removed>(impl.FileWatcherReloadStrategy|support.ReloadStrategySupport))
   description: |
     `org.apache.camel.{removed}` has been removed.
   effort: 1
@@ -179,7 +181,8 @@
   ruleID: java-generic-information-00010
   when:
     builtin.filecontent:
-      pattern: .includeRoutes(*)
+      filePattern: .*\.java
+      pattern: .includeRoutes(.*)
 - category: mandatory
   customVariables: []
   description: |-
@@ -241,7 +244,7 @@
   customVariables:
   - name: annotation
     nameOfCaptureGroup: annotation
-    pattern: org.apache.camel.(?P<annotation>(InvokeOnHeaders|InvokeOnHeader))?
+    pattern: org.apache.camel.(?P<annotation>(InvokeOnHeaders|InvokeOnHeader))
   description: |
     Annotation `org.apache.camel.{annotation}` has been moved
   effort: 1
@@ -399,7 +402,7 @@
   customVariables:
   - name: moved
     nameOfCaptureGroup: moved
-    pattern: org.apache.camel.util.(?P<moved>(AsyncProcessorHelper|AsyncProcessorConverterHelper|EndpointHelper|EventHelper|ExchangeHelper|GZIPHelper|JsonSchemaHelper|MessageHelper|PlatformHelper|PredicateAssertHelper|ResolverHelper|ResourceHelper|UnitOfWorkHelper))?
+    pattern: org.apache.camel.util.(?P<moved>(AsyncProcessorHelper|AsyncProcessorConverterHelper|EndpointHelper|EventHelper|ExchangeHelper|GZIPHelper|JsonSchemaHelper|MessageHelper|PlatformHelper|PredicateAssertHelper|ResolverHelper|ResourceHelper|UnitOfWorkHelper))
   description: |
     `org.apache.camel.util.{moved}` has been moved.
   effort: 1
@@ -637,7 +640,7 @@
   customVariables:
   - name: method
     nameOfCaptureGroup: method
-    pattern: org.apache.camel.CamelContext.(?P<method>(getManagedCamelContext|getManagedProcessor|getManagedRoute))?({*})
+    pattern: org.apache.camel.CamelContext.(?P<method>(getManagedCamelContext|getManagedProcessor|getManagedRoute))?(.*)
   description: |
     The methods on `CamelContext` that are related to JMX has been moved into a new `ManagedCamelContext` interface present in the `org.apache.camel:camel-management-api` artifact
   effort: 1
@@ -695,7 +698,7 @@
   customVariables:
   - name: class
     nameOfCaptureGroup: class
-    pattern: org.apache.camel.(?P<class>(Consume|EndpointInject|Produce))?
+    pattern: org.apache.camel.(?P<class>(Consume|EndpointInject|Produce))
   description: |
     @{class}: `uri` attribute has been deprecated
   effort: 0
@@ -717,7 +720,7 @@
   customVariables:
   - name: class
     nameOfCaptureGroup: class
-    pattern: org.apache.camel.(?P<class>(Consume|EndpointInject|Produce))?
+    pattern: org.apache.camel.(?P<class>(Consume|EndpointInject|Produce))
   description: |
     @{class}: `ref` attribute has been removed
   effort: 1
@@ -738,7 +741,7 @@
   customVariables:
   - name: method
     nameOfCaptureGroup: method
-    pattern: org.apache.camel.CamelContext.(?P<method>(getComponentParameterJsonSchema|getDataFormatParameterJsonSchema|getLanguageParameterJsonSchema|getEipParameterJsonSchema))?({*})
+    pattern: org.apache.camel.CamelContext.(?P<method>(getComponentParameterJsonSchema|getDataFormatParameterJsonSchema|getLanguageParameterJsonSchema|getEipParameterJsonSchema))?(.*)
   description: |
     The methods on `CamelContext` that are related to the catalog have been moved into a new `CatalogCamelContext` interface
   effort: 1
@@ -760,7 +763,7 @@
   customVariables:
   - name: method
     nameOfCaptureGroup: method
-    pattern: org.apache.camel.CamelContext.(?P<method>(loadRoutesDefinition|loadRestsDefinition))?({*})
+    pattern: org.apache.camel.CamelContext.(?P<method>(loadRoutesDefinition|loadRestsDefinition))?(.*)
   description: |
     The duplicate method `org.apache.camel.CamelContext.{method}` has been removed
   effort: 1
@@ -782,7 +785,7 @@
   customVariables:
   - name: method
     nameOfCaptureGroup: method
-    pattern: org.apache.camel.CamelContext.(?P<method>(getRouteDefinitions|getRouteDefinition|addRouteDefinitions|addRouteDefinition|removeRouteDefinitions|removeRouteDefinition|getRestDefinitions|addRestDefinitions|setDataFormats|getDataFormats|resolveDataFormatDefinition|getProcessorDefinition|setValidators|getHystrixConfiguration|setHystrixConfiguration|setHystrixConfigurations|addHystrixConfiguration|getValidators|setTransformers|getTransformers|addServiceCallConfiguration|setServiceCallConfigurations|setServiceCallConfiguration|getServiceCallConfiguration))?({*})
+    pattern: org.apache.camel.CamelContext.(?P<method>(getRouteDefinitions|getRouteDefinition|addRouteDefinitions|addRouteDefinition|removeRouteDefinitions|removeRouteDefinition|getRestDefinitions|addRestDefinitions|setDataFormats|getDataFormats|resolveDataFormatDefinition|getProcessorDefinition|setValidators|getHystrixConfiguration|setHystrixConfiguration|setHystrixConfigurations|addHystrixConfiguration|getValidators|setTransformers|getTransformers|addServiceCallConfiguration|setServiceCallConfigurations|setServiceCallConfiguration|getServiceCallConfiguration))?(.*)
   description: |
     The methods on `CamelContext` that are related to the routes model have been moved into a new `Model` interface
   effort: 1
@@ -805,7 +808,7 @@
   customVariables:
   - name: method
     nameOfCaptureGroup: method
-    pattern: org.apache.camel.CamelContext.(?P<method>(setupRoutes|isSetupRoutes|getRouteStartupOrder|getManagementMBeanAssembler|addInterceptStrategy|getInterceptStrategies|getErrorHandlerExecutorService|getDataFormatResolver|setDataFormatResolver|getDefaultFactoryFinder|setFactoryFinderResolver|getFactoryFinder|getPackageScanClassResolver|setPackageScanClassResolver|setNodeIdFactory|getNodeIdFactory|getAsyncProcessorAwaitManager|setAsyncProcessorAwaitManager|getProcessorFactory|setProcessorFactory|getUnitOfWorkFactory|setUnitOfWorkFactory|getModelJAXBContextFactory|setModelJAXBContextFactory|getLogListeners|addLogListener))?({*})
+    pattern: org.apache.camel.CamelContext.(?P<method>(setupRoutes|isSetupRoutes|getRouteStartupOrder|getManagementMBeanAssembler|addInterceptStrategy|getInterceptStrategies|getErrorHandlerExecutorService|getDataFormatResolver|setDataFormatResolver|getDefaultFactoryFinder|setFactoryFinderResolver|getFactoryFinder|getPackageScanClassResolver|setPackageScanClassResolver|setNodeIdFactory|getNodeIdFactory|getAsyncProcessorAwaitManager|setAsyncProcessorAwaitManager|getProcessorFactory|setProcessorFactory|getUnitOfWorkFactory|setUnitOfWorkFactory|getModelJAXBContextFactory|setModelJAXBContextFactory|getLogListeners|addLogListener))?(.*)
   description: |
     The methods on `CamelContext` that are intended for advanced use cases have been moved into a new `ExtendedCamelContext` interface
   effort: 1

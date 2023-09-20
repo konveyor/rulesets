@@ -12,6 +12,7 @@
   - JRun
   when:
     java.referenced:
+      location: PACKAGE
       pattern: jrun*
 - customVariables: []
   labels:
@@ -27,4 +28,5 @@
   - JRunX
   when:
     java.referenced:
+      location: PACKAGE
       pattern: jrunx*

@@ -2,7 +2,7 @@
   customVariables:
   - name: methods_param
     nameOfCaptureGroup: methods_param
-    pattern: (?P<methods_param>(org.hibernate.usertype.UserVersionType.next|org.hibernate.type.VersionType.next|org.hibernate.type.SingleColumnType.set|org.hibernate.type.AbstractStandardBasicType.set|org.hibernate.type.Type.resolve|org.hibernate.usertype.UserVersionType.seed|org.hibernate.type.VersionType.seed|org.hibernate.collection.spi.PersistentCollection.setCurrentSession|org.hibernate.type.ProcedureParameterNamedBinder.nullSafeSet|org.hibernate.type.Type.nullSafeSet|org.hibernate.usertype.UserType.nullSafeSet|org.hibernate.usertype.CompositeUserType.nullSafeSet|org.hibernate.type.Type.beforeAssemble|org.hibernate.type.AbstractStandardBasicType.nullSafeGet|org.hibernate.type.Type.nullSafeGet|org.hibernate.type.SingleColumnType.nullSafeGet|org.hibernate.usertype.UserType.nullSafeGet|org.hibernate.usertype.CompositeUserType.nullSafeGet|org.hibernate.type.Type.replace|org.hibernate.usertype.CompositeUserType.replace|org.hibernate.usertype.UserCollectionType.replaceElements|org.hibernate.collection.spi.PersistentCollection.unsetSession|org.hibernate.type.Type.hydrate|org.hibernate.type.Type.semiResolve|org.hibernate.usertype.CompositeUserType.assemble|org.hibernate.type.Type.assemble|org.hibernate.usertype.UserCollectionType.instantiate|org.hibernate.usertype.CompositeUserType.disassemble|org.hibernate.type.Type.disassemble|org.hibernate.type.ProcedureParameterExtractionAware.extract|org.hibernate.type.Type.isDirty|org.hibernate.type.Type.isModified|org.hibernate.type.SingleColumnType.get|org.hibernate.type.AbstractStandardBasicType.get|org.hibernate.usertype.UserCollectionType.wrap))?({*}org.hibernate.engine.spi.SessionImplementor{*})
+    pattern: (?P<methods_param>(org.hibernate.usertype.UserVersionType.next|org.hibernate.type.VersionType.next|org.hibernate.type.SingleColumnType.set|org.hibernate.type.AbstractStandardBasicType.set|org.hibernate.type.Type.resolve|org.hibernate.usertype.UserVersionType.seed|org.hibernate.type.VersionType.seed|org.hibernate.collection.spi.PersistentCollection.setCurrentSession|org.hibernate.type.ProcedureParameterNamedBinder.nullSafeSet|org.hibernate.type.Type.nullSafeSet|org.hibernate.usertype.UserType.nullSafeSet|org.hibernate.usertype.CompositeUserType.nullSafeSet|org.hibernate.type.Type.beforeAssemble|org.hibernate.type.AbstractStandardBasicType.nullSafeGet|org.hibernate.type.Type.nullSafeGet|org.hibernate.type.SingleColumnType.nullSafeGet|org.hibernate.usertype.UserType.nullSafeGet|org.hibernate.usertype.CompositeUserType.nullSafeGet|org.hibernate.type.Type.replace|org.hibernate.usertype.CompositeUserType.replace|org.hibernate.usertype.UserCollectionType.replaceElements|org.hibernate.collection.spi.PersistentCollection.unsetSession|org.hibernate.type.Type.hydrate|org.hibernate.type.Type.semiResolve|org.hibernate.usertype.CompositeUserType.assemble|org.hibernate.type.Type.assemble|org.hibernate.usertype.UserCollectionType.instantiate|org.hibernate.usertype.CompositeUserType.disassemble|org.hibernate.type.Type.disassemble|org.hibernate.type.ProcedureParameterExtractionAware.extract|org.hibernate.type.Type.isDirty|org.hibernate.type.Type.isModified|org.hibernate.type.SingleColumnType.get|org.hibernate.type.AbstractStandardBasicType.get|org.hibernate.usertype.UserCollectionType.wrap))?(.*org.hibernate.engine.spi.SessionImplementor.*)
   description: |-
     Hibernate 5.3 - SessionImplementor parameter changed to SharedSessionContractImplementor
     `org.hibernate.engine.spi.SessionImplementor` parameter has to be changed to `org.hibernate.engine.spi.SharedSessionContractImplementor`.
@@ -71,7 +71,7 @@
       |type.SerializationException|service.spi.ServiceException|SessionException|StaleStateException|boot.registry.selector.spi.StrategySelectionException
       |context.TenantIdentifierMismatchException|jdbc.TooManyRowsAffectedException|TransactionException|resource.transaction.TransactionRequiredForJoinException
       |TransientObjectException|TypeMismatchException|cache.spi.access.UnknownAccessTypeException|persister.spi.UnknownPersisterException|UnknownProfileException
-      |service.UnknownServiceException|service.UnknownUnwrapTypeException|UnresolvableObjectException|UnsupportedLockAttemptException|WrongClassException))?
+      |service.UnknownServiceException|service.UnknownUnwrapTypeException|UnresolvableObjectException|UnsupportedLockAttemptException|WrongClassException))
   description: |-
     Hibernate 5.3 - Exception Handling
     If the `SessionFactory` is built via Hibernate’s native bootstrapping and `org.hibernate.HibernateException` or a subclass is referenced by the application. then set `hibernate.native_exception_handling_51_compliance` configuration property to `true`.
@@ -132,7 +132,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.engine.spi.SessionFactoryImplementor.getQueryCache()
+      pattern: org.hibernate.engine.spi.SessionFactoryImplementor.getQueryCache*
 - category: mandatory
   customVariables: []
   description: |-
@@ -178,7 +178,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.engine.spi.SessionFactoryImplementor.getUpdateTimestampsCache()
+      pattern: org.hibernate.engine.spi.SessionFactoryImplementor.getUpdateTimestampsCache*
 - category: mandatory
   customVariables: []
   description: |-
@@ -297,12 +297,12 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.engine.spi.SessionFactoryImplementor.getAllSecondLevelCacheRegions()
+      pattern: org.hibernate.engine.spi.SessionFactoryImplementor.getAllSecondLevelCacheRegions*
 - category: mandatory
   customVariables:
   - name: className
     nameOfCaptureGroup: className
-    pattern: org.hibernate.(?P<className>(cache.RegionFactory|cache.spi.RegionFactory|cache.spi.AbstractRegionFactory|testing.cache.CachingRegionFactory|cache.spi.support.RegionFactoryTemplate|cache.ehcache.EhCacheRegionFactory|cache.infinispan.InfinispanRegionFactory|cache.infinispan.JndiInfinispanRegionFactory|cache.internal.NoCachingRegionFactory|cache.ehcache.SingletonEhCacheRegionFactory))?
+    pattern: org.hibernate.(?P<className>(cache.RegionFactory|cache.spi.RegionFactory|cache.spi.AbstractRegionFactory|testing.cache.CachingRegionFactory|cache.spi.support.RegionFactoryTemplate|cache.ehcache.EhCacheRegionFactory|cache.infinispan.InfinispanRegionFactory|cache.infinispan.JndiInfinispanRegionFactory|cache.internal.NoCachingRegionFactory|cache.ehcache.SingletonEhCacheRegionFactory))
   description: |-
     Hibernate 5.3 - RegionFactory usage
     Review usage of classes in `org.hibernate.cache.spi.RegionFactory`, as SPIs for this class has changed.. See Javadoc for `org.hibernate.cache.spi.RegionFactory` for details.
@@ -361,7 +361,7 @@
   customVariables:
   - name: interfaces
     nameOfCaptureGroup: interfaces
-    pattern: org.hibernate.stat.(?P<interfaces>(SecondLevelCacheStatistics|NaturalIdCacheStatistics).)?getEntries()
+    pattern: org.hibernate.stat.(?P<interfaces>(SecondLevelCacheStatistics|NaturalIdCacheStatistics).)?getEntries\(\)
   description: |-
     Hibernate 5.3 - SecondLevelCacheStatistics.getEntries() and NaturalIdCacheStatistics.getEntries(): deprecated methods
     A change to be aware of is accessing cache entries via `SecondLevelCacheStatistics.getEntries()` and `NaturalIdCacheStatistics.getEntries()`.. These methods have been deprecated, however the new caching SPI does not really require caching providers to support this.. As of Hibernate 5.3 these methods inherently return an empty Map (`Collections#emptyMap`).. This has always been something that providers did not implement "correctly" anyway.. Details can be found in HHH-11356 JIRA issue (link below).
@@ -389,7 +389,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.stat.(SecondLevelCacheStatistics|NaturalIdCacheStatistics).getEntries()
+      pattern: org.hibernate.stat.(SecondLevelCacheStatistics|NaturalIdCacheStatistics).getEntries*
 - category: optional
   customVariables: []
   description: |-
@@ -412,7 +412,7 @@
   when:
     java.referenced:
       location: METHOD
-      pattern: '*.getEntries()'
+      pattern: '*.getEntries*'
 - category: optional
   customVariables: []
   description: |-
@@ -435,12 +435,12 @@
   when:
     java.referenced:
       location: METHOD
-      pattern: '*.getEntries()'
+      pattern: '*.getEntries*'
 - category: mandatory
   customVariables:
   - name: packages
     nameOfCaptureGroup: packages
-    pattern: org.hibernate.(?P<packages>(persister|tuple).)?{*}
+    pattern: org.hibernate.(?P<packages>(persister|tuple).)?.*
   description: |
     Hibernate 5.3 - SPI in package org.hibernate.{packages} changed
   effort: 3
@@ -548,7 +548,7 @@
   customVariables:
   - name: className
     nameOfCaptureGroup: className
-    pattern: org.hibernate.(?P<className>(engine.query.spi.NamedParameterDescriptor|engine.query.spi.OrdinalParameterDescriptor|query.procedure.internal.ProcedureParameterImpl|query.internal.QueryParameterImpl|query.internal.QueryParameterNamedImpl).)?getType({*})
+    pattern: org.hibernate.(?P<className>(engine.query.spi.NamedParameterDescriptor|engine.query.spi.OrdinalParameterDescriptor|query.procedure.internal.ProcedureParameterImpl|query.internal.QueryParameterImpl|query.internal.QueryParameterNamedImpl).)?getType(.*)
   description: |
     Hibernate 5.3 - QueryParameter.getType() renamed
   effort: 1
@@ -566,4 +566,5 @@
   ruleID: hibernate51-53-01200
   when:
     java.referenced:
+      location: METHOD_CALL
       pattern: org.hibernate.(engine.query.spi.NamedParameterDescriptor|engine.query.spi.OrdinalParameterDescriptor|query.procedure.internal.ProcedureParameterImpl|query.internal.QueryParameterImpl|query.internal.QueryParameterNamedImpl).getType*

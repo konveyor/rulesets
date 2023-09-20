@@ -10,11 +10,12 @@
   links:
   - title: Jakarta EE
     url: https://jakarta.ee/
-  message: Update the group dependency by replacing the `javax.{{renamed-g}}` groupId
-    with `jakarta.{{renamed-g}}`
+  message: Update the group dependency by replacing the `javax.{{renamedG}}` groupId
+    with `jakarta.{{renamedG}}`
   ruleID: javax-to-jakarta-dependencies-00001
   when:
     builtin.filecontent:
+      filePattern: pom\.xml
       pattern: groupId>javax.(annotation|batch|ejb|el|enterprise.concurrent|enterprise.deploy|faces|interceptor|jms|jws|mail|management.j2ee|resource|security.auth.message|security.jacc|servlet|servlet.jsp|servlet.jsp.jstl|transaction|websocket|ws.rs|xml.bind|xml.registry|xml.rpc|xml.soap|xml.ws)<
 - category: mandatory
   customVariables: []
@@ -28,11 +29,12 @@
   links:
   - title: Jakarta EE
     url: https://jakarta.ee/
-  message: Update artifact dependency by replacing the `javax.{{renamed-a}}-api` artifactId
-    with `jakarta.{{renamed-a}}-api`
+  message: Update artifact dependency by replacing the `javax.{{renamedA}}-api` artifactId
+    with `jakarta.{{renamedA}}-api`
   ruleID: javax-to-jakarta-dependencies-00002
   when:
     builtin.filecontent:
+      filePattern: pom\.xml
       pattern: artifactId>javax.(activation|annotation|batch|ejb|el|enterprise.concurrent|enterprise.deploy|faces|interceptor|jms|jws|mail|management.j2ee|resource|security.auth.message|security.jacc|servlet|servlet.jsp|servlet.jsp.jstl|transaction|websocket|ws.rs|xml.registry|xml.rpc|xml.soap|xml.ws)-api<
 - category: mandatory
   customVariables: []
@@ -51,6 +53,7 @@
   ruleID: javax-to-jakarta-dependencies-00003
   when:
     builtin.filecontent:
+      filePattern: pom\.xml
       pattern: artifactId>jaxb-api<
 - category: mandatory
   customVariables: []
@@ -88,6 +91,7 @@
   ruleID: javax-to-jakarta-dependencies-00005
   when:
     builtin.filecontent:
+      filePattern: pom\.xml
       pattern: artifactId>javax.faces<
 - category: mandatory
   customVariables: []
@@ -106,6 +110,7 @@
   ruleID: javax-to-jakarta-dependencies-00006
   when:
     builtin.filecontent:
+      filePattern: pom\.xml
       pattern: groupId>javax<
 - category: mandatory
   customVariables: []
@@ -125,6 +130,7 @@
   ruleID: javax-to-jakarta-dependencies-00007
   when:
     builtin.filecontent:
+      filePattern: pom\.xml
       pattern: artifactId>javaee-api<
 - category: mandatory
   customVariables: []
@@ -144,4 +150,5 @@
   ruleID: javax-to-jakarta-dependencies-00008
   when:
     builtin.filecontent:
+      filePattern: pom\.xml
       pattern: artifactId>javaee-web-api<

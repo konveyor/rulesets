@@ -1,7 +1,7 @@
 - customVariables:
   - name: classes
     nameOfCaptureGroup: classes
-    pattern: java.lang.(?P<classes>(Thread|ThreadDeath|ThreadGroup|ThreadLocal))?
+    pattern: java.lang.(?P<classes>(Thread|ThreadDeath|ThreadGroup|ThreadLocal))
   description: |
     Threads
     The application uses Thread APIs.
@@ -19,7 +19,7 @@
 - customVariables:
   - name: classes
     nameOfCaptureGroup: classes
-    pattern: java.util.concurrent.(?P<classes>(ExecutorService|Executors|Executor|ScheduledExecutorService))?
+    pattern: java.util.concurrent.(?P<classes>(ExecutorService|Executors|Executor|ScheduledExecutorService))
   description: |
     Threads
     The application uses Concurrent Executors APIs.

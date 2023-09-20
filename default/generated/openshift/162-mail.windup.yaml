@@ -27,10 +27,14 @@
   when:
     or:
     - java.referenced:
+        location: PACKAGE
         pattern: javax.mail*
     - java.referenced:
+        location: PACKAGE
         pattern: com.sun.mail*
     - java.referenced:
+        location: PACKAGE
         pattern: org.simplejavamail*
     - java.referenced:
+        location: PACKAGE
         pattern: org.apache.commons.mail*

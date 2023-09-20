@@ -47,6 +47,7 @@
   - Spring datasource properties detected
   when:
     builtin.filecontent:
+      filePattern: application.*\.(properties|yml|yaml)
       pattern: spring.datasource
 - customVariables: []
   description: |
@@ -62,6 +63,7 @@
   - Spring logging properties detected
   when:
     builtin.filecontent:
+      filePattern: application.*\.(properties|yml|yaml)
       pattern: logging.level.org.springframework
 - customVariables: []
   description: |

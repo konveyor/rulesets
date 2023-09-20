@@ -15,6 +15,7 @@
   - Dependency entries in MANIFEST.MF
   when:
     builtin.filecontent:
+      filePattern: MANIFEST\.MF
       pattern: 'Dependencies:'
 - customVariables: []
   description: "Apache CFX integration with JBoss \nMigrate all functionality specified
@@ -184,12 +185,13 @@
   - HornetQ was removed in EAP 7
   when:
     java.referenced:
+      location: PACKAGE
       pattern: org.hornetq*
 - category: mandatory
   customVariables:
   - name: annotation
     nameOfCaptureGroup: annotation
-    pattern: org.jboss.logging.(?P<annotation>(Cause|Field|FormatWith|LoggingClass|LogMessage|Message|MessageBundle|MessageLogger|Param|Property))?
+    pattern: org.jboss.logging.(?P<annotation>(Cause|Field|FormatWith|LoggingClass|LogMessage|Message|MessageBundle|MessageLogger|Param|Property))
   description: |-
     JBoss deprecated logging annotations
     JBoss Logging annotations in package `org.jboss.logging` are deprecated. You should replace them by the corresponding annotations from package `org.jboss.logging.annotations`. Note that using the `org.jboss.logging.annotations` package requires adding a new dependency: `org.jboss.logging:jboss-logging-annotations`.

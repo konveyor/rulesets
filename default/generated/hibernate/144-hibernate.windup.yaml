@@ -24,7 +24,7 @@
   customVariables:
   - name: method
     nameOfCaptureGroup: method
-    pattern: org.hibernate.criterion.Projections.(?P<method>(count|rowCount|sum))?{*}
+    pattern: org.hibernate.criterion.Projections.(?P<method>(count|rowCount|sum))?.*
   description: |-
     Hibernate 4 - Changed 'Projections' return types
     The return types of the numeric aggregate criteria projections has changed to Long in hibernate 4. This change may introduce conflicts in the code.
@@ -85,6 +85,7 @@
   ruleID: hibernate-04000
   when:
     java.referenced:
+      location: PACKAGE
       pattern: org.hibernate.classic*
 - category: optional
   customVariables: []
@@ -175,7 +176,7 @@
   customVariables:
   - name: classname
     nameOfCaptureGroup: classname
-    pattern: org.hibernate.connection.(?P<classname>[^.]+)?
+    pattern: org.hibernate.connection.(?P<classname>[^.]+)
   description: |-
     Hibernate 4 - Renamed package 'org.hibernate.connection'
     The classes in org.hibernate.connection package was moved to org.hibernate.service.jdbc.connections.internal in Hibernate 4
@@ -191,6 +192,7 @@
   ruleID: hibernate-09000
   when:
     java.referenced:
+      location: PACKAGE
       pattern: org.hibernate.connection*
 - category: optional
   customVariables: []
@@ -214,7 +216,7 @@
   customVariables:
   - name: classname
     nameOfCaptureGroup: classname
-    pattern: net.sf.hibernate.(?P<classname>[^.]+)?
+    pattern: net.sf.hibernate.(?P<classname>[^.]+)
   description: |-
     Hibernate type reference net.sf.hibernate.{classname}
     This is an old Hibernate package name from version 2.x and needs to be migrated to a compatible API to Hibernate 4.x/5.x,. where package name is org.hibernate.
@@ -232,4 +234,5 @@
   - Hibernate 2.x - Renamed package 'net.sf.hibernate'
   when:
     java.referenced:
+      location: PACKAGE
       pattern: net.sf.hibernate*

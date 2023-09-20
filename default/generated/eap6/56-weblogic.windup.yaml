@@ -45,6 +45,7 @@
   ruleID: weblogic-02000
   when:
     java.referenced:
+      location: PACKAGE
       pattern: weblogic.utils.StringUtils*
 - category: mandatory
   customVariables: []
@@ -62,12 +63,13 @@
   ruleID: weblogic-03000
   when:
     java.referenced:
+      location: PACKAGE
       pattern: weblogic.apache.xml*
 - category: mandatory
   customVariables:
   - name: classname
     nameOfCaptureGroup: classname
-    pattern: weblogic.transaction.(?P<classname>(Client)*TransactionManager)?
+    pattern: weblogic.transaction.(?P<classname>(Client)*TransactionManager)
   description: |-
     WebLogic TransactionManager usage
     Replace with the Java EE standard [javax.transaction.TransactionManager](http://docs.oracle.com/javaee/7/api/javax/transaction/TransactionManager.html)
@@ -165,7 +167,7 @@
 - customVariables:
   - name: classname
     nameOfCaptureGroup: classname
-    pattern: weblogic.transaction.(?P<classname>(Client)*TxHelper.)?getTransactionManager()
+    pattern: weblogic.transaction.(?P<classname>(Client)*TxHelper.)?getTransactionManager\(\)
   description: |-
     WebLogic ClientTxHelper
     Look up the Java Enterprise Edition `javax.transaction.TransactionManager` in JBoss EAP using the following code:. ```java. InitialContext context = new InitialContext();. TransactionManager transactionManager =. (TransactionManager)context.lookup("java:jboss/TransactionManager");. ```
@@ -184,7 +186,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: weblogic.transaction.(Client)*TxHelper.getTransactionManager()
+      pattern: weblogic.transaction.(Client)*TxHelper.getTransactionManager*
 - category: mandatory
   customVariables: []
   description: |-
@@ -227,7 +229,8 @@
   ruleID: weblogic-10000
   when:
     java.referenced:
-      pattern: weblogic.jdbc.vendor.oracle.OracleThinClob.getCharacterOutputStream()
+      location: METHOD_CALL
+      pattern: weblogic.jdbc.vendor.oracle.OracleThinClob.getCharacterOutputStream*
 - category: mandatory
   customVariables: []
   description: |-
@@ -308,6 +311,7 @@
   ruleID: weblogic-13000
   when:
     builtin.filecontent:
+      filePattern: MANIFEST\.MF
       pattern: 'Weblogic-Application-Version:'
 - category: mandatory
   customVariables: []
@@ -329,6 +333,7 @@
   ruleID: weblogic-15000
   when:
     builtin.filecontent:
+      filePattern: .*
       pattern: oracle.net.wallet_location
 - category: mandatory
   customVariables: []
@@ -354,6 +359,7 @@
   ruleID: weblogic-016000
   when:
     builtin.filecontent:
+      filePattern: .*\.(java|properties|xml)
       pattern: weblogic.jndi.WLInitialContextFactory
 - category: mandatory
   customVariables: []
@@ -380,4 +386,5 @@
   ruleID: weblogic-017000
   when:
     builtin.filecontent:
+      filePattern: .*\.(java|properties|xml)
       pattern: t3s?://

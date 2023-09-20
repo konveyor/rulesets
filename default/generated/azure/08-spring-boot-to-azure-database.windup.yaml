@@ -28,6 +28,7 @@
   ruleID: spring-boot-to-azure-database-jdbc-01000
   when:
     builtin.filecontent:
+      filePattern: application.*\.(properties|yaml|yml)
       pattern: 'jdbc:'
 - category: potential
   customVariables: []
@@ -57,4 +58,5 @@
   ruleID: spring-boot-to-azure-database-mongodb-02000
   when:
     builtin.filecontent:
+      filePattern: application.*\.(properties|yaml|yml)
       pattern: 'mongodb:'

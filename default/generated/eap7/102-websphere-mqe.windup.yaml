@@ -1,10 +1,10 @@
 - customVariables:
   - name: package
     nameOfCaptureGroup: package
-    pattern: (?P<package>com.ibm(\..*)?\.(mqe).*.)?(?P<type>[^.]+)?
+    pattern: (?P<package>com.ibm(\..*)?\.(mqe).*.)?(?P<type>[^.]+)
   - name: type
     nameOfCaptureGroup: type
-    pattern: (?P<package>com.ibm(\..*)?\.(mqe).*.)?(?P<type>[^.]+)?
+    pattern: (?P<package>com.ibm(\..*)?\.(mqe).*.)?(?P<type>[^.]+)
   description: "IBM MQe client API\nWebSphere MQe client API is used to communicate
     with the MQ server from client-side applications.\n                        For
     JBoss EAP 7, this needs to be replaced with standard Java EE 6 JMS API, or with
@@ -28,7 +28,8 @@
   - IBM MQe client API
   when:
     java.referenced:
-      pattern: com.ibm.*(mqe)**
+      location: PACKAGE
+      pattern: com.ibm.*(mqe)*
 - category: mandatory
   customVariables: []
   description: |

@@ -1,7 +1,7 @@
 - customVariables:
   - name: classes
     nameOfCaptureGroup: classes
-    pattern: javax.ejb.(?P<classes>(Schedule|ScheduleExpression|Schedules|TimedObject|Timeout|Timer|TimerConfig|TimerHandle|TimerService))?
+    pattern: javax.ejb.(?P<classes>(Schedule|ScheduleExpression|Schedules|TimedObject|Timeout|Timer|TimerConfig|TimerHandle|TimerService))
   description: |
     EJB Timer
     The application uses EJB timers.

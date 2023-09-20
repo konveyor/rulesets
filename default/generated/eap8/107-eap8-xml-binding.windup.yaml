@@ -21,8 +21,10 @@
   when:
     or:
     - java.referenced:
+        location: PACKAGE
         pattern: com.sun.xml.bind.api*
     - java.referenced:
+        location: PACKAGE
         pattern: com.sun.xml.bind.v2*
 - category: mandatory
   customVariables: []
@@ -67,6 +69,7 @@
   ruleID: eap8-xml-binding-00003
   when:
     builtin.filecontent:
+      filePattern: .*\.xjb
       pattern: http://java.sun.com/xml/ns/jaxb
 - category: mandatory
   customVariables: []
@@ -102,7 +105,7 @@
   customVariables:
   - name: mapClassname
     nameOfCaptureGroup: mapClassname
-    pattern: javax.xml.bind.JAXBContext.newInstance({*})
+    pattern: javax.xml.bind.JAXBContext.newInstance(.*)
   description: |-
     Searches for implementation class names via properties have been dropped
     Searches for implementation class names through `javax.xml.bind.context.factory` and `javax.xml.bind.JAXBContext` properties have been dropped in Jakarta XML Binding 4.0 for EAP8.. Use of the removed JAXBContext implementation discovery mechanisms should be replaced by one of the supported mechanisms discussed in the links.
@@ -150,7 +153,7 @@
         pattern: javax.xml.bind.Validator
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.xml.bind.JAXBContext.createValidator()
+        pattern: javax.xml.bind.JAXBContext.createValidator*
 - category: potential
   customVariables: []
   description: |-
@@ -175,6 +178,7 @@
   when:
     or:
     - java.referenced:
+        location: METHOD_CALL
         pattern: javax.xml.bind.Marshaller.setAdapter*
 - category: mandatory
   customVariables: []
@@ -224,4 +228,5 @@
   when:
     or:
     - java.referenced:
+        location: METHOD_CALL
         pattern: javax.xml.bind.Marshaller.getAdapter*

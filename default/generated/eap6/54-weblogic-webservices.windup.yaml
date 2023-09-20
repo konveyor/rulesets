@@ -145,8 +145,10 @@
   when:
     or:
     - java.referenced:
+        location: PACKAGE
         pattern: weblogic.wsee.tools.clientgen*
     - java.referenced:
+        location: PACKAGE
         pattern: weblogic.webservice*
 - category: mandatory
   customVariables: []

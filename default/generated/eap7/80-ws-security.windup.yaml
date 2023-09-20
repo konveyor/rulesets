@@ -24,7 +24,7 @@
   customVariables:
   - name: SAMLClassAndPackages
     nameOfCaptureGroup: SAMLClassAndPackages
-    pattern: org.apache.ws.security.saml.ext.(?P<SAMLClassAndPackages>(bean.|builder.|OpenSAMLBootstrap|OpenSAMLUtil|SAMLCallback))?{*}
+    pattern: org.apache.ws.security.saml.ext.(?P<SAMLClassAndPackages>(bean.|builder.|OpenSAMLBootstrap|OpenSAMLUtil|SAMLCallback))?.*
   description: |-
     WS-Security SAML package changed
     Most of the SAML bean objects from the `org.apache.ws.security.saml.ext` package have been moved to the `org.apache.wss4j.common.saml` package.. The application must be changed to reference to the new package.
