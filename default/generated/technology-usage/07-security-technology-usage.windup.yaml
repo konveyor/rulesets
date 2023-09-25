@@ -2,7 +2,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-01000
   tag:
@@ -32,7 +31,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-01100
   tag:
@@ -46,7 +44,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-01200
   tag:
@@ -60,7 +57,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-01300
   tag:
@@ -74,7 +70,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-01400
   tag:
@@ -88,7 +83,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-01500
   tag:
@@ -102,7 +96,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-01600
   tag:
@@ -116,7 +109,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-01700
   tag:
@@ -130,7 +122,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-01800
   tag:
@@ -144,7 +135,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-01900
   tag:
@@ -158,7 +148,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-02000
   tag:
@@ -172,7 +161,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-02100
   tag:
@@ -186,7 +174,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-02200
   tag:
@@ -200,7 +187,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-02300
   tag:
@@ -214,7 +200,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-02400
   tag:
@@ -228,7 +213,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-02500
   tag:
@@ -242,7 +226,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-02600
   tag:
@@ -256,7 +239,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-02700
   tag:
@@ -270,7 +252,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-02800
   tag:
@@ -284,7 +265,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-02900
   tag:
@@ -298,7 +278,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-03000
   tag:
@@ -312,7 +291,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-03100
   tag:
@@ -326,7 +304,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-03200
   tag:
@@ -340,7 +317,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-03300
   tag:
@@ -354,7 +330,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-03400
   tag:
@@ -368,7 +343,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-security-03500
   tag:

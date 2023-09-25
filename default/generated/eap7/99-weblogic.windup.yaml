@@ -7,6 +7,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - scheduler
   - ejb
@@ -35,6 +36,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   links:
   - title: Apache Commons Lang
@@ -54,6 +56,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   links: []
   message: Code using this package should be replaced with code using the org.apache.xml
@@ -75,6 +78,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - transactions
   links:
@@ -96,6 +100,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - transactions
   links: []
@@ -125,6 +130,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - transactions
   links: []
@@ -153,6 +159,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - transactions
   links: []
@@ -173,6 +180,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - transactions
   links: []
@@ -194,6 +202,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - jdbc
   links:
@@ -216,6 +225,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - jdbc
   links:
@@ -238,6 +248,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - logging
   links:
@@ -267,6 +278,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - jdbc
   links:
@@ -292,6 +304,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   links:
   - title: Replace WebLogic side-by-side production redeployment in EAP 6
@@ -320,6 +333,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   links:
   - title: Replace WebLogic Oracle Wallets When Migrating to EAP 6
@@ -342,6 +356,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - configuration
   links:
@@ -368,6 +383,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - configuration
   links:

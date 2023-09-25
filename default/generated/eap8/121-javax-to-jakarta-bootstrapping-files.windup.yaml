@@ -5,8 +5,10 @@
     Replace the bootstrapping file name prefix `javax.` with `jakarta.`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta EE

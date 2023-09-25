@@ -6,6 +6,7 @@
   effort: 0
   labels:
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   - JakartaEE
   - eap8

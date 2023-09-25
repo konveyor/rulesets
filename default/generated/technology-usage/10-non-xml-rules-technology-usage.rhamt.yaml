@@ -2,7 +2,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-02000
   tag:
@@ -16,7 +15,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-05000
   tag:
@@ -30,7 +28,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-06000
   tag:
@@ -44,7 +41,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-12000
   tag:
@@ -58,7 +54,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-13000
   tag:
@@ -72,7 +67,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-14000
   tag:
@@ -86,7 +80,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-17000
   tag:
@@ -100,7 +93,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-18000
   tag:
@@ -114,7 +106,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-19000
   tag:
@@ -128,7 +119,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-20000
   tag:
@@ -142,7 +132,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-21000
   tag:
@@ -156,7 +145,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-22000
   tag:
@@ -170,7 +158,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-23000
   tag:
@@ -184,7 +171,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-24000
   tag:
@@ -198,7 +184,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-25000
   tag:
@@ -212,7 +197,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-26000
   tag:
@@ -226,7 +210,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: non-xml-technology-usage-27000
   tag:

@@ -4,8 +4,10 @@
     javax.{renamed-g} groupId has been replaced by jakarta.{renamed-g}
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta EE
@@ -23,8 +25,10 @@
     javax.{renamed-a} javax.{renamed-a}-api artifactId has been replaced by jakarta.{renamed-a} jakarta.{renamed-a}-api
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta EE
@@ -43,8 +47,10 @@
     Replace the `jaxb-api` artifact dependency with `jakarta.xml.bind-api`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta EE
@@ -62,8 +68,10 @@
     Replace dependency groupId `javax.activation` with `jakarta.activation`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta EE
@@ -81,8 +89,10 @@
     Replace the `javax.faces` artifactId with `jakarta.faces`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta EE
@@ -100,8 +110,10 @@
     Update group dependency by replacing the `javax` groupId with `jakarta.platform`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta EE
@@ -119,8 +131,10 @@
     Update artifact dependency by replacing the `javaee-api` artifactId with `jakarta.jakartaee-api`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta EE
@@ -139,8 +153,10 @@
     Update artifact dependency by replacing the `javaee-web-api` artifactId with `jakarta.jakartaee-web-api`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta EE

@@ -4,9 +4,13 @@
     Hibernate Search library API used in application.
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links: []
@@ -26,9 +30,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -48,9 +56,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -70,9 +82,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -92,9 +108,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -115,9 +135,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -138,9 +162,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -160,9 +188,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -182,9 +214,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -204,9 +240,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -228,9 +268,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -253,9 +297,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -275,9 +323,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -301,9 +353,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -326,9 +382,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -348,9 +408,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -373,9 +437,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -400,9 +468,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   - annotation
@@ -425,9 +497,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -449,9 +525,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -481,9 +561,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -511,9 +595,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -534,9 +622,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -560,9 +652,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -588,9 +684,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -621,9 +721,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -648,9 +752,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -704,9 +812,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -732,9 +844,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -767,9 +883,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -796,9 +916,13 @@
     directly, for example org.apache.lucene:lucene-analyzers-common.
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links: []
@@ -818,9 +942,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   - maven
@@ -844,9 +972,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   - lucene
@@ -874,9 +1006,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -899,9 +1035,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -924,9 +1064,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -948,9 +1092,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -972,9 +1120,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -996,9 +1148,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -1021,9 +1177,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -1044,9 +1204,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -1068,9 +1232,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -1093,9 +1261,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -1118,9 +1290,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:
@@ -1144,9 +1320,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   - lucene
@@ -1172,9 +1352,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   - lucene
@@ -1200,9 +1384,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   - lucene
@@ -1230,9 +1418,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   - lucene
@@ -1258,9 +1450,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   - lucene
@@ -1288,9 +1484,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   - lucene
@@ -1316,9 +1516,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   - lucene
@@ -1346,9 +1550,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   - lucene
@@ -1376,9 +1584,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   - lucene
@@ -1404,9 +1616,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   - lucene
@@ -1432,9 +1648,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   - lucene
@@ -1462,9 +1682,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   - lucene
@@ -1490,9 +1714,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   - lucene
@@ -1521,9 +1749,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   - lucene
@@ -1551,9 +1783,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   - lucene
@@ -1581,9 +1817,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   - lucene
@@ -1608,9 +1848,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate-search4
+  - konveyor.io/source=hibernate-search
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate-search5
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate-search5+
+  - konveyor.io/target=hibernate-search
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate-search
   - hibernate
   links:

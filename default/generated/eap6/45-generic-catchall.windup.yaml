@@ -11,8 +11,8 @@
   - konveyor.io/source=java
   - konveyor.io/source=javaee
   - konveyor.io/source=soa
-  - konveyor.io/target=eap6
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - catchall
   links: []
   message: This is an old Doug Lea Concurrency util type and needs to be migrated
@@ -33,8 +33,8 @@
   - konveyor.io/source=java
   - konveyor.io/source=javaee
   - konveyor.io/source=soa
-  - konveyor.io/target=eap6
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - catchall
   links: []
   message: This type is the backport of java.util.concurrent API, introduced in Java
@@ -47,11 +47,11 @@
       pattern: edu.emory.mathcs.backport.java.util*
 - category: optional
   customVariables:
-  - name: packageRemainder
-    nameOfCaptureGroup: packageRemainder
-    pattern: org.mule.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
   - name: type
     nameOfCaptureGroup: type
+    pattern: org.mule.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
+  - name: packageRemainder
+    nameOfCaptureGroup: packageRemainder
     pattern: org.mule.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
   description: |
     Mule API reference
@@ -60,8 +60,8 @@
   - konveyor.io/source=java
   - konveyor.io/source=javaee
   - konveyor.io/source=soa
-  - konveyor.io/target=eap6
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - catchall
   - mule
   links: []
@@ -87,8 +87,8 @@
   - konveyor.io/source=java
   - konveyor.io/source=javaee
   - konveyor.io/source=soa
-  - konveyor.io/target=eap6
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - catchall
   - mx4j
   links: []
@@ -110,8 +110,8 @@
   - konveyor.io/source=java
   - konveyor.io/source=javaee
   - konveyor.io/source=soa
-  - konveyor.io/target=eap6
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - catchall
   - soa
   - apache-tuscany
@@ -132,8 +132,8 @@
   - konveyor.io/source=java
   - konveyor.io/source=javaee
   - konveyor.io/source=soa
-  - konveyor.io/target=eap6
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - tibco
   - soa
   links: []
@@ -158,8 +158,8 @@
   - konveyor.io/source=java
   - konveyor.io/source=javaee
   - konveyor.io/source=soa
-  - konveyor.io/target=eap6
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - catchall
   - tibco
   links: []
@@ -185,8 +185,8 @@
   - konveyor.io/source=java
   - konveyor.io/source=javaee
   - konveyor.io/source=soa
-  - konveyor.io/target=eap6
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - catchall
   - sap
   links: []
@@ -212,8 +212,8 @@
   - konveyor.io/source=java
   - konveyor.io/source=javaee
   - konveyor.io/source=soa
-  - konveyor.io/target=eap6
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - catchall
   - iona
   links: []
@@ -236,8 +236,8 @@
   - konveyor.io/source=java
   - konveyor.io/source=javaee
   - konveyor.io/source=soa
-  - konveyor.io/target=eap6
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - catchall
   - apache
   links: []
@@ -266,8 +266,8 @@
   - konveyor.io/source=java
   - konveyor.io/source=javaee
   - konveyor.io/source=soa
-  - konveyor.io/target=eap6
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - catchall
   - jboss
   links: []
@@ -288,8 +288,8 @@
   - konveyor.io/source=java
   - konveyor.io/source=javaee
   - konveyor.io/source=soa
-  - konveyor.io/target=eap6
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - catchall
   - jdbc
   links: []

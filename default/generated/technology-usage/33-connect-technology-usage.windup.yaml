@@ -2,7 +2,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01100
   tag:
@@ -27,7 +26,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01101
   tag:
@@ -59,7 +57,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01200
   tag:
@@ -88,7 +85,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01300
   tag:
@@ -122,7 +118,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01400
   tag:
@@ -136,7 +131,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01500
   tag:
@@ -150,7 +144,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01600
   tag:
@@ -164,7 +157,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01700
   tag:
@@ -178,7 +170,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01800
   tag:
@@ -192,7 +183,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-01900
   tag:
@@ -206,7 +196,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-02000
   tag:
@@ -220,7 +209,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-02100
   tag:
@@ -234,7 +222,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-02200
   tag:
@@ -248,7 +235,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-02300
   tag:
@@ -262,7 +248,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-02400
   tag:
@@ -276,7 +261,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-02500
   tag:
@@ -290,7 +274,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-02600
   tag:
@@ -304,7 +287,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-02700
   tag:
@@ -318,7 +300,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: technology-usage-connect-02800
   tag:

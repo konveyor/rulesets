@@ -12,7 +12,9 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   links:
@@ -37,7 +39,9 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   - messaging
@@ -62,7 +66,9 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   - messaging
@@ -88,7 +94,9 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   - messaging
@@ -110,7 +118,9 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   - messaging

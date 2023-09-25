@@ -2,7 +2,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javase-technology-usage-01000
   tag:

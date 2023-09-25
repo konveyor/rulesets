@@ -6,6 +6,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - konveyor.io/source
   - EclipseMicroProfile
   links:
@@ -28,6 +29,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - konveyor.io/source
   - EclipseMicroProfile
   links:
@@ -50,6 +52,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - konveyor.io/source
   - EclipseMicroProfile
   links:
@@ -72,6 +75,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - konveyor.io/source
   - EclipseMicroProfile
   links:
@@ -94,6 +98,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - konveyor.io/source
   - EclipseMicroProfile
   links:

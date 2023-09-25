@@ -4,7 +4,8 @@
      Glassfish specific ejb configuration file used to configure EJBs, map them to jndi names etc.
   labels:
   - konveyor.io/source=glassfish
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - web-app
   - glassfish
   - configuration
@@ -24,7 +25,8 @@
      Glassfish-application  is a Glassfish specific EAR configuration file used to configure security roles, url addresses, JNDI binding etc. This file is glassfish specific and needs to be migrated to application.xml or jboss-app.xml.
   labels:
   - konveyor.io/source=glassfish
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - web-app
   - glassfish
   - configuration

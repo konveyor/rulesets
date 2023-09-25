@@ -1,9 +1,9 @@
 - customVariables:
-  - name: type
-    nameOfCaptureGroup: type
-    pattern: (?P<package>com.ibm(\..*)?\.(mq|wmq).*.)?(?P<type>[^.]+)
   - name: package
     nameOfCaptureGroup: package
+    pattern: (?P<package>com.ibm(\..*)?\.(mq|wmq).*.)?(?P<type>[^.]+)
+  - name: type
+    nameOfCaptureGroup: type
     pattern: (?P<package>com.ibm(\..*)?\.(mq|wmq).*.)?(?P<type>[^.]+)
   description: "IBM MQ client API\nWebSphere MQ client API is used to communicate
     with the MQ server from client-side applications.\n                        For
@@ -12,7 +12,9 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   links:
@@ -43,7 +45,9 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   - messaging
@@ -73,7 +77,9 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   - messaging

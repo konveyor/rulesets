@@ -6,6 +6,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: When a singleton EJB bean class implements `javax.ejb.SessionBean` interface,

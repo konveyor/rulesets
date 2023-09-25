@@ -6,6 +6,7 @@
   effort: 3
   labels:
   - konveyor.io/source=eap7
+  - konveyor.io/source=eap
   - konveyor.io/target=azure-appservice
   - konveyor.io/target=azure-aks
   - password

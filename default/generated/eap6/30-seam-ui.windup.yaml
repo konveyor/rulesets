@@ -10,9 +10,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -45,9 +48,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -71,9 +77,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -102,9 +111,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -133,9 +145,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -162,9 +177,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -192,9 +210,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -221,9 +242,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -250,9 +274,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -282,9 +309,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -311,9 +341,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -340,9 +373,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -369,9 +405,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -398,9 +437,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -427,9 +469,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -456,9 +501,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -485,9 +533,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -514,9 +565,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -543,9 +597,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -572,9 +629,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -601,9 +661,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -633,9 +696,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -665,9 +731,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -697,9 +766,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -729,9 +801,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -760,9 +835,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -791,9 +869,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -824,9 +905,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -855,9 +939,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -886,9 +973,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -916,9 +1006,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -946,9 +1039,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -977,9 +1073,12 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:

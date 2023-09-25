@@ -2,8 +2,10 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/source=websphere
-  - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - commonj
   links:
   - title: Replacement for JSR-236 (Timer Manager) and JSR-237 (Work Manager) in JBoss
@@ -26,8 +28,10 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/source=websphere
-  - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - commonj
   links:
   - title: Java EE 6 Tutorial - Using the Timer Service
@@ -50,8 +54,10 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/source=websphere
-  - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - commonj
   links: []
   message: Commonj Timer Interface is similar to the EJB 3.1 javax.ejb.Timer Interface.
@@ -63,8 +69,10 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/source=websphere
-  - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - commonj
   links:
   - title: Replacement for JSR-236 (Timer Manager) and JSR-237 (Work Manager) in JBoss
@@ -91,8 +99,10 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/source=websphere
-  - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - commonj
   links:
   - title: Ironjacamar WorkManager SPI
@@ -113,8 +123,10 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/source=websphere
-  - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - commonj
   links: []
   message: Replace commonj.work.Work{{part}} with javax.resource.spi.work.Work{{part}}.
@@ -133,8 +145,10 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/source=websphere
-  - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - commonj
   links: []
   message: Replace CommonJ Work related Exception with a javax.resource.spi.work.Work{{subpart}}Exception

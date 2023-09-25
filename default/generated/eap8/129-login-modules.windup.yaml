@@ -6,7 +6,9 @@
   effort: 3
   labels:
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   links:
   - title: How to Configure Server Security
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/how_to_configure_server_security/index

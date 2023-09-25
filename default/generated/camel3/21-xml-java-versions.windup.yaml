@@ -6,7 +6,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Java Versions'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_java_versions
@@ -37,7 +39,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Java Versions'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_java_versions
@@ -68,7 +72,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Java Versions'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_java_versions

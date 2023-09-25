@@ -2,7 +2,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00010
   tag:
@@ -18,7 +17,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00011
   tag:
@@ -39,7 +37,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00012
   tag:
@@ -53,7 +50,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00013
   tag:
@@ -67,7 +63,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00020-javax
   tag:
@@ -84,7 +79,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00020-jakarta
   tag:
@@ -101,7 +95,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00021
   tag:
@@ -115,7 +108,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00030
   tag:
@@ -128,7 +120,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00031
   tag:
@@ -145,7 +136,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00040
   tag:
@@ -162,7 +152,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00050
   tag:
@@ -179,7 +168,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00060
   tag:
@@ -195,7 +183,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00070
   tag:
@@ -215,7 +202,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00080
   tag:
@@ -235,7 +221,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00090
   tag:
@@ -252,7 +237,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00100
   tag:
@@ -269,7 +253,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00110
   tag:
@@ -286,7 +269,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00120
   tag:
@@ -303,7 +285,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00130
   tag:
@@ -317,7 +298,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00140
   tag:
@@ -331,7 +311,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00150
   tag:
@@ -345,7 +324,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00160
   tag:
@@ -359,7 +337,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00170
   tag:
@@ -373,7 +350,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00180
   tag:
@@ -387,7 +363,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00190
   tag:
@@ -401,7 +376,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00200
   tag:
@@ -415,7 +389,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00210
   tag:
@@ -429,7 +402,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00220
   tag:
@@ -443,7 +415,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00230
   tag:
@@ -457,7 +428,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00902
   tag:
@@ -472,7 +442,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00903
   tag:
@@ -487,7 +456,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00905
   tag:
@@ -502,7 +470,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00906
   tag:
@@ -517,7 +484,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00910
   tag:
@@ -532,7 +498,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00911
   tag:
@@ -547,7 +512,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00912
   tag:
@@ -562,7 +526,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00913
   tag:
@@ -577,7 +540,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00914
   tag:
@@ -592,7 +554,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00915
   tag:
@@ -607,7 +568,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00916
   tag:
@@ -622,7 +582,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00917
   tag:
@@ -637,7 +596,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00918
   tag:
@@ -652,7 +610,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00926
   tag:
@@ -667,7 +624,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00927
   tag:
@@ -682,7 +638,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00928
   tag:
@@ -697,7 +652,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00930
   tag:
@@ -712,7 +666,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00931
   tag:
@@ -727,7 +680,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00932
   tag:
@@ -742,7 +694,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00950
   tag:
@@ -756,7 +707,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00951
   tag:
@@ -770,7 +720,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00952
   tag:
@@ -784,7 +733,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00953
   tag:
@@ -798,7 +746,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00954
   tag:
@@ -812,7 +759,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00955
   tag:
@@ -826,7 +772,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00956
   tag:
@@ -840,7 +785,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00957
   tag:
@@ -854,7 +798,6 @@
   labels:
   - konveyor.io/source
   - konveyor.io/target
-  - phase=PostMigrationRulesPhase
   links: []
   ruleID: javaee-technology-usage-00958
   tag:

@@ -6,8 +6,10 @@
   effort: 5
   labels:
   - konveyor.io/source=websphere
-  - konveyor.io/target=eap7
-  - konveyor.io/target=java-ee7
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee7+
+  - konveyor.io/target=java-ee
   - websphere
   - asynchronous
   links:
@@ -33,8 +35,10 @@
   effort: 4
   labels:
   - konveyor.io/source=websphere
-  - konveyor.io/target=eap7
-  - konveyor.io/target=java-ee7
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee7+
+  - konveyor.io/target=java-ee
   - websphere
   - startup
   links:

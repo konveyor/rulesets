@@ -6,6 +6,7 @@
   effort: 5
   labels:
   - konveyor.io/source=eap7
+  - konveyor.io/source=eap
   - konveyor.io/target=azure-appservice
   links:
   - title: Configure a Java app for Azure App Service - Initialize the Java Key Store

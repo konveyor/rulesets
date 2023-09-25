@@ -6,7 +6,9 @@
   effort: 3
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Kafka'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_kafka
@@ -20,7 +22,7 @@
     or:
     - builtin.filecontent:
         filePattern: .*\.java
-        pattern: .to("kafka:{[^"]+}(circularTopicDetection|bridgeEndpoint)=.*
+        pattern: .to\("kafka:{[^"]+}(circularTopicDetection|bridgeEndpoint)=.*
     - java.referenced:
         location: METHOD_CALL
         pattern: org.apache.camel.component.kafka.KafkaConfiguration.(setBridgeEndpoint|setCircularTopicDetection)*

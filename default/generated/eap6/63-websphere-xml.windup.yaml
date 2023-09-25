@@ -5,6 +5,7 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - websphere
   links: []
   ruleID: websphere-xml-01000
@@ -28,6 +29,7 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - websphere
   links:
   - title: Migrate IBM WebSphere Application Server Web Application Extension or Binding
@@ -57,6 +59,7 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - websphere
   links: []
   message: This file contains WebSphere proprietary JSP engine configuration.. To
@@ -87,6 +90,7 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - websphere
   links:
   - title: Configure the EAP 6 Web Subsystem
@@ -117,6 +121,7 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - websphere
   links:
   - title: JAX-WS Web Services
@@ -141,6 +146,7 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - websphere
   links:
   - title: JAX-WS Web Services
@@ -166,6 +172,7 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - websphere
   links:
   - title: IBM WebSphere configuration document descriptions

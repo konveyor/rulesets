@@ -8,6 +8,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   links:
@@ -32,6 +33,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   links:
@@ -58,6 +60,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - performance
@@ -89,6 +92,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - ejb
@@ -125,6 +129,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - ejb
@@ -145,6 +150,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   links: []
@@ -162,6 +168,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   links: []
@@ -179,6 +186,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   links: []
@@ -202,6 +210,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   links: []
@@ -235,6 +244,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   links:
@@ -262,6 +272,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   links:
@@ -289,6 +300,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   links: []
@@ -309,6 +321,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   links: []
@@ -327,6 +340,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   links: []
@@ -350,6 +364,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   links: []
@@ -370,6 +385,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   links:
@@ -394,6 +410,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - ejb

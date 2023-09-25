@@ -7,7 +7,9 @@
   labels:
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/source
   - JakartaEE
   links:
@@ -31,7 +33,9 @@
   labels:
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/source
   - JakartaEE
   links:
@@ -55,7 +59,9 @@
   labels:
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/source
   - JakartaEE
   links:
@@ -78,7 +84,9 @@
   labels:
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/source
   - JakartaEE
   links:
@@ -101,7 +109,9 @@
   labels:
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/source
   - JakartaEE
   links:
@@ -125,7 +135,9 @@
   labels:
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/source
   - JakartaEE
   links:
@@ -149,7 +161,9 @@
   labels:
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/source
   - JakartaEE
   links:
@@ -173,7 +187,9 @@
   labels:
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/source
   - JakartaEE
   links:
@@ -197,7 +213,9 @@
   labels:
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/source
   - JakartaEE
   links:
@@ -222,7 +240,9 @@
   labels:
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/source
   - JakartaEE
   links:
@@ -247,7 +267,9 @@
   labels:
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/source
   - JakartaEE
   links:
@@ -271,7 +293,9 @@
   labels:
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/source
   - JakartaEE
   links:
@@ -295,7 +319,9 @@
   labels:
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/source
   - JakartaEE
   links:
@@ -319,7 +345,9 @@
   labels:
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/source
   - JakartaEE
   links:
@@ -343,7 +371,9 @@
   labels:
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/source
   - JakartaEE
   links:
@@ -367,7 +397,9 @@
   labels:
   - konveyor.io/target=eap7
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/target=jakarta-ee8
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/source
   - JakartaEE
   links:

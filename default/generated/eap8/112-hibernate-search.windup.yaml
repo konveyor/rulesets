@@ -5,8 +5,10 @@
     In Hibernate Search 6, constants are provided through classes whose name ends with Settings. Follow link for more details.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -29,8 +31,10 @@
     This property is not available anymore. To override the default analyzer, define a custom analyzer named default. See link.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -53,8 +57,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.enabled`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -75,8 +81,10 @@
     No direct equivalent in Hibernate Search 6. This property was not documented in Hibernate Search 5. For the specific use case of batch processes, know that upon Hibernate ORM session flushes,. Hibernate Search 6 will automatically turn entities to documents and hold documents in memory until the transaction commit.. See links for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -102,8 +110,10 @@
     AWS configuration properties must change from `hibernate.search.default.elasticsearch.aws.*` to `hibernate.search.backend.aws.*`.. See link for more information about credential configuration changes.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -125,8 +135,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.connection_timeout`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -147,8 +159,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.default.elasticsearch.discovery.default_scheme`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -169,8 +183,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.discovery.enabled`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -191,8 +207,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.discovery.refresh_interval`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -213,8 +231,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.dynamic_mapping` (for global defaults). or `hibernate.search.backend.indexes.<index-name>.dynamic_mapping` (per-index).
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -236,8 +256,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.uris`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -258,8 +280,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.schema_management.minimal_required_status_wait_timeout` (for global defaults). or `hibernate.search.backend.indexes.<index-name>.schema_management.minimal_required_status_wait_timeout` (per-index).
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -282,8 +306,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.schema_management.strategy` (for global defaults). There is no equivalent for per-index configuration.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -305,8 +331,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.max_connections_per_route`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -327,8 +355,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.max_connections`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -349,8 +379,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.password`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -371,8 +403,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.path_prefix`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -393,8 +427,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.read_timeout`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -415,8 +451,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.automatic_indexing.synchronization.strategy` (for global defaults). There is no equivalent for per-index configuration.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -438,8 +476,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.request_timeout`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -460,8 +500,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.schema_management.minimal_required_status` (for global defaults). or `hibernate.search.backend.indexes.<index-name>.schema_management.minimal_required_status` (per-index).
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -484,8 +526,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.username`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -506,8 +550,10 @@
     This property is not available anymore. There is no substitute in Hibernate Search 6.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -528,8 +574,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.directory.type` (for global defaults). or `hibernate.search.backend.indexes.<index-name>.directory.type` (per-index).
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -551,8 +599,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.directory.root` (for global defaults). or `hibernate.search.backend.indexes.<index-name>.directory.root` (per-index).
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -574,8 +624,10 @@
     No equivalent in Hibernate Search 6. The name of an index can still be customized in the mapping, using. @Indexed(name = ...), or with the programmatic equivalent.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -597,8 +649,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.io.commit_interval` (for global defaults). or `hibernate.search.backend.indexes.<index name>.io.commit_interval` (per-index).
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -621,8 +675,10 @@
     No equivalent in Hibernate Search 6. This property was not documented in Hibernate Search 5.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -643,8 +699,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.type` (for global defaults).. No equivalent for the per-index configuration. See link for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -666,8 +724,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.io.writer` or `hibernate.search.backend.io.merge` (for global defaults). or `hibernate.search.backend.indexes.<index-name>.io.writer` or `hibernate.search.backend.indexes.<index-name>.io.merge` (per-index).
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -690,8 +750,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.directory.locking.strategy` (for global defaults). or `hibernate.search.backend.indexes.<index-name>.directory.locking.strategy` (per-index).
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -716,8 +778,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.indexing.queue_size` (for global defaults). or `hibernate.search.backend.indexes.<index-name>.indexing.queue_size` (per-index).
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -740,8 +804,10 @@
     No equivalent in Hibernate Search 6. In most cases, you won’t need to use indexNullAs anymore. Where indexNullAs is still needed, define the token explicitly for each index field. See links for more info.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -765,8 +831,10 @@
     No direct equivalent in Hibernate Search 6. To enable async reader refresh, set hibernate.search.backend.io.refresh_interval or hibernate.search.backend.indexes.<index-name>.io.refresh_interval. to a strictly positive value (in milliseconds). See links for more information. Custom reader strategies are no longer supported.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -791,8 +859,10 @@
     This property is not available anymore. The filesystem-slave directory provider is no longer supported. See links for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -815,8 +885,10 @@
     This property is not available anymore. Sharding is configured differently. See links for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -839,8 +911,10 @@
     This property is not available anymore. The similarity is configured through the analysis configurer. See links for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -863,8 +937,10 @@
     This property is not available anymore. The JMS/JGroups backends are no longer supported. See links for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -887,8 +963,10 @@
     This property is not available anymore. Setting hibernate.search.automatic_indexing.synchronization.strategy to async or sync will produce results similar to setting hibernate.search.<index-name>.worker.execution to the same value. See links for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -912,8 +990,10 @@
     This property is not available anymore. The JMS/JGroups backends are no longer supported. See links for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -936,8 +1016,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.analysis.configurer`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -960,8 +1042,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.log.json_pretty_printing`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -982,8 +1066,10 @@
     This property is not available anymore: scrolling is forward-only. See links for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1006,8 +1092,10 @@
     This property is not available anymore. When using Hibernate Search APIs, the "chunk size" is an argument to the scroll method. When using the Hibernate ORM or JPA adapters, the "chunk size" is set to the same value as the fetch size. See links for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1032,8 +1120,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.scroll_timeout`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1054,8 +1144,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.automatic_indexing.enable_dirty_check`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1076,8 +1168,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.background_failure_handler`. A different interface should be implemented: see links for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1101,8 +1195,10 @@
     This property is not available anymore. There's no equivalent for Hibernate Search 6. If you need caching for some of your Lucene queries, consider upgrading directly to Hibernate Search 6.1, which provides configurable Low-level hit caching. See link for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1129,8 +1225,10 @@
     This property is not available anymore. There's no equivalent for Hibernate Search 6. If you need caching for some of your Lucene queries, consider upgrading directly to Hibernate Search 6.1, which provides configurable Low-level hit caching. See link for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1157,8 +1255,10 @@
     This property is not available anymore. There's no equivalent for Hibernate Search 6. No equivalent in Hibernate Search 6. See links for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1181,8 +1281,10 @@
     Index uninverting was deprecated in Hibernate Search 5 due to poor performance and is no longer allowed. All index fields that you want to sort on must be marked as sortable. See links for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1206,8 +1308,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.automatic_indexing.strategy`. Set to `none` to get the equivalent of `hibernate.search.indexing_strategy = manual` in Hibernate Search 5.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1230,8 +1334,10 @@
     This property is not available anymore. See links for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1253,8 +1359,10 @@
     This property is not available anymore. See links for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1276,8 +1384,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.analysis.configurer`. A different interface should be implemented: see links for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1301,8 +1411,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.lucene_version`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1323,8 +1435,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.mapping.configurer`. A different interface should be implemented: see links for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1348,8 +1462,10 @@
     This property is no available anymore. No equivalent in Hibernate Search 6: entities are always loaded with a query.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1370,8 +1486,10 @@
     This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.query.loading.cache_lookup.strategy`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1394,8 +1512,10 @@
     This property is not available anymore. There is no direct equivalent in Hibernate Search 6: the similarity is configured through the analysis configurer. The default similarity changed when this property is not configured: see links for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1420,8 +1540,10 @@
     This property is not available anymore. No equivalent to the concept of "worker" in Hibernate Search 6:. automatic indexing is always performed on transaction commit or, when there is no transaction, on session flush.. Also, transactional backends, for example the JMS backend, are no longer supported. See links for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1449,8 +1571,10 @@
     In Hibernate Search 5, it was possible to apply an @Analyzer annotation to a class or property, so that the corresponding analyzer would be used by default for any index field declared in this scope.. There is no equivalent to that feature in Hibernate Search 6: all fields must specify their analyzer explicitly using @FullTextField(analyzer = "myAnalyzer"), or rely on the (global) default analyzer.. Also, still in Hibernate Search 5, @Analyzer could point directly to a class extending org.apache.lucene.analysis.Analyzer, for example with @Analyzer(impl = StandardAnalyzer.class).. This is no longer possible: analyzers are now always referenced by their name. However, you can assign a name to a given analyzer instance using the Lucene analysis configurer.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1479,8 +1603,10 @@
     Annotation-based analyzer definitions are no longer supported.. Instead, implement an analysis configurer: see links for Lucene and Elasticsearch replacements.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1507,8 +1633,10 @@
     `@AnalyzerDiscriminator` has no direct equivalent in Hibernate Search 6: the analyzer assigned to each field is static and cannot change at runtime, because that results in unreliable matches and in scoring issues.. Instead, Hibernate Search 6 allows declaring multiple index fields for a single property, and putting the content of that property in a different field depending on a discriminator. Then, when searching, you can target all fields at once.. See link for more information.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1533,8 +1661,10 @@
     Index-time boosting was deprecated in Hibernate Search 5. It is no longer available in Hibernate Search 6.. Instead, rely on query-time boosting. See link for more information.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1556,8 +1686,10 @@
     This annotation was deprecated and non-functional in Hibernate Search 5. It is no longer available in Hibernate Search 6.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1576,8 +1708,10 @@
     `@CalendarBridge` is not necessary to index Calendar values: you can simply apply @GenericField to a property of type Calendar, and an appropriate default bridge will be used.. See link for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1599,8 +1733,10 @@
     Annotation-based analyzer definitions are no longer supported. See link for more information.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1621,8 +1757,10 @@
     The bridge API was completely reworked in Hibernate Search 6. See link for more information.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1647,8 +1785,10 @@
     @ContainedIn is no longer necessary in Hibernate Search 6.. Hibernate Search 6 infers indexing dependencies from the mapping, and raises errors at bootstrap when the equivalent of @ContainedIn cannot be applied automatically (for example an @IndexedEmbedded association with no inverse side).. Thus, the recommended approach when migrating is to simply remove all @ContainedIn annotations, then deal with the bootstrap errors, if any.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1674,8 +1814,10 @@
     @DateBridge is not necessary to index Date values: you can simply apply @GenericField to a property of type java.util.Date, java.sql.Date, java.sql.Time or java.sql.Timestamp, and an appropriate default bridge will be used.. See link for more information.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1698,8 +1840,10 @@
     `@DocumentId` is still available in Hibernate Search 6, but moved to a different package: `org.hibernate.search.mapper.pojo.mapping.definition.annotation.DocumentId`.. However, it no longer exposes a name attribute, because the document ID is no longer an index field, and thus it does not need a name.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1722,8 +1866,10 @@
     Index-time boosting was deprecated in Hibernate Search 5. It is no longer available in Hibernate Search 6.. Instead, rely on query-time boosting. See link for more information.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1745,8 +1891,10 @@
     Facets are now called aggregations, which are a generalization of the concept of faceting. See link for more information.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1771,8 +1919,10 @@
     The @Field annotation was split into multiple annotations, specific to each field type. See link for more information.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1797,8 +1947,10 @@
     The bridge API was completely reworked in Hibernate Search 6. See link for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1819,8 +1971,10 @@
     Full-text filters have no direct equivalent in Hibernate Search 6. See link for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1845,8 +1999,10 @@
     `@Indexed` is still available in Hibernate Search 6, but moved to a different package: `org.hibernate.search.mapper.pojo.mapping.definition.annotation.Indexed`.. However, there are some related changes that must be addressed - see link for more information.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1869,8 +2025,10 @@
     `@IndexedEmbedded` is still available in Hibernate Search 6, but moved to a different package: `org.hibernate.search.mapper.pojo.mapping.definition.annotation.IndexedEmbedded`.. Some other changes within the annotation have been made. For more information, see the link.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1893,8 +2051,10 @@
     `@Key` has no equivalent in Hibernate Search 6.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1914,8 +2074,10 @@
     `@Latitude` is still available in Hibernate Search 6, but moved to a different package: `org.hibernate.search.annotations.Latitude`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1936,8 +2098,10 @@
     `@Longitude` is still available in Hibernate Search 6, but moved to a different package: `org.hibernate.search.annotations.Longitude`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1958,8 +2122,10 @@
     In Hibernate Search 5, `@Normalizer` could point directly to a class extending `org.apache.lucene.analysis.Analyzer`, for example with `@Normalizer(impl = MyNormalizer.class)`.. This is no longer possible: normalizers are now always referenced by their name. However, you can assign a name to a given normalizer instance using the Lucene analysis configurer.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -1983,8 +2149,10 @@
     Annotation-based analyzer definitions are no longer supported.. Instead, implement an analysis configurer: see links for Lucene and Elasticsearch
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2011,8 +2179,10 @@
     @NumericField no longer exists in Hibernate Search 6.. Numeric types are indexed as numeric values by default, so this annotation can simply be removed.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2035,8 +2205,10 @@
     `@ProvidedId` was deprecated in Hibernate Search 5. It no longer exists in Hibernate Search 6.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2055,8 +2227,10 @@
     @SortableField(s) no longer exists in Hibernate Search 6. Instead, use @*Field.sortable.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2081,8 +2255,10 @@
     @Spatial has no direct equivalent in Hibernate Search 6.. Check link for a quick reference of how to convert a @Spatial annotation to Hibernate Search 6.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2108,8 +2284,10 @@
     @TikaBridge has no equivalent in Hibernate Search 6 yet.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2129,8 +2307,10 @@
     Annotation-based analyzer definitions are no longer supported.. See links for more information.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2157,8 +2337,10 @@
     The equivalent to Hibernate Search 5’s `FullTextEntityManager/FullTextSession` is Hibernate Search 6’s `SearchSession`. Check link for guide. to switch implementation to `SearchSession`.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2182,8 +2364,10 @@
     Search APIs have changed significantly in order to implement several improvements. The recommended way to build search. queries in Hibernate Search 6 is through the Hibernate Search DSL. See link for a thorough explanation and examples.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2207,8 +2391,10 @@
     Lucene queries are replaced with Lucene-independent "search predicates" in Hibernate Search 6. See link for guide and examples.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2228,8 +2414,10 @@
     Lucene sort fields are replaced with Lucene-independent "search sorts" in Hibernate Search 6. Follow the link for more info and examples.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2253,8 +2441,10 @@
     The `ProjectionConstants` are no longer available, and Hibernate Search 6's DSL must be used instead to build `SearchProjection` objects. Follow link for more information and examples.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2278,8 +2468,10 @@
     Facets are now called aggregations, which are a generalization of the concept of faceting. See link for more information and examples.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2304,8 +2496,10 @@
     The ErrorHandler interface and API have been replaced with the `FailureHandler` interface, and the related configuration properties changed. See link for more information and examples.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2331,8 +2525,10 @@
     The @Factory annotation does not exist in Hibernate Search 6 anymore. It is encouraged instead to rely on a proper dependency injection framework if such a feature is needed.. This can be done by referencing the bean name instead of referencing the bean class in your Hibernate Search mapping/configuration. See link for more information.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2356,8 +2552,10 @@
     `org.hibernate.search.exception.SearchException` has been moved to `org.hibernate.search.util.common.SearchException`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2376,8 +2574,10 @@
     Static sharding is still available in Hibernate Search 6, but it works differently, so the Hibernate Search 5 APIs are no longer available.. To implement static sharding in Hibernate Search 6, refer to the link.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2403,8 +2603,10 @@
     The equivalent to Hibernate Search 5’s SearchFactory is Hibernate Search 6’s SearchMapping, but some operations are more conveniently accessible directly from SearchSession.. Check the link for more information and examples.
   effort: 3
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2425,8 +2627,10 @@
     The MassIndexer mostly stays the same in Hibernate Search 6, but it moved to a different package: `org.hibernate.search.mapper.orm.massindexing.MassIndexer`.. There are some other changes that can be checked by following the link.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2447,8 +2651,10 @@
     The mass indexing Batch (JSR-352) job mostly stays the same in Hibernate Search 6, but `MassIndexingJob` moved to a different package: `org.hibernate.search.batch.jsr352.core.massindexing.MassIndexingJob`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -2468,8 +2674,10 @@
     Hibernate Search 6 uses the groupId `org.hibernate.search` and all dependencies must be updated
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8

@@ -7,9 +7,13 @@
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap6
+  - konveyor.io/source=eap
   - konveyor.io/source=resteasy2
-  - konveyor.io/target=eap7
-  - konveyor.io/target=resteasy3
+  - konveyor.io/source=resteasy
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
+  - konveyor.io/target=resteasy3+
+  - konveyor.io/target=resteasy
   - resteasy
   links:
   - title: RESTEasy SPI Application Changes

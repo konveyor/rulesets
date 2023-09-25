@@ -7,7 +7,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links:
   - title: Jakarta Faces 4.0 specification
@@ -34,7 +36,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links:
   - title: Jakarta Faces ManagedProperty api
@@ -61,7 +65,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links:
   - title: Jakarta EE9 Faces ManagedBean api (Deprecated)
@@ -93,7 +99,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links:
   - title: Jakarta Faces ViewScoped api
@@ -118,7 +126,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links:
   - title: jakarta.enterprise.context package javadoc
@@ -141,7 +151,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links:
   - title: jakarta.enterprise.context.spi.Context javadoc
@@ -164,7 +176,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links:
   - title: jakarta.enterprise.context.Dependent javadoc
@@ -187,7 +201,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links:
   - title: 'Faces 4.0: remove deprecated ResourceResolver'
@@ -213,7 +229,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links:
   - title: Jakarta EE Faces 4.0 Facelets

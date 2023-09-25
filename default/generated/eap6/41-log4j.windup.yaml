@@ -3,7 +3,8 @@
     It is recommended to use the built-in JBoss EAP Log4j module configured via `jboss-deployment-structure.xml`
   labels:
   - konveyor.io/source=log4j
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - log4j
   links: []
   message: Deploying log4j.jar can result in non-deterministic ClassLoading issues.
@@ -16,7 +17,8 @@
 - customVariables: []
   labels:
   - konveyor.io/source=log4j
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - log4j
   links:
   - title: How to configure Log4J in JBoss EAP 6/7
@@ -42,7 +44,8 @@
   effort: 1
   labels:
   - konveyor.io/source=log4j
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - log4j
   links:
   - title: EAP 6 deadlocks when using ConsoleHandler and java.io.PrintStream

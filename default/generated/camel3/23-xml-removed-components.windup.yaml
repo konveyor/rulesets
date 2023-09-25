@@ -6,7 +6,9 @@
   effort: 7
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_removed_components
@@ -25,7 +27,9 @@
   effort: 7
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_removed_components
@@ -44,7 +48,9 @@
   effort: 7
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: JAVAX.SCRIPT'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_javax_script
@@ -64,7 +70,9 @@
   effort: 7
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: JAVAX.SCRIPT'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_javax_script
@@ -84,7 +92,9 @@
   effort: 7
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_removed_components
@@ -103,7 +113,9 @@
   effort: 7
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_removed_components
@@ -122,7 +134,9 @@
   effort: 7
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_removed_components
@@ -141,7 +155,9 @@
   effort: 7
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_removed_components
@@ -161,7 +177,9 @@
   effort: 7
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_removed_components
@@ -173,7 +191,7 @@
     or:
     - builtin.filecontent:
         filePattern: .*\.java
-        pattern: from("twitter-streaming:.*
+        pattern: from\("twitter-streaming:.*
     - builtin.xml:
         namespaces:
           c: http://camel.apache.org/schema/spring
@@ -190,7 +208,9 @@
   effort: 3
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_removed_components
@@ -212,7 +232,9 @@
   effort: 7
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Camel Core'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_modularization_of_camel_core
@@ -232,7 +254,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Camel Maven Plugin'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_migrating_camel_maven_plugins

@@ -1,7 +1,8 @@
 - customVariables: []
   labels:
   - konveyor.io/source=sonicesb
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   links: []
   ruleID: xml-sonic-esb-01000

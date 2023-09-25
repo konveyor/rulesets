@@ -1,7 +1,8 @@
 - customVariables: []
   labels:
   - konveyor.io/source=jrun
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - web-app
   - jrun
   links: []
@@ -17,7 +18,8 @@
 - customVariables: []
   labels:
   - konveyor.io/source=jrun
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - web-app
   - jrun
   links: []
