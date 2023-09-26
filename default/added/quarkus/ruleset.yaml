@@ -1,0 +1,2 @@
+name: quarkus/resteasy
+description: This ruleset gives hints to migrate resteasy components to Quarkus extension

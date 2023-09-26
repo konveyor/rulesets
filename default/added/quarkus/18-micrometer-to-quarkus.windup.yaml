@@ -1,0 +1,38 @@
+- category: mandatory
+  customVariables: []
+  description: |-
+    Replace the 'micrometer-registry-prometheus' dependency with Quarkus 'quarkus-micrometer-registry-prometheus' extension
+    Replace the `io.micrometer:micrometer-registry-prometheus` dependency with the Quarkus dependency `io.quarkus:quarkus-micrometer-registry-prometheus`. Further information in the link below.
+  effort: 1
+  labels:
+  - konveyor.io/source=micrometer
+  - konveyor.io/target=quarkus
+  links: []
+  message: Replace the `io.micrometer:micrometer-registry-prometheus` dependency with
+    the Quarkus dependency `io.quarkus:quarkus-micrometer-registry-prometheus`. Further
+    information in the link below.
+  ruleID: quarkus-micrometer-registry-prometheus-00000
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: io.micrometer.micrometer-registry-prometheus
+- category: mandatory
+  customVariables: []
+  description: |-
+    Replace the 'micrometer-registry-prometheus' dependency with Quarkus 'quarkus-micrometer-registry-prometheus' extension
+    Replace the `io.micrometer:micrometer-registry-prometheus` dependency with the Quarkus dependency `io.quarkus:quarkus-micrometer-registry-prometheus`. Further information in the link below.
+  effort: 1
+  labels:
+  - konveyor.io/source=micrometer
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus - Guide
+    url: https://quarkus.io/guides/telemetry-micrometer
+  message: Replace the `io.micrometer:micrometer-registry-prometheus` dependency with
+    the Quarkus dependency `io.quarkus:quarkus-micrometer-registry-prometheus`. Further
+    information in the link below.
+  ruleID: quarkus-micrometer-registry-prometheus-00010
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: io.micrometer.micrometer-registry-prometheus
