@@ -1,0 +1,8 @@
+name: openjdk21/openjdk17
+description: APIs use the default charset which is changing from being platform dependent
+  to defined as UTF-8
+labels:
+- konveyor.io/target=openjdk18+
+- konveyor.io/target=openjdk
+- konveyor.io/source
+- openjdk21/openjdk17

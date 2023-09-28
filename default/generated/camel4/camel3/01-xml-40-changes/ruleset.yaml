@@ -1,0 +1,8 @@
+name: camel4/camel3
+description: Rules for changes between Camel 3.0 and Camel 4.0
+labels:
+- konveyor.io/source=camel3
+- konveyor.io/source=camel
+- konveyor.io/target=camel4+
+- konveyor.io/target=camel
+- camel4/camel3
