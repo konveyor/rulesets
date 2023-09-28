@@ -1,7 +1,6 @@
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: non-xml-technology-usage-02000
   tag:
@@ -13,8 +12,7 @@
     - EJB XML
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: non-xml-technology-usage-05000
   tag:
@@ -26,8 +24,7 @@
     - Hibernate Cfg
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: non-xml-technology-usage-06000
   tag:
@@ -39,8 +36,7 @@
     - Hibernate Mapping
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: non-xml-technology-usage-12000
   tag:
@@ -52,8 +48,7 @@
     - JBoss EJB XML
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: non-xml-technology-usage-13000
   tag:
@@ -65,8 +60,7 @@
     - JBoss Web XML
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: non-xml-technology-usage-14000
   tag:
@@ -78,8 +72,7 @@
     - JDBC
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: non-xml-technology-usage-17000
   tag:
@@ -91,8 +84,7 @@
     - JPA XML
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: non-xml-technology-usage-18000
   tag:
@@ -104,8 +96,7 @@
     - Orion EJB XML
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: non-xml-technology-usage-19000
   tag:
@@ -117,8 +108,7 @@
     - Orion Web XML
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: non-xml-technology-usage-20000
   tag:
@@ -130,8 +120,7 @@
     - Properties
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: non-xml-technology-usage-21000
   tag:
@@ -143,8 +132,7 @@
     - Seam
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: non-xml-technology-usage-22000
   tag:
@@ -156,8 +144,7 @@
     - WebLogic Web XML
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: non-xml-technology-usage-23000
   tag:
@@ -169,8 +156,7 @@
     - WebSphere EJB
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: non-xml-technology-usage-24000
   tag:
@@ -182,8 +168,7 @@
     - WebSphere EJB Ext
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: non-xml-technology-usage-25000
   tag:
@@ -195,8 +180,7 @@
     - WebSphere Web XML
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: non-xml-technology-usage-26000
   tag:
@@ -208,8 +192,7 @@
     - WebSphere WS Binding
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: non-xml-technology-usage-27000
   tag:

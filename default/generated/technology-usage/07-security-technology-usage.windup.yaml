@@ -1,7 +1,6 @@
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-01000
   tag:
@@ -29,8 +28,7 @@
         xpath: //*[local-name() = 'login-config']/*[local-name() = 'realm']
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-01100
   tag:
@@ -42,8 +40,7 @@
     - Spring Security
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-01200
   tag:
@@ -55,8 +52,7 @@
     - Apache Shiro
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-01300
   tag:
@@ -68,8 +64,7 @@
     - Hdiv
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-01400
   tag:
@@ -81,8 +76,7 @@
     - OACC
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-01500
   tag:
@@ -94,8 +88,7 @@
     - PicketLink
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-01600
   tag:
@@ -107,8 +100,7 @@
     - PicketBox
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-01700
   tag:
@@ -120,8 +112,7 @@
     - Keyczar
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-01800
   tag:
@@ -133,8 +124,7 @@
     - XACML
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-01900
   tag:
@@ -146,8 +136,7 @@
     - SAML
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-02000
   tag:
@@ -159,8 +148,7 @@
     - Bouncy Castle
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-02100
   tag:
@@ -172,8 +160,7 @@
     - Jasypt
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-02200
   tag:
@@ -185,8 +172,7 @@
     - Apache Santuario
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-02300
   tag:
@@ -198,8 +184,7 @@
     - SSL
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-02400
   tag:
@@ -211,8 +196,7 @@
     - Vlad
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-02500
   tag:
@@ -224,8 +208,7 @@
     - Apache Commons Validator
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-02600
   tag:
@@ -237,8 +220,7 @@
     - OWASP ESAPI
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-02700
   tag:
@@ -250,8 +232,7 @@
     - WSS4J
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-02800
   tag:
@@ -263,8 +244,7 @@
     - OpenSAML
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-02900
   tag:
@@ -276,8 +256,7 @@
     - OTR4J
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-03000
   tag:
@@ -289,8 +268,7 @@
     - OWASP CSRF Guard
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-03100
   tag:
@@ -302,8 +280,7 @@
     - OAUTH
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-03200
   tag:
@@ -315,8 +292,7 @@
     - Acegi Security
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-03300
   tag:
@@ -328,8 +304,7 @@
     - JSecurity
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-03400
   tag:
@@ -341,8 +316,7 @@
     - AcrIS Security
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-security-03500
   tag:

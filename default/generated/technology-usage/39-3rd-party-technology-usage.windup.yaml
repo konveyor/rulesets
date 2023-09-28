@@ -1,7 +1,6 @@
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-3rd-party-01000
   tag:
@@ -13,8 +12,7 @@
     - Liferay
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-3rd-party-02000
   tag:
@@ -26,8 +24,7 @@
     - Oracle Forms
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-3rd-party-03000
   tag:
@@ -39,8 +36,7 @@
     - Spring Boot
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-3rd-party-04000
   tag:
@@ -52,8 +48,7 @@
     - Elasticsearch
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-3rd-party-05000
   tag:
@@ -65,8 +60,7 @@
     - Logstash
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-3rd-party-06000
   tag:
@@ -78,8 +72,7 @@
     - Jetty
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-3rd-party-08000
   tag:
@@ -91,8 +84,7 @@
     - Tomcat
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-3rd-party-09000
   tag:
@@ -104,8 +96,7 @@
     - Kibana
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-3rd-party-10000
   tag:
@@ -117,8 +108,7 @@
     - Apache Karaf
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-3rd-party-11000
   tag:
@@ -130,8 +120,7 @@
     - Neo4j
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-3rd-party-12000
   tag:
@@ -143,8 +132,7 @@
     - Spark
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-3rd-party-13000
   tag:
@@ -156,8 +144,7 @@
     - Apache Hadoop
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-3rd-party-14000
   tag:
@@ -169,8 +156,7 @@
     - Apache Geronimo
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-3rd-party-15000
   tag:
@@ -182,8 +168,7 @@
     - Apache Aries
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-3rd-party-16000
   tag:
@@ -195,8 +180,7 @@
     - Cloudera
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-3rd-party-17000
   tag:
@@ -208,8 +192,7 @@
     - MapR
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-3rd-party-18000
   tag:
@@ -221,8 +204,7 @@
     - TensorFlow
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-3rd-party-19000
   tag:
@@ -234,8 +216,7 @@
     - Weka
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-3rd-party-20000
   tag:
