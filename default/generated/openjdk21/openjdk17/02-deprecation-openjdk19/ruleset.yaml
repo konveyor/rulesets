@@ -1,8 +1,0 @@
-name: openjdk21/openjdk17
-description: This ruleset provides analysis regarding deprecated APIs in OpenJDK 19.
-labels:
-- konveyor.io/source=openjdk19-
-- konveyor.io/source=openjdk
-- konveyor.io/target=openjdk19+
-- konveyor.io/target=openjdk
-- openjdk21/openjdk17

@@ -1,9 +1,0 @@
-name: openjdk21/openjdk17
-description: This ruleset provides analysis regarding the dynamic loading of agents
-  deprecation in OpenJDK 21.
-labels:
-- konveyor.io/source=openjdk21-
-- konveyor.io/source=openjdk
-- konveyor.io/target=openjdk21+
-- konveyor.io/target=openjdk
-- openjdk21/openjdk17

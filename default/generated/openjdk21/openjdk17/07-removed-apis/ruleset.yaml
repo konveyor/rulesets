@@ -1,8 +1,0 @@
-name: openjdk21/openjdk17
-description: This ruleset provides analysis regarding removed APIs in OpenJDK 18 to
-  21.
-labels:
-- konveyor.io/target=openjdk18+
-- konveyor.io/target=openjdk
-- konveyor.io/source
-- openjdk21/openjdk17
