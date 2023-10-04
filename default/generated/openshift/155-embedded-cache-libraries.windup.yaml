@@ -7,7 +7,6 @@
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
-  - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-01000
   tag:
@@ -25,7 +24,6 @@
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
-  - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-02000
   tag:
@@ -43,7 +41,6 @@
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
-  - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-03000
   tag:
@@ -61,7 +58,6 @@
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
-  - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-04000
   tag:
@@ -79,7 +75,6 @@
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
-  - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-05000
   tag:
@@ -97,7 +92,6 @@
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
-  - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-06000
   tag:
@@ -115,7 +109,6 @@
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
-  - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-07000
   tag:
@@ -133,7 +126,6 @@
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
-  - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-08000
   tag:
@@ -151,7 +143,6 @@
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
-  - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-09000
   tag:
@@ -168,7 +159,6 @@
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
-  - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-10000
   tag:
@@ -186,7 +176,6 @@
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
-  - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-11000
   tag:
@@ -204,7 +193,6 @@
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
-  - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-12000
   tag:
@@ -222,7 +210,6 @@
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
-  - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-13000
   tag:
@@ -240,7 +227,6 @@
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
-  - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-14000
   tag:
@@ -255,7 +241,6 @@
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
-  - phase=InitialAnalysisPhase
   links: []
   ruleID: embedded-cache-libraries-15000
   tag:

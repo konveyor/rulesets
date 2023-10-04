@@ -7,7 +7,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   links: []
   message: In order to add support for EAP native OpenID Connect, the `auth-method`
     must be updated to `OIDC`.
@@ -27,7 +29,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   links: []
   message: In order to add support for EAP native OpenID Connect, the `WEB-INF/keycloak.json`
     file must be renamed to `WEB-INF/oidc.json`.

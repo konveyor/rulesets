@@ -6,7 +6,8 @@
   effort: 1
   labels:
   - konveyor.io/source=thorntail
-  - konveyor.io/target=eapxp2
+  - konveyor.io/target=eapxp2+
+  - konveyor.io/target=eapxp
   - JBossEAP
   - Thorntail
   links:
@@ -34,7 +35,8 @@
   effort: 1
   labels:
   - konveyor.io/source=thorntail
-  - konveyor.io/target=eapxp2
+  - konveyor.io/target=eapxp2+
+  - konveyor.io/target=eapxp
   - JBossEAP
   - Thorntail
   links:

@@ -6,7 +6,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Generic Information'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_generic_information
@@ -27,7 +29,9 @@
   effort: 3
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Migrating custom Components'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_migrating_custom_components
@@ -46,7 +50,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links: []
   message: '`zip` and `gzip` dataformats were renamed to `zipdeflater and `gzipdeflater`'
   ruleID: java-generic-information-00002
@@ -75,7 +81,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links: []
   message: The class `org.apache.camel.impl.{{registry}}` has been removed. Use `org.apache.camel.support.DefaultRegistry`
     instead.
@@ -93,7 +101,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Generic Information'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_generic_information
@@ -116,7 +126,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Generic Information'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_generic_information
@@ -135,7 +147,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Generic Information'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_generic_information
@@ -154,7 +168,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Generic Information'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_generic_information
@@ -173,7 +189,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Migration Guide
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_generic_information
@@ -191,7 +209,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Migration Guide
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_generic_information
@@ -210,7 +230,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Migration Guide
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_generic_information
@@ -229,7 +251,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Migration Guide
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_generic_information
@@ -250,7 +274,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Migration Guide
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_generic_information
@@ -269,7 +295,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Migration Guide
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_generic_information
@@ -289,7 +317,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Migration Guide
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_generic_information
@@ -308,7 +338,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Migration Guide
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_generic_information
@@ -327,7 +359,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Migration Guide
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_generic_information
@@ -347,7 +381,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Migration Guide
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_generic_information
@@ -367,7 +403,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Migration Guide
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_generic_information
@@ -386,7 +424,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Migrating custom languages'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_migrating_custom_languages
@@ -408,7 +448,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links: []
   message: The class `org.apache.camel.util.{{moved}}` has been moved to `org.apache.camel.support.{{moved}}`.
     It has been moved out of `org.apache.camel:camel-core` and into `org.apache.camel:camel-support`
@@ -426,7 +468,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links: []
   message: The class `org.apache.camel.util.ServiceHelper` has been moved to `org.apache.camel.support.service.ServiceHelper`.
     It has been moved out of `org.apache.camel:camel-core` and into `org.apache.camel:camel-api`
@@ -444,7 +488,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links: []
   message: The class `org.apache.camel.spi.RestProducerFactoryHelper` has been moved
     to `org.apache.camel.support.RestProducerFactoryHelper`. It has been moved out
@@ -463,7 +509,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links: []
   message: 'The class `org.apache.camel.util.ObjectHelper` has been moved out of the
     `org.apache.camel:camel-core` and has been split into two classes: `org.apache.camel.support.ObjectHelper`
@@ -483,7 +531,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links: []
   message: The class `org.apache.camel.support.RoutePolicySupport` has been moved
     out of `org.apache.camel:camel-core` and into `org.apache.camel:camel-support`.
@@ -503,7 +553,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links: []
   message: The class `org.apache.camel.impl.ThrottlingInflightRoutePolicy` has been
     moved to `org.apache.camel.throttling.ThrottlingInflightRoutePolicy`. It has been
@@ -521,7 +573,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Idempotent repositories'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_idempotent_repositories
@@ -542,7 +596,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Fallback Type Converters'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_fallback_type_converters
@@ -564,7 +620,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Aggregation'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_aggregation
@@ -596,7 +654,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: CONFIGURING GLOBAL OPTIONS ON CAMELCONTEXT'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_configuring_global_options_on_camelcontext
@@ -624,7 +684,9 @@
   effort: 0
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: FHIR'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_fhir
@@ -646,7 +708,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Managed Camel Context
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_jmx
@@ -667,7 +731,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Simple Language'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_simple_language
@@ -704,7 +770,9 @@
   effort: 0
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Pojo Annotations
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_pojo_annotations
@@ -726,7 +794,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Pojo Annotations
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_pojo_annotations
@@ -747,7 +817,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Catalog Camel Context
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_camelcontext
@@ -769,7 +841,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Catalog Camel Context
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_camelcontext
@@ -791,7 +865,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Model Camel Context
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_modelcamelcontext
@@ -814,7 +890,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Extended Camel Context
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_extended_camelcontext

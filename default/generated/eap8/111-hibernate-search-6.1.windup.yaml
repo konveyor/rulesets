@@ -5,8 +5,10 @@
     Hibernate Search 6.1.x now requires using Hibernate ORM versions from the 5.6.x family.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6.1
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -38,8 +40,10 @@
     `org.hibernate.search.engine.cfg.spi.ConfigurationPropertySource` has been moved to `org.hibernate.search.engine.cfg.ConfigurationPropertySource`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6.1
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -60,8 +64,10 @@
     `org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurer` moved to `org.hibernate.search.backend.elasticsearch.client.ElasticsearchHttpClientConfigurer` and is now an API.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6.1
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -83,8 +89,10 @@
     `org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurationContext` moved to `org.hibernate.search.backend.elasticsearch.client.ElasticsearchHttpClientConfigurationContext` and is now an API.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6.1
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -106,8 +114,10 @@
     `org.hibernate.search.engine.common.timing.spi.Deadline` moved to `org.hibernate.search.engine.common.timing.Deadline` and is now API.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6.1
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -128,8 +138,10 @@
     `org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlanExecutionReport` is now `org.hibernate.search.engine.backend.work.execution.spi.MultiEntityOperationExecutionReport`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6.1
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -150,8 +162,10 @@
     `URLEncodedString#fromJsonString` must be removed.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6.1
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -172,8 +186,10 @@
     `FieldPaths#absolutize(String, String, String)` must be removed.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6.1
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -195,8 +211,10 @@
     `IndexManagerImplementor#createIndexingPlan` no longer expects an `EntityReferenceFactory` parameter.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6.1
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -218,8 +236,10 @@
     `IndexIndexingPlan#executeAndReport` now expects an `EntityReferenceFactory` parameter.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6.1
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -241,8 +261,10 @@
     `org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaObjectNodeBuilder` is now `org.hibernate.search.engine.backend.document.model.dsl.spi.IndexCompositeNodeBuilder`
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6.1
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -263,8 +285,10 @@
     `org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaObjectFieldNodeBuilder` is now `org.hibernate.search.engine.backend.document.model.dsl.spi.IndexObjectFieldBuilder`
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6.1
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -285,8 +309,10 @@
     `org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaRootNodeBuilder` is now `org.hibernate.search.engine.backend.document.model.dsl.spi.IndexRootBuilder`
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6.1
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -307,8 +333,10 @@
     `FromDocumentFieldValueConverter` has been deprecated, implement `FromDocumentValueConverter` instead.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6.1
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -329,8 +357,10 @@
     `ToDocumentFieldValueConverter` has been deprecated, implement `ToDocumentValueConverter` instead.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6.1
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -351,8 +381,10 @@
     `org.hibernate.search.mapper.orm.massindexing.MassIndexingFailureHandler` has been deprecated, implement `org.hibernate.search.mapper.pojo.massindexing.MassIndexingFailureHandler` instead.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6.1
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -373,8 +405,10 @@
     `org.hibernate.search.mapper.orm.massindexing.MassIndexingMonitor` has been deprecated, implement `org.hibernate.search.mapper.pojo.massindexing.MassIndexingMonitor` instead.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6.1
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8
@@ -395,8 +429,10 @@
     Property has been deprecated: use the new configuration property that accepts `true`/`false` instead. See `HibernateOrmMapperSettings#AUTOMATIC_INDEXING_ENABLED`.
   effort: 1
   labels:
-  - konveyor.io/target=eap8
-  - konveyor.io/target=hibernate6.1
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
+  - konveyor.io/target=hibernate6.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/source
   - hibernate
   - eap8

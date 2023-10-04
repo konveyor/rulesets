@@ -7,7 +7,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links:
   - title: Jakarta Enterprise Beans 4.0 specification
@@ -33,7 +35,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links:
   - title: Jakarta Enterprise Beans 4.0 specification
@@ -55,7 +59,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links:
   - title: Jakarta Enterprise Beans 4.0 specification

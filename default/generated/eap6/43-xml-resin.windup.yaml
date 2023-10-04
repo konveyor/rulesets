@@ -5,7 +5,8 @@
     and needs to be migrated to web.xml or jboss-web.xml\n                        \n"
   labels:
   - konveyor.io/source=resin
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - web-app
   - resin
   - configuration

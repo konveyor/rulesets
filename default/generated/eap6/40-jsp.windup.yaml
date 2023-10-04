@@ -5,8 +5,10 @@
     Empty import definition in .jsp or .jspf files would fail in compilation time and needs to be removed.
   effort: 1
   labels:
-  - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - konveyor.io/source
   links: []
   message: Empty import definition in .jsp or .jspf files would fail in compilation

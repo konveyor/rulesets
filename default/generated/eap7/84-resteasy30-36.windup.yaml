@@ -6,7 +6,9 @@
   effort: 1
   labels:
   - konveyor.io/target=eap7
-  - konveyor.io/target=resteasy3
+  - konveyor.io/target=eap
+  - konveyor.io/target=resteasy3+
+  - konveyor.io/target=resteasy
   - konveyor.io/source
   - resteasy
   links:

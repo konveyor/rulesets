@@ -2,6 +2,8 @@
   description: "Discover project license"
   tag:
   - License={{matchingText}}
+  labels:
+  - konveyor.io/include=always
   when:
     or:
     - builtin.filecontent:
@@ -37,40 +39,54 @@
   message: "When migrating environments, hard-coded IP addresses may need to be modified or eliminated."
 - ruleID: discover-properties-file
   description: "Properties file"
+  labels:
+  - konveyor.io/include=always
   when:
     builtin.file:
       pattern: "^.*\\.properties$"
   tag: ["Properties"]
 - ruleID: discover-manifest-file
   description: "Manifest file"
+  labels:
+  - konveyor.io/include=always
   when:
     builtin.file:
       pattern: "MANIFEST.MF"
   tag: ["Manifest"]
 - ruleID: discover-java-files
   description: "Java source files"
+  labels:
+  - konveyor.io/include=always
   when:
     builtin.file:
       pattern: "*.java"
   tag: ["Java Source"]
 - ruleID: discover-maven-xml
   description: "Maven XML file"
+  labels:
+  - konveyor.io/include=always
   when:
     builtin.file:
       pattern: "pom.xml"
   tag: ["Maven XML"]
 - ruleID: windup-discover-ejb-configuration
+  labels:
+  - konveyor.io/include=always
   tag: ["EJB XML"]
   when:
     builtin.xml:
       xpath: "/(jboss:ejb-jar or ejb-jar)"
 - ruleID: windup-discover-spring-configuration
   tag: ["Spring XML"]
+  labels:
+  - konveyor.io/include=always
   when:
     builtin.xml:
       xpath: "/beans"
 - ruleID: windup-discover-jpa-configuration
   tag: ["JPA XML"]
+  labels:
+  - konveyor.io/include=always
   message: "Persistence unit"
   when:
     or:
@@ -81,6 +97,8 @@
       - builtin.xml:
           xpath: '/persistence[boolean(namespace-uri(/persistence)="https://jakarta.ee/xml/ns/persistence")]'
 - ruleID: windup-discover-web-configuration
+  labels:
+  - konveyor.io/include=always
   tag: ["Web XML"]
   when:
     # TODO extract version as in rules-java-ee/addon/src/main/java/org/jboss/windup/rules/apps/javaee/rules/DiscoverWebXmlRuleProvider.java

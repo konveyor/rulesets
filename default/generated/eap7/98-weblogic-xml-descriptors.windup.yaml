@@ -8,6 +8,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - configuration
@@ -33,6 +34,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - configuration
@@ -60,6 +62,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - configuration
@@ -92,6 +95,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - configuration
@@ -128,6 +132,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - configuration
@@ -148,6 +153,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - configuration
@@ -166,6 +172,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - configuration
@@ -184,6 +191,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - configuration
@@ -208,6 +216,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - configuration
@@ -242,6 +251,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - configuration
@@ -270,6 +280,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - configuration
@@ -297,6 +308,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - configuration
@@ -318,6 +330,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - configuration
@@ -337,6 +350,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - configuration
@@ -361,6 +375,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - configuration
@@ -382,6 +397,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - configuration
@@ -407,6 +423,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - weblogic
   - descriptor
   - configuration

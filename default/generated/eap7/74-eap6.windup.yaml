@@ -6,7 +6,9 @@
   effort: 1
   labels:
   - konveyor.io/source=eap6
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jndi
   - configuration
   - ejb
@@ -36,7 +38,9 @@
   effort: 1
   labels:
   - konveyor.io/source=eap6
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jndi
   - configuration
   - ejb
@@ -65,7 +69,9 @@
   effort: 1
   labels:
   - konveyor.io/source=eap6
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jndi
   - configuration
   - ejb
@@ -91,7 +97,9 @@
   effort: 1
   labels:
   - konveyor.io/source=eap6
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jsf
   links:
   - title: Compatibility Issue Between JSF 2.1 and JSF 2.2
@@ -118,7 +126,9 @@
   effort: 1
   labels:
   - konveyor.io/source=eap6
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - certificate
   - https
   links:

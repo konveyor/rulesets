@@ -11,8 +11,10 @@
     ActiveMQ Artemis client API.\n                    \n"
   labels:
   - konveyor.io/source=websphere
-  - konveyor.io/target=eap7
-  - konveyor.io/target=java-ee7
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee7+
+  - konveyor.io/target=java-ee
   - jms
   - messaging
   - websphere
@@ -43,8 +45,10 @@
   effort: 3
   labels:
   - konveyor.io/source=websphere
-  - konveyor.io/target=eap7
-  - konveyor.io/target=java-ee7
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee7+
+  - konveyor.io/target=java-ee
   - jms
   - messaging
   - websphere
@@ -74,8 +78,10 @@
   effort: 3
   labels:
   - konveyor.io/source=websphere
-  - konveyor.io/target=eap7
-  - konveyor.io/target=java-ee7
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee7+
+  - konveyor.io/target=java-ee
   - jms
   - messaging
   - websphere

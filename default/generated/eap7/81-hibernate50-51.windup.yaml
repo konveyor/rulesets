@@ -5,10 +5,14 @@
     Previous releases of Hibernate interpreted all null column values for an `@Embeddable` to mean the `@Embeddable` itself should be null.. In this release, applications can dictate that Hibernate should instead use an empty `@Embeddable` instance by specifying the `hibernate.create_empty_composites.enabled` opt-in setting.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.0
-  - konveyor.io/source=eap7.0
-  - konveyor.io/target=hibernate5.1
+  - konveyor.io/source=hibernate5.0-
+  - konveyor.io/source=hibernate
+  - konveyor.io/source=eap7.0-
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate5.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   - Hibernate
   links:
@@ -31,10 +35,14 @@
     The changes mainly focused on:. *  Unifying handling of hbm2ddl.auto and Hibernate’s JPA schema-generation support.. *  Removing JDBC concerns from the SPI to facilitate true replacement (for OGM). These changes are a migration concern since the application is directly using some of the changed classes.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.0
-  - konveyor.io/source=eap7.0
-  - konveyor.io/target=hibernate5.1
+  - konveyor.io/source=hibernate5.0-
+  - konveyor.io/source=hibernate
+  - konveyor.io/source=eap7.0-
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate5.1+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   - Hibernate
   links:

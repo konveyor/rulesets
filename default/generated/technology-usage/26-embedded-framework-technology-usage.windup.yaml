@@ -1,8 +1,6 @@
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-01000
   tag:
@@ -14,9 +12,7 @@
     - Apache Axis
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-01010
   tag:
@@ -28,9 +24,7 @@
     - Apache Axis2
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-01100
   tag:
@@ -42,9 +36,7 @@
     - Apache CXF
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-01200
   tag:
@@ -56,9 +48,7 @@
     - XFire
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-01300
   tag:
@@ -70,9 +60,7 @@
     - Jersey
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-01400
   tag:
@@ -84,9 +72,7 @@
     - Unirest
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-01500
   tag:
@@ -98,9 +84,7 @@
     - Hibernate
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-01600
   tag:
@@ -112,9 +96,7 @@
     - Hibernate OGM
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-01700
   tag:
@@ -126,9 +108,7 @@
     - EclipseLink
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-02000
   tag:
@@ -140,9 +120,7 @@
     - Spring Batch
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-02100
   tag:
@@ -154,9 +132,7 @@
     - Spring
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-02200
   tag:
@@ -168,9 +144,7 @@
     - AspectJ
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-02300
   tag:
@@ -182,9 +156,7 @@
     - JBPM
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-02400
   tag:
@@ -196,9 +168,7 @@
     - iLog
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-02700
   tag:
@@ -210,9 +180,7 @@
     - Ehcache
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-02800
   tag:
@@ -224,9 +192,7 @@
     - Infinispan
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-02900
   tag:
@@ -238,9 +204,7 @@
     - Drools
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-03000
   tag:
@@ -252,9 +216,7 @@
     - Camunda
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-03100
   tag:
@@ -266,9 +228,7 @@
     - Pega
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-03200
   tag:
@@ -280,9 +240,7 @@
     - Blaze
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-03300
   tag:
@@ -294,9 +252,7 @@
     - MRules
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-03400
   tag:
@@ -308,9 +264,7 @@
     - Easy Rules
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-03500
   tag:
@@ -322,9 +276,7 @@
     - Coherence
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-03600
   tag:
@@ -336,9 +288,7 @@
     - Apache Commons JCS
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-03700
   tag:
@@ -350,9 +300,7 @@
     - Dynacache
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-03800
   tag:
@@ -364,9 +312,7 @@
     - Cache API
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-03900
   tag:
@@ -378,9 +324,7 @@
     - Hazelcast
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-04000
   tag:
@@ -392,9 +336,7 @@
     - Apache Ignite
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-04100
   tag:
@@ -406,9 +348,7 @@
     - JBoss Cache
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-04200
   tag:
@@ -420,9 +360,7 @@
     - JCache
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-04300
   tag:
@@ -434,9 +372,7 @@
     - Memcached client
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-04400
   tag:
@@ -448,9 +384,7 @@
     - Oscache
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-04500
   tag:
@@ -462,9 +396,7 @@
     - ShiftOne
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-04600
   tag:
@@ -476,9 +408,7 @@
     - SwarmCache
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-04700
   tag:
@@ -490,9 +420,7 @@
     - AOP Alliance
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-05000
   tag:
@@ -504,9 +432,7 @@
     - SNMP4J
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-05100
   tag:
@@ -518,9 +444,7 @@
     - HTTP Client
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-05300
   tag:
@@ -532,9 +456,7 @@
     - Javax Inject
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-05400
   tag:
@@ -546,9 +468,7 @@
     - Google Guice
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-05600
   tag:
@@ -560,9 +480,7 @@
     - Plexus Container
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-05700
   tag:
@@ -574,9 +492,7 @@
     - Weld
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-05800
   tag:
@@ -588,9 +504,7 @@
     - Dagger
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-05900
   tag:
@@ -602,9 +516,7 @@
     - GIN
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-06000
   tag:
@@ -616,9 +528,7 @@
     - PicoContainer
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-06100
   tag:
@@ -630,9 +540,7 @@
     - Scaldi
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-06200
   tag:
@@ -644,9 +552,7 @@
     - Macros
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-06300
   tag:
@@ -658,9 +564,7 @@
     - Injekt for Kotlin
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-06400
   tag:
@@ -672,9 +576,7 @@
     - Kodein
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-06500
   tag:
@@ -686,9 +588,7 @@
     - Peaberry
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-06600
   tag:
@@ -700,9 +600,7 @@
     - Sticky Configured
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-06700
   tag:
@@ -714,9 +612,7 @@
     - Ka DI
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-06800
   tag:
@@ -728,9 +624,7 @@
     - Polyforms DI
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-06900
   tag:
@@ -742,9 +636,7 @@
     - JayWire
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-07000
   tag:
@@ -756,9 +648,7 @@
     - Silk DI
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-07100
   tag:
@@ -770,9 +660,7 @@
     - Grapht DI
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-07200
   tag:
@@ -784,9 +672,7 @@
     - Syringe
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-07300
   tag:
@@ -798,9 +684,7 @@
     - Cfg Engine
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-07400
   tag:
@@ -812,9 +696,7 @@
     - BeanInject
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-07500
   tag:
@@ -826,9 +708,7 @@
     - Tornado Inject
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-07600
   tag:
@@ -840,9 +720,7 @@
     - Airframe
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-07700
   tag:
@@ -854,9 +732,7 @@
     - Winter
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-07800
   tag:
@@ -868,9 +744,7 @@
     - KouInject
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-07900
   tag:
@@ -882,9 +756,7 @@
     - Iroh
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-08000
   tag:
@@ -896,9 +768,7 @@
     - Micro DI
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-08100
   tag:
@@ -910,9 +780,7 @@
     - SubCut
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-08200
   tag:
@@ -924,9 +792,7 @@
     - Spring DI
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-08300
   tag:
@@ -938,9 +804,7 @@
     - Micrometer
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-08400
   tag:
@@ -952,9 +816,7 @@
     - Spring Web
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-08500
   tag:
@@ -966,9 +828,7 @@
     - Spring Boot Cache
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-08600
   tag:
@@ -980,9 +840,7 @@
     - Spring Shell
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-08700
   tag:
@@ -994,9 +852,7 @@
     - Spring Scheduled
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-08800
   tag:
@@ -1008,9 +864,7 @@
     - Spring Cloud Function
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-08900
   tag:
@@ -1022,9 +876,7 @@
     - Quartz
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-09000
   tag:
@@ -1036,9 +888,7 @@
     - Feign
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-embedded-framework-09100
   tag:
@@ -1050,9 +900,7 @@
     - Zipkin
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-09200
   tag:
@@ -1064,9 +912,7 @@
     - Redis
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: embedded-framework-embedded-framework-09300
   tag:

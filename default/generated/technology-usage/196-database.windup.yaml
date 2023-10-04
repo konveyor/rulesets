@@ -3,8 +3,7 @@
     Embedded HSQLDB Driver
     The application embeds an HSQLDB driver.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -22,8 +21,7 @@
     Embedded MySQL Driver
     The application embeds an MySQL driver.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -41,8 +39,7 @@
     Embedded Derby Driver
     The application embeds an Derby driver.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -60,8 +57,7 @@
     Embedded PostgreSQL Driver
     The application embeds an PostgreSQL driver.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -79,8 +75,7 @@
     Embedded H2 Driver
     The application embeds an H2 driver.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -98,8 +93,7 @@
     Embedded Microsoft SQL Driver
     The application embeds an Microsoft SQL driver.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -120,8 +114,7 @@
     Embedded SQLite Driver
     The application embeds an SQLite driver.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -139,8 +132,7 @@
     Embedded Oracle DB Driver
     The application embeds an Oracle DB driver.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -161,8 +153,7 @@
     Embedded Cassandra Client
     The application embeds a Cassandra client.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -195,8 +186,7 @@
     Embedded Axion Driver
     The application embeds an Axion driver.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -214,8 +204,7 @@
     Embedded MckoiSQLDB Driver
     The application embeds an MckoiSQLDB driver.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -233,8 +222,7 @@
     Embedded MongoDB Client
     The application embeds a MongoDB client.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -263,8 +251,7 @@
     Embedded framework - Spring Data
     The application embeds the Spring Data framework.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: database-02600
   tag:
@@ -278,8 +265,7 @@
     Embedded framework - Morphia
     The application embeds Morphia.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -297,8 +283,7 @@
     Embedded LevelDB Client
     The application embeds a LevelDB client.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -316,8 +301,7 @@
     Embedded Apache HBase Client
     The application embeds an Apache HBase client.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -335,8 +319,7 @@
     Embedded Apache Accumulo Client
     The application embeds an Apache Accumulo client.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -354,8 +337,7 @@
     Embedded Spring Data JPA
     The application embeds Spring Data JPA
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: database-03200
   tag:

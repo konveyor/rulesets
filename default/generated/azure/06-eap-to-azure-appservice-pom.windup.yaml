@@ -6,6 +6,7 @@
   effort: 1
   labels:
   - konveyor.io/source=eap7
+  - konveyor.io/source=eap
   - konveyor.io/target=azure-appservice
   - Azure
   links:

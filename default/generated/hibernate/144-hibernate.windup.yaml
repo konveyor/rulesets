@@ -5,9 +5,12 @@
     In versions of Hibernate prior to 3.5, text type was mapped to JDBC CLOB. A new Hibernate type, materialized_clob, was added in Hibernate 4 to map Java String properties to JDBC CLOB. Therefore, Hibernate 4 text LOB type definitions should be defined using `@Lob`, instead.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate3.9
-  - konveyor.io/target=hibernate4
+  - konveyor.io/source=hibernate3.9-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate4+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: Hibernate 4 java @Type migration.
@@ -30,9 +33,12 @@
     The return types of the numeric aggregate criteria projections has changed to Long in hibernate 4. This change may introduce conflicts in the code.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate3.9
-  - konveyor.io/target=hibernate4
+  - konveyor.io/source=hibernate3.9-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate4+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: Hibernate 4 projections return type change.
@@ -51,9 +57,12 @@
     The initial/default naming strategy in Hibernate 4 was changed from DefaultNamingStrategy to EJB3NamingStrategy. This can result in naming mismatches. If you rely on the naming strategy, call Configuration#setNamingStrategy.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate3.9
-  - konveyor.io/target=hibernate4
+  - konveyor.io/source=hibernate3.9-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate4+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: Hibernate 4 naming strategy change documentation.
@@ -73,9 +82,12 @@
     The deprecated classes in org.hibernate.classic package was removed in Hibernate 4.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate3.9
-  - konveyor.io/target=hibernate4
+  - konveyor.io/source=hibernate3.9-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate4+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: 'JBoss EAP - Migration Guide: Hibernate and JPA Changes'
@@ -94,9 +106,12 @@
     Replace org.hibernate.dialect.resolver.DialectResolver with org.hibernate.service.jdbc.dialect.spi.DialectResolver.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate3.9
-  - konveyor.io/target=hibernate4
+  - konveyor.io/source=hibernate3.9-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate4+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - hibernate
   links: []
   message: Replace org.hibernate.dialect.resolver.DialectResolver with org.hibernate.service.jdbc.dialect.spi.DialectResolver.
@@ -111,9 +126,12 @@
     Replace org.hibernate.jdbc.BatcherFactory by org.hibernate.engine.jdbc.batch.spi.BatchBuilder.. Their default implementations are in org.hibernate.engine.jdbc.batch.internal.. You can override the default BatchBuilder by defining the  "hibernate.jdbc.batch.builder" property as the name of a BatchBuilder implementation. or by providing a BatchBuilder in a custom ServiceRegistry.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate3.9
-  - konveyor.io/target=hibernate4
+  - konveyor.io/source=hibernate3.9-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate4+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - hibernate
   links: []
   message: Replace org.hibernate.jdbc.BatcherFactory by org.hibernate.engine.jdbc.batch.spi.BatchBuilder..
@@ -137,9 +155,12 @@
     Replace org.hibernate.jdbc.Batcher by org.hibernate.engine.jdbc.batch.spi.Batch.. Their default implementations are in org.hibernate.engine.jdbc.batch.internal.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate3.9
-  - konveyor.io/target=hibernate4
+  - konveyor.io/source=hibernate3.9-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate4+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - hibernate
   links: []
   message: Replace org.hibernate.jdbc.Batcher by org.hibernate.engine.jdbc.batch.spi.Batch..
@@ -162,9 +183,12 @@
     Replace org.hibernate.engine.SessionImplementor with org.hibernate.engine.spi.SessionImplementor
   effort: 1
   labels:
-  - konveyor.io/source=hibernate3.9
-  - konveyor.io/target=hibernate4
+  - konveyor.io/source=hibernate3.9-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate4+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - hibernate
   links: []
   message: Replace org.hibernate.engine.SessionImplementor with org.hibernate.engine.spi.SessionImplementor
@@ -182,9 +206,12 @@
     The classes in org.hibernate.connection package was moved to org.hibernate.service.jdbc.connections.internal in Hibernate 4
   effort: 1
   labels:
-  - konveyor.io/source=hibernate3.9
-  - konveyor.io/target=hibernate4
+  - konveyor.io/source=hibernate3.9-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate4+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - hibernate
   links: []
   message: The classes in org.hibernate.connection package was moved to org.hibernate.service.jdbc.connections.internal
@@ -201,9 +228,12 @@
     The class org.hibernate.collection.PersistentBag was moved to org.hibernate.collection.internal.PersistentBag in Hibernate 4
   effort: 1
   labels:
-  - konveyor.io/source=hibernate3.9
-  - konveyor.io/target=hibernate4
+  - konveyor.io/source=hibernate3.9-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate4+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - hibernate
   links: []
   message: The class org.hibernate.collection.PersistentBag was moved to org.hibernate.collection.internal.PersistentBag
@@ -222,9 +252,12 @@
     This is an old Hibernate package name from version 2.x and needs to be migrated to a compatible API to Hibernate 4.x/5.x,. where package name is org.hibernate.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate3.9
-  - konveyor.io/target=hibernate4
+  - konveyor.io/source=hibernate3.9-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate4+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - hibernate
   links: []
   message: This is an old Hibernate package name from version 2.x and needs to be

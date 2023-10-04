@@ -4,7 +4,9 @@
     tree-like structure that is replicated across several members.\n                    \n"
   labels:
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam
@@ -33,7 +35,9 @@
   effort: 5
   labels:
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam
@@ -64,7 +68,9 @@
     it with `jboss-ejb3.xml`.\n                    \n"
   labels:
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam
@@ -96,7 +102,9 @@
   effort: 3
   labels:
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam
@@ -124,7 +132,9 @@
   effort: 5
   labels:
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam

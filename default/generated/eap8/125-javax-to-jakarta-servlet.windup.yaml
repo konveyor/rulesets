@@ -5,8 +5,10 @@
     The `javax.servlet.SingleThreadModel` marker interface has been removed and servlets that implement this interface should remove. the interface declaration and ensure that the servlet code properly guards state and other resource access against concurrent access,. for example by avoiding the usage of an instance variable or synchronizing the block of code accessing resources. However, it is. strongly recommended that developers not synchronize the service method (or methods like `doGet` and `doPost` that it dispatches to). because of the detrimental effect of such synchronization on performance.
   effort: 3
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -32,8 +34,10 @@
     The `javax.servlet.http.HttpSessionContext` interface has been removed,. along with the `javax.servlet.http.HttpSession.getSessionContext()` method. Since Servlet 2.1 there have. been no use cases for this interface as its implementations were required by spec not to provide any usable data.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -59,8 +63,10 @@
     The `javax.servlet.http.HttpUtils` utility class has been removed. Applications should use the ServletRequest. and HttpServletRequest interfaces instead of these methods it provided:. - `parseQueryString(String s)` and `parsePostData(int len, ServletInputStream in)` -- Use `ServletRequest.getParameterMap()`. If an application needs to differentiate between query string parameters and request body parameters it will need to implement code to do that itself, perhaps by parsing the query string itself.. - `getRequestURL(HttpServletRequest req)` -- Use `HttpServletRequest.getRequestURL()`.
   effort: 3
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -84,8 +90,10 @@
     Method getServlet in javax.servlet.ServletContext has been removed.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -105,8 +113,10 @@
     Method getServlets in javax.servlet.ServletContext has been removed.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -126,8 +136,10 @@
     Method getServletNames in javax.servlet.ServletContext has been removed.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -147,8 +159,10 @@
     Method log(Exception, String) in javax.servlet.ServletContext has been removed. Use log(String, Throwable) instead.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -168,8 +182,10 @@
     Method `getRealPath(String)` in javax.servlet.ServletRequest has been removed. It can be replaced with `ServletContext.getRealPath(String path)`.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -189,8 +205,10 @@
     Method `getRealPath` in javax.servlet.ServletRequestWrapper has been removed. It can be replaced with `ServletContext.getRealPath(String path)`.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -209,8 +227,10 @@
     Method getServlet in javax.servlet.UnavailableException has been removed.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -229,8 +249,10 @@
     Constructor UnavailableException(Servlet, String) in javax.servlet.UnavailableException has been removed. Use UnavailableException(String) instead.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -250,8 +272,10 @@
     Constructor UnavailableException(int, Servlet, String) in javax.servlet.UnavailableException has been removed. Use UnavailableException(String, int) instead.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -271,8 +295,10 @@
     Method `isRequestedSessionIdFromUrl` in javax.servlet.http.HttpServletRequest has been removed. Use `isRequestedSessionIdFromURL()` instead.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -292,8 +318,10 @@
     Method `isRequestedSessionIdFromUrl` in javax.servlet.http.HttpServletRequestWrapper has been removed. Use `isRequestedSessionIdFromURL()` instead.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -313,8 +341,10 @@
     Method encodeURL in javax.servlet.http.HttpServletResponse has been removed. Use encodeURL(String) instead.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -333,8 +363,10 @@
     Method encodeRedirectUrl(String) in javax.servlet.http.HttpServletResponse has been removed. Use encodeRedirectURL(String) instead.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -353,8 +385,10 @@
     Method setStatus(int, String) in javax.servlet.http.HttpServletResponse has been removed. Use sendError(int, String) instead.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -373,8 +407,10 @@
     Method encodeUrl in javax.servlet.http.HttpServletResponseWrapper has been removed. Use encodeURL instead.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -393,8 +429,10 @@
     Method encodeRedirectUrl in javax.servlet.http.HttpServletResponseWrapper has been removed. Use encodeRedirectURL instead.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -413,8 +451,10 @@
     Method setStatus(int, String) in javax.servlet.http.HttpServletResponseWrapper has been removed. Use sendError(int, String) instead.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -433,8 +473,10 @@
     Method getValue in javax.servlet.http.HttpSession has been removed. Use getAttribute instead.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -454,8 +496,10 @@
     Method getValueNames in javax.servlet.http.HttpSession has been removed. Use getAttributeNames instead.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -475,8 +519,10 @@
     Method putValue in javax.servlet.http.HttpSession has been removed. Use setAttribute instead.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta
@@ -496,8 +542,10 @@
     Method removeValue in javax.servlet.http.HttpSession has been removed. Use removeAttribute instead.
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta

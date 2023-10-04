@@ -3,8 +3,7 @@
     Embedded framework - Spring
     The application embeds the Spring framework.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: spring-catchall-00001
   tag:

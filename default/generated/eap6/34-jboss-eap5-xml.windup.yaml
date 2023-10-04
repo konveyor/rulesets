@@ -4,7 +4,9 @@
     will be multicast to all group members reliably and in the same order.\n                    \n"
   labels:
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam
@@ -30,7 +32,9 @@
     \                   \n"
   labels:
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam
@@ -55,7 +59,9 @@
     configuration via `components.xml`.\n                    \n"
   labels:
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam
@@ -77,7 +83,9 @@
     the page flow and other configuration of the Seam Framework.\n                    \n"
   labels:
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam
@@ -97,7 +105,9 @@
 - customVariables: []
   labels:
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam
@@ -124,7 +134,9 @@
     \                       \n"
   labels:
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam
@@ -148,7 +160,9 @@
     EAP.\n                        It is an extension to standard `web.xml`.\n                    \n"
   labels:
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam
@@ -178,7 +192,9 @@
   effort: 5
   labels:
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam
@@ -212,7 +228,9 @@
     of deployments.\n                    \n"
   labels:
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam
@@ -236,7 +254,9 @@
     Persistence (CMP).\n                    \n"
   labels:
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam
@@ -261,7 +281,9 @@
     \                       Replace it with `jboss-ejb3.xml`.\n                    \n"
   labels:
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam
@@ -289,7 +311,9 @@
   effort: 3
   labels:
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam
@@ -313,7 +337,9 @@
   effort: 5
   labels:
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam
@@ -342,7 +368,9 @@
     JBoss specific EJB 3 configuration allows extensions of Java EE EJB 3.\n                    \n"
   labels:
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam
@@ -372,7 +400,9 @@
     \                   \n"
   labels:
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam
@@ -395,7 +425,9 @@
 - customVariables: []
   labels:
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - jboss-eap5
   - ejb
   - seam

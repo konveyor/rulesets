@@ -5,8 +5,10 @@
     JBoss EAP 7.2 PicketLink STS issues tokens with a different format, which may require changes in applications such as EJB clients.. Please refer to the JBoss EAP 7.2 Migration Guide section with respect to this migration issue, and how to resolve it.
   effort: 1
   labels:
-  - konveyor.io/source=eap7.1
+  - konveyor.io/source=eap7.1-
+  - konveyor.io/source=eap
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - picketlink
   links:
   - title: JBoss EAP 7.2 Migration Guide

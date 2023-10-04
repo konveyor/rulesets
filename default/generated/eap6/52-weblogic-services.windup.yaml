@@ -7,6 +7,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - startup
   links:
@@ -30,6 +31,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - webservice
   links:
@@ -55,6 +57,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - weblogic
   - logging
   links:

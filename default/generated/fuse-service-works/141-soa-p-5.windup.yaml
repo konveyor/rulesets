@@ -10,8 +10,10 @@
     from a Camel route.. For more information, see the [Action Class Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/action-class-migration.md)."
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: Custom action classes should be migrated to CDI Beans in Fuse Service Works.
@@ -34,8 +36,10 @@
           '.*')]/@class
 - customVariables: []
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   ruleID: soa-p-5-02000
@@ -48,8 +52,10 @@
       xpath: /jbossesb-deployment
 - customVariables: []
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links:
   - title: Action Pipeline Migration
@@ -64,8 +70,10 @@
       xpath: /*[local-name()='jbossesb']
 - customVariables: []
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links:
   - title: Smooks Development Guide
@@ -84,8 +92,10 @@
     This listener requires a composite service binding in Fuse Service Works. The configuration for a JCA or JMS binding can be found in the jms-bus definition. associated with this listener.. For additional information, see the. [Gateway Listener Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/gateway-listener-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: This listener requires a composite service binding in Fuse Service Works.
@@ -103,8 +113,10 @@
     An ESB-aware listener is no longer required in Fuse Service Works.
   effort: 1
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: An ESB-aware listener is no longer required in Fuse Service Works.
@@ -119,8 +131,10 @@
     Each <service> definition in SOA-P 5 represents a service which can be. called from outside the application through an ESB listner.  The. equivalent definition in Fuse Service Works is a composite service.. For additional information, see the. [Service Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/service-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: Each <service> definition in SOA-P 5 represents a service which can be.
@@ -138,8 +152,10 @@
     The logic and execution flow of a service in SOA-P 5 is defined in an. action processing pipeline. This logic is. contained within a service component definition and expressed. using any of the available implementation types in Fuse Service Works.. For additional information see: the [Action Pipeline Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/action-pipeline-migration.md)
   effort: 5
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: 'The logic and execution flow of a service in SOA-P 5 is defined in an.
@@ -158,8 +174,10 @@
     Although Camel has both Hibernate and JPA components that are. useful in consuming records, there isn't any support for Hibernate events.. To migrate this to SwitchYard you may have to. build a custom SwitchYard component using Hibernate. listeners, or redesign your requirements to leverage the. existing Camel components available (Hibernate/JPA/SQL). in this area.
   effort: 13
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: Although Camel has both Hibernate and JPA components that are. useful in
@@ -178,8 +196,10 @@
     A jms-bus definition can be converted to a JMS or JCA gateway. binding on a composite service in SwitchYard. If the jms-bus. configuration is used for a non-gateway listener, it does not. need to be migrated to Fuse Service Works.. For additional information, see the. [JMS Bus Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/jms-bus-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: A jms-bus definition can be converted to a JMS or JCA gateway. binding
@@ -197,8 +217,10 @@
     A ftp-bus definition can be converted to a FTP gateway. binding on a composite service in SwitchYard.. For additional information, see the. [FTP Bus Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/ftp-bus-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: A ftp-bus definition can be converted to a FTP gateway. binding on a composite
@@ -215,8 +237,10 @@
     A camel-bus definition can be converted to a Camel gateway. binding on a composite service in SwitchYard.. For additional information, see the. [Camel Bus Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/camel-bus-migration.md)
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   - camel
   links: []
@@ -234,8 +258,10 @@
     A UDP Listener definition can be converted to a TCP/UDP. gateway binding on a composite service in SwitchYard.
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links:
   - title: TCP/UDP Gateway
@@ -253,8 +279,10 @@
     A jms-jca-provider definition can be converted to a JCA. gateway binding on a composite service in Fuse Service Works.
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links:
   - title: JCA Gateway Binding
@@ -272,8 +300,10 @@
     A http-provider definition can be converted to a HTTP gateway. binding on a composite service in Fuse Service Works.. For additional information, see the. [Gateway Listener Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/gateway-listener-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   - soa-p
   links: []
@@ -291,8 +321,10 @@
     A cron-schedule definition can be converted to a Quartz. gateway binding on a composite service in Fuse Service Works.. For additional information, see the. [Cron Scheduler Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/cron-schedule-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: A cron-schedule definition can be converted to a Quartz. gateway binding
@@ -309,8 +341,10 @@
     This listener requires a composite service binding in Fuse Service Works. The configuration for a FTP binding. can be found in the ftp-bus definition associated with this listener.. For additional information, see the. [Gateway Listener Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/gateway-listener-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: This listener requires a composite service binding in Fuse Service Works.
@@ -328,8 +362,10 @@
     This gateway requires a composite service binding in Fuse Service Works.. The configuration for a Camel binding can be found in the camel-bus definition associated. with this listener.. For additional information, see the. [Gateway Listener Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/gateway-listener-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   - camel
   links: []
@@ -348,8 +384,10 @@
     A <http-gateway> can be replaced in Fuse Service Works by a http binding added to your composite service.. For additional information, see the. [HTTP Gateway Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/http-gateway-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: A <http-gateway> can be replaced in Fuse Service Works by a http binding
@@ -366,8 +404,10 @@
     Fuse Service Works uses a <transform> to replace the invocation. of as SmooksAction to transform message content. You most likely will want to use a Smooks transform. to specify your Smooks configuration and from/to types.. For additional information, see the. [Transformation Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/transformation-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   - smooks
   links: []
@@ -386,8 +426,10 @@
     In a Fuse Service Works Smooks transform, you can specify your Smooks configuration with the &quot;config&quot; attribute.. For additional information, see the. [Transformation Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/transformation-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   - smooks
   links: []
@@ -405,8 +447,10 @@
     Fuse Service Works uses a <transform> to replace the invocation of as SmooksAction. to transform message content. You most likely will want to use a Smooks transform. to specify your Smooks configuration and from/to types.. For additional information, see the. [Transformation Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/transformation-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   - smooks
   links: []
@@ -426,8 +470,10 @@
     Instead of the JBoss ESB SOAPProxy action which transforms a specified WSDL and rewrites the address to the JBoss ESB server,. Fuse Service Works relies on Camel's routing capability to forward requests from a proxying service to the source.. Create a proxy service and a reference to the original service, and then use Camel to route them.. For additional information, see the. [SOAPProxy Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/soap-proxy.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: Instead of the JBoss ESB SOAPProxy action which transforms a specified
@@ -447,8 +493,10 @@
     In order to log your message (or a static logging message), you may want to create a Bean service which logs the message in the manner you wish, or you can use Camel routing to log static. logging messages.. For additional information, see the. [Action Class Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/action-class-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: In order to log your message (or a static logging message), you may want
@@ -466,8 +514,10 @@
     In order to configure static routes for your message in. Fuse Service Works, you should use Camel's routing (either through Java DSL routes or route.xml).. For additional information, see the. [Action Class Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/action-class-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: In order to configure static routes for your message in. Fuse Service Works,
@@ -484,8 +534,10 @@
     In order to replace the use of the JMSRouter in Fuse Service Works, you should use a JMS binding. You may need to review the options for JMS bindings in. Fuse Service Works if you are using the unwrap property.. For additional information, see the. [Action Class Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/action-class-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: In order to replace the use of the JMSRouter in Fuse Service Works, you
@@ -503,8 +555,10 @@
     TestMessageStore is an out-of-the-box ESB action that is used in JBoss Application Server. container tests to store a message with some form of logging - to a file, JMX, etc. TestMessageStore is used throughout. the JBoss ESB sample projects to help test the results of processed messages.. Fuse Service Works is able to leverage Arquillian to do container testing, so TestMessageStore is not. necessary for testing. This action should simply be removed during the migration.
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: TestMessageStore is an out-of-the-box ESB action that is used in JBoss
@@ -524,8 +578,10 @@
     The GroovyActionProcessor action executes a Groovy script. You can duplicate this functionality in. Fuse Service Works through Camel routing (both Java and XML.). For additional information, see the. [Camel Scripting Guide](https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Fuse_Service_Works/6.0/html/Development_Guide_Volume_1_SwitchYard/chap-Service_Implementations.html#Using_Scripting_Languages).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: The GroovyActionProcessor action executes a Groovy script. You can duplicate
@@ -542,8 +598,10 @@
     The BpmProcessor makes calls to jBPM 3 through the jBPM command API. Fuse Service Works supports jBPM 5, so you will need. to migrate your existing workflow from jBPM 3 to jBPM 5 and use a Fuse Service Works BPM implementation.. For additional information, see the. [BPM Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/bpm_migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: The BpmProcessor makes calls to jBPM 3 through the jBPM command API. Fuse
@@ -561,8 +619,10 @@
     A fs-bus definition can be converted to a Camel binding on a composite service in Fuse Service Works.. For additional information, see the. [Gateway Listener Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/gateway-listener-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: A fs-bus definition can be converted to a Camel binding on a composite
@@ -579,8 +639,10 @@
     JBoss ESB uses notifiers to transform ESB aware messages to a format that ESB-unaware services can handle. Fuse Service Works uses bi-directional gateways to transfer messages. via its service bindings.. A JBoss ESB Notifier should be converted to a Fuse Service Works Service Binding.. For example:. ```xml. <service category="routerToFile" name="FileRouterListener" description="Static route file destination">. <actions mep="OneWay">. <action name="notificationAction" class="org.jboss.soa.esb.actions.Notifier">. <property name="okMethod" value="notifyOK"/>. <property name="notification-details">. <NotificationList type="ok">. <target class="NotifyFiles">. <file append="false" URI="/tmp/HelloWorldFileNotifierTest.log"/>. </target>. </NotificationList>. </property>. </action>. </actions>. </service>. ```. Could be translated to:. ```xml. <sca:reference name="HelloWorld" multiplicity="0..1" promote="MyComponent/HelloWorld">. <camel:binding.file>. <camel:directory>/tmp</camel:directory>. <camel:fileName>HelloWorldFileNotifierTest.log</camel:fileName>. </camel:binding.file>. </sca:reference>. <sca:component name="MyComponent">. <sca:reference name="HelloWorld">. <sca:interface.wsdl interface="HelloWorld.wsdl#wsdl.porttype(HelloWorld)"/>. </sca:reference>. </sca:component>. ```
   effort: 7
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: JBoss ESB uses notifiers to transform ESB aware messages to a format that
@@ -609,8 +671,10 @@
     JBoss ESB uses a ByteArrayToString action to do conversion on a message body. In Fuse Service Works. you would use Camel to do type conversion.
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links:
   - title: Camel convertBodyTo
@@ -630,8 +694,10 @@
     JBoss ESB uses the LongToDateConverter action to do conversion on a message body.. In Fuse Service Works you would use Camel to do type conversion.
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links:
   - title: Camel Type Converters
@@ -649,8 +715,10 @@
     JBoss ESB uses the ObjectToCSVString action to do conversion on a message body. Fuse Service Works. would use a Smooks transform or a Camel route to perform this type of conversion.. For additional information, see the. [Transformation Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/transformation-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: JBoss ESB uses the ObjectToCSVString action to do conversion on a message
@@ -668,8 +736,10 @@
     JBoss ESB uses a ObjectInvoke action to invoke a processor on a message.. Fuse Service Works would use a bean component to do this.
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links:
   - title: Fuse Service Works Bean Component
@@ -687,8 +757,10 @@
     JBoss ESB uses an ObjectToXStream action to do convert an Object payload to XML using the XStream. processor. Fuse Service Works would use a Smooks transform or a Camel route to do this type of conversion.. For additional information, see the. [Transformation Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/transformation-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: JBoss ESB uses an ObjectToXStream action to do convert an Object payload
@@ -706,8 +778,10 @@
     JBoss ESB uses an XStreamToObject action to convert XML in a payload to an object using the XStream processor.. Fuse Service Works would use Smooks transform or a Camel route transform to do this type of conversion.. For additional information, see the. [Transformation Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/transformation-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: JBoss ESB uses an XStreamToObject action to convert XML in a payload to
@@ -725,8 +799,10 @@
     JBoss ESB uses the XsltAction action to transform documents in a payload. Fuse Service Works would use Camel to do this type of. conversion.. For additional information, see the. [Transformation Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/transformation-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: JBoss ESB uses the XsltAction action to transform documents in a payload.
@@ -743,8 +819,10 @@
     Fuse Service Works uses a &lt;transform&gt; to replace the invocation of a SmooksTransformer to transform message content.. You will need to use a Smooks transform to specify your Smooks configuration and from/to types.. For additional information, see the. [Transformation Migration Guide](https://github.com/windup/soa-migration/blob/master/advice/transformation-migration.md).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links:
   - title: Smooks Development Guide
@@ -764,8 +842,10 @@
     JBoss ESB uses the MessagePersister action to persist a message. Fuse Service Works would use. a [SQL reference binding](https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Fuse_Service_Works/6.0/html/Development_Guide_Volume_1_SwitchYard/chap-Gateways.html#sect-SQL) to accomplish something similar.
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: JBoss ESB uses the MessagePersister action to persist a message. Fuse Service
@@ -782,8 +862,10 @@
     JBoss ESB uses the EJBProcessor action to invoke a stateless session bean with the contents of a message.. Similar things can be achieved in Fuse Service Works through the use ofa bean service.
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links:
   - title: Fuse Service Works Bean Component
@@ -802,8 +884,10 @@
     The ScriptingAction executes a script using the BeanScriptingFramework. You can duplicate this functionality in Fuse Service Works. through Camel routing (both Java and XML.). For additional information, see the. [Camel Scripting Guide](https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Fuse_Service_Works/6.0/html/Development_Guide_Volume_1_SwitchYard/chap-Service_Implementations.html#Using_Scripting_Languages).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: The ScriptingAction executes a script using the BeanScriptingFramework.
@@ -819,8 +903,10 @@
     ESB {javaclassname}
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: JBoss ESB uses the {{javaclassname}} action to aggregate a message sequence
@@ -838,8 +924,10 @@
     In order to replace the use of the HttpRouter in JBoss ESB, you should use a HTTP reference binding.. Further documentation is available in the. [Fuse Service Works Developer Guide](https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Fuse_Service_Works/6.0/html/Development_Guide_Volume_1_SwitchYard/chap-Gateways.html#sect-HTTP).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: In order to replace the use of the HttpRouter in JBoss ESB, you should
@@ -856,8 +944,10 @@
     In order to replace the use of the EmailRouter in Fuse Service Works, you should use a mail reference binding.. Further documentation is available in the. [Fuse Service Works Developer Guide](https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Fuse_Service_Works/6.0/html/Development_Guide_Volume_1_SwitchYard/chap-Gateways.html#sect-Mail).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: In order to replace the use of the EmailRouter in Fuse Service Works, you
@@ -874,8 +964,10 @@
     In order to replace the use of the ContentBasedRouter in Fuse Service Works, you should use Camel to route messages.. A good example of this functionality can be found in the quickstarts project in the [rules-camel-jbr. quickstart](https://github.com/jboss-switchyard/quickstarts/tree/master/rules-camel-cbr).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: In order to replace the use of the ContentBasedRouter in Fuse Service Works,
@@ -892,8 +984,10 @@
     In order to replace the use of the StaticWiretap in Fuse Service Works, you should use a. [Camel Wiretap](http://camel.apache.org/wire-tap.html) to perform this action.
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: In order to replace the use of the StaticWiretap in Fuse Service Works,
@@ -910,8 +1004,10 @@
     In order to replace the use of the StaticRouter in Fuse Service Works, you should use Camel to route messages.. Further information is available in the [Camel Integration Patterns Documentation](http://camel.apache.org/enterprise-integration-patterns.html).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: In order to replace the use of the StaticRouter in Fuse Service Works,
@@ -928,8 +1024,10 @@
     In order to replace the use of the SOAPProcessor you should use a SOAP reference binding in Fuse Service Works.. For more information, see the. [Fuse Service Works Development Guide](https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Fuse_Service_Works/6.0/html/Development_Guide_Volume_1_SwitchYard/chap-Gateways.html#sect-SOAP).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: In order to replace the use of the SOAPProcessor you should use a SOAP
@@ -946,8 +1044,10 @@
     In order to replace the use of the SOAPClient in Fuse Service Works, you should use a SOAP reference binding.. For more information, see the. [Fuse Service Works Development Guide](https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Fuse_Service_Works/6.0/html/Development_Guide_Volume_1_SwitchYard/chap-Gateways.html#sect-SOAP).
   effort: 3
   labels:
-  - konveyor.io/source=soa-p5
-  - konveyor.io/target=fsw6
+  - konveyor.io/source=soa-p5-
+  - konveyor.io/source=soa-p
+  - konveyor.io/target=fsw6+
+  - konveyor.io/target=fsw
   - jboss-esb
   links: []
   message: In order to replace the use of the SOAPClient in Fuse Service Works, you

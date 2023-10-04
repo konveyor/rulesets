@@ -6,7 +6,9 @@
   effort: 5
   labels:
   - konveyor.io/source=eap4
-  - konveyor.io/target=eap6
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - jboss-web
   - datasource
   - ejb
@@ -44,7 +46,9 @@
   effort: 5
   labels:
   - konveyor.io/source=eap4
-  - konveyor.io/target=eap6
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - jboss-web
   - datasource
   - ejb
@@ -81,7 +85,9 @@
   effort: 5
   labels:
   - konveyor.io/source=eap4
-  - konveyor.io/target=eap6
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - jboss-web
   - datasource
   - ejb
@@ -117,7 +123,9 @@
   effort: 1
   labels:
   - konveyor.io/source=eap4
-  - konveyor.io/target=eap6
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - jboss-web
   - datasource
   - ejb
@@ -150,7 +158,9 @@
   effort: 1
   labels:
   - konveyor.io/source=eap4
-  - konveyor.io/target=eap6
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - jboss-web
   - datasource
   - ejb
@@ -179,7 +189,9 @@
   effort: 1
   labels:
   - konveyor.io/source=eap4
-  - konveyor.io/target=eap6
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - jboss-web
   - datasource
   - ejb
@@ -217,7 +229,9 @@
   effort: 1
   labels:
   - konveyor.io/source=eap4
-  - konveyor.io/target=eap6
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - jboss-web
   - datasource
   - ejb
@@ -246,7 +260,9 @@
   effort: 1
   labels:
   - konveyor.io/source=eap4
-  - konveyor.io/target=eap6
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - jboss-web
   - datasource
   - ejb
@@ -276,7 +292,9 @@
   effort: 1
   labels:
   - konveyor.io/source=eap4
-  - konveyor.io/target=eap6
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - jboss-web
   - datasource
   - ejb
@@ -306,7 +324,9 @@
   effort: 1
   labels:
   - konveyor.io/source=eap4
-  - konveyor.io/target=eap6
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - jboss-web
   - datasource
   - ejb
@@ -335,7 +355,9 @@
   effort: 1
   labels:
   - konveyor.io/source=eap4
-  - konveyor.io/target=eap6
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - jboss-web
   - datasource
   - ejb
@@ -363,7 +385,9 @@
   effort: 1
   labels:
   - konveyor.io/source=eap4
-  - konveyor.io/target=eap6
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - jboss-web
   - datasource
   - ejb
@@ -395,7 +419,9 @@
   effort: 3
   labels:
   - konveyor.io/source=eap4
-  - konveyor.io/target=eap6
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - jboss-web
   - datasource
   - ejb
@@ -432,7 +458,9 @@
   effort: 3
   labels:
   - konveyor.io/source=eap4
-  - konveyor.io/target=eap6
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - jboss-web
   - datasource
   - ejb
@@ -467,7 +495,9 @@
   effort: 3
   labels:
   - konveyor.io/source=eap4
-  - konveyor.io/target=eap6
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - jboss-web
   - datasource
   - ejb
@@ -501,7 +531,9 @@
   effort: 3
   labels:
   - konveyor.io/source=eap4
-  - konveyor.io/target=eap6
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - jboss-web
   - datasource
   - ejb
@@ -536,7 +568,9 @@
   effort: 3
   labels:
   - konveyor.io/source=eap4
-  - konveyor.io/target=eap6
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - jboss-web
   - datasource
   - ejb
@@ -571,7 +605,9 @@
   effort: 3
   labels:
   - konveyor.io/source=eap4
-  - konveyor.io/target=eap6
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - jboss-web
   - datasource
   - ejb

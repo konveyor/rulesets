@@ -6,7 +6,9 @@
   effort: 1
   labels:
   - konveyor.io/source=eap6
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - ws-security
   - security
   links:
@@ -31,7 +33,9 @@
   effort: 1
   labels:
   - konveyor.io/source=eap6
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - ws-security
   - security
   links:
@@ -53,7 +57,9 @@
   effort: 1
   labels:
   - konveyor.io/source=eap6
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - ws-security
   - security
   links:

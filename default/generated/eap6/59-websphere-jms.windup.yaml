@@ -1,9 +1,9 @@
 - customVariables:
-  - name: package
-    nameOfCaptureGroup: package
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<type>[^.]+)
   - name: type
     nameOfCaptureGroup: type
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<type>[^.]+)
+  - name: package
+    nameOfCaptureGroup: package
     pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<type>[^.]+)
   description: "IBM JMS Client\nWebSphere MQ client API is used to communicate with
     the MQ server from client-side applications.\n                        For JBoss
@@ -12,7 +12,9 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   links:
@@ -48,7 +50,9 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   links:
@@ -75,7 +79,9 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   links:
@@ -96,7 +102,9 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   links:
@@ -125,7 +133,9 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   links: []
@@ -138,14 +148,14 @@
       pattern: com.ibm.*jms.(JMS|MQe|MQ)(Text|Stream|Object|Map|Bytes)?Message
 - category: mandatory
   customVariables:
-  - name: package
-    nameOfCaptureGroup: package
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)
   - name: prefix
     nameOfCaptureGroup: prefix
     pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)
   - name: type
     nameOfCaptureGroup: type
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)
+  - name: package
+    nameOfCaptureGroup: package
     pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)
   description: |
     IBM JMS interface
@@ -153,7 +163,9 @@
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   links: []

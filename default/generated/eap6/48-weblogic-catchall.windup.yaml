@@ -1,10 +1,10 @@
 - category: potential
   customVariables:
-  - name: prefix
-    nameOfCaptureGroup: prefix
-    pattern: (?P<prefix>(com\.weblogic[^.]*\.)|(com\.bea[^.]*\.)|(bea\.)|(weblogic\.))?(?P<remainder>.*)
   - name: remainder
     nameOfCaptureGroup: remainder
+    pattern: (?P<prefix>(com\.weblogic[^.]*\.)|(com\.bea[^.]*\.)|(bea\.)|(weblogic\.))?(?P<remainder>.*)
+  - name: prefix
+    nameOfCaptureGroup: prefix
     pattern: (?P<prefix>(com\.weblogic[^.]*\.)|(com\.bea[^.]*\.)|(bea\.)|(weblogic\.))?(?P<remainder>.*)
   description: |
     WebLogic proprietary type reference
@@ -13,7 +13,7 @@
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap
   - catchall
   links: []
   message: This is a WebLogic proprietary type (`{{prefix}}{{remainder}}`) and needs
@@ -36,7 +36,7 @@
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap
   - catchall
   links: []
   message: This is an Oracle proprietary SQL type (`oracle.sql.{{remainder}}`).. It
@@ -62,7 +62,7 @@
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap
   - catchall
   links: []
   message: This is an Oracle proprietary type (`com.tangosol{{subpackage}}.{{type}}`)
@@ -91,7 +91,7 @@
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap
   - catchall
   links: []
   message: This is an Oracle proprietary type (`{{com}}oracle{{subpackage}}.{{type}}`)
@@ -114,7 +114,7 @@
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap
   - catchall
   links: []
   message: This is an Oracle proprietary JDBC type (`oracle.sql.{{remainder}}`)..

@@ -20,9 +20,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   links:
   - title: Migration from Seam 2 to Java EE and Alternatives
@@ -57,9 +60,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - cdi
   links:
@@ -81,9 +87,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - cdi
   links:
@@ -109,9 +118,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - cdi
   links:
@@ -138,9 +150,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - cdi
   links:
@@ -166,9 +181,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - cdi
   links:
@@ -190,9 +208,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - cdi
   links:
@@ -215,9 +236,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - cdi
   links:
@@ -248,9 +272,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - cdi
   links:
@@ -282,9 +309,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   links:
   - title: Java EE 7 - Startup annotation
@@ -310,9 +340,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - javaee
   links:
@@ -336,9 +369,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - javaee
   links:
@@ -362,9 +398,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - cdi
   - conversation
@@ -387,9 +426,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - cdi
   links:
@@ -417,9 +459,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   links: []
   message: Refactor to have annotated error handler which redirect to a viewID page
@@ -439,9 +484,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - cdi
   links:
@@ -473,9 +521,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - javaee
   links:
@@ -497,9 +548,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - javaee
   - servlet
@@ -523,9 +577,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   links:
   - title: JBoss EAP 6 - Contexts, Scopes, and Dependencies
@@ -544,9 +601,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   links:
   - title: JBoss BPM Suite 6 - CDI integration
@@ -571,9 +631,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - cdi
   links:
@@ -594,9 +657,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - cdi
   links:
@@ -618,9 +684,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - cdi
   links:
@@ -642,9 +711,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -671,9 +743,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - cdi
   links:
@@ -705,9 +780,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - jsf
   links:
@@ -732,9 +810,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - cdi
   links:
@@ -768,9 +849,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - javaee
   links:
@@ -799,9 +883,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - javaee
   links:
@@ -823,9 +910,12 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/source=seam2
+  - konveyor.io/source=seam
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - seam
   - javaee
   links:
