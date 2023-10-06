@@ -6,7 +6,6 @@
   labels:
   - konveyor.io/source=springboot
   - konveyor.io/target=quarkus
-  - phase=PostMigrationRulesPhase
   - springboot
   - catchall
   links: []

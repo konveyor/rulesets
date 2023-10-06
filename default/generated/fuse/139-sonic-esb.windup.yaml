@@ -6,7 +6,8 @@
   effort: 4
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   links:
@@ -29,7 +30,8 @@
   effort: 4
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   links: []
@@ -61,7 +63,8 @@
   effort: 4
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   - spring
@@ -90,7 +93,8 @@
   effort: 1
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   links: []
@@ -108,7 +112,8 @@
   effort: 1
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   - spring
@@ -127,7 +132,8 @@
   effort: 1
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   - spring
@@ -150,7 +156,8 @@
   effort: 3
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   - spring
@@ -173,7 +180,8 @@
   effort: 3
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   links: []
@@ -195,7 +203,8 @@
   effort: 3
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   links: []
@@ -213,7 +222,8 @@
   effort: 3
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   links: []
@@ -231,7 +241,8 @@
   effort: 1
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   links: []
@@ -249,7 +260,8 @@
   effort: 3
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   links: []
@@ -271,7 +283,8 @@
   effort: 1
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   links: []
@@ -289,7 +302,8 @@
   effort: 1
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   links: []
@@ -307,7 +321,8 @@
   effort: 1
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   - slf4j
@@ -330,7 +345,8 @@
   effort: 1
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   links: []
@@ -353,7 +369,8 @@
   effort: 1
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   links: []
@@ -372,7 +389,8 @@
   effort: 3
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   links: []
@@ -394,7 +412,8 @@
   effort: 1
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   links: []
@@ -415,7 +434,8 @@
   effort: 3
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   links: []
@@ -437,7 +457,8 @@
   effort: 1
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic-esb
   - camel
   links: []

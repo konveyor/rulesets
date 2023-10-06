@@ -6,6 +6,7 @@
   effort: 5
   labels:
   - konveyor.io/source=eap7
+  - konveyor.io/source=eap
   - konveyor.io/source=springboot
   - konveyor.io/target=azure-spring-apps
   - konveyor.io/target=azure-appservice
@@ -39,6 +40,7 @@
   effort: 5
   labels:
   - konveyor.io/source=eap7
+  - konveyor.io/source=eap
   - konveyor.io/source=springboot
   - konveyor.io/target=azure-spring-apps
   - konveyor.io/target=azure-appservice
@@ -63,6 +65,7 @@
   effort: 5
   labels:
   - konveyor.io/source=eap7
+  - konveyor.io/source=eap
   - konveyor.io/source=springboot
   - konveyor.io/target=azure-spring-apps
   - konveyor.io/target=azure-appservice

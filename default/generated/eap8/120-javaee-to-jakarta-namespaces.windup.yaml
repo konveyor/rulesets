@@ -5,8 +5,10 @@
     Replace `http://xmlns.jcp.org/xml/ns/javaee` with `https://jakarta.ee/xml/ns/jakartaee` and change the schema version number
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta EE XML Schemas
@@ -25,8 +27,10 @@
     Replace `http://xmlns.jcp.org/xml/ns/persistence` with `https://jakarta.ee/xml/ns/persistence` and change the schema version number
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta Persistence XML Schemas
@@ -45,8 +49,10 @@
     Replace `http://xmlns.jcp.org/xml/ns/validation` with `https://jakarta.ee/xml/ns/validation` and change the schema version number
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta Bean Validation XML Schemas
@@ -65,8 +71,10 @@
     Replace `javaee_web_services_metadata_handler_2_0.xsd` with `jakartaee_web_services_metadata_handler_3_0.xsd` and update the version attribute to `"3.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -85,8 +93,10 @@
     Replace `batchXML_1_0.xsd` with `batchXML_2_0.xsd`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -104,8 +114,10 @@
     Replace `beans_1_1.xsd` with `beans_3_0.xsd` and update the version attribute to `"3.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -124,8 +136,10 @@
     Replace `beans_2_0.xsd` with `beans_3_0.xsd` and update the version attribute to `"3.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -144,8 +158,10 @@
     Replace `jobXML_1_0.xsd` with `jobXML_2_0.xsd` and update the version attribute to `"2.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -164,8 +180,10 @@
     Replace `application_7.xsd` with `application_9.xsd` and update the version attribute to `"9"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -184,8 +202,10 @@
     Replace `application_8.xsd` with `application_9.xsd` and update the version attribute to `"9"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -204,8 +224,10 @@
     Replace `application-client_7.xsd` with `application-client_9.xsd` and update the version attribute to `"9"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -224,8 +246,10 @@
     Replace `application-client_8.xsd` with `application-client_9.xsd` and update the version attribute to `"9"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -244,8 +268,10 @@
     Replace `connector_1_7.xsd` with `connector_2_0.xsd` and update the version attribute to `"2.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -264,8 +290,10 @@
     Replace `ejb-jar_3_2.xsd` with `ejb-jar_4_0.xsd` and update the version attribute to `"4.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -284,8 +312,10 @@
     Replace `javaee_web_services_1_4.xsd` with `jakartaee_web_services_2_0.xsd` and update the version attribute to `"2.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -304,8 +334,10 @@
     Replace `permissions_7.xsd` with `permissions_9.xsd` and update the version attribute to `"9"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -324,8 +356,10 @@
     Replace `web-app_3_1.xsd` with `web-app_5_0.xsd` and update the version attribute to `"5.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -344,8 +378,10 @@
     Replace `web-app_4_0.xsd` with `web-app_5_0.xsd` and update the version attribute to `"5.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -364,8 +400,10 @@
     Replace `web-fragment_3_1.xsd` with `web-fragment_5_0.xsd` and update the version attribute to `"5.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -384,8 +422,10 @@
     Replace `web-fragment_4_0.xsd` with `web-fragment_5_0.xsd` and update the version attribute to `"5.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -404,8 +444,10 @@
     Replace `web-facesconfig_2_2.xsd` with `web-facesconfig_3_0.xsd` and update the version attribute to `"3.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -424,8 +466,10 @@
     Replace `web-facesconfig_2_3.xsd` with `web-facesconfig_3_0.xsd` and update the version attribute to `"3.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -444,8 +488,10 @@
     Replace `web-facelettaglibrary_2_2.xsd` with `web-facelettaglibrary_3_0.xsd` and update the version attribute to `"3.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -464,8 +510,10 @@
     Replace `web-facelettaglibrary_2_3.xsd` with `web-facelettaglibrary_3_0.xsd` and update the version attribute to `"3.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -484,8 +532,10 @@
     Replace `web-partialresponse_2_2.xsd` with `web-partialresponse_3_0.xsd`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -503,8 +553,10 @@
     Replace `web-partialresponse_2_3.xsd` with `web-partialresponse_3_0.xsd`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -522,8 +574,10 @@
     Replace `web-jsptaglibrary_2_1.xsd` with `web-jsptaglibrary_3_0.xsd` and update the version attribute to `"3.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -542,8 +596,10 @@
     Replace `validation-mapping-2.0.xsd` with `validation-mapping-3.0.xsd` and update the version attribute to `"3.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -562,8 +618,10 @@
     Replace `validation-configuration-2.0.xsd` with `validation-configuration-3.0.xsd` and update the version attribute to `"3.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -582,8 +640,10 @@
     Replace `persistence_2_1.xsd` with `persistence_3_0.xsd` and update the version attribute to `"3.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -602,8 +662,10 @@
     Replace `orm_2_1.xsd` with `orm_3_0.xsd` and update the version attribute to `"3.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -622,8 +684,10 @@
     Replace `orm_2_2.xsd` with `orm_3_0.xsd` and update the version attribute to `"3.0"`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: Jakarta XML Schemas
@@ -642,8 +706,10 @@
     In the root tag, replace the `version` attribute value `2.1` with `3.0`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: In the root tag, replace the `version` attribute value `2.1` with `3.0`
@@ -667,8 +733,10 @@
     In the root tag, replace the `version` attribute value `7` with `9`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: In the root tag, replace the `version` attribute value `7` with `9`
@@ -692,8 +760,10 @@
     `beans_1_1.xsd`: In the root tag, replace the `version` attribute value with `3.0`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`beans_1_1.xsd`: In the root tag, replace the `version` attribute value
@@ -718,8 +788,10 @@
     `beans_2_0.xsd`: In the root tag, replace the `version` attribute value with `3.0`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`beans_2_0.xsd`: In the root tag, replace the `version` attribute value
@@ -744,8 +816,10 @@
     `application_7.xsd`: In the root tag, replace the `version` attribute value with `9`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`application_7.xsd`: In the root tag, replace the `version` attribute
@@ -770,8 +844,10 @@
     `application_8.xsd`: In the root tag, replace the `version` attribute value with `9`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`application_8.xsd`: In the root tag, replace the `version` attribute
@@ -796,8 +872,10 @@
     `application-client_7.xsd`: In the root tag, replace the `version` attribute value with `9`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`application-client_7.xsd`: In the root tag, replace the `version` attribute
@@ -822,8 +900,10 @@
     `application-client_8.xsd`: In the root tag, replace the `version` attribute value with `9`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`application-client_8.xsd`: In the root tag, replace the `version` attribute
@@ -848,8 +928,10 @@
     `connector_1_7.xsd`: In the root tag, replace the `version` attribute value with `2.0`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`connector_1_7.xsd`: In the root tag, replace the `version` attribute
@@ -874,8 +956,10 @@
     `ejb-jar_3_2.xsd`: In the root tag, replace the `version` attribute value with `4.0`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`ejb-jar_3_2.xsd`: In the root tag, replace the `version` attribute value
@@ -900,8 +984,10 @@
     `javaee_web_services_1_4.xsd`: In the root tag, replace the `version` attribute value with `2.0`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`javaee_web_services_1_4.xsd`: In the root tag, replace the `version`
@@ -926,8 +1012,10 @@
     `web-app_3_1`: In the root tag, replace the `version` attribute value with `5.0`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`web-app_3_1`: In the root tag, replace the `version` attribute value
@@ -952,8 +1040,10 @@
     `web-app_4_0`: In the root tag, replace the `version` attribute value with `5.0`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`web-app_4_0`: In the root tag, replace the `version` attribute value
@@ -978,8 +1068,10 @@
     `web-fragment_3_1`: In the root tag, replace the `version` attribute value with `5.0`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`web-fragment_3_1`: In the root tag, replace the `version` attribute value
@@ -1004,8 +1096,10 @@
     `web-fragment_4_0`: In the root tag, replace the `version` attribute value with `5.0`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`web-fragment_4_0`: In the root tag, replace the `version` attribute value
@@ -1030,8 +1124,10 @@
     `web-facesconfig_2_2`: In the root tag, replace the `version` attribute value with `3.0`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`web-facesconfig_2_2`: In the root tag, replace the `version` attribute
@@ -1056,8 +1152,10 @@
     `web-facesconfig_2_3`: In the root tag, replace the `version` attribute value with `3.0`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`web-facesconfig_2_3`: In the root tag, replace the `version` attribute
@@ -1082,8 +1180,10 @@
     `web-facelettaglibrary_2_2`: In the root tag, replace the `version` attribute value with `3.0`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`web-facelettaglibrary_2_2`: In the root tag, replace the `version` attribute
@@ -1108,8 +1208,10 @@
     `web-facelettaglibrary_2_3`: In the root tag, replace the `version` attribute value with `3.0`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`web-facelettaglibrary_2_3`: In the root tag, replace the `version` attribute
@@ -1134,8 +1236,10 @@
     `web-jsptaglibrary_2_1`: In the root tag, replace the `version` attribute value with `3.0`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`web-jsptaglibrary_2_1`: In the root tag, replace the `version` attribute
@@ -1160,8 +1264,10 @@
     `validation-mapping-2.0`: In the root tag, replace the `version` attribute value with `3.0`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`validation-mapping-2.0`: In the root tag, replace the `version` attribute
@@ -1186,8 +1292,10 @@
     `validation-configuration-2.0`: In the root tag, replace the `version` attribute value with `3.0`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`validation-configuration-2.0`: In the root tag, replace the `version`
@@ -1212,8 +1320,10 @@
     `orm_2_1`: In the root tag, replace the `version` attribute value with `3.0`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`orm_2_1`: In the root tag, replace the `version` attribute value with
@@ -1238,8 +1348,10 @@
     `orm_2_2`: In the root tag, replace the `version` attribute value with `3.0`
   effort: 1
   labels:
-  - konveyor.io/target=jakarta-ee9
+  - konveyor.io/target=jakarta-ee9+
+  - konveyor.io/target=jakarta-ee
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: '`orm_2_2`: In the root tag, replace the `version` attribute value with

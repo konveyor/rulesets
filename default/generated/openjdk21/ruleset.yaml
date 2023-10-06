@@ -1,0 +1,3 @@
+name: openjdk17
+description: This ruleset provides analysis regarding removed APIs in OpenJDK 18 to
+  21.

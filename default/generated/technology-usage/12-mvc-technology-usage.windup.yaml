@@ -1,8 +1,6 @@
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-01000
   tag:
@@ -14,9 +12,7 @@
     - Apache Wicket
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-01100
   tag:
@@ -28,9 +24,7 @@
     - Apache Struts
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-01200
   tag:
@@ -42,9 +36,7 @@
     - Spring MVC
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-01300
   tag:
@@ -56,9 +48,7 @@
     - GWT
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-01400
   tag:
@@ -70,9 +60,7 @@
     - MyFaces
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-01500
   tag:
@@ -84,9 +72,7 @@
     - RichFaces
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-01600
   tag:
@@ -98,9 +84,7 @@
     - JSF
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-01700
   tag:
@@ -112,9 +96,7 @@
     - Apache Tapestry
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-01800
   tag:
@@ -126,9 +108,7 @@
     - Stripes
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-01900
   tag:
@@ -140,9 +120,7 @@
     - Spark
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-02000
   tag:
@@ -154,9 +132,7 @@
     - Vaadin
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-02100
   tag:
@@ -168,9 +144,7 @@
     - Grails
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-02200
   tag:
@@ -182,9 +156,7 @@
     - Play
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-02300
   tag:
@@ -196,9 +168,7 @@
     - Oracle ADF
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-02400
   tag:
@@ -210,9 +180,7 @@
     - PrimeFaces
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-02500
   tag:
@@ -224,9 +192,7 @@
     - JSTL
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-02600
   tag:
@@ -238,9 +204,7 @@
     - OpenFaces
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-02700
   tag:
@@ -252,9 +216,7 @@
     - JFreeChart
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-02800
   tag:
@@ -266,9 +228,7 @@
     - BootsFaces
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-02900
   tag:
@@ -280,9 +240,7 @@
     - ICEfaces
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-03000
   tag:
@@ -294,9 +252,7 @@
     - BabbageFaces
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-03100
   tag:
@@ -308,9 +264,7 @@
     - Portlet
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-03200
   tag:
@@ -322,9 +276,7 @@
     - AngularFaces
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-03300
   tag:
@@ -336,9 +288,7 @@
     - LiferayFaces
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-03400
   tag:
@@ -350,9 +300,7 @@
     - Liferay
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-03500
   tag:
@@ -364,9 +312,7 @@
     - ButterFaces
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-03600
   tag:
@@ -378,9 +324,7 @@
     - HighFaces
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-03700
   tag:
@@ -392,9 +336,7 @@
     - TieFaces
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-03800
   tag:
@@ -406,9 +348,7 @@
     - OmniFaces
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-03900
   tag:
@@ -420,9 +360,7 @@
     - UberFire
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-04000
   tag:
@@ -434,9 +372,7 @@
     - Velocity
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-04100
   tag:
@@ -448,9 +384,7 @@
     - Thymeleaf
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-0x4200
   tag:
@@ -462,9 +396,7 @@
     - FreeMarker
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-04300
   tag:
@@ -476,9 +408,7 @@
     - ANTLR StringTemplate
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-04400
   tag:
@@ -490,9 +420,7 @@
     - Handlebars
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-04500
   tag:
@@ -504,9 +432,7 @@
     - JMustache
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-04600
   tag:
@@ -518,9 +444,7 @@
     - Jamon
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-04700
   tag:
@@ -532,9 +456,7 @@
     - Twirl
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-04800
   tag:
@@ -546,9 +468,7 @@
     - Scalate
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-04900
   tag:
@@ -560,9 +480,7 @@
     - Rythm Template Engine
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-05000
   tag:
@@ -574,9 +492,7 @@
     - Trimou
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-05100
   tag:
@@ -588,9 +504,7 @@
     - Jetbrick Template
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-05200
   tag:
@@ -602,9 +516,7 @@
     - Chunk Templates
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-05300
   tag:
@@ -616,9 +528,7 @@
     - JSilver
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-05400
   tag:
@@ -630,9 +540,7 @@
     - Water Template Engine
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-05500
   tag:
@@ -644,9 +552,7 @@
     - Ickenham
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-05600
   tag:
@@ -658,9 +564,7 @@
     - Mixer
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-05700
   tag:
@@ -672,9 +576,7 @@
     - Webmacro
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-05800
   tag:
@@ -686,9 +588,7 @@
     - DVSL
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-05900
   tag:
@@ -700,9 +600,7 @@
     - Snippetory Template Engine
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-mvc-06000
   tag:

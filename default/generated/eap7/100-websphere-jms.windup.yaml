@@ -11,8 +11,10 @@
     Artemis client API.\n                    \n"
   labels:
   - konveyor.io/source=websphere
-  - konveyor.io/target=eap7
-  - konveyor.io/target=java-ee7
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee7+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   links:
@@ -33,22 +35,24 @@
       pattern: com.ibm.*jms*
 - category: mandatory
   customVariables:
-  - name: package
-    nameOfCaptureGroup: package
-    pattern: (?P<package>com.ibm(\.[^.]*)*\.jms.)?(?P<prefix>(Jms|MQeJNDI|MQe|MQ)?)?(?P<type>[^.]*?)?ConnectionFactory
   - name: prefix
     nameOfCaptureGroup: prefix
     pattern: (?P<package>com.ibm(\.[^.]*)*\.jms.)?(?P<prefix>(Jms|MQeJNDI|MQe|MQ)?)?(?P<type>[^.]*?)?ConnectionFactory
   - name: type
     nameOfCaptureGroup: type
     pattern: (?P<package>com.ibm(\.[^.]*)*\.jms.)?(?P<prefix>(Jms|MQeJNDI|MQe|MQ)?)?(?P<type>[^.]*?)?ConnectionFactory
+  - name: package
+    nameOfCaptureGroup: package
+    pattern: (?P<package>com.ibm(\.[^.]*)*\.jms.)?(?P<prefix>(Jms|MQeJNDI|MQe|MQ)?)?(?P<type>[^.]*?)?ConnectionFactory
   description: |
     IBM {prefix}{type}ConnectionFactory reference
   effort: 1
   labels:
   - konveyor.io/source=websphere
-  - konveyor.io/target=eap7
-  - konveyor.io/target=java-ee7
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee7+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   links:
@@ -74,8 +78,10 @@
   effort: 1
   labels:
   - konveyor.io/source=websphere
-  - konveyor.io/target=eap7
-  - konveyor.io/target=java-ee7
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee7+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   links:
@@ -94,8 +100,10 @@
   effort: 1
   labels:
   - konveyor.io/source=websphere
-  - konveyor.io/target=eap7
-  - konveyor.io/target=java-ee7
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee7+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   links:
@@ -109,22 +117,24 @@
       pattern: com.ibm.mqe.jms.{type}Queue
 - category: mandatory
   customVariables:
-  - name: package
-    nameOfCaptureGroup: package
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
   - name: type
     nameOfCaptureGroup: type
     pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
   - name: prefix
     nameOfCaptureGroup: prefix
     pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
+  - name: package
+    nameOfCaptureGroup: package
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
   description: |
     IBM JMS destination message
   effort: 1
   labels:
   - konveyor.io/source=websphere
-  - konveyor.io/target=eap7
-  - konveyor.io/target=java-ee7
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee7+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   links: []
@@ -137,22 +147,24 @@
       pattern: com.ibm.*jms.(JMS|MQe|MQ)(Text|Stream|Object|Map|Bytes)?Message
 - category: mandatory
   customVariables:
-  - name: prefix
-    nameOfCaptureGroup: prefix
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)
   - name: type
     nameOfCaptureGroup: type
     pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)
   - name: package
     nameOfCaptureGroup: package
     pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)
+  - name: prefix
+    nameOfCaptureGroup: prefix
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)
   description: |
     IBM JMS interface
   effort: 1
   labels:
   - konveyor.io/source=websphere
-  - konveyor.io/target=eap7
-  - konveyor.io/target=java-ee7
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee7+
+  - konveyor.io/target=java-ee
   - jms
   - websphere
   links: []

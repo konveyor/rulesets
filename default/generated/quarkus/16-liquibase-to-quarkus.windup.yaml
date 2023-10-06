@@ -1,0 +1,72 @@
+- category: mandatory
+  customVariables: []
+  description: |-
+    Replace the 'liquibase-core' dependency with Quarkus 'quarkus-liquibase' extension
+    Replace the `org.liquibase:liquibase-core` dependency with the Quarkus dependency `io.quarkus:quarkus-liquibase`. Further information in the link below.
+  effort: 1
+  labels:
+  - konveyor.io/source=liquibase
+  - konveyor.io/target=quarkus
+  links: []
+  message: Replace the `org.liquibase:liquibase-core` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-liquibase`. Further information in the link below.
+  ruleID: quarkus-liquibase-00000
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.liquibase.liquibase-core
+- category: mandatory
+  customVariables: []
+  description: |-
+    Replace the 'liquibase-core' dependency with Quarkus 'quarkus-liquibase' extension
+    Replace the `org.liquibase:liquibase-core` dependency with the Quarkus dependency `io.quarkus:quarkus-liquibase`. Further information in the link below.
+  effort: 1
+  labels:
+  - konveyor.io/source=liquibase
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus - Guide
+    url: https://quarkus.io/guides/liquibase
+  message: Replace the `org.liquibase:liquibase-core` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-liquibase`. Further information in the link below.
+  ruleID: quarkus-liquibase-00010
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.liquibase.liquibase-core
+- category: mandatory
+  customVariables: []
+  description: |-
+    Replace the 'liquibase-mongodb' dependency with Quarkus 'quarkus-liquibase-mongodb' extension
+    Replace the `org.liquibase.ext:liquibase-mongodb` dependency with the Quarkus dependency `io.quarkus:quarkus-liquibase-mongodb`. No specific guide is available.
+  effort: 1
+  labels:
+  - konveyor.io/source=liquibase
+  - konveyor.io/target=quarkus
+  links: []
+  message: Replace the `org.liquibase.ext:liquibase-mongodb` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-liquibase-mongodb`. No specific guide is available.
+  ruleID: quarkus-liquibase-mongodb-00000
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.liquibase.ext.liquibase-mongodb
+- category: mandatory
+  customVariables: []
+  description: |-
+    Replace the 'liquibase-mongodb' dependency with Quarkus 'quarkus-liquibase-mongodb' extension
+    Replace the `org.liquibase.ext:liquibase-mongodb` dependency with the Quarkus dependency `io.quarkus:quarkus-liquibase-mongodb`. No specific guide is available.
+  effort: 1
+  labels:
+  - konveyor.io/source=liquibase
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus - Guide
+    url: https://quarkus.io/guides/
+  message: Replace the `org.liquibase.ext:liquibase-mongodb` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-liquibase-mongodb`. No specific guide is available.
+  ruleID: quarkus-liquibase-mongodb-00010
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.liquibase.ext.liquibase-mongodb

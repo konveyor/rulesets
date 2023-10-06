@@ -6,7 +6,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Renamed components'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -25,7 +27,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Renamed components'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -44,7 +48,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Renamed components'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -63,7 +69,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: Renamed components'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -81,7 +89,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: the Maven `groupId` for the Camel Spring Boot
       starters have changed'
@@ -102,7 +112,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -122,7 +134,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -143,7 +157,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -163,7 +179,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -183,7 +201,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -203,7 +223,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -222,7 +244,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -242,7 +266,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -262,7 +288,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -282,7 +310,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -301,7 +331,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -321,7 +353,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -341,7 +375,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -361,7 +397,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -380,7 +418,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -400,7 +440,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -420,7 +462,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -440,7 +484,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -460,7 +506,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -480,7 +528,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -501,7 +551,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -521,7 +573,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -540,7 +594,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -558,7 +614,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - Renamed Components
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
@@ -576,7 +634,9 @@
   effort: 3
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: Camel 3 - ActiveMQ
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_activemq

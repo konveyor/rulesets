@@ -1,0 +1,38 @@
+- category: mandatory
+  customVariables: []
+  description: |-
+    Replace the 'smallrye-config-source-yaml' dependency with Quarkus 'quarkus-config-yaml' extension
+    Replace the `io.smallrye.config:smallrye-config-source-yaml` dependency with the Quarkus dependency `io.quarkus:quarkus-config-yaml`. Further information in the link below.
+  effort: 1
+  labels:
+  - konveyor.io/source=config
+  - konveyor.io/target=quarkus
+  links: []
+  message: Replace the `io.smallrye.config:smallrye-config-source-yaml` dependency
+    with the Quarkus dependency `io.quarkus:quarkus-config-yaml`. Further information
+    in the link below.
+  ruleID: quarkus-config-yaml-00000
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: io.smallrye.config.smallrye-config-source-yaml
+- category: mandatory
+  customVariables: []
+  description: |-
+    Replace the 'smallrye-config-source-yaml' dependency with Quarkus 'quarkus-config-yaml' extension
+    Replace the `io.smallrye.config:smallrye-config-source-yaml` dependency with the Quarkus dependency `io.quarkus:quarkus-config-yaml`. Further information in the link below.
+  effort: 1
+  labels:
+  - konveyor.io/source=config
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus - Guide
+    url: https://quarkus.io/guides/config#yaml
+  message: Replace the `io.smallrye.config:smallrye-config-source-yaml` dependency
+    with the Quarkus dependency `io.quarkus:quarkus-config-yaml`. Further information
+    in the link below.
+  ruleID: quarkus-config-yaml-00010
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: io.smallrye.config.smallrye-config-source-yaml

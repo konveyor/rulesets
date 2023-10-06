@@ -8,7 +8,9 @@
   effort: 1
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: multiple CamelContexts per application not
       supported'
@@ -31,7 +33,9 @@
   effort: 3
   labels:
   - konveyor.io/source=camel2
-  - konveyor.io/target=camel3
+  - konveyor.io/source=camel
+  - konveyor.io/target=camel3+
+  - konveyor.io/target=camel
   links:
   - title: 'Camel 3 - Migration Guide: multiple CamelContexts per application not
       supported'

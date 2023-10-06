@@ -1,8 +1,6 @@
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-clustering-01000
   tag:
@@ -14,9 +12,7 @@
     - Clustering Web Session
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-clustering-02000
   tag:

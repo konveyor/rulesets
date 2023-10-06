@@ -7,6 +7,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - web-app
   - weblogic
   - file-system
@@ -31,6 +32,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - web-app
   - weblogic
   - servlet
@@ -54,6 +56,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - web-app
   - weblogic
   - servlet
@@ -77,6 +80,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - web-app
   - weblogic
   - servlet
@@ -100,6 +104,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - web-app
   - weblogic
   - lifecycle
@@ -138,6 +143,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - web-app
   - weblogic
   - lifecycle
@@ -172,6 +178,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - web-app
   - weblogic
   - security
@@ -192,6 +199,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - web-app
   - weblogic
   - security
@@ -214,6 +222,7 @@
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
+  - konveyor.io/target=eap
   - web-app
   - weblogic
   - security

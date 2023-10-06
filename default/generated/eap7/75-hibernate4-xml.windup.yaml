@@ -6,9 +6,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate4
+  - konveyor.io/source=hibernate
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate5+
+  - konveyor.io/target=hibernate
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - hibernate
   - configuration
   - transaction
@@ -44,9 +48,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate4
+  - konveyor.io/source=hibernate
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate5+
+  - konveyor.io/target=hibernate
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - hibernate
   - configuration
   links:
@@ -65,9 +73,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate4
+  - konveyor.io/source=hibernate
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate5+
+  - konveyor.io/target=hibernate
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - hibernate
   - configuration
   links:
@@ -95,9 +107,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate4
+  - konveyor.io/source=hibernate
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate5+
+  - konveyor.io/target=hibernate
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - hibernate
   - configuration
   links: []
@@ -125,9 +141,13 @@
   effort: 1
   labels:
   - konveyor.io/source=hibernate4
+  - konveyor.io/source=hibernate
   - konveyor.io/source=eap6
-  - konveyor.io/target=hibernate5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=hibernate5+
+  - konveyor.io/target=hibernate
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - hibernate
   - configuration
   links: []

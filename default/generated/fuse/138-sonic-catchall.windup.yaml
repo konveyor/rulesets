@@ -11,8 +11,10 @@
   effort: 0
   labels:
   - konveyor.io/source=sonic
-  - konveyor.io/target=camel2
-  - konveyor.io/target=fuse6
+  - konveyor.io/target=camel2+
+  - konveyor.io/target=camel
+  - konveyor.io/target=fuse6+
+  - konveyor.io/target=fuse
   - sonic
   - catchall
   links: []

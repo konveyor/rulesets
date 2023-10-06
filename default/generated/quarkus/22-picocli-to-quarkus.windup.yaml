@@ -1,0 +1,36 @@
+- category: mandatory
+  customVariables: []
+  description: |-
+    Replace the 'picocli' dependency with Quarkus 'quarkus-picocli' extension
+    Replace the `info.picocli:picocli` dependency with the Quarkus dependency `io.quarkus:quarkus-picocli`. Further information in the link below.
+  effort: 1
+  labels:
+  - konveyor.io/source=picocli
+  - konveyor.io/target=quarkus
+  links: []
+  message: Replace the `info.picocli:picocli` dependency with the Quarkus dependency
+    `io.quarkus:quarkus-picocli`. Further information in the link below.
+  ruleID: quarkus-picocli-00000
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: info.picocli.picocli
+- category: mandatory
+  customVariables: []
+  description: |-
+    Replace the 'picocli' dependency with Quarkus 'quarkus-picocli' extension
+    Replace the `info.picocli:picocli` dependency with the Quarkus dependency `io.quarkus:quarkus-picocli`. Further information in the link below.
+  effort: 1
+  labels:
+  - konveyor.io/source=picocli
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus - Guide
+    url: https://quarkus.io/guides/picocli
+  message: Replace the `info.picocli:picocli` dependency with the Quarkus dependency
+    `io.quarkus:quarkus-picocli`. Further information in the link below.
+  ruleID: quarkus-picocli-00010
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: info.picocli.picocli

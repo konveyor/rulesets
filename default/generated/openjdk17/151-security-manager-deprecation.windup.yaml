@@ -8,8 +8,10 @@
     The Java Security Manager API is deprecated in Java 17. Any references to it should be removed.. See the link for further information.
   effort: 5
   labels:
-  - konveyor.io/source=openjdk11
-  - konveyor.io/target=openjdk17
+  - konveyor.io/source=openjdk11-
+  - konveyor.io/source=openjdk
+  - konveyor.io/target=openjdk17+
+  - konveyor.io/target=openjdk
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
@@ -29,8 +31,10 @@
     References to Java Security Manager API classes deprecated in Java 17. Any references to it should be removed.. See the link for further information.
   effort: 5
   labels:
-  - konveyor.io/source=openjdk11
-  - konveyor.io/target=openjdk17
+  - konveyor.io/source=openjdk11-
+  - konveyor.io/source=openjdk
+  - konveyor.io/target=openjdk17+
+  - konveyor.io/target=openjdk
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
@@ -50,8 +54,10 @@
     The java.lang.System::getSecurityManager and java.lang.System::setSecurityManager methods have been deprecated in Java 17.. See the link for further information.
   effort: 5
   labels:
-  - konveyor.io/source=openjdk11
-  - konveyor.io/target=openjdk17
+  - konveyor.io/source=openjdk11-
+  - konveyor.io/source=openjdk
+  - konveyor.io/target=openjdk17+
+  - konveyor.io/target=openjdk
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
@@ -69,8 +75,10 @@
     The java.lang.Thread::checkAccess method has been deprecated in Java 17.. See the link for further information.
   effort: 5
   labels:
-  - konveyor.io/source=openjdk11
-  - konveyor.io/target=openjdk17
+  - konveyor.io/source=openjdk11-
+  - konveyor.io/source=openjdk
+  - konveyor.io/target=openjdk17+
+  - konveyor.io/target=openjdk
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
@@ -88,8 +96,10 @@
     The java.lang.ThreadGroup::checkAccess method has been deprecated in Java 17.. See the link for further information.
   effort: 5
   labels:
-  - konveyor.io/source=openjdk11
-  - konveyor.io/target=openjdk17
+  - konveyor.io/source=openjdk11-
+  - konveyor.io/source=openjdk
+  - konveyor.io/target=openjdk17+
+  - konveyor.io/target=openjdk
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
@@ -107,8 +117,10 @@
     The java.util.logging.LogManager::checkAccess method has been deprecated in Java 17.. See the link for further information.
   effort: 5
   labels:
-  - konveyor.io/source=openjdk11
-  - konveyor.io/target=openjdk17
+  - konveyor.io/source=openjdk11-
+  - konveyor.io/source=openjdk
+  - konveyor.io/target=openjdk17+
+  - konveyor.io/target=openjdk
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
@@ -128,8 +140,10 @@
     The java.util.concurrent.Executors.{method-names} method has been deprecated
   effort: 5
   labels:
-  - konveyor.io/source=openjdk11
-  - konveyor.io/target=openjdk17
+  - konveyor.io/source=openjdk11-
+  - konveyor.io/source=openjdk
+  - konveyor.io/target=openjdk17+
+  - konveyor.io/target=openjdk
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
@@ -149,8 +163,10 @@
     javax.security.auth.Subject.{meth-name} method has been deprecated
   effort: 5
   labels:
-  - konveyor.io/source=openjdk11
-  - konveyor.io/target=openjdk17
+  - konveyor.io/source=openjdk11-
+  - konveyor.io/source=openjdk
+  - konveyor.io/target=openjdk17+
+  - konveyor.io/target=openjdk
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411

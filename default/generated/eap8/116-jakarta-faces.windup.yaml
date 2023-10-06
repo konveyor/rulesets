@@ -7,7 +7,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
+  - konveyor.io/source=eap
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - JakartaEE
   - eap8
   links:

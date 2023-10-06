@@ -1,0 +1,76 @@
+- category: mandatory
+  customVariables: []
+  description: |-
+    Replace the 'opentelemetry-exporter-jaeger' dependency with Quarkus 'quarkus-opentelemetry-exporter-jaeger' extension
+    Replace the `io.opentelemetry:opentelemetry-exporter-jaeger` dependency with the Quarkus dependency `io.quarkus:quarkus-opentelemetry-exporter-jaeger`. Further information in the link below.
+  effort: 1
+  labels:
+  - konveyor.io/source=opentelemetry
+  - konveyor.io/target=quarkus
+  links: []
+  message: Replace the `io.opentelemetry:opentelemetry-exporter-jaeger` dependency
+    with the Quarkus dependency `io.quarkus:quarkus-opentelemetry-exporter-jaeger`.
+    Further information in the link below.
+  ruleID: quarkus-opentelemetry-exporter-jaeger-00000
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: io.opentelemetry.opentelemetry-exporter-jaeger
+- category: mandatory
+  customVariables: []
+  description: |-
+    Replace the 'opentelemetry-exporter-jaeger' dependency with Quarkus 'quarkus-opentelemetry-exporter-jaeger' extension
+    Replace the `io.opentelemetry:opentelemetry-exporter-jaeger` dependency with the Quarkus dependency `io.quarkus:quarkus-opentelemetry-exporter-jaeger`. Further information in the link below.
+  effort: 1
+  labels:
+  - konveyor.io/source=opentelemetry
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus - Guide
+    url: https://quarkus.io/guides/opentelemetry
+  message: Replace the `io.opentelemetry:opentelemetry-exporter-jaeger` dependency
+    with the Quarkus dependency `io.quarkus:quarkus-opentelemetry-exporter-jaeger`.
+    Further information in the link below.
+  ruleID: quarkus-opentelemetry-exporter-jaeger-00010
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: io.opentelemetry.opentelemetry-exporter-jaeger
+- category: mandatory
+  customVariables: []
+  description: |-
+    Replace the 'opentelemetry-exporter-otlp-trace' dependency with Quarkus 'quarkus-opentelemetry-exporter-otlp' extension
+    Replace the `io.opentelemetry:opentelemetry-exporter-otlp-trace` dependency with the Quarkus dependency `io.quarkus:quarkus-opentelemetry-exporter-otlp`. Further information in the link below.
+  effort: 1
+  labels:
+  - konveyor.io/source=opentelemetry
+  - konveyor.io/target=quarkus
+  links: []
+  message: Replace the `io.opentelemetry:opentelemetry-exporter-otlp-trace` dependency
+    with the Quarkus dependency `io.quarkus:quarkus-opentelemetry-exporter-otlp`.
+    Further information in the link below.
+  ruleID: quarkus-opentelemetry-exporter-otlp-00000
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: io.opentelemetry.opentelemetry-exporter-otlp-trace
+- category: mandatory
+  customVariables: []
+  description: |-
+    Replace the 'opentelemetry-exporter-otlp-trace' dependency with Quarkus 'quarkus-opentelemetry-exporter-otlp' extension
+    Replace the `io.opentelemetry:opentelemetry-exporter-otlp-trace` dependency with the Quarkus dependency `io.quarkus:quarkus-opentelemetry-exporter-otlp`. Further information in the link below.
+  effort: 1
+  labels:
+  - konveyor.io/source=opentelemetry
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus - Guide
+    url: https://quarkus.io/guides/opentelemetry
+  message: Replace the `io.opentelemetry:opentelemetry-exporter-otlp-trace` dependency
+    with the Quarkus dependency `io.quarkus:quarkus-opentelemetry-exporter-otlp`.
+    Further information in the link below.
+  ruleID: quarkus-opentelemetry-exporter-otlp-00010
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: io.opentelemetry.opentelemetry-exporter-otlp-trace

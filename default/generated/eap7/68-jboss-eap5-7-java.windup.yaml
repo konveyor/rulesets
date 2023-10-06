@@ -7,7 +7,9 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jms
   - ejb
@@ -38,7 +40,9 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jms
   - ejb
@@ -70,7 +74,9 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jms
   - ejb
@@ -111,7 +117,9 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jms
   - ejb
@@ -143,7 +151,9 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jms
   - ejb
@@ -168,7 +178,9 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jms
   - ejb
@@ -192,7 +204,9 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jms
   - ejb
@@ -216,7 +230,9 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jms
   - ejb
@@ -240,7 +256,9 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jms
   - ejb
@@ -264,7 +282,9 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jms
   - ejb
@@ -288,7 +308,9 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jms
   - ejb
@@ -310,7 +332,9 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jms
   - ejb
@@ -333,7 +357,9 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jms
   - ejb
@@ -357,7 +383,9 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jms
   - ejb
@@ -381,7 +409,9 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jms
   - ejb
@@ -404,7 +434,9 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jms
   - ejb
@@ -426,7 +458,9 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jms
   - ejb

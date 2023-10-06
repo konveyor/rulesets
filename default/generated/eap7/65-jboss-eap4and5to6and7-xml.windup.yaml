@@ -7,8 +7,10 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   links:
   - title: JBoss EAP 6 - Migration Guide
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/#sect-Service-style_Deployment_Changes
@@ -39,8 +41,10 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   links:
   - title: 'BarrierController service in JBoss EAP 6 '
     url: https://access.redhat.com/solutions/410953
@@ -71,8 +75,10 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   links:
   - title: How to compress remote EJB communication in JBoss EAP 6
     url: https://access.redhat.com/solutions/322953
@@ -102,8 +108,10 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   links:
   - title: Configure UsersRolesLoginModule for EAP 6 management console
     url: https://access.redhat.com/solutions/219933
@@ -125,8 +133,10 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   links:
   - title: JBoss EAP 6 - Migration Guide
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/#sect-Configuration_File_Changes
@@ -160,8 +170,10 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   links: []
   message: JBoss EAP 6 supports deploying SAR files, however JBoss EAP 5 and 6 do
     not share a lot of the internals.. The class your `jboss-{{types}}.xml` file is
@@ -183,8 +195,10 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   links:
   - title: JBoss EAP 5 - Custom Callback Handlers
     url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/security_guide/#Custom_Callback_Handlers

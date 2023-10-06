@@ -8,9 +8,12 @@
     `org.hibernate.engine.spi.SessionImplementor` parameter has to be changed to `org.hibernate.engine.spi.SharedSessionContractImplementor`.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
@@ -30,9 +33,12 @@
     change reference to hibernate-java8 to hibernate-core (since hibernate-java8 has been merged into hibernate-core module)
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
@@ -77,9 +83,12 @@
     If the `SessionFactory` is built via Hibernate’s native bootstrapping and `org.hibernate.HibernateException` or a subclass is referenced by the application. then set `hibernate.native_exception_handling_51_compliance` configuration property to `true`.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
@@ -118,9 +127,12 @@
     `org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getDefaultQueryResultsCache()` should be used instead of `SessionFactoryImplementor.getQueryCache()` method.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
@@ -140,9 +152,12 @@
     `org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getDefaultQueryResultsCache(String regionName)` should be used instead of `SessionFactoryImplementor.getQueryCache(String regionName)` method.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
@@ -163,9 +178,12 @@
     `org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getTimestampsCache()` should be used instead of `SessionFactoryImplementor.getUpdateTimestampsCache()` method.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
@@ -186,9 +204,12 @@
     `org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getRegion(String regionName)` should be used instead of `SessionFactoryImplementor.getSecondLevelCacheRegion(String regionName)` method.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
@@ -209,9 +230,12 @@
     Depending on the type of region, the appropriate method should be used instead:. * For an entity cache region, `org.hibernate.engine.spi.SessionFactoryImplementor.getMetamodel().entityPersister( entityName ).getCacheAccessStrategy()` should be used instead. * For a collection region, `org.hibernate.engine.spi.SessionFactoryImplementor.getMetamodel().collectionPersister( role ).getCacheAccessStrategy()` should be used instead. * For a natural ID region, `org.hibernate.engine.spi.SessionFactoryImplementor.getMetamodel().entityPersister( entityName ).getNaturalIdCacheAccessStrategy()` should be used instead
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
@@ -236,9 +260,12 @@
     `org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getRegion(String regionName)` should be used instead of `SessionFactoryImplementor.getNaturalIdCacheRegion(String regionName)` method.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
@@ -259,9 +286,12 @@
     `org.hibernate.engine.spi.SessionFactoryImplementor.getMetamodel().entityPersister( entityName ).getNaturalIdCacheAccessStrategy()` should be used instead of `SessionFactoryImplementor.getNaturalIdCacheRegionAccessStrategy(String regionName)` method.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
@@ -282,9 +312,12 @@
     `org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getCacheRegionNames()` should be used to obtain all cache region names, then `org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getRegion(String regionName)` should be used to look up each region.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
@@ -308,9 +341,12 @@
     Review usage of classes in `org.hibernate.cache.spi.RegionFactory`, as SPIs for this class has changed.. See Javadoc for `org.hibernate.cache.spi.RegionFactory` for details.
   effort: 3
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
@@ -333,9 +369,12 @@
     One potential upgrade concern is any custom `org.hibernate.cache.spi.QueryCacheFactory` implementations.. `org.hibernate.cache.spi.QueryCacheFactory` was meant as a means to allow service providers the ability to define query result caching, generally with more stale-tolerant query result invalidation handling.. However, the contract also bound it to the old second level cache contracts so they had to be updated.. Its responsibilities also changed so we also decided to "rename it" to `org.hibernate.cache.spi.TimestampsCacheFactory`.. Details can be found in HHH-11356 JIRA issue (link below).
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: 'Hibernate ORM 5.3 Migration Guide: Second-level cache provider SPI changes'
@@ -367,9 +406,12 @@
     A change to be aware of is accessing cache entries via `SecondLevelCacheStatistics.getEntries()` and `NaturalIdCacheStatistics.getEntries()`.. These methods have been deprecated, however the new caching SPI does not really require caching providers to support this.. As of Hibernate 5.3 these methods inherently return an empty Map (`Collections#emptyMap`).. This has always been something that providers did not implement "correctly" anyway.. Details can be found in HHH-11356 JIRA issue (link below).
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: 'Hibernate ORM 5.3 Migration Guide: Second-level cache provider SPI changes'
@@ -397,9 +439,12 @@
     A change to be aware of is accessing cache entries via `NaturalIdCacheStatistics.getEntries()`.. This method has been deprecated, however the new caching SPI does not really require caching providers to support this.. As of Hibernate 5.3 this method inherently return an empty Map (`Collections#emptyMap`).. This has always been something that providers did not implement "correctly" anyway.. Details can be found in HHH-11356 JIRA issue (link below).
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links: []
   message: A change to be aware of is accessing cache entries via `NaturalIdCacheStatistics.getEntries()`..
@@ -420,9 +465,12 @@
     A change to be aware of is accessing cache entries via `SecondLevelCacheStatistics.getEntries()`.. This method has been deprecated, however the new caching SPI does not really require caching providers to support this.. As of Hibernate 5.3 these methods inherently return an empty Map (`Collections#emptyMap`).. This has always been something that providers did not implement "correctly" anyway.. Details can be found in HHH-11356 JIRA issue (link below).
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links: []
   message: A change to be aware of is accessing cache entries via `SecondLevelCacheStatistics.getEntries()`..
@@ -445,9 +493,12 @@
     Hibernate 5.3 - SPI in package org.hibernate.{packages} changed
   effort: 3
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
@@ -470,9 +521,12 @@
     Define `hibernate.default_schema` or `hibernate.default_catalog` (whichever is used by the selected dialect), or, alternatively, set `hibernate.hbm2ddl.jdbc_metadata_extraction_strategy=individually`.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links: []
   message: Define `hibernate.default_schema` or `hibernate.default_catalog` (whichever
@@ -499,9 +553,12 @@
     If the application uses Hibernate, please define `hibernate.default_schema` or `hibernate.default_catalog` (whichever is used by the selected dialect), or, alternatively, set `hibernate.hbm2ddl.jdbc_metadata_extraction_strategy=individually`.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links: []
   message: If the application uses Hibernate, please define `hibernate.default_schema`
@@ -529,9 +586,12 @@
     Applications using the `@TableGenerator` should set the `hibernate.id.generator.stored_last_used` configuration property to `false`.
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
@@ -553,9 +613,12 @@
     Hibernate 5.3 - QueryParameter.getType() renamed
   effort: 1
   labels:
-  - konveyor.io/source=hibernate5.1
-  - konveyor.io/target=hibernate5.3
+  - konveyor.io/source=hibernate5.1-
+  - konveyor.io/source=hibernate
+  - konveyor.io/target=hibernate5.3+
+  - konveyor.io/target=hibernate
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   - hibernate
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM

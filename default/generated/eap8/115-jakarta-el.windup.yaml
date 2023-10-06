@@ -6,6 +6,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: The incorrectly spelled `javax.el.MethodExpression.isParmetersProvided()`
@@ -23,6 +24,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: The incorrectly spelled `jakarta.el.MethodExpression.isParmetersProvided()`

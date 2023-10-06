@@ -10,7 +10,7 @@
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap
   links: []
   message: This is a reference to the IBM DB2 driver type (`com.ibm.db2.jcc.{{type}}`).
     It probably does not need to be migrated. However the IBM DB2 driver should be
@@ -35,7 +35,7 @@
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap
   - catchall
   links: []
   message: This is an IBM proprietary type (`{{package}}.{{type}}`) and needs to be
@@ -61,7 +61,7 @@
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/target=eap
   - catchall
   links: []
   message: This is an IBM ILog proprietary type (`ilog.{{subpackage}}.{{type}}`) and

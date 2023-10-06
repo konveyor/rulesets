@@ -1,7 +1,8 @@
 - customVariables: []
   labels:
   - konveyor.io/source=java-ee
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - webservice
   links: []
   ruleID: xml-webservices-01000
@@ -17,7 +18,8 @@
 - customVariables: []
   labels:
   - konveyor.io/source=java-ee
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - webservice
   links: []
   ruleID: xml-webservices-02000
@@ -33,7 +35,8 @@
 - customVariables: []
   labels:
   - konveyor.io/source=java-ee
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - webservice
   links: []
   ruleID: xml-webservices-03000
@@ -49,7 +52,8 @@
 - customVariables: []
   labels:
   - konveyor.io/source=java-ee
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - webservice
   links: []
   ruleID: xml-webservices-04000
@@ -66,7 +70,8 @@
 - customVariables: []
   labels:
   - konveyor.io/source=java-ee
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - webservice
   links: []
   ruleID: xml-webservices-05000
@@ -89,7 +94,8 @@
   effort: 0
   labels:
   - konveyor.io/source=java-ee
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - webservice
   links: []
   message: JBoss EAP developer documentation describes JAX-WS Web Services Common
@@ -120,7 +126,8 @@
   effort: 0
   labels:
   - konveyor.io/source=java-ee
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - webservice
   links: []
   message: JBoss EAP developer documentation about JAX-WS Web Services Endpoints
@@ -145,7 +152,8 @@
 - customVariables: []
   labels:
   - konveyor.io/source=java-ee
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - webservice
   links: []
   ruleID: xml-webservices-07000
@@ -162,7 +170,8 @@
 - customVariables: []
   labels:
   - konveyor.io/source=java-ee
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - webservice
   links: []
   ruleID: xml-webservices-08000
@@ -179,7 +188,8 @@
 - customVariables: []
   labels:
   - konveyor.io/source=java-ee
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - webservice
   links: []
   ruleID: xml-webservices-09000
@@ -196,7 +206,8 @@
 - customVariables: []
   labels:
   - konveyor.io/source=java-ee
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - webservice
   links: []
   ruleID: xml-webservices-10000

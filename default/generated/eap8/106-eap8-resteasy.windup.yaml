@@ -7,7 +7,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links: []
   message: The `org.jboss.resteasy.resteasy-jettison-provider` module has been removed.
@@ -30,7 +32,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links: []
   message: The `org.jboss.resteasy:resteasy-jettison-provider` artifact has been removed.
@@ -49,7 +53,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links: []
   message: The `org.jboss.resteasy.resteasy-yaml-provider` module has been removed.
@@ -72,7 +78,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links: []
   message: The `org.jboss.resteasy:resteasy-yaml-provider` artifact has been removed.
@@ -91,7 +99,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links: []
   message: The `org.jboss.resteasy:resteasy-spring` artifact has been renamed to `org.jboss.resteasy.spring:resteasy-spring`
@@ -109,7 +119,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links: []
   message: '`org.jboss.resteasy.spi.StringConverter` has been removed. Replace with
@@ -132,7 +144,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links: []
   message: '`org.jboss.resteasy.spi.AsynchronousResponse` has been removed. Replace
@@ -158,7 +172,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links: []
   message: '`org.jboss.resteasy.annotations.Suspend` has been removed. Replace with
@@ -181,7 +197,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links:
   - title: org.jboss.resteasy.spi.ResourceInvoker
@@ -201,7 +219,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links:
   - title: org.jboss.resteasy.plugins.interceptors
@@ -224,7 +244,9 @@
   labels:
   - konveyor.io/source=eap6
   - konveyor.io/source=eap7
-  - konveyor.io/target=eap8
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - eap8
   links: []
   message: The `org.jboss.resteasy.resteasy-jaxrs` module has been deprecated and

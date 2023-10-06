@@ -7,8 +7,10 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   links:
   - title: JBoss EAP 6 - Development Guide
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/development_guide/#Use_a_Security_Domain_in_Your_Application
@@ -30,8 +32,10 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   links:
   - title: Where is class MBeanProxyExt in JBoss EAP 6?
     url: https://access.redhat.com/solutions/410503
@@ -59,8 +63,10 @@
   labels:
   - konveyor.io/source=eap4
   - konveyor.io/source=eap5
+  - konveyor.io/source=eap
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
+  - konveyor.io/target=eap
   links:
   - title: How to implement MBeans in JBoss EAP 6
     url: https://access.redhat.com/solutions/121823

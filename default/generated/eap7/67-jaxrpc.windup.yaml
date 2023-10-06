@@ -6,7 +6,8 @@
   effort: 5
   labels:
   - konveyor.io/source=java-ee
-  - konveyor.io/target=eap7
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jax-rpc
   - soap
   links:

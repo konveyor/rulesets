@@ -5,8 +5,10 @@
     This method has changed from `EntityPersister#multiload(Object[] ids, SharedSessionContractImplementor session, MultiIdLoadOptions loadOptions)` to `EntityPersister#lock(Object[] ids, EventSource session, MultiIdLoadOptions loadOptions)`.. Both EventSource and SharedSessionContractImplementor are contracts of `SessionImpl` so they can be easily swapped.. Methods `isEventSource` and `asEventSource` can also be used to ease the transition, available on the `SharedSessionContractImplementor` contract.
   effort: 1
   labels:
-  - konveyor.io/target=hibernate6.2
-  - konveyor.io/target=eap8
+  - konveyor.io/target=hibernate6.2+
+  - konveyor.io/target=hibernate
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - konveyor.io/source
   - hibernate
   links:
@@ -30,8 +32,10 @@
     This method has changed from `Executable#afterDeserialize(SharedSessionContractImplementor session)` to `Executable#afterDeserialize(EventSource eventSource)`.. Both EventSource and SharedSessionContractImplementor are contracts of `SessionImpl` so they can be easily swapped.. Methods `isEventSource` and `asEventSource` can also be used to ease the transition, available on the `SharedSessionContractImplementor` contract.
   effort: 1
   labels:
-  - konveyor.io/target=hibernate6.2
-  - konveyor.io/target=eap8
+  - konveyor.io/target=hibernate6.2+
+  - konveyor.io/target=hibernate
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - konveyor.io/source
   - hibernate
   links:
@@ -54,8 +58,10 @@
     The return type of `JdbcType#getJdbcRecommendedJavaTypeMapping()` was changed from `BasicJavaType` to `JavaType`.
   effort: 1
   labels:
-  - konveyor.io/target=hibernate6.2
-  - konveyor.io/target=eap8
+  - konveyor.io/target=hibernate6.2+
+  - konveyor.io/target=hibernate
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - konveyor.io/source
   - hibernate
   links:
@@ -78,8 +84,10 @@
     This class within `org.hibernate.cfg` has been moved; see link for more information.
   effort: 1
   labels:
-  - konveyor.io/target=hibernate6.2
-  - konveyor.io/target=eap8
+  - konveyor.io/target=hibernate6.2+
+  - konveyor.io/target=hibernate
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - konveyor.io/source
   - hibernate
   links:
@@ -101,8 +109,10 @@
     This class within `org.hibernate.loader` has been moved; see link for more information.
   effort: 1
   labels:
-  - konveyor.io/target=hibernate6.2
-  - konveyor.io/target=eap8
+  - konveyor.io/target=hibernate6.2+
+  - konveyor.io/target=hibernate
+  - konveyor.io/target=eap8+
+  - konveyor.io/target=eap
   - konveyor.io/source
   - hibernate
   links:

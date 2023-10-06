@@ -6,6 +6,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links:
   - title: 'Developing Jakarta XML Web Services: Apache CXF Support'
@@ -32,6 +33,7 @@
   effort: 1
   labels:
   - konveyor.io/target=eap8
+  - konveyor.io/target=eap
   - konveyor.io/source
   links: []
   message: Configure an RH-SSO SAML client and then generate a keycloak-saml.xml file

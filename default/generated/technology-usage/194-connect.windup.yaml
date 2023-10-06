@@ -3,8 +3,7 @@
     Embedded Resource Adapter
     The application embeds a resource adapter.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: connect-01400
   tag:
@@ -18,8 +17,7 @@
     Embedded library - ActiveMQ
     The application embeds an ActiveMQ client library.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -37,8 +35,7 @@
     Embedded library - OpenWS
     The application embeds an OpenWS library.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: connect-01600
   tag:
@@ -52,8 +49,7 @@
     Embedded library - WSDL
     The application embeds a WSDL library.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links: []
   ruleID: connect-01700
   tag:
@@ -67,8 +63,7 @@
     Embedded library - RabbitMQ Client
     The application embeds a RabbitMQ client library.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -95,8 +90,7 @@
     Embedded library - Spring Messaging Client
     The application embeds a Spring Messaging client library.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -117,8 +111,7 @@
     Embedded library - Camel Messaging Client
     The application embeds a Camel Messaging client library.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -136,8 +129,7 @@
     Embedded library - Amazon SQS Client
     The application embeds a Amazon SQS client library.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -155,8 +147,7 @@
     Embedded library - HornetQ Client
     The application embeds a HornetQ client library.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -174,8 +165,7 @@
     Embedded library - AMQP Client
     The application embeds an AMQP client library.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -193,8 +183,7 @@
     Embedded library - RocketMQ Client
     The application embeds a RocketMQ client library.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -212,8 +201,7 @@
     Embedded library - 0MQ Client
     The application embeds a 0MQ client library.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -234,8 +222,7 @@
     Embedded library - JBossMQ Client
     The application embeds a JBossMQ client library.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -253,8 +240,7 @@
     Embedded library - Zbus Client
     The application embeds a Zbus client library.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663
@@ -272,8 +258,7 @@
     Embedded library - Qpid Client
     The application embeds a Qpid client library.
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
+  - konveyor.io/include=always
   links:
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 6 Supported Configurations
     url: https://access.redhat.com/articles/111663

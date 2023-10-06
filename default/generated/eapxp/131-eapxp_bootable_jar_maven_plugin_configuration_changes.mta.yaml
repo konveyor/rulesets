@@ -6,7 +6,8 @@
   effort: 1
   labels:
   - konveyor.io/source=eapxp
-  - konveyor.io/target=eapxp3
+  - konveyor.io/target=eapxp3+
+  - konveyor.io/target=eapxp
   - JBossEAP
   - EAPXP
   links:

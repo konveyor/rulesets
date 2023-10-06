@@ -7,7 +7,9 @@
   labels:
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - konveyor.io/source
   - classloader
   links:
@@ -35,7 +37,9 @@
   labels:
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - konveyor.io/source
   - jndi
   links: []
@@ -59,7 +63,9 @@
   labels:
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - konveyor.io/source
   - jndi
   links: []
@@ -85,7 +91,9 @@
   labels:
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - konveyor.io/source
   links: []
   ruleID: environment-dependent-calls-03500
@@ -107,7 +115,9 @@
   labels:
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - konveyor.io/source
   - jmx
   links: []
@@ -131,7 +141,9 @@
   labels:
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - konveyor.io/source
   - jmx
   links: []
@@ -153,7 +165,9 @@
   labels:
   - konveyor.io/target=eap6
   - konveyor.io/target=eap7
-  - konveyor.io/target=java-ee6
+  - konveyor.io/target=eap
+  - konveyor.io/target=java-ee6+
+  - konveyor.io/target=java-ee
   - konveyor.io/source
   - jmx
   links: []

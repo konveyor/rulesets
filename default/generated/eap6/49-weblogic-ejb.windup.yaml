@@ -9,7 +9,8 @@
   effort: 1
   labels:
   - konveyor.io/source=weblogic
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - ejb
   - weblogic
   links: []
@@ -28,7 +29,8 @@
   effort: 3
   labels:
   - konveyor.io/source=weblogic
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - ejb
   - weblogic
   links:
@@ -55,7 +57,8 @@
   effort: 3
   labels:
   - konveyor.io/source=weblogic
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - ejb
   - weblogic
   links:
@@ -80,7 +83,8 @@
   effort: 3
   labels:
   - konveyor.io/source=weblogic
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - ejb
   - weblogic
   links:

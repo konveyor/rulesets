@@ -7,7 +7,8 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - eap7
   - base64
   links:

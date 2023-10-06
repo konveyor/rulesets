@@ -5,7 +5,9 @@
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap6
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jboss-eap6
   links: []
@@ -25,7 +27,9 @@
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap6
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jboss-eap6
   links: []
@@ -48,7 +52,9 @@
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap6
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jboss-eap6
   - cmp
@@ -73,7 +79,9 @@
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap6
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jboss-eap6
   links: []
@@ -99,7 +107,9 @@
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap6
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jboss-eap6
   - configuration
@@ -123,7 +133,9 @@
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap6
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jboss-eap6
   - singleton
@@ -144,7 +156,9 @@
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap6
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jboss-eap6
   - cluster
@@ -170,7 +184,9 @@
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap6
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jboss-eap6
   links:
@@ -199,7 +215,9 @@
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap6
-  - konveyor.io/target=eap7
+  - konveyor.io/source=eap
+  - konveyor.io/target=eap7+
+  - konveyor.io/target=eap
   - jboss-eap5
   - jboss-eap6
   - logging

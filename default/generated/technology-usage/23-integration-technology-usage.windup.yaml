@@ -1,8 +1,6 @@
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-integration-00001
   tag:
@@ -14,9 +12,7 @@
     - Apache Camel
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-integration-00002
   tag:
@@ -28,9 +24,7 @@
     - Teiid
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-integration-00003
   tag:
@@ -42,9 +36,7 @@
     - Spring Integration
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-integration-00004
   tag:
@@ -56,9 +48,7 @@
     - Ikasan
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-integration-00005
   tag:
@@ -70,9 +60,7 @@
     - Swagger
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-integration-00006
   tag:
@@ -84,9 +72,7 @@
     - Apiman
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-integration-00007
   tag:
@@ -98,9 +84,7 @@
     - 3scale
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-integration-00008
   tag:
@@ -112,9 +96,7 @@
     - Istio
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-integration-00009
   tag:
@@ -126,9 +108,7 @@
     - ServiceMix
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-integration-00010
   tag:
@@ -140,9 +120,7 @@
     - Mule
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-integration-00011
   tag:
@@ -154,9 +132,7 @@
     - Petals EIP
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-integration-00012
   tag:
@@ -168,9 +144,7 @@
     - SwitchYard
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-integration-00013
   tag:
@@ -182,9 +156,7 @@
     - Apache Synapse
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-integration-00014
   tag:
@@ -196,9 +168,7 @@
     - WSO2
 - customVariables: []
   labels:
-  - konveyor.io/source
-  - konveyor.io/target
-  - phase=PostMigrationRulesPhase
+  - konveyor.io/include=always
   links: []
   ruleID: technology-usage-integration-00015
   tag:

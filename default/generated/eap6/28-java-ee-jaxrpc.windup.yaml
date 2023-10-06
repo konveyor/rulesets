@@ -9,7 +9,8 @@
     handle methods.\n                        \n                    \n"
   labels:
   - konveyor.io/source=java-ee
-  - konveyor.io/target=eap6
+  - konveyor.io/target=eap6+
+  - konveyor.io/target=eap
   - jax-rpc
   - soap
   links:
