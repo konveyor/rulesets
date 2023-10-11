@@ -87,7 +87,6 @@
   tag: ["JPA XML"]
   labels:
   - konveyor.io/include=always
-  message: "Persistence unit"
   when:
     or:
       - builtin.xml:
