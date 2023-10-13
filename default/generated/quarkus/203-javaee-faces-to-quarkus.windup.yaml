@@ -1,0 +1,27 @@
+- category: mandatory
+  customVariables: []
+  description: |-
+    Replace JSF Dependency with MyFaces
+    JSF Dependencies with groupId `org.jboss.spec.javax.faces` should be replaced with. ```. <!-- Quarkus MyFaces dependencies -->. <dependency>. <groupId>org.apache.myfaces.core.extensions.quarkus</groupId>. <artifactId>myfaces-quarkus</artifactId>. <version>4.0.1</version>. </dependency>. <!-- Quarkus Faces utilities and components extensions -->. <dependency>. <groupId>io.quarkiverse.primefaces</groupId>. <artifactId>quarkus-primefaces</artifactId>. <version>3.13.1</version>. </dependency>. <dependency>. <groupId>io.quarkiverse.omnifaces</groupId>. <artifactId>quarkus-omnifaces</artifactId>. <version>4.2.0</version>. </dependency>. ```
+  effort: 1
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: 'Apache MyFaces: Getting Started on Quarkus'
+    url: https://myfaces.apache.org/#/coregettingstarted?id=quarkus
+  message: JSF Dependencies with groupId `org.jboss.spec.javax.faces` should be replaced
+    with. ```. <!-- Quarkus MyFaces dependencies -->. <dependency>. <groupId>org.apache.myfaces.core.extensions.quarkus</groupId>.
+    <artifactId>myfaces-quarkus</artifactId>. <version>4.0.1</version>. </dependency>.
+    <!-- Quarkus Faces utilities and components extensions -->. <dependency>. <groupId>io.quarkiverse.primefaces</groupId>.
+    <artifactId>quarkus-primefaces</artifactId>. <version>3.13.1</version>. </dependency>.
+    <dependency>. <groupId>io.quarkiverse.omnifaces</groupId>. <artifactId>quarkus-omnifaces</artifactId>.
+    <version>4.2.0</version>. </dependency>. ```
+  ruleID: javaee-faces-to-quarkus-00000
+  when:
+    builtin.xml:
+      filepaths:
+      - pom.xml
+      namespaces:
+        m: http://maven.apache.org/POM/4.0.0
+      xpath: /m:project/m:dependencies/m:dependency[m:groupId/text() = 'org.jboss.spec.javax.faces']
