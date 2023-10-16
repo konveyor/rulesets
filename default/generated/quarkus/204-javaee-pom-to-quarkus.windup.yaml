@@ -18,7 +18,7 @@
       - pom.xml
       namespaces:
         m: http://maven.apache.org/POM/4.0.0
-      xpath: /m:project/m:packaging/text()[matches(self::node(), '^(?!jar).*$')]
+      xpath: /m:project/m:packaging/text()[matches(self::node(), '(ear|war|ejb|zip|pom)')]
 - category: mandatory
   customVariables: []
   description: |
