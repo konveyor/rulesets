@@ -237,7 +237,10 @@
       pattern: .*swarmcache.*\.jar$
 - customVariables: []
   description: "Caching - Spring Boot Cache library\n\n                        The
-    application embeds the Spring Boot Cache library.\n                    \n"
+    application embeds the Spring Boot Cache library.\n\n                        An
+    embedded cache library is problematic because state information might not be persisted
+    to a backing service.\n\n                        Recommendation: Use a cache backing
+    service.\n                    \n"
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
@@ -254,3 +257,20 @@
     - java.dependency:
         lowerbound: 0.0.0
         name: org.springframework.boot.spring-boot-starter-cache
+- customVariables: []
+  description: "Caching - Redis Cache library\n\n                        The application
+    embeds the Redis client.\n                    \n                        An embedded
+    cache library is problematic because state information might not be persisted
+    to a backing service.\n\n                        Recommendation: Use a cache backing
+    service.\n                    \n"
+  labels:
+  - konveyor.io/target=cloud-readiness
+  - konveyor.io/source
+  links: []
+  ruleID: embedded-cache-libraries-16000
+  tag:
+  - Redis
+  - Caching - Redis Cache library
+  when:
+    builtin.file:
+      pattern: .*redis.*\.jar

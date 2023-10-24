@@ -54,3 +54,57 @@
     - java.referenced:
         location: VARIABLE_DECLARATION
         pattern: com.sun.jna*
+- category: mandatory
+  customVariables: []
+  description: |-
+    Java Native Processes
+    Native Processes might not run in a cloud or container environment.. Recommendations. * Review the purpose of the native process in your application.. * Check whether the native process is compatible with a cloud environment.. * Replace, remove, or rewrite the native process or application using a cloud-compatible equivalent.
+  effort: 7
+  labels:
+  - konveyor.io/target=cloud-readiness
+  - konveyor.io/source
+  - jni
+  links: []
+  message: Native Processes might not run in a cloud or container environment.. Recommendations.
+    * Review the purpose of the native process in your application.. * Check whether
+    the native process is compatible with a cloud environment.. * Replace, remove,
+    or rewrite the native process or application using a cloud-compatible equivalent.
+  ruleID: jni-native-code-00001
+  when:
+    or:
+    - java.referenced:
+        location: CONSTRUCTOR_CALL
+        pattern: java.lang.Process
+    - java.referenced:
+        location: IMPORT
+        pattern: java.lang.Process
+    - java.referenced:
+        location: INHERITANCE
+        pattern: java.lang.Process
+    - java.referenced:
+        location: VARIABLE_DECLARATION
+        pattern: java.lang.Process
+    - java.referenced:
+        location: CONSTRUCTOR_CALL
+        pattern: java.lang.ProcessBuilder
+    - java.referenced:
+        location: IMPORT
+        pattern: java.lang.ProcessBuilder
+    - java.referenced:
+        location: INHERITANCE
+        pattern: java.lang.ProcessBuilder
+    - java.referenced:
+        location: VARIABLE_DECLARATION
+        pattern: java.lang.ProcessBuilder
+    - java.referenced:
+        location: CONSTRUCTOR_CALL
+        pattern: java.lang.ProcessHandle
+    - java.referenced:
+        location: IMPORT
+        pattern: java.lang.ProcessHandle
+    - java.referenced:
+        location: INHERITANCE
+        pattern: java.lang.ProcessHandle
+    - java.referenced:
+        location: VARIABLE_DECLARATION
+        pattern: java.lang.ProcessHandle
