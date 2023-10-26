@@ -6,9 +6,7 @@
   effort: 3
   labels:
   - konveyor.io/source=openjdk18-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk18+
-  - konveyor.io/target=openjdk
   links:
   - title: 'JEP 421: Deprecate Finalization for Removal'
     url: https://openjdk.org/jeps/421
@@ -29,9 +27,7 @@
   effort: 3
   labels:
   - konveyor.io/source=openjdk18-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk18+
-  - konveyor.io/target=openjdk
   links:
   - title: 'JEP 421: Deprecate Finalization for Removal'
     url: https://openjdk.org/jeps/421

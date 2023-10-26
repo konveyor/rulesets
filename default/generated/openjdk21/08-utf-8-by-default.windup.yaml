@@ -8,7 +8,6 @@
   effort: 1
   labels:
   - konveyor.io/target=openjdk18+
-  - konveyor.io/target=openjdk
   - konveyor.io/source
   links:
   - title: 'JEP 400: UTF-8 by Default'
@@ -31,7 +30,6 @@
   effort: 1
   labels:
   - konveyor.io/target=openjdk18+
-  - konveyor.io/target=openjdk
   - konveyor.io/source
   links:
   - title: 'JEP 400: UTF-8 by Default'
@@ -52,7 +50,6 @@
   effort: 1
   labels:
   - konveyor.io/target=openjdk18+
-  - konveyor.io/target=openjdk
   - konveyor.io/source
   links:
   - title: 'JEP 400: UTF-8 by Default'
@@ -73,7 +70,6 @@
   effort: 1
   labels:
   - konveyor.io/target=openjdk18+
-  - konveyor.io/target=openjdk
   - konveyor.io/source
   links:
   - title: 'JEP 400: UTF-8 by Default'

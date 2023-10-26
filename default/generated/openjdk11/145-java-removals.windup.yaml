@@ -6,9 +6,7 @@
   effort: 3
   labels:
   - konveyor.io/source=openjdk8-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
-  - konveyor.io/target=openjdk
   links:
   - title: Java Thread Primitive Deprecation
     url: https://docs.oracle.com/javase/7/docs/technotes/guides/concurrency/threadPrimitiveDeprecation.html
@@ -34,9 +32,7 @@
   effort: 1
   labels:
   - konveyor.io/source=openjdk8-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
-  - konveyor.io/target=openjdk
   links:
   - title: Example changeset
     url: https://hg.openjdk.java.net/openjfx/9-dev/rt/rev/70f6fa01a32c
@@ -60,9 +56,7 @@
   effort: 1
   labels:
   - konveyor.io/source=openjdk8-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
-  - konveyor.io/target=openjdk
   links:
   - title: Example changeset
     url: https://hg.openjdk.java.net/openjfx/9-dev/rt/rev/70f6fa01a32c
@@ -85,9 +79,7 @@
   effort: 3
   labels:
   - konveyor.io/source=openjdk8-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
-  - konveyor.io/target=openjdk
   links:
   - title: Java 10 javax.security.auth.Policy api
     url: https://docs.oracle.com/javase/10/docs/api/javax/security/auth/Policy.html
@@ -113,9 +105,7 @@
   effort: 1
   labels:
   - konveyor.io/source=openjdk8-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
-  - konveyor.io/target=openjdk
   links:
   - title: Java 11 SecurityManager api
     url: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityManager.html
@@ -143,9 +133,7 @@
   effort: 1
   labels:
   - konveyor.io/source=openjdk8-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
-  - konveyor.io/target=openjdk
   links:
   - title: Java 11 SecurityManager api
     url: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityManager.html
@@ -166,9 +154,7 @@
   effort: 1
   labels:
   - konveyor.io/source=openjdk8-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
-  - konveyor.io/target=openjdk
   links:
   - title: APIs removed in JDK 9
     url: https://docs.oracle.com/en/java/javase/16/migrate/removed-apis.html#GUID-B96BD00F-12A4-493A-9907-2FFE8DA6748C
@@ -189,9 +175,7 @@
   effort: 1
   labels:
   - konveyor.io/source=openjdk8-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
-  - konveyor.io/target=openjdk
   links:
   - title: APIs removed in JDK 9
     url: https://docs.oracle.com/en/java/javase/16/migrate/removed-apis.html#GUID-B96BD00F-12A4-493A-9907-2FFE8DA6748C
@@ -212,9 +196,7 @@
   effort: 3
   labels:
   - konveyor.io/source=openjdk8-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
-  - konveyor.io/target=openjdk
   links:
   - title: java.util.jar.Packer API
     url: https://docs.oracle.com/javase/8/docs/api/java/util/jar/Pack200.Packer.html
@@ -249,9 +231,7 @@
   effort: 2
   labels:
   - konveyor.io/source=openjdk8-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
-  - konveyor.io/target=openjdk
   links:
   - title: Test changes for JDK-8054494
     url: https://hg.openjdk.java.net/jdk9/jdk9/jdk/rev/0a0a0986400e#l2.19
@@ -285,9 +265,7 @@
   effort: 1
   labels:
   - konveyor.io/source=openjdk8-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
-  - konveyor.io/target=openjdk
   links:
   - title: java.util.Base64 - Javadoc
     url: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Base64.html
@@ -312,9 +290,7 @@
   effort: 1
   labels:
   - konveyor.io/source=openjdk8-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
-  - konveyor.io/target=openjdk
   links:
   - title: JDK 11 removed APIs
     url: https://docs.oracle.com/en/java/javase/11/migrate/index.html#JSMIG-GUID-4B613B7E-B150-4D0A-835C-2393C60BE1F8
@@ -340,9 +316,7 @@
   effort: 3
   labels:
   - konveyor.io/source=openjdk8-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
-  - konveyor.io/target=openjdk
   links:
   - title: java.awt.peer Not Accessible
     url: https://docs.oracle.com/en/java/javase/11/migrate/index.html#JSMIG-GUID-0C350BAB-F2C8-409E-AD3E-63831C684A55
@@ -369,9 +343,7 @@
   effort: 1
   labels:
   - konveyor.io/source=openjdk8-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
-  - konveyor.io/target=openjdk
   links:
   - title: JDK11 New Classloader Implementations
     url: https://docs.oracle.com/en/java/javase/11/migrate/index.html#JSMIG-GUID-A868D0B9-026F-4D46-B979-901834343F9E

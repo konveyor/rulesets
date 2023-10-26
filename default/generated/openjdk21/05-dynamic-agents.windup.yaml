@@ -6,9 +6,7 @@
   effort: 3
   labels:
   - konveyor.io/source=openjdk21-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk21+
-  - konveyor.io/target=openjdk
   links:
   - title: 'JEP 451: Prepare to Disallow the Dynamic Loading of Agents'
     url: https://openjdk.org/jeps/451
