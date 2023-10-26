@@ -6,7 +6,6 @@
   effort: 3
   labels:
   - konveyor.io/target=openjdk18+
-  - konveyor.io/target=openjdk
   - konveyor.io/source
   links: []
   message: This finalization method has been removed between JDK 18 and 21 and must
@@ -31,7 +30,6 @@
   effort: 1
   labels:
   - konveyor.io/target=openjdk18+
-  - konveyor.io/target=openjdk
   - konveyor.io/source
   links: []
   message: The `java.lang.ThreadGroup.allowThreadSuspension` method has been removed
@@ -49,7 +47,6 @@
   effort: 3
   labels:
   - konveyor.io/target=openjdk18+
-  - konveyor.io/target=openjdk
   - konveyor.io/source
   links: []
   message: The `java.lang.Compiler` method has been removed and cannot be used anymore.
@@ -65,7 +62,6 @@
   effort: 3
   labels:
   - konveyor.io/target=openjdk18+
-  - konveyor.io/target=openjdk
   - konveyor.io/source
   links: []
   message: The `javax.management.remote.rmi.RMIIIOPServerImpl` method has been removed

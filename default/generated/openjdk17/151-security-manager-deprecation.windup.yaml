@@ -9,9 +9,7 @@
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk17+
-  - konveyor.io/target=openjdk
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
@@ -32,9 +30,7 @@
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk17+
-  - konveyor.io/target=openjdk
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
@@ -55,9 +51,7 @@
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk17+
-  - konveyor.io/target=openjdk
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
@@ -76,9 +70,7 @@
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk17+
-  - konveyor.io/target=openjdk
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
@@ -97,9 +89,7 @@
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk17+
-  - konveyor.io/target=openjdk
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
@@ -118,9 +108,7 @@
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk17+
-  - konveyor.io/target=openjdk
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
@@ -141,9 +129,7 @@
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk17+
-  - konveyor.io/target=openjdk
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
@@ -164,9 +150,7 @@
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk17+
-  - konveyor.io/target=openjdk
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411

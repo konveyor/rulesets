@@ -6,9 +6,7 @@
   effort: 1
   labels:
   - konveyor.io/source=openjdk8-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
-  - konveyor.io/target=openjdk
   links:
   - title: Removed Java EE modules
     url: https://www.oracle.com/java/technologies/javase/11-relnote-issues.html#JDK-8190378
@@ -27,9 +25,7 @@
   effort: 1
   labels:
   - konveyor.io/source=openjdk8-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
-  - konveyor.io/target=openjdk
   links:
   - title: GlassFish implementation of CORBA and RMI-IIOP
     url: https://javaee.github.io/glassfish-corba/index.html
@@ -58,9 +54,7 @@
   effort: 1
   labels:
   - konveyor.io/source=openjdk8-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
-  - konveyor.io/target=openjdk
   links:
   - title: Removed Java EE modules
     url: https://www.oracle.com/java/technologies/javase/11-relnote-issues.html#JDK-8190378

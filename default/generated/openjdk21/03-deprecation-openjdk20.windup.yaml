@@ -6,9 +6,7 @@
   effort: 3
   labels:
   - konveyor.io/source=openjdk20-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk20+
-  - konveyor.io/target=openjdk
   links: []
   message: Several classes under `javax` have been deprecated in JDK 20 for removal
     in a future release.

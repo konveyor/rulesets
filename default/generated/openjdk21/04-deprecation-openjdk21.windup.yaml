@@ -6,9 +6,7 @@
   effort: 3
   labels:
   - konveyor.io/source=openjdk21-
-  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk21+
-  - konveyor.io/target=openjdk
   links: []
   message: The `load(URL)` method under `SynthLookAndFeel` has been deprecated in
     JDK 21 for removal in a future release.
