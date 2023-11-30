@@ -1,5 +1,5 @@
 - customVariables: []
-  description: |
+  description: |-
     Glassfish EJB Descriptor
      Glassfish specific ejb configuration file used to configure EJBs, map them to jndi names etc.
   labels:
@@ -20,7 +20,7 @@
       namespaces: {}
       xpath: /glassfish-ejb-jar
 - customVariables: []
-  description: |
+  description: |-
     Glassfish Application EAR configuration file
      Glassfish-application  is a Glassfish specific EAR configuration file used to configure security roles, url addresses, JNDI binding etc. This file is glassfish specific and needs to be migrated to application.xml or jboss-app.xml.
   labels:

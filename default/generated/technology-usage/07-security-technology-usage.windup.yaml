@@ -1,4 +1,5 @@
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -27,6 +28,7 @@
         namespaces: {}
         xpath: //*[local-name() = 'login-config']/*[local-name() = 'realm']
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -39,6 +41,7 @@
     builtin.hasTags:
     - Spring Security
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -51,6 +54,7 @@
     builtin.hasTags:
     - Apache Shiro
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -63,6 +67,7 @@
     builtin.hasTags:
     - Hdiv
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -75,6 +80,7 @@
     builtin.hasTags:
     - OACC
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -87,6 +93,7 @@
     builtin.hasTags:
     - PicketLink
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -99,6 +106,7 @@
     builtin.hasTags:
     - PicketBox
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -111,6 +119,7 @@
     builtin.hasTags:
     - Keyczar
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -123,6 +132,7 @@
     builtin.hasTags:
     - XACML
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -135,6 +145,7 @@
     builtin.hasTags:
     - SAML
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -147,6 +158,7 @@
     builtin.hasTags:
     - Bouncy Castle
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -159,6 +171,7 @@
     builtin.hasTags:
     - Jasypt
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -171,6 +184,7 @@
     builtin.hasTags:
     - Apache Santuario
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -183,6 +197,7 @@
     builtin.hasTags:
     - SSL
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -195,6 +210,7 @@
     builtin.hasTags:
     - Vlad
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -207,6 +223,7 @@
     builtin.hasTags:
     - Apache Commons Validator
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -219,6 +236,7 @@
     builtin.hasTags:
     - OWASP ESAPI
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -231,6 +249,7 @@
     builtin.hasTags:
     - WSS4J
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -243,6 +262,7 @@
     builtin.hasTags:
     - OpenSAML
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -255,6 +275,7 @@
     builtin.hasTags:
     - OTR4J
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -267,6 +288,7 @@
     builtin.hasTags:
     - OWASP CSRF Guard
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -279,6 +301,7 @@
     builtin.hasTags:
     - OAUTH
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -291,6 +314,7 @@
     builtin.hasTags:
     - Acegi Security
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -303,6 +327,7 @@
     builtin.hasTags:
     - JSecurity
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -315,6 +340,7 @@
     builtin.hasTags:
     - AcrIS Security
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []

@@ -1,4 +1,5 @@
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -13,6 +14,7 @@
         "": http://xmlns.jcp.org/xml/ns/javaee
       xpath: //*[local-name() = 'batch-artifacts']
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -32,6 +34,7 @@
           "": http://xmlns.jcp.org/xml/ns/javaee
         xpath: //*[local-name() = 'job']
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -44,6 +47,7 @@
     builtin.hasTags:
     - Java EE Batch API
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -56,6 +60,7 @@
     builtin.hasTags:
     - Java EE Batch
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -71,6 +76,7 @@
         location: PACKAGE
         pattern: javax.inject*
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -86,6 +92,7 @@
         location: PACKAGE
         pattern: jakarta.inject*
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -98,6 +105,7 @@
     builtin.hasTags:
     - CDI
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -109,6 +117,7 @@
       location: PACKAGE
       pattern: javax.json*
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -121,7 +130,7 @@
     builtin.hasTags:
     - Java EE JSON-P
 - customVariables: []
-  description: |
+  description: |-
     Java Authorization Contract for Containers
     The application uses JACC.
   labels:
@@ -136,7 +145,7 @@
       location: IMPORT
       pattern: javax.security.jacc*
 - customVariables: []
-  description: |
+  description: |-
     Java EE Management
     The application uses Java EE Management.
   labels:
@@ -151,7 +160,7 @@
       location: IMPORT
       pattern: javax.management.j2ee*
 - customVariables: []
-  description: |
+  description: |-
     Java EE Application Deployment
     The application uses Java EE Application Deployment.
   labels:
@@ -165,7 +174,7 @@
     builtin.file:
       pattern: .*\.ear
 - customVariables: []
-  description: |
+  description: |-
     Web Services Metadata
     The application uses Web Services Metadata
   labels:
@@ -183,7 +192,7 @@
   - name: annotation
     nameOfCaptureGroup: annotation
     pattern: javax.annotation.(?P<annotation>PreDestroy|PostConstruct|Resource|Resources)
-  description: |
+  description: |-
     Common Annotations
     The application uses Common Annotations
   labels:
@@ -201,7 +210,7 @@
   - name: package
     nameOfCaptureGroup: package
     pattern: (?P<package>java|javax.)?xml.bind..*
-  description: |
+  description: |-
     JAXB
     The application uses JAXB
   labels:
@@ -216,7 +225,7 @@
       location: IMPORT
       pattern: java|javax.xml.bind*
 - customVariables: []
-  description: |
+  description: |-
     JAXR
     The application uses JAXR
   labels:
@@ -231,7 +240,7 @@
       location: IMPORT
       pattern: javax.xml.registry*
 - customVariables: []
-  description: |
+  description: |-
     Bean Validation
     The application uses Bean Validation
   labels:
@@ -246,7 +255,7 @@
       location: IMPORT
       pattern: javax.validation.constraints*
 - customVariables: []
-  description: |
+  description: |-
     Java Servlet
     The application uses Java Servlets
   labels:
@@ -261,7 +270,7 @@
       location: IMPORT
       pattern: javax.servlet*
 - customVariables: []
-  description: |
+  description: |-
     JSON Binding
     The application uses JSON binding
   labels:
@@ -276,6 +285,7 @@
       location: IMPORT
       pattern: javax.json.bind*
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -288,6 +298,7 @@
     builtin.hasTags:
     - JACC
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -300,6 +311,7 @@
     builtin.hasTags:
     - MEJB
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -312,6 +324,7 @@
     builtin.hasTags:
     - EAR
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -324,6 +337,7 @@
     builtin.hasTags:
     - WS Metadata
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -336,6 +350,7 @@
     builtin.hasTags:
     - Common Annotations
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -348,6 +363,7 @@
     builtin.hasTags:
     - JAXB
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -360,6 +376,7 @@
     builtin.hasTags:
     - JAXR
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -372,6 +389,7 @@
     builtin.hasTags:
     - Bean Validation
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -384,6 +402,7 @@
     builtin.hasTags:
     - JSON-B
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -396,6 +415,7 @@
     builtin.hasTags:
     - Servlet
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -409,6 +429,7 @@
         p: http://xmlns.jcp.org/xml/ns/persistence/orm
       xpath: //p:entity-mappings/@version[matches(self::node(), '(1.0|2.0|2.1|2.2)')]
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -422,6 +443,7 @@
         p: https://jakarta.ee/xml/ns/persistence/orm
       xpath: //p:entity-mappings/@version[matches(self::node(), '(3.0|3.1)')]
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -435,6 +457,7 @@
         p: http://xmlns.jcp.org/xml/ns/javaee
       xpath: //p:beans/@version[matches(self::node(), '(1.0|1.1|2.0)')]
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -448,6 +471,7 @@
         p: https://jakarta.ee/xml/ns/jakartaee
       xpath: //p:beans/@version[matches(self::node(), '(3.0|4.0)')]
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -461,6 +485,7 @@
         p: http://java.sun.com/xml/ns/javaee
       xpath: //p:application/@version[matches(self::node(), '(5|6)')]
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -474,6 +499,7 @@
         p: http://xmlns.jcp.org/xml/ns/javaee
       xpath: //p:application/@version[matches(self::node(), '(7|8)')]
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -487,6 +513,7 @@
         p: https://jakarta.ee/xml/ns/jakartaee
       xpath: //p:application/@version[matches(self::node(), '(9|10)')]
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -500,6 +527,7 @@
         p: http://java.sun.com/xml/ns/javaee
       xpath: //p:application-client/@version[matches(self::node(), '(5|6)')]
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -513,6 +541,7 @@
         p: http://xmlns.jcp.org/xml/ns/javaee
       xpath: //p:application-client/@version[matches(self::node(), '(7|8)')]
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -526,6 +555,7 @@
         p: https://jakarta.ee/xml/ns/jakartaee
       xpath: //p:application-client/@version[matches(self::node(), '(9|10)')]
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -539,6 +569,7 @@
         p: http://java.sun.com/xml/ns/javaee
       xpath: //p:connector/@version[matches(self::node(), '(1.6)')]
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -552,6 +583,7 @@
         p: http://xmlns.jcp.org/xml/ns/javaee
       xpath: //p:connector/@version[matches(self::node(), '(1.7)')]
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -565,6 +597,7 @@
         p: https://jakarta.ee/xml/ns/jakartaee
       xpath: //p:connector/@version[matches(self::node(), '(2.0|2.1)')]
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -578,6 +611,7 @@
         p: http://java.sun.com/xml/ns/javaee
       xpath: //p:faces-config/@version[matches(self::node(), '(1.2|2.0)')]
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -591,6 +625,7 @@
         p: http://xmlns.jcp.org/xml/ns/javaee
       xpath: //p:faces-config/@version[matches(self::node(), '(2.2|2.3)')]
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -604,6 +639,7 @@
         p: https://jakarta.ee/xml/ns/jakartaee
       xpath: //p:faces-config/@version[matches(self::node(), '(3.0|4.0)')]
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -617,6 +653,7 @@
         p: http://java.sun.com/xml/ns/javaee
       xpath: //p:webservices/@version[matches(self::node(), '(1.2|1.3)')]
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -630,6 +667,7 @@
         p: http://xmlns.jcp.org/xml/ns/javaee
       xpath: //p:webservices/@version[matches(self::node(), '(1.4)')]
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -643,6 +681,7 @@
         p: https://jakarta.ee/xml/ns/jakartaee
       xpath: //p:webservices/@version[matches(self::node(), '(2.0)')]
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -655,6 +694,7 @@
     builtin.hasTags:
     - JPA Mapping XML
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -667,6 +707,7 @@
     builtin.hasTags:
     - CDI XML
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -679,6 +720,7 @@
     builtin.hasTags:
     - Java EE XML
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -691,6 +733,7 @@
     builtin.hasTags:
     - Jakarta EE XML
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -703,6 +746,7 @@
     builtin.hasTags:
     - Java EE Client XML
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -715,6 +759,7 @@
     builtin.hasTags:
     - Jakarta EE Client XML
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -727,6 +772,7 @@
     builtin.hasTags:
     - Connector XML
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -739,6 +785,7 @@
     builtin.hasTags:
     - JSF XML
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []

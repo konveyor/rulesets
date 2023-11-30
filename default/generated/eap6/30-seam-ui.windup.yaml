@@ -6,7 +6,7 @@
     This approach is low effort but the application will not use a tested and supported
     library and it may not work on EAP 7 at all.\n                        2. Switch
     to standard CDI beans and migrate to JSF 2.2 UI tags. This will require significant
-    migration effort.\n\n                    \n"
+    migration effort.\n\n                    "
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
@@ -44,7 +44,7 @@
     work on EAP 7 at all.\n                        2. Switch to standard CDI beans
     and migrate to JSF 2.2 UI tags. This will require significant migration effort.\n\n
     \                       The provided links describe the issue in more detail.\n
-    \                   \n"
+    \                   "
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/source=eap5
@@ -70,9 +70,7 @@
       xpath: //*[namespace-uri()='http://jboss.org/schema/seam/taglib']
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:button
-    Seam UI's `<s:button>` JSF control should be replaced by `<h:button>`.. There are differences in attributes, for example the _action_ attribute maps to _outcome_ and there is no _propagation_ attribute.
+  description: JSF Seam 2 UI control s:button
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -88,9 +86,9 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: Seam UI's `<s:button>` JSF control should be replaced by `<h:button>`..
+  message: "\n Seam UI's `<s:button>` JSF control should be replaced by `<h:button>`.\n
     There are differences in attributes, for example the _action_ attribute maps to
-    _outcome_ and there is no _propagation_ attribute.
+    _outcome_ and there is no _propagation_ attribute.\n "
   ruleID: seam-ui-jsf-00001-01
   when:
     or:
@@ -104,9 +102,7 @@
         xpath: //s:button
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:link
-    Seam UI's `<s:link>` should be replaced by `<h:link>`.. There are differences in attributes, for example the _action_ attribute maps to _outcome_ and there is no _propagation_ attribute.
+  description: JSF Seam 2 UI control s:link
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -122,9 +118,9 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: Seam UI's `<s:link>` should be replaced by `<h:link>`.. There are differences
-    in attributes, for example the _action_ attribute maps to _outcome_ and there
-    is no _propagation_ attribute.
+  message: "\n Seam UI's `<s:link>` should be replaced by `<h:link>`.\n There are
+    differences in attributes, for example the _action_ attribute maps to _outcome_
+    and there is no _propagation_ attribute.\n "
   ruleID: seam-ui-jsf-01000
   when:
     or:
@@ -138,9 +134,7 @@
         xpath: //s:link
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:conversationId
-    There is no direct mapping for `<s:conversationId>` in JSF UI controls.
+  description: JSF Seam 2 UI control s:conversationId
   effort: 3
   labels:
   - konveyor.io/source=java-ee
@@ -156,7 +150,7 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: There is no direct mapping for `<s:conversationId>` in JSF UI controls.
+  message: "\n There is no direct mapping for `<s:conversationId>` in JSF UI controls.\n "
   ruleID: seam-ui-jsf-01001
   when:
     or:
@@ -170,9 +164,7 @@
         xpath: //s:conversationId
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:conversationPropagation
-    There is no direct mapping for `<s:conversationPropagation>` in JSF UI controls
+  description: JSF Seam 2 UI control s:conversationPropagation
   effort: 3
   labels:
   - konveyor.io/source=java-ee
@@ -188,8 +180,8 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: There is no direct mapping for `<s:conversationPropagation>` in JSF UI
-    controls
+  message: "\n There is no direct mapping for `<s:conversationPropagation>` in JSF
+    UI controls\n "
   ruleID: seam-ui-jsf-01002
   when:
     or:
@@ -203,9 +195,7 @@
         xpath: //s:conversationPropagation
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:taskId
-    There is no direct mapping for `<s:taskId>` in JSF UI controls
+  description: JSF Seam 2 UI control s:taskId
   effort: 3
   labels:
   - konveyor.io/source=java-ee
@@ -221,7 +211,7 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: There is no direct mapping for `<s:taskId>` in JSF UI controls
+  message: "\n There is no direct mapping for `<s:taskId>` in JSF UI controls\n "
   ruleID: seam-ui-jsf-01003
   when:
     or:
@@ -235,9 +225,7 @@
         xpath: //s:taskId
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:defaultAction
-    There is no direct mapping for `<s:defaultAction>` in JSF UI controls
+  description: JSF Seam 2 UI control s:defaultAction
   effort: 3
   labels:
   - konveyor.io/source=java-ee
@@ -253,7 +241,7 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: There is no direct mapping for `<s:defaultAction>` in JSF UI controls
+  message: "\n There is no direct mapping for `<s:defaultAction>` in JSF UI controls\n "
   ruleID: seam-ui-jsf-01004
   when:
     or:
@@ -267,9 +255,7 @@
         xpath: //s:defaultAction
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:convertDateTime
-    Seam UI's `<f:convertDateTime type="time" pattern="kk:mm:ss">` should be replaced by `<f:convertDateTime>`.. The format can be configured by setting  the locale,. or by setting the context-param `javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE` to `true`.
+  description: JSF Seam 2 UI control s:convertDateTime
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -285,10 +271,10 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: Seam UI's `<f:convertDateTime type="time" pattern="kk:mm:ss">` should be
-    replaced by `<f:convertDateTime>`.. The format can be configured by setting  the
-    locale,. or by setting the context-param `javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE`
-    to `true`.
+  message: "\n Seam UI's `<f:convertDateTime type=\"time\" pattern=\"kk:mm:ss\">`
+    should be replaced by `<f:convertDateTime>`.\n\n The format can be configured
+    by setting the locale,\n or by setting the context-param `javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE`
+    to `true`.\n "
   ruleID: seam-ui-jsf-01005
   when:
     or:
@@ -302,9 +288,7 @@
         xpath: //s:convertDateTime
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:convertEntity
-    Seam UI's `<s:convertEntity>` should be replaced by `<f:converter converterId="[yourConverterClass]">`.
+  description: JSF Seam 2 UI control s:convertEntity
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -320,7 +304,7 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: Seam UI's `<s:convertEntity>` should be replaced by `<f:converter converterId="[yourConverterClass]">`.
+  message: "\n Seam UI's `<s:convertEntity>` should be replaced by `<f:converter converterId=\"[yourConverterClass]\">`.\n "
   ruleID: seam-ui-jsf-01006
   when:
     or:
@@ -334,9 +318,7 @@
         xpath: //s:convertEntity
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:enumItem
-    There is no direct mapping for `<s:enumItem>` in JSF UI controls
+  description: JSF Seam 2 UI control s:enumItem
   effort: 3
   labels:
   - konveyor.io/source=java-ee
@@ -352,7 +334,7 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: There is no direct mapping for `<s:enumItem>` in JSF UI controls
+  message: "\n There is no direct mapping for `<s:enumItem>` in JSF UI controls\n "
   ruleID: seam-ui-jsf-01007
   when:
     or:
@@ -366,9 +348,7 @@
         xpath: //s:enumItem
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:token
-    There is no direct mapping for `<s:token>` in JSF UI controls
+  description: JSF Seam 2 UI control s:token
   effort: 3
   labels:
   - konveyor.io/source=java-ee
@@ -384,7 +364,7 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: There is no direct mapping for `<s:token>` in JSF UI controls
+  message: "\n There is no direct mapping for `<s:token>` in JSF UI controls\n "
   ruleID: seam-ui-jsf-01008
   when:
     or:
@@ -398,9 +378,7 @@
         xpath: //s:token
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:formattedText
-    There is no direct mapping for `<s:formattedText>` in JSF UI controls
+  description: JSF Seam 2 UI control s:formattedText
   effort: 3
   labels:
   - konveyor.io/source=java-ee
@@ -416,7 +394,7 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: There is no direct mapping for `<s:formattedText>` in JSF UI controls
+  message: "\n There is no direct mapping for `<s:formattedText>` in JSF UI controls\n "
   ruleID: seam-ui-jsf-01009
   when:
     or:
@@ -430,9 +408,7 @@
         xpath: //s:formattedText
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:cache
-    There is no direct mapping for `<s:cache>` in JSF UI controls
+  description: JSF Seam 2 UI control s:cache
   effort: 3
   labels:
   - konveyor.io/source=java-ee
@@ -448,7 +424,7 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: There is no direct mapping for `<s:cache>` in JSF UI controls
+  message: "\n There is no direct mapping for `<s:cache>` in JSF UI controls\n "
   ruleID: seam-ui-jsf-01010
   when:
     or:
@@ -462,9 +438,7 @@
         xpath: //s:cache
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:resource
-    There is no direct mapping for `<s:resource>` in JSF UI controls
+  description: JSF Seam 2 UI control s:resource
   effort: 3
   labels:
   - konveyor.io/source=java-ee
@@ -480,7 +454,7 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: There is no direct mapping for `<s:resource>` in JSF UI controls
+  message: "\n There is no direct mapping for `<s:resource>` in JSF UI controls\n "
   ruleID: seam-ui-jsf-01011
   when:
     or:
@@ -494,9 +468,7 @@
         xpath: //s:resource
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:download
-    There is no direct mapping for `<s:download>` in JSF UI controls
+  description: JSF Seam 2 UI control s:download
   effort: 3
   labels:
   - konveyor.io/source=java-ee
@@ -512,7 +484,7 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: There is no direct mapping for `<s:download>` in JSF UI controls
+  message: "\n There is no direct mapping for `<s:download>` in JSF UI controls\n "
   ruleID: seam-ui-jsf-01012
   when:
     or:
@@ -526,9 +498,7 @@
         xpath: //s:download
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:remote
-    There is no direct mapping for `<s:remote>` in JSF UI controls
+  description: JSF Seam 2 UI control s:remote
   effort: 3
   labels:
   - konveyor.io/source=java-ee
@@ -544,7 +514,7 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: There is no direct mapping for `<s:remote>` in JSF UI controls
+  message: "\n There is no direct mapping for `<s:remote>` in JSF UI controls\n "
   ruleID: seam-ui-jsf-01013
   when:
     or:
@@ -558,9 +528,7 @@
         xpath: //s:remote
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:selectItems
-    Seam UI's `<s:selectItems>` should be replaced by `<h:selectItems>`.
+  description: JSF Seam 2 UI control s:selectItems
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -576,7 +544,7 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: Seam UI's `<s:selectItems>` should be replaced by `<h:selectItems>`.
+  message: "\n Seam UI's `<s:selectItems>` should be replaced by `<h:selectItems>`.\n "
   ruleID: seam-ui-jsf-01014
   when:
     or:
@@ -590,9 +558,7 @@
         xpath: //s:selectItems
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:validate
-    Seam UI's `<s:validate>` should be replaced by `<f:validateBean>`.
+  description: JSF Seam 2 UI control s:validate
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -608,7 +574,7 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: Seam UI's `<s:validate>` should be replaced by `<f:validateBean>`.
+  message: "\n Seam UI's `<s:validate>` should be replaced by `<f:validateBean>`.\n "
   ruleID: seam-ui-jsf-01015
   when:
     or:
@@ -622,9 +588,7 @@
         xpath: //s:validate
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:fragment
-    Seam UI's `<s:fragment>` should be replaced by `<ui:fragment>`.
+  description: JSF Seam 2 UI control s:fragment
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -640,7 +604,7 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: Seam UI's `<s:fragment>` should be replaced by `<ui:fragment>`.
+  message: "\n Seam UI's `<s:fragment>` should be replaced by `<ui:fragment>`.\n "
   ruleID: seam-ui-jsf-01016
   when:
     or:
@@ -654,9 +618,7 @@
         xpath: //s:fragment
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:convertEnum
-    There is no direct mapping for `<s:convertEnum>` in JSF UI controls, but JSF 2 has a built-in EnumConverter which can be extended if necessary.
+  description: JSF Seam 2 UI control s:convertEnum
   effort: 3
   labels:
   - konveyor.io/source=java-ee
@@ -674,8 +636,8 @@
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
   - title: Java EE javax.faces.convert.EnumConverter
     url: https://docs.oracle.com/javaee/6/api/javax/faces/convert/EnumConverter.html
-  message: There is no direct mapping for `<s:convertEnum>` in JSF UI controls, but
-    JSF 2 has a built-in EnumConverter which can be extended if necessary.
+  message: "\n There is no direct mapping for `<s:convertEnum>` in JSF UI controls,
+    but JSF 2 has a built-in EnumConverter which can be extended if necessary.\n "
   ruleID: seam-ui-jsf-01017
   when:
     or:
@@ -689,9 +651,7 @@
         xpath: //s:convertEnum
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:convertAtomicBoolean
-    There is no direct mapping for `<s:convertAtomicBoolean>` in JSF UI controls. Create a custom converter for a replacement.
+  description: JSF Seam 2 UI control s:convertAtomicBoolean
   effort: 3
   labels:
   - konveyor.io/source=java-ee
@@ -709,8 +669,8 @@
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
   - title: Creating and Using a Custom Converter
     url: https://docs.oracle.com/javaee/6/tutorial/doc/bnaus.html
-  message: There is no direct mapping for `<s:convertAtomicBoolean>` in JSF UI controls.
-    Create a custom converter for a replacement.
+  message: "\n There is no direct mapping for `<s:convertAtomicBoolean>` in JSF UI
+    controls. Create a custom converter for a replacement.\n "
   ruleID: seam-ui-jsf-01018
   when:
     or:
@@ -724,9 +684,7 @@
         xpath: //s:convertAtomicBoolean
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:convertAtomicInteger
-    There is no direct mapping for `<s:convertAtomicInteger>` in JSF UI controls. Create a custom converter for a replacement.
+  description: JSF Seam 2 UI control s:convertAtomicInteger
   effort: 3
   labels:
   - konveyor.io/source=java-ee
@@ -744,8 +702,8 @@
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
   - title: Creating and Using a Custom Converter
     url: https://docs.oracle.com/javaee/6/tutorial/doc/bnaus.html
-  message: There is no direct mapping for `<s:convertAtomicInteger>` in JSF UI controls.
-    Create a custom converter for a replacement.
+  message: "\n There is no direct mapping for `<s:convertAtomicInteger>` in JSF UI
+    controls. Create a custom converter for a replacement.\n "
   ruleID: seam-ui-jsf-01019
   when:
     or:
@@ -759,9 +717,7 @@
         xpath: //s:convertAtomicInteger
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:convertAtomicLong
-    There is no direct mapping for `<s:convertAtomicLong>` in JSF UI controls. Create a custom converter for a replacement.
+  description: JSF Seam 2 UI control s:convertAtomicLong
   effort: 3
   labels:
   - konveyor.io/source=java-ee
@@ -779,8 +735,8 @@
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
   - title: Creating and Using a Custom Converter
     url: https://docs.oracle.com/javaee/6/tutorial/doc/bnaus.html
-  message: There is no direct mapping for `<s:convertAtomicLong>` in JSF UI controls.
-    Create a custom converter for a replacement.
+  message: "\n There is no direct mapping for `<s:convertAtomicLong>` in JSF UI controls.
+    Create a custom converter for a replacement.\n "
   ruleID: seam-ui-jsf-01020
   when:
     or:
@@ -794,9 +750,7 @@
         xpath: //s:convertAtomicLong
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:validateEquality
-    There is no direct mapping for `<s:validateEquality>` in JSF UI controls.. Use respective `<f:validate[constraint]>` like:. * `<f:validateDoubleRange>`,. * `<f:validateLength>`,. * `<f:validateLongRange>`,. * `<f:validateRequired>`.
+  description: JSF Seam 2 UI control s:validateEquality
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -812,9 +766,9 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: There is no direct mapping for `<s:validateEquality>` in JSF UI controls..
-    Use respective `<f:validate[constraint]>` like:. * `<f:validateDoubleRange>`,.
-    * `<f:validateLength>`,. * `<f:validateLongRange>`,. * `<f:validateRequired>`.
+  message: "\n There is no direct mapping for `<s:validateEquality>` in JSF UI controls.\n
+    Use respective `<f:validate[constraint]>` like:\n\n * `<f:validateDoubleRange>`,\n
+    * `<f:validateLength>`,\n * `<f:validateLongRange>`,\n * `<f:validateRequired>`.\n\n "
   ruleID: seam-ui-jsf-01021
   when:
     or:
@@ -828,9 +782,7 @@
         xpath: //s:validateEquality
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:validateAll
-    There is no direct mapping for `<s:validateAll>` in JSF UI controls, but you can achieve a similar effect by using `<f:validateBean>` or [Richfaces](http://richfaces.jboss.org/) `<rich:validator>`.
+  description: JSF Seam 2 UI control s:validateAll
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -846,9 +798,9 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: There is no direct mapping for `<s:validateAll>` in JSF UI controls, but
-    you can achieve a similar effect by using `<f:validateBean>` or [Richfaces](http://richfaces.jboss.org/)
-    `<rich:validator>`.
+  message: "\n There is no direct mapping for `<s:validateAll>` in JSF UI controls,
+    but you can achieve a similar effect by using `<f:validateBean>` or [Richfaces](http://richfaces.jboss.org/)
+    `<rich:validator>`.\n "
   ruleID: seam-ui-jsf-01022
   when:
     or:
@@ -862,9 +814,7 @@
         xpath: //s:validateAll
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:decorate
-    There is no direct mapping for `<s:decorate>` in JSF UI controls, but you can achieve the same functionality by using the UIInputContainer and a composite container, both of which are demonstrated in the [Open18 migration example](https://github.com/seam/migration/blob/develop/open18_java_ee_6). [input.xhtml](https://raw.githubusercontent.com/seam/migration/develop/open18_java_ee_6/src/main/webapp/resources/components/input.xhtml) file.
+  description: JSF Seam 2 UI control s:decorate
   effort: 3
   labels:
   - konveyor.io/source=java-ee
@@ -880,11 +830,11 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: There is no direct mapping for `<s:decorate>` in JSF UI controls, but you
-    can achieve the same functionality by using the UIInputContainer and a composite
-    container, both of which are demonstrated in the [Open18 migration example](https://github.com/seam/migration/blob/develop/open18_java_ee_6).
+  message: "\n There is no direct mapping for `<s:decorate>` in JSF UI controls, but
+    you can achieve the same functionality by using the UIInputContainer and a composite
+    container, both of which are demonstrated in the [Open18 migration example](https://github.com/seam/migration/blob/develop/open18_java_ee_6)\n
     [input.xhtml](https://raw.githubusercontent.com/seam/migration/develop/open18_java_ee_6/src/main/webapp/resources/components/input.xhtml)
-    file.
+    file.\n "
   ruleID: seam-ui-jsf-01023
   when:
     or:
@@ -898,9 +848,7 @@
         xpath: //s:decorate
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:div
-    There is no direct mapping for `<s:div>` in JSF UI controls, but it could be done with an `<h:panelGroup layout="block">` or a `<ui:fragment>` containing a div.
+  description: JSF Seam 2 UI control s:div
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -916,9 +864,9 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: There is no direct mapping for `<s:div>` in JSF UI controls, but it could
-    be done with an `<h:panelGroup layout="block">` or a `<ui:fragment>` containing
-    a div.
+  message: "\n There is no direct mapping for `<s:div>` in JSF UI controls, but it
+    could be done with an `<h:panelGroup layout=\"block\">` or a `<ui:fragment>` containing
+    a div.\n "
   ruleID: seam-ui-jsf-01024
   when:
     or:
@@ -932,9 +880,7 @@
         xpath: //s:div
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:span
-    There is no direct mapping for `<s:span>` in JSF UI controls, but you can achieve a similar effect by using `<h:panelGroup>` or a `<ui:fragment>` with a span element.
+  description: JSF Seam 2 UI control s:span
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -950,9 +896,9 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: There is no direct mapping for `<s:span>` in JSF UI controls, but you can
-    achieve a similar effect by using `<h:panelGroup>` or a `<ui:fragment>` with a
-    span element.
+  message: "\n There is no direct mapping for `<s:span>` in JSF UI controls, but you
+    can achieve a similar effect by using `<h:panelGroup>` or a `<ui:fragment>` with
+    a span element.\n "
   ruleID: seam-ui-jsf-01025
   when:
     or:
@@ -966,9 +912,7 @@
         xpath: //s:span
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:label
-    There is no direct mapping for `<s:label>` in JSF UI controls, but `<h:outputLabel>` is similar.
+  description: JSF Seam 2 UI control s:label
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -984,8 +928,8 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: There is no direct mapping for `<s:label>` in JSF UI controls, but `<h:outputLabel>`
-    is similar.
+  message: "\n There is no direct mapping for `<s:label>` in JSF UI controls, but
+    `<h:outputLabel>` is similar.\n "
   ruleID: seam-ui-jsf-01026
   when:
     or:
@@ -999,9 +943,7 @@
         xpath: //s:label
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:message
-    Use `<h:message for="name" errorClass="invalid">` or [Richfaces](http://richfaces.jboss.org/) `<rich:message>`.
+  description: JSF Seam 2 UI control s:message
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -1017,8 +959,8 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: Use `<h:message for="name" errorClass="invalid">` or [Richfaces](http://richfaces.jboss.org/)
-    `<rich:message>`.
+  message: "\n Use `<h:message for=\"name\" errorClass=\"invalid\">` or [Richfaces](http://richfaces.jboss.org/)
+    `<rich:message>`.\n "
   ruleID: seam-ui-jsf-01027
   when:
     or:
@@ -1032,9 +974,7 @@
         xpath: //s:message
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:fileUpload
-    There is no direct mapping for `<s:fileUpload>` in JSF UI controls. You can achieve similar functionality by using [Richfaces](http://richfaces.jboss.org/) `<rich:fileUpload>`
+  description: JSF Seam 2 UI control s:fileUpload
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -1050,9 +990,9 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: There is no direct mapping for `<s:fileUpload>` in JSF UI controls. You
-    can achieve similar functionality by using [Richfaces](http://richfaces.jboss.org/)
-    `<rich:fileUpload>`
+  message: "\n There is no direct mapping for `<s:fileUpload>` in JSF UI controls.
+    You can achieve similar functionality by using [Richfaces](http://richfaces.jboss.org/)
+    `<rich:fileUpload>`\n "
   ruleID: seam-ui-jsf-01028
   when:
     or:
@@ -1066,9 +1006,7 @@
         xpath: //s:fileUpload
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF Seam 2 UI control s:graphicImage
-    There is no direct mapping for `<s:graphicImage>` in JSF UI controls, but you can use `<h:graphicImage>` as Seam extends that JSF UI control.
+  description: JSF Seam 2 UI control s:graphicImage
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -1084,8 +1022,8 @@
   links:
   - title: Seam 2 UI controls migration to JSF
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
-  message: There is no direct mapping for `<s:graphicImage>` in JSF UI controls, but
-    you can use `<h:graphicImage>` as Seam extends that JSF UI control.
+  message: "\n There is no direct mapping for `<s:graphicImage>` in JSF UI controls,
+    but you can use `<h:graphicImage>` as Seam extends that JSF UI control.\n "
   ruleID: seam-ui-jsf-01029
   when:
     or:

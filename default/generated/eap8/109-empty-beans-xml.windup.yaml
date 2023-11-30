@@ -1,8 +1,7 @@
 - category: potential
   customVariables: []
-  description: |-
-    Use the `all` CDI bean discovery mode if the application has beans without bean defining annotations
-    Add a `beans` element with a `bean-discovery-mode='all'` attribute to an empty beans.xml file if the application has beans without bean defining annotations
+  description: Use the `all` CDI bean discovery mode if the application has beans
+    without bean defining annotations
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -14,8 +13,8 @@
   links:
   - title: Jakarta Contexts and Dependency Injection Bean Discovery
     url: https://access.redhat.com/articles/6980265#cdi_bean_discovery
-  message: Add a `beans` element with a `bean-discovery-mode='all'` attribute to an
-    empty beans.xml file if the application has beans without bean defining annotations
+  message: 'Add a `beans` element with a `bean-discovery-mode=''all''` attribute to
+    an empty beans.xml file if the application has beans without bean defining annotations '
   ruleID: empty-beans-xml-00001
   when:
     and:

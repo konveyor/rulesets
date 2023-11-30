@@ -6,7 +6,7 @@
     class as a superclass. It is a convenience abstract\n                        class
     that makes writing Handlers easy. GenericHandler provides default implementations\n
     \                       of the lifecycle methods init and destroy and also different
-    handle methods.\n                        \n                    \n"
+    handle methods.\n                        \n                    "
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=eap6+

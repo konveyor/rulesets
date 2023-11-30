@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Sonic ESB service - inheritance from com.sonicsw.xq.XQService
-    Sonic ESB services inherit from XQService.  In Camel, this can be achieved through the simple Java Bean Camel Component.. * [Camel Java Bean Component](http://camel.apache.org/bean.html)
+  description: Sonic ESB service - inheritance from com.sonicsw.xq.XQService
   effort: 4
   labels:
   - konveyor.io/source=sonic
@@ -13,8 +11,9 @@
   links:
   - title: XQService Javadoc
     url: http://documentation.progress.com/output/Sonic/8.0.0/Docs8.0/api/esb_api/com/sonicsw/xq/XQService.html
-  message: Sonic ESB services inherit from XQService.  In Camel, this can be achieved
-    through the simple Java Bean Camel Component.. * [Camel Java Bean Component](http://camel.apache.org/bean.html)
+  message: "\n \n Sonic ESB services inherit from XQService. In Camel, this can be
+    achieved through the simple Java Bean Camel Component.\n\n * [Camel Java Bean
+    Component](http://camel.apache.org/bean.html)\n \n "
   ruleID: sonic-esb-01000
   tag:
   - sonic-esb
@@ -25,8 +24,7 @@
       pattern: com.sonicsw.xq.XQService
 - category: mandatory
   customVariables: []
-  description: |
-    Reference to com.sonicsw.xq.XQServiceContext
+  description: Reference to com.sonicsw.xq.XQServiceContext
   effort: 4
   labels:
   - konveyor.io/source=sonic
@@ -35,18 +33,20 @@
   - sonic-esb
   - camel
   links: []
-  message: Sonic ESB services leverage the service(XQServiceContext context) method
-    to implement business logic.  When messages are routed to the service, the service(XQServiceContext
-    context) method is executed.. In Camel, this is achieved by routing messages to
-    the Java Bean via the Camel Route's Bean Component syntax.. * [Camel Java Bean
-    Component](http://camel.apache.org/bean.html). * [Camel Binding Annotations](http://camel.apache.org/parameter-binding-annotations.html).
-    Camel's Java Bean Component can leverage annotations annotations on the method
-    to specify how Camel Message body values are mapped to the method parameters.  Additionally,
-    the @Handler annotation can be leveraged to setup the default Java Bean method..
-    **For example:**. ```java. public void service(XQServiceContext ctx) throws XQServiceException
-    \{{. .... }}. ```. **Should become:**. ```java. @Handler. public void service(@Header
-    messageHeader, @Body messageBody, Exchange exchange) \{{. .... }}. ```. * org.apache.camel.Body.
-    * org.apache.camel.Header. * org.apache.camel.Exchange
+  message: "\n \n Sonic ESB services leverage the service(XQServiceContext context)
+    method to implement business logic. When messages are routed to the service, the
+    service(XQServiceContext context) method is executed.\n In Camel, this is achieved
+    by routing messages to the Java Bean via the Camel Route's Bean Component syntax.\n\n
+    * [Camel Java Bean Component](http://camel.apache.org/bean.html)\n * [Camel Binding
+    Annotations](http://camel.apache.org/parameter-binding-annotations.html)\n\n Camel's
+    Java Bean Component can leverage annotations annotations on the method to specify
+    how Camel Message body values are mapped to the method parameters. Additionally,
+    the @Handler annotation can be leveraged to setup the default Java Bean method.\n\n
+    **For example:**\n\n ```java\n public void service(XQServiceContext ctx) throws
+    XQServiceException \\{{\n ...\n }}\n ```\n\n **Should become:**\n\n ```java\n
+    @Handler\n public void service(@Header messageHeader, @Body messageBody, Exchange
+    exchange) \\{{\n ...\n }}\n ```\n\n * org.apache.camel.Body\n * org.apache.camel.Header\n
+    * org.apache.camel.Exchange\n \n "
   ruleID: sonic-esb-02000
   when:
     or:
@@ -58,8 +58,7 @@
         pattern: com.sonicsw.xq.XQServiceContext
 - category: mandatory
   customVariables: []
-  description: |
-    Reference to com.sonicsw.xq.XQInitContext
+  description: Reference to com.sonicsw.xq.XQInitContext
   effort: 4
   labels:
   - konveyor.io/source=sonic
@@ -69,13 +68,13 @@
   - camel
   - spring
   links: []
-  message: The XQInitContext is used to receive initialization information for the
-    service from Sonic ESB.. This is not neccessary for Camel.  The init() method
-    that receives this object should be replaced with Spring Bean property injection.  For
-    initialization beyond propery injection, leverage Spring's @PostConstruct annotation
-    on this init() method.. * [Spring @PostConstruct Documentation](http://docs.spring.io/spring/docs/2.5.x/reference/beans.html#beans-postconstruct-and-predestroy-annotations).
-    ```java. @PostConstruct. public void init() \{{. //leverage injected properties.
-    }}. ```
+  message: "\n \n The XQInitContext is used to receive initialization information
+    for the service from Sonic ESB.\n\n This is not neccessary for Camel. The init()
+    method that receives this object should be replaced with Spring Bean property
+    injection. For initialization beyond propery injection, leverage Spring's @PostConstruct
+    annotation on this init() method.\n\n * [Spring @PostConstruct Documentation](http://docs.spring.io/spring/docs/2.5.x/reference/beans.html#beans-postconstruct-and-predestroy-annotations)\n\n
+    ```java\n @PostConstruct\n public void init() \\{{\n //leverage injected properties\n
+    }}\n ```\n \n "
   ruleID: sonic-esb-03000
   when:
     or:
@@ -87,9 +86,7 @@
         pattern: com.sonicsw.xq.XQInitContext
 - category: mandatory
   customVariables: []
-  description: |-
-    Call of com.sonicsw.xq.XQInitContext.getParameters
-    Migrate XQInitContext.getParameters to Spring property injection.
+  description: Call of com.sonicsw.xq.XQInitContext.getParameters
   effort: 1
   labels:
   - konveyor.io/source=sonic
@@ -106,9 +103,7 @@
       pattern: com.sonicsw.xq.XQInitContext.getParameters*
 - category: mandatory
   customVariables: []
-  description: |-
-    Call of com.sonicsw.xq.XQParameters.getParameter
-    Migrate XQParameters.getParameter to Spring property injection.
+  description: Call of com.sonicsw.xq.XQParameters.getParameter
   effort: 1
   labels:
   - konveyor.io/source=sonic
@@ -126,9 +121,7 @@
       pattern: com.sonicsw.xq.XQParameters.getParameter*
 - category: mandatory
   customVariables: []
-  description: |-
-    Reference to com.sonicsw.xq.XQParameters
-    Migrate XQParameters to Spring property injection.
+  description: Reference to com.sonicsw.xq.XQParameters
   effort: 1
   labels:
   - konveyor.io/source=sonic
@@ -150,9 +143,7 @@
         pattern: com.sonicsw.xq.XQParameters
 - category: mandatory
   customVariables: []
-  description: |-
-    Reference to com.sonicsw.xq.XQParameters
-    Migrate XQParameterInfo to Spring property injection.
+  description: Reference to com.sonicsw.xq.XQParameters
   effort: 3
   labels:
   - konveyor.io/source=sonic
@@ -174,9 +165,7 @@
         pattern: com.sonicsw.xq.XQParameterInfo
 - category: mandatory
   customVariables: []
-  description: |-
-    Reference to com.sonicsw.xq.XQMessage
-    Migrate to org.apache.camel.Message
+  description: Reference to com.sonicsw.xq.XQMessage
   effort: 3
   labels:
   - konveyor.io/source=sonic
@@ -197,9 +186,7 @@
         pattern: com.sonicsw.xq.XQMessage
 - category: mandatory
   customVariables: []
-  description: |-
-    Call of com.sonicsw.xq.XQMessage.getHeaderValue
-    Migrate to org.apache.camel.Message.getHeader(String name)
+  description: Call of com.sonicsw.xq.XQMessage.getHeaderValue
   effort: 3
   labels:
   - konveyor.io/source=sonic
@@ -216,9 +203,7 @@
       pattern: com.sonicsw.xq.XQMessage.getHeaderValue*
 - category: mandatory
   customVariables: []
-  description: |-
-    Call of com.sonicsw.xq.XQMessage.setHeaderValue
-    Migrate to org.apache.camel.Message.setHeader(String name, Object value)
+  description: Call of com.sonicsw.xq.XQMessage.setHeaderValue
   effort: 3
   labels:
   - konveyor.io/source=sonic
@@ -235,9 +220,7 @@
       pattern: com.sonicsw.xq.XQMessage.setHeaderValue*
 - category: mandatory
   customVariables: []
-  description: |-
-    Call of com.sonicsw.xq.XQMessage.getHeaderNames
-    Migrate to org.apache.camel.Message.getHeaders()
+  description: Call of com.sonicsw.xq.XQMessage.getHeaderNames
   effort: 1
   labels:
   - konveyor.io/source=sonic
@@ -254,9 +237,7 @@
       pattern: com.sonicsw.xq.XQMessage.getHeaderNames*
 - category: mandatory
   customVariables: []
-  description: |-
-    Reference to com.sonicsw.xq.XQPart
-    Migrate XQPart to an attachment on the org.apache.camel.Message
+  description: Reference to com.sonicsw.xq.XQPart
   effort: 3
   labels:
   - konveyor.io/source=sonic
@@ -277,9 +258,7 @@
         pattern: com.sonicsw.xq.XQPart
 - category: mandatory
   customVariables: []
-  description: |-
-    Call of com.sonicsw.xq.XQMessage.getPartCount
-    Migrate to org.apache.camel.Message.getAttachments().size()
+  description: Call of com.sonicsw.xq.XQMessage.getPartCount
   effort: 1
   labels:
   - konveyor.io/source=sonic
@@ -296,9 +275,7 @@
       pattern: com.sonicsw.xq.XQMessage.getPartCount*
 - category: mandatory
   customVariables: []
-  description: |-
-    Call of com.sonicsw.xq.XQMessage.getPart
-    Migrate to org.apache.camel.Message.getAttachment(String id)
+  description: Call of com.sonicsw.xq.XQMessage.getPart
   effort: 1
   labels:
   - konveyor.io/source=sonic
@@ -315,9 +292,7 @@
       pattern: com.sonicsw.xq.XQMessage.getPart*
 - category: mandatory
   customVariables: []
-  description: |-
-    Reference to com.sonicsw.xq.XQLog
-    Migrate to [Apache SLF4J](http://www.slf4j.org).
+  description: Reference to com.sonicsw.xq.XQLog
   effort: 1
   labels:
   - konveyor.io/source=sonic
@@ -327,7 +302,7 @@
   - camel
   - slf4j
   links: []
-  message: Migrate to [Apache SLF4J](http://www.slf4j.org).
+  message: "\n Migrate to [Apache SLF4J](http://www.slf4j.org).\n "
   ruleID: sonic-esb-15000
   when:
     or:
@@ -339,9 +314,7 @@
         pattern: com.sonicsw.xq.XQLog
 - category: mandatory
   customVariables: []
-  description: "Reference to com.sonicsw.xq.XQServiceException \nCreate a custom ServiceException
-    class, extending Exception.  The documentation below explains exception handling
-    in Camel.. * [Camel Exception Handling](http://camel.apache.org/exception-clause.html)"
+  description: 'Reference to com.sonicsw.xq.XQServiceException '
   effort: 1
   labels:
   - konveyor.io/source=sonic
@@ -350,8 +323,9 @@
   - sonic-esb
   - camel
   links: []
-  message: Create a custom ServiceException class, extending Exception.  The documentation
-    below explains exception handling in Camel.. * [Camel Exception Handling](http://camel.apache.org/exception-clause.html)
+  message: "\n \n Create a custom ServiceException class, extending Exception. The
+    documentation below explains exception handling in Camel.\n\n * [Camel Exception
+    Handling](http://camel.apache.org/exception-clause.html)\n \n "
   ruleID: sonic-esb-16000
   when:
     or:
@@ -363,9 +337,7 @@
         pattern: com.sonicsw.xq.XQServiceException
 - category: mandatory
   customVariables: []
-  description: |-
-    Call of com.sonicsw.xq.XQMessage.getCorrelationId
-    Correlation is handled several ways in Camel.  Read the article below.. * [Camel Exception Handling](http://camel.apache.org/correlation-identifier.html)
+  description: Call of com.sonicsw.xq.XQMessage.getCorrelationId
   effort: 1
   labels:
   - konveyor.io/source=sonic
@@ -374,8 +346,8 @@
   - sonic-esb
   - camel
   links: []
-  message: Correlation is handled several ways in Camel.  Read the article below..
-    * [Camel Exception Handling](http://camel.apache.org/correlation-identifier.html)
+  message: "\n \n Correlation is handled several ways in Camel. Read the article below.\n\n
+    * [Camel Exception Handling](http://camel.apache.org/correlation-identifier.html)\n "
   ruleID: sonic-esb-17000
   when:
     java.referenced:
@@ -383,9 +355,7 @@
       pattern: com.sonicsw.xq.XQMessage.getCorrelationId*
 - category: mandatory
   customVariables: []
-  description: |-
-    Call of com.sonicsw.xq.XQAddressFactory.createEndpointAddress
-    This indicates that the Sonic ESB Service is routing messages to a [1...N] endpoints.  To achieve this in Camel, take the business logic in the service, and populate a header property with an array of target enpoints.. Next, create a Recipient List processor to route the message to N endpoints.. * [Camel Recipient List](http://camel.apache.org/recipientlist-annotation.html)
+  description: Call of com.sonicsw.xq.XQAddressFactory.createEndpointAddress
   effort: 3
   labels:
   - konveyor.io/source=sonic
@@ -394,11 +364,12 @@
   - sonic-esb
   - camel
   links: []
-  message: This indicates that the Sonic ESB Service is routing messages to a [1...N]
-    endpoints.  To achieve this in Camel, take the business logic in the service,
-    and populate a header property with an array of target enpoints.. Next, create
-    a Recipient List processor to route the message to N endpoints.. * [Camel Recipient
-    List](http://camel.apache.org/recipientlist-annotation.html)
+  message: "\n \n This indicates that the Sonic ESB Service is routing messages to
+    a [1...N] endpoints. To achieve this in Camel, take the business logic in the
+    service, and populate a header property with an array of target enpoints.\n\n
+    Next, create a Recipient List processor to route the message to N endpoints.\n\n
+    * [Camel Recipient List](http://camel.apache.org/recipientlist-annotation.html)\n
+    \n "
   ruleID: sonic-esb-18000
   when:
     java.referenced:
@@ -406,9 +377,7 @@
       pattern: com.sonicsw.xq.XQAddressFactory.createEndpointAddress*
 - category: mandatory
   customVariables: []
-  description: |-
-    Call of com.sonicsw.xq.XQServiceContext.addOutgoing
-    Sonic ESB uses the addOutgoing method to set the outgoing message.. This is achieved in Camel by either modifying the @Body parameter in the Java Bean Component method, or literally setting a new message to the Exchange.. * [Camel Setting Response](http://camel.apache.org/using-getin-or-getout-methods-on-exchange.html)
+  description: Call of com.sonicsw.xq.XQServiceContext.addOutgoing
   effort: 1
   labels:
   - konveyor.io/source=sonic
@@ -417,10 +386,11 @@
   - sonic-esb
   - camel
   links: []
-  message: Sonic ESB uses the addOutgoing method to set the outgoing message.. This
-    is achieved in Camel by either modifying the @Body parameter in the Java Bean
-    Component method, or literally setting a new message to the Exchange.. * [Camel
-    Setting Response](http://camel.apache.org/using-getin-or-getout-methods-on-exchange.html)
+  message: "\n \n Sonic ESB uses the addOutgoing method to set the outgoing message.\n
+    This is achieved in Camel by either modifying the @Body parameter in the Java
+    Bean Component method, or literally setting a new message to the Exchange.\n\n
+    * [Camel Setting Response](http://camel.apache.org/using-getin-or-getout-methods-on-exchange.html)\n
+    \n "
   ruleID: sonic-esb-19000
   when:
     java.referenced:
@@ -428,9 +398,7 @@
       pattern: com.sonicsw.xq.XQServiceContext.addOutgoing*
 - category: mandatory
   customVariables: []
-  description: |-
-    Reference to com.sonicsw.xq.XQEnvelope
-    Migrate to org.apache.camel.Exchange
+  description: Reference to com.sonicsw.xq.XQEnvelope
   effort: 3
   labels:
   - konveyor.io/source=sonic
@@ -451,9 +419,7 @@
         pattern: com.sonicsw.xq.XQEnvelope
 - category: mandatory
   customVariables: []
-  description: |-
-    Call of com.sonicsw.xq.XQEnvelope.getMessage
-    Migrate to org.apache.camel.Message.getIn()
+  description: Call of com.sonicsw.xq.XQEnvelope.getMessage
   effort: 1
   labels:
   - konveyor.io/source=sonic

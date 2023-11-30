@@ -1,8 +1,7 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE namespace, schemaLocation and version with the Jakarta equivalent
-    Replace `http://xmlns.jcp.org/xml/ns/javaee` with `https://jakarta.ee/xml/ns/jakartaee` and change the schema version number
+  description: Replace the Java EE namespace, schemaLocation and version with the
+    Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -13,8 +12,8 @@
   links:
   - title: Jakarta EE XML Schemas
     url: https://jakarta.ee/xml/ns/jakartaee/#10
-  message: Replace `http://xmlns.jcp.org/xml/ns/javaee` with `https://jakarta.ee/xml/ns/jakartaee`
-    and change the schema version number
+  message: 'Replace `http://xmlns.jcp.org/xml/ns/javaee` with `https://jakarta.ee/xml/ns/jakartaee`
+    and change the schema version number '
   ruleID: javaee-to-jakarta-namespaces-00001
   when:
     builtin.filecontent:
@@ -22,9 +21,8 @@
       pattern: http://xmlns.jcp.org/xml/ns/javaee
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE persistence namespace, schemaLocation and version with the Jakarta equivalent
-    Replace `http://xmlns.jcp.org/xml/ns/persistence` with `https://jakarta.ee/xml/ns/persistence` and change the schema version number
+  description: Replace the Java EE persistence namespace, schemaLocation and version
+    with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -35,8 +33,8 @@
   links:
   - title: Jakarta Persistence XML Schemas
     url: https://jakarta.ee/xml/ns/persistence/#3
-  message: Replace `http://xmlns.jcp.org/xml/ns/persistence` with `https://jakarta.ee/xml/ns/persistence`
-    and change the schema version number
+  message: 'Replace `http://xmlns.jcp.org/xml/ns/persistence` with `https://jakarta.ee/xml/ns/persistence`
+    and change the schema version number '
   ruleID: javaee-to-jakarta-namespaces-00002
   when:
     builtin.filecontent:
@@ -44,9 +42,8 @@
       pattern: http://xmlns.jcp.org/xml/ns/persistence
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE bean validation configuration namespace, schemaLocation and version with the Jakarta equivalent
-    Replace `http://xmlns.jcp.org/xml/ns/validation` with `https://jakarta.ee/xml/ns/validation` and change the schema version number
+  description: Replace the Java EE bean validation configuration namespace, schemaLocation
+    and version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -57,8 +54,8 @@
   links:
   - title: Jakarta Bean Validation XML Schemas
     url: https://jakarta.ee/xml/ns/validation/
-  message: Replace `http://xmlns.jcp.org/xml/ns/validation` with `https://jakarta.ee/xml/ns/validation`
-    and change the schema version number
+  message: 'Replace `http://xmlns.jcp.org/xml/ns/validation` with `https://jakarta.ee/xml/ns/validation`
+    and change the schema version number '
   ruleID: javaee-to-jakarta-namespaces-00003
   when:
     builtin.filecontent:
@@ -66,9 +63,7 @@
       pattern: http://xmlns.jcp.org/xml/ns/validation
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `javaee_web_services_metadata_handler_2_0.xsd` with `jakartaee_web_services_metadata_handler_3_0.xsd` and update the version attribute to `"3.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -88,9 +83,7 @@
       pattern: javaee_web_services_metadata_handler_2_0.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `batchXML_1_0.xsd` with `batchXML_2_0.xsd`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -109,9 +102,7 @@
       pattern: batchXML_1_0.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `beans_1_1.xsd` with `beans_3_0.xsd` and update the version attribute to `"3.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -131,9 +122,7 @@
       pattern: beans_1_1.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `beans_2_0.xsd` with `beans_3_0.xsd` and update the version attribute to `"3.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -153,9 +142,7 @@
       pattern: beans_2_0.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `jobXML_1_0.xsd` with `jobXML_2_0.xsd` and update the version attribute to `"2.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -175,9 +162,7 @@
       pattern: jobXML_1_0.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `application_7.xsd` with `application_9.xsd` and update the version attribute to `"9"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -197,9 +182,7 @@
       pattern: application_7.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `application_8.xsd` with `application_9.xsd` and update the version attribute to `"9"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -219,9 +202,7 @@
       pattern: application_8.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `application-client_7.xsd` with `application-client_9.xsd` and update the version attribute to `"9"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -241,9 +222,7 @@
       pattern: application-client_7.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `application-client_8.xsd` with `application-client_9.xsd` and update the version attribute to `"9"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -263,9 +242,7 @@
       pattern: application-client_8.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `connector_1_7.xsd` with `connector_2_0.xsd` and update the version attribute to `"2.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -285,9 +262,7 @@
       pattern: connector_1_7.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `ejb-jar_3_2.xsd` with `ejb-jar_4_0.xsd` and update the version attribute to `"4.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -307,9 +282,7 @@
       pattern: ejb-jar_3_2.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `javaee_web_services_1_4.xsd` with `jakartaee_web_services_2_0.xsd` and update the version attribute to `"2.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -329,9 +302,7 @@
       pattern: javaee_web_services_1_4.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `permissions_7.xsd` with `permissions_9.xsd` and update the version attribute to `"9"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -351,9 +322,7 @@
       pattern: permissions_7.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `web-app_3_1.xsd` with `web-app_5_0.xsd` and update the version attribute to `"5.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -373,9 +342,7 @@
       pattern: web-app_3_1.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `web-app_4_0.xsd` with `web-app_5_0.xsd` and update the version attribute to `"5.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -395,9 +362,7 @@
       pattern: web-app_4_0.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `web-fragment_3_1.xsd` with `web-fragment_5_0.xsd` and update the version attribute to `"5.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -417,9 +382,7 @@
       pattern: web-fragment_3_1.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `web-fragment_4_0.xsd` with `web-fragment_5_0.xsd` and update the version attribute to `"5.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -439,9 +402,7 @@
       pattern: web-fragment_4_0.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `web-facesconfig_2_2.xsd` with `web-facesconfig_3_0.xsd` and update the version attribute to `"3.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -461,9 +422,7 @@
       pattern: web-facesconfig_2_2.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `web-facesconfig_2_3.xsd` with `web-facesconfig_3_0.xsd` and update the version attribute to `"3.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -483,9 +442,7 @@
       pattern: web-facesconfig_2_3.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `web-facelettaglibrary_2_2.xsd` with `web-facelettaglibrary_3_0.xsd` and update the version attribute to `"3.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -505,9 +462,7 @@
       pattern: web-facelettaglibrary_2_2.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `web-facelettaglibrary_2_3.xsd` with `web-facelettaglibrary_3_0.xsd` and update the version attribute to `"3.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -527,9 +482,7 @@
       pattern: web-facelettaglibrary_2_3.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `web-partialresponse_2_2.xsd` with `web-partialresponse_3_0.xsd`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -548,9 +501,7 @@
       pattern: web-partialresponse_2_2.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `web-partialresponse_2_3.xsd` with `web-partialresponse_3_0.xsd`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -569,9 +520,7 @@
       pattern: web-partialresponse_2_3.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `web-jsptaglibrary_2_1.xsd` with `web-jsptaglibrary_3_0.xsd` and update the version attribute to `"3.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -591,9 +540,7 @@
       pattern: web-jsptaglibrary_2_1.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `validation-mapping-2.0.xsd` with `validation-mapping-3.0.xsd` and update the version attribute to `"3.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -613,9 +560,7 @@
       pattern: validation-mapping-2.0.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `validation-configuration-2.0.xsd` with `validation-configuration-3.0.xsd` and update the version attribute to `"3.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -635,9 +580,7 @@
       pattern: validation-configuration-2.0.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `persistence_2_1.xsd` with `persistence_3_0.xsd` and update the version attribute to `"3.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -657,9 +600,7 @@
       pattern: persistence_2_1.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `orm_2_1.xsd` with `orm_3_0.xsd` and update the version attribute to `"3.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -679,9 +620,7 @@
       pattern: orm_2_1.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE XSD with the Jakarta equivalent
-    Replace `orm_2_2.xsd` with `orm_3_0.xsd` and update the version attribute to `"3.0"`
+  description: Replace the Java EE XSD with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -701,9 +640,7 @@
       pattern: orm_2_2.xsd
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    In the root tag, replace the `version` attribute value `2.1` with `3.0`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -728,9 +665,7 @@
         xpath: p:persistence[@version='2.1']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    In the root tag, replace the `version` attribute value `7` with `9`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -755,9 +690,7 @@
         xpath: p:permissions[@version='7']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `beans_1_1.xsd`: In the root tag, replace the `version` attribute value with `3.0`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -783,9 +716,7 @@
         xpath: p:beans[@version='1.1']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `beans_2_0.xsd`: In the root tag, replace the `version` attribute value with `3.0`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -811,9 +742,7 @@
         xpath: p:beans[@version='2.0']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `application_7.xsd`: In the root tag, replace the `version` attribute value with `9`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -839,9 +768,7 @@
         xpath: p:application[@version='7']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `application_8.xsd`: In the root tag, replace the `version` attribute value with `9`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -867,9 +794,7 @@
         xpath: p:application[@version='8']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `application-client_7.xsd`: In the root tag, replace the `version` attribute value with `9`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -895,9 +820,7 @@
         xpath: p:application-client[@version='7']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `application-client_8.xsd`: In the root tag, replace the `version` attribute value with `9`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -923,9 +846,7 @@
         xpath: p:application-client[@version='8']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `connector_1_7.xsd`: In the root tag, replace the `version` attribute value with `2.0`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -951,9 +872,7 @@
         xpath: p:connector[@version='1.7']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `ejb-jar_3_2.xsd`: In the root tag, replace the `version` attribute value with `4.0`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -979,9 +898,7 @@
         xpath: p:ejb-jar[@version='3.2']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `javaee_web_services_1_4.xsd`: In the root tag, replace the `version` attribute value with `2.0`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -1007,9 +924,7 @@
         xpath: p:webservices[@version='1.4']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `web-app_3_1`: In the root tag, replace the `version` attribute value with `5.0`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -1035,9 +950,7 @@
         xpath: p:web-app[@version='3.1']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `web-app_4_0`: In the root tag, replace the `version` attribute value with `5.0`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -1063,9 +976,7 @@
         xpath: p:web-app[@version='4.0']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `web-fragment_3_1`: In the root tag, replace the `version` attribute value with `5.0`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -1091,9 +1002,7 @@
         xpath: p:web-fragment[@version='3.1']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `web-fragment_4_0`: In the root tag, replace the `version` attribute value with `5.0`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -1119,9 +1028,7 @@
         xpath: p:web-fragment[@version='4.0']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `web-facesconfig_2_2`: In the root tag, replace the `version` attribute value with `3.0`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -1147,9 +1054,7 @@
         xpath: p:faces-config[@version='2.2']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `web-facesconfig_2_3`: In the root tag, replace the `version` attribute value with `3.0`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -1175,9 +1080,7 @@
         xpath: p:faces-config[@version='2.3']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `web-facelettaglibrary_2_2`: In the root tag, replace the `version` attribute value with `3.0`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -1203,9 +1106,7 @@
         xpath: p:facelet-taglib[@version='2.2']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `web-facelettaglibrary_2_3`: In the root tag, replace the `version` attribute value with `3.0`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -1231,9 +1132,7 @@
         xpath: p:facelet-taglib[@version='2.3']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `web-jsptaglibrary_2_1`: In the root tag, replace the `version` attribute value with `3.0`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -1259,9 +1158,7 @@
         xpath: p:taglib[@version='2.1']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `validation-mapping-2.0`: In the root tag, replace the `version` attribute value with `3.0`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -1287,9 +1184,7 @@
         xpath: p:constraint-mappings[@version='2.0']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `validation-configuration-2.0`: In the root tag, replace the `version` attribute value with `3.0`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -1315,9 +1210,7 @@
         xpath: p:validation-config[@version='2.0']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `orm_2_1`: In the root tag, replace the `version` attribute value with `3.0`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -1343,9 +1236,7 @@
         xpath: p:entity-mappings[@version='2.1']
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Java EE version with the Jakarta equivalent
-    `orm_2_2`: In the root tag, replace the `version` attribute value with `3.0`
+  description: Replace the Java EE version with the Jakarta equivalent
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+

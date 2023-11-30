@@ -1,5 +1,5 @@
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Spring Cloud Config
     The application embeds Spring Cloud Config.
   labels:
@@ -18,7 +18,7 @@
         lowerbound: 0.0.0
         name: org.springframework.cloud.spring-cloud-config-client
 - customVariables: []
-  description: |
+  description: |-
     Application properties file detected
     Application properties file detected
   labels:
@@ -32,7 +32,7 @@
     builtin.file:
       pattern: application.*\.(properties|yml|yaml)
 - customVariables: []
-  description: |
+  description: |-
     Spring datasource properties detected
     Spring datasource properties detected
   labels:
@@ -47,7 +47,7 @@
       filePattern: application.*\.(properties|yml|yaml)
       pattern: spring.datasource
 - customVariables: []
-  description: |
+  description: |-
     Spring logging properties detected
     Spring logging properties detected
   labels:
@@ -62,7 +62,7 @@
       filePattern: application.*\.(properties|yml|yaml)
       pattern: logging.level.org.springframework
 - customVariables: []
-  description: |
+  description: |-
     Spring configuration properties annotation detected
     Spring configuration properties annotation detected
   labels:

@@ -8,7 +8,7 @@
   description: "IBM JMS Client\nWebSphere MQ client API is used to communicate with
     the MQ server from client-side applications.\n                        For JBoss
     EAP 7, this needs to be replaced with standard Java EE 7 JMS API, or with ActiveMQ
-    Artemis client API.\n                    \n"
+    Artemis client API.\n                    "
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap7+
@@ -35,17 +35,16 @@
       pattern: com.ibm.*jms*
 - category: mandatory
   customVariables:
+  - name: package
+    nameOfCaptureGroup: package
+    pattern: (?P<package>com.ibm(\.[^.]*)*\.jms.)?(?P<prefix>(Jms|MQeJNDI|MQe|MQ)?)?(?P<type>[^.]*?)?ConnectionFactory
   - name: prefix
     nameOfCaptureGroup: prefix
     pattern: (?P<package>com.ibm(\.[^.]*)*\.jms.)?(?P<prefix>(Jms|MQeJNDI|MQe|MQ)?)?(?P<type>[^.]*?)?ConnectionFactory
   - name: type
     nameOfCaptureGroup: type
     pattern: (?P<package>com.ibm(\.[^.]*)*\.jms.)?(?P<prefix>(Jms|MQeJNDI|MQe|MQ)?)?(?P<type>[^.]*?)?ConnectionFactory
-  - name: package
-    nameOfCaptureGroup: package
-    pattern: (?P<package>com.ibm(\.[^.]*)*\.jms.)?(?P<prefix>(Jms|MQeJNDI|MQe|MQ)?)?(?P<type>[^.]*?)?ConnectionFactory
-  description: |
-    IBM {prefix}{type}ConnectionFactory reference
+  description: IBM {prefix}{type}ConnectionFactory reference
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -58,9 +57,9 @@
   links:
   - title: Java EE JMS Documentation
     url: https://docs.oracle.com/javaee/7/tutorial/jms-concepts003.htm#BNCEH
-  message: 'IBM {{prefix}}{{type}}ConnectionFactory is a proprietary encapsulation
-    of JMS servers to which Connections can be created for. message distribution.
-    This reference should be replaced with the Java EE standard API: `javax.jms.{{type}}ConnectionFactory`.'
+  message: "\n IBM {{prefix}}{{type}}ConnectionFactory is a proprietary encapsulation
+    of JMS servers to which Connections can be created for\n message distribution.
+    This reference should be replaced with the Java EE standard API: `javax.jms.{{type}}ConnectionFactory`.\n "
   ruleID: websphere-jms-eap7-01000
   when:
     java.referenced:
@@ -73,8 +72,7 @@
   - name: type
     nameOfCaptureGroup: type
     pattern: (?P<package>com.ibm(\..*)?\.jms.)?JmsMsg(?P<type>(Producer|Consumer))
-  description: |
-    IBM JMS topic/queue message
+  description: IBM JMS topic/queue message
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -87,16 +85,16 @@
   links:
   - title: Java EE JMS Documentation
     url: https://docs.oracle.com/javaee/7/tutorial/jms-concepts003.htm#BNCEH
-  message: IBM JMS API {{type}}s are used for sending/reading messages to/from a topic
-    or queue. This reference should be. replaced with the Java EE standard API `javax.jms.Message{{type}}`.
+  message: "\n IBM JMS API {{type}}s are used for sending/reading messages to/from
+    a topic or queue. This reference should be\n replaced with the Java EE standard
+    API `javax.jms.Message{{type}}`.\n "
   ruleID: websphere-jms-eap7-02000
   when:
     java.referenced:
       pattern: com.ibm.*jms.JmsMsg(Producer|Consumer)
 - category: mandatory
   customVariables: []
-  description: |
-    WebSphere implementation MQe{type}Queue of JMS Queue
+  description: WebSphere implementation MQe{type}Queue of JMS Queue
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -109,25 +107,24 @@
   links:
   - title: Java EE 7 JMS Tutorial
     url: https://docs.oracle.com/javaee/7/tutorial/jms-concepts003.htm#BNCEH
-  message: '`MQe{{type}}Queue` is a WebSphere implementation of a JMS `Queue` and
-    should be migrated to. the Java EE 6 JMS standard interface `javax.jms.Queue`.'
+  message: "\n `MQe{{type}}Queue` is a WebSphere implementation of a JMS `Queue` and
+    should be migrated to\n the Java EE 6 JMS standard interface `javax.jms.Queue`.\n "
   ruleID: websphere-jms-eap7-02500
   when:
     java.referenced:
       pattern: com.ibm.mqe.jms.{type}Queue
 - category: mandatory
   customVariables:
+  - name: package
+    nameOfCaptureGroup: package
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
   - name: type
     nameOfCaptureGroup: type
     pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
   - name: prefix
     nameOfCaptureGroup: prefix
     pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
-  - name: package
-    nameOfCaptureGroup: package
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
-  description: |
-    IBM JMS destination message
+  description: IBM JMS destination message
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -138,26 +135,25 @@
   - jms
   - websphere
   links: []
-  message: JMS `{{package}}.{{prefix}}{{type}}Message` messages represent the actual
-    data passed through JMS destinations. This reference should be. replaced with
-    the Java EE standard API `javax.jms.{{type}}Message`.
+  message: "\n JMS `{{package}}.{{prefix}}{{type}}Message` messages represent the
+    actual data passed through JMS destinations. This reference should be\n replaced
+    with the Java EE standard API `javax.jms.{{type}}Message`.\n "
   ruleID: websphere-jms-eap7-03000
   when:
     java.referenced:
       pattern: com.ibm.*jms.(JMS|MQe|MQ)(Text|Stream|Object|Map|Bytes)?Message
 - category: mandatory
   customVariables:
-  - name: type
-    nameOfCaptureGroup: type
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)
   - name: package
     nameOfCaptureGroup: package
     pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)
   - name: prefix
     nameOfCaptureGroup: prefix
     pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)
-  description: |
-    IBM JMS interface
+  - name: type
+    nameOfCaptureGroup: type
+    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)
+  description: IBM JMS interface
   effort: 1
   labels:
   - konveyor.io/source=websphere

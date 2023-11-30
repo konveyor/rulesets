@@ -1,4 +1,5 @@
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap
@@ -18,9 +19,7 @@
       pattern: org.jboss.ejb3.annotation.Management
 - category: optional
   customVariables: []
-  description: |-
-    JMS legacy javax.jms.QueueConnectionFactory
-    `QueueConnectionFactory` was used to obtain connection to JMS queues.. Replace the lookup string `QueueConnectionFactory` with `ConnectionFactory`.
+  description: JMS legacy javax.jms.QueueConnectionFactory
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -35,8 +34,9 @@
     url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html/Administration_and_Configuration_Guide/sect-Configuration1.html#Configure_the_JMS_Server1
   - title: JavaEE 6 - JMS Interfaces
     url: https://docs.oracle.com/javaee/6/api/javax/jms/package-summary.html#package_description
-  message: '`QueueConnectionFactory` was used to obtain connection to JMS queues..
-    Replace the lookup string `QueueConnectionFactory` with `ConnectionFactory`.'
+  message: "\n \n `QueueConnectionFactory` was used to obtain connection to JMS queues.\n\n
+    Replace the lookup string `QueueConnectionFactory` with `ConnectionFactory`.\n
+    \n "
   ruleID: jboss-eap5-java-02000
   when:
     or:
@@ -51,9 +51,7 @@
   - name: package
     nameOfCaptureGroup: package
     pattern: org.jboss(?P<package>(\.ejb3)?\.annotation(\.ejb)?.)?Service
-  description: |-
-    org.jboss{package}.Service
-    The `@Service` annotation is one of JBoss EJB 3.0 extensions which creates a singleton EJB.. To achieve the singleton nature of the `@Service` annotation, use the EJB3.1 spec `@Singleton` bean
+  description: org.jboss{package}.Service
   effort: 3
   labels:
   - konveyor.io/source=eap5
@@ -72,9 +70,9 @@
     url: https://docs.jboss.org/ejb3/docs/reference/build/reference/en/html/jboss_extensions.html
   - title: JBoss EJB 3.0 Javadoc
     url: https://docs.jboss.org/ejb3/embedded/api/org/jboss/annotation/ejb/package-summary.html
-  message: The `@Service` annotation is one of JBoss EJB 3.0 extensions which creates
-    a singleton EJB.. To achieve the singleton nature of the `@Service` annotation,
-    use the EJB3.1 spec `@Singleton` bean
+  message: "\n The `@Service` annotation is one of JBoss EJB 3.0 extensions which
+    creates a singleton EJB.\n To achieve the singleton nature of the `@Service` annotation,
+    use the EJB3.1 spec `@Singleton` bean\n "
   ruleID: jboss-eap5-java-04000
   when:
     java.referenced:
@@ -85,9 +83,7 @@
   - name: package
     nameOfCaptureGroup: package
     pattern: org.jboss(?P<package>(\.ejb3)?\.annotation(\.ejb)?.)?Management
-  description: |-
-    org.jboss{package}.Management
-    The `@Management` annotation is one of JBoss EJB 3.0 extensions which wraps the the bean. as an MBean and install it in the JBoss MBean Server.. To achieve the singleton nature of the `@Service` and `@Management` annotations, use the EJB3.1 spec `@Singleton` bean.
+  description: org.jboss{package}.Management
   effort: 3
   labels:
   - konveyor.io/source=eap5
@@ -107,10 +103,10 @@
     url: https://docs.jboss.org/ejb3/docs/reference/build/reference/en/html/jboss_extensions.html
   - title: JBoss EJB 3.0 Javadoc
     url: https://docs.jboss.org/ejb3/embedded/api/org/jboss/annotation/ejb/package-summary.html
-  message: The `@Management` annotation is one of JBoss EJB 3.0 extensions which wraps
-    the the bean. as an MBean and install it in the JBoss MBean Server.. To achieve
-    the singleton nature of the `@Service` and `@Management` annotations, use the
-    EJB3.1 spec `@Singleton` bean.
+  message: "\n The `@Management` annotation is one of JBoss EJB 3.0 extensions which
+    wraps the the bean\n as an MBean and install it in the JBoss MBean Server.\n To
+    achieve the singleton nature of the `@Service` and `@Management` annotations,
+    use the EJB3.1 spec `@Singleton` bean.\n "
   ruleID: jboss-eap5-java-05000
   when:
     java.referenced:
@@ -118,9 +114,7 @@
       pattern: org.jboss(.ejb3)?.annotation(.ejb)?.Management
 - category: mandatory
   customVariables: []
-  description: |-
-    org.jboss.annotation.ejb.LocalBinding
-    The `@LocalBinding` annotation is one of JBoss EJB 3.0 extensions. which specifies the local jndi binding for an EJB local interface.. Migrate to `org.jboss.ejb3.annotation.LocalBinding`.
+  description: org.jboss.annotation.ejb.LocalBinding
   effort: 3
   labels:
   - konveyor.io/source=eap5
@@ -135,8 +129,9 @@
     url: https://docs.jboss.org/ejb3/docs/reference/build/reference/en/html/jboss_extensions.html
   - title: JBoss EJB 3.0 Javadoc
     url: https://docs.jboss.org/ejb3/embedded/api/org/jboss/annotation/ejb/package-summary.html
-  message: The `@LocalBinding` annotation is one of JBoss EJB 3.0 extensions. which
-    specifies the local jndi binding for an EJB local interface.. Migrate to `org.jboss.ejb3.annotation.LocalBinding`.
+  message: "\n The `@LocalBinding` annotation is one of JBoss EJB 3.0 extensions\n
+    which specifies the local jndi binding for an EJB local interface.\n Migrate to
+    `org.jboss.ejb3.annotation.LocalBinding`.\n "
   ruleID: jboss-eap5-java-06000
   when:
     java.referenced:
@@ -144,9 +139,7 @@
       pattern: org.jboss.annotation.ejb.LocalBinding
 - category: mandatory
   customVariables: []
-  description: |-
-    org.jboss.annotation.ejb.Depends
-    The `@Depends` annotation is one of JBoss EJB 3.0 extensions. which specifies a deployment dependency for a bean.. Validate that a JBoss EAP 6 Dependency exists.
+  description: org.jboss.annotation.ejb.Depends
   effort: 3
   labels:
   - konveyor.io/source=eap5
@@ -161,8 +154,9 @@
     url: https://docs.jboss.org/ejb3/docs/reference/build/reference/en/html/jboss_extensions.html
   - title: JBoss EJB 3.0 Javadoc
     url: https://docs.jboss.org/ejb3/embedded/api/org/jboss/annotation/ejb/package-summary.html
-  message: The `@Depends` annotation is one of JBoss EJB 3.0 extensions. which specifies
-    a deployment dependency for a bean.. Validate that a JBoss EAP 6 Dependency exists.
+  message: "\n The `@Depends` annotation is one of JBoss EJB 3.0 extensions\n which
+    specifies a deployment dependency for a bean.\n Validate that a JBoss EAP 6 Dependency
+    exists.\n "
   ruleID: jboss-eap5-java-07000
   when:
     java.referenced:
@@ -170,9 +164,7 @@
       pattern: org.jboss.annotation.ejb.Depends
 - category: mandatory
   customVariables: []
-  description: |-
-    org.jboss.wsf.spi.annotation has been moved to org.jboss.ws.api.annotation
-    This package has been relocated to `org.jboss.ws.api.annotation` as specified in the. migration guide.
+  description: org.jboss.wsf.spi.annotation has been moved to org.jboss.ws.api.annotation
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -186,8 +178,8 @@
   links:
   - title: EAP 6 Migration Guide
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/#sect-Web_Services_Changes
-  message: This package has been relocated to `org.jboss.ws.api.annotation` as specified
-    in the. migration guide.
+  message: "\n This package has been relocated to `org.jboss.ws.api.annotation` as
+    specified in the\n migration guide.\n "
   ruleID: jboss-eap5-java-08000
   when:
     java.referenced:
@@ -195,9 +187,7 @@
       pattern: org.jboss.wsf.spi.annotation*
 - category: mandatory
   customVariables: []
-  description: |-
-    org.jboss.wsf.spi.binding has been moved to org.jboss.ws.api.binding
-    This package has been relocated to `org.jboss.ws.api.binding` as specified in the. migration guide.
+  description: org.jboss.wsf.spi.binding has been moved to org.jboss.ws.api.binding
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -211,8 +201,8 @@
   links:
   - title: EAP 6 Migration Guide
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/#sect-Web_Services_Changes
-  message: This package has been relocated to `org.jboss.ws.api.binding` as specified
-    in the. migration guide.
+  message: "\n This package has been relocated to `org.jboss.ws.api.binding` as specified
+    in the\n migration guide.\n "
   ruleID: jboss-eap5-java-08100
   when:
     java.referenced:
@@ -220,9 +210,7 @@
       pattern: org.jboss.wsf.spi.binding*
 - category: mandatory
   customVariables: []
-  description: |-
-    org.jboss.wsf.spi.management.recording has been moved to org.jboss.ws.api.monitoring
-    This package has been relocated to `org.jboss.ws.api.monitoring` as specified in the. migration guide.
+  description: org.jboss.wsf.spi.management.recording has been moved to org.jboss.ws.api.monitoring
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -236,8 +224,8 @@
   links:
   - title: EAP 6 Migration Guide
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/#sect-Web_Services_Changes
-  message: This package has been relocated to `org.jboss.ws.api.monitoring` as specified
-    in the. migration guide.
+  message: "\n This package has been relocated to `org.jboss.ws.api.monitoring` as
+    specified in the\n migration guide.\n "
   ruleID: jboss-eap5-java-08200
   when:
     java.referenced:
@@ -245,9 +233,7 @@
       pattern: org.jboss.wsf.spi.management.recording*
 - category: mandatory
   customVariables: []
-  description: |-
-    org.jboss.wsf.spi.tools.ant has been moved to org.jboss.ws.tools.ant
-    This package has been relocated to `org.jboss.ws.tools.ant` as specified in the. migration guide.
+  description: org.jboss.wsf.spi.tools.ant has been moved to org.jboss.ws.tools.ant
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -261,8 +247,8 @@
   links:
   - title: EAP 6 Migration Guide
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/#sect-Web_Services_Changes
-  message: This package has been relocated to `org.jboss.ws.tools.ant` as specified
-    in the. migration guide.
+  message: "\n This package has been relocated to `org.jboss.ws.tools.ant` as specified
+    in the\n migration guide.\n "
   ruleID: jboss-eap5-java-08300
   when:
     java.referenced:
@@ -270,9 +256,7 @@
       pattern: org.jboss.wsf.spi.tools.ant*
 - category: mandatory
   customVariables: []
-  description: |-
-    org.jboss.wsf.spi.tools.cmd has been moved to org.jboss.ws.tools.cmd
-    This package has been relocated to `org.jboss.ws.tools.cmd` as specified in the. migration guide.
+  description: org.jboss.wsf.spi.tools.cmd has been moved to org.jboss.ws.tools.cmd
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -286,8 +270,8 @@
   links:
   - title: EAP 6 Migration Guide
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/#sect-Web_Services_Changes
-  message: This package has been relocated to `org.jboss.ws.tools.cmd` as specified
-    in the. migration guide.
+  message: "\n This package has been relocated to `org.jboss.ws.tools.cmd` as specified
+    in the\n migration guide.\n "
   ruleID: jboss-eap5-java-08400
   when:
     java.referenced:
@@ -295,9 +279,7 @@
       pattern: org.jboss.wsf.spi.tools.cmd*
 - category: mandatory
   customVariables: []
-  description: |-
-    org.jboss.wsf.spi.tools has been moved to org.jboss.ws.api.tools
-    This package has been relocated to `org.jboss.ws.api.tools` as specified in the. migration guide.
+  description: org.jboss.wsf.spi.tools has been moved to org.jboss.ws.api.tools
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -309,8 +291,8 @@
   - ejb
   - jbossws
   links: []
-  message: This package has been relocated to `org.jboss.ws.api.tools` as specified
-    in the. migration guide.
+  message: "\n This package has been relocated to `org.jboss.ws.api.tools` as specified
+    in the\n migration guide.\n "
   ruleID: jboss-eap5-java-08500
   when:
     java.referenced:
@@ -318,9 +300,7 @@
       pattern: org.jboss.wsf.spi.tools*
 - category: mandatory
   customVariables: []
-  description: |-
-    org.jboss.wsf.spi.util.ServiceLoader has been moved to org.jboss.ws.api.util.ServiceLoader
-    This class has been relocated to `org.jboss.ws.api.util.ServiceLoader` as specified in the. migration guide.
+  description: org.jboss.wsf.spi.util.ServiceLoader has been moved to org.jboss.ws.api.util.ServiceLoader
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -334,17 +314,15 @@
   links:
   - title: EAP 6 Migration Guide
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/#sect-Web_Services_Changes
-  message: This class has been relocated to `org.jboss.ws.api.util.ServiceLoader`
-    as specified in the. migration guide.
+  message: "\n This class has been relocated to `org.jboss.ws.api.util.ServiceLoader`
+    as specified in the\n migration guide.\n "
   ruleID: jboss-eap5-java-08600
   when:
     java.referenced:
       pattern: org.jboss.wsf.spi.util.ServiceLoader
 - category: mandatory
   customVariables: []
-  description: |-
-    org.jboss.wsf.common.handler has been moved to org.jboss.ws.api.handler
-    This package has been relocated to `org.jboss.ws.api.handler` as specified in the. migration guide.
+  description: org.jboss.wsf.common.handler has been moved to org.jboss.ws.api.handler
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -358,8 +336,8 @@
   links:
   - title: EAP 6 Migration Guide
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/#sect-Web_Services_Changes
-  message: This package has been relocated to `org.jboss.ws.api.handler` as specified
-    in the. migration guide.
+  message: "\n This package has been relocated to `org.jboss.ws.api.handler` as specified
+    in the\n migration guide.\n "
   ruleID: jboss-eap5-java-08700
   when:
     java.referenced:
@@ -367,9 +345,7 @@
       pattern: org.jboss.wsf.common.handler*
 - category: mandatory
   customVariables: []
-  description: |-
-    org.jboss.wsf.common.addressing has been moved to org.jboss.ws.api.addressing
-    This package has been relocated to `org.jboss.ws.api.addressing` as specified in the. migration guide.
+  description: org.jboss.wsf.common.addressing has been moved to org.jboss.ws.api.addressing
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -383,8 +359,8 @@
   links:
   - title: EAP 6 Migration Guide
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/#sect-Web_Services_Changes
-  message: This package has been relocated to `org.jboss.ws.api.addressing` as specified
-    in the. migration guide.
+  message: "\n This package has been relocated to `org.jboss.ws.api.addressing` as
+    specified in the\n migration guide.\n "
   ruleID: jboss-eap5-java-08800
   when:
     java.referenced:
@@ -392,9 +368,7 @@
       pattern: org.jboss.wsf.common.addressing*
 - category: mandatory
   customVariables: []
-  description: |-
-    org.jboss.wsf.common.DOMUtils has been moved to org.jboss.ws.api.util.DOMUtils
-    This class has been relocated to `org.jboss.ws.api.util.DOMUtils` as specified in the. migration guide.
+  description: org.jboss.wsf.common.DOMUtils has been moved to org.jboss.ws.api.util.DOMUtils
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -408,17 +382,15 @@
   links:
   - title: EAP 6 Migration Guide
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/#sect-Web_Services_Changes
-  message: This class has been relocated to `org.jboss.ws.api.util.DOMUtils` as specified
-    in the. migration guide.
+  message: "\n This class has been relocated to `org.jboss.ws.api.util.DOMUtils` as
+    specified in the\n migration guide.\n "
   ruleID: jboss-eap5-java-08900
   when:
     java.referenced:
       pattern: org.jboss.wsf.common.DOMUtils
 - category: mandatory
   customVariables: []
-  description: |-
-    org.jboss.wsf.common has been moved to org.jboss.ws.common
-    This package has been relocated to `org.jboss.ws.common` as specified in the. migration guide.
+  description: org.jboss.wsf.common has been moved to org.jboss.ws.common
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -430,8 +402,8 @@
   - ejb
   - jbossws
   links: []
-  message: This package has been relocated to `org.jboss.ws.common` as specified in
-    the. migration guide.
+  message: "\n This package has been relocated to `org.jboss.ws.common` as specified
+    in the\n migration guide.\n "
   ruleID: jboss-eap5-java-09000
   when:
     java.referenced:
@@ -439,9 +411,7 @@
       pattern: org.jboss.wsf.common*
 - category: mandatory
   customVariables: []
-  description: |-
-    org.jboss.ws.annotation.EndpointConfig has been moved to org.jboss.ws.api.annotation.EndpointConfig
-    This class has been relocated to `org.jboss.ws.api.annotation.EndpointConfig` as specified in the. migration guide.
+  description: org.jboss.ws.annotation.EndpointConfig has been moved to org.jboss.ws.api.annotation.EndpointConfig
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -455,8 +425,8 @@
   links:
   - title: EAP 6 Migration Guide
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/#sect-Web_Services_Changes
-  message: This class has been relocated to `org.jboss.ws.api.annotation.EndpointConfig`
-    as specified in the. migration guide.
+  message: "\n This class has been relocated to `org.jboss.ws.api.annotation.EndpointConfig`
+    as specified in the\n migration guide.\n "
   ruleID: jboss-eap5-java-09100
   when:
     java.referenced:

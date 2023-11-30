@@ -1,5 +1,5 @@
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Apache Axis
     The application embeds the Apache Axis framework.
   labels:
@@ -13,7 +13,7 @@
     builtin.file:
       pattern: axis.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Apache Axis2
     The application embeds the Apache Axis2 framework.
   labels:
@@ -27,7 +27,7 @@
     builtin.file:
       pattern: axis2.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Apache CXF
     The application embeds the Apache CXF framework.
   labels:
@@ -41,7 +41,7 @@
     builtin.file:
       pattern: .*cxf.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - XFire
     The application embeds the XFire framework.
   labels:
@@ -55,7 +55,7 @@
     builtin.file:
       pattern: .*xfire.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Jersey
     The application embeds the Jersey framework.
   labels:
@@ -69,7 +69,7 @@
     builtin.file:
       pattern: .*jersey.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Unirest
     The application embeds the Unirest framework.
   labels:
@@ -83,7 +83,7 @@
     builtin.file:
       pattern: .*unirest.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Hibernate
     The application embeds the Hibernate framework.
   labels:
@@ -97,7 +97,7 @@
     builtin.file:
       pattern: hibernate.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Hibernate OGM
     The application embeds the Hibernate OGM framework.
   labels:
@@ -111,7 +111,7 @@
     builtin.file:
       pattern: hibernate-ogm.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - EclipseLink
     The application embeds the EclipseLink framework.
   labels:
@@ -125,7 +125,7 @@
     builtin.file:
       pattern: .*eclipselink.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Spring Batch
     The application embeds the Spring Batch framework.
   labels:
@@ -139,7 +139,7 @@
     builtin.file:
       pattern: spring-batch.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - AspectJ
     The application embeds the AspectJ framework.
   labels:
@@ -153,7 +153,7 @@
     builtin.file:
       pattern: .*aspectj.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - JBPM
     The application embeds the JBPM framework.
   labels:
@@ -167,7 +167,7 @@
     builtin.file:
       pattern: .*jbpm.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - iLog
     The application embeds the iLog framework.
   labels:
@@ -181,7 +181,7 @@
     builtin.file:
       pattern: .*jrules.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Camunda
     The application embeds the Camunda framework.
   labels:
@@ -195,7 +195,7 @@
     builtin.file:
       pattern: .*camunda.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Pega
     The application embeds the Pega framework.
   labels:
@@ -209,7 +209,7 @@
     builtin.file:
       pattern: .*pega.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Blaze
     The application embeds the Blaze framework.
   labels:
@@ -223,7 +223,7 @@
     builtin.file:
       pattern: blaze.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - MRules
     The application embeds the MRules framework.
   labels:
@@ -237,7 +237,7 @@
     builtin.file:
       pattern: .*MRules.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Easy Rules
     The application embeds the Easy Rules framework.
   labels:
@@ -251,7 +251,7 @@
     builtin.file:
       pattern: .*easy-rules.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - AOP Alliance
     The application embeds the AOP Alliance library.
   labels:
@@ -265,7 +265,7 @@
     builtin.file:
       pattern: .*aopalliance.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - SNMP4J
     The application embeds SNMP4J.
   labels:
@@ -279,7 +279,7 @@
     builtin.file:
       pattern: .*snmp4j.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - HTTP Client
     The application embeds a HTTP client.
   labels:
@@ -293,7 +293,7 @@
     builtin.file:
       pattern: .*http-client.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Javax Inject
     The application embeds a Javax Inject library.
   labels:
@@ -310,7 +310,7 @@
     - builtin.file:
         pattern: .*atinject.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Google Guice
     The application embeds a Google Guice library.
   labels:
@@ -324,7 +324,7 @@
     builtin.file:
       pattern: .*guice.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - CDI
     The application embeds a CDI library.
   labels:
@@ -338,7 +338,7 @@
     builtin.file:
       pattern: .*cdi.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Plexus Container
     The application embeds a Plexus Container library.
   labels:
@@ -352,7 +352,7 @@
     builtin.file:
       pattern: .*plexus-container.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Weld
     The application embeds a Weld library.
   labels:
@@ -366,7 +366,7 @@
     builtin.file:
       pattern: .*weld.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Dagger
     The application embeds a Dagger library.
   labels:
@@ -380,7 +380,7 @@
     builtin.file:
       pattern: dagger.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - GIN
     The application embeds a GIN (GWT INjection) library.
   labels:
@@ -394,7 +394,7 @@
     builtin.file:
       pattern: gin.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - PicoContainer
     The application embeds a PicoContainer library.
   labels:
@@ -408,7 +408,7 @@
     builtin.file:
       pattern: .*picocontainer.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Scaldi
     The application embeds a Scaldi library.
   labels:
@@ -422,7 +422,7 @@
     builtin.file:
       pattern: .*scaldi.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Macros
     The application embeds a Macros library.
   labels:
@@ -436,7 +436,7 @@
     builtin.file:
       pattern: macros.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Injekt for Kotlin
     The application embeds a Injekt for Kotlin library.
   labels:
@@ -450,7 +450,7 @@
     builtin.file:
       pattern: injekt-core.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Kodein
     The application embeds a Kodein library.
   labels:
@@ -464,7 +464,7 @@
     builtin.file:
       pattern: kodein.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Peaberry
     The application embeds a Peaberry library.
   labels:
@@ -478,7 +478,7 @@
     builtin.file:
       pattern: peaberry.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Sticky Configured
     The application embeds a Sticky Configured library.
   labels:
@@ -492,7 +492,7 @@
     builtin.file:
       pattern: sticky-configured.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Ka DI
     The application embeds a Ka DI library.
   labels:
@@ -506,7 +506,7 @@
     builtin.file:
       pattern: ka-di.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Polyforms DI
     The application embeds a Polyforms DI library.
   labels:
@@ -520,7 +520,7 @@
     builtin.file:
       pattern: polyforms-di.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - JayWire
     The application embeds a JayWire library.
   labels:
@@ -534,7 +534,7 @@
     builtin.file:
       pattern: jaywire.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Silk DI
     The application embeds a Silk DI library.
   labels:
@@ -548,7 +548,7 @@
     builtin.file:
       pattern: silk-di.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Grapht DI
     The application embeds a Grapht DI library.
   labels:
@@ -562,7 +562,7 @@
     builtin.file:
       pattern: grapht.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Syringe
     The application embeds a Syringe library.
   labels:
@@ -576,7 +576,7 @@
     builtin.file:
       pattern: syringe.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Cfg Engine
     The application embeds a Cfg Engine library.
   labels:
@@ -590,7 +590,7 @@
     builtin.file:
       pattern: cfg-engine.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - BeanInject
     The application embeds a BeanInject library.
   labels:
@@ -604,7 +604,7 @@
     builtin.file:
       pattern: beaninject.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Tornado Inject
     The application embeds a Tornado Inject library.
   labels:
@@ -618,7 +618,7 @@
     builtin.file:
       pattern: inject.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Airframe
     The application embeds a Airframe library.
   labels:
@@ -632,7 +632,7 @@
     builtin.file:
       pattern: airframe.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Winter
     The application embeds a Winter library.
   labels:
@@ -646,7 +646,7 @@
     builtin.file:
       pattern: winter.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - KouInject
     The application embeds a KouInject library.
   labels:
@@ -660,7 +660,7 @@
     builtin.file:
       pattern: kouinject.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Iroh
     The application embeds an Iroh library.
   labels:
@@ -674,7 +674,7 @@
     builtin.file:
       pattern: iroh.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Micro DI
     The application embeds a Micro DI library.
   labels:
@@ -688,7 +688,7 @@
     builtin.file:
       pattern: micro-di.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - SubCut
     The application embeds a SubCut library.
   labels:
@@ -702,7 +702,7 @@
     builtin.file:
       pattern: subcut.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Spring DI
     The application embeds a Spring DI library.
   labels:
@@ -717,7 +717,7 @@
       lowerbound: 0.0.0
       name: org.springframework.spring-beans
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Micrometer
     The application embeds a Micrometer library.
   labels:
@@ -732,7 +732,7 @@
       lowerbound: 0.0.0
       name: io.micrometer.micrometer-core
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Spring Web
     The application embeds the Spring Web framework.
   labels:
@@ -754,7 +754,7 @@
         lowerbound: 0.0.0
         name: org.springframework.spring-web
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Spring Shell
     The application embeds a Spring Shell library.
   labels:
@@ -769,7 +769,7 @@
       lowerbound: 0.0.0
       name: org.springframework.shell.spring-shell-core
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Spring Boot Flo
     The application embeds Spring Boot Flo.
   labels:
@@ -784,7 +784,7 @@
       filePattern: .*\.(html|ts)
       pattern: (<|')flo-editor
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Spring Scheduled
     The application embeds Spring Scheduled.
   labels:
@@ -799,7 +799,7 @@
       location: ANNOTATION
       pattern: org.springframework.scheduling.annotation.Scheduled
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Spring Cloud Function
     The application embeds Spring Cloud Function.
   labels:
@@ -818,7 +818,7 @@
         lowerbound: 0.0.0
         name: org.springframework.cloud.spring-cloud-function-context
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Quartz
     The application embeds the Quartz framework.
   labels:
@@ -832,7 +832,7 @@
     builtin.file:
       pattern: .*quartz.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Zipkin
     The application embeds the Zipkin framework.
   labels:
@@ -846,7 +846,7 @@
     builtin.file:
       pattern: .*zipkin.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Feign
     The application embeds the Feign framework.
   labels:
@@ -860,7 +860,7 @@
     builtin.file:
       pattern: feign-.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Redis
     The application embeds the Redis client.
   labels:
@@ -874,7 +874,7 @@
     builtin.file:
       pattern: .*redis.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Eureka
     The application embeds the Eureka client.
   labels:

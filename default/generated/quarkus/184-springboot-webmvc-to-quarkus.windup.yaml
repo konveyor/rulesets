@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Spring MVC is not supported by Quarkus
-    Spring MVC is not supported by Quarkus. Use the following link to figure out the supported Spring Web functionalities.
+  description: Spring MVC is not supported by Quarkus
   effort: 13
   labels:
   - konveyor.io/source=springboot
@@ -10,8 +8,8 @@
   links:
   - title: Quarkus - Supported Spring Web functionalities
     url: https://quarkus.io/guides/spring-web#supported-spring-web-functionalities
-  message: Spring MVC is not supported by Quarkus. Use the following link to figure
-    out the supported Spring Web functionalities.
+  message: "\n Spring MVC is not supported by Quarkus\n\n Use the following link to
+    figure out the supported Spring Web functionalities.\n "
   ruleID: springboot-webmvc-to-quarkus-00000
   when:
     java.referenced:
@@ -19,9 +17,7 @@
       pattern: org.springframework.web.servlet.mvc.Controller
 - category: mandatory
   customVariables: []
-  description: |-
-    Spring WebFlux is not supported by Quarkus
-    Spring WebFlux is not supported by Quarkus. If the application needs a reactive stack, please refer to the following links to get more information.
+  description: Spring WebFlux is not supported by Quarkus
   effort: 13
   labels:
   - konveyor.io/source=springboot
@@ -31,8 +27,8 @@
     url: https://quarkus.io/guides/vertx
   - title: Quarkus - Using Reactive Routes
     url: https://quarkus.io/guides/reactive-routes
-  message: Spring WebFlux is not supported by Quarkus. If the application needs a
-    reactive stack, please refer to the following links to get more information.
+  message: "\n Spring WebFlux is not supported by Quarkus\n\n If the application needs
+    a reactive stack, please refer to the following links to get more information.\n "
   ruleID: springboot-webmvc-to-quarkus-01000
   when:
     or:

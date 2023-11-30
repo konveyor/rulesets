@@ -1,6 +1,6 @@
 - customVariables: []
   description: "Embedded library - Apache Camel\n\n                      The application
-    embedds an Apache Camel library.\n                  \n"
+    embedds an Apache Camel library.\n                  "
   labels:
   - konveyor.io/include=always
   links: []
@@ -13,7 +13,7 @@
       pattern: .*camel.*\.jar$
 - customVariables: []
   description: "Embedded library - Teiid\n\n                      The application
-    embedds a Teiid library.\n                  \n"
+    embedds a Teiid library.\n                  "
   labels:
   - konveyor.io/include=always
   links: []
@@ -25,7 +25,7 @@
     builtin.file:
       pattern: .*teiid.*\.jar$
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Spring Integration
     The application embeds the Spring Integration framework.
   labels:
@@ -39,7 +39,7 @@
     builtin.file:
       pattern: spring-integration.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Ikasan
     The application embeds an Ikasan library.
   labels:
@@ -53,7 +53,7 @@
     builtin.file:
       pattern: .*ikasan.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Swagger
     The application embeds a Swagger library.
   labels:
@@ -67,7 +67,7 @@
     builtin.file:
       pattern: .*swagger.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Apiman
     The application embeds an Apiman library.
   labels:
@@ -81,7 +81,7 @@
     builtin.file:
       pattern: .*apiman.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - 3scale
     The application embeds a 3scale library.
   labels:
@@ -95,7 +95,7 @@
     builtin.file:
       pattern: .*3scale.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Istio
     The application embeds an Istio library.
   labels:
@@ -109,7 +109,7 @@
     builtin.file:
       pattern: .*istio.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - ServiceMix
     The application embeds a ServiceMix library.
   labels:
@@ -123,7 +123,7 @@
     builtin.file:
       pattern: .*servicemix.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Mule
     The application embeds a Mule library.
   labels:
@@ -137,7 +137,7 @@
     builtin.file:
       pattern: .*mule.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Petals EIP
     The application embeds a Petals EIP library.
   labels:
@@ -151,7 +151,7 @@
     builtin.file:
       pattern: .*petals.*eip.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - SwitchYard
     The application embeds a SwitchYard library.
   labels:
@@ -165,7 +165,7 @@
     builtin.file:
       pattern: .*switchyard.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Apache Synapse
     The application embeds an Apache Synapse library.
   labels:
@@ -179,7 +179,7 @@
     builtin.file:
       pattern: .*synapse.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - WSO2
     The application embeds a WSO2 library.
   labels:
@@ -193,7 +193,7 @@
     builtin.file:
       pattern: .*wso2.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Talend ESB
     The application embeds a Talend ESB library.
   labels:
@@ -207,7 +207,7 @@
     builtin.file:
       pattern: .*talend.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Spring Integration
     The application embeds the Spring Integration framework.
   labels:
@@ -223,7 +223,7 @@
         int: http://www.springframework.org/schema/integration
       xpath: //*/int:channel
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Spring Integration
     The application embeds the Spring Integration framework.
   labels:

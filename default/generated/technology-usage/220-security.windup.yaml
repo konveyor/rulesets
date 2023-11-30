@@ -1,5 +1,5 @@
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Spring Security
     The application embeds a Spring Security library.
   labels:
@@ -13,7 +13,7 @@
     builtin.file:
       pattern: .*spring-security.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Apache Shiro
     The application embeds an Apache Shiro library.
   labels:
@@ -27,7 +27,7 @@
     builtin.file:
       pattern: .*shiro.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Hdiv
     The application embeds an Hdiv library.
   labels:
@@ -41,7 +41,7 @@
     builtin.file:
       pattern: .*hdiv.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - OACC
     The application embeds an OACC library.
   labels:
@@ -55,7 +55,7 @@
     builtin.file:
       pattern: .*acciente-oacc.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - PicketLink
     The application embeds a PicketLink library.
   labels:
@@ -69,7 +69,7 @@
     builtin.file:
       pattern: .*picketlink.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - PicketBox
     The application embeds a PicketBox library.
   labels:
@@ -83,7 +83,7 @@
     builtin.file:
       pattern: .*picketbox.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Keyczar
     The application embeds a Keyczar library.
   labels:
@@ -97,7 +97,7 @@
     builtin.file:
       pattern: .*keyczar.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - XACML
     The application embeds an XACML library.
   labels:
@@ -111,7 +111,7 @@
     builtin.file:
       pattern: .*xacml.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - SAML
     The application embeds a SAML library.
   labels:
@@ -125,7 +125,7 @@
     builtin.file:
       pattern: .*saml.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Bouncy Castle
     The application embeds a Bouncy Castle library.
   labels:
@@ -150,7 +150,7 @@
     - builtin.file:
         pattern: .*bctls.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Jasypt
     The application embeds a Jasypt library.
   labels:
@@ -164,7 +164,7 @@
     builtin.file:
       pattern: .*jasypt.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Apache Santuario
     The application embeds a Apache Santuario library.
   labels:
@@ -178,7 +178,7 @@
     builtin.file:
       pattern: .*xmlsec.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - SSL
     The application embeds an SSL library.
   labels:
@@ -192,7 +192,7 @@
     builtin.file:
       pattern: .*ssl.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Vlad
     The application embeds a Vlad library.
   labels:
@@ -206,7 +206,7 @@
     builtin.file:
       pattern: vlad.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Apache Commons Validator
     The application embeds an Apache Commons Validator library.
   labels:
@@ -220,7 +220,7 @@
     builtin.file:
       pattern: commons-validator.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - OWASP ESAPI
     The application embeds an OWASP ESAPI library.
   labels:
@@ -234,7 +234,7 @@
     builtin.file:
       pattern: .*esapi.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - WSS4J
     The application embeds a WSS4J library.
   labels:
@@ -248,7 +248,7 @@
     builtin.file:
       pattern: .*wss4j.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - OpenSAML
     The application embeds an OpenSAML library.
   labels:
@@ -262,7 +262,7 @@
     builtin.file:
       pattern: .*opensaml.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - OTR4J
     The application embeds an OTR4J library.
   labels:
@@ -276,7 +276,7 @@
     builtin.file:
       pattern: .*otr4j.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - OWASP CSRF Guard
     The application embeds an OWASP CSRF Guard library.
   labels:
@@ -290,7 +290,7 @@
     builtin.file:
       pattern: .*csrfguard.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - OAUTH
     The application embeds an OAUTH library.
   labels:
@@ -304,7 +304,7 @@
     builtin.file:
       pattern: .*oauth.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Acegi Security
     The application embeds an Acegi Security library.
   labels:
@@ -318,7 +318,7 @@
     builtin.file:
       pattern: .*acegi-security.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - JSecurity
     The application embeds a JSecurity library.
   labels:
@@ -332,7 +332,7 @@
     builtin.file:
       pattern: .*jsecurity.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - AcrIS Security
     The application embeds an AcrIS Security library.
   labels:
@@ -346,7 +346,7 @@
     builtin.file:
       pattern: .*acris-security.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Trunk JGuard
     The application embeds a Trunk JGuard library.
   labels:
@@ -360,7 +360,7 @@
     builtin.file:
       pattern: .*jguard.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Spring Security
     The application embeds a Spring Security library.
   labels:

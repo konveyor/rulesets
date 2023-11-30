@@ -2,7 +2,7 @@
   - name: classes
     nameOfCaptureGroup: classes
     pattern: java.lang.(?P<classes>(Thread|ThreadDeath|ThreadGroup|ThreadLocal))
-  description: |
+  description: |-
     Threads
     The application uses Thread APIs.
   labels:
@@ -19,7 +19,7 @@
   - name: classes
     nameOfCaptureGroup: classes
     pattern: java.util.concurrent.(?P<classes>(ExecutorService|Executors|Executor|ScheduledExecutorService))
-  description: |
+  description: |-
     Threads
     The application uses Concurrent Executors APIs.
   labels:

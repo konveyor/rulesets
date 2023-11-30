@@ -1,5 +1,5 @@
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Spring Boot Actuator
     The application embeds Spring Boot Actuator.
   labels:
@@ -24,7 +24,7 @@
         lowerbound: 0.0.0
         name: org.springframework.boot.spring-boot-actuator
 - customVariables: []
-  description: |
+  description: |-
     Spring JMX configuration detected
     The application uses Spring JMX.
   labels:

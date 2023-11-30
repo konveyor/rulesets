@@ -1,7 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: "Rename properties prefixed by javax with jakarta \nRename properties
-    prefixed by `javax` with `jakarta`"
+  description: 'Rename properties prefixed by javax with jakarta '
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -12,7 +11,7 @@
   links:
   - title: Jakarta EE
     url: https://jakarta.ee/
-  message: Rename properties prefixed by `javax` with `jakarta`
+  message: 'Rename properties prefixed by `javax` with `jakarta` '
   ruleID: javax-to-jakarta-properties-00001
   when:
     builtin.filecontent:

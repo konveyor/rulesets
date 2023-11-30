@@ -1,5 +1,5 @@
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Spring
     The application embeds the Spring framework.
   labels:

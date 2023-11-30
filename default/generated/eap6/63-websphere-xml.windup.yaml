@@ -1,5 +1,5 @@
 - customVariables: []
-  description: |
+  description: |-
     IBM Process Server Rules 6.0
     WBI is a WebSphere proprietary business integration solution. This needs to be migrated to JBoss Drools or JBPM/BRMS.
   labels:
@@ -24,7 +24,6 @@
   description: |-
     WebSphere EAR Application Binding
     This WebSphere application binding is an IBM proprietary method for binding user roles for authorization and needs to be migrated to JAAS or KeyCloak.
-    This file contains a specific IBM WebSphere Application binding configuration.. To migrate to EAP 6.x, configure EAP 6.x accordingly using the CLI interface or web console.
   effort: 0
   labels:
   - konveyor.io/source=websphere
@@ -37,9 +36,9 @@
     url: https://access.redhat.com/articles/1330673
   - title: Enabling Role-Based Access Control in JBoss EAP 6
     url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html/Security_Guide/Enabling_Role-Based_Access_Control.html
-  message: This file contains a specific IBM WebSphere Application binding configuration..
-    To migrate to EAP 6.x, configure EAP 6.x accordingly using the CLI interface or
-    web console.
+  message: "\n \n This file contains a specific IBM WebSphere Application binding
+    configuration.\n\n To migrate to EAP 6.x, configure EAP 6.x accordingly using
+    the CLI interface or web console.\n \n "
   ruleID: websphere-xml-02000
   tag:
   - security
@@ -52,9 +51,7 @@
       xpath: /applicationbnd:ApplicationBinding
 - category: mandatory
   customVariables: []
-  description: |-
-    WebSphere JSP engine configuration (ibm-web-ext)
-    This file contains WebSphere proprietary JSP engine configuration.. To migrate to EAP 6, configure it accordingly using the CLI or the web console.
+  description: WebSphere JSP engine configuration (ibm-web-ext)
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -62,8 +59,9 @@
   - konveyor.io/target=eap
   - websphere
   links: []
-  message: This file contains WebSphere proprietary JSP engine configuration.. To
-    migrate to EAP 6, configure it accordingly using the CLI or the web console.
+  message: "\n \n This file contains WebSphere proprietary JSP engine configuration.\n\n
+    To migrate to EAP 6, configure it accordingly using the CLI or the web console.\n
+    \n "
   ruleID: websphere-xml-03500
   when:
     or:
@@ -83,9 +81,7 @@
         pattern: ibm-web-ext\.xml|xmi
 - category: mandatory
   customVariables: []
-  description: |-
-    WebSphere web application binding (ibm-web-bnd)
-    This file contains WebSphere proprietary binding configuration.. To migrate to EAP 6.x, configure EAP 6.x accordingly using the CLI interface or web console.
+  description: WebSphere web application binding (ibm-web-bnd)
   effort: 3
   labels:
   - konveyor.io/source=websphere
@@ -98,8 +94,9 @@
   - title: Migrate IBM WebSphere Application Server Web Application Extension or Binding
       Files
     url: https://access.redhat.com/articles/1330673
-  message: This file contains WebSphere proprietary binding configuration.. To migrate
-    to EAP 6.x, configure EAP 6.x accordingly using the CLI interface or web console.
+  message: "\n \n This file contains WebSphere proprietary binding configuration.\n\n
+    To migrate to EAP 6.x, configure EAP 6.x accordingly using the CLI interface or
+    web console.\n \n "
   ruleID: websphere-xml-06000
   when:
     or:
@@ -117,7 +114,7 @@
     extension that needs to be migrated to JBossWS.\n                    JBossWS implements
     the latest JAX-WS specification, which users can reference for any vendor-agnostic
     web service usage need.\n                    You can migrate deployment descriptors
-    following the links below.\n                    \n                    \n"
+    following the links below.\n                    \n                    "
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
@@ -142,7 +139,7 @@
     binding that needs to be migrated to JBossWS.\n                    JBossWS implements
     the latest JAX-WS specification, which users can reference for any vendor-agnostic
     web service usage need.\n                    You can get more information about
-    developing web services in the links below.\n                    \n                    \n"
+    developing web services in the links below.\n                    \n                    "
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
@@ -168,7 +165,7 @@
     XML schema documentation can be found within the WebSphere Application Server
     7.0 directory under `/web/configDocs/packages/appdeployment/Deployment.html`.\n
     \                       It should be safe to delete this file, unless it was created
-    manually.\n                    \n"
+    manually.\n                    "
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6

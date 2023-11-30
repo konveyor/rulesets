@@ -3,9 +3,7 @@
   - name: domain
     nameOfCaptureGroup: domain
     pattern: (?P<domain>(edu|EDU).)?oswego.cs.dl.util.concurrent..*
-  description: |-
-    Doug Lea Concurrency util
-    This is an old Doug Lea Concurrency util type and needs to be migrated to a compatible `java.util.concurrent` API.. There is currently no detailed information about this type.
+  description: Doug Lea Concurrency util
   effort: 0
   labels:
   - konveyor.io/source=java
@@ -15,9 +13,9 @@
   - konveyor.io/target=eap
   - catchall
   links: []
-  message: This is an old Doug Lea Concurrency util type and needs to be migrated
-    to a compatible `java.util.concurrent` API.. There is currently no detailed information
-    about this type.
+  message: "\n This is an old Doug Lea Concurrency util type and needs to be migrated
+    to a compatible `java.util.concurrent` API.\n There is currently no detailed information
+    about this type.\n "
   ruleID: generic-catchall-00000
   when:
     java.referenced:
@@ -25,9 +23,7 @@
       pattern: (edu|EDU).oswego.cs.dl.util.concurrent*
 - category: optional
   customVariables: []
-  description: |-
-    backport-util-concurrent type reference
-    This type is the backport of java.util.concurrent API, introduced in Java 5.0 and further refined in Java 6.0, to older Java platforms.. You should use java.util.concurrent API instead.
+  description: backport-util-concurrent type reference
   effort: 0
   labels:
   - konveyor.io/source=java
@@ -37,9 +33,9 @@
   - konveyor.io/target=eap
   - catchall
   links: []
-  message: This type is the backport of java.util.concurrent API, introduced in Java
-    5.0 and further refined in Java 6.0, to older Java platforms.. You should use
-    java.util.concurrent API instead.
+  message: "\n This type is the backport of java.util.concurrent API, introduced in
+    Java 5.0 and further refined in Java 6.0, to older Java platforms.\n You should
+    use java.util.concurrent API instead.\n "
   ruleID: generic-catchall-00001
   when:
     java.referenced:
@@ -47,14 +43,13 @@
       pattern: edu.emory.mathcs.backport.java.util*
 - category: optional
   customVariables:
-  - name: type
-    nameOfCaptureGroup: type
-    pattern: org.mule.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
   - name: packageRemainder
     nameOfCaptureGroup: packageRemainder
     pattern: org.mule.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
-  description: |
-    Mule API reference
+  - name: type
+    nameOfCaptureGroup: type
+    pattern: org.mule.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
+  description: Mule API reference
   effort: 0
   labels:
   - konveyor.io/source=java
@@ -65,8 +60,8 @@
   - catchall
   - mule
   links: []
-  message: Mule API `org.mule.{{packageRemainder}}.{{type}}` was used.. You should
-    convert these types to Apache Camel.
+  message: "\n Mule API `org.mule.{{packageRemainder}}.{{type}}` was used.\n You should
+    convert these types to Apache Camel.\n "
   ruleID: generic-catchall-00002
   when:
     java.referenced:
@@ -80,8 +75,7 @@
   - name: type
     nameOfCaptureGroup: type
     pattern: mx4j.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
-  description: |
-    MX4J type reference
+  description: MX4J type reference
   effort: 0
   labels:
   - konveyor.io/source=java
@@ -103,8 +97,7 @@
   - name: type
     nameOfCaptureGroup: type
     pattern: org.osoa.sca.annotations.(?P<type>[^.]+)
-  description: |
-    Apache Tuscany type reference
+  description: Apache Tuscany type reference
   effort: 0
   labels:
   - konveyor.io/source=java
@@ -124,9 +117,7 @@
       pattern: org.osoa.sca.annotations*
 - category: optional
   customVariables: []
-  description: |-
-    Tibco ActiveMatrix Stub
-    Tibco ActiveMatrix Stub; regenerate the SOAP Client for the class
+  description: Tibco ActiveMatrix Stub
   effort: 0
   labels:
   - konveyor.io/source=java
@@ -151,8 +142,7 @@
   - name: type
     nameOfCaptureGroup: type
     pattern: com.tibco.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
-  description: |
-    Tibco type reference
+  description: Tibco type reference
   effort: 0
   labels:
   - konveyor.io/source=java
@@ -163,8 +153,8 @@
   - catchall
   - tibco
   links: []
-  message: Tibco `com.tibco.{{packageRemainder}}.{{type}}` reference found.. No specific
-    details available.
+  message: "\n Tibco `com.tibco.{{packageRemainder}}.{{type}}` reference found.\n
+    No specific details available.\n "
   ruleID: generic-catchall-00300
   when:
     java.referenced:
@@ -178,8 +168,7 @@
   - name: type
     nameOfCaptureGroup: type
     pattern: com.crystaldecisions.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
-  description: |
-    SAP CrystalReports type reference
+  description: SAP CrystalReports type reference
   effort: 0
   labels:
   - konveyor.io/source=java
@@ -190,8 +179,9 @@
   - catchall
   - sap
   links: []
-  message: SAP CrystalReports `com.crystaldecisions.{{packageRemainder}}.{{type}}`
-    reference found.. No specific details available.
+  message: |-
+    SAP CrystalReports `com.crystaldecisions.{{packageRemainder}}.{{type}}` reference found.
+     No specific details available.
   ruleID: generic-catchall-00400
   when:
     java.referenced:
@@ -205,8 +195,7 @@
   - name: type
     nameOfCaptureGroup: type
     pattern: com.iona.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
-  description: |
-    IONA type reference
+  description: IONA type reference
   effort: 0
   labels:
   - konveyor.io/source=java
@@ -217,8 +206,9 @@
   - catchall
   - iona
   links: []
-  message: IONA `com.iona.{{packageRemainder}}.{{type}}` reference found.. No specific
-    details available.
+  message: |-
+    IONA `com.iona.{{packageRemainder}}.{{type}}` reference found.
+     No specific details available.
   ruleID: generic-catchall-00500
   when:
     java.referenced:
@@ -229,8 +219,7 @@
   - name: subpackage
     nameOfCaptureGroup: subpackage
     pattern: org.apache.(?P<subpackage>(activeio|activemq).)?.*
-  description: |
-    Apache org.apache.{subpackage} type reference
+  description: Apache org.apache.{subpackage} type reference
   effort: 0
   labels:
   - konveyor.io/source=java
@@ -241,8 +230,9 @@
   - catchall
   - apache
   links: []
-  message: Apache `org.apache.{{subpackage}}` API reference found.. No specific details
-    available.
+  message: |-
+    Apache `org.apache.{{subpackage}}` API reference found.
+     No specific details available.
   ruleID: generic-catchall-00600
   when:
     java.referenced:
@@ -250,17 +240,16 @@
       pattern: org.apache.(activeio|activemq)*
 - category: potential
   customVariables:
-  - name: subpackage
-    nameOfCaptureGroup: subpackage
-    pattern: org.(?P<subpackage>(jboss|jbpm).)?(?P<packageRemainder>([a-z]+\.)*)?(?P<type>[^.()]+)
   - name: packageRemainder
     nameOfCaptureGroup: packageRemainder
     pattern: org.(?P<subpackage>(jboss|jbpm).)?(?P<packageRemainder>([a-z]+\.)*)?(?P<type>[^.()]+)
   - name: type
     nameOfCaptureGroup: type
     pattern: org.(?P<subpackage>(jboss|jbpm).)?(?P<packageRemainder>([a-z]+\.)*)?(?P<type>[^.()]+)
-  description: |
-    JBoss API reference
+  - name: subpackage
+    nameOfCaptureGroup: subpackage
+    pattern: org.(?P<subpackage>(jboss|jbpm).)?(?P<packageRemainder>([a-z]+\.)*)?(?P<type>[^.()]+)
+  description: JBoss API reference
   effort: 0
   labels:
   - konveyor.io/source=java
@@ -280,9 +269,7 @@
       pattern: org.(jboss|jbpm).*
 - category: optional
   customVariables: []
-  description: |-
-    java.sql.DriverManager type reference
-    `java.sql.DriverManager` type reference found. No specific details available.
+  description: java.sql.DriverManager type reference
   effort: 0
   labels:
   - konveyor.io/source=java

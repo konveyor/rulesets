@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    JAX-RPC Generic Handler not supported
-    JAX-RPC is no longer supported on JBoss EAP 7. JAX-WS is successor and offers a more accurate and complete solution.
+  description: JAX-RPC Generic Handler not supported
   effort: 5
   labels:
   - konveyor.io/source=java-ee

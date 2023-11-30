@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Remove spring-boot-devtools dependency
-    Remove the spring-boot-devtools dependency.. Quarkus has its own set of development tools integrated by default.
+  description: Remove spring-boot-devtools dependency
   effort: 1
   labels:
   - konveyor.io/source=springboot
@@ -10,8 +8,8 @@
   links:
   - title: Quarkus development tools
     url: https://quarkus.io/guides/tooling
-  message: Remove the spring-boot-devtools dependency.. Quarkus has its own set of
-    development tools integrated by default.
+  message: "\n Remove the spring-boot-devtools dependency.\n Quarkus has its own set
+    of development tools integrated by default.\n "
   ruleID: springboot-devtools-to-quarkus-0000
   when:
     builtin.xml:

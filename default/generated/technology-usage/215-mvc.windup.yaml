@@ -1,5 +1,5 @@
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Apache Wicket
     The application embeds an Apache Wicket library.
   labels:
@@ -13,7 +13,7 @@
     builtin.file:
       pattern: .*wicket.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Apache Struts
     The application embeds an Apache Struts library.
   labels:
@@ -27,7 +27,7 @@
     builtin.file:
       pattern: .*struts.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Spring MVC
     The application embeds a Spring MVC library.
   labels:
@@ -41,7 +41,7 @@
     builtin.file:
       pattern: .*spring-webmvc.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Spring MVC
     The application embeds a Spring MVC library.
   labels:
@@ -56,7 +56,7 @@
       location: ANNOTATION
       pattern: org.springframework.web.servlet.mvc.Controller
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Spring MVC
     The application embeds a Spring MVC library.
   labels:
@@ -81,7 +81,7 @@
         lowerbound: 0.0.0
         name: org.springframework.spring-webflux
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - GWT
     The application embeds a GWT library.
   labels:
@@ -95,7 +95,7 @@
     builtin.file:
       pattern: .*gwt.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - MyFaces
     The application embeds a MyFaces library.
   labels:
@@ -109,7 +109,7 @@
     builtin.file:
       pattern: .*myfaces.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - RichFaces
     The application embeds a RichFaces library.
   labels:
@@ -123,7 +123,7 @@
     builtin.file:
       pattern: .*richfaces.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - JSF
     The application embeds a JSF library.
   labels:
@@ -137,7 +137,7 @@
     builtin.file:
       pattern: .*jsf.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Apache Tapestry
     The application embeds an Apache Tapestry library.
   labels:
@@ -151,7 +151,7 @@
     builtin.file:
       pattern: .*tapestry.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Stripes
     The application embeds a Stripes library.
   labels:
@@ -165,7 +165,7 @@
     builtin.file:
       pattern: .*stripes.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Spark
     The application embeds a Spark library.
   labels:
@@ -179,7 +179,7 @@
     builtin.file:
       pattern: .*spark.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Vaadin
     The application embeds a Vaadin library.
   labels:
@@ -193,7 +193,7 @@
     builtin.file:
       pattern: .*vaadin.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Grails
     The application embeds a Grails library.
   labels:
@@ -207,7 +207,7 @@
     builtin.file:
       pattern: .*grails.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Play
     The application embeds a Play library.
   labels:
@@ -221,7 +221,7 @@
     builtin.file:
       pattern: .*play.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Oracle ADF
     The application embeds an Oracle ADF library.
   labels:
@@ -238,7 +238,7 @@
     - builtin.file:
         pattern: adfc-config\.xml
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - PrimeFaces
     The application embeds a PrimeFaces library.
   labels:
@@ -252,7 +252,7 @@
     builtin.file:
       pattern: .*primefaces.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - JSTL
     The application embeds a JSTL library.
   labels:
@@ -266,7 +266,7 @@
     builtin.file:
       pattern: .*jslt.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - OpenFaces
     The application embeds an OpenFaces library.
   labels:
@@ -280,7 +280,7 @@
     builtin.file:
       pattern: .*openfaces.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - JFreeChart
     The application embeds a JFreeChart library.
   labels:
@@ -294,7 +294,7 @@
     builtin.file:
       pattern: .*jfreechart.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - BootsFaces
     The application embeds a BootsFaces library.
   labels:
@@ -308,7 +308,7 @@
     builtin.file:
       pattern: .*bootsfaces.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - ICEfaces
     The application embeds an ICEfaces library.
   labels:
@@ -322,7 +322,7 @@
     builtin.file:
       pattern: .*icefaces.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - BabbageFaces
     The application embeds a BabbageFaces library.
   labels:
@@ -336,7 +336,7 @@
     builtin.file:
       pattern: .*babbageFaces.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Portlet
     The application embeds a Portlet library.
   labels:
@@ -350,7 +350,7 @@
     builtin.file:
       pattern: .*portlet.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - AngularFaces
     The application embeds an AngularFaces library.
   labels:
@@ -364,7 +364,7 @@
     builtin.file:
       pattern: .*angularFaces.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - LiferayFaces
     The application embeds a LiferayFaces library.
   labels:
@@ -378,7 +378,7 @@
     builtin.file:
       pattern: .*liferay-faces.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Liferay
     The application embeds a Liferay library.
   labels:
@@ -392,7 +392,7 @@
     builtin.file:
       pattern: .*liferay.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - ButterFaces
     The application embeds a Larmic ButterFaces library.
   labels:
@@ -406,7 +406,7 @@
     builtin.file:
       pattern: .*butterfaces.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - HighFaces
     The application embeds a HighFaces library.
   labels:
@@ -420,7 +420,7 @@
     builtin.file:
       pattern: .*highfaces.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - TieFaces
     The application embeds a TieFaces library.
   labels:
@@ -434,7 +434,7 @@
     builtin.file:
       pattern: .*tiefaces.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - OmniFaces
     The application embeds an OmniFaces library.
   labels:
@@ -448,7 +448,7 @@
     builtin.file:
       pattern: .*omnifaces.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - UberFire
     The application embeds an UberFire library.
   labels:
@@ -462,7 +462,7 @@
     builtin.file:
       pattern: .*uberfire.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Apache Velocity
     The application embeds an Apache Velocity library.
   labels:
@@ -476,7 +476,7 @@
     builtin.file:
       pattern: .*velocity.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Thymeleaf
     The application embeds a Thymeleaf library.
   labels:
@@ -490,7 +490,7 @@
     builtin.file:
       pattern: .*thymeleaf.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Apache FreeMarker
     The application embeds an Apache FreeMarker library.
   labels:
@@ -504,7 +504,7 @@
     builtin.file:
       pattern: .*freemarker.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - ANTLR StringTemplate
     The application embeds an ANTLR StringTemplate library.
   labels:
@@ -518,7 +518,7 @@
     builtin.file:
       pattern: .*stringtemplate.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Handlebars
     The application embeds a Handlebars library.
   labels:
@@ -532,7 +532,7 @@
     builtin.file:
       pattern: .*handlebars.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - JMustache
     The application embeds a JMustache library.
   labels:
@@ -546,7 +546,7 @@
     builtin.file:
       pattern: .*jmustache.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Jamon
     The application embeds a Jamon library.
   labels:
@@ -560,7 +560,7 @@
     builtin.file:
       pattern: jamon-.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Twirl
     The application embeds a Twirl library.
   labels:
@@ -574,7 +574,7 @@
     builtin.file:
       pattern: .*twirl.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Scalate
     The application embeds a Scalate library.
   labels:
@@ -588,7 +588,7 @@
     builtin.file:
       pattern: .*scalate.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Rythm Template Engine
     The application embeds a Rythm Template Engine library.
   labels:
@@ -602,7 +602,7 @@
     builtin.file:
       pattern: .*rythm-engine.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Trimou
     The application embeds a Trimou library.
   labels:
@@ -616,7 +616,7 @@
     builtin.file:
       pattern: .*trimou-core.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Jetbrick Template
     The application embeds a Jetbrick Template library.
   labels:
@@ -630,7 +630,7 @@
     builtin.file:
       pattern: .*velocity.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Chunk Templates
     The application embeds a Chunk Templates library.
   labels:
@@ -644,7 +644,7 @@
     builtin.file:
       pattern: .*chunk-templates.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - JSilver
     The application embeds a JSilver library.
   labels:
@@ -658,7 +658,7 @@
     builtin.file:
       pattern: .*jsilver.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Water Template Engine
     The application embeds a Water Template Engine library.
   labels:
@@ -672,7 +672,7 @@
     builtin.file:
       pattern: .*watertemplate-engine.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Ickenham
     The application embeds an Ickenham library.
   labels:
@@ -686,7 +686,7 @@
     builtin.file:
       pattern: .*ickenham.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Mixer
     The application embeds a Mixer library.
   labels:
@@ -700,7 +700,7 @@
     builtin.file:
       pattern: .*mixer.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Webmacro
     The application embeds a Webmacro library.
   labels:
@@ -714,7 +714,7 @@
     builtin.file:
       pattern: .*webmacro.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - DVSL
     The application embeds a DVSL library.
   labels:
@@ -728,7 +728,7 @@
     builtin.file:
       pattern: .*dvsl.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Snippetory Template Engine
     The application embeds a Snippetory Template Engine library.
   labels:
@@ -742,7 +742,7 @@
     builtin.file:
       pattern: .*snippetory.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Anakia
     The application embeds an Anakia library.
   labels:

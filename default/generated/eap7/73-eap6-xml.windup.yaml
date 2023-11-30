@@ -1,5 +1,5 @@
 - customVariables: []
-  description: |
+  description: |-
     JMS proprietary resource definitions
 
                             The proprietary XML descriptors, previously used to setup JMS resources, are deprecated in EAP 7.
@@ -30,7 +30,7 @@
           msg: urn:jboss:messaging-deployment:1.0
         xpath: /msg:messaging-deployment
 - customVariables: []
-  description: |
+  description: |-
     JBoss deployment structure dependencies (jboss-deployment-structure.xml)
     Verify in advance that all the modules this application depends on still exist.
   labels:

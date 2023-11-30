@@ -8,7 +8,7 @@
   description: "IBM MQ client API\nWebSphere MQ client API is used to communicate
     with the MQ server from client-side applications.\n                        For
     JBoss EAP 7, this needs to be replaced with standard Java EE 6 JMS API, or with
-    ActiveMQ Artemis client API.\n                    \n"
+    ActiveMQ Artemis client API.\n                    "
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap7+
@@ -37,11 +37,7 @@
   description: "IBM MQ Configuration\nThe WebSphere MQ client API is used to communicate
     with the MQ server from client-side applications.\n                        For
     JBoss EAP 7, this needs to be replaced with standard Java EE 7 JMS API, or with
-    ActiveMQ Artemis client API.\n                    \n`WMQInitialContextFactory`
-    is an implementation of `InitialContextFactory`. used to get object instances
-    from JNDI. The. equivalent functionality needs to be configured on JBoss EAP 7
-    using ActiveMQ Artemis.. `InitialContextFactory` is provided. by EAP and you only
-    need to instantiate `InitialContext ctx = new InitialContext();`."
+    ActiveMQ Artemis client API.\n                    "
   effort: 3
   labels:
   - konveyor.io/source=websphere
@@ -58,11 +54,11 @@
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/configuring_messaging/#the_integrated_activemq_artemis_messaging_broker
   - title: Java EE 7 JMS Tutorial
     url: https://docs.oracle.com/javaee/7/tutorial/jms-concepts003.htm#BNCEH
-  message: '`WMQInitialContextFactory` is an implementation of `InitialContextFactory`.
-    used to get object instances from JNDI. The. equivalent functionality needs to
-    be configured on JBoss EAP 7 using ActiveMQ Artemis.. `InitialContextFactory`
-    is provided. by EAP and you only need to instantiate `InitialContext ctx = new
-    InitialContext();`.'
+  message: "`WMQInitialContextFactory` is an implementation of `InitialContextFactory`\n
+    used to get object instances from JNDI. The\n equivalent functionality needs to
+    be configured on JBoss EAP 7 using ActiveMQ Artemis.\n `InitialContextFactory`
+    is provided\n by EAP and you only need to instantiate `InitialContext ctx = new
+    InitialContext();`.\n "
   ruleID: websphere-mq-eap7-01000
   tag:
   - IBM MQ Configuration
@@ -72,9 +68,7 @@
       pattern: com.ibm.mq.jms.context.WMQInitialContextFactory
 - category: mandatory
   customVariables: []
-  description: |-
-    IBM WebSphere .scp file
-    WebSphere `.scp` files contain scripts for the `jmsadmin` program which is used. to configure the WebSphere MQ destinations. and routing. To configure messaging in JBoss EAP 7 with ActiveMQ Artemis, use either the Management Console or Management CLI with it's. scripting feature.
+  description: IBM WebSphere .scp file
   effort: 3
   labels:
   - konveyor.io/source=websphere
@@ -91,10 +85,10 @@
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/configuring_messaging/#basic_configuration
   - title: Java EE 7 JMS Tutorial
     url: https://docs.oracle.com/javaee/7/tutorial/jms-concepts003.htm#BNCEH
-  message: WebSphere `.scp` files contain scripts for the `jmsadmin` program which
-    is used. to configure the WebSphere MQ destinations. and routing. To configure
+  message: "\n WebSphere `.scp` files contain scripts for the `jmsadmin` program which
+    is used\n to configure the WebSphere MQ destinations\n and routing. To configure
     messaging in JBoss EAP 7 with ActiveMQ Artemis, use either the Management Console
-    or Management CLI with it's. scripting feature.
+    or Management CLI with it's\n scripting feature.\n "
   ruleID: websphere-mq-eap7-02000
   tag:
   - IBM MQ Configuration

@@ -1,6 +1,6 @@
 - customVariables: []
   description: "Embedded library - Drools\n\n                        The application
-    embedds a Drools library.\n                    \n"
+    embedds a Drools library.\n                    "
   labels:
   - konveyor.io/target=eap
   - konveyor.io/source
@@ -23,7 +23,7 @@
     to remove the embedded library and configure the application to use the module's
     library but then the application will rely on a tested and supported version of
     the Hibernate library.\n\n                        In the links below there are
-    the instructions to enable alternative versions for both EAP 6 and 7.\n                    \n"
+    the instructions to enable alternative versions for both EAP 6 and 7.\n                    "
   labels:
   - konveyor.io/target=eap
   - konveyor.io/source
@@ -43,7 +43,7 @@
       pattern: .*hibernate.*\.jar$
 - customVariables: []
   description: "Embedded library - JDBC\n\n                        The application
-    embeds a JDBC library.\n                    \n"
+    embeds a JDBC library.\n                    "
   labels:
   - konveyor.io/target=eap
   - konveyor.io/source
@@ -66,7 +66,7 @@
     embedded library and configure the application to use the module's library, but
     then the application will rely on a tested and supported version of the JSF library.\n\n
     \                       In the links below there are instructions to enable alternative
-    versions for both EAP 6 and 7.\n                    \n"
+    versions for both EAP 6 and 7.\n                    "
   labels:
   - konveyor.io/target=eap
   - konveyor.io/source
@@ -102,7 +102,7 @@
     5, does not support Seam 2.2 or Seam 2.3 due to end of life of Red Hat JBoss Web
     Framework Kit. It is recommended that you rewrite your Seam components using CDI
     beans.\n                        In the links below there are the instructions
-    to enable alternatives for both EAP 6 and 7\n                    \n"
+    to enable alternatives for both EAP 6 and 7\n                    "
   labels:
   - konveyor.io/target=eap
   - konveyor.io/source

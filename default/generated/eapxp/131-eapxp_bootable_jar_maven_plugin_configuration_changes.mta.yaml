@@ -1,8 +1,7 @@
 - category: potential
   customVariables: []
-  description: |-
-    Bootable JAR Maven Plugin: rename extraServerContent configuration element
-    If you migrate your application to JBoss EAP XP 3.0 (or later), and want to ensure its Maven building, running or testing works as expected, rename the configuration element `extraServerContent` to `extraServerContentDirs`.
+  description: 'Bootable JAR Maven Plugin: rename extraServerContent configuration
+    element'
   effort: 1
   labels:
   - konveyor.io/source=eapxp

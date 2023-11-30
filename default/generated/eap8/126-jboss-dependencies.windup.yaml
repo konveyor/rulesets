@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-eap-jakartaee8 artifact with jboss-eap-ee
-    Update the dependency by replacing the group `org.jboss.bom` artifact `jboss-eap-jakartaee8`. with group `org.jboss.bom` artifact `jboss-eap-ee`
+  description: Replace jboss-eap-jakartaee8 artifact with jboss-eap-ee
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -10,8 +8,8 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.bom` artifact `jboss-eap-jakartaee8`.
-    with group `org.jboss.bom` artifact `jboss-eap-ee`
+  message: "Update the dependency by replacing the group `org.jboss.bom` artifact
+    `jboss-eap-jakartaee8` \n with group `org.jboss.bom` artifact `jboss-eap-ee`"
   ruleID: jboss-dependencies-00001
   when:
     java.dependency:
@@ -19,9 +17,7 @@
       name: org.jboss.bom.jboss-eap-jakartaee8
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-eap-jakartaee8-with-tools artifact with jboss-eap-ee-with-tools
-    Update the dependency by replacing the group `org.jboss.bom` artifcat `jboss-eap-jakartaee8-with-tools`. with group `org.jboss.bom` artifact `jboss-eap-ee-with-tools`
+  description: Replace jboss-eap-jakartaee8-with-tools artifact with jboss-eap-ee-with-tools
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -29,8 +25,8 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.bom` artifcat `jboss-eap-jakartaee8-with-tools`.
-    with group `org.jboss.bom` artifact `jboss-eap-ee-with-tools`
+  message: "Update the dependency by replacing the group `org.jboss.bom` artifcat
+    `jboss-eap-jakartaee8-with-tools` \n with group `org.jboss.bom` artifact `jboss-eap-ee-with-tools`"
   ruleID: jboss-dependencies-00002
   when:
     java.dependency:
@@ -38,9 +34,7 @@
       name: org.jboss.bom.jboss-eap-jakartaee8-with-tools
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-jakartaee-8.0 artifact with jboss-eap-ee
-    Update the dependency by replacing the group `org.jboss.spec` artifact `jboss-jakartaee-8.0`. with group `org.jboss.bom` artifact `jboss-eap-ee`
+  description: Replace jboss-jakartaee-8.0 artifact with jboss-eap-ee
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -48,8 +42,8 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec` artifact
-    `jboss-jakartaee-8.0`. with group `org.jboss.bom` artifact `jboss-eap-ee`
+  message: "Update the dependency by replacing the group `org.jboss.spec` artifact
+    `jboss-jakartaee-8.0` \n with group `org.jboss.bom` artifact `jboss-eap-ee`"
   ruleID: jboss-dependencies-00003
   when:
     java.dependency:
@@ -57,9 +51,7 @@
       name: org.jboss.spec.jboss-jakartaee-8.0
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-jakartaee-web-8.0 artifact with jboss-eap-ee
-    Update the dependency by replacing the group `org.jboss.spec` artifact `jboss-jakartaee-web-8.0`. with group `org.jboss.bom` artifact `jboss-eap-ee`
+  description: Replace jboss-jakartaee-web-8.0 artifact with jboss-eap-ee
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -67,8 +59,8 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec` artifact
-    `jboss-jakartaee-web-8.0`. with group `org.jboss.bom` artifact `jboss-eap-ee`
+  message: "Update the dependency by replacing the group `org.jboss.spec` artifact
+    `jboss-jakartaee-web-8.0` \n with group `org.jboss.bom` artifact `jboss-eap-ee`"
   ruleID: jboss-dependencies-00004
   when:
     java.dependency:
@@ -76,9 +68,7 @@
       name: org.jboss.spec.jboss-jakartaee-web-8.0
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jakarta.activation artifact with jakarta.activation-api
-    Update the dependency by replacing the group `com.sun.activation` artifact `jakarta.activation`. with group `jakarta.activation` artifact `jakarta.activation-api`
+  description: Replace jakarta.activation artifact with jakarta.activation-api
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -86,8 +76,8 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `com.sun.activation` artifact
-    `jakarta.activation`. with group `jakarta.activation` artifact `jakarta.activation-api`
+  message: "Update the dependency by replacing the group `com.sun.activation` artifact
+    `jakarta.activation` \n with group `jakarta.activation` artifact `jakarta.activation-api`"
   ruleID: jboss-dependencies-00005
   when:
     java.dependency:
@@ -95,9 +85,7 @@
       name: com.sun.activation.jakarta.activation
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-annotations-api_1.3_spec artifact with jakarta.annotation-api
-    Update the dependency by replacing the group `org.jboss.spec.javax.annotation` artifact `jboss-annotations-api_1.3_spec`. with group `jakarta.annotation` artifact `jakarta.annotation-api`
+  description: Replace jboss-annotations-api_1.3_spec artifact with jakarta.annotation-api
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -105,9 +93,9 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec.javax.annotation`
-    artifact `jboss-annotations-api_1.3_spec`. with group `jakarta.annotation` artifact
-    `jakarta.annotation-api`
+  message: "Update the dependency by replacing the group `org.jboss.spec.javax.annotation`
+    artifact `jboss-annotations-api_1.3_spec` \n with group `jakarta.annotation` artifact
+    `jakarta.annotation-api`"
   ruleID: jboss-dependencies-00006
   when:
     java.dependency:
@@ -115,9 +103,7 @@
       name: org.jboss.spec.javax.annotation.jboss-annotations-api_1.3_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-jaspi-api_1.0_spec artifact with jakarta.authentication-api
-    Update the dependency by replacing the group `org.jboss.spec.javax.security.auth.message` artifact `jboss-jaspi-api_1.0_spec`. with group `jakarta.authentication` artifact `jakarta.authentication-api`
+  description: Replace jboss-jaspi-api_1.0_spec artifact with jakarta.authentication-api
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -125,9 +111,9 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec.javax.security.auth.message`
-    artifact `jboss-jaspi-api_1.0_spec`. with group `jakarta.authentication` artifact
-    `jakarta.authentication-api`
+  message: "Update the dependency by replacing the group `org.jboss.spec.javax.security.auth.message`
+    artifact `jboss-jaspi-api_1.0_spec` \n with group `jakarta.authentication` artifact
+    `jakarta.authentication-api`"
   ruleID: jboss-dependencies-00007
   when:
     java.dependency:
@@ -135,9 +121,7 @@
       name: org.jboss.spec.javax.security.auth.message.jboss-jaspi-api_1.0_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-jacc-api_1.5_spec artifact with jakarta.authorization-api
-    Update the dependency by replacing the group `org.jboss.spec.javax.security.jacc` artifact `jboss-jacc-api_1.5_spec`. with group `jakarta.authorization` artifact `jakarta.authorization-api`
+  description: Replace jboss-jacc-api_1.5_spec artifact with jakarta.authorization-api
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -145,9 +129,9 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec.javax.security.jacc`
-    artifact `jboss-jacc-api_1.5_spec`. with group `jakarta.authorization` artifact
-    `jakarta.authorization-api`
+  message: "Update the dependency by replacing the group `org.jboss.spec.javax.security.jacc`
+    artifact `jboss-jacc-api_1.5_spec` \n with group `jakarta.authorization` artifact
+    `jakarta.authorization-api`"
   ruleID: jboss-dependencies-00008
   when:
     java.dependency:
@@ -155,9 +139,7 @@
       name: org.jboss.spec.javax.security.jacc.jboss-jacc-api_1.5_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-batch-api_1.0_spec artifact with jakarta.batch-api
-    Update the dependency by replacing the group `org.jboss.spec.javax.batch` artifact `jboss-batch-api_1.0_spec`. with group `jakarta.batch` artifact `jakarta.batch-api`
+  description: Replace jboss-batch-api_1.0_spec artifact with jakarta.batch-api
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -165,8 +147,8 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec.javax.batch`
-    artifact `jboss-batch-api_1.0_spec`. with group `jakarta.batch` artifact `jakarta.batch-api`
+  message: "Update the dependency by replacing the group `org.jboss.spec.javax.batch`
+    artifact `jboss-batch-api_1.0_spec` \n with group `jakarta.batch` artifact `jakarta.batch-api`"
   ruleID: jboss-dependencies-00009
   when:
     java.dependency:
@@ -174,9 +156,7 @@
       name: org.jboss.spec.javax.batch.jboss-batch-api_1.0_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-ejb-api_3.2_spec artifact with jakarta.ejb-api
-    Update the dependency by replacing the group `org.jboss.spec.javax.ejb` artifact `jboss-ejb-api_3.2_spec`. with group `jakarta.ejb` artifact `jakarta.ejb-api`
+  description: Replace jboss-ejb-api_3.2_spec artifact with jakarta.ejb-api
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -184,8 +164,8 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec.javax.ejb`
-    artifact `jboss-ejb-api_3.2_spec`. with group `jakarta.ejb` artifact `jakarta.ejb-api`
+  message: "Update the dependency by replacing the group `org.jboss.spec.javax.ejb`
+    artifact `jboss-ejb-api_3.2_spec` \n with group `jakarta.ejb` artifact `jakarta.ejb-api`"
   ruleID: jboss-dependencies-00010
   when:
     java.dependency:
@@ -193,9 +173,7 @@
       name: org.jboss.spec.javax.ejb.jboss-ejb-api_3.2_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-el-api_3.0_spec artifact with jboss-el-api_5.0_spec
-    Update the dependency by replacing the group `org.jboss.spec.javax.el` artifact `jboss-el-api_3.0_spec`. with group `org.jboss.spec.jakarta.el` artifact `jboss-el-api_5.0_spec`
+  description: Replace jboss-el-api_3.0_spec artifact with jboss-el-api_5.0_spec
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -203,9 +181,9 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec.javax.el`
-    artifact `jboss-el-api_3.0_spec`. with group `org.jboss.spec.jakarta.el` artifact
-    `jboss-el-api_5.0_spec`
+  message: "Update the dependency by replacing the group `org.jboss.spec.javax.el`
+    artifact `jboss-el-api_3.0_spec` \n with group `org.jboss.spec.jakarta.el` artifact
+    `jboss-el-api_5.0_spec`"
   ruleID: jboss-dependencies-00011
   when:
     java.dependency:
@@ -213,9 +191,7 @@
       name: org.jboss.spec.javax.el.jboss-el-api_3.0_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-concurrency-api_1.0_spec artifact with jakarta.enterprise.concurrent-api
-    Update the dependency by replacing the group `org.jboss.spec.javax.enterprise.concurrent` artifact `jboss-concurrency-api_1.0_spec`. with group `jakarta.enterprise.concurrent` artifact `jakarta.enterprise.concurrent-api`
+  description: Replace jboss-concurrency-api_1.0_spec artifact with jakarta.enterprise.concurrent-api
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -223,9 +199,9 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec.javax.enterprise.concurrent`
-    artifact `jboss-concurrency-api_1.0_spec`. with group `jakarta.enterprise.concurrent`
-    artifact `jakarta.enterprise.concurrent-api`
+  message: "Update the dependency by replacing the group `org.jboss.spec.javax.enterprise.concurrent`
+    artifact `jboss-concurrency-api_1.0_spec` \n with group `jakarta.enterprise.concurrent`
+    artifact `jakarta.enterprise.concurrent-api`"
   ruleID: jboss-dependencies-00012
   when:
     java.dependency:
@@ -233,9 +209,7 @@
       name: org.jboss.spec.javax.enterprise.concurrent.jboss-concurrency-api_1.0_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-jsf-api_2.3_spec artifact with jakarta.faces-api
-    Update the dependency by replacing the group `org.jboss.spec.javax.faces` artifact `jboss-jsf-api_2.3_spec`. with group `jakarta.faces` artifact `jakarta.faces-api`
+  description: Replace jboss-jsf-api_2.3_spec artifact with jakarta.faces-api
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -243,8 +217,8 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec.javax.faces`
-    artifact `jboss-jsf-api_2.3_spec`. with group `jakarta.faces` artifact `jakarta.faces-api`
+  message: "Update the dependency by replacing the group `org.jboss.spec.javax.faces`
+    artifact `jboss-jsf-api_2.3_spec` \n with group `jakarta.faces` artifact `jakarta.faces-api`"
   ruleID: jboss-dependencies-00013
   when:
     java.dependency:
@@ -252,9 +226,7 @@
       name: org.jboss.spec.javax.faces.jboss-jsf-api_2.3_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-interceptors-api_1.2_spec artifact with jakarta.interceptor-api
-    Update the dependency by replacing the group `org.jboss.spec.javax.interceptor` artifact `jboss-interceptors-api_1.2_spec`. with group `jakarta.interceptor` artifact `jakarta.interceptor-api`
+  description: Replace jboss-interceptors-api_1.2_spec artifact with jakarta.interceptor-api
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -262,9 +234,9 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec.javax.interceptor`
-    artifact `jboss-interceptors-api_1.2_spec`. with group `jakarta.interceptor` artifact
-    `jakarta.interceptor-api`
+  message: "Update the dependency by replacing the group `org.jboss.spec.javax.interceptor`
+    artifact `jboss-interceptors-api_1.2_spec` \n with group `jakarta.interceptor`
+    artifact `jakarta.interceptor-api`"
   ruleID: jboss-dependencies-00014
   when:
     java.dependency:
@@ -272,9 +244,7 @@
       name: org.jboss.spec.javax.interceptor.jboss-interceptors-api_1.2_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-jms-api_2.0_spec artifact with jakarta.jms-api
-    Update the dependency by replacing the group `org.jboss.spec.javax.jms` artifact `jboss-jms-api_2.0_spec`. with group `jakarta.jms` artifact `jakarta.jms-api`
+  description: Replace jboss-jms-api_2.0_spec artifact with jakarta.jms-api
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -282,8 +252,8 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec.javax.jms`
-    artifact `jboss-jms-api_2.0_spec`. with group `jakarta.jms` artifact `jakarta.jms-api`
+  message: "Update the dependency by replacing the group `org.jboss.spec.javax.jms`
+    artifact `jboss-jms-api_2.0_spec` \n with group `jakarta.jms` artifact `jakarta.jms-api`"
   ruleID: jboss-dependencies-00015
   when:
     java.dependency:
@@ -291,9 +261,7 @@
       name: org.jboss.spec.javax.jms.jboss-jms-api_2.0_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jakarta.mail artifact with jakarta.mail-api
-    Update the dependency by replacing the group `com.sun.mail` artifact `jakarta.mail`. with group `jakarta.mail` artifact `jakarta.mail-api`
+  description: Replace jakarta.mail artifact with jakarta.mail-api
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -301,8 +269,8 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `com.sun.mail` artifact `jakarta.mail`.
-    with group `jakarta.mail` artifact `jakarta.mail-api`
+  message: "Update the dependency by replacing the group `com.sun.mail` artifact `jakarta.mail`
+    \n with group `jakarta.mail` artifact `jakarta.mail-api`"
   ruleID: jboss-dependencies-00016
   when:
     java.dependency:
@@ -310,9 +278,7 @@
       name: com.sun.mail.jakarta.mail
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-connector-api_1.7_spec artifact with jakarta.resource-api
-    Update the dependency by replacing the group `org.jboss.spec.javax.resource` artifact `jboss-connector-api_1.7_spec`. with group `jakarta.resource` artifact `jakarta.resource-api`
+  description: Replace jboss-connector-api_1.7_spec artifact with jakarta.resource-api
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -320,9 +286,9 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec.javax.resource`
-    artifact `jboss-connector-api_1.7_spec`. with group `jakarta.resource` artifact
-    `jakarta.resource-api`
+  message: "Update the dependency by replacing the group `org.jboss.spec.javax.resource`
+    artifact `jboss-connector-api_1.7_spec` \n with group `jakarta.resource` artifact
+    `jakarta.resource-api`"
   ruleID: jboss-dependencies-00017
   when:
     java.dependency:
@@ -330,9 +296,7 @@
       name: org.jboss.spec.javax.resource.jboss-connector-api_1.7_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-servlet-api_4.0_spec artifact with jakarta.servlet-api
-    Update the dependency by replacing the group `org.jboss.spec.javax.servlet` artifact `jboss-servlet-api_4.0_spec`. with group `jakarta.servlet` artifact `jakarta.servlet-api`
+  description: Replace jboss-servlet-api_4.0_spec artifact with jakarta.servlet-api
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -340,8 +304,9 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec.javax.servlet`
-    artifact `jboss-servlet-api_4.0_spec`. with group `jakarta.servlet` artifact `jakarta.servlet-api`
+  message: "Update the dependency by replacing the group `org.jboss.spec.javax.servlet`
+    artifact `jboss-servlet-api_4.0_spec` \n with group `jakarta.servlet` artifact
+    `jakarta.servlet-api`"
   ruleID: jboss-dependencies-00018
   when:
     java.dependency:
@@ -349,9 +314,7 @@
       name: org.jboss.spec.javax.servlet.jboss-servlet-api_4.0_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-jsp-api_2.3_spec artifact with jakarta.servlet.jsp-api
-    Update the dependency by replacing the group `org.jboss.spec.javax.servlet.jsp` artifact `jboss-jsp-api_2.3_spec`. with group `jakarta.servlet.jsp` artifact `jakarta.servlet.jsp-api`
+  description: Replace jboss-jsp-api_2.3_spec artifact with jakarta.servlet.jsp-api
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -359,8 +322,9 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec.javax.servlet.jsp`
-    artifact `jboss-jsp-api_2.3_spec`. with group `jakarta.servlet.jsp` artifact `jakarta.servlet.jsp-api`
+  message: "Update the dependency by replacing the group `org.jboss.spec.javax.servlet.jsp`
+    artifact `jboss-jsp-api_2.3_spec` \n with group `jakarta.servlet.jsp` artifact
+    `jakarta.servlet.jsp-api`"
   ruleID: jboss-dependencies-00019
   when:
     java.dependency:
@@ -368,9 +332,7 @@
       name: org.jboss.spec.javax.servlet.jsp.jboss-jsp-api_2.3_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace taglibs-standard-spec artifact with jakarta.servlet.jsp.jstl-api
-    Update the dependency by replacing the group `org.apache.taglibs` artifact `taglibs-standard-spec`. with group `jakarta.servlet.jsp.jstl` artifact `jakarta.servlet.jsp.jstl-api`
+  description: Replace taglibs-standard-spec artifact with jakarta.servlet.jsp.jstl-api
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -378,8 +340,8 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.apache.taglibs` artifact
-    `taglibs-standard-spec`. with group `jakarta.servlet.jsp.jstl` artifact `jakarta.servlet.jsp.jstl-api`
+  message: "Update the dependency by replacing the group `org.apache.taglibs` artifact
+    `taglibs-standard-spec` \n with group `jakarta.servlet.jsp.jstl` artifact `jakarta.servlet.jsp.jstl-api`"
   ruleID: jboss-dependencies-00020
   when:
     java.dependency:
@@ -387,9 +349,7 @@
       name: org.apache.taglibs.taglibs-standard-spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-transaction-api_1.3_spec artifact with jakarta.transaction-api
-    Update the dependency by replacing the group `org.jboss.spec.javax.transaction` artifact `jboss-transaction-api_1.3_spec`. with group `jakarta.transaction` artifact `jakarta.transaction-api`
+  description: Replace jboss-transaction-api_1.3_spec artifact with jakarta.transaction-api
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -397,9 +357,9 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec.javax.transaction`
-    artifact `jboss-transaction-api_1.3_spec`. with group `jakarta.transaction` artifact
-    `jakarta.transaction-api`
+  message: "Update the dependency by replacing the group `org.jboss.spec.javax.transaction`
+    artifact `jboss-transaction-api_1.3_spec` \n with group `jakarta.transaction`
+    artifact `jakarta.transaction-api`"
   ruleID: jboss-dependencies-00021
   when:
     java.dependency:
@@ -407,9 +367,7 @@
       name: org.jboss.spec.javax.transaction.jboss-transaction-api_1.3_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-jaxb-api_2.3_spec artifact with jakarta.xml.bind-api
-    Update the dependency by replacing the group `org.jboss.spec.javax.xml.bind` artifact `jboss-jaxb-api_2.3_spec`. with group `jakarta.xml.bind` artifact `jakarta.xml.bind-api`
+  description: Replace jboss-jaxb-api_2.3_spec artifact with jakarta.xml.bind-api
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -417,8 +375,8 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec.javax.xml.bind`
-    artifact `jboss-jaxb-api_2.3_spec`. with group `jakarta.xml.bind` artifact `jakarta.xml.bind-api`
+  message: "Update the dependency by replacing the group `org.jboss.spec.javax.xml.bind`
+    artifact `jboss-jaxb-api_2.3_spec` \n with group `jakarta.xml.bind` artifact `jakarta.xml.bind-api`"
   ruleID: jboss-dependencies-00022
   when:
     java.dependency:
@@ -426,9 +384,7 @@
       name: org.jboss.spec.javax.xml.bind.jboss-jaxb-api_2.3_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-jaxws-api_2.3_spec artifact with jboss-jakarta-xml-ws-api_4.0_spec
-    Update the dependency by replacing the group `org.jboss.spec.javax.xml.ws` artifact `jboss-jaxws-api_2.3_spec`. with group `org.jboss.spec.jakarta.xml.ws` artifact `jboss-jakarta-xml-ws-api_4.0_spec`
+  description: Replace jboss-jaxws-api_2.3_spec artifact with jboss-jakarta-xml-ws-api_4.0_spec
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -436,9 +392,9 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec.javax.xml.ws`
-    artifact `jboss-jaxws-api_2.3_spec`. with group `org.jboss.spec.jakarta.xml.ws`
-    artifact `jboss-jakarta-xml-ws-api_4.0_spec`
+  message: "Update the dependency by replacing the group `org.jboss.spec.javax.xml.ws`
+    artifact `jboss-jaxws-api_2.3_spec` \n with group `org.jboss.spec.jakarta.xml.ws`
+    artifact `jboss-jakarta-xml-ws-api_4.0_spec`"
   ruleID: jboss-dependencies-00023
   when:
     java.dependency:
@@ -446,9 +402,7 @@
       name: org.jboss.spec.javax.xml.ws.jboss-jaxws-api_2.3_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-websocket-api_1.1_spec artifact with jakarta.websocket-api
-    Update the dependency by replacing the group `org.jboss.spec.javax.websocket` artifact `jboss-websocket-api_1.1_spec`. with group `jakarta.websocket` artifact `jakarta.websocket-api`
+  description: Replace jboss-websocket-api_1.1_spec artifact with jakarta.websocket-api
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -456,9 +410,9 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec.javax.websocket`
-    artifact `jboss-websocket-api_1.1_spec`. with group `jakarta.websocket` artifact
-    `jakarta.websocket-api`
+  message: "Update the dependency by replacing the group `org.jboss.spec.javax.websocket`
+    artifact `jboss-websocket-api_1.1_spec` \n with group `jakarta.websocket` artifact
+    `jakarta.websocket-api`"
   ruleID: jboss-dependencies-00024
   when:
     java.dependency:
@@ -466,9 +420,7 @@
       name: org.jboss.spec.javax.websocket.jboss-websocket-api_1.1_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-jaxrs-api_2.1_spec artifact with jakarta.ws.rs-api
-    Update the dependency by replacing the group `org.jboss.spec.javax.ws.rs` artifact `jboss-jaxrs-api_2.1_spec`. with group `jakarta.ws.rs` artifact `jakarta.ws.rs-api`
+  description: Replace jboss-jaxrs-api_2.1_spec artifact with jakarta.ws.rs-api
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -476,8 +428,8 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec.javax.ws.rs`
-    artifact `jboss-jaxrs-api_2.1_spec`. with group `jakarta.ws.rs` artifact `jakarta.ws.rs-api`
+  message: "Update the dependency by replacing the group `org.jboss.spec.javax.ws.rs`
+    artifact `jboss-jaxrs-api_2.1_spec` \n with group `jakarta.ws.rs` artifact `jakarta.ws.rs-api`"
   ruleID: jboss-dependencies-00025
   when:
     java.dependency:
@@ -485,9 +437,7 @@
       name: org.jboss.spec.javax.ws.rs.jboss-jaxrs-api_2.1_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jboss-saaj-api_1.4_spec artifact with jboss-saaj-api_3.0_spec
-    Update the dependency by replacing the group `org.jboss.spec.javax.xml.soap` artifact `jboss-saaj-api_1.4_spec`. with group `org.jboss.spec.jakarta.xml.soap` artifact `jboss-saaj-api_3.0_spec`
+  description: Replace jboss-saaj-api_1.4_spec artifact with jboss-saaj-api_3.0_spec
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -495,9 +445,9 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.spec.javax.xml.soap`
-    artifact `jboss-saaj-api_1.4_spec`. with group `org.jboss.spec.jakarta.xml.soap`
-    artifact `jboss-saaj-api_3.0_spec`
+  message: "Update the dependency by replacing the group `org.jboss.spec.javax.xml.soap`
+    artifact `jboss-saaj-api_1.4_spec` \n with group `org.jboss.spec.jakarta.xml.soap`
+    artifact `jboss-saaj-api_3.0_spec`"
   ruleID: jboss-dependencies-00026
   when:
     java.dependency:
@@ -505,9 +455,7 @@
       name: org.jboss.spec.javax.xml.soap.jboss-saaj-api_1.4_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace org.hibernate group with org.hibernate.orm
-    Update the dependency by replacing the group `org.hibernate` artifact `hibernate-core`. with group `org.hibernate.orm` artifact `hibernate-core`
+  description: Replace org.hibernate group with org.hibernate.orm
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -515,8 +463,8 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.hibernate` artifact `hibernate-core`.
-    with group `org.hibernate.orm` artifact `hibernate-core`
+  message: "Update the dependency by replacing the group `org.hibernate` artifact
+    `hibernate-core` \n with group `org.hibernate.orm` artifact `hibernate-core`"
   ruleID: jboss-dependencies-00027
   when:
     java.dependency:
@@ -524,9 +472,7 @@
       name: org.hibernate.hibernate-core
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace org.hibernate group with org.hibernate.orm
-    Update the dependency by replacing the group `org.hibernate` artifact `hibernate-jpamodelgen`. with group `org.hibernate.orm` artifact `hibernate-jpamodelgen`
+  description: Replace org.hibernate group with org.hibernate.orm
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -534,8 +480,8 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.hibernate` artifact `hibernate-jpamodelgen`.
-    with group `org.hibernate.orm` artifact `hibernate-jpamodelgen`
+  message: "Update the dependency by replacing the group `org.hibernate` artifact
+    `hibernate-jpamodelgen` \n with group `org.hibernate.orm` artifact `hibernate-jpamodelgen`"
   ruleID: jboss-dependencies-00028
   when:
     java.dependency:
@@ -543,9 +489,7 @@
       name: org.hibernate.hibernate-jpamodelgen
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jbossxts artifact with jbossxts-jakarta
-    Update the dependency by replacing the group `org.jboss.narayana.xts` artifact `jbossxts`. with group `org.jboss.narayana.xts` artifact `jbossxts-jakarta`
+  description: Replace jbossxts artifact with jbossxts-jakarta
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -553,8 +497,8 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.narayana.xts` artifact
-    `jbossxts`. with group `org.jboss.narayana.xts` artifact `jbossxts-jakarta`
+  message: "Update the dependency by replacing the group `org.jboss.narayana.xts`
+    artifact `jbossxts` \n with group `org.jboss.narayana.xts` artifact `jbossxts-jakarta`"
   ruleID: jboss-dependencies-00029
   when:
     java.dependency:
@@ -562,9 +506,7 @@
       name: org.jboss.narayana.xts.jbossxts
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace eap-runtime-artifacts artifact with jboss-eap-ee
-    Update the dependency by replacing the group `org.jboss.bom` artifact `eap-runtime-artifacts`. with group `org.jboss.bom` artifact `jboss-eap-ee`
+  description: Replace eap-runtime-artifacts artifact with jboss-eap-ee
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -572,8 +514,8 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `org.jboss.bom` artifact `eap-runtime-artifacts`.
-    with group `org.jboss.bom` artifact `jboss-eap-ee`
+  message: "Update the dependency by replacing the group `org.jboss.bom` artifact
+    `eap-runtime-artifacts` \n with group `org.jboss.bom` artifact `jboss-eap-ee`"
   ruleID: jboss-dependencies-00030
   when:
     java.dependency:
@@ -581,9 +523,7 @@
       name: org.jboss.bom.eap-runtime-artifacts
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace jsr181-api artifact with jboss-jakarta-xml-ws-api_4.0_spec
-    Update the dependency by replacing the group `javax.jws` artifact `jsr181-api`. with group `org.jboss.spec.jakarta.xml.ws` artifact `jboss-jakarta-xml-ws-api_4.0_spec`
+  description: Replace jsr181-api artifact with jboss-jakarta-xml-ws-api_4.0_spec
   effort: 1
   labels:
   - konveyor.io/source=jakarta-ee7+
@@ -591,8 +531,8 @@
   - konveyor.io/target=eap8
   - konveyor.io/target=eap
   links: []
-  message: Update the dependency by replacing the group `javax.jws` artifact `jsr181-api`.
-    with group `org.jboss.spec.jakarta.xml.ws` artifact `jboss-jakarta-xml-ws-api_4.0_spec`
+  message: "Update the dependency by replacing the group `javax.jws` artifact `jsr181-api`
+    \n with group `org.jboss.spec.jakarta.xml.ws` artifact `jboss-jakarta-xml-ws-api_4.0_spec`"
   ruleID: jboss-dependencies-00031
   when:
     java.dependency:

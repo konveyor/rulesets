@@ -1,4 +1,5 @@
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -11,6 +12,7 @@
     builtin.hasTags:
     - Apache Log4J
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -23,6 +25,7 @@
     builtin.hasTags:
     - Apache Commons Logging
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -35,6 +38,7 @@
     builtin.hasTags:
     - SLF4J
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -47,6 +51,7 @@
     builtin.hasTags:
     - tinylog
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -59,6 +64,7 @@
     builtin.hasTags:
     - Logback
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -71,6 +77,7 @@
     builtin.hasTags:
     - Logging to file system
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -83,6 +90,7 @@
     builtin.hasTags:
     - Logging to Socket Handler
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -95,6 +103,7 @@
     builtin.hasTags:
     - JBoss logging
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -107,6 +116,7 @@
     builtin.hasTags:
     - Monolog
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -119,6 +129,7 @@
     builtin.hasTags:
     - Jcabi Log
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -131,6 +142,7 @@
     builtin.hasTags:
     - NLOG4J
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -143,6 +155,7 @@
     builtin.hasTags:
     - Log4s
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -155,6 +168,7 @@
     builtin.hasTags:
     - Kotlin Logging
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -167,6 +181,7 @@
     builtin.hasTags:
     - Airlift Log Manager
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -179,6 +194,7 @@
     builtin.hasTags:
     - MinLog
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -191,6 +207,7 @@
     builtin.hasTags:
     - Logging Utils
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -203,6 +220,7 @@
     builtin.hasTags:
     - OCPsoft Logging Utils
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -215,6 +233,7 @@
     builtin.hasTags:
     - Scribe
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -227,6 +246,7 @@
     builtin.hasTags:
     - GFC Logging
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -239,6 +259,7 @@
     builtin.hasTags:
     - Blitz4j
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -251,6 +272,7 @@
     builtin.hasTags:
     - Avalon Logkit
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -263,6 +285,7 @@
     builtin.hasTags:
     - KLogger
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -275,6 +298,7 @@
     builtin.hasTags:
     - Lumberjack
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -287,6 +311,7 @@
     builtin.hasTags:
     - Log.io
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -299,6 +324,7 @@
     builtin.hasTags:
     - OPS4J Pax Logging Service
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -311,6 +337,7 @@
     builtin.hasTags:
     - OW2 Log Util
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -323,6 +350,7 @@
     builtin.hasTags:
     - Twitter Util Logging
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -335,6 +363,7 @@
     builtin.hasTags:
     - Composite Logging JCL
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []

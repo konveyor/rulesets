@@ -1,17 +1,17 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    The java.activation (JAF) module has been removed from OpenJDK 11
-    Add the `jakarta.activation` dependency to your application's `pom.xml`.. `<groupId>jakarta.activation</groupId>`. `<artifactId>jakarta.activation</artifactId>`
+  description: The java.activation (JAF) module has been removed from OpenJDK 11
   effort: 1
   labels:
   - konveyor.io/source=openjdk8-
+  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
+  - konveyor.io/target=openjdk
   links:
   - title: Removed Java EE modules
     url: https://www.oracle.com/java/technologies/javase/11-relnote-issues.html#JDK-8190378
-  message: Add the `jakarta.activation` dependency to your application's `pom.xml`..
-    `<groupId>jakarta.activation</groupId>`. `<artifactId>jakarta.activation</artifactId>`
+  message: "\n Add the `jakarta.activation` dependency to your application's `pom.xml`.\n\n
+    `<groupId>jakarta.activation</groupId>`\n\n `<artifactId>jakarta.activation</artifactId>`\n "
   ruleID: removed-javaee-modules-00000
   when:
     java.referenced:
@@ -19,21 +19,21 @@
       pattern: javax.activation*
 - category: mandatory
   customVariables: []
-  description: |-
-    The java.corba module has been removed from OpenJDK 11
-    The `java.corba` (CORBA) module has been removed from OpenJDK 11.. If you wish to continue using CORBA within your application consider using the GlassFish implementation of CORBA and RMI-IIOP.
+  description: The java.corba module has been removed from OpenJDK 11
   effort: 1
   labels:
   - konveyor.io/source=openjdk8-
+  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
+  - konveyor.io/target=openjdk
   links:
   - title: GlassFish implementation of CORBA and RMI-IIOP
     url: https://javaee.github.io/glassfish-corba/index.html
   - title: Removed Java EE modules
     url: https://www.oracle.com/java/technologies/javase/11-relnote-issues.html#JDK-8190378
-  message: The `java.corba` (CORBA) module has been removed from OpenJDK 11.. If you
-    wish to continue using CORBA within your application consider using the GlassFish
-    implementation of CORBA and RMI-IIOP.
+  message: "\n The `java.corba` (CORBA) module has been removed from OpenJDK 11. \n
+    If you wish to continue using CORBA within your application consider using the
+    GlassFish implementation of CORBA and RMI-IIOP.\n "
   ruleID: removed-javaee-modules-00010
   when:
     or:
@@ -48,18 +48,19 @@
         pattern: com.sun.corba*
 - category: mandatory
   customVariables: []
-  description: |-
-    The java.annotation (Common Annotations) module has been removed from OpenJDK 11
-    Add the `jakarta.annotation` dependency to your application's `pom.xml`.. `<groupId>jakarta.annotation</groupId>`. `<artifactId>jakarta.annotation-api</artifactId>`
+  description: The java.annotation (Common Annotations) module has been removed from
+    OpenJDK 11
   effort: 1
   labels:
   - konveyor.io/source=openjdk8-
+  - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk11+
+  - konveyor.io/target=openjdk
   links:
   - title: Removed Java EE modules
     url: https://www.oracle.com/java/technologies/javase/11-relnote-issues.html#JDK-8190378
-  message: Add the `jakarta.annotation` dependency to your application's `pom.xml`..
-    `<groupId>jakarta.annotation</groupId>`. `<artifactId>jakarta.annotation-api</artifactId>`
+  message: "\n Add the `jakarta.annotation` dependency to your application's `pom.xml`.\n\n
+    `<groupId>jakarta.annotation</groupId>`\n\n `<artifactId>jakarta.annotation-api</artifactId>`\n "
   ruleID: removed-javaee-modules-00020
   when:
     java.referenced:

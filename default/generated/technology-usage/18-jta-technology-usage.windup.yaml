@@ -1,4 +1,5 @@
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -10,6 +11,7 @@
   when:
     or: []
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -22,6 +24,7 @@
     builtin.hasTags:
     - Mycontainer JTA
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -34,6 +37,7 @@
     builtin.hasTags:
     - Geronimo JTA
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -46,6 +50,7 @@
     builtin.hasTags:
     - OW2 JTA
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -58,6 +63,7 @@
     builtin.hasTags:
     - Evo JTA
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -70,6 +76,7 @@
     builtin.hasTags:
     - AKKA JTA
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -82,6 +89,7 @@
     builtin.hasTags:
     - KumuluzEE JTA
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -94,6 +102,7 @@
     builtin.hasTags:
     - Ignite JTA
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -106,6 +115,7 @@
     builtin.hasTags:
     - Nuxeo JTA/JCA
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -118,6 +128,7 @@
     builtin.hasTags:
     - Everit JTA
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -130,6 +141,7 @@
     builtin.hasTags:
     - Demoiselle JTA
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -142,6 +154,7 @@
     builtin.hasTags:
     - Apache Meecrowave JTA
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -154,6 +167,7 @@
     builtin.hasTags:
     - Apache Sirona JTA
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -166,6 +180,7 @@
     builtin.hasTags:
     - Lift JTA
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -178,6 +193,7 @@
     builtin.hasTags:
     - WF Core JTA
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -190,6 +206,7 @@
     builtin.hasTags:
     - Java Transaction API
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -202,6 +219,7 @@
     builtin.hasTags:
     - JBoss Transactions
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -214,6 +232,7 @@
     builtin.hasTags:
     - GlassFish JTA
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -226,6 +245,7 @@
     builtin.hasTags:
     - Atomikos JTA
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -238,6 +258,7 @@
     builtin.hasTags:
     - Narayana Arjuna
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []

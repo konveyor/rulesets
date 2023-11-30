@@ -8,7 +8,7 @@
   description: "IBM MQ client API\nWebSphere MQ client API is used to communicate
     with the MQ server from client-side applications.\n                        For
     JBoss EAP 6, this needs to be replaced with standard Java EE 6 JMS API, or with
-    HornetQ client API.\n                    \n"
+    HornetQ client API.\n                    "
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap6
@@ -36,11 +36,7 @@
   description: "IBM MQ Configuration\nThe WebSphere MQ client API is used to communicate
     with the MQ server from client-side applications.\n                        For
     JBoss EAP 6, this needs to be replaced with standard Java EE 6 JMS API, or with
-    HornetQ client API.\n                    \n`WMQInitialContextFactory` is an implementation
-    of `InitialContextFactory`. used to get object instances from JNDI. The. equivalent
-    functionality needs to be configured on JBoss EAP 6 using HornetQ.. `InitialContextFactory`
-    is provided. by EAP and you only need to instantiate `InitialContext ctx = new
-    InitialContext();`."
+    HornetQ client API.\n                    "
   effort: 3
   labels:
   - konveyor.io/source=websphere
@@ -57,10 +53,10 @@
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#Migrate_Your_Application_to_Use_HornetQ_as_the_JMS_Provider
   - title: Java EE 6 JMS Tutorial
     url: https://docs.oracle.com/javaee/6/tutorial/doc/bnceh.html
-  message: '`WMQInitialContextFactory` is an implementation of `InitialContextFactory`.
-    used to get object instances from JNDI. The. equivalent functionality needs to
-    be configured on JBoss EAP 6 using HornetQ.. `InitialContextFactory` is provided.
-    by EAP and you only need to instantiate `InitialContext ctx = new InitialContext();`.'
+  message: "`WMQInitialContextFactory` is an implementation of `InitialContextFactory`\n
+    used to get object instances from JNDI. The\n equivalent functionality needs to
+    be configured on JBoss EAP 6 using HornetQ.\n `InitialContextFactory` is provided\n
+    by EAP and you only need to instantiate `InitialContext ctx = new InitialContext();`.\n "
   ruleID: websphere-mq-01000
   tag:
   - IBM MQ Configuration
@@ -70,9 +66,7 @@
       pattern: com.ibm.mq.jms.context.WMQInitialContextFactory
 - category: mandatory
   customVariables: []
-  description: |-
-    IBM WebSphere .scp file
-    WebSphere `.scp` files contain scripts for the `jmsadmin` program which is used. to configure the WebSphere MQ destinations. and routing. To configure messaging in JBoss EAP 6 with HornetQ, use either the Management Console or Management CLI with it's. scripting feature.
+  description: IBM WebSphere .scp file
   effort: 3
   labels:
   - konveyor.io/source=websphere
@@ -89,10 +83,10 @@
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#Configure_Messaging_with_HornetQ2
   - title: Java EE 6 JMS Tutorial
     url: https://docs.oracle.com/javaee/6/tutorial/doc/bnceh.html
-  message: WebSphere `.scp` files contain scripts for the `jmsadmin` program which
-    is used. to configure the WebSphere MQ destinations. and routing. To configure
+  message: "\n WebSphere `.scp` files contain scripts for the `jmsadmin` program which
+    is used\n to configure the WebSphere MQ destinations\n and routing. To configure
     messaging in JBoss EAP 6 with HornetQ, use either the Management Console or Management
-    CLI with it's. scripting feature.
+    CLI with it's\n scripting feature.\n "
   ruleID: websphere-mq-02000
   tag:
   - IBM MQ Configuration

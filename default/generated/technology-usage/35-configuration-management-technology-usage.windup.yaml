@@ -1,4 +1,5 @@
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -11,6 +12,7 @@
     builtin.hasTags:
     - Spring Cloud Config
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []
@@ -23,6 +25,7 @@
     builtin.hasTags:
     - Application Properties File
 - customVariables: []
+  description: null
   labels:
   - konveyor.io/include=always
   links: []

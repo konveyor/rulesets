@@ -1,3 +1,2 @@
-name: eap6/resin
-description: This ruleset provides analysis of Resin proprietary xml files that may
-  require individual attention when migrating to JBoss EAP 6+.
+name: eap6/java-ee
+description: This ruleset provides generic migration knowledge for the Java EE specification

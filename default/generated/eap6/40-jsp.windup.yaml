@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Empty import definition in a JSP
-    Empty import definition in .jsp or .jspf files would fail in compilation time and needs to be removed.
+  description: Empty import definition in a JSP
   effort: 1
   labels:
   - konveyor.io/target=eap6+
@@ -11,8 +9,8 @@
   - konveyor.io/target=java-ee
   - konveyor.io/source
   links: []
-  message: Empty import definition in .jsp or .jspf files would fail in compilation
-    time and needs to be removed.
+  message: "\n Empty import definition in .jsp or .jspf files would fail in compilation
+    time and needs to be removed.\n "
   ruleID: jsp-01000
   when:
     builtin.filecontent:

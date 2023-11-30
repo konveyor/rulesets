@@ -5,7 +5,7 @@
   - name: type
     nameOfCaptureGroup: type
     pattern: org.hibernate.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
-  description: |
+  description: |-
     Hibernate
     This is a Hibernate type and it will need to be verified for compatibility with the latest Hibernate version.
   labels:

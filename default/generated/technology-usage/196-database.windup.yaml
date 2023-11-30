@@ -1,5 +1,5 @@
 - customVariables: []
-  description: |
+  description: |-
     Embedded HSQLDB Driver
     The application embeds an HSQLDB driver.
   labels:
@@ -17,7 +17,7 @@
     builtin.file:
       pattern: .*hsqldb.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded MySQL Driver
     The application embeds an MySQL driver.
   labels:
@@ -35,7 +35,7 @@
     builtin.file:
       pattern: .*mysql-connector.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded Derby Driver
     The application embeds an Derby driver.
   labels:
@@ -53,7 +53,7 @@
     builtin.file:
       pattern: .*derby.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded PostgreSQL Driver
     The application embeds an PostgreSQL driver.
   labels:
@@ -71,7 +71,7 @@
     builtin.file:
       pattern: .*postgresql.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded H2 Driver
     The application embeds an H2 driver.
   labels:
@@ -89,7 +89,7 @@
     builtin.file:
       pattern: .*h2.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded Microsoft SQL Driver
     The application embeds an Microsoft SQL driver.
   labels:
@@ -110,7 +110,7 @@
     - builtin.file:
         pattern: mssql-jdbc.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded SQLite Driver
     The application embeds an SQLite driver.
   labels:
@@ -128,7 +128,7 @@
     builtin.file:
       pattern: .*sqlite-jdbc.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded Oracle DB Driver
     The application embeds an Oracle DB driver.
   labels:
@@ -149,7 +149,7 @@
     - builtin.file:
         pattern: .*ojdbc.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded Cassandra Client
     The application embeds a Cassandra client.
   labels:
@@ -182,7 +182,7 @@
     - builtin.file:
         pattern: .*scale7-pelops.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded Axion Driver
     The application embeds an Axion driver.
   labels:
@@ -200,7 +200,7 @@
     builtin.file:
       pattern: .*axion.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded MckoiSQLDB Driver
     The application embeds an MckoiSQLDB driver.
   labels:
@@ -218,7 +218,7 @@
     builtin.file:
       pattern: .*mckoisqldb.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded MongoDB Client
     The application embeds a MongoDB client.
   labels:
@@ -247,7 +247,7 @@
     - builtin.file:
         pattern: .*rogue.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Spring Data
     The application embeds the Spring Data framework.
   labels:
@@ -261,7 +261,7 @@
     builtin.file:
       pattern: spring-data.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Morphia
     The application embeds Morphia.
   labels:
@@ -279,7 +279,7 @@
     builtin.file:
       pattern: .*morphia.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded LevelDB Client
     The application embeds a LevelDB client.
   labels:
@@ -297,7 +297,7 @@
     builtin.file:
       pattern: .*leveldb.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded Apache HBase Client
     The application embeds an Apache HBase client.
   labels:
@@ -315,7 +315,7 @@
     builtin.file:
       pattern: .*hbase.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded Apache Accumulo Client
     The application embeds an Apache Accumulo client.
   labels:
@@ -333,7 +333,7 @@
     builtin.file:
       pattern: .*accumulo.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded Spring Data JPA
     The application embeds Spring Data JPA
   labels:

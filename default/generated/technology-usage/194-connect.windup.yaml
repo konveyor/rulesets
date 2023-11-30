@@ -1,5 +1,5 @@
 - customVariables: []
-  description: |
+  description: |-
     Embedded Resource Adapter
     The application embeds a resource adapter.
   labels:
@@ -13,7 +13,7 @@
     builtin.file:
       pattern: .*\.rar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - ActiveMQ
     The application embeds an ActiveMQ client library.
   labels:
@@ -31,7 +31,7 @@
     builtin.file:
       pattern: .*activemq.*
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - OpenWS
     The application embeds an OpenWS library.
   labels:
@@ -45,7 +45,7 @@
     builtin.file:
       pattern: .*openws.*
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - WSDL
     The application embeds a WSDL library.
   labels:
@@ -59,7 +59,7 @@
     builtin.file:
       pattern: .*wsdl.*
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - RabbitMQ Client
     The application embeds a RabbitMQ client library.
   labels:
@@ -86,7 +86,7 @@
     - builtin.file:
         pattern: .*conduit.*
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Spring Messaging Client
     The application embeds a Spring Messaging client library.
   labels:
@@ -107,7 +107,7 @@
     - builtin.file:
         pattern: .*spring-jms.*
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Camel Messaging Client
     The application embeds a Camel Messaging client library.
   labels:
@@ -125,7 +125,7 @@
     builtin.file:
       pattern: .*camel-jms.*
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Amazon SQS Client
     The application embeds a Amazon SQS client library.
   labels:
@@ -143,7 +143,7 @@
     builtin.file:
       pattern: .*aws-java-sdk-sqs.*
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - HornetQ Client
     The application embeds a HornetQ client library.
   labels:
@@ -161,7 +161,7 @@
     builtin.file:
       pattern: .*hornetq.*
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - AMQP Client
     The application embeds an AMQP client library.
   labels:
@@ -179,7 +179,7 @@
     builtin.file:
       pattern: .*amqp.*
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - RocketMQ Client
     The application embeds a RocketMQ client library.
   labels:
@@ -197,7 +197,7 @@
     builtin.file:
       pattern: .*rocketmq-client.*
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - 0MQ Client
     The application embeds a 0MQ client library.
   labels:
@@ -218,7 +218,7 @@
     - builtin.file:
         pattern: .*jeromq.*
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - JBossMQ Client
     The application embeds a JBossMQ client library.
   labels:
@@ -236,7 +236,7 @@
     builtin.file:
       pattern: .*jbossmq-client.*
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Zbus Client
     The application embeds a Zbus client library.
   labels:
@@ -254,7 +254,7 @@
     builtin.file:
       pattern: .*zbus-client.*
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Qpid Client
     The application embeds a Qpid client library.
   labels:

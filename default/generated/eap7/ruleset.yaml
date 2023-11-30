@@ -1,3 +1,4 @@
-name: eap7/websphere
-description: Provides analysis of WebSphere proprietary classes and constructs that
-  may require individual attention when migrating to JBoss EAP 7+.
+name: eap7/eap72
+description: This ruleset provides analysis of Maven built applications that depend
+  on org.jboss.spec.javax.rmi:jboss-rmi-api_1.0_spec artifact, a dependency that should
+  be removed when migrating to JBoss EAP 7.3 or later.

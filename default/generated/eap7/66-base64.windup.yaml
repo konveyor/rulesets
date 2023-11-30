@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    The class org.jboss.util.Base64 has been moved
-    This API is not considered a public API for EAP. For JDK 8+, the recommended solution is to migrate to. [java.util.Base64](https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html).. For JDK 7, it is recommended to migrate to another Base 64 library, for example. [Apache Commons Codec](https://commons.apache.org/proper/commons-codec/).
+  description: The class org.jboss.util.Base64 has been moved
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -14,10 +12,10 @@
   links:
   - title: Can application use the JBoss EAP org.jboss.util.Base64 built in class?
     url: https://access.redhat.com/solutions/403703
-  message: This API is not considered a public API for EAP. For JDK 8+, the recommended
-    solution is to migrate to. [java.util.Base64](https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html)..
-    For JDK 7, it is recommended to migrate to another Base 64 library, for example.
-    [Apache Commons Codec](https://commons.apache.org/proper/commons-codec/).
+  message: "\n This API is not considered a public API for EAP. For JDK 8+, the recommended
+    solution is to migrate to\n [java.util.Base64](https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html).\n\n
+    For JDK 7, it is recommended to migrate to another Base 64 library, for example\n
+    [Apache Commons Codec](https://commons.apache.org/proper/commons-codec/).\n "
   ruleID: base64-01000
   when:
     java.referenced:

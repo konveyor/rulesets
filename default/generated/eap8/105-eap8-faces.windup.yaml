@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Dependency on JSF artifacts must be updated
-    Dependency on JSF artifacts must be updated for EAP8 to Jakarta Faces 4.0.. Update dependency to `org.glassfish:jakarta.faces:4.0.0` or greater
+  description: Dependency on JSF artifacts must be updated
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -16,8 +14,9 @@
     url: https://jakarta.ee/specifications/faces/4.0/
   - title: Jakarta Server Faces
     url: https://access.redhat.com/articles/6980265#faces
-  message: Dependency on JSF artifacts must be updated for EAP8 to Jakarta Faces 4.0..
-    Update dependency to `org.glassfish:jakarta.faces:4.0.0` or greater
+  message: |-
+    Dependency on JSF artifacts must be updated for EAP8 to Jakarta Faces 4.0.
+     Update dependency to `org.glassfish:jakarta.faces:4.0.0` or greater
   ruleID: eap8-faces-00001
   when:
     or:
@@ -29,9 +28,7 @@
         nameregex: com\.sun\.faces\..*
 - category: mandatory
   customVariables: []
-  description: |-
-    Source reference to `javax.faces.bean.ManagedProperty` must be updated
-    Source reference to `javax.faces.bean.ManagedProperty` must be updated.. Use 'jakarta.faces.annotation.ManagedProperty' along with `@Inject`.
+  description: Source reference to `javax.faces.bean.ManagedProperty` must be updated
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -45,8 +42,9 @@
     url: https://jakarta.ee/specifications/platform/9/apidocs/jakarta/faces/bean/managedproperty
   - title: Faces Managed Beans
     url: https://access.redhat.com/articles/6980265#faces_managed_beans
-  message: Source reference to `javax.faces.bean.ManagedProperty` must be updated..
-    Use 'jakarta.faces.annotation.ManagedProperty' along with `@Inject`.
+  message: |-
+    Source reference to `javax.faces.bean.ManagedProperty` must be updated.
+     Use 'jakarta.faces.annotation.ManagedProperty' along with `@Inject`.
   ruleID: eap8-faces-00002
   when:
     or:
@@ -58,9 +56,7 @@
         pattern: javax.faces.bean.ManagedProperty
 - category: mandatory
   customVariables: []
-  description: |-
-    JSF ManagedBean has been removed
-    JSF ManagedBean has been removed.. Use CDI's `@jakarta.inject.Named(“foo”)` to replace JSF ManagedBeans.
+  description: JSF ManagedBean has been removed
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -76,8 +72,9 @@
     url: https://jakarta.ee/specifications/cdi/4.0/
   - title: Faces Managed Beans
     url: https://access.redhat.com/articles/6980265#faces_managed_beans
-  message: JSF ManagedBean has been removed.. Use CDI's `@jakarta.inject.Named(“foo”)`
-    to replace JSF ManagedBeans.
+  message: |-
+    JSF ManagedBean has been removed.
+     Use CDI's `@jakarta.inject.Named(“foo”)` to replace JSF ManagedBeans.
   ruleID: eap8-faces-00003
   when:
     or:
@@ -92,9 +89,7 @@
         xpath: //*/j:managed-bean
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation `javax.faces.bean.ViewScoped` removed
-    Annotation `javax.faces.bean.ViewScoped` removed.. Use `jakarta.faces.view.ViewScoped` to replace it.
+  description: Annotation `javax.faces.bean.ViewScoped` removed
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -108,8 +103,9 @@
     url: https://jakarta.ee/specifications/faces/3.0/apidocs/jakarta/faces/view/viewscoped
   - title: Other Faces API Changes
     url: https://access.redhat.com/articles/6980265#faces_other
-  message: Annotation `javax.faces.bean.ViewScoped` removed.. Use `jakarta.faces.view.ViewScoped`
-    to replace it.
+  message: |-
+    Annotation `javax.faces.bean.ViewScoped` removed.
+     Use `jakarta.faces.view.ViewScoped` to replace it.
   ruleID: eap8-faces-00004
   when:
     java.referenced:
@@ -120,8 +116,7 @@
   - name: scope
     nameOfCaptureGroup: scope
     pattern: javax.faces.bean.(?P<scope>Application|Request|Session)?Scoped
-  description: |
-    Annotation `javax.faces.bean.{scope}Scoped` removed
+  description: Annotation `javax.faces.bean.{scope}Scoped` removed
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -135,8 +130,9 @@
     url: https://jakarta.ee/specifications/cdi/4.0/apidocs/jakarta.cdi/jakarta/enterprise/context/package-summary.html
   - title: Faces Managed Beans
     url: https://access.redhat.com/articles/6980265#faces_managed_beans
-  message: Annotation `javax.faces.bean.{{scope}}Scoped` removed.. Use `jakarta.enterprise.context.{{scope}}Scoped`
-    to replace it.
+  message: |-
+    Annotation `javax.faces.bean.{{scope}}Scoped` removed.
+     Use `jakarta.enterprise.context.{{scope}}Scoped` to replace it.
   ruleID: eap8-faces-00005
   when:
     java.referenced:
@@ -144,9 +140,7 @@
       pattern: javax.faces.bean.Application|Request|SessionScoped
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation `javax.faces.bean.CustomScoped` removed
-    Annotation `javax.faces.bean.CustomScoped` removed.. Use `jakarta.enterprise.context.spi.Context` to replace it.
+  description: Annotation `javax.faces.bean.CustomScoped` removed
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -160,8 +154,9 @@
     url: https://jakarta.ee/specifications/cdi/4.0/apidocs/jakarta.cdi/jakarta/enterprise/context/spi/context
   - title: Faces Managed Beans
     url: https://access.redhat.com/articles/6980265#faces_managed_beans
-  message: Annotation `javax.faces.bean.CustomScoped` removed.. Use `jakarta.enterprise.context.spi.Context`
-    to replace it.
+  message: |-
+    Annotation `javax.faces.bean.CustomScoped` removed.
+     Use `jakarta.enterprise.context.spi.Context` to replace it.
   ruleID: eap8-faces-00006
   when:
     java.referenced:
@@ -169,9 +164,7 @@
       pattern: javax.faces.bean.CustomScoped
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation `javax.faces.bean.NoneScoped` removed
-    Annotation `javax.faces.bean.NoneScoped` removed.. Use `jakarta.enterprise.context.Dependent` to replace it.
+  description: Annotation `javax.faces.bean.NoneScoped` removed
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -185,8 +178,9 @@
     url: https://jakarta.ee/specifications/cdi/4.0/apidocs/jakarta.cdi/jakarta/enterprise/context/dependent
   - title: Faces Managed Beans
     url: https://access.redhat.com/articles/6980265#faces_managed_beans
-  message: Annotation `javax.faces.bean.NoneScoped` removed.. Use `jakarta.enterprise.context.Dependent`
-    to replace it.
+  message: |-
+    Annotation `javax.faces.bean.NoneScoped` removed.
+     Use `jakarta.enterprise.context.Dependent` to replace it.
   ruleID: eap8-faces-00007
   when:
     java.referenced:
@@ -194,9 +188,7 @@
       pattern: javax.faces.bean.NoneScoped
 - category: mandatory
   customVariables: []
-  description: |-
-    ResourceResolvers have been removed
-    ResourceResolvers have been removed in eap8.. Instead, implement a `jakarta.faces.application.ResourceHandler` and register the fully qualified class name via faces-config.xml/application/resource-handler element
+  description: ResourceResolvers have been removed
   effort: 3
   labels:
   - konveyor.io/source=eap6
@@ -210,9 +202,9 @@
     url: https://github.com/jakartaee/faces/issues/1583
   - title: Other Faces API Changes
     url: https://access.redhat.com/articles/6980265#faces_other
-  message: ResourceResolvers have been removed in eap8.. Instead, implement a `jakarta.faces.application.ResourceHandler`
-    and register the fully qualified class name via faces-config.xml/application/resource-handler
-    element
+  message: |-
+    ResourceResolvers have been removed in eap8.
+     Instead, implement a `jakarta.faces.application.ResourceHandler` and register the fully qualified class name via faces-config.xml/application/resource-handler element
   ruleID: eap8-faces-00008
   when:
     or:
@@ -222,9 +214,7 @@
         pattern: javax.faces.view.facelets.ResourceResolver
 - category: mandatory
   customVariables: []
-  description: |-
-    JSP support has been removed in Jakarta EE 10
-    JSP support has been removed in Jakarta EE 10. Facelets will remain as the only default view language, and views can also now be created solely using java.
+  description: JSP support has been removed in Jakarta EE 10
   effort: 5
   labels:
   - konveyor.io/source=eap6

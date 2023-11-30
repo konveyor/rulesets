@@ -3,7 +3,7 @@
     application embeds an Ehcache library.\n\n                        An embedded
     cache library is problematic because state information might not be persisted
     to a backing service.\n\n                        Recommendation: Use a cache backing
-    service.\n                    \n"
+    service.\n                    "
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
@@ -20,7 +20,7 @@
     application embeds a Coherence library.\n\n                        An embedded
     cache library is problematic because state information might not be persisted
     to a backing service.\n\n                        Recommendation: Use a cache backing
-    service.\n                    \n"
+    service.\n                    "
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
@@ -37,7 +37,7 @@
     application embeds an Apache Commons JCS library.\n\n                        An
     embedded cache library is problematic because state information might not be persisted
     to a backing service.\n\n                        Recommendation: Use a cache backing
-    service.\n                    \n"
+    service.\n                    "
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
@@ -54,7 +54,7 @@
     application embeds a Dynacache library.\n\n                        An embedded
     cache library is problematic because state information might not be persisted
     to a backing service.\n\n                        Recommendation: Use a cache backing
-    service.\n                    \n"
+    service.\n                    "
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
@@ -71,7 +71,7 @@
     embeds a library that provides caching.\n\n                        An embedded
     cache library is problematic because state information might not be persisted
     to a backing service.\n\n                        Recommendation: Use a cache backing
-    service.\n                    \n"
+    service.\n                    "
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
@@ -88,7 +88,7 @@
     application embeds a Hazelcast library.\n\n                        An embedded
     cache library is problematic because state information might not be persisted
     to a backing service.\n\n                        Recommendation: Use a cache backing
-    service.\n                    \n"
+    service.\n                    "
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
@@ -105,7 +105,7 @@
     application embeds an Apache Ignite library.\n\n                        An embedded
     cache library is problematic because state information might not be persisted
     to a backing service.\n\n                        Recommendation: Use a cache backing
-    service.\n                    \n"
+    service.\n                    "
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
@@ -122,7 +122,7 @@
     application embeds an Infinispan library.\n\n                        An embedded
     cache library is problematic because state information might not be persisted
     to a backing service.\n\n                        Recommendation: Use a cache backing
-    service.\n                    \n"
+    service.\n                    "
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
@@ -139,7 +139,7 @@
     application embedds a JBoss Cache library.\n\n                        An embedded
     cache library is problematic because state information might not be persisted
     to a backing service.\n\n                        Recommendation: Use a cache backing
-    service.\n                    \n"
+    service.\n                    "
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
@@ -155,7 +155,7 @@
   description: "Caching - JCache embedded library\n\n                        The application
     embeds a JCache library.\n\n                        An embedded cache library
     is problematic because state information might not be persisted to a backing service.\n\n
-    \                       Recommendation: Use a cache backing service.\n                    \n"
+    \                       Recommendation: Use a cache backing service.\n                    "
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
@@ -172,7 +172,7 @@
     application embeds a Memcached client library.\n\n                        An embedded
     cache library is problematic because state information might not be persisted
     to a backing service.\n\n                        Recommendation: Use a cache backing
-    service.\n                    \n"
+    service.\n                    "
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
@@ -189,7 +189,7 @@
     application embeds an Oscache library.\n\n                        An embedded
     cache library is problematic because state information might not be persisted
     to a backing service.\n\n                        Recommendation: Use a cache backing
-    service.\n                    \n"
+    service.\n                    "
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
@@ -206,7 +206,7 @@
     application embeds a ShiftOne library (Java Object Cache or JOCache).\n\n                        An
     embedded cache library is problematic because state information might not be persisted
     to a backing service.\n\n                        Recommendation: Use a cache backing
-    service.\n                    \n"
+    service.\n                    "
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
@@ -223,7 +223,7 @@
     application embeds a SwarmCache library.\n\n                        An embedded
     cache library is problematic because state information might not be persisted
     to a backing service.\n\n                        Recommendation: Use a cache backing
-    service.\n                    \n"
+    service.\n                    "
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
@@ -237,10 +237,7 @@
       pattern: .*swarmcache.*\.jar$
 - customVariables: []
   description: "Caching - Spring Boot Cache library\n\n                        The
-    application embeds the Spring Boot Cache library.\n\n                        An
-    embedded cache library is problematic because state information might not be persisted
-    to a backing service.\n\n                        Recommendation: Use a cache backing
-    service.\n                    \n"
+    application embeds the Spring Boot Cache library.\n                    "
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
@@ -257,20 +254,3 @@
     - java.dependency:
         lowerbound: 0.0.0
         name: org.springframework.boot.spring-boot-starter-cache
-- customVariables: []
-  description: "Caching - Redis Cache library\n\n                        The application
-    embeds the Redis client.\n                    \n                        An embedded
-    cache library is problematic because state information might not be persisted
-    to a backing service.\n\n                        Recommendation: Use a cache backing
-    service.\n                    \n"
-  labels:
-  - konveyor.io/target=cloud-readiness
-  - konveyor.io/source
-  links: []
-  ruleID: embedded-cache-libraries-16000
-  tag:
-  - Redis
-  - Caching - Redis Cache library
-  when:
-    builtin.file:
-      pattern: .*redis.*\.jar

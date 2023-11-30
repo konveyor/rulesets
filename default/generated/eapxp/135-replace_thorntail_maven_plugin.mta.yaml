@@ -1,8 +1,6 @@
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Maven Plugin
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Maven Plugin with JBoss EAP XP Bootable JAR Maven Plugin.
+  description: Replace Thorntail Maven Plugin
   effort: 1
   labels:
   - konveyor.io/source=thorntail

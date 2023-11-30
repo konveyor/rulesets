@@ -1,5 +1,5 @@
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - EasyMock
     The application embeds the EasyMock library.
   labels:
@@ -13,7 +13,7 @@
     builtin.file:
       pattern: .*easymock.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - PowerMock
     The application embeds the PowerMock library.
   labels:
@@ -27,7 +27,7 @@
     builtin.file:
       pattern: .*powermock.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Mockito
     The application embeds the Mockito library.
   labels:
@@ -41,7 +41,7 @@
     builtin.file:
       pattern: .*mockito.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - TestNG
     The application embeds the TestNG library.
   labels:
@@ -55,7 +55,7 @@
     builtin.file:
       pattern: .*testng.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Hamcrest
     The application embeds the Hamcrest library.
   labels:
@@ -69,7 +69,7 @@
     builtin.file:
       pattern: .*hamcrest.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Spring Test
     The application embeds a Spring Test framework.
   labels:
@@ -83,7 +83,7 @@
     builtin.file:
       pattern: spring.*test.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Spock
     The application embeds the Spock framework.
   labels:
@@ -97,7 +97,7 @@
     builtin.file:
       pattern: spock.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - XMLUnit
     The application embeds the XMLUnit framework.
   labels:
@@ -111,7 +111,7 @@
     builtin.file:
       pattern: xmlunit.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Akka Testkit
     The application embeds the Akka Testkit library.
   labels:
@@ -125,7 +125,7 @@
     builtin.file:
       pattern: akka-testkit.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - REST Assured
     The application embeds the REST Assured library.
   labels:
@@ -139,7 +139,7 @@
     builtin.file:
       pattern: rest-assured.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - DbUnit
     The application embeds the DbUnit library.
   labels:
@@ -153,7 +153,7 @@
     builtin.file:
       pattern: dbunit.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Mule Functional Test Framework (TCK)
     The application embeds the Mule Functional Test Framework (TCK).
   labels:
@@ -167,7 +167,7 @@
     builtin.file:
       pattern: mule-test.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Guava Testing Library
     The application embeds the Guava Testing Library.
   labels:
@@ -181,7 +181,7 @@
     builtin.file:
       pattern: guava-testlib.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - RandomizedTesting Randomized Runner
     The application embeds the RandomizedTesting Randomized Runner library.
   labels:
@@ -195,7 +195,7 @@
     builtin.file:
       pattern: randomizedtesting-runner.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - HttpUnit
     The application embeds the HttpUnit library.
   labels:
@@ -209,7 +209,7 @@
     builtin.file:
       pattern: httpunit.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - JCUnit
     The application embeds the JCunit library.
   labels:
@@ -223,7 +223,7 @@
     builtin.file:
       pattern: jcunit.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - JPA Matchers
     The application embeds the JPA Matchers library.
   labels:
@@ -237,7 +237,7 @@
     builtin.file:
       pattern: jpa-matchers.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - MultithreadedTC
     The application embeds the MultithreadedTC library.
   labels:
@@ -251,7 +251,7 @@
     builtin.file:
       pattern: multithreadedtc.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Specsy
     The application embeds the Specsy framework.
   labels:
@@ -265,7 +265,7 @@
     builtin.file:
       pattern: specsy.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - JFunk
     The application embeds the JFunk framework.
   labels:
@@ -279,7 +279,7 @@
     builtin.file:
       pattern: jfunk.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Restito
     The application embeds the Restito framework.
   labels:
@@ -293,7 +293,7 @@
     builtin.file:
       pattern: restito.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Test Interface
     The application embeds the Test Interface library.
   labels:
@@ -307,7 +307,7 @@
     builtin.file:
       pattern: test-interface.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Play Test
     The application embeds the Play Test framework.
   labels:
@@ -321,7 +321,7 @@
     builtin.file:
       pattern: play-test.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Arquillian
     The application embeds the Arquillian framework.
   labels:
@@ -335,7 +335,7 @@
     builtin.file:
       pattern: .*arquillian.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Cactus
     The application embeds the Cactus framework.
   labels:
@@ -349,7 +349,7 @@
     builtin.file:
       pattern: .*cactus.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Concordion
     The application embeds the Concordion framework.
   labels:
@@ -363,7 +363,7 @@
     builtin.file:
       pattern: .*concordion.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Cucumber
     The application embeds the Cucumber framework.
   labels:
@@ -377,7 +377,7 @@
     builtin.file:
       pattern: .*cucumber.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - EtlUnit
     The application embeds the EtlUnit framework.
   labels:
@@ -391,7 +391,7 @@
     builtin.file:
       pattern: .*etlunit.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - HavaRunner
     The application embeds the HavaRunner framework.
   labels:
@@ -405,7 +405,7 @@
     builtin.file:
       pattern: .*havarunner.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - JBehave
     The application embeds the JBehave framework.
   labels:
@@ -419,7 +419,7 @@
     builtin.file:
       pattern: .*jbehave.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - JMock
     The application embeds the JMock framework.
   labels:
@@ -433,7 +433,7 @@
     builtin.file:
       pattern: .*jmock-.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - JMockit
     The application embeds the JMockit framework.
   labels:
@@ -447,7 +447,7 @@
     builtin.file:
       pattern: .*jmockit.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Jukito
     The application embeds the Jukito framework.
   labels:
@@ -461,7 +461,7 @@
     builtin.file:
       pattern: .*jukito.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Needle
     The application embeds the Needle framework.
   labels:
@@ -475,7 +475,7 @@
     builtin.file:
       pattern: .*needle.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - OpenPojo
     The application embeds the OpenPojo framework.
   labels:
@@ -489,7 +489,7 @@
     builtin.file:
       pattern: .*openpojo.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - Unitils
     The application embeds the Unitils library.
   labels:
@@ -503,7 +503,7 @@
     builtin.file:
       pattern: .*unitils.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded framework - JUnit
     The application embeds the JUnit framework.
   labels:

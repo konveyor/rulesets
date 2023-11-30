@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Unsupported version of Spring Boot
-    Spring Boot has to be updated to Spring Boot 2.2.6 before being able to be migrated to a version supported by Red Hat Runtimes
+  description: Unsupported version of Spring Boot
   effort: 3
   labels:
   - konveyor.io/source=springboot
@@ -19,9 +17,7 @@
       upperbound: 2.2.5.RELEASE
 - category: potential
   customVariables: []
-  description: |-
-    Unsupported version of Spring Boot
-    Spring Boot has to be updated to a version supported by Red Hat Runtimes
+  description: Unsupported version of Spring Boot
   effort: 1
   labels:
   - konveyor.io/source=springboot

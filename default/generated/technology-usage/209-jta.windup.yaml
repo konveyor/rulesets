@@ -1,5 +1,5 @@
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Mycontainer JTA
     The application embeds a Mycontainer JTA library.
   labels:
@@ -13,7 +13,7 @@
     builtin.file:
       pattern: mycontainer-jta.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Geronimo JTA
     The application embeds a Geronimo JTA library.
   labels:
@@ -27,7 +27,7 @@
     builtin.file:
       pattern: geronimo-jta.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - OW2 JTA
     The application embeds an OW2 JTA library.
   labels:
@@ -41,7 +41,7 @@
     builtin.file:
       pattern: ow2-jta.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Evo JTA
     The application embeds an Evo JTA library.
   labels:
@@ -55,7 +55,7 @@
     builtin.file:
       pattern: evo-jta.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - AKKA JTA
     The application embeds an AKKA JTA library.
   labels:
@@ -69,7 +69,7 @@
     builtin.file:
       pattern: akka-jta.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - KumuluzEE JTA
     The application embeds a KumuluzEE JTA library.
   labels:
@@ -83,7 +83,7 @@
     builtin.file:
       pattern: kumuluzee-jta.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Ignite JTA
     The application embeds an Ignite JTA library.
   labels:
@@ -97,7 +97,7 @@
     builtin.file:
       pattern: ignite-jta.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Nuxeo JTA/JCA
     The application embeds a Nuxeo JTA/JCA library.
   labels:
@@ -111,7 +111,7 @@
     builtin.file:
       pattern: nuxeo-runtime-jtajca.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Everit JTA
     The application embeds an Everit JTA library.
   labels:
@@ -125,7 +125,7 @@
     builtin.file:
       pattern: org\.everit\.transaction\.propagator\.jta.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Demoiselle JTA
     The application embeds a Demoiselle JTA library.
   labels:
@@ -139,7 +139,7 @@
     builtin.file:
       pattern: demoiselle-jta.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Apache Meecrowave JTA
     The application embeds an Apache Meecrowave JTA library.
   labels:
@@ -153,7 +153,7 @@
     builtin.file:
       pattern: meecrowave-jta.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Apache Sirona JTA
     The application embeds an Apache Sirona JTA library.
   labels:
@@ -167,7 +167,7 @@
     builtin.file:
       pattern: sirona-jta.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Lift JTA
     The application embeds a Lift JTA library.
   labels:
@@ -181,7 +181,7 @@
     builtin.file:
       pattern: lift-jta.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - WF Core JTA
     The application embeds a WF Core JTA library.
   labels:
@@ -195,7 +195,7 @@
     builtin.file:
       pattern: wf-core-jta.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Java Transaction API (JTA)
     The application embeds a Java Transaction API library.
   labels:
@@ -212,7 +212,7 @@
     - builtin.file:
         pattern: javax-jta.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - JBoss Transactions
     The application embeds a JBoss Transactions library.
   labels:
@@ -241,7 +241,7 @@
     - builtin.file:
         pattern: transactions.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - GlassFish JTA
     The application embeds a GlassFish JTA library.
   labels:
@@ -260,7 +260,7 @@
     - builtin.file:
         pattern: jta-l10n.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Atomikos JTA
     The application embeds an Atomikos JTA library.
   labels:
@@ -279,7 +279,7 @@
     - builtin.file:
         pattern: evo-jta-atomikos.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Narayana Arjuna
     The application embeds a Narayana Arjuna library.
   labels:
@@ -298,7 +298,7 @@
     - builtin.file:
         pattern: tomcat-jta.*\.jar
 - customVariables: []
-  description: |
+  description: |-
     Embedded library - Spring Transactions
     The application embeds a Spring Transactions library.
   labels:

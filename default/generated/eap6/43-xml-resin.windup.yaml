@@ -2,7 +2,7 @@
   description: "Resin Web Application Descriptor\nAn Resin specific file defining
     an application configuration. Such a file may define URL paths, internal resin
     ids, root directory path etc.\n                            This is Resin specific
-    and needs to be migrated to web.xml or jboss-web.xml\n                        \n"
+    and needs to be migrated to web.xml or jboss-web.xml\n                        "
   labels:
   - konveyor.io/source=resin
   - konveyor.io/target=eap6+
