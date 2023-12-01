@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-activemq component has been removed
-    `camel-activemq` component has been removed in Apache Camel 4.0.  Please explore alternative components such as camel-jms / camel-sjms / camel-amqp
+  description: camel-activemq component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -12,7 +10,7 @@
   links:
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
-  message: '`camel-activemq` component has been removed in Apache Camel 4.0.  Please
+  message: '`camel-activemq` component has been removed in Apache Camel 4.0. Please
     explore alternative components such as camel-jms / camel-sjms / camel-amqp'
   ruleID: xml-removed-camel4-00001
   when:
@@ -25,9 +23,7 @@
         name: org.apache.camel.camel-activemq
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-any23 component has been removed
-    `camel-any23` component has been removed in Apache Camel 4.0.
+  description: camel-any23 component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -49,9 +45,7 @@
         name: org.apache.camel.camel-any23
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-atmos component has been removed
-    `camel-atmos` component has been removed in Apache Camel 4.0.
+  description: camel-atmos component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -73,9 +67,7 @@
         name: org.apache.camel.camel-atmos
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-caffeine-lrucache component has been removed
-    `camel-caffeine-lrucache` component has been removed in Apache Camel 4.0.  Please explore alternative components such as camel-cache, camel-ignite, camel-infinispan
+  description: camel-caffeine-lrucache component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -85,8 +77,8 @@
   links:
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
-  message: '`camel-caffeine-lrucache` component has been removed in Apache Camel 4.0.  Please
-    explore alternative components such as camel-cache, camel-ignite, camel-infinispan'
+  message: '`camel-caffeine-lrucache` component has been removed in Apache Camel 4.0.
+    Please explore alternative components such as camel-cache, camel-ignite, camel-infinispan'
   ruleID: xml-removed-camel4-00004
   when:
     or:
@@ -98,9 +90,7 @@
         name: org.apache.camel.camel-caffeine-lrucache
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-cdi component has been removed
-    `camel-cdi` component has been removed in Apache Camel 4.0.  Please explore alternative components such as camel-spring-boot, camel-quarkus
+  description: camel-cdi component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -110,7 +100,7 @@
   links:
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
-  message: '`camel-cdi` component has been removed in Apache Camel 4.0.  Please explore
+  message: '`camel-cdi` component has been removed in Apache Camel 4.0. Please explore
     alternative components such as camel-spring-boot, camel-quarkus'
   ruleID: xml-removed-camel4-00005
   when:
@@ -123,9 +113,7 @@
         name: org.apache.camel.camel-cdi
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-directvm component has been removed
-    `camel-directvm` component has been removed in Apache Camel 4.0.  Please explore alternative components such as camel-direct
+  description: camel-directvm component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -135,7 +123,7 @@
   links:
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
-  message: '`camel-directvm` component has been removed in Apache Camel 4.0.  Please
+  message: '`camel-directvm` component has been removed in Apache Camel 4.0. Please
     explore alternative components such as camel-direct'
   ruleID: xml-removed-camel4-00006
   when:
@@ -148,9 +136,7 @@
         name: org.apache.camel.camel-directvm
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-dozer component has been removed
-    `camel-dozer` component has been removed in Apache Camel 4.0.  Please explore alternative components such as camel-mapstruct
+  description: camel-dozer component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -160,8 +146,8 @@
   links:
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
-  message: '`camel-dozer` component has been removed in Apache Camel 4.0.  Please
-    explore alternative components such as camel-mapstruct'
+  message: '`camel-dozer` component has been removed in Apache Camel 4.0. Please explore
+    alternative components such as camel-mapstruct'
   ruleID: xml-removed-camel4-00007
   when:
     or:
@@ -173,9 +159,7 @@
         name: org.apache.camel.camel-dozer
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-elasticsearch-rest component has been removed
-    `camel-elasticsearch-rest` component has been removed in Apache Camel 4.0.  Please explore alternative components such as camel-elasticsearch
+  description: camel-elasticsearch-rest component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -186,7 +170,7 @@
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
   message: '`camel-elasticsearch-rest` component has been removed in Apache Camel
-    4.0.  Please explore alternative components such as camel-elasticsearch'
+    4.0. Please explore alternative components such as camel-elasticsearch'
   ruleID: xml-removed-camel4-00008
   when:
     or:
@@ -198,9 +182,7 @@
         name: org.apache.camel.camel-elasticsearch-rest
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-gora component has been removed
-    `camel-gora` component has been removed in Apache Camel 4.0.
+  description: camel-gora component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -222,9 +204,7 @@
         name: org.apache.camel.camel-gora
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-hbase component has been removed
-    `camel-hbase` component has been removed in Apache Camel 4.0.
+  description: camel-hbase component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -246,9 +226,7 @@
         name: org.apache.camel.camel-hbase
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-iota component has been removed
-    `camel-iota` component has been removed in Apache Camel 4.0.
+  description: camel-iota component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -270,9 +248,7 @@
         name: org.apache.camel.camel-iota
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-ipfs component has been removed
-    `camel-ipfs` component has been removed in Apache Camel 4.0.
+  description: camel-ipfs component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -294,9 +270,7 @@
         name: org.apache.camel.camel-ipfs
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-jbpm component has been removed
-    `camel-jbpm` component has been removed in Apache Camel 4.0.
+  description: camel-jbpm component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -318,9 +292,7 @@
         name: org.apache.camel.camel-jbpm
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-jclouds component has been removed
-    `camel-jclouds` component has been removed in Apache Camel 4.0.
+  description: camel-jclouds component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -342,9 +314,7 @@
         name: org.apache.camel.camel-jclouds
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-johnzon component has been removed
-    `camel-johnzon` component has been removed in Apache Camel 4.0.  Please explore alternative components such as camel-jackson, camel-fastjson, camel-gson
+  description: camel-johnzon component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -354,7 +324,7 @@
   links:
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
-  message: '`camel-johnzon` component has been removed in Apache Camel 4.0.  Please
+  message: '`camel-johnzon` component has been removed in Apache Camel 4.0. Please
     explore alternative components such as camel-jackson, camel-fastjson, camel-gson'
   ruleID: xml-removed-camel4-00016
   when:
@@ -367,9 +337,7 @@
         name: org.apache.camel.camel-johnzon
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-microprofile-metrics component has been removed
-    `camel-microprofile-metrics` component has been removed in Apache Camel 4.0.  Please explore alternative components such as camel-micrometer, camel-opentelemetry
+  description: camel-microprofile-metrics component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -380,7 +348,7 @@
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
   message: '`camel-microprofile-metrics` component has been removed in Apache Camel
-    4.0.  Please explore alternative components such as camel-micrometer, camel-opentelemetry'
+    4.0. Please explore alternative components such as camel-micrometer, camel-opentelemetry'
   ruleID: xml-removed-camel4-00017
   when:
     or:
@@ -392,9 +360,7 @@
         name: org.apache.camel.camel-microprofile-metrics
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-milo component has been removed
-    `camel-milo` component has been removed in Apache Camel 4.0.
+  description: camel-milo component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -416,9 +382,7 @@
         name: org.apache.camel.camel-milo
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-opentracing component has been removed
-    `camel-opentracing` component has been removed in Apache Camel 4.0.  Please explore alternative components such as camel-micrometer, camel-opentelemetry
+  description: camel-opentracing component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -428,7 +392,7 @@
   links:
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
-  message: '`camel-opentracing` component has been removed in Apache Camel 4.0.  Please
+  message: '`camel-opentracing` component has been removed in Apache Camel 4.0. Please
     explore alternative components such as camel-micrometer, camel-opentelemetry'
   ruleID: xml-removed-camel4-00019
   when:
@@ -441,9 +405,7 @@
         name: org.apache.camel.camel-opentracing
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-optaplanner component has been removed
-    `camel-optaplanner` component has been removed in Apache Camel 4.0.
+  description: camel-optaplanner component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -465,9 +427,7 @@
         name: org.apache.camel.camel-optaplanner
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-rabbitmq component has been removed
-    `camel-rabbitmq` component has been removed in Apache Camel 4.0.  Please explore alternative components such as spring-rabbitmq-component
+  description: camel-rabbitmq component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -477,7 +437,7 @@
   links:
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
-  message: '`camel-rabbitmq` component has been removed in Apache Camel 4.0.  Please
+  message: '`camel-rabbitmq` component has been removed in Apache Camel 4.0. Please
     explore alternative components such as spring-rabbitmq-component'
   ruleID: xml-removed-camel4-00021
   when:
@@ -490,9 +450,7 @@
         name: org.apache.camel.camel-rabbitmq
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-rest-swagger component has been removed
-    `camel-rest-swagger` component has been removed in Apache Camel 4.0.  Please explore alternative components such as camel-openapi-rest
+  description: camel-rest-swagger component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -502,7 +460,7 @@
   links:
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
-  message: '`camel-rest-swagger` component has been removed in Apache Camel 4.0.  Please
+  message: '`camel-rest-swagger` component has been removed in Apache Camel 4.0. Please
     explore alternative components such as camel-openapi-rest'
   ruleID: xml-removed-camel4-00022
   when:
@@ -515,9 +473,7 @@
         name: org.apache.camel.camel-rest-swagger
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-restdsl-swagger-plugin component has been removed
-    `camel-restdsl-swagger-plugin` component has been removed in Apache Camel 4.0.  Please explore alternative components such as camel-restdsl-openapi-plugin
+  description: camel-restdsl-swagger-plugin component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -528,7 +484,7 @@
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
   message: '`camel-restdsl-swagger-plugin` component has been removed in Apache Camel
-    4.0.  Please explore alternative components such as camel-restdsl-openapi-plugin'
+    4.0. Please explore alternative components such as camel-restdsl-openapi-plugin'
   ruleID: xml-removed-camel4-00023
   when:
     or:
@@ -540,9 +496,7 @@
         name: org.apache.camel.camel-restdsl-swagger-plugin
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-resteasy component has been removed
-    `camel-resteasy` component has been removed in Apache Camel 4.0.  Please explore alternative components such as camel-cxf, camel-rest
+  description: camel-resteasy component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -552,7 +506,7 @@
   links:
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
-  message: '`camel-resteasy` component has been removed in Apache Camel 4.0.  Please
+  message: '`camel-resteasy` component has been removed in Apache Camel 4.0. Please
     explore alternative components such as camel-cxf, camel-rest'
   ruleID: xml-removed-camel4-00024
   when:
@@ -565,9 +519,7 @@
         name: org.apache.camel.camel-resteasy
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-spark component has been removed
-    `camel-spark` component has been removed in Apache Camel 4.0.
+  description: camel-spark component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -589,9 +541,7 @@
         name: org.apache.camel.camel-spark
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-spring-integration component has been removed
-    `camel-spring-integration` component has been removed in Apache Camel 4.0.
+  description: camel-spring-integration component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -614,9 +564,7 @@
         name: org.apache.camel.camel-spring-integration
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-swift component has been removed
-    `camel-swift` component has been removed in Apache Camel 4.0.
+  description: camel-swift component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -638,9 +586,7 @@
         name: org.apache.camel.camel-swift
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-swagger-java component has been removed
-    `camel-swagger-java` component has been removed in Apache Camel 4.0.  Please explore camel-openapi-java as an alternative component.
+  description: camel-swagger-java component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -650,7 +596,7 @@
   links:
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
-  message: '`camel-swagger-java` component has been removed in Apache Camel 4.0.  Please
+  message: '`camel-swagger-java` component has been removed in Apache Camel 4.0. Please
     explore camel-openapi-java as an alternative component.'
   ruleID: xml-removed-camel4-00028
   when:
@@ -663,9 +609,7 @@
         name: org.apache.camel.camel-swagger-java
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-websocket component has been removed
-    `camel-websocket` component has been removed in Apache Camel 4.0.   Please explore. camel-vertx-websocket as an alternative component.
+  description: camel-websocket component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -675,8 +619,8 @@
   links:
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
-  message: '`camel-websocket` component has been removed in Apache Camel 4.0.   Please
-    explore. camel-vertx-websocket as an alternative component.'
+  message: "`camel-websocket` component has been removed in Apache Camel 4.0. Please
+    explore \t\ncamel-vertx-websocket as an alternative component."
   ruleID: xml-removed-camel4-00029
   when:
     or:
@@ -688,9 +632,7 @@
         name: org.apache.camel.camel-websocket
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-websocket-jsr356 component has been removed
-    `camel-websocket-jsr356` component has been removed in Apache Camel 4.0.   Please explore. camel-vertx-websocket as an alternative component.
+  description: camel-websocket-jsr356 component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -700,8 +642,8 @@
   links:
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
-  message: '`camel-websocket-jsr356` component has been removed in Apache Camel 4.0.   Please
-    explore. camel-vertx-websocket as an alternative component.'
+  message: "`camel-websocket-jsr356` component has been removed in Apache Camel 4.0.
+    Please explore \t\ncamel-vertx-websocket as an alternative component."
   ruleID: xml-removed-camel4-00030
   when:
     or:
@@ -713,9 +655,7 @@
         name: org.apache.camel.camel-websocket-jsr356
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-vertx-kafka component has been removed
-    `camel-vertx-kafka` component has been removed in Apache Camel 4.0.   Please explore. camel-kafka as an alternative component.
+  description: camel-vertx-kafka component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -725,8 +665,8 @@
   links:
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
-  message: '`camel-vertx-kafka` component has been removed in Apache Camel 4.0.   Please
-    explore. camel-kafka as an alternative component.'
+  message: "`camel-vertx-kafka` component has been removed in Apache Camel 4.0. Please
+    explore \t\ncamel-kafka as an alternative component."
   ruleID: xml-removed-camel4-00031
   when:
     or:
@@ -738,9 +678,7 @@
         name: org.apache.camel.camel-vertx-kafka
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-vm component has been removed
-    `camel-vm` component has been removed in Apache Camel 4.0.   Please explore. camel-seda as an alternative component.
+  description: camel-vm component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -750,8 +688,8 @@
   links:
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
-  message: '`camel-vm` component has been removed in Apache Camel 4.0.   Please explore.
-    camel-seda as an alternative component.'
+  message: "`camel-vm` component has been removed in Apache Camel 4.0. Please explore
+    \t\ncamel-seda as an alternative component."
   ruleID: xml-removed-camel4-00032
   when:
     or:
@@ -763,9 +701,7 @@
         name: org.apache.camel.camel-vm
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-xstream component has been removed
-    `camel-xstream` component has been removed in Apache Camel 4.0.   Please explore. camel-jacksonxml as an alternative component.
+  description: camel-xstream component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -775,8 +711,8 @@
   links:
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
-  message: '`camel-xstream` component has been removed in Apache Camel 4.0.   Please
-    explore. camel-jacksonxml as an alternative component.'
+  message: "`camel-xstream` component has been removed in Apache Camel 4.0. Please
+    explore \t\ncamel-jacksonxml as an alternative component."
   ruleID: xml-removed-camel4-00033
   when:
     or:
@@ -788,9 +724,7 @@
         name: org.apache.camel.camel-xstream
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-zipkin component has been removed
-    `camel-zipkin` component has been removed in Apache Camel 4.0.   Please explore. camel-micrometer, camel-opentelemetry as an alternative component.
+  description: camel-zipkin component has been removed
   effort: 7
   labels:
   - konveyor.io/source=camel3
@@ -800,8 +734,8 @@
   links:
   - title: 'Camel 4 - Migration Guide: Removed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_removed_components
-  message: '`camel-zipkin` component has been removed in Apache Camel 4.0.   Please
-    explore. camel-micrometer, camel-opentelemetry as an alternative component.'
+  message: "`camel-zipkin` component has been removed in Apache Camel 4.0. Please
+    explore \t\ncamel-micrometer, camel-opentelemetry as an alternative component."
   ruleID: xml-removed-camel4-00034
   when:
     or:
@@ -813,9 +747,8 @@
         name: org.apache.camel.camel-zipkin
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-platform-http-starter has been changed from using camel-servlet to use Spring HTTP server directly
-    `camel-platform-http-starter` as been changed from using camel-servlet to use Spring HTTP server directly in Apache Camel 4.0.  Therefore, all the HTTP endpoints are no longer prefixed with the servlet context-path (default is camel).
+  description: camel-platform-http-starter has been changed from using camel-servlet
+    to use Spring HTTP server directly
   effort: 3
   labels:
   - konveyor.io/source=camel3
@@ -826,7 +759,7 @@
   - title: 'Camel 4 - Migration Guide: Changed components'
     url: https://camel.apache.org/manual/camel-4-migration-guide.html#_camel_platform_http_starter
   message: '`camel-platform-http-starter` as been changed from using camel-servlet
-    to use Spring HTTP server directly in Apache Camel 4.0.  Therefore, all the HTTP
+    to use Spring HTTP server directly in Apache Camel 4.0. Therefore, all the HTTP
     endpoints are no longer prefixed with the servlet context-path (default is camel).'
   ruleID: xml-changedcomponent-camel4-00001
   when:
@@ -839,9 +772,9 @@
         name: org.apache.camel.springboot.camel-platform-http-starter
 - category: mandatory
   customVariables: []
-  description: |-
-    camel-micrometer-starter has been changed - the uri tags are now static instead of dynamic (by default), as potential too many tags generated due to URI with dynamic values.
-    `camel-micrometer-starter` has been changed - the uri tags are now static instead of dynamic (by default), as potential too many tags generated due to URI with dynamic values.
+  description: camel-micrometer-starter has been changed - the uri tags are now static
+    instead of dynamic (by default), as potential too many tags generated due to URI
+    with dynamic values.
   effort: 2
   labels:
   - konveyor.io/source=camel3

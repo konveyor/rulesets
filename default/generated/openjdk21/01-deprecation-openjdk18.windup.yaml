@@ -1,15 +1,13 @@
 - category: potential
   customVariables: []
-  description: |-
-    Deprecated method in JDK 18 for removal in future release
-    This `doAs` signature has been deprecated in JDK18 for removal in a future release.
+  description: Deprecated method in JDK 18 for removal in future release
   effort: 3
   labels:
   - konveyor.io/source=openjdk18-
   - konveyor.io/target=openjdk18+
   links: []
-  message: This `doAs` signature has been deprecated in JDK18 for removal in a future
-    release.
+  message: "\n This `doAs` signature has been deprecated in JDK18 for removal in a
+    future release.\n "
   ruleID: deprecation-00000
   when:
     java.referenced:
@@ -17,16 +15,14 @@
       pattern: javax.security.auth.Subject.doAs*
 - category: mandatory
   customVariables: []
-  description: |-
-    Deprecated method in JDK 18 for removal in future release
-    The `Thread.stop()` signature has been deprecated in JDK18 for removal in a future release.
+  description: Deprecated method in JDK 18 for removal in future release
   effort: 3
   labels:
   - konveyor.io/source=openjdk18-
   - konveyor.io/target=openjdk18+
   links: []
-  message: The `Thread.stop()` signature has been deprecated in JDK18 for removal
-    in a future release.
+  message: "\n The `Thread.stop()` signature has been deprecated in JDK18 for removal
+    in a future release.\n "
   ruleID: deprecation-00005
   when:
     java.referenced:

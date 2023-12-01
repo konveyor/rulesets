@@ -1,15 +1,13 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Deprecated class in JDK 21 for removal in future release
-    The `load(URL)` method under `SynthLookAndFeel` has been deprecated in JDK 21 for removal in a future release.
+  description: Deprecated class in JDK 21 for removal in future release
   effort: 3
   labels:
   - konveyor.io/source=openjdk21-
   - konveyor.io/target=openjdk21+
   links: []
-  message: The `load(URL)` method under `SynthLookAndFeel` has been deprecated in
-    JDK 21 for removal in a future release.
+  message: "\n The `load(URL)` method under `SynthLookAndFeel` has been deprecated
+    in JDK 21 for removal in a future release.\n "
   ruleID: deprecation-00030
   when:
     or:

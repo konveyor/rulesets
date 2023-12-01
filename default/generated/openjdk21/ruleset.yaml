@@ -1,3 +1,3 @@
 name: openjdk17
-description: This ruleset provides analysis regarding removed APIs in OpenJDK 18 to
-  21.
+description: APIs use the default charset which is changing from being platform dependent
+  to defined as UTF-8
