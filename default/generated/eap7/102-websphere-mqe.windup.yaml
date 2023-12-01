@@ -1,14 +1,11 @@
 - customVariables:
-  - name: package
-    nameOfCaptureGroup: package
-    pattern: (?P<package>com.ibm(\..*)?\.(mqe).*.)?(?P<type>[^.]+)
   - name: type
     nameOfCaptureGroup: type
     pattern: (?P<package>com.ibm(\..*)?\.(mqe).*.)?(?P<type>[^.]+)
-  description: "IBM MQe client API\nWebSphere MQe client API is used to communicate
-    with the MQ server from client-side applications.\n                        For
-    JBoss EAP 7, this needs to be replaced with standard Java EE 6 JMS API, or with
-    ActiveMQ Artemis client API.\n                    \n"
+  - name: package
+    nameOfCaptureGroup: package
+    pattern: (?P<package>com.ibm(\..*)?\.(mqe).*.)?(?P<type>[^.]+)
+  description: IBM MQe client API
   labels:
   - konveyor.io/source=websphere
   - konveyor.io/target=eap7
@@ -23,6 +20,10 @@
     url: https://docs.oracle.com/javaee/7/tutorial/jms-concepts003.htm#BNCEH
   - title: WebSphere MQe JavaDoc
     url: http://www-01.ibm.com/support/knowledgecenter/SSVHEW_6.2.0/com.ibm.mqe.javadoc/java/overview-summary.html
+  message:
+  - "WebSphere MQe client API is used to communicate with the MQ server from client-side
+    applications.\n                        For JBoss EAP 7, this needs to be replaced
+    with standard Java EE 6 JMS API, or with ActiveMQ Artemis client API.\n                    "
   ruleID: websphere-mqe-eap7-00000
   tag:
   - jms
@@ -34,8 +35,7 @@
       pattern: com.ibm.*(mqe)*
 - category: mandatory
   customVariables: []
-  description: |
-    IBM MQe com.ibm.mqe.adapters.MQe{type}Adapter
+  description: IBM MQe com.ibm.mqe.adapters.MQe{type}Adapter
   effort: 3
   labels:
   - konveyor.io/source=websphere
@@ -51,8 +51,8 @@
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/configuring_messaging/#deploy_the_websphere_mq_resource_adapter
   - title: MQe Adapter Javadoc
     url: http://www-01.ibm.com/support/knowledgecenter/SSVHEW_6.2.0/com.ibm.mqe.javadoc/java/com/ibm/mqe/adapters/package-summary.html
-  message: IBM MQe {{type}} adapter provides plug-in communications adapters or data
-    storage adapters for queue managers. These can. be deployed to JBoss EAP.
+  message: "\n IBM MQe {{type}} adapter provides plug-in communications adapters or
+    data storage adapters for queue managers. These can\n be deployed to JBoss EAP.\n "
   ruleID: websphere-mqe-eap7-01000
   when:
     java.referenced:
@@ -60,8 +60,7 @@
       pattern: com.ibm.mqe.adapters.MQe{type}Adapter
 - category: mandatory
   customVariables: []
-  description: |
-    IBM MQe com.ibm.mqe.administration.MQe{type}AdminMsg
+  description: IBM MQe com.ibm.mqe.administration.MQe{type}AdminMsg
   effort: 3
   labels:
   - konveyor.io/source=websphere
@@ -77,9 +76,9 @@
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/configuring_messaging/#configure_destinations_artemis
   - title: IBM MQe Admin API Javadoc
     url: http://www-01.ibm.com/support/knowledgecenter/SSVHEW_6.2.0/com.ibm.mqe.javadoc/java/com/ibm/mqe/administration/package-summary.html
-  message: IBM MQe {{type}} administration API provides classes used to administer
-    and monitor a WebSphere MQ Everyplace queue manager. In. JBoss EAP 7, the JMS
-    destinations can be configured with the JBoss Admin CLI.
+  message: "IBM MQe {{type}} administration API provides classes used to administer
+    and monitor a WebSphere MQ Everyplace queue manager. In\n JBoss EAP 7, the JMS
+    destinations can be configured with the JBoss Admin CLI.\n "
   ruleID: websphere-mqe-eap7-02000
   when:
     java.referenced:
@@ -87,9 +86,7 @@
       pattern: com.ibm.mqe.administration.MQe{type}AdminMsg
 - category: mandatory
   customVariables: []
-  description: |-
-    IBM MQe com.ibm.mqe.jms.MQeJMSAuthenticator
-    `MQeJMSAuthenticator` is a WebSphere proprietary JMS authentication API.. To migrate to JBoss EAP 7, replace with Java EE 6 JAAS for JMS authentication.
+  description: IBM MQe com.ibm.mqe.jms.MQeJMSAuthenticator
   effort: 5
   labels:
   - konveyor.io/source=websphere
@@ -103,17 +100,15 @@
   links:
   - title: 'JBoss EAP 7 Configuring Messaging: Configuring Security'
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/configuring_messaging/#configuring_messaging_security
-  message: '`MQeJMSAuthenticator` is a WebSphere proprietary JMS authentication API..
-    To migrate to JBoss EAP 7, replace with Java EE 6 JAAS for JMS authentication.'
+  message: "\n `MQeJMSAuthenticator` is a WebSphere proprietary JMS authentication
+    API.\n To migrate to JBoss EAP 7, replace with Java EE 6 JAAS for JMS authentication.\n "
   ruleID: websphere-mqe-eap7-03000
   when:
     java.referenced:
       pattern: com.ibm.mqe.jms.MQeJMSAuthenticator
 - category: optional
   customVariables: []
-  description: |-
-    IBM MQe com.ibm.mqe.jms.MQeJMSMsgFieldNames
-    IBM MQe constants are used to name fields when a JMS message is mapped to an `MQeMsgObject`. These are provided to. enable WebSphere MQ Everyplace applications to interpret messages sent by JMS or to construct messages that a JMS application. will understand.. These settings can be discarded when migrating to JBoss EAP 7 with ActiveMQ Artemis.
+  description: IBM MQe com.ibm.mqe.jms.MQeJMSMsgFieldNames
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -125,11 +120,11 @@
   - messaging
   - websphere
   links: []
-  message: IBM MQe constants are used to name fields when a JMS message is mapped
-    to an `MQeMsgObject`. These are provided to. enable WebSphere MQ Everyplace applications
-    to interpret messages sent by JMS or to construct messages that a JMS application.
-    will understand.. These settings can be discarded when migrating to JBoss EAP
-    7 with ActiveMQ Artemis.
+  message: "\n IBM MQe constants are used to name fields when a JMS message is mapped
+    to an `MQeMsgObject`. These are provided to\n enable WebSphere MQ Everyplace applications
+    to interpret messages sent by JMS or to construct messages that a JMS application\n
+    will understand.\n\n These settings can be discarded when migrating to JBoss EAP
+    7 with ActiveMQ Artemis.\n "
   ruleID: websphere-mqe-eap7-04000
   when:
     java.referenced:

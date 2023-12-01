@@ -3,8 +3,7 @@
   - name: renamed
     nameOfCaptureGroup: renamed
     pattern: javax.(?P<renamed>(activation|annotation|batch|decorator|ejb|el|enterprise|faces|inject|interceptor|jms|json|jws|mail|persistence|resource|security|servlet|transaction|validation|websocket|ws|xml))?.*
-  description: |
-    javax.{renamed} has been replaced by jakarta.{renamed}
+  description: javax.{renamed} has been replaced by jakarta.{renamed}
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -13,7 +12,7 @@
   - konveyor.io/target=eap
   - konveyor.io/source
   links: []
-  message: Replace the `javax.{{renamed}}` import statement with `jakarta.{{renamed}}`
+  message: 'Replace the `javax.{{renamed}}` import statement with `jakarta.{{renamed}}` '
   ruleID: javax-to-jakarta-import-00001
   when:
     as: javaClass

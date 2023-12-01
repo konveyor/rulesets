@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Version of the tomcat artifact not compatible with JWS 6
-    Version 10.1.0 is the minimum version recommended
+  description: Version of the tomcat artifact not compatible with JWS 6
   effort: 1
   labels:
   - konveyor.io/target=jws6+

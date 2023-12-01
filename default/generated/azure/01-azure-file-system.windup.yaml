@@ -1,8 +1,6 @@
 - category: optional
   customVariables: []
-  description: |-
-    The application uses Java APIs to read/write from the file system
-    The application uses Java APIs to read/write from the file system.. Any usage of the file system on the application will require reconfiguration or, in rare cases, architectural changes.
+  description: The application uses Java APIs to read/write from the file system
   effort: 5
   labels:
   - konveyor.io/source=eap7
@@ -18,9 +16,9 @@
     url: https://learn.microsoft.com/azure/developer/java/migration/migrate-spring-cloud-to-azure-spring-apps?pivots=sc-standard-tier#determine-whether-and-how-the-file-system-is-used
   - title: Azure Spring Boot Starter for Azure Storage
     url: https://search.maven.org/artifact/com.azure.spring/azure-spring-boot-starter-storage
-  message: The application uses Java APIs to read/write from the file system.. Any
-    usage of the file system on the application will require reconfiguration or, in
-    rare cases, architectural changes.
+  message: "\n \n The application uses Java APIs to read/write from the file system.\n
+    \n Any usage of the file system on the application will require reconfiguration
+    or, in rare cases, architectural changes.\n \n "
   ruleID: azure-file-system-01000
   when:
     or:
@@ -34,9 +32,7 @@
         pattern: org.apache.commons.io*
 - category: optional
   customVariables: []
-  description: |-
-    Relative path found
-    Relative path found.. Any usage of the file system on the application will require reconfiguration or, in rare cases, architectural changes.
+  description: Relative path found
   effort: 5
   labels:
   - konveyor.io/source=eap7
@@ -50,8 +46,8 @@
   links:
   - title: Relative path found in the application
     url: https://learn.microsoft.com/azure/developer/java/migration/migrate-spring-cloud-to-azure-spring-apps?pivots=sc-standard-tier#determine-whether-and-how-the-file-system-is-used
-  message: Relative path found.. Any usage of the file system on the application will
-    require reconfiguration or, in rare cases, architectural changes.
+  message: "\n \n Relative path found.\n \n Any usage of the file system on the application
+    will require reconfiguration or, in rare cases, architectural changes.\n \n "
   ruleID: azure-file-system-02000
   when:
     builtin.filecontent:
@@ -59,9 +55,7 @@
       pattern: \.\/.
 - category: optional
   customVariables: []
-  description: |-
-    Home path found
-    Home path found.. Any usage of the file system on the application will require reconfiguration or, in rare cases, architectural changes.
+  description: Home path found
   effort: 5
   labels:
   - konveyor.io/source=eap7
@@ -75,8 +69,8 @@
   links:
   - title: Home path found in the application
     url: https://learn.microsoft.com/azure/developer/java/migration/migrate-spring-cloud-to-azure-spring-apps?pivots=sc-standard-tier#determine-whether-and-how-the-file-system-is-used
-  message: Home path found.. Any usage of the file system on the application will
-    require reconfiguration or, in rare cases, architectural changes.
+  message: "\n \n Home path found.\n \n Any usage of the file system on the application
+    will require reconfiguration or, in rare cases, architectural changes.\n \n "
   ruleID: azure-file-system-03000
   when:
     builtin.filecontent:

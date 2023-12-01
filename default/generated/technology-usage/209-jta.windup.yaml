@@ -1,10 +1,10 @@
 - customVariables: []
-  description: |
-    Embedded library - Mycontainer JTA
-    The application embeds a Mycontainer JTA library.
+  description: Embedded library - Mycontainer JTA
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Mycontainer JTA library.
   ruleID: jta-00020
   tag:
   - Mycontainer JTA
@@ -13,12 +13,12 @@
     builtin.file:
       pattern: mycontainer-jta.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Geronimo JTA
-    The application embeds a Geronimo JTA library.
+  description: Embedded library - Geronimo JTA
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Geronimo JTA library.
   ruleID: jta-00030
   tag:
   - Geronimo JTA
@@ -27,12 +27,12 @@
     builtin.file:
       pattern: geronimo-jta.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - OW2 JTA
-    The application embeds an OW2 JTA library.
+  description: Embedded library - OW2 JTA
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an OW2 JTA library.
   ruleID: jta-00040
   tag:
   - OW2 JTA
@@ -41,12 +41,12 @@
     builtin.file:
       pattern: ow2-jta.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Evo JTA
-    The application embeds an Evo JTA library.
+  description: Embedded library - Evo JTA
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an Evo JTA library.
   ruleID: jta-00050
   tag:
   - Evo JTA
@@ -55,12 +55,12 @@
     builtin.file:
       pattern: evo-jta.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - AKKA JTA
-    The application embeds an AKKA JTA library.
+  description: Embedded library - AKKA JTA
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an AKKA JTA library.
   ruleID: jta-00060
   tag:
   - AKKA JTA
@@ -69,12 +69,12 @@
     builtin.file:
       pattern: akka-jta.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - KumuluzEE JTA
-    The application embeds a KumuluzEE JTA library.
+  description: Embedded library - KumuluzEE JTA
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a KumuluzEE JTA library.
   ruleID: jta-00070
   tag:
   - KumuluzEE JTA
@@ -83,12 +83,12 @@
     builtin.file:
       pattern: kumuluzee-jta.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Ignite JTA
-    The application embeds an Ignite JTA library.
+  description: Embedded library - Ignite JTA
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an Ignite JTA library.
   ruleID: jta-00080
   tag:
   - Ignite JTA
@@ -97,12 +97,12 @@
     builtin.file:
       pattern: ignite-jta.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Nuxeo JTA/JCA
-    The application embeds a Nuxeo JTA/JCA library.
+  description: Embedded library - Nuxeo JTA/JCA
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Nuxeo JTA/JCA library.
   ruleID: jta-00090
   tag:
   - Nuxeo JTA/JCA
@@ -111,12 +111,12 @@
     builtin.file:
       pattern: nuxeo-runtime-jtajca.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Everit JTA
-    The application embeds an Everit JTA library.
+  description: Embedded library - Everit JTA
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an Everit JTA library.
   ruleID: jta-00100
   tag:
   - Everit JTA
@@ -125,12 +125,12 @@
     builtin.file:
       pattern: org\.everit\.transaction\.propagator\.jta.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Demoiselle JTA
-    The application embeds a Demoiselle JTA library.
+  description: Embedded library - Demoiselle JTA
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Demoiselle JTA library.
   ruleID: jta-00110
   tag:
   - Demoiselle JTA
@@ -139,12 +139,12 @@
     builtin.file:
       pattern: demoiselle-jta.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Apache Meecrowave JTA
-    The application embeds an Apache Meecrowave JTA library.
+  description: Embedded library - Apache Meecrowave JTA
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an Apache Meecrowave JTA library.
   ruleID: jta-00120
   tag:
   - Apache Meecrowave JTA
@@ -153,12 +153,12 @@
     builtin.file:
       pattern: meecrowave-jta.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Apache Sirona JTA
-    The application embeds an Apache Sirona JTA library.
+  description: Embedded library - Apache Sirona JTA
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an Apache Sirona JTA library.
   ruleID: jta-00130
   tag:
   - Apache Sirona JTA
@@ -167,12 +167,12 @@
     builtin.file:
       pattern: sirona-jta.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Lift JTA
-    The application embeds a Lift JTA library.
+  description: Embedded library - Lift JTA
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Lift JTA library.
   ruleID: jta-00140
   tag:
   - Lift JTA
@@ -181,12 +181,12 @@
     builtin.file:
       pattern: lift-jta.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - WF Core JTA
-    The application embeds a WF Core JTA library.
+  description: Embedded library - WF Core JTA
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a WF Core JTA library.
   ruleID: jta-00150
   tag:
   - WF Core JTA
@@ -195,12 +195,12 @@
     builtin.file:
       pattern: wf-core-jta.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Java Transaction API (JTA)
-    The application embeds a Java Transaction API library.
+  description: Embedded library - Java Transaction API (JTA)
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Java Transaction API library.
   ruleID: jta-00160
   tag:
   - Java Transaction API
@@ -212,12 +212,12 @@
     - builtin.file:
         pattern: javax-jta.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - JBoss Transactions
-    The application embeds a JBoss Transactions library.
+  description: Embedded library - JBoss Transactions
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a JBoss Transactions library.
   ruleID: jta-00170
   tag:
   - JBoss Transactions
@@ -241,12 +241,12 @@
     - builtin.file:
         pattern: transactions.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - GlassFish JTA
-    The application embeds a GlassFish JTA library.
+  description: Embedded library - GlassFish JTA
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a GlassFish JTA library.
   ruleID: jta-00180
   tag:
   - GlassFish JTA
@@ -260,12 +260,12 @@
     - builtin.file:
         pattern: jta-l10n.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Atomikos JTA
-    The application embeds an Atomikos JTA library.
+  description: Embedded library - Atomikos JTA
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an Atomikos JTA library.
   ruleID: jta-00190
   tag:
   - Atomikos JTA
@@ -279,12 +279,12 @@
     - builtin.file:
         pattern: evo-jta-atomikos.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Narayana Arjuna
-    The application embeds a Narayana Arjuna library.
+  description: Embedded library - Narayana Arjuna
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Narayana Arjuna library.
   ruleID: jta-00200
   tag:
   - Narayana Arjuna
@@ -298,12 +298,12 @@
     - builtin.file:
         pattern: tomcat-jta.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Spring Transactions
-    The application embeds a Spring Transactions library.
+  description: Embedded library - Spring Transactions
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Spring Transactions library.
   ruleID: jta-00210
   tag:
   - Spring Transactions

@@ -2,12 +2,12 @@
   - name: classes
     nameOfCaptureGroup: classes
     pattern: javax.ejb.(?P<classes>(Schedule|ScheduleExpression|Schedules|TimedObject|Timeout|Timer|TimerConfig|TimerHandle|TimerService))
-  description: |
-    EJB Timer
-    The application uses EJB timers.
+  description: EJB Timer
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application uses EJB timers.
   ruleID: ejb-01000
   tag:
   - EJB Timer

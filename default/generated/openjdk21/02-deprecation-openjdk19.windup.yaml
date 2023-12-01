@@ -1,15 +1,13 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Deprecated class in JDK 19 for removal in future release
-    Several classes under `javax.swing.plaf.basic` have been deprecated in JDK 19 for removal in a future release.
+  description: Deprecated class in JDK 19 for removal in future release
   effort: 3
   labels:
   - konveyor.io/source=openjdk19-
   - konveyor.io/target=openjdk19+
   links: []
-  message: Several classes under `javax.swing.plaf.basic` have been deprecated in
-    JDK 19 for removal in a future release.
+  message: "\n Several classes under `javax.swing.plaf.basic` have been deprecated
+    in JDK 19 for removal in a future release.\n "
   ruleID: deprecation-00010
   when:
     or:

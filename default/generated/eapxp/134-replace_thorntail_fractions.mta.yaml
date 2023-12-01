@@ -1,8 +1,6 @@
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:bean-validation
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:bean-validation` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:bean-validation
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -25,9 +23,7 @@
       name: io.thorntail.bean-validation
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:cdi-config
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:cdi-config` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:cdi-config
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -50,9 +46,7 @@
       name: io.thorntail.cdi-config
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:cdi
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:cdi` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:cdi
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -75,9 +69,7 @@
       name: io.thorntail.cdi
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:config-api-runtime
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:config-api-runtime` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:config-api-runtime
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -100,9 +92,7 @@
       name: io.thorntail.config-api-runtime
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:datasources
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:datasources` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:datasources
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -125,9 +115,7 @@
       name: io.thorntail.datasources
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:ee-security
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:ee-security` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:ee-security
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -150,9 +138,7 @@
       name: io.thorntail.ee-security
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:ejb-mdb
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:ejb-mdb` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:ejb-mdb
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -175,9 +161,7 @@
       name: io.thorntail.ejb-mdb
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:ejb
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:ejb` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:ejb
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -200,9 +184,7 @@
       name: io.thorntail.ejb
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:elytron
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:elytron` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:elytron
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -225,9 +207,7 @@
       name: io.thorntail.elytron
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:fraction-metadata
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:fraction-metadata` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:fraction-metadata
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -250,9 +230,7 @@
       name: io.thorntail.fraction-metadata
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:hibernate-validator
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:hibernate-validator` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:hibernate-validator
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -275,9 +253,7 @@
       name: io.thorntail.hibernate-validator
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:hibernate
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:hibernate` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:hibernate
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -300,9 +276,7 @@
       name: io.thorntail.hibernate
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:hystrix
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:hystrix` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:hystrix
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -325,9 +299,7 @@
       name: io.thorntail.hystrix
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:infinispan
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:infinispan` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:infinispan
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -350,9 +322,7 @@
       name: io.thorntail.infinispan
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:jaeger
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:jaeger` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:jaeger
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -375,9 +345,7 @@
       name: io.thorntail.jaeger
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:jaxrs-jaxb
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:jaxrs-jaxb` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:jaxrs-jaxb
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -400,9 +368,7 @@
       name: io.thorntail.jaxrs-jaxb
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:jaxrs-jsonb
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:jaxrs-jsonb` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:jaxrs-jsonb
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -425,9 +391,7 @@
       name: io.thorntail.jaxrs-jsonb
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:jaxrs-jsonp
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:jaxrs-jsonp` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:jaxrs-jsonp
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -450,9 +414,7 @@
       name: io.thorntail.jaxrs-jsonp
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:jaxrs-multipart
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:jaxrs-multipart` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:jaxrs-multipart
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -475,9 +437,7 @@
       name: io.thorntail.jaxrs-multipart
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:jaxrs-validator
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:jaxrs-validator` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:jaxrs-validator
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -500,9 +460,7 @@
       name: io.thorntail.jaxrs-validator
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:jaxrs
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:jaxrs` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:jaxrs
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -525,9 +483,7 @@
       name: io.thorntail.jaxrs
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:jca
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:jca` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:jca
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -550,9 +506,7 @@
       name: io.thorntail.jca
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:jmx
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:jmx` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:jmx
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -575,9 +529,7 @@
       name: io.thorntail.jmx
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:jpa
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:jpa` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:jpa
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -600,9 +552,7 @@
       name: io.thorntail.jpa
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:jsf
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:jsf` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:jsf
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -625,9 +575,7 @@
       name: io.thorntail.jsf
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:jsonb
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:jsonb` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:jsonb
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -650,9 +598,7 @@
       name: io.thorntail.jsonb
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:jsonp
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:jsonp` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:jsonp
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -675,9 +621,7 @@
       name: io.thorntail.jsonp
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:keycloak
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:keycloak` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:keycloak
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -700,9 +644,7 @@
       name: io.thorntail.keycloak
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:logging
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:logging` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:logging
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -725,9 +667,7 @@
       name: io.thorntail.logging
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:management
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:management` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:management
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -750,9 +690,7 @@
       name: io.thorntail.management
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:microprofile-config
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:microprofile-config` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:microprofile-config
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -775,9 +713,7 @@
       name: io.thorntail.microprofile-config
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:microprofile-fault-tolerance
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:microprofile-fault-tolerance` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:microprofile-fault-tolerance
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -800,9 +736,7 @@
       name: io.thorntail.microprofile-fault-tolerance
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:microprofile-health
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:microprofile-health` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:microprofile-health
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -825,9 +759,7 @@
       name: io.thorntail.microprofile-health
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:microprofile-jwt
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:microprofile-jwt` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:microprofile-jwt
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -850,9 +782,7 @@
       name: io.thorntail.microprofile-jwt
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:microprofile-metrics
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:microprofile-metrics` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:microprofile-metrics
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -875,9 +805,7 @@
       name: io.thorntail.microprofile-metrics
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:microprofile-openapi
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:microprofile-openapi` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:microprofile-openapi
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -900,9 +828,7 @@
       name: io.thorntail.microprofile-openapi
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:microprofile-opentracing
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:microprofile-opentracing` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:microprofile-opentracing
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -925,9 +851,7 @@
       name: io.thorntail.microprofile-opentracing
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:microprofile-restclient
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:microprofile-restclient` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:microprofile-restclient
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -950,9 +874,7 @@
       name: io.thorntail.microprofile-restclient
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:microprofile
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:microprofile` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:microprofile
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -975,9 +897,7 @@
       name: io.thorntail.microprofile
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:opentracing
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:opentracing` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:opentracing
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -1000,9 +920,7 @@
       name: io.thorntail.opentracing
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:remoting
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:remoting` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:remoting
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -1025,9 +943,7 @@
       name: io.thorntail.remoting
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:resource-adapters
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:resource-adapters` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:resource-adapters
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -1050,9 +966,7 @@
       name: io.thorntail.resource-adapters
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:spi
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:spi` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:spi
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -1075,9 +989,7 @@
       name: io.thorntail.spi
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:topology-openshift
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:topology-openshift` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:topology-openshift
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -1100,9 +1012,7 @@
       name: io.thorntail.topology-openshift
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:topology-webapp
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:topology-webapp` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:topology-webapp
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -1125,9 +1035,7 @@
       name: io.thorntail.topology-webapp
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:transactions
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:transactions` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:transactions
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -1150,9 +1058,7 @@
       name: io.thorntail.transactions
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:undertow
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:undertow` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:undertow
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -1175,9 +1081,7 @@
       name: io.thorntail.undertow
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:web
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:web` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:web
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -1200,9 +1104,7 @@
       name: io.thorntail.web
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:archaius
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:archaius` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:archaius
   effort: 1
   labels:
   - konveyor.io/source=thorntail
@@ -1225,9 +1127,7 @@
       name: io.thorntail.archaius
 - category: potential
   customVariables: []
-  description: |-
-    Replace Thorntail Fractions - io.thorntail:monitor
-    If you migrate your application to JBoss EAP XP 2.0 (or later), and want to ensure its Maven building, running or testing works as expected, replace Thorntail Fraction `io.thorntail:monitor` with the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+  description: Replace Thorntail Fractions - io.thorntail:monitor
   effort: 1
   labels:
   - konveyor.io/source=thorntail

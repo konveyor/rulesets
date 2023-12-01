@@ -1,8 +1,6 @@
 - category: potential
   customVariables: []
-  description: |-
-    Producer for creating FacesContext must be removed
-    The `@Produces` annotation for instantiating `FacesContext` is not necessary anymore, as CDI injection for `FacesContext` works out of the box.
+  description: Producer for creating FacesContext must be removed
   effort: 1
   labels:
   - konveyor.io/source=eap6

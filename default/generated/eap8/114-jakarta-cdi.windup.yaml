@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Method javax.enterprise.inject.spi.Bean.isNullable() has been removed
-    Replace this method call with `false` (which is the value that CDI implementations have returned for many years now).
+  description: Method javax.enterprise.inject.spi.Bean.isNullable() has been removed
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -22,9 +20,8 @@
       pattern: javax.enterprise.inject.spi.Bean.isNullable*
 - category: mandatory
   customVariables: []
-  description: |-
-    Method jakarta.enterprise.inject.spi.BeanManager.createInjectionTarget(AnnotatedType) has been removed.
-    Replace this method call with with BeanManager.getInjectionTargetFactory(AnnotatedType) and use the returned factory to create injection targets.
+  description: Method jakarta.enterprise.inject.spi.BeanManager.createInjectionTarget(AnnotatedType)
+    has been removed.
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -46,9 +43,8 @@
       pattern: jakarta.enterprise.inject.spi.BeanManager.createInjectionTarget*
 - category: mandatory
   customVariables: []
-  description: |-
-    Method jakarta.enterprise.inject.spi.BeanManager.fireEvent(Object, Annotation) has been removed.
-    jakarta.enterprise.inject.spi.BeanManager.fireEvent(Object, Annotation) has been removed. Use BeanManager.getEvent() as an entry point to a similar API.
+  description: Method jakarta.enterprise.inject.spi.BeanManager.fireEvent(Object,
+    Annotation) has been removed.
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -70,9 +66,8 @@
       pattern: jakarta.enterprise.inject.spi.BeanManager.fireEvent*
 - category: potential
   customVariables: []
-  description: |-
-    Method javax.enterprise.inject.spi.BeforeBeanDiscovery.addAnnotatedType(AnnotatedType) has been removed
-    If you application is calling method BeforeBeanDiscovery.addAnnotatedType(AnnotatedType) replace it with BeforeBeanDiscovery.addAnnotatedType(AnnotatedType, (String) null)
+  description: Method javax.enterprise.inject.spi.BeforeBeanDiscovery.addAnnotatedType(AnnotatedType)
+    has been removed
   effort: 1
   labels:
   - konveyor.io/source=eap6

@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Constants for Hibernate Search configuration property keys have changed
-    In Hibernate Search 6, constants are provided through classes whose name ends with Settings. Follow link for more details.
+  description: Constants for Hibernate Search configuration property keys have changed
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -26,9 +24,7 @@
         pattern: org.hibernate.search.elasticsearch.cfg.ElasticsearchEnvironment
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.analyzer not available anymore
-    This property is not available anymore. To override the default analyzer, define a custom analyzer named default. See link.
+  description: Property hibernate.search.analyzer not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -52,9 +48,7 @@
       pattern: hibernate.search.analyzer
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.autoregister_listeners not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.enabled`.
+  description: Property hibernate.search.autoregister_listeners not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -76,9 +70,7 @@
       pattern: hibernate.search.autoregister_listeners
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.batch_size not available anymore
-    No direct equivalent in Hibernate Search 6. This property was not documented in Hibernate Search 5. For the specific use case of batch processes, know that upon Hibernate ORM session flushes,. Hibernate Search 6 will automatically turn entities to documents and hold documents in memory until the transaction commit.. See links for more information.
+  description: Property hibernate.search.batch_size not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -93,11 +85,11 @@
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#configuration-property-reference
   - title: 'Hibernate Search 6: Manual Indexing'
     url: https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#manual-index-changes
-  message: No direct equivalent in Hibernate Search 6. This property was not documented
+  message: "\n No direct equivalent in Hibernate Search 6. This property was not documented
     in Hibernate Search 5. For the specific use case of batch processes, know that
-    upon Hibernate ORM session flushes,. Hibernate Search 6 will automatically turn
-    entities to documents and hold documents in memory until the transaction commit..
-    See links for more information.
+    upon Hibernate ORM session flushes,\n Hibernate Search 6 will automatically turn
+    entities to documents and hold documents in memory until the transaction commit.\n\n
+    See links for more information.\n "
   ruleID: hibernate-search-00040
   when:
     builtin.filecontent:
@@ -105,9 +97,8 @@
       pattern: hibernate.search.batch_size
 - category: mandatory
   customVariables: []
-  description: |-
-    The syntax for configuring AWS authentication changed in Hibernate Search 6.
-    AWS configuration properties must change from `hibernate.search.default.elasticsearch.aws.*` to `hibernate.search.backend.aws.*`.. See link for more information about credential configuration changes.
+  description: The syntax for configuring AWS authentication changed in Hibernate
+    Search 6.
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -120,9 +111,9 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: Configuration Property Reference'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#configuration-property-reference
-  message: AWS configuration properties must change from `hibernate.search.default.elasticsearch.aws.*`
-    to `hibernate.search.backend.aws.*`.. See link for more information about credential
-    configuration changes.
+  message: "\n AWS configuration properties must change from `hibernate.search.default.elasticsearch.aws.*`
+    to `hibernate.search.backend.aws.*`.\n See link for more information about credential
+    configuration changes.\n "
   ruleID: hibernate-search-00050
   when:
     builtin.filecontent:
@@ -130,9 +121,7 @@
       pattern: hibernate.search.default.elasticsearch.aws..*
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.batch_size not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.connection_timeout`.
+  description: Property hibernate.search.batch_size not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -154,9 +143,8 @@
       pattern: hibernate.search.default.elasticsearch.connection_timeout
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.default.elasticsearch.discovery.default_scheme not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.default.elasticsearch.discovery.default_scheme`.
+  description: Property hibernate.search.default.elasticsearch.discovery.default_scheme
+    not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -178,9 +166,8 @@
       pattern: hibernate.search.default.elasticsearch.discovery.default_scheme
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.default.elasticsearch.discovery.enabled not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.discovery.enabled`.
+  description: Property hibernate.search.default.elasticsearch.discovery.enabled not
+    available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -202,9 +189,8 @@
       pattern: hibernate.search.default.elasticsearch.discovery.enabled
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.default.elasticsearch.discovery.refresh_interval not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.discovery.refresh_interval`.
+  description: Property hibernate.search.default.elasticsearch.discovery.refresh_interval
+    not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -226,9 +212,8 @@
       pattern: hibernate.search.default.elasticsearch.discovery.refresh_interval
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.elasticsearch.dynamic_mapping not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.dynamic_mapping` (for global defaults). or `hibernate.search.backend.indexes.<index-name>.dynamic_mapping` (per-index).
+  description: Property hibernate.search.*.elasticsearch.dynamic_mapping not available
+    anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -241,9 +226,9 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: Configuration Property Reference'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#configuration-property-reference
-  message: 'This property is not available anymore. Substitute with the Hibernate
-    Search 6 equivalent: `hibernate.search.backend.dynamic_mapping` (for global defaults).
-    or `hibernate.search.backend.indexes.<index-name>.dynamic_mapping` (per-index).'
+  message: "This property is not available anymore. Substitute with the Hibernate
+    Search 6 equivalent: `hibernate.search.backend.dynamic_mapping` (for global defaults)\n
+    or `hibernate.search.backend.indexes.<index-name>.dynamic_mapping` (per-index).\n "
   ruleID: hibernate-search-00100
   when:
     builtin.filecontent:
@@ -251,9 +236,8 @@
       pattern: hibernate.search..*.elasticsearch.dynamic_mapping
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.default.elasticsearch.host not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.uris`.
+  description: Property hibernate.search.default.elasticsearch.host not available
+    anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -275,9 +259,8 @@
       pattern: hibernate.search.default.elasticsearch.host
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.elasticsearch.index_management_wait_timeout not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.schema_management.minimal_required_status_wait_timeout` (for global defaults). or `hibernate.search.backend.indexes.<index-name>.schema_management.minimal_required_status_wait_timeout` (per-index).
+  description: Property hibernate.search.*.elasticsearch.index_management_wait_timeout
+    not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -290,10 +273,10 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: Configuration Property Reference'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#configuration-property-reference
-  message: 'This property is not available anymore. Substitute with the Hibernate
+  message: "This property is not available anymore. Substitute with the Hibernate
     Search 6 equivalent: `hibernate.search.backend.schema_management.minimal_required_status_wait_timeout`
-    (for global defaults). or `hibernate.search.backend.indexes.<index-name>.schema_management.minimal_required_status_wait_timeout`
-    (per-index).'
+    (for global defaults)\n or `hibernate.search.backend.indexes.<index-name>.schema_management.minimal_required_status_wait_timeout`
+    (per-index).\n "
   ruleID: hibernate-search-00110
   when:
     builtin.filecontent:
@@ -301,9 +284,8 @@
       pattern: hibernate.search..*.elasticsearch.index_management_wait_timeout
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.elasticsearch.index_schema_management_strategy not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.schema_management.strategy` (for global defaults). There is no equivalent for per-index configuration.
+  description: Property hibernate.search.*.elasticsearch.index_schema_management_strategy
+    not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -326,9 +308,8 @@
       pattern: hibernate.search..*.elasticsearch.index_schema_management_strategy
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.default.elasticsearch.max_total_connection_per_route not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.max_connections_per_route`.
+  description: Property hibernate.search.default.elasticsearch.max_total_connection_per_route
+    not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -350,9 +331,8 @@
       pattern: hibernate.search.default.elasticsearch.max_total_connection_per_route
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.default.elasticsearch.max_total_connection not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.max_connections`.
+  description: Property hibernate.search.default.elasticsearch.max_total_connection
+    not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -374,9 +354,8 @@
       pattern: hibernate.search.default.elasticsearch.max_total_connection
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.default.elasticsearch.password not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.password`.
+  description: Property hibernate.search.default.elasticsearch.password not available
+    anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -398,9 +377,8 @@
       pattern: hibernate.search.default.elasticsearch.password
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.default.elasticsearch.path_prefix not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.path_prefix`.
+  description: Property hibernate.search.default.elasticsearch.path_prefix not available
+    anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -422,9 +400,8 @@
       pattern: hibernate.search.default.elasticsearch.path_prefix
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.default.elasticsearch.read_timeout not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.read_timeout`.
+  description: Property hibernate.search.default.elasticsearch.read_timeout not available
+    anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -446,9 +423,8 @@
       pattern: hibernate.search.default.elasticsearch.read_timeout
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.elasticsearch.refresh_after_write not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.automatic_indexing.synchronization.strategy` (for global defaults). There is no equivalent for per-index configuration.
+  description: Property hibernate.search.*.elasticsearch.refresh_after_write not available
+    anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -471,9 +447,8 @@
       pattern: hibernate.search..*.elasticsearch.refresh_after_write
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.default.elasticsearch.request_timeout not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.request_timeout`.
+  description: Property hibernate.search.default.elasticsearch.request_timeout not
+    available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -495,9 +470,8 @@
       pattern: hibernate.search.default.elasticsearch.request_timeout
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.elasticsearch.required_index_status not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.schema_management.minimal_required_status` (for global defaults). or `hibernate.search.backend.indexes.<index-name>.schema_management.minimal_required_status` (per-index).
+  description: Property hibernate.search.*.elasticsearch.required_index_status not
+    available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -510,10 +484,10 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: Configuration Property Reference'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#configuration-property-reference
-  message: 'This property is not available anymore. Substitute with the Hibernate
+  message: "This property is not available anymore. Substitute with the Hibernate
     Search 6 equivalent: `hibernate.search.backend.schema_management.minimal_required_status`
-    (for global defaults). or `hibernate.search.backend.indexes.<index-name>.schema_management.minimal_required_status`
-    (per-index).'
+    (for global defaults)\n or `hibernate.search.backend.indexes.<index-name>.schema_management.minimal_required_status`
+    (per-index).\n "
   ruleID: hibernate-search-00210
   when:
     builtin.filecontent:
@@ -521,9 +495,8 @@
       pattern: hibernate.search..*.elasticsearch.required_index_status
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.default.elasticsearch.username not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.username`.
+  description: Property hibernate.search.default.elasticsearch.username not available
+    anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -545,9 +518,7 @@
       pattern: hibernate.search.default.elasticsearch.username
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.exclusive_index_use not available anymore
-    This property is not available anymore. There is no substitute in Hibernate Search 6.
+  description: Property hibernate.search.*.exclusive_index_use not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -569,9 +540,7 @@
       pattern: hibernate.search..*.exclusive_index_use
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.directory_provider not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.directory.type` (for global defaults). or `hibernate.search.backend.indexes.<index-name>.directory.type` (per-index).
+  description: Property hibernate.search.*.directory_provider not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -584,9 +553,9 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: Configuration Property Reference'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#configuration-property-reference
-  message: 'This property is not available anymore. Substitute with the Hibernate
-    Search 6 equivalent: `hibernate.search.backend.directory.type` (for global defaults).
-    or `hibernate.search.backend.indexes.<index-name>.directory.type` (per-index).'
+  message: "This property is not available anymore. Substitute with the Hibernate
+    Search 6 equivalent: `hibernate.search.backend.directory.type` (for global defaults)\n
+    or `hibernate.search.backend.indexes.<index-name>.directory.type` (per-index).\n "
   ruleID: hibernate-search-00240
   when:
     builtin.filecontent:
@@ -594,9 +563,7 @@
       pattern: hibernate.search..*.directory_provider
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.indexBase not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.directory.root` (for global defaults). or `hibernate.search.backend.indexes.<index-name>.directory.root` (per-index).
+  description: Property hibernate.search.*.indexBase not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -609,9 +576,9 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: Configuration Property Reference'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#configuration-property-reference
-  message: 'This property is not available anymore. Substitute with the Hibernate
-    Search 6 equivalent: `hibernate.search.backend.directory.root` (for global defaults).
-    or `hibernate.search.backend.indexes.<index-name>.directory.root` (per-index).'
+  message: "This property is not available anymore. Substitute with the Hibernate
+    Search 6 equivalent: `hibernate.search.backend.directory.root` (for global defaults)\n
+    or `hibernate.search.backend.indexes.<index-name>.directory.root` (per-index).\n "
   ruleID: hibernate-search-00250
   when:
     builtin.filecontent:
@@ -619,9 +586,7 @@
       pattern: hibernate.search..*.indexBase
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.indexName not available anymore
-    No equivalent in Hibernate Search 6. The name of an index can still be customized in the mapping, using. @Indexed(name = ...), or with the programmatic equivalent.
+  description: Property hibernate.search.*.indexName not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -634,9 +599,9 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: Configuration Property Reference'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#configuration-property-reference
-  message: No equivalent in Hibernate Search 6. The name of an index can still be
-    customized in the mapping, using. @Indexed(name = ...), or with the programmatic
-    equivalent.
+  message: "No equivalent in Hibernate Search 6. The name of an index can still be
+    customized in the mapping, using\n @Indexed(name = ...), or with the programmatic
+    equivalent.\n "
   ruleID: hibernate-search-00260
   when:
     builtin.filecontent:
@@ -644,9 +609,7 @@
       pattern: hibernate.search..*.indexName
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.index_flush_interval not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.io.commit_interval` (for global defaults). or `hibernate.search.backend.indexes.<index name>.io.commit_interval` (per-index).
+  description: Property hibernate.search.*.index_flush_interval not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -659,10 +622,10 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: Configuration Property Reference'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#configuration-property-reference
-  message: 'This property is not available anymore. Substitute with the Hibernate
+  message: "This property is not available anymore. Substitute with the Hibernate
     Search 6 equivalent: `hibernate.search.backend.io.commit_interval` (for global
-    defaults). or `hibernate.search.backend.indexes.<index name>.io.commit_interval`
-    (per-index).'
+    defaults)\n or `hibernate.search.backend.indexes.<index name>.io.commit_interval`
+    (per-index).\n "
   ruleID: hibernate-search-00270
   when:
     builtin.filecontent:
@@ -670,9 +633,7 @@
       pattern: hibernate.search..*.index_flush_interval
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.index_metadata_complete not available anymore
-    No equivalent in Hibernate Search 6. This property was not documented in Hibernate Search 5.
+  description: Property hibernate.search.*.index_metadata_complete not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -694,9 +655,7 @@
       pattern: hibernate.search..*.index_metadata_complete
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.indexmanager not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.type` (for global defaults).. No equivalent for the per-index configuration. See link for more information.
+  description: Property hibernate.search.*.indexmanager not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -709,9 +668,9 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: Configuration Property Reference'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#configuration-property-reference
-  message: 'This property is not available anymore. Substitute with the Hibernate
-    Search 6 equivalent: `hibernate.search.backend.type` (for global defaults).. No
-    equivalent for the per-index configuration. See link for more information.'
+  message: "This property is not available anymore. Substitute with the Hibernate
+    Search 6 equivalent: `hibernate.search.backend.type` (for global defaults).\n
+    No equivalent for the per-index configuration. See link for more information.\n "
   ruleID: hibernate-search-00290
   when:
     builtin.filecontent:
@@ -719,9 +678,7 @@
       pattern: hibernate.search..*.indexmanager
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.indexwriter not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.io.writer` or `hibernate.search.backend.io.merge` (for global defaults). or `hibernate.search.backend.indexes.<index-name>.io.writer` or `hibernate.search.backend.indexes.<index-name>.io.merge` (per-index).
+  description: Property hibernate.search.*.indexwriter not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -734,10 +691,10 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: Configuration Property Reference'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#configuration-property-reference
-  message: 'This property is not available anymore. Substitute with the Hibernate
+  message: "This property is not available anymore. Substitute with the Hibernate
     Search 6 equivalent: `hibernate.search.backend.io.writer` or `hibernate.search.backend.io.merge`
-    (for global defaults). or `hibernate.search.backend.indexes.<index-name>.io.writer`
-    or `hibernate.search.backend.indexes.<index-name>.io.merge` (per-index).'
+    (for global defaults)\n or `hibernate.search.backend.indexes.<index-name>.io.writer`
+    or `hibernate.search.backend.indexes.<index-name>.io.merge` (per-index).\n "
   ruleID: hibernate-search-00300
   when:
     builtin.filecontent:
@@ -745,9 +702,7 @@
       pattern: hibernate.search..*.indexwriter
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.locking_strategy not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.directory.locking.strategy` (for global defaults). or `hibernate.search.backend.indexes.<index-name>.directory.locking.strategy` (per-index).
+  description: Property hibernate.search.*.locking_strategy not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -762,10 +717,10 @@
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#configuration-property-reference
   - title: Hibernate Search 6 - Locking Strategy
     url: https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#backend-lucene-configuration-directory-locking-strategy
-  message: 'This property is not available anymore. Substitute with the Hibernate
+  message: "This property is not available anymore. Substitute with the Hibernate
     Search 6 equivalent: `hibernate.search.backend.directory.locking.strategy` (for
-    global defaults). or `hibernate.search.backend.indexes.<index-name>.directory.locking.strategy`
-    (per-index).'
+    global defaults)\n or `hibernate.search.backend.indexes.<index-name>.directory.locking.strategy`
+    (per-index).\n "
   ruleID: hibernate-search-00310
   when:
     builtin.filecontent:
@@ -773,9 +728,7 @@
       pattern: hibernate.search..*.locking_strategy
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.max_queue_length not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.indexing.queue_size` (for global defaults). or `hibernate.search.backend.indexes.<index-name>.indexing.queue_size` (per-index).
+  description: Property hibernate.search.*.max_queue_length not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -788,10 +741,10 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: Configuration Property Reference'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#configuration-property-reference
-  message: 'This property is not available anymore. Substitute with the Hibernate
+  message: "This property is not available anymore. Substitute with the Hibernate
     Search 6 equivalent: `hibernate.search.backend.indexing.queue_size` (for global
-    defaults). or `hibernate.search.backend.indexes.<index-name>.indexing.queue_size`
-    (per-index).'
+    defaults)\n or `hibernate.search.backend.indexes.<index-name>.indexing.queue_size`
+    (per-index).\n "
   ruleID: hibernate-search-00320
   when:
     builtin.filecontent:
@@ -799,9 +752,7 @@
       pattern: hibernate.search..*.max_queue_length
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.default_null_token not available anymore
-    No equivalent in Hibernate Search 6. In most cases, you won’t need to use indexNullAs anymore. Where indexNullAs is still needed, define the token explicitly for each index field. See links for more info.
+  description: Property hibernate.search.default_null_token not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -826,9 +777,7 @@
       pattern: hibernate.search.default_null_token
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.reader not available anymore
-    No direct equivalent in Hibernate Search 6. To enable async reader refresh, set hibernate.search.backend.io.refresh_interval or hibernate.search.backend.indexes.<index-name>.io.refresh_interval. to a strictly positive value (in milliseconds). See links for more information. Custom reader strategies are no longer supported.
+  description: Property hibernate.search.*.reader not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -843,10 +792,10 @@
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#configuration-property-reference
   - title: Hibernate Search 6 - Reference Documentation
     url: https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#backend-lucene-io-refresh
-  message: No direct equivalent in Hibernate Search 6. To enable async reader refresh,
-    set hibernate.search.backend.io.refresh_interval or hibernate.search.backend.indexes.<index-name>.io.refresh_interval.
+  message: "\n No direct equivalent in Hibernate Search 6. To enable async reader
+    refresh, set hibernate.search.backend.io.refresh_interval or hibernate.search.backend.indexes.<index-name>.io.refresh_interval\n
     to a strictly positive value (in milliseconds). See links for more information.
-    Custom reader strategies are no longer supported.
+    Custom reader strategies are no longer supported.\n "
   ruleID: hibernate-search-00340
   when:
     builtin.filecontent:
@@ -854,9 +803,7 @@
       pattern: hibernate.search..*.reader
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.retry_marker_lookup not available anymore
-    This property is not available anymore. The filesystem-slave directory provider is no longer supported. See links for more information.
+  description: Property hibernate.search.*.retry_marker_lookup not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -880,9 +827,7 @@
       pattern: hibernate.search..*.retry_marker_lookup
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.sharding_strategy not available anymore
-    This property is not available anymore. Sharding is configured differently. See links for more information.
+  description: Property hibernate.search.*.sharding_strategy not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -906,9 +851,7 @@
       pattern: hibernate.search..*.sharding_strategy
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.similarity not available anymore
-    This property is not available anymore. The similarity is configured through the analysis configurer. See links for more information.
+  description: Property hibernate.search.*.similarity not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -932,9 +875,7 @@
       pattern: hibernate.search..*.similarity
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.worker.backend not available anymore
-    This property is not available anymore. The JMS/JGroups backends are no longer supported. See links for more information.
+  description: Property hibernate.search.*.worker.backend not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -958,9 +899,7 @@
       pattern: hibernate.search..*.worker.backend
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.worker.execution not available anymore
-    This property is not available anymore. Setting hibernate.search.automatic_indexing.synchronization.strategy to async or sync will produce results similar to setting hibernate.search.<index-name>.worker.execution to the same value. See links for more information.
+  description: Property hibernate.search.*.worker.execution not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -985,9 +924,7 @@
       pattern: hibernate.search..*.worker.execution
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.*.worker not available anymore
-    This property is not available anymore. The JMS/JGroups backends are no longer supported. See links for more information.
+  description: Property hibernate.search.*.worker not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1011,9 +948,8 @@
       pattern: hibernate.search..*.worker
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.elasticsearch.analysis_definition_provider not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.analysis.configurer`.
+  description: Property hibernate.search.elasticsearch.analysis_definition_provider
+    not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1037,9 +973,8 @@
       pattern: hibernate.search.elasticsearch.analysis_definition_provider
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.elasticsearch.log.json_pretty_printing not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.log.json_pretty_printing`.
+  description: Property hibernate.search.elasticsearch.log.json_pretty_printing not
+    available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1061,9 +996,8 @@
       pattern: hibernate.search.elasticsearch.log.json_pretty_printing
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.elasticsearch.scroll_backtracking_window_size not available anymore
-    This property is not available anymore: scrolling is forward-only. See links for more information.
+  description: Property hibernate.search.elasticsearch.scroll_backtracking_window_size
+    not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1087,9 +1021,8 @@
       pattern: hibernate.search.elasticsearch.scroll_backtracking_window_size
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.elasticsearch.scroll_fetch_size not available anymore
-    This property is not available anymore. When using Hibernate Search APIs, the "chunk size" is an argument to the scroll method. When using the Hibernate ORM or JPA adapters, the "chunk size" is set to the same value as the fetch size. See links for more information.
+  description: Property hibernate.search.elasticsearch.scroll_fetch_size not available
+    anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1115,9 +1048,8 @@
       pattern: hibernate.search.elasticsearch.scroll_fetch_size
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.elasticsearch.scroll_timeout not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.scroll_timeout`.
+  description: Property hibernate.search.elasticsearch.scroll_timeout not available
+    anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1139,9 +1071,7 @@
       pattern: hibernate.search.elasticsearch.scroll_timeout
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.enable_dirty_check not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.automatic_indexing.enable_dirty_check`.
+  description: Property hibernate.search.enable_dirty_check not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1163,9 +1093,7 @@
       pattern: hibernate.search.enable_dirty_check
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.error_handler not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.background_failure_handler`. A different interface should be implemented: see links for more information.
+  description: Property hibernate.search.error_handler not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1190,9 +1118,8 @@
       pattern: hibernate.search.error_handler
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.filter.cache_docidresults.size not available anymore
-    This property is not available anymore. There's no equivalent for Hibernate Search 6. If you need caching for some of your Lucene queries, consider upgrading directly to Hibernate Search 6.1, which provides configurable Low-level hit caching. See link for more information.
+  description: Property hibernate.search.filter.cache_docidresults.size not available
+    anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1220,9 +1147,7 @@
       pattern: hibernate.search.filter.cache_docidresults.size
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.filter.cache_strategy not available anymore
-    This property is not available anymore. There's no equivalent for Hibernate Search 6. If you need caching for some of your Lucene queries, consider upgrading directly to Hibernate Search 6.1, which provides configurable Low-level hit caching. See link for more information.
+  description: Property hibernate.search.filter.cache_strategy not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1250,9 +1175,7 @@
       pattern: hibernate.search.filter.cache_strategy
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.generate_statistics not available anymore
-    This property is not available anymore. There's no equivalent for Hibernate Search 6. No equivalent in Hibernate Search 6. See links for more information.
+  description: Property hibernate.search.generate_statistics not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1276,9 +1199,7 @@
       pattern: hibernate.search.generate_statistics
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.index_uninverting_allowed not available anymore
-    Index uninverting was deprecated in Hibernate Search 5 due to poor performance and is no longer allowed. All index fields that you want to sort on must be marked as sortable. See links for more information.
+  description: Property hibernate.search.index_uninverting_allowed not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1303,9 +1224,7 @@
       pattern: hibernate.search.index_uninverting_allowed
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.indexing_strategy not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.automatic_indexing.strategy`. Set to `none` to get the equivalent of `hibernate.search.indexing_strategy = manual` in Hibernate Search 5.
+  description: Property hibernate.search.indexing_strategy not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1329,9 +1248,7 @@
       pattern: hibernate.search.indexing_strategy
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.jmx_bean_suffix not available anymore
-    This property is not available anymore. See links for more information.
+  description: Property hibernate.search.jmx_bean_suffix not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1354,9 +1271,7 @@
       pattern: hibernate.search.jmx_bean_suffix
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.jmx_enabled not available anymore
-    This property is not available anymore. See links for more information.
+  description: Property hibernate.search.jmx_enabled not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1379,9 +1294,7 @@
       pattern: hibernate.search.jmx_enabled
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.error_handler not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.analysis.configurer`. A different interface should be implemented: see links for more information.
+  description: Property hibernate.search.error_handler not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1406,9 +1319,7 @@
       pattern: hibernate.search.lucene.analysis_definition_provider
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.lucene_version not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.backend.lucene_version`.
+  description: Property hibernate.search.lucene_version not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1430,9 +1341,7 @@
       pattern: hibernate.search.lucene_version
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.model_mapping not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.mapping.configurer`. A different interface should be implemented: see links for more information.
+  description: Property hibernate.search.model_mapping not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1457,9 +1366,8 @@
       pattern: hibernate.search.model_mapping
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.query.database_retrieval_method not available anymore
-    This property is no available anymore. No equivalent in Hibernate Search 6: entities are always loaded with a query.
+  description: Property hibernate.search.query.database_retrieval_method not available
+    anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1481,9 +1389,8 @@
       pattern: hibernate.search.query.database_retrieval_method
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.query.object_lookup_method not available anymore
-    This property is not available anymore. Substitute with the Hibernate Search 6 equivalent: `hibernate.search.query.loading.cache_lookup.strategy`.
+  description: Property hibernate.search.query.object_lookup_method not available
+    anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1507,9 +1414,7 @@
       pattern: hibernate.search.query.object_lookup_method
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.similarity not available anymore
-    This property is not available anymore. There is no direct equivalent in Hibernate Search 6: the similarity is configured through the analysis configurer. The default similarity changed when this property is not configured: see links for more information.
+  description: Property hibernate.search.similarity not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1535,9 +1440,7 @@
       pattern: hibernate.search.similarity
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.search.worker.* not available anymore
-    This property is not available anymore. No equivalent to the concept of "worker" in Hibernate Search 6:. automatic indexing is always performed on transaction commit or, when there is no transaction, on session flush.. Also, transactional backends, for example the JMS backend, are no longer supported. See links for more information.
+  description: Property hibernate.search.worker.* not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1554,11 +1457,10 @@
     url: https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-indexing-automatic-concepts
   - title: 'Hibernate Search 5 to 6 Migration: Backends'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#search-5-backends
-  message: This property is not available anymore. No equivalent to the concept of
-    "worker" in Hibernate Search 6:. automatic indexing is always performed on transaction
-    commit or, when there is no transaction, on session flush.. Also, transactional
-    backends, for example the JMS backend, are no longer supported. See links for
-    more information.
+  message: |-
+    This property is not available anymore. No equivalent to the concept of "worker" in Hibernate Search 6:
+     automatic indexing is always performed on transaction commit or, when there is no transaction, on session flush.
+     Also, transactional backends, for example the JMS backend, are no longer supported. See links for more information.
   ruleID: hibernate-search-00610
   when:
     builtin.filecontent:
@@ -1566,9 +1468,7 @@
       pattern: hibernate.search.worker..*
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @Analyzer not available anymore
-    In Hibernate Search 5, it was possible to apply an @Analyzer annotation to a class or property, so that the corresponding analyzer would be used by default for any index field declared in this scope.. There is no equivalent to that feature in Hibernate Search 6: all fields must specify their analyzer explicitly using @FullTextField(analyzer = "myAnalyzer"), or rely on the (global) default analyzer.. Also, still in Hibernate Search 5, @Analyzer could point directly to a class extending org.apache.lucene.analysis.Analyzer, for example with @Analyzer(impl = StandardAnalyzer.class).. This is no longer possible: analyzers are now always referenced by their name. However, you can assign a name to a given analyzer instance using the Lucene analysis configurer.
+  description: Annotation @Analyzer not available anymore
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -1581,16 +1481,16 @@
   links:
   - title: 'Hibernate Search 6 Reference: Custom analyzers and normalizers'
     url: https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#backend-lucene-analysis-analyzers
-  message: 'In Hibernate Search 5, it was possible to apply an @Analyzer annotation
+  message: "\n In Hibernate Search 5, it was possible to apply an @Analyzer annotation
     to a class or property, so that the corresponding analyzer would be used by default
-    for any index field declared in this scope.. There is no equivalent to that feature
+    for any index field declared in this scope.\n There is no equivalent to that feature
     in Hibernate Search 6: all fields must specify their analyzer explicitly using
-    @FullTextField(analyzer = "myAnalyzer"), or rely on the (global) default analyzer..
+    @FullTextField(analyzer = \"myAnalyzer\"), or rely on the (global) default analyzer.\n
     Also, still in Hibernate Search 5, @Analyzer could point directly to a class extending
-    org.apache.lucene.analysis.Analyzer, for example with @Analyzer(impl = StandardAnalyzer.class)..
+    org.apache.lucene.analysis.Analyzer, for example with @Analyzer(impl = StandardAnalyzer.class).\n
     This is no longer possible: analyzers are now always referenced by their name.
     However, you can assign a name to a given analyzer instance using the Lucene analysis
-    configurer.'
+    configurer.\n "
   ruleID: hibernate-search-00620
   when:
     java.referenced:
@@ -1598,9 +1498,7 @@
       pattern: org.hibernate.search.annotations.Analyzer
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @AnalyzerDef(s) not available anymore
-    Annotation-based analyzer definitions are no longer supported.. Instead, implement an analysis configurer: see links for Lucene and Elasticsearch replacements.
+  description: Annotation @AnalyzerDef(s) not available anymore
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -1615,8 +1513,8 @@
     url: https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#backend-lucene-analysis-analyzers
   - title: 'Hibernate Search 6 Reference: Elasticsearch analyzers and normalizers'
     url: https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#backend-elasticsearch-analysis-analyzers
-  message: 'Annotation-based analyzer definitions are no longer supported.. Instead,
-    implement an analysis configurer: see links for Lucene and Elasticsearch replacements.'
+  message: "\n Annotation-based analyzer definitions are no longer supported.\n Instead,
+    implement an analysis configurer: see links for Lucene and Elasticsearch replacements.\n "
   ruleID: hibernate-search-00630
   when:
     or:
@@ -1628,9 +1526,7 @@
         pattern: org.hibernate.search.annotations.AnalyzerDefs
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @AnalyzerDiscriminator not available anymore
-    `@AnalyzerDiscriminator` has no direct equivalent in Hibernate Search 6: the analyzer assigned to each field is static and cannot change at runtime, because that results in unreliable matches and in scoring issues.. Instead, Hibernate Search 6 allows declaring multiple index fields for a single property, and putting the content of that property in a different field depending on a discriminator. Then, when searching, you can target all fields at once.. See link for more information.
+  description: Annotation @AnalyzerDiscriminator not available anymore
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -1643,12 +1539,12 @@
   links:
   - title: 'Hibernate Search 6 Reference: Mapping multiple alternatives'
     url: https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#mapper-orm-alternatives
-  message: '`@AnalyzerDiscriminator` has no direct equivalent in Hibernate Search
+  message: "\n `@AnalyzerDiscriminator` has no direct equivalent in Hibernate Search
     6: the analyzer assigned to each field is static and cannot change at runtime,
-    because that results in unreliable matches and in scoring issues.. Instead, Hibernate
+    because that results in unreliable matches and in scoring issues.\n Instead, Hibernate
     Search 6 allows declaring multiple index fields for a single property, and putting
     the content of that property in a different field depending on a discriminator.
-    Then, when searching, you can target all fields at once.. See link for more information.'
+    Then, when searching, you can target all fields at once.\n See link for more information.\n "
   ruleID: hibernate-search-00640
   when:
     java.referenced:
@@ -1656,9 +1552,7 @@
       pattern: org.hibernate.search.annotations.AnalyzerDiscriminator
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @Boost not available anymore
-    Index-time boosting was deprecated in Hibernate Search 5. It is no longer available in Hibernate Search 6.. Instead, rely on query-time boosting. See link for more information.
+  description: Annotation @Boost not available anymore
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -1671,9 +1565,9 @@
   links:
   - title: 'Hibernate Search 6 Reference: Query-time boosting'
     url: https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-predicate-common-boost
-  message: Index-time boosting was deprecated in Hibernate Search 5. It is no longer
-    available in Hibernate Search 6.. Instead, rely on query-time boosting. See link
-    for more information.
+  message: "\n Index-time boosting was deprecated in Hibernate Search 5. It is no
+    longer available in Hibernate Search 6.\n Instead, rely on query-time boosting.
+    See link for more information.\n "
   ruleID: hibernate-search-00650
   when:
     java.referenced:
@@ -1681,9 +1575,7 @@
       pattern: org.hibernate.search.annotations.Boost
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @CacheFromIndex not available anymore
-    This annotation was deprecated and non-functional in Hibernate Search 5. It is no longer available in Hibernate Search 6.
+  description: Annotation @CacheFromIndex not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1694,8 +1586,8 @@
   - hibernate
   - eap8
   links: []
-  message: This annotation was deprecated and non-functional in Hibernate Search 5.
-    It is no longer available in Hibernate Search 6.
+  message: "\n This annotation was deprecated and non-functional in Hibernate Search
+    5. It is no longer available in Hibernate Search 6.\n "
   ruleID: hibernate-search-00660
   when:
     java.referenced:
@@ -1703,9 +1595,7 @@
       pattern: org.hibernate.search.annotations.CacheFromIndex
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @CalendarBridge not available anymore
-    `@CalendarBridge` is not necessary to index Calendar values: you can simply apply @GenericField to a property of type Calendar, and an appropriate default bridge will be used.. See link for more information.
+  description: Annotation @CalendarBridge not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1718,9 +1608,9 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: @CalendarBridge'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#calendarbridge
-  message: '`@CalendarBridge` is not necessary to index Calendar values: you can simply
-    apply @GenericField to a property of type Calendar, and an appropriate default
-    bridge will be used.. See link for more information.'
+  message: "\n `@CalendarBridge` is not necessary to index Calendar values: you can
+    simply apply @GenericField to a property of type Calendar, and an appropriate
+    default bridge will be used.\n See link for more information.\n "
   ruleID: hibernate-search-00670
   when:
     java.referenced:
@@ -1728,9 +1618,7 @@
       pattern: org.hibernate.search.annotations.CalendarBridge
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @CharFilterDef not available anymore
-    Annotation-based analyzer definitions are no longer supported. See link for more information.
+  description: Annotation @CharFilterDef not available anymore
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -1743,8 +1631,8 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: @CharFilterDef'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#charfilterdef
-  message: Annotation-based analyzer definitions are no longer supported. See link
-    for more information.
+  message: "\n Annotation-based analyzer definitions are no longer supported. See
+    link for more information.\n "
   ruleID: hibernate-search-00680
   when:
     java.referenced:
@@ -1752,9 +1640,7 @@
       pattern: org.hibernate.search.annotations.CharFilterDef
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @ClassBridge(s) not available anymore
-    The bridge API was completely reworked in Hibernate Search 6. See link for more information.
+  description: Annotation @ClassBridge(s) not available anymore
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -1767,8 +1653,8 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: Bridges'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#bridges
-  message: The bridge API was completely reworked in Hibernate Search 6. See link
-    for more information.
+  message: "\n The bridge API was completely reworked in Hibernate Search 6. See link
+    for more information.\n "
   ruleID: hibernate-search-00690
   when:
     or:
@@ -1780,9 +1666,7 @@
         pattern: org.hibernate.search.annotations.ClassBridges
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @ContainedIn not available anymore
-    @ContainedIn is no longer necessary in Hibernate Search 6.. Hibernate Search 6 infers indexing dependencies from the mapping, and raises errors at bootstrap when the equivalent of @ContainedIn cannot be applied automatically (for example an @IndexedEmbedded association with no inverse side).. Thus, the recommended approach when migrating is to simply remove all @ContainedIn annotations, then deal with the bootstrap errors, if any.
+  description: Annotation @ContainedIn not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1796,12 +1680,12 @@
   - title: 'Hibernate Search 5 to 6 Migration: Automatic indexing across associations
       by defaults'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#automatic-indexing-across-associations-by-default
-  message: '@ContainedIn is no longer necessary in Hibernate Search 6.. Hibernate
+  message: "\n @ContainedIn is no longer necessary in Hibernate Search 6.\n Hibernate
     Search 6 infers indexing dependencies from the mapping, and raises errors at bootstrap
     when the equivalent of @ContainedIn cannot be applied automatically (for example
-    an @IndexedEmbedded association with no inverse side).. Thus, the recommended
+    an @IndexedEmbedded association with no inverse side).\n Thus, the recommended
     approach when migrating is to simply remove all @ContainedIn annotations, then
-    deal with the bootstrap errors, if any.'
+    deal with the bootstrap errors, if any.\n "
   ruleID: hibernate-search-00700
   when:
     java.referenced:
@@ -1809,9 +1693,7 @@
       pattern: org.hibernate.search.annotations.ContainedIn
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @DateBridge not available anymore
-    @DateBridge is not necessary to index Date values: you can simply apply @GenericField to a property of type java.util.Date, java.sql.Date, java.sql.Time or java.sql.Timestamp, and an appropriate default bridge will be used.. See link for more information.
+  description: Annotation @DateBridge not available anymore
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -1824,10 +1706,10 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: @DateBridge'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#datebridge
-  message: '@DateBridge is not necessary to index Date values: you can simply apply
+  message: "\n @DateBridge is not necessary to index Date values: you can simply apply
     @GenericField to a property of type java.util.Date, java.sql.Date, java.sql.Time
-    or java.sql.Timestamp, and an appropriate default bridge will be used.. See link
-    for more information.'
+    or java.sql.Timestamp, and an appropriate default bridge will be used.\n See link
+    for more information.\n "
   ruleID: hibernate-search-00710
   when:
     java.referenced:
@@ -1835,9 +1717,7 @@
       pattern: org.hibernate.search.annotations.DateBridge
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @DocumentId has moved
-    `@DocumentId` is still available in Hibernate Search 6, but moved to a different package: `org.hibernate.search.mapper.pojo.mapping.definition.annotation.DocumentId`.. However, it no longer exposes a name attribute, because the document ID is no longer an index field, and thus it does not need a name.
+  description: Annotation @DocumentId has moved
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1850,10 +1730,10 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: @DocumentId'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#documentid
-  message: '`@DocumentId` is still available in Hibernate Search 6, but moved to a
-    different package: `org.hibernate.search.mapper.pojo.mapping.definition.annotation.DocumentId`..
+  message: "\n `@DocumentId` is still available in Hibernate Search 6, but moved to
+    a different package: `org.hibernate.search.mapper.pojo.mapping.definition.annotation.DocumentId`.\n
     However, it no longer exposes a name attribute, because the document ID is no
-    longer an index field, and thus it does not need a name.'
+    longer an index field, and thus it does not need a name.\n "
   ruleID: hibernate-search-00720
   when:
     java.referenced:
@@ -1861,9 +1741,7 @@
       pattern: org.hibernate.search.annotations.DocumentId
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @DynamicBoost not available anymore
-    Index-time boosting was deprecated in Hibernate Search 5. It is no longer available in Hibernate Search 6.. Instead, rely on query-time boosting. See link for more information.
+  description: Annotation @DynamicBoost not available anymore
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -1876,9 +1754,9 @@
   links:
   - title: 'Hibernate Search 6 Reference: Boosting the score of a predicate'
     url: https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#search-dsl-predicate-common-boost
-  message: Index-time boosting was deprecated in Hibernate Search 5. It is no longer
-    available in Hibernate Search 6.. Instead, rely on query-time boosting. See link
-    for more information.
+  message: "\n Index-time boosting was deprecated in Hibernate Search 5. It is no
+    longer available in Hibernate Search 6.\n Instead, rely on query-time boosting.
+    See link for more information.\n "
   ruleID: hibernate-search-00730
   when:
     java.referenced:
@@ -1886,9 +1764,7 @@
       pattern: org.hibernate.search.annotations.DynamicBoost
 - category: mandatory
   customVariables: []
-  description: |-
-    Facets have changed
-    Facets are now called aggregations, which are a generalization of the concept of faceting. See link for more information.
+  description: Facets have changed
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -1901,8 +1777,8 @@
   links:
   - title: 'Hibernate Search 6 Reference: @Facet(s)'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#facet
-  message: Facets are now called aggregations, which are a generalization of the concept
-    of faceting. See link for more information.
+  message: "\n Facets are now called aggregations, which are a generalization of the
+    concept of faceting. See link for more information.\n "
   ruleID: hibernate-search-00740
   when:
     or:
@@ -1914,9 +1790,7 @@
         pattern: org.hibernate.search.annotations.Facets
 - category: mandatory
   customVariables: []
-  description: |-
-    The @Field(s) annotation has been split into multiple annotations
-    The @Field annotation was split into multiple annotations, specific to each field type. See link for more information.
+  description: The @Field(s) annotation has been split into multiple annotations
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -1929,8 +1803,8 @@
   links:
   - title: 'Hibernate Search 6 Reference: @Field(s)'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#field
-  message: The @Field annotation was split into multiple annotations, specific to
-    each field type. See link for more information.
+  message: "\n The @Field annotation was split into multiple annotations, specific
+    to each field type. See link for more information.\n "
   ruleID: hibernate-search-00750
   when:
     or:
@@ -1942,9 +1816,7 @@
         pattern: org.hibernate.search.annotations.Fields
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @FieldBridge not available anymore
-    The bridge API was completely reworked in Hibernate Search 6. See link for more information.
+  description: Annotation @FieldBridge not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1957,8 +1829,8 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: Bridges'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#bridges
-  message: The bridge API was completely reworked in Hibernate Search 6. See link
-    for more information.
+  message: "\n The bridge API was completely reworked in Hibernate Search 6. See link
+    for more information.\n "
   ruleID: hibernate-search-00760
   when:
     java.referenced:
@@ -1966,9 +1838,7 @@
       pattern: org.hibernate.search.annotations.FieldBridge
 - category: mandatory
   customVariables: []
-  description: |-
-    The @FullTextFilterDef(s) annotation is not available anymore
-    Full-text filters have no direct equivalent in Hibernate Search 6. See link for more information.
+  description: The @FullTextFilterDef(s) annotation is not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -1981,8 +1851,8 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: Full-text filter'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#full-text-filter
-  message: Full-text filters have no direct equivalent in Hibernate Search 6. See
-    link for more information.
+  message: "\n Full-text filters have no direct equivalent in Hibernate Search 6.
+    See link for more information.\n "
   ruleID: hibernate-search-00770
   when:
     or:
@@ -1994,9 +1864,7 @@
         pattern: org.hibernate.search.annotations.FullTextFilterDefs
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @Indexed has moved
-    `@Indexed` is still available in Hibernate Search 6, but moved to a different package: `org.hibernate.search.mapper.pojo.mapping.definition.annotation.Indexed`.. However, there are some related changes that must be addressed - see link for more information.
+  description: Annotation @Indexed has moved
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -2009,10 +1877,10 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: @Indexed'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#indexed
-  message: '`@Indexed` is still available in Hibernate Search 6, but moved to a different
-    package: `org.hibernate.search.mapper.pojo.mapping.definition.annotation.Indexed`..
+  message: "\n `@Indexed` is still available in Hibernate Search 6, but moved to a
+    different package: `org.hibernate.search.mapper.pojo.mapping.definition.annotation.Indexed`.\n
     However, there are some related changes that must be addressed - see link for
-    more information.'
+    more information.\n "
   ruleID: hibernate-search-00780
   when:
     java.referenced:
@@ -2020,9 +1888,7 @@
       pattern: org.hibernate.search.annotations.Indexed
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @IndexedEmbedded has moved
-    `@IndexedEmbedded` is still available in Hibernate Search 6, but moved to a different package: `org.hibernate.search.mapper.pojo.mapping.definition.annotation.IndexedEmbedded`.. Some other changes within the annotation have been made. For more information, see the link.
+  description: Annotation @IndexedEmbedded has moved
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -2035,10 +1901,10 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: @IndexedEmbedded'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#indexedembeded
-  message: '`@IndexedEmbedded` is still available in Hibernate Search 6, but moved
-    to a different package: `org.hibernate.search.mapper.pojo.mapping.definition.annotation.IndexedEmbedded`..
+  message: "\n `@IndexedEmbedded` is still available in Hibernate Search 6, but moved
+    to a different package: `org.hibernate.search.mapper.pojo.mapping.definition.annotation.IndexedEmbedded`.\n
     Some other changes within the annotation have been made. For more information,
-    see the link.'
+    see the link.\n "
   ruleID: hibernate-search-00790
   when:
     java.referenced:
@@ -2046,9 +1912,7 @@
       pattern: org.hibernate.search.annotations.IndexedEmbedded
 - category: mandatory
   customVariables: []
-  description: |-
-    The @Key annotation is not available anymore
-    `@Key` has no equivalent in Hibernate Search 6.
+  description: The @Key annotation is not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -2061,7 +1925,7 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: Full-text filter'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#full-text-filter
-  message: '`@Key` has no equivalent in Hibernate Search 6.'
+  message: "\n `@Key` has no equivalent in Hibernate Search 6.\n "
   ruleID: hibernate-search-00800
   when:
     java.referenced:
@@ -2069,9 +1933,7 @@
       pattern: org.hibernate.search.annotations.Key
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @Latitude has moved
-    `@Latitude` is still available in Hibernate Search 6, but moved to a different package: `org.hibernate.search.annotations.Latitude`.
+  description: Annotation @Latitude has moved
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -2084,8 +1946,8 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: @Latitude'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#latitude
-  message: '`@Latitude` is still available in Hibernate Search 6, but moved to a different
-    package: `org.hibernate.search.annotations.Latitude`.'
+  message: "\n `@Latitude` is still available in Hibernate Search 6, but moved to
+    a different package: `org.hibernate.search.annotations.Latitude`.\n "
   ruleID: hibernate-search-00810
   when:
     java.referenced:
@@ -2093,9 +1955,7 @@
       pattern: org.hibernate.search.annotations.Latitude
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @Longitude has moved
-    `@Longitude` is still available in Hibernate Search 6, but moved to a different package: `org.hibernate.search.annotations.Longitude`.
+  description: Annotation @Longitude has moved
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -2108,8 +1968,8 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: @Longitude'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#longitude
-  message: '`@Longitude` is still available in Hibernate Search 6, but moved to a
-    different package: `org.hibernate.search.annotations.Longitude`.'
+  message: "\n `@Longitude` is still available in Hibernate Search 6, but moved to
+    a different package: `org.hibernate.search.annotations.Longitude`.\n "
   ruleID: hibernate-search-00820
   when:
     java.referenced:
@@ -2117,9 +1977,7 @@
       pattern: org.hibernate.search.annotations.Longitude
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @Longitude has moved
-    In Hibernate Search 5, `@Normalizer` could point directly to a class extending `org.apache.lucene.analysis.Analyzer`, for example with `@Normalizer(impl = MyNormalizer.class)`.. This is no longer possible: normalizers are now always referenced by their name. However, you can assign a name to a given normalizer instance using the Lucene analysis configurer.
+  description: Annotation @Longitude has moved
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -2132,11 +1990,11 @@
   links:
   - title: 'Hibernate Search 6 Reference: Lucene analysis configurer'
     url: https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#backend-lucene-analysis-analyzers
-  message: 'In Hibernate Search 5, `@Normalizer` could point directly to a class extending
-    `org.apache.lucene.analysis.Analyzer`, for example with `@Normalizer(impl = MyNormalizer.class)`..
-    This is no longer possible: normalizers are now always referenced by their name.
-    However, you can assign a name to a given normalizer instance using the Lucene
-    analysis configurer.'
+  message: "\n In Hibernate Search 5, `@Normalizer` could point directly to a class
+    extending `org.apache.lucene.analysis.Analyzer`, for example with `@Normalizer(impl
+    = MyNormalizer.class)`.\n This is no longer possible: normalizers are now always
+    referenced by their name. However, you can assign a name to a given normalizer
+    instance using the Lucene analysis configurer.\n "
   ruleID: hibernate-search-00830
   when:
     java.referenced:
@@ -2144,9 +2002,7 @@
       pattern: org.hibernate.search.annotations.Normalizer
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @NormalizerDef(s) not available anymore
-    Annotation-based analyzer definitions are no longer supported.. Instead, implement an analysis configurer: see links for Lucene and Elasticsearch
+  description: Annotation @NormalizerDef(s) not available anymore
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -2161,8 +2017,8 @@
     url: https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#backend-lucene-analysis-analyzers
   - title: 'Hibernate Search 6 Reference: Elasticsearch analyzers and normalizers'
     url: https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#backend-elasticsearch-analysis-analyzers
-  message: 'Annotation-based analyzer definitions are no longer supported.. Instead,
-    implement an analysis configurer: see links for Lucene and Elasticsearch'
+  message: "\n Annotation-based analyzer definitions are no longer supported.\n Instead,
+    implement an analysis configurer: see links for Lucene and Elasticsearch\n "
   ruleID: hibernate-search-00840
   when:
     or:
@@ -2174,9 +2030,7 @@
         pattern: org.hibernate.search.annotations.NormalizerDefs
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @NumericField(s) not available anymore
-    @NumericField no longer exists in Hibernate Search 6.. Numeric types are indexed as numeric values by default, so this annotation can simply be removed.
+  description: Annotation @NumericField(s) not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -2187,8 +2041,8 @@
   - hibernate
   - eap8
   links: []
-  message: '@NumericField no longer exists in Hibernate Search 6.. Numeric types are
-    indexed as numeric values by default, so this annotation can simply be removed.'
+  message: "\n @NumericField no longer exists in Hibernate Search 6.\n Numeric types
+    are indexed as numeric values by default, so this annotation can simply be removed.\n "
   ruleID: hibernate-search-00850
   when:
     or:
@@ -2200,9 +2054,7 @@
         pattern: org.hibernate.search.annotations.NumericFields
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @ProvidedId is no longer available
-    `@ProvidedId` was deprecated in Hibernate Search 5. It no longer exists in Hibernate Search 6.
+  description: Annotation @ProvidedId is no longer available
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -2213,8 +2065,8 @@
   - hibernate
   - eap8
   links: []
-  message: '`@ProvidedId` was deprecated in Hibernate Search 5. It no longer exists
-    in Hibernate Search 6.'
+  message: "\n `@ProvidedId` was deprecated in Hibernate Search 5. It no longer exists
+    in Hibernate Search 6.\n "
   ruleID: hibernate-search-00860
   when:
     java.referenced:
@@ -2222,9 +2074,7 @@
       pattern: org.hibernate.search.annotations.ProvidedId
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @SortableField(s) not available anymore
-    @SortableField(s) no longer exists in Hibernate Search 6. Instead, use @*Field.sortable.
+  description: Annotation @SortableField(s) not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -2237,8 +2087,8 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: @SortableField(s)'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#sortablefield
-  message: '@SortableField(s) no longer exists in Hibernate Search 6. Instead, use
-    @*Field.sortable.'
+  message: "\n @SortableField(s) no longer exists in Hibernate Search 6. Instead,
+    use @*Field.sortable.\n "
   ruleID: hibernate-search-00870
   when:
     or:
@@ -2250,9 +2100,7 @@
         pattern: org.hibernate.search.annotations.SortableFields
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @Spatial(s) not available anymore
-    @Spatial has no direct equivalent in Hibernate Search 6.. Check link for a quick reference of how to convert a @Spatial annotation to Hibernate Search 6.
+  description: Annotation @Spatial(s) not available anymore
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -2265,9 +2113,9 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: @Spatial'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#spatial
-  message: '@Spatial has no direct equivalent in Hibernate Search 6.. Check link for
-    a quick reference of how to convert a @Spatial annotation to Hibernate Search
-    6.'
+  message: "\n @Spatial has no direct equivalent in Hibernate Search 6.\n Check link
+    for a quick reference of how to convert a @Spatial annotation to Hibernate Search
+    6.\n "
   ruleID: hibernate-search-00880
   when:
     or:
@@ -2279,9 +2127,7 @@
         pattern: org.hibernate.search.annotations.Spatials
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @TikaBridge is no longer available
-    @TikaBridge has no equivalent in Hibernate Search 6 yet.
+  description: Annotation @TikaBridge is no longer available
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -2294,7 +2140,7 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: @TikaBridge'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#tikabridge
-  message: '@TikaBridge has no equivalent in Hibernate Search 6 yet.'
+  message: "\n @TikaBridge has no equivalent in Hibernate Search 6 yet.\n "
   ruleID: hibernate-search-00890
   when:
     java.referenced:
@@ -2302,9 +2148,7 @@
       pattern: org.hibernate.search.annotations.TikaBridge
 - category: mandatory
   customVariables: []
-  description: |-
-    Annotation @AnalyzerDef(s) not available anymore
-    Annotation-based analyzer definitions are no longer supported.. See links for more information.
+  description: Annotation @AnalyzerDef(s) not available anymore
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -2319,8 +2163,8 @@
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#tokenfilterdef
   - title: 'Hibernate Search 5 to 6 Migration: @TokenizerDef'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#tokenizerdef
-  message: Annotation-based analyzer definitions are no longer supported.. See links
-    for more information.
+  message: "\n Annotation-based analyzer definitions are no longer supported.\n See
+    links for more information.\n "
   ruleID: hibernate-search-00900
   when:
     or:
@@ -2332,9 +2176,7 @@
         pattern: org.hibernate.search.annotations.TokenizerDef
 - category: mandatory
   customVariables: []
-  description: |-
-    FullTextEntityManager and FullTextSession removed
-    The equivalent to Hibernate Search 5’s `FullTextEntityManager/FullTextSession` is Hibernate Search 6’s `SearchSession`. Check link for guide. to switch implementation to `SearchSession`.
+  description: FullTextEntityManager and FullTextSession removed
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -2347,9 +2189,9 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: FullTextEntityManager/FullTextSession'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#fulltextsession
-  message: The equivalent to Hibernate Search 5’s `FullTextEntityManager/FullTextSession`
-    is Hibernate Search 6’s `SearchSession`. Check link for guide. to switch implementation
-    to `SearchSession`.
+  message: "\n The equivalent to Hibernate Search 5’s `FullTextEntityManager/FullTextSession`
+    is Hibernate Search 6’s `SearchSession`. Check link for guide\n to switch implementation
+    to `SearchSession`.\n "
   ruleID: hibernate-search-00910
   when:
     or:
@@ -2359,9 +2201,7 @@
         pattern: org.hibernate.search.FullTextSession
 - category: mandatory
   customVariables: []
-  description: |-
-    Full text queries now done via SDL - FullTextQueries have changed
-    Search APIs have changed significantly in order to implement several improvements. The recommended way to build search. queries in Hibernate Search 6 is through the Hibernate Search DSL. See link for a thorough explanation and examples.
+  description: Full text queries now done via SDL - FullTextQueries have changed
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -2374,9 +2214,10 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: FullTextQuery'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#searching-fulltextquery
-  message: Search APIs have changed significantly in order to implement several improvements.
-    The recommended way to build search. queries in Hibernate Search 6 is through
-    the Hibernate Search DSL. See link for a thorough explanation and examples.
+  message: "\n Search APIs have changed significantly in order to implement several
+    improvements. The recommended way to build search\n queries in Hibernate Search
+    6 is through the Hibernate Search DSL. See link for a thorough explanation and
+    examples.\n "
   ruleID: hibernate-search-00920
   when:
     or:
@@ -2386,9 +2227,8 @@
         pattern: org.hibernate.search.jpa.FullTextQuery
 - category: mandatory
   customVariables: []
-  description: |-
-    Full text queries now done via SDL - Lucene queries replaced with search predicates
-    Lucene queries are replaced with Lucene-independent "search predicates" in Hibernate Search 6. See link for guide and examples.
+  description: Full text queries now done via SDL - Lucene queries replaced with search
+    predicates
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -2401,17 +2241,16 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: org.apache.lucene.search.Query -> SearchPredicate'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#queries
-  message: Lucene queries are replaced with Lucene-independent "search predicates"
-    in Hibernate Search 6. See link for guide and examples.
+  message: "\n Lucene queries are replaced with Lucene-independent \"search predicates\"
+    in Hibernate Search 6. See link for guide and examples.\n "
   ruleID: hibernate-search-00930
   when:
     java.referenced:
       pattern: org.apache.lucene.search.Query
 - category: mandatory
   customVariables: []
-  description: |-
-    Full text queries now done via DSL - Sort fields replaced with search sorts
-    Lucene sort fields are replaced with Lucene-independent "search sorts" in Hibernate Search 6. Follow the link for more info and examples.
+  description: Full text queries now done via DSL - Sort fields replaced with search
+    sorts
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -2425,8 +2264,8 @@
   - title: 'Hibernate Search 5 to 6 Migration: org.apache.lucene.search.Sort/SortField
       -> SearchSort'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#sorts
-  message: Lucene sort fields are replaced with Lucene-independent "search sorts"
-    in Hibernate Search 6. Follow the link for more info and examples.
+  message: "\n Lucene sort fields are replaced with Lucene-independent \"search sorts\"
+    in Hibernate Search 6. Follow the link for more info and examples.\n "
   ruleID: hibernate-search-00940
   when:
     or:
@@ -2436,9 +2275,7 @@
         pattern: org.apache.lucene.search.SortField
 - category: mandatory
   customVariables: []
-  description: |-
-    ProjectionConstants no longer available
-    The `ProjectionConstants` are no longer available, and Hibernate Search 6's DSL must be used instead to build `SearchProjection` objects. Follow link for more information and examples.
+  description: ProjectionConstants no longer available
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -2451,9 +2288,9 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: Projections'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#projections
-  message: The `ProjectionConstants` are no longer available, and Hibernate Search
+  message: "\n The `ProjectionConstants` are no longer available, and Hibernate Search
     6's DSL must be used instead to build `SearchProjection` objects. Follow link
-    for more information and examples.
+    for more information and examples.\n "
   ruleID: hibernate-search-00950
   when:
     or:
@@ -2463,9 +2300,7 @@
         pattern: org.hibernate.search.elasticsearch.ElasticsearchProjectionConstants
 - category: mandatory
   customVariables: []
-  description: |-
-    Full text queries now done via SDL - Facets now called aggregations
-    Facets are now called aggregations, which are a generalization of the concept of faceting. See link for more information and examples.
+  description: Full text queries now done via SDL - Facets now called aggregations
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -2478,8 +2313,8 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: Facets'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#searching-facet
-  message: Facets are now called aggregations, which are a generalization of the concept
-    of faceting. See link for more information and examples.
+  message: "\n Facets are now called aggregations, which are a generalization of the
+    concept of faceting. See link for more information and examples.\n "
   ruleID: hibernate-search-00960
   when:
     or:
@@ -2491,9 +2326,7 @@
         pattern: org.hibernate.search*facet*
 - category: mandatory
   customVariables: []
-  description: |-
-    ErrorHandler API no longer available
-    The ErrorHandler interface and API have been replaced with the `FailureHandler` interface, and the related configuration properties changed. See link for more information and examples.
+  description: ErrorHandler API no longer available
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -2506,9 +2339,9 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: ErrorHandler'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#error-handler
-  message: The ErrorHandler interface and API have been replaced with the `FailureHandler`
+  message: "\n The ErrorHandler interface and API have been replaced with the `FailureHandler`
     interface, and the related configuration properties changed. See link for more
-    information and examples.
+    information and examples.\n "
   ruleID: hibernate-search-00970
   when:
     or:
@@ -2520,9 +2353,7 @@
         pattern: org.hibernate.search*errorhandl*
 - category: mandatory
   customVariables: []
-  description: |-
-    The @Factory annotation is not available anymore
-    The @Factory annotation does not exist in Hibernate Search 6 anymore. It is encouraged instead to rely on a proper dependency injection framework if such a feature is needed.. This can be done by referencing the bean name instead of referencing the bean class in your Hibernate Search mapping/configuration. See link for more information.
+  description: The @Factory annotation is not available anymore
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -2535,11 +2366,11 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: @Factory'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#factory
-  message: The @Factory annotation does not exist in Hibernate Search 6 anymore. It
-    is encouraged instead to rely on a proper dependency injection framework if such
-    a feature is needed.. This can be done by referencing the bean name instead of
-    referencing the bean class in your Hibernate Search mapping/configuration. See
-    link for more information.
+  message: "\n The @Factory annotation does not exist in Hibernate Search 6 anymore.
+    It is encouraged instead to rely on a proper dependency injection framework if
+    such a feature is needed.\n This can be done by referencing the bean name instead
+    of referencing the bean class in your Hibernate Search mapping/configuration.
+    See link for more information.\n "
   ruleID: hibernate-search-00980
   when:
     java.referenced:
@@ -2547,9 +2378,7 @@
       pattern: org.hibernate.search.annotations.Factory
 - category: mandatory
   customVariables: []
-  description: |-
-    org.hibernate.search.exception.SearchException has been moved
-    `org.hibernate.search.exception.SearchException` has been moved to `org.hibernate.search.util.common.SearchException`.
+  description: org.hibernate.search.exception.SearchException has been moved
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -2562,16 +2391,15 @@
   links:
   - title: 'Hibernate Search 5 to 6 Migration: SearchException'
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#searchexception
-  message: '`org.hibernate.search.exception.SearchException` has been moved to `org.hibernate.search.util.common.SearchException`.'
+  message: "\n `org.hibernate.search.exception.SearchException` has been moved to
+    `org.hibernate.search.util.common.SearchException`.\n "
   ruleID: hibernate-search-00990
   when:
     java.referenced:
       pattern: org.hibernate.search.exception.SearchException
 - category: mandatory
   customVariables: []
-  description: |-
-    Sharding has changed in Hibernate Search 6
-    Static sharding is still available in Hibernate Search 6, but it works differently, so the Hibernate Search 5 APIs are no longer available.. To implement static sharding in Hibernate Search 6, refer to the link.
+  description: Sharding has changed in Hibernate Search 6
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -2584,9 +2412,9 @@
   links:
   - title: Hibernate Search 6 Reference - Sharding and routing
     url: https://docs.jboss.org/hibernate/search/6.0/reference/en-US/html_single/#concepts-sharding-routing
-  message: Static sharding is still available in Hibernate Search 6, but it works
-    differently, so the Hibernate Search 5 APIs are no longer available.. To implement
-    static sharding in Hibernate Search 6, refer to the link.
+  message: "\n Static sharding is still available in Hibernate Search 6, but it works
+    differently, so the Hibernate Search 5 APIs are no longer available.\n To implement
+    static sharding in Hibernate Search 6, refer to the link.\n "
   ruleID: hibernate-search-01000
   when:
     or:
@@ -2598,9 +2426,7 @@
         pattern: org.hibernate.search.store.ShardIdentifierProviderTemplate
 - category: mandatory
   customVariables: []
-  description: |-
-    SearchFactory is no longer available
-    The equivalent to Hibernate Search 5’s SearchFactory is Hibernate Search 6’s SearchMapping, but some operations are more conveniently accessible directly from SearchSession.. Check the link for more information and examples.
+  description: SearchFactory is no longer available
   effort: 3
   labels:
   - konveyor.io/target=eap8+
@@ -2613,18 +2439,16 @@
   links:
   - title: Hibernate Search 6 Reference - SearchFactory
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#_searchfactory
-  message: The equivalent to Hibernate Search 5’s SearchFactory is Hibernate Search
+  message: "\n The equivalent to Hibernate Search 5’s SearchFactory is Hibernate Search
     6’s SearchMapping, but some operations are more conveniently accessible directly
-    from SearchSession.. Check the link for more information and examples.
+    from SearchSession.\n Check the link for more information and examples.\n "
   ruleID: hibernate-search-01010
   when:
     java.referenced:
       pattern: org.hibernate.search*SearchFactory
 - category: mandatory
   customVariables: []
-  description: |-
-    MassIndexer has moved
-    The MassIndexer mostly stays the same in Hibernate Search 6, but it moved to a different package: `org.hibernate.search.mapper.orm.massindexing.MassIndexer`.. There are some other changes that can be checked by following the link.
+  description: MassIndexer has moved
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -2637,18 +2461,16 @@
   links:
   - title: Hibernate Search 6 Reference - MassIndexer
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#massindexer
-  message: 'The MassIndexer mostly stays the same in Hibernate Search 6, but it moved
-    to a different package: `org.hibernate.search.mapper.orm.massindexing.MassIndexer`..
-    There are some other changes that can be checked by following the link.'
+  message: "\n The MassIndexer mostly stays the same in Hibernate Search 6, but it
+    moved to a different package: `org.hibernate.search.mapper.orm.massindexing.MassIndexer`.\n
+    There are some other changes that can be checked by following the link.\n "
   ruleID: hibernate-search-01020
   when:
     java.referenced:
       pattern: org.hibernate.search.MassIndexer
 - category: mandatory
   customVariables: []
-  description: |-
-    MassIndexer has moved
-    The mass indexing Batch (JSR-352) job mostly stays the same in Hibernate Search 6, but `MassIndexingJob` moved to a different package: `org.hibernate.search.batch.jsr352.core.massindexing.MassIndexingJob`.
+  description: MassIndexer has moved
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -2661,17 +2483,15 @@
   links:
   - title: Hibernate Search 6 Reference - MassIndexingJob
     url: https://docs.jboss.org/hibernate/search/6.0/migration/html_single/#jsr352
-  message: 'The mass indexing Batch (JSR-352) job mostly stays the same in Hibernate
-    Search 6, but `MassIndexingJob` moved to a different package: `org.hibernate.search.batch.jsr352.core.massindexing.MassIndexingJob`.'
+  message: "\n The mass indexing Batch (JSR-352) job mostly stays the same in Hibernate
+    Search 6, but `MassIndexingJob` moved to a different package: `org.hibernate.search.batch.jsr352.core.massindexing.MassIndexingJob`.\n "
   ruleID: hibernate-search-01030
   when:
     java.referenced:
       pattern: org.hibernate.search.jsr352.massindexing.MassIndexingJob
 - category: mandatory
   customVariables: []
-  description: |-
-    Dependency must be migrated from Hibernate Search 5 to 6
-    Hibernate Search 6 uses the groupId `org.hibernate.search` and all dependencies must be updated
+  description: Dependency must be migrated from Hibernate Search 5 to 6
   effort: 1
   labels:
   - konveyor.io/target=eap8+

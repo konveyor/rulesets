@@ -1,13 +1,12 @@
 - category: potential
   customVariables:
-  - name: remainder
-    nameOfCaptureGroup: remainder
-    pattern: (?P<prefix>(com\.weblogic[^.]*\.)|(com\.bea[^.]*\.)|(bea\.)|(weblogic\.))?(?P<remainder>.*)
   - name: prefix
     nameOfCaptureGroup: prefix
     pattern: (?P<prefix>(com\.weblogic[^.]*\.)|(com\.bea[^.]*\.)|(bea\.)|(weblogic\.))?(?P<remainder>.*)
-  description: |
-    WebLogic proprietary type reference
+  - name: remainder
+    nameOfCaptureGroup: remainder
+    pattern: (?P<prefix>(com\.weblogic[^.]*\.)|(com\.bea[^.]*\.)|(bea\.)|(weblogic\.))?(?P<remainder>.*)
+  description: WebLogic proprietary type reference
   effort: 0
   labels:
   - konveyor.io/source=weblogic
@@ -16,9 +15,9 @@
   - konveyor.io/target=eap
   - catchall
   links: []
-  message: This is a WebLogic proprietary type (`{{prefix}}{{remainder}}`) and needs
-    to be migrated to a compatible API. There is currently no detailed information
-    about this type.
+  message: "\n This is a WebLogic proprietary type (`{{prefix}}{{remainder}}`) and
+    needs to be migrated to a compatible API. There is currently no detailed information
+    about this type.\n "
   ruleID: weblogic-catchall-01000
   when:
     java.referenced:
@@ -29,8 +28,7 @@
   - name: remainder
     nameOfCaptureGroup: remainder
     pattern: oracle.sql.(?P<remainder>.*)
-  description: |
-    Oracle proprietary SQL type reference
+  description: Oracle proprietary SQL type reference
   effort: 0
   labels:
   - konveyor.io/source=weblogic
@@ -39,9 +37,10 @@
   - konveyor.io/target=eap
   - catchall
   links: []
-  message: This is an Oracle proprietary SQL type (`oracle.sql.{{remainder}}`).. It
-    should be migrated to a compatible API either if you consider replacing your Oracle
-    database or if you want to get rid of the Oracle proprietary API usage.
+  message: "\n \n This is an Oracle proprietary SQL type (`oracle.sql.{{remainder}}`).\n\n
+    It should be migrated to a compatible API either if you consider replacing your
+    Oracle database or if you want to get rid of the Oracle proprietary API usage.\n
+    \n "
   ruleID: weblogic-catchall-02000
   when:
     java.referenced:
@@ -55,8 +54,7 @@
   - name: type
     nameOfCaptureGroup: type
     pattern: com.tangosol(?P<subpackage>(\..*)?.)?(?P<type>[^.]+)
-  description: |
-    Tangosol Proprietary type reference
+  description: Tangosol Proprietary type reference
   effort: 0
   labels:
   - konveyor.io/source=weblogic
@@ -65,9 +63,9 @@
   - konveyor.io/target=eap
   - catchall
   links: []
-  message: This is an Oracle proprietary type (`com.tangosol{{subpackage}}.{{type}}`)
+  message: "\n This is an Oracle proprietary type (`com.tangosol{{subpackage}}.{{type}}`)
     and needs to be migrated to a compatible API. There is currently no detailed information
-    about this type.
+    about this type.\n "
   ruleID: weblogic-catchall-03000
   when:
     java.referenced:
@@ -84,8 +82,7 @@
   - name: type
     nameOfCaptureGroup: type
     pattern: (?P<com>(com\.)?)?oracle(?P<subpackage>(\..*)?.)?(?P<type>[^.]+)
-  description: |
-    Oracle proprietary type reference
+  description: Oracle proprietary type reference
   effort: 0
   labels:
   - konveyor.io/source=weblogic
@@ -94,9 +91,9 @@
   - konveyor.io/target=eap
   - catchall
   links: []
-  message: This is an Oracle proprietary type (`{{com}}oracle{{subpackage}}.{{type}}`)
+  message: "\n This is an Oracle proprietary type (`{{com}}oracle{{subpackage}}.{{type}}`)
     and needs to be migrated to a compatible API. There is currently no detailed information
-    about this type.
+    about this type.\n "
   ruleID: weblogic-catchall-06000
   when:
     java.referenced:
@@ -107,8 +104,7 @@
   - name: remainder
     nameOfCaptureGroup: remainder
     pattern: oracle.jdbc.(?P<remainder>.*)
-  description: |
-    Oracle proprietary JDBC type reference
+  description: Oracle proprietary JDBC type reference
   effort: 0
   labels:
   - konveyor.io/source=weblogic
@@ -117,8 +113,8 @@
   - konveyor.io/target=eap
   - catchall
   links: []
-  message: This is an Oracle proprietary JDBC type (`oracle.sql.{{remainder}}`)..
-    It should be replaced by standard Java EE JCA, datasource and JDBC types.
+  message: "\n \n This is an Oracle proprietary JDBC type (`oracle.sql.{{remainder}}`).\n\n
+    It should be replaced by standard Java EE JCA, datasource and JDBC types.\n \n "
   ruleID: weblogic-catchall-06500
   when:
     java.referenced:

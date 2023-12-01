@@ -3,9 +3,7 @@
   - name: cache_class
     nameOfCaptureGroup: cache_class
     pattern: org.jboss.resteasy.client.cache.(?P<cache_class>(CacheEntry|CacheFactory|CacheInterceptor|LightweightBrowserCache|BrowserCache|MapCache))
-  description: |-
-    RESTEasy 3 Cache Client package change
-    Caching in the RESTEasy client framework in resteasy-jaxrs is replaced by caching in the JAX-RS 2.0 compliant resteasy-client module.. Use `org.jboss.resteasy.client.jaxrs.cache` package instead of `org.jboss.resteasy.client.cache`.
+  description: RESTEasy 3 Cache Client package change
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -20,18 +18,16 @@
   links:
   - title: RESTEasy Client Application Changes
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#application_migration_changes
-  message: Caching in the RESTEasy client framework in resteasy-jaxrs is replaced
-    by caching in the JAX-RS 2.0 compliant resteasy-client module.. Use `org.jboss.resteasy.client.jaxrs.cache`
-    package instead of `org.jboss.resteasy.client.cache`.
+  message: "Caching in the RESTEasy client framework in resteasy-jaxrs is replaced
+    by caching in the JAX-RS 2.0 compliant resteasy-client module.\n Use `org.jboss.resteasy.client.jaxrs.cache`
+    package instead of `org.jboss.resteasy.client.cache`.\n "
   ruleID: resteasy-eap6-000001
   when:
     java.referenced:
       pattern: org.jboss.resteasy.client.cache.(CacheEntry|CacheFactory|CacheInterceptor|LightweightBrowserCache|BrowserCache|MapCache)
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated class ClientRequest in RESTEasy 3
-    Replace class `org.jboss.resteasy.client.ClientRequest` with `org.jboss.resteasy.client.jaxrs.ResteasyClient`.. The following is an example of how to send a link header with the RESTEasy client in EAP 6 with RESTEasy 2.3.x.. ```java. ClientRequest request = new ClientRequest(generateURL("/linkheader/str"));. request.addLink("previous chapter", "previous", "http://example.com/TheBook/chapter2", null);. ClientResponse response = request.post();. LinkHeader header = response.getLinkHeader();. ```. The following is an example of how to accomplish the same task with the RESTEasy client in RESTEasy 3.. ```java. ResteasyClient client = new ResteasyClientBuilder().build();. Response response = client.target(generateURL("/linkheader/str")).request(). .header("Link", "<http://example.com/TheBook/chapter2>; rel="previous";. title="previous chapter">").post(Entity.text(new String()));. javax.ws.rs.core.Link link = response.getLink("previous");. ```
+  description: Deprecated class ClientRequest in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -46,25 +42,24 @@
   links:
   - title: RESTEasy Client Application Changes
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#application_migration_changes
-  message: Replace class `org.jboss.resteasy.client.ClientRequest` with `org.jboss.resteasy.client.jaxrs.ResteasyClient`..
+  message: "\n Replace class `org.jboss.resteasy.client.ClientRequest` with `org.jboss.resteasy.client.jaxrs.ResteasyClient`.\n\n
     The following is an example of how to send a link header with the RESTEasy client
-    in EAP 6 with RESTEasy 2.3.x.. ```java. ClientRequest request = new ClientRequest(generateURL("/linkheader/str"));.
-    request.addLink("previous chapter", "previous", "http://example.com/TheBook/chapter2",
-    null);. ClientResponse response = request.post();. LinkHeader header = response.getLinkHeader();.
-    ```. The following is an example of how to accomplish the same task with the RESTEasy
-    client in RESTEasy 3.. ```java. ResteasyClient client = new ResteasyClientBuilder().build();.
-    Response response = client.target(generateURL("/linkheader/str")).request(). .header("Link",
-    "<http://example.com/TheBook/chapter2>; rel="previous";. title="previous chapter">").post(Entity.text(new
-    String()));. javax.ws.rs.core.Link link = response.getLink("previous");. ```
+    in EAP 6 with RESTEasy 2.3.x.\n\n ```java\n ClientRequest request = new ClientRequest(generateURL(\"/linkheader/str\"));\n
+    request.addLink(\"previous chapter\", \"previous\", \"http://example.com/TheBook/chapter2\",
+    null);\n ClientResponse response = request.post();\n LinkHeader header = response.getLinkHeader();\n
+    ```\n\n The following is an example of how to accomplish the same task with the
+    RESTEasy client in RESTEasy 3.\n\n ```java\n ResteasyClient client = new ResteasyClientBuilder().build();\n
+    Response response = client.target(generateURL(\"/linkheader/str\")).request()\n
+    .header(\"Link\", \"<http://example.com/TheBook/chapter2>; rel=\"previous\";\n
+    title=\"previous chapter\">\").post(Entity.text(new String()));\n javax.ws.rs.core.Link
+    link = response.getLink(\"previous\");\n ```\n\n "
   ruleID: resteasy-eap6-000002
   when:
     java.referenced:
       pattern: org.jboss.resteasy.client.ClientRequest
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated class ClientResponse in RESTEasy 3
-    Replace `org.jboss.resteasy.client.ClientResponse` class with `javax.ws.rs.core.Response`.
+  description: Deprecated class ClientResponse in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -89,8 +84,7 @@
   - name: type
     nameOfCaptureGroup: type
     pattern: org.jboss.resteasy.client.(?P<type>(ProxyBuilder|ProxyConfig|ProxyFactory))
-  description: |
-    Deprecated class org.jboss.resteasy.client.{type} in RESTEasy 3
+  description: Deprecated class org.jboss.resteasy.client.{type} in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -112,9 +106,7 @@
       pattern: org.jboss.resteasy.client.(ProxyBuilder|ProxyConfig|ProxyFactory)
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated class EntityTypeFactory in RESTEasy 3
-    There is no direct replacement for `org.jboss.resteasy.client.EntityTypeFactory` class.. `org.jboss.resteasy.client.ClientResponse<T>` is a generic type in the RESTEasy client framework,. but `org.jboss.resteasy.client.jaxrs.internal.ClientResponse` in the resteasy-client module is not, so. `EntityTypeFactory` is no longer useful.
+  description: Deprecated class EntityTypeFactory in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -129,19 +121,17 @@
   links:
   - title: RESTEasy Client Application Changes
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#application_migration_changes
-  message: There is no direct replacement for `org.jboss.resteasy.client.EntityTypeFactory`
-    class.. `org.jboss.resteasy.client.ClientResponse<T>` is a generic type in the
-    RESTEasy client framework,. but `org.jboss.resteasy.client.jaxrs.internal.ClientResponse`
-    in the resteasy-client module is not, so. `EntityTypeFactory` is no longer useful.
+  message: "\n There is no direct replacement for `org.jboss.resteasy.client.EntityTypeFactory`
+    class.\n\n `org.jboss.resteasy.client.ClientResponse<T>` is a generic type in
+    the RESTEasy client framework,\n but `org.jboss.resteasy.client.jaxrs.internal.ClientResponse`
+    in the resteasy-client module is not, so\n `EntityTypeFactory` is no longer useful.\n "
   ruleID: resteasy-eap6-000005
   when:
     java.referenced:
       pattern: org.jboss.resteasy.client.EntityTypeFactory
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated interface ClientExecutor in RESTEasy 3
-    Replace the `org.jboss.resteasy.client.ClientExecutor` usage with `org.jboss.resteasy.client.jaxrs.ClientHttpEngine` class.
+  description: Deprecated interface ClientExecutor in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -164,9 +154,7 @@
       pattern: org.jboss.resteasy.client.ClientExecutor
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated class ClientRequestFactory in RESTEasy 3
-    Replace the `org.jboss.resteasy.client.ClientRequestFactory` usage with `org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder` class.
+  description: Deprecated class ClientRequestFactory in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -189,9 +177,7 @@
       pattern: org.jboss.resteasy.client.ClientRequestFactory
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated exception ClientResponseFailure in RESTEasy 3
-    Replace the `org.jboss.resteasy.client.ClientResponseFailure` with `javax.ws.rs.client.ResponseProcessingException`. or with `javax.ws.rs.client.ProcessingException` or with `javax.ws.rs.client.WebApplicationException` class.
+  description: Deprecated exception ClientResponseFailure in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -206,18 +192,16 @@
   links:
   - title: RESTEasy Client Application Changes
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#application_migration_changes
-  message: Replace the `org.jboss.resteasy.client.ClientResponseFailure` with `javax.ws.rs.client.ResponseProcessingException`.
-    or with `javax.ws.rs.client.ProcessingException` or with `javax.ws.rs.client.WebApplicationException`
-    class.
+  message: |-
+    Replace the `org.jboss.resteasy.client.ClientResponseFailure` with `javax.ws.rs.client.ResponseProcessingException`
+     or with `javax.ws.rs.client.ProcessingException` or with `javax.ws.rs.client.WebApplicationException` class.
   ruleID: resteasy-eap6-000008
   when:
     java.referenced:
       pattern: org.jboss.resteasy.client.ClientResponseFailure
 - category: mandatory
   customVariables: []
-  description: |-
-    RESTEasy 3 SPI Application Change for StringConverter
-    Replace `org.jboss.resteasy.spi.StringConverter` by `javax.ws.rs.ext.ParamConverterProvider`.
+  description: RESTEasy 3 SPI Application Change for StringConverter
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -241,9 +225,7 @@
       pattern: org.jboss.resteasy.spi.StringConverter
 - category: mandatory
   customVariables: []
-  description: |-
-    RESTEasy 3 SPI Application Changes for InjectorFactory
-    There were multiple changes on adding/removing methods on `org.jboss.resteasy.spi.InjectorFactory`.
+  description: RESTEasy 3 SPI Application Changes for InjectorFactory
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -267,9 +249,7 @@
       pattern: org.jboss.resteasy.spi.InjectorFactory
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated interface MessageBodyWriterInterceptor in RESTEasy 3
-    The interface `org.jboss.resteasy.spi.interception.MessageBodyWriterInterceptor` is deprecated and you should use `javax.ws.rs.ext.WriterInterceptor` from JAX-RS API.
+  description: Deprecated interface MessageBodyWriterInterceptor in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -295,9 +275,7 @@
       pattern: org.jboss.resteasy.spi.interception.MessageBodyWriterInterceptor
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated interface MessageBodyReaderInterceptor in RESTEasy 3
-    The interface `org.jboss.resteasy.spi.interception.MessageBodyReaderInterceptor` is deprecated and you should use `javax.ws.rs.ext.ReaderInterceptor` from JAX-RS API.
+  description: Deprecated interface MessageBodyReaderInterceptor in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -323,9 +301,7 @@
       pattern: org.jboss.resteasy.spi.interception.MessageBodyReaderInterceptor
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated interface MessageBodyWriterContext in RESTEasy 3
-    The interface `org.jboss.resteasy.spi.interception.MessageBodyWriterContext` is replaced by the `javax.ws.rs.ext.WriterInterceptorContext` interface by JAX-RS 2.0 compliant interceptor facility.
+  description: Deprecated interface MessageBodyWriterContext in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -351,9 +327,7 @@
       pattern: org.jboss.resteasy.spi.interception.MessageBodyWriterContext
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated class InterceptorRegistry in RESTEasy 3
-    `org.jboss.resteasy.core.interception.InterceptorRegistry` is deprecated in favor of the JAX-RS 2.0 Interceptor and filter API.
+  description: Deprecated class InterceptorRegistry in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -378,9 +352,7 @@
       pattern: org.jboss.resteasy.core.interception.InterceptorRegistry
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated interface InterceptorRegistryListener in RESTEasy 3
-    `org.jboss.resteasy.core.interception.InterceptorRegistryListener` is deprecated in favor of the JAX-RS 2.0 Interceptor and filter API.
+  description: Deprecated interface InterceptorRegistryListener in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -405,9 +377,7 @@
       pattern: org.jboss.resteasy.core.interception.InterceptorRegistryListener
 - category: mandatory
   customVariables: []
-  description: |-
-    Removed class ApacheHttpClientExecutor from in RESTEasy 3
-    No direct replacement.
+  description: Removed class ApacheHttpClientExecutor from in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -431,9 +401,7 @@
       pattern: org.jboss.resteasy.client.core.executors.ApacheHttpClientExecutor
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated interface AcceptedByMethod in RESTEasy 3
-    Use `javax.ws.rs.container.DynamicFeature` for Dynamic binding instead of implementing `org.jboss.resteasy.spi.interception.AcceptedByMethod` interface.
+  description: Deprecated interface AcceptedByMethod in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -458,9 +426,7 @@
       pattern: org.jboss.resteasy.spi.interception.AcceptedByMethod
 - category: mandatory
   customVariables: []
-  description: |-
-    Removed annotation ServerCached in RESTEasy 3
-    Remove annotation `@org.jboss.resteasy.annotations.cache.ServerCached' as it was removed in RESTEasy 3.x.
+  description: Removed annotation ServerCached in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -487,9 +453,7 @@
       pattern: org.jboss.resteasy.annotations.cache.ServerCached
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated class Link in RESTEasy 3
-    Replaced by `javax.ws.rs.core.Link` in JAX-RS API.
+  description: Deprecated class Link in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -514,9 +478,7 @@
       pattern: org.jboss.resteasy.spi.Link
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated interface ClientExecutionContext in RESTEasy 3
-    `org.jboss.resteasy.spi.interception.ClientExecutionContext` is deprecated in favor of the JAX-RS 2.0 Interceptor and filter API.
+  description: Deprecated interface ClientExecutionContext in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -541,9 +503,7 @@
       pattern: org.jboss.resteasy.spi.interception.ClientExecutionContext
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated interface ClientExecutionInterceptor in RESTEasy 3
-    Use `javax.ws.rs.client.Invocation` instead of `org.jboss.resteasy.spi.interception.ClientExecutionInterceptor`.. The RESTEasy interceptor facility introduced in release 2.x is replaced by the JAX-RS 2.0 compliant interceptor facility in release 3.0.x.
+  description: Deprecated interface ClientExecutionInterceptor in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -558,18 +518,16 @@
   links:
   - title: RESTEasy SPI Application Changes
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_resteasy_deprecated_classes
-  message: Use `javax.ws.rs.client.Invocation` instead of `org.jboss.resteasy.spi.interception.ClientExecutionInterceptor`..
-    The RESTEasy interceptor facility introduced in release 2.x is replaced by the
-    JAX-RS 2.0 compliant interceptor facility in release 3.0.x.
+  message: |-
+    Use `javax.ws.rs.client.Invocation` instead of `org.jboss.resteasy.spi.interception.ClientExecutionInterceptor`.
+     The RESTEasy interceptor facility introduced in release 2.x is replaced by the JAX-RS 2.0 compliant interceptor facility in release 3.0.x.
   ruleID: resteasy-eap6-000023
   when:
     java.referenced:
       pattern: org.jboss.resteasy.spi.interception.ClientExecutionInterceptor
 - category: mandatory
   customVariables: []
-  description: |-
-    ResteasyProviderFactory#add* methods were removed
-    Most of the `org.jboss.resteasy.spi.ResteasyProviderFactory#add*` methods have been removed or made protected in RESTEasy 3.0.. For example, the `addBuiltInMessageBodyReader()` and `addBuiltInMessageBodyWriter()` methods have been removed and the `addMessageBodyReader()` and `addMessageBodyWriter()` methods have been made protected.. You should now use the `registerProvider()` and `registerProviderInstance()` methods.
+  description: ResteasyProviderFactory#add* methods were removed
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -586,11 +544,10 @@
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#resteasyproviderfactory_add_methods
   - title: JAX-RS API
     url: https://docs.jboss.org/resteasy/docs/3.0.16.Final/javadocs/org/jboss/resteasy/spi/ResteasyProviderFactory.html
-  message: Most of the `org.jboss.resteasy.spi.ResteasyProviderFactory#add*` methods
-    have been removed or made protected in RESTEasy 3.0.. For example, the `addBuiltInMessageBodyReader()`
-    and `addBuiltInMessageBodyWriter()` methods have been removed and the `addMessageBodyReader()`
-    and `addMessageBodyWriter()` methods have been made protected.. You should now
-    use the `registerProvider()` and `registerProviderInstance()` methods.
+  message: |-
+    Most of the `org.jboss.resteasy.spi.ResteasyProviderFactory#add*` methods have been removed or made protected in RESTEasy 3.0.
+     For example, the `addBuiltInMessageBodyReader()` and `addBuiltInMessageBodyWriter()` methods have been removed and the `addMessageBodyReader()` and `addMessageBodyWriter()` methods have been made protected.
+     You should now use the `registerProvider()` and `registerProviderInstance()` methods.
   ruleID: resteasy-eap6-000024
   when:
     java.referenced:
@@ -598,9 +555,7 @@
       pattern: org.jboss.resteasy.spi.ResteasyProviderFactory.add*
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated interface MessageBodyReaderContext in RESTEasy 3
-    Use `javax.ws.rs.ext.ReaderInterceptorContext` instead of `org.jboss.resteasy.spi.interception.MessageBodyReaderContext`.. The RESTEasy interceptor facility introduced in release 2.x is replaced by the JAX-RS 2.0 compliant interceptor facility in release 3.0.x.
+  description: Deprecated interface MessageBodyReaderContext in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -617,18 +572,16 @@
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_resteasy_deprecated_classes
   - title: JAX-RS API
     url: https://docs.oracle.com/javaee/7/api/index.html?javax/ws/rs/ext/ReaderInterceptor.html
-  message: Use `javax.ws.rs.ext.ReaderInterceptorContext` instead of `org.jboss.resteasy.spi.interception.MessageBodyReaderContext`..
-    The RESTEasy interceptor facility introduced in release 2.x is replaced by the
-    JAX-RS 2.0 compliant interceptor facility in release 3.0.x.
+  message: |-
+    Use `javax.ws.rs.ext.ReaderInterceptorContext` instead of `org.jboss.resteasy.spi.interception.MessageBodyReaderContext`.
+     The RESTEasy interceptor facility introduced in release 2.x is replaced by the JAX-RS 2.0 compliant interceptor facility in release 3.0.x.
   ruleID: resteasy-eap6-000025
   when:
     java.referenced:
       pattern: org.jboss.resteasy.spi.interception.MessageBodyReaderContext
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated interface PostProcessInterceptor in RESTEasy 3
-    Use `javax.ws.rs.container.ContainerResponseFilter` instead of `org.jboss.resteasy.spi.interception.PostProcessInterceptor`.. The RESTEasy interceptor facility introduced in release 2.x is replaced by the JAX-RS 2.0 compliant filters and interceptor facility in release 3.0.x.
+  description: Deprecated interface PostProcessInterceptor in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -645,18 +598,16 @@
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_resteasy_deprecated_classes
   - title: JAX-RS API
     url: https://jax-rs-spec.java.net/nonav/2.0-rev-a/apidocs/index.html?javax/ws/rs/container/ContainerResponseFilter.html
-  message: Use `javax.ws.rs.container.ContainerResponseFilter` instead of `org.jboss.resteasy.spi.interception.PostProcessInterceptor`..
-    The RESTEasy interceptor facility introduced in release 2.x is replaced by the
-    JAX-RS 2.0 compliant filters and interceptor facility in release 3.0.x.
+  message: |-
+    Use `javax.ws.rs.container.ContainerResponseFilter` instead of `org.jboss.resteasy.spi.interception.PostProcessInterceptor`.
+     The RESTEasy interceptor facility introduced in release 2.x is replaced by the JAX-RS 2.0 compliant filters and interceptor facility in release 3.0.x.
   ruleID: resteasy-eap6-000029
   when:
     java.referenced:
       pattern: org.jboss.resteasy.spi.interception.PostProcessInterceptor
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated interface PreProcessInterceptor in RESTEasy 3
-    Use `javax.ws.rs.container.ContainerRequestFilter` instead of `org.jboss.resteasy.spi.interception.PreProcessInterceptor`.. The RESTEasy interceptor facility introduced in release 2.x is replaced by the JAX-RS 2.0 compliant filters and interceptor facility in release 3.0.x.
+  description: Deprecated interface PreProcessInterceptor in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -673,18 +624,16 @@
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_resteasy_deprecated_classes
   - title: JAX-RS API
     url: https://jax-rs-spec.java.net/nonav/2.0-rev-a/apidocs/index.html?javax/ws/rs/container/ContainerRequestFilter.html
-  message: Use `javax.ws.rs.container.ContainerRequestFilter` instead of `org.jboss.resteasy.spi.interception.PreProcessInterceptor`..
-    The RESTEasy interceptor facility introduced in release 2.x is replaced by the
-    JAX-RS 2.0 compliant filters and interceptor facility in release 3.0.x.
+  message: |-
+    Use `javax.ws.rs.container.ContainerRequestFilter` instead of `org.jboss.resteasy.spi.interception.PreProcessInterceptor`.
+     The RESTEasy interceptor facility introduced in release 2.x is replaced by the JAX-RS 2.0 compliant filters and interceptor facility in release 3.0.x.
   ruleID: resteasy-eap6-000030
   when:
     java.referenced:
       pattern: org.jboss.resteasy.spi.interception.PreProcessInterceptor
 - category: mandatory
   customVariables: []
-  description: |-
-    RESTEasy 3 SPI Registry changed
-    There were multiple changes on adding/removing methods on `org.jboss.resteasy.spi.Registry`.
+  description: RESTEasy 3 SPI Registry changed
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -708,9 +657,7 @@
       pattern: org.jboss.resteasy.spi.Registry
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated exception ForbiddenException in RESTEasy 3
-    Replaced by `javax.ws.rs.ForbiddenException` in jaxrs-api module.
+  description: Deprecated exception ForbiddenException in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -735,9 +682,7 @@
       pattern: org.jboss.resteasy.spi.ForbiddenException
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated exception MethodNotAllowedException in RESTEasy 3
-    Replaced by `javax.ws.rs.NotAllowedException` in jaxrs-api module.
+  description: Deprecated exception MethodNotAllowedException in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -762,9 +707,7 @@
       pattern: org.jboss.resteasy.spi.MethodNotAllowedException
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated exception NotAcceptableException in RESTEasy 3
-    Replaced by `javax.ws.rs.NotAcceptableException` in jaxrs-api module.
+  description: Deprecated exception NotAcceptableException in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -789,9 +732,7 @@
       pattern: org.jboss.resteasy.spi.NotAcceptableException
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated exception NotFoundException in RESTEasy 3
-    Replaced by `javax.ws.rs.NotFoundException` in jaxrs-api module.
+  description: Deprecated exception NotFoundException in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -816,9 +757,7 @@
       pattern: org.jboss.resteasy.spi.NotFoundException
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated exception UnauthorizedException in RESTEasy 3
-    Replaced by `javax.ws.rs.NotAuthorizedException` in jaxrs-api module.
+  description: Deprecated exception UnauthorizedException in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -843,9 +782,7 @@
       pattern: org.jboss.resteasy.spi.UnauthorizedException
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated exception UnsupportedMediaTypeException in RESTEasy 3
-    Replaced by `javax.ws.rs.NotSupportedException` in jaxrs-api module.
+  description: Deprecated exception UnsupportedMediaTypeException in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -870,9 +807,7 @@
       pattern: org.jboss.resteasy.spi.UnsupportedMediaTypeException
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated method ServerCookie#checkName in RESTEasy 3
-    RESTEasy 3 deprecates method `org.jboss.resteasy.plugins.delegates.ServerCookie#checkName` without a replacement.. It was deprecated in the original `org.apache.tomcat.util.http.ServerCookie` class which was a template for this method.
+  description: Deprecated method ServerCookie#checkName in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -887,9 +822,9 @@
   links:
   - title: RESTEasy SPI Application Changes
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_resteasy_deprecated_classes
-  message: RESTEasy 3 deprecates method `org.jboss.resteasy.plugins.delegates.ServerCookie#checkName`
-    without a replacement.. It was deprecated in the original `org.apache.tomcat.util.http.ServerCookie`
-    class which was a template for this method.
+  message: |-
+    RESTEasy 3 deprecates method `org.jboss.resteasy.plugins.delegates.ServerCookie#checkName` without a replacement.
+     It was deprecated in the original `org.apache.tomcat.util.http.ServerCookie` class which was a template for this method.
   ruleID: resteasy-eap6-000118
   when:
     java.referenced:
@@ -897,9 +832,7 @@
       pattern: org.jboss.resteasy.plugins.delegates.ServerCookie.checkName*
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated method JAXBContextWrapper#createValidator in RESTEasy 3
-    Empty
+  description: Deprecated method JAXBContextWrapper#createValidator in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -922,9 +855,7 @@
       pattern: org.jboss.resteasy.plugins.providers.jaxb.JAXBContextWrapper.createValidator*
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated method ResteasyHttpServletResponseWrapper#encodeRedirectUrl
-    Replace method calls of `encodeRedirectUrl` with `encodeRedirectURL(String url)`.
+  description: Deprecated method ResteasyHttpServletResponseWrapper#encodeRedirectUrl
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -950,9 +881,7 @@
       pattern: org.jboss.resteasy.core.ResteasyHttpServletResponseWrapper.encodeRedirectUrl*
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated ResteasyHttpServletResponseWrapper#encodeUrl method
-    Replace `ResteasyHttpServletResponseWrapper#encodeUrl` with `ResteasyHttpServletResponseWrapper#encodeURL(String url)`.
+  description: Deprecated ResteasyHttpServletResponseWrapper#encodeUrl method
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -978,9 +907,8 @@
       pattern: org.jboss.resteasy.core.ResteasyHttpServletResponseWrapper.encodeUrl*
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated method MultipartFormDataInputImpl#getFormData in RESTEasy 3
-    `MultipartFormDataInputImpl#getFormData` method will be removed in the future. Use `MultipartFormDataInput#getFormDataMap()` instead.
+  description: Deprecated method MultipartFormDataInputImpl#getFormData in RESTEasy
+    3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -1006,9 +934,7 @@
       pattern: org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInputImpl.getFormData*
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated method MultipartFormDataInput#getFormData in RESTEasy 3
-    `MultipartFormDataInput#getFormData` method will be removed in the future. Use `MultipartFormDataInput#getFormDataMap()` instead.
+  description: Deprecated method MultipartFormDataInput#getFormData in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -1034,9 +960,8 @@
       pattern: org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInput.getFormData*
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated method ResteasyHttpServletRequestWrapper.isRequestedSessionIdFromURL in RESTEasy 3
-    As of Version 2.1 of the Java Servlet API, use `ResteasyHttpServletRequestWrapper.isRequestedSessionIdFromURL()` instead.
+  description: Deprecated method ResteasyHttpServletRequestWrapper.isRequestedSessionIdFromURL
+    in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -1062,9 +987,7 @@
       pattern: org.jboss.resteasy.core.ResteasyHttpServletRequestWrapper.isRequestedSessionIdFromUrl*
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated method SecureUnmarshaller#isValidating in RESTEasy 3
-    Method `org.jboss.resteasy.plugins.providers.jaxb.SecureUnmarshaller#isValidating` is deprecated without a replacement.
+  description: Deprecated method SecureUnmarshaller#isValidating in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -1090,9 +1013,7 @@
       pattern: org.jboss.resteasy.plugins.providers.jaxb.SecureUnmarshaller.isValidating*
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated method ServerCookie#maybeQuote in RESTEasy 3
-    RESTEasy 3 deprecates method `org.jboss.resteasy.plugins.delegates.ServerCookie#maybeQuote` without a replacement.. It was deprecated in the original `org.apache.tomcat.util.http.ServerCookie` class which was a template for this method.
+  description: Deprecated method ServerCookie#maybeQuote in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -1109,9 +1030,9 @@
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_resteasy_deprecated_classes
   - title: JAX-RS API
     url: https://docs.jboss.org/resteasy/docs/3.0.16.Final/javadocs/org/jboss/resteasy/plugins/delegates/ServerCookie.html#maybeQuote%28int,%20java.lang.StringBuffer,%20java.lang.String%29
-  message: RESTEasy 3 deprecates method `org.jboss.resteasy.plugins.delegates.ServerCookie#maybeQuote`
-    without a replacement.. It was deprecated in the original `org.apache.tomcat.util.http.ServerCookie`
-    class which was a template for this method.
+  message: |-
+    RESTEasy 3 deprecates method `org.jboss.resteasy.plugins.delegates.ServerCookie#maybeQuote` without a replacement.
+     It was deprecated in the original `org.apache.tomcat.util.http.ServerCookie` class which was a template for this method.
   ruleID: resteasy-eap6-000127
   when:
     java.referenced:
@@ -1119,9 +1040,7 @@
       pattern: org.jboss.resteasy.plugins.delegates.ServerCookie.maybeQuote*
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated method SecureUnmarshaller#setAdapter in RESTEasy 3
-    Method `org.jboss.resteasy.plugins.providers.jaxb.SecureUnmarshaller#setAdapter` is deprecated in RESTEasy 3.
+  description: Deprecated method SecureUnmarshaller#setAdapter in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -1147,9 +1066,8 @@
       pattern: org.jboss.resteasy.plugins.providers.jaxb.SecureUnmarshaller.setAdapter*
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated method ResteasyHttpServletResponseWrapper#setStatus in RESTEasy 3
-    As of version 2.1, due to ambiguous meaning of the message parameter. To set a status code use `setStatus(int)` instead,. to send an error with a description use `sendError(int, String)`. Sets the status code and message for this response.
+  description: Deprecated method ResteasyHttpServletResponseWrapper#setStatus in RESTEasy
+    3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -1166,9 +1084,9 @@
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_resteasy_deprecated_classes
   - title: RESTEasy javadoc ResteasyHttpServletResponseWrapper.html#setStatus
     url: https://docs.jboss.org/resteasy/docs/3.0.16.Final/javadocs/org/jboss/resteasy/core/ResteasyHttpServletResponseWrapper.html#setStatus(int,%20java.lang.String)
-  message: As of version 2.1, due to ambiguous meaning of the message parameter. To
-    set a status code use `setStatus(int)` instead,. to send an error with a description
-    use `sendError(int, String)`. Sets the status code and message for this response.
+  message: |-
+    As of version 2.1, due to ambiguous meaning of the message parameter. To set a status code use `setStatus(int)` instead,
+     to send an error with a description use `sendError(int, String)`. Sets the status code and message for this response.
   ruleID: resteasy-eap6-000129
   when:
     java.referenced:
@@ -1176,9 +1094,7 @@
       pattern: org.jboss.resteasy.core.ResteasyHttpServletResponseWrapper.setStatus*
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated method SecureUnmarshaller#setValidating in RESTEasy 3
-    RESTEasy 3 deprecates method `org.jboss.resteasy.plugins.providers.jaxb.SecureUnmarshaller#setValidating` without a replacement.
+  description: Deprecated method SecureUnmarshaller#setValidating in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -1204,9 +1120,7 @@
       pattern: org.jboss.resteasy.plugins.providers.jaxb.SecureUnmarshaller.setValidating*
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated method OAuthValidator#validateMessage in RESTEasy 3
-    RESTEasy 3 deprecates `org.jboss.resteasy.auth.oauth.OAuthValidator#validateMessage` method without a replacement.
+  description: Deprecated method OAuthValidator#validateMessage in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -1232,9 +1146,7 @@
       pattern: org.jboss.resteasy.auth.oauth.OAuthValidator.validateMessage*
 - category: mandatory
   customVariables: []
-  description: |-
-    Resteasy Yaml Provider is deprecated and disabled by default
-    The resteasy-yaml-provider module is not recommended to use due security issue in SnakeYAML library used by RESTEasy for unmarshaling.. If you would like to use YAML Resteasy Provider even it is not recommended,. you need to add the SnakeYAML library (Maven dependency) into your application and enable it by creating file `META-INF/services/javax.ws.rs.ext.Providers` with line `org.jboss.resteasy.plugins.providers.YamlProvider` in that file and your application.
+  description: Resteasy Yaml Provider is deprecated and disabled by default
   effort: 3
   labels:
   - konveyor.io/source=eap6
@@ -1248,12 +1160,12 @@
   - resteasy
   - yaml
   links: []
-  message: The resteasy-yaml-provider module is not recommended to use due security
-    issue in SnakeYAML library used by RESTEasy for unmarshaling.. If you would like
-    to use YAML Resteasy Provider even it is not recommended,. you need to add the
-    SnakeYAML library (Maven dependency) into your application and enable it by creating
-    file `META-INF/services/javax.ws.rs.ext.Providers` with line `org.jboss.resteasy.plugins.providers.YamlProvider`
-    in that file and your application.
+  message: "The resteasy-yaml-provider module is not recommended to use due security
+    issue in SnakeYAML library used by RESTEasy for unmarshaling. \n If you would
+    like to use YAML Resteasy Provider even it is not recommended, \n you need to
+    add the SnakeYAML library (Maven dependency) into your application and enable
+    it by creating file `META-INF/services/javax.ws.rs.ext.Providers` with line `org.jboss.resteasy.plugins.providers.YamlProvider`
+    in that file and your application.\n "
   ruleID: resteasy-eap6-000140
   when:
     java.referenced:
@@ -1261,9 +1173,7 @@
       pattern: javax.ws.rs.Produces
 - category: mandatory
   customVariables: []
-  description: |-
-    Resteasy SerializableProvider is disabled by default
-    Deserializing Java objects from untrusted sources is not safe. For this reason,. the `org.jboss.resteasy.plugins.providers.SerializableProvider` class is disabled by default, and it is not recommended to use this provider.. If you need to enable it even against the recommendation, create or update file `META-INF/services/javax.ws.rs.ext.Providers` with adding line with `org.jboss.resteasy.plugins.providers.SerializableProvider` string.
+  description: Resteasy SerializableProvider is disabled by default
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -1276,12 +1186,12 @@
   - konveyor.io/target=eap
   - resteasy
   links: []
-  message: Deserializing Java objects from untrusted sources is not safe. For this
-    reason,. the `org.jboss.resteasy.plugins.providers.SerializableProvider` class
-    is disabled by default, and it is not recommended to use this provider.. If you
-    need to enable it even against the recommendation, create or update file `META-INF/services/javax.ws.rs.ext.Providers`
+  message: "Deserializing Java objects from untrusted sources is not safe. For this
+    reason, \n the `org.jboss.resteasy.plugins.providers.SerializableProvider` class
+    is disabled by default, and it is not recommended to use this provider. \n If
+    you need to enable it even against the recommendation, create or update file `META-INF/services/javax.ws.rs.ext.Providers`
     with adding line with `org.jboss.resteasy.plugins.providers.SerializableProvider`
-    string.
+    string.\n "
   ruleID: resteasy-eap6-000141
   when:
     or:
@@ -1293,9 +1203,7 @@
         pattern: javax.ws.rs.Consumes
 - category: optional
   customVariables: []
-  description: |-
-    RESTEasy Text default charset response changed
-    RESTEasy fixes the issue when it doesn't set/add correctly character set meta data specified in JAX-RS specification. Therefore UTF-8 as the character set for text media types is set by default.. This behavior results in adding `charset=UTF-8` string to the returned content-type header when the resource method returns a `text/*` or `application/xml*` media type without an explicit charset.. The behavior is controlled by `resteasy.add.charset` parameter which is set to `true` by default and you can customize the `resteasy.add.charset` parameter to `false` in _web.xml_'s `context-param` element. in case of wanting to keep previous behavior.
+  description: RESTEasy Text default charset response changed
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -1313,14 +1221,15 @@
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.1/html/migration_guide/application_migration_changes#migrate_resteasy_default_charset_utf8_in_content_type_header
   - title: RESTEasy Text media types and character sets
     url: http://docs.jboss.org/resteasy/docs/3.1.4.Final/userguide/html_single/index.html#Text_media_types
-  message: RESTEasy fixes the issue when it doesn't set/add correctly character set
+  message: "RESTEasy fixes the issue when it doesn't set/add correctly character set
     meta data specified in JAX-RS specification. Therefore UTF-8 as the character
-    set for text media types is set by default.. This behavior results in adding `charset=UTF-8`
-    string to the returned content-type header when the resource method returns a
-    `text/*` or `application/xml*` media type without an explicit charset.. The behavior
-    is controlled by `resteasy.add.charset` parameter which is set to `true` by default
-    and you can customize the `resteasy.add.charset` parameter to `false` in _web.xml_'s
-    `context-param` element. in case of wanting to keep previous behavior.
+    set for text media types is set by default.\n This behavior results in adding
+    `charset=UTF-8` string to the returned content-type header when the resource method
+    returns a `text/*` or `application/xml*` media type without an explicit charset.\n
+    The behavior is controlled by `resteasy.add.charset` parameter which is set to
+    `true` by default and you can customize the `resteasy.add.charset` parameter to
+    `false` in _web.xml_'s `context-param` element \n in case of wanting to keep previous
+    behavior.\n "
   ruleID: resteasy-eap6-000142
   when:
     or:

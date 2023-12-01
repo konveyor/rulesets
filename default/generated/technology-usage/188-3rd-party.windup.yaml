@@ -1,10 +1,10 @@
 - customVariables: []
-  description: |
-    Embedded framework - Liferay
-    The application embeds the Liferay framework.
+  description: Embedded framework - Liferay
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Liferay framework.
   ruleID: 3rd-party-01000
   tag:
   - Liferay
@@ -13,12 +13,12 @@
     builtin.file:
       pattern: .*liferay.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Oracle Forms
-    The application embeds the Oracle Forms framework.
+  description: Embedded framework - Oracle Forms
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Oracle Forms framework.
   ruleID: 3rd-party-02000
   tag:
   - Oracle Forms
@@ -27,12 +27,12 @@
     builtin.file:
       pattern: .*frm.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Spring Boot
-    The application embeds the Spring Boot framework.
+  description: Embedded framework - Spring Boot
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Spring Boot framework.
   ruleID: 3rd-party-03000
   tag:
   - Spring Boot
@@ -41,12 +41,12 @@
     builtin.file:
       pattern: spring-boot.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Elasticsearch
-    The application embeds the Elasticsearch framework.
+  description: Embedded framework - Elasticsearch
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Elasticsearch framework.
   ruleID: 3rd-party-04000
   tag:
   - Elasticsearch
@@ -55,12 +55,12 @@
     builtin.file:
       pattern: .*elasticsearch.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Logstash
-    The application embeds the Logstash framework.
+  description: Embedded framework - Logstash
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Logstash framework.
   ruleID: 3rd-party-05000
   tag:
   - Logstash
@@ -69,12 +69,12 @@
     builtin.file:
       pattern: .*logstash.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Jetty
-    The application embeds the Jetty framework.
+  description: Embedded framework - Jetty
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Jetty framework.
   ruleID: 3rd-party-06000
   tag:
   - Jetty
@@ -83,12 +83,12 @@
     builtin.file:
       pattern: .*jetty.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Tomcat
-    The application embeds the Tomcat framework.
+  description: Embedded framework - Tomcat
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Tomcat framework.
   ruleID: 3rd-party-07000
   tag:
   - Tomcat
@@ -97,12 +97,12 @@
     builtin.file:
       pattern: .*tomcat.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Kibana
-    The application embeds the Kibana framework.
+  description: Embedded framework - Kibana
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Kibana framework.
   ruleID: 3rd-party-08000
   tag:
   - Kibana
@@ -111,12 +111,12 @@
     builtin.file:
       pattern: .*kibana.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Apache Karaf
-    The application embeds the Apache Karaf framework.
+  description: Embedded framework - Apache Karaf
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Apache Karaf framework.
   ruleID: 3rd-party-09000
   tag:
   - Apache Karaf
@@ -125,12 +125,12 @@
     builtin.file:
       pattern: .*karaf.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Neo4j
-    The application embeds the Neo4j framework.
+  description: Embedded framework - Neo4j
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Neo4j framework.
   ruleID: 3rd-party-10000
   tag:
   - Neo4j
@@ -139,12 +139,12 @@
     builtin.file:
       pattern: .*neo4j.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Spark
-    The application embeds the Spark framework.
+  description: Embedded framework - Spark
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Spark framework.
   ruleID: 3rd-party-11000
   tag:
   - Spark
@@ -153,12 +153,12 @@
     builtin.file:
       pattern: .*spark-.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Apache Hadoop
-    The application embeds the Apache Hadoop framework.
+  description: Embedded framework - Apache Hadoop
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Apache Hadoop framework.
   ruleID: 3rd-party-12000
   tag:
   - Apache Hadoop
@@ -167,12 +167,12 @@
     builtin.file:
       pattern: .*hadoop.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Apache Geronimo
-    The application embeds the Apache Geronimo framework.
+  description: Embedded framework - Apache Geronimo
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Apache Geronimo framework.
   ruleID: 3rd-party-13000
   tag:
   - Apache Geronimo
@@ -181,12 +181,12 @@
     builtin.file:
       pattern: .*geronimo.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Apache Aries
-    The application embeds the Apache Aries framework.
+  description: Embedded framework - Apache Aries
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Apache Aries framework.
   ruleID: 3rd-party-14000
   tag:
   - Apache Aries
@@ -195,12 +195,12 @@
     builtin.file:
       pattern: .*aries.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Cloudera
-    The application embeds the Cloudera framework.
+  description: Embedded framework - Cloudera
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Cloudera framework.
   ruleID: 3rd-party-15000
   tag:
   - Cloudera
@@ -209,12 +209,12 @@
     builtin.file:
       pattern: .*cloudera.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - MapR
-    The application embeds the MapR framework.
+  description: Embedded framework - MapR
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the MapR framework.
   ruleID: 3rd-party-16000
   tag:
   - MapR
@@ -223,12 +223,12 @@
     builtin.file:
       pattern: .*mapr.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - TensorFlow
-    The application embeds the TensorFlow framework.
+  description: Embedded framework - TensorFlow
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the TensorFlow framework.
   ruleID: 3rd-party-17000
   tag:
   - TensorFlow
@@ -237,12 +237,12 @@
     builtin.file:
       pattern: .*tensorflow.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Weka
-    The application embeds the Weka framework.
+  description: Embedded framework - Weka
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Weka framework.
   ruleID: 3rd-party-18000
   tag:
   - Weka
@@ -251,12 +251,12 @@
     builtin.file:
       pattern: .*weka.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Apache Mahout
-    The application embeds the Apache Mahout framework.
+  description: Embedded framework - Apache Mahout
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Apache Mahout framework.
   ruleID: 3rd-party-19000
   tag:
   - Apache Mahout

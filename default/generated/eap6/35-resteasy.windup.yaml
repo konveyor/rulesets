@@ -1,8 +1,6 @@
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated class SimpleServerCache in RESTEasy 2
-    Use of `org.jboss.resteasy.plugins.cache.server.SimpleServerCache` is not supported in JBoss EAP 6.
+  description: Deprecated class SimpleServerCache in RESTEasy 2
   effort: 1
   labels:
   - konveyor.io/source=eap5

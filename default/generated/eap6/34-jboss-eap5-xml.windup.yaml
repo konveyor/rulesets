@@ -1,7 +1,5 @@
 - customVariables: []
-  description: "JBoss Cache\n\n                        JBoss Cache TreeCache is a
-    distributed tree-like structure that is replicated across several members.\n                        Updates
-    will be multicast to all group members reliably and in the same order.\n                    \n"
+  description: JBoss Cache
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap
@@ -15,6 +13,10 @@
     url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/cache_user_guide/
   - title: JBoss Cache Tutorial
     url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/cache_tutorial/
+  message:
+  - "\n                        JBoss Cache TreeCache is a distributed tree-like structure
+    that is replicated across several members.\n                        Updates will
+    be multicast to all group members reliably and in the same order.\n                    "
   ruleID: jboss-eap5-xml-01000
   tag:
   - cache
@@ -27,9 +29,7 @@
       namespaces: {}
       xpath: //mbean[@code='org.jboss.cache.TreeCache']
 - customVariables: []
-  description: "JBoss Classloading configuration, typically in jboss-classloading.xml.\n\n
-    \                       JBoss EAP 5 allows detailed classloading configuration.\n
-    \                   \n"
+  description: JBoss Classloading configuration, typically in jboss-classloading.xml.
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap
@@ -41,6 +41,9 @@
   links:
   - title: JBoss EAP 5 Classloading
     url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/5/html/Microcontainer_User_Guide/sect-JBoss_Microcontainer_User_Guide-The_ClassLoading_Layer-ClassLoading.html
+  message:
+  - "\n                        JBoss EAP 5 allows detailed classloading configuration.\n
+    \                   "
   ruleID: jboss-eap5-xml-03000
   tag:
   - jboss-eap5
@@ -50,13 +53,7 @@
       namespaces: {}
       xpath: /classloading
 - customVariables: []
-  description: "JBoss Seam Components (components.xml)\n\n                        Allows
-    to configure a Seam component using XML: to isolate deployment-specific information
-    from\n                        the Java code, to enable the creation of re-usable
-    frameworks, to configure Seam's built-in functionality, etc.\n                        Seam
-    provides two basic approaches to configuring components:\n                        configuration
-    via property settings in a properties file or in `web.xml`,\n                        and
-    configuration via `components.xml`.\n                    \n"
+  description: JBoss Seam Components (components.xml)
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap
@@ -68,6 +65,14 @@
   links:
   - title: JBoss Seam Reference Guide - Configuring Seam components
     url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/seam_reference_guide/#xml
+  message:
+  - "\n                        Allows to configure a Seam component using XML: to
+    isolate deployment-specific information from\n                        the Java
+    code, to enable the creation of re-usable frameworks, to configure Seam's built-in
+    functionality, etc.\n                        Seam provides two basic approaches
+    to configuring components:\n                        configuration via property
+    settings in a properties file or in `web.xml`,\n                        and configuration
+    via `components.xml`.\n                    "
   ruleID: jboss-eap5-xml-05000
   tag:
   - seam
@@ -79,8 +84,7 @@
         sc: http://jboss.com/products/seam/components
       xpath: /sc:components
 - customVariables: []
-  description: "JBoss Seam Pages\n\n                        The `pages.xml` file specifies
-    the page flow and other configuration of the Seam Framework.\n                    \n"
+  description: JBoss Seam Pages
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap
@@ -92,6 +96,9 @@
   links:
   - title: Seam Framework Reference Guide
     url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/seam_reference_guide/
+  message:
+  - "\n                        The `pages.xml` file specifies the page flow and other
+    configuration of the Seam Framework.\n                    "
   ruleID: jboss-eap5-xml-06000
   tag:
   - seam
@@ -103,6 +110,7 @@
         sp: http://jboss.com/products/seam/pages
       xpath: /sp:pages
 - customVariables: []
+  description: JBoss Seam Page
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap
@@ -129,9 +137,7 @@
         namespaces: {}
         xpath: /page
 - customVariables: []
-  description: "JBoss EAR descriptor\n\n                            The `jboss-app.xml`
-    file configures a Java EE application deployments specifically for JBoss EAP.\n
-    \                       \n"
+  description: JBoss EAR descriptor
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap
@@ -141,6 +147,9 @@
   - ejb
   - seam
   links: []
+  message:
+  - "\n                            The `jboss-app.xml` file configures a Java EE application
+    deployments specifically for JBoss EAP.\n                        "
   ruleID: jboss-eap5-xml-08000
   tag:
   - configuration
@@ -155,9 +164,7 @@
       namespaces: {}
       xpath: //*[local-name()='jboss-app']
 - customVariables: []
-  description: "JBoss web application descriptor (jboss-web.xml)\n\n                        The
-    `jboss-web.xml` file configures a Java EE web application specifically for JBoss
-    EAP.\n                        It is an extension to standard `web.xml`.\n                    \n"
+  description: JBoss web application descriptor (jboss-web.xml)
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap
@@ -169,6 +176,10 @@
   links:
   - title: jboss-web.xml Configuration Reference
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/development_guide/#jboss-webxml_Configuration_Reference
+  message:
+  - "\n                        The `jboss-web.xml` file configures a Java EE web application
+    specifically for JBoss EAP.\n                        It is an extension to standard
+    `web.xml`.\n                    "
   ruleID: jboss-eap5-xml-09000
   tag:
   - web
@@ -185,10 +196,7 @@
       xpath: //*[local-name()='jboss-web']
 - category: mandatory
   customVariables: []
-  description: |-
-    JBoss 5 classloader configuration (jboss-classloading.xml)
-    The `jboss-classloading.xml` file allows customization of classloading in JBoss EAP 5.
-    In JBoss EAP 6, the classloading configuration is not done through `jboss-classloading.xml`.. Since EAP 6 it is of modular nature, based on JBoss Modules.. Learn how to divide your application's dependencies into modules. and what dependencies and APIs are available automatically.
+  description: JBoss 5 classloader configuration (jboss-classloading.xml)
   effort: 5
   labels:
   - konveyor.io/source=eap5
@@ -208,10 +216,9 @@
     url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html/Development_Guide/chap-Class_Loading_and_Modules.html
   - title: JBoss EAP 5 Class Loading and Modules
     url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/5/html/Microcontainer_User_Guide/sect-JBoss_Microcontainer_User_Guide-The_ClassLoading_Layer-ClassLoading.html
-  message: In JBoss EAP 6, the classloading configuration is not done through `jboss-classloading.xml`..
-    Since EAP 6 it is of modular nature, based on JBoss Modules.. Learn how to divide
-    your application's dependencies into modules. and what dependencies and APIs are
-    available automatically.
+  message:
+  - The `jboss-classloading.xml` file allows customization of classloading in JBoss
+    EAP 5.
   ruleID: jboss-eap5-7-xml-10000
   tag:
   - classloading
@@ -222,10 +229,7 @@
         jbc: urn:jboss:classloading:1.0
       xpath: /jbc:classloading
 - customVariables: []
-  description: "JBoss module and classloading configuration (jboss-deployment-structure.xml)\n\n
-    \                       The `jboss-deployment-structure.xml` file allows the creator
-    of the deployment to control the dependencies\n                        and classloading
-    of deployments.\n                    \n"
+  description: JBoss module and classloading configuration (jboss-deployment-structure.xml)
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap
@@ -237,6 +241,10 @@
   links:
   - title: Class Loading and Modules
     url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html/Development_Guide/chap-Class_Loading_and_Modules.html
+  message:
+  - "\n                        The `jboss-deployment-structure.xml` file allows the
+    creator of the deployment to control the dependencies\n                        and
+    classloading of deployments.\n                    "
   ruleID: jboss-eap5-xml-11000
   tag:
   - classloading
@@ -249,9 +257,7 @@
       namespaces: {}
       xpath: //*[local-name()='jboss-deployment-structure']
 - customVariables: []
-  description: "JBoss EJB 2 CMP Deployment descriptor (jbosscmp-jdbc.xml)\n\n                        The
-    `jbosscmp-jdbc.xml` is a deployment decriptor controlling the Container Managed
-    Persistence (CMP).\n                    \n"
+  description: JBoss EJB 2 CMP Deployment descriptor (jbosscmp-jdbc.xml)
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap
@@ -263,6 +269,9 @@
   links:
   - title: JBoss EAP 5 - The jbosscmp-jdbc Structure
     url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/administration_and_configuration_guide/index#The_CMP_Engine-The_jbosscmp_jdbc_Structure
+  message:
+  - "\n                        The `jbosscmp-jdbc.xml` is a deployment decriptor controlling
+    the Container Managed Persistence (CMP).\n                    "
   ruleID: jboss-eap5-xml-12000
   tag:
   - jdbc
@@ -276,9 +285,7 @@
       namespaces: {}
       xpath: //*[local-name()='jbosscmp-jdbc']
 - customVariables: []
-  description: "JBoss EJB XML deployment descriptor prior to EAP 6\n\n                        The
-    `jboss.xml` descriptor in deployments is ignored by JBoss AS 7+ or JBoss EAP 6+.\n
-    \                       Replace it with `jboss-ejb3.xml`.\n                    \n"
+  description: JBoss EJB XML deployment descriptor prior to EAP 6
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap
@@ -292,6 +299,10 @@
     url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/administration_and_configuration_guide/#ENC_Usage_Conventions-EJB_References_with_jboss.xml_and_jboss_web.xml
   - title: JBoss EAP 6 - Replace the jboss.xml File
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/#Replace_the_jboss.xml_File
+  message:
+  - "\n                        The `jboss.xml` descriptor in deployments is ignored
+    by JBoss AS 7+ or JBoss EAP 6+.\n                        Replace it with `jboss-ejb3.xml`.\n
+    \                   "
   ruleID: jboss-eap5-xml-13000
   tag:
   - descriptor
@@ -305,9 +316,7 @@
       xpath: //*[local-name()='jboss']
 - category: mandatory
   customVariables: []
-  description: |-
-    JBoss EAP security-domain configuration - java:/jaas/
-    `java:/jaas/` is a JBoss EAP `security-domain` URI.. Remove the `java:/jaas/` prefix for `security-domain` elements in AS 7 / EAP 6.
+  description: JBoss EAP security-domain configuration - java:/jaas/
   effort: 3
   labels:
   - konveyor.io/source=eap5
@@ -322,8 +331,8 @@
   links:
   - title: Java Authentication and Authorization Service (JAAS) Reference Guide
     url: http://docs.oracle.com/javase/7/docs/technotes/guides/security/jaas/JAASRefGuide.html
-  message: '`java:/jaas/` is a JBoss EAP `security-domain` URI.. Remove the `java:/jaas/`
-    prefix for `security-domain` elements in AS 7 / EAP 6.'
+  message: "\n `java:/jaas/` is a JBoss EAP `security-domain` URI.\n Remove the `java:/jaas/`
+    prefix for `security-domain` elements in AS 7 / EAP 6.\n "
   ruleID: jboss-eap5-xml-14000
   when:
     builtin.xml:
@@ -331,9 +340,7 @@
       xpath: //*[local-name()='security-domain' and starts-with(text(), 'java:/jaas/')]
 - category: mandatory
   customVariables: []
-  description: |-
-    JBoss security configuration descriptor (login-config.xml)
-    Before JBoss EAP 6, authentication security domains and login modules could be configured in a `login-config.xml` file.. JBoss EAP 6+ does not support the `login-config.xml` descriptor. Security is now configured inside the server configuration. Please refer to the corresponding server security guide.
+  description: JBoss security configuration descriptor (prior to AS 7 / EAP 6)
   effort: 5
   labels:
   - konveyor.io/source=eap5
@@ -349,10 +356,10 @@
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/how_to_configure_server_security/
   - title: JBoss EAP 5 - Login Modules
     url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/security_guide/#idm139921681412720
-  message: Before JBoss EAP 6, authentication security domains and login modules could
-    be configured in a `login-config.xml` file.. JBoss EAP 6+ does not support the
-    `login-config.xml` descriptor. Security is now configured inside the server configuration.
-    Please refer to the corresponding server security guide.
+  message: "Before JBoss EAP 6, authentication security domains and login modules
+    could be configured in a `login-config.xml` file.\n JBoss EAP 6+ does not support
+    the `login-config.xml` descriptor. Security is now configured inside the server
+    configuration. Please refer to the corresponding server security guide.\n "
   ruleID: jboss-eap5-xml-16000
   tag:
   - security
@@ -364,8 +371,7 @@
       namespaces: {}
       xpath: //*[local-name()='policy']
 - customVariables: []
-  description: "JBoss EJB 3 deployment descriptor (jboss-ejb3.xml)\n\n                        A
-    JBoss specific EJB 3 configuration allows extensions of Java EE EJB 3.\n                    \n"
+  description: JBoss EJB 3 deployment descriptor (jboss-ejb3.xml)
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap
@@ -377,6 +383,9 @@
   links:
   - title: jboss-ejb3.xml Deployment Descriptor Reference
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/development_guide/index#jboss-ejb3xml_Deployment_Descriptor_Reference
+  message:
+  - "\n                        A JBoss specific EJB 3 configuration allows extensions
+    of Java EE EJB 3.\n                    "
   ruleID: jboss-eap5-xml-17000
   tag:
   - jboss-eap5
@@ -388,16 +397,7 @@
       namespaces: {}
       xpath: //*[local-name()='ejb-jar']
 - customVariables: []
-  description: "JBoss web-services deployment descriptor (jboss-webservices.xml)\n\n
-    \                       JBossWS 4.0 introduces a new deployment descriptor to
-    configure web services.\n                        The `jboss-webservices.xml` file
-    provides additional information for the given deployment\n                        and
-    partially replaces the obsolete `jboss.xml` file.\n\n                        For
-    EJB webservice deployments, the expected location of the `jboss-webservices.xml`
-    descriptor file\n                        is in the `META-INF/` directory. For
-    POJO and EJB webservice endpoints bundled in WAR file,\n                        the
-    expected location of the `jboss-webservices.xml` file is in the `WEB-INF/` directory.\n
-    \                   \n"
+  description: JBoss web-services deployment descriptor (jboss-webservices.xml)
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap
@@ -409,6 +409,16 @@
   links:
   - title: JBoss web-services deployment descriptor (jboss-webservices.xml)
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-Web_Services_Changes
+  message:
+  - "\n                        JBossWS 4.0 introduces a new deployment descriptor
+    to configure web services.\n                        The `jboss-webservices.xml`
+    file provides additional information for the given deployment\n                        and
+    partially replaces the obsolete `jboss.xml` file.\n\n                        For
+    EJB webservice deployments, the expected location of the `jboss-webservices.xml`
+    descriptor file\n                        is in the `META-INF/` directory. For
+    POJO and EJB webservice endpoints bundled in WAR file,\n                        the
+    expected location of the `jboss-webservices.xml` file is in the `WEB-INF/` directory.\n
+    \                   "
   ruleID: jboss-eap5-xml-18000
   tag:
   - jboss-ws
@@ -423,6 +433,7 @@
       namespaces: {}
       xpath: //*[local-name()='webservices']
 - customVariables: []
+  description: JBoss EAP 4 JMS configuration
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap

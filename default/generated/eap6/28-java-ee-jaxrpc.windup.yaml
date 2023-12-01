@@ -1,12 +1,5 @@
 - customVariables: []
-  description: "JAX-RPC Generic Handler\n\n                    \n                        The
-    \"javax.xml.rpc.handler.GenericHandler\" class implements the Handler interface.\n
-    \                       SOAP Message Handler developers should typically subclass
-    GenericHandler class unless\n                        the Handler class needs another
-    class as a superclass. It is a convenience abstract\n                        class
-    that makes writing Handlers easy. GenericHandler provides default implementations\n
-    \                       of the lifecycle methods init and destroy and also different
-    handle methods.\n                        \n                    \n"
+  description: JAX-RPC Generic Handler
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=eap6+
@@ -16,6 +9,15 @@
   links:
   - title: Java EE RPC Generic Handler API
     url: http://docs.oracle.com/cd/E17802_01/webservices/webservices/docs/1.6/api/javax/xml/rpc/handler/GenericHandler.html
+  message:
+  - "\n                    \n                        The \"javax.xml.rpc.handler.GenericHandler\"
+    class implements the Handler interface.\n                        SOAP Message
+    Handler developers should typically subclass GenericHandler class unless\n                        the
+    Handler class needs another class as a superclass. It is a convenience abstract\n
+    \                       class that makes writing Handlers easy. GenericHandler
+    provides default implementations\n                        of the lifecycle methods
+    init and destroy and also different handle methods.\n                        \n
+    \                   "
   ruleID: java-ee-jaxrpc-00000
   tag:
   - jax-rpc

@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    SpringBoot Integration flows are not supported.
-    SpringBoot Integration flows are not supported. A migration to Apache Camel route is mandatory.
+  description: SpringBoot Integration flows are not supported.
   effort: 5
   labels:
   - konveyor.io/source=springboot
@@ -10,8 +8,8 @@
   links:
   - title: Quarkus Apache Camel
     url: https://quarkus.io/guides/camel
-  message: SpringBoot Integration flows are not supported. A migration to Apache Camel
-    route is mandatory.
+  message: "\n SpringBoot Integration flows are not supported. A migration to Apache
+    Camel route is mandatory.\n "
   ruleID: springboot-integration-to-quarkus-00010
   when:
     builtin.xml:
@@ -20,9 +18,7 @@
       xpath: //*/int:channel
 - category: mandatory
   customVariables: []
-  description: |-
-    SpringBoot IntegrationFlow class usage is not supported.
-    SpringBoot IntegrationFlow class usage is not supported. A migration to Apache Camel route using From is mandatory.
+  description: SpringBoot IntegrationFlow class usage is not supported.
   effort: 5
   labels:
   - konveyor.io/source=springboot
@@ -30,8 +26,8 @@
   links:
   - title: Quarkus Apache Camel
     url: https://quarkus.io/guides/camel
-  message: SpringBoot IntegrationFlow class usage is not supported. A migration to
-    Apache Camel route using From is mandatory.
+  message: "\n SpringBoot IntegrationFlow class usage is not supported. A migration
+    to Apache Camel route using From is mandatory.\n "
   ruleID: springboot-integration-to-quarkus-00020
   when:
     java.referenced:

@@ -1,4 +1,5 @@
 - customVariables: []
+  description: JRun
   labels:
   - konveyor.io/source=jrun
   - konveyor.io/target=eap6+
@@ -16,6 +17,7 @@
       location: PACKAGE
       pattern: jrun*
 - customVariables: []
+  description: JRunX
   labels:
   - konveyor.io/source=jrun
   - konveyor.io/target=eap6+

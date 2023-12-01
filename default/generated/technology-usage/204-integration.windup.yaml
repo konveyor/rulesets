@@ -1,9 +1,10 @@
 - customVariables: []
-  description: "Embedded library - Apache Camel\n\n                      The application
-    embedds an Apache Camel library.\n                  \n"
+  description: Embedded library - Apache Camel
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - "\n                      The application embedds an Apache Camel library.\n                  "
   ruleID: integration-00001
   tag:
   - Apache Camel
@@ -12,11 +13,12 @@
     builtin.file:
       pattern: .*camel.*\.jar$
 - customVariables: []
-  description: "Embedded library - Teiid\n\n                      The application
-    embedds a Teiid library.\n                  \n"
+  description: Embedded library - Teiid
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - "\n                      The application embedds a Teiid library.\n                  "
   ruleID: integration-00002
   tag:
   - Teiid
@@ -25,12 +27,12 @@
     builtin.file:
       pattern: .*teiid.*\.jar$
 - customVariables: []
-  description: |
-    Embedded framework - Spring Integration
-    The application embeds the Spring Integration framework.
+  description: Embedded framework - Spring Integration
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Spring Integration framework.
   ruleID: integration-00003
   tag:
   - Spring Integration
@@ -39,12 +41,12 @@
     builtin.file:
       pattern: spring-integration.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Ikasan
-    The application embeds an Ikasan library.
+  description: Embedded framework - Ikasan
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an Ikasan library.
   ruleID: integration-00004
   tag:
   - Ikasan
@@ -53,12 +55,12 @@
     builtin.file:
       pattern: .*ikasan.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Swagger
-    The application embeds a Swagger library.
+  description: Embedded framework - Swagger
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Swagger library.
   ruleID: integration-00005
   tag:
   - Swagger
@@ -67,12 +69,12 @@
     builtin.file:
       pattern: .*swagger.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Apiman
-    The application embeds an Apiman library.
+  description: Embedded framework - Apiman
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an Apiman library.
   ruleID: integration-00006
   tag:
   - Apiman
@@ -81,12 +83,12 @@
     builtin.file:
       pattern: .*apiman.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - 3scale
-    The application embeds a 3scale library.
+  description: Embedded framework - 3scale
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a 3scale library.
   ruleID: integration-00007
   tag:
   - 3scale
@@ -95,12 +97,12 @@
     builtin.file:
       pattern: .*3scale.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Istio
-    The application embeds an Istio library.
+  description: Embedded framework - Istio
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an Istio library.
   ruleID: integration-00008
   tag:
   - Istio
@@ -109,12 +111,12 @@
     builtin.file:
       pattern: .*istio.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - ServiceMix
-    The application embeds a ServiceMix library.
+  description: Embedded framework - ServiceMix
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a ServiceMix library.
   ruleID: integration-00009
   tag:
   - ServiceMix
@@ -123,12 +125,12 @@
     builtin.file:
       pattern: .*servicemix.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Mule
-    The application embeds a Mule library.
+  description: Embedded framework - Mule
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Mule library.
   ruleID: integration-00010
   tag:
   - Mule
@@ -137,12 +139,12 @@
     builtin.file:
       pattern: .*mule.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Petals EIP
-    The application embeds a Petals EIP library.
+  description: Embedded framework - Petals EIP
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Petals EIP library.
   ruleID: integration-00011
   tag:
   - Petals EIP
@@ -151,12 +153,12 @@
     builtin.file:
       pattern: .*petals.*eip.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - SwitchYard
-    The application embeds a SwitchYard library.
+  description: Embedded framework - SwitchYard
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a SwitchYard library.
   ruleID: integration-00012
   tag:
   - SwitchYard
@@ -165,12 +167,12 @@
     builtin.file:
       pattern: .*switchyard.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Apache Synapse
-    The application embeds an Apache Synapse library.
+  description: Embedded framework - Apache Synapse
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an Apache Synapse library.
   ruleID: integration-00013
   tag:
   - Apache Synapse
@@ -179,12 +181,12 @@
     builtin.file:
       pattern: .*synapse.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - WSO2
-    The application embeds a WSO2 library.
+  description: Embedded framework - WSO2
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a WSO2 library.
   ruleID: integration-00014
   tag:
   - WSO2
@@ -193,12 +195,12 @@
     builtin.file:
       pattern: .*wso2.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Talend ESB
-    The application embeds a Talend ESB library.
+  description: Embedded framework - Talend ESB
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Talend ESB library.
   ruleID: integration-00015
   tag:
   - Talend ESB
@@ -207,12 +209,12 @@
     builtin.file:
       pattern: .*talend.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Spring Integration
-    The application embeds the Spring Integration framework.
+  description: Embedded framework - Spring Integration
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Spring Integration framework.
   ruleID: integration-00016
   tag:
   - Spring Integration
@@ -223,12 +225,12 @@
         int: http://www.springframework.org/schema/integration
       xpath: //*/int:channel
 - customVariables: []
-  description: |
-    Embedded framework - Spring Integration
-    The application embeds the Spring Integration framework.
+  description: Embedded framework - Spring Integration
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Spring Integration framework.
   ruleID: integration-00017
   tag:
   - Spring Integration

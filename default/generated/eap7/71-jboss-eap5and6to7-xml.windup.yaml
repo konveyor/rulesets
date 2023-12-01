@@ -1,8 +1,6 @@
 - category: optional
   customVariables: []
-  description: |-
-    Stateful Session EJB Clustering configuration changes in EAP 7
-    The `clustered` element is ignored in EAP 7 and is not useful. In case the application is started using HA profile, the replication will be done automatically.
+  description: Stateful Session EJB Clustering configuration changes in EAP 7
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -16,8 +14,8 @@
   - cluster
   - configuration
   links: []
-  message: The `clustered` element is ignored in EAP 7 and is not useful. In case
-    the application is started using HA profile, the replication will be done automatically.
+  message: "\n The `clustered` element is ignored in EAP 7 and is not useful. In case
+    the application is started using HA profile, the replication will be done automatically.\n "
   ruleID: jboss-eap5and6to7-xml-37000
   when:
     builtin.xml:
@@ -26,9 +24,7 @@
       namespaces: {}
       xpath: /*[local-name()='ejb-jar']/*[local-name()='assembly-descriptor']/*[local-name()='clustering']/*[local-name()='clustered']
 - customVariables: []
-  description: |
-    JBoss Seam Components (components.xml)
-    You should migrate from Seam 2 Framework to Context Dependency Injection technology.
+  description: JBoss Seam Components (components.xml)
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap6
@@ -43,6 +39,8 @@
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/development_guide/#contexts_and_dependency_injection_cdi
   - title: Migration from Seam 2 to Java EE and alternatives
     url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/ch36.html
+  message:
+  - You should migrate from Seam 2 Framework to Context Dependency Injection technology.
   ruleID: jboss-eap5and6to7-xml-05000
   tag:
   - seam2
@@ -54,10 +52,7 @@
         sc: http://jboss.com/products/seam/components
       xpath: /sc:components
 - customVariables: []
-  description: "JBoss Seam Pages (pages.xml)\nYou should migrate from Seam 2 Framework
-    to Context Dependency Injection technology.\n                        The most
-    features from `pages.xml` file where it is specified a page flow and other configuration
-    of the Seam Framework is achievable through JSF Flow.\n                    \n"
+  description: JBoss Seam Pages (pages.xml)
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap6
@@ -72,6 +67,11 @@
     url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/seam_reference_guide/
   - title: Using Faces Flows
     url: https://docs.oracle.com/javaee/7/tutorial/jsf-configure003.htm
+  message:
+  - "You should migrate from Seam 2 Framework to Context Dependency Injection technology.\n
+    \                       The most features from `pages.xml` file where it is specified
+    a page flow and other configuration of the Seam Framework is achievable through
+    JSF Flow.\n                    "
   ruleID: jboss-eap5and6to7-xml-06000
   tag:
   - seam
@@ -83,6 +83,7 @@
         sp: http://jboss.com/products/seam/pages
       xpath: /sp:pages
 - customVariables: []
+  description: JBoss Seam Page
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap6
@@ -110,9 +111,7 @@
         namespaces: {}
         xpath: /page
 - customVariables: []
-  description: "JBoss web application descriptor (jboss-web.xml)\n\n                        The
-    `jboss-web.xml` file configures a Java EE web application specifically for JBoss
-    EAP.\n                        It is an extension to standard `web.xml`.\n                    \n"
+  description: JBoss web application descriptor (jboss-web.xml)
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap6
@@ -125,6 +124,10 @@
   links:
   - title: jboss-web.xml Configuration Reference
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/development_guide/#jboss-webxml_Configuration_Reference
+  message:
+  - "\n                        The `jboss-web.xml` file configures a Java EE web application
+    specifically for JBoss EAP.\n                        It is an extension to standard
+    `web.xml`.\n                    "
   ruleID: jboss-eap5and6to7-xml-09000
   tag:
   - web
@@ -140,12 +143,7 @@
       namespaces: {}
       xpath: //*[local-name()='jboss-web']
 - customVariables: []
-  description: "JBoss EJB 2 CMP Deployment descriptor (jbosscmp-jdbc.xml)\n\n                        The
-    `jbosscmp-jdbc.xml` is a deployment decriptor controlling the Container Managed
-    Persistence (CMP).\n\n                        Support for EJB Entity Beans is
-    optional in Java EE 7 and they are not supported in JBoss EAP 7.\n                        This
-    means CMP entity beans must be rewritten to use Java Persistence API (JPA) entities.\n
-    \                   \n"
+  description: JBoss EJB 2 CMP Deployment descriptor (jbosscmp-jdbc.xml)
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap6
@@ -160,6 +158,12 @@
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_entity_beans_to_jpa
   - title: JBoss EAP 5 - The jbosscmp-jdbc Structure
     url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/administration_and_configuration_guide/index#The_CMP_Engine-The_jbosscmp_jdbc_Structure
+  message:
+  - "\n                        The `jbosscmp-jdbc.xml` is a deployment decriptor controlling
+    the Container Managed Persistence (CMP).\n\n                        Support for
+    EJB Entity Beans is optional in Java EE 7 and they are not supported in JBoss
+    EAP 7.\n                        This means CMP entity beans must be rewritten
+    to use Java Persistence API (JPA) entities.\n                    "
   ruleID: jboss-eap5and6to7-xml-12000
   tag:
   - jdbc
@@ -174,8 +178,7 @@
       namespaces: {}
       xpath: //*[local-name()='jbosscmp-jdbc']
 - customVariables: []
-  description: "JBoss EJB 3 deployment descriptor (jboss-ejb3.xml)\n\n                        A
-    JBoss specific EJB 3 configuration allows extensions of Java EE EJB 3.\n                    \n"
+  description: JBoss EJB 3 deployment descriptor (jboss-ejb3.xml)
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap6
@@ -188,6 +191,9 @@
   links:
   - title: jboss-ejb3.xml Deployment Descriptor Reference
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/development_guide/index#jboss-ejb3xml_Deployment_Descriptor_Reference
+  message:
+  - "\n                        A JBoss specific EJB 3 configuration allows extensions
+    of Java EE EJB 3.\n                    "
   ruleID: jboss-eap5and6to7-xml-17000
   tag:
   - jboss-eap5
@@ -199,16 +205,7 @@
       namespaces: {}
       xpath: //*[local-name()='ejb-jar']
 - customVariables: []
-  description: "JBoss web-services deployment descriptor (jboss-webservices.xml)\n\n
-    \                       JBossWS 4.0 introduces a new deployment descriptor to
-    configure web services.\n                        The `jboss-webservices.xml` file
-    provides additional information for the given deployment\n                        and
-    partially replaces the obsolete `jboss.xml` file.\n\n                        For
-    EJB webservice deployments, the expected location of the `jboss-webservices.xml`
-    descriptor file\n                        is in the `META-INF/` directory. For
-    POJO and EJB webservice endpoints bundled in WAR file,\n                        the
-    expected location of the `jboss-webservices.xml` file is in the `WEB-INF/` directory.\n
-    \                   \n"
+  description: JBoss web-services deployment descriptor (jboss-webservices.xml)
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap6
@@ -221,6 +218,16 @@
   links:
   - title: JBoss web-services changes
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_web_service_application_changes
+  message:
+  - "\n                        JBossWS 4.0 introduces a new deployment descriptor
+    to configure web services.\n                        The `jboss-webservices.xml`
+    file provides additional information for the given deployment\n                        and
+    partially replaces the obsolete `jboss.xml` file.\n\n                        For
+    EJB webservice deployments, the expected location of the `jboss-webservices.xml`
+    descriptor file\n                        is in the `META-INF/` directory. For
+    POJO and EJB webservice endpoints bundled in WAR file,\n                        the
+    expected location of the `jboss-webservices.xml` file is in the `WEB-INF/` directory.\n
+    \                   "
   ruleID: jboss-eap5and6to7-xml-18000
   tag:
   - jboss-ws
@@ -236,9 +243,7 @@
       xpath: //*[local-name()='webservices']
 - category: mandatory
   customVariables: []
-  description: |-
-    CMP Entity EJB configuration
-    CMP entity beans are no longer supported in JBoss EAP 7. User is requested to use JPA entities that fully replaced the functionality provided by CMP beans.. CMP configuration provided in this ejb-jar.xml should be configured using JPA persistence.xml or using JPA annotations.
+  description: CMP Entity EJB configuration
   effort: 3
   labels:
   - konveyor.io/source=eap5
@@ -252,10 +257,9 @@
   - jpa
   - cmp
   links: []
-  message: CMP entity beans are no longer supported in JBoss EAP 7. User is requested
-    to use JPA entities that fully replaced the functionality provided by CMP beans..
-    CMP configuration provided in this ejb-jar.xml should be configured using JPA
-    persistence.xml or using JPA annotations.
+  message: |-
+    CMP entity beans are no longer supported in JBoss EAP 7. User is requested to use JPA entities that fully replaced the functionality provided by CMP beans.
+     CMP configuration provided in this ejb-jar.xml should be configured using JPA persistence.xml or using JPA annotations.
   ruleID: jboss-eap5and6to7-xml-31000
   when:
     builtin.xml:
@@ -271,9 +275,7 @@
         = 'Container']
 - category: mandatory
   customVariables: []
-  description: |-
-    EJB 2.x BMP Entity Beans configuration
-    BMP entity beans are no longer supported in JBoss EAP 7. User is requested to use JPA entities that fully replaced the functionality provided by BMP beans.. BMP configuration provided in this ejb-jar.xml should be configured using JPA persistence.xml or using JPA annotations.
+  description: EJB 2.x BMP Entity Beans configuration
   effort: 3
   labels:
   - konveyor.io/source=eap5
@@ -287,10 +289,9 @@
   - jpa
   - bmp
   links: []
-  message: BMP entity beans are no longer supported in JBoss EAP 7. User is requested
-    to use JPA entities that fully replaced the functionality provided by BMP beans..
-    BMP configuration provided in this ejb-jar.xml should be configured using JPA
-    persistence.xml or using JPA annotations.
+  message: |-
+    BMP entity beans are no longer supported in JBoss EAP 7. User is requested to use JPA entities that fully replaced the functionality provided by BMP beans.
+     BMP configuration provided in this ejb-jar.xml should be configured using JPA persistence.xml or using JPA annotations.
   ruleID: jboss-eap5and6to7-xml-31500
   when:
     builtin.xml:
@@ -306,9 +307,7 @@
         = 'Bean']
 - category: mandatory
   customVariables: []
-  description: |-
-    Valve is not supported in JBoss EAP 7
-    JBoss Web was replaced by Undertow, which does not contain support for the Valve functionality. It may be needed to migrate to Undertow handlers.
+  description: Valve is not supported in JBoss EAP 7
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -333,9 +332,7 @@
       xpath: /jboss-web/valve | /jboss:jboss-web/jboss:valve
 - category: mandatory
   customVariables: []
-  description: |-
-    JAX-RPC specific configuration
-    JAX-RPC support was removed in JBoss EAP 7. All the RPC calls will need to be migrated to JAX-WS.
+  description: JAX-RPC specific configuration
   effort: 3
   labels:
   - konveyor.io/source=eap5
@@ -379,9 +376,7 @@
         xpath: /java-wsdl-mapping | /jee:java-wsdl-mapping | /jcp:java-wsdl-mapping
           | /j2ee:java-wsdl-mapping
 - customVariables: []
-  description: |
-    JSR-88 deployment plans are no more supported by JBoss EAP7
-    This file should be removed and instead rely on proprietary functionality to automate deployments. Please consult EAP 7 admin documentation to learn about such functionality.
+  description: JSR-88 deployment plans are no more supported by JBoss EAP7
   labels:
   - konveyor.io/source=eap5
   - konveyor.io/source=eap6
@@ -394,6 +389,9 @@
   links:
   - title: Migrate Deployment plan configurations
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_deployment_plan_configurations
+  message:
+  - This file should be removed and instead rely on proprietary functionality to automate
+    deployments. Please consult EAP 7 admin documentation to learn about such functionality.
   ruleID: jboss-eap5and6to7-xml-34000
   tag:
   - configuration
@@ -403,9 +401,7 @@
       pattern: deployment-plan\.xml
 - category: optional
   customVariables: []
-  description: |-
-    Web Session Clustering config replication-trigger changes in EAP 7
-    The EAP 7 Web Session Clustering configuration deprecates `replication-trigger` element in `jboss-web.xml` file descriptor.
+  description: Web Session Clustering config replication-trigger changes in EAP 7
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -422,8 +418,8 @@
   links:
   - title: Web Session Clustering config migration changes in EAP 7
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_web_session_clustering_changes
-  message: The EAP 7 Web Session Clustering configuration deprecates `replication-trigger`
-    element in `jboss-web.xml` file descriptor.
+  message: "\n The EAP 7 Web Session Clustering configuration deprecates `replication-trigger`
+    element in `jboss-web.xml` file descriptor.\n "
   ruleID: jboss-eap5and6to7-xml-38000
   when:
     builtin.xml:
@@ -433,9 +429,7 @@
       xpath: /*[local-name()='jboss-web']/*[local-name()='replication-config']/*[local-name()='replication-trigger']
 - category: optional
   customVariables: []
-  description: |-
-    Web Session Clustering config replication-mode changes in EAP 7
-    The EAP 7 Web Session Clustering configuration deprecates element `replication-mode` element without replacement in `jboss-web.xml` file descriptor.
+  description: Web Session Clustering config replication-mode changes in EAP 7
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -452,8 +446,8 @@
   links:
   - title: Web Session Clustering config migration changes in EAP 7
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_web_session_clustering_changes
-  message: The EAP 7 Web Session Clustering configuration deprecates element `replication-mode`
-    element without replacement in `jboss-web.xml` file descriptor.
+  message: "\n The EAP 7 Web Session Clustering configuration deprecates element `replication-mode`
+    element without replacement in `jboss-web.xml` file descriptor.\n "
   ruleID: jboss-eap5and6to7-xml-38001
   when:
     builtin.xml:
@@ -463,9 +457,7 @@
       xpath: /*[local-name()='jboss-web']/*[local-name()='replication-config']/*[local-name()='replication-mode']
 - category: optional
   customVariables: []
-  description: |-
-    Web Session Clustering config backups changes in EAP 7
-    The EAP 7 Web Session Clustering configuration deprecates `backups` element without replacement in `jboss-web.xml` file descriptor.
+  description: Web Session Clustering config backups changes in EAP 7
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -482,8 +474,8 @@
   links:
   - title: Web Session Clustering config migration changes in EAP 7
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_web_session_clustering_changes
-  message: The EAP 7 Web Session Clustering configuration deprecates `backups` element
-    without replacement in `jboss-web.xml` file descriptor.
+  message: "\n The EAP 7 Web Session Clustering configuration deprecates `backups`
+    element without replacement in `jboss-web.xml` file descriptor.\n "
   ruleID: jboss-eap5and6to7-xml-38002
   when:
     builtin.xml:
@@ -493,9 +485,7 @@
       xpath: /*[local-name()='jboss-web']/*[local-name()='replication-config']/*[local-name()='backups']
 - category: optional
   customVariables: []
-  description: |-
-    Web Session Clustering config use-jk changes in EAP 7
-    The EAP 7 Web Session Clustering configuration deprecates `use-jk` element without replacement in `jboss-web.xml` file descriptor.. Previously by specifying `use-jk` element, the instance-id of the node handling a given request was appended to the jsessionid (foruse by load balancers such as mod_jk, mod_proxy_balancer, mod_cluster, etc.) depending on the value specified for `use-jk`.. In the new implementation, the instance-id, if defined, is always appended to the jsessionid.
+  description: Web Session Clustering config use-jk changes in EAP 7
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -512,12 +502,12 @@
   links:
   - title: Web Session Clustering config migration changes in EAP 7
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_web_session_clustering_changes
-  message: The EAP 7 Web Session Clustering configuration deprecates `use-jk` element
-    without replacement in `jboss-web.xml` file descriptor.. Previously by specifying
-    `use-jk` element, the instance-id of the node handling a given request was appended
-    to the jsessionid (foruse by load balancers such as mod_jk, mod_proxy_balancer,
-    mod_cluster, etc.) depending on the value specified for `use-jk`.. In the new
-    implementation, the instance-id, if defined, is always appended to the jsessionid.
+  message: "\n The EAP 7 Web Session Clustering configuration deprecates `use-jk`
+    element without replacement in `jboss-web.xml` file descriptor.\n\n Previously
+    by specifying `use-jk` element, the instance-id of the node handling a given request
+    was appended to the jsessionid (foruse by load balancers such as mod_jk, mod_proxy_balancer,
+    mod_cluster, etc.) depending on the value specified for `use-jk`.\n\n In the new
+    implementation, the instance-id, if defined, is always appended to the jsessionid.\n "
   ruleID: jboss-eap5and6to7-xml-38003
   when:
     builtin.xml:
@@ -527,9 +517,8 @@
       xpath: /*[local-name()='jboss-web']/*[local-name()='replication-config']/*[local-name()='use-jk']
 - category: optional
   customVariables: []
-  description: |-
-    Web Session Clustering config max-unreplicated-interval changes in EAP 7
-    The EAP 7 Web Session Clustering configuration deprecates `max-unreplicated-interval` element in `jboss-web.xml` file descriptor.. Previously, this configuration option was an optimization that would prevent the replication of a session’s timestamp if no session attribute was changed. While this sounds nice, in practice it doesn't prevent any RPCs, since session access requires cache transaction RPCs regardless of whether any session attributes changed.. In the new implementation, the timestamp of a session is replicated on every request.. This prevents stale session metadata following failover.
+  description: Web Session Clustering config max-unreplicated-interval changes in
+    EAP 7
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -546,14 +535,14 @@
   links:
   - title: Web Session Clustering config migration changes in EAP 7
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_web_session_clustering_changes
-  message: The EAP 7 Web Session Clustering configuration deprecates `max-unreplicated-interval`
-    element in `jboss-web.xml` file descriptor.. Previously, this configuration option
-    was an optimization that would prevent the replication of a session’s timestamp
+  message: "\n The EAP 7 Web Session Clustering configuration deprecates `max-unreplicated-interval`
+    element in `jboss-web.xml` file descriptor.\n\n Previously, this configuration
+    option was an optimization that would prevent the replication of a session’s timestamp
     if no session attribute was changed. While this sounds nice, in practice it doesn't
     prevent any RPCs, since session access requires cache transaction RPCs regardless
-    of whether any session attributes changed.. In the new implementation, the timestamp
-    of a session is replicated on every request.. This prevents stale session metadata
-    following failover.
+    of whether any session attributes changed.\n\n In the new implementation, the
+    timestamp of a session is replicated on every request.\n This prevents stale session
+    metadata following failover.\n "
   ruleID: jboss-eap5and6to7-xml-38004
   when:
     builtin.xml:
@@ -563,9 +552,7 @@
       xpath: /*[local-name()='jboss-web']/*[local-name()='replication-config']/*[local-name()='max-unreplicated-interval']
 - category: optional
   customVariables: []
-  description: |-
-    Web Session Clustering config snapshot-mode changes in EAP 7
-    The EAP 7 Web Session Clustering configuration deprecates `snapshot-mode` element in `jboss-web.xml` file descriptor.. Previously, one could configure `snapshot-mode` as INSTANT or INTERVAL. Infinispan’s replication queue renders this configuration option obsolete.
+  description: Web Session Clustering config snapshot-mode changes in EAP 7
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -582,10 +569,10 @@
   links:
   - title: Web Session Clustering config migration changes in EAP 7
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_web_session_clustering_changes
-  message: The EAP 7 Web Session Clustering configuration deprecates `snapshot-mode`
-    element in `jboss-web.xml` file descriptor.. Previously, one could configure `snapshot-mode`
-    as INSTANT or INTERVAL. Infinispan’s replication queue renders this configuration
-    option obsolete.
+  message: "\n The EAP 7 Web Session Clustering configuration deprecates `snapshot-mode`
+    element in `jboss-web.xml` file descriptor.\n\n Previously, one could configure
+    `snapshot-mode` as INSTANT or INTERVAL. Infinispan’s replication queue renders
+    this configuration option obsolete.\n "
   ruleID: jboss-eap5and6to7-xml-38005
   when:
     builtin.xml:
@@ -595,9 +582,7 @@
       xpath: /*[local-name()='jboss-web']/*[local-name()='replication-config']/*[local-name()='snapshot-mode']
 - category: optional
   customVariables: []
-  description: |-
-    Web Session Clustering config snapshot-interval changes in EAP 7
-    The EAP 7 Web Session Clustering configuration removed `snapshot-interval` element from `jboss-web.xml` file descriptor.. This option was only relevant for `<snapshot-mode>INTERVAL</snapshot-mode>`. Since `snapshot-mode` is no longer used, this option is no longer used as well.
+  description: Web Session Clustering config snapshot-interval changes in EAP 7
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -614,10 +599,10 @@
   links:
   - title: Web Session Clustering config migration changes in EAP 7
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_web_session_clustering_changes
-  message: The EAP 7 Web Session Clustering configuration removed `snapshot-interval`
-    element from `jboss-web.xml` file descriptor.. This option was only relevant for
-    `<snapshot-mode>INTERVAL</snapshot-mode>`. Since `snapshot-mode` is no longer
-    used, this option is no longer used as well.
+  message: "\n The EAP 7 Web Session Clustering configuration removed `snapshot-interval`
+    element from `jboss-web.xml` file descriptor.\n This option was only relevant
+    for `<snapshot-mode>INTERVAL</snapshot-mode>`. Since `snapshot-mode` is no longer
+    used, this option is no longer used as well.\n "
   ruleID: jboss-eap5and6to7-xml-38006
   when:
     builtin.xml:
@@ -627,9 +612,8 @@
       xpath: /*[local-name()='jboss-web']/*[local-name()='replication-config']/*[local-name()='snapshot-interval']
 - category: optional
   customVariables: []
-  description: |-
-    Web Session Clustering config session-notification-policy changes in EAP 7
-    The EAP 7 Web Session Clustering configuration deprecates `session-notification-policy` element in `jboss-web.xml` file descriptor.. Previously `session-notification-policy` element defined a policy for triggering session events.. In the new implementation, this behaviour is specification driven and not configurable.
+  description: Web Session Clustering config session-notification-policy changes in
+    EAP 7
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -646,10 +630,10 @@
   links:
   - title: Web Session Clustering config migration changes in EAP 7
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_web_session_clustering_changes
-  message: The EAP 7 Web Session Clustering configuration deprecates `session-notification-policy`
-    element in `jboss-web.xml` file descriptor.. Previously `session-notification-policy`
-    element defined a policy for triggering session events.. In the new implementation,
-    this behaviour is specification driven and not configurable.
+  message: "\n The EAP 7 Web Session Clustering configuration deprecates `session-notification-policy`
+    element in `jboss-web.xml` file descriptor.\n\n Previously `session-notification-policy`
+    element defined a policy for triggering session events.\n\n In the new implementation,
+    this behaviour is specification driven and not configurable.\n "
   ruleID: jboss-eap5and6to7-xml-38007
   when:
     builtin.xml:
@@ -659,9 +643,7 @@
       xpath: /*[local-name()='jboss-web']/*[local-name()='replication-config']/*[local-name()='session-notification-policy']
 - category: optional
   customVariables: []
-  description: |-
-    Web Session Clustering config passivation-config changes in EAP 7
-    The EAP 7 Web Session Clustering configuration deprecates `passivation-config` element and its sub-elements `use-session-passivation`, `passivation-min-idle-time` and `passivation-max-idle-time` completely in `jboss-web.xml` file descriptor.. * `use-session-passivation` enabled the passivation, but now passivation is enabled by specifying a non-negative value for `max-active-sessions` element.. * `passivation-min-idle-time` is not supported and the new implementation avoids waiting some time before the passivation.. * `passivation-max-idle-time` is not supported and the new implementation supports only lazy passivation. Sessions are only passivated when necessary to comply with `max-active-sessions`.
+  description: Web Session Clustering config passivation-config changes in EAP 7
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -678,15 +660,15 @@
   links:
   - title: Web Session Clustering config migration changes in EAP 7
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_web_session_clustering_changes
-  message: The EAP 7 Web Session Clustering configuration deprecates `passivation-config`
+  message: "\n The EAP 7 Web Session Clustering configuration deprecates `passivation-config`
     element and its sub-elements `use-session-passivation`, `passivation-min-idle-time`
-    and `passivation-max-idle-time` completely in `jboss-web.xml` file descriptor..
+    and `passivation-max-idle-time` completely in `jboss-web.xml` file descriptor.\n\n
     * `use-session-passivation` enabled the passivation, but now passivation is enabled
-    by specifying a non-negative value for `max-active-sessions` element.. * `passivation-min-idle-time`
+    by specifying a non-negative value for `max-active-sessions` element.\n\n * `passivation-min-idle-time`
     is not supported and the new implementation avoids waiting some time before the
-    passivation.. * `passivation-max-idle-time` is not supported and the new implementation
+    passivation.\n\n * `passivation-max-idle-time` is not supported and the new implementation
     supports only lazy passivation. Sessions are only passivated when necessary to
-    comply with `max-active-sessions`.
+    comply with `max-active-sessions`.\n "
   ruleID: jboss-eap5and6to7-xml-39000
   when:
     builtin.xml:
@@ -696,9 +678,7 @@
       xpath: /*[local-name()='jboss-web']/*[local-name()='passivation-config']
 - category: optional
   customVariables: []
-  description: |-
-    Web Session Clustering config max-active-sessions changes in EAP 7
-    The EAP 7 Web Session Clustering configuration changed `max-active-sessions` element meaning in `jboss-web.xml` file descriptor.. Previously, session creation would fail if an additional session would cause the number of active sessions to exceed the value specified by `<max-active-sessions/>`.. In the new implementation, `<max-active-sessions/>` is used to enable session passivation. If session creation would cause the number of active sessions to exceed `<max-active-sessions/>`,. then the oldest session known to the session manager will passivate to make room for the new session.
+  description: Web Session Clustering config max-active-sessions changes in EAP 7
   effort: 1
   labels:
   - konveyor.io/source=eap5
@@ -715,14 +695,14 @@
   links:
   - title: Web Session Clustering config migration changes in EAP 7
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_web_session_clustering_changes
-  message: The EAP 7 Web Session Clustering configuration changed `max-active-sessions`
-    element meaning in `jboss-web.xml` file descriptor.. Previously, session creation
+  message: "\n The EAP 7 Web Session Clustering configuration changed `max-active-sessions`
+    element meaning in `jboss-web.xml` file descriptor.\n\n Previously, session creation
     would fail if an additional session would cause the number of active sessions
-    to exceed the value specified by `<max-active-sessions/>`.. In the new implementation,
+    to exceed the value specified by `<max-active-sessions/>`.\n\n In the new implementation,
     `<max-active-sessions/>` is used to enable session passivation. If session creation
-    would cause the number of active sessions to exceed `<max-active-sessions/>`,.
+    would cause the number of active sessions to exceed `<max-active-sessions/>`,\n
     then the oldest session known to the session manager will passivate to make room
-    for the new session.
+    for the new session.\n "
   ruleID: jboss-eap5and6to7-xml-40000
   when:
     builtin.xml:

@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    WebLogic Startup Service
-    Replace this class with a class using the EJB 3.1 `@Singleton` and `@Startup` annotations.
+  description: WebLogic Startup Service
   effort: 3
   labels:
   - konveyor.io/source=weblogic
@@ -24,9 +22,7 @@
       pattern: weblogic.common.T3StartupDef
 - category: mandatory
   customVariables: []
-  description: |-
-    WebLogic T3ServicesDef usage
-    `T3ServicesDef` provides access to core services of the container, such as Timers and Logging facilities.. Replace the services provided by this with a Singleton EJB (using the `@Singleton` annotation) that provides access to the equivalent services from JBoss EAP.
+  description: WebLogic T3ServicesDef usage
   effort: 3
   labels:
   - konveyor.io/source=weblogic
@@ -37,10 +33,10 @@
   links:
   - title: Java EE Tutorial - @Singleton Session Bean
     url: http://docs.oracle.com/javaee/6/tutorial/doc/gipvi.html
-  message: '`T3ServicesDef` provides access to core services of the container, such
-    as Timers and Logging facilities.. Replace the services provided by this with
-    a Singleton EJB (using the `@Singleton` annotation) that provides access to the
-    equivalent services from JBoss EAP.'
+  message: "\n \n `T3ServicesDef` provides access to core services of the container,
+    such as Timers and Logging facilities.\n\n Replace the services provided by this
+    with a Singleton EJB (using the `@Singleton` annotation) that provides access
+    to the equivalent services from JBoss EAP.\n \n "
   ruleID: weblogic-services-02000
   when:
     java.referenced:
@@ -50,9 +46,7 @@
   - name: logger
     nameOfCaptureGroup: logger
     pattern: weblogic.(?P<logger>(i18n.)?logging.[^N])?.*
-  description: |-
-    WebLogic proprietary logging classes
-    Oracle WebLogic logging classes should be replaced with SLF4J, Log4J, or Java Logging.. Please refer to the [JBoss EAP migration guide](https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html/Migration_Guide/chap-Migrate_Your_Application.html#sect-Logging_Changes) for more information on this.
+  description: WebLogic proprietary logging classes
   effort: 1
   labels:
   - konveyor.io/source=weblogic
@@ -63,9 +57,9 @@
   links:
   - title: JBoss EAP 6 - Logging changes
     url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html/Migration_Guide/chap-Migrate_Your_Application.html#sect-Logging_Changes
-  message: Oracle WebLogic logging classes should be replaced with SLF4J, Log4J, or
-    Java Logging.. Please refer to the [JBoss EAP migration guide](https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html/Migration_Guide/chap-Migrate_Your_Application.html#sect-Logging_Changes)
-    for more information on this.
+  message: "\n \n Oracle WebLogic logging classes should be replaced with SLF4J, Log4J,
+    or Java Logging.\n\n Please refer to the [JBoss EAP migration guide](https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html/Migration_Guide/chap-Migrate_Your_Application.html#sect-Logging_Changes)
+    for more information on this.\n \n "
   ruleID: weblogic-services-03000
   when:
     java.referenced:

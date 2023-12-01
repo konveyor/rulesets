@@ -1,10 +1,10 @@
 - customVariables: []
-  description: |
-    Embedded library - Spring Boot Actuator
-    The application embeds Spring Boot Actuator.
+  description: Embedded library - Spring Boot Actuator
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds Spring Boot Actuator.
   ruleID: observability-0100
   tag:
   - Spring Boot Actuator
@@ -24,12 +24,12 @@
         lowerbound: 0.0.0
         name: org.springframework.boot.spring-boot-actuator
 - customVariables: []
-  description: |
-    Spring JMX configuration detected
-    The application uses Spring JMX.
+  description: Spring JMX configuration detected
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application uses Spring JMX.
   ruleID: observability-0200
   tag:
   - Spring JMX

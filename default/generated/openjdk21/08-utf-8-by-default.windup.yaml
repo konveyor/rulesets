@@ -3,8 +3,7 @@
   - name: className
     nameOfCaptureGroup: className
     pattern: java.io.(?P<className>(FileReader|FileWriter|InputStreamReader|OutputStreamWriter|PrintStream))?.*
-  description: |
-    The java.io.{class-name} constructor uses UTF-8 by default
+  description: The java.io.{class-name} constructor uses UTF-8 by default
   effort: 1
   labels:
   - konveyor.io/target=openjdk18+
@@ -12,9 +11,9 @@
   links:
   - title: 'JEP 400: UTF-8 by Default'
     url: https://openjdk.org/jeps/400
-  message: If not supplied, the `java.io.{{className}}` constructor uses UTF-8 by
-    default.. If you haven't provided the character set, and UTF-8 is not appropriate
-    for your class, then supply the appropriate character set to the constructor call.
+  message: "If not supplied, the `java.io.{{className}}` constructor uses UTF-8 by
+    default. \n If you haven't provided the character set, and UTF-8 is not appropriate
+    for your class, then supply the appropriate character set to the constructor call.\n "
   ruleID: utf-8-by-default-00000
   when:
     java.referenced:
@@ -25,8 +24,7 @@
   - name: classNames
     nameOfCaptureGroup: classNames
     pattern: java.util.(?P<classNames>(Formatter|Scanner))?.*
-  description: |
-    The java.util.{class-names} constructor uses UTF-8 by default
+  description: The java.util.{class-names} constructor uses UTF-8 by default
   effort: 1
   labels:
   - konveyor.io/target=openjdk18+
@@ -34,9 +32,9 @@
   links:
   - title: 'JEP 400: UTF-8 by Default'
     url: https://openjdk.org/jeps/400
-  message: If not supplied, the `java.util.{{classNames}}` constructor uses UTF-8
-    by default.. If you haven't provided the character set, and UTF-8 is not appropriate
-    for your class, then supply the appropriate character set to the constructor call.
+  message: "If not supplied, the `java.util.{{classNames}}` constructor uses UTF-8
+    by default. \n If you haven't provided the character set, and UTF-8 is not appropriate
+    for your class, then supply the appropriate character set to the constructor call.\n "
   ruleID: utf-8-by-default-00010
   when:
     java.referenced:
@@ -44,9 +42,7 @@
       pattern: java.util.(Formatter|Scanner)*
 - category: potential
   customVariables: []
-  description: |-
-    The java.net.URLEncoder.encode method uses UTF-8 by default
-    If not supplied, the `java.net.URLEncoder.encode` method uses UTF-8 by default.. If you haven't provided the character set, and UTF-8 is not appropriate for your class, then then supply the appropriate character set to the method call.
+  description: The java.net.URLEncoder.encode method uses UTF-8 by default
   effort: 1
   labels:
   - konveyor.io/target=openjdk18+
@@ -54,9 +50,9 @@
   links:
   - title: 'JEP 400: UTF-8 by Default'
     url: https://openjdk.org/jeps/400
-  message: If not supplied, the `java.net.URLEncoder.encode` method uses UTF-8 by
-    default.. If you haven't provided the character set, and UTF-8 is not appropriate
-    for your class, then then supply the appropriate character set to the method call.
+  message: "If not supplied, the `java.net.URLEncoder.encode` method uses UTF-8 by
+    default. \n If you haven't provided the character set, and UTF-8 is not appropriate
+    for your class, then then supply the appropriate character set to the method call.\n "
   ruleID: utf-8-by-default-00020
   when:
     java.referenced:
@@ -64,9 +60,7 @@
       pattern: java.net.URLEncoder.encode*
 - category: potential
   customVariables: []
-  description: |-
-    The java.net.URLDecoder.decode method uses UTF-8 by default
-    If not supplied, the `java.net.URLDecoder.decode` method uses UTF-8 by default.. If you haven't provided the character set, and UTF-8 is not appropriate for your class, then then supply the appropriate character set to the method call.
+  description: The java.net.URLDecoder.decode method uses UTF-8 by default
   effort: 1
   labels:
   - konveyor.io/target=openjdk18+
@@ -74,9 +68,9 @@
   links:
   - title: 'JEP 400: UTF-8 by Default'
     url: https://openjdk.org/jeps/400
-  message: If not supplied, the `java.net.URLDecoder.decode` method uses UTF-8 by
-    default.. If you haven't provided the character set, and UTF-8 is not appropriate
-    for your class, then then supply the appropriate character set to the method call.
+  message: "If not supplied, the `java.net.URLDecoder.decode` method uses UTF-8 by
+    default. \n If you haven't provided the character set, and UTF-8 is not appropriate
+    for your class, then then supply the appropriate character set to the method call.\n "
   ruleID: utf-8-by-default-00030
   when:
     java.referenced:

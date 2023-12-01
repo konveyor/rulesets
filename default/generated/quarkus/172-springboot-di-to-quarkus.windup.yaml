@@ -1,8 +1,7 @@
 - category: potential
   customVariables: []
-  description: |-
-    Replace the SpringBoot Dependency Injection artifact with Quarkus 'spring-di' extension
-    Replace the SpringBoot Dependency Injection artifact with Quarkus `spring-di` extension. Spring DI is in spring-beans artifact brought transitively by any `org.springframework.boot:spring-boot-*` dependency. Add Quarkus dependency `io.quarkus:quarkus-spring-di`
+  description: Replace the SpringBoot Dependency Injection artifact with Quarkus 'spring-di'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=springboot
@@ -10,9 +9,9 @@
   links:
   - title: Quarkus DI Guide
     url: https://quarkus.io/guides/spring-di
-  message: Replace the SpringBoot Dependency Injection artifact with Quarkus `spring-di`
-    extension. Spring DI is in spring-beans artifact brought transitively by any `org.springframework.boot:spring-boot-*`
-    dependency. Add Quarkus dependency `io.quarkus:quarkus-spring-di`
+  message: "\n Replace the SpringBoot Dependency Injection artifact with Quarkus `spring-di`
+    extension\n\n Spring DI is in spring-beans artifact brought transitively by any
+    `org.springframework.boot:spring-boot-*` dependency\n Add Quarkus dependency `io.quarkus:quarkus-spring-di`\n "
   ruleID: springboot-di-to-quarkus-00000
   when:
     java.dependency:
@@ -20,8 +19,8 @@
       name: org.springframework.spring-beans
 - category: mandatory
   customVariables: []
-  description: "For Spring DI the XML-based bean configuration metadata is not supported
-    by Quarkus \nQuarkus only supports the java-based configuration of Spring beans."
+  description: 'For Spring DI the XML-based bean configuration metadata is not supported
+    by Quarkus '
   effort: 1
   labels:
   - konveyor.io/source=springboot
@@ -45,9 +44,7 @@
         xpath: //*/c:annotation-config
 - category: mandatory
   customVariables: []
-  description: |-
-    Spring DI infrastructure classes not supported by Quarkus
-    Spring infrastructure classes (like `org.springframework.beans.factory.config.BeanPostProcessor` , `org.springframework.context.ApplicationContext` for example) will not be executed.
+  description: Spring DI infrastructure classes not supported by Quarkus
   effort: 3
   labels:
   - konveyor.io/source=springboot

@@ -5,9 +5,7 @@
   - name: type
     nameOfCaptureGroup: type
     pattern: org.hibernate.(?P<packageRemainder>(.*)?.)?(?P<type>[^.]+)
-  description: |
-    Hibernate
-    This is a Hibernate type and it will need to be verified for compatibility with the latest Hibernate version.
+  description: Hibernate
   labels:
   - konveyor.io/source=hibernate3.9-
   - konveyor.io/source=hibernate
@@ -17,6 +15,9 @@
   - konveyor.io/target=eap
   - hibernate
   links: []
+  message:
+  - This is a Hibernate type and it will need to be verified for compatibility with
+    the latest Hibernate version.
   ruleID: hibernate-catchall-00000
   tag:
   - catchall

@@ -1,3 +1,3 @@
 name: openjdk17/openjdk11
-description: This ruleset provides analysis Security Manager classes and methods deprecated
+description: This ruleset provides analysis with respect to applet-api deprecation
   between OpenJDK 11 to 17.

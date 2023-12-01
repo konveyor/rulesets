@@ -1,10 +1,10 @@
 - customVariables: []
-  description: |
-    Embedded framework - Spring Security
-    The application embeds a Spring Security library.
+  description: Embedded framework - Spring Security
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Spring Security library.
   ruleID: security-01100
   tag:
   - Spring Security
@@ -13,12 +13,12 @@
     builtin.file:
       pattern: .*spring-security.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Apache Shiro
-    The application embeds an Apache Shiro library.
+  description: Embedded library - Apache Shiro
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an Apache Shiro library.
   ruleID: security-01200
   tag:
   - Apache Shiro
@@ -27,12 +27,12 @@
     builtin.file:
       pattern: .*shiro.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Hdiv
-    The application embeds an Hdiv library.
+  description: Embedded library - Hdiv
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an Hdiv library.
   ruleID: security-01300
   tag:
   - Hdiv
@@ -41,12 +41,12 @@
     builtin.file:
       pattern: .*hdiv.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - OACC
-    The application embeds an OACC library.
+  description: Embedded library - OACC
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an OACC library.
   ruleID: security-01400
   tag:
   - OACC
@@ -55,12 +55,12 @@
     builtin.file:
       pattern: .*acciente-oacc.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - PicketLink
-    The application embeds a PicketLink library.
+  description: Embedded library - PicketLink
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a PicketLink library.
   ruleID: security-01500
   tag:
   - PicketLink
@@ -69,12 +69,12 @@
     builtin.file:
       pattern: .*picketlink.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - PicketBox
-    The application embeds a PicketBox library.
+  description: Embedded library - PicketBox
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a PicketBox library.
   ruleID: security-01600
   tag:
   - PicketBox
@@ -83,12 +83,12 @@
     builtin.file:
       pattern: .*picketbox.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Keyczar
-    The application embeds a Keyczar library.
+  description: Embedded library - Keyczar
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Keyczar library.
   ruleID: security-01700
   tag:
   - Keyczar
@@ -97,12 +97,12 @@
     builtin.file:
       pattern: .*keyczar.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - XACML
-    The application embeds an XACML library.
+  description: Embedded library - XACML
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an XACML library.
   ruleID: security-01800
   tag:
   - XACML
@@ -111,12 +111,12 @@
     builtin.file:
       pattern: .*xacml.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - SAML
-    The application embeds a SAML library.
+  description: Embedded library - SAML
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a SAML library.
   ruleID: security-01900
   tag:
   - SAML
@@ -125,12 +125,12 @@
     builtin.file:
       pattern: .*saml.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Bouncy Castle
-    The application embeds a Bouncy Castle library.
+  description: Embedded library - Bouncy Castle
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Bouncy Castle library.
   ruleID: security-02000
   tag:
   - Bouncy Castle
@@ -150,12 +150,12 @@
     - builtin.file:
         pattern: .*bctls.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Jasypt
-    The application embeds a Jasypt library.
+  description: Embedded library - Jasypt
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Jasypt library.
   ruleID: security-02100
   tag:
   - Jasypt
@@ -164,12 +164,12 @@
     builtin.file:
       pattern: .*jasypt.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Apache Santuario
-    The application embeds a Apache Santuario library.
+  description: Embedded library - Apache Santuario
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Apache Santuario library.
   ruleID: security-02200
   tag:
   - Apache Santuario
@@ -178,12 +178,12 @@
     builtin.file:
       pattern: .*xmlsec.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - SSL
-    The application embeds an SSL library.
+  description: Embedded library - SSL
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an SSL library.
   ruleID: security-02300
   tag:
   - SSL
@@ -192,12 +192,12 @@
     builtin.file:
       pattern: .*ssl.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Vlad
-    The application embeds a Vlad library.
+  description: Embedded library - Vlad
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Vlad library.
   ruleID: security-02400
   tag:
   - Vlad
@@ -206,12 +206,12 @@
     builtin.file:
       pattern: vlad.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Apache Commons Validator
-    The application embeds an Apache Commons Validator library.
+  description: Embedded library - Apache Commons Validator
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an Apache Commons Validator library.
   ruleID: security-02500
   tag:
   - Apache Commons Validator
@@ -220,12 +220,12 @@
     builtin.file:
       pattern: commons-validator.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - OWASP ESAPI
-    The application embeds an OWASP ESAPI library.
+  description: Embedded library - OWASP ESAPI
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an OWASP ESAPI library.
   ruleID: security-02600
   tag:
   - OWASP ESAPI
@@ -234,12 +234,12 @@
     builtin.file:
       pattern: .*esapi.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - WSS4J
-    The application embeds a WSS4J library.
+  description: Embedded library - WSS4J
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a WSS4J library.
   ruleID: security-02700
   tag:
   - WSS4J
@@ -248,12 +248,12 @@
     builtin.file:
       pattern: .*wss4j.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - OpenSAML
-    The application embeds an OpenSAML library.
+  description: Embedded library - OpenSAML
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an OpenSAML library.
   ruleID: security-02800
   tag:
   - OpenSAML
@@ -262,12 +262,12 @@
     builtin.file:
       pattern: .*opensaml.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - OTR4J
-    The application embeds an OTR4J library.
+  description: Embedded library - OTR4J
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an OTR4J library.
   ruleID: security-02900
   tag:
   - OTR4J
@@ -276,12 +276,12 @@
     builtin.file:
       pattern: .*otr4j.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - OWASP CSRF Guard
-    The application embeds an OWASP CSRF Guard library.
+  description: Embedded library - OWASP CSRF Guard
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an OWASP CSRF Guard library.
   ruleID: security-03000
   tag:
   - OWASP CSRF Guard
@@ -290,12 +290,12 @@
     builtin.file:
       pattern: .*csrfguard.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - OAUTH
-    The application embeds an OAUTH library.
+  description: Embedded library - OAUTH
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an OAUTH library.
   ruleID: security-03100
   tag:
   - OAUTH
@@ -304,12 +304,12 @@
     builtin.file:
       pattern: .*oauth.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Acegi Security
-    The application embeds an Acegi Security library.
+  description: Embedded library - Acegi Security
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an Acegi Security library.
   ruleID: security-03200
   tag:
   - Acegi Security
@@ -318,12 +318,12 @@
     builtin.file:
       pattern: .*acegi-security.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - JSecurity
-    The application embeds a JSecurity library.
+  description: Embedded library - JSecurity
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a JSecurity library.
   ruleID: security-03300
   tag:
   - JSecurity
@@ -332,12 +332,12 @@
     builtin.file:
       pattern: .*jsecurity.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - AcrIS Security
-    The application embeds an AcrIS Security library.
+  description: Embedded library - AcrIS Security
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an AcrIS Security library.
   ruleID: security-03400
   tag:
   - AcrIS Security
@@ -346,12 +346,12 @@
     builtin.file:
       pattern: .*acris-security.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Trunk JGuard
-    The application embeds a Trunk JGuard library.
+  description: Embedded library - Trunk JGuard
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Trunk JGuard library.
   ruleID: security-03500
   tag:
   - Trunk JGuard
@@ -360,12 +360,12 @@
     builtin.file:
       pattern: .*jguard.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Spring Security
-    The application embeds a Spring Security library.
+  description: Embedded framework - Spring Security
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Spring Security library.
   ruleID: security-03600
   tag:
   - Spring Security

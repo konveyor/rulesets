@@ -1,10 +1,10 @@
 - customVariables: []
-  description: |
-    Embedded framework - Apache Axis
-    The application embeds the Apache Axis framework.
+  description: Embedded framework - Apache Axis
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Apache Axis framework.
   ruleID: embedded-framework-01000
   tag:
   - Apache Axis
@@ -13,12 +13,12 @@
     builtin.file:
       pattern: axis.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Apache Axis2
-    The application embeds the Apache Axis2 framework.
+  description: Embedded framework - Apache Axis2
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Apache Axis2 framework.
   ruleID: embedded-framework-01010
   tag:
   - Apache Axis2
@@ -27,12 +27,12 @@
     builtin.file:
       pattern: axis2.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Apache CXF
-    The application embeds the Apache CXF framework.
+  description: Embedded framework - Apache CXF
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Apache CXF framework.
   ruleID: embedded-framework-01100
   tag:
   - Apache CXF
@@ -41,12 +41,12 @@
     builtin.file:
       pattern: .*cxf.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - XFire
-    The application embeds the XFire framework.
+  description: Embedded framework - XFire
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the XFire framework.
   ruleID: embedded-framework-01200
   tag:
   - XFire
@@ -55,12 +55,12 @@
     builtin.file:
       pattern: .*xfire.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Jersey
-    The application embeds the Jersey framework.
+  description: Embedded framework - Jersey
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Jersey framework.
   ruleID: embedded-framework-01300
   tag:
   - Jersey
@@ -69,12 +69,12 @@
     builtin.file:
       pattern: .*jersey.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Unirest
-    The application embeds the Unirest framework.
+  description: Embedded framework - Unirest
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Unirest framework.
   ruleID: embedded-framework-01400
   tag:
   - Unirest
@@ -83,12 +83,12 @@
     builtin.file:
       pattern: .*unirest.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Hibernate
-    The application embeds the Hibernate framework.
+  description: Embedded framework - Hibernate
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Hibernate framework.
   ruleID: embedded-framework-01500
   tag:
   - Hibernate
@@ -97,12 +97,12 @@
     builtin.file:
       pattern: hibernate.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Hibernate OGM
-    The application embeds the Hibernate OGM framework.
+  description: Embedded framework - Hibernate OGM
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Hibernate OGM framework.
   ruleID: embedded-framework-01600
   tag:
   - Hibernate OGM
@@ -111,12 +111,12 @@
     builtin.file:
       pattern: hibernate-ogm.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - EclipseLink
-    The application embeds the EclipseLink framework.
+  description: Embedded framework - EclipseLink
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the EclipseLink framework.
   ruleID: embedded-framework-01700
   tag:
   - EclipseLink
@@ -125,12 +125,12 @@
     builtin.file:
       pattern: .*eclipselink.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Spring Batch
-    The application embeds the Spring Batch framework.
+  description: Embedded framework - Spring Batch
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Spring Batch framework.
   ruleID: embedded-framework-02000
   tag:
   - Spring Batch
@@ -139,12 +139,12 @@
     builtin.file:
       pattern: spring-batch.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - AspectJ
-    The application embeds the AspectJ framework.
+  description: Embedded framework - AspectJ
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the AspectJ framework.
   ruleID: embedded-framework-02200
   tag:
   - AspectJ
@@ -153,12 +153,12 @@
     builtin.file:
       pattern: .*aspectj.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - JBPM
-    The application embeds the JBPM framework.
+  description: Embedded framework - JBPM
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the JBPM framework.
   ruleID: embedded-framework-02300
   tag:
   - JBPM
@@ -167,12 +167,12 @@
     builtin.file:
       pattern: .*jbpm.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - iLog
-    The application embeds the iLog framework.
+  description: Embedded framework - iLog
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the iLog framework.
   ruleID: embedded-framework-02400
   tag:
   - iLog
@@ -181,12 +181,12 @@
     builtin.file:
       pattern: .*jrules.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Camunda
-    The application embeds the Camunda framework.
+  description: Embedded framework - Camunda
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Camunda framework.
   ruleID: embedded-framework-03000
   tag:
   - Camunda
@@ -195,12 +195,12 @@
     builtin.file:
       pattern: .*camunda.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Pega
-    The application embeds the Pega framework.
+  description: Embedded framework - Pega
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Pega framework.
   ruleID: embedded-framework-03100
   tag:
   - Pega
@@ -209,12 +209,12 @@
     builtin.file:
       pattern: .*pega.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Blaze
-    The application embeds the Blaze framework.
+  description: Embedded framework - Blaze
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Blaze framework.
   ruleID: embedded-framework-03200
   tag:
   - Blaze
@@ -223,12 +223,12 @@
     builtin.file:
       pattern: blaze.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - MRules
-    The application embeds the MRules framework.
+  description: Embedded framework - MRules
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the MRules framework.
   ruleID: embedded-framework-03300
   tag:
   - MRules
@@ -237,12 +237,12 @@
     builtin.file:
       pattern: .*MRules.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Easy Rules
-    The application embeds the Easy Rules framework.
+  description: Embedded framework - Easy Rules
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Easy Rules framework.
   ruleID: embedded-framework-03400
   tag:
   - Easy Rules
@@ -251,12 +251,12 @@
     builtin.file:
       pattern: .*easy-rules.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - AOP Alliance
-    The application embeds the AOP Alliance library.
+  description: Embedded framework - AOP Alliance
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the AOP Alliance library.
   ruleID: embedded-framework-04700
   tag:
   - AOP Alliance
@@ -265,12 +265,12 @@
     builtin.file:
       pattern: .*aopalliance.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - SNMP4J
-    The application embeds SNMP4J.
+  description: Embedded framework - SNMP4J
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds SNMP4J.
   ruleID: embedded-framework-05000
   tag:
   - SNMP4J
@@ -279,12 +279,12 @@
     builtin.file:
       pattern: .*snmp4j.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - HTTP Client
-    The application embeds a HTTP client.
+  description: Embedded framework - HTTP Client
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a HTTP client.
   ruleID: embedded-framework-05100
   tag:
   - HTTP Client
@@ -293,12 +293,12 @@
     builtin.file:
       pattern: .*http-client.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Javax Inject
-    The application embeds a Javax Inject library.
+  description: Embedded framework - Javax Inject
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Javax Inject library.
   ruleID: embedded-framework-05300
   tag:
   - Javax Inject
@@ -310,12 +310,12 @@
     - builtin.file:
         pattern: .*atinject.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Google Guice
-    The application embeds a Google Guice library.
+  description: Embedded framework - Google Guice
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Google Guice library.
   ruleID: embedded-framework-05400
   tag:
   - Google Guice
@@ -324,12 +324,12 @@
     builtin.file:
       pattern: .*guice.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - CDI
-    The application embeds a CDI library.
+  description: Embedded framework - CDI
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a CDI library.
   ruleID: embedded-framework-05500
   tag:
   - CDI
@@ -338,12 +338,12 @@
     builtin.file:
       pattern: .*cdi.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Plexus Container
-    The application embeds a Plexus Container library.
+  description: Embedded framework - Plexus Container
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Plexus Container library.
   ruleID: embedded-framework-05600
   tag:
   - Plexus Container
@@ -352,12 +352,12 @@
     builtin.file:
       pattern: .*plexus-container.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Weld
-    The application embeds a Weld library.
+  description: Embedded framework - Weld
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Weld library.
   ruleID: embedded-framework-05700
   tag:
   - Weld
@@ -366,12 +366,12 @@
     builtin.file:
       pattern: .*weld.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Dagger
-    The application embeds a Dagger library.
+  description: Embedded framework - Dagger
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Dagger library.
   ruleID: embedded-framework-05800
   tag:
   - Dagger
@@ -380,12 +380,12 @@
     builtin.file:
       pattern: dagger.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - GIN
-    The application embeds a GIN (GWT INjection) library.
+  description: Embedded framework - GIN
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a GIN (GWT INjection) library.
   ruleID: embedded-framework-05900
   tag:
   - GIN
@@ -394,12 +394,12 @@
     builtin.file:
       pattern: gin.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - PicoContainer
-    The application embeds a PicoContainer library.
+  description: Embedded framework - PicoContainer
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a PicoContainer library.
   ruleID: embedded-framework-06000
   tag:
   - PicoContainer
@@ -408,12 +408,12 @@
     builtin.file:
       pattern: .*picocontainer.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Scaldi
-    The application embeds a Scaldi library.
+  description: Embedded framework - Scaldi
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Scaldi library.
   ruleID: embedded-framework-06100
   tag:
   - Scaldi
@@ -422,12 +422,12 @@
     builtin.file:
       pattern: .*scaldi.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Macros
-    The application embeds a Macros library.
+  description: Embedded framework - Macros
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Macros library.
   ruleID: embedded-framework-06200
   tag:
   - Macros
@@ -436,12 +436,12 @@
     builtin.file:
       pattern: macros.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Injekt for Kotlin
-    The application embeds a Injekt for Kotlin library.
+  description: Embedded framework - Injekt for Kotlin
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Injekt for Kotlin library.
   ruleID: embedded-framework-06300
   tag:
   - Injekt for Kotlin
@@ -450,12 +450,12 @@
     builtin.file:
       pattern: injekt-core.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Kodein
-    The application embeds a Kodein library.
+  description: Embedded framework - Kodein
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Kodein library.
   ruleID: embedded-framework-06400
   tag:
   - Kodein
@@ -464,12 +464,12 @@
     builtin.file:
       pattern: kodein.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Peaberry
-    The application embeds a Peaberry library.
+  description: Embedded framework - Peaberry
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Peaberry library.
   ruleID: embedded-framework-06500
   tag:
   - Peaberry
@@ -478,12 +478,12 @@
     builtin.file:
       pattern: peaberry.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Sticky Configured
-    The application embeds a Sticky Configured library.
+  description: Embedded framework - Sticky Configured
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Sticky Configured library.
   ruleID: embedded-framework-06600
   tag:
   - Sticky Configured
@@ -492,12 +492,12 @@
     builtin.file:
       pattern: sticky-configured.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Ka DI
-    The application embeds a Ka DI library.
+  description: Embedded framework - Ka DI
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Ka DI library.
   ruleID: embedded-framework-06700
   tag:
   - Ka DI
@@ -506,12 +506,12 @@
     builtin.file:
       pattern: ka-di.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Polyforms DI
-    The application embeds a Polyforms DI library.
+  description: Embedded framework - Polyforms DI
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Polyforms DI library.
   ruleID: embedded-framework-06800
   tag:
   - Polyforms DI
@@ -520,12 +520,12 @@
     builtin.file:
       pattern: polyforms-di.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - JayWire
-    The application embeds a JayWire library.
+  description: Embedded framework - JayWire
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a JayWire library.
   ruleID: embedded-framework-06900
   tag:
   - JayWire
@@ -534,12 +534,12 @@
     builtin.file:
       pattern: jaywire.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Silk DI
-    The application embeds a Silk DI library.
+  description: Embedded framework - Silk DI
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Silk DI library.
   ruleID: embedded-framework-07000
   tag:
   - Silk DI
@@ -548,12 +548,12 @@
     builtin.file:
       pattern: silk-di.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Grapht DI
-    The application embeds a Grapht DI library.
+  description: Embedded framework - Grapht DI
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Grapht DI library.
   ruleID: embedded-framework-07100
   tag:
   - Grapht DI
@@ -562,12 +562,12 @@
     builtin.file:
       pattern: grapht.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Syringe
-    The application embeds a Syringe library.
+  description: Embedded framework - Syringe
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Syringe library.
   ruleID: embedded-framework-07200
   tag:
   - Syringe
@@ -576,12 +576,12 @@
     builtin.file:
       pattern: syringe.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Cfg Engine
-    The application embeds a Cfg Engine library.
+  description: Embedded framework - Cfg Engine
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Cfg Engine library.
   ruleID: embedded-framework-07300
   tag:
   - Cfg Engine
@@ -590,12 +590,12 @@
     builtin.file:
       pattern: cfg-engine.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - BeanInject
-    The application embeds a BeanInject library.
+  description: Embedded framework - BeanInject
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a BeanInject library.
   ruleID: embedded-framework-07400
   tag:
   - BeanInject
@@ -604,12 +604,12 @@
     builtin.file:
       pattern: beaninject.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Tornado Inject
-    The application embeds a Tornado Inject library.
+  description: Embedded framework - Tornado Inject
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Tornado Inject library.
   ruleID: embedded-framework-07500
   tag:
   - Tornado Inject
@@ -618,12 +618,12 @@
     builtin.file:
       pattern: inject.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Airframe
-    The application embeds a Airframe library.
+  description: Embedded framework - Airframe
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Airframe library.
   ruleID: embedded-framework-07600
   tag:
   - Airframe
@@ -632,12 +632,12 @@
     builtin.file:
       pattern: airframe.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Winter
-    The application embeds a Winter library.
+  description: Embedded framework - Winter
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Winter library.
   ruleID: embedded-framework-07700
   tag:
   - Winter
@@ -646,12 +646,12 @@
     builtin.file:
       pattern: winter.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - KouInject
-    The application embeds a KouInject library.
+  description: Embedded framework - KouInject
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a KouInject library.
   ruleID: embedded-framework-07800
   tag:
   - KouInject
@@ -660,12 +660,12 @@
     builtin.file:
       pattern: kouinject.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Iroh
-    The application embeds an Iroh library.
+  description: Embedded framework - Iroh
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an Iroh library.
   ruleID: embedded-framework-07900
   tag:
   - Iroh
@@ -674,12 +674,12 @@
     builtin.file:
       pattern: iroh.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Micro DI
-    The application embeds a Micro DI library.
+  description: Embedded framework - Micro DI
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Micro DI library.
   ruleID: embedded-framework-08000
   tag:
   - Micro DI
@@ -688,12 +688,12 @@
     builtin.file:
       pattern: micro-di.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - SubCut
-    The application embeds a SubCut library.
+  description: Embedded framework - SubCut
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a SubCut library.
   ruleID: embedded-framework-08100
   tag:
   - SubCut
@@ -702,12 +702,12 @@
     builtin.file:
       pattern: subcut.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Spring DI
-    The application embeds a Spring DI library.
+  description: Embedded framework - Spring DI
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Spring DI library.
   ruleID: embedded-framework-08200
   tag:
   - Spring DI
@@ -717,12 +717,12 @@
       lowerbound: 0.0.0
       name: org.springframework.spring-beans
 - customVariables: []
-  description: |
-    Embedded framework - Micrometer
-    The application embeds a Micrometer library.
+  description: Embedded framework - Micrometer
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Micrometer library.
   ruleID: embedded-framework-08300
   tag:
   - Micrometer
@@ -732,12 +732,12 @@
       lowerbound: 0.0.0
       name: io.micrometer.micrometer-core
 - customVariables: []
-  description: |
-    Embedded framework - Spring Web
-    The application embeds the Spring Web framework.
+  description: Embedded framework - Spring Web
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Spring Web framework.
   ruleID: embedded-framework-08400
   tag:
   - Spring Web
@@ -754,12 +754,12 @@
         lowerbound: 0.0.0
         name: org.springframework.spring-web
 - customVariables: []
-  description: |
-    Embedded framework - Spring Shell
-    The application embeds a Spring Shell library.
+  description: Embedded framework - Spring Shell
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a Spring Shell library.
   ruleID: embedded-framework-08500
   tag:
   - Spring Shell
@@ -769,12 +769,12 @@
       lowerbound: 0.0.0
       name: org.springframework.shell.spring-shell-core
 - customVariables: []
-  description: |
-    Embedded framework - Spring Boot Flo
-    The application embeds Spring Boot Flo.
+  description: Embedded framework - Spring Boot Flo
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds Spring Boot Flo.
   ruleID: embedded-framework-08600
   tag:
   - Spring Boot Flo
@@ -784,12 +784,12 @@
       filePattern: .*\.(html|ts)
       pattern: (<|')flo-editor
 - customVariables: []
-  description: |
-    Embedded framework - Spring Scheduled
-    The application embeds Spring Scheduled.
+  description: Embedded framework - Spring Scheduled
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds Spring Scheduled.
   ruleID: embedded-framework-08700
   tag:
   - Spring Scheduled
@@ -799,12 +799,12 @@
       location: ANNOTATION
       pattern: org.springframework.scheduling.annotation.Scheduled
 - customVariables: []
-  description: |
-    Embedded framework - Spring Cloud Function
-    The application embeds Spring Cloud Function.
+  description: Embedded framework - Spring Cloud Function
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds Spring Cloud Function.
   ruleID: embedded-framework-08800
   tag:
   - Spring Cloud Function
@@ -818,12 +818,12 @@
         lowerbound: 0.0.0
         name: org.springframework.cloud.spring-cloud-function-context
 - customVariables: []
-  description: |
-    Embedded framework - Quartz
-    The application embeds the Quartz framework.
+  description: Embedded framework - Quartz
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Quartz framework.
   ruleID: embedded-framework-08900
   tag:
   - Quartz
@@ -832,12 +832,12 @@
     builtin.file:
       pattern: .*quartz.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Zipkin
-    The application embeds the Zipkin framework.
+  description: Embedded framework - Zipkin
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Zipkin framework.
   ruleID: embedded-framework-09100
   tag:
   - Zipkin
@@ -846,12 +846,12 @@
     builtin.file:
       pattern: .*zipkin.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Feign
-    The application embeds the Feign framework.
+  description: Embedded framework - Feign
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Feign framework.
   ruleID: embedded-framework-09000
   tag:
   - Feign
@@ -860,12 +860,12 @@
     builtin.file:
       pattern: feign-.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Redis
-    The application embeds the Redis client.
+  description: Embedded framework - Redis
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Redis client.
   ruleID: embedded-framework-09200
   tag:
   - Redis
@@ -874,12 +874,12 @@
     builtin.file:
       pattern: .*redis.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Eureka
-    The application embeds the Eureka client.
+  description: Embedded framework - Eureka
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds the Eureka client.
   ruleID: embedded-framework-09300
   tag:
   - Eureka

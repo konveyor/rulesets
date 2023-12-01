@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the spring-boot-maven-plugin dependency
-    Replace the `spring-boot-maven-plugin` dependency.. The `spring-boot-maven-plugin` dependency needs to be replaced with `quarkus-maven-plugin`, so that the application is built with Quarkus, both for running on the JVM and in native mode.
+  description: Replace the spring-boot-maven-plugin dependency
   effort: 2
   labels:
   - konveyor.io/source=springboot
@@ -10,9 +8,9 @@
   links:
   - title: Building Quarkus with maven
     url: https://quarkus.io/guides/maven-tooling#build-tool-maven
-  message: Replace the `spring-boot-maven-plugin` dependency.. The `spring-boot-maven-plugin`
+  message: "\n Replace the `spring-boot-maven-plugin` dependency.\n The `spring-boot-maven-plugin`
     dependency needs to be replaced with `quarkus-maven-plugin`, so that the application
-    is built with Quarkus, both for running on the JVM and in native mode.
+    is built with Quarkus, both for running on the JVM and in native mode.\n "
   ruleID: springboot-plugins-to-quarkus-0000
   when:
     builtin.xml:

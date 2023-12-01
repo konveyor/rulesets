@@ -3,9 +3,7 @@
   - name: className
     nameOfCaptureGroup: className
     pattern: java.util.jar.(?P<className>(Pack200|Pack200.Packer|Pack200.Unpacker))
-  description: |-
-    The java.util.jar.{class-name} class has been removed
-    After being deprecated in OpenJDK 11, the pack200,. unpack200 and corresponding java.util.jar.Pack200* classes were removed in OpenJDK 14.. Please look into switching to either the jlink tool or the jpackage tool to create. application-specific runtimes with an optimized factor.
+  description: The java.util.jar.{class-name} class has been removed
   effort: 3
   labels:
   - konveyor.io/source=openjdk11-
@@ -15,10 +13,10 @@
     url: https://openjdk.org/jeps/367
   - title: 'JEP 392: Packaging Tool (jpackage tool)'
     url: https://openjdk.org/jeps/392
-  message: After being deprecated in OpenJDK 11, the pack200,. unpack200 and corresponding
-    java.util.jar.Pack200* classes were removed in OpenJDK 14.. Please look into switching
-    to either the jlink tool or the jpackage tool to create. application-specific
-    runtimes with an optimized factor.
+  message: "\n After being deprecated in OpenJDK 11, the pack200, \n unpack200 and
+    corresponding java.util.jar.Pack200* classes were removed in OpenJDK 14. \n Please
+    look into switching to either the jlink tool or the jpackage tool to create \n
+    application-specific runtimes with an optimized factor.\n "
   ruleID: removed-classes-00000
   when:
     java.referenced:

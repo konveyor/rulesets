@@ -1,8 +1,6 @@
 - category: potential
   customVariables: []
-  description: |-
-    Active MQ Broker
-    The application uses an ActiveMQ message broker.. Checkout Azure Service Bus for a fully managed message broker.
+  description: Active MQ Broker
   effort: 0
   labels:
   - konveyor.io/source=springboot
@@ -21,8 +19,8 @@
     url: https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-service-bus
   - title: Azure Spring Boot Starter for Azure Service Bus JMS
     url: https://search.maven.org/artifact/com.azure.spring/azure-spring-boot-starter-servicebus-jms
-  message: The application uses an ActiveMQ message broker.. Checkout Azure Service
-    Bus for a fully managed message broker.
+  message: "\n \n The application uses an ActiveMQ message broker.\n \n Checkout Azure
+    Service Bus for a fully managed message broker.\n \n "
   ruleID: spring-boot-to-azure-jms-broker-01000
   when:
     or:

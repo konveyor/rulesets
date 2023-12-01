@@ -1,8 +1,6 @@
 - category: optional
   customVariables: []
-  description: |-
-    Azure - The application loads certificates into a KeyStore
-    Azure - The application loads certificates into a KeyStore
+  description: Azure - The application loads certificates into a KeyStore
   effort: 5
   labels:
   - konveyor.io/source=eap7

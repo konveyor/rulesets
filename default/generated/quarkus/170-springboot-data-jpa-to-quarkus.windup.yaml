@@ -1,8 +1,7 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the SpringBoot Data JPA artifact with Quarkus 'spring-data-jpa' extension
-    Replace the SpringBoot JPA artifact with Quarkus `spring-data-jpa` extension. Spring Data JPA is in spring-data-jpa artifact brought transitively by any `org.springframework.data:spring-data-*` dependency. Add Quarkus dependency `io.quarkus:quarkus-spring-data-jpa`
+  description: Replace the SpringBoot Data JPA artifact with Quarkus 'spring-data-jpa'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=springboot
@@ -10,9 +9,10 @@
   links:
   - title: Quarkus JPA Guide
     url: https://quarkus.io/guides/spring-data-jpa
-  message: Replace the SpringBoot JPA artifact with Quarkus `spring-data-jpa` extension.
-    Spring Data JPA is in spring-data-jpa artifact brought transitively by any `org.springframework.data:spring-data-*`
-    dependency. Add Quarkus dependency `io.quarkus:quarkus-spring-data-jpa`
+  message: "\n Replace the SpringBoot JPA artifact with Quarkus `spring-data-jpa`
+    extension\n\n Spring Data JPA is in spring-data-jpa artifact brought transitively
+    by any `org.springframework.data:spring-data-*` dependency \n Add Quarkus dependency
+    `io.quarkus:quarkus-spring-data-jpa`\n "
   ruleID: springboot-jpa-to-quarkus-00000
   when:
     or:

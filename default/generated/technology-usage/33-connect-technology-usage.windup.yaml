@@ -19,12 +19,12 @@
         location: METHOD_CALL
         pattern: java.lang.Runtime.loadLibrary*
 - customVariables: []
-  description: |
-    JNA usage
-    JNA is used in the application
+  description: JNA usage
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - JNA is used in the application
   ruleID: technology-usage-connect-01101
   tag:
   - Connect=JNA
@@ -49,12 +49,12 @@
         location: VARIABLE_DECLARATION
         pattern: com.sun.jna*
 - customVariables: []
-  description: |
-    Mail usage
-    Mailing is used in the application
+  description: Mail usage
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - Mailing is used in the application
   ruleID: technology-usage-connect-01200
   tag:
   - Connect=Mail
@@ -76,12 +76,12 @@
         location: PACKAGE
         pattern: org.apache.commons.mail*
 - customVariables: []
-  description: |
-    JCA usage
-    JCA is used in the application
+  description: JCA usage
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - JCA is used in the application
   ruleID: technology-usage-connect-01300
   tag:
   - Connect=JCA

@@ -1,8 +1,7 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the SpringBoot Security artifact with Quarkus 'spring-security' extension
-    Replace the SpringBoot Security artifact with Quarkus `spring-security` extension. Spring Security is in spring-security-core artifact brought transitively by `org.springframework.boot:spring-boot-starter-security` dependency.. Add Quarkus dependency `io.quarkus:quarkus-spring-security`
+  description: Replace the SpringBoot Security artifact with Quarkus 'spring-security'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=springboot
@@ -10,10 +9,10 @@
   links:
   - title: Quarkus Extension for Spring Security API Guide
     url: https://quarkus.io/guides/spring-security
-  message: Replace the SpringBoot Security artifact with Quarkus `spring-security`
-    extension. Spring Security is in spring-security-core artifact brought transitively
-    by `org.springframework.boot:spring-boot-starter-security` dependency.. Add Quarkus
-    dependency `io.quarkus:quarkus-spring-security`
+  message: "\n Replace the SpringBoot Security artifact with Quarkus `spring-security`
+    extension\n\n Spring Security is in spring-security-core artifact brought transitively
+    by `org.springframework.boot:spring-boot-starter-security` dependency. \n Add
+    Quarkus dependency `io.quarkus:quarkus-spring-security`\n "
   ruleID: springboot-security-to-quarkus-00000
   when:
     or:

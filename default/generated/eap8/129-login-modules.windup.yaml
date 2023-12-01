@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Migrate Custom Login Modules
-    The legacy custom login modules have been removed. Applications must be changed either use some of the already existing elytron security realms, or implement a custom security realm or migrate to the elytron's jaas realm. The jaas-realm can be used only if the custom login module does not use or depend on Picketbox.
+  description: Migrate Custom Login Modules
   effort: 3
   labels:
   - konveyor.io/source=eap7

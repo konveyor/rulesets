@@ -1,3 +1,3 @@
 name: quarkus/springboot
-description: This ruleset gives hints to migrate from Spring Scheduled to Quarkus
-  spring-scheduled extension
+description: This ruleset gives hints to migrate from Spring Web to Quarkus spring-web
+  extension

@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    `zip` and `gzip` dataformat was renamed
-    `zip` and `gzip` dataformats were renamed to `zipdeflater` and `gzipdeflater`
+  description: '`zip` and `gzip` dataformat was renamed'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -12,7 +10,7 @@
   links:
   - title: 'Camel 3 - Migration Guide: Zip and Gzip dafaformats'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_zip_and_gzip_dataformat
-  message: '`zip` and `gzip` dataformats were renamed to `zipdeflater` and `gzipdeflater`'
+  message: "`zip` and `gzip` dataformats were renamed to `zipdeflater` and `gzipdeflater`\n\n "
   ruleID: xml-dsl-changes-00001
   when:
     or:
@@ -26,9 +24,7 @@
         xpath: //*[(count(c:gzip)+count(c:zip)) > 0]
 - category: mandatory
   customVariables: []
-  description: |-
-    `custom` load balancer was renamed `customLoadBalancer`
-    `custom` load balancer was renamed to `customLoadBalancer`
+  description: '`custom` load balancer was renamed `customLoadBalancer`'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -38,7 +34,7 @@
   links:
   - title: Camel 3 - Migration Guide
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_xml_dsl_migration
-  message: '`custom` load balancer was renamed to `customLoadBalancer`'
+  message: "`custom` load balancer was renamed to `customLoadBalancer`\n\n "
   ruleID: xml-dsl-changes-00002
   when:
     or:
@@ -52,9 +48,7 @@
         xpath: //*/c:route/c:loadBalance/c:custom
 - category: mandatory
   customVariables: []
-  description: |-
-    `zipFile` data format was renamed to `zipfile`
-    `zipFile` data format was renamed to `zipfile`
+  description: '`zipFile` data format was renamed to `zipfile`'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -64,7 +58,7 @@
   links:
   - title: Camel 3 - Migration Guide
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_xml_dsl_migration
-  message: '`zipFile` data format was renamed to `zipfile`'
+  message: "`zipFile` data format was renamed to `zipfile`\n\n "
   ruleID: xml-dsl-changes-00003
   when:
     or:
@@ -86,9 +80,7 @@
         xpath: //*/c:unmarshal/c:zipFile
 - category: mandatory
   customVariables: []
-  description: |-
-    `keyOrTrustStoreParametersId` attribute was renamed
-    `keyOrTrustStoreParametersId` attribute was renamed to `keyOrTrustStoreParametersRef`
+  description: '`keyOrTrustStoreParametersId` attribute was renamed'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -98,7 +90,7 @@
   links:
   - title: Camel 3 - Migration Guide
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_xml_dsl_migration
-  message: '`keyOrTrustStoreParametersId` attribute was renamed to `keyOrTrustStoreParametersRef`'
+  message: "`keyOrTrustStoreParametersId` attribute was renamed to `keyOrTrustStoreParametersRef`\n\n "
   ruleID: xml-dsl-changes-00004
   when:
     or:
@@ -112,9 +104,7 @@
         xpath: //*/c:secureXML/@keyOrTrustStoreParametersId
 - category: mandatory
   customVariables: []
-  description: |-
-    `hystrix` was renamed
-    Hystrix circuit breaker has been generalized as circuit breaker. Use `circuitBreaker`. instead of `hystrix'.
+  description: '`hystrix` was renamed'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -124,8 +114,8 @@
   links:
   - title: Camel 3 - Migration Guide
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_xml_dsl_migration
-  message: Hystrix circuit breaker has been generalized as circuit breaker. Use `circuitBreaker`.
-    instead of `hystrix'.
+  message: "Hystrix circuit breaker has been generalized as circuit breaker. Use `circuitBreaker`\n
+    instead of `hystrix'.\n "
   ruleID: xml-dsl-changes-00005
   when:
     or:
@@ -139,9 +129,7 @@
         xpath: //*/c:hystrix
 - category: mandatory
   customVariables: []
-  description: |-
-    `completionSize` in aggregate was renamed
-    Use `completionSizeExpression` instead of `completionSize`. Expressions (not the attributes) for. setting correlation size/timeout were renamed.
+  description: '`completionSize` in aggregate was renamed'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -151,8 +139,8 @@
   links:
   - title: Camel 3 - Migration Guide - Aggregate EIP changes
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_aggregate_eip_in_xml_dsl
-  message: Use `completionSizeExpression` instead of `completionSize`. Expressions
-    (not the attributes) for. setting correlation size/timeout were renamed.
+  message: "Use `completionSizeExpression` instead of `completionSize`. Expressions
+    (not the attributes) for\n setting correlation size/timeout were renamed.\n "
   ruleID: xml-dsl-changes-00006
   when:
     or:
@@ -166,9 +154,7 @@
         xpath: //*/c:aggregate/c:completionSize
 - category: mandatory
   customVariables: []
-  description: |-
-    `completionTimeout` in aggregate was renamed
-    Use `completionTimeoutExpression` instead of `completionTimeout`. Expressions (not the. attributes) for. setting correlation size/timeout were renamed.
+  description: '`completionTimeout` in aggregate was renamed'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -178,8 +164,8 @@
   links:
   - title: Camel 3 - Migration Guide - Aggregate EIP changes
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_aggregate_eip_in_xml_dsl
-  message: Use `completionTimeoutExpression` instead of `completionTimeout`. Expressions
-    (not the. attributes) for. setting correlation size/timeout were renamed.
+  message: "Use `completionTimeoutExpression` instead of `completionTimeout`. Expressions
+    (not the\n attributes) for\n setting correlation size/timeout were renamed.\n "
   ruleID: xml-dsl-changes-00007
   when:
     or:
@@ -193,9 +179,7 @@
         xpath: //*/c:aggregate/c:completionTimeout
 - category: mandatory
   customVariables: []
-  description: |-
-    `headerName` attribute was renamed
-    The attribute `headerName` was renamed to `name`.
+  description: '`headerName` attribute was renamed'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -219,9 +203,7 @@
         xpath: //*/c:setHeader/@headerName
 - category: mandatory
   customVariables: []
-  description: |-
-    `propertyName` attribute was renamed
-    The attribute `propertyName` was renamed to `name`.
+  description: '`propertyName` attribute was renamed'
   effort: 1
   labels:
   - konveyor.io/source=camel2

@@ -6,8 +6,7 @@
   - name: classname
     nameOfCaptureGroup: classname
     pattern: com.(?P<subpackage>(sonic|sonicsw)(\..*)?.)?(?P<classname>[^.]+)
-  description: |
-    Sonic proprietary type reference com.{subpackage}.{classname}
+  description: Sonic proprietary type reference com.{subpackage}.{classname}
   effort: 0
   labels:
   - konveyor.io/source=sonic
@@ -18,9 +17,9 @@
   - sonic
   - catchall
   links: []
-  message: This com.{{subpackage}}.{{classname}} is a Sonic proprietary type and needs
-    to be migrated to a compatible API. There are currently no detailed. migration
-    rules about this type.
+  message: "\n This com.{{subpackage}}.{{classname}} is a Sonic proprietary type and
+    needs to be migrated to a compatible API. There are currently no detailed\n migration
+    rules about this type.\n "
   ruleID: sonic-catchall-00000
   when:
     java.referenced:

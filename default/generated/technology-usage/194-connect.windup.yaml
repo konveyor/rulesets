@@ -1,10 +1,10 @@
 - customVariables: []
-  description: |
-    Embedded Resource Adapter
-    The application embeds a resource adapter.
+  description: Embedded Resource Adapter
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a resource adapter.
   ruleID: connect-01400
   tag:
   - Resource Adapter
@@ -13,9 +13,7 @@
     builtin.file:
       pattern: .*\.rar
 - customVariables: []
-  description: |
-    Embedded library - ActiveMQ
-    The application embeds an ActiveMQ client library.
+  description: Embedded library - ActiveMQ
   labels:
   - konveyor.io/include=always
   links:
@@ -23,6 +21,8 @@
     url: https://access.redhat.com/articles/111663
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 7 Supported Configurations
     url: https://access.redhat.com/articles/2026253
+  message:
+  - The application embeds an ActiveMQ client library.
   ruleID: connect-01500
   tag:
   - ActiveMQ
@@ -31,12 +31,12 @@
     builtin.file:
       pattern: .*activemq.*
 - customVariables: []
-  description: |
-    Embedded library - OpenWS
-    The application embeds an OpenWS library.
+  description: Embedded library - OpenWS
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds an OpenWS library.
   ruleID: connect-01600
   tag:
   - OpenWS
@@ -45,12 +45,12 @@
     builtin.file:
       pattern: .*openws.*
 - customVariables: []
-  description: |
-    Embedded library - WSDL
-    The application embeds a WSDL library.
+  description: Embedded library - WSDL
   labels:
   - konveyor.io/include=always
   links: []
+  message:
+  - The application embeds a WSDL library.
   ruleID: connect-01700
   tag:
   - WSDL
@@ -59,9 +59,7 @@
     builtin.file:
       pattern: .*wsdl.*
 - customVariables: []
-  description: |
-    Embedded library - RabbitMQ Client
-    The application embeds a RabbitMQ client library.
+  description: Embedded library - RabbitMQ Client
   labels:
   - konveyor.io/include=always
   links:
@@ -69,6 +67,8 @@
     url: https://access.redhat.com/articles/111663
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 7 Supported Configurations
     url: https://access.redhat.com/articles/2026253
+  message:
+  - The application embeds a RabbitMQ client library.
   ruleID: connect-01800
   tag:
   - RabbitMQ Client
@@ -86,9 +86,7 @@
     - builtin.file:
         pattern: .*conduit.*
 - customVariables: []
-  description: |
-    Embedded library - Spring Messaging Client
-    The application embeds a Spring Messaging client library.
+  description: Embedded library - Spring Messaging Client
   labels:
   - konveyor.io/include=always
   links:
@@ -96,6 +94,8 @@
     url: https://access.redhat.com/articles/111663
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 7 Supported Configurations
     url: https://access.redhat.com/articles/2026253
+  message:
+  - The application embeds a Spring Messaging client library.
   ruleID: connect-01900
   tag:
   - Spring Messaging Client
@@ -107,9 +107,7 @@
     - builtin.file:
         pattern: .*spring-jms.*
 - customVariables: []
-  description: |
-    Embedded library - Camel Messaging Client
-    The application embeds a Camel Messaging client library.
+  description: Embedded library - Camel Messaging Client
   labels:
   - konveyor.io/include=always
   links:
@@ -117,6 +115,8 @@
     url: https://access.redhat.com/articles/111663
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 7 Supported Configurations
     url: https://access.redhat.com/articles/2026253
+  message:
+  - The application embeds a Camel Messaging client library.
   ruleID: connect-02000
   tag:
   - Camel Messaging Client
@@ -125,9 +125,7 @@
     builtin.file:
       pattern: .*camel-jms.*
 - customVariables: []
-  description: |
-    Embedded library - Amazon SQS Client
-    The application embeds a Amazon SQS client library.
+  description: Embedded library - Amazon SQS Client
   labels:
   - konveyor.io/include=always
   links:
@@ -135,6 +133,8 @@
     url: https://access.redhat.com/articles/111663
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 7 Supported Configurations
     url: https://access.redhat.com/articles/2026253
+  message:
+  - The application embeds a Amazon SQS client library.
   ruleID: connect-02100
   tag:
   - Amazon SQS Client
@@ -143,9 +143,7 @@
     builtin.file:
       pattern: .*aws-java-sdk-sqs.*
 - customVariables: []
-  description: |
-    Embedded library - HornetQ Client
-    The application embeds a HornetQ client library.
+  description: Embedded library - HornetQ Client
   labels:
   - konveyor.io/include=always
   links:
@@ -153,6 +151,8 @@
     url: https://access.redhat.com/articles/111663
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 7 Supported Configurations
     url: https://access.redhat.com/articles/2026253
+  message:
+  - The application embeds a HornetQ client library.
   ruleID: connect-02200
   tag:
   - HornetQ Client
@@ -161,9 +161,7 @@
     builtin.file:
       pattern: .*hornetq.*
 - customVariables: []
-  description: |
-    Embedded library - AMQP Client
-    The application embeds an AMQP client library.
+  description: Embedded library - AMQP Client
   labels:
   - konveyor.io/include=always
   links:
@@ -171,6 +169,8 @@
     url: https://access.redhat.com/articles/111663
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 7 Supported Configurations
     url: https://access.redhat.com/articles/2026253
+  message:
+  - The application embeds an AMQP client library.
   ruleID: connect-02300
   tag:
   - AMQP Client
@@ -179,9 +179,7 @@
     builtin.file:
       pattern: .*amqp.*
 - customVariables: []
-  description: |
-    Embedded library - RocketMQ Client
-    The application embeds a RocketMQ client library.
+  description: Embedded library - RocketMQ Client
   labels:
   - konveyor.io/include=always
   links:
@@ -189,6 +187,8 @@
     url: https://access.redhat.com/articles/111663
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 7 Supported Configurations
     url: https://access.redhat.com/articles/2026253
+  message:
+  - The application embeds a RocketMQ client library.
   ruleID: connect-02400
   tag:
   - RocketMQ Client
@@ -197,9 +197,7 @@
     builtin.file:
       pattern: .*rocketmq-client.*
 - customVariables: []
-  description: |
-    Embedded library - 0MQ Client
-    The application embeds a 0MQ client library.
+  description: Embedded library - 0MQ Client
   labels:
   - konveyor.io/include=always
   links:
@@ -207,6 +205,8 @@
     url: https://access.redhat.com/articles/111663
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 7 Supported Configurations
     url: https://access.redhat.com/articles/2026253
+  message:
+  - The application embeds a 0MQ client library.
   ruleID: connect-02500
   tag:
   - 0MQ Client
@@ -218,9 +218,7 @@
     - builtin.file:
         pattern: .*jeromq.*
 - customVariables: []
-  description: |
-    Embedded library - JBossMQ Client
-    The application embeds a JBossMQ client library.
+  description: Embedded library - JBossMQ Client
   labels:
   - konveyor.io/include=always
   links:
@@ -228,6 +226,8 @@
     url: https://access.redhat.com/articles/111663
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 7 Supported Configurations
     url: https://access.redhat.com/articles/2026253
+  message:
+  - The application embeds a JBossMQ client library.
   ruleID: connect-02600
   tag:
   - JBossMQ Client
@@ -236,9 +236,7 @@
     builtin.file:
       pattern: .*jbossmq-client.*
 - customVariables: []
-  description: |
-    Embedded library - Zbus Client
-    The application embeds a Zbus client library.
+  description: Embedded library - Zbus Client
   labels:
   - konveyor.io/include=always
   links:
@@ -246,6 +244,8 @@
     url: https://access.redhat.com/articles/111663
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 7 Supported Configurations
     url: https://access.redhat.com/articles/2026253
+  message:
+  - The application embeds a Zbus client library.
   ruleID: connect-02700
   tag:
   - Zbus Client
@@ -254,9 +254,7 @@
     builtin.file:
       pattern: .*zbus-client.*
 - customVariables: []
-  description: |
-    Embedded library - Qpid Client
-    The application embeds a Qpid client library.
+  description: Embedded library - Qpid Client
   labels:
   - konveyor.io/include=always
   links:
@@ -264,6 +262,8 @@
     url: https://access.redhat.com/articles/111663
   - title: Red Hat JBoss Enterprise Application Platform (EAP) 7 Supported Configurations
     url: https://access.redhat.com/articles/2026253
+  message:
+  - The application embeds a Qpid client library.
   ruleID: connect-02800
   tag:
   - Qpid Client

@@ -1,8 +1,7 @@
 - category: potential
   customVariables: []
-  description: |-
-    Implicit name determination for sequences and tables associated with identifier generation has changed
-    The way in which Hibernate determines implicit names for sequences and tables associated with identifier generation has changed in 6.0 which may affect migrating applications.. As of 6.0, Hibernate by default creates a sequence per entity hierarchy instead of a single sequence hibernate_sequence.. Due to this change, users that previously used `@GeneratedValue(strategy = GenerationStrategy.AUTO)` or simply `@GeneratedValue` (since `AUTO` is the default), need to ensure that the database now contains sequences for every entity, named `<entity name>_seq`. For an entity Person, a sequence person_seq is expected to exist.. It’s best to run hbm2ddl (e.g. by temporarily setting `hbm2ddl.auto=create`) to obtain a list of DDL statements for the sequences.
+  description: Implicit name determination for sequences and tables associated with
+    identifier generation has changed
   effort: 3
   labels:
   - konveyor.io/target=hibernate6+
@@ -15,16 +14,16 @@
   - title: Hibernate ORM 6 migration guide - Implicit Identifier Sequence and Table
       Name
     url: https://github.com/hibernate/hibernate-orm/blob/6.0/migration-guide.adoc#implicit-identifier-sequence-and-table-name
-  message: The way in which Hibernate determines implicit names for sequences and
-    tables associated with identifier generation has changed in 6.0 which may affect
-    migrating applications.. As of 6.0, Hibernate by default creates a sequence per
-    entity hierarchy instead of a single sequence hibernate_sequence.. Due to this
-    change, users that previously used `@GeneratedValue(strategy = GenerationStrategy.AUTO)`
+  message: "\n The way in which Hibernate determines implicit names for sequences
+    and tables associated with identifier generation has changed in 6.0 which may
+    affect migrating applications. \n As of 6.0, Hibernate by default creates a sequence
+    per entity hierarchy instead of a single sequence hibernate_sequence. \n Due to
+    this change, users that previously used `@GeneratedValue(strategy = GenerationStrategy.AUTO)`
     or simply `@GeneratedValue` (since `AUTO` is the default), need to ensure that
     the database now contains sequences for every entity, named `<entity name>_seq`.
-    For an entity Person, a sequence person_seq is expected to exist.. It’s best to
-    run hbm2ddl (e.g. by temporarily setting `hbm2ddl.auto=create`) to obtain a list
-    of DDL statements for the sequences.
+    For an entity Person, a sequence person_seq is expected to exist. \n It’s best
+    to run hbm2ddl (e.g. by temporarily setting `hbm2ddl.auto=create`) to obtain a
+    list of DDL statements for the sequences.\n "
   ruleID: hibernate-00005
   when:
     java.referenced:
@@ -35,9 +34,7 @@
   - name: annotation
     nameOfCaptureGroup: annotation
     pattern: org.hibernate.annotations.(?P<annotation>(AnyMetaDef|AnyMetaDefs|TypeDef|TypeDefs))
-  description: |-
-    String-based approaches for specifying Types to use have been removed
-    As part of the Hibernate ORM 6.0 release, mapping annotations have been modernised and made more type-safe. These annotations must be removed. See the User Guide for details about mapping your domain model.
+  description: String-based approaches for specifying Types to use have been removed
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -51,9 +48,9 @@
     url: https://github.com/hibernate/hibernate-orm/blob/6.0/migration-guide.adoc#type-system
   - title: Hibernate ORM 6 user guide - Domain model
     url: https://docs.jboss.org/hibernate/orm/6.0/userguide/html_single/Hibernate_User_Guide.html#domain-model
-  message: As part of the Hibernate ORM 6.0 release, mapping annotations have been
-    modernised and made more type-safe. These annotations must be removed. See the
-    User Guide for details about mapping your domain model.
+  message: "\n As part of the Hibernate ORM 6.0 release, mapping annotations have
+    been modernised and made more type-safe. These annotations must be removed. See
+    the User Guide for details about mapping your domain model.\n "
   ruleID: hibernate-00010
   when:
     java.referenced:
@@ -63,9 +60,7 @@
   - name: annotation
     nameOfCaptureGroup: annotation
     pattern: org.hibernate.annotations.(?P<annotation>(CollectionType|ParamDef|Type))
-  description: |-
-    String-based approaches for specifying Types to use have been removed
-    As part of the Hibernate ORM 6.0 release, mapping annotations have been modernised and made more type-safe. Annotation attributes accepting types as String have been removed. See the User Guide for details about mapping your domain model.
+  description: String-based approaches for specifying Types to use have been removed
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -79,9 +74,10 @@
     url: https://github.com/hibernate/hibernate-orm/blob/6.0/migration-guide.adoc#type-system
   - title: Hibernate ORM 6 user guide - Domain model
     url: https://docs.jboss.org/hibernate/orm/6.0/userguide/html_single/Hibernate_User_Guide.html#domain-model
-  message: As part of the Hibernate ORM 6.0 release, mapping annotations have been
-    modernised and made more type-safe. Annotation attributes accepting types as String
-    have been removed. See the User Guide for details about mapping your domain model.
+  message: "\n As part of the Hibernate ORM 6.0 release, mapping annotations have
+    been modernised and made more type-safe. Annotation attributes accepting types
+    as String have been removed. See the User Guide for details about mapping your
+    domain model.\n "
   ruleID: hibernate6-00020
   when:
     java.referenced:
@@ -89,9 +85,7 @@
       pattern: org.hibernate.annotations.(CollectionType|ParamDef|Type)
 - category: mandatory
   customVariables: []
-  description: |-
-    Basic mappings are no longer configurable through the BasicType contract
-    Basic mappings are no longer configurable through the BasicType contract. Instead, users configure the different aspects of mapping the basic value to the database. See migration guide for more details.
+  description: Basic mappings are no longer configurable through the BasicType contract
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -113,9 +107,7 @@
       pattern: org.hibernate.type.BasicType
 - category: mandatory
   customVariables: []
-  description: |-
-    StandardBasicTypes class now exposes fields of type BasicTypeReference
-    The `StandardBasicTypes` class previously exposed `BasicType` instance fields, which now have been replaced with fields of the type `BasicTypeReference`.
+  description: StandardBasicTypes class now exposes fields of type BasicTypeReference
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -135,9 +127,7 @@
       pattern: org.hibernate.type.StandardBasicTypes
 - category: mandatory
   customVariables: []
-  description: |-
-    Renaming of JavaTypeDescriptor contract
-    The interface `org.hibernate.type.descriptor.java.JavaTypeDescriptor` must be renamed to `org.hibernate.type.descriptor.java.JavaType`.
+  description: Renaming of JavaTypeDescriptor contract
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -157,9 +147,7 @@
       pattern: org.hibernate.type.descriptor.java.JavaTypeDescriptor
 - category: mandatory
   customVariables: []
-  description: |-
-    Renaming of SqlTypeDescriptor contract
-    The interface `org.hibernate.type.descriptor.sql.SqlTypeDescriptor` has been renamed to `org.hibernate.type.descriptor.jdbc.JdbcType`.
+  description: Renaming of SqlTypeDescriptor contract
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -179,9 +167,7 @@
       pattern: org.hibernate.type.descriptor.sql.SqlTypeDescriptor
 - category: mandatory
   customVariables: []
-  description: |-
-    The CompositeUserType interface has been reimplemented
-    The CompositeUserType interface was re-implemented to be able to model user types as proper embeddable types. See the migration guide for more information.
+  description: The CompositeUserType interface has been reimplemented
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -201,9 +187,7 @@
       pattern: org.hibernate.usertype.CompositeUserType
 - category: mandatory
   customVariables: []
-  description: |-
-    Property hibernate.hql.bulk_id_strategy has changed
-    The configuration property `hibernate.hql.bulk_id_strategy` was changed to `hibernate.query.mutation_strategy` which now refers to classes or objects implementing `org.hibernate.query.sqm.mutation.spi.SqmMultiTableMutationStrategy`.
+  description: Property hibernate.hql.bulk_id_strategy has changed
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -225,9 +209,7 @@
       pattern: hibernate.hql.bulk_id_strategy
 - category: mandatory
   customVariables: []
-  description: |-
-    Stream#close() must be called explicitly to close the underlying resources
-    `jakarta.persistence.Query#getResultStream()` and `org.hibernate.query.Query#stream()` no longer return a Stream decorator. In order to close the underlying IO resources, it is now necessary to explicitly call the `Stream#close()` method.. This change makes the Streams returned by Hibernate behave as defined in the JDK Stream documentation, which is quite explicit about the need for an explicit call to close by the user to avoid resource leakages.
+  description: Stream#close() must be called explicitly to close the underlying resources
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -239,12 +221,12 @@
   links:
   - title: Hibernate ORM 6 migration guide - Stream
     url: https://github.com/hibernate/hibernate-orm/blob/6.0/migration-guide.adoc#stream
-  message: '`jakarta.persistence.Query#getResultStream()` and `org.hibernate.query.Query#stream()`
+  message: "\n `jakarta.persistence.Query#getResultStream()` and `org.hibernate.query.Query#stream()`
     no longer return a Stream decorator. In order to close the underlying IO resources,
-    it is now necessary to explicitly call the `Stream#close()` method.. This change
+    it is now necessary to explicitly call the `Stream#close()` method.\n This change
     makes the Streams returned by Hibernate behave as defined in the JDK Stream documentation,
     which is quite explicit about the need for an explicit call to close by the user
-    to avoid resource leakages.'
+    to avoid resource leakages.\n "
   ruleID: hibernate6-00090
   when:
     or:
@@ -256,9 +238,7 @@
         pattern: org.hibernate.query.Query.stream*
 - category: mandatory
   customVariables: []
-  description: |-
-    The signature of the Interceptor#onSave method has been changed
-    The signature of the `Interceptor#onSave` method has been changed to account for the general change in expected identifier type from `Serializable` to `Object`. See migration guide for more information.
+  description: The signature of the Interceptor#onSave method has been changed
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -280,9 +260,7 @@
       pattern: org.hibernate.Interceptor.onSave*
 - category: mandatory
   customVariables: []
-  description: |-
-    The contents of the loader.collection package have been restructured
-    The contents of the `loader.collection` package were restructured into `loader.ast.spi` and `loader.ast.internal` as well as adapted to the SQM API.
+  description: The contents of the loader.collection package have been restructured
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -303,9 +281,7 @@
       pattern: org.hibernate.loader.collection*
 - category: mandatory
   customVariables: []
-  description: |-
-    The contents of the loader.custom package have been moved
-    The contents of the `loader.custom` package were adapted and moved to `query.sql`.
+  description: The contents of the loader.custom package have been moved
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -325,9 +301,8 @@
       pattern: org.hibernate.loader.custom*
 - category: mandatory
   customVariables: []
-  description: |-
-    The contents of the loader.entity and loader.plan packages have been removed
-    The contents of `loader.entity` and `loader.plan` were removed
+  description: The contents of the loader.entity and loader.plan packages have been
+    removed
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -351,9 +326,7 @@
         pattern: org.hibernate.loader.plan*
 - category: mandatory
   customVariables: []
-  description: |-
-    The contents of sql.ordering have moved
-    The contents of `sql.ordering` were adapted and moved to `metamodel.mapping.ordering.ast`.
+  description: The contents of sql.ordering have moved
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -376,9 +349,8 @@
   - name: className
     nameOfCaptureGroup: className
     pattern: org.hibernate.sql.(?P<className>(ANSICaseFragment|ANSIJoinFragment|CacheJoinFragment|CaseFragment|ConditionFragment|DecodeCaseFragment|DerbyCaseFragment|DisjunctionFragment|HSQLCaseFragment|InsertSelect|JoinFragment|JoinType|MckoiCaseFragment|OracleJoinFragment|QueryJoinFragment|QuerySelect|Select|SelectExpression|SelectFragment|SelectValues|Sybase11JoinFragment))
-  description: |-
-    Some classes of the sql package that were previously used for building SQL were removed
-    Classes of the sql package that were previously used for building SQL, but aren’t needed anymore, were removed. The SQL generation is now fully handled through the `SqlAstTranslator` which a `Dialect` exposes a factory for.
+  description: Some classes of the sql package that were previously used for building
+    SQL were removed
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -399,9 +371,7 @@
       pattern: org.hibernate.sql.(ANSICaseFragment|ANSIJoinFragment|CacheJoinFragment|CaseFragment|ConditionFragment|DecodeCaseFragment|DerbyCaseFragment|DisjunctionFragment|HSQLCaseFragment|InsertSelect|JoinFragment|JoinType|MckoiCaseFragment|OracleJoinFragment|QueryJoinFragment|QuerySelect|Select|SelectExpression|SelectFragment|SelectValues|Sybase11JoinFragment)
 - category: mandatory
   customVariables: []
-  description: |-
-    Support for basic property mappings with multiple columns was removed
-    In Hibernate 6.0 the support for basic property mappings with multiple columns was removed. The only use case for that was when a `CompositeUserType` was in use, which was reworked to now work on top of components.
+  description: Support for basic property mappings with multiple columns was removed
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -431,9 +401,7 @@
         xpath: //*/h:property[count(h:column) > 1]
 - category: mandatory
   customVariables: []
-  description: |-
-    Legacy Hibernate Criteria API has been removed
-    The legacy Hibernate Criteria API which was deprecated back in Hibernate 5.x and removed in 6.0. Usually, all queries using the legacy API can be modeled with the JPA Criteria API. In some cases it is necessary to use the Hibernate JPA Criteria extensions.
+  description: Legacy Hibernate Criteria API has been removed
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -456,9 +424,7 @@
       pattern: org.hibernate.criterion*
 - category: mandatory
   customVariables: []
-  description: |-
-    The Query#iterate() method has been removed
-    The Query#iterate() method has been removed. See link for alternatives.
+  description: The Query#iterate() method has been removed
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -478,9 +444,8 @@
       pattern: org.hibernate.query.Query.iterate*
 - category: mandatory
   customVariables: []
-  description: |-
-    Using NativeQuery to call SQL functions and procedures is no longer supported
-    Using `NativeQuery` to call SQL functions and procedures is no longer supported. `org.hibernate.procedure.ProcedureCall` or `jakarta.persistence.StoredProcedureQuery` should be used instead. `@NamedNativeQuery` references defining execution of procedure or functions should be migrated to use `@NamedStoredProcedureQuery` instead.
+  description: Using NativeQuery to call SQL functions and procedures is no longer
+    supported
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -514,9 +479,8 @@
         xpath: //*/h:sql-query[@callable = 'true']
 - category: mandatory
   customVariables: []
-  description: |-
-    Using NativeQuery to call SQL functions and procedures is no longer supported
-    The fetch all properties clause was removed from the HQL language without a replacement. See link for replacement info.
+  description: Using NativeQuery to call SQL functions and procedures is no longer
+    supported
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -544,9 +508,8 @@
         xpath: //text()[contains(., 'fetch all properties')]
 - category: mandatory
   customVariables: []
-  description: |-
-    Hibernate no longer provides built-in support for integrating itself with JMX environments
-    Hibernate no longer provides built-in support for integrating itself with JMX environments.
+  description: Hibernate no longer provides built-in support for integrating itself
+    with JMX environments
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -567,9 +530,8 @@
       pattern: org.hibernate.jmx*
 - category: mandatory
   customVariables: []
-  description: |-
-    Hibernate no longer provides built-in support for integrating itself with JACC environments
-    Hibernate no longer provides built-in support for integrating itself with JACC environments.
+  description: Hibernate no longer provides built-in support for integrating itself
+    with JACC environments
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -590,9 +552,7 @@
       pattern: org.hibernate*Jacc*
 - category: mandatory
   customVariables: []
-  description: |-
-    Removed hibernate classloader properties
-    These properties are deprecated: use `hibernate.classLoaders` instead.
+  description: Removed hibernate classloader properties
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -612,9 +572,7 @@
       pattern: hibernate.classLoader.(application|resources|hibernate|environment)
 - category: mandatory
   customVariables: []
-  description: |-
-    Removed hibernate properties
-    This property has been removed: use `jakarta.persistence.create-database-schemas` or `hibernate.hbm2ddl.create_namespaces` instead
+  description: Removed hibernate properties
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -635,9 +593,7 @@
       pattern: hibernate.hbm2dll.create_namespaces
 - category: mandatory
   customVariables: []
-  description: |-
-    Renamed hibernate property hibernate.ejb.metamodel.population
-    This property has been removed: please use `hibernate.jpa.metamodel.population` instead
+  description: Renamed hibernate property hibernate.ejb.metamodel.population
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -658,9 +614,7 @@
       pattern: hibernate.ejb.metamodel.population
 - category: mandatory
   customVariables: []
-  description: |-
-    Renamed hibernate property hibernate.ejb.cfgfile
-    This property has been removed: please use `hibernate.cfg_xml_file` instead
+  description: Renamed hibernate property hibernate.ejb.cfgfile
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -680,9 +634,7 @@
       pattern: hibernate.ejb.cfgfile
 - category: mandatory
   customVariables: []
-  description: |-
-    Renamed hibernate property hibernate.ejb.xml_files
-    This property has been removed: please use `hibernate.orm_xml_files` instead
+  description: Renamed hibernate property hibernate.ejb.xml_files
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -702,9 +654,7 @@
       pattern: hibernate.ejb.xml_files
 - category: mandatory
   customVariables: []
-  description: |-
-    Renamed hibernate property hibernate.hbmxml.files
-    This property has been removed: please use `hibernate.hbm_xml_files` instead
+  description: Renamed hibernate property hibernate.hbmxml.files
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -724,9 +674,7 @@
       pattern: hibernate.hbmxml.files
 - category: mandatory
   customVariables: []
-  description: |-
-    Renamed hibernate property hibernate.ejb.loaded.classes
-    This property has been removed: please use `hibernate.loaded_classes` instead
+  description: Renamed hibernate property hibernate.ejb.loaded.classes
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -747,8 +695,7 @@
       pattern: hibernate.ejb.loaded.classes
 - category: mandatory
   customVariables: []
-  description: |
-    Renamed hibernate property hibernate.ejb.{property}
+  description: Renamed hibernate property hibernate.ejb.{property}
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -768,9 +715,7 @@
       pattern: hibernate.ejb.(persistenceUnitName|discard_pc_on_close|session_factory_observer|identifier_generator_strategy_provider|classcache|collectioncache|event)
 - category: mandatory
   customVariables: []
-  description: |-
-    Renamed hibernate property hibernate.ejb.entitymanager_factory_name
-    This property has been removed: please use `hibernate.session_factory_name` instead
+  description: Renamed hibernate property hibernate.ejb.entitymanager_factory_name
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -791,9 +736,7 @@
       pattern: hibernate.ejb.entitymanager_factory_name
 - category: potential
   customVariables: []
-  description: |-
-    Community dialects moved to a separate module
-    As of Hibernate 6.0, some dialect classes that are maintained by vendors or individuals, as opposed to the Hibernate team, have been moved to a separate Maven artifact: `org.hibernate.orm:hibernate-community-dialects`.. Note that the new artifact is not included in the EAP 8 distribution and will have to be added manually.
+  description: Community dialects moved to a separate module
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -805,11 +748,11 @@
   links:
   - title: Hibernate ORM 6 migration guide - Community dialects
     url: https://github.com/hibernate/hibernate-orm/blob/6.0/migration-guide.adoc#community-dialects-moved-to-a-separate-module
-  message: 'As of Hibernate 6.0, some dialect classes that are maintained by vendors
+  message: "\n As of Hibernate 6.0, some dialect classes that are maintained by vendors
     or individuals, as opposed to the Hibernate team, have been moved to a separate
-    Maven artifact: `org.hibernate.orm:hibernate-community-dialects`.. Note that the
-    new artifact is not included in the EAP 8 distribution and will have to be added
-    manually.'
+    Maven artifact: `org.hibernate.orm:hibernate-community-dialects`.\n\n Note that
+    the new artifact is not included in the EAP 8 distribution and will have to be
+    added manually.\n "
   ruleID: hibernate6-00270
   when:
     or:

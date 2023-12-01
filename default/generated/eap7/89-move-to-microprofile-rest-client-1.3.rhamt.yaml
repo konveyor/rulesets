@@ -1,8 +1,6 @@
 - category: potential
   customVariables: []
-  description: |-
-    Move to Microprofile REST Client 1.3
-    The application imports class `org.jboss.resteasy.client.microprofile.MicroprofileClientBuilderResolver`, and should be changed to use instead `org.eclipse.microprofile.rest.client.RestClientBuilder`, from Microprofile REST Client 1.3.
+  description: Move to Microprofile REST Client 1.3
   effort: 1
   labels:
   - konveyor.io/target=eap7

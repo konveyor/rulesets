@@ -1,8 +1,6 @@
 - category: potential
   customVariables: []
-  description: |-
-    Move to Jakarta EE Maven Artifacts - com.sun.mail:javax.mail
-    If you migrate your application to JBoss EAP 7.3 (or later), and want to ensure its Maven building, running or testing works as expected, use instead the Jakarta EE dependency with groupId `com.sun.mail`, and artifactId `jakarta.mail`.
+  description: Move to Jakarta EE Maven Artifacts - com.sun.mail:javax.mail
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -26,9 +24,7 @@
       pattern: artifactId>javax.mail<
 - category: potential
   customVariables: []
-  description: |-
-    Move to Jakarta EE Maven Artifacts - replace groupId javax.activation
-    If you migrate your application to JBoss EAP 7.3, or later, and want to ensure its Maven building, running or testing works as expected, use instead the Jakarta EE dependency with groupId `com.sun.activation`
+  description: Move to Jakarta EE Maven Artifacts - replace groupId javax.activation
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -52,9 +48,7 @@
       name: javax.activation.activation
 - category: potential
   customVariables: []
-  description: |-
-    Move to Jakarta EE Maven Artifacts - replace artifactId activation
-    If you migrate your application to JBoss EAP 7.3, or later, and want to ensure its Maven building, running or testing works as expected, use instead the Jakarta EE dependency with artifactId `jakarta.activation`
+  description: Move to Jakarta EE Maven Artifacts - replace artifactId activation
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -78,8 +72,7 @@
       pattern: artifactId>activation<
 - category: potential
   customVariables: []
-  description: |
-    javax.{renamed-g} groupId has been replaced by jakarta.{renamed-g}
+  description: javax.{renamed-g} groupId has been replaced by jakarta.{renamed-g}
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -103,8 +96,8 @@
       pattern: groupId>javax.(enterprise|inject|json|json.bind|persistence|security.enterprise|validation)<
 - category: potential
   customVariables: []
-  description: |
-    javax.{renamed-a} javax.{renamed-a}-api artifactId has been replaced by jakarta.{renamed-a} jakarta.{renamed-a}-api
+  description: javax.{renamed-a} javax.{renamed-a}-api artifactId has been replaced
+    by jakarta.{renamed-a} jakarta.{renamed-a}-api
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -128,9 +121,7 @@
       pattern: artifactId>javax.(json|json.bind|persistence|security.enterprise)-api<
 - category: potential
   customVariables: []
-  description: |-
-    Move to Jakarta EE Maven Artifacts - replace artifactId cdi-api
-    If you migrate your application to JBoss EAP 7.3, or later, and want to ensure its Maven building, running or testing works as expected, use instead the Jakarta EE dependency with artifactId `jakarta.enterprise.cdi-api`
+  description: Move to Jakarta EE Maven Artifacts - replace artifactId cdi-api
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -154,9 +145,7 @@
       pattern: artifactId>cdi-api<
 - category: potential
   customVariables: []
-  description: |-
-    Move to Jakarta EE Maven Artifacts - replace artifactId validation-api
-    If you migrate your application to JBoss EAP 7.3, or later, and want to ensure its Maven building, running or testing works as expected, use instead the Jakarta EE dependency with artifactId `jakarta.validation-api`
+  description: Move to Jakarta EE Maven Artifacts - replace artifactId validation-api
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -180,9 +169,7 @@
       pattern: artifactId>validation-api<
 - category: potential
   customVariables: []
-  description: |-
-    Move to Jakarta EE Maven Artifacts - replace artifactId javax.inject
-    If you migrate your application to JBoss EAP 7.3, or later, and want to ensure its Maven building, running or testing works as expected, use instead the Jakarta EE dependency with artifactId `jakarta.inject-api`
+  description: Move to Jakarta EE Maven Artifacts - replace artifactId javax.inject
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -206,9 +193,7 @@
       pattern: artifactId>javax.inject<
 - category: potential
   customVariables: []
-  description: |-
-    Move to Jakarta EE Maven Artifacts - org.jboss.spec.javax.xml.soap:jboss-saaj-api_1.3_spec
-    If you migrate your application to JBoss EAP 7.3 (or later), and want to ensure its Maven building, running or testing works as expected, use instead the Jakarta EE dependency with groupId `org.jboss.spec.javax.xml.soap`, and artifactId `jboss-saaj-api_1.4_spec`.
+  description: Move to Jakarta EE Maven Artifacts - org.jboss.spec.javax.xml.soap:jboss-saaj-api_1.3_spec
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -233,9 +218,7 @@
       pattern: artifactId>jboss-saaj-api_1.3_spec<
 - category: potential
   customVariables: []
-  description: |-
-    Move to Jakarta EE Maven Artifacts - org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec
-    If you migrate your application to JBoss EAP 7.3 (or later), and want to ensure its Maven building, running or testing works as expected, use instead the Jakarta EE dependency with groupId `org.jboss.spec.javax.transaction`, and artifactId `jboss-transaction-api_1.3_spec`.
+  description: Move to Jakarta EE Maven Artifacts - org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -260,9 +243,7 @@
       pattern: artifactId>jboss-transaction-api_1.2_spec<
 - category: potential
   customVariables: []
-  description: |-
-    Move to JBoss EAP Jakarta EE BOMs - org.jboss.bom:jboss-eap-javaee8
-    If you migrate your application to JBoss EAP 7.3 (or later), and want to ensure its Maven building, running or testing works as expected, use instead the JBoss EAP Jakarta EE BOM with groupId `org.jboss.bom`, and artifactId `jboss-eap-jakartaee8`.
+  description: Move to JBoss EAP Jakarta EE BOMs - org.jboss.bom:jboss-eap-javaee8
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -286,9 +267,7 @@
       pattern: artifactId>jboss-eap-javaee8<
 - category: potential
   customVariables: []
-  description: |-
-    Move to JBoss EAP Jakarta EE BOMs - org.jboss.bom:jboss-eap-javaee8-with-spring4
-    If you migrate your application to JBoss EAP 7.3 (or later), and want to ensure its Maven building, running or testing works as expected, use instead the JBoss EAP Jakarta EE BOM with groupId `org.jboss.bom`, and artifactId `jboss-eap-jakartaee8-with-spring4`.
+  description: Move to JBoss EAP Jakarta EE BOMs - org.jboss.bom:jboss-eap-javaee8-with-spring4
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -312,9 +291,7 @@
       pattern: artifactId>jboss-eap-javaee8-with-spring4<
 - category: potential
   customVariables: []
-  description: |-
-    Move to JBoss EAP Jakarta EE BOMs - org.jboss.bom:jboss-eap-javaee8-with-tools
-    If you migrate your application to JBoss EAP 7.3 (or later), and want to ensure its Maven building, running or testing works as expected, use instead the JBoss EAP Jakarta EE BOM with groupId `org.jboss.bom`, and artifactId `jboss-eap-jakartaee8-with-tools`.
+  description: Move to JBoss EAP Jakarta EE BOMs - org.jboss.bom:jboss-eap-javaee8-with-tools
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -338,9 +315,7 @@
       pattern: artifactId>jboss-eap-javaee8-with-tools<
 - category: potential
   customVariables: []
-  description: |-
-    Move to JBoss Jakarta EE BOMs - org.jboss.spec:jboss-javaee-8.0
-    If you migrate your application to JBoss EAP 7.3 (or later), and want to ensure its Maven building, running or testing works as expected, use instead the JBoss Jakarta EE BOM with groupId `org.jboss.spec`, and artifactId `jboss-jakartaee-8.0`.
+  description: Move to JBoss Jakarta EE BOMs - org.jboss.spec:jboss-javaee-8.0
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -364,9 +339,7 @@
       pattern: artifactId>jboss-javaee-8.0<
 - category: potential
   customVariables: []
-  description: |-
-    Move to JBoss Jakarta EE BOMs - org.jboss.spec:jboss-javaee-web-8.0
-    If you migrate your application to JBoss EAP 7.3 (or later), and want to ensure its Maven building, running or testing works as expected, use instead the JBoss Jakarta EE BOM with groupId `org.jboss.spec`, and artifactId `jboss-jakartaee-web-8.0`.
+  description: Move to JBoss Jakarta EE BOMs - org.jboss.spec:jboss-javaee-web-8.0
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -390,9 +363,7 @@
       pattern: artifactId>jboss-javaee-web-8.0<
 - category: potential
   customVariables: []
-  description: |-
-    Move to JBoss Jakarta EE BOMs - org.jboss.spec:jboss-javaee-all-8.0
-    If you migrate your application to JBoss EAP 7.3 (or later), and want to ensure its Maven building, running or testing works as expected, use instead the JBoss Jakarta EE BOM with groupId `org.jboss.spec`, and artifactId `jboss-jakartaee-all-8.0`.
+  description: Move to JBoss Jakarta EE BOMs - org.jboss.spec:jboss-javaee-all-8.0
   effort: 1
   labels:
   - konveyor.io/target=eap7

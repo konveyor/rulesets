@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    The classes from `org.apache.camel.util.component` have been moved
-    All the classes from `org.apache.camel.util.component` have been moved to `org.apache.camel.support.component`.. `org.apache.camel:camel-support` is a transitive dependency of `camel-core` but it could be used also separately to trim the application size.
+  description: The classes from `org.apache.camel.util.component` have been moved
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -10,10 +8,10 @@
   - konveyor.io/target=camel3+
   - konveyor.io/target=camel
   links: []
-  message: All the classes from `org.apache.camel.util.component` have been moved
-    to `org.apache.camel.support.component`.. `org.apache.camel:camel-support` is
+  message: "All the classes from `org.apache.camel.util.component` have been moved
+    to `org.apache.camel.support.component`.\n `org.apache.camel:camel-support` is
     a transitive dependency of `camel-core` but it could be used also separately to
-    trim the application size.
+    trim the application size.\n "
   ruleID: xml-moved-components-00012
   when:
     as: javaClass
@@ -25,8 +23,7 @@
   - name: moved
     nameOfCaptureGroup: moved
     pattern: org.apache.camel.impl.(?P<moved>(CamelPostProcessorHelper|DefaultAsyncProcessorAwaitManager|DefaultCamelBeanPostProcessor|DefaultCamelContextNameStrategy|DefaultClaimCheckRepository|DefaultClassResolver|DefaultComponentResolver|DefaultConsumerTemplate|DefaultDataFormatResolver|DefaultEndpointRegistry|DefaultEndpointUtilizationStatistics|DefaultFactoryFinder|DefaultFactoryFinderResolver|DefaultHeadersMapFactory|DefaultInflightRepository|DefaultInjector|DefaultLanguageResolver|DefaultManagementNameStrategy|DefaultMessageHistoryFactory|DefaultNodeIdFactory|DefaultPackageScanClassResolver|DefaultProcessorFactory|DefaultProducerTemplate|DefaultRoute|DefaultRouteContext|DefaultRouteController|DefaultRouteError|DefaultRouteStartupOrder|DefaultRuntimeEndpointRegistry|DefaultShutdownStrategy|DefaultStreamCachingStrategy|DefaultTransformerRegistry|DefaultUnitOfWork|DefaultUnitOfWorkFactory|DefaultUuidGenerator|DefaultValidatorRegistry|DeferProducer|DeferServiceStartupListener|DurationRoutePolicy|DurationRoutePolicyFactory|EndpointKey|EventDrivenConsumerRoute|EventNotifierCallback|ExplicitCamelContextNameStrategy|FileStateRepository|HashMapHeadersMapFactory|HeadersMapFactoryResolver|InterceptSendToEndpointProcessor|InterceptSendToMockEndpointStrategy|JavaUuidGenerator|LimitedPollingConsumerPollStrategy|MDCUnitOfWork|MemoryStateRepository|SubscribeMethodProcessor|SupervisingRouteController|SupervisingRouteController.FilterResult|SupervisingRouteControllerFilters|SupervisingRouteControllerFilters.BlackList|TypedProcessorFactory|WebSpherePackageScanClassResolver))
-  description: |
-    `org.apache.camel.impl.{moved}` class has been moved
+  description: '`org.apache.camel.impl.{moved}` class has been moved'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -34,10 +31,10 @@
   - konveyor.io/target=camel3+
   - konveyor.io/target=camel
   links: []
-  message: The class `org.apache.camel.impl.{{moved}}` has been moved to `org.apache.camel.impl.engine`
-    package in `camel-base` dependency.. `org.apache.camel:camel-base` is a transitive
+  message: "The class `org.apache.camel.impl.{{moved}}` has been moved to `org.apache.camel.impl.engine`
+    package in `camel-base` dependency.\n `org.apache.camel:camel-base` is a transitive
     dependency of `camel-core` but it could be used also separately to trim the application
-    size.
+    size.\n "
   ruleID: xml-moved-components-00013
   when:
     as: javaClass
@@ -46,9 +43,7 @@
       pattern: org.apache.camel.impl.(CamelPostProcessorHelper|DefaultAsyncProcessorAwaitManager|DefaultCamelBeanPostProcessor|DefaultCamelContextNameStrategy|DefaultClaimCheckRepository|DefaultClassResolver|DefaultComponentResolver|DefaultConsumerTemplate|DefaultDataFormatResolver|DefaultEndpointRegistry|DefaultEndpointUtilizationStatistics|DefaultFactoryFinder|DefaultFactoryFinderResolver|DefaultHeadersMapFactory|DefaultInflightRepository|DefaultInjector|DefaultLanguageResolver|DefaultManagementNameStrategy|DefaultMessageHistoryFactory|DefaultNodeIdFactory|DefaultPackageScanClassResolver|DefaultProcessorFactory|DefaultProducerTemplate|DefaultRoute|DefaultRouteContext|DefaultRouteController|DefaultRouteError|DefaultRouteStartupOrder|DefaultRuntimeEndpointRegistry|DefaultShutdownStrategy|DefaultStreamCachingStrategy|DefaultTransformerRegistry|DefaultUnitOfWork|DefaultUnitOfWorkFactory|DefaultUuidGenerator|DefaultValidatorRegistry|DeferProducer|DeferServiceStartupListener|DurationRoutePolicy|DurationRoutePolicyFactory|EndpointKey|EventDrivenConsumerRoute|EventNotifierCallback|ExplicitCamelContextNameStrategy|FileStateRepository|HashMapHeadersMapFactory|HeadersMapFactoryResolver|InterceptSendToEndpointProcessor|InterceptSendToMockEndpointStrategy|JavaUuidGenerator|LimitedPollingConsumerPollStrategy|MDCUnitOfWork|MemoryStateRepository|SubscribeMethodProcessor|SupervisingRouteController|SupervisingRouteController.FilterResult|SupervisingRouteControllerFilters|SupervisingRouteControllerFilters.BlackList|TypedProcessorFactory|WebSpherePackageScanClassResolver)
 - category: mandatory
   customVariables: []
-  description: |-
-    `org.apache.camel.main.Main` class has been moved
-    The class `org.apache.camel.main.Main` has been moved out of `org.apache.camel:camel-core` and into its own JAR named `org.apache.camel:camel-main`.. `org.apache.camel:camel-main` has to be added as a dependency to your project pom.xml file
+  description: '`org.apache.camel.main.Main` class has been moved'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -56,9 +51,9 @@
   - konveyor.io/target=camel3+
   - konveyor.io/target=camel
   links: []
-  message: The class `org.apache.camel.main.Main` has been moved out of `org.apache.camel:camel-core`
-    and into its own JAR named `org.apache.camel:camel-main`.. `org.apache.camel:camel-main`
-    has to be added as a dependency to your project pom.xml file
+  message: "The class `org.apache.camel.main.Main` has been moved out of `org.apache.camel:camel-core`
+    and into its own JAR named `org.apache.camel:camel-main`.\n `org.apache.camel:camel-main`
+    has to be added as a dependency to your project pom.xml file\n "
   ruleID: xml-moved-components-00014
   when:
     as: javaClass
@@ -67,9 +62,7 @@
       pattern: org.apache.camel.main.Main
 - category: potential
   customVariables: []
-  description: |-
-    JMX is disable by default
-    If you run Camel standalone with just `camel-core` as a dependency, and you want JMX enabled out of the box, then you need to add `org.apache.camel:camel-management` as a dependency.
+  description: JMX is disable by default
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -77,9 +70,9 @@
   - konveyor.io/target=camel3+
   - konveyor.io/target=camel
   links: []
-  message: If you run Camel standalone with just `camel-core` as a dependency, and
+  message: "If you run Camel standalone with just `camel-core` as a dependency, and
     you want JMX enabled out of the box, then you need to add `org.apache.camel:camel-management`
-    as a dependency.
+    as a dependency.\n "
   ruleID: xml-moved-components-00015
   when:
     as: dependencies-block

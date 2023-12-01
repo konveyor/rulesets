@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    `org.apache.camel:camel-linkedin` artifact has been removed
-    `org.apache.camel:camel-linkedin` artifact has been removed in Apache Camel 3 so it won't be available
+  description: '`org.apache.camel:camel-linkedin` artifact has been removed'
   effort: 7
   labels:
   - konveyor.io/source=camel2
@@ -21,9 +19,7 @@
       name: org.apache.camel.camel-linkedin
 - category: mandatory
   customVariables: []
-  description: |-
-    `org.apache.camel:camel-linkedin-starter` artifact has been removed
-    `org.apache.camel:camel-linkedin-starter` artifact has been removed in Apache Camel 3 so it won't be available
+  description: '`org.apache.camel:camel-linkedin-starter` artifact has been removed'
   effort: 7
   labels:
   - konveyor.io/source=camel2
@@ -42,9 +38,7 @@
       name: org.apache.camel.camel-linkedin-starter
 - category: mandatory
   customVariables: []
-  description: |-
-    `org.apache.camel:camel-script` artifact has been removed
-    `org.apache.camel:camel-script` artifact has been deprecated in Apache Camel 2 and removed in Apache Camel 3 as there is no support for javax.script, which is also deprecated in the JDK and to be removed from Java 11 onwards.
+  description: '`org.apache.camel:camel-script` artifact has been removed'
   effort: 7
   labels:
   - konveyor.io/source=camel2
@@ -64,9 +58,7 @@
       name: org.apache.camel.camel-script
 - category: mandatory
   customVariables: []
-  description: |-
-    `org.apache.camel:camel-script-starter` artifact has been removed
-    `org.apache.camel:camel-script-starter` artifact has been deprecated in Apache Camel 2 and removed in Apache Camel 3 as there is no support for javax.script, which is also deprecated in the JDK and to be removed from Java 11 onwards.
+  description: '`org.apache.camel:camel-script-starter` artifact has been removed'
   effort: 7
   labels:
   - konveyor.io/source=camel2
@@ -86,9 +78,7 @@
       name: org.apache.camel.camel-script-starter
 - category: mandatory
   customVariables: []
-  description: |-
-    `org.apache.camel:camel-jibx` artifact has been removed
-    `org.apache.camel:camel-jibx` artifact has been deprecated in Apache Camel 2 and removed in Apache Camel 3 because it did not support JDK8.
+  description: '`org.apache.camel:camel-jibx` artifact has been removed'
   effort: 7
   labels:
   - konveyor.io/source=camel2
@@ -107,9 +97,7 @@
       name: org.apache.camel.camel-jibx
 - category: mandatory
   customVariables: []
-  description: |-
-    `org.apache.camel:camel-jibx-starter` artifact has been removed
-    `org.apache.camel:camel-jibx-starter` artifact has been deprecated in Apache Camel 2 and removed in Apache Camel 3 because it did not support JDK8.
+  description: '`org.apache.camel:camel-jibx-starter` artifact has been removed'
   effort: 7
   labels:
   - konveyor.io/source=camel2
@@ -128,9 +116,7 @@
       name: org.apache.camel.camel-jibx-starter
 - category: mandatory
   customVariables: []
-  description: |-
-    `org.apache.camel:camel-boon` artifact has been removed
-    `org.apache.camel:camel-boon` artifact has been deprecated in Apache Camel 2 and removed in Apache Camel 3 because it did not support JDK9 and later.
+  description: '`org.apache.camel:camel-boon` artifact has been removed'
   effort: 7
   labels:
   - konveyor.io/source=camel2
@@ -149,9 +135,7 @@
       name: org.apache.camel.camel-boon
 - category: mandatory
   customVariables: []
-  description: |-
-    `org.apache.camel:camel-boon-starter` artifact has been removed
-    `org.apache.camel:camel-boon-starter` artifact has been deprecated in Apache Camel 2 and removed in Apache Camel 3 because it did not support JDK9 and later.
+  description: '`org.apache.camel:camel-boon-starter` artifact has been removed'
   effort: 7
   labels:
   - konveyor.io/source=camel2
@@ -171,9 +155,7 @@
       name: org.apache.camel.camel-boon-starter
 - category: mandatory
   customVariables: []
-  description: |-
-    `twitter-streaming` component has been removed
-    `twitter-streaming` component has been deprecated in Apache Camel 2 and removed in Apache Camel 3 because it relied on the deprecated Twitter Streaming API and is no longer functional.
+  description: '`twitter-streaming` component has been removed'
   effort: 7
   labels:
   - konveyor.io/source=camel2
@@ -191,7 +173,7 @@
     or:
     - builtin.filecontent:
         filePattern: .*\.java
-        pattern: from\("twitter-streaming:.*
+        pattern: from("twitter-streaming:.*
     - builtin.xml:
         namespaces:
           c: http://camel.apache.org/schema/spring
@@ -202,9 +184,7 @@
         xpath: //*/c:from/@uri[matches(self::node(), 'twitter-streaming:{*}')]
 - category: mandatory
   customVariables: []
-  description: |-
-    `org.apache.camel:camel-restlet` artifact has been removed
-    `org.apache.camel:camel-restlet` artifact has been deprecated in Apache Camel 2 and removed in Apache Camel 3. Use any of the other REST capable components, such as `camel-rest`, `camel-jetty`, `camel-netty-http` or `camel-undertow`
+  description: '`org.apache.camel:camel-restlet` artifact has been removed'
   effort: 3
   labels:
   - konveyor.io/source=camel2
@@ -226,9 +206,7 @@
       name: org.apache.camel.camel-restlet
 - category: mandatory
   customVariables: []
-  description: |-
-    `org.apache.camel:camel-core-starter` artifact has been removed
-    `org.apache.camel:camel-core-starter` artifact has been removed and split into several modules. Please add the relevant starter artifacts to your pom.xml file.
+  description: '`org.apache.camel:camel-core-starter` artifact has been removed'
   effort: 7
   labels:
   - konveyor.io/source=camel2
@@ -248,9 +226,7 @@
       name: org.apache.camel.camel-core-starter
 - category: mandatory
   customVariables: []
-  description: |-
-    `org.apache.camel:camel-maven-plugin` has been split
-    The `camel-maven-plugin` has been split up into two Maven plugins: `camel-maven-plugin` and `camel-report-maven-plugin`. The `camel-maven-plugin` contains the `run` goal which is intended for quickly running Camel applications. The `camel-report-maven-plugin` has the `validate` and `route-coverage` goals which is used for generating reports of your Camel projects by validating Camel endpoint URIs and performing route coverage reports. Please use the `org.apache.camel:camel-report-maven-plugin` in this case.
+  description: '`org.apache.camel:camel-maven-plugin` has been split'
   effort: 1
   labels:
   - konveyor.io/source=camel2
