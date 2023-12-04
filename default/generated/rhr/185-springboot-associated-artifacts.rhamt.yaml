@@ -1,8 +1,6 @@
 - category: potential
   customVariables: []
-  description: |-
-    Unsupported version of AMQP SpringBoot starter
-    Check the links below for the Red Hat Runtimes supported version of AMQP SpringBoot starter
+  description: Unsupported version of AMQP SpringBoot starter
   effort: 1
   labels:
   - konveyor.io/source=springboot
@@ -21,9 +19,7 @@
       upperbound: 2.2.1
 - category: potential
   customVariables: []
-  description: |-
-    Unsupported version of CXF JAXRS SpringBoot starter
-    Check the links below for the Red Hat Runtimes supported version of CXF JAXRS SpringBoot starter
+  description: Unsupported version of CXF JAXRS SpringBoot starter
   effort: 1
   labels:
   - konveyor.io/source=springboot
@@ -42,9 +38,7 @@
       name: org.apache.cxf.cxf-spring-boot-starter-jaxrs
 - category: potential
   customVariables: []
-  description: |-
-    Unsupported version of Resteasy SpringBoot starter
-    Check the links below for the Red Hat Runtimes supported version of Resteasy SpringBoot starter
+  description: Unsupported version of Resteasy SpringBoot starter
   effort: 1
   labels:
   - konveyor.io/source=springboot
@@ -63,9 +57,7 @@
       upperbound: 3.4.0
 - category: potential
   customVariables: []
-  description: |-
-    Unsupported version of Infinispan SpringBoot starter
-    Check the links below for the Red Hat Runtimes supported version of Infinispan SpringBoot starter
+  description: Unsupported version of Infinispan SpringBoot starter
   effort: 1
   labels:
   - konveyor.io/source=springboot
@@ -84,9 +76,7 @@
       upperbound: 2.2.2
 - category: potential
   customVariables: []
-  description: |-
-    Unsupported version of Keycloak SpringBoot starter
-    Check the links below for the Red Hat Runtimes supported version of Keycloak SpringBoot starter
+  description: Unsupported version of Keycloak SpringBoot starter
   effort: 1
   labels:
   - konveyor.io/source=springboot
@@ -105,9 +95,7 @@
       upperbound: 9.0.2
 - category: potential
   customVariables: []
-  description: |-
-    Unsupported version of Narayana SpringBoot starter
-    Check the links below for the Red Hat Runtimes supported version of Narayana SpringBoot starter
+  description: Unsupported version of Narayana SpringBoot starter
   effort: 1
   labels:
   - konveyor.io/source=springboot
@@ -126,9 +114,7 @@
       upperbound: 2.2.0
 - category: potential
   customVariables: []
-  description: |-
-    Unsupported version of OpenTracing Spring Jaeger SpringBoot web starter
-    Check the links below for the Red Hat Runtimes supported version of OpenTracing Spring Jaeger SpringBoot web starter
+  description: Unsupported version of OpenTracing Spring Jaeger SpringBoot web starter
   effort: 1
   labels:
   - konveyor.io/source=springboot
@@ -147,17 +133,15 @@
       upperbound: 3.1.0
 - category: optional
   customVariables: []
-  description: |-
-    Migrate to a supported AMQP dependency
-    Migrate `org.amqphub.spring:amqp-10-jms-spring-boot-starter` dependency to a version compatible with the supported versions of the RHOAR components provided in the link.
+  description: Migrate to a supported AMQP dependency
   effort: 1
   labels:
   - konveyor.io/source=springboot
   - konveyor.io/target=rhr
   links: []
-  message: Migrate `org.amqphub.spring:amqp-10-jms-spring-boot-starter` dependency
+  message: "Migrate `org.amqphub.spring:amqp-10-jms-spring-boot-starter` dependency
     to a version compatible with the supported versions of the RHOAR components provided
-    in the link.
+    in the link.\n "
   ruleID: springboot-associated-00008
   when:
     as: dependencies-block
@@ -171,17 +155,15 @@
         'redhat'))]
 - category: optional
   customVariables: []
-  description: |-
-    Migrate to a supported CXF JAX-RS dependency
-    Migrate `org.apache.cxf:cxf-spring-boot-starter-jaxrs` dependency to a version compatible with the supported versions of the RHOAR components provided in the link.
+  description: Migrate to a supported CXF JAX-RS dependency
   effort: 1
   labels:
   - konveyor.io/source=springboot
   - konveyor.io/target=rhr
   links: []
-  message: Migrate `org.apache.cxf:cxf-spring-boot-starter-jaxrs` dependency to a
+  message: "Migrate `org.apache.cxf:cxf-spring-boot-starter-jaxrs` dependency to a
     version compatible with the supported versions of the RHOAR components provided
-    in the link.
+    in the link.\n "
   ruleID: springboot-associated-00009
   when:
     as: dependencies-block
@@ -194,17 +176,15 @@
         and ../m:artifactId='cxf-spring-boot-starter-jaxrs' and not(contains(., 'redhat'))]
 - category: optional
   customVariables: []
-  description: |-
-    Migrate to a supported RestEasy dependency
-    Migrate `org.jboss.resteasy:resteasy-spring-boot-starter` dependency to a version compatible with the supported versions of the RHOAR components provided in the link.
+  description: Migrate to a supported RestEasy dependency
   effort: 1
   labels:
   - konveyor.io/source=springboot
   - konveyor.io/target=rhr
   links: []
-  message: Migrate `org.jboss.resteasy:resteasy-spring-boot-starter` dependency to
+  message: "Migrate `org.jboss.resteasy:resteasy-spring-boot-starter` dependency to
     a version compatible with the supported versions of the RHOAR components provided
-    in the link.
+    in the link.\n "
   ruleID: springboot-associated-00010
   when:
     as: dependencies-block
@@ -217,17 +197,15 @@
         and ../m:artifactId='resteasy-spring-boot-starter' and not(contains(., 'redhat'))]
 - category: optional
   customVariables: []
-  description: |-
-    Migrate to a supported Infinispan embedded dependency
-    Migrate `org.infinispan:infinispan-spring-boot-starter-embedded` dependency to a version compatible with the supported versions of the RHOAR components provided in the link.
+  description: Migrate to a supported Infinispan embedded dependency
   effort: 1
   labels:
   - konveyor.io/source=springboot
   - konveyor.io/target=rhr
   links: []
-  message: Migrate `org.infinispan:infinispan-spring-boot-starter-embedded` dependency
+  message: "Migrate `org.infinispan:infinispan-spring-boot-starter-embedded` dependency
     to a version compatible with the supported versions of the RHOAR components provided
-    in the link.
+    in the link.\n "
   ruleID: springboot-associated-00011
   when:
     as: dependencies-block
@@ -241,17 +219,15 @@
         'redhat'))]
 - category: optional
   customVariables: []
-  description: |-
-    Migrate to a supported Infinispan remote dependency
-    Migrate `org.infinispan:infinispan-spring-boot-starter-remote` dependency to a version compatible with the supported versions of the RHOAR components provided in the link.
+  description: Migrate to a supported Infinispan remote dependency
   effort: 1
   labels:
   - konveyor.io/source=springboot
   - konveyor.io/target=rhr
   links: []
-  message: Migrate `org.infinispan:infinispan-spring-boot-starter-remote` dependency
+  message: "Migrate `org.infinispan:infinispan-spring-boot-starter-remote` dependency
     to a version compatible with the supported versions of the RHOAR components provided
-    in the link.
+    in the link.\n "
   ruleID: springboot-associated-00012
   when:
     as: dependencies-block
@@ -265,17 +241,15 @@
         'redhat'))]
 - category: optional
   customVariables: []
-  description: |-
-    Migrate to a supported Keycloak dependency
-    Migrate `org.keycloak:keycloak-spring-boot-starter` dependency to a version compatible with the supported versions of the RHOAR components provided in the link.
+  description: Migrate to a supported Keycloak dependency
   effort: 1
   labels:
   - konveyor.io/source=springboot
   - konveyor.io/target=rhr
   links: []
-  message: Migrate `org.keycloak:keycloak-spring-boot-starter` dependency to a version
+  message: "Migrate `org.keycloak:keycloak-spring-boot-starter` dependency to a version
     compatible with the supported versions of the RHOAR components provided in the
-    link.
+    link.\n "
   ruleID: springboot-associated-00013
   when:
     as: dependencies-block
@@ -288,17 +262,15 @@
         and ../m:artifactId='keycloak-spring-boot-starter' and not(contains(., 'redhat'))]
 - category: optional
   customVariables: []
-  description: |-
-    Migrate to a supported Narayana dependency
-    Migrate `me.snowdrop:narayana-spring-boot-starter` dependency to a version compatible with the supported versions of the RHOAR components provided in the link.
+  description: Migrate to a supported Narayana dependency
   effort: 1
   labels:
   - konveyor.io/source=springboot
   - konveyor.io/target=rhr
   links: []
-  message: Migrate `me.snowdrop:narayana-spring-boot-starter` dependency to a version
+  message: "Migrate `me.snowdrop:narayana-spring-boot-starter` dependency to a version
     compatible with the supported versions of the RHOAR components provided in the
-    link.
+    link.\n "
   ruleID: springboot-associated-00014
   when:
     as: dependencies-block
@@ -311,17 +283,15 @@
         and ../m:artifactId='narayana-spring-boot-starter' and not(contains(., 'redhat'))]
 - category: optional
   customVariables: []
-  description: |-
-    Migrate to a supported Spring Jaeger dependency
-    Migrate `io.opentracing.contrib:opentracing-spring-jaeger-web-starter` dependency to a version compatible with the supported versions of the RHOAR components provided in the link.
+  description: Migrate to a supported Spring Jaeger dependency
   effort: 1
   labels:
   - konveyor.io/source=springboot
   - konveyor.io/target=rhr
   links: []
-  message: Migrate `io.opentracing.contrib:opentracing-spring-jaeger-web-starter`
+  message: "Migrate `io.opentracing.contrib:opentracing-spring-jaeger-web-starter`
     dependency to a version compatible with the supported versions of the RHOAR components
-    provided in the link.
+    provided in the link.\n "
   ruleID: springboot-associated-00015
   when:
     as: dependencies-block

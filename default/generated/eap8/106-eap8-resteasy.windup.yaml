@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    The org.jboss.resteasy.resteasy-jettison-provider module has been removed
-    The `org.jboss.resteasy.resteasy-jettison-provider` module has been removed. There is no documented solution for this issue.
+  description: The org.jboss.resteasy.resteasy-jettison-provider module has been removed
   effort: 13
   labels:
   - konveyor.io/source=eap6
@@ -25,9 +23,8 @@
         pattern: org.jboss.resteasy.resteasy-jettison-provider
 - category: mandatory
   customVariables: []
-  description: |-
-    The org.jboss.resteasy resteasy-jettison-provider artifact has been removed
-    The `org.jboss.resteasy:resteasy-jettison-provider` artifact has been removed. There is no documented solution for this issue.
+  description: The org.jboss.resteasy resteasy-jettison-provider artifact has been
+    removed
   effort: 13
   labels:
   - konveyor.io/source=eap6
@@ -46,9 +43,7 @@
       name: org.jboss.resteasy.resteasy-jettison-provider
 - category: mandatory
   customVariables: []
-  description: |-
-    The org.jboss.resteasy.resteasy-yaml-provider module has been removed
-    The `org.jboss.resteasy.resteasy-yaml-provider` module has been removed. There is no documented solution for this issue.
+  description: The org.jboss.resteasy.resteasy-yaml-provider module has been removed
   effort: 13
   labels:
   - konveyor.io/source=eap6
@@ -71,9 +66,7 @@
         pattern: org.jboss.resteasy.resteasy-yaml-provider
 - category: mandatory
   customVariables: []
-  description: |-
-    The org.jboss.resteasy resteasy-yaml-provider artifact has been removed
-    The `org.jboss.resteasy:resteasy-yaml-provider` artifact has been removed. There is no documented solution for this issue.
+  description: The org.jboss.resteasy resteasy-yaml-provider artifact has been removed
   effort: 13
   labels:
   - konveyor.io/source=eap6
@@ -92,9 +85,7 @@
       name: org.jboss.resteasy.resteasy-yaml-provider
 - category: mandatory
   customVariables: []
-  description: |-
-    The org.jboss.resteasy resteasy-spring artifact has been renamed
-    The `org.jboss.resteasy:resteasy-spring` artifact has been renamed to `org.jboss.resteasy.spring:resteasy-spring`
+  description: The org.jboss.resteasy resteasy-spring artifact has been renamed
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -112,9 +103,7 @@
       name: org.jboss.resteasy.resteasy-spring
 - category: mandatory
   customVariables: []
-  description: |-
-    org.jboss.resteasy.spi.StringConverter has been removed
-    `org.jboss.resteasy.spi.StringConverter` has been removed. Replace with `jakarta.ws.rs.ext.ParamConverter`
+  description: org.jboss.resteasy.spi.StringConverter has been removed
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -137,9 +126,7 @@
         pattern: org.jboss.resteasy.spi.StringConverter
 - category: mandatory
   customVariables: []
-  description: |-
-    org.jboss.resteasy.spi.AsynchronousResponse has been removed
-    `org.jboss.resteasy.spi.AsynchronousResponse` has been removed. Replace with `jakarta.ws.rs.container.AsyncResponse`
+  description: org.jboss.resteasy.spi.AsynchronousResponse has been removed
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -165,9 +152,7 @@
         pattern: org.jboss.resteasy.spi.AsynchronousResponse
 - category: mandatory
   customVariables: []
-  description: |-
-    org.jboss.resteasy.annotations.Suspend has been removed
-    `org.jboss.resteasy.annotations.Suspend` has been removed. Replace with `jakarta.ws.rs.container.Suspended`
+  description: org.jboss.resteasy.annotations.Suspend has been removed
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -190,9 +175,7 @@
         pattern: org.jboss.resteasy.annotations.Suspend
 - category: mandatory
   customVariables: []
-  description: |-
-    org.jboss.resteasy.core.ResourceInvoker interface has been removed
-    `org.jboss.resteasy.core.ResourceInvoker` interface have been removed. Replace with `org.jboss.resteasy.spi.ResourceInvoker`.
+  description: org.jboss.resteasy.core.ResourceInvoker interface has been removed
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -212,9 +195,7 @@
       pattern: org.jboss.resteasy.core.ResourceInvoker
 - category: mandatory
   customVariables: []
-  description: |-
-    org.jboss.resteasy.plugins.interceptors.encoding classes has been removed
-    `org.jboss.resteasy.plugins.interceptors.encoding` classes have been removed. Replace with the equivalent `org.jboss.resteasy.plugins.interceptors` classes. Or remove the manual registration of the interceptors and set the system property `resteasy.allowGzip=true`.
+  description: org.jboss.resteasy.plugins.interceptors.encoding classes has been removed
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -237,9 +218,7 @@
       pattern: org.jboss.resteasy.plugins.interceptors.encoding*
 - category: optional
   customVariables: []
-  description: |-
-    The org.jboss.resteasy.resteasy-jaxrs module has been deprecated
-    The `org.jboss.resteasy.resteasy-jaxrs` module has been deprecated and split into 4 new modules, specifically `org.jboss.resteasy.resteasy-client`, `org.jboss.resteasy.resteasy-client-spi`,`org.jboss.resteasy.resteasy-core` and `org.jboss.resteasy.resteasy-core-spi`
+  description: The org.jboss.resteasy.resteasy-jaxrs module has been deprecated
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -249,9 +228,9 @@
   - konveyor.io/target=eap
   - eap8
   links: []
-  message: The `org.jboss.resteasy.resteasy-jaxrs` module has been deprecated and
+  message: "The `org.jboss.resteasy.resteasy-jaxrs` module has been deprecated and
     split into 4 new modules, specifically `org.jboss.resteasy.resteasy-client`, `org.jboss.resteasy.resteasy-client-spi`,`org.jboss.resteasy.resteasy-core`
-    and `org.jboss.resteasy.resteasy-core-spi`
+    and `org.jboss.resteasy.resteasy-core-spi` \n "
   ruleID: eap8-resteasy-00011
   when:
     or:

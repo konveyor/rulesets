@@ -1,8 +1,6 @@
 - category: potential
   customVariables: []
-  description: |-
-    Remove Maven dependency on org.jboss.spec.javax.rmi:jboss-rmi-api_1.0_spec
-    If you migrate your application to JBoss EAP 7.3 (or later), and want to ensure its Maven building, running or testing works as expected, remove any dependency on unsupported artifact with groupId `org.jboss.spec.javax.rmi`, and artifactId `jboss-rmi-api_1.0_spec`.
+  description: Remove Maven dependency on org.jboss.spec.javax.rmi:jboss-rmi-api_1.0_spec
   effort: 1
   labels:
   - konveyor.io/target=eap7

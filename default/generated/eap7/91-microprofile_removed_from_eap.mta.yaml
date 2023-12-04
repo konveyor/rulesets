@@ -1,8 +1,6 @@
 - category: potential
   customVariables: []
-  description: |-
-    Eclipse MicroProfile removed from JBoss EAP - MicroProfile Config
-    This application depends on Eclipse MicroProfile Config, which is no longer supported by JBoss EAP 7.4 (or later), unless the JBoss EAP expansion pack is installed.
+  description: Eclipse MicroProfile removed from JBoss EAP - MicroProfile Config
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -23,9 +21,7 @@
       name: org.eclipse.microprofile.config.microprofile-config-api
 - category: potential
   customVariables: []
-  description: |-
-    Eclipse MicroProfile removed from JBoss EAP - MicroProfile Health
-    This application depends on Eclipse MicroProfile Health, which is no longer supported by JBoss EAP 7.4 (or later), unless the JBoss EAP expansion pack is installed.
+  description: Eclipse MicroProfile removed from JBoss EAP - MicroProfile Health
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -46,9 +42,7 @@
       name: org.eclipse.microprofile.health.microprofile-health-api
 - category: potential
   customVariables: []
-  description: |-
-    Eclipse MicroProfile removed from JBoss EAP - MicroProfile Metrics
-    This application depends on Eclipse MicroProfile Metrics, which is no longer supported by JBoss EAP 7.4 (or later), unless the JBoss EAP expansion pack is installed.
+  description: Eclipse MicroProfile removed from JBoss EAP - MicroProfile Metrics
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -69,9 +63,7 @@
       name: org.eclipse.microprofile.metrics.microprofile-metrics-api
 - category: potential
   customVariables: []
-  description: |-
-    Eclipse MicroProfile removed from JBoss EAP - MicroProfile REST Client
-    This application depends on Eclipse MicroProfile REST Client, which is no longer supported by JBoss EAP 7.4 (or later), unless the JBoss EAP expansion pack is installed.
+  description: Eclipse MicroProfile removed from JBoss EAP - MicroProfile REST Client
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -92,9 +84,7 @@
       name: org.eclipse.microprofile.rest.client.microprofile-rest-client-api
 - category: potential
   customVariables: []
-  description: |-
-    Eclipse MicroProfile removed from JBoss EAP - MicroProfile Opentracing
-    This application depends on Eclipse MicroProfile Opentracing, which is no longer supported by JBoss EAP 7.4 (or later), unless the JBoss EAP expansion pack is installed.
+  description: Eclipse MicroProfile removed from JBoss EAP - MicroProfile Opentracing
   effort: 1
   labels:
   - konveyor.io/target=eap7

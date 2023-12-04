@@ -1,3 +1,1 @@
-name: eap7/websphere
-description: Provides analysis of WebSphere proprietary classes and constructs that
-  may require individual attention when migrating to JBoss EAP 7+.
+name: eap7/weblogic/tests/data

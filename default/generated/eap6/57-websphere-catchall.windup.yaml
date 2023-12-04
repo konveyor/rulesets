@@ -3,8 +3,7 @@
   - name: type
     nameOfCaptureGroup: type
     pattern: com.ibm.db2.jcc.(?P<type>[^.]+)
-  description: |
-    IBM DB2 driver type reference
+  description: IBM DB2 driver type reference
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -12,9 +11,9 @@
   - konveyor.io/target=eap7
   - konveyor.io/target=eap
   links: []
-  message: This is a reference to the IBM DB2 driver type (`com.ibm.db2.jcc.{{type}}`).
+  message: "\n This is a reference to the IBM DB2 driver type (`com.ibm.db2.jcc.{{type}}`).
     It probably does not need to be migrated. However the IBM DB2 driver should be
-    configured properly.
+    configured properly.\n "
   ruleID: websphere-catchall-db2-00000
   when:
     java.referenced:
@@ -28,8 +27,7 @@
   - name: type
     nameOfCaptureGroup: type
     pattern: (?P<package>(com\.)?(websphere|ibm)(\..*)?.)?(?P<type>[^.]+)
-  description: |
-    IBM proprietary type reference
+  description: IBM proprietary type reference
   effort: 0
   labels:
   - konveyor.io/source=websphere
@@ -38,9 +36,9 @@
   - konveyor.io/target=eap
   - catchall
   links: []
-  message: This is an IBM proprietary type (`{{package}}.{{type}}`) and needs to be
-    migrated to a compatible API. There is currently no detailed. information about
-    this type.
+  message: "\n This is an IBM proprietary type (`{{package}}.{{type}}`) and needs
+    to be migrated to a compatible API. There is currently no detailed\n information
+    about this type.\n "
   ruleID: websphere-catchall-00000
   when:
     java.referenced:
@@ -54,8 +52,7 @@
   - name: type
     nameOfCaptureGroup: type
     pattern: ilog.(?P<subpackage>.*.)?(?P<type>[^.]+)
-  description: |
-    IBM ILog proprietary type reference
+  description: IBM ILog proprietary type reference
   effort: 0
   labels:
   - konveyor.io/source=websphere
@@ -64,9 +61,9 @@
   - konveyor.io/target=eap
   - catchall
   links: []
-  message: This is an IBM ILog proprietary type (`ilog.{{subpackage}}.{{type}}`) and
-    needs to be migrated to a compatible API. There is currently no detailed. information
-    about this type.
+  message: "\n This is an IBM ILog proprietary type (`ilog.{{subpackage}}.{{type}}`)
+    and needs to be migrated to a compatible API. There is currently no detailed\n
+    information about this type.\n "
   ruleID: websphere-catchall-00001
   when:
     java.referenced:

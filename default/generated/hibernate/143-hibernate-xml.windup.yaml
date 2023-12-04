@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Hibernate: Deprecated 'string' CLOB data type
-    In versions of Hibernate prior to 3.5, text type was mapped to JDBC CLOB. A new Hibernate type, `materialized_clob`, was added in Hibernate 4 to map Java `String` properties to JDBC CLOB
+  description: 'Hibernate: Deprecated ''string'' CLOB data type'
   effort: 1
   labels:
   - konveyor.io/source=hibernate3.9-
@@ -29,9 +27,8 @@
       from: "1"
 - category: mandatory
   customVariables: []
-  description: |-
-    hibernate.jdbc.use_streams_for_binary must be set according to the provider
-    If you are using Oracle and using the ```materialized_clob``` or ```materialized_blob``` properties, this global environment variable must be set to true.. If you are using PostgreSQL and using the CLOB or BLOB properties, this global environment variable  must be set to false.
+  description: hibernate.jdbc.use_streams_for_binary must be set according to the
+    provider
   effort: 1
   labels:
   - konveyor.io/source=hibernate3.9-
@@ -41,10 +38,10 @@
   - hibernate
   - configuration
   links: []
-  message: If you are using Oracle and using the ```materialized_clob``` or ```materialized_blob```
-    properties, this global environment variable must be set to true.. If you are
-    using PostgreSQL and using the CLOB or BLOB properties, this global environment
-    variable  must be set to false.
+  message: "\n If you are using Oracle and using the ```materialized_clob``` or ```materialized_blob```
+    properties, this global environment variable must be set to true.\n\t\t\tIf you
+    are using PostgreSQL and using the CLOB or BLOB properties, this global environment
+    variable must be set to false.\n "
   ruleID: hibernate-xml-02000
   when:
     or:
@@ -59,9 +56,7 @@
       from: "1"
 - category: mandatory
   customVariables: []
-  description: |-
-    Hibernate: Removed package org.hibernate.connection
-    From Hibernate 4.0 there were moved classes from package `org.hibernate.connection` to package `org.hibernate.service.jdbc.connections.internal`.. You should change your Hibernate setup to replace references to the old package names.
+  description: 'Hibernate: Removed package org.hibernate.connection'
   effort: 1
   labels:
   - konveyor.io/source=hibernate3.9-
@@ -71,9 +66,9 @@
   - hibernate
   - configuration
   links: []
-  message: From Hibernate 4.0 there were moved classes from package `org.hibernate.connection`
-    to package `org.hibernate.service.jdbc.connections.internal`.. You should change
-    your Hibernate setup to replace references to the old package names.
+  message: "From Hibernate 4.0 there were moved classes from package `org.hibernate.connection`
+    to package `org.hibernate.service.jdbc.connections.internal`.\n You should change
+    your Hibernate setup to replace references to the old package names.\n "
   ruleID: hibernate-xml-03000
   when:
     builtin.filecontent:

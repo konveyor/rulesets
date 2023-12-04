@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    `hystrix()` has been renamed.
-    Hystrix circuit breaker has been generalized as circuit breaker. Use `circuitBreaker()`. instead of `hystrix()`
+  description: '`hystrix()` has been renamed.'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -12,8 +10,8 @@
   links:
   - title: Camel 3 - Migration Guide - Hystrix EIP
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_hystrix_eip
-  message: Hystrix circuit breaker has been generalized as circuit breaker. Use `circuitBreaker()`.
-    instead of `hystrix()`
+  message: "Hystrix circuit breaker has been generalized as circuit breaker. Use `circuitBreaker()`\n
+    instead of `hystrix()`\n "
   ruleID: java-dsl-changes-00001
   when:
     java.referenced:

@@ -1,10 +1,9 @@
 - customVariables: []
-  description: |
-    Embedded library - Spring Cloud Config
-    The application embeds Spring Cloud Config.
+  description: Embedded library - Spring Cloud Config
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds Spring Cloud Config.
   ruleID: configuration-management-0100
   tag:
   - Spring Cloud Config
@@ -18,12 +17,11 @@
         lowerbound: 0.0.0
         name: org.springframework.cloud.spring-cloud-config-client
 - customVariables: []
-  description: |
-    Application properties file detected
-    Application properties file detected
+  description: Application properties file detected
   labels:
   - konveyor.io/include=always
   links: []
+  message: Application properties file detected
   ruleID: configuration-management-0200
   tag:
   - Application Properties File
@@ -32,12 +30,11 @@
     builtin.file:
       pattern: application.*\.(properties|yml|yaml)
 - customVariables: []
-  description: |
-    Spring datasource properties detected
-    Spring datasource properties detected
+  description: Spring datasource properties detected
   labels:
   - konveyor.io/include=always
   links: []
+  message: Spring datasource properties detected
   ruleID: configuration-management-0300
   tag:
   - Spring Properties
@@ -47,12 +44,11 @@
       filePattern: application.*\.(properties|yml|yaml)
       pattern: spring.datasource
 - customVariables: []
-  description: |
-    Spring logging properties detected
-    Spring logging properties detected
+  description: Spring logging properties detected
   labels:
   - konveyor.io/include=always
   links: []
+  message: Spring logging properties detected
   ruleID: configuration-management-0400
   tag:
   - Spring Properties
@@ -62,12 +58,11 @@
       filePattern: application.*\.(properties|yml|yaml)
       pattern: logging.level.org.springframework
 - customVariables: []
-  description: |
-    Spring configuration properties annotation detected
-    Spring configuration properties annotation detected
+  description: Spring configuration properties annotation detected
   labels:
   - konveyor.io/include=always
   links: []
+  message: Spring configuration properties annotation detected
   ruleID: configuration-management-0500
   tag:
   - Spring Properties

@@ -1,8 +1,7 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Spring Boot Actuator dependency with Quarkus Smallrye Health extension
-    Replace the Spring Boot Actuator dependency with Quarkus Smallrye Health extension.. It has to be replaced by `io.quarkus:quarkus-smallrye-health` artifact.
+  description: Replace the Spring Boot Actuator dependency with Quarkus Smallrye Health
+    extension
   effort: 5
   labels:
   - konveyor.io/source=springboot
@@ -10,8 +9,8 @@
   links:
   - title: Quarkus - Smallrye Health
     url: https://quarkus.io/guides/smallrye-health
-  message: Replace the Spring Boot Actuator dependency with Quarkus Smallrye Health
-    extension.. It has to be replaced by `io.quarkus:quarkus-smallrye-health` artifact.
+  message: "\n Replace the Spring Boot Actuator dependency with Quarkus Smallrye Health
+    extension. \n It has to be replaced by `io.quarkus:quarkus-smallrye-health` artifact.\n "
   ruleID: springboot-actuator-to-quarkus-0100
   when:
     or:
@@ -29,9 +28,7 @@
         name: org.springframework.boot.spring-boot-actuator
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace Spring Health endpoint mapping
-    Replace `management.endpoints.web.exposure.include=health` with `quarkus.smallrye-health.root-path=/actuator/health`
+  description: Replace Spring Health endpoint mapping
   effort: 1
   labels:
   - konveyor.io/source=springboot
@@ -39,7 +36,7 @@
   links:
   - title: Quarkus Guide - Smallrye Health
     url: https://quarkus.io/guides/smallrye-health
-  message: Replace `management.endpoints.web.exposure.include=health` with `quarkus.smallrye-health.root-path=/actuator/health`
+  message: "\n Replace `management.endpoints.web.exposure.include=health` with `quarkus.smallrye-health.root-path=/actuator/health`\n "
   ruleID: springboot-actuator-to-quarkus-0200
   when:
     builtin.filecontent:

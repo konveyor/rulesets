@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Local HTTP Calls
-    The app is trying to access local resource by HTTP, please try to migrate the resource to cloud
+  description: Local HTTP Calls
   effort: 7
   labels:
   - konveyor.io/target=cloud-readiness
@@ -18,9 +16,7 @@
       pattern: http(s)?://((localhost)|(127\.0\.0\.1))+(:[0-9]+)?(/.*)?
 - category: mandatory
   customVariables: []
-  description: |-
-    Local JDBC Calls
-    The app is trying to access local resource by JDBC, please try to migrate the resource to cloud
+  description: Local JDBC Calls
   effort: 7
   labels:
   - konveyor.io/target=cloud-readiness
@@ -36,9 +32,7 @@
       pattern: jdbc:([a-z0-9-]+)://(localhost|127\.0\.0\.1)(:[0-9]+)?
 - category: mandatory
   customVariables: []
-  description: |-
-    Local WebSocket Calls
-    The app is trying to access local resource using WebSocket, please try to migrate the resource to cloud
+  description: Local WebSocket Calls
   effort: 7
   labels:
   - konveyor.io/target=cloud-readiness

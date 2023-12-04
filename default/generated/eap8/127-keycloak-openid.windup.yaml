@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Update the 'auth-method' configuration from KEYCLOAK to OIDC
-    In order to add support for EAP native OpenID Connect, the `auth-method` must be updated to `OIDC`.
+  description: Update the 'auth-method' configuration from KEYCLOAK to OIDC
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -22,9 +20,7 @@
       xpath: /web-app/login-config/auth-method[text()='KEYCLOAK']
 - category: mandatory
   customVariables: []
-  description: |-
-    Rename the keycloak.json configuration file to oidc.json
-    In order to add support for EAP native OpenID Connect, the `WEB-INF/keycloak.json` file must be renamed to `WEB-INF/oidc.json`.
+  description: Rename the keycloak.json configuration file to oidc.json
   effort: 1
   labels:
   - konveyor.io/source=eap6

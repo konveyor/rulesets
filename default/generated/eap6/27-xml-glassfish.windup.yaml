@@ -1,7 +1,5 @@
 - customVariables: []
-  description: |
-    Glassfish EJB Descriptor
-     Glassfish specific ejb configuration file used to configure EJBs, map them to jndi names etc.
+  description: Glassfish EJB Descriptor
   labels:
   - konveyor.io/source=glassfish
   - konveyor.io/target=eap6+
@@ -10,6 +8,8 @@
   - glassfish
   - configuration
   links: []
+  message: ' Glassfish specific ejb configuration file used to configure EJBs, map
+    them to jndi names etc.'
   ruleID: xml-glassfish-02000
   tag:
   - configuration
@@ -20,9 +20,7 @@
       namespaces: {}
       xpath: /glassfish-ejb-jar
 - customVariables: []
-  description: |
-    Glassfish Application EAR configuration file
-     Glassfish-application  is a Glassfish specific EAR configuration file used to configure security roles, url addresses, JNDI binding etc. This file is glassfish specific and needs to be migrated to application.xml or jboss-app.xml.
+  description: Glassfish Application EAR configuration file
   labels:
   - konveyor.io/source=glassfish
   - konveyor.io/target=eap6+
@@ -31,6 +29,9 @@
   - glassfish
   - configuration
   links: []
+  message: ' Glassfish-application  is a Glassfish specific EAR configuration file
+    used to configure security roles, url addresses, JNDI binding etc. This file is
+    glassfish specific and needs to be migrated to application.xml or jboss-app.xml.'
   ruleID: xml-glassfish-03000
   tag:
   - configuration

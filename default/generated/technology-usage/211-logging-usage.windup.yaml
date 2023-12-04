@@ -1,10 +1,9 @@
 - customVariables: []
-  description: |
-    Embedded library - Apache Log4J
-    The application embeds an Apache Log4J library.
+  description: Embedded library - Apache Log4J
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds an Apache Log4J library.
   ruleID: logging-usage-00010
   tag:
   - Apache Log4J
@@ -13,12 +12,11 @@
     builtin.file:
       pattern: .*log4j.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Apache Commons Logging
-    The application embeds an Apache Commons Logging library.
+  description: Embedded library - Apache Commons Logging
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds an Apache Commons Logging library.
   ruleID: logging-usage-00020
   tag:
   - Apache Commons Logging
@@ -27,12 +25,11 @@
     builtin.file:
       pattern: .*commons-logging.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - SLF4J
-    The application embeds a Simple Logging Facade for Java (SLJ4J) library.
+  description: Embedded library - SLF4J
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a Simple Logging Facade for Java (SLJ4J) library.
   ruleID: logging-usage-00030
   tag:
   - SLF4J
@@ -41,12 +38,11 @@
     builtin.file:
       pattern: .*slf4j.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - tinylog
-    The application embeds a tinylog library.
+  description: Embedded library - tinylog
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a tinylog library.
   ruleID: logging-usage-00040
   tag:
   - tinylog
@@ -55,12 +51,11 @@
     builtin.file:
       pattern: .*tinylog.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Logback
-    The application embeds a Logback library.
+  description: Embedded library - Logback
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a Logback library.
   ruleID: logging-usage-00050
   tag:
   - Logback
@@ -69,12 +64,11 @@
     builtin.file:
       pattern: .*logback.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - JBoss logging
-    The application embeds a JBoss logging library.
+  description: Embedded library - JBoss logging
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a JBoss logging library.
   ruleID: logging-usage-00080
   tag:
   - JBoss logging
@@ -83,12 +77,11 @@
     builtin.file:
       pattern: .*jboss-logging.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Monolog
-    The application embeds a Monolog library.
+  description: Embedded library - Monolog
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a Monolog library.
   ruleID: logging-usage-00090
   tag:
   - Monolog
@@ -97,12 +90,11 @@
     builtin.file:
       pattern: .*monolog.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Jcabi Log
-    The application embeds a Jcabi Log library.
+  description: Embedded library - Jcabi Log
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a Jcabi Log library.
   ruleID: logging-usage-00100
   tag:
   - Jcabi Log
@@ -111,12 +103,11 @@
     builtin.file:
       pattern: .*jcabi-log.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - NLOG4J
-    The application embeds a NLOG4J library.
+  description: Embedded library - NLOG4J
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a NLOG4J library.
   ruleID: logging-usage-00110
   tag:
   - NLOG4J
@@ -125,12 +116,11 @@
     builtin.file:
       pattern: .*nlog4j.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Log4s
-    The application embeds a Log4s library.
+  description: Embedded library - Log4s
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a Log4s library.
   ruleID: logging-usage-00120
   tag:
   - Log4s
@@ -139,12 +129,11 @@
     builtin.file:
       pattern: log4s.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Kotlin Logging
-    The application embeds a Kotlin Logging library.
+  description: Embedded library - Kotlin Logging
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a Kotlin Logging library.
   ruleID: logging-usage-00130
   tag:
   - Kotlin Logging
@@ -153,12 +142,11 @@
     builtin.file:
       pattern: .*kotlin-logging.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Airlift Log Manager
-    The application embeds an Airlift Log Manager library.
+  description: Embedded library - Airlift Log Manager
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds an Airlift Log Manager library.
   ruleID: logging-usage-00140
   tag:
   - Airlift Log Manager
@@ -167,12 +155,11 @@
     builtin.file:
       pattern: log-manager.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - MinLog
-    The application embeds a MinLog library.
+  description: Embedded library - MinLog
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a MinLog library.
   ruleID: logging-usage-00150
   tag:
   - MinLog
@@ -181,12 +168,11 @@
     builtin.file:
       pattern: .*minilog.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Logging Utils
-    The application embeds a Common Java Logging Utils library.
+  description: Embedded library - Logging Utils
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a Common Java Logging Utils library.
   ruleID: logging-usage-00160
   tag:
   - Logging Utils
@@ -195,12 +181,11 @@
     builtin.file:
       pattern: logging.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - OCPsoft Logging Utils
-    The application embeds an OCPsoft Logging Utils library.
+  description: Embedded library - OCPsoft Logging Utils
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds an OCPsoft Logging Utils library.
   ruleID: logging-usage-00170
   tag:
   - OCPsoft Logging Utils
@@ -209,12 +194,11 @@
     builtin.file:
       pattern: logging-api.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Scribe
-    The application embeds a Scribe library.
+  description: Embedded library - Scribe
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a Scribe library.
   ruleID: logging-usage-00180
   tag:
   - Scribe
@@ -223,12 +207,11 @@
     builtin.file:
       pattern: .*scribe.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - GFC Logging
-    The application embeds a Git Foundation Classes (GFC) Logging library.
+  description: Embedded library - GFC Logging
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a Git Foundation Classes (GFC) Logging library.
   ruleID: logging-usage-00190
   tag:
   - GFC Logging
@@ -237,12 +220,11 @@
     builtin.file:
       pattern: .*gfc-logging.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Blitz4j
-    The application embeds a Blitz4j library.
+  description: Embedded library - Blitz4j
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a Blitz4j library.
   ruleID: logging-usage-00200
   tag:
   - Blitz4j
@@ -251,12 +233,11 @@
     builtin.file:
       pattern: .*blitz4j.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Avalon Logkit
-    The application embeds an Avalon Logkit library.
+  description: Embedded library - Avalon Logkit
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds an Avalon Logkit library.
   ruleID: logging-usage-00210
   tag:
   - Avalon Logkit
@@ -265,12 +246,11 @@
     builtin.file:
       pattern: .*avalon-logkit.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - KLogger
-    The application embeds a KLogger library.
+  description: Embedded library - KLogger
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a KLogger library.
   ruleID: logging-usage-00220
   tag:
   - KLogger
@@ -279,12 +259,11 @@
     builtin.file:
       pattern: .*klogger.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Lumberjack
-    The application embeds a Lumberjack library.
+  description: Embedded library - Lumberjack
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a Lumberjack library.
   ruleID: logging-usage-00230
   tag:
   - Lumberjack
@@ -293,12 +272,11 @@
     builtin.file:
       pattern: .*lumberjack.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Log.io
-    The application embeds a Log.io library.
+  description: Embedded library - Log.io
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a Log.io library.
   ruleID: logging-usage-00240
   tag:
   - Log.io
@@ -307,12 +285,11 @@
     builtin.file:
       pattern: .*logio.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - OPS4J Pax Logging Service
-    The application embeds an OPS4J Pax Logging Service library.
+  description: Embedded library - OPS4J Pax Logging Service
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds an OPS4J Pax Logging Service library.
   ruleID: logging-usage-00250
   tag:
   - OPS4J Pax Logging Service
@@ -321,12 +298,11 @@
     builtin.file:
       pattern: .*pax-logging-service.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - OW2 Log Util
-    The application embeds an OW2 Log Util library.
+  description: Embedded library - OW2 Log Util
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds an OW2 Log Util library.
   ruleID: logging-usage-00260
   tag:
   - OW2 Log Util
@@ -335,12 +311,11 @@
     builtin.file:
       pattern: util-log.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Twitter Util Logging
-    The application embeds a Twitter Util Logging library.
+  description: Embedded library - Twitter Util Logging
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a Twitter Util Logging library.
   ruleID: logging-usage-00270
   tag:
   - Twitter Util Logging
@@ -349,12 +324,11 @@
     builtin.file:
       pattern: util-logging.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Composite Logging JCL
-    The application embeds a Composite Logging JCL library.
+  description: Embedded library - Composite Logging JCL
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a Composite Logging JCL library.
   ruleID: logging-usage-00280
   tag:
   - Composite Logging JCL
@@ -363,12 +337,11 @@
     builtin.file:
       pattern: composite-logging-api.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - Apache Flume
-    The application embeds an Apache Flume library.
+  description: Embedded library - Apache Flume
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds an Apache Flume library.
   ruleID: logging-usage-00290
   tag:
   - Apache Flume

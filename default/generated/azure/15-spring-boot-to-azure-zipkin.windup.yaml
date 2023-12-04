@@ -1,8 +1,6 @@
 - category: potential
   customVariables: []
-  description: |-
-    Zipkin
-    The application uses Zipkin.
+  description: Zipkin
   effort: 0
   labels:
   - konveyor.io/source=springboot
@@ -16,7 +14,7 @@
     url: https://learn.microsoft.com/azure/developer/java/migration/migrate-spring-cloud-to-azure-spring-apps?pivots=sc-standard-tier#identify-zipkin-dependencies
   - title: Distributed Tracing
     url: https://learn.microsoft.com/azure/azure-monitor/app/distributed-tracing-telemetry-correlation
-  message: The application uses Zipkin.
+  message: "\n \n The application uses Zipkin.\n \n "
   ruleID: spring-boot-to-azure-zipkin-01000
   when:
     or:

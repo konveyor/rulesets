@@ -1,8 +1,7 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Bootstrapping files prefixed with javax should be renamed to use the jakarta prefix
-    Replace the bootstrapping file name prefix `javax.` with `jakarta.`
+  description: Bootstrapping files prefixed with javax should be renamed to use the
+    jakarta prefix
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+

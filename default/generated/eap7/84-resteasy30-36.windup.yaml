@@ -1,8 +1,6 @@
 - category: potential
   customVariables: []
-  description: |-
-    RESTEasy 3.6 - Resource Method Algorithm Switch changes
-    If you migrate your application from JBoss EAP from 7.1.1 to 7.2.x and want to retain the stricter behavior as defined in the JAX-RS 2.0 specification, set the `jaxrs.2.0.request.matching` option to `true`.
+  description: RESTEasy 3.6 - Resource Method Algorithm Switch changes
   effort: 1
   labels:
   - konveyor.io/target=eap7

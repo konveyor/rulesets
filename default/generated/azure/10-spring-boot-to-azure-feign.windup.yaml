@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Feign
-    The application uses Feign. Spring Cloud Service Registry uses OpenFeign instead. When migrating to Spring Cloud Service Registry, the Feign invocations will no longer be possible.. Update the clients to use Spring Cloud OpenFeign instead.
+  description: Feign
   effort: 3
   labels:
   - konveyor.io/source=springboot
@@ -16,10 +14,10 @@
     url: https://learn.microsoft.com/azure/developer/java/migration/migrate-spring-cloud-to-azure-spring-apps?pivots=sc-standard-tier#identify-clients-that-bypass-the-service-registry
   - title: Spring Cloud OpenFeign
     url: https://spring.io/projects/spring-cloud-openfeign/
-  message: The application uses Feign. Spring Cloud Service Registry uses OpenFeign
+  message: "\n \n The application uses Feign. Spring Cloud Service Registry uses OpenFeign
     instead. When migrating to Spring Cloud Service Registry, the Feign invocations
-    will no longer be possible.. Update the clients to use Spring Cloud OpenFeign
-    instead.
+    will no longer be possible.\n \n Update the clients to use Spring Cloud OpenFeign
+    instead.\n \n "
   ruleID: spring-boot-to-azure-feign-01000
   when:
     or:
