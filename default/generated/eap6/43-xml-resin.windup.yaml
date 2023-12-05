@@ -1,8 +1,5 @@
 - customVariables: []
-  description: "Resin Web Application Descriptor\nAn Resin specific file defining
-    an application configuration. Such a file may define URL paths, internal resin
-    ids, root directory path etc.\n                            This is Resin specific
-    and needs to be migrated to web.xml or jboss-web.xml\n                        \n"
+  description: Resin Web Application Descriptor
   labels:
   - konveyor.io/source=resin
   - konveyor.io/target=eap6+
@@ -11,6 +8,9 @@
   - resin
   - configuration
   links: []
+  message: "An Resin specific file defining an application configuration. Such a file
+    may define URL paths, internal resin ids, root directory path etc.\n                            This
+    is Resin specific and needs to be migrated to web.xml or jboss-web.xml\n                        "
   ruleID: xml-resin-01000
   tag:
   - configuration

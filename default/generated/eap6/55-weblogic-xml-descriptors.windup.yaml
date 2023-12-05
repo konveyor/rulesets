@@ -1,10 +1,5 @@
 - customVariables: []
-  description: "WebLogic EAR application descriptor (weblogic-application.xml)\n\n
-    \                     The `weblogic-application.xml` deployment descriptor file
-    is used to describe Oracle WebLogic Server EAR archives. Oracle WebLogic Server
-    EAR configures some application settings through the `application-param` element.\n
-    \                     These settings could be replaced with `context-param` elements
-    in Java EE Servlet `web.xml` descriptor.\n                    \n"
+  description: WebLogic EAR application descriptor (weblogic-application.xml)
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
@@ -17,6 +12,11 @@
   - title: Migrate Oracle WebLogic server descriptors (weblogic-application.xml) to
       JBoss EAP 6 or 7
     url: https://access.redhat.com/articles/1328043
+  message: "\n                      The `weblogic-application.xml` deployment descriptor
+    file is used to describe Oracle WebLogic Server EAR archives. Oracle WebLogic
+    Server EAR configures some application settings through the `application-param`
+    element.\n                      These settings could be replaced with `context-param`
+    elements in Java EE Servlet `web.xml` descriptor.\n                    "
   ruleID: weblogic-xml-descriptor-01000
   tag:
   - webservice
@@ -27,9 +27,7 @@
       namespaces: {}
       xpath: /*[local-name()='weblogic-application']
 - customVariables: []
-  description: |
-    WebLogic Entity EJB configuration
-    WebLogic Entity EJB Configuration are used for RDBMS based persistence services.
+  description: WebLogic Entity EJB configuration
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
@@ -40,6 +38,8 @@
   - title: Migrate Oracle WebLogic Server Configuration Files and Descriptors to JBoss
       EAP 6 or 7
     url: https://access.redhat.com/articles/1326803
+  message: WebLogic Entity EJB Configuration are used for RDBMS based persistence
+    services.
   ruleID: weblogic-xml-descriptor-02000
   tag:
   - database
@@ -53,9 +53,7 @@
       xpath: /*[local-name()='weblogic-rdbms-jar']
 - category: mandatory
   customVariables: []
-  description: |-
-    WebLogic EJB XML (weblogic-ejb-jar.xml) delay-updates-until-end-of-tx
-    The WebLogic `<delay-updates-until-end-of-tx>` configuration element, which defaults to `true`, is used for performance reasons to delay updates to the persistent store of all beans until the end of the transaction. When set to `false`, updates are sent to the database after each method invocation, but are not committed until the end of the transaction. This allows other processes to access the persisted data while the transaction is waiting to be completed.. In JBoss EAP 6+, you can achieve the same behavior by specifying the `<sync-on-commit-only>` in the jbosscmp-jdbc.xml file.
+  description: WebLogic EJB XML (weblogic-ejb-jar.xml) delay-updates-until-end-of-tx
   effort: 1
   labels:
   - konveyor.io/source=weblogic
@@ -70,14 +68,14 @@
   - title: Map delay-updates-until-end-of-tx element from weblogic-ejb-jar.xml Elements
       to the JBoss Enterprise Application Platform Equivalent
     url: https://access.redhat.com/articles/1326823
-  message: The WebLogic `<delay-updates-until-end-of-tx>` configuration element, which
-    defaults to `true`, is used for performance reasons to delay updates to the persistent
-    store of all beans until the end of the transaction. When set to `false`, updates
-    are sent to the database after each method invocation, but are not committed until
-    the end of the transaction. This allows other processes to access the persisted
-    data while the transaction is waiting to be completed.. In JBoss EAP 6+, you can
-    achieve the same behavior by specifying the `<sync-on-commit-only>` in the jbosscmp-jdbc.xml
-    file.
+  message: "\n \n The WebLogic `<delay-updates-until-end-of-tx>` configuration element,
+    which defaults to `true`, is used for performance reasons to delay updates to
+    the persistent store of all beans until the end of the transaction. When set to
+    `false`, updates are sent to the database after each method invocation, but are
+    not committed until the end of the transaction. This allows other processes to
+    access the persisted data while the transaction is waiting to be completed.\n\n
+    In JBoss EAP 6+, you can achieve the same behavior by specifying the `<sync-on-commit-only>`
+    in the jbosscmp-jdbc.xml file.\n \n "
   ruleID: weblogic-xml-descriptor-03000
   when:
     builtin.xml:
@@ -85,9 +83,7 @@
       xpath: //*[local-name()='delay-updates-until-end-of-tx']/text()
 - category: mandatory
   customVariables: []
-  description: |-
-    WebLogic EJB XML (weblogic-ejb-jar.xml)
-    The elements of proprietary `weblogic-ejb-jar.xml` descriptor need to be mapped to the `jboss-ejb3.xml` one according to the attached knowledge article.
+  description: WebLogic EJB XML (weblogic-ejb-jar.xml)
   effort: 3
   labels:
   - konveyor.io/source=weblogic
@@ -122,9 +118,7 @@
         xpath: /wls:weblogic-ejb-jar
 - category: mandatory
   customVariables: []
-  description: |-
-    WebLogic Stateful Session Bean (SFSB)
-    Replace WebLogic proprietary configuration by Java EE annotation `@AccessTimeout`.. The equivalent usage is `@AccessTimeout(value= -1)`
+  description: WebLogic Stateful Session Bean (SFSB)
   effort: 1
   labels:
   - konveyor.io/source=weblogic
@@ -137,8 +131,9 @@
   links:
   - title: Java EE 6 annotation @AccessTimeout
     url: http://docs.oracle.com/javaee/6/api/javax/ejb/AccessTimeout.html
-  message: Replace WebLogic proprietary configuration by Java EE annotation `@AccessTimeout`..
-    The equivalent usage is `@AccessTimeout(value= -1)`
+  message: |-
+    Replace WebLogic proprietary configuration by Java EE annotation `@AccessTimeout`.
+     The equivalent usage is `@AccessTimeout(value= -1)`
   ruleID: weblogic-xml-descriptor-06001
   when:
     builtin.xml:
@@ -147,6 +142,7 @@
       xpath: //*[local-name() = 'allow-concurrent-calls' and translate(text(),'TRUE','true')
         = 'true' ]
 - customVariables: []
+  description: WebLogic SOAP client mapping
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
@@ -165,6 +161,7 @@
         wl10: http://www.bea.com/ns/weblogic/weblogic-wsee-standaloneclient
       xpath: /weblogic-wsee-standaloneclient |/wl10:weblogic-wsee-standaloneclient
 - customVariables: []
+  description: WebLogic Java to WSDL Mapping
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
@@ -183,6 +180,7 @@
         jee: http://java.sun.com/xml/ns/j2ee
       xpath: /java-wsdl-mapping
 - customVariables: []
+  description: WebLogic web service policy
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
@@ -203,9 +201,7 @@
       xpath: /webservice-policy-ref | /wl:webservice-policy-ref | /wl9:webservice-policy-ref
 - category: optional
   customVariables: []
-  description: |-
-    Webservice Type
-    WebLogic webservices can be migrated to `jboss-webservices.xml` descriptor or to a Java EE standard Annotation based configuration. Reference the JBoss EAP product documentation for more information.
+  description: Webservice Type
   effort: 3
   labels:
   - konveyor.io/source=weblogic
@@ -214,9 +210,9 @@
   - weblogic
   - descriptor
   links: []
-  message: WebLogic webservices can be migrated to `jboss-webservices.xml` descriptor
+  message: "WebLogic webservices can be migrated to `jboss-webservices.xml` descriptor
     or to a Java EE standard Annotation based configuration. Reference the JBoss EAP
-    product documentation for more information.
+    product documentation for more information.\n "
   ruleID: weblogic-xml-descriptor-10000
   when:
     or:
@@ -234,13 +230,7 @@
         xpath: //webservice-type | //wl:webservice-type | //wl9:webservice-type
       from: webservices
 - customVariables: []
-  description: "WebLogic JMS descriptor\n\n                        This file is a
-    proprietary WebLogic JMS configuration and needs to be migrated.\n                        While
-    there is no direct mapping of these descriptor elements, many of these features
-    may be configured in the application deployment or JBoss server configuration
-    files.\n\n                        For information on how to configure JBoss EAP
-    JMS, please refer to the Administration and Configuration Guide for JBoss Enterprise
-    Application Platform 6.\n                    \n"
+  description: WebLogic JMS descriptor
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
@@ -250,6 +240,12 @@
   links:
   - title: EAP 6 JMS Server configuration
     url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html-single/Administration_and_Configuration_Guide/index.html#sect-Configuration1
+  message: "\n                        This file is a proprietary WebLogic JMS configuration
+    and needs to be migrated.\n                        While there is no direct mapping
+    of these descriptor elements, many of these features may be configured in the
+    application deployment or JBoss server configuration files.\n\n                        For
+    information on how to configure JBoss EAP JMS, please refer to the Administration
+    and Configuration Guide for JBoss Enterprise Application Platform 6.\n                    "
   ruleID: weblogic-xml-descriptor-11000
   tag:
   - jms
@@ -261,14 +257,7 @@
       namespaces: {}
       xpath: /*[local-name()='weblogic-jms']
 - customVariables: []
-  description: "WebLogic web application descriptor (weblogic.xml)\n\n                        The
-    Oracle WebLogic Server deployment descriptor file (`weblogic.xml`) provides functionality
-    that is not included in the standard Java EE specification.\n                        While
-    there is no direct mapping of these descriptor elements, many of these features
-    may be configured in the application deployment or JBoss server configuration
-    files.\n\n                        For more information on how to configure JBoss
-    EAP, please refer to the Administration and Configuration Guide for JBoss Enterprise
-    Application Platform 6.\n                    \n"
+  description: WebLogic web application descriptor (weblogic.xml)
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
@@ -283,6 +272,13 @@
   - title: Administration and Configuration Guide for JBoss Enterprise Application
       Platform 6
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index
+  message: "\n                        The Oracle WebLogic Server deployment descriptor
+    file (`weblogic.xml`) provides functionality that is not included in the standard
+    Java EE specification.\n                        While there is no direct mapping
+    of these descriptor elements, many of these features may be configured in the
+    application deployment or JBoss server configuration files.\n\n                        For
+    more information on how to configure JBoss EAP, please refer to the Administration
+    and Configuration Guide for JBoss Enterprise Application Platform 6.\n                    "
   ruleID: weblogic-xml-descriptor-12000
   tag:
   - web-app
@@ -297,6 +293,7 @@
       xpath: /bea:weblogic-web-app | /wlso:weblogic-web-app | /wls:weblogic-web-app
         | /weblogic-web-app
 - customVariables: []
+  description: WebLogic web service type mapping
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
@@ -315,9 +312,7 @@
         wsdd: http://www.bea.com/servers/wls70
       xpath: /wsdd:type-mapping
 - customVariables: []
-  description: |
-    WebLogic services configuration
-    WebLogic specific configuration of web services runtime parameters
+  description: WebLogic services configuration
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
@@ -325,6 +320,7 @@
   - weblogic
   - descriptor
   links: []
+  message: WebLogic specific configuration of web services runtime parameters
   ruleID: weblogic-xml-descriptor-15000
   tag:
   - webservice
@@ -337,6 +333,7 @@
         wlw: http://www.bea.com/2003/03/wlw/config/
       xpath: /wlw:wlw-config
 - customVariables: []
+  description: WebLogic specific webservice ant tasks
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
@@ -358,9 +355,7 @@
         | /project/taskdef[@classname='weblogic.ant.taskdefs.webservices.autotype.JavaSource2DD']
         | /project/taskdef[@classname='weblogic.ant.taskdefs.webservices.clientgen.ClientGenTask']
 - customVariables: []
-  description: "WebLogic annotation manifest\n\n                        In this file,
-    the value set for a property by a metadata annotation can be overridden. (It does
-    not override the values set by a setter method.)\n                    \n"
+  description: WebLogic annotation manifest
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
@@ -368,6 +363,9 @@
   - weblogic
   - descriptor
   links: []
+  message: "\n                        In this file, the value set for a property by
+    a metadata annotation can be overridden. (It does not override the values set
+    by a setter method.)\n                    "
   ruleID: weblogic-xml-descriptor-17000
   tag:
   - configuration
@@ -379,9 +377,7 @@
         wl: http://www.bea.com/2004/03/wlw/external-config/
       xpath: /wl:annotation-manifest | /annotation-manifest
 - customVariables: []
-  description: "WebLogic plan.xml deployment descriptor\n\n                        WebLogic
-    `plan.xml` deployment descriptor file provides a way to target the application
-    deployment for a specific environment.\n                    \n"
+  description: WebLogic plan.xml deployment descriptor
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap6
@@ -391,6 +387,9 @@
   links:
   - title: Replace the WebLogic plan.xml deployment descriptor configuration
     url: https://access.redhat.com/articles/1329173
+  message: "\n                        WebLogic `plan.xml` deployment descriptor file
+    provides a way to target the application deployment for a specific environment.\n
+    \                   "
   ruleID: weblogic-xml-descriptor-18000
   tag:
   - configuration
@@ -403,9 +402,7 @@
       xpath: /wls:deployment-plan
 - category: mandatory
   customVariables: []
-  description: |-
-    WebLogic EJB XML (weblogic-ejb-jar.xml) trans-timeout-seconds
-    The WebLogic `<trans-timeout-seconds>` configuration element sets the maximum duration for an EJB's container-initiated transactions, in seconds, after which the transaction is rolled back.. In JBoss EAP 6+, you can achieve the same behavior by using the `TransactionTimeout` annotation.
+  description: WebLogic EJB XML (weblogic-ejb-jar.xml) trans-timeout-seconds
   effort: 3
   labels:
   - konveyor.io/source=weblogic
@@ -422,10 +419,10 @@
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/#Session_Bean_Transaction_Timeout
   - title: How to set EJB transaction timeout in JBoss EAP 6
     url: https://access.redhat.com/solutions/90553
-  message: The WebLogic `<trans-timeout-seconds>` configuration element sets the maximum
-    duration for an EJB's container-initiated transactions, in seconds, after which
-    the transaction is rolled back.. In JBoss EAP 6+, you can achieve the same behavior
-    by using the `TransactionTimeout` annotation.
+  message: "\n \n The WebLogic `<trans-timeout-seconds>` configuration element sets
+    the maximum duration for an EJB's container-initiated transactions, in seconds,
+    after which the transaction is rolled back. \n\n In JBoss EAP 6+, you can achieve
+    the same behavior by using the `TransactionTimeout` annotation.\n \n "
   ruleID: weblogic-xml-descriptor-19000
   when:
     builtin.xml:

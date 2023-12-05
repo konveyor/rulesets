@@ -1,8 +1,6 @@
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated class SimpleServerCache in RESTEasy 3
-    Use `org.jboss.resteasy.plugins.cache.server.InfinispanCache` instead of `org.jboss.resteasy.plugins.cache.server.SimpleServerCache`.
+  description: Deprecated class SimpleServerCache in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap5

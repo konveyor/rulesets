@@ -1,8 +1,6 @@
 - category: optional
   customVariables: []
-  description: |-
-    Hibernate: Deprecated property hibernate.transaction.factory_class
-    Replace configuration transaction property `hibernate.transaction.factory_class`. with `hibernate.transaction.coordinator_class`.. Next the contract in `hibernate.transaction.coordinator_class` property should refer to `org.hibernate.resource.transaction.TransactionCoordinatorBuilder`. instead of to `org.hibernate.engine.transaction.spi.TransactionFactory`. If a JPA application does not provide a setting for `hibernate.transaction.coordinator_class`, Hibernate will automatically build the proper transaction coordinator based on the transaction type for the persistence unit.. If a non-JPA application does not provide a setting for `hibernate.transaction.coordinator_class`, Hibernate will use jdbc as the default. This default will cause problems if the application actually uses JTA-based transactions. A non-JPA application that uses JTA-based transactions should explicitly set `hibernate.transaction.coordinator_class=jta` or provide a custom `org.hibernate.resource.transaction.TransactionCoordinatorBuilder` that builds a `org.hibernate.resource.transaction.TransactionCoordinator` that properly coordinates with JTA-based transactions.
+  description: 'Hibernate: Deprecated property hibernate.transaction.factory_class'
   effort: 1
   labels:
   - konveyor.io/source=hibernate4
@@ -21,20 +19,20 @@
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migration_hibernate_orm_changes_transactions
   - title: Hibernate javadoc for org.hibernate.cfg.AvailableSettings.TRANSACTION_COORDINATOR_STRATEGY
     url: https://docs.jboss.org/hibernate/orm/5.1/javadocs/index.html?org/hibernate/cfg/AvailableSettings.html#TRANSACTION_COORDINATOR_STRATEGY
-  message: Replace configuration transaction property `hibernate.transaction.factory_class`.
-    with `hibernate.transaction.coordinator_class`.. Next the contract in `hibernate.transaction.coordinator_class`
-    property should refer to `org.hibernate.resource.transaction.TransactionCoordinatorBuilder`.
-    instead of to `org.hibernate.engine.transaction.spi.TransactionFactory`. If a
-    JPA application does not provide a setting for `hibernate.transaction.coordinator_class`,
+  message: "\n Replace configuration transaction property `hibernate.transaction.factory_class`\n
+    with `hibernate.transaction.coordinator_class`.\n\n Next the contract in `hibernate.transaction.coordinator_class`
+    property should refer to `org.hibernate.resource.transaction.TransactionCoordinatorBuilder`\n
+    instead of to `org.hibernate.engine.transaction.spi.TransactionFactory`\n\n If
+    a JPA application does not provide a setting for `hibernate.transaction.coordinator_class`,
     Hibernate will automatically build the proper transaction coordinator based on
-    the transaction type for the persistence unit.. If a non-JPA application does
+    the transaction type for the persistence unit.\n\n If a non-JPA application does
     not provide a setting for `hibernate.transaction.coordinator_class`, Hibernate
     will use jdbc as the default. This default will cause problems if the application
     actually uses JTA-based transactions. A non-JPA application that uses JTA-based
     transactions should explicitly set `hibernate.transaction.coordinator_class=jta`
     or provide a custom `org.hibernate.resource.transaction.TransactionCoordinatorBuilder`
     that builds a `org.hibernate.resource.transaction.TransactionCoordinator` that
-    properly coordinates with JTA-based transactions.
+    properly coordinates with JTA-based transactions.\n "
   ruleID: hibernate4-xml-00001
   when:
     builtin.filecontent:
@@ -42,9 +40,8 @@
       pattern: hibernate.transaction.factory_class
 - category: mandatory
   customVariables: []
-  description: |-
-    Class org.hibernate.id.{idclass} was removed/deprecated in Hibernate 5
-    Use `org.hibernate.id.enhanced.SequenceStyleGenerator` instead.
+  description: Class org.hibernate.id.{idclass} was removed/deprecated in Hibernate
+    5
   effort: 1
   labels:
   - konveyor.io/source=hibernate4
@@ -68,8 +65,8 @@
       pattern: org.hibernate.id.(TableGenerator|TableHiLoGenerator|SequenceGenerator|SequenceIdentityGenerator|SequenceHiLoGenerator)
 - category: mandatory
   customVariables: []
-  description: |
-    Identifier generator {generator} was removed/deprecated in Hibernate 5
+  description: Identifier generator {generator} was removed/deprecated in Hibernate
+    5
   effort: 1
   labels:
   - konveyor.io/source=hibernate4
@@ -101,9 +98,7 @@
         xpath: //generator/@class[matches(self::node(), '(seqhilo|sequence-identity|hilo)')]
 - category: mandatory
   customVariables: []
-  description: |-
-    TemporaryTableBulkIdStrategy was replaced in Hibernate 5
-    Since Hibernate 5, the `org.hibernate.hql.spi.TemporaryTableBulkIdStrategy` class was replaced by `org.hibernate.hql.spi.id.global.GlobalTemporaryTableBulkIdStrategy` and `org.hibernate.hql.spi.id.local.LocalTemporaryTableBulkIdStrategy`.
+  description: TemporaryTableBulkIdStrategy was replaced in Hibernate 5
   effort: 1
   labels:
   - konveyor.io/source=hibernate4
@@ -135,9 +130,7 @@
         xpath: //property[text() = 'org.hibernate.hql.spi.TemporaryTableBulkIdStrategy']
 - category: mandatory
   customVariables: []
-  description: |-
-    Class PersistentTableBulkIdStrategy was moved in Hibernate 5
-    Since Hibernate 5, the `org.hibernate.hql.spi.PersistentTableBulkIdStrategy` class was moved to new package and you should use it as `org.hibernate.hql.spi.id.persistent.PersistentTableBulkIdStrategy`.
+  description: Class PersistentTableBulkIdStrategy was moved in Hibernate 5
   effort: 1
   labels:
   - konveyor.io/source=hibernate4

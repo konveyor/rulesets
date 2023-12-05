@@ -1,3 +1,2 @@
 name: camel3/camel2
-description: This ruleset provides analysis with respect to the missing dependencies
-  in Apache Camel 3 due to Java 11 adoption.
+description: Rules for changes in XML file (e.g. pom.xml) to run on Apache Camel 3

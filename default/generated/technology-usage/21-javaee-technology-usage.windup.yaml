@@ -121,12 +121,11 @@
     builtin.hasTags:
     - Java EE JSON-P
 - customVariables: []
-  description: |
-    Java Authorization Contract for Containers
-    The application uses JACC.
+  description: Java Authorization Contract for Containers
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application uses JACC.
   ruleID: javaee-technology-usage-00040
   tag:
   - JACC
@@ -136,12 +135,11 @@
       location: IMPORT
       pattern: javax.security.jacc*
 - customVariables: []
-  description: |
-    Java EE Management
-    The application uses Java EE Management.
+  description: Java EE Management
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application uses Java EE Management.
   ruleID: javaee-technology-usage-00050
   tag:
   - MEJB
@@ -151,12 +149,11 @@
       location: IMPORT
       pattern: javax.management.j2ee*
 - customVariables: []
-  description: |
-    Java EE Application Deployment
-    The application uses Java EE Application Deployment.
+  description: Java EE Application Deployment
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application uses Java EE Application Deployment.
   ruleID: javaee-technology-usage-00060
   tag:
   - EAR
@@ -165,12 +162,11 @@
     builtin.file:
       pattern: .*\.ear
 - customVariables: []
-  description: |
-    Web Services Metadata
-    The application uses Web Services Metadata
+  description: Web Services Metadata
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application uses Web Services Metadata
   ruleID: javaee-technology-usage-00070
   tag:
   - WS Metadata
@@ -183,12 +179,11 @@
   - name: annotation
     nameOfCaptureGroup: annotation
     pattern: javax.annotation.(?P<annotation>PreDestroy|PostConstruct|Resource|Resources)
-  description: |
-    Common Annotations
-    The application uses Common Annotations
+  description: Common Annotations
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application uses Common Annotations
   ruleID: javaee-technology-usage-00080
   tag:
   - Common Annotations
@@ -201,12 +196,11 @@
   - name: package
     nameOfCaptureGroup: package
     pattern: (?P<package>java|javax.)?xml.bind..*
-  description: |
-    JAXB
-    The application uses JAXB
+  description: JAXB
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application uses JAXB
   ruleID: javaee-technology-usage-00090
   tag:
   - JAXB
@@ -216,12 +210,11 @@
       location: IMPORT
       pattern: java|javax.xml.bind*
 - customVariables: []
-  description: |
-    JAXR
-    The application uses JAXR
+  description: JAXR
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application uses JAXR
   ruleID: javaee-technology-usage-00100
   tag:
   - JAXR
@@ -231,12 +224,11 @@
       location: IMPORT
       pattern: javax.xml.registry*
 - customVariables: []
-  description: |
-    Bean Validation
-    The application uses Bean Validation
+  description: Bean Validation
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application uses Bean Validation
   ruleID: javaee-technology-usage-00110
   tag:
   - Bean Validation
@@ -246,12 +238,11 @@
       location: IMPORT
       pattern: javax.validation.constraints*
 - customVariables: []
-  description: |
-    Java Servlet
-    The application uses Java Servlets
+  description: Java Servlet
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application uses Java Servlets
   ruleID: javaee-technology-usage-00120
   tag:
   - Servlet
@@ -261,12 +252,11 @@
       location: IMPORT
       pattern: javax.servlet*
 - customVariables: []
-  description: |
-    JSON Binding
-    The application uses JSON binding
+  description: JSON Binding
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application uses JSON binding
   ruleID: javaee-technology-usage-00130
   tag:
   - JSON-B

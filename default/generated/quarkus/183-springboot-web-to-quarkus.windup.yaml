@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Spring Web artifact with Quarkus 'spring-web' extension
-    Replace the Spring Web artifact with Quarkus `spring-web` extension. Spring Web is a spring-web artifact brought transitively by any `org.springframework:spring-web*` dependency. Add Quarkus dependency `io.quarkus:quarkus-spring-web`. Starting with Quarkus version 2.5, the underlying JAX-RS engine must be chosen. For performance reasons,. the `quarkus-resteasy-reactive-jackson` dependency should be used.
+  description: Replace the Spring Web artifact with Quarkus 'spring-web' extension
   effort: 1
   labels:
   - konveyor.io/source=springboot
@@ -12,11 +10,11 @@
     url: https://quarkus.io/guides/spring-web
   - title: Quarkus Migration Guide 2.5
     url: https://github.com/quarkusio/quarkus/wiki/Migration-Guide-2.5#spring-web
-  message: Replace the Spring Web artifact with Quarkus `spring-web` extension. Spring
-    Web is a spring-web artifact brought transitively by any `org.springframework:spring-web*`
-    dependency. Add Quarkus dependency `io.quarkus:quarkus-spring-web`. Starting with
-    Quarkus version 2.5, the underlying JAX-RS engine must be chosen. For performance
-    reasons,. the `quarkus-resteasy-reactive-jackson` dependency should be used.
+  message: "\n Replace the Spring Web artifact with Quarkus `spring-web` extension\n\n
+    Spring Web is a spring-web artifact brought transitively by any `org.springframework:spring-web*`
+    dependency \n Add Quarkus dependency `io.quarkus:quarkus-spring-web` \n \n Starting
+    with Quarkus version 2.5, the underlying JAX-RS engine must be chosen. For performance
+    reasons,\n the `quarkus-resteasy-reactive-jackson` dependency should be used.\n "
   ruleID: springboot-web-to-quarkus-00000
   when:
     or:
@@ -31,9 +29,7 @@
         name: org.springframework.spring-web
 - category: mandatory
   customVariables: []
-  description: |-
-    Add the Quarkus 'quarkus-resteasy-reactive-jackson' dependency
-    Add the Quarkus `quarkus-resteasy-reactive-jackson` dependency.. Starting with Quarkus version 2.5, the underlying JAX-RS engine must be chosen. For performance reasons,. the `quarkus-resteasy-reactive-jackson` dependency should be used."
+  description: Add the Quarkus 'quarkus-resteasy-reactive-jackson' dependency
   effort: 1
   labels:
   - konveyor.io/source=springboot
@@ -41,9 +37,10 @@
   links:
   - title: Quarkus Migration Guide 2.5
     url: https://github.com/quarkusio/quarkus/wiki/Migration-Guide-2.5#spring-web
-  message: Add the Quarkus `quarkus-resteasy-reactive-jackson` dependency.. Starting
-    with Quarkus version 2.5, the underlying JAX-RS engine must be chosen. For performance
-    reasons,. the `quarkus-resteasy-reactive-jackson` dependency should be used."
+  message: "\n Add the Quarkus `quarkus-resteasy-reactive-jackson` dependency.\n\n
+    Starting with Quarkus version 2.5, the underlying JAX-RS engine must be chosen.
+    For performance reasons,\n the `quarkus-resteasy-reactive-jackson` dependency
+    should be used.\"\n "
   ruleID: springboot-web-to-quarkus-00010
   when:
     or:

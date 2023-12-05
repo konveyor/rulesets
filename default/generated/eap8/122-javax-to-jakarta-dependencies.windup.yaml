@@ -1,7 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |
-    javax.{renamed-g} groupId has been replaced by jakarta.{renamed-g}
+  description: javax.{renamed-g} groupId has been replaced by jakarta.{renamed-g}
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -21,8 +20,8 @@
       pattern: groupId>javax.(annotation|batch|ejb|el|enterprise.concurrent|enterprise.deploy|faces|interceptor|jms|jws|mail|management.j2ee|resource|security.auth.message|security.jacc|servlet|servlet.jsp|servlet.jsp.jstl|transaction|websocket|ws.rs|xml.bind|xml.registry|xml.rpc|xml.soap|xml.ws)<
 - category: mandatory
   customVariables: []
-  description: |
-    javax.{renamed-a} javax.{renamed-a}-api artifactId has been replaced by jakarta.{renamed-a} jakarta.{renamed-a}-api
+  description: javax.{renamed-a} javax.{renamed-a}-api artifactId has been replaced
+    by jakarta.{renamed-a} jakarta.{renamed-a}-api
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -42,9 +41,8 @@
       pattern: artifactId>javax.(activation|annotation|batch|ejb|el|enterprise.concurrent|enterprise.deploy|faces|interceptor|jms|jws|mail|management.j2ee|resource|security.auth.message|security.jacc|servlet|servlet.jsp|servlet.jsp.jstl|transaction|websocket|ws.rs|xml.registry|xml.rpc|xml.soap|xml.ws)-api<
 - category: mandatory
   customVariables: []
-  description: |-
-    javax.xml.bind jaxb-api artifactId has been replaced by jakarta.xml.bind jakarta.xml.bind-api
-    Replace the `jaxb-api` artifact dependency with `jakarta.xml.bind-api`
+  description: javax.xml.bind jaxb-api artifactId has been replaced by jakarta.xml.bind
+    jakarta.xml.bind-api
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -63,9 +61,7 @@
       pattern: artifactId>jaxb-api<
 - category: mandatory
   customVariables: []
-  description: |-
-    javax.activation groupId has been replaced by jakarta.activation
-    Replace dependency groupId `javax.activation` with `jakarta.activation`
+  description: javax.activation groupId has been replaced by jakarta.activation
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -84,9 +80,8 @@
       name: javax.activation.javax.activation-api
 - category: mandatory
   customVariables: []
-  description: |-
-    org.glassfish javax.faces artifactId has been replaced by org.glassfish jakarta.faces
-    Replace the `javax.faces` artifactId with `jakarta.faces`
+  description: org.glassfish javax.faces artifactId has been replaced by org.glassfish
+    jakarta.faces
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -105,9 +100,7 @@
       pattern: artifactId>javax.faces<
 - category: mandatory
   customVariables: []
-  description: |-
-    javax groupId has been replaced by jakarta.platform
-    Update group dependency by replacing the `javax` groupId with `jakarta.platform`
+  description: javax groupId has been replaced by jakarta.platform
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -126,9 +119,7 @@
       pattern: groupId>javax<
 - category: mandatory
   customVariables: []
-  description: |-
-    javax javaee-api artifactId has been replaced by jakarta.platform jakarta.jakartaee-api
-    Update artifact dependency by replacing the `javaee-api` artifactId with `jakarta.jakartaee-api`
+  description: javax javaee-api artifactId has been replaced by jakarta.platform jakarta.jakartaee-api
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -148,9 +139,8 @@
       pattern: artifactId>javaee-api<
 - category: mandatory
   customVariables: []
-  description: |-
-    javax javaee-web-api artifactId has been replaced by jakarta.platform jakarta.jakartaee-web-api
-    Update artifact dependency by replacing the `javaee-web-api` artifactId with `jakarta.jakartaee-web-api`
+  description: javax javaee-web-api artifactId has been replaced by jakarta.platform
+    jakarta.jakartaee-web-api
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+

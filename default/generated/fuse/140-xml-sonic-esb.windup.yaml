@@ -1,4 +1,5 @@
 - customVariables: []
+  description: SonicESB Service Configuration
   labels:
   - konveyor.io/source=sonicesb
   - konveyor.io/target=fuse6+

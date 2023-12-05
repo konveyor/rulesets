@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    The Activity Session service is unavailable
-    <div class="Text">. <p> The Activity Session service is unavailable on Liberty. This rule flags the following items: </p>. <ul>. <li>References to APIs in the <code>com.ibm.websphere.ActivitySession</code> package</li>. <li>The activity session JNDI name <code>java:comp/websphere/UserActivitySession</code></li>. <li>Elements that are related to activity sessions in Java Platform, Enterprise Edition (Java EE) extension deployment descriptors</li>. </ul>. </div>
+  description: The Activity Session service is unavailable
   effort: 3
   labels:
   - konveyor.io/source=websphere
@@ -10,12 +8,12 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The Activity Session service is unavailable on
-    Liberty. This rule flags the following items: </p>. <ul>. <li>References to APIs
-    in the <code>com.ibm.websphere.ActivitySession</code> package</li>. <li>The activity
-    session JNDI name <code>java:comp/websphere/UserActivitySession</code></li>. <li>Elements
-    that are related to activity sessions in Java Platform, Enterprise Edition (Java
-    EE) extension deployment descriptors</li>. </ul>. </div>'
+  message: "<div class=\"Text\"> \n <p> The Activity Session service is unavailable
+    on Liberty. This rule flags the following items: </p> \n <ul> \n <li>References
+    to APIs in the <code>com.ibm.websphere.ActivitySession</code> package</li> \n
+    <li>The activity session JNDI name <code>java:comp/websphere/UserActivitySession</code></li>
+    \n <li>Elements that are related to activity sessions in Java Platform, Enterprise
+    Edition (Java EE) extension deployment descriptors</li> \n </ul> \n</div>"
   ruleID: ActivitySessionRule
   when:
     or:
@@ -66,9 +64,7 @@
         xpath: //*[local-name()='activitySessionEJBJarExtension']
 - category: mandatory
   customVariables: []
-  description: |-
-    The WebSphere Application Profiling APIs are unavailable
-    <div class="Text">. <p> The following WebSphere Application Profiling APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.appprofile</code></li>. <li><code>com.ibm.websphere.appprofile.accessintent</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The WebSphere Application Profiling APIs are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -76,10 +72,10 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere Application Profiling
-    APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.appprofile</code></li>.
-    <li><code>com.ibm.websphere.appprofile.accessintent</code></li>. </ul>. <p>You
-    must modify the application so that it can run on Liberty.</p>. </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere Application Profiling
+    APIs are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.websphere.appprofile</code></li>
+    \n <li><code>com.ibm.websphere.appprofile.accessintent</code></li> \n </ul> \n
+    <p>You must modify the application so that it can run on Liberty.</p> \n</div>"
   ruleID: AppProfileRule
   when:
     java.referenced:
@@ -90,9 +86,7 @@
   - name: AsyncBeansSchedulerRule_0_packages
     nameOfCaptureGroup: AsyncBeansSchedulerRule_0_packages
     pattern: (?P<AsyncBeansSchedulerRule_0_packages>(com.ibm.websphere.asynchbeans\.[^.]+|com.ibm.websphere.asynchbeans.pool\.[^.]+))
-  description: |-
-    The WebSphere Asynchronous Beans API was superseded by a newer implementation
-    <span class="SubHeader">WebSphere Asynchronous Beans API</span>. <div class="Text">. <p> This rule flags APIs from the <code>com.ibm.websphere.asynchbeans</code> package. These APIs are not provided on Liberty and are marked as deprecated in WebSphere Application Server traditional V9.0. The WebSphere Asynchronous Beans API are replaced by JSR 236, Concurrency Utilities for Java EE. </p>. <p> <b>Note:</b> Concurrency Utilities for Java EE provides no replacement for the <code>com.ibm.websphere.asynchbeans.pool</code> APIs. </p>. <p> For information and examples about how to use Concurrency Utilities for Java EE instead of Asynchronous beans in WebSphere traditional, see <a href="http://www14.software.ibm.com/webapp/wsbroker/redirect?version=cord&amp;product=was-nd-mp&amp;topic=rasb_migrate_to_eeconcurrency" title="Opens a new window" onclick="javascript:helpWindow('http://www14.software.ibm.com/webapp/wsbroker/redirect?version=cord&amp;product=was-nd-mp&amp;topic=rasb_migrate_to_eeconcurrency'); return false;"> Examples to migrate to EE Concurrency from Asynchronous beans and CommonJ</a>. </p>. <p> For information about the Concurrency Utilities for Java EE feature <code>concurrent-1.0</code> in Liberty, see the link below. </div>
+  description: The WebSphere Asynchronous Beans API was superseded by a newer implementation
   effort: 5
   labels:
   - konveyor.io/source=websphere
@@ -102,27 +96,25 @@
     url: https://www.ibm.com/docs/en/was-liberty/nd?topic=features-concurrency-utilities-java-ee-10
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: <span class="SubHeader">WebSphere Asynchronous Beans API</span>. <div class="Text">.
-    <p> This rule flags APIs from the <code>com.ibm.websphere.asynchbeans</code> package.
-    These APIs are not provided on Liberty and are marked as deprecated in WebSphere
-    Application Server traditional V9.0. The WebSphere Asynchronous Beans API are
-    replaced by JSR 236, Concurrency Utilities for Java EE. </p>. <p> <b>Note:</b>
+  message: "<span class=\"SubHeader\">WebSphere Asynchronous Beans API</span> \n<div
+    class=\"Text\"> \n <p> This rule flags APIs from the <code>com.ibm.websphere.asynchbeans</code>
+    package. These APIs are not provided on Liberty and are marked as deprecated in
+    WebSphere Application Server traditional V9.0. The WebSphere Asynchronous Beans
+    API are replaced by JSR 236, Concurrency Utilities for Java EE. </p> \n <p> <b>Note:</b>
     Concurrency Utilities for Java EE provides no replacement for the <code>com.ibm.websphere.asynchbeans.pool</code>
-    APIs. </p>. <p> For information and examples about how to use Concurrency Utilities
-    for Java EE instead of Asynchronous beans in WebSphere traditional, see <a href="http://www14.software.ibm.com/webapp/wsbroker/redirect?version=cord&amp;product=was-nd-mp&amp;topic=rasb_migrate_to_eeconcurrency"
-    title="Opens a new window" onclick="javascript:helpWindow('http://www14.software.ibm.com/webapp/wsbroker/redirect?version=cord&amp;product=was-nd-mp&amp;topic=rasb_migrate_to_eeconcurrency');
-    return false;"> Examples to migrate to EE Concurrency from Asynchronous beans
-    and CommonJ</a>. </p>. <p> For information about the Concurrency Utilities for
-    Java EE feature <code>concurrent-1.0</code> in Liberty, see the link below. </div>
+    APIs. </p> \n <p> For information and examples about how to use Concurrency Utilities
+    for Java EE instead of Asynchronous beans in WebSphere traditional, see <a href=\"http://www14.software.ibm.com/webapp/wsbroker/redirect?version=cord&amp;product=was-nd-mp&amp;topic=rasb_migrate_to_eeconcurrency\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('http://www14.software.ibm.com/webapp/wsbroker/redirect?version=cord&amp;product=was-nd-mp&amp;topic=rasb_migrate_to_eeconcurrency');
+    return false;\"> Examples to migrate to EE Concurrency from Asynchronous beans
+    and CommonJ</a>. </p> \n <p> For information about the Concurrency Utilities for
+    Java EE feature <code>concurrent-1.0</code> in Liberty, see the link below \n</div>"
   ruleID: AsyncBeansSchedulerRule
   when:
     java.referenced:
       pattern: (com.ibm.websphere.asynchbeans*|com.ibm.websphere.asynchbeans.pool*)
 - category: mandatory
   customVariables: []
-  description: |-
-    The WebSphere Batch API and SPI are unavailable
-    <div class="Text">. <p>WebSphere Batch API and SPI are unavailable on Liberty. This rule flags the following packages:</p>. <ul>. <li><code>com.ibm.websphere.batch*</code></li>. <li><code>com.ibm.websphere.ci</code></li>. <li><code>com.ibm.websphere.grid.spi</code></li>. <li><code>com.ibm.websphere.longrun</code></li>. <li><code>com.ibm.wsspi.batch*</code></li>. </ul>. <p> For information on Liberty Batch, see <a href="http://www.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102544" title="Opens a new window" onclick="javascript:helpWindow('http://www.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102544'); return false;"> IBM WebSphere Liberty Java Batch</a>. </p>. <p> For information on transitioning to WebSphere Liberty Batch, see the <a href="http://www.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102638" title="Opens a new window" onclick="javascript:helpWindow('http://www.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102638'); return false;"> WebSphere Liberty Batch Migration</a> documentation. </p>. </div>
+  description: The WebSphere Batch API and SPI are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -130,16 +122,16 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: <div class="Text">. <p>WebSphere Batch API and SPI are unavailable on Liberty.
-    This rule flags the following packages:</p>. <ul>. <li><code>com.ibm.websphere.batch*</code></li>.
-    <li><code>com.ibm.websphere.ci</code></li>. <li><code>com.ibm.websphere.grid.spi</code></li>.
-    <li><code>com.ibm.websphere.longrun</code></li>. <li><code>com.ibm.wsspi.batch*</code></li>.
-    </ul>. <p> For information on Liberty Batch, see <a href="http://www.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102544"
-    title="Opens a new window" onclick="javascript:helpWindow('http://www.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102544');
-    return false;"> IBM WebSphere Liberty Java Batch</a>. </p>. <p> For information
-    on transitioning to WebSphere Liberty Batch, see the <a href="http://www.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102638"
-    title="Opens a new window" onclick="javascript:helpWindow('http://www.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102638');
-    return false;"> WebSphere Liberty Batch Migration</a> documentation. </p>. </div>
+  message: "<div class=\"Text\"> \n <p>WebSphere Batch API and SPI are unavailable
+    on Liberty. This rule flags the following packages:</p> \n <ul> \n <li><code>com.ibm.websphere.batch*</code></li>
+    \n <li><code>com.ibm.websphere.ci</code></li> \n <li><code>com.ibm.websphere.grid.spi</code></li>
+    \n <li><code>com.ibm.websphere.longrun</code></li> \n <li><code>com.ibm.wsspi.batch*</code></li>
+    \n </ul> \n <p> For information on Liberty Batch, see <a href=\"http://www.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102544\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('http://www.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102544');
+    return false;\"> IBM WebSphere Liberty Java Batch</a>. </p> \n <p> For information
+    on transitioning to WebSphere Liberty Batch, see the <a href=\"http://www.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102638\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('http://www.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102638');
+    return false;\"> WebSphere Liberty Batch Migration</a> documentation. </p> \n</div>"
   ruleID: BatchFeaturePackRule
   when:
     or:
@@ -153,9 +145,7 @@
           'com\.ibm\.websphere\.batch\..*')]
 - category: mandatory
   customVariables: []
-  description: |-
-    Web Services Policy Sets are unavailable in Liberty
-    <div class="Text"> <span class="SubHeader">Web Services Policy Sets are unavailable in Liberty.</span>. <p> This rule detects the following generated files when using web services Policy Sets in WebSphere traditional: </p>. <ul>. <li>policySet.xml</li>. <li>policyAttachments.xml</li>. <li>clientPolicyAttachments.xml</li>. <li>policy.xml</li>. <li>bindings.xml</li>. <li>bindingDefinition.xml</li>. </ul>. <p> In Liberty, web services Policy Sets are no longer used. Changes are needed to migrate an application to the Web Services Policy implementation on Liberty. For more information on using WS-Policy in Liberty see <a href="https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/twlp_dep_policyattach.html" title="Opens a new window" onclick="javascript:helpWindow('https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/twlp_dep_policyattach.html'); return false;"> Defining web service policy via policy attachment</a>. </p>. <p> The web services security implementation for Liberty is different than WebSphere traditional. If an application is using the WebSphere traditional web services security adhering to the OASIS specification changes may not be necessary. Review the <a href="https://www.ibm.com/support/knowledgecenter/SS7K4U_liberty/com.ibm.websphere.wlp.zseries.doc/ae/cwlp_wssec_cxf_diff.html" title="Opens a new window" onclick="javascript:helpWindow('https://www.ibm.com/support/knowledgecenter/SS7K4U_liberty/com.ibm.websphere.wlp.zseries.doc/ae/cwlp_wssec_cxf_diff.html'); return false;"> WS-Security behavior differences between traditional and Liberty</a> for more information about behavior differences that may require changes in your application. </p>. <p> For more information on the OASIS specification see <a href="https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/cwlp_wssec_specs.html" title="Opens a new window" onclick="https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/cwlp_wssec_specs.html'); return false;"> Web Services Security specifications and standards</a>. </p>. </div>
+  description: Web Services Policy Sets are unavailable in Liberty
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -163,37 +153,35 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text"> <span class="SubHeader">Web Services Policy Sets are
-    unavailable in Liberty.</span>. <p> This rule detects the following generated
-    files when using web services Policy Sets in WebSphere traditional: </p>. <ul>.
-    <li>policySet.xml</li>. <li>policyAttachments.xml</li>. <li>clientPolicyAttachments.xml</li>.
-    <li>policy.xml</li>. <li>bindings.xml</li>. <li>bindingDefinition.xml</li>. </ul>.
-    <p> In Liberty, web services Policy Sets are no longer used. Changes are needed
-    to migrate an application to the Web Services Policy implementation on Liberty.
-    For more information on using WS-Policy in Liberty see <a href="https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/twlp_dep_policyattach.html"
-    title="Opens a new window" onclick="javascript:helpWindow(''https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/twlp_dep_policyattach.html'');
-    return false;"> Defining web service policy via policy attachment</a>. </p>. <p>
-    The web services security implementation for Liberty is different than WebSphere
+  message: "<div class=\"Text\"> <span class=\"SubHeader\">Web Services Policy Sets
+    are unavailable in Liberty.</span> \n <p> This rule detects the following generated
+    files when using web services Policy Sets in WebSphere traditional: </p> \n <ul>
+    \n <li>policySet.xml</li> \n <li>policyAttachments.xml</li> \n <li>clientPolicyAttachments.xml</li>
+    \n <li>policy.xml</li> \n <li>bindings.xml</li> \n <li>bindingDefinition.xml</li>
+    \n </ul> \n <p> In Liberty, web services Policy Sets are no longer used. Changes
+    are needed to migrate an application to the Web Services Policy implementation
+    on Liberty. For more information on using WS-Policy in Liberty see <a href=\"https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/twlp_dep_policyattach.html\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/twlp_dep_policyattach.html');
+    return false;\"> Defining web service policy via policy attachment</a>. </p> \n
+    <p> The web services security implementation for Liberty is different than WebSphere
     traditional. If an application is using the WebSphere traditional web services
     security adhering to the OASIS specification changes may not be necessary. Review
-    the <a href="https://www.ibm.com/support/knowledgecenter/SS7K4U_liberty/com.ibm.websphere.wlp.zseries.doc/ae/cwlp_wssec_cxf_diff.html"
-    title="Opens a new window" onclick="javascript:helpWindow(''https://www.ibm.com/support/knowledgecenter/SS7K4U_liberty/com.ibm.websphere.wlp.zseries.doc/ae/cwlp_wssec_cxf_diff.html'');
-    return false;"> WS-Security behavior differences between traditional and Liberty</a>
+    the <a href=\"https://www.ibm.com/support/knowledgecenter/SS7K4U_liberty/com.ibm.websphere.wlp.zseries.doc/ae/cwlp_wssec_cxf_diff.html\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('https://www.ibm.com/support/knowledgecenter/SS7K4U_liberty/com.ibm.websphere.wlp.zseries.doc/ae/cwlp_wssec_cxf_diff.html');
+    return false;\"> WS-Security behavior differences between traditional and Liberty</a>
     for more information about behavior differences that may require changes in your
-    application. </p>. <p> For more information on the OASIS specification see <a
-    href="https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/cwlp_wssec_specs.html"
-    title="Opens a new window" onclick="https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/cwlp_wssec_specs.html'');
-    return false;"> Web Services Security specifications and standards</a>. </p>.
-    </div>'
+    application. </p> \n <p> For more information on the OASIS specification see <a
+    href=\"https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/cwlp_wssec_specs.html\"
+    title=\"Opens a new window\" onclick=\"https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/cwlp_wssec_specs.html');
+    return false;\"> Web Services Security specifications and standards</a>. </p>
+    \n</div>"
   ruleID: DetectPolicySetAndWsSecurity
   when:
     builtin.file:
       pattern: policySet\\.xml|policyAttachments\\.xml|clientPolicyAttachments\\.xml|policy\\.xml|bindings\\.xml|bindingDefinition\\.xml
 - category: optional
   customVariables: []
-  description: |-
-    Web Services Atomic Transaction (WS-AT) Version 1.2 is available
-    <div class="Text">. <p> Web Services Atomic Transaction (WS-AT) Version 1.2 is now available on Liberty. This rule flags the following unsupported WS-AT attributes in IBM deployment descriptor extensions: </p>. <ul>. <li><code>execute-using-wsat="true"</code></li>. <li><code>sendWSAT="true"</code></li>. <li><code>send-wsat-context="true"</code></li>. <li><code>supportsWSAT="true"</code></li>. </ul>. <p> Liberty does not provide support for WS-AT with EJB global transactions, but Liberty applications can use the WS-AT Version 1.2 specification. </p>. <p> For more information, see the knowledge center topics starting at <a href="http://www14.software.ibm.com/webapp/wsbroker/redirect?version=cord&amp;product=was-nd-mp&amp;topic=twlp_dep_wsat_lib" title="Opens a new window" onclick="javascript:helpWindow('http://www14.software.ibm.com/webapp/wsbroker/redirect?version=cord&amp;product=was-nd-mp&amp;topic=twlp_dep_wsat_lib'); return false;"> Web Services Atomic Transaction in Liberty</a>. </p>. </div>
+  description: Web Services Atomic Transaction (WS-AT) Version 1.2 is available
   effort: 0
   labels:
   - konveyor.io/source=websphere
@@ -201,16 +189,16 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> Web Services Atomic Transaction (WS-AT) Version
+  message: "<div class=\"Text\"> \n <p> Web Services Atomic Transaction (WS-AT) Version
     1.2 is now available on Liberty. This rule flags the following unsupported WS-AT
-    attributes in IBM deployment descriptor extensions: </p>. <ul>. <li><code>execute-using-wsat="true"</code></li>.
-    <li><code>sendWSAT="true"</code></li>. <li><code>send-wsat-context="true"</code></li>.
-    <li><code>supportsWSAT="true"</code></li>. </ul>. <p> Liberty does not provide
-    support for WS-AT with EJB global transactions, but Liberty applications can use
-    the WS-AT Version 1.2 specification. </p>. <p> For more information, see the knowledge
-    center topics starting at <a href="http://www14.software.ibm.com/webapp/wsbroker/redirect?version=cord&amp;product=was-nd-mp&amp;topic=twlp_dep_wsat_lib"
-    title="Opens a new window" onclick="javascript:helpWindow(''http://www14.software.ibm.com/webapp/wsbroker/redirect?version=cord&amp;product=was-nd-mp&amp;topic=twlp_dep_wsat_lib'');
-    return false;"> Web Services Atomic Transaction in Liberty</a>. </p>. </div>'
+    attributes in IBM deployment descriptor extensions: </p> \n <ul> \n <li><code>execute-using-wsat=\"true\"</code></li>
+    \n <li><code>sendWSAT=\"true\"</code></li> \n <li><code>send-wsat-context=\"true\"</code></li>
+    \n <li><code>supportsWSAT=\"true\"</code></li> \n </ul> \n <p> Liberty does not
+    provide support for WS-AT with EJB global transactions, but Liberty applications
+    can use the WS-AT Version 1.2 specification. </p> \n <p> For more information,
+    see the knowledge center topics starting at <a href=\"http://www14.software.ibm.com/webapp/wsbroker/redirect?version=cord&amp;product=was-nd-mp&amp;topic=twlp_dep_wsat_lib\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('http://www14.software.ibm.com/webapp/wsbroker/redirect?version=cord&amp;product=was-nd-mp&amp;topic=twlp_dep_wsat_lib');
+    return false;\"> Web Services Atomic Transaction in Liberty</a>. </p>\n</div>"
   ruleID: DetectWSATXML
   when:
     or:
@@ -242,9 +230,7 @@
           '(?i:true)')]
 - category: mandatory
   customVariables: []
-  description: |-
-    Web Services Business Activity (WS-BA) is unavailable
-    <div class="Text">. <p> Web Services Business Activity (WS-BA) is unavailable on Liberty. This rule flags references to APIs in the com.ibm.websphere.wsba package and the business activity JNDI name <code>java:comp/websphere/UserBusinessActivity</code>. </p>. </div>
+  description: Web Services Business Activity (WS-BA) is unavailable
   effort: 5
   labels:
   - konveyor.io/source=websphere
@@ -252,10 +238,10 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: <div class="Text">. <p> Web Services Business Activity (WS-BA) is unavailable
-    on Liberty. This rule flags references to APIs in the com.ibm.websphere.wsba package
-    and the business activity JNDI name <code>java:comp/websphere/UserBusinessActivity</code>.
-    </p>. </div>
+  message: "<div class=\"Text\"> \n <p> Web Services Business Activity (WS-BA) is
+    unavailable on Liberty. This rule flags references to APIs in the com.ibm.websphere.wsba
+    package and the business activity JNDI name <code>java:comp/websphere/UserBusinessActivity</code>.
+    </p> \n</div>"
   ruleID: DetectWSBAJava
   when:
     or:
@@ -270,9 +256,7 @@
   - name: DynamicCacheRule_0_packages
     nameOfCaptureGroup: DynamicCacheRule_0_packages
     pattern: (?P<DynamicCacheRule_0_packages>(com.ibm.websphere.cache*\.[^.]+|com.ibm.websphere.servlet.cache*\.[^.]+|com.ibm.ws.cache*\.[^.]+|com.ibm.wsspi.cache*\.[^.]+))
-  description: |-
-    Review use of the dynamic cache service
-    <div class="Text">. <p> On Liberty, the dynamic cache service is provided by the Distributed Map Interface for Dynamic Caching feature, <code>distributedMap-1.0</code>, and the Web Response Cache feature, <code>webCache-1.0</code>. The implementation has the following restrictions: </p>. <ul>. <li>No cache replication</li>. <li>Only the high-performance disk caching mode is supported with random and size eviction techniques</li>. <li>There is no support for Web Services client and server side caching as well as portlet caching in the cachespec.xml file</li>. <li>Servlet caching of SingleThreadModel servlets is not supported</li>. <li>Defining cache configuration by using properties files is not supported for JAR files that contain only Enterprise JavaBeans</li>. <li>Limiting the memory cache sizes in megabytes works only for 32-bit Java Virtual Machines</li>. </ul>. <p> This rule flags Java code that has references to the following packages: </p>. <ul>. <li><code>com.ibm.websphere.cache</code></li>. <li><code>com.ibm.ws.cache</code></li>. <li><code>com.ibm.wsspi.cache</code></li>. <li><code>com.ibm.websphere.servlet.cache</code></li>. </ul>. <p> The following APIs and SPIs are not available in Liberty: </p>. <ul>. <li><code>com.ibm.websphere.cache.ServletCache</code></li>. <li><code>com.ibm.wsspi.cache.CacheInstanceResourceBinder</code></li>. <li><code>com.ibm.wsspi.cache.CacheMonitor</code></li>. <li><code>com.ibm.wsspi.cache.ESIStats</code></li>. <li><code>com.ibm.wsspi.cache.ESIStats$ESIServerStats</code></li>. <li><code>com.ibm.wsspi.cache.ESIStats$ESIServerStats$ESIProcessorStats</code></li>. <li><code>com.ibm.wsspi.cache.ESIStats$ESIServerStats$ESIProcessorStats$ESICacheEntryStats</code></li>. </ul>. <p> For detailed information about dynamic cache on Liberty, see the following resources: </p>. <ul>. <li> <a href="http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&amp;product=was-nd-mp&amp;topic=rwlp_restrict#rwlp_restrict__dynacache-restrict" title="Opens a new window" onclick="javascript:helpWindow('http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&amp;product=was-nd-mp&amp;topic=rwlp_restrict#rwlp_restrict__dynacache-restrict'); return false;"> Liberty:Runtime environment known issues and restrictions</a> </li>. <li> <a href="https://mediacenter.ibm.com/media/Dynamic+cache+in+Liberty/0_bnh3uidz" title="Opens a new window" onclick="javascript:helpWindow('https://mediacenter.ibm.com/media/Dynamic+cache+in+Liberty/0_bnh3uidz'); return false;"> Dynamic cache in Liberty</a> document </li>. </div>
+  description: Review use of the dynamic cache service
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -284,41 +268,39 @@
     url: https://www.ibm.com/docs/en/was-liberty/nd?topic=features-web-response-cache-10
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> On Liberty, the dynamic cache service is provided
+  message: "<div class=\"Text\"> \n <p> On Liberty, the dynamic cache service is provided
     by the Distributed Map Interface for Dynamic Caching feature, <code>distributedMap-1.0</code>,
     and the Web Response Cache feature, <code>webCache-1.0</code>. The implementation
-    has the following restrictions: </p>. <ul>. <li>No cache replication</li>. <li>Only
-    the high-performance disk caching mode is supported with random and size eviction
-    techniques</li>. <li>There is no support for Web Services client and server side
-    caching as well as portlet caching in the cachespec.xml file</li>. <li>Servlet
-    caching of SingleThreadModel servlets is not supported</li>. <li>Defining cache
-    configuration by using properties files is not supported for JAR files that contain
-    only Enterprise JavaBeans</li>. <li>Limiting the memory cache sizes in megabytes
-    works only for 32-bit Java Virtual Machines</li>. </ul>. <p> This rule flags Java
-    code that has references to the following packages: </p>. <ul>. <li><code>com.ibm.websphere.cache</code></li>.
-    <li><code>com.ibm.ws.cache</code></li>. <li><code>com.ibm.wsspi.cache</code></li>.
-    <li><code>com.ibm.websphere.servlet.cache</code></li>. </ul>. <p> The following
-    APIs and SPIs are not available in Liberty: </p>. <ul>. <li><code>com.ibm.websphere.cache.ServletCache</code></li>.
-    <li><code>com.ibm.wsspi.cache.CacheInstanceResourceBinder</code></li>. <li><code>com.ibm.wsspi.cache.CacheMonitor</code></li>.
-    <li><code>com.ibm.wsspi.cache.ESIStats</code></li>. <li><code>com.ibm.wsspi.cache.ESIStats$ESIServerStats</code></li>.
-    <li><code>com.ibm.wsspi.cache.ESIStats$ESIServerStats$ESIProcessorStats</code></li>.
-    <li><code>com.ibm.wsspi.cache.ESIStats$ESIServerStats$ESIProcessorStats$ESICacheEntryStats</code></li>.
-    </ul>. <p> For detailed information about dynamic cache on Liberty, see the following
-    resources: </p>. <ul>. <li> <a href="http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&amp;product=was-nd-mp&amp;topic=rwlp_restrict#rwlp_restrict__dynacache-restrict"
-    title="Opens a new window" onclick="javascript:helpWindow(''http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&amp;product=was-nd-mp&amp;topic=rwlp_restrict#rwlp_restrict__dynacache-restrict'');
-    return false;"> Liberty:Runtime environment known issues and restrictions</a>
-    </li>. <li> <a href="https://mediacenter.ibm.com/media/Dynamic+cache+in+Liberty/0_bnh3uidz"
-    title="Opens a new window" onclick="javascript:helpWindow(''https://mediacenter.ibm.com/media/Dynamic+cache+in+Liberty/0_bnh3uidz'');
-    return false;"> Dynamic cache in Liberty</a> document </li>. </div>'
+    has the following restrictions: </p> \n <ul> \n <li>No cache replication</li>
+    \n <li>Only the high-performance disk caching mode is supported with random and
+    size eviction techniques</li> \n <li>There is no support for Web Services client
+    and server side caching as well as portlet caching in the cachespec.xml file</li>
+    \n <li>Servlet caching of SingleThreadModel servlets is not supported</li> \n
+    <li>Defining cache configuration by using properties files is not supported for
+    JAR files that contain only Enterprise JavaBeans</li> \n <li>Limiting the memory
+    cache sizes in megabytes works only for 32-bit Java Virtual Machines</li> \n </ul>
+    \n <p> This rule flags Java code that has references to the following packages:
+    </p> \n <ul> \n <li><code>com.ibm.websphere.cache</code></li> \n <li><code>com.ibm.ws.cache</code></li>
+    \n <li><code>com.ibm.wsspi.cache</code></li> \n <li><code>com.ibm.websphere.servlet.cache</code></li>
+    \n </ul> \n <p> The following APIs and SPIs are not available in Liberty: </p>
+    \n <ul> \n <li><code>com.ibm.websphere.cache.ServletCache</code></li> \n <li><code>com.ibm.wsspi.cache.CacheInstanceResourceBinder</code></li>
+    \n <li><code>com.ibm.wsspi.cache.CacheMonitor</code></li> \n <li><code>com.ibm.wsspi.cache.ESIStats</code></li>
+    \n <li><code>com.ibm.wsspi.cache.ESIStats$ESIServerStats</code></li> \n <li><code>com.ibm.wsspi.cache.ESIStats$ESIServerStats$ESIProcessorStats</code></li>
+    \n <li><code>com.ibm.wsspi.cache.ESIStats$ESIServerStats$ESIProcessorStats$ESICacheEntryStats</code></li>
+    \n </ul> \n <p> For detailed information about dynamic cache on Liberty, see the
+    following resources: </p> \n <ul> \n <li> <a href=\"http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&amp;product=was-nd-mp&amp;topic=rwlp_restrict#rwlp_restrict__dynacache-restrict\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&amp;product=was-nd-mp&amp;topic=rwlp_restrict#rwlp_restrict__dynacache-restrict');
+    return false;\"> Liberty:Runtime environment known issues and restrictions</a>
+    </li> \n <li> <a href=\"https://mediacenter.ibm.com/media/Dynamic+cache+in+Liberty/0_bnh3uidz\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('https://mediacenter.ibm.com/media/Dynamic+cache+in+Liberty/0_bnh3uidz');
+    return false;\"> Dynamic cache in Liberty</a> document </li>\n </div> \n"
   ruleID: DynamicCacheRule
   when:
     java.referenced:
       pattern: (com.ibm.websphere.cache*|com.ibm.websphere.servlet.cache*|com.ibm.ws.cache*|com.ibm.wsspi.cache*)
 - category: mandatory
   customVariables: []
-  description: |-
-    The WebSphere EJB Query API is unavailable
-    <div class="Text">. <p> The WebSphere Enterprise JavaBeans (EJB) query service is not available on Liberty. </p>. <p> This rule flags Java code that has references to the <code>com.ibm.websphere.ejbquery</code> package. </p>. <p> WebSphere EJB query service is used to query entity beans, which are not available on Liberty. </p>. </div>
+  description: The WebSphere EJB Query API is unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -326,11 +308,11 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: <div class="Text">. <p> The WebSphere Enterprise JavaBeans (EJB) query
-    service is not available on Liberty. </p>. <p> This rule flags Java code that
-    has references to the <code>com.ibm.websphere.ejbquery</code> package. </p>. <p>
-    WebSphere EJB query service is used to query entity beans, which are not available
-    on Liberty. </p>. </div>
+  message: "<div class=\"Text\"> \n <p> The WebSphere Enterprise JavaBeans (EJB) query
+    service is not available on Liberty. </p> \n <p> This rule flags Java code that
+    has references to the <code>com.ibm.websphere.ejbquery</code> package. </p> \n
+    <p> WebSphere EJB query service is used to query entity beans, which are not available
+    on Liberty. </p> \n</div>"
   ruleID: DynamicQueryRule
   when:
     or:
@@ -348,9 +330,7 @@
   - name: I18nRule_0_packages
     nameOfCaptureGroup: I18nRule_0_packages
     pattern: (?P<I18nRule_0_packages>(com.ibm.websphere.i18n.context\.[^.]+|com.ibm.wsspi.i18n.context.util\.[^.]+))
-  description: |-
-    The WebSphere i18n APIs and SPIs are unavailable
-    <div class="Text">. <p> The following WebSphere i18n APIs and SPIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.i18n.context</code></li>. <li><code>com.ibm.wsspi.i18n.context.util</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The WebSphere i18n APIs and SPIs are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -358,18 +338,17 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere i18n APIs and SPIs are
-    not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.i18n.context</code></li>.
-    <li><code>com.ibm.wsspi.i18n.context.util</code></li>. </ul>. <p>You must modify
-    the application so that it can run on Liberty.</p>. </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere i18n APIs and SPIs
+    are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.websphere.i18n.context</code></li>
+    \n <li><code>com.ibm.wsspi.i18n.context.util</code></li> \n </ul> \n <p>You must
+    modify the application so that it can run on Liberty.</p> \n</div>"
   ruleID: I18nRule
   when:
     java.referenced:
       pattern: (com.ibm.websphere.i18n.context*|com.ibm.wsspi.i18n.context.util*)
 - category: optional
   customVariables: []
-  description: |
-    Review use of the javax.activation.DataHandler object
+  description: Review use of the javax.activation.DataHandler object
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -377,25 +356,25 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> On Liberty, each DataHandler object can be written
-    to an output stream only once. Writing a DataHandler object to an OutputStream
+  message: "<div class=\"Text\"> \n <p> On Liberty, each DataHandler object can be
+    written to an output stream only once. Writing a DataHandler object to an OutputStream
     object more than once results in an empty file. After you call the <code>javax.activation.DataHandler.writeTo(OutputStream)</code>
     method, you cannot pass the DataHandler object to another method, return it, or
-    store it for later use. </p>. <p> As a workaround, you can create a new DataHandler
+    store it for later use. </p> \n <p> As a workaround, you can create a new DataHandler
     object and initialize the DataHandler object with the content that was already
     retrieved from the existing DataHandler object using the <code>writeTo</code>
-    method. For example: </p>. <table class="code">. <tbody>. <tr>. <td> <span class="Code">
-    <span class="JavaType">File</span> f = <span class="JavaKeyword">new</span> File("received_image");<br>
-    <span class="JavaKeyword">if</span> (f.exists()) {{<br> <span class="indent"></span>f.delete();<br>
-    }}<br> <br> <span class="JavaType">FileOutputStream</span> fos = <span class="JavaKeyword">new</span>
-    FileOutputStream(f);<br> <br> // Write the DataHandler object to the output stream.<br>
-    img_in.writeTo(fos);<br> <br> // Create a new DataHandler object and initialize
-    it with<br> // the content that was retrieved using the writeTo method above.<br>
-    <br> <span class="JavaType">FileDataSource</span> fos_out = <span class="JavaKeyword">new</span>
-    FileDataSource(f);<br> <br> <span class="JavaType">DataHandler</span> img_out
-    = <span class="JavaKeyword">new</span> DataHandler(fos_out);<br> <br> <br> <span
-    class="JavaKeyword">return</span> img_out; </span> </td>. </tr>. </tbody>. </table>.
-    </div>'
+    method. For example: </p> \n <table class=\"code\"> \n <tbody>\n <tr> \n <td>
+    <span class=\"Code\"> <span class=\"JavaType\">File</span> f = <span class=\"JavaKeyword\">new</span>
+    File(\"received_image\");<br> <span class=\"JavaKeyword\">if</span> (f.exists())
+    {{<br> <span class=\"indent\"></span>f.delete();<br> }}<br> <br> <span class=\"JavaType\">FileOutputStream</span>
+    fos = <span class=\"JavaKeyword\">new</span> FileOutputStream(f);<br> <br> //
+    Write the DataHandler object to the output stream.<br> img_in.writeTo(fos);<br>
+    <br> // Create a new DataHandler object and initialize it with<br> // the content
+    that was retrieved using the writeTo method above.<br> <br> <span class=\"JavaType\">FileDataSource</span>
+    fos_out = <span class=\"JavaKeyword\">new</span> FileDataSource(f);<br> <br> <span
+    class=\"JavaType\">DataHandler</span> img_out = <span class=\"JavaKeyword\">new</span>
+    DataHandler(fos_out);<br> <br> <br> <span class=\"JavaKeyword\">return</span>
+    img_out; </span> </td>\n </tr>\n </tbody>\n </table> \n</div>"
   ruleID: MTOMRule
   when:
     java.referenced:
@@ -403,9 +382,7 @@
       pattern: javax.activation.DataHandler.writeTo(java.io.OutputStream)
 - category: mandatory
   customVariables: []
-  description: |-
-    Getting the server name on Liberty
-    <div class="Text">. <p> This rule flags references to the following methods: </p>. <ul>. <li><code>com.ibm.websphere.management.AdminService.getProcessName()</code></li>. <li><code>com.ibm.ejs.ras.RasHelper.getServerName()</code></li>. <li><code>com.ibm.websphere.runtime.ServerName.getDisplayName()</code></li>. <li><code>com.ibm.websphere.runtime.ServerName.getFullName()</code></li>. </ul>. <p> These methods are not available on Liberty. </p>. <p> The source scanner has a quick fix to change any reference to the methods mentioned earlier to <code>java.lang.System.getProperty("wlp.server.name")</code> which retrieves the name of your Liberty server. This solution does not work on WebSphere Application Server traditional. </p>. <p> For alternative solutions, see the <a href="https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/rwlp_dirs.html#d132906e961" title="Opens a new window" onclick="javascript:helpWindow('https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/rwlp_dirs.html#d132906e961'); return false;"> Programmatic access to location properties</a> section in the Knowledge Center. </p>. </div>
+  description: Getting the server name on Liberty
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -413,18 +390,18 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> This rule flags references to the following methods:
-    </p>. <ul>. <li><code>com.ibm.websphere.management.AdminService.getProcessName()</code></li>.
-    <li><code>com.ibm.ejs.ras.RasHelper.getServerName()</code></li>. <li><code>com.ibm.websphere.runtime.ServerName.getDisplayName()</code></li>.
-    <li><code>com.ibm.websphere.runtime.ServerName.getFullName()</code></li>. </ul>.
-    <p> These methods are not available on Liberty. </p>. <p> The source scanner has
-    a quick fix to change any reference to the methods mentioned earlier to <code>java.lang.System.getProperty("wlp.server.name")</code>
-    which retrieves the name of your Liberty server. This solution does not work on
-    WebSphere Application Server traditional. </p>. <p> For alternative solutions,
-    see the <a href="https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/rwlp_dirs.html#d132906e961"
-    title="Opens a new window" onclick="javascript:helpWindow(''https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/rwlp_dirs.html#d132906e961'');
-    return false;"> Programmatic access to location properties</a> section in the
-    Knowledge Center. </p>. </div>'
+  message: "<div class=\"Text\"> \n <p> This rule flags references to the following
+    methods: </p> \n <ul> \n <li><code>com.ibm.websphere.management.AdminService.getProcessName()</code></li>
+    \n <li><code>com.ibm.ejs.ras.RasHelper.getServerName()</code></li> \n <li><code>com.ibm.websphere.runtime.ServerName.getDisplayName()</code></li>
+    \n <li><code>com.ibm.websphere.runtime.ServerName.getFullName()</code></li> \n
+    </ul> \n <p> These methods are not available on Liberty. </p> \n <p> The source
+    scanner has a quick fix to change any reference to the methods mentioned earlier
+    to <code>java.lang.System.getProperty(\"wlp.server.name\")</code> which retrieves
+    the name of your Liberty server. This solution does not work on WebSphere Application
+    Server traditional. </p>\n <p> For alternative solutions, see the <a href=\"https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/rwlp_dirs.html#d132906e961\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/rwlp_dirs.html#d132906e961');
+    return false;\"> Programmatic access to location properties</a> section in the
+    Knowledge Center. </p> \n</div>"
   ruleID: ServerName
   when:
     or:
@@ -439,9 +416,7 @@
         pattern: com.ibm.websphere.runtime.ServerName.(getDisplayName|getFullName)*
 - category: mandatory
   customVariables: []
-  description: |-
-    SOAP over Java Message Service (JMS) is unavailable
-    <div class="Text">. <p> Liberty does not support Simple Object Access Protocol (SOAP) over Java Message Service (JMS). References to the following namespaces indicate usage of SOAP over JMS: </p>. <ul>. <li>http://www.w3.org/2010/soapjms/</li>. <li>http://www.w3.org/2010/soapjms/soap1.1</li>. <li>http://www.w3.org/2010/soapjms/soap1.2</li>. </ul> This rule flags the following items:. <p></p>. <ul>. <li><code>javax.xml.ws.BindingType</code> annotations with a <code>value</code> attribute that references one of the described namespaces</li>. <li>WSDL files with a <code>transport</code> attribute on the <span class="XmlDefinition">&lt;binding&gt;</span> element that references one of the described namespaces</li>. </ul>. </div>
+  description: SOAP over Java Message Service (JMS) is unavailable
   effort: 5
   labels:
   - konveyor.io/source=websphere
@@ -449,15 +424,15 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> Liberty does not support Simple Object Access
+  message: "<div class=\"Text\"> \n <p> Liberty does not support Simple Object Access
     Protocol (SOAP) over Java Message Service (JMS). References to the following namespaces
-    indicate usage of SOAP over JMS: </p>. <ul>. <li>http://www.w3.org/2010/soapjms/</li>.
-    <li>http://www.w3.org/2010/soapjms/soap1.1</li>. <li>http://www.w3.org/2010/soapjms/soap1.2</li>.
-    </ul> This rule flags the following items:. <p></p>. <ul>. <li><code>javax.xml.ws.BindingType</code>
+    indicate usage of SOAP over JMS: </p> \n <ul> \n <li>http://www.w3.org/2010/soapjms/</li>
+    \n <li>http://www.w3.org/2010/soapjms/soap1.1</li> \n <li>http://www.w3.org/2010/soapjms/soap1.2</li>
+    \n </ul> This rule flags the following items: \n <p></p> \n <ul> \n <li><code>javax.xml.ws.BindingType</code>
     annotations with a <code>value</code> attribute that references one of the described
-    namespaces</li>. <li>WSDL files with a <code>transport</code> attribute on the
-    <span class="XmlDefinition">&lt;binding&gt;</span> element that references one
-    of the described namespaces</li>. </ul>. </div>'
+    namespaces</li> \n <li>WSDL files with a <code>transport</code> attribute on the
+    <span class=\"XmlDefinition\">&lt;binding&gt;</span> element that references one
+    of the described namespaces</li> \n </ul> \n</div>"
   ruleID: SOAPOverJMSRule
   when:
     or:
@@ -471,9 +446,7 @@
         xpath: //*[local-name()='binding']/@transport[matches(self::node(), '.*/soapjms(/.*)?')]
 - category: mandatory
   customVariables: []
-  description: |-
-    The WebSphere Startup Beans Service API was superseded by a newer implementation
-    <div class="Text">. <p> The WebSphere startup bean service was superseded by the startup beans in Enterprise JavaBeans (EJB) 3.1. The service is deprecated in WebSphere Application Server traditional V8.0 and is not available on Liberty. </p>. <p> This rule flags Java code that has references to the <code>com.ibm.websphere.startupservice</code> package. </p>. <p> For information about EJB 3.1 startup beans, see the following resources: </p>. <ul>. <li> <a href="https://www.ibm.com/support/knowledgecenter/en/SSAW57_9.0.5/com.ibm.websphere.nd.multiplatform.doc/asyncbns/tasks/tasb_confstb.html" title="Opens a new window" onclick="javascript:helpWindow('https://www.ibm.com/support/knowledgecenter/en/SSAW57_9.0.5/com.ibm.websphere.nd.multiplatform.doc/asyncbns/tasks/tasb_confstb.html'); return false;"> Using startup beans</a> IBM knowledge center documentation </li>. <li> <a href="http://docs.oracle.com/javaee/6/api/javax/ejb/Startup.html" title="Opens a new window" onclick="javascript:helpWindow('http://docs.oracle.com/javaee/6/api/javax/ejb/Startup.html'); return false;"> javax.ejb.Startup</a> annotation Java documentation </li>. <li> <a href="http://www.redbooks.ibm.com/abstracts/redp4885.html" title="Opens a new window" onclick="javascript:helpWindow('http://www.redbooks.ibm.com/abstracts/redp4885.html'); return false;"> Developing Enterprise JavaBeans Applications</a> Redpaper </li>. </ul>. </div>
+  description: The WebSphere Startup Beans Service API was superseded by a newer implementation
   effort: 5
   labels:
   - konveyor.io/source=websphere
@@ -481,21 +454,21 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The WebSphere startup bean service was superseded
+  message: "<div class=\"Text\"> \n <p> The WebSphere startup bean service was superseded
     by the startup beans in Enterprise JavaBeans (EJB) 3.1. The service is deprecated
     in WebSphere Application Server traditional V8.0 and is not available on Liberty.
-    </p>. <p> This rule flags Java code that has references to the <code>com.ibm.websphere.startupservice</code>
-    package. </p>. <p> For information about EJB 3.1 startup beans, see the following
-    resources: </p>. <ul>. <li> <a href="https://www.ibm.com/support/knowledgecenter/en/SSAW57_9.0.5/com.ibm.websphere.nd.multiplatform.doc/asyncbns/tasks/tasb_confstb.html"
-    title="Opens a new window" onclick="javascript:helpWindow(''https://www.ibm.com/support/knowledgecenter/en/SSAW57_9.0.5/com.ibm.websphere.nd.multiplatform.doc/asyncbns/tasks/tasb_confstb.html'');
-    return false;"> Using startup beans</a> IBM knowledge center documentation </li>.
-    <li> <a href="http://docs.oracle.com/javaee/6/api/javax/ejb/Startup.html" title="Opens
-    a new window" onclick="javascript:helpWindow(''http://docs.oracle.com/javaee/6/api/javax/ejb/Startup.html'');
-    return false;"> javax.ejb.Startup</a> annotation Java documentation </li>. <li>
-    <a href="http://www.redbooks.ibm.com/abstracts/redp4885.html" title="Opens a new
-    window" onclick="javascript:helpWindow(''http://www.redbooks.ibm.com/abstracts/redp4885.html'');
-    return false;"> Developing Enterprise JavaBeans Applications</a> Redpaper </li>.
-    </ul>. </div>'
+    </p> \n <p> This rule flags Java code that has references to the <code>com.ibm.websphere.startupservice</code>
+    package. </p> \n <p> For information about EJB 3.1 startup beans, see the following
+    resources: </p> \n <ul> \n <li> <a href=\"https://www.ibm.com/support/knowledgecenter/en/SSAW57_9.0.5/com.ibm.websphere.nd.multiplatform.doc/asyncbns/tasks/tasb_confstb.html\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('https://www.ibm.com/support/knowledgecenter/en/SSAW57_9.0.5/com.ibm.websphere.nd.multiplatform.doc/asyncbns/tasks/tasb_confstb.html');
+    return false;\"> Using startup beans</a> IBM knowledge center documentation </li>
+    \n <li> <a href=\"http://docs.oracle.com/javaee/6/api/javax/ejb/Startup.html\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('http://docs.oracle.com/javaee/6/api/javax/ejb/Startup.html');
+    return false;\"> javax.ejb.Startup</a> annotation Java documentation </li> \n
+    <li> <a href=\"http://www.redbooks.ibm.com/abstracts/redp4885.html\" title=\"Opens
+    a new window\" onclick=\"javascript:helpWindow('http://www.redbooks.ibm.com/abstracts/redp4885.html');
+    return false;\"> Developing Enterprise JavaBeans Applications</a> Redpaper </li>
+    \n </ul> \n</div>"
   ruleID: StartupBeanRule
   when:
     or:
@@ -513,9 +486,7 @@
   - name: WebSphereSdoRule_0_packages
     nameOfCaptureGroup: WebSphereSdoRule_0_packages
     pattern: (?P<WebSphereSdoRule_0_packages>(com.ibm.websphere.sdo*\.[^.]+|com.ibm.websphere.sdox*\.[^.]+))
-  description: |-
-    The WebSphere Service Data Objects (SDO) APIs are unavailable
-    <div class="Text">. <p> The following WebSphere Service Data Objects (SDO) APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.sdo</code></li>. <li><code>com.ibm.websphere.sdox</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The WebSphere Service Data Objects (SDO) APIs are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -523,19 +494,17 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere Service Data Objects (SDO)
-    APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.sdo</code></li>.
-    <li><code>com.ibm.websphere.sdox</code></li>. </ul>. <p>You must modify the application
-    so that it can run on Liberty.</p>. </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere Service Data Objects
+    (SDO) APIs are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.websphere.sdo</code></li>
+    \n <li><code>com.ibm.websphere.sdox</code></li> \n </ul> \n <p>You must modify
+    the application so that it can run on Liberty.</p> \n</div>"
   ruleID: WebSphereSdoRule
   when:
     java.referenced:
       pattern: (com.ibm.websphere.sdo*|com.ibm.websphere.sdox*)
 - category: mandatory
   customVariables: []
-  description: |-
-    The WebSphere Scheduler API was superseded by a newer implementation
-    <div class="Text">. <p> The WebSphere Scheduler API was superseded by Enterprise JavaBeans Persistent Timers 3.2, which is enabled by the ejbPersistentTimer-3.2 Liberty feature. </p>. <p> This rule flags references to the <code>com.ibm.websphere.scheduler</code> package because it is not available on Liberty. </p>. <p> For information about the Enterprise JavaBeans Persistent Timers feature, see the link below. </div>
+  description: The WebSphere Scheduler API was superseded by a newer implementation
   effort: 5
   labels:
   - konveyor.io/source=websphere
@@ -545,11 +514,11 @@
     url: https://www.ibm.com/docs/en/was-liberty/nd?topic=features-enterprise-javabeans-persistent-timers-32
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: <div class="Text">. <p> The WebSphere Scheduler API was superseded by Enterprise
-    JavaBeans Persistent Timers 3.2, which is enabled by the ejbPersistentTimer-3.2
-    Liberty feature. </p>. <p> This rule flags references to the <code>com.ibm.websphere.scheduler</code>
-    package because it is not available on Liberty. </p>. <p> For information about
-    the Enterprise JavaBeans Persistent Timers feature, see the link below. </div>
+  message: "<div class=\"Text\"> \n <p> The WebSphere Scheduler API was superseded
+    by Enterprise JavaBeans Persistent Timers 3.2, which is enabled by the ejbPersistentTimer-3.2
+    Liberty feature. </p> \n <p> This rule flags references to the <code>com.ibm.websphere.scheduler</code>
+    package because it is not available on Liberty. </p> \n <p> For information about
+    the Enterprise JavaBeans Persistent Timers feature, see the link below \n</div>"
   ruleID: WebSphereSchedulerRule
   when:
     or:
@@ -564,9 +533,7 @@
           'com\.ibm\.websphere\.scheduler\..*')]
 - category: mandatory
   customVariables: []
-  description: |-
-    The WebSphere Servlet API was superseded by a newer implementation
-    <div class="Text">. <p> The WebSphere Servlet API was superseded by standard Servlet 3.0 functionality. </p>. <p> This rule flags Java code that has references to the following classes and packages because they are not available on Liberty. </p>. <ul>. <li><code>com.ibm.servlet.ClientList</code></li>. <li><code>com.ibm.servlet.ClientListElement</code></li>. <li><code>com.ibm.servlet.MLNotFoundException</code></li>. <li><code>com.ibm.servlet.PageListServlet</code></li>. <li><code>com.ibm.servlet.PageNotFoundException</code></li>. <li><code>com.ibm.websphere.servlet.filter.ChainedRequest</code></li>. <li><code>com.ibm.websphere.servlet.filter.ChainedResponse</code></li>. <li><code>com.ibm.websphere.servlet.filter.ChainerServlet</code></li>. <li><code>com.ibm.websphere.servlet.filter.ServletChain</code></li>. <li><code>com.ibm.websphere.servlet.response.IResponse</code></li>. <li><code>com.ibm.websphere.servlet.response.StoredResponseCompat</code></li>. <li><code>com.ibm.websphere.servlet.response.HttpServletResponseProxy</code></li>. <li><code>com.ibm.websphere.servlet.response.ResponseUtils</code></li>. <li><code>com.ibm.websphere.servlet.response.ServletOutputStreamAdapter</code></li>. <li><code>com.ibm.websphere.servlet.response.ResponseErrorReport</code></li>. <li><code>com.ibm.websphere.servlet.request</code></li>. <li><code>com.ibm.websphere.webcontainer.async</code></li>. </ul>. <p> For information about the Java EE Servlet APIs, see the <a href="http://docs.oracle.com/javaee/6/api/?javax/servlet/package-summary.html" title="Opens a new window" onclick="javascript:helpWindow('http://docs.oracle.com/javaee/6/api/?javax/servlet/package-summary.html'); return false;"> javax.servlet</a> package Java documentation. </p>. <p> For information about the WebSphere Servlet APIs, see the <a href="http://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.javadoc.doc/web/apidocs/overview-summary.html" title="Opens a new window" onclick="javascript:helpWindow('http://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.javadoc.doc/web/apidocs/overview-summary.html'); return false;"> IBM WebSphere Application Server, Release 8.5 API Specification</a>. </p>. </div>
+  description: The WebSphere Servlet API was superseded by a newer implementation
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -574,26 +541,26 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: <div class="Text">. <p> The WebSphere Servlet API was superseded by standard
-    Servlet 3.0 functionality. </p>. <p> This rule flags Java code that has references
-    to the following classes and packages because they are not available on Liberty.
-    </p>. <ul>. <li><code>com.ibm.servlet.ClientList</code></li>. <li><code>com.ibm.servlet.ClientListElement</code></li>.
-    <li><code>com.ibm.servlet.MLNotFoundException</code></li>. <li><code>com.ibm.servlet.PageListServlet</code></li>.
-    <li><code>com.ibm.servlet.PageNotFoundException</code></li>. <li><code>com.ibm.websphere.servlet.filter.ChainedRequest</code></li>.
-    <li><code>com.ibm.websphere.servlet.filter.ChainedResponse</code></li>. <li><code>com.ibm.websphere.servlet.filter.ChainerServlet</code></li>.
-    <li><code>com.ibm.websphere.servlet.filter.ServletChain</code></li>. <li><code>com.ibm.websphere.servlet.response.IResponse</code></li>.
-    <li><code>com.ibm.websphere.servlet.response.StoredResponseCompat</code></li>.
-    <li><code>com.ibm.websphere.servlet.response.HttpServletResponseProxy</code></li>.
-    <li><code>com.ibm.websphere.servlet.response.ResponseUtils</code></li>. <li><code>com.ibm.websphere.servlet.response.ServletOutputStreamAdapter</code></li>.
-    <li><code>com.ibm.websphere.servlet.response.ResponseErrorReport</code></li>.
-    <li><code>com.ibm.websphere.servlet.request</code></li>. <li><code>com.ibm.websphere.webcontainer.async</code></li>.
-    </ul>. <p> For information about the Java EE Servlet APIs, see the <a href="http://docs.oracle.com/javaee/6/api/?javax/servlet/package-summary.html"
-    title="Opens a new window" onclick="javascript:helpWindow('http://docs.oracle.com/javaee/6/api/?javax/servlet/package-summary.html');
-    return false;"> javax.servlet</a> package Java documentation. </p>. <p> For information
-    about the WebSphere Servlet APIs, see the <a href="http://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.javadoc.doc/web/apidocs/overview-summary.html"
-    title="Opens a new window" onclick="javascript:helpWindow('http://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.javadoc.doc/web/apidocs/overview-summary.html');
-    return false;"> IBM WebSphere Application Server, Release 8.5 API Specification</a>.
-    </p>. </div>
+  message: "<div class=\"Text\"> \n <p> The WebSphere Servlet API was superseded by
+    standard Servlet 3.0 functionality. </p> \n <p> This rule flags Java code that
+    has references to the following classes and packages because they are not available
+    on Liberty. </p>\n <ul> \n <li><code>com.ibm.servlet.ClientList</code></li> \n
+    <li><code>com.ibm.servlet.ClientListElement</code></li> \n <li><code>com.ibm.servlet.MLNotFoundException</code></li>
+    \n <li><code>com.ibm.servlet.PageListServlet</code></li> \n <li><code>com.ibm.servlet.PageNotFoundException</code></li>
+    \n <li><code>com.ibm.websphere.servlet.filter.ChainedRequest</code></li> \n <li><code>com.ibm.websphere.servlet.filter.ChainedResponse</code></li>
+    \n <li><code>com.ibm.websphere.servlet.filter.ChainerServlet</code></li> \n <li><code>com.ibm.websphere.servlet.filter.ServletChain</code></li>
+    \n <li><code>com.ibm.websphere.servlet.response.IResponse</code></li> \n <li><code>com.ibm.websphere.servlet.response.StoredResponseCompat</code></li>
+    \n <li><code>com.ibm.websphere.servlet.response.HttpServletResponseProxy</code></li>
+    \n <li><code>com.ibm.websphere.servlet.response.ResponseUtils</code></li> \n <li><code>com.ibm.websphere.servlet.response.ServletOutputStreamAdapter</code></li>
+    \n <li><code>com.ibm.websphere.servlet.response.ResponseErrorReport</code></li>
+    \n <li><code>com.ibm.websphere.servlet.request</code></li> \n <li><code>com.ibm.websphere.webcontainer.async</code></li>
+    \n </ul> \n <p> For information about the Java EE Servlet APIs, see the <a href=\"http://docs.oracle.com/javaee/6/api/?javax/servlet/package-summary.html\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('http://docs.oracle.com/javaee/6/api/?javax/servlet/package-summary.html');
+    return false;\"> javax.servlet</a> package Java documentation. </p> \n <p> For
+    information about the WebSphere Servlet APIs, see the <a href=\"http://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.javadoc.doc/web/apidocs/overview-summary.html\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('http://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.javadoc.doc/web/apidocs/overview-summary.html');
+    return false;\"> IBM WebSphere Application Server, Release 8.5 API Specification</a>.
+    </p> \n</div>"
   ruleID: WebSphereServletRule
   when:
     or:
@@ -606,9 +573,7 @@
   - name: WebSphereUnavailableAPIsAppClient_0_packages
     nameOfCaptureGroup: WebSphereUnavailableAPIsAppClient_0_packages
     pattern: (?P<WebSphereUnavailableAPIsAppClient_0_packages>com.ibm.websphere.client.applicationclient\.[^.]+)
-  description: |-
-    The WebSphere Application Client APIs are unavailable
-    <div class="Text">. <p> The following WebSphere Application Client APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.client.applicationclient</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The WebSphere Application Client APIs are unavailable
   effort: 3
   labels:
   - konveyor.io/source=websphere
@@ -616,10 +581,10 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere Application Client APIs
-    are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.client.applicationclient</code></li>.
-    </ul>. <p>You must modify the application so that it can run on Liberty.</p>.
-    </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere Application Client
+    APIs are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.websphere.client.applicationclient</code></li>
+    \n </ul> \n <p>You must modify the application so that it can run on Liberty.</p>
+    \n</div>"
   ruleID: WebSphereUnavailableAPIsAppClient
   when:
     java.referenced:
@@ -630,9 +595,7 @@
   - name: WebSphereUnavailableAPIsConnectorArchitecture_0_packages
     nameOfCaptureGroup: WebSphereUnavailableAPIsConnectorArchitecture_0_packages
     pattern: (?P<WebSphereUnavailableAPIsConnectorArchitecture_0_packages>com.ibm.websphere.j2c\.[^.]+)
-  description: |-
-    The WebSphere Connector Architecture APIs are unavailable
-    <div class="Text">. <p> The following WebSphere Connector Architecture APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.j2c</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The WebSphere Connector Architecture APIs are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -640,10 +603,10 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere Connector Architecture
-    APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.j2c</code></li>.
-    </ul>. <p>You must modify the application so that it can run on Liberty.</p>.
-    </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere Connector Architecture
+    APIs are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.websphere.j2c</code></li>
+    \n </ul> \n <p>You must modify the application so that it can run on Liberty.</p>
+    \n</div>"
   ruleID: WebSphereUnavailableAPIsConnectorArchitecture
   when:
     java.referenced:
@@ -654,9 +617,7 @@
   - name: WebSphereUnavailableAPIsEnterpriseJavaBeans_0_packages
     nameOfCaptureGroup: WebSphereUnavailableAPIsEnterpriseJavaBeans_0_packages
     pattern: (?P<WebSphereUnavailableAPIsEnterpriseJavaBeans_0_packages>(com.ibm.websphere.ejbcontainer*\.[^.]+|com.ibm.websphere.ejbpersistence*\.[^.]+|com.ibm.wsspi.ejbpersistence\.[^.]+|com.ibm.websphere.csi\.[^.]+))
-  description: |-
-    The WebSphere Enterprise JavaBeans APIs and SPIs are unavailable
-    <div class="Text">. <p> The following WebSphere Enterprise JavaBeans APIs and SPIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.ejbcontainer</code></li>. <li><code>com.ibm.websphere.ejbpersistence</code></li>. <li><code>com.ibm.websphere.csi</code></li>. <li><code>com.ibm.wsspi.ejbpersistence</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The WebSphere Enterprise JavaBeans APIs and SPIs are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -664,20 +625,18 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere Enterprise JavaBeans APIs
-    and SPIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.ejbcontainer</code></li>.
-    <li><code>com.ibm.websphere.ejbpersistence</code></li>. <li><code>com.ibm.websphere.csi</code></li>.
-    <li><code>com.ibm.wsspi.ejbpersistence</code></li>. </ul>. <p>You must modify
-    the application so that it can run on Liberty.</p>. </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere Enterprise JavaBeans
+    APIs and SPIs are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.websphere.ejbcontainer</code></li>
+    \n <li><code>com.ibm.websphere.ejbpersistence</code></li> \n <li><code>com.ibm.websphere.csi</code></li>
+    \n <li><code>com.ibm.wsspi.ejbpersistence</code></li> \n </ul> \n <p>You must
+    modify the application so that it can run on Liberty.</p> \n</div>"
   ruleID: WebSphereUnavailableAPIsEnterpriseJavaBeans
   when:
     java.referenced:
       pattern: (com.ibm.websphere.ejbcontainer*|com.ibm.websphere.ejbpersistence*|com.ibm.wsspi.ejbpersistence*|com.ibm.websphere.csi*)
 - category: mandatory
   customVariables: []
-  description: |-
-    Some WebSphere Exception APIs and SPIs are unavailable
-    <div class="Text">. <p> The following WebSphere Exception APIs and SPIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.exception.DistributedEJBCreateException</code></li>. <li><code>com.ibm.websphere.exception.DistributedEJBRemoveException</code></li>. <li><code>com.ibm.ws.exception</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: Some WebSphere Exception APIs and SPIs are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -685,11 +644,11 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere Exception APIs and SPIs
-    are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.exception.DistributedEJBCreateException</code></li>.
-    <li><code>com.ibm.websphere.exception.DistributedEJBRemoveException</code></li>.
-    <li><code>com.ibm.ws.exception</code></li>. </ul>. <p>You must modify the application
-    so that it can run on Liberty.</p>. </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere Exception APIs and
+    SPIs are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.websphere.exception.DistributedEJBCreateException</code></li>
+    \n <li><code>com.ibm.websphere.exception.DistributedEJBRemoveException</code></li>
+    \n <li><code>com.ibm.ws.exception</code></li> \n </ul> \n <p>You must modify the
+    application so that it can run on Liberty.</p> \n</div>"
   ruleID: WebSphereUnavailableAPIsExceptions
   when:
     or:
@@ -700,9 +659,7 @@
         pattern: com.ibm.ws.exception*
 - category: mandatory
   customVariables: []
-  description: |-
-    The Extension Registry APIs are unavailable
-    <div class="Text">. <p> The following Extension Registry APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.workplace.extension</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The Extension Registry APIs are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -710,10 +667,10 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following Extension Registry APIs are not
-    available on Liberty: </p>. <ul>. <li><code>com.ibm.workplace.extension</code></li>.
-    </ul>. <p>You must modify the application so that it can run on Liberty.</p>.
-    </div>'
+  message: "<div class=\"Text\"> \n <p> The following Extension Registry APIs are
+    not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.workplace.extension</code></li>
+    \n </ul> \n <p>You must modify the application so that it can run on Liberty.</p>
+    \n</div>"
   ruleID: WebSphereUnavailableAPIsExtensionRegistry
   when:
     java.referenced:
@@ -721,9 +678,7 @@
       pattern: com.ibm.workplace.extension*
 - category: mandatory
   customVariables: []
-  description: |-
-    The Integrated Solutions Console (ISC) APIs are unavailable
-    <div class="Text">. <p> The following Integrated Solutions Console (ISC) APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.isc.api.platform</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The Integrated Solutions Console (ISC) APIs are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -731,10 +686,10 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following Integrated Solutions Console (ISC)
-    APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.isc.api.platform</code></li>.
-    </ul>. <p>You must modify the application so that it can run on Liberty.</p>.
-    </div>'
+  message: "<div class=\"Text\"> \n <p> The following Integrated Solutions Console
+    (ISC) APIs are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.isc.api.platform</code></li>
+    \n </ul> \n <p>You must modify the application so that it can run on Liberty.</p>
+    \n</div>"
   ruleID: WebSphereUnavailableAPIsISC
   when:
     java.referenced:
@@ -742,9 +697,7 @@
       pattern: com.ibm.isc.api.platform*
 - category: mandatory
   customVariables: []
-  description: |-
-    The WebSphere logging and RAS APIs and SPIs are unavailable
-    <div class="Text">. <p> The following WebSphere logging and RAS APIs and SPIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.logging.RawTraceList</code></li>. <li><code>com.ibm.websphere.logging.RawTraceList$PatternLevel</code></li>. <li><code>com.ibm.websphere.logging.MessageConverter</code></li>. <li><code>com.ibm.websphere.logging.WsLevel</code></li>. <li><code>com.ibm.ejs.ras</code></li>. <li><code>com.ibm.ffdc</code></li>. <li><code>com.ibm.ras</code></li>. <li><code>com.ibm.websphere.als</code></li>. <li><code>com.ibm.websphere.logging.cbe</code></li>. <li><code>com.ibm.websphere.ras</code></li>. <li><code>com.ibm.wsspi.rasdiag</code></li>. <li><code>com.ibm.wsspi.xct</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The WebSphere logging and RAS APIs and SPIs are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -752,15 +705,16 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere logging and RAS APIs and
-    SPIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.logging.RawTraceList</code></li>.
-    <li><code>com.ibm.websphere.logging.RawTraceList$PatternLevel</code></li>. <li><code>com.ibm.websphere.logging.MessageConverter</code></li>.
-    <li><code>com.ibm.websphere.logging.WsLevel</code></li>. <li><code>com.ibm.ejs.ras</code></li>.
-    <li><code>com.ibm.ffdc</code></li>. <li><code>com.ibm.ras</code></li>. <li><code>com.ibm.websphere.als</code></li>.
-    <li><code>com.ibm.websphere.logging.cbe</code></li>. <li><code>com.ibm.websphere.ras</code></li>.
-    <li><code>com.ibm.wsspi.rasdiag</code></li>. <li><code>com.ibm.wsspi.xct</code></li>.
-    </ul>. <p>You must modify the application so that it can run on Liberty.</p>.
-    </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere logging and RAS APIs
+    and SPIs are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.websphere.logging.RawTraceList</code></li>
+    \n <li><code>com.ibm.websphere.logging.RawTraceList$PatternLevel</code></li> \n
+    <li><code>com.ibm.websphere.logging.MessageConverter</code></li> \n <li><code>com.ibm.websphere.logging.WsLevel</code></li>
+    \n <li><code>com.ibm.ejs.ras</code></li> \n <li><code>com.ibm.ffdc</code></li>
+    \n <li><code>com.ibm.ras</code></li> \n <li><code>com.ibm.websphere.als</code></li>
+    \n <li><code>com.ibm.websphere.logging.cbe</code></li> \n <li><code>com.ibm.websphere.ras</code></li>
+    \n <li><code>com.ibm.wsspi.rasdiag</code></li> \n <li><code>com.ibm.wsspi.xct</code></li>
+    \n </ul> \n <p>You must modify the application so that it can run on Liberty.</p>
+    \n</div>"
   ruleID: WebSphereUnavailableAPIsLoggingAndRAS
   when:
     or:
@@ -773,9 +727,7 @@
   - name: WebSphereUnavailableAPIsManagement_0_packages
     nameOfCaptureGroup: WebSphereUnavailableAPIsManagement_0_packages
     pattern: (?P<WebSphereUnavailableAPIsManagement_0_packages>(com.ibm.websphere.ant.tasks*\.[^.]+|com.ibm.websphere.hamanager.jmx*\.[^.]+|com.ibm.websphere.interrupt*\.[^.]+|com.ibm.websphere.management*\.[^.]+|com.ibm.websphere.naming*\.[^.]+|com.ibm.websphere.product*\.[^.]+|com.ibm.wsspi.management.metadata\.[^.]+))
-  description: |-
-    The WebSphere Management APIs and SPIs are unavailable
-    <div class="Text">. <p> The following WebSphere Management APIs and SPIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.ant.tasks</code></li>. <li><code>com.ibm.websphere.hamanager.jmx</code></li>. <li><code>com.ibm.websphere.interrupt</code></li>. <li><code>com.ibm.websphere.management</code></li>. <li><code>com.ibm.websphere.naming</code></li>. <li><code>com.ibm.websphere.product</code></li>. <li><code>com.ibm.wsspi.management.metadata</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The WebSphere Management APIs and SPIs are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -783,13 +735,13 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere Management APIs and SPIs
-    are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.ant.tasks</code></li>.
-    <li><code>com.ibm.websphere.hamanager.jmx</code></li>. <li><code>com.ibm.websphere.interrupt</code></li>.
-    <li><code>com.ibm.websphere.management</code></li>. <li><code>com.ibm.websphere.naming</code></li>.
-    <li><code>com.ibm.websphere.product</code></li>. <li><code>com.ibm.wsspi.management.metadata</code></li>.
-    </ul>. <p>You must modify the application so that it can run on Liberty.</p>.
-    </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere Management APIs and
+    SPIs are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.websphere.ant.tasks</code></li>
+    \n <li><code>com.ibm.websphere.hamanager.jmx</code></li> \n <li><code>com.ibm.websphere.interrupt</code></li>
+    \n <li><code>com.ibm.websphere.management</code></li> \n <li><code>com.ibm.websphere.naming</code></li>
+    \n <li><code>com.ibm.websphere.product</code></li> \n <li><code>com.ibm.wsspi.management.metadata</code></li>
+    \n </ul> \n <p>You must modify the application so that it can run on Liberty.</p>
+    \n</div>"
   ruleID: WebSphereUnavailableAPIsManagement
   when:
     java.referenced:
@@ -799,9 +751,7 @@
   - name: WebSphereUnavailableAPIsORB_0_packages
     nameOfCaptureGroup: WebSphereUnavailableAPIsORB_0_packages
     pattern: (?P<WebSphereUnavailableAPIsORB_0_packages>(com.ibm.websphere.orbext*\.[^.]+|com.ibm.ejs.oa.EJSORB*\.[^.]+))
-  description: |-
-    The WebSphere ORB Extensions APIs are unavailable
-    <div class="Text">. <p> The following WebSphere ORB Extensions APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.orbext</code></li>. <li><code>com.ibm.ejs.oa.EJSORB</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The WebSphere ORB Extensions APIs are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -809,10 +759,10 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere ORB Extensions APIs are
-    not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.orbext</code></li>.
-    <li><code>com.ibm.ejs.oa.EJSORB</code></li>. </ul>. <p>You must modify the application
-    so that it can run on Liberty.</p>. </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere ORB Extensions APIs
+    are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.websphere.orbext</code></li>
+    \n <li><code>com.ibm.ejs.oa.EJSORB</code></li> \n </ul> \n <p>You must modify
+    the application so that it can run on Liberty.</p> \n</div>"
   ruleID: WebSphereUnavailableAPIsORB
   when:
     java.referenced:
@@ -822,9 +772,8 @@
   - name: WebSphereUnavailableAPIsPMI_0_packages
     nameOfCaptureGroup: WebSphereUnavailableAPIsPMI_0_packages
     pattern: (?P<WebSphereUnavailableAPIsPMI_0_packages>(com.ibm.websphere.pmi*\.[^.]+|com.ibm.wsspi.pmi*\.[^.]+|com.ibm.ws.pmi.server\.[^.]+|com.ibm.ws.performance.tuning.rule\.[^.]+))
-  description: |-
-    The WebSphere Performance Monitoring Infrastructure (PMI) APIs and SPIs are unavailable
-    <div class="Text">. <p> The following WebSphere Performance Monitoring Infrastructure (PMI) APIs and SPIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.pmi</code></li>. <li><code>com.ibm.wsspi.pmi</code></li>. <li><code>com.ibm.ws.performance.tuning.rule</code></li>. <li><code>com.ibm.ws.pmi.server</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The WebSphere Performance Monitoring Infrastructure (PMI) APIs and
+    SPIs are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -832,20 +781,19 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere Performance Monitoring
-    Infrastructure (PMI) APIs and SPIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.pmi</code></li>.
-    <li><code>com.ibm.wsspi.pmi</code></li>. <li><code>com.ibm.ws.performance.tuning.rule</code></li>.
-    <li><code>com.ibm.ws.pmi.server</code></li>. </ul>. <p>You must modify the application
-    so that it can run on Liberty.</p>. </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere Performance Monitoring
+    Infrastructure (PMI) APIs and SPIs are not available on Liberty: </p> \n <ul>
+    \n <li><code>com.ibm.websphere.pmi</code></li> \n <li><code>com.ibm.wsspi.pmi</code></li>
+    \n <li><code>com.ibm.ws.performance.tuning.rule</code></li> \n <li><code>com.ibm.ws.pmi.server</code></li>
+    \n </ul> \n <p>You must modify the application so that it can run on Liberty.</p>
+    \n</div>"
   ruleID: WebSphereUnavailableAPIsPMI
   when:
     java.referenced:
       pattern: (com.ibm.websphere.pmi*|com.ibm.wsspi.pmi*|com.ibm.ws.pmi.server*|com.ibm.ws.performance.tuning.rule*)
 - category: mandatory
   customVariables: []
-  description: |-
-    The WebSphere Portal APIs are unavailable
-    <div class="Text">. <p> The following WebSphere Portal APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.portal</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The WebSphere Portal APIs are unavailable
   effort: 3
   labels:
   - konveyor.io/source=websphere
@@ -853,9 +801,10 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere Portal APIs are not available
-    on Liberty: </p>. <ul>. <li><code>com.ibm.portal</code></li>. </ul>. <p>You must
-    modify the application so that it can run on Liberty.</p>. </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere Portal APIs are not
+    available on Liberty: </p> \n <ul> \n <li><code>com.ibm.portal</code></li> \n
+    </ul> \n <p>You must modify the application so that it can run on Liberty.</p>
+    \n</div>"
   ruleID: WebSphereUnavailableAPIsPortal
   when:
     java.referenced:
@@ -866,9 +815,7 @@
   - name: WebSphereUnavailableAPIsResourceAdapter_0_packages
     nameOfCaptureGroup: WebSphereUnavailableAPIsResourceAdapter_0_packages
     pattern: (?P<WebSphereUnavailableAPIsResourceAdapter_0_packages>(com.ibm.websphere.rsadapter*\.[^.]+|com.ibm.wsspi.rsadapter\.[^.]+|com.ibm.wsspi.rawrapper\.[^.]+))
-  description: |-
-    The WebSphere Resource Adapter APIs and SPIs are unavailable
-    <div class="Text">. <p> The following WebSphere Resource Adapter APIs and SPIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.rsadapter</code></li>. <li><code>com.ibm.wsspi.rsadapter</code></li>. <li><code>com.ibm.wsspi.rawrapper</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The WebSphere Resource Adapter APIs and SPIs are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -876,20 +823,18 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere Resource Adapter APIs
-    and SPIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.rsadapter</code></li>.
-    <li><code>com.ibm.wsspi.rsadapter</code></li>. <li><code>com.ibm.wsspi.rawrapper</code></li>.
-    </ul>. <p>You must modify the application so that it can run on Liberty.</p>.
-    </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere Resource Adapter APIs
+    and SPIs are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.websphere.rsadapter</code></li>
+    \n <li><code>com.ibm.wsspi.rsadapter</code></li> \n <li><code>com.ibm.wsspi.rawrapper</code></li>
+    \n </ul> \n <p>You must modify the application so that it can run on Liberty.</p>
+    \n</div>"
   ruleID: WebSphereUnavailableAPIsResourceAdapter
   when:
     java.referenced:
       pattern: (com.ibm.websphere.rsadapter*|com.ibm.wsspi.rsadapter*|com.ibm.wsspi.rawrapper*)
 - category: mandatory
   customVariables: []
-  description: |-
-    Some WebSphere Security APIs and SPIs are unavailable
-    <div class="Text">. <p> The following WebSphere Security APIs and SPIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.crypto.KeyGenerator</code></li>. <li><code>com.ibm.websphere.crypto.KeyPair</code></li>. <li><code>com.ibm.websphere.crypto.KeyPairGenerator</code></li>. <li><code>com.ibm.websphere.crypto.KeySetHelper</code></li>. <li><code>com.ibm.websphere.security.auth.WSPrincipal</code></li>. <li><code>com.ibm.websphere.security.auth.IdentityPrincipal</code></li>. <li><code>com.ibm.websphere.security.auth.MappingAuthData</code></li>. <li><code>com.ibm.websphere.security.auth.AuthenticationFailedException</code></li>. <li><code>com.ibm.websphere.security.auth.AuthenticationNotSupportedException</code></li>. <li><code>com.ibm.websphere.security.auth.MapCredentialFailedException</code></li>. <li><code>com.ibm.websphere.security.auth.MapCredentialNotSupportedException</code></li>. <li><code>com.ibm.websphere.security.auth.UnsupportedRealmException</code></li>. <li><code>com.ibm.websphere.security.auth.ValidationFailedException</code></li>. <li><code>com.ibm.websphere.security.auth.ValidationNotSupportedException</code></li>. <li><code>com.ibm.websphere.security.auth.callback.NonPromptCallbackHandler</code></li>. <li><code>com.ibm.websphere.security.auth.callback.WSCcacheCallBackHandlerImpl</code></li>. <li><code>com.ibm.websphere.security.auth.callback.WSGUICallbackHandlerImpl</code></li>. <li><code>com.ibm.websphere.security.auth.callback.WSStdinCallbackHandlerImpl</code></li>. <li><code>com.ibm.websphere.security.DistributedUserMappingFailedException</code></li>. <li><code>com.ibm.websphere.security.oidc.util</code></li>. <li><code>com.ibm.websphere.security.ProviderFailureException</code></li>. <li><code>com.ibm.websphere.security.SAFRoleMapper</code></li>. <li><code>com.ibm.websphere.security.TrustAssociationInterceptor</code></li>. <li><code>com.ibm.websphere.security.UserMapping</code></li>. <li><code>com.ibm.websphere.security.UserMappingException</code></li>. <li><code>com.ibm.websphere.security.WebSphereBaseTrustAssociationInterceptor</code></li>. <li><code>com.ibm.websphere.ssl.protocol</code></li>. <li><code>com.ibm.ws.security.core.SecurityContext</code></li>. <li><code>com.ibm.ws.security.util.LoginHelper</code></li>. <li><code>com.ibm.ws.security.util.ByteArray</code></li>. <li><code>com.ibm.wsspi.security.audit</code></li>. <li><code>com.ibm.wsspi.security.auth.callback.WSIdentityCallback</code></li>. <li><code>com.ibm.wsspi.security.auth.callback.WSMappingCallbackHandlerFactory</code></li>. <li><code>com.ibm.wsspi.security.auth.callback.WSProtocolPolicyCallback</code></li>. <li><code>com.ibm.wsspi.security.auth.callback.WSTokenHolderCallback</code></li>. <li><code>com.ibm.wsspi.security.auth.WSSubjectWrapper</code></li>. <li><code>com.ibm.wsspi.security.authorization</code></li>. <li><code>com.ibm.wsspi.security.context</code></li>. <li><code>com.ibm.wsspi.security.crypto.aes</code></li>. <li><code>com.ibm.wsspi.security.csiv2</code></li>. <li><code>com.ibm.wsspi.security.ltpa</code></li>. <li><code>com.ibm.wsspi.security.policy</code></li>. <li><code>com.ibm.wsspi.security.securitydomain</code></li>. <li><code>com.ibm.wsspi.security.spnego</code></li>. <li><code>com.ibm.wsspi.security.tai.NegotiateTrustAssociationInterceptor</code></li>. <li><code>com.ibm.wsspi.security.tai.NegotiateTrustAssociationInterceptorImpl</code></li>. <li><code>com.ibm.wsspi.security.tai.TrustAssociationInterceptorExt</code></li>. <li><code>com.ibm.wsspi.security.token.AuthenticationToken</code></li>. <li><code>com.ibm.wsspi.security.token.AuthorizationToken</code></li>. <li><code>com.ibm.wsspi.security.token.KerberosToken</code></li>. <li><code>com.ibm.wsspi.security.token.PropagationToken</code></li>. <li><code>com.ibm.wsspi.security.token.TokenHolder</code></li>. <li><code>com.ibm.wsspi.security.token.WSOpaqueTokenHelper</code></li>. <li><code>com.ibm.wsspi.security.web.saml</code></li>. <li><code>com.ibm.wsspi.ssl.RetrieveSignersHelper</code></li>. <li><code>com.ibm.wsspi.ssl.WSPKIClient</code></li>. <li><code>com.ibm.IExtendedSecurity</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: Some WebSphere Security APIs and SPIs are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -897,47 +842,47 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere Security APIs and SPIs
-    are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.crypto.KeyGenerator</code></li>.
-    <li><code>com.ibm.websphere.crypto.KeyPair</code></li>. <li><code>com.ibm.websphere.crypto.KeyPairGenerator</code></li>.
-    <li><code>com.ibm.websphere.crypto.KeySetHelper</code></li>. <li><code>com.ibm.websphere.security.auth.WSPrincipal</code></li>.
-    <li><code>com.ibm.websphere.security.auth.IdentityPrincipal</code></li>. <li><code>com.ibm.websphere.security.auth.MappingAuthData</code></li>.
-    <li><code>com.ibm.websphere.security.auth.AuthenticationFailedException</code></li>.
-    <li><code>com.ibm.websphere.security.auth.AuthenticationNotSupportedException</code></li>.
-    <li><code>com.ibm.websphere.security.auth.MapCredentialFailedException</code></li>.
-    <li><code>com.ibm.websphere.security.auth.MapCredentialNotSupportedException</code></li>.
-    <li><code>com.ibm.websphere.security.auth.UnsupportedRealmException</code></li>.
-    <li><code>com.ibm.websphere.security.auth.ValidationFailedException</code></li>.
-    <li><code>com.ibm.websphere.security.auth.ValidationNotSupportedException</code></li>.
-    <li><code>com.ibm.websphere.security.auth.callback.NonPromptCallbackHandler</code></li>.
-    <li><code>com.ibm.websphere.security.auth.callback.WSCcacheCallBackHandlerImpl</code></li>.
-    <li><code>com.ibm.websphere.security.auth.callback.WSGUICallbackHandlerImpl</code></li>.
-    <li><code>com.ibm.websphere.security.auth.callback.WSStdinCallbackHandlerImpl</code></li>.
-    <li><code>com.ibm.websphere.security.DistributedUserMappingFailedException</code></li>.
-    <li><code>com.ibm.websphere.security.oidc.util</code></li>. <li><code>com.ibm.websphere.security.ProviderFailureException</code></li>.
-    <li><code>com.ibm.websphere.security.SAFRoleMapper</code></li>. <li><code>com.ibm.websphere.security.TrustAssociationInterceptor</code></li>.
-    <li><code>com.ibm.websphere.security.UserMapping</code></li>. <li><code>com.ibm.websphere.security.UserMappingException</code></li>.
-    <li><code>com.ibm.websphere.security.WebSphereBaseTrustAssociationInterceptor</code></li>.
-    <li><code>com.ibm.websphere.ssl.protocol</code></li>. <li><code>com.ibm.ws.security.core.SecurityContext</code></li>.
-    <li><code>com.ibm.ws.security.util.LoginHelper</code></li>. <li><code>com.ibm.ws.security.util.ByteArray</code></li>.
-    <li><code>com.ibm.wsspi.security.audit</code></li>. <li><code>com.ibm.wsspi.security.auth.callback.WSIdentityCallback</code></li>.
-    <li><code>com.ibm.wsspi.security.auth.callback.WSMappingCallbackHandlerFactory</code></li>.
-    <li><code>com.ibm.wsspi.security.auth.callback.WSProtocolPolicyCallback</code></li>.
-    <li><code>com.ibm.wsspi.security.auth.callback.WSTokenHolderCallback</code></li>.
-    <li><code>com.ibm.wsspi.security.auth.WSSubjectWrapper</code></li>. <li><code>com.ibm.wsspi.security.authorization</code></li>.
-    <li><code>com.ibm.wsspi.security.context</code></li>. <li><code>com.ibm.wsspi.security.crypto.aes</code></li>.
-    <li><code>com.ibm.wsspi.security.csiv2</code></li>. <li><code>com.ibm.wsspi.security.ltpa</code></li>.
-    <li><code>com.ibm.wsspi.security.policy</code></li>. <li><code>com.ibm.wsspi.security.securitydomain</code></li>.
-    <li><code>com.ibm.wsspi.security.spnego</code></li>. <li><code>com.ibm.wsspi.security.tai.NegotiateTrustAssociationInterceptor</code></li>.
-    <li><code>com.ibm.wsspi.security.tai.NegotiateTrustAssociationInterceptorImpl</code></li>.
-    <li><code>com.ibm.wsspi.security.tai.TrustAssociationInterceptorExt</code></li>.
-    <li><code>com.ibm.wsspi.security.token.AuthenticationToken</code></li>. <li><code>com.ibm.wsspi.security.token.AuthorizationToken</code></li>.
-    <li><code>com.ibm.wsspi.security.token.KerberosToken</code></li>. <li><code>com.ibm.wsspi.security.token.PropagationToken</code></li>.
-    <li><code>com.ibm.wsspi.security.token.TokenHolder</code></li>. <li><code>com.ibm.wsspi.security.token.WSOpaqueTokenHelper</code></li>.
-    <li><code>com.ibm.wsspi.security.web.saml</code></li>. <li><code>com.ibm.wsspi.ssl.RetrieveSignersHelper</code></li>.
-    <li><code>com.ibm.wsspi.ssl.WSPKIClient</code></li>. <li><code>com.ibm.IExtendedSecurity</code></li>.
-    </ul>. <p>You must modify the application so that it can run on Liberty.</p>.
-    </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere Security APIs and
+    SPIs are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.websphere.crypto.KeyGenerator</code></li>
+    \n <li><code>com.ibm.websphere.crypto.KeyPair</code></li> \n <li><code>com.ibm.websphere.crypto.KeyPairGenerator</code></li>
+    \n <li><code>com.ibm.websphere.crypto.KeySetHelper</code></li> \n <li><code>com.ibm.websphere.security.auth.WSPrincipal</code></li>
+    \n <li><code>com.ibm.websphere.security.auth.IdentityPrincipal</code></li> \n
+    <li><code>com.ibm.websphere.security.auth.MappingAuthData</code></li> \n <li><code>com.ibm.websphere.security.auth.AuthenticationFailedException</code></li>
+    \n <li><code>com.ibm.websphere.security.auth.AuthenticationNotSupportedException</code></li>
+    \n <li><code>com.ibm.websphere.security.auth.MapCredentialFailedException</code></li>
+    \n <li><code>com.ibm.websphere.security.auth.MapCredentialNotSupportedException</code></li>
+    \n <li><code>com.ibm.websphere.security.auth.UnsupportedRealmException</code></li>
+    \n <li><code>com.ibm.websphere.security.auth.ValidationFailedException</code></li>
+    \n <li><code>com.ibm.websphere.security.auth.ValidationNotSupportedException</code></li>
+    \n <li><code>com.ibm.websphere.security.auth.callback.NonPromptCallbackHandler</code></li>
+    \n <li><code>com.ibm.websphere.security.auth.callback.WSCcacheCallBackHandlerImpl</code></li>
+    \n <li><code>com.ibm.websphere.security.auth.callback.WSGUICallbackHandlerImpl</code></li>
+    \n <li><code>com.ibm.websphere.security.auth.callback.WSStdinCallbackHandlerImpl</code></li>
+    \n <li><code>com.ibm.websphere.security.DistributedUserMappingFailedException</code></li>
+    \n <li><code>com.ibm.websphere.security.oidc.util</code></li> \n <li><code>com.ibm.websphere.security.ProviderFailureException</code></li>
+    \n <li><code>com.ibm.websphere.security.SAFRoleMapper</code></li> \n <li><code>com.ibm.websphere.security.TrustAssociationInterceptor</code></li>
+    \n <li><code>com.ibm.websphere.security.UserMapping</code></li> \n <li><code>com.ibm.websphere.security.UserMappingException</code></li>
+    \n <li><code>com.ibm.websphere.security.WebSphereBaseTrustAssociationInterceptor</code></li>
+    \n <li><code>com.ibm.websphere.ssl.protocol</code></li> \n <li><code>com.ibm.ws.security.core.SecurityContext</code></li>
+    \n <li><code>com.ibm.ws.security.util.LoginHelper</code></li> \n <li><code>com.ibm.ws.security.util.ByteArray</code></li>
+    \n <li><code>com.ibm.wsspi.security.audit</code></li> \n <li><code>com.ibm.wsspi.security.auth.callback.WSIdentityCallback</code></li>
+    \n <li><code>com.ibm.wsspi.security.auth.callback.WSMappingCallbackHandlerFactory</code></li>
+    \n <li><code>com.ibm.wsspi.security.auth.callback.WSProtocolPolicyCallback</code></li>
+    \n <li><code>com.ibm.wsspi.security.auth.callback.WSTokenHolderCallback</code></li>
+    \n <li><code>com.ibm.wsspi.security.auth.WSSubjectWrapper</code></li> \n <li><code>com.ibm.wsspi.security.authorization</code></li>
+    \n <li><code>com.ibm.wsspi.security.context</code></li> \n <li><code>com.ibm.wsspi.security.crypto.aes</code></li>
+    \n <li><code>com.ibm.wsspi.security.csiv2</code></li> \n <li><code>com.ibm.wsspi.security.ltpa</code></li>
+    \n <li><code>com.ibm.wsspi.security.policy</code></li> \n <li><code>com.ibm.wsspi.security.securitydomain</code></li>
+    \n <li><code>com.ibm.wsspi.security.spnego</code></li> \n <li><code>com.ibm.wsspi.security.tai.NegotiateTrustAssociationInterceptor</code></li>
+    \n <li><code>com.ibm.wsspi.security.tai.NegotiateTrustAssociationInterceptorImpl</code></li>
+    \n <li><code>com.ibm.wsspi.security.tai.TrustAssociationInterceptorExt</code></li>
+    \n <li><code>com.ibm.wsspi.security.token.AuthenticationToken</code></li> \n <li><code>com.ibm.wsspi.security.token.AuthorizationToken</code></li>
+    \n <li><code>com.ibm.wsspi.security.token.KerberosToken</code></li> \n <li><code>com.ibm.wsspi.security.token.PropagationToken</code></li>
+    \n <li><code>com.ibm.wsspi.security.token.TokenHolder</code></li> \n <li><code>com.ibm.wsspi.security.token.WSOpaqueTokenHelper</code></li>
+    \n <li><code>com.ibm.wsspi.security.web.saml</code></li> \n <li><code>com.ibm.wsspi.ssl.RetrieveSignersHelper</code></li>
+    \n <li><code>com.ibm.wsspi.ssl.WSPKIClient</code></li> \n <li><code>com.ibm.IExtendedSecurity</code></li>
+    \n </ul> \n <p>You must modify the application so that it can run on Liberty.</p>
+    \n</div>"
   ruleID: WebSphereUnavailableAPIsSecurity
   when:
     or:
@@ -947,9 +892,7 @@
         pattern: (com.ibm.websphere.security.auth.WSPrincipal|com.ibm.websphere.security.auth.IdentityPrincipal|com.ibm.websphere.security.auth.MappingAuthData|com.ibm.websphere.security.auth.AuthenticationFailedException|com.ibm.websphere.security.auth.AuthenticationNotSupportedException|com.ibm.websphere.security.auth.MapCredentialFailedException|com.ibm.websphere.security.auth.MapCredentialNotSupportedException|com.ibm.websphere.security.auth.UnsupportedRealmException|com.ibm.websphere.security.auth.ValidationFailedException|com.ibm.websphere.security.auth.ValidationNotSupportedException|com.ibm.websphere.security.auth.callback.NonPromptCallbackHandler|com.ibm.websphere.security.auth.callback.WSCcacheCallBackHandlerImpl|com.ibm.websphere.security.auth.callback.WSGUICallbackHandlerImpl|com.ibm.websphere.security.auth.callback.WSStdinCallbackHandlerImpl|com.ibm.websphere.security.DistributedUserMappingFailedException|com.ibm.websphere.security.ProviderFailureException|com.ibm.websphere.security.SAFRoleMapper|com.ibm.websphere.security.TrustAssociationInterceptor|com.ibm.websphere.security.UserMapping|com.ibm.websphere.security.UserMappingException|com.ibm.websphere.security.WebSphereBaseTrustAssociationInterceptor|com.ibm.ws.security.core.SecurityContext|com.ibm.ws.security.util.LoginHelper|com.ibm.ws.security.util.ByteArray|com.ibm.websphere.crypto.KeyGenerator|com.ibm.websphere.crypto.KeyPair|com.ibm.websphere.crypto.KeyPairGenerator|com.ibm.websphere.crypto.KeySetHelper|com.ibm.wsspi.ssl.RetrieveSignersHelper|com.ibm.wsspi.ssl.WSPKIClient|com.ibm.wsspi.security.auth.callback.WSIdentityCallback|com.ibm.wsspi.security.auth.callback.WSMappingCallbackHandlerFactory|com.ibm.wsspi.security.auth.callback.WSProtocolPolicyCallback|com.ibm.wsspi.security.auth.callback.WSTokenHolderCallback|com.ibm.wsspi.security.auth.WSSubjectWrapper|com.ibm.wsspi.security.tai.NegotiateTrustAssociationInterceptor|com.ibm.wsspi.security.tai.NegotiateTrustAssociationInterceptorImpl|com.ibm.wsspi.security.tai.TrustAssociationInterceptorExt|com.ibm.wsspi.security.token.AuthenticationToken|com.ibm.wsspi.security.token.AuthorizationToken|com.ibm.wsspi.security.token.KerberosToken|com.ibm.wsspi.security.token.PropagationToken|com.ibm.wsspi.security.token.TokenHolder|com.ibm.wsspi.security.token.WSOpaqueTokenHelper)
 - category: mandatory
   customVariables: []
-  description: |-
-    The WebSphere Service Integration Bus (SIB) APIs are unavailable
-    <div class="Text">. <p> The following WebSphere Service Integration Bus (SIB) APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.sib</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The WebSphere Service Integration Bus (SIB) APIs are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -957,10 +900,10 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere Service Integration Bus
-    (SIB) APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.sib</code></li>.
-    </ul>. <p>You must modify the application so that it can run on Liberty.</p>.
-    </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere Service Integration
+    Bus (SIB) APIs are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.websphere.sib</code></li>
+    \n </ul> \n <p>You must modify the application so that it can run on Liberty.</p>
+    \n</div>"
   ruleID: WebSphereUnavailableAPIsSIB
   when:
     java.referenced:
@@ -968,9 +911,7 @@
       pattern: com.ibm.websphere.sib*
 - category: mandatory
   customVariables: []
-  description: |-
-    The WebSphere SMF recording APIs are unavailable
-    <div class="Text">. <p> The following WebSphere SMF recording APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.smf</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The WebSphere SMF recording APIs are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -978,10 +919,10 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere SMF recording APIs are
-    not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.smf</code></li>.
-    </ul>. <p>You must modify the application so that it can run on Liberty.</p>.
-    </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere SMF recording APIs
+    are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.websphere.smf</code></li>
+    \n </ul> \n <p>You must modify the application so that it can run on Liberty.</p>
+    \n</div>"
   ruleID: WebSphereUnavailableAPIsSMF
   when:
     java.referenced:
@@ -989,9 +930,7 @@
       pattern: com.ibm.websphere.smf*
 - category: mandatory
   customVariables: []
-  description: |-
-    The Tivoli Performance Viewer SPIs are unavailable
-    <div class="Text">. <p> The following Tivoli Performance Viewer SPIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.ws.tpv</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The Tivoli Performance Viewer SPIs are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -999,9 +938,10 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following Tivoli Performance Viewer SPIs are
-    not available on Liberty: </p>. <ul>. <li><code>com.ibm.ws.tpv</code></li>. </ul>.
-    <p>You must modify the application so that it can run on Liberty.</p>. </div>'
+  message: "<div class=\"Text\"> \n <p> The following Tivoli Performance Viewer SPIs
+    are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.ws.tpv</code></li>
+    \n </ul> \n <p>You must modify the application so that it can run on Liberty.</p>
+    \n</div>"
   ruleID: WebSphereUnavailableAPIsTPV
   when:
     java.referenced:
@@ -1009,9 +949,7 @@
       pattern: com.ibm.ws.tpv*
 - category: mandatory
   customVariables: []
-  description: |-
-    Some WebSphere Extension Helper SPIs are unavailable
-    <div class="Text">. <p> The following WebSphere Extension Helper SPIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.ws.extensionhelper</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: Some WebSphere Extension Helper SPIs are unavailable
   effort: 3
   labels:
   - konveyor.io/source=websphere
@@ -1019,10 +957,10 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere Extension Helper SPIs
-    are not available on Liberty: </p>. <ul>. <li><code>com.ibm.ws.extensionhelper</code></li>.
-    </ul>. <p>You must modify the application so that it can run on Liberty.</p>.
-    </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere Extension Helper SPIs
+    are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.ws.extensionhelper</code></li>
+    \n </ul> \n <p>You must modify the application so that it can run on Liberty.</p>
+    \n</div>"
   ruleID: WebSphereUnavailableAPIsExtHelper
   when:
     java.referenced:
@@ -1030,9 +968,8 @@
       pattern: com.ibm.ws.extensionhelper*
 - category: mandatory
   customVariables: []
-  description: |-
-    The Universal Description, Discovery and Integration (UDDI) APIs are unavailable
-    <div class="Text">. <p> The following Universal Description, Discovery and Integration (UDDI) APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.uddi</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The Universal Description, Discovery and Integration (UDDI) APIs are
+    unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -1040,10 +977,10 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following Universal Description, Discovery
-    and Integration (UDDI) APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.uddi</code></li>.
-    </ul>. <p>You must modify the application so that it can run on Liberty.</p>.
-    </div>'
+  message: "<div class=\"Text\"> \n <p> The following Universal Description, Discovery
+    and Integration (UDDI) APIs are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.uddi</code></li>
+    \n </ul> \n <p>You must modify the application so that it can run on Liberty.</p>
+    \n</div>"
   ruleID: WebSphereUnavailableAPIsUDDI
   when:
     java.referenced:
@@ -1054,9 +991,7 @@
   - name: WebSphereUnavailableAPIsWLM_0_packages
     nameOfCaptureGroup: WebSphereUnavailableAPIsWLM_0_packages
     pattern: (?P<WebSphereUnavailableAPIsWLM_0_packages>(com.ibm.websphere.wlm*\.[^.]+|com.ibm.websphere.wlm.exception*\.[^.]+))
-  description: |-
-    The WebSphere Workload Manager APIs are unavailable
-    <div class="Text">. <p> The following WebSphere Workload Manager APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.wlm</code></li>. <li><code>com.ibm.websphere.wlm.exception</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The WebSphere Workload Manager APIs are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -1064,19 +999,18 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere Workload Manager APIs
-    are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.wlm</code></li>.
-    <li><code>com.ibm.websphere.wlm.exception</code></li>. </ul>. <p>You must modify
-    the application so that it can run on Liberty.</p>. </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere Workload Manager APIs
+    are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.websphere.wlm</code></li>
+    \n <li><code>com.ibm.websphere.wlm.exception</code></li> \n </ul> \n <p>You must
+    modify the application so that it can run on Liberty.</p> \n</div>"
   ruleID: WebSphereUnavailableAPIsWLM
   when:
     java.referenced:
       pattern: (com.ibm.websphere.wlm*|com.ibm.websphere.wlm.exception*)
 - category: mandatory
   customVariables: []
-  description: |-
-    The WebSphere Studio Application Developer Integration Edition APIs are unavailable
-    <div class="Text">. <p> The following WebSphere Studio Application Developer Integration Edition APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.webtools.runtime.AbstractStudioServlet</code></li>. <li><code>com.ibm.webtools.runtime.BuildNumber</code></li>. <li><code>com.ibm.webtools.runtime.NoDataException</code></li>. <li><code>com.ibm.webtools.runtime.StudioPervasiveServlet</code></li>. <li><code>com.ibm.webtools.runtime.TransactionFailureException</code></li>. <li><code>com.ibm.webtools.runtime.WSUtilities</code></li>. <li><code>com.ibm.etools.ctc.physicalrep</code></li>. <li><code>com.ibm.etools.ctc.plugin.binding.connector</code></li>. <li><code>com.ibm.etools.ctc.wsdl.extensions.physicalrep</code></li>. <li><code>com.ibm.etools.logging</code></li>. <li><code>com.ibm.etools.xsltypeconverter</code></li>. <li><code>com.ibm.jca.importservice</code></li>. <li><code>com.ibm.wsdl.extensions.physicalrep</code></li>. <li><code>com.ibm.wsdl.extensions.transformer</code></li>. <li><code>com.ibm.wsif.format.jca</code></li>. <li><code>com.ibm.wsif.format.literal</code></li>. <li><code>com.ibm.wsif.format.transformer</code></li>. <li><code>com.ibm.wsif.jca</code></li>. <li><code>com.ibm.wsif.providers.ejb.proxy</code></li>. <li><code>com.ibm.wsif.providers.transformer</code></li>. <li><code>com.ibm.wsif.providers.transformerrt</code></li>. <li><code>org.xmlsoap.schemas.wsdl.wsadie.messages</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The WebSphere Studio Application Developer Integration Edition APIs
+    are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -1084,20 +1018,21 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere Studio Application Developer
-    Integration Edition APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.webtools.runtime.AbstractStudioServlet</code></li>.
-    <li><code>com.ibm.webtools.runtime.BuildNumber</code></li>. <li><code>com.ibm.webtools.runtime.NoDataException</code></li>.
-    <li><code>com.ibm.webtools.runtime.StudioPervasiveServlet</code></li>. <li><code>com.ibm.webtools.runtime.TransactionFailureException</code></li>.
-    <li><code>com.ibm.webtools.runtime.WSUtilities</code></li>. <li><code>com.ibm.etools.ctc.physicalrep</code></li>.
-    <li><code>com.ibm.etools.ctc.plugin.binding.connector</code></li>. <li><code>com.ibm.etools.ctc.wsdl.extensions.physicalrep</code></li>.
-    <li><code>com.ibm.etools.logging</code></li>. <li><code>com.ibm.etools.xsltypeconverter</code></li>.
-    <li><code>com.ibm.jca.importservice</code></li>. <li><code>com.ibm.wsdl.extensions.physicalrep</code></li>.
-    <li><code>com.ibm.wsdl.extensions.transformer</code></li>. <li><code>com.ibm.wsif.format.jca</code></li>.
-    <li><code>com.ibm.wsif.format.literal</code></li>. <li><code>com.ibm.wsif.format.transformer</code></li>.
-    <li><code>com.ibm.wsif.jca</code></li>. <li><code>com.ibm.wsif.providers.ejb.proxy</code></li>.
-    <li><code>com.ibm.wsif.providers.transformer</code></li>. <li><code>com.ibm.wsif.providers.transformerrt</code></li>.
-    <li><code>org.xmlsoap.schemas.wsdl.wsadie.messages</code></li>. </ul>. <p>You
-    must modify the application so that it can run on Liberty.</p>. </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere Studio Application
+    Developer Integration Edition APIs are not available on Liberty: </p> \n <ul>
+    \n <li><code>com.ibm.webtools.runtime.AbstractStudioServlet</code></li> \n <li><code>com.ibm.webtools.runtime.BuildNumber</code></li>
+    \n <li><code>com.ibm.webtools.runtime.NoDataException</code></li> \n <li><code>com.ibm.webtools.runtime.StudioPervasiveServlet</code></li>
+    \n <li><code>com.ibm.webtools.runtime.TransactionFailureException</code></li>
+    \n <li><code>com.ibm.webtools.runtime.WSUtilities</code></li> \n <li><code>com.ibm.etools.ctc.physicalrep</code></li>
+    \n <li><code>com.ibm.etools.ctc.plugin.binding.connector</code></li> \n <li><code>com.ibm.etools.ctc.wsdl.extensions.physicalrep</code></li>
+    \n <li><code>com.ibm.etools.logging</code></li> \n <li><code>com.ibm.etools.xsltypeconverter</code></li>
+    \n <li><code>com.ibm.jca.importservice</code></li> \n <li><code>com.ibm.wsdl.extensions.physicalrep</code></li>
+    \n <li><code>com.ibm.wsdl.extensions.transformer</code></li> \n <li><code>com.ibm.wsif.format.jca</code></li>
+    \n <li><code>com.ibm.wsif.format.literal</code></li> \n <li><code>com.ibm.wsif.format.transformer</code></li>
+    \n <li><code>com.ibm.wsif.jca</code></li> \n <li><code>com.ibm.wsif.providers.ejb.proxy</code></li>
+    \n <li><code>com.ibm.wsif.providers.transformer</code></li> \n <li><code>com.ibm.wsif.providers.transformerrt</code></li>
+    \n <li><code>org.xmlsoap.schemas.wsdl.wsadie.messages</code></li> \n </ul> \n
+    <p>You must modify the application so that it can run on Liberty.</p> \n</div>"
   ruleID: WebSphereUnavailableAPIsWSADIE
   when:
     or:
@@ -1110,9 +1045,7 @@
   - name: WebSphereUnavailableAPIsWSSecurityHelper_0_methodNames
     nameOfCaptureGroup: WebSphereUnavailableAPIsWSSecurityHelper_0_methodNames
     pattern: com.ibm.websphere.security.WSSecurityHelper.(?P<WebSphereUnavailableAPIsWSSecurityHelper_0_methodNames>(getFirstCaller|getFirstServer|getCallerList|getServerList|getPropagationAttributes|addPropagationAttribute|convertCookieStringToBytes|revokeSSOCookiesForPortlets))?(.*)
-  description: |-
-    Some WSSecurityHelper methods are unavailable
-    <div class="Text">. <p> The following WSSecurityHelper methods are not available on Liberty: </p>. <ul>. <li><code>getCallerList</code></li>. <li><code>getFirstCaller</code></li>. <li><code>getFirstServer</code></li>. <li><code>getServerList</code></li>. <li><code>addPropagationAttribute</code></li>. <li><code>getPropagationAttributes</code></li>. <li><code>convertCookieStringToBytes</code></li>. <li><code>revokeSSOCookies</code></li>. <li><code>revokeSSOCookiesForPortlets</code></li>. <li><code>getLTPACookieFromSSOToken</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: Some WSSecurityHelper methods are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -1120,13 +1053,14 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WSSecurityHelper methods are not
-    available on Liberty: </p>. <ul>. <li><code>getCallerList</code></li>. <li><code>getFirstCaller</code></li>.
-    <li><code>getFirstServer</code></li>. <li><code>getServerList</code></li>. <li><code>addPropagationAttribute</code></li>.
-    <li><code>getPropagationAttributes</code></li>. <li><code>convertCookieStringToBytes</code></li>.
-    <li><code>revokeSSOCookies</code></li>. <li><code>revokeSSOCookiesForPortlets</code></li>.
-    <li><code>getLTPACookieFromSSOToken</code></li>. </ul>. <p>You must modify the
-    application so that it can run on Liberty.</p>. </div>'
+  message: "<div class=\"Text\"> \n <p> The following WSSecurityHelper methods are
+    not available on Liberty: </p> \n <ul> \n <li><code>getCallerList</code></li>
+    \n <li><code>getFirstCaller</code></li> \n <li><code>getFirstServer</code></li>
+    \n <li><code>getServerList</code></li> \n <li><code>addPropagationAttribute</code></li>
+    \n <li><code>getPropagationAttributes</code></li> \n <li><code>convertCookieStringToBytes</code></li>
+    \n <li><code>revokeSSOCookies</code></li> \n <li><code>revokeSSOCookiesForPortlets</code></li>
+    \n <li><code>getLTPACookieFromSSOToken</code></li> \n </ul> \n <p>You must modify
+    the application so that it can run on Liberty.</p> \n</div>"
   ruleID: WebSphereUnavailableAPIsWSSecurityHelper
   when:
     java.referenced:
@@ -1134,9 +1068,7 @@
       pattern: com.ibm.websphere.security.WSSecurityHelper.(getFirstCaller|getFirstServer|getCallerList|getServerList|getPropagationAttributes|addPropagationAttribute|convertCookieStringToBytes|revokeSSOCookiesForPortlets)*
 - category: mandatory
   customVariables: []
-  description: |-
-    The WebSphere Remote Request Dispatcher (RRD) SPIs are unavailable
-    <div class="Text">. <p> The following WebSphere Remote Request Dispatcher (RRD) SPIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.wsspi.rrd</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The WebSphere Remote Request Dispatcher (RRD) SPIs are unavailable
   effort: 3
   labels:
   - konveyor.io/source=websphere
@@ -1144,10 +1076,10 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere Remote Request Dispatcher
-    (RRD) SPIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.wsspi.rrd</code></li>.
-    </ul>. <p>You must modify the application so that it can run on Liberty.</p>.
-    </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere Remote Request Dispatcher
+    (RRD) SPIs are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.wsspi.rrd</code></li>
+    \n </ul> \n <p>You must modify the application so that it can run on Liberty.</p>
+    \n</div>"
   ruleID: WebSphereUnavailableSPIsRRD
   when:
     java.referenced:
@@ -1155,9 +1087,7 @@
       pattern: com.ibm.wsspi.rrd*
 - category: mandatory
   customVariables: []
-  description: |-
-    Do not use the WSSecurityHelper revokeSSOCookies method
-    <div class="Text"> <span class="SubHeader">Avoid using the deprecated WSSecurityHelper revokeSSOCookies method</span>. <p> This rule flags the following deprecated method from the <span class="Code">com.ibm.websphere.security.WSSecurityHelper</span> class: </p>. <ul>. <li><span class="Code">revokeSSOCookies(HttpServletRequest req, HttpServletResponse res)</span></li>. </ul>. <p>This method is deprecated in traditional WebSphere Application Server Version 8.5 and might be removed in a future release. It is not available on Liberty. </p>. <p> The functionality provided by <span class="Code">WSSecurityHelper.revokeSSOCookies(HttpServletRequest req, HttpServletResponse res)</span> is replaced by the Java Servlet-3.0 specification's <span class="Code">logout()</span> method. The Java Servlet-3.0 <span class="Code">logout()</span> method will perform all of the work that <span class="Code">WSSecurityHelper.revokeSSOCookies(HttpServletRequest req, HttpServletResponse res)</span> performs as well as doing additional state clean up, such as invalidating the session and clearing the security <span class="Code">Subject</span> from the thread. </p>. <p> Use the new method to be compatible on both WebSphere Application Server traditional and Liberty. Also note that with the <span class="Code">logout()</span> method in use, the application requires WebSphere Application Server V8.0 or later. </p>. <p> In the source scanner, the quick fix replaces calls to <span class="Code">revokeSSOCookies(HttpServletRequest req, HttpServletResponse res)</span> with calls to the <span class="Code">logout()</span> method. For example, the following code </p>. <table bgcolor="#F7F8F9" border="1" cellpadding="2px">. <tbody>. <tr>. <td> import javax.servlet.http.HttpServletRequest; <br> <span class="indent2"></span>... <br> <span class="indent2"></span>WSSecurityHelper.revokeSSOCookies(req, res); </td>. </tr>. </tbody>. </table>. <p>is replaced by </p>. <table bgcolor="#F7F8F9" border="1" cellpadding="2px">. <tbody>. <tr>. <td> import javax.servlet.http.HttpServletRequest; <br> <span class="indent2"></span>...<br> <span class="indent2"></span>req.logout(); </td>. </tr>. </tbody>. </table>. <p> For additional information, see </p>. <ul>. <li><a href="https://www.ibm.com/docs/en/was-nd/8.5.5?topic=providers-java-servlet-30-support-security" title="Opens a new window" onclick="javascript:helpWindow('https://www.ibm.com/docs/en/was-nd/8.5.5?topic=providers-java-servlet-30-support-security'); return false;"> Java Servlet 3.0 support for security</a> Knowledge Center documentation. </li>. <li><a href="https://www.ibm.com/support/knowledgecenter/SSEQTP_9.0.5/com.ibm.websphere.javadoc.doc/web/apidocs/com/ibm/websphere/security/WSSecurityHelper.html" title="Opens a new window" onclick="javascript:helpWindow('https://www.ibm.com/support/knowledgecenter/SSEQTP_9.0.5/com.ibm.websphere.javadoc.doc/web/apidocs/com/ibm/websphere/security/WSSecurityHelper.html'); return false;"> Class WSSecurityHelper</a> Java documentation. </li>. <li><a href="https://www.ibm.com/docs/en/was-nd/8.5.5?topic=applications-servlet-security-methods" title="Opens a new window" onclick="javascript:helpWindow('https://www.ibm.com/docs/en/was-nd/8.5.5?topic=applications-servlet-security-methods'); return false;"> Servlet security methods</a> Knowledge Center documentation. </li>. </ul>. </div>
+  description: Do not use the WSSecurityHelper revokeSSOCookies method
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -1165,40 +1095,41 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text"> <span class="SubHeader">Avoid using the deprecated
-    WSSecurityHelper revokeSSOCookies method</span>. <p> This rule flags the following
-    deprecated method from the <span class="Code">com.ibm.websphere.security.WSSecurityHelper</span>
-    class: </p>. <ul>. <li><span class="Code">revokeSSOCookies(HttpServletRequest
-    req, HttpServletResponse res)</span></li>. </ul>. <p>This method is deprecated
+  message: "<div class=\"Text\"> <span class=\"SubHeader\">Avoid using the deprecated
+    WSSecurityHelper revokeSSOCookies method</span> \n <p> This rule flags the following
+    deprecated method from the <span class=\"Code\">com.ibm.websphere.security.WSSecurityHelper</span>
+    class: </p> \n <ul> \n <li><span class=\"Code\">revokeSSOCookies(HttpServletRequest
+    req, HttpServletResponse res)</span></li> \n </ul> \n <p>This method is deprecated
     in traditional WebSphere Application Server Version 8.5 and might be removed in
-    a future release. It is not available on Liberty. </p>. <p> The functionality
-    provided by <span class="Code">WSSecurityHelper.revokeSSOCookies(HttpServletRequest
-    req, HttpServletResponse res)</span> is replaced by the Java Servlet-3.0 specification''s
-    <span class="Code">logout()</span> method. The Java Servlet-3.0 <span class="Code">logout()</span>
-    method will perform all of the work that <span class="Code">WSSecurityHelper.revokeSSOCookies(HttpServletRequest
+    a future release. It is not available on Liberty. </p> \n <p> The functionality
+    provided by <span class=\"Code\">WSSecurityHelper.revokeSSOCookies(HttpServletRequest
+    req, HttpServletResponse res)</span> is replaced by the Java Servlet-3.0 specification's
+    <span class=\"Code\">logout()</span> method. The Java Servlet-3.0 <span class=\"Code\">logout()</span>
+    method will perform all of the work that <span class=\"Code\">WSSecurityHelper.revokeSSOCookies(HttpServletRequest
     req, HttpServletResponse res)</span> performs as well as doing additional state
-    clean up, such as invalidating the session and clearing the security <span class="Code">Subject</span>
-    from the thread. </p>. <p> Use the new method to be compatible on both WebSphere
-    Application Server traditional and Liberty. Also note that with the <span class="Code">logout()</span>
+    clean up, such as invalidating the session and clearing the security <span class=\"Code\">Subject</span>
+    from the thread. </p> \n <p> Use the new method to be compatible on both WebSphere
+    Application Server traditional and Liberty. Also note that with the <span class=\"Code\">logout()</span>
     method in use, the application requires WebSphere Application Server V8.0 or later.
-    </p>. <p> In the source scanner, the quick fix replaces calls to <span class="Code">revokeSSOCookies(HttpServletRequest
-    req, HttpServletResponse res)</span> with calls to the <span class="Code">logout()</span>
-    method. For example, the following code </p>. <table bgcolor="#F7F8F9" border="1"
-    cellpadding="2px">. <tbody>. <tr>. <td> import javax.servlet.http.HttpServletRequest;
-    <br> <span class="indent2"></span>... <br> <span class="indent2"></span>WSSecurityHelper.revokeSSOCookies(req,
-    res); </td>. </tr>. </tbody>. </table>. <p>is replaced by </p>. <table bgcolor="#F7F8F9"
-    border="1" cellpadding="2px">. <tbody>. <tr>. <td> import javax.servlet.http.HttpServletRequest;
-    <br> <span class="indent2"></span>...<br> <span class="indent2"></span>req.logout();
-    </td>. </tr>. </tbody>. </table>. <p> For additional information, see </p>. <ul>.
-    <li><a href="https://www.ibm.com/docs/en/was-nd/8.5.5?topic=providers-java-servlet-30-support-security"
-    title="Opens a new window" onclick="javascript:helpWindow(''https://www.ibm.com/docs/en/was-nd/8.5.5?topic=providers-java-servlet-30-support-security'');
-    return false;"> Java Servlet 3.0 support for security</a> Knowledge Center documentation.
-    </li>. <li><a href="https://www.ibm.com/support/knowledgecenter/SSEQTP_9.0.5/com.ibm.websphere.javadoc.doc/web/apidocs/com/ibm/websphere/security/WSSecurityHelper.html"
-    title="Opens a new window" onclick="javascript:helpWindow(''https://www.ibm.com/support/knowledgecenter/SSEQTP_9.0.5/com.ibm.websphere.javadoc.doc/web/apidocs/com/ibm/websphere/security/WSSecurityHelper.html'');
-    return false;"> Class WSSecurityHelper</a> Java documentation. </li>. <li><a href="https://www.ibm.com/docs/en/was-nd/8.5.5?topic=applications-servlet-security-methods"
-    title="Opens a new window" onclick="javascript:helpWindow(''https://www.ibm.com/docs/en/was-nd/8.5.5?topic=applications-servlet-security-methods'');
-    return false;"> Servlet security methods</a> Knowledge Center documentation. </li>.
-    </ul>. </div>'
+    </p> \n <p> In the source scanner, the quick fix replaces calls to <span class=\"Code\">revokeSSOCookies(HttpServletRequest
+    req, HttpServletResponse res)</span> with calls to the <span class=\"Code\">logout()</span>
+    method. For example, the following code </p> \n <table bgcolor=\"#F7F8F9\" border=\"1\"
+    cellpadding=\"2px\"> \n <tbody>\n <tr> \n <td> import javax.servlet.http.HttpServletRequest;
+    <br> <span class=\"indent2\"></span>... <br> <span class=\"indent2\"></span>WSSecurityHelper.revokeSSOCookies(req,
+    res); </td> \n </tr> \n </tbody>\n </table> \n <p>is replaced by </p> \n <table
+    bgcolor=\"#F7F8F9\" border=\"1\" cellpadding=\"2px\"> \n <tbody>\n <tr> \n <td>
+    import javax.servlet.http.HttpServletRequest; <br> <span class=\"indent2\"></span>...<br>
+    <span class=\"indent2\"></span>req.logout(); </td> \n </tr> \n </tbody>\n </table>
+    \n <p> For additional information, see </p> \n <ul> \n <li><a href=\"https://www.ibm.com/docs/en/was-nd/8.5.5?topic=providers-java-servlet-30-support-security\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('https://www.ibm.com/docs/en/was-nd/8.5.5?topic=providers-java-servlet-30-support-security');
+    return false;\"> Java Servlet 3.0 support for security</a> Knowledge Center documentation.
+    </li> \n <li><a href=\"https://www.ibm.com/support/knowledgecenter/SSEQTP_9.0.5/com.ibm.websphere.javadoc.doc/web/apidocs/com/ibm/websphere/security/WSSecurityHelper.html\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('https://www.ibm.com/support/knowledgecenter/SSEQTP_9.0.5/com.ibm.websphere.javadoc.doc/web/apidocs/com/ibm/websphere/security/WSSecurityHelper.html');
+    return false;\"> Class WSSecurityHelper</a> Java documentation. </li> \n <li><a
+    href=\"https://www.ibm.com/docs/en/was-nd/8.5.5?topic=applications-servlet-security-methods\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('https://www.ibm.com/docs/en/was-nd/8.5.5?topic=applications-servlet-security-methods');
+    return false;\"> Servlet security methods</a> Knowledge Center documentation.
+    </li> \n </ul> \n</div>"
   ruleID: WebSphereUnavailableSSOCookieMethod
   when:
     java.referenced:
@@ -1206,9 +1137,7 @@
       pattern: com.ibm.websphere.security.WSSecurityHelper.revokeSSOCookies*
 - category: mandatory
   customVariables: []
-  description: |-
-    Do not use the WSSecurityHelper getLTPACookieFromSSOToken method
-    <div class="Text">. <p> This rule flags the following method from the <span class="Code">com.ibm.websphere.security.WSSecurityHelper</span> class: </p>. <ul>. <li><span class="Code">getLTPACookieFromSSOToken()</span></li>. </ul>. <p>This method is deprecated in traditional WebSphere Application Server Version 8.5 and might be removed in a future release. It is not available on Liberty. </p>. <p> The functionality provided by <span class="Code">WSSecurityHelper.getLTPACookieFromSSOToken()</span> is replaced by the new method <span class="Code">com.ibm.websphere.security.web.WebSecurityHelper.getSSOCookieFromSSOToken().</span> Note that this new method is in the class <span class="Code">com.ibm.websphere.security.web.WebSecurityHelper,</span> not <span class="Code">com.ibm.websphere.security.WSSecurityHelper.</span> This method will extract the SSO token from the subject of current thread and builds an SSO cookie out of it for use on downstream web invocations. </p>. <p> Use the new method to be compatible on both WebSphere Application Server traditional and Liberty. Also note that with the <span class="Code">getSSOCookieFromSSOToken()</span> method in use, the application requires WebSphere Application Server V8.0 or later. </p>. <p> In the source scanner, the quick fix replaces calls to <span class="Code">WSSecurityHelper.getLTPACookieFromSSOToken()</span> with calls to the <span class="Code">WebSecurityHelper.getSSOCookieFromSSOToken()</span> method. An import statement for <span class="Code">com.ibm.websphere.security.web.WebSecurityHelper</span> is added if needed. For example, the following code </p>. <table bgcolor="#F7F8F9" border="1" cellpadding="2px">. <tbody>. <tr>. <td> import javax.servlet.http.Cookie;<br> import com.ibm.websphere.security.WSSecurityHelper; <br> <span class="indent2"></span>... <br> <span class="indent2"></span>Cookie ltpaCookie = WSSecurityHelper.getLTPACookieFromSSOToken(); </td>. </tr>. </tbody>. </table>. <p>is replaced by </p>. <table bgcolor="#F7F8F9" border="1" cellpadding="2px">. <tbody>. <tr>. <td> import javax.servlet.http.Cookie;<br> import com.ibm.websphere.security.WSSecurityHelper;<br> import com.ibm.websphere.security.web.WebSecurityHelper; <br> <span class="indent2"></span>...<br> <span class="indent2"></span>Cookie ltpaCookie = WebSecurityHelper.getSSOCookieFromSSOToken(); </td>. </tr>. </tbody>. </table>. <p> For additional information, see </p>. <ul>. <li><a href="https://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.javadoc.doc/web/apidocs/com/ibm/websphere/security/web/WebSecurityHelper.html" title="Opens a new window" onclick="javascript:helpWindow('https://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.javadoc.doc/web/apidocs/com/ibm/websphere/security/web/WebSecurityHelper.html'); return false;"> Class WebSecurityHelper</a> Java documentation. </li>. <li><a href="https://www.ibm.com/docs/en/SSAW57_8.5.5/com.ibm.websphere.javadoc.doc/web/apidocs/com/ibm/websphere/security/WSSecurityHelper.html" title="Opens a new window" onclick="javascript:helpWindow('https://www.ibm.com/docs/en/SSAW57_8.5.5/com.ibm.websphere.javadoc.doc/web/apidocs/com/ibm/websphere/security/WSSecurityHelper.html'); return false;"> Class WSSecurityHelper</a> Java documentation. </li>. <li><a href="https://www.ibm.com/docs/en/was-nd/8.5.5?topic=ssa-using-websphere-application-server-api-achieve-downstream-web-single-sign-ltpatoken2-cookie" title="Opens a new window" onclick="javascript:helpWindow('https://www.ibm.com/docs/en/was-nd/8.5.5?topic=ssa-using-websphere-application-server-api-achieve-downstream-web-single-sign-ltpatoken2-cookie'); return false;"> Using a WebSphere Application Server API to achieve downstream web single sign-on with an LtpaToken2 cookie</a> Knowledge Center documentation. </li>. </ul>. </div>
+  description: Do not use the WSSecurityHelper getLTPACookieFromSSOToken method
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -1216,42 +1145,43 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> This rule flags the following method from the
-    <span class="Code">com.ibm.websphere.security.WSSecurityHelper</span> class: </p>.
-    <ul>. <li><span class="Code">getLTPACookieFromSSOToken()</span></li>. </ul>. <p>This
-    method is deprecated in traditional WebSphere Application Server Version 8.5 and
-    might be removed in a future release. It is not available on Liberty. </p>. <p>
-    The functionality provided by <span class="Code">WSSecurityHelper.getLTPACookieFromSSOToken()</span>
-    is replaced by the new method <span class="Code">com.ibm.websphere.security.web.WebSecurityHelper.getSSOCookieFromSSOToken().</span>
-    Note that this new method is in the class <span class="Code">com.ibm.websphere.security.web.WebSecurityHelper,</span>
-    not <span class="Code">com.ibm.websphere.security.WSSecurityHelper.</span> This
+  message: "<div class=\"Text\"> \n <p> This rule flags the following method from
+    the <span class=\"Code\">com.ibm.websphere.security.WSSecurityHelper</span> class:
+    </p> \n <ul> \n <li><span class=\"Code\">getLTPACookieFromSSOToken()</span></li>
+    \n </ul> \n <p>This method is deprecated in traditional WebSphere Application
+    Server Version 8.5 and might be removed in a future release. It is not available
+    on Liberty. </p> \n <p> The functionality provided by <span class=\"Code\">WSSecurityHelper.getLTPACookieFromSSOToken()</span>
+    is replaced by the new method <span class=\"Code\">com.ibm.websphere.security.web.WebSecurityHelper.getSSOCookieFromSSOToken().</span>
+    Note that this new method is in the class <span class=\"Code\">com.ibm.websphere.security.web.WebSecurityHelper,</span>
+    not <span class=\"Code\">com.ibm.websphere.security.WSSecurityHelper.</span> This
     method will extract the SSO token from the subject of current thread and builds
-    an SSO cookie out of it for use on downstream web invocations. </p>. <p> Use the
-    new method to be compatible on both WebSphere Application Server traditional and
-    Liberty. Also note that with the <span class="Code">getSSOCookieFromSSOToken()</span>
+    an SSO cookie out of it for use on downstream web invocations. </p> \n <p> Use
+    the new method to be compatible on both WebSphere Application Server traditional
+    and Liberty. Also note that with the <span class=\"Code\">getSSOCookieFromSSOToken()</span>
     method in use, the application requires WebSphere Application Server V8.0 or later.
-    </p>. <p> In the source scanner, the quick fix replaces calls to <span class="Code">WSSecurityHelper.getLTPACookieFromSSOToken()</span>
-    with calls to the <span class="Code">WebSecurityHelper.getSSOCookieFromSSOToken()</span>
-    method. An import statement for <span class="Code">com.ibm.websphere.security.web.WebSecurityHelper</span>
-    is added if needed. For example, the following code </p>. <table bgcolor="#F7F8F9"
-    border="1" cellpadding="2px">. <tbody>. <tr>. <td> import javax.servlet.http.Cookie;<br>
-    import com.ibm.websphere.security.WSSecurityHelper; <br> <span class="indent2"></span>...
-    <br> <span class="indent2"></span>Cookie ltpaCookie = WSSecurityHelper.getLTPACookieFromSSOToken();
-    </td>. </tr>. </tbody>. </table>. <p>is replaced by </p>. <table bgcolor="#F7F8F9"
-    border="1" cellpadding="2px">. <tbody>. <tr>. <td> import javax.servlet.http.Cookie;<br>
+    </p> \n <p> In the source scanner, the quick fix replaces calls to <span class=\"Code\">WSSecurityHelper.getLTPACookieFromSSOToken()</span>
+    with calls to the <span class=\"Code\">WebSecurityHelper.getSSOCookieFromSSOToken()</span>
+    method. An import statement for <span class=\"Code\">com.ibm.websphere.security.web.WebSecurityHelper</span>
+    is added if needed. For example, the following code </p> \n <table bgcolor=\"#F7F8F9\"
+    border=\"1\" cellpadding=\"2px\"> \n <tbody>\n <tr> \n <td> import javax.servlet.http.Cookie;<br>
+    import com.ibm.websphere.security.WSSecurityHelper; <br> <span class=\"indent2\"></span>...
+    <br> <span class=\"indent2\"></span>Cookie ltpaCookie = WSSecurityHelper.getLTPACookieFromSSOToken();
+    </td> \n </tr> \n </tbody>\n </table> \n <p>is replaced by </p> \n <table bgcolor=\"#F7F8F9\"
+    border=\"1\" cellpadding=\"2px\"> \n <tbody>\n <tr> \n <td> import javax.servlet.http.Cookie;<br>
     import com.ibm.websphere.security.WSSecurityHelper;<br> import com.ibm.websphere.security.web.WebSecurityHelper;
-    <br> <span class="indent2"></span>...<br> <span class="indent2"></span>Cookie
-    ltpaCookie = WebSecurityHelper.getSSOCookieFromSSOToken(); </td>. </tr>. </tbody>.
-    </table>. <p> For additional information, see </p>. <ul>. <li><a href="https://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.javadoc.doc/web/apidocs/com/ibm/websphere/security/web/WebSecurityHelper.html"
-    title="Opens a new window" onclick="javascript:helpWindow(''https://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.javadoc.doc/web/apidocs/com/ibm/websphere/security/web/WebSecurityHelper.html'');
-    return false;"> Class WebSecurityHelper</a> Java documentation. </li>. <li><a
-    href="https://www.ibm.com/docs/en/SSAW57_8.5.5/com.ibm.websphere.javadoc.doc/web/apidocs/com/ibm/websphere/security/WSSecurityHelper.html"
-    title="Opens a new window" onclick="javascript:helpWindow(''https://www.ibm.com/docs/en/SSAW57_8.5.5/com.ibm.websphere.javadoc.doc/web/apidocs/com/ibm/websphere/security/WSSecurityHelper.html'');
-    return false;"> Class WSSecurityHelper</a> Java documentation. </li>. <li><a href="https://www.ibm.com/docs/en/was-nd/8.5.5?topic=ssa-using-websphere-application-server-api-achieve-downstream-web-single-sign-ltpatoken2-cookie"
-    title="Opens a new window" onclick="javascript:helpWindow(''https://www.ibm.com/docs/en/was-nd/8.5.5?topic=ssa-using-websphere-application-server-api-achieve-downstream-web-single-sign-ltpatoken2-cookie'');
-    return false;"> Using a WebSphere Application Server API to achieve downstream
+    <br> <span class=\"indent2\"></span>...<br> <span class=\"indent2\"></span>Cookie
+    ltpaCookie = WebSecurityHelper.getSSOCookieFromSSOToken(); </td> \n </tr> \n </tbody>\n
+    </table> \n <p> For additional information, see </p> \n <ul> \n <li><a href=\"https://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.javadoc.doc/web/apidocs/com/ibm/websphere/security/web/WebSecurityHelper.html\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('https://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.javadoc.doc/web/apidocs/com/ibm/websphere/security/web/WebSecurityHelper.html');
+    return false;\"> Class WebSecurityHelper</a> Java documentation. </li> \n <li><a
+    href=\"https://www.ibm.com/docs/en/SSAW57_8.5.5/com.ibm.websphere.javadoc.doc/web/apidocs/com/ibm/websphere/security/WSSecurityHelper.html\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('https://www.ibm.com/docs/en/SSAW57_8.5.5/com.ibm.websphere.javadoc.doc/web/apidocs/com/ibm/websphere/security/WSSecurityHelper.html');
+    return false;\"> Class WSSecurityHelper</a> Java documentation. </li> \n <li><a
+    href=\"https://www.ibm.com/docs/en/was-nd/8.5.5?topic=ssa-using-websphere-application-server-api-achieve-downstream-web-single-sign-ltpatoken2-cookie\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('https://www.ibm.com/docs/en/was-nd/8.5.5?topic=ssa-using-websphere-application-server-api-achieve-downstream-web-single-sign-ltpatoken2-cookie');
+    return false;\"> Using a WebSphere Application Server API to achieve downstream
     web single sign-on with an LtpaToken2 cookie</a> Knowledge Center documentation.
-    </li>. </ul>. </div>'
+    </li> \n </ul> \n</div>"
   ruleID: WebSphereUnavailableSSOTokenMethod
   when:
     java.referenced:
@@ -1259,9 +1189,7 @@
       pattern: com.ibm.websphere.security.WSSecurityHelper.getLTPACookieFromSSOToken*
 - category: optional
   customVariables: []
-  description: |-
-    Some WebSphere z/OS Optimized Local Adapters APIs are unavailable
-    <div class="Text">. <p> Liberty supports a subset of the WebSphere Optimized Local Adapters (WOLA) APIs. This rule flags the use of APIs that are unsupported on Liberty. </p>. <p> The Java™ rule flags the following classes related to MBean functions that are unavailable on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.ola.OLAConnectionHandle</code></li>. <li><code>com.ibm.websphere.ola.OLAHeader</code></li>. <li><code>com.ibm.websphere.ola.OLARGE</code></li>. <li><code>com.ibm.websphere.ola.OLARGEInformation</code></li>. <li><code>com.ibm.websphere.ola.OLARGEList</code></li>. <li><code>com.ibm.websphere.ola.OLASearchObject</code></li>. <li><code>com.ibm.websphere.ola.OLAStatusInformation</code></li>. </ul>. <p> The Java rule also flags <code>RemoteHome</code> annotations with <code>com.ibm.websphere.ola.ExecuteHome.class</code> as the remote interface. Liberty ignores the <code>@RemoteHome</code> interface. To host this EJB on Liberty, modify your application to also provide a business local EJB bean that implements com.ibm.websphere.ola.ExecuteLocalBusiness. </p>. <ul>. <li><code>@RemoteHome(com.ibm.websphere.ola.ExecuteHome.class)</code></li>. </ul>. <p> The XML rule flags <code>&lt;remote&gt;</code> and <code>&lt;home&gt;</code> elements that contain references to <code>com.ibm.websphere.ola</code> classes. To use WOLA with EJB beans on Liberty, you need to migrate your EJB beans to use EJB 3.0 <code>&lt;business-local&gt;</code> interfaces, and your EJB class must implement <code>com.ibm.websphere.ola.ExecuteLocalBusiness</code>. </p>. <p> For example, the tool flags the use of WOLA on the remote and home interfaces: </p>. <table class="code">. <tbody>. <tr>. <td> <span class="Code"> <span class="indent"></span>&lt;session id="wola_sample"&gt;<br> <span class="indent3"></span>&lt;ejb-name&gt;WOLA&lt;/ejb-name&gt;<br> <span class="indent3"></span><span style="font-weight:bolder;">&lt;home&gt;com.ibm.websphere.ola.ExecuteHome&lt;/home&gt;</span><br> <span class="indent3"></span><span style="font-weight:bolder;">&lt;remote&gt;com.ibm.websphere.ola.Execute&lt;/remote&gt;</span><br> <span class="indent3"></span>&lt;ejb-class&gt;com.ibm.Hello&lt;/ejb-class&gt;<br> <span class="indent3"></span>&lt;session-type&gt;Stateless&lt;/session-type&gt;<br> <span class="indent3"></span>&lt;transaction-type&gt;Container&lt;/transaction-type&gt;<br> <span class="indent"></span>&lt;/session&gt;<br> </span> </td>. </tr>. </tbody>. </table>. <p> To use WOLA in this application on Liberty, migrate the EJB classes to use the local business interface and update the <span class="FilePath">ejb-jar.xml</span> file as follows: </p>. <table class="code">. <tbody>. <tr>. <td> <span class="Code"> <span class="indent"></span>&lt;session id="wola_sample"&gt;<br> <span class="indent3"></span>&lt;ejb-name&gt;WOLA&lt;/ejb-name&gt;<br> <span class="indent3"></span><span style="font-weight:bolder;">&lt;business-local&gt;com.ibm.websphere.ola.ExecuteLocalBusiness&lt;/business-local&gt;</span><br> <span class="indent3"></span>&lt;ejb-class&gt;com.ibm.Hello&lt;/ejb-class&gt;<br> <span class="indent3"></span>&lt;session-type&gt;Stateless&lt;/session-type&gt;<br> <span class="indent3"></span>&lt;transaction-type&gt;Container&lt;/transaction-type&gt;<br> <span class="indent"></span>&lt;/session&gt;<br> </span> </td>. </tr>. </tbody>. </table>. <p> Also note that Java Naming and Directory Interface (JNDI) names of target EJB beans on Liberty use <code>java:</code> naming. Start the Liberty server and check the server log for messages that display the JNDI of the target EJB beans. </p>. <p> For detailed information about WOLA on Liberty, see the <a href="http://www.ibm.com/support/knowledgecenter/SS7K4U_liberty/com.ibm.websphere.wlp.zseries.doc/ae/container_wlp_ola_developing.html" title="Opens a new window" onclick="javascript:helpWindow('http://www.ibm.com/support/knowledgecenter/SS7K4U_liberty/com.ibm.websphere.wlp.zseries.doc/ae/container_wlp_ola_developing.html'); return false;"> Developing applications that use optimized local adapters on Liberty</a> documentation. </p>. </div>
+  description: Some WebSphere z/OS Optimized Local Adapters APIs are unavailable
   effort: 3
   labels:
   - konveyor.io/source=websphere
@@ -1269,49 +1197,50 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> Liberty supports a subset of the WebSphere Optimized
-    Local Adapters (WOLA) APIs. This rule flags the use of APIs that are unsupported
-    on Liberty. </p>. <p> The Java™ rule flags the following classes related to MBean
-    functions that are unavailable on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.ola.OLAConnectionHandle</code></li>.
-    <li><code>com.ibm.websphere.ola.OLAHeader</code></li>. <li><code>com.ibm.websphere.ola.OLARGE</code></li>.
-    <li><code>com.ibm.websphere.ola.OLARGEInformation</code></li>. <li><code>com.ibm.websphere.ola.OLARGEList</code></li>.
-    <li><code>com.ibm.websphere.ola.OLASearchObject</code></li>. <li><code>com.ibm.websphere.ola.OLAStatusInformation</code></li>.
-    </ul>. <p> The Java rule also flags <code>RemoteHome</code> annotations with <code>com.ibm.websphere.ola.ExecuteHome.class</code>
-    as the remote interface. Liberty ignores the <code>@RemoteHome</code> interface.
-    To host this EJB on Liberty, modify your application to also provide a business
-    local EJB bean that implements com.ibm.websphere.ola.ExecuteLocalBusiness. </p>.
-    <ul>. <li><code>@RemoteHome(com.ibm.websphere.ola.ExecuteHome.class)</code></li>.
-    </ul>. <p> The XML rule flags <code>&lt;remote&gt;</code> and <code>&lt;home&gt;</code>
+  message: "<div class=\"Text\"> \n <p> Liberty supports a subset of the WebSphere
+    Optimized Local Adapters (WOLA) APIs. This rule flags the use of APIs that are
+    unsupported on Liberty. </p> \n <p> The Java™ rule flags the following classes
+    related to MBean functions that are unavailable on Liberty: </p> \n <ul> \n <li><code>com.ibm.websphere.ola.OLAConnectionHandle</code></li>
+    \n <li><code>com.ibm.websphere.ola.OLAHeader</code></li> \n <li><code>com.ibm.websphere.ola.OLARGE</code></li>
+    \n <li><code>com.ibm.websphere.ola.OLARGEInformation</code></li> \n <li><code>com.ibm.websphere.ola.OLARGEList</code></li>
+    \n <li><code>com.ibm.websphere.ola.OLASearchObject</code></li> \n <li><code>com.ibm.websphere.ola.OLAStatusInformation</code></li>
+    \n </ul> \n <p> The Java rule also flags <code>RemoteHome</code> annotations with
+    <code>com.ibm.websphere.ola.ExecuteHome.class</code> as the remote interface.
+    Liberty ignores the <code>@RemoteHome</code> interface. To host this EJB on Liberty,
+    modify your application to also provide a business local EJB bean that implements
+    com.ibm.websphere.ola.ExecuteLocalBusiness. </p> \n <ul> \n <li><code>@RemoteHome(com.ibm.websphere.ola.ExecuteHome.class)</code></li>
+    \n </ul> \n <p> The XML rule flags <code>&lt;remote&gt;</code> and <code>&lt;home&gt;</code>
     elements that contain references to <code>com.ibm.websphere.ola</code> classes.
     To use WOLA with EJB beans on Liberty, you need to migrate your EJB beans to use
     EJB 3.0 <code>&lt;business-local&gt;</code> interfaces, and your EJB class must
-    implement <code>com.ibm.websphere.ola.ExecuteLocalBusiness</code>. </p>. <p> For
-    example, the tool flags the use of WOLA on the remote and home interfaces: </p>.
-    <table class="code">. <tbody>. <tr>. <td> <span class="Code"> <span class="indent"></span>&lt;session
-    id="wola_sample"&gt;<br> <span class="indent3"></span>&lt;ejb-name&gt;WOLA&lt;/ejb-name&gt;<br>
-    <span class="indent3"></span><span style="font-weight:bolder;">&lt;home&gt;com.ibm.websphere.ola.ExecuteHome&lt;/home&gt;</span><br>
-    <span class="indent3"></span><span style="font-weight:bolder;">&lt;remote&gt;com.ibm.websphere.ola.Execute&lt;/remote&gt;</span><br>
-    <span class="indent3"></span>&lt;ejb-class&gt;com.ibm.Hello&lt;/ejb-class&gt;<br>
-    <span class="indent3"></span>&lt;session-type&gt;Stateless&lt;/session-type&gt;<br>
-    <span class="indent3"></span>&lt;transaction-type&gt;Container&lt;/transaction-type&gt;<br>
-    <span class="indent"></span>&lt;/session&gt;<br> </span> </td>. </tr>. </tbody>.
-    </table>. <p> To use WOLA in this application on Liberty, migrate the EJB classes
-    to use the local business interface and update the <span class="FilePath">ejb-jar.xml</span>
-    file as follows: </p>. <table class="code">. <tbody>. <tr>. <td> <span class="Code">
-    <span class="indent"></span>&lt;session id="wola_sample"&gt;<br> <span class="indent3"></span>&lt;ejb-name&gt;WOLA&lt;/ejb-name&gt;<br>
-    <span class="indent3"></span><span style="font-weight:bolder;">&lt;business-local&gt;com.ibm.websphere.ola.ExecuteLocalBusiness&lt;/business-local&gt;</span><br>
-    <span class="indent3"></span>&lt;ejb-class&gt;com.ibm.Hello&lt;/ejb-class&gt;<br>
-    <span class="indent3"></span>&lt;session-type&gt;Stateless&lt;/session-type&gt;<br>
-    <span class="indent3"></span>&lt;transaction-type&gt;Container&lt;/transaction-type&gt;<br>
-    <span class="indent"></span>&lt;/session&gt;<br> </span> </td>. </tr>. </tbody>.
-    </table>. <p> Also note that Java Naming and Directory Interface (JNDI) names
+    implement <code>com.ibm.websphere.ola.ExecuteLocalBusiness</code>. </p> \n <p>
+    For example, the tool flags the use of WOLA on the remote and home interfaces:
+    </p> \n <table class=\"code\"> \n <tbody>\n <tr> \n <td> <span class=\"Code\">
+    <span class=\"indent\"></span>&lt;session id=\"wola_sample\"&gt;<br> <span class=\"indent3\"></span>&lt;ejb-name&gt;WOLA&lt;/ejb-name&gt;<br>
+    <span class=\"indent3\"></span><span style=\"font-weight:bolder;\">&lt;home&gt;com.ibm.websphere.ola.ExecuteHome&lt;/home&gt;</span><br>
+    <span class=\"indent3\"></span><span style=\"font-weight:bolder;\">&lt;remote&gt;com.ibm.websphere.ola.Execute&lt;/remote&gt;</span><br>
+    <span class=\"indent3\"></span>&lt;ejb-class&gt;com.ibm.Hello&lt;/ejb-class&gt;<br>
+    <span class=\"indent3\"></span>&lt;session-type&gt;Stateless&lt;/session-type&gt;<br>
+    <span class=\"indent3\"></span>&lt;transaction-type&gt;Container&lt;/transaction-type&gt;<br>
+    <span class=\"indent\"></span>&lt;/session&gt;<br> </span> </td>\n </tr>\n </tbody>\n
+    </table> \n <p> To use WOLA in this application on Liberty, migrate the EJB classes
+    to use the local business interface and update the <span class=\"FilePath\">ejb-jar.xml</span>
+    file as follows: </p>\n <table class=\"code\"> \n <tbody>\n <tr> \n <td> <span
+    class=\"Code\"> <span class=\"indent\"></span>&lt;session id=\"wola_sample\"&gt;<br>
+    <span class=\"indent3\"></span>&lt;ejb-name&gt;WOLA&lt;/ejb-name&gt;<br> <span
+    class=\"indent3\"></span><span style=\"font-weight:bolder;\">&lt;business-local&gt;com.ibm.websphere.ola.ExecuteLocalBusiness&lt;/business-local&gt;</span><br>
+    <span class=\"indent3\"></span>&lt;ejb-class&gt;com.ibm.Hello&lt;/ejb-class&gt;<br>
+    <span class=\"indent3\"></span>&lt;session-type&gt;Stateless&lt;/session-type&gt;<br>
+    <span class=\"indent3\"></span>&lt;transaction-type&gt;Container&lt;/transaction-type&gt;<br>
+    <span class=\"indent\"></span>&lt;/session&gt;<br> </span> </td>\n </tr>\n </tbody>\n
+    </table> \n <p> Also note that Java Naming and Directory Interface (JNDI) names
     of target EJB beans on Liberty use <code>java:</code> naming. Start the Liberty
     server and check the server log for messages that display the JNDI of the target
-    EJB beans. </p>. <p> For detailed information about WOLA on Liberty, see the <a
-    href="http://www.ibm.com/support/knowledgecenter/SS7K4U_liberty/com.ibm.websphere.wlp.zseries.doc/ae/container_wlp_ola_developing.html"
-    title="Opens a new window" onclick="javascript:helpWindow(''http://www.ibm.com/support/knowledgecenter/SS7K4U_liberty/com.ibm.websphere.wlp.zseries.doc/ae/container_wlp_ola_developing.html'');
-    return false;"> Developing applications that use optimized local adapters on Liberty</a>
-    documentation. </p>. </div>'
+    EJB beans. </p> \n <p> For detailed information about WOLA on Liberty, see the
+    <a href=\"http://www.ibm.com/support/knowledgecenter/SS7K4U_liberty/com.ibm.websphere.wlp.zseries.doc/ae/container_wlp_ola_developing.html\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('http://www.ibm.com/support/knowledgecenter/SS7K4U_liberty/com.ibm.websphere.wlp.zseries.doc/ae/container_wlp_ola_developing.html');
+    return false;\"> Developing applications that use optimized local adapters on
+    Liberty</a> documentation. </p> \n</div>"
   ruleID: WOLAMissingClassesRule
   when:
     or:
@@ -1331,9 +1260,7 @@
   - name: WOLARule_0_packages
     nameOfCaptureGroup: WOLARule_0_packages
     pattern: (?P<WOLARule_0_packages>com.ibm.websphere.ola\.[^.]+)
-  description: |-
-    Review differences in the WebSphere z/OS Optimized Local Adapters API
-    <div class="Text">. <p> Liberty supports some com.ibm.websphere.ola APIs, but there are differences from the support provided on WebSphere Application Server traditional. Review your use of the WOLA APIs to see if the differences affect your application. </p>. <p> Differences include the WOLA support for global transactions, Enterprise JavaBeans (EJB) support, and Java Naming and Directory Interface (JNDI). For detailed information about WOLA on Liberty, see the <a href="http://www.ibm.com/support/knowledgecenter/SS7K4U_liberty/com.ibm.websphere.wlp.zseries.doc/ae/container_wlp_ola_developing.html" title="Opens a new window" onclick="javascript:helpWindow('http://www.ibm.com/support/knowledgecenter/SS7K4U_liberty/com.ibm.websphere.wlp.zseries.doc/ae/container_wlp_ola_developing.html'); return false;"> Developing applications that use optimized local adapters on Liberty</a> documentation. </p>. <p> WOLA support for IBM Information Management Systems (IMS) is introduced in Liberty 16.0.0.3. </p>. </div>
+  description: Review differences in the WebSphere z/OS Optimized Local Adapters API
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -1341,16 +1268,16 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: <div class="Text">. <p> Liberty supports some com.ibm.websphere.ola APIs,
-    but there are differences from the support provided on WebSphere Application Server
-    traditional. Review your use of the WOLA APIs to see if the differences affect
-    your application. </p>. <p> Differences include the WOLA support for global transactions,
-    Enterprise JavaBeans (EJB) support, and Java Naming and Directory Interface (JNDI).
-    For detailed information about WOLA on Liberty, see the <a href="http://www.ibm.com/support/knowledgecenter/SS7K4U_liberty/com.ibm.websphere.wlp.zseries.doc/ae/container_wlp_ola_developing.html"
-    title="Opens a new window" onclick="javascript:helpWindow('http://www.ibm.com/support/knowledgecenter/SS7K4U_liberty/com.ibm.websphere.wlp.zseries.doc/ae/container_wlp_ola_developing.html');
-    return false;"> Developing applications that use optimized local adapters on Liberty</a>
-    documentation. </p>. <p> WOLA support for IBM Information Management Systems (IMS)
-    is introduced in Liberty 16.0.0.3. </p>. </div>
+  message: "<div class=\"Text\"> \n <p> Liberty supports some com.ibm.websphere.ola
+    APIs, but there are differences from the support provided on WebSphere Application
+    Server traditional. Review your use of the WOLA APIs to see if the differences
+    affect your application. </p> \n <p> Differences include the WOLA support for
+    global transactions, Enterprise JavaBeans (EJB) support, and Java Naming and Directory
+    Interface (JNDI). For detailed information about WOLA on Liberty, see the <a href=\"http://www.ibm.com/support/knowledgecenter/SS7K4U_liberty/com.ibm.websphere.wlp.zseries.doc/ae/container_wlp_ola_developing.html\"
+    title=\"Opens a new window\" onclick=\"javascript:helpWindow('http://www.ibm.com/support/knowledgecenter/SS7K4U_liberty/com.ibm.websphere.wlp.zseries.doc/ae/container_wlp_ola_developing.html');
+    return false;\"> Developing applications that use optimized local adapters on
+    Liberty</a> documentation. </p> \n <p> WOLA support for IBM Information Management
+    Systems (IMS) is introduced in Liberty 16.0.0.3. </p> \n</div>"
   ruleID: WOLARule
   when:
     java.referenced:
@@ -1361,9 +1288,7 @@
   - name: WorkAreaRule_0_packages
     nameOfCaptureGroup: WorkAreaRule_0_packages
     pattern: (?P<WorkAreaRule_0_packages>(com.ibm.websphere.workarea\.[^.]+|com.ibm.wsspi.workarea\.[^.]+))
-  description: |-
-    The WebSphere Work Area APIs and SPIs are unavailable
-    <div class="Text">. <p> The following WebSphere Work Area APIs and SPIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.workarea</code></li>. <li><code>com.ibm.wsspi.workarea</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The WebSphere Work Area APIs and SPIs are unavailable
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -1371,19 +1296,17 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<div class="Text">. <p> The following WebSphere Work Area APIs and SPIs
-    are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.workarea</code></li>.
-    <li><code>com.ibm.wsspi.workarea</code></li>. </ul>. <p>You must modify the application
-    so that it can run on Liberty.</p>. </div>'
+  message: "<div class=\"Text\"> \n <p> The following WebSphere Work Area APIs and
+    SPIs are not available on Liberty: </p> \n <ul> \n <li><code>com.ibm.websphere.workarea</code></li>
+    \n <li><code>com.ibm.wsspi.workarea</code></li> \n </ul> \n <p>You must modify
+    the application so that it can run on Liberty.</p> \n</div>"
   ruleID: WorkAreaRule
   when:
     java.referenced:
       pattern: (com.ibm.websphere.workarea*|com.ibm.wsspi.workarea*)
 - category: mandatory
   customVariables: []
-  description: |-
-    Web Services Notification (WS-Notification) is unavailable
-    <span class="SubHeader">The WebSphere Web Services Notification (WS-Notification) APIs are unavailable</span>. <div class="Text">. <p> The following WebSphere Web Services Notification (WS-Notification) APIs are not available on Liberty: </p>. <ul>. <li><code>com.ibm.websphere.sib.wsn</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: Web Services Notification (WS-Notification) is unavailable
   effort: 0
   labels:
   - konveyor.io/source=websphere
@@ -1391,11 +1314,11 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: '<span class="SubHeader">The WebSphere Web Services Notification (WS-Notification)
-    APIs are unavailable</span>. <div class="Text">. <p> The following WebSphere Web
-    Services Notification (WS-Notification) APIs are not available on Liberty: </p>.
-    <ul>. <li><code>com.ibm.websphere.sib.wsn</code></li>. </ul>. <p>You must modify
-    the application so that it can run on Liberty.</p>. </div>'
+  message: "<span class=\"SubHeader\">The WebSphere Web Services Notification (WS-Notification)
+    APIs are unavailable</span> \n<div class=\"Text\"> \n <p> The following WebSphere
+    Web Services Notification (WS-Notification) APIs are not available on Liberty:
+    </p> \n <ul> \n <li><code>com.ibm.websphere.sib.wsn</code></li> \n </ul> \n <p>You
+    must modify the application so that it can run on Liberty.</p> \n</div>"
   ruleID: WSNotificationRuleJava
   when:
     java.referenced:
@@ -1403,9 +1326,7 @@
       pattern: com.ibm.websphere.sib.wsn*
 - category: mandatory
   customVariables: []
-  description: |-
-    The use of the WebSphere XPath, XQuery, and XSLT API requires configuration
-    <div class="Text">. <p> To use the WebSphere XPath, XQuery, and XSLT API, applications must be configured to use the XML thin client JAR file provided by the WebSphere Application Server Feature Pack for XML. <!--  How do they get this feature pack? How do they configure their applications to use it? --> </p>. </div>
+  description: The use of the WebSphere XPath, XQuery, and XSLT API requires configuration
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -1413,10 +1334,11 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: <div class="Text">. <p> To use the WebSphere XPath, XQuery, and XSLT API,
-    applications must be configured to use the XML thin client JAR file provided by
-    the WebSphere Application Server Feature Pack for XML. <!--  How do they get this
-    feature pack? How do they configure their applications to use it? --> </p>. </div>
+  message: "<div class=\"Text\"> \n <p> To use the WebSphere XPath, XQuery, and XSLT
+    API, applications must be configured to use the XML thin client JAR file provided
+    by the WebSphere Application Server Feature Pack for XML. <!-- How do they get
+    this feature pack? How do they configure their applications to use it? --> </p>
+    \n</div>"
   ruleID: XMLFeaturePackRule
   when:
     java.referenced:
@@ -1430,9 +1352,7 @@
   - name: WebSphereWebServicesRule_0_files
     nameOfCaptureGroup: WebSphereWebServicesRule_0_files
     pattern: (?P<WebSphereWebServicesRule_0_packages>(com.ibm.websphere.webservices\.[^.]+|com.ibm.websphere.websvcs.rm\.[^.]+|com.ibm.websphere.wsaddressing\.[^.]+|com.ibm.websphere.wsrf\.[^.]+|com.ibm.websphere.wssecurity\.[^.]+|com.ibm.websphere.cache.webservices\.[^.]+|com.ibm.ws.webservices\.[^.]+|com.ibm.ws.websvcs\.[^.]+|com.ibm.ws.wssecurity\.[^.]+|com.ibm.wsspi.soapcontainer\.[^.]+|com.ibm.wsspi.webservices\.[^.]+|com.ibm.wsspi.wssecurity\.[^.]+|com.ibm.wsspi.wsaddressing\.[^.]+|com.ibm.wsspi.wsrm\.[^.]+))
-  description: |-
-    The WebSphere web services APIs and SPIs are unavailable
-    <div class="Text">. <p>. The following WebSphere web services APIs and SPIs are not available on Liberty:. </p>. <ul>. <li><code>com.ibm.websphere.webservices</code></li>. <li><code>com.ibm.websphere.websvcs.rm</code></li>. <li><code>com.ibm.websphere.wssecurity</code></li>. <li><code>com.ibm.websphere.cache.webservices</code></li>. <li><code>com.ibm.ws.webservices</code></li>. <li><code>com.ibm.ws.websvcs</code></li>. <li><code>com.ibm.ws.wssecurity</code></li>. <li><code>com.ibm.websphere.wsaddressing</code></li>. <li><code>com.ibm.websphere.wsrf</code></li>. <li><code>com.ibm.wsspi.soapcontainer</code></li>. <li><code>com.ibm.wsspi.webservices</code></li>. <li><code>com.ibm.wsspi.wssecurity</code></li>. <li><code>com.ibm.wsspi.wsaddressing</code></li>. <li><code>com.ibm.wsspi.wsrm</code></li>. </ul>. <p>You must modify the application so that it can run on Liberty.</p>. </div>
+  description: The WebSphere web services APIs and SPIs are unavailable
   effort: 3
   labels:
   - konveyor.io/source=websphere
@@ -1440,31 +1360,42 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: <div class="Text">. <p>. The following WebSphere web services APIs and
-    SPIs are not available on Liberty:. </p>. <ul>. <li><code>com.ibm.websphere.webservices</code></li>.
-    <li><code>com.ibm.websphere.websvcs.rm</code></li>. <li><code>com.ibm.websphere.wssecurity</code></li>.
-    <li><code>com.ibm.websphere.cache.webservices</code></li>. <li><code>com.ibm.ws.webservices</code></li>.
-    <li><code>com.ibm.ws.websvcs</code></li>. <li><code>com.ibm.ws.wssecurity</code></li>.
-    <li><code>com.ibm.websphere.wsaddressing</code></li>. <li><code>com.ibm.websphere.wsrf</code></li>.
-    <li><code>com.ibm.wsspi.soapcontainer</code></li>. <li><code>com.ibm.wsspi.webservices</code></li>.
-    <li><code>com.ibm.wsspi.wssecurity</code></li>. <li><code>com.ibm.wsspi.wsaddressing</code></li>.
-    <li><code>com.ibm.wsspi.wsrm</code></li>. </ul>. <p>You must modify the application
-    so that it can run on Liberty.</p>. </div>
+  message: |-
+    <div class="Text">
+     <p>
+     The following WebSphere web services APIs and SPIs are not available on Liberty:
+     </p>
+     <ul>
+     <li><code>com.ibm.websphere.webservices</code></li>
+     <li><code>com.ibm.websphere.websvcs.rm</code></li>
+     <li><code>com.ibm.websphere.wssecurity</code></li>
+     <li><code>com.ibm.websphere.cache.webservices</code></li>
+     <li><code>com.ibm.ws.webservices</code></li>
+     <li><code>com.ibm.ws.websvcs</code></li>
+     <li><code>com.ibm.ws.wssecurity</code></li>
+     <li><code>com.ibm.websphere.wsaddressing</code></li>
+     <li><code>com.ibm.websphere.wsrf</code></li>
+     <li><code>com.ibm.wsspi.soapcontainer</code></li>
+     <li><code>com.ibm.wsspi.webservices</code></li>
+     <li><code>com.ibm.wsspi.wssecurity</code></li>
+     <li><code>com.ibm.wsspi.wsaddressing</code></li>
+     <li><code>com.ibm.wsspi.wsrm</code></li>
+     </ul>
+     <p>You must modify the application so that it can run on Liberty.</p>
+     </div>
   ruleID: WebSphereWebServicesRule
   when:
     java.referenced:
       pattern: (com.ibm.websphere.webservices*|com.ibm.websphere.websvcs.rm*|com.ibm.websphere.wsaddressing*|com.ibm.websphere.wsrf*|com.ibm.websphere.wssecurity*|com.ibm.websphere.cache.webservices*|com.ibm.ws.webservices*|com.ibm.ws.websvcs*|com.ibm.ws.wssecurity*|com.ibm.wsspi.soapcontainer*|com.ibm.wsspi.webservices*|com.ibm.wsspi.wssecurity*|com.ibm.wsspi.wsaddressing*|com.ibm.wsspi.wsrm*)
 - category: optional
   customVariables:
-  - name: WebSphereWebServicesGeneratedClassesRule_0_packages
-    nameOfCaptureGroup: WebSphereWebServicesGeneratedClassesRule_0_packages
-    pattern: (?P<WebSphereWebServicesGeneratedClassesRule_0_packages>(com.ibm.websphere.webservices\.[^.]+|com.ibm.websphere.websvcs.rm\.[^.]+|com.ibm.websphere.wsaddressing\.[^.]+|com.ibm.websphere.wsrf\.[^.]+|com.ibm.websphere.wssecurity\.[^.]+|com.ibm.websphere.cache.webservices\.[^.]+|com.ibm.ws.webservices\.[^.]+|com.ibm.ws.websvcs\.[^.]+|com.ibm.ws.wssecurity\.[^.]+|com.ibm.wsspi.soapcontainer\.[^.]+|com.ibm.wsspi.webservices\.[^.]+|com.ibm.wsspi.wssecurity\.[^.]+|com.ibm.wsspi.wsaddressing\.[^.]+|com.ibm.wsspi.wsrm\.[^.]+))
   - name: WebSphereWebServicesGeneratedClassesRule_0_files
     nameOfCaptureGroup: WebSphereWebServicesGeneratedClassesRule_0_files
     pattern: (?P<WebSphereWebServicesGeneratedClassesRule_0_packages>(com.ibm.websphere.webservices\.[^.]+|com.ibm.websphere.websvcs.rm\.[^.]+|com.ibm.websphere.wsaddressing\.[^.]+|com.ibm.websphere.wsrf\.[^.]+|com.ibm.websphere.wssecurity\.[^.]+|com.ibm.websphere.cache.webservices\.[^.]+|com.ibm.ws.webservices\.[^.]+|com.ibm.ws.websvcs\.[^.]+|com.ibm.ws.wssecurity\.[^.]+|com.ibm.wsspi.soapcontainer\.[^.]+|com.ibm.wsspi.webservices\.[^.]+|com.ibm.wsspi.wssecurity\.[^.]+|com.ibm.wsspi.wsaddressing\.[^.]+|com.ibm.wsspi.wsrm\.[^.]+))
-  description: |-
-    Application contains WSDL2Java generated classes
-    <div class="Text">. <p>. The WSDL2Java emitter generates Java classes from JAX-RPC WSDL files. These generated classes are used with JAX-RPC web. services that is not supported on Liberty. These classes can be removed when converting from JAX-RPC to JAX-WS.. </p>. <p>. This rule flags the following WSDL2Java emitter generated classes:. </p>. <ul>. <li><code>*_Deser.class</code></li>. <li><code>*_Helper.class</code></li>. <li><code>*_Ser.class</code></li>. <li><code>*Stub.class</code></li>. <li><code>*Locator.class</code></li>. <li><code>*Information.class</code></li>. </ul>. <p>. For example, if your WSDL file contains an element named Book the WSDL2Java emitter may generate any of the following classes. to be flagged by this rule:. </p>. <ul>. <li><code>Book_Deser.class</code></li>. <li><code>Book_Helper.class</code></li>. <li><code>Book_Ser.class</code></li>. <li><code>BookStub.class</code></li>. <li><code>BookBindingStub.class</code></li>. <li><code>BookLocator.class</code></li>. <li><code>BookServiceLocator.class</code></li>. <li><code>Book_ServiceLocator.class</code></li>. <li><code>BookInformation.class</code></li>. <li><code>BookServiceInformation.class</code></li>. <li><code>Book_ServiceInformation.class</code></li>. </ul>. </div>
+  - name: WebSphereWebServicesGeneratedClassesRule_0_packages
+    nameOfCaptureGroup: WebSphereWebServicesGeneratedClassesRule_0_packages
+    pattern: (?P<WebSphereWebServicesGeneratedClassesRule_0_packages>(com.ibm.websphere.webservices\.[^.]+|com.ibm.websphere.websvcs.rm\.[^.]+|com.ibm.websphere.wsaddressing\.[^.]+|com.ibm.websphere.wsrf\.[^.]+|com.ibm.websphere.wssecurity\.[^.]+|com.ibm.websphere.cache.webservices\.[^.]+|com.ibm.ws.webservices\.[^.]+|com.ibm.ws.websvcs\.[^.]+|com.ibm.ws.wssecurity\.[^.]+|com.ibm.wsspi.soapcontainer\.[^.]+|com.ibm.wsspi.webservices\.[^.]+|com.ibm.wsspi.wssecurity\.[^.]+|com.ibm.wsspi.wsaddressing\.[^.]+|com.ibm.wsspi.wsrm\.[^.]+))
+  description: Application contains WSDL2Java generated classes
   effort: 0
   labels:
   - konveyor.io/source=websphere
@@ -1472,21 +1403,41 @@
   links:
   - title: Open Liberty migration rules in Windup
     url: https://www.ibm.com/docs/wamt?topic=rules-open-liberty-migration-in-windup
-  message: <div class="Text">. <p>. The WSDL2Java emitter generates Java classes from
-    JAX-RPC WSDL files. These generated classes are used with JAX-RPC web. services
-    that is not supported on Liberty. These classes can be removed when converting
-    from JAX-RPC to JAX-WS.. </p>. <p>. This rule flags the following WSDL2Java emitter
-    generated classes:. </p>. <ul>. <li><code>*_Deser.class</code></li>. <li><code>*_Helper.class</code></li>.
-    <li><code>*_Ser.class</code></li>. <li><code>*Stub.class</code></li>. <li><code>*Locator.class</code></li>.
-    <li><code>*Information.class</code></li>. </ul>. <p>. For example, if your WSDL
-    file contains an element named Book the WSDL2Java emitter may generate any of
-    the following classes. to be flagged by this rule:. </p>. <ul>. <li><code>Book_Deser.class</code></li>.
-    <li><code>Book_Helper.class</code></li>. <li><code>Book_Ser.class</code></li>.
-    <li><code>BookStub.class</code></li>. <li><code>BookBindingStub.class</code></li>.
-    <li><code>BookLocator.class</code></li>. <li><code>BookServiceLocator.class</code></li>.
-    <li><code>Book_ServiceLocator.class</code></li>. <li><code>BookInformation.class</code></li>.
-    <li><code>BookServiceInformation.class</code></li>. <li><code>Book_ServiceInformation.class</code></li>.
-    </ul>. </div>
+  message: |-
+    <div class="Text">
+     <p>
+     The WSDL2Java emitter generates Java classes from JAX-RPC WSDL files. These generated classes are used with JAX-RPC web
+     services that is not supported on Liberty. These classes can be removed when converting from JAX-RPC to JAX-WS.
+     </p>
+     <p>
+     This rule flags the following WSDL2Java emitter generated classes:
+     </p>
+     <ul>
+     <li><code>*_Deser.class</code></li>
+     <li><code>*_Helper.class</code></li>
+     <li><code>*_Ser.class</code></li>
+     <li><code>*Stub.class</code></li>
+     <li><code>*Locator.class</code></li>
+     <li><code>*Information.class</code></li>
+     </ul>
+     <p>
+     For example, if your WSDL file contains an element named Book the WSDL2Java emitter may generate any of the following classes
+     to be flagged by this rule:
+     </p>
+     <ul>
+     <li><code>Book_Deser.class</code></li>
+     <li><code>Book_Helper.class</code></li>
+     <li><code>Book_Ser.class</code></li>
+     <li><code>BookStub.class</code></li>
+     <li><code>BookBindingStub.class</code></li>
+     <li><code>BookLocator.class</code></li>
+     <li><code>BookServiceLocator.class</code></li>
+     <li><code>Book_ServiceLocator.class</code></li>
+     <li><code>BookInformation.class</code></li>
+     <li><code>BookServiceInformation.class</code></li>
+     <li><code>Book_ServiceInformation.class</code></li>
+     </ul>
+     </div>
   ruleID: WebSphereWebServicesGeneratedClassesRule
   when:
     java.referenced:

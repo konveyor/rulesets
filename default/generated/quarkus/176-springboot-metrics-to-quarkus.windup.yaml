@@ -1,8 +1,7 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Micrometer dependency with Quarkus Microprofile 'metrics' extension
-    Replace the Micrometer dependency with Quarkus Microprofile 'metrics' extension.. Usually this is a transitive dependency brought by `org.springframework.boot:spring-boot-starter-actuator` and has to be replaced by `io.quarkus:quarkus-smallrye-metrics` artifact
+  description: Replace the Micrometer dependency with Quarkus Microprofile 'metrics'
+    extension
   effort: 5
   labels:
   - konveyor.io/source=springboot
@@ -10,9 +9,9 @@
   links:
   - title: Quarkus metrics
     url: https://quarkus.io/guides/microprofile-metrics
-  message: Replace the Micrometer dependency with Quarkus Microprofile 'metrics' extension..
-    Usually this is a transitive dependency brought by `org.springframework.boot:spring-boot-starter-actuator`
-    and has to be replaced by `io.quarkus:quarkus-smallrye-metrics` artifact
+  message: "\n Replace the Micrometer dependency with Quarkus Microprofile 'metrics'
+    extension. \n Usually this is a transitive dependency brought by `org.springframework.boot:spring-boot-starter-actuator`
+    and has to be replaced by `io.quarkus:quarkus-smallrye-metrics` artifact\n "
   ruleID: springboot-metrics-to-quarkus-0100
   when:
     java.dependency:
@@ -20,15 +19,13 @@
       name: io.micrometer.micrometer-core
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the Micrometer code with Microprofile Metrics code
-    Replace the Micrometer code with Microprofile Metrics code
+  description: Replace the Micrometer code with Microprofile Metrics code
   effort: 5
   labels:
   - konveyor.io/source=springboot
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the Micrometer code with Microprofile Metrics code
+  message: "\n Replace the Micrometer code with Microprofile Metrics code\n "
   ruleID: springboot-metrics-to-quarkus-0200
   when:
     java.dependency:
@@ -36,9 +33,7 @@
       name: io.micrometer.micrometer-core
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace Spring Prometheus Metrics endpoint mapping
-    Replace `management.endpoints.web.exposure.include=prometheus` with `quarkus.micrometer.export.prometheus.path=/actuator/prometheus`
+  description: Replace Spring Prometheus Metrics endpoint mapping
   effort: 1
   labels:
   - konveyor.io/source=springboot
@@ -46,7 +41,8 @@
   links:
   - title: Quarkus Guide - Micrometer Metrics
     url: https://quarkus.io/guides/micrometer
-  message: Replace `management.endpoints.web.exposure.include=prometheus` with `quarkus.micrometer.export.prometheus.path=/actuator/prometheus`
+  message: "\n Replace `management.endpoints.web.exposure.include=prometheus` with
+    `quarkus.micrometer.export.prometheus.path=/actuator/prometheus`\n "
   ruleID: springboot-metrics-to-quarkus-0300
   when:
     builtin.filecontent:

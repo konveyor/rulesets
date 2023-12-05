@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    The Lombok version is incompatible with Open JDK 17
-    Lombok supports Java 17 since version 1.18.22. The version of Lombok used in this project is too old and not compatible with Java 17. You should consider upgrading it.
+  description: The Lombok version is incompatible with Open JDK 17
   effort: 3
   labels:
   - konveyor.io/source=openjdk11-
@@ -10,9 +8,9 @@
   links:
   - title: Upgrade Lombok version to support Java 17
     url: https://github.com/projectlombok/lombok/issues/2898
-  message: Lombok supports Java 17 since version 1.18.22. The version of Lombok used
-    in this project is too old and not compatible with Java 17. You should consider
-    upgrading it.
+  message: "\n Lombok supports Java 17 since version 1.18.22. The version of Lombok
+    used in this project is too old and not compatible with Java 17. You should consider
+    upgrading it.\n "
   ruleID: lombok-incompatibility-00001
   when:
     java.dependency:

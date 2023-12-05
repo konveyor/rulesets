@@ -1,10 +1,9 @@
 - customVariables: []
-  description: |
-    Embedded framework - EasyMock
-    The application embeds the EasyMock library.
+  description: Embedded framework - EasyMock
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the EasyMock library.
   ruleID: test-frameworks-sauge-00010
   tag:
   - EasyMock
@@ -13,12 +12,11 @@
     builtin.file:
       pattern: .*easymock.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - PowerMock
-    The application embeds the PowerMock library.
+  description: Embedded framework - PowerMock
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the PowerMock library.
   ruleID: test-frameworks-sauge-00020
   tag:
   - PowerMock
@@ -27,12 +25,11 @@
     builtin.file:
       pattern: .*powermock.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Mockito
-    The application embeds the Mockito library.
+  description: Embedded framework - Mockito
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the Mockito library.
   ruleID: test-frameworks-sauge-00030
   tag:
   - Mockito
@@ -41,12 +38,11 @@
     builtin.file:
       pattern: .*mockito.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - TestNG
-    The application embeds the TestNG library.
+  description: Embedded framework - TestNG
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the TestNG library.
   ruleID: test-frameworks-sauge-00040
   tag:
   - TestNG
@@ -55,12 +51,11 @@
     builtin.file:
       pattern: .*testng.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Hamcrest
-    The application embeds the Hamcrest library.
+  description: Embedded framework - Hamcrest
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the Hamcrest library.
   ruleID: test-frameworks-sauge-00050
   tag:
   - Hamcrest
@@ -69,12 +64,11 @@
     builtin.file:
       pattern: .*hamcrest.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Spring Test
-    The application embeds a Spring Test framework.
+  description: Embedded framework - Spring Test
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds a Spring Test framework.
   ruleID: test-frameworks-sauge-00060
   tag:
   - Spring Test
@@ -83,12 +77,11 @@
     builtin.file:
       pattern: spring.*test.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Spock
-    The application embeds the Spock framework.
+  description: Embedded framework - Spock
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the Spock framework.
   ruleID: test-frameworks-sauge-00070
   tag:
   - Spock
@@ -97,12 +90,11 @@
     builtin.file:
       pattern: spock.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - XMLUnit
-    The application embeds the XMLUnit framework.
+  description: Embedded framework - XMLUnit
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the XMLUnit framework.
   ruleID: test-frameworks-sauge-00080
   tag:
   - XMLUnit
@@ -111,12 +103,11 @@
     builtin.file:
       pattern: xmlunit.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Akka Testkit
-    The application embeds the Akka Testkit library.
+  description: Embedded framework - Akka Testkit
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the Akka Testkit library.
   ruleID: test-frameworks-sauge-00090
   tag:
   - Akka Testkit
@@ -125,12 +116,11 @@
     builtin.file:
       pattern: akka-testkit.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - REST Assured
-    The application embeds the REST Assured library.
+  description: Embedded framework - REST Assured
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the REST Assured library.
   ruleID: test-frameworks-sauge-00100
   tag:
   - REST Assured
@@ -139,12 +129,11 @@
     builtin.file:
       pattern: rest-assured.*\.jar
 - customVariables: []
-  description: |
-    Embedded library - DbUnit
-    The application embeds the DbUnit library.
+  description: Embedded library - DbUnit
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the DbUnit library.
   ruleID: test-frameworks-sauge-00110
   tag:
   - DbUnit
@@ -153,12 +142,11 @@
     builtin.file:
       pattern: dbunit.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Mule Functional Test Framework (TCK)
-    The application embeds the Mule Functional Test Framework (TCK).
+  description: Embedded framework - Mule Functional Test Framework (TCK)
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the Mule Functional Test Framework (TCK).
   ruleID: test-frameworks-sauge-00120
   tag:
   - Mule Functional Test Framework
@@ -167,12 +155,11 @@
     builtin.file:
       pattern: mule-test.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Guava Testing Library
-    The application embeds the Guava Testing Library.
+  description: Embedded framework - Guava Testing Library
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the Guava Testing Library.
   ruleID: test-frameworks-sauge-00130
   tag:
   - Guava Testing
@@ -181,12 +168,11 @@
     builtin.file:
       pattern: guava-testlib.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - RandomizedTesting Randomized Runner
-    The application embeds the RandomizedTesting Randomized Runner library.
+  description: Embedded framework - RandomizedTesting Randomized Runner
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the RandomizedTesting Randomized Runner library.
   ruleID: test-frameworks-sauge-00140
   tag:
   - RandomizedTesting Runner
@@ -195,12 +181,11 @@
     builtin.file:
       pattern: randomizedtesting-runner.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - HttpUnit
-    The application embeds the HttpUnit library.
+  description: Embedded framework - HttpUnit
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the HttpUnit library.
   ruleID: test-frameworks-sauge-00150
   tag:
   - HttpUnit
@@ -209,12 +194,11 @@
     builtin.file:
       pattern: httpunit.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - JCUnit
-    The application embeds the JCunit library.
+  description: Embedded framework - JCUnit
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the JCunit library.
   ruleID: test-frameworks-sauge-00160
   tag:
   - JCunit
@@ -223,12 +207,11 @@
     builtin.file:
       pattern: jcunit.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - JPA Matchers
-    The application embeds the JPA Matchers library.
+  description: Embedded framework - JPA Matchers
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the JPA Matchers library.
   ruleID: test-frameworks-sauge-00170
   tag:
   - JPA Matchers
@@ -237,12 +220,11 @@
     builtin.file:
       pattern: jpa-matchers.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - MultithreadedTC
-    The application embeds the MultithreadedTC library.
+  description: Embedded framework - MultithreadedTC
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the MultithreadedTC library.
   ruleID: test-frameworks-sauge-00180
   tag:
   - MultithreadedTC
@@ -251,12 +233,11 @@
     builtin.file:
       pattern: multithreadedtc.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Specsy
-    The application embeds the Specsy framework.
+  description: Embedded framework - Specsy
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the Specsy framework.
   ruleID: test-frameworks-sauge-00190
   tag:
   - Specsy
@@ -265,12 +246,11 @@
     builtin.file:
       pattern: specsy.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - JFunk
-    The application embeds the JFunk framework.
+  description: Embedded framework - JFunk
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the JFunk framework.
   ruleID: test-frameworks-sauge-00200
   tag:
   - JFunk
@@ -279,12 +259,11 @@
     builtin.file:
       pattern: jfunk.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Restito
-    The application embeds the Restito framework.
+  description: Embedded framework - Restito
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the Restito framework.
   ruleID: test-frameworks-sauge-00210
   tag:
   - Restito
@@ -293,12 +272,11 @@
     builtin.file:
       pattern: restito.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Test Interface
-    The application embeds the Test Interface library.
+  description: Embedded framework - Test Interface
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the Test Interface library.
   ruleID: test-frameworks-sauge-00220
   tag:
   - Test Interface
@@ -307,12 +285,11 @@
     builtin.file:
       pattern: test-interface.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Play Test
-    The application embeds the Play Test framework.
+  description: Embedded framework - Play Test
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the Play Test framework.
   ruleID: test-frameworks-sauge-00230
   tag:
   - Play Test
@@ -321,12 +298,11 @@
     builtin.file:
       pattern: play-test.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Arquillian
-    The application embeds the Arquillian framework.
+  description: Embedded framework - Arquillian
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the Arquillian framework.
   ruleID: test-frameworks-sauge-00240
   tag:
   - Arquillian
@@ -335,12 +311,11 @@
     builtin.file:
       pattern: .*arquillian.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Cactus
-    The application embeds the Cactus framework.
+  description: Embedded framework - Cactus
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the Cactus framework.
   ruleID: test-frameworks-sauge-00560
   tag:
   - Cactus
@@ -349,12 +324,11 @@
     builtin.file:
       pattern: .*cactus.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Concordion
-    The application embeds the Concordion framework.
+  description: Embedded framework - Concordion
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the Concordion framework.
   ruleID: test-frameworks-sauge-00260
   tag:
   - Concordion
@@ -363,12 +337,11 @@
     builtin.file:
       pattern: .*concordion.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Cucumber
-    The application embeds the Cucumber framework.
+  description: Embedded framework - Cucumber
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the Cucumber framework.
   ruleID: test-frameworks-sauge-00270
   tag:
   - Cucumber
@@ -377,12 +350,11 @@
     builtin.file:
       pattern: .*cucumber.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - EtlUnit
-    The application embeds the EtlUnit framework.
+  description: Embedded framework - EtlUnit
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the EtlUnit framework.
   ruleID: test-frameworks-sauge-00280
   tag:
   - EtlUnit
@@ -391,12 +363,11 @@
     builtin.file:
       pattern: .*etlunit.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - HavaRunner
-    The application embeds the HavaRunner framework.
+  description: Embedded framework - HavaRunner
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the HavaRunner framework.
   ruleID: test-frameworks-sauge-00290
   tag:
   - HavaRunner
@@ -405,12 +376,11 @@
     builtin.file:
       pattern: .*havarunner.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - JBehave
-    The application embeds the JBehave framework.
+  description: Embedded framework - JBehave
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the JBehave framework.
   ruleID: test-frameworks-sauge-00300
   tag:
   - JBehave
@@ -419,12 +389,11 @@
     builtin.file:
       pattern: .*jbehave.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - JMock
-    The application embeds the JMock framework.
+  description: Embedded framework - JMock
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the JMock framework.
   ruleID: test-frameworks-sauge-00310
   tag:
   - JMock
@@ -433,12 +402,11 @@
     builtin.file:
       pattern: .*jmock-.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - JMockit
-    The application embeds the JMockit framework.
+  description: Embedded framework - JMockit
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the JMockit framework.
   ruleID: test-frameworks-sauge-00320
   tag:
   - JMockit
@@ -447,12 +415,11 @@
     builtin.file:
       pattern: .*jmockit.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Jukito
-    The application embeds the Jukito framework.
+  description: Embedded framework - Jukito
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the Jukito framework.
   ruleID: test-frameworks-sauge-00330
   tag:
   - Jukito
@@ -461,12 +428,11 @@
     builtin.file:
       pattern: .*jukito.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Needle
-    The application embeds the Needle framework.
+  description: Embedded framework - Needle
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the Needle framework.
   ruleID: test-frameworks-sauge-00340
   tag:
   - Needle
@@ -475,12 +441,11 @@
     builtin.file:
       pattern: .*needle.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - OpenPojo
-    The application embeds the OpenPojo framework.
+  description: Embedded framework - OpenPojo
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the OpenPojo framework.
   ruleID: test-frameworks-sauge-00350
   tag:
   - OpenPojo
@@ -489,12 +454,11 @@
     builtin.file:
       pattern: .*openpojo.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - Unitils
-    The application embeds the Unitils library.
+  description: Embedded framework - Unitils
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the Unitils library.
   ruleID: test-frameworks-sauge-00360
   tag:
   - Unitils
@@ -503,12 +467,11 @@
     builtin.file:
       pattern: .*unitils.*\.jar
 - customVariables: []
-  description: |
-    Embedded framework - JUnit
-    The application embeds the JUnit framework.
+  description: Embedded framework - JUnit
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application embeds the JUnit framework.
   ruleID: test-frameworks-sauge-00370
   tag:
   - JUnit

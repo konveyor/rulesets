@@ -2,12 +2,11 @@
   - name: classes
     nameOfCaptureGroup: classes
     pattern: java.lang.(?P<classes>(Thread|ThreadDeath|ThreadGroup|ThreadLocal))
-  description: |
-    Threads
-    The application uses Thread APIs.
+  description: Threads
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application uses Thread APIs.
   ruleID: javase-01000
   tag:
   - Java Threads
@@ -19,12 +18,11 @@
   - name: classes
     nameOfCaptureGroup: classes
     pattern: java.util.concurrent.(?P<classes>(ExecutorService|Executors|Executor|ScheduledExecutorService))
-  description: |
-    Threads
-    The application uses Concurrent Executors APIs.
+  description: Threads
   labels:
   - konveyor.io/include=always
   links: []
+  message: The application uses Concurrent Executors APIs.
   ruleID: javase-01100
   tag:
   - Java Threads

@@ -3,9 +3,7 @@
   - name: className
     nameOfCaptureGroup: className
     pattern: java.security.(?P<className>(AccessController|AccessControlContext|AccessControlException|DomainCombiner|Policy|PolicySpi|Policy.Parameters))
-  description: |-
-    The java.security.{class-name} class has been deprecated
-    The Java Security Manager API is deprecated in Java 17. Any references to it should be removed.. See the link for further information.
+  description: The java.security.{class-name} class has been deprecated
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
@@ -13,8 +11,8 @@
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
-  message: The Java Security Manager API is deprecated in Java 17. Any references
-    to it should be removed.. See the link for further information.
+  message: "\n The Java Security Manager API is deprecated in Java 17. Any references
+    to it should be removed. \n See the link for further information.\n "
   ruleID: security-manager-deprecation-00000
   when:
     java.referenced:
@@ -24,9 +22,7 @@
   - name: fqcn
     nameOfCaptureGroup: fqcn
     pattern: (?P<fqcn>(java.lang.SecurityManager|java.rmi.RMISecurityManager|javax.security.auth.SubjectDomainCombiner))
-  description: |-
-    The {fqcn} class has been deprecated
-    References to Java Security Manager API classes deprecated in Java 17. Any references to it should be removed.. See the link for further information.
+  description: The {fqcn} class has been deprecated
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
@@ -34,8 +30,8 @@
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
-  message: References to Java Security Manager API classes deprecated in Java 17.
-    Any references to it should be removed.. See the link for further information.
+  message: "\n References to Java Security Manager API classes deprecated in Java
+    17. Any references to it should be removed. \n See the link for further information.\n "
   ruleID: security-manager-deprecation-00010
   when:
     java.referenced:
@@ -45,9 +41,7 @@
   - name: methodName
     nameOfCaptureGroup: methodName
     pattern: java.lang.System.(?P<methodName>(getSecurityManager|setSecurityManager))?(.*)
-  description: |-
-    The java.lang.System.{method-name} method has been deprecated
-    The java.lang.System::getSecurityManager and java.lang.System::setSecurityManager methods have been deprecated in Java 17.. See the link for further information.
+  description: The java.lang.System.{method-name} method has been deprecated
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
@@ -55,8 +49,8 @@
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
-  message: The java.lang.System::getSecurityManager and java.lang.System::setSecurityManager
-    methods have been deprecated in Java 17.. See the link for further information.
+  message: "\n The java.lang.System::getSecurityManager and java.lang.System::setSecurityManager
+    methods have been deprecated in Java 17. \n See the link for further information.\n "
   ruleID: security-manager-deprecation-00020
   when:
     java.referenced:
@@ -64,9 +58,7 @@
       pattern: java.lang.System.(getSecurityManager|setSecurityManager)*
 - category: mandatory
   customVariables: []
-  description: |-
-    java.lang.Thread.checkAccess method has been deprecated
-    The java.lang.Thread::checkAccess method has been deprecated in Java 17.. See the link for further information.
+  description: java.lang.Thread.checkAccess method has been deprecated
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
@@ -74,8 +66,8 @@
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
-  message: The java.lang.Thread::checkAccess method has been deprecated in Java 17..
-    See the link for further information.
+  message: "\n The java.lang.Thread::checkAccess method has been deprecated in Java
+    17. \n See the link for further information.\n "
   ruleID: security-manager-deprecation-00030
   when:
     java.referenced:
@@ -83,9 +75,7 @@
       pattern: java.lang.Thread.checkAccess*
 - category: mandatory
   customVariables: []
-  description: |-
-    java.lang.ThreadGroup.checkAccess method has been deprecated
-    The java.lang.ThreadGroup::checkAccess method has been deprecated in Java 17.. See the link for further information.
+  description: java.lang.ThreadGroup.checkAccess method has been deprecated
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
@@ -93,8 +83,8 @@
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
-  message: The java.lang.ThreadGroup::checkAccess method has been deprecated in Java
-    17.. See the link for further information.
+  message: "\n The java.lang.ThreadGroup::checkAccess method has been deprecated in
+    Java 17. \n See the link for further information.\n "
   ruleID: security-manager-deprecation-00040
   when:
     java.referenced:
@@ -102,9 +92,7 @@
       pattern: java.lang.ThreadGroup.checkAccess*
 - category: mandatory
   customVariables: []
-  description: |-
-    java.util.logging.LogManager.checkAccess method has been deprecated
-    The java.util.logging.LogManager::checkAccess method has been deprecated in Java 17.. See the link for further information.
+  description: java.util.logging.LogManager.checkAccess method has been deprecated
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
@@ -112,8 +100,8 @@
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
-  message: The java.util.logging.LogManager::checkAccess method has been deprecated
-    in Java 17.. See the link for further information.
+  message: "\n The java.util.logging.LogManager::checkAccess method has been deprecated
+    in Java 17. \n See the link for further information.\n "
   ruleID: security-manager-deprecation-00050
   when:
     java.referenced:
@@ -124,8 +112,7 @@
   - name: methodNames
     nameOfCaptureGroup: methodNames
     pattern: java.util.concurrent.Executors.(?P<methodNames>(privilegedCallable|privilegedCallableUsingCurrentClassLoader|privilegedThreadFactory))?(.*)
-  description: |
-    The java.util.concurrent.Executors.{method-names} method has been deprecated
+  description: The java.util.concurrent.Executors.{method-names} method has been deprecated
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
@@ -133,8 +120,8 @@
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
-  message: The java.util.concurrent.Executors::{{methodNames}} method has been deprecated
-    in Java 17.. See the link for further information.
+  message: "\n The java.util.concurrent.Executors::{{methodNames}} method has been
+    deprecated in Java 17. \n See the link for further information.\n "
   ruleID: security-manager-deprecation-00060
   when:
     java.referenced:
@@ -145,8 +132,7 @@
   - name: methName
     nameOfCaptureGroup: methName
     pattern: javax.security.auth.Subject.(?P<methName>(doAsPrivileged|getSubject))?(.*)
-  description: |
-    javax.security.auth.Subject.{meth-name} method has been deprecated
+  description: javax.security.auth.Subject.{meth-name} method has been deprecated
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
@@ -154,8 +140,8 @@
   links:
   - title: 'JEP 411: Deprecate the Security Manager for Removal'
     url: https://openjdk.org/jeps/411
-  message: The javax.security.auth.Subject::{{methName}} method has been deprecated
-    in Java 17.. See the link for further information.
+  message: "\n The javax.security.auth.Subject::{{methName}} method has been deprecated
+    in Java 17. \n See the link for further information.\n "
   ruleID: security-manager-deprecation-00070
   when:
     java.referenced:

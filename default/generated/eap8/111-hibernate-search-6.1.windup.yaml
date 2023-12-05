@@ -1,8 +1,7 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Hibernate Search 6.1.* now requires using Hibernate ORM versions from the 5.6.x family.
-    Hibernate Search 6.1.x now requires using Hibernate ORM versions from the 5.6.x family.
+  description: Hibernate Search 6.1.* now requires using Hibernate ORM versions from
+    the 5.6.x family.
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -35,9 +34,8 @@
           name: org.hibernate.search.hibernate-search-mapper-orm
 - category: mandatory
   customVariables: []
-  description: |-
-    org.hibernate.search.engine.cfg.spi.ConfigurationPropertySource has moved
-    `org.hibernate.search.engine.cfg.spi.ConfigurationPropertySource` has been moved to `org.hibernate.search.engine.cfg.ConfigurationPropertySource`.
+  description: org.hibernate.search.engine.cfg.spi.ConfigurationPropertySource has
+    moved
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -50,8 +48,8 @@
   links:
   - title: Hibernate Search 6.1 - Migration Guide from 6.0
     url: https://docs.jboss.org/hibernate/search/6.1/migration/html_single/#spi
-  message: '`org.hibernate.search.engine.cfg.spi.ConfigurationPropertySource` has
-    been moved to `org.hibernate.search.engine.cfg.ConfigurationPropertySource`.'
+  message: "\n `org.hibernate.search.engine.cfg.spi.ConfigurationPropertySource` has
+    been moved to `org.hibernate.search.engine.cfg.ConfigurationPropertySource`.\n "
   ruleID: hibernate-search-6.1-00020
   when:
     or:
@@ -59,9 +57,8 @@
         pattern: org.hibernate.search.engine.cfg.spi.ConfigurationPropertySource
 - category: mandatory
   customVariables: []
-  description: |-
-    org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurer has moved
-    `org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurer` moved to `org.hibernate.search.backend.elasticsearch.client.ElasticsearchHttpClientConfigurer` and is now an API.
+  description: org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurer
+    has moved
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -74,9 +71,9 @@
   links:
   - title: Hibernate Search 6.1 - Migration Guide from 6.0
     url: https://docs.jboss.org/hibernate/search/6.1/migration/html_single/#spi
-  message: '`org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurer`
+  message: "\n `org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurer`
     moved to `org.hibernate.search.backend.elasticsearch.client.ElasticsearchHttpClientConfigurer`
-    and is now an API.'
+    and is now an API.\n "
   ruleID: hibernate-search-6.1-00030
   when:
     or:
@@ -84,9 +81,8 @@
         pattern: org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurer
 - category: mandatory
   customVariables: []
-  description: |-
-    org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurationContext has moved
-    `org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurationContext` moved to `org.hibernate.search.backend.elasticsearch.client.ElasticsearchHttpClientConfigurationContext` and is now an API.
+  description: org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurationContext
+    has moved
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -99,9 +95,9 @@
   links:
   - title: Hibernate Search 6.1 - Migration Guide from 6.0
     url: https://docs.jboss.org/hibernate/search/6.1/migration/html_single/#spi
-  message: '`org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurationContext`
+  message: "\n `org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurationContext`
     moved to `org.hibernate.search.backend.elasticsearch.client.ElasticsearchHttpClientConfigurationContext`
-    and is now an API.'
+    and is now an API.\n "
   ruleID: hibernate-search-6.1-00040
   when:
     or:
@@ -109,9 +105,7 @@
         pattern: org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurationContext
 - category: mandatory
   customVariables: []
-  description: |-
-    org.hibernate.search.engine.common.timing.spi.Deadline has moved
-    `org.hibernate.search.engine.common.timing.spi.Deadline` moved to `org.hibernate.search.engine.common.timing.Deadline` and is now API.
+  description: org.hibernate.search.engine.common.timing.spi.Deadline has moved
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -133,9 +127,8 @@
         pattern: org.hibernate.search.engine.common.timing.spi.Deadline
 - category: mandatory
   customVariables: []
-  description: |-
-    org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlanExecutionReport has moved
-    `org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlanExecutionReport` is now `org.hibernate.search.engine.backend.work.execution.spi.MultiEntityOperationExecutionReport`.
+  description: org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlanExecutionReport
+    has moved
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -157,9 +150,7 @@
         pattern: org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlanExecutionReport
 - category: mandatory
   customVariables: []
-  description: |-
-    URLEncodedString#fromJsonString was removed
-    `URLEncodedString#fromJsonString` must be removed.
+  description: URLEncodedString#fromJsonString was removed
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -181,9 +172,7 @@
         pattern: org.hibernate.search.backend.elasticsearch.util.spi.URLEncodedString.fromJSon*
 - category: mandatory
   customVariables: []
-  description: |-
-    FieldPaths#absolutize(String, String, String) has been removed
-    `FieldPaths#absolutize(String, String, String)` must be removed.
+  description: FieldPaths#absolutize(String, String, String) has been removed
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -206,9 +195,7 @@
           java.lang.String, java.lang.String)
 - category: mandatory
   customVariables: []
-  description: |-
-    IndexManagerImplementor#createIndexingPlan has changed
-    `IndexManagerImplementor#createIndexingPlan` no longer expects an `EntityReferenceFactory` parameter.
+  description: IndexManagerImplementor#createIndexingPlan has changed
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -231,9 +218,7 @@
         pattern: org.hibernate.search.engine.backend.index.spi.IndexManagerImplementor.createIndexingPlan*
 - category: mandatory
   customVariables: []
-  description: |-
-    IndexIndexingPlan#executeAndReport has changed
-    `IndexIndexingPlan#executeAndReport` now expects an `EntityReferenceFactory` parameter.
+  description: IndexIndexingPlan#executeAndReport has changed
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -256,9 +241,7 @@
         pattern: org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlan.executeAndReport*
 - category: mandatory
   customVariables: []
-  description: |-
-    IndexSchemaObjectNodeBuilder has changed
-    `org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaObjectNodeBuilder` is now `org.hibernate.search.engine.backend.document.model.dsl.spi.IndexCompositeNodeBuilder`
+  description: IndexSchemaObjectNodeBuilder has changed
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -280,9 +263,7 @@
         pattern: org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaObjectNodeBuilder
 - category: mandatory
   customVariables: []
-  description: |-
-    IndexSchemaObjectNodeBuilder has changed
-    `org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaObjectFieldNodeBuilder` is now `org.hibernate.search.engine.backend.document.model.dsl.spi.IndexObjectFieldBuilder`
+  description: IndexSchemaObjectNodeBuilder has changed
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -304,9 +285,7 @@
         pattern: org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaObjectFieldNodeBuilder
 - category: mandatory
   customVariables: []
-  description: |-
-    IndexSchemaObjectNodeBuilder has changed
-    `org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaRootNodeBuilder` is now `org.hibernate.search.engine.backend.document.model.dsl.spi.IndexRootBuilder`
+  description: IndexSchemaObjectNodeBuilder has changed
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -328,9 +307,7 @@
         pattern: org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaObjectFieldNodeBuilder
 - category: optional
   customVariables: []
-  description: |-
-    FromDocumentFieldValueConverter has been deprecated
-    `FromDocumentFieldValueConverter` has been deprecated, implement `FromDocumentValueConverter` instead.
+  description: FromDocumentFieldValueConverter has been deprecated
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -352,9 +329,7 @@
       pattern: org.hibernate.search.engine.backend.types.converter.FromDocumentFieldValueConverter
 - category: optional
   customVariables: []
-  description: |-
-    ToDocumentFieldValueConverter has been deprecated
-    `ToDocumentFieldValueConverter` has been deprecated, implement `ToDocumentValueConverter` instead.
+  description: ToDocumentFieldValueConverter has been deprecated
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -376,9 +351,7 @@
       pattern: org.hibernate.search.engine.backend.types.converter.ToDocumentFieldValueConverter
 - category: optional
   customVariables: []
-  description: |-
-    MassIndexingFailureHandler has been deprecated
-    `org.hibernate.search.mapper.orm.massindexing.MassIndexingFailureHandler` has been deprecated, implement `org.hibernate.search.mapper.pojo.massindexing.MassIndexingFailureHandler` instead.
+  description: MassIndexingFailureHandler has been deprecated
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -400,9 +373,7 @@
       pattern: org.hibernate.search.mapper.orm.massindexing.MassIndexingFailureHandler
 - category: optional
   customVariables: []
-  description: |-
-    MassIndexingMonitor has been deprecated
-    `org.hibernate.search.mapper.orm.massindexing.MassIndexingMonitor` has been deprecated, implement `org.hibernate.search.mapper.pojo.massindexing.MassIndexingMonitor` instead.
+  description: MassIndexingMonitor has been deprecated
   effort: 1
   labels:
   - konveyor.io/target=eap8+
@@ -424,9 +395,7 @@
       pattern: org.hibernate.search.mapper.orm.massindexing.MassIndexingMonitor
 - category: optional
   customVariables: []
-  description: |-
-    Deprecated configuration settings
-    Property has been deprecated: use the new configuration property that accepts `true`/`false` instead. See `HibernateOrmMapperSettings#AUTOMATIC_INDEXING_ENABLED`.
+  description: Deprecated configuration settings
   effort: 1
   labels:
   - konveyor.io/target=eap8+

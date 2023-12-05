@@ -1,6 +1,4 @@
 - customVariables: []
-  description: Deploying log4j.jar can result in non-deterministic ClassLoading issues.
-    It is recommended to use the built-in JBoss EAP Log4j module configured via `jboss-deployment-structure.xml`
   labels:
   - konveyor.io/source=log4j
   - konveyor.io/target=eap6+
@@ -15,6 +13,7 @@
       lowerbound: 0.0.0
       name: log4j.log4j
 - customVariables: []
+  description: Log4j Configuration
   labels:
   - konveyor.io/source=log4j
   - konveyor.io/target=eap6+
@@ -39,8 +38,7 @@
       pattern: .*
 - category: optional
   customVariables: []
-  description: |
-    Log4j ConsoleAppender Configuration - Potential Deadlock
+  description: Log4j ConsoleAppender Configuration - Potential Deadlock
   effort: 1
   labels:
   - konveyor.io/source=log4j
@@ -50,8 +48,10 @@
   links:
   - title: EAP 6 deadlocks when using ConsoleHandler and java.io.PrintStream
     url: https://access.redhat.com/solutions/375273
-  message: Using ConsoleAppender configured in log4j.{{suffix}} can cause a deadlock
-    on JBoss EAP 6.. It is recommended to Remove application level log4j ConsoleAppenders.
+  message: |2-
+
+     Using ConsoleAppender configured in log4j.{{suffix}} can cause a deadlock on JBoss EAP 6.
+     It is recommended to Remove application level log4j ConsoleAppenders.
   ruleID: log4j-03000
   when:
     builtin.filecontent:

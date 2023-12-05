@@ -1,8 +1,6 @@
 - category: potential
   customVariables: []
-  description: |-
-    eureka
-    The application uses Eureka.. Azure Spring Apps will host eureka server for you.. Eureka connection configurations will be injected automatically by ASA, if you put these configurations in your Config Server, please remove them.
+  description: eureka
   effort: 0
   labels:
   - konveyor.io/source=springboot
@@ -12,18 +10,14 @@
   - konveyor.io/target=azure-container-apps
   - eureka
   links:
-  - title: Azure Spring Apps - Enable Service Registration
-    url: https://learn.microsoft.com/azure/spring-apps/how-to-service-registration?pivots=programming-language-java
-  - title: Azure Spring Apps - Access Config Server and Service Registry
-    url: https://learn.microsoft.com/azure/spring-apps/how-to-access-data-plane-azure-ad-rbac
-  - title: Restricted configurations
-    url: http://aka.ms/spring-cloud-to-asa?pivots=sc-standard-tier#remove-restricted-configurations
-  message: The application uses Eureka.. Azure Spring Apps will host eureka server
-    for you.. Eureka connection configurations will be injected automatically by ASA,
-    if you put these configurations in your Config Server, please remove them.
+  - title: Distributed Tracing
+    url: https://learn.microsoft.com/azure/developer/java/migration/migrate-spring-cloud-to-azure-spring-apps?pivots=sc-standard-tier#remove-explicit-configuration-server-settings
+  message: "\n \n The application uses Eureka.\n\n If a setting like this appears
+    in your application configuration, remove it. Azure Spring Apps will automatically
+    inject the connection information of its configuration server\n\n ```\n eureka:\n
+    client:\n serviceUrl:\n defaultZone: http://myusername:mysecretpassword@localhost:8761/eureka/\n
+    ```\n \n "
   ruleID: spring-boot-to-azure-eureka-01000
-  tag:
-  - Eureka
   when:
     or:
     - java.dependency:
@@ -35,34 +29,3 @@
     - java.dependency:
         lowerbound: 0.0.0
         nameregex: com\.netflix\.eureka\..*
-- category: potential
-  customVariables: []
-  description: |-
-    Explicit eureka connection info found in configuration file
-    The application uses an eureka connection string.. Azure Spring Apps will host eureka server for you.. Eureka connection configurations will be injected automatically by ASA, if you put these configurations in your Config Server, please remove them.
-  effort: 0
-  labels:
-  - konveyor.io/source=springboot
-  - konveyor.io/target=azure-spring-apps
-  - konveyor.io/target=azure-aks
-  - konveyor.io/target=azure-appservice
-  - konveyor.io/target=azure-container-apps
-  - eureka
-  links:
-  - title: Azure Spring Apps - Enable Service Registration
-    url: https://learn.microsoft.com/azure/spring-apps/how-to-service-registration?pivots=programming-language-java
-  - title: Azure Spring Apps - Access Config Server and Service Registry
-    url: https://learn.microsoft.com/azure/spring-apps/how-to-access-data-plane-azure-ad-rbac
-  - title: Restricted configurations
-    url: http://aka.ms/spring-cloud-to-asa?pivots=sc-standard-tier#remove-restricted-configurations
-  message: The application uses an eureka connection string.. Azure Spring Apps will
-    host eureka server for you.. Eureka connection configurations will be injected
-    automatically by ASA, if you put these configurations in your Config Server, please
-    remove them.
-  ruleID: spring-boot-to-azure-eureka-02000
-  tag:
-  - Eureka
-  when:
-    builtin.filecontent:
-      filePattern: application.*\.(properties|yaml|yml)
-      pattern: eureka\.client\.(service-url|serviceUrl)

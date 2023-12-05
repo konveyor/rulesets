@@ -1,8 +1,6 @@
 - category: potential
   customVariables: []
-  description: |-
-    Deprecated HA Singleton API
-    The application imports class `org.wildfly.clustering.singleton.SingletonPolicy`, from deprecated HA Singleton API.
+  description: Deprecated HA Singleton API
   effort: 1
   labels:
   - konveyor.io/target=eap7

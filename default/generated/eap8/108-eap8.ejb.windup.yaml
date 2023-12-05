@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Methods relying on `java.security.Identity` removed
-    Methods relying on `java.security.Identity` have been removed from the Jakarta Enterprise Beans 4.0 specification and api.. Use `Principal.getCallerPrincipal()` instead.
+  description: Methods relying on `java.security.Identity` removed
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -14,9 +12,9 @@
   links:
   - title: Jakarta Enterprise Beans 4.0 specification
     url: https://jakarta.ee/specifications/enterprise-beans/4.0/
-  message: Methods relying on `java.security.Identity` have been removed from the
-    Jakarta Enterprise Beans 4.0 specification and api.. Use `Principal.getCallerPrincipal()`
-    instead.
+  message: |-
+    Methods relying on `java.security.Identity` have been removed from the Jakarta Enterprise Beans 4.0 specification and api.
+     Use `Principal.getCallerPrincipal()` instead.
   ruleID: eap8-ejb-00001
   when:
     or:
@@ -28,9 +26,7 @@
         pattern: javax.ejb.EJBContext.isCallerInRole*
 - category: mandatory
   customVariables: []
-  description: |-
-    javax.ejb.EJBContext.getEnvironment() method removed
-    Method was deprecated and has now been removed from the Jakarta Enterprise Beans 4.0 specification and api.. Use the JNDI naming context `java:comp/env` to access enterprise bean's environment.
+  description: javax.ejb.EJBContext.getEnvironment() method removed
   effort: 1
   labels:
   - konveyor.io/source=eap6
@@ -42,9 +38,9 @@
   links:
   - title: Jakarta Enterprise Beans 4.0 specification
     url: https://jakarta.ee/specifications/enterprise-beans/4.0/
-  message: Method was deprecated and has now been removed from the Jakarta Enterprise
-    Beans 4.0 specification and api.. Use the JNDI naming context `java:comp/env`
-    to access enterprise bean's environment.
+  message: |-
+    Method was deprecated and has now been removed from the Jakarta Enterprise Beans 4.0 specification and api.
+     Use the JNDI naming context `java:comp/env` to access enterprise bean's environment.
   ruleID: eap8-ejb-00002
   when:
     java.referenced:
@@ -52,9 +48,7 @@
       pattern: javax.ejb.EJBContext.getEnvironment*
 - category: mandatory
   customVariables: []
-  description: |-
-    javax.ejb.SessionContext.getMessageContext() method removed
-    Methods relying on Jakarta XML RPC have been removed from the Jakarta Enterprise Beans 4.0 specification and api.
+  description: javax.ejb.SessionContext.getMessageContext() method removed
   effort: 1
   labels:
   - konveyor.io/source=eap6

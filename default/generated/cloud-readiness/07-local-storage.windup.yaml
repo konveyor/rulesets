@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    File system - Java IO
-    An application running inside a container could lose access to a file in local storage.. Recommendations. The following recommendations depend on the function of the file in local storage:. * Logging: Log to standard output and use a centralized log collector to analyze the logs.. * Caching: Use a cache backing service.. * Configuration: Store configuration settings in environment variables so that they can be updated without code changes.. * Data storage: Use a database backing service for relational data or use a persistent data storage system.. * Temporary data storage: Use the file system of a running container as a brief, single-transaction cache.
+  description: File system - Java IO
   effort: 1
   labels:
   - konveyor.io/target=cloud-readiness
@@ -21,15 +19,15 @@
     url: https://docs.openshift.com/container-platform/4.5/builds/creating-build-inputs.html#builds-input-secrets-configmaps_creating-build-inputs
   - title: 'OpenShift Container Platform: Understanding persistent storage'
     url: https://docs.openshift.com/container-platform/4.5/storage/understanding-persistent-storage.html
-  message: 'An application running inside a container could lose access to a file
-    in local storage.. Recommendations. The following recommendations depend on the
-    function of the file in local storage:. * Logging: Log to standard output and
-    use a centralized log collector to analyze the logs.. * Caching: Use a cache backing
-    service.. * Configuration: Store configuration settings in environment variables
-    so that they can be updated without code changes.. * Data storage: Use a database
-    backing service for relational data or use a persistent data storage system..
-    * Temporary data storage: Use the file system of a running container as a brief,
-    single-transaction cache.'
+  message: "\n An application running inside a container could lose access to a file
+    in local storage.\n\n Recommendations\n\n The following recommendations depend
+    on the function of the file in local storage:\n\n * Logging: Log to standard output
+    and use a centralized log collector to analyze the logs.\n * Caching: Use a cache
+    backing service.\n * Configuration: Store configuration settings in environment
+    variables so that they can be updated without code changes.\n * Data storage:
+    Use a database backing service for relational data or use a persistent data storage
+    system.\n * Temporary data storage: Use the file system of a running container
+    as a brief, single-transaction cache.\n "
   ruleID: local-storage-00001
   when:
     or:
@@ -50,9 +48,7 @@
   - name: class
     nameOfCaptureGroup: class
     pattern: java.net.(?P<class>(URL|URI))?(.*)
-  description: |-
-    File system - java.net.URL/URI
-    An application running inside a container could lose access to a file in local storage.. Recommendations. The following recommendations depend on the function of the file in local storage:. * Logging: Log to standard output and use a centralized log collector to analyze the logs.. * Caching: Use a cache backing service.. * Configuration: Store configuration settings in environment variables so that they can be updated without code changes.. * Data storage: Use a database backing service for relational data or use a persistent data storage system.. * Temporary data storage: Use the file system of a running container as a brief, single-transaction cache.
+  description: File system - java.net.URL/URI
   effort: 1
   labels:
   - konveyor.io/target=cloud-readiness
@@ -71,15 +67,15 @@
     url: https://docs.openshift.com/container-platform/4.5/builds/creating-build-inputs.html#builds-input-secrets-configmaps_creating-build-inputs
   - title: 'OpenShift Container Platform: Understanding persistent storage'
     url: https://docs.openshift.com/container-platform/4.5/storage/understanding-persistent-storage.html
-  message: 'An application running inside a container could lose access to a file
-    in local storage.. Recommendations. The following recommendations depend on the
-    function of the file in local storage:. * Logging: Log to standard output and
-    use a centralized log collector to analyze the logs.. * Caching: Use a cache backing
-    service.. * Configuration: Store configuration settings in environment variables
-    so that they can be updated without code changes.. * Data storage: Use a database
-    backing service for relational data or use a persistent data storage system..
-    * Temporary data storage: Use the file system of a running container as a brief,
-    single-transaction cache.'
+  message: "\n An application running inside a container could lose access to a file
+    in local storage.\n\n Recommendations\n\n The following recommendations depend
+    on the function of the file in local storage:\n\n * Logging: Log to standard output
+    and use a centralized log collector to analyze the logs.\n * Caching: Use a cache
+    backing service.\n * Configuration: Store configuration settings in environment
+    variables so that they can be updated without code changes.\n * Data storage:
+    Use a database backing service for relational data or use a persistent data storage
+    system.\n * Temporary data storage: Use the file system of a running container
+    as a brief, single-transaction cache.\n "
   ruleID: local-storage-00002
   when:
     java.referenced:
@@ -87,9 +83,7 @@
       pattern: java.net.(URL|URI)*
 - category: mandatory
   customVariables: []
-  description: |-
-    File system - 'file://' scheme
-    An application running inside a container could lose access to a file in local storage.. Recommendations. The following recommendations depend on the function of the file in local storage:. * Logging: Log to standard output and use a centralized log collector to analyze the logs.. * Caching: Use a cache backing service.. * Configuration: Store configuration settings in environment variables so that they can be updated without code changes.. * Data storage: Use a database backing service for relational data or use a persistent data storage system.. * Temporary data storage: Use the file system of a running container as a brief, single-transaction cache.
+  description: File system - File path URL
   effort: 1
   labels:
   - konveyor.io/target=cloud-readiness
@@ -108,15 +102,50 @@
     url: https://docs.openshift.com/container-platform/4.5/builds/creating-build-inputs.html#builds-input-secrets-configmaps_creating-build-inputs
   - title: 'OpenShift Container Platform: Understanding persistent storage'
     url: https://docs.openshift.com/container-platform/4.5/storage/understanding-persistent-storage.html
-  message: 'An application running inside a container could lose access to a file
-    in local storage.. Recommendations. The following recommendations depend on the
-    function of the file in local storage:. * Logging: Log to standard output and
-    use a centralized log collector to analyze the logs.. * Caching: Use a cache backing
-    service.. * Configuration: Store configuration settings in environment variables
-    so that they can be updated without code changes.. * Data storage: Use a database
-    backing service for relational data or use a persistent data storage system..
-    * Temporary data storage: Use the file system of a running container as a brief,
-    single-transaction cache.'
+  message: "\n An application running inside a container could lose access to a file
+    in local storage.\n\n Recommendations\n\n The following recommendations depend
+    on the function of the file in local storage:\n\n * Logging: Log to standard output
+    and use a centralized log collector to analyze the logs.\n * Caching: Use a cache
+    backing service.\n * Configuration: Store configuration settings in environment
+    variables so that they can be updated without code changes.\n * Data storage:
+    Use a database backing service for relational data or use a persistent data storage
+    system.\n * Temporary data storage: Use the file system of a running container
+    as a brief, single-transaction cache.\n "
+  ruleID: local-storage-00003
+  when:
+    builtin.filecontent:
+      filePattern: .*(\\.java|\\.properties|\\.jsp|\\.jspf|\\.tag|[^pom]\\.xml|\\.txt)
+      pattern: (([:=(,\{])([ ])*(["'])?([a-zA-Z]):)(?<![\<\\\/\d\w])([\\\/]\w+)+(\.\w+)?
+- category: mandatory
+  customVariables: []
+  description: File system - 'file://' scheme
+  effort: 1
+  labels:
+  - konveyor.io/target=cloud-readiness
+  - konveyor.io/source
+  - storage
+  links:
+  - title: 'Twelve-Factor App: Logs'
+    url: https://12factor.net/logs
+  - title: 'OpenShift Container Platform: Understanding cluster logging'
+    url: https://docs.openshift.com/container-platform/4.5/logging/cluster-logging.html
+  - title: 'Twelve-Factor App: Backing services'
+    url: https://12factor.net/backing-services
+  - title: 'Twelve-Factor App: Config'
+    url: https://12factor.net/config
+  - title: 'OpenShift Container Platform: Input secrets and ConfigMaps'
+    url: https://docs.openshift.com/container-platform/4.5/builds/creating-build-inputs.html#builds-input-secrets-configmaps_creating-build-inputs
+  - title: 'OpenShift Container Platform: Understanding persistent storage'
+    url: https://docs.openshift.com/container-platform/4.5/storage/understanding-persistent-storage.html
+  message: "\n An application running inside a container could lose access to a file
+    in local storage.\n\n Recommendations\n\n The following recommendations depend
+    on the function of the file in local storage:\n\n * Logging: Log to standard output
+    and use a centralized log collector to analyze the logs.\n * Caching: Use a cache
+    backing service.\n * Configuration: Store configuration settings in environment
+    variables so that they can be updated without code changes.\n * Data storage:
+    Use a database backing service for relational data or use a persistent data storage
+    system.\n * Temporary data storage: Use the file system of a running container
+    as a brief, single-transaction cache.\n "
   ruleID: local-storage-00004
   when:
     builtin.filecontent:
@@ -124,24 +153,22 @@
       pattern: file://
 - category: mandatory
   customVariables: []
-  description: |-
-    File system - Java NIO
-    An application running inside a container could lose access to a file in local storage.. Recommendations. The following recommendations depend on the function of the file in local storage:. * Logging: Log to standard output and use a centralized log collector to analyze the logs.. * Caching: Use a cache backing service.. * Configuration: Store configuration settings in environment variables so that they can be updated without code changes.. * Data storage: Use a database backing service for relational data or use a persistent data storage system.. * Temporary data storage: Use the file system of a running container as a brief, single-transaction cache.
+  description: File system - Java NIO
   effort: 1
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
   - storage
   links: []
-  message: 'An application running inside a container could lose access to a file
-    in local storage.. Recommendations. The following recommendations depend on the
-    function of the file in local storage:. * Logging: Log to standard output and
-    use a centralized log collector to analyze the logs.. * Caching: Use a cache backing
-    service.. * Configuration: Store configuration settings in environment variables
-    so that they can be updated without code changes.. * Data storage: Use a database
-    backing service for relational data or use a persistent data storage system..
-    * Temporary data storage: Use the file system of a running container as a brief,
-    single-transaction cache.'
+  message: "\n An application running inside a container could lose access to a file
+    in local storage.\n\n Recommendations\n\n The following recommendations depend
+    on the function of the file in local storage:\n\n * Logging: Log to standard output
+    and use a centralized log collector to analyze the logs.\n * Caching: Use a cache
+    backing service.\n * Configuration: Store configuration settings in environment
+    variables so that they can be updated without code changes.\n * Data storage:
+    Use a database backing service for relational data or use a persistent data storage
+    system.\n * Temporary data storage: Use the file system of a running container
+    as a brief, single-transaction cache.\n "
   ruleID: local-storage-00005
   when:
     or:
@@ -159,24 +186,22 @@
         pattern: java.nio.file*
 - category: mandatory
   customVariables: []
-  description: |-
-    Apache Commons I/O
-    An application running inside a container could lose access to a file in local storage.. Recommendations. The following recommendations depend on the function of the file in local storage:. * Logging: Log to standard output and use a centralized log collector to analyze the logs.. * Caching: Use a cache backing service.. * Configuration: Store configuration settings in environment variables so that they can be updated without code changes.. * Data storage: Use a database backing service for relational data or use a persistent data storage system.. * Temporary data storage: Use the file system of a running container as a brief, single-transaction cache.
+  description: Apache Commons I/O
   effort: 1
   labels:
   - konveyor.io/target=cloud-readiness
   - konveyor.io/source
   - storage
   links: []
-  message: 'An application running inside a container could lose access to a file
-    in local storage.. Recommendations. The following recommendations depend on the
-    function of the file in local storage:. * Logging: Log to standard output and
-    use a centralized log collector to analyze the logs.. * Caching: Use a cache backing
-    service.. * Configuration: Store configuration settings in environment variables
-    so that they can be updated without code changes.. * Data storage: Use a database
-    backing service for relational data or use a persistent data storage system..
-    * Temporary data storage: Use the file system of a running container as a brief,
-    single-transaction cache.'
+  message: "\n An application running inside a container could lose access to a file
+    in local storage.\n\n Recommendations\n\n The following recommendations depend
+    on the function of the file in local storage:\n\n * Logging: Log to standard output
+    and use a centralized log collector to analyze the logs.\n * Caching: Use a cache
+    backing service.\n * Configuration: Store configuration settings in environment
+    variables so that they can be updated without code changes.\n * Data storage:
+    Use a database backing service for relational data or use a persistent data storage
+    system.\n * Temporary data storage: Use the file system of a running container
+    as a brief, single-transaction cache.\n "
   ruleID: local-storage-00006
   when:
     or:
