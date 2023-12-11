@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Windows file system path
-    This file system path is Microsoft Windows platform dependent. It needs to be replaced with a Linux-style path.
+  description: Windows file system path
   effort: 1
   labels:
   - konveyor.io/source=eap7
@@ -23,9 +21,7 @@
       pattern: (\W|\s|^)(?:[a-zA-Z]\:|\\\\[\w\s\.]+)([\\\/][^\n\t]+)+
 - category: mandatory
   customVariables: []
-  description: |-
-    Dynamic-Link Library (DLL)
-    This Dynamic-Link Library is Microsoft Windows platform dependent. It needs to be replaced with a Linux-style shared library.
+  description: Dynamic-Link Library (DLL)
   effort: 5
   labels:
   - konveyor.io/source=eap7

@@ -1,16 +1,15 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'narayana-jta' dependency with Quarkus 'quarkus-narayana-jta' extension
-    Replace the `org.jboss.narayana.jta:narayana-jta` dependency with the Quarkus dependency `io.quarkus:quarkus-narayana-jta`. Further information in the link below.
+  description: Replace the 'narayana-jta' dependency with Quarkus 'quarkus-narayana-jta'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=narayana
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `org.jboss.narayana.jta:narayana-jta` dependency with the Quarkus
-    dependency `io.quarkus:quarkus-narayana-jta`. Further information in the link
-    below.
+  message: "\n Replace the `org.jboss.narayana.jta:narayana-jta` dependency with the
+    Quarkus dependency `io.quarkus:quarkus-narayana-jta` \n Further information in
+    the link below.\n "
   ruleID: quarkus-narayana-jta-00000
   when:
     java.dependency:
@@ -18,9 +17,8 @@
       name: org.jboss.narayana.jta.narayana-jta
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'narayana-jta' dependency with Quarkus 'quarkus-narayana-jta' extension
-    Replace the `org.jboss.narayana.jta:narayana-jta` dependency with the Quarkus dependency `io.quarkus:quarkus-narayana-jta`. Further information in the link below.
+  description: Replace the 'narayana-jta' dependency with Quarkus 'quarkus-narayana-jta'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=narayana
@@ -28,9 +26,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/transaction
-  message: Replace the `org.jboss.narayana.jta:narayana-jta` dependency with the Quarkus
-    dependency `io.quarkus:quarkus-narayana-jta`. Further information in the link
-    below.
+  message: "\n Replace the `org.jboss.narayana.jta:narayana-jta` dependency with the
+    Quarkus dependency `io.quarkus:quarkus-narayana-jta` \n Further information in
+    the link below.\n "
   ruleID: quarkus-narayana-jta-00010
   when:
     java.dependency:
@@ -38,17 +36,16 @@
       name: org.jboss.narayana.jta.narayana-jta
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'narayana-lra' dependency with Quarkus 'quarkus-narayana-lra' extension
-    Replace the `org.jboss.narayana.rts:narayana-lra` dependency with the Quarkus dependency `io.quarkus:quarkus-narayana-lra`. Further information in the link below.
+  description: Replace the 'narayana-lra' dependency with Quarkus 'quarkus-narayana-lra'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=narayana
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `org.jboss.narayana.rts:narayana-lra` dependency with the Quarkus
-    dependency `io.quarkus:quarkus-narayana-lra`. Further information in the link
-    below.
+  message: "\n Replace the `org.jboss.narayana.rts:narayana-lra` dependency with the
+    Quarkus dependency `io.quarkus:quarkus-narayana-lra` \n Further information in
+    the link below.\n "
   ruleID: quarkus-narayana-lra-00000
   when:
     java.dependency:
@@ -56,9 +53,8 @@
       name: org.jboss.narayana.rts.narayana-lra
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'narayana-lra' dependency with Quarkus 'quarkus-narayana-lra' extension
-    Replace the `org.jboss.narayana.rts:narayana-lra` dependency with the Quarkus dependency `io.quarkus:quarkus-narayana-lra`. Further information in the link below.
+  description: Replace the 'narayana-lra' dependency with Quarkus 'quarkus-narayana-lra'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=narayana
@@ -66,9 +62,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/lra
-  message: Replace the `org.jboss.narayana.rts:narayana-lra` dependency with the Quarkus
-    dependency `io.quarkus:quarkus-narayana-lra`. Further information in the link
-    below.
+  message: "\n Replace the `org.jboss.narayana.rts:narayana-lra` dependency with the
+    Quarkus dependency `io.quarkus:quarkus-narayana-lra` \n Further information in
+    the link below.\n "
   ruleID: quarkus-narayana-lra-00010
   when:
     java.dependency:
@@ -76,16 +72,15 @@
       name: org.jboss.narayana.rts.narayana-lra
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'stm' dependency with Quarkus 'quarkus-narayana-stm' extension
-    Replace the `org.jboss.narayana.stm:stm` dependency with the Quarkus dependency `io.quarkus:quarkus-narayana-stm`. Further information in the link below.
+  description: Replace the 'stm' dependency with Quarkus 'quarkus-narayana-stm' extension
   effort: 1
   labels:
   - konveyor.io/source=narayana
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `org.jboss.narayana.stm:stm` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-narayana-stm`. Further information in the link below.
+  message: "\n Replace the `org.jboss.narayana.stm:stm` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-narayana-stm` \n Further information in the link
+    below.\n "
   ruleID: quarkus-narayana-stm-00000
   when:
     java.dependency:
@@ -93,9 +88,7 @@
       name: org.jboss.narayana.stm.stm
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'stm' dependency with Quarkus 'quarkus-narayana-stm' extension
-    Replace the `org.jboss.narayana.stm:stm` dependency with the Quarkus dependency `io.quarkus:quarkus-narayana-stm`. Further information in the link below.
+  description: Replace the 'stm' dependency with Quarkus 'quarkus-narayana-stm' extension
   effort: 1
   labels:
   - konveyor.io/source=narayana
@@ -103,8 +96,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/software-transactional-memory
-  message: Replace the `org.jboss.narayana.stm:stm` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-narayana-stm`. Further information in the link below.
+  message: "\n Replace the `org.jboss.narayana.stm:stm` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-narayana-stm` \n Further information in the link
+    below.\n "
   ruleID: quarkus-narayana-stm-00010
   when:
     java.dependency:

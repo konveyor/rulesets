@@ -1,15 +1,15 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'openshift-client' dependency with Quarkus 'quarkus-openshift-client' extension
-    Replace the `io.fabric8:openshift-client` dependency with the Quarkus dependency `io.quarkus:quarkus-openshift-client`. Further information in the link below.
+  description: Replace the 'openshift-client' dependency with Quarkus 'quarkus-openshift-client'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=openshift
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `io.fabric8:openshift-client` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-openshift-client`. Further information in the link below.
+  message: "\n Replace the `io.fabric8:openshift-client` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-openshift-client` \n Further information in the
+    link below.\n "
   ruleID: quarkus-openshift-client-00000
   when:
     java.dependency:
@@ -17,9 +17,8 @@
       name: io.fabric8.openshift-client
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'openshift-client' dependency with Quarkus 'quarkus-openshift-client' extension
-    Replace the `io.fabric8:openshift-client` dependency with the Quarkus dependency `io.quarkus:quarkus-openshift-client`. Further information in the link below.
+  description: Replace the 'openshift-client' dependency with Quarkus 'quarkus-openshift-client'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=openshift
@@ -27,8 +26,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/kubernetes-client
-  message: Replace the `io.fabric8:openshift-client` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-openshift-client`. Further information in the link below.
+  message: "\n Replace the `io.fabric8:openshift-client` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-openshift-client` \n Further information in the
+    link below.\n "
   ruleID: quarkus-openshift-client-00010
   when:
     java.dependency:

@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Don't log to file system
-    Logging to the file system is not recommended when running applications in the cloud.. Instead, use a console appender to log to standard output.
+  description: Don't log to file system
   effort: 1
   labels:
   - konveyor.io/source=eap7
@@ -14,8 +12,8 @@
   - konveyor.io/target=azure-container-apps
   - logging
   links: []
-  message: Logging to the file system is not recommended when running applications
-    in the cloud.. Instead, use a console appender to log to standard output.
+  message: "\n Logging to the file system is not recommended when running applications
+    in the cloud. \n \n Instead, use a console appender to log to standard output.\n "
   ruleID: azure-logging-0000
   tag:
   - Logging to file system

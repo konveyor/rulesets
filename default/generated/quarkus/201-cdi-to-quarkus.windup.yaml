@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace javax.enterprise:cdi-api dependency
-    Dependency `javax.enterprise:cdi-api` has to be replaced with `io.quarkus:quarkus-arc` artifact.
+  description: Replace javax.enterprise:cdi-api dependency
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -10,8 +8,8 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/cdi-reference
-  message: Dependency `javax.enterprise:cdi-api` has to be replaced with `io.quarkus:quarkus-arc`
-    artifact.
+  message: "\n Dependency `javax.enterprise:cdi-api` has to be replaced with `io.quarkus:quarkus-arc`
+    artifact.\n "
   ruleID: cdi-to-quarkus-00000
   when:
     builtin.xml:
@@ -24,9 +22,7 @@
         'io.quarkus')]) = 0)]
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace javax.inject:javax.inject dependency
-    Dependency `javax.inject:javax.inject` has to be replaced with `io.quarkus:quarkus-arc` artifact.
+  description: Replace javax.inject:javax.inject dependency
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -34,8 +30,8 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/cdi-reference
-  message: Dependency `javax.inject:javax.inject` has to be replaced with `io.quarkus:quarkus-arc`
-    artifact.
+  message: "\n Dependency `javax.inject:javax.inject` has to be replaced with `io.quarkus:quarkus-arc`
+    artifact.\n "
   ruleID: cdi-to-quarkus-00020
   when:
     builtin.xml:
@@ -48,17 +44,15 @@
         'io.quarkus')]) = 0)]
 - category: potential
   customVariables: []
-  description: |-
-    `beans.xml` descriptor content is ignored
-    `beans.xml` descriptor content is ignored and it could be removed from the application.. Refer to the guide referenced below to check the supported CDI feature in Quarkus.
+  description: '`beans.xml` descriptor content is ignored'
   effort: 3
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
   links: []
-  message: '`beans.xml` descriptor content is ignored and it could be removed from
-    the application.. Refer to the guide referenced below to check the supported CDI
-    feature in Quarkus.'
+  message: "\n `beans.xml` descriptor content is ignored and it could be removed from
+    the application. \n Refer to the guide referenced below to check the supported
+    CDI feature in Quarkus.\n "
   ruleID: cdi-to-quarkus-00030
   when:
     as: root
@@ -70,9 +64,7 @@
       xpath: /b:beans
 - category: potential
   customVariables: []
-  description: |-
-    Producer annotation no longer required
-    In Quarkus, you can skip the @Produces annotation completely if the producer method is annotated with a scope annotation, a stereotype or a qualifier... This field could be accessed using a `@Named` getter method instead.
+  description: Producer annotation no longer required
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -80,9 +72,9 @@
   links:
   - title: Quarkus Simplified Producer Method Declaration
     url: https://quarkus.io/guides/cdi-reference#simplified-producer-method-declaration
-  message: In Quarkus, you can skip the @Produces annotation completely if the producer
-    method is annotated with a scope annotation, a stereotype or a qualifier... This
-    field could be accessed using a `@Named` getter method instead.
+  message: "In Quarkus, you can skip the @Produces annotation completely if the producer
+    method is annotated with a scope annotation, a stereotype or a qualifier..\n This
+    field could be accessed using a `@Named` getter method instead.\n "
   ruleID: cdi-to-quarkus-00040
   when:
     java.referenced:
@@ -90,9 +82,7 @@
       pattern: javax.enterprise.inject.Produces
 - category: potential
   customVariables: []
-  description: |-
-    Stateless annotation can be replaced with scope
-    Stateless EJBs can be converted to a cdi bean by replacing the `@Stateless` annotation with a scope eg `@ApplicationScoped`
+  description: Stateless annotation can be replaced with scope
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -100,8 +90,8 @@
   links:
   - title: Quarkus CDI reference
     url: https://quarkus.io/guides/cdi-reference
-  message: Stateless EJBs can be converted to a cdi bean by replacing the `@Stateless`
-    annotation with a scope eg `@ApplicationScoped`
+  message: "Stateless EJBs can be converted to a cdi bean by replacing the `@Stateless`
+    annotation with a scope eg `@ApplicationScoped`\n "
   ruleID: cdi-to-quarkus-00050
   when:
     java.referenced:

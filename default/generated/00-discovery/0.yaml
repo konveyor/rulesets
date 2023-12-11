@@ -27,7 +27,7 @@
     - builtin.filecontent:
         pattern: "Public Domain License"
 - ruleID: hardcoded-ip-address
-  description: "Hardcoded IP Address\nWhen migrating environments, hard-coded IP addresses may need to be modified or eliminated."
+  description: "Hardcoded IP Address"
   labels:
   - konveyor.io/target=cloud-readiness
   when:

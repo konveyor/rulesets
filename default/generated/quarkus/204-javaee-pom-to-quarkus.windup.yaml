@@ -1,7 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |
-    The expected project artifact's extension is `jar`
+  description: The expected project artifact's extension is `jar`
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -9,8 +8,8 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/maven-tooling#build-tool-maven
-  message: The project artifact's current extension (i.e. `<packaging>` tag value)
-    is `{{notJar}}` but the expected value should be `jar`
+  message: "\n The project artifact's current extension (i.e. `<packaging>` tag value)
+    is `{{notJar}}` but the expected value should be `jar`\n "
   ruleID: javaee-pom-to-quarkus-00000
   when:
     builtin.xml:
@@ -18,11 +17,10 @@
       - pom.xml
       namespaces:
         m: http://maven.apache.org/POM/4.0.0
-      xpath: /m:project/m:packaging/text()[matches(self::node(), '(ear|war|ejb|zip|pom)')]
+      xpath: /m:project/m:packaging/text()[matches(self::node(), '^(?!jar).*$')]
 - category: mandatory
   customVariables: []
-  description: |
-    Adopt Quarkus BOM
+  description: Adopt Quarkus BOM
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -32,14 +30,16 @@
     url: https://quarkus.io/guides/maven-tooling#build-tool-maven
   - title: Quarkus - Releases
     url: https://quarkus.io/blog/tag/release/
-  message: Use the Quarkus BOM to omit the version of the different Quarkus dependencies..
-    Add the following sections to the `pom.xml` file:. ```xml. <properties>. <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>.
-    <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>. <quarkus.platform.version>3.1.0.Final</quarkus.platform.version>.
-    </properties>. <dependencyManagement>. <dependencies>. <dependency>. <groupId>${{quarkus.platform.group-id}}</groupId>.
-    <artifactId>${{quarkus.platform.artifact-id}}</artifactId>. <version>${{quarkus.platform.version}}</version>.
-    <type>pom</type>. <scope>import</scope>. </dependency>. </dependencies>. </dependencyManagement>.
-    ```. Check the latest Quarkus version available from the `Quarkus - Releases`
-    link below.
+  message: "\n \n Use the Quarkus BOM to omit the version of the different Quarkus
+    dependencies. \n Add the following sections to the `pom.xml` file: \n\n ```xml\n
+    <properties> \n <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
+    \n <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
+    \n <quarkus.platform.version>3.1.0.Final</quarkus.platform.version>\n </properties>
+    \n <dependencyManagement> \n <dependencies> \n <dependency> \n <groupId>${{quarkus.platform.group-id}}</groupId>
+    \n <artifactId>${{quarkus.platform.artifact-id}}</artifactId> \n <version>${{quarkus.platform.version}}</version>
+    \n <type>pom</type> \n <scope>import</scope> \n </dependency> \n </dependencies>
+    \n </dependencyManagement> \n ```\n Check the latest Quarkus version available
+    from the `Quarkus - Releases` link below.\n \n "
   ruleID: javaee-pom-to-quarkus-00010
   when:
     builtin.xml:
@@ -52,8 +52,7 @@
         = '${quarkus.platform.artifact-id}')]
 - category: mandatory
   customVariables: []
-  description: |
-    Adopt Quarkus Maven plugin
+  description: Adopt Quarkus Maven plugin
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -61,14 +60,14 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/maven-tooling#build-tool-maven
-  message: Use the Quarkus Maven plugin adding the following sections to the `pom.xml`
-    file:. ```xml. <properties>. <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>.
-    <quarkus.platform.version>3.1.0.Final</quarkus.platform.version>. </properties>.
-    <build>. <plugins>. <plugin>. <groupId>${{quarkus.platform.group-id}}</groupId>.
-    <artifactId>quarkus-maven-plugin</artifactId>. <version>${{quarkus.platform.version}}</version>.
-    <extensions>true</extensions>. <executions>. <execution>. <goals>. <goal>build</goal>.
-    <goal>generate-code</goal>. <goal>generate-code-tests</goal>. </goals>. </execution>.
-    </executions>. </plugin>. </plugins>. </build>. ```
+  message: "\n \n Use the Quarkus Maven plugin adding the following sections to the
+    `pom.xml` file: \n\n ```xml\n <properties> \n <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
+    \n <quarkus.platform.version>3.1.0.Final</quarkus.platform.version>\n </properties>
+    \n <build>\n <plugins>\n <plugin>\n <groupId>${{quarkus.platform.group-id}}</groupId>\n
+    <artifactId>quarkus-maven-plugin</artifactId>\n <version>${{quarkus.platform.version}}</version>\n
+    <extensions>true</extensions>\n <executions>\n <execution>\n <goals>\n <goal>build</goal>\n
+    <goal>generate-code</goal>\n <goal>generate-code-tests</goal>\n </goals>\n </execution>\n
+    </executions>\n </plugin>\n </plugins>\n </build>\n ```\n \n "
   ruleID: javaee-pom-to-quarkus-00020
   when:
     builtin.xml:
@@ -79,8 +78,7 @@
       xpath: /m:project[not(m:build/m:plugins/m:plugin/m:artifactId/text() = 'quarkus-maven-plugin')]
 - category: mandatory
   customVariables: []
-  description: |
-    Adopt Maven Compiler plugin
+  description: Adopt Maven Compiler plugin
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -88,12 +86,12 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/maven-tooling#build-tool-maven
-  message: Use the Maven Compiler plugin adding the following sections to the `pom.xml`
-    file:. ```xml. <properties>. <compiler-plugin.version>3.10.1</compiler-plugin.version>.
-    <maven.compiler.release>11</maven.compiler.release>. </properties>. <build>. <plugins>.
-    <plugin>. <artifactId>maven-compiler-plugin</artifactId>. <version>${{compiler-plugin.version}}</version>.
-    <configuration>. <compilerArgs>. <arg>-parameters</arg>. </compilerArgs>. </configuration>.
-    </plugin>. </plugins>. </build>. ```
+  message: "\n \n Use the Maven Compiler plugin adding the following sections to the
+    `pom.xml` file: \n\n ```xml\n <properties> \n <compiler-plugin.version>3.10.1</compiler-plugin.version>\n
+    <maven.compiler.release>11</maven.compiler.release>\n </properties> \n <build>\n
+    <plugins>\n <plugin>\n <artifactId>maven-compiler-plugin</artifactId>\n <version>${{compiler-plugin.version}}</version>\n
+    <configuration>\n <compilerArgs>\n <arg>-parameters</arg>\n </compilerArgs>\n
+    </configuration>\n </plugin>\n </plugins>\n </build>\n ```\n \n "
   ruleID: javaee-pom-to-quarkus-00030
   when:
     builtin.xml:
@@ -106,8 +104,7 @@
                         m:build/m:plugins/m:plugin/m:artifactId[text() = 'maven-compiler-plugin' and not(../m:configuration/m:compilerArgs/m:arg/text() = '-parameters')]]
 - category: mandatory
   customVariables: []
-  description: |
-    Adopt Maven Surefire plugin
+  description: Adopt Maven Surefire plugin
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -115,13 +112,13 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/maven-tooling#build-tool-maven
-  message: Use the Maven Surefire plugin adding the following sections to the `pom.xml`
-    file:. ```xml. <properties>. <surefire-plugin.version>3.0.0</compiler-plugin.version>.
-    </properties>. <build>. <plugins>. <plugin>. <artifactId>maven-surefire-plugin</artifactId>.
-    <version>${{surefire-plugin.version}}</version>. <configuration>. <systemPropertyVariables>.
-    <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>.
-    <maven.home>${{maven.home}}</maven.home>. </systemPropertyVariables>. </configuration>.
-    </plugin>. </plugins>. </build>. ```
+  message: "\n \n Use the Maven Surefire plugin adding the following sections to the
+    `pom.xml` file: \n\n ```xml\n <properties> \n <surefire-plugin.version>3.0.0</compiler-plugin.version>\n
+    </properties> \n <build>\n <plugins>\n <plugin>\n <artifactId>maven-surefire-plugin</artifactId>\n
+    <version>${{surefire-plugin.version}}</version>\n <configuration>\n <systemPropertyVariables>\n
+    <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>\n
+    <maven.home>${{maven.home}}</maven.home>\n </systemPropertyVariables>\n </configuration>\n
+    </plugin>\n </plugins>\n </build>\n ```\n \n "
   ruleID: javaee-pom-to-quarkus-00040
   when:
     builtin.xml:
@@ -134,8 +131,7 @@
                         m:build/m:plugins/m:plugin/m:artifactId[text() = 'maven-surefire-plugin' and not(../m:configuration/m:systemPropertyVariables/m:java.util.logging.manager/text() = 'org.jboss.logmanager.LogManager')]]
 - category: mandatory
   customVariables: []
-  description: |
-    Adopt Maven Failsafe plugin
+  description: Adopt Maven Failsafe plugin
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -143,15 +139,15 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/maven-tooling#build-tool-maven
-  message: Use the Maven Failsafe plugin adding the following sections to the `pom.xml`
-    file:. ```xml. <properties>. <surefire-plugin.version>3.0.0</compiler-plugin.version>.
-    </properties>. <build>. <plugins>. <plugin>. <artifactId>maven-failsafe-plugin</artifactId>.
-    <version>${{surefire-plugin.version}}</version>. <executions>. <execution>. <goals>.
-    <goals>integration-test</goal>. <goals>verify</goal>. </goals>. <configuration>.
-    <systemPropertyVariables>. <native.image.path>${{project.build.directory}}/${{project.build.finalName}}-runner</native.image.path>.
-    <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>.
-    <maven.home>${{maven.home}}</maven.home>. </systemPropertyVariables>. </configuration>.
-    </execution>. </executions>. </plugin>. </plugins>. </build>. ```
+  message: "\n \n Use the Maven Failsafe plugin adding the following sections to the
+    `pom.xml` file: \n\n ```xml\n <properties> \n <surefire-plugin.version>3.0.0</compiler-plugin.version>\n
+    </properties> \n <build>\n <plugins>\n <plugin>\n <artifactId>maven-failsafe-plugin</artifactId>\n
+    <version>${{surefire-plugin.version}}</version>\n <executions>\n <execution>\n
+    <goals>\n <goals>integration-test</goal>\n <goals>verify</goal>\n </goals>\n <configuration>\n
+    <systemPropertyVariables>\n <native.image.path>${{project.build.directory}}/${{project.build.finalName}}-runner</native.image.path>\n
+    <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>\n
+    <maven.home>${{maven.home}}</maven.home>\n </systemPropertyVariables>\n </configuration>\n
+    </execution>\n </executions>\n </plugin>\n </plugins>\n </build>\n ```\n \n "
   ruleID: javaee-pom-to-quarkus-00050
   when:
     builtin.xml:
@@ -164,9 +160,7 @@
                         m:build/m:plugins/m:plugin/m:artifactId[text() = 'maven-failsafe-plugin' and not(../m:executions/m:execution/m:configuration/m:systemPropertyVariables/m:native.image.path)]]
 - category: mandatory
   customVariables: []
-  description: |-
-    Add Maven profile to run the Quarkus native build
-    Leverage a Maven profile to run the Quarkus native build adding the following section to the `pom.xml` file:. ```xml. <profiles>. <profile>. <id>native</id>. <activation>. <property>. <name>native</name>. </property>. </activation>. <properties>. <skipITs>false</skipITs>. <quarkus.package.type>native</quarkus.package.type>. </properties>. </profile>. </profiles>. ```
+  description: Add Maven profile to run the Quarkus native build
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -174,11 +168,11 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/maven-tooling#build-tool-maven
-  message: Leverage a Maven profile to run the Quarkus native build adding the following
-    section to the `pom.xml` file:. ```xml. <profiles>. <profile>. <id>native</id>.
-    <activation>. <property>. <name>native</name>. </property>. </activation>. <properties>.
-    <skipITs>false</skipITs>. <quarkus.package.type>native</quarkus.package.type>.
-    </properties>. </profile>. </profiles>. ```
+  message: "\n \n Leverage a Maven profile to run the Quarkus native build adding
+    the following section to the `pom.xml` file: \n\n ```xml\n <profiles>\n <profile>\n
+    <id>native</id>\n <activation>\n <property>\n <name>native</name>\n </property>\n
+    </activation>\n <properties>\n <skipITs>false</skipITs>\n <quarkus.package.type>native</quarkus.package.type>\n
+    </properties>\n </profile>\n </profiles>\n ```\n \n "
   ruleID: javaee-pom-to-quarkus-00060
   when:
     builtin.xml:
@@ -190,9 +184,7 @@
         = 'native')]
 - category: mandatory
   customVariables: []
-  description: |-
-    Configure Quarkus hibernate-orm
-    Configure Quarkus 'hibernate-orm` and jakarta persistence.. Add the `quarkus-hibernate-orm` section and one for your preferred jdbc solution to the `pom.xml` file, eg for postgres:. ```. <!-- Hibernate ORM specific dependencies -->. <dependency>. <groupId>io.quarkus</groupId>. <artifactId>quarkus-hibernate-orm</artifactId>. </dependency>. <!-- JDBC driver dependencies -->. <dependency>. <groupId>io.quarkus</groupId>. <artifactId>quarkus-jdbc-postgresql</artifactId>. </dependency>. ```
+  description: Configure Quarkus hibernate-orm
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -200,12 +192,12 @@
   links:
   - title: Using hibernate-orm and jakarta persistence
     url: https://quarkus.io/guides/hibernate-orm
-  message: Configure Quarkus 'hibernate-orm` and jakarta persistence.. Add the `quarkus-hibernate-orm`
-    section and one for your preferred jdbc solution to the `pom.xml` file, eg for
-    postgres:. ```. <!-- Hibernate ORM specific dependencies -->. <dependency>. <groupId>io.quarkus</groupId>.
-    <artifactId>quarkus-hibernate-orm</artifactId>. </dependency>. <!-- JDBC driver
-    dependencies -->. <dependency>. <groupId>io.quarkus</groupId>. <artifactId>quarkus-jdbc-postgresql</artifactId>.
-    </dependency>. ```
+  message: "\n \n Configure Quarkus 'hibernate-orm` and jakarta persistence. \n Add
+    the `quarkus-hibernate-orm` section and one for your preferred jdbc solution to
+    the `pom.xml` file, eg for postgres: \n\n ```\n <!-- Hibernate ORM specific dependencies
+    -->\n <dependency>\n <groupId>io.quarkus</groupId>\n <artifactId>quarkus-hibernate-orm</artifactId>\n
+    </dependency>\n \n <!-- JDBC driver dependencies -->\n <dependency>\n <groupId>io.quarkus</groupId>\n
+    <artifactId>quarkus-jdbc-postgresql</artifactId>\n </dependency> \n ```\n \n "
   ruleID: javaee-pom-to-quarkus-00070
   when:
     or:
@@ -223,9 +215,7 @@
         xpath: /m:project/m:dependencies/m:dependency/m:groupId[contains(text(),'org.hibernate')]
 - category: mandatory
   customVariables: []
-  description: |-
-    Use Quarkus junit artifact
-    Use Quarkus junit artifact:. ```. <!-- Quarkus junit specific dependency -->. <dependency>. <groupId>io.quarkus</groupId>. <artifactId>quarkus-junit5</artifactId>. <scope>test</scope>. </dependency>. ```
+  description: Use Quarkus junit artifact
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -235,9 +225,9 @@
     url: https://quarkus.io/guides/getting-started-testing
   - title: Testing your Quarkus application with JUnit
     url: https://access.redhat.com/documentation/en-us/red_hat_build_of_quarkus/1.3/html/getting_started_with_quarkus/proc-quarkus-junit-testing_quarkus-getting-started
-  message: Use Quarkus junit artifact:. ```. <!-- Quarkus junit specific dependency
-    -->. <dependency>. <groupId>io.quarkus</groupId>. <artifactId>quarkus-junit5</artifactId>.
-    <scope>test</scope>. </dependency>. ```
+  message: "\n \n Use Quarkus junit artifact: \n\n ```\n <!-- Quarkus junit specific
+    dependency -->\n <dependency>\n <groupId>io.quarkus</groupId>\n <artifactId>quarkus-junit5</artifactId>\n
+    <scope>test</scope>\n </dependency>\n ```\n \n "
   ruleID: javaee-pom-to-quarkus-00080
   when:
     java.dependency:

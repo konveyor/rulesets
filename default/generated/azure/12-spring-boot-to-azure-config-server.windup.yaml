@@ -1,8 +1,6 @@
 - category: potential
   customVariables: []
-  description: |-
-    Explicit Config Server connection info found in configuration file
-    The application uses a Spring Cloud Config Server connection string.. If you are migrating to Azure Spring Apps, the connection info of Config Server will be injected upon app start.. Please remove the connection info from your configuration file. Configure the Config Server after creating an Azure Spring Apps instance.
+  description: Explicit Config Server connection info found in configuration file
   effort: 0
   labels:
   - konveyor.io/source=springboot
@@ -16,10 +14,11 @@
     url: http://aka.ms/spring-cloud-to-asa?toc=%2Fazure%2Fspring-apps%2Ftoc.json&bc=%2Fazure%2Fspring-apps%2Fbreadcrumb%2Ftoc.json&pivots=sc-standard-tier#remove-restricted-configurations
   - title: Prepare the Spring Cloud Config server
     url: http://aka.ms/spring-cloud-to-asa?toc=%2Fazure%2Fspring-apps%2Ftoc.json&bc=%2Fazure%2Fspring-apps%2Fbreadcrumb%2Ftoc.json&pivots=sc-standard-tier#prepare-the-spring-cloud-config-server
-  message: The application uses a Spring Cloud Config Server connection string.. If
-    you are migrating to Azure Spring Apps, the connection info of Config Server will
-    be injected upon app start.. Please remove the connection info from your configuration
-    file. Configure the Config Server after creating an Azure Spring Apps instance.
+  message: "\n \n The application uses a Spring Cloud Config Server connection string.\n\n
+    If you are migrating to Azure Spring Apps, the connection info of Config Server
+    will be injected upon app start. \n Please remove the connection info from your
+    configuration file. Configure the Config Server after creating an Azure Spring
+    Apps instance.\n \n "
   ruleID: spring-boot-to-azure-config-server-01000
   tag:
   - Spring Cloud Config

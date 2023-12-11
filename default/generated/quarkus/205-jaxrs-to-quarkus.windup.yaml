@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace JAX-RS dependency
-    Dependency `org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_2.1_spec` has to be replaced with `io.quarkus:quarkus-resteasy-reactive` artifact.
+  description: Replace JAX-RS dependency
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -10,8 +8,8 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/resteasy-reactive
-  message: Dependency `org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_2.1_spec` has to
-    be replaced with `io.quarkus:quarkus-resteasy-reactive` artifact.
+  message: "\n Dependency `org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_2.1_spec` has
+    to be replaced with `io.quarkus:quarkus-resteasy-reactive` artifact.\n "
   ruleID: jaxrs-to-quarkus-00000
   when:
     java.dependency:
@@ -19,9 +17,7 @@
       name: org.jboss.spec.javax.ws.rs.jboss-jaxrs-api_2.1_spec
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace JAX-RS dependency
-    Dependency `javax.ws.rs:javax.ws.rs-api` has to be replaced with `io.quarkus:quarkus-resteasy-reactive` artifact.
+  description: Replace JAX-RS dependency
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -29,8 +25,8 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/resteasy-reactive
-  message: Dependency `javax.ws.rs:javax.ws.rs-api` has to be replaced with `io.quarkus:quarkus-resteasy-reactive`
-    artifact.
+  message: "\n Dependency `javax.ws.rs:javax.ws.rs-api` has to be replaced with `io.quarkus:quarkus-resteasy-reactive`
+    artifact.\n "
   ruleID: jaxrs-to-quarkus-00010
   when:
     java.dependency:
@@ -38,9 +34,7 @@
       name: javax.ws.rs.javax.ws.rs-api
 - category: optional
   customVariables: []
-  description: |-
-    JAX-RS activation is no longer necessary
-    JAX-RS activation is no longer necessary. You can set a root path like this but you don't have to.
+  description: JAX-RS activation is no longer necessary
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -48,8 +42,8 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/resteasy-reactive#declaring-endpoints-uri-mapping
-  message: JAX-RS activation is no longer necessary. You can set a root path like
-    this but you don't have to.
+  message: "\n JAX-RS activation is no longer necessary. You can set a root path like
+    this but you don't have to.\n "
   ruleID: jaxrs-to-quarkus-00020
   when:
     and:

@@ -1,8 +1,6 @@
 - category: potential
   customVariables: []
-  description: |-
-    Non-LTS version Java
-    The application is using non-LTS version Java.. JDK on LTS version is recommended, i.e. JAVA_8, JAVA_11 or JAVA_17.
+  description: Non-LTS version Java
   effort: 3
   labels:
   - konveyor.io/source=springboot
@@ -14,8 +12,8 @@
   - konveyor.io/target=azure-container-apps
   - version
   links: []
-  message: The application is using non-LTS version Java.. JDK on LTS version is recommended,
-    i.e. JAVA_8, JAVA_11 or JAVA_17.
+  message: "\n \n The application is using non-LTS version Java. \n JDK on LTS version
+    is recommended, i.e. JAVA_8, JAVA_11 or JAVA_17.\n \n "
   ruleID: azure-java-version-01000
   when:
     as: result
@@ -27,9 +25,7 @@
       xpath: //m:java.version[matches(text(), '(9|10|12|13|14|15|16|19|20).*')]
 - category: potential
   customVariables: []
-  description: |-
-    Java version found to be lower than JAVA_8
-    The application is using Java version lower than JAVA_8.. JDK on LTS version is recommended, i.e. JAVA_8, JAVA_11 or JAVA_17.
+  description: Java version found to be lower than JAVA_8
   effort: 3
   labels:
   - konveyor.io/source=springboot
@@ -41,8 +37,8 @@
   - konveyor.io/target=azure-container-apps
   - version
   links: []
-  message: The application is using Java version lower than JAVA_8.. JDK on LTS version
-    is recommended, i.e. JAVA_8, JAVA_11 or JAVA_17.
+  message: "\n \n The application is using Java version lower than JAVA_8.\n JDK on
+    LTS version is recommended, i.e. JAVA_8, JAVA_11 or JAVA_17.\n \n "
   ruleID: azure-java-version-02000
   when:
     as: result

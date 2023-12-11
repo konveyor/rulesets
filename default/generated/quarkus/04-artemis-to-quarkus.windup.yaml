@@ -1,16 +1,15 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'artemis-jms-client' dependency with Quarkus 'quarkus-artemis-jms' extension
-    Replace the `org.apache.activemq:artemis-jms-client` dependency with the Quarkus dependency `io.quarkus:quarkus-artemis-jms`. Further information in the link below.
+  description: Replace the 'artemis-jms-client' dependency with Quarkus 'quarkus-artemis-jms'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=artemis
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `org.apache.activemq:artemis-jms-client` dependency with the
-    Quarkus dependency `io.quarkus:quarkus-artemis-jms`. Further information in the
-    link below.
+  message: "\n Replace the `org.apache.activemq:artemis-jms-client` dependency with
+    the Quarkus dependency `io.quarkus:quarkus-artemis-jms` \n Further information
+    in the link below.\n "
   ruleID: quarkus-artemis-jms-00000
   when:
     java.dependency:
@@ -18,9 +17,8 @@
       name: org.apache.activemq.artemis-jms-client
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'artemis-jms-client' dependency with Quarkus 'quarkus-artemis-jms' extension
-    Replace the `org.apache.activemq:artemis-jms-client` dependency with the Quarkus dependency `io.quarkus:quarkus-artemis-jms`. Further information in the link below.
+  description: Replace the 'artemis-jms-client' dependency with Quarkus 'quarkus-artemis-jms'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=artemis
@@ -28,9 +26,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/jms
-  message: Replace the `org.apache.activemq:artemis-jms-client` dependency with the
-    Quarkus dependency `io.quarkus:quarkus-artemis-jms`. Further information in the
-    link below.
+  message: "\n Replace the `org.apache.activemq:artemis-jms-client` dependency with
+    the Quarkus dependency `io.quarkus:quarkus-artemis-jms` \n Further information
+    in the link below.\n "
   ruleID: quarkus-artemis-jms-00010
   when:
     java.dependency:

@@ -1,15 +1,13 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'jcc' dependency with Quarkus 'quarkus-jdbc-db2' extension
-    Replace the `com.ibm.db2:jcc` dependency with the Quarkus dependency `io.quarkus:quarkus-jdbc-db2`. Further information in the link below.
+  description: Replace the 'jcc' dependency with Quarkus 'quarkus-jdbc-db2' extension
   effort: 1
   labels:
   - konveyor.io/source=jdbc
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `com.ibm.db2:jcc` dependency with the Quarkus dependency `io.quarkus:quarkus-jdbc-db2`.
-    Further information in the link below.
+  message: "\n Replace the `com.ibm.db2:jcc` dependency with the Quarkus dependency
+    `io.quarkus:quarkus-jdbc-db2` \n Further information in the link below.\n "
   ruleID: quarkus-jdbc-db2-00000
   when:
     java.dependency:
@@ -17,9 +15,7 @@
       name: com.ibm.db2.jcc
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'jcc' dependency with Quarkus 'quarkus-jdbc-db2' extension
-    Replace the `com.ibm.db2:jcc` dependency with the Quarkus dependency `io.quarkus:quarkus-jdbc-db2`. Further information in the link below.
+  description: Replace the 'jcc' dependency with Quarkus 'quarkus-jdbc-db2' extension
   effort: 1
   labels:
   - konveyor.io/source=jdbc
@@ -27,8 +23,8 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/hibernate-orm
-  message: Replace the `com.ibm.db2:jcc` dependency with the Quarkus dependency `io.quarkus:quarkus-jdbc-db2`.
-    Further information in the link below.
+  message: "\n Replace the `com.ibm.db2:jcc` dependency with the Quarkus dependency
+    `io.quarkus:quarkus-jdbc-db2` \n Further information in the link below.\n "
   ruleID: quarkus-jdbc-db2-00010
   when:
     java.dependency:
@@ -36,16 +32,16 @@
       name: com.ibm.db2.jcc
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'derbyclient' dependency with Quarkus 'quarkus-jdbc-derby' extension
-    Replace the `org.apache.derby:derbyclient` dependency with the Quarkus dependency `io.quarkus:quarkus-jdbc-derby`. Further information in the link below.
+  description: Replace the 'derbyclient' dependency with Quarkus 'quarkus-jdbc-derby'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=jdbc
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `org.apache.derby:derbyclient` dependency with the Quarkus
-    dependency `io.quarkus:quarkus-jdbc-derby`. Further information in the link below.
+  message: "\n Replace the `org.apache.derby:derbyclient` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-jdbc-derby` \n Further information in the link
+    below.\n "
   ruleID: quarkus-jdbc-derby-00000
   when:
     java.dependency:
@@ -53,9 +49,8 @@
       name: org.apache.derby.derbyclient
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'derbyclient' dependency with Quarkus 'quarkus-jdbc-derby' extension
-    Replace the `org.apache.derby:derbyclient` dependency with the Quarkus dependency `io.quarkus:quarkus-jdbc-derby`. Further information in the link below.
+  description: Replace the 'derbyclient' dependency with Quarkus 'quarkus-jdbc-derby'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=jdbc
@@ -63,8 +58,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/hibernate-orm
-  message: Replace the `org.apache.derby:derbyclient` dependency with the Quarkus
-    dependency `io.quarkus:quarkus-jdbc-derby`. Further information in the link below.
+  message: "\n Replace the `org.apache.derby:derbyclient` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-jdbc-derby` \n Further information in the link
+    below.\n "
   ruleID: quarkus-jdbc-derby-00010
   when:
     java.dependency:
@@ -72,17 +68,16 @@
       name: org.apache.derby.derbyclient
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'mariadb-java-client' dependency with Quarkus 'quarkus-jdbc-mariadb' extension
-    Replace the `org.mariadb.jdbc:mariadb-java-client` dependency with the Quarkus dependency `io.quarkus:quarkus-jdbc-mariadb`. Further information in the link below.
+  description: Replace the 'mariadb-java-client' dependency with Quarkus 'quarkus-jdbc-mariadb'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=jdbc
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `org.mariadb.jdbc:mariadb-java-client` dependency with the
-    Quarkus dependency `io.quarkus:quarkus-jdbc-mariadb`. Further information in the
-    link below.
+  message: "\n Replace the `org.mariadb.jdbc:mariadb-java-client` dependency with
+    the Quarkus dependency `io.quarkus:quarkus-jdbc-mariadb` \n Further information
+    in the link below.\n "
   ruleID: quarkus-jdbc-mariadb-00000
   when:
     java.dependency:
@@ -90,9 +85,8 @@
       name: org.mariadb.jdbc.mariadb-java-client
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'mariadb-java-client' dependency with Quarkus 'quarkus-jdbc-mariadb' extension
-    Replace the `org.mariadb.jdbc:mariadb-java-client` dependency with the Quarkus dependency `io.quarkus:quarkus-jdbc-mariadb`. Further information in the link below.
+  description: Replace the 'mariadb-java-client' dependency with Quarkus 'quarkus-jdbc-mariadb'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=jdbc
@@ -100,9 +94,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/hibernate-orm
-  message: Replace the `org.mariadb.jdbc:mariadb-java-client` dependency with the
-    Quarkus dependency `io.quarkus:quarkus-jdbc-mariadb`. Further information in the
-    link below.
+  message: "\n Replace the `org.mariadb.jdbc:mariadb-java-client` dependency with
+    the Quarkus dependency `io.quarkus:quarkus-jdbc-mariadb` \n Further information
+    in the link below.\n "
   ruleID: quarkus-jdbc-mariadb-00010
   when:
     java.dependency:
@@ -110,16 +104,16 @@
       name: org.mariadb.jdbc.mariadb-java-client
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'mysql-connector-java' dependency with Quarkus 'quarkus-jdbc-mysql' extension
-    Replace the `mysql:mysql-connector-java` dependency with the Quarkus dependency `io.quarkus:quarkus-jdbc-mysql`. Further information in the link below.
+  description: Replace the 'mysql-connector-java' dependency with Quarkus 'quarkus-jdbc-mysql'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=jdbc
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `mysql:mysql-connector-java` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-jdbc-mysql`. Further information in the link below.
+  message: "\n Replace the `mysql:mysql-connector-java` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-jdbc-mysql` \n Further information in the link
+    below.\n "
   ruleID: quarkus-jdbc-mysql-00000
   when:
     java.dependency:
@@ -127,9 +121,8 @@
       name: mysql.mysql-connector-java
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'mysql-connector-java' dependency with Quarkus 'quarkus-jdbc-mysql' extension
-    Replace the `mysql:mysql-connector-java` dependency with the Quarkus dependency `io.quarkus:quarkus-jdbc-mysql`. Further information in the link below.
+  description: Replace the 'mysql-connector-java' dependency with Quarkus 'quarkus-jdbc-mysql'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=jdbc
@@ -137,8 +130,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/hibernate-orm
-  message: Replace the `mysql:mysql-connector-java` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-jdbc-mysql`. Further information in the link below.
+  message: "\n Replace the `mysql:mysql-connector-java` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-jdbc-mysql` \n Further information in the link
+    below.\n "
   ruleID: quarkus-jdbc-mysql-00010
   when:
     java.dependency:
@@ -146,16 +140,16 @@
       name: mysql.mysql-connector-java
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'ojdbc11' dependency with Quarkus 'quarkus-jdbc-oracle' extension
-    Replace the `com.oracle.database.jdbc:ojdbc11` dependency with the Quarkus dependency `io.quarkus:quarkus-jdbc-oracle`. Further information in the link below.
+  description: Replace the 'ojdbc11' dependency with Quarkus 'quarkus-jdbc-oracle'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=jdbc
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `com.oracle.database.jdbc:ojdbc11` dependency with the Quarkus
-    dependency `io.quarkus:quarkus-jdbc-oracle`. Further information in the link below.
+  message: "\n Replace the `com.oracle.database.jdbc:ojdbc11` dependency with the
+    Quarkus dependency `io.quarkus:quarkus-jdbc-oracle` \n Further information in
+    the link below.\n "
   ruleID: quarkus-jdbc-oracle-00000
   when:
     java.dependency:
@@ -163,9 +157,8 @@
       name: com.oracle.database.jdbc.ojdbc11
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'ojdbc11' dependency with Quarkus 'quarkus-jdbc-oracle' extension
-    Replace the `com.oracle.database.jdbc:ojdbc11` dependency with the Quarkus dependency `io.quarkus:quarkus-jdbc-oracle`. Further information in the link below.
+  description: Replace the 'ojdbc11' dependency with Quarkus 'quarkus-jdbc-oracle'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=jdbc
@@ -173,8 +166,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/hibernate-orm
-  message: Replace the `com.oracle.database.jdbc:ojdbc11` dependency with the Quarkus
-    dependency `io.quarkus:quarkus-jdbc-oracle`. Further information in the link below.
+  message: "\n Replace the `com.oracle.database.jdbc:ojdbc11` dependency with the
+    Quarkus dependency `io.quarkus:quarkus-jdbc-oracle` \n Further information in
+    the link below.\n "
   ruleID: quarkus-jdbc-oracle-00010
   when:
     java.dependency:
@@ -182,16 +176,16 @@
       name: com.oracle.database.jdbc.ojdbc11
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'postgresql' dependency with Quarkus 'quarkus-jdbc-postgresql' extension
-    Replace the `org.postgresql:postgresql` dependency with the Quarkus dependency `io.quarkus:quarkus-jdbc-postgresql`. Further information in the link below.
+  description: Replace the 'postgresql' dependency with Quarkus 'quarkus-jdbc-postgresql'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=jdbc
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `org.postgresql:postgresql` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-jdbc-postgresql`. Further information in the link below.
+  message: "\n Replace the `org.postgresql:postgresql` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-jdbc-postgresql` \n Further information in the
+    link below.\n "
   ruleID: quarkus-jdbc-postgresql-00000
   when:
     java.dependency:
@@ -199,9 +193,8 @@
       name: org.postgresql.postgresql
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'postgresql' dependency with Quarkus 'quarkus-jdbc-postgresql' extension
-    Replace the `org.postgresql:postgresql` dependency with the Quarkus dependency `io.quarkus:quarkus-jdbc-postgresql`. Further information in the link below.
+  description: Replace the 'postgresql' dependency with Quarkus 'quarkus-jdbc-postgresql'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=jdbc
@@ -209,8 +202,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/hibernate-orm
-  message: Replace the `org.postgresql:postgresql` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-jdbc-postgresql`. Further information in the link below.
+  message: "\n Replace the `org.postgresql:postgresql` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-jdbc-postgresql` \n Further information in the
+    link below.\n "
   ruleID: quarkus-jdbc-postgresql-00010
   when:
     java.dependency:

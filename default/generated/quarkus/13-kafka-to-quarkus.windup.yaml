@@ -1,16 +1,15 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'kafka-clients' dependency with Quarkus 'quarkus-kafka-client' extension
-    Replace the `org.apache.kafka:kafka-clients` dependency with the Quarkus dependency `io.quarkus:quarkus-kafka-client`. Further information in the link below.
+  description: Replace the 'kafka-clients' dependency with Quarkus 'quarkus-kafka-client'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=kafka
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `org.apache.kafka:kafka-clients` dependency with the Quarkus
-    dependency `io.quarkus:quarkus-kafka-client`. Further information in the link
-    below.
+  message: "\n Replace the `org.apache.kafka:kafka-clients` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-kafka-client` \n Further information in the link
+    below.\n "
   ruleID: quarkus-kafka-client-00000
   when:
     java.dependency:
@@ -18,9 +17,8 @@
       name: org.apache.kafka.kafka-clients
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'kafka-clients' dependency with Quarkus 'quarkus-kafka-client' extension
-    Replace the `org.apache.kafka:kafka-clients` dependency with the Quarkus dependency `io.quarkus:quarkus-kafka-client`. Further information in the link below.
+  description: Replace the 'kafka-clients' dependency with Quarkus 'quarkus-kafka-client'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=kafka
@@ -28,9 +26,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/kafka
-  message: Replace the `org.apache.kafka:kafka-clients` dependency with the Quarkus
-    dependency `io.quarkus:quarkus-kafka-client`. Further information in the link
-    below.
+  message: "\n Replace the `org.apache.kafka:kafka-clients` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-kafka-client` \n Further information in the link
+    below.\n "
   ruleID: quarkus-kafka-client-00010
   when:
     java.dependency:
@@ -38,17 +36,16 @@
       name: org.apache.kafka.kafka-clients
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'kafka-streams' dependency with Quarkus 'quarkus-kafka-streams' extension
-    Replace the `org.apache.kafka:kafka-streams` dependency with the Quarkus dependency `io.quarkus:quarkus-kafka-streams`. Further information in the link below.
+  description: Replace the 'kafka-streams' dependency with Quarkus 'quarkus-kafka-streams'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=kafka
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `org.apache.kafka:kafka-streams` dependency with the Quarkus
-    dependency `io.quarkus:quarkus-kafka-streams`. Further information in the link
-    below.
+  message: "\n Replace the `org.apache.kafka:kafka-streams` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-kafka-streams` \n Further information in the link
+    below.\n "
   ruleID: quarkus-kafka-streams-00000
   when:
     java.dependency:
@@ -56,9 +53,8 @@
       name: org.apache.kafka.kafka-streams
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'kafka-streams' dependency with Quarkus 'quarkus-kafka-streams' extension
-    Replace the `org.apache.kafka:kafka-streams` dependency with the Quarkus dependency `io.quarkus:quarkus-kafka-streams`. Further information in the link below.
+  description: Replace the 'kafka-streams' dependency with Quarkus 'quarkus-kafka-streams'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=kafka
@@ -66,9 +62,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/kafka-streams
-  message: Replace the `org.apache.kafka:kafka-streams` dependency with the Quarkus
-    dependency `io.quarkus:quarkus-kafka-streams`. Further information in the link
-    below.
+  message: "\n Replace the `org.apache.kafka:kafka-streams` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-kafka-streams` \n Further information in the link
+    below.\n "
   ruleID: quarkus-kafka-streams-00010
   when:
     java.dependency:

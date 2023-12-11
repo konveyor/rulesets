@@ -1,15 +1,13 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'agroal-api' dependency with Quarkus 'quarkus-agroal' extension
-    Replace the `io.agroal:agroal-api` dependency with the Quarkus dependency `io.quarkus:quarkus-agroal`. Further information in the link below.
+  description: Replace the 'agroal-api' dependency with Quarkus 'quarkus-agroal' extension
   effort: 1
   labels:
   - konveyor.io/source=agroal
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `io.agroal:agroal-api` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-agroal`. Further information in the link below.
+  message: "\n Replace the `io.agroal:agroal-api` dependency with the Quarkus dependency
+    `io.quarkus:quarkus-agroal` \n Further information in the link below.\n "
   ruleID: quarkus-agroal-00000
   when:
     java.dependency:
@@ -17,9 +15,7 @@
       name: io.agroal.agroal-api
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'agroal-api' dependency with Quarkus 'quarkus-agroal' extension
-    Replace the `io.agroal:agroal-api` dependency with the Quarkus dependency `io.quarkus:quarkus-agroal`. Further information in the link below.
+  description: Replace the 'agroal-api' dependency with Quarkus 'quarkus-agroal' extension
   effort: 1
   labels:
   - konveyor.io/source=agroal
@@ -27,8 +23,8 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/datasource
-  message: Replace the `io.agroal:agroal-api` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-agroal`. Further information in the link below.
+  message: "\n Replace the `io.agroal:agroal-api` dependency with the Quarkus dependency
+    `io.quarkus:quarkus-agroal` \n Further information in the link below.\n "
   ruleID: quarkus-agroal-00010
   when:
     java.dependency:
