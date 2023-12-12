@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    JavaFX usage
-    The application uses JavaFX.. JavaFX is not cloud compatible and requires the JRE on the remote device.
+  description: JavaFX usage
   effort: 5
   labels:
   - konveyor.io/source=springboot
@@ -12,8 +10,8 @@
   - konveyor.io/target=azure-container-apps
   - JavaFX
   links: []
-  message: The application uses JavaFX.. JavaFX is not cloud compatible and requires
-    the JRE on the remote device.
+  message: "\n \n The application uses JavaFX.\n JavaFX is not cloud compatible and
+    requires the JRE on the remote device.\n \n "
   ruleID: spring-boot-to-azure-java-fx-01000
   when:
     java.referenced:

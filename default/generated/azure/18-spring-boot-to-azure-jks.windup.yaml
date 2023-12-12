@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    JKS file
-    Java KeyStore file is found. Make sure to externalize the Java Keystore.
+  description: JKS file
   effort: 1
   labels:
   - konveyor.io/source=springboot

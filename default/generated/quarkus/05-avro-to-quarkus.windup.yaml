@@ -1,15 +1,13 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'avro' dependency with Quarkus 'quarkus-avro' extension
-    Replace the `org.apache.avro:avro` dependency with the Quarkus dependency `io.quarkus:quarkus-avro`. Further information in the link below.
+  description: Replace the 'avro' dependency with Quarkus 'quarkus-avro' extension
   effort: 1
   labels:
   - konveyor.io/source=avro
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `org.apache.avro:avro` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-avro`. Further information in the link below.
+  message: "\n Replace the `org.apache.avro:avro` dependency with the Quarkus dependency
+    `io.quarkus:quarkus-avro` \n Further information in the link below.\n "
   ruleID: quarkus-avro-00000
   when:
     java.dependency:
@@ -17,9 +15,7 @@
       name: org.apache.avro.avro
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'avro' dependency with Quarkus 'quarkus-avro' extension
-    Replace the `org.apache.avro:avro` dependency with the Quarkus dependency `io.quarkus:quarkus-avro`. Further information in the link below.
+  description: Replace the 'avro' dependency with Quarkus 'quarkus-avro' extension
   effort: 1
   labels:
   - konveyor.io/source=avro
@@ -27,8 +23,8 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/kafka
-  message: Replace the `org.apache.avro:avro` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-avro`. Further information in the link below.
+  message: "\n Replace the `org.apache.avro:avro` dependency with the Quarkus dependency
+    `io.quarkus:quarkus-avro` \n Further information in the link below.\n "
   ruleID: quarkus-avro-00010
   when:
     java.dependency:

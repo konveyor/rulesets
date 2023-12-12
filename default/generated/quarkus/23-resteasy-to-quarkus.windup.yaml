@@ -1,16 +1,15 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'resteasy-multipart-provider' dependency with Quarkus 'quarkus-resteasy-multipart' extension
-    Replace the `org.jboss.resteasy:resteasy-multipart-provider` dependency with the Quarkus dependency `io.quarkus:quarkus-resteasy-multipart`. Further information in the link below.
+  description: Replace the 'resteasy-multipart-provider' dependency with Quarkus 'quarkus-resteasy-multipart'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=resteasy
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `org.jboss.resteasy:resteasy-multipart-provider` dependency
-    with the Quarkus dependency `io.quarkus:quarkus-resteasy-multipart`. Further information
-    in the link below.
+  message: "\n Replace the `org.jboss.resteasy:resteasy-multipart-provider` dependency
+    with the Quarkus dependency `io.quarkus:quarkus-resteasy-multipart` \n Further
+    information in the link below.\n "
   ruleID: quarkus-resteasy-multipart-00000
   when:
     java.dependency:
@@ -18,9 +17,8 @@
       name: org.jboss.resteasy.resteasy-multipart-provider
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'resteasy-multipart-provider' dependency with Quarkus 'quarkus-resteasy-multipart' extension
-    Replace the `org.jboss.resteasy:resteasy-multipart-provider` dependency with the Quarkus dependency `io.quarkus:quarkus-resteasy-multipart`. Further information in the link below.
+  description: Replace the 'resteasy-multipart-provider' dependency with Quarkus 'quarkus-resteasy-multipart'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=resteasy
@@ -28,9 +26,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/rest-json#multipart-support
-  message: Replace the `org.jboss.resteasy:resteasy-multipart-provider` dependency
-    with the Quarkus dependency `io.quarkus:quarkus-resteasy-multipart`. Further information
-    in the link below.
+  message: "\n Replace the `org.jboss.resteasy:resteasy-multipart-provider` dependency
+    with the Quarkus dependency `io.quarkus:quarkus-resteasy-multipart` \n Further
+    information in the link below.\n "
   ruleID: quarkus-resteasy-multipart-00010
   when:
     java.dependency:

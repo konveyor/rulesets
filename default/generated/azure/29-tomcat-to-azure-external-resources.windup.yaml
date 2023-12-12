@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    External resources found in configuration file
-    External resources, such as data sources, JMS message brokers, and others are injected via Java Naming and Directory Interface (JNDI).. Some such resources may require migration or reconfiguration.
+  description: External resources found in configuration file
   effort: 5
   labels:
   - konveyor.io/target=azure-spring-apps
@@ -14,9 +12,9 @@
   links:
   - title: Inventory external resources
     url: https://learn.microsoft.com/azure/developer/java/migration/migrate-tomcat-to-azure-spring-apps
-  message: External resources, such as data sources, JMS message brokers, and others
-    are injected via Java Naming and Directory Interface (JNDI).. Some such resources
-    may require migration or reconfiguration.
+  message: "\n \n External resources, such as data sources, JMS message brokers, and
+    others are injected via Java Naming and Directory Interface (JNDI).\n \n Some
+    such resources may require migration or reconfiguration.\n \n "
   ruleID: tomcat-to-azure-external-resources-01000
   when:
     builtin.xml:

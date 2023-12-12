@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    spring cloud version too low
-    Spring Cloud version too low.. Update to open source support version of Spring Cloud.
+  description: spring cloud version too low
   effort: 5
   labels:
   - konveyor.io/source=springboot
@@ -14,8 +12,8 @@
   links:
   - title: Spring Cloud Supported Versions
     url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions
-  message: Spring Cloud version too low.. Update to open source support version of
-    Spring Cloud.
+  message: "\n \n Spring Cloud version too low.\n Update to open source support version
+    of Spring Cloud.\n \n "
   ruleID: spring-cloud-to-azure-version-01000
   when:
     java.dependency:
@@ -24,9 +22,7 @@
       upperbound: Edgware.9
 - category: potential
   customVariables: []
-  description: |-
-    spring cloud version out of support
-    Spring Cloud version is out of any Spring Cloud support scope.. Update to open source support version of Spring Cloud.
+  description: spring cloud version out of support
   effort: 2
   labels:
   - konveyor.io/source=springboot
@@ -38,8 +34,8 @@
   links:
   - title: Spring Cloud Supported Versions
     url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions
-  message: Spring Cloud version is out of any Spring Cloud support scope.. Update
-    to open source support version of Spring Cloud.
+  message: "\n \n Spring Cloud version is out of any Spring Cloud support scope.\n
+    Update to open source support version of Spring Cloud.\n \n "
   ruleID: spring-cloud-to-azure-version-02000
   when:
     java.dependency:
@@ -48,9 +44,7 @@
       upperbound: Hoxton.9
 - category: potential
   customVariables: []
-  description: |-
-    spring cloud version out of OSS support
-    Spring Cloud version is out of open source software support.. Update to open source support version of Spring Cloud, if you don't have commercial support.
+  description: spring cloud version out of OSS support
   effort: 1
   labels:
   - konveyor.io/source=springboot
@@ -62,8 +56,9 @@
   links:
   - title: Spring Cloud Supported Versions
     url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions
-  message: Spring Cloud version is out of open source software support.. Update to
-    open source support version of Spring Cloud, if you don't have commercial support.
+  message: "\n \n Spring Cloud version is out of open source software support.\n Update
+    to open source support version of Spring Cloud, if you don't have commercial support.\n
+    \n "
   ruleID: spring-cloud-to-azure-version-03000
   when:
     or:

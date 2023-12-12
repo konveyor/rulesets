@@ -1,16 +1,15 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'dynamodb' dependency with Quarkus 'quarkus-amazon-dynamodb' extension
-    Replace the `software.amazon.awssdk:dynamodb` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-dynamodb`. Further information in the link below.
+  description: Replace the 'dynamodb' dependency with Quarkus 'quarkus-amazon-dynamodb'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `software.amazon.awssdk:dynamodb` dependency with the Quarkus
-    dependency `io.quarkus:quarkus-amazon-dynamodb`. Further information in the link
-    below.
+  message: "\n Replace the `software.amazon.awssdk:dynamodb` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-amazon-dynamodb` \n Further information in the
+    link below.\n "
   ruleID: quarkus-amazon-dynamodb-00000
   when:
     java.dependency:
@@ -18,9 +17,8 @@
       name: software.amazon.awssdk.dynamodb
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'dynamodb' dependency with Quarkus 'quarkus-amazon-dynamodb' extension
-    Replace the `software.amazon.awssdk:dynamodb` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-dynamodb`. Further information in the link below.
+  description: Replace the 'dynamodb' dependency with Quarkus 'quarkus-amazon-dynamodb'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
@@ -28,9 +26,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/amazon-dynamodb
-  message: Replace the `software.amazon.awssdk:dynamodb` dependency with the Quarkus
-    dependency `io.quarkus:quarkus-amazon-dynamodb`. Further information in the link
-    below.
+  message: "\n Replace the `software.amazon.awssdk:dynamodb` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-amazon-dynamodb` \n Further information in the
+    link below.\n "
   ruleID: quarkus-amazon-dynamodb-00010
   when:
     java.dependency:
@@ -38,16 +36,15 @@
       name: software.amazon.awssdk.dynamodb
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'iam' dependency with Quarkus 'quarkus-amazon-iam' extension
-    Replace the `software.amazon.awssdk:iam` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-iam`. Further information in the link below.
+  description: Replace the 'iam' dependency with Quarkus 'quarkus-amazon-iam' extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `software.amazon.awssdk:iam` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-amazon-iam`. Further information in the link below.
+  message: "\n Replace the `software.amazon.awssdk:iam` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-amazon-iam` \n Further information in the link
+    below.\n "
   ruleID: quarkus-amazon-iam-00000
   when:
     java.dependency:
@@ -55,9 +52,7 @@
       name: software.amazon.awssdk.iam
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'iam' dependency with Quarkus 'quarkus-amazon-iam' extension
-    Replace the `software.amazon.awssdk:iam` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-iam`. Further information in the link below.
+  description: Replace the 'iam' dependency with Quarkus 'quarkus-amazon-iam' extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
@@ -65,8 +60,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/amazon-iam
-  message: Replace the `software.amazon.awssdk:iam` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-amazon-iam`. Further information in the link below.
+  message: "\n Replace the `software.amazon.awssdk:iam` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-amazon-iam` \n Further information in the link
+    below.\n "
   ruleID: quarkus-amazon-iam-00010
   when:
     java.dependency:
@@ -74,16 +70,15 @@
       name: software.amazon.awssdk.iam
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'kms' dependency with Quarkus 'quarkus-amazon-kms' extension
-    Replace the `software.amazon.awssdk:kms` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-kms`. Further information in the link below.
+  description: Replace the 'kms' dependency with Quarkus 'quarkus-amazon-kms' extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `software.amazon.awssdk:kms` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-amazon-kms`. Further information in the link below.
+  message: "\n Replace the `software.amazon.awssdk:kms` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-amazon-kms` \n Further information in the link
+    below.\n "
   ruleID: quarkus-amazon-kms-00000
   when:
     java.dependency:
@@ -91,9 +86,7 @@
       name: software.amazon.awssdk.kms
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'kms' dependency with Quarkus 'quarkus-amazon-kms' extension
-    Replace the `software.amazon.awssdk:kms` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-kms`. Further information in the link below.
+  description: Replace the 'kms' dependency with Quarkus 'quarkus-amazon-kms' extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
@@ -101,8 +94,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/amazon-kms
-  message: Replace the `software.amazon.awssdk:kms` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-amazon-kms`. Further information in the link below.
+  message: "\n Replace the `software.amazon.awssdk:kms` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-amazon-kms` \n Further information in the link
+    below.\n "
   ruleID: quarkus-amazon-kms-00010
   when:
     java.dependency:
@@ -110,17 +104,16 @@
       name: software.amazon.awssdk.kms
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'aws-lambda-java-core' dependency with Quarkus 'quarkus-amazon-lambda-http' extension
-    Replace the `com.amazonaws:aws-lambda-java-core` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-lambda-http`. Further information in the link below.
+  description: Replace the 'aws-lambda-java-core' dependency with Quarkus 'quarkus-amazon-lambda-http'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `com.amazonaws:aws-lambda-java-core` dependency with the Quarkus
-    dependency `io.quarkus:quarkus-amazon-lambda-http`. Further information in the
-    link below.
+  message: "\n Replace the `com.amazonaws:aws-lambda-java-core` dependency with the
+    Quarkus dependency `io.quarkus:quarkus-amazon-lambda-http` \n Further information
+    in the link below.\n "
   ruleID: quarkus-amazon-lambda-http-00000
   when:
     java.dependency:
@@ -128,9 +121,8 @@
       name: com.amazonaws.aws-lambda-java-core
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'aws-lambda-java-core' dependency with Quarkus 'quarkus-amazon-lambda-http' extension
-    Replace the `com.amazonaws:aws-lambda-java-core` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-lambda-http`. Further information in the link below.
+  description: Replace the 'aws-lambda-java-core' dependency with Quarkus 'quarkus-amazon-lambda-http'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
@@ -138,9 +130,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/aws-lambda-http
-  message: Replace the `com.amazonaws:aws-lambda-java-core` dependency with the Quarkus
-    dependency `io.quarkus:quarkus-amazon-lambda-http`. Further information in the
-    link below.
+  message: "\n Replace the `com.amazonaws:aws-lambda-java-core` dependency with the
+    Quarkus dependency `io.quarkus:quarkus-amazon-lambda-http` \n Further information
+    in the link below.\n "
   ruleID: quarkus-amazon-lambda-http-00010
   when:
     java.dependency:
@@ -148,17 +140,16 @@
       name: com.amazonaws.aws-lambda-java-core
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'aws-serverless-java-container-core' dependency with Quarkus 'quarkus-amazon-lambda-rest' extension
-    Replace the `com.amazonaws.serverless:aws-serverless-java-container-core` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-lambda-rest`. Further information in the link below.
+  description: Replace the 'aws-serverless-java-container-core' dependency with Quarkus
+    'quarkus-amazon-lambda-rest' extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `com.amazonaws.serverless:aws-serverless-java-container-core`
-    dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-lambda-rest`.
-    Further information in the link below.
+  message: "\n Replace the `com.amazonaws.serverless:aws-serverless-java-container-core`
+    dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-lambda-rest`
+    \n Further information in the link below.\n "
   ruleID: quarkus-amazon-lambda-rest-00000
   when:
     java.dependency:
@@ -166,9 +157,8 @@
       name: com.amazonaws.serverless.aws-serverless-java-container-core
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'aws-serverless-java-container-core' dependency with Quarkus 'quarkus-amazon-lambda-rest' extension
-    Replace the `com.amazonaws.serverless:aws-serverless-java-container-core` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-lambda-rest`. Further information in the link below.
+  description: Replace the 'aws-serverless-java-container-core' dependency with Quarkus
+    'quarkus-amazon-lambda-rest' extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
@@ -176,9 +166,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/aws-lambda-http
-  message: Replace the `com.amazonaws.serverless:aws-serverless-java-container-core`
-    dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-lambda-rest`.
-    Further information in the link below.
+  message: "\n Replace the `com.amazonaws.serverless:aws-serverless-java-container-core`
+    dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-lambda-rest`
+    \n Further information in the link below.\n "
   ruleID: quarkus-amazon-lambda-rest-00010
   when:
     java.dependency:
@@ -186,17 +176,16 @@
       name: com.amazonaws.serverless.aws-serverless-java-container-core
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'aws-xray-recorder-sdk-aws-sdk-v2' dependency with Quarkus 'quarkus-amazon-lambda-xray' extension
-    Replace the `com.amazonaws:aws-xray-recorder-sdk-aws-sdk-v2` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-lambda-xray`. Further information in the link below.
+  description: Replace the 'aws-xray-recorder-sdk-aws-sdk-v2' dependency with Quarkus
+    'quarkus-amazon-lambda-xray' extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `com.amazonaws:aws-xray-recorder-sdk-aws-sdk-v2` dependency
-    with the Quarkus dependency `io.quarkus:quarkus-amazon-lambda-xray`. Further information
-    in the link below.
+  message: "\n Replace the `com.amazonaws:aws-xray-recorder-sdk-aws-sdk-v2` dependency
+    with the Quarkus dependency `io.quarkus:quarkus-amazon-lambda-xray` \n Further
+    information in the link below.\n "
   ruleID: quarkus-amazon-lambda-xray-00000
   when:
     java.dependency:
@@ -204,9 +193,8 @@
       name: com.amazonaws.aws-xray-recorder-sdk-aws-sdk-v2
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'aws-xray-recorder-sdk-aws-sdk-v2' dependency with Quarkus 'quarkus-amazon-lambda-xray' extension
-    Replace the `com.amazonaws:aws-xray-recorder-sdk-aws-sdk-v2` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-lambda-xray`. Further information in the link below.
+  description: Replace the 'aws-xray-recorder-sdk-aws-sdk-v2' dependency with Quarkus
+    'quarkus-amazon-lambda-xray' extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
@@ -214,9 +202,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/aws-lambda#tracing-with-aws-xray-and-graalvm
-  message: Replace the `com.amazonaws:aws-xray-recorder-sdk-aws-sdk-v2` dependency
-    with the Quarkus dependency `io.quarkus:quarkus-amazon-lambda-xray`. Further information
-    in the link below.
+  message: "\n Replace the `com.amazonaws:aws-xray-recorder-sdk-aws-sdk-v2` dependency
+    with the Quarkus dependency `io.quarkus:quarkus-amazon-lambda-xray` \n Further
+    information in the link below.\n "
   ruleID: quarkus-amazon-lambda-xray-00010
   when:
     java.dependency:
@@ -224,16 +212,14 @@
       name: com.amazonaws.aws-xray-recorder-sdk-aws-sdk-v2
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 's3' dependency with Quarkus 'quarkus-amazon-s3' extension
-    Replace the `software.amazon.awssdk:s3` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-s3`. Further information in the link below.
+  description: Replace the 's3' dependency with Quarkus 'quarkus-amazon-s3' extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `software.amazon.awssdk:s3` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-amazon-s3`. Further information in the link below.
+  message: "\n Replace the `software.amazon.awssdk:s3` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-amazon-s3` \n Further information in the link below.\n "
   ruleID: quarkus-amazon-s3-00000
   when:
     java.dependency:
@@ -241,9 +227,7 @@
       name: software.amazon.awssdk.s3
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 's3' dependency with Quarkus 'quarkus-amazon-s3' extension
-    Replace the `software.amazon.awssdk:s3` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-s3`. Further information in the link below.
+  description: Replace the 's3' dependency with Quarkus 'quarkus-amazon-s3' extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
@@ -251,8 +235,8 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/amazon-s3
-  message: Replace the `software.amazon.awssdk:s3` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-amazon-s3`. Further information in the link below.
+  message: "\n Replace the `software.amazon.awssdk:s3` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-amazon-s3` \n Further information in the link below.\n "
   ruleID: quarkus-amazon-s3-00010
   when:
     java.dependency:
@@ -260,16 +244,15 @@
       name: software.amazon.awssdk.s3
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'ses' dependency with Quarkus 'quarkus-amazon-ses' extension
-    Replace the `software.amazon.awssdk:ses` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-ses`. Further information in the link below.
+  description: Replace the 'ses' dependency with Quarkus 'quarkus-amazon-ses' extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `software.amazon.awssdk:ses` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-amazon-ses`. Further information in the link below.
+  message: "\n Replace the `software.amazon.awssdk:ses` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-amazon-ses` \n Further information in the link
+    below.\n "
   ruleID: quarkus-amazon-ses-00000
   when:
     java.dependency:
@@ -277,9 +260,7 @@
       name: software.amazon.awssdk.ses
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'ses' dependency with Quarkus 'quarkus-amazon-ses' extension
-    Replace the `software.amazon.awssdk:ses` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-ses`. Further information in the link below.
+  description: Replace the 'ses' dependency with Quarkus 'quarkus-amazon-ses' extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
@@ -287,8 +268,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/amazon-ses
-  message: Replace the `software.amazon.awssdk:ses` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-amazon-ses`. Further information in the link below.
+  message: "\n Replace the `software.amazon.awssdk:ses` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-amazon-ses` \n Further information in the link
+    below.\n "
   ruleID: quarkus-amazon-ses-00010
   when:
     java.dependency:
@@ -296,16 +278,15 @@
       name: software.amazon.awssdk.ses
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'sns' dependency with Quarkus 'quarkus-amazon-sns' extension
-    Replace the `software.amazon.awssdk:sns` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-sns`. Further information in the link below.
+  description: Replace the 'sns' dependency with Quarkus 'quarkus-amazon-sns' extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `software.amazon.awssdk:sns` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-amazon-sns`. Further information in the link below.
+  message: "\n Replace the `software.amazon.awssdk:sns` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-amazon-sns` \n Further information in the link
+    below.\n "
   ruleID: quarkus-amazon-sns-00000
   when:
     java.dependency:
@@ -313,9 +294,7 @@
       name: software.amazon.awssdk.sns
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'sns' dependency with Quarkus 'quarkus-amazon-sns' extension
-    Replace the `software.amazon.awssdk:sns` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-sns`. Further information in the link below.
+  description: Replace the 'sns' dependency with Quarkus 'quarkus-amazon-sns' extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
@@ -323,8 +302,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/amazon-sns
-  message: Replace the `software.amazon.awssdk:sns` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-amazon-sns`. Further information in the link below.
+  message: "\n Replace the `software.amazon.awssdk:sns` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-amazon-sns` \n Further information in the link
+    below.\n "
   ruleID: quarkus-amazon-sns-00010
   when:
     java.dependency:
@@ -332,16 +312,15 @@
       name: software.amazon.awssdk.sns
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'sqs' dependency with Quarkus 'quarkus-amazon-sqs' extension
-    Replace the `software.amazon.awssdk:sqs` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-sqs`. Further information in the link below.
+  description: Replace the 'sqs' dependency with Quarkus 'quarkus-amazon-sqs' extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `software.amazon.awssdk:sqs` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-amazon-sqs`. Further information in the link below.
+  message: "\n Replace the `software.amazon.awssdk:sqs` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-amazon-sqs` \n Further information in the link
+    below.\n "
   ruleID: quarkus-amazon-sqs-00000
   when:
     java.dependency:
@@ -349,9 +328,7 @@
       name: software.amazon.awssdk.sqs
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'sqs' dependency with Quarkus 'quarkus-amazon-sqs' extension
-    Replace the `software.amazon.awssdk:sqs` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-sqs`. Further information in the link below.
+  description: Replace the 'sqs' dependency with Quarkus 'quarkus-amazon-sqs' extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
@@ -359,8 +336,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/amazon-sqs
-  message: Replace the `software.amazon.awssdk:sqs` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-amazon-sqs`. Further information in the link below.
+  message: "\n Replace the `software.amazon.awssdk:sqs` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-amazon-sqs` \n Further information in the link
+    below.\n "
   ruleID: quarkus-amazon-sqs-00010
   when:
     java.dependency:
@@ -368,16 +346,15 @@
       name: software.amazon.awssdk.sqs
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'ssm' dependency with Quarkus 'quarkus-amazon-ssm' extension
-    Replace the `software.amazon.awssdk:ssm` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-ssm`. Further information in the link below.
+  description: Replace the 'ssm' dependency with Quarkus 'quarkus-amazon-ssm' extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `software.amazon.awssdk:ssm` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-amazon-ssm`. Further information in the link below.
+  message: "\n Replace the `software.amazon.awssdk:ssm` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-amazon-ssm` \n Further information in the link
+    below.\n "
   ruleID: quarkus-amazon-ssm-00000
   when:
     java.dependency:
@@ -385,9 +362,7 @@
       name: software.amazon.awssdk.ssm
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'ssm' dependency with Quarkus 'quarkus-amazon-ssm' extension
-    Replace the `software.amazon.awssdk:ssm` dependency with the Quarkus dependency `io.quarkus:quarkus-amazon-ssm`. Further information in the link below.
+  description: Replace the 'ssm' dependency with Quarkus 'quarkus-amazon-ssm' extension
   effort: 1
   labels:
   - konveyor.io/source=amazon
@@ -395,8 +370,9 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/amazon-ssm
-  message: Replace the `software.amazon.awssdk:ssm` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-amazon-ssm`. Further information in the link below.
+  message: "\n Replace the `software.amazon.awssdk:ssm` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-amazon-ssm` \n Further information in the link
+    below.\n "
   ruleID: quarkus-amazon-ssm-00010
   when:
     java.dependency:

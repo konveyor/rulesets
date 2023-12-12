@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Remove non-quarkus dependencies
-    Non-quarkus dependencies are no longer required and can be removed.
+  description: Remove non-quarkus dependencies
   effort: 1
   labels:
   - konveyor.io/source=java-ee
@@ -10,7 +8,7 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides
-  message: Non-quarkus dependencies are no longer required and can be removed.
+  message: "\n Non-quarkus dependencies are no longer required and can be removed.\n "
   ruleID: dependency-removal-for-quarkus-00000
   when:
     or:

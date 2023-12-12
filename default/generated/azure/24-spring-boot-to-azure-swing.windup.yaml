@@ -1,8 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Java Swing usage
-    The application uses Java Swing.. Upgrade to modern cloud native UI framework.
+  description: Java Swing usage
   effort: 5
   labels:
   - konveyor.io/source=springboot
@@ -12,7 +10,8 @@
   - konveyor.io/target=azure-container-apps
   - Swing
   links: []
-  message: The application uses Java Swing.. Upgrade to modern cloud native UI framework.
+  message: "\n \n The application uses Java Swing.\n Upgrade to modern cloud native
+    UI framework.\n \n "
   ruleID: spring-boot-to-azure-swing-01000
   when:
     java.referenced:

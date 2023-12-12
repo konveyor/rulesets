@@ -36,3 +36,33 @@
     - java.dependency:
         lowerbound: 0.0.0
         name: org.springframework.integration.spring-integration-redis
+- category: potential
+  customVariables: []
+  description: Redis Cache connection string found
+  effort: 0
+  labels:
+  - konveyor.io/source=springboot
+  - konveyor.io/target=azure-spring-apps
+  - konveyor.io/target=azure-appservice
+  - konveyor.io/target=azure-aks
+  - konveyor.io/target=azure-container-apps
+  - cache
+  - redis
+  links:
+  - title: Redis Cache found in the application
+    url: https://learn.microsoft.com/azure/developer/java/migration/migrate-spring-boot-to-azure-spring-apps#identify-external-caches
+  - title: Azure Cache for Redis
+    url: https://azure.microsoft.com/services/cache
+  - title: Spring Data Redis
+    url: https://spring.io/projects/spring-data-redis/
+  - title: Azure Spring Cloud Starter Cache
+    url: https://search.maven.org/artifact/com.azure.spring/azure-spring-cloud-starter-cache
+  message: "\n \n Redis Cache connection string, username, or password used in this
+    application.\n\n Checkout Azure Cache for Redis for a fully managed cache on Azure.\n
+    \n "
+  ruleID: spring-boot-to-azure-cache-redis-02000
+  when:
+    or:
+    - builtin.filecontent:
+        filePattern: application.*\.(properties|yaml|yml)
+        pattern: (redis|jedis|lettuce)\.(.*\.)?(url|host|nodes|username|password)

@@ -1,15 +1,14 @@
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'flyway-core' dependency with Quarkus 'quarkus-flyway' extension
-    Replace the `org.flywaydb:flyway-core` dependency with the Quarkus dependency `io.quarkus:quarkus-flyway`. Further information in the link below.
+  description: Replace the 'flyway-core' dependency with Quarkus 'quarkus-flyway'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=flyway
   - konveyor.io/target=quarkus
   links: []
-  message: Replace the `org.flywaydb:flyway-core` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-flyway`. Further information in the link below.
+  message: "\n Replace the `org.flywaydb:flyway-core` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-flyway` \n Further information in the link below.\n "
   ruleID: quarkus-flyway-00000
   when:
     java.dependency:
@@ -17,9 +16,8 @@
       name: org.flywaydb.flyway-core
 - category: mandatory
   customVariables: []
-  description: |-
-    Replace the 'flyway-core' dependency with Quarkus 'quarkus-flyway' extension
-    Replace the `org.flywaydb:flyway-core` dependency with the Quarkus dependency `io.quarkus:quarkus-flyway`. Further information in the link below.
+  description: Replace the 'flyway-core' dependency with Quarkus 'quarkus-flyway'
+    extension
   effort: 1
   labels:
   - konveyor.io/source=flyway
@@ -27,8 +25,8 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/flyway
-  message: Replace the `org.flywaydb:flyway-core` dependency with the Quarkus dependency
-    `io.quarkus:quarkus-flyway`. Further information in the link below.
+  message: "\n Replace the `org.flywaydb:flyway-core` dependency with the Quarkus
+    dependency `io.quarkus:quarkus-flyway` \n Further information in the link below.\n "
   ruleID: quarkus-flyway-00010
   when:
     java.dependency:
