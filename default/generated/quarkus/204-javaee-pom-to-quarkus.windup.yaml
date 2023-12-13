@@ -1,25 +1,5 @@
 - category: mandatory
   customVariables: []
-  description: The expected project artifact's extension is `jar`
-  effort: 1
-  labels:
-  - konveyor.io/source=java-ee
-  - konveyor.io/target=quarkus
-  links:
-  - title: Quarkus - Guide
-    url: https://quarkus.io/guides/maven-tooling#build-tool-maven
-  message: "\n The project artifact's current extension (i.e. `<packaging>` tag value)
-    is `{{notJar}}` but the expected value should be `jar`\n "
-  ruleID: javaee-pom-to-quarkus-00000
-  when:
-    builtin.xml:
-      filepaths:
-      - pom.xml
-      namespaces:
-        m: http://maven.apache.org/POM/4.0.0
-      xpath: /m:project/m:packaging/text()[matches(self::node(), '^(?!jar).*$')]
-- category: mandatory
-  customVariables: []
   description: Adopt Quarkus BOM
   effort: 1
   labels:
