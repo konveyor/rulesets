@@ -21,6 +21,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
+        path: rulesets
+    - uses: actions/checkout@v3
+      with:
         fetch-depth: 0
         repository: konveyor/tackle2-hub
         ref: ${{ github.event_name == 'push' && github.ref || github.base_ref }}
@@ -36,7 +39,7 @@ jobs:
     - name: Update the seed repo
       working-directory: tackle2-hub/tackle2-seed
       run: |
-        RULESET_ARGS='--branch=${{ github.ref }} --yes' make ruleset-patch
+        RULESET_ARGS='-r ../../rulesets --yes' make ruleset-patch
 
     - name: Build hub and save image
       working-directory: tackle2-hub
