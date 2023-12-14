@@ -1,0 +1,57 @@
+name: Global CI
+
+on:
+  push:
+    branches:
+    - main
+    - 'release-*'
+    tags:
+    - 'v*'
+  pull_request:
+    branches:
+    - main
+    - 'release-*'
+
+jobs:
+  build-hub:
+    name: Build tackle2-hub
+    runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: false
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        repository: konveyor/tackle2-hub
+        ref: ${{ github.event_name == 'push' && github.ref || github.base_ref }}
+        path: tackle2-hub
+
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        repository: konveyor/tackle2-seed
+        ref: ${{ github.event_name == 'push' && github.ref || github.base_ref }}
+        path: tackle2-hub/tackle2-seed
+
+    - name: Update the seed repo
+      working-directory: tackle2-hub/tackle2-seed
+      run: |
+        RULESET_ARGS='--branch=${{ github.ref }} --yes' make ruleset-patch
+
+    - name: Build hub and save image
+      working-directory: tackle2-hub
+      run: |
+        IMG=quay.io/konveyor/tackle2-hub:latest make podman-build
+        podman save -o /tmp/tackle2-hub.tar quay.io/konveyor/tackle2-hub:latest
+
+    - name: Upload image as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: tackle2-hub
+        path: /tmp/tackle2-hub.tar
+        retention-days: 1
+  e2e:
+    needs: build-hub
+    uses: konveyor/ci/.github/workflows/global-ci.yml@main
+    with:
+      component_name: tackle2-hub
