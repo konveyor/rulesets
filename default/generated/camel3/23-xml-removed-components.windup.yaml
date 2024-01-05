@@ -173,7 +173,7 @@
     or:
     - builtin.filecontent:
         filePattern: .*\.java
-        pattern: from("twitter-streaming:.*
+        pattern: from\("twitter-streaming:.*
     - builtin.xml:
         namespaces:
           c: http://camel.apache.org/schema/spring

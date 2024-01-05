@@ -21,7 +21,7 @@
     or:
     - builtin.filecontent:
         filePattern: .*\.java
-        pattern: .to("kafka:{[^"]+}(circularTopicDetection|bridgeEndpoint)=.*
+        pattern: .to\("kafka:{[^"]+}(circularTopicDetection|bridgeEndpoint)=.*
     - java.referenced:
         location: METHOD_CALL
         pattern: org.apache.camel.component.kafka.KafkaConfiguration.(setBridgeEndpoint|setCircularTopicDetection)*
