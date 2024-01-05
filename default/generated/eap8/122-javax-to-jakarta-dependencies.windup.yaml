@@ -32,8 +32,8 @@
   links:
   - title: Jakarta EE
     url: https://jakarta.ee/
-  description: Update artifact dependency by replacing the `javax.{{renamedA}}-api` artifactId
-    with `jakarta.{{renamedA}}-api`
+  description: Update artifact dependency by replacing the `javax.*-api` artifactId
+    with `jakarta.*-api`
   ruleID: javax-to-jakarta-dependencies-00002
   when:
     builtin.filecontent:
