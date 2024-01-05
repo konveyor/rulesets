@@ -34,6 +34,8 @@
     url: https://jakarta.ee/
   description: Update artifact dependency by replacing the `javax.*-api` artifactId
     with `jakarta.*-api`
+  incidentMessage: Update artifact dependency by replacing the `javax.{{renamedA}}-api` artifactId
+    with `jakarta.{{renamedA}}-api`
   ruleID: javax-to-jakarta-dependencies-00002
   when:
     builtin.filecontent:
