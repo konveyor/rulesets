@@ -1,6 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: javax.{renamed-g} groupId has been replaced by jakarta.{renamed-g}
+  description: The 'javax' groupId has been replaced by 'jakarta' group id in dependencies.
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+
@@ -20,8 +20,7 @@
       pattern: groupId>javax.(annotation|batch|ejb|el|enterprise.concurrent|enterprise.deploy|faces|interceptor|jms|jws|mail|management.j2ee|resource|security.auth.message|security.jacc|servlet|servlet.jsp|servlet.jsp.jstl|transaction|websocket|ws.rs|xml.bind|xml.registry|xml.rpc|xml.soap|xml.ws)<
 - category: mandatory
   customVariables: []
-  description: javax.{renamed-a} javax.{renamed-a}-api artifactId has been replaced
-    by jakarta.{renamed-a} jakarta.{renamed-a}-api
+  description: The artifactIds starting with javax.*-api are updated to their corresponding jakarta.*-api versions in dependency files.
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+

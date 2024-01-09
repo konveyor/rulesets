@@ -618,7 +618,7 @@
   - name: type
     nameOfCaptureGroup: type
     pattern: org.hibernate.metamodel.spi.(?P<type>(TypeContributor|TypeContributions))
-  description: Hibernate 5 - Moved method org.hibernate.metamodel.spi.{type}
+  description: In Hibernate 5, methods under 'org.hibernate.metamodel.spi' have been moved.
   effort: 1
   labels:
   - konveyor.io/source=hibernate4
@@ -672,7 +672,7 @@
   - name: idclass
     nameOfCaptureGroup: idclass
     pattern: org.hibernate.id.(?P<idclass>(TableGenerator|TableHiLoGenerator|SequenceGenerator|SequenceIdentityGenerator|SequenceHiLoGenerator))
-  description: Hibernate 5 - Removed deprecated class org.hibernate.id.{idclass}
+  description: Deprecated classes in Hibernate 5 under 'org.hibernate.id' are removed.  Use 'org.hibernate.id.enhanced.SequenceStyleGenerator' instead.
   effort: 1
   labels:
   - konveyor.io/source=hibernate4
@@ -700,7 +700,7 @@
   - name: type
     nameOfCaptureGroup: type
     pattern: org.hibernate.hql.spi.(?P<type>(MultiTableBulkIdStrategy|MultiTableBulkIdStrategy.DeleteHandler|MultiTableBulkIdStrategy.UpdateHandler|AbstractTableBasedBulkIdHandler|AbstractTableBasedBulkIdHandler.ProcessedWhereClause|TableBasedDeleteHandlerImpl|TableBasedUpdateHandlerImpl))
-  description: Hibernate 5 - Moved class org.hibernate.hql.spi.{type}
+  description: Classes under 'org.hibernate.hql.spi' in Hibernate 5 are moved to the 'org.hibernate.hql.spi.id' package
   effort: 1
   labels:
   - konveyor.io/source=hibernate4

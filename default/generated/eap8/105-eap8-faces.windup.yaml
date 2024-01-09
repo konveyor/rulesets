@@ -116,7 +116,7 @@
   - name: scope
     nameOfCaptureGroup: scope
     pattern: javax.faces.bean.(?P<scope>Application|Request|Session)?Scoped
-  description: Annotation `javax.faces.bean.{scope}Scoped` removed
+  description: Annotations under 'javax.faces.bean' are removed.
   effort: 1
   labels:
   - konveyor.io/source=eap6

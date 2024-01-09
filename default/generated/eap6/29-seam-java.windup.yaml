@@ -728,7 +728,7 @@
       pattern: org.jboss.seam.annotations.Logger
 - category: mandatory
   customVariables: []
-  description: Seam API - org.jboss.seam.annotations.datamodel.DataModel{*}
+  description: The Seam API's `@DataModel\*` functionality should be replaced with the evolved Expression Language Specification in Java EE, which allows parameters to be passed to EL method expressions.
   effort: 1
   labels:
   - konveyor.io/source=java-ee

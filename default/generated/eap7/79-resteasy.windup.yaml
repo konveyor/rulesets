@@ -84,7 +84,7 @@
   - name: type
     nameOfCaptureGroup: type
     pattern: org.jboss.resteasy.client.(?P<type>(ProxyBuilder|ProxyConfig|ProxyFactory))
-  description: Deprecated class org.jboss.resteasy.client.{type} in RESTEasy 3
+  description: Deprecated classes in `org.jboss.resteasy.client` package in RESTEasy 3
   effort: 1
   labels:
   - konveyor.io/source=eap6

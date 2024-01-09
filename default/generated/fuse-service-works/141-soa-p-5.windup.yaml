@@ -854,7 +854,7 @@
       namespaces: {}
       xpath: //*[local-name()='action' and @class='org.jboss.soa.esb.actions.scripting.ScriptingAction']/@class
 - customVariables: []
-  description: ESB {javaclassname}
+  description: JBoss ESB uses certain actions to aggregate a message sequence into a single aggregated message. Fuse Service Works utilizes Camel routing and Camel's aggregator for this purpose. For more information, see the Camel Aggregator Documentation.
   effort: 3
   labels:
   - konveyor.io/source=soa-p5-

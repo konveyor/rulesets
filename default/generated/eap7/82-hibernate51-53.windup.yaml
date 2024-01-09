@@ -466,7 +466,7 @@
   - name: packages
     nameOfCaptureGroup: packages
     pattern: org.hibernate.(?P<packages>(persister|tuple).)?.*
-  description: Hibernate 5.3 - SPI in package org.hibernate.{packages} changed
+  description: Changes occurred in SPI packages under 'org.hibernate'. Custom classes using these SPIs need to be reviewed and updated. Please refer to the Javadoc for these packages for details.
   effort: 3
   labels:
   - konveyor.io/source=hibernate5.1-
