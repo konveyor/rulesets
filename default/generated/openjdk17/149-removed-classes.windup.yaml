@@ -3,7 +3,7 @@
   - name: className
     nameOfCaptureGroup: className
     pattern: java.util.jar.(?P<className>(Pack200|Pack200.Packer|Pack200.Unpacker))
-  description: The java.util.jar.{class-name} class has been removed
+  description: The classes under java.util.jar have been removed
   effort: 3
   labels:
   - konveyor.io/source=openjdk11-

@@ -219,7 +219,7 @@
   - name: subpackage
     nameOfCaptureGroup: subpackage
     pattern: org.apache.(?P<subpackage>(activeio|activemq).)?.*
-  description: Apache org.apache.{subpackage} type reference
+  description: Reference to an Apache org.apache type was found.
   effort: 0
   labels:
   - konveyor.io/source=java

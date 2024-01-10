@@ -23,7 +23,7 @@
   - name: SupportClass
     nameOfCaptureGroup: SupportClass
     pattern: org.apache.camel.impl.(?P<SupportClass>(BaseSelectorProducer|AsyncCallbackToCompletableFutureAdapter|BridgeExceptionHandlerToErrorHandler|DefaultAsyncProducer|DefaultComponent|DefaultConsumer|DefaultEndpoint|DefaultExchange|DefaultExchangeHolder|DefaultHeaderFilterStrategy|DefaultMessage|DefaultMessageHistory|DefaultPollingConsumerPollStrategy|DefaultPollingEndpoint|DefaultProducer|DefaultScheduledPollConsumer|DefaultScheduledPollConsumerScheduler|DefaultThreadPoolFactory|EventDrivenPollingConsumer|ExpressionAdapter|ExpressionComparator|ExpressionListComparator|ExpressionSupport|HeaderFilterStrategyComponent|HeaderSelectorProducer|LoggingExceptionHandler|MessageSupport|PollingConsumerSupport|ProcessorEndpoint|ProcessorPollingConsumer|ScheduledBatchPollingConsumer|ScheduledPollConsumer|ScheduledPollEndpoint|SimpleRegistry|SimpleUuidGeneratorSynchronizationAdapter|SynchronousDelegateProducer))
-  description: '`org.apache.camel.impl.{SupportClass}` has been moved'
+  description: 'Classes in `org.apache.camel.impl` have been relocated to `org.apache.camel.support`.'
   effort: 3
   labels:
   - konveyor.io/source=camel2
@@ -73,7 +73,7 @@
   - name: registry
     nameOfCaptureGroup: registry
     pattern: org.apache.camel.impl.(?P<registry>(PropertyPlaceholderDelegateRegistry|CompositeRegistry))
-  description: '`org.apache.camel.impl.{registry}` has been removed.'
+  description: 'Classes under 'org.apache.camel.impl' have been removed'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -116,7 +116,7 @@
   - name: removed
     nameOfCaptureGroup: removed
     pattern: org.apache.camel.(?P<removed>(impl.FileWatcherReloadStrategy|support.ReloadStrategySupport))
-  description: '`org.apache.camel.{removed}` has been removed.'
+  description: 'The classes previously under `org.apache.camel` have been removed.'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -251,7 +251,7 @@
   - name: annotation
     nameOfCaptureGroup: annotation
     pattern: org.apache.camel.(?P<annotation>(InvokeOnHeaders|InvokeOnHeader))
-  description: Annotation `org.apache.camel.{annotation}` has been moved
+  description: Annotations under `org.apache.camel` are moved to `org.apache.camel.spi`
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -412,7 +412,7 @@
   - name: moved
     nameOfCaptureGroup: moved
     pattern: org.apache.camel.util.(?P<moved>(AsyncProcessorHelper|AsyncProcessorConverterHelper|EndpointHelper|EventHelper|ExchangeHelper|GZIPHelper|JsonSchemaHelper|MessageHelper|PlatformHelper|PredicateAssertHelper|ResolverHelper|ResourceHelper|UnitOfWorkHelper))
-  description: '`org.apache.camel.util.{moved}` has been moved.'
+  description: 'Classes under 'org.apache.camel.util' have been moved to 'org.apache.camel.support'.'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -526,7 +526,7 @@
       pattern: org.apache.camel.impl.ThrottlingInflightRoutePolicy
 - category: mandatory
   customVariables: []
-  description: '`org.apache.camel.processor.idempotent.{moved}` has been moved'
+  description: 'Classes under 'org.apache.camel.processor.idempotent' have been moved to 'org.apache.camel.support.processor.idempotent''
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -716,7 +716,7 @@
   - name: class
     nameOfCaptureGroup: class
     pattern: org.apache.camel.(?P<class>(Consume|EndpointInject|Produce))
-  description: '@{class}: `uri` attribute has been deprecated'
+  description: 'Replace the deprecated 'uri' attribute with 'value' in Apache Camel's Consume, EndpointInject, or Produce annotations for modernization  '
   effort: 0
   labels:
   - konveyor.io/source=camel2
@@ -739,7 +739,7 @@
   - name: class
     nameOfCaptureGroup: class
     pattern: org.apache.camel.(?P<class>(Consume|EndpointInject|Produce))
-  description: '@{class}: `ref` attribute has been removed'
+  description: 'The `ref` attribute in certain annotations is removed in the latest versions'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -785,8 +785,7 @@
   - name: method
     nameOfCaptureGroup: method
     pattern: org.apache.camel.CamelContext.(?P<method>(loadRoutesDefinition|loadRestsDefinition))?(.*)
-  description: The duplicate method `org.apache.camel.CamelContext.{method}` has been
-    removed
+  description: The duplicate method in `org.apache.camel.CamelContext` has been removed
   effort: 1
   labels:
   - konveyor.io/source=camel2

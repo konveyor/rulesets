@@ -695,7 +695,7 @@
       pattern: hibernate.ejb.loaded.classes
 - category: mandatory
   customVariables: []
-  description: Renamed hibernate property hibernate.ejb.{property}
+  description: The hibernate property under 'hibernate.ejb' has been renamed.
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+

@@ -76,8 +76,7 @@
       name: org.apache.camel.camel-rxjava2-starter
 - category: mandatory
   customVariables: []
-  description: '`org.apache.camel:camel-{substitution}-starter` artifact has been
-    renamed'
+  description: 'The `org.apache.camel:camel-*starter` artifacts have been renamed in Apache Camel 3.'
   effort: 1
   labels:
   - konveyor.io/source=camel2

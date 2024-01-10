@@ -6,7 +6,7 @@
   - name: classname
     nameOfCaptureGroup: classname
     pattern: com.(?P<subpackage>(sonic|sonicsw)(\..*)?.)?(?P<classname>[^.]+)
-  description: Sonic proprietary type reference com.{subpackage}.{classname}
+  description: Sonic proprietary type reference in the 'com' package needs to be migrated to a compatible API
   effort: 0
   labels:
   - konveyor.io/source=sonic

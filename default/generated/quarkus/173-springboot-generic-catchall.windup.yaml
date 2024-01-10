@@ -1,6 +1,6 @@
 - category: potential
   customVariables: []
-  description: Spring component {artifact} requires investigation
+  description: Spring component requires investigation for compatibility with Quarkus extensions or possibility of code rewrite.
   effort: 5
   labels:
   - konveyor.io/source=springboot

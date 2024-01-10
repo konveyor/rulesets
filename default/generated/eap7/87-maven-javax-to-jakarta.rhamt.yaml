@@ -72,7 +72,7 @@
       pattern: artifactId>activation<
 - category: potential
   customVariables: []
-  description: javax.{renamed-g} groupId has been replaced by jakarta.{renamed-g}
+  description: The groupId 'javax' has been replaced by 'jakarta' in JBoss EAP 7.3, or later
   effort: 1
   labels:
   - konveyor.io/target=eap7
@@ -96,8 +96,7 @@
       pattern: groupId>javax.(enterprise|inject|json|json.bind|persistence|security.enterprise|validation)<
 - category: potential
   customVariables: []
-  description: javax.{renamed-a} javax.{renamed-a}-api artifactId has been replaced
-    by jakarta.{renamed-a} jakarta.{renamed-a}-api
+  description: The artifactId for javax packages has been replaced by its corresponding jakarta equivalent.
   effort: 1
   labels:
   - konveyor.io/target=eap7
