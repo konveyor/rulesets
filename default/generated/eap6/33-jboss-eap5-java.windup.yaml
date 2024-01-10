@@ -83,7 +83,7 @@
   - name: package
     nameOfCaptureGroup: package
     pattern: org.jboss(?P<package>(\.ejb3)?\.annotation(\.ejb)?.)?Management
-  description: The `@Management` annotation in 'org.jboss' package, is a JBoss EJB 3.0 extension, that wraps the bean as an MBean and installs it in the JBoss MBean Server. For singleton implementation, use the EJB3.1 spec `@Singleton` bean instead.
+  description: Replace JBoss EJB 3.0 `@Management` annotation with EJB3.1 spec `@Singleton` bean
   effort: 3
   labels:
   - konveyor.io/source=eap5
