@@ -35,7 +35,7 @@
       pattern: com.ibm.*(mqe)*
 - category: mandatory
   customVariables: []
-  description: IBM MQe com.ibm.mqe.adapters.MQe{type}Adapter
+  description: IBM MQe adapters are provided for plug-in communications or data storage for queue managers. These can be deployed to JBoss EAP.
   effort: 3
   labels:
   - konveyor.io/source=websphere
@@ -60,7 +60,7 @@
       pattern: com.ibm.mqe.adapters.MQe{type}Adapter
 - category: mandatory
   customVariables: []
-  description: IBM MQe com.ibm.mqe.administration.MQe{type}AdminMsg
+  description: The JMS destinations in IBM MQe administration API can be configured with the JBoss Admin CLI in JBoss EAP 7
   effort: 3
   labels:
   - konveyor.io/source=websphere

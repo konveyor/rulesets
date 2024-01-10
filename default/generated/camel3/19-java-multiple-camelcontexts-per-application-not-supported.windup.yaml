@@ -3,7 +3,7 @@
   - name: class
     nameOfCaptureGroup: class
     pattern: org.apache.camel.(?P<class>(BeanInject|Consume|DynamicRouter|EndpointInject|Produce|PropertyInject|RecipientList|RoutingSlip))
-  description: '{class}: `context` attribute removed'
+  description: 'The `context` attribute has been removed from annotations due to support for only one CamelContext per deployment.'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -27,7 +27,7 @@
   - name: CdiCamelContextName
     nameOfCaptureGroup: CdiCamelContextName
     pattern: org.apache.camel.cdi.(?P<CdiCamelContextName>(ContextName|ContextNames))
-  description: '{CdiCamelContextName} has been removed'
+  description: 'Support for multiple CamelContexts has been removed'
   effort: 3
   labels:
   - konveyor.io/source=camel2

@@ -3,7 +3,7 @@
   - name: className
     nameOfCaptureGroup: className
     pattern: java.security.(?P<className>(AccessController|AccessControlContext|AccessControlException|DomainCombiner|Policy|PolicySpi|Policy.Parameters))
-  description: The java.security.{class-name} class has been deprecated
+  description: The Java Security Manager class has been deprecated.
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
@@ -22,7 +22,7 @@
   - name: fqcn
     nameOfCaptureGroup: fqcn
     pattern: (?P<fqcn>(java.lang.SecurityManager|java.rmi.RMISecurityManager|javax.security.auth.SubjectDomainCombiner))
-  description: The {fqcn} class has been deprecated
+  description: References to the Java Security Manager API have been deprecated
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
@@ -41,7 +41,7 @@
   - name: methodName
     nameOfCaptureGroup: methodName
     pattern: java.lang.System.(?P<methodName>(getSecurityManager|setSecurityManager))?(.*)
-  description: The java.lang.System.{method-name} method has been deprecated
+  description: The methods 'getSecurityManager' and 'setSecurityManager' under java.lang.System have been deprecated since Java 17.
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
@@ -112,7 +112,7 @@
   - name: methodNames
     nameOfCaptureGroup: methodNames
     pattern: java.util.concurrent.Executors.(?P<methodNames>(privilegedCallable|privilegedCallableUsingCurrentClassLoader|privilegedThreadFactory))?(.*)
-  description: The java.util.concurrent.Executors.{method-names} method has been deprecated
+  description: Methods under java.util.concurrent.Executors have been deprecated
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-
@@ -132,7 +132,7 @@
   - name: methName
     nameOfCaptureGroup: methName
     pattern: javax.security.auth.Subject.(?P<methName>(doAsPrivileged|getSubject))?(.*)
-  description: javax.security.auth.Subject.{meth-name} method has been deprecated
+  description: The 'javax.security.auth.Subject' method has been deprecated
   effort: 5
   labels:
   - konveyor.io/source=openjdk11-

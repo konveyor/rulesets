@@ -3,7 +3,7 @@
   - name: renamed
     nameOfCaptureGroup: renamed
     pattern: javax.(?P<renamed>(activation|annotation|batch|decorator|ejb|el|enterprise|faces|inject|interceptor|jms|json|jws|mail|persistence|resource|security|servlet|transaction|validation|websocket|ws|xml))?.*
-  description: javax.{renamed} has been replaced by jakarta.{renamed}
+  description: The package 'javax' has been replaced by 'jakarta'.
   effort: 1
   labels:
   - konveyor.io/target=jakarta-ee9+

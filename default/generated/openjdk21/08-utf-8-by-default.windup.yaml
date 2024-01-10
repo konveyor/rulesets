@@ -3,7 +3,7 @@
   - name: className
     nameOfCaptureGroup: className
     pattern: java.io.(?P<className>(FileReader|FileWriter|InputStreamReader|OutputStreamWriter|PrintStream))?.*
-  description: The java.io.{class-name} constructor uses UTF-8 by default
+  description: The 'java.io' constructor defaults to UTF-8
   effort: 1
   labels:
   - konveyor.io/target=openjdk18+
@@ -25,7 +25,7 @@
   - name: classNames
     nameOfCaptureGroup: classNames
     pattern: java.util.(?P<classNames>(Formatter|Scanner))?.*
-  description: The java.util.{class-names} constructor uses UTF-8 by default
+  description: The `java.util` constructor defaults to UTF-8
   effort: 1
   labels:
   - konveyor.io/target=openjdk18+
