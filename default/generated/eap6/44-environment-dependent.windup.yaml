@@ -104,7 +104,7 @@
   - name: suffix
     nameOfCaptureGroup: suffix
     pattern: javax.management.(?P<suffix>(ObjectName))?.*
-  description: JMX MBean object name (javax.management.{suffix})
+  description: JMX MBean object names may change after migration
   effort: 1
   labels:
   - konveyor.io/target=eap6
@@ -129,7 +129,7 @@
   - name: suffix
     nameOfCaptureGroup: suffix
     pattern: javax.management.(?P<suffix>(remote.JMXServiceURL))?.*
-  description: JMX API connector server address (javax.management.{suffix})
+  description: JMX API connector server address under 'javax.management' may not be present after migration
   effort: 1
   labels:
   - konveyor.io/target=eap6

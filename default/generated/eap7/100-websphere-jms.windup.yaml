@@ -45,7 +45,7 @@
   - name: type
     nameOfCaptureGroup: type
     pattern: (?P<package>com.ibm(\.[^.]*)*\.jms.)?(?P<prefix>(Jms|MQeJNDI|MQe|MQ)?)?(?P<type>[^.]*?)?ConnectionFactory
-  description: IBM {prefix}{type}ConnectionFactory reference
+  description: IBM ConnectionFactory references should be replaced with the Java EE standard API
   effort: 1
   labels:
   - konveyor.io/source=websphere
@@ -95,7 +95,7 @@
       pattern: com.ibm.*jms.JmsMsg(Producer|Consumer)
 - category: mandatory
   customVariables: []
-  description: WebSphere implementation MQe{type}Queue of JMS Queue
+  description: WebSphere's MQe variant of JMS Queue need to be migrated to the Java EE 6 JMS standard interface 'javax.jms.Queue'
   effort: 1
   labels:
   - konveyor.io/source=websphere
