@@ -60,7 +60,7 @@
       pattern: com.ibm.mqe.adapters.MQe{type}Adapter
 - category: mandatory
   customVariables: []
-  description: The IBM MQe administration API, used to administer and monitor a WebSphere MQ Everyplace queue manager, provides various classes. In JBoss EAP 7, the JMS destinations can be configured with the JBoss Admin CLI.
+  description: The JMS destinations in IBM MQe administration API can be configured with the JBoss Admin CLI in JBoss EAP 7
   effort: 3
   labels:
   - konveyor.io/source=websphere

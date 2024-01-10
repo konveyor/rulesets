@@ -3,7 +3,7 @@
   - name: className
     nameOfCaptureGroup: className
     pattern: java.util.jar.(?P<className>(Pack200|Pack200.Packer|Pack200.Unpacker))
-  description: The classes under java.util.jar have been removed after OpenJDK 11 and completely removed in OpenJDK 14. Please consider switching to either the jlink tool or the jpackage tool to create optimized, application-specific runtimes.
+  description: The classes under java.util.jar have been removed
   effort: 3
   labels:
   - konveyor.io/source=openjdk11-

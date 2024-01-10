@@ -27,7 +27,7 @@
   - name: CdiCamelContextName
     nameOfCaptureGroup: CdiCamelContextName
     pattern: org.apache.camel.cdi.(?P<CdiCamelContextName>(ContextName|ContextNames))
-  description: 'Support for multiple CamelContexts has been removed. Use standard CDI annotations such as `javax.inject.Named` and `javax.enterprise.context.ApplicationScoped` instead.'
+  description: 'Support for multiple CamelContexts has been removed'
   effort: 3
   labels:
   - konveyor.io/source=camel2

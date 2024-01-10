@@ -60,7 +60,7 @@
       pattern: com.ibm.mqe.adapters.MQe{type}Adapter
 - category: mandatory
   customVariables: []
-  description: The administration classes under 'com.ibm.mqe.administration' are used to manage and monitor a WebSphere MQ Everyplace queue manager. In JBoss EAP 6, these JMS destinations can be configured with the JBoss Admin CLI.
+  description: Classes under 'com.ibm.mqe.administration' can be configured with the JBoss Admin CLI in JBoss EAP 6
   effort: 3
   labels:
   - konveyor.io/source=websphere

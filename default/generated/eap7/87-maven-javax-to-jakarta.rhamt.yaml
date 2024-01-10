@@ -72,7 +72,7 @@
       pattern: artifactId>activation<
 - category: potential
   customVariables: []
-  description: The groupId 'javax' has been replaced by 'jakarta' in JBoss EAP 7.3, or later. To ensure its Maven building, running or testing works as expected, use the corresponding Jakarta EE dependency.
+  description: The groupId 'javax' has been replaced by 'jakarta' in JBoss EAP 7.3, or later
   effort: 1
   labels:
   - konveyor.io/target=eap7

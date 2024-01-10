@@ -95,7 +95,7 @@
       pattern: com.ibm.*jms.JmsMsg(Producer|Consumer)
 - category: mandatory
   customVariables: []
-  description: WebSphere specific implementation of JMS Queue is being used and needs to be migrated to the standard Java EE 6 JMS interface.
+  description: WebSphere specific implementation of JMS Queue needs to be migrated to the standard Java EE 6 JMS interface
   effort: 1
   labels:
   - konveyor.io/source=websphere

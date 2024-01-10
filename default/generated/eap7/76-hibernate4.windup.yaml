@@ -672,7 +672,7 @@
   - name: idclass
     nameOfCaptureGroup: idclass
     pattern: org.hibernate.id.(?P<idclass>(TableGenerator|TableHiLoGenerator|SequenceGenerator|SequenceIdentityGenerator|SequenceHiLoGenerator))
-  description: Deprecated classes in Hibernate 5 under 'org.hibernate.id' are removed.  Use 'org.hibernate.id.enhanced.SequenceStyleGenerator' instead.
+  description: Deprecated classes in Hibernate 5 under 'org.hibernate.id' are removed
   effort: 1
   labels:
   - konveyor.io/source=hibernate4

@@ -40,7 +40,7 @@
       pattern: hibernate.transaction.factory_class
 - category: mandatory
   customVariables: []
-  description: Classes from the 'org.hibernate.id' package were removed or deprecated in Hibernate 5. Use the 'org.hibernate.id.enhanced.SequenceStyleGenerator' instead.
+  description: Classes from the 'org.hibernate.id' package were removed or deprecated in Hibernate 5
   effort: 1
   labels:
   - konveyor.io/source=hibernate4

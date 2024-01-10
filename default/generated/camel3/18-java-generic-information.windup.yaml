@@ -73,7 +73,7 @@
   - name: registry
     nameOfCaptureGroup: registry
     pattern: org.apache.camel.impl.(?P<registry>(PropertyPlaceholderDelegateRegistry|CompositeRegistry))
-  description: 'Classes under 'org.apache.camel.impl' have been removed. Use 'org.apache.camel.support.DefaultRegistry' instead.'
+  description: 'Classes under 'org.apache.camel.impl' have been removed'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -739,7 +739,7 @@
   - name: class
     nameOfCaptureGroup: class
     pattern: org.apache.camel.(?P<class>(Consume|EndpointInject|Produce))
-  description: 'The `ref` attribute in certain annotations is removed in the latest versions. Please use the `ref` component in the `value` attribute instead.'
+  description: 'The `ref` attribute in certain annotations is removed in the latest versions'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -785,7 +785,7 @@
   - name: method
     nameOfCaptureGroup: method
     pattern: org.apache.camel.CamelContext.(?P<method>(loadRoutesDefinition|loadRestsDefinition))?(.*)
-  description: The duplicate method in `org.apache.camel.CamelContext` has been removed. Use the corresponding `static` method from `org.apache.camel.model.ModelHelper` instead.
+  description: The duplicate method in `org.apache.camel.CamelContext` has been removed
   effort: 1
   labels:
   - konveyor.io/source=camel2

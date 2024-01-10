@@ -91,7 +91,7 @@
   - name: methodName
     nameOfCaptureGroup: methodName
     pattern: java.lang.SecurityManager.(?P<methodName>(checkAwtEventQueueAccess|checkSystemClipboardAccess|checkTopLevelWindow))?(.*)
-  description: Certain methods under `java.lang.SecurityManager` tied to the AWT stack have been removed in Java 11 due to modularisation. Methods such as `checkAwtEventQueueAccess()`, `checkSystemClipboardAccess()` and `checkTopLevelWindow(java.lang.Object)` need to be replaced with `java.lang.SecurityManager.checkPermission(java.security.Permission)`. Specific replacement methods are detailed in the 'message' field.
+  description: Certain methods under `java.lang.SecurityManager` tied to the AWT stack have been removed in Java 11
   effort: 1
   labels:
   - konveyor.io/source=openjdk8-

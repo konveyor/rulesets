@@ -104,7 +104,7 @@
   - name: suffix
     nameOfCaptureGroup: suffix
     pattern: javax.management.(?P<suffix>(ObjectName))?.*
-  description: JMX MBean object names may change after migration. Ensure that JMX beans provided by the previous server are present and valid for JBoss EAP.
+  description: JMX MBean object names may change after migration
   effort: 1
   labels:
   - konveyor.io/target=eap6
@@ -129,7 +129,7 @@
   - name: suffix
     nameOfCaptureGroup: suffix
     pattern: javax.management.(?P<suffix>(remote.JMXServiceURL))?.*
-  description: JMX API connector server address under 'javax.management' may not be present after migration. Ensure that these are not required for JBoss EAP.
+  description: JMX API connector server address under 'javax.management' may not be present after migration
   effort: 1
   labels:
   - konveyor.io/target=eap6

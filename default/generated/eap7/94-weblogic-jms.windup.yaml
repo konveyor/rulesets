@@ -122,7 +122,7 @@
   - name: type
     nameOfCaptureGroup: type
     pattern: oracle.jms.AQjms(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
-  description: Oracle JMS messages Oracle JMS messages represent the actual data passed through JMS destinations. These references should be replaced with the Java EE standard API.
+  description: Oracle JMS messages references should be replaced with the Java EE standard API
   effort: 1
   labels:
   - konveyor.io/source=weblogic
