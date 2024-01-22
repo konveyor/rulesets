@@ -6,7 +6,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application uses EJB timers.
   ruleID: ejb-01000
   tag:
   - EJB Timer

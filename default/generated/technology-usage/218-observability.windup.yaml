@@ -3,7 +3,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds Spring Boot Actuator.
   ruleID: observability-0100
   tag:
   - Spring Boot Actuator
@@ -27,7 +26,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application uses Spring JMX.
   ruleID: observability-0200
   tag:
   - Spring JMX

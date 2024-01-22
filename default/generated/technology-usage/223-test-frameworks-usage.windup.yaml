@@ -3,7 +3,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the EasyMock library.
   ruleID: test-frameworks-sauge-00010
   tag:
   - EasyMock
@@ -16,7 +15,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the PowerMock library.
   ruleID: test-frameworks-sauge-00020
   tag:
   - PowerMock
@@ -29,7 +27,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Mockito library.
   ruleID: test-frameworks-sauge-00030
   tag:
   - Mockito
@@ -42,7 +39,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the TestNG library.
   ruleID: test-frameworks-sauge-00040
   tag:
   - TestNG
@@ -55,7 +51,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Hamcrest library.
   ruleID: test-frameworks-sauge-00050
   tag:
   - Hamcrest
@@ -68,7 +63,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Spring Test framework.
   ruleID: test-frameworks-sauge-00060
   tag:
   - Spring Test
@@ -81,7 +75,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Spock framework.
   ruleID: test-frameworks-sauge-00070
   tag:
   - Spock
@@ -94,7 +87,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the XMLUnit framework.
   ruleID: test-frameworks-sauge-00080
   tag:
   - XMLUnit
@@ -107,7 +99,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Akka Testkit library.
   ruleID: test-frameworks-sauge-00090
   tag:
   - Akka Testkit
@@ -120,7 +111,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the REST Assured library.
   ruleID: test-frameworks-sauge-00100
   tag:
   - REST Assured
@@ -133,7 +123,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the DbUnit library.
   ruleID: test-frameworks-sauge-00110
   tag:
   - DbUnit
@@ -146,7 +135,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Mule Functional Test Framework (TCK).
   ruleID: test-frameworks-sauge-00120
   tag:
   - Mule Functional Test Framework
@@ -159,7 +147,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Guava Testing Library.
   ruleID: test-frameworks-sauge-00130
   tag:
   - Guava Testing
@@ -172,7 +159,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the RandomizedTesting Randomized Runner library.
   ruleID: test-frameworks-sauge-00140
   tag:
   - RandomizedTesting Runner
@@ -185,7 +171,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the HttpUnit library.
   ruleID: test-frameworks-sauge-00150
   tag:
   - HttpUnit
@@ -198,7 +183,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the JCunit library.
   ruleID: test-frameworks-sauge-00160
   tag:
   - JCunit
@@ -211,7 +195,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the JPA Matchers library.
   ruleID: test-frameworks-sauge-00170
   tag:
   - JPA Matchers
@@ -224,7 +207,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the MultithreadedTC library.
   ruleID: test-frameworks-sauge-00180
   tag:
   - MultithreadedTC
@@ -237,7 +219,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Specsy framework.
   ruleID: test-frameworks-sauge-00190
   tag:
   - Specsy
@@ -250,7 +231,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the JFunk framework.
   ruleID: test-frameworks-sauge-00200
   tag:
   - JFunk
@@ -263,7 +243,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Restito framework.
   ruleID: test-frameworks-sauge-00210
   tag:
   - Restito
@@ -276,7 +255,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Test Interface library.
   ruleID: test-frameworks-sauge-00220
   tag:
   - Test Interface
@@ -289,7 +267,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Play Test framework.
   ruleID: test-frameworks-sauge-00230
   tag:
   - Play Test
@@ -302,7 +279,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Arquillian framework.
   ruleID: test-frameworks-sauge-00240
   tag:
   - Arquillian
@@ -315,7 +291,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Cactus framework.
   ruleID: test-frameworks-sauge-00560
   tag:
   - Cactus
@@ -328,7 +303,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Concordion framework.
   ruleID: test-frameworks-sauge-00260
   tag:
   - Concordion
@@ -341,7 +315,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Cucumber framework.
   ruleID: test-frameworks-sauge-00270
   tag:
   - Cucumber
@@ -354,7 +327,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the EtlUnit framework.
   ruleID: test-frameworks-sauge-00280
   tag:
   - EtlUnit
@@ -367,7 +339,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the HavaRunner framework.
   ruleID: test-frameworks-sauge-00290
   tag:
   - HavaRunner
@@ -380,7 +351,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the JBehave framework.
   ruleID: test-frameworks-sauge-00300
   tag:
   - JBehave
@@ -393,7 +363,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the JMock framework.
   ruleID: test-frameworks-sauge-00310
   tag:
   - JMock
@@ -406,7 +375,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the JMockit framework.
   ruleID: test-frameworks-sauge-00320
   tag:
   - JMockit
@@ -419,7 +387,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Jukito framework.
   ruleID: test-frameworks-sauge-00330
   tag:
   - Jukito
@@ -432,7 +399,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Needle framework.
   ruleID: test-frameworks-sauge-00340
   tag:
   - Needle
@@ -445,7 +411,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the OpenPojo framework.
   ruleID: test-frameworks-sauge-00350
   tag:
   - OpenPojo
@@ -458,7 +423,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Unitils library.
   ruleID: test-frameworks-sauge-00360
   tag:
   - Unitils
@@ -471,7 +435,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the JUnit framework.
   ruleID: test-frameworks-sauge-00370
   tag:
   - JUnit
