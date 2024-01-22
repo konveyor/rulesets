@@ -3,7 +3,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: "\n                      The application embedds an Apache Camel library.\n
     \                 "
   ruleID: integration-00001
   tag:
@@ -17,7 +16,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: "\n                      The application embedds a Teiid library.\n                  "
   ruleID: integration-00002
   tag:
   - Teiid
@@ -30,7 +28,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Spring Integration framework.
   ruleID: integration-00003
   tag:
   - Spring Integration
@@ -43,7 +40,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Ikasan library.
   ruleID: integration-00004
   tag:
   - Ikasan
@@ -56,7 +52,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Swagger library.
   ruleID: integration-00005
   tag:
   - Swagger
@@ -69,7 +64,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Apiman library.
   ruleID: integration-00006
   tag:
   - Apiman
@@ -82,7 +76,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a 3scale library.
   ruleID: integration-00007
   tag:
   - 3scale
@@ -95,7 +88,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Istio library.
   ruleID: integration-00008
   tag:
   - Istio
@@ -108,7 +100,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a ServiceMix library.
   ruleID: integration-00009
   tag:
   - ServiceMix
@@ -121,7 +112,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Mule library.
   ruleID: integration-00010
   tag:
   - Mule
@@ -134,7 +124,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Petals EIP library.
   ruleID: integration-00011
   tag:
   - Petals EIP
@@ -147,7 +136,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a SwitchYard library.
   ruleID: integration-00012
   tag:
   - SwitchYard
@@ -160,7 +148,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Apache Synapse library.
   ruleID: integration-00013
   tag:
   - Apache Synapse
@@ -173,7 +160,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a WSO2 library.
   ruleID: integration-00014
   tag:
   - WSO2
@@ -186,7 +172,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Talend ESB library.
   ruleID: integration-00015
   tag:
   - Talend ESB
@@ -199,7 +184,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Spring Integration framework.
   ruleID: integration-00016
   tag:
   - Spring Integration
@@ -214,7 +198,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Spring Integration framework.
   ruleID: integration-00017
   tag:
   - Spring Integration

@@ -3,7 +3,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds Spring Cloud Config.
   ruleID: configuration-management-0100
   tag:
   - Spring Cloud Config
@@ -21,7 +20,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: Application properties file detected
   ruleID: configuration-management-0200
   tag:
   - Application Properties File
@@ -34,7 +32,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: Spring datasource properties detected
   ruleID: configuration-management-0300
   tag:
   - Spring Properties
@@ -48,7 +45,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: Spring logging properties detected
   ruleID: configuration-management-0400
   tag:
   - Spring Properties
@@ -62,7 +58,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: Spring configuration properties annotation detected
   ruleID: configuration-management-0500
   tag:
   - Spring Properties

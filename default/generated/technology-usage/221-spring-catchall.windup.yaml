@@ -3,7 +3,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Spring framework.
   ruleID: spring-catchall-00001
   tag:
   - Spring

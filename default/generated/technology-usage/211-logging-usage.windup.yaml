@@ -3,7 +3,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Apache Log4J library.
   ruleID: logging-usage-00010
   tag:
   - Apache Log4J
@@ -16,7 +15,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Apache Commons Logging library.
   ruleID: logging-usage-00020
   tag:
   - Apache Commons Logging
@@ -29,7 +27,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Simple Logging Facade for Java (SLJ4J) library.
   ruleID: logging-usage-00030
   tag:
   - SLF4J
@@ -42,7 +39,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a tinylog library.
   ruleID: logging-usage-00040
   tag:
   - tinylog
@@ -55,7 +51,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Logback library.
   ruleID: logging-usage-00050
   tag:
   - Logback
@@ -68,7 +63,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a JBoss logging library.
   ruleID: logging-usage-00080
   tag:
   - JBoss logging
@@ -81,7 +75,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Monolog library.
   ruleID: logging-usage-00090
   tag:
   - Monolog
@@ -94,7 +87,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Jcabi Log library.
   ruleID: logging-usage-00100
   tag:
   - Jcabi Log
@@ -107,7 +99,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a NLOG4J library.
   ruleID: logging-usage-00110
   tag:
   - NLOG4J
@@ -120,7 +111,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Log4s library.
   ruleID: logging-usage-00120
   tag:
   - Log4s
@@ -133,7 +123,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Kotlin Logging library.
   ruleID: logging-usage-00130
   tag:
   - Kotlin Logging
@@ -146,7 +135,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Airlift Log Manager library.
   ruleID: logging-usage-00140
   tag:
   - Airlift Log Manager
@@ -159,7 +147,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a MinLog library.
   ruleID: logging-usage-00150
   tag:
   - MinLog
@@ -172,7 +159,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Common Java Logging Utils library.
   ruleID: logging-usage-00160
   tag:
   - Logging Utils
@@ -185,7 +171,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an OCPsoft Logging Utils library.
   ruleID: logging-usage-00170
   tag:
   - OCPsoft Logging Utils
@@ -198,7 +183,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Scribe library.
   ruleID: logging-usage-00180
   tag:
   - Scribe
@@ -211,7 +195,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Git Foundation Classes (GFC) Logging library.
   ruleID: logging-usage-00190
   tag:
   - GFC Logging
@@ -224,7 +207,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Blitz4j library.
   ruleID: logging-usage-00200
   tag:
   - Blitz4j
@@ -237,7 +219,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Avalon Logkit library.
   ruleID: logging-usage-00210
   tag:
   - Avalon Logkit
@@ -250,7 +231,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a KLogger library.
   ruleID: logging-usage-00220
   tag:
   - KLogger
@@ -263,7 +243,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Lumberjack library.
   ruleID: logging-usage-00230
   tag:
   - Lumberjack
@@ -276,7 +255,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Log.io library.
   ruleID: logging-usage-00240
   tag:
   - Log.io
@@ -289,7 +267,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an OPS4J Pax Logging Service library.
   ruleID: logging-usage-00250
   tag:
   - OPS4J Pax Logging Service
@@ -302,7 +279,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an OW2 Log Util library.
   ruleID: logging-usage-00260
   tag:
   - OW2 Log Util
@@ -315,7 +291,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Twitter Util Logging library.
   ruleID: logging-usage-00270
   tag:
   - Twitter Util Logging
@@ -328,7 +303,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Composite Logging JCL library.
   ruleID: logging-usage-00280
   tag:
   - Composite Logging JCL
@@ -341,7 +315,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Apache Flume library.
   ruleID: logging-usage-00290
   tag:
   - Apache Flume
