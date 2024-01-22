@@ -23,7 +23,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: JNA is used in the application
   ruleID: technology-usage-connect-01101
   tag:
   - Connect=JNA
@@ -52,7 +51,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: Mailing is used in the application
   ruleID: technology-usage-connect-01200
   tag:
   - Connect=Mail
@@ -78,7 +76,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: JCA is used in the application
   ruleID: technology-usage-connect-01300
   tag:
   - Connect=JCA

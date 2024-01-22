@@ -3,7 +3,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Mycontainer JTA library.
   ruleID: jta-00020
   tag:
   - Mycontainer JTA
@@ -16,7 +15,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Geronimo JTA library.
   ruleID: jta-00030
   tag:
   - Geronimo JTA
@@ -29,7 +27,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an OW2 JTA library.
   ruleID: jta-00040
   tag:
   - OW2 JTA
@@ -42,7 +39,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Evo JTA library.
   ruleID: jta-00050
   tag:
   - Evo JTA
@@ -55,7 +51,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an AKKA JTA library.
   ruleID: jta-00060
   tag:
   - AKKA JTA
@@ -68,7 +63,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a KumuluzEE JTA library.
   ruleID: jta-00070
   tag:
   - KumuluzEE JTA
@@ -81,7 +75,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Ignite JTA library.
   ruleID: jta-00080
   tag:
   - Ignite JTA
@@ -94,7 +87,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Nuxeo JTA/JCA library.
   ruleID: jta-00090
   tag:
   - Nuxeo JTA/JCA
@@ -107,7 +99,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Everit JTA library.
   ruleID: jta-00100
   tag:
   - Everit JTA
@@ -120,7 +111,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Demoiselle JTA library.
   ruleID: jta-00110
   tag:
   - Demoiselle JTA
@@ -133,7 +123,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Apache Meecrowave JTA library.
   ruleID: jta-00120
   tag:
   - Apache Meecrowave JTA
@@ -146,7 +135,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Apache Sirona JTA library.
   ruleID: jta-00130
   tag:
   - Apache Sirona JTA
@@ -159,7 +147,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Lift JTA library.
   ruleID: jta-00140
   tag:
   - Lift JTA
@@ -172,7 +159,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a WF Core JTA library.
   ruleID: jta-00150
   tag:
   - WF Core JTA
@@ -185,7 +171,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Java Transaction API library.
   ruleID: jta-00160
   tag:
   - Java Transaction API
@@ -201,7 +186,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a JBoss Transactions library.
   ruleID: jta-00170
   tag:
   - JBoss Transactions
@@ -229,7 +213,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a GlassFish JTA library.
   ruleID: jta-00180
   tag:
   - GlassFish JTA
@@ -247,7 +230,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Atomikos JTA library.
   ruleID: jta-00190
   tag:
   - Atomikos JTA
@@ -265,7 +247,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Narayana Arjuna library.
   ruleID: jta-00200
   tag:
   - Narayana Arjuna
@@ -283,7 +264,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Spring Transactions library.
   ruleID: jta-00210
   tag:
   - Spring Transactions

@@ -6,7 +6,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application uses Thread APIs.
   ruleID: javase-01000
   tag:
   - Java Threads
@@ -22,7 +21,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application uses Concurrent Executors APIs.
   ruleID: javase-01100
   tag:
   - Java Threads

@@ -3,7 +3,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Spring Security library.
   ruleID: security-01100
   tag:
   - Spring Security
@@ -16,7 +15,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Apache Shiro library.
   ruleID: security-01200
   tag:
   - Apache Shiro
@@ -29,7 +27,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Hdiv library.
   ruleID: security-01300
   tag:
   - Hdiv
@@ -42,7 +39,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an OACC library.
   ruleID: security-01400
   tag:
   - OACC
@@ -55,7 +51,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a PicketLink library.
   ruleID: security-01500
   tag:
   - PicketLink
@@ -68,7 +63,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a PicketBox library.
   ruleID: security-01600
   tag:
   - PicketBox
@@ -81,7 +75,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Keyczar library.
   ruleID: security-01700
   tag:
   - Keyczar
@@ -94,7 +87,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an XACML library.
   ruleID: security-01800
   tag:
   - XACML
@@ -107,7 +99,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a SAML library.
   ruleID: security-01900
   tag:
   - SAML
@@ -120,7 +111,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Bouncy Castle library.
   ruleID: security-02000
   tag:
   - Bouncy Castle
@@ -144,7 +134,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Jasypt library.
   ruleID: security-02100
   tag:
   - Jasypt
@@ -157,7 +146,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Apache Santuario library.
   ruleID: security-02200
   tag:
   - Apache Santuario
@@ -170,7 +158,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an SSL library.
   ruleID: security-02300
   tag:
   - SSL
@@ -183,7 +170,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Vlad library.
   ruleID: security-02400
   tag:
   - Vlad
@@ -196,7 +182,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Apache Commons Validator library.
   ruleID: security-02500
   tag:
   - Apache Commons Validator
@@ -209,7 +194,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an OWASP ESAPI library.
   ruleID: security-02600
   tag:
   - OWASP ESAPI
@@ -222,7 +206,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a WSS4J library.
   ruleID: security-02700
   tag:
   - WSS4J
@@ -235,7 +218,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an OpenSAML library.
   ruleID: security-02800
   tag:
   - OpenSAML
@@ -248,7 +230,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an OTR4J library.
   ruleID: security-02900
   tag:
   - OTR4J
@@ -261,7 +242,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an OWASP CSRF Guard library.
   ruleID: security-03000
   tag:
   - OWASP CSRF Guard
@@ -274,7 +254,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an OAUTH library.
   ruleID: security-03100
   tag:
   - OAUTH
@@ -287,7 +266,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Acegi Security library.
   ruleID: security-03200
   tag:
   - Acegi Security
@@ -300,7 +278,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a JSecurity library.
   ruleID: security-03300
   tag:
   - JSecurity
@@ -313,7 +290,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an AcrIS Security library.
   ruleID: security-03400
   tag:
   - AcrIS Security
@@ -326,7 +302,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Trunk JGuard library.
   ruleID: security-03500
   tag:
   - Trunk JGuard
@@ -339,7 +314,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Spring Security library.
   ruleID: security-03600
   tag:
   - Spring Security

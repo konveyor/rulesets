@@ -3,7 +3,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Apache Axis framework.
   ruleID: embedded-framework-01000
   tag:
   - Apache Axis
@@ -16,7 +15,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Apache Axis2 framework.
   ruleID: embedded-framework-01010
   tag:
   - Apache Axis2
@@ -29,7 +27,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Apache CXF framework.
   ruleID: embedded-framework-01100
   tag:
   - Apache CXF
@@ -42,7 +39,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the XFire framework.
   ruleID: embedded-framework-01200
   tag:
   - XFire
@@ -55,7 +51,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Jersey framework.
   ruleID: embedded-framework-01300
   tag:
   - Jersey
@@ -68,7 +63,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Unirest framework.
   ruleID: embedded-framework-01400
   tag:
   - Unirest
@@ -81,7 +75,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Hibernate framework.
   ruleID: embedded-framework-01500
   tag:
   - Hibernate
@@ -94,7 +87,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Hibernate OGM framework.
   ruleID: embedded-framework-01600
   tag:
   - Hibernate OGM
@@ -107,7 +99,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the EclipseLink framework.
   ruleID: embedded-framework-01700
   tag:
   - EclipseLink
@@ -120,7 +111,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Spring Batch framework.
   ruleID: embedded-framework-02000
   tag:
   - Spring Batch
@@ -133,7 +123,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the AspectJ framework.
   ruleID: embedded-framework-02200
   tag:
   - AspectJ
@@ -146,7 +135,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the JBPM framework.
   ruleID: embedded-framework-02300
   tag:
   - JBPM
@@ -159,7 +147,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the iLog framework.
   ruleID: embedded-framework-02400
   tag:
   - iLog
@@ -172,7 +159,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Camunda framework.
   ruleID: embedded-framework-03000
   tag:
   - Camunda
@@ -185,7 +171,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Pega framework.
   ruleID: embedded-framework-03100
   tag:
   - Pega
@@ -198,7 +183,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Blaze framework.
   ruleID: embedded-framework-03200
   tag:
   - Blaze
@@ -211,7 +195,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the MRules framework.
   ruleID: embedded-framework-03300
   tag:
   - MRules
@@ -224,7 +207,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Easy Rules framework.
   ruleID: embedded-framework-03400
   tag:
   - Easy Rules
@@ -237,7 +219,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the AOP Alliance library.
   ruleID: embedded-framework-04700
   tag:
   - AOP Alliance
@@ -250,7 +231,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds SNMP4J.
   ruleID: embedded-framework-05000
   tag:
   - SNMP4J
@@ -263,7 +243,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a HTTP client.
   ruleID: embedded-framework-05100
   tag:
   - HTTP Client
@@ -276,7 +255,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Javax Inject library.
   ruleID: embedded-framework-05300
   tag:
   - Javax Inject
@@ -292,7 +270,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Google Guice library.
   ruleID: embedded-framework-05400
   tag:
   - Google Guice
@@ -305,7 +282,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a CDI library.
   ruleID: embedded-framework-05500
   tag:
   - CDI
@@ -318,7 +294,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Plexus Container library.
   ruleID: embedded-framework-05600
   tag:
   - Plexus Container
@@ -331,7 +306,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Weld library.
   ruleID: embedded-framework-05700
   tag:
   - Weld
@@ -344,7 +318,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Dagger library.
   ruleID: embedded-framework-05800
   tag:
   - Dagger
@@ -357,7 +330,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a GIN (GWT INjection) library.
   ruleID: embedded-framework-05900
   tag:
   - GIN
@@ -370,7 +342,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a PicoContainer library.
   ruleID: embedded-framework-06000
   tag:
   - PicoContainer
@@ -383,7 +354,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Scaldi library.
   ruleID: embedded-framework-06100
   tag:
   - Scaldi
@@ -396,7 +366,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Macros library.
   ruleID: embedded-framework-06200
   tag:
   - Macros
@@ -409,7 +378,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Injekt for Kotlin library.
   ruleID: embedded-framework-06300
   tag:
   - Injekt for Kotlin
@@ -422,7 +390,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Kodein library.
   ruleID: embedded-framework-06400
   tag:
   - Kodein
@@ -435,7 +402,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Peaberry library.
   ruleID: embedded-framework-06500
   tag:
   - Peaberry
@@ -448,7 +414,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Sticky Configured library.
   ruleID: embedded-framework-06600
   tag:
   - Sticky Configured
@@ -461,7 +426,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Ka DI library.
   ruleID: embedded-framework-06700
   tag:
   - Ka DI
@@ -474,7 +438,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Polyforms DI library.
   ruleID: embedded-framework-06800
   tag:
   - Polyforms DI
@@ -487,7 +450,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a JayWire library.
   ruleID: embedded-framework-06900
   tag:
   - JayWire
@@ -500,7 +462,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Silk DI library.
   ruleID: embedded-framework-07000
   tag:
   - Silk DI
@@ -513,7 +474,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Grapht DI library.
   ruleID: embedded-framework-07100
   tag:
   - Grapht DI
@@ -526,7 +486,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Syringe library.
   ruleID: embedded-framework-07200
   tag:
   - Syringe
@@ -539,7 +498,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Cfg Engine library.
   ruleID: embedded-framework-07300
   tag:
   - Cfg Engine
@@ -552,7 +510,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a BeanInject library.
   ruleID: embedded-framework-07400
   tag:
   - BeanInject
@@ -565,7 +522,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Tornado Inject library.
   ruleID: embedded-framework-07500
   tag:
   - Tornado Inject
@@ -578,7 +534,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Airframe library.
   ruleID: embedded-framework-07600
   tag:
   - Airframe
@@ -591,7 +546,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Winter library.
   ruleID: embedded-framework-07700
   tag:
   - Winter
@@ -604,7 +558,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a KouInject library.
   ruleID: embedded-framework-07800
   tag:
   - KouInject
@@ -617,7 +570,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds an Iroh library.
   ruleID: embedded-framework-07900
   tag:
   - Iroh
@@ -630,7 +582,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Micro DI library.
   ruleID: embedded-framework-08000
   tag:
   - Micro DI
@@ -643,7 +594,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a SubCut library.
   ruleID: embedded-framework-08100
   tag:
   - SubCut
@@ -656,7 +606,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Spring DI library.
   ruleID: embedded-framework-08200
   tag:
   - Spring DI
@@ -670,7 +619,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Micrometer library.
   ruleID: embedded-framework-08300
   tag:
   - Micrometer
@@ -684,7 +632,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Spring Web framework.
   ruleID: embedded-framework-08400
   tag:
   - Spring Web
@@ -705,7 +652,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds a Spring Shell library.
   ruleID: embedded-framework-08500
   tag:
   - Spring Shell
@@ -719,7 +665,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds Spring Boot Flo.
   ruleID: embedded-framework-08600
   tag:
   - Spring Boot Flo
@@ -733,7 +678,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds Spring Scheduled.
   ruleID: embedded-framework-08700
   tag:
   - Spring Scheduled
@@ -747,7 +691,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds Spring Cloud Function.
   ruleID: embedded-framework-08800
   tag:
   - Spring Cloud Function
@@ -765,7 +708,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Quartz framework.
   ruleID: embedded-framework-08900
   tag:
   - Quartz
@@ -778,7 +720,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Zipkin framework.
   ruleID: embedded-framework-09100
   tag:
   - Zipkin
@@ -791,7 +732,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Feign framework.
   ruleID: embedded-framework-09000
   tag:
   - Feign
@@ -804,7 +744,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Redis client.
   ruleID: embedded-framework-09200
   tag:
   - Redis
@@ -817,7 +756,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Eureka client.
   ruleID: embedded-framework-09300
   tag:
   - Eureka
