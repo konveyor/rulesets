@@ -3,7 +3,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Liferay framework.
   ruleID: 3rd-party-01000
   tag:
   - Liferay
@@ -16,7 +15,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Oracle Forms framework.
   ruleID: 3rd-party-02000
   tag:
   - Oracle Forms
@@ -29,7 +27,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Spring Boot framework.
   ruleID: 3rd-party-03000
   tag:
   - Spring Boot
@@ -42,7 +39,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Elasticsearch framework.
   ruleID: 3rd-party-04000
   tag:
   - Elasticsearch
@@ -55,7 +51,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Logstash framework.
   ruleID: 3rd-party-05000
   tag:
   - Logstash
@@ -68,7 +63,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Jetty framework.
   ruleID: 3rd-party-06000
   tag:
   - Jetty
@@ -81,7 +75,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Tomcat framework.
   ruleID: 3rd-party-07000
   tag:
   - Tomcat
@@ -94,7 +87,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Kibana framework.
   ruleID: 3rd-party-08000
   tag:
   - Kibana
@@ -107,7 +99,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Apache Karaf framework.
   ruleID: 3rd-party-09000
   tag:
   - Apache Karaf
@@ -120,7 +111,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Neo4j framework.
   ruleID: 3rd-party-10000
   tag:
   - Neo4j
@@ -133,7 +123,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Spark framework.
   ruleID: 3rd-party-11000
   tag:
   - Spark
@@ -146,7 +135,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Apache Hadoop framework.
   ruleID: 3rd-party-12000
   tag:
   - Apache Hadoop
@@ -159,7 +147,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Apache Geronimo framework.
   ruleID: 3rd-party-13000
   tag:
   - Apache Geronimo
@@ -172,7 +159,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Apache Aries framework.
   ruleID: 3rd-party-14000
   tag:
   - Apache Aries
@@ -185,7 +171,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Cloudera framework.
   ruleID: 3rd-party-15000
   tag:
   - Cloudera
@@ -198,7 +183,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the MapR framework.
   ruleID: 3rd-party-16000
   tag:
   - MapR
@@ -211,7 +195,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the TensorFlow framework.
   ruleID: 3rd-party-17000
   tag:
   - TensorFlow
@@ -224,7 +207,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Weka framework.
   ruleID: 3rd-party-18000
   tag:
   - Weka
@@ -237,7 +219,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-  message: The application embeds the Apache Mahout framework.
   ruleID: 3rd-party-19000
   tag:
   - Apache Mahout
