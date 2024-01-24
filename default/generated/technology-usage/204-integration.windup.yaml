@@ -3,7 +3,6 @@
   labels:
   - konveyor.io/include=always
   links: []
-    \                 "
   ruleID: integration-00001
   tag:
   - Apache Camel
