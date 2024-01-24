@@ -22,6 +22,21 @@ jobs:
     - uses: actions/checkout@v3
       with:
         path: rulesets
+
+    - name: Validate YAML rules
+      working-directory: rulesets
+      run: |
+        #!/bin/bash
+        rc=0
+        for file in $(find . -type f -name *.yaml); do
+                yq eval '.' "$file" > /dev/null 2>&1
+                if [ $? -ne 0 ]; then
+                  echo "bad yaml file $file"
+                  rc=1
+                fi
+        done
+        exit $rc
+
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
