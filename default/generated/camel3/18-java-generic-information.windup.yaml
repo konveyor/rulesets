@@ -73,7 +73,7 @@
   - name: registry
     nameOfCaptureGroup: registry
     pattern: org.apache.camel.impl.(?P<registry>(PropertyPlaceholderDelegateRegistry|CompositeRegistry))
-  description: 'Classes under 'org.apache.camel.impl' have been removed'
+  description: 'Classes under org.apache.camel.impl have been removed'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -412,7 +412,7 @@
   - name: moved
     nameOfCaptureGroup: moved
     pattern: org.apache.camel.util.(?P<moved>(AsyncProcessorHelper|AsyncProcessorConverterHelper|EndpointHelper|EventHelper|ExchangeHelper|GZIPHelper|JsonSchemaHelper|MessageHelper|PlatformHelper|PredicateAssertHelper|ResolverHelper|ResourceHelper|UnitOfWorkHelper))
-  description: 'Classes under 'org.apache.camel.util' have been moved to 'org.apache.camel.support'.'
+  description: 'Classes under `org.apache.camel.util` have been moved to `org.apache.camel.support`.'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -526,7 +526,7 @@
       pattern: org.apache.camel.impl.ThrottlingInflightRoutePolicy
 - category: mandatory
   customVariables: []
-  description: 'Classes under 'org.apache.camel.processor.idempotent' have been moved to 'org.apache.camel.support.processor.idempotent''
+  description: 'Classes under `org.apache.camel.processor.idempotent` have been moved to `org.apache.camel.support.processor.idempotent`'
   effort: 1
   labels:
   - konveyor.io/source=camel2
@@ -716,7 +716,7 @@
   - name: class
     nameOfCaptureGroup: class
     pattern: org.apache.camel.(?P<class>(Consume|EndpointInject|Produce))
-  description: 'Replace the deprecated 'uri' attribute with 'value' in Apache Camel's Consume, EndpointInject, or Produce annotations for modernization  '
+  description: "Replace the deprecated `uri` attribute with `value` in Apache Camel's Consume, EndpointInject, or Produce annotations for modernization"
   effort: 0
   labels:
   - konveyor.io/source=camel2
