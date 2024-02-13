@@ -540,7 +540,7 @@
     alternatively, set `hibernate.hbm2ddl.jdbc_metadata_extraction_strategy=individually`.
   ruleID: hibernate51-53-01001
   when:
-    or:
+    and:
     - as: persistence_files
       builtin.xml:
         namespaces:

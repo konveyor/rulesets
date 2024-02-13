@@ -222,7 +222,7 @@
     product documentation for more information.\n "
   ruleID: weblogic-xml-descriptor-eap7-10000
   when:
-    or:
+    and:
     - as: webservices
       builtin.xml:
         namespaces:
