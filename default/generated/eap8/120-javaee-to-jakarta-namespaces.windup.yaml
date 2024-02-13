@@ -652,7 +652,7 @@
   message: In the root tag, replace the `version` attribute value `2.1` with `3.0`
   ruleID: javaee-to-jakarta-namespaces-00033
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -677,7 +677,7 @@
   message: In the root tag, replace the `version` attribute value `7` with `9`
   ruleID: javaee-to-jakarta-namespaces-00034
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -703,7 +703,7 @@
     with `3.0`'
   ruleID: javaee-to-jakarta-namespaces-00035
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -729,7 +729,7 @@
     with `3.0`'
   ruleID: javaee-to-jakarta-namespaces-00036
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -755,7 +755,7 @@
     value with `9`'
   ruleID: javaee-to-jakarta-namespaces-00037
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -781,7 +781,7 @@
     value with `9`'
   ruleID: javaee-to-jakarta-namespaces-00038
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -807,7 +807,7 @@
     value with `9`'
   ruleID: javaee-to-jakarta-namespaces-00039
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -833,7 +833,7 @@
     value with `9`'
   ruleID: javaee-to-jakarta-namespaces-00040
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -859,7 +859,7 @@
     value with `2.0`'
   ruleID: javaee-to-jakarta-namespaces-00041
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -885,7 +885,7 @@
     with `4.0`'
   ruleID: javaee-to-jakarta-namespaces-00042
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -911,7 +911,7 @@
     attribute value with `2.0`'
   ruleID: javaee-to-jakarta-namespaces-00043
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -937,7 +937,7 @@
     with `5.0`'
   ruleID: javaee-to-jakarta-namespaces-00044
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -963,7 +963,7 @@
     with `5.0`'
   ruleID: javaee-to-jakarta-namespaces-00045
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -989,7 +989,7 @@
     with `5.0`'
   ruleID: javaee-to-jakarta-namespaces-00046
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -1015,7 +1015,7 @@
     with `5.0`'
   ruleID: javaee-to-jakarta-namespaces-00047
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -1041,7 +1041,7 @@
     value with `3.0`'
   ruleID: javaee-to-jakarta-namespaces-00048
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -1067,7 +1067,7 @@
     value with `3.0`'
   ruleID: javaee-to-jakarta-namespaces-00049
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -1093,7 +1093,7 @@
     value with `3.0`'
   ruleID: javaee-to-jakarta-namespaces-00050
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -1119,7 +1119,7 @@
     value with `3.0`'
   ruleID: javaee-to-jakarta-namespaces-00051
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -1145,7 +1145,7 @@
     value with `3.0`'
   ruleID: javaee-to-jakarta-namespaces-00052
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -1171,7 +1171,7 @@
     value with `3.0`'
   ruleID: javaee-to-jakarta-namespaces-00053
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -1197,7 +1197,7 @@
     attribute value with `3.0`'
   ruleID: javaee-to-jakarta-namespaces-00054
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -1223,7 +1223,7 @@
     `3.0`'
   ruleID: javaee-to-jakarta-namespaces-00055
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""
@@ -1249,7 +1249,7 @@
     `3.0`'
   ruleID: javaee-to-jakarta-namespaces-00056
   when:
-    or:
+    and:
     - as: result
       builtin.filecontent:
         filePattern: ""

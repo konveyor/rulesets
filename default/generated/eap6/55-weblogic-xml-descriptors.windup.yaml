@@ -215,7 +215,7 @@
     product documentation for more information.\n "
   ruleID: weblogic-xml-descriptor-10000
   when:
-    or:
+    and:
     - as: webservices
       builtin.xml:
         namespaces:
@@ -419,10 +419,10 @@
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/#Session_Bean_Transaction_Timeout
   - title: How to set EJB transaction timeout in JBoss EAP 6
     url: https://access.redhat.com/solutions/90553
-  message: "\n \n The WebLogic `<trans-timeout-seconds>` configuration element sets
-    the maximum duration for an EJB's container-initiated transactions, in seconds,
-    after which the transaction is rolled back. \n\n In JBoss EAP 6+, you can achieve
-    the same behavior by using the `TransactionTimeout` annotation.\n \n "
+  message: "The WebLogic `<trans-timeout-seconds>` configuration element sets the
+    maximum duration for an EJB's container-initiated transactions, in seconds, after
+    which the transaction is rolled back. \n\n In JBoss EAP 6+, you can achieve the
+    same behavior by using the `TransactionTimeout` annotation."
   ruleID: weblogic-xml-descriptor-19000
   when:
     builtin.xml:
