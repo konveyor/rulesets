@@ -15,7 +15,7 @@
     `String` properties to JDBC CLOB
   ruleID: hibernate-xml-01000
   when:
-    or:
+    and:
     - as: "1"
       builtin.xml:
         namespaces: {}
@@ -44,7 +44,7 @@
     variable must be set to false.\n "
   ruleID: hibernate-xml-02000
   when:
-    or:
+    and:
     - as: "1"
       builtin.xml:
         namespaces: {}
