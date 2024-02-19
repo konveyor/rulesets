@@ -33,9 +33,6 @@
   - cloud-readiness
   - rmi
   links: []
-  message: "\n                            The Java RMI API is tightly coupled. Tight
-    coupling is not suitable in a cloud environment because of scalability problems.\n\n
-    \                           Use a RESTful API or a message queue.\n                            "
   ruleID: java-rmi-00001
   tag:
   - rmi
