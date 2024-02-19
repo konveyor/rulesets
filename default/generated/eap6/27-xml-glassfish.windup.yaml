@@ -8,8 +8,6 @@
   - glassfish
   - configuration
   links: []
-  message: ' Glassfish specific ejb configuration file used to configure EJBs, map
-    them to jndi names etc.'
   ruleID: xml-glassfish-02000
   tag:
   - configuration
@@ -29,9 +27,6 @@
   - glassfish
   - configuration
   links: []
-  message: ' Glassfish-application  is a Glassfish specific EAR configuration file
-    used to configure security roles, url addresses, JNDI binding etc. This file is
-    glassfish specific and needs to be migrated to application.xml or jboss-app.xml.'
   ruleID: xml-glassfish-03000
   tag:
   - configuration

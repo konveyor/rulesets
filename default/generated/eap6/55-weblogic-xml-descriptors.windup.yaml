@@ -12,11 +12,6 @@
   - title: Migrate Oracle WebLogic server descriptors (weblogic-application.xml) to
       JBoss EAP 6 or 7
     url: https://access.redhat.com/articles/1328043
-  message: "\n                      The `weblogic-application.xml` deployment descriptor
-    file is used to describe Oracle WebLogic Server EAR archives. Oracle WebLogic
-    Server EAR configures some application settings through the `application-param`
-    element.\n                      These settings could be replaced with `context-param`
-    elements in Java EE Servlet `web.xml` descriptor.\n                    "
   ruleID: weblogic-xml-descriptor-01000
   tag:
   - webservice
@@ -240,12 +235,6 @@
   links:
   - title: EAP 6 JMS Server configuration
     url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html-single/Administration_and_Configuration_Guide/index.html#sect-Configuration1
-  message: "\n                        This file is a proprietary WebLogic JMS configuration
-    and needs to be migrated.\n                        While there is no direct mapping
-    of these descriptor elements, many of these features may be configured in the
-    application deployment or JBoss server configuration files.\n\n                        For
-    information on how to configure JBoss EAP JMS, please refer to the Administration
-    and Configuration Guide for JBoss Enterprise Application Platform 6.\n                    "
   ruleID: weblogic-xml-descriptor-11000
   tag:
   - jms
@@ -272,13 +261,6 @@
   - title: Administration and Configuration Guide for JBoss Enterprise Application
       Platform 6
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index
-  message: "\n                        The Oracle WebLogic Server deployment descriptor
-    file (`weblogic.xml`) provides functionality that is not included in the standard
-    Java EE specification.\n                        While there is no direct mapping
-    of these descriptor elements, many of these features may be configured in the
-    application deployment or JBoss server configuration files.\n\n                        For
-    more information on how to configure JBoss EAP, please refer to the Administration
-    and Configuration Guide for JBoss Enterprise Application Platform 6.\n                    "
   ruleID: weblogic-xml-descriptor-12000
   tag:
   - web-app
@@ -363,9 +345,6 @@
   - weblogic
   - descriptor
   links: []
-  message: "\n                        In this file, the value set for a property by
-    a metadata annotation can be overridden. (It does not override the values set
-    by a setter method.)\n                    "
   ruleID: weblogic-xml-descriptor-17000
   tag:
   - configuration
@@ -387,9 +366,6 @@
   links:
   - title: Replace the WebLogic plan.xml deployment descriptor configuration
     url: https://access.redhat.com/articles/1329173
-  message: "\n                        WebLogic `plan.xml` deployment descriptor file
-    provides a way to target the application deployment for a specific environment.\n
-    \                   "
   ruleID: weblogic-xml-descriptor-18000
   tag:
   - configuration

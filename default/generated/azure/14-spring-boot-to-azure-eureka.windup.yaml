@@ -16,10 +16,6 @@
     url: https://learn.microsoft.com/azure/spring-apps/how-to-access-data-plane-azure-ad-rbac
   - title: Restricted configurations
     url: http://aka.ms/spring-cloud-to-asa?pivots=sc-standard-tier#remove-restricted-configurations
-  message: "\n \n The application uses Eureka.\n\n Azure Spring Apps will host eureka
-    server for you.\n Eureka connection configurations will be injected automatically
-    by ASA, if you put these configurations in your Config Server, please remove them.\n
-    \n "
   ruleID: spring-boot-to-azure-eureka-01000
   tag:
   - Eureka
@@ -52,10 +48,6 @@
     url: https://learn.microsoft.com/azure/spring-apps/how-to-access-data-plane-azure-ad-rbac
   - title: Restricted configurations
     url: http://aka.ms/spring-cloud-to-asa?pivots=sc-standard-tier#remove-restricted-configurations
-  message: "\n \n The application uses an eureka connection string.\n\n Azure Spring
-    Apps will host eureka server for you.\n Eureka connection configurations will
-    be injected automatically by ASA, if you put these configurations in your Config
-    Server, please remove them.\n \n "
   ruleID: spring-boot-to-azure-eureka-02000
   tag:
   - Eureka

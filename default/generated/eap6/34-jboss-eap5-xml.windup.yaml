@@ -13,9 +13,6 @@
     url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/cache_user_guide/
   - title: JBoss Cache Tutorial
     url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/cache_tutorial/
-  message: "\n                        JBoss Cache TreeCache is a distributed tree-like
-    structure that is replicated across several members.\n                        Updates
-    will be multicast to all group members reliably and in the same order.\n                    "
   ruleID: jboss-eap5-xml-01000
   tag:
   - cache
@@ -40,8 +37,6 @@
   links:
   - title: JBoss EAP 5 Classloading
     url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/5/html/Microcontainer_User_Guide/sect-JBoss_Microcontainer_User_Guide-The_ClassLoading_Layer-ClassLoading.html
-  message: "\n                        JBoss EAP 5 allows detailed classloading configuration.\n
-    \                   "
   ruleID: jboss-eap5-xml-03000
   tag:
   - jboss-eap5
@@ -63,13 +58,6 @@
   links:
   - title: JBoss Seam Reference Guide - Configuring Seam components
     url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/seam_reference_guide/#xml
-  message: "\n                        Allows to configure a Seam component using XML:
-    to isolate deployment-specific information from\n                        the Java
-    code, to enable the creation of re-usable frameworks, to configure Seam's built-in
-    functionality, etc.\n                        Seam provides two basic approaches
-    to configuring components:\n                        configuration via property
-    settings in a properties file or in `web.xml`,\n                        and configuration
-    via `components.xml`.\n                    "
   ruleID: jboss-eap5-xml-05000
   tag:
   - seam
@@ -93,8 +81,6 @@
   links:
   - title: Seam Framework Reference Guide
     url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/seam_reference_guide/
-  message: "\n                        The `pages.xml` file specifies the page flow
-    and other configuration of the Seam Framework.\n                    "
   ruleID: jboss-eap5-xml-06000
   tag:
   - seam
@@ -143,8 +129,6 @@
   - ejb
   - seam
   links: []
-  message: "\n                            The `jboss-app.xml` file configures a Java
-    EE application deployments specifically for JBoss EAP.\n                        "
   ruleID: jboss-eap5-xml-08000
   tag:
   - configuration
@@ -171,9 +155,6 @@
   links:
   - title: jboss-web.xml Configuration Reference
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/development_guide/#jboss-webxml_Configuration_Reference
-  message: "\n                        The `jboss-web.xml` file configures a Java EE
-    web application specifically for JBoss EAP.\n                        It is an
-    extension to standard `web.xml`.\n                    "
   ruleID: jboss-eap5-xml-09000
   tag:
   - web
@@ -234,9 +215,6 @@
   links:
   - title: Class Loading and Modules
     url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html/Development_Guide/chap-Class_Loading_and_Modules.html
-  message: "\n                        The `jboss-deployment-structure.xml` file allows
-    the creator of the deployment to control the dependencies\n                        and
-    classloading of deployments.\n                    "
   ruleID: jboss-eap5-xml-11000
   tag:
   - classloading
@@ -261,8 +239,6 @@
   links:
   - title: JBoss EAP 5 - The jbosscmp-jdbc Structure
     url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/administration_and_configuration_guide/index#The_CMP_Engine-The_jbosscmp_jdbc_Structure
-  message: "\n                        The `jbosscmp-jdbc.xml` is a deployment decriptor
-    controlling the Container Managed Persistence (CMP).\n                    "
   ruleID: jboss-eap5-xml-12000
   tag:
   - jdbc
@@ -290,9 +266,6 @@
     url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/administration_and_configuration_guide/#ENC_Usage_Conventions-EJB_References_with_jboss.xml_and_jboss_web.xml
   - title: JBoss EAP 6 - Replace the jboss.xml File
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/#Replace_the_jboss.xml_File
-  message: "\n                        The `jboss.xml` descriptor in deployments is
-    ignored by JBoss AS 7+ or JBoss EAP 6+.\n                        Replace it with
-    `jboss-ejb3.xml`.\n                    "
   ruleID: jboss-eap5-xml-13000
   tag:
   - descriptor
@@ -373,8 +346,6 @@
   links:
   - title: jboss-ejb3.xml Deployment Descriptor Reference
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/development_guide/index#jboss-ejb3xml_Deployment_Descriptor_Reference
-  message: "\n                        A JBoss specific EJB 3 configuration allows
-    extensions of Java EE EJB 3.\n                    "
   ruleID: jboss-eap5-xml-17000
   tag:
   - jboss-eap5
@@ -398,15 +369,6 @@
   links:
   - title: JBoss web-services deployment descriptor (jboss-webservices.xml)
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-Web_Services_Changes
-  message: "\n                        JBossWS 4.0 introduces a new deployment descriptor
-    to configure web services.\n                        The `jboss-webservices.xml`
-    file provides additional information for the given deployment\n                        and
-    partially replaces the obsolete `jboss.xml` file.\n\n                        For
-    EJB webservice deployments, the expected location of the `jboss-webservices.xml`
-    descriptor file\n                        is in the `META-INF/` directory. For
-    POJO and EJB webservice endpoints bundled in WAR file,\n                        the
-    expected location of the `jboss-webservices.xml` file is in the `WEB-INF/` directory.\n
-    \                   "
   ruleID: jboss-eap5-xml-18000
   tag:
   - jboss-ws

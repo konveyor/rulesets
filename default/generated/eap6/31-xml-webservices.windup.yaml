@@ -101,8 +101,6 @@
   - konveyor.io/target=eap
   - webservice
   links: []
-  message: JBoss EAP developer documentation describes JAX-WS Web Services Common
-    API.
   ruleID: xml-webservices-06000
   when:
     or:
@@ -131,7 +129,6 @@
   - konveyor.io/target=eap
   - webservice
   links: []
-  message: JBoss EAP developer documentation about JAX-WS Web Services Endpoints
   ruleID: xml-webservices-06001
   when:
     or:
