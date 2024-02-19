@@ -21,10 +21,6 @@
     url: http://activemq.apache.org/artemis/docs/1.5.0/messaging-concepts.html
   - title: ActiveMQ Artemis Core Client API Javadoc
     url: http://activemq.apache.org/artemis/docs/javadocs/javadoc-1.5.0/org/apache/activemq/artemis/api/core/client/package-summary.html
-  message: "WebSphere MQ client API is used to communicate with the MQ server from
-    client-side applications.\n                        For JBoss EAP 7, this needs
-    to be replaced with standard Java EE 7 JMS API, or with ActiveMQ Artemis client
-    API.\n                    "
   ruleID: websphere-jms-eap7-00000
   tag:
   - jms

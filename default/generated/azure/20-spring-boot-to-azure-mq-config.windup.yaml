@@ -14,9 +14,6 @@
   links:
   - title: Spring Boot app to Kafka on Confluent Cloud
     url: https://learn.microsoft.com/azure/service-connector/tutorial-java-spring-confluent-kafka
-  message: "\n \n The application uses a Kafka connection string or password.\n\n
-    Consider connecting Apache Kafka on Confluent Cloud to Azure Spring Apps using
-    Service Connector\n \n "
   ruleID: spring-boot-to-azure-mq-config-kafka-01000
   tag:
   - Kafka Client
@@ -66,9 +63,6 @@
   links:
   - title: Service connection in Azure Spring Apps
     url: https://learn.microsoft.com/azure/service-connector/quickstart-portal-spring-cloud-connection
-  message: "\n The application uses an ActiveMQ Artemis connection string, username,
-    or password.\n\n Consider using Azure Event Grid/Azure Event Hubs/Azure Service
-    Bus or Apache Kafka on Confluent Cloud and connect it with Service Connector\n "
   ruleID: spring-boot-to-azure-mq-config-artemis-01000
   tag:
   - ActiveMQ

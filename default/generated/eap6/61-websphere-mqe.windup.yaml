@@ -19,10 +19,6 @@
     url: https://docs.oracle.com/javaee/6/tutorial/doc/bnceh.html
   - title: WebSphere MQe JavaDoc
     url: http://www-01.ibm.com/support/knowledgecenter/SSVHEW_6.2.0/com.ibm.mqe.javadoc/java/overview-summary.html
-  message: "WebSphere MQe client API is used to communicate with the MQ server from
-    client-side applications.\n                        For JBoss EAP 6, this needs
-    to be replaced with standard Java EE 6 JMS API, or with HornetQ client API.\n
-    \                   "
   ruleID: websphere-mqe-00000
   tag:
   - jms
