@@ -549,7 +549,7 @@
   when:
     java.referenced:
       location: PACKAGE
-      pattern: org.hibernate*Jacc*
+      pattern: org.hibernate.*Jacc*
 - category: mandatory
   customVariables: []
   description: Removed hibernate classloader properties
