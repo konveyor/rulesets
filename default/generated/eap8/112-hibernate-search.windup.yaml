@@ -2320,10 +2320,10 @@
     or:
     - java.referenced:
         location: PACKAGE
-        pattern: org.hibernate.search*Facet*
+        pattern: org.hibernate.search.*Facet*
     - java.referenced:
         location: PACKAGE
-        pattern: org.hibernate.search*facet*
+        pattern: org.hibernate.search.*facet*
 - category: mandatory
   customVariables: []
   description: ErrorHandler API no longer available
@@ -2347,10 +2347,10 @@
     or:
     - java.referenced:
         location: PACKAGE
-        pattern: org.hibernate.search*ErrorHandl*
+        pattern: org.hibernate.search.*ErrorHandl*
     - java.referenced:
         location: PACKAGE
-        pattern: org.hibernate.search*errorhandl*
+        pattern: org.hibernate.search.*errorhandl*
 - category: mandatory
   customVariables: []
   description: The @Factory annotation is not available anymore
@@ -2445,7 +2445,7 @@
   ruleID: hibernate-search-01010
   when:
     java.referenced:
-      pattern: org.hibernate.search*SearchFactory
+      pattern: org.hibernate.search.*SearchFactory
 - category: mandatory
   customVariables: []
   description: MassIndexer has moved

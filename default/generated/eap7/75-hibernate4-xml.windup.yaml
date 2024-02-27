@@ -85,13 +85,13 @@
   ruleID: hibernate4-xml-00003
   when:
     or:
-    - as: xmlfiles
+    - as: xmlfiles1
       builtin.file:
         pattern: .*\.hbm\.xml
       ignore: true
     - builtin.xml:
-        filepaths: '{{xmlfiles.filepaths}}'
-        from: xmlfiles
+        filepaths: '{{xmlfiles1.filepaths}}'
+        from: xmlfiles1
         namespaces: {}
         xpath: //generator/@class[matches(self::node(), '(seqhilo|sequence-identity|hilo)')]
 - category: mandatory

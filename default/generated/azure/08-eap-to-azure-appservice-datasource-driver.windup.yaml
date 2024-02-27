@@ -27,111 +27,111 @@
   ruleID: eap-to-azure-appservice-datasource-driver-01000
   when:
     or:
-    - as: xmlfiles
+    - as: xmlfiles1
       builtin.file:
         pattern: .*-ds\.xml
       ignore: true
     - builtin.xml:
-        filepaths: '{{xmlfiles.filepaths}}'
-        from: xmlfiles
+        filepaths: '{{xmlfiles1.filepaths}}'
+        from: xmlfiles1
         namespaces: {}
         xpath: /datasources/datasource/connection-url[contains(text(),'jdbc:db2')]
-    - as: xmlfiles
+    - as: xmlfiles2
       builtin.file:
         pattern: .*-ds\.xml
       ignore: true
     - builtin.xml:
-        filepaths: '{{xmlfiles.filepaths}}'
-        from: xmlfiles
+        filepaths: '{{xmlfiles2.filepaths}}'
+        from: xmlfiles2
         namespaces: {}
         xpath: /datasources/drivers/driver/xa-datasource-class[contains(text(),'db2')]
-    - as: xmlfiles
+    - as: xmlfiles3
       builtin.file:
         pattern: .*-ds\.xml
       ignore: true
     - builtin.xml:
-        filepaths: '{{xmlfiles.filepaths}}'
-        from: xmlfiles
+        filepaths: '{{xmlfiles3.filepaths}}'
+        from: xmlfiles3
         namespaces: {}
         xpath: /datasources/datasource/connection-url[contains(text(),'jdbc:mysql')]
-    - as: xmlfiles
+    - as: xmlfiles4
       builtin.file:
         pattern: .*-ds\.xml
       ignore: true
     - builtin.xml:
-        filepaths: '{{xmlfiles.filepaths}}'
-        from: xmlfiles
+        filepaths: '{{xmlfiles4.filepaths}}'
+        from: xmlfiles4
         namespaces: {}
         xpath: /datasources/drivers/driver/xa-datasource-class[contains(text(),'mysql')]
-    - as: xmlfiles
+    - as: xmlfiles5
       builtin.file:
         pattern: .*-ds\.xml
       ignore: true
     - builtin.xml:
-        filepaths: '{{xmlfiles.filepaths}}'
-        from: xmlfiles
+        filepaths: '{{xmlfiles5.filepaths}}'
+        from: xmlfiles5
         namespaces: {}
         xpath: /datasources/datasource/connection-url[contains(text(),'jdbc:oracle')]
-    - as: xmlfiles
+    - as: xmlfiles6
       builtin.file:
         pattern: .*-ds\.xml
       ignore: true
     - builtin.xml:
-        filepaths: '{{xmlfiles.filepaths}}'
-        from: xmlfiles
+        filepaths: '{{xmlfiles6.filepaths}}'
+        from: xmlfiles6
         namespaces: {}
         xpath: /datasources/drivers/driver/xa-datasource-class[contains(text(),'oracle')]
-    - as: xmlfiles
+    - as: xmlfiles7
       builtin.file:
         pattern: .*-ds\.xml
       ignore: true
     - builtin.xml:
-        filepaths: '{{xmlfiles.filepaths}}'
-        from: xmlfiles
+        filepaths: '{{xmlfiles7.filepaths}}'
+        from: xmlfiles7
         namespaces: {}
         xpath: /datasources/datasource/connection-url[contains(text(),'jdbc:postgres')]
-    - as: xmlfiles
+    - as: xmlfiles8
       builtin.file:
         pattern: .*-ds\.xml
       ignore: true
     - builtin.xml:
-        filepaths: '{{xmlfiles.filepaths}}'
-        from: xmlfiles
+        filepaths: '{{xmlfiles8.filepaths}}'
+        from: xmlfiles8
         namespaces: {}
         xpath: /datasources/drivers/driver/xa-datasource-class[contains(text(),'postgres')]
-    - as: xmlfiles
+    - as: xmlfiles9
       builtin.file:
         pattern: .*-ds\.xml
       ignore: true
     - builtin.xml:
-        filepaths: '{{xmlfiles.filepaths}}'
-        from: xmlfiles
+        filepaths: '{{xmlfiles9.filepaths}}'
+        from: xmlfiles9
         namespaces: {}
         xpath: /datasources/datasource/connection-url[contains(text(),'jdbc:microsoft:sqlserver')]
-    - as: xmlfiles
+    - as: xmlfiles10
       builtin.file:
         pattern: .*-ds\.xml
       ignore: true
     - builtin.xml:
-        filepaths: '{{xmlfiles.filepaths}}'
-        from: xmlfiles
+        filepaths: '{{xmlfiles10.filepaths}}'
+        from: xmlfiles10
         namespaces: {}
         xpath: /datasources/drivers/driver/xa-datasource-class[contains(text(),'sqlserver')]
-    - as: xmlfiles
+    - as: xmlfiles11
       builtin.file:
         pattern: .*-ds\.xml
       ignore: true
     - builtin.xml:
-        filepaths: '{{xmlfiles.filepaths}}'
-        from: xmlfiles
+        filepaths: '{{xmlfiles11.filepaths}}'
+        from: xmlfiles11
         namespaces: {}
         xpath: /datasources/datasource/connection-url[contains(text(),'jdbc:sybase')]
-    - as: xmlfiles
+    - as: xmlfiles12
       builtin.file:
         pattern: .*-ds\.xml
       ignore: true
     - builtin.xml:
-        filepaths: '{{xmlfiles.filepaths}}'
-        from: xmlfiles
+        filepaths: '{{xmlfiles12.filepaths}}'
+        from: xmlfiles12
         namespaces: {}
         xpath: /datasources/drivers/driver/xa-datasource-class[contains(text(),'sybase')]

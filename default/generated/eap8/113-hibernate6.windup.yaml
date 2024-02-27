@@ -389,13 +389,13 @@
   ruleID: hibernate6-00160
   when:
     or:
-    - as: xmlfiles
+    - as: xmlfiles1
       builtin.file:
         pattern: .*\.hbm\.xml
       ignore: true
     - builtin.xml:
-        filepaths: '{{xmlfiles.filepaths}}'
-        from: xmlfiles
+        filepaths: '{{xmlfiles1.filepaths}}'
+        from: xmlfiles1
         namespaces:
           h: http://www.hibernate.org/xsd/hibernate-mapping
         xpath: //*/h:property[count(h:column) > 1]
@@ -467,13 +467,13 @@
     - java.referenced:
         location: ANNOTATION
         pattern: org.hibernate.annotations.NamedNativeQuery
-    - as: xmlfiles
+    - as: xmlfiles1
       builtin.file:
         pattern: .*\.hbm\.xml
       ignore: true
     - builtin.xml:
-        filepaths: '{{xmlfiles.filepaths}}'
-        from: xmlfiles
+        filepaths: '{{xmlfiles1.filepaths}}'
+        from: xmlfiles1
         namespaces:
           h: http://www.hibernate.org/xsd/hibernate-mapping
         xpath: //*/h:sql-query[@callable = 'true']
@@ -497,13 +497,13 @@
   ruleID: hibernate6-00200
   when:
     or:
-    - as: xmlfiles
+    - as: xmlfiles1
       builtin.file:
         pattern: .*\.hbm\.xml
       ignore: true
     - builtin.xml:
-        filepaths: '{{xmlfiles.filepaths}}'
-        from: xmlfiles
+        filepaths: '{{xmlfiles1.filepaths}}'
+        from: xmlfiles1
         namespaces: {}
         xpath: //text()[contains(., 'fetch all properties')]
 - category: mandatory
@@ -549,7 +549,7 @@
   when:
     java.referenced:
       location: PACKAGE
-      pattern: org.hibernate*Jacc*
+      pattern: org.hibernate.*Jacc*
 - category: mandatory
   customVariables: []
   description: Removed hibernate classloader properties

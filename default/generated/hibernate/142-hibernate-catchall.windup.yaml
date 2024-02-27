@@ -24,4 +24,4 @@
   when:
     java.referenced:
       location: PACKAGE
-      pattern: org.hibernate.(*)?*
+      pattern: org.hibernate.*

@@ -17,13 +17,13 @@
         - web.xml
         namespaces: {}
         xpath: //*[local-name() = 'login-config']/*[local-name() = 'realm-name']
-    - as: xmlfiles
+    - as: xmlfiles2
       builtin.file:
         pattern: .*ejb-jar\.xml
       ignore: true
     - builtin.xml:
-        filepaths: '{{xmlfiles.filepaths}}'
-        from: xmlfiles
+        filepaths: '{{xmlfiles2.filepaths}}'
+        from: xmlfiles2
         namespaces: {}
         xpath: //*[local-name() = 'login-config']/*[local-name() = 'realm']
 - customVariables: []
