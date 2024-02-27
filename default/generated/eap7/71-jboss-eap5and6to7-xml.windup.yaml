@@ -100,13 +100,13 @@
   - JBoss Seam Page
   when:
     or:
-    - as: xmlfiles
+    - as: xmlfiles1
       builtin.file:
         pattern: .*\.page\.xml
       ignore: true
     - builtin.xml:
-        filepaths: '{{xmlfiles.filepaths}}'
-        from: xmlfiles
+        filepaths: '{{xmlfiles1.filepaths}}'
+        from: xmlfiles1
         namespaces: {}
         xpath: /page
 - customVariables: []

@@ -58,11 +58,11 @@
     - or:
       - builtin.filecontent:
           filePattern: ""
-          pattern: .zip(.*)
+          pattern: .zip\(.*\)
         from: routeBuilders
       - builtin.filecontent:
           filePattern: ""
-          pattern: .gzip(.*)
+          pattern: .gzip\(.*\)
         from: routeBuilders
     - as: routeBuilders
       java.referenced:
@@ -188,7 +188,7 @@
   when:
     builtin.filecontent:
       filePattern: .*\.java
-      pattern: .includeRoutes(.*)
+      pattern: .includeRoutes\(.*\)
 - category: mandatory
   customVariables: []
   description: Annotation `org.apache.camel.language.Bean` method has been moved

@@ -21,13 +21,13 @@
   - Java EE Batch
   when:
     or:
-    - as: xmlfiles
+    - as: xmlfiles1
       builtin.file:
         pattern: .*\.xml
       ignore: true
     - builtin.xml:
-        filepaths: '{{xmlfiles.filepaths}}'
-        from: xmlfiles
+        filepaths: '{{xmlfiles1.filepaths}}'
+        from: xmlfiles1
         namespaces:
           "": http://xmlns.jcp.org/xml/ns/javaee
         xpath: //*[local-name() = 'job']

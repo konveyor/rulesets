@@ -51,4 +51,4 @@
   when:
     java.referenced:
       location: PACKAGE
-      pattern: com.ibm.websphere.startupservice*StartUp*
+      pattern: com.ibm.websphere.startupservice.*StartUp*
