@@ -71,8 +71,7 @@
           webappext: webappext.xmi
         xpath: /webappext:WebAppExtension
       from: files
-    - as: default
-      builtin.xml:
+    - builtin.xml:
         namespaces:
           ext: http://websphere.ibm.com/xml/ns/javaee
         xpath: /ext:web-ext

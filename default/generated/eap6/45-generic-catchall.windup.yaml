@@ -66,7 +66,7 @@
   when:
     java.referenced:
       location: PACKAGE
-      pattern: org.mule.(*)?*
+      pattern: org.mule.*
 - category: optional
   customVariables:
   - name: packageRemainder
@@ -91,7 +91,7 @@
   when:
     java.referenced:
       location: PACKAGE
-      pattern: mx4j.(*)?*
+      pattern: mx4j.*
 - category: potential
   customVariables:
   - name: type
@@ -159,7 +159,7 @@
   when:
     java.referenced:
       location: PACKAGE
-      pattern: com.tibco.(*)?*
+      pattern: com.tibco.*
 - category: optional
   customVariables:
   - name: packageRemainder
@@ -186,7 +186,7 @@
   when:
     java.referenced:
       location: PACKAGE
-      pattern: com.crystaldecisions.(*)?*
+      pattern: com.crystaldecisions.*
 - category: optional
   customVariables:
   - name: packageRemainder
@@ -213,7 +213,7 @@
   when:
     java.referenced:
       location: PACKAGE
-      pattern: com.iona.(*)?*
+      pattern: com.iona.*
 - category: optional
   customVariables:
   - name: subpackage
