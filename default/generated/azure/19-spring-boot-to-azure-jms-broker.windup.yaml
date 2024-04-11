@@ -19,8 +19,8 @@
     url: https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-service-bus
   - title: Azure Spring Boot Starter for Azure Service Bus JMS
     url: https://search.maven.org/artifact/com.azure.spring/azure-spring-boot-starter-servicebus-jms
-  message: "\n \n The application uses an ActiveMQ message broker.\n \n Checkout Azure
-    Service Bus for a fully managed message broker.\n \n "
+  message: "The application uses an ActiveMQ message broker.\n \n Checkout Azure Service
+    Bus for a fully managed message broker."
   ruleID: spring-boot-to-azure-jms-broker-01000
   when:
     or:

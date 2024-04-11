@@ -12,8 +12,8 @@
   - konveyor.io/target=azure-container-apps
   - version
   links: []
-  message: "\n \n The application is using non-LTS version Java. \n JDK on LTS version
-    is recommended, i.e. JAVA_8, JAVA_11 or JAVA_17.\n \n "
+  message: "The application is using non-LTS version Java. \n JDK on LTS version is
+    recommended, i.e. JAVA_8, JAVA_11 or JAVA_17."
   ruleID: azure-java-version-01000
   when:
     as: result
@@ -37,8 +37,9 @@
   - konveyor.io/target=azure-container-apps
   - version
   links: []
-  message: "\n \n The application is using Java version lower than JAVA_8.\n JDK on
-    LTS version is recommended, i.e. JAVA_8, JAVA_11 or JAVA_17.\n \n "
+  message: |-
+    The application is using Java version lower than JAVA_8.
+     JDK on LTS version is recommended, i.e. JAVA_8, JAVA_11 or JAVA_17.
   ruleID: azure-java-version-02000
   when:
     as: result

@@ -13,12 +13,14 @@
     url: https://aka.ms/webapps-java-perf
   - title: Environment variables and app settings in Azure App Service
     url: https://aka.ms/webapps-env-vars
-  message: "\n \n App Service - The application reads environment variables.\n\n Any
-    environment variables used in the code will need to be defined as App Settings,
-    which are exposed\n as environment variables in App Service.\n\n Any System properties
-    that the code depends on will need to be provided either in a custom Startup Script\n
-    or by defining an App Setting with the name JAVA_OPTS and include any system properties
-    in it.\n \n "
+  message: |-
+    App Service - The application reads environment variables.
+
+     Any environment variables used in the code will need to be defined as App Settings, which are exposed
+     as environment variables in App Service.
+
+     Any System properties that the code depends on will need to be provided either in a custom Startup Script
+     or by defining an App Setting with the name JAVA_OPTS and include any system properties in it.
   ruleID: eap-to-azure-appservice-environment-variables-001
   when:
     or:

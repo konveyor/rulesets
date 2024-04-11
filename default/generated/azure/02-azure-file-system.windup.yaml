@@ -16,9 +16,9 @@
     url: https://learn.microsoft.com/azure/developer/java/migration/migrate-spring-cloud-to-azure-spring-apps?pivots=sc-standard-tier#determine-whether-and-how-the-file-system-is-used
   - title: Azure Spring Boot Starter for Azure Storage
     url: https://search.maven.org/artifact/com.azure.spring/azure-spring-boot-starter-storage
-  message: "\n \n The application uses Java APIs to read/write from the file system.\n
-    \n Any usage of the file system on the application will require reconfiguration
-    or, in rare cases, architectural changes.\n \n "
+  message: "The application uses Java APIs to read/write from the file system.\n \n
+    Any usage of the file system on the application will require reconfiguration or,
+    in rare cases, architectural changes."
   ruleID: azure-file-system-01000
   when:
     or:
@@ -46,8 +46,8 @@
   links:
   - title: Relative path found in the application
     url: https://learn.microsoft.com/azure/developer/java/migration/migrate-spring-cloud-to-azure-spring-apps?pivots=sc-standard-tier#determine-whether-and-how-the-file-system-is-used
-  message: "\n \n Relative path found.\n \n Any usage of the file system on the application
-    will require reconfiguration or, in rare cases, architectural changes.\n \n "
+  message: "Relative path found.\n \n Any usage of the file system on the application
+    will require reconfiguration or, in rare cases, architectural changes."
   ruleID: azure-file-system-02000
   when:
     builtin.filecontent:
@@ -69,8 +69,8 @@
   links:
   - title: Home path found in the application
     url: https://learn.microsoft.com/azure/developer/java/migration/migrate-spring-cloud-to-azure-spring-apps?pivots=sc-standard-tier#determine-whether-and-how-the-file-system-is-used
-  message: "\n \n Home path found.\n \n Any usage of the file system on the application
-    will require reconfiguration or, in rare cases, architectural changes.\n \n "
+  message: "Home path found.\n \n Any usage of the file system on the application
+    will require reconfiguration or, in rare cases, architectural changes."
   ruleID: azure-file-system-03000
   when:
     builtin.filecontent:

@@ -19,8 +19,10 @@
     url: https://spring.io/projects/spring-data-redis/
   - title: Azure Spring Cloud Starter Cache
     url: https://search.maven.org/artifact/com.azure.spring/azure-spring-cloud-starter-cache
-  message: "\n \n The application uses a Redis Cache.\n\n Checkout Azure Cache for
-    Redis for a fully managed cache on Azure.\n \n "
+  message: |-
+    The application uses a Redis Cache.
+
+     Checkout Azure Cache for Redis for a fully managed cache on Azure.
   ruleID: spring-boot-to-azure-cache-redis-01000
   when:
     or:
@@ -57,9 +59,10 @@
     url: https://spring.io/projects/spring-data-redis/
   - title: Azure Spring Cloud Starter Cache
     url: https://search.maven.org/artifact/com.azure.spring/azure-spring-cloud-starter-cache
-  message: "\n \n Redis Cache connection string, username, or password used in this
-    application.\n\n Checkout Azure Cache for Redis for a fully managed cache on Azure.\n
-    \n "
+  message: |-
+    Redis Cache connection string, username, or password used in this application.
+
+     Checkout Azure Cache for Redis for a fully managed cache on Azure.
   ruleID: spring-boot-to-azure-cache-redis-02000
   when:
     or:

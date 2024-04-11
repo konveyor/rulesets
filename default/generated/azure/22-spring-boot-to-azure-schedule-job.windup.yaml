@@ -13,12 +13,13 @@
   links:
   - title: The application uses Quartz to scheduled jobs
     url: https://docs.microsoft.com/azure/developer/java/migration/migrate-spring-boot-to-app-service#determine-whether-application-relies-on-scheduled-jobs
-  message: "\n \n Scheduled jobs, such as Quartz Scheduler tasks or cron jobs, can't
-    be used with App Service.\n App Service won't prevent you from deploying an application
-    containing scheduled tasks internally.\n However, if your application is scaled
-    out, the same scheduled job may run more than once per scheduled period.\n This
-    situation can lead to unintended consequences.\n\n Inventory any scheduled jobs,
-    inside or outside the application process.\n \n "
+  message: |-
+    Scheduled jobs, such as Quartz Scheduler tasks or cron jobs, can't be used with App Service.
+     App Service won't prevent you from deploying an application containing scheduled tasks internally.
+     However, if your application is scaled out, the same scheduled job may run more than once per scheduled period.
+     This situation can lead to unintended consequences.
+
+     Inventory any scheduled jobs, inside or outside the application process.
   ruleID: spring-boot-to-azure-schedule-job-01000
   when:
     or:

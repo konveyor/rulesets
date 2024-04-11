@@ -37,9 +37,10 @@
   links:
   - title: Service connection in Azure Spring Apps
     url: https://learn.microsoft.com/azure/service-connector/quickstart-portal-spring-cloud-connection
-  message: "\n The application uses a RabbitMQ connection string, username, or password.\n\n
-    Consider using Azure Event Grid/Azure Event Hubs/Azure Service Bus or Apache Kafka
-    on Confluent Cloud and connect it with Service Connector\n "
+  message: |-
+    The application uses a RabbitMQ connection string, username, or password.
+
+     Consider using Azure Event Grid/Azure Event Hubs/Azure Service Bus or Apache Kafka on Confluent Cloud and connect it with Service Connector
   ruleID: spring-boot-to-azure-mq-config-rabbitmq-01000
   tag:
   - RabbitMQ Client

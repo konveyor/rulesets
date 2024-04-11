@@ -12,6 +12,7 @@
   - title: Migrate JBoss EAP applications to JBoss EAP on Azure App Service - Inventory
       all certificates
     url: https://docs.microsoft.com/en-us/azure/developer/java/migration/migrate-jboss-eap-to-jboss-eap-on-azure-app-service#inventory-all-certificates
+  message: Azure - The application loads certificates into a KeyStore
   ruleID: eap-to-azure-appservice-certificates-001
   tag:
   - Azure

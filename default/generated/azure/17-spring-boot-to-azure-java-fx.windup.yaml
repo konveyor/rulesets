@@ -10,8 +10,9 @@
   - konveyor.io/target=azure-container-apps
   - JavaFX
   links: []
-  message: "\n \n The application uses JavaFX.\n JavaFX is not cloud compatible and
-    requires the JRE on the remote device.\n \n "
+  message: |-
+    The application uses JavaFX.
+     JavaFX is not cloud compatible and requires the JRE on the remote device.
   ruleID: spring-boot-to-azure-java-fx-01000
   when:
     java.referenced:

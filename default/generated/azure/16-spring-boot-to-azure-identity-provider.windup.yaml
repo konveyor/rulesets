@@ -18,8 +18,10 @@
     url: https://docs.spring.io/spring-security/reference/index.html
   - title: 'Spring Boot API: Authorization'
     url: https://auth0.com/docs/quickstart/backend/java-spring-security5/01-authorization
-  message: "\n \n The application uses Spring security.\n\n Checkout Azure Active
-    Directory as an identity provider.\n \n "
+  message: |-
+    The application uses Spring security.
+
+     Checkout Azure Active Directory as an identity provider.
   ruleID: spring-boot-to-azure-identity-provider-01000
   when:
     or:
