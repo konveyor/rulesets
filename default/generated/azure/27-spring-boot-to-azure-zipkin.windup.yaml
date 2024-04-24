@@ -14,7 +14,7 @@
     url: https://learn.microsoft.com/azure/developer/java/migration/migrate-spring-cloud-to-azure-spring-apps?pivots=sc-standard-tier#identify-zipkin-dependencies
   - title: Distributed Tracing
     url: https://learn.microsoft.com/azure/azure-monitor/app/distributed-tracing-telemetry-correlation
-  message: "\n \n The application uses Zipkin.\n \n "
+  message: The application uses Zipkin.
   ruleID: spring-boot-to-azure-zipkin-01000
   when:
     or:

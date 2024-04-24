@@ -12,6 +12,8 @@
   - konveyor.io/target=azure-container-apps
   - logging
   links: []
+  message: "Logging to the file system is not recommended when running applications
+    in the cloud. \n \n Instead, use a console appender to log to standard output."
   ruleID: azure-logging-0000
   tag:
   - Logging to file system
@@ -22,7 +24,7 @@
         pattern: (?i)((Daily)?Rolling)?FileAppender|type\s*=\s*((Daily)?Rolling)?File|<\/((Daily)?Rolling)?File>
     - java.referenced:
         location: IMPORT
-        pattern: org.apache*log4j*FileAppender*
+        pattern: org.apache.*log4j.*FileAppender*
     - java.referenced:
         location: IMPORT
         pattern: java.util.logging.FileHandler*

@@ -12,8 +12,9 @@
   links:
   - title: Spring Cloud Supported Versions
     url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions
-  message: "\n \n Spring Cloud version too low.\n Update to open source support version
-    of Spring Cloud.\n \n "
+  message: |-
+    Spring Cloud version too low.
+     Update to open source support version of Spring Cloud.
   ruleID: spring-cloud-to-azure-version-01000
   when:
     java.dependency:
@@ -34,8 +35,9 @@
   links:
   - title: Spring Cloud Supported Versions
     url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions
-  message: "\n \n Spring Cloud version is out of any Spring Cloud support scope.\n
-    Update to open source support version of Spring Cloud.\n \n "
+  message: |-
+    Spring Cloud version is out of any Spring Cloud support scope.
+     Update to open source support version of Spring Cloud.
   ruleID: spring-cloud-to-azure-version-02000
   when:
     java.dependency:
@@ -56,9 +58,9 @@
   links:
   - title: Spring Cloud Supported Versions
     url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions
-  message: "\n \n Spring Cloud version is out of open source software support.\n Update
-    to open source support version of Spring Cloud, if you don't have commercial support.\n
-    \n "
+  message: |-
+    Spring Cloud version is out of open source software support.
+     Update to open source support version of Spring Cloud, if you don't have commercial support.
   ruleID: spring-cloud-to-azure-version-03000
   when:
     or:

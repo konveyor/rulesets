@@ -14,8 +14,8 @@
     url: https://aka.ms/webapps-deployment-apis
   - title: Migrate JBoss EAP applications to JBoss EAP on Azure App Service
     url: https://aka.ms/webapps-jboss-migrate-guide
-  message: "\n \n Get started with JBoss EAP on App Service with the CLI commands
-    below. Don't have the Azure CLI installed? Go to [https://aka.ms/azure-cli](https://aka.ms/azure-cli)\n
+  message: "Get started with JBoss EAP on App Service with the CLI commands below.
+    Don't have the Azure CLI installed? Go to [https://aka.ms/azure-cli](https://aka.ms/azure-cli)\n
     \n <pre>\n # Customize these variables\n $resourceGroup=jboss-rg\n $location=eastus\n
     $appName=jboss-app\n $appServicePlan=jboss-asp\n\n az group create --resource-group
     $resourceGroup --location $location\n\n az appservice plan create --resource-group
@@ -26,7 +26,7 @@
     az webapp deploy --resource-group $resourceGroup --plan $appServicePlan --name
     $appName --type war --src-path app.war\n\n # To deploy EAR files:\n az webapp
     deploy --resource-group $resourceGroup --plan $appServicePlan --name $appName
-    --type ear --src-path app.ear\n </pre>\n \n "
+    --type ear --src-path app.ear\n </pre>"
   ruleID: eap-to-azure-appservice-pom-001
   when:
     java.dependency:

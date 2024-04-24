@@ -12,7 +12,7 @@
   - konveyor.io/target=azure-container-apps
   - AWS
   links: []
-  message: "\n \n The application contains AWS credential configuration.\n \n "
+  message: The application contains AWS credential configuration.
   ruleID: azure-aws-config-credential-01000
   when:
     or:
@@ -39,7 +39,7 @@
   - konveyor.io/target=azure-container-apps
   - AWS
   links: []
-  message: "\n \n The application contains AWS region configuration.\n \n "
+  message: The application contains AWS region configuration.
   ruleID: azure-aws-config-region-02000
   when:
     or:
@@ -66,8 +66,9 @@
   - konveyor.io/target=azure-container-apps
   - AWS
   links: []
-  message: "\n \n The application contains AWS S3 configuration.\n Consider using
-    Azure Blob Storage instead.\n \n "
+  message: |-
+    The application contains AWS S3 configuration.
+     Consider using Azure Blob Storage instead.
   ruleID: azure-aws-config-s3-03000
   when:
     or:
@@ -88,8 +89,9 @@
   - konveyor.io/target=azure-container-apps
   - AWS
   links: []
-  message: "\n \n The application contains Amazon Simple Queue Service configuration.\n
-    Consider using Azure Service Bus instead.\n \n "
+  message: |-
+    The application contains Amazon Simple Queue Service configuration.
+     Consider using Azure Service Bus instead.
   ruleID: azure-aws-config-sqs-04000
   when:
     or:
@@ -110,8 +112,9 @@
   - konveyor.io/target=azure-container-apps
   - AWS
   links: []
-  message: "\n \n The application contains AWS Secrets Manager configuration.\n Consider
-    using Azure Key Vault instead.\n \n "
+  message: |-
+    The application contains AWS Secrets Manager configuration.
+     Consider using Azure Key Vault instead.
   ruleID: azure-aws-config-secret-manager-05000
   when:
     or:

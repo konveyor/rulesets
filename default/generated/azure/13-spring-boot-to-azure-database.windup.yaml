@@ -21,9 +21,10 @@
     url: https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-postgresql
   - title: Use Spring Data JDBC with Azure SQL Database
     url: https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-sql-server
-  message: "\n \n The application uses a JDBC connection string, username or password
-    in the configuration file.\n\n Checkout the different types of databases that
-    are fully managed on Azure.\n \n "
+  message: |-
+    The application uses a JDBC connection string, username or password in the configuration file.
+
+     Checkout the different types of databases that are fully managed on Azure.
   ruleID: spring-boot-to-azure-database-jdbc-01000
   when:
     or:
@@ -78,8 +79,10 @@
     url: https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-mongodb-with-cosmos-db
   - title: Spring Cloud Azure Starter Data Cosmos DB
     url: https://search.maven.org/artifact/com.azure.spring/spring-cloud-azure-starter-data-cosmos
-  message: "\n \n The application uses a MongoDB connection string.\n\n Checkout the
-    different types of databases that are fully managed on Azure.\n \n "
+  message: |-
+    The application uses a MongoDB connection string.
+
+     Checkout the different types of databases that are fully managed on Azure.
   ruleID: spring-boot-to-azure-database-mongodb-02000
   when:
     or:
@@ -118,9 +121,10 @@
     url: https://learn.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-postgresql
   - title: Use Spring Data R2DBC with Azure SQL Database
     url: https://learn.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-sql-server
-  message: "\n \n The application uses a R2DBC connection string, username or password
-    in the configuration file.\n\n Checkout the different types of databases that
-    are fully managed on Azure.\n \n "
+  message: |-
+    The application uses a R2DBC connection string, username or password in the configuration file.
+
+     Checkout the different types of databases that are fully managed on Azure.
   ruleID: spring-boot-to-azure-database-r2dbc-03000
   when:
     or:

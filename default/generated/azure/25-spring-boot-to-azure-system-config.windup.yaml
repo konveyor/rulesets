@@ -12,10 +12,12 @@
   links:
   - title: Configure per-service secrets and externalized settings
     url: https://learn.microsoft.com/azure/developer/java/migration/migrate-spring-boot-to-azure-spring-apps#configure-per-service-secrets-and-externalized-settings
-  message: "\n \n Review the usage of environment variables and system properties
-    and externalize them.\n\n You can inject any per-service configuration settings
-    into each service as environment variables.\n\n Any system properties that the
-    code depends on will need to be defined in JVM options.\n \n "
+  message: |-
+    Review the usage of environment variables and system properties and externalize them.
+
+     You can inject any per-service configuration settings into each service as environment variables.
+
+     Any system properties that the code depends on will need to be defined in JVM options.
   ruleID: spring-boot-to-azure-system-config-01000
   when:
     or:

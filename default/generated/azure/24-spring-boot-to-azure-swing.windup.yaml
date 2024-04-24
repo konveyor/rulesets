@@ -10,8 +10,9 @@
   - konveyor.io/target=azure-container-apps
   - Swing
   links: []
-  message: "\n \n The application uses Java Swing.\n Upgrade to modern cloud native
-    UI framework.\n \n "
+  message: |-
+    The application uses Java Swing.
+     Upgrade to modern cloud native UI framework.
   ruleID: spring-boot-to-azure-swing-01000
   when:
     java.referenced:

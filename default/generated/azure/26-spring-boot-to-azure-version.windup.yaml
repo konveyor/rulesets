@@ -12,8 +12,9 @@
   links:
   - title: Spring Boot Support Versions
     url: https://github.com/spring-projects/spring-boot/wiki/Supported-Versions
-  message: "\n The application uses Spring Boot 1.x, which is too low.\n Update to
-    open source support version of Spring Boot.\n "
+  message: |-
+    The application uses Spring Boot 1.x, which is too low.
+     Update to open source support version of Spring Boot.
   ruleID: spring-boot-to-azure-version-01000
   when:
     java.dependency:
@@ -34,8 +35,9 @@
   links:
   - title: Spring Boot Supported Versions
     url: https://github.com/spring-projects/spring-boot/wiki/Supported-Versions
-  message: "\n Spring boot version is out of any spring boot support scope.\n Update
-    to open source support version of Spring Boot.\n "
+  message: |-
+    Spring boot version is out of any spring boot support scope.
+     Update to open source support version of Spring Boot.
   ruleID: spring-boot-to-azure-version-02000
   when:
     java.dependency:
@@ -56,8 +58,9 @@
   links:
   - title: Spring Boot Supported Versions
     url: https://github.com/spring-projects/spring-boot/wiki/Supported-Versions
-  message: "\n Spring Boot version is out of open source software support.\n Update
-    to open source support version of Spring Boot, if you don't have commercial support.\n "
+  message: |-
+    Spring Boot version is out of open source software support.
+     Update to open source support version of Spring Boot, if you don't have commercial support.
   ruleID: spring-boot-to-azure-version-03000
   when:
     java.dependency:
