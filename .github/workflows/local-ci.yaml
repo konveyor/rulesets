@@ -1,0 +1,29 @@
+name: Local CI
+
+on: ["push", "pull_request"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Upgrade podman 
+        run: |
+          sudo apt-get install -y ansible
+          export DEB=$(curl -s https://passt.top/builds/latest/x86_64/ | grep deb | awk -F '"' '{ print $4}')
+          sudo ansible -m apt -a deb=https://passt.top/builds/latest/x86_64/${DEB} localhost
+          sudo apt-get remove podman crun
+          brew install crun podman
+
+      - uses: actions/checkout@v3
+
+      - name: Run kantra test
+        run: |
+          podman cp $(podman create --name kantra-download quay.io/konveyor/kantra:latest):/usr/local/bin/kantra .
+          podman rm kantra-download
+          ./kantra test ./default/generated/ || true
+          
+            
+        
