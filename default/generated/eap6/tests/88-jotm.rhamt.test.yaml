@@ -1,0 +1,13 @@
+rulesPath: ../88-jotm.rhamt.yaml
+providers:
+- name: java
+  dataPath: ./data/88-jotm.rhamt.test.yaml
+- name: builtin
+  dataPath: ./data/88-jotm.rhamt.test.yaml
+tests:
+- ruleID: jotm-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The modules required by JOTM's JTA implementation

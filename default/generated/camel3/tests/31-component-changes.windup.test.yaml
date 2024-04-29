@@ -1,0 +1,14 @@
+rulesPath: ../31-component-changes.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/31-component-changes
+- name: builtin
+  dataPath: ./data/31-component-changes
+tests:
+- ruleID: component-changes-00019
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 7
+      messageMatches: The `org.apache.camel:camel-kafka` component has removed the
+        options `bridgeEndpoint` and `circularEndpointDetection`

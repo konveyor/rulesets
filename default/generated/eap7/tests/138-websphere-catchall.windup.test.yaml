@@ -1,0 +1,27 @@
+rulesPath: ../138-websphere-catchall.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/138-websphere-catchall
+- name: builtin
+  dataPath: ./data/138-websphere-catchall
+tests:
+- ruleID: websphere-catchall-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: This is an IBM proprietary type (.*?) and needs to be migrated
+        to a compatible API.*
+- ruleID: websphere-catchall-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: This is an IBM ILog proprietary type (.*?) and needs to be migrated
+        to a compatible API.*
+- ruleID: websphere-catchall-db2-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: This is a reference to the IBM DB2 driver type.*

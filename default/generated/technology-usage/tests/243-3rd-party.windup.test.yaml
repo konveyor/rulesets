@@ -1,0 +1,159 @@
+rulesPath: ../243-3rd-party.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/243-3rd-party
+- name: builtin
+  dataPath: ./data/243-3rd-party
+tests:
+- ruleID: 3rd-party-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Liferay
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Liferay
+- ruleID: 3rd-party-02000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Oracle Forms
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Oracle Forms
+- ruleID: 3rd-party-03000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Spring Boot
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Spring Boot
+- ruleID: 3rd-party-04000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Elasticsearch
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Elasticsearch
+- ruleID: 3rd-party-05000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Logstash
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Logstash
+- ruleID: 3rd-party-06000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Jetty
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Jetty
+- ruleID: 3rd-party-07000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Tomcat
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Tomcat
+- ruleID: 3rd-party-08000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Kibana
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Kibana
+- ruleID: 3rd-party-09000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Apache Karaf
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Apache Karaf
+- ruleID: 3rd-party-10000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Neo4j
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Neo4j
+- ruleID: 3rd-party-11000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Spark
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Spark
+- ruleID: 3rd-party-12000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Apache Hadoop
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Apache Hadoop
+- ruleID: 3rd-party-13000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Apache Geronimo
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Apache Geronimo
+- ruleID: 3rd-party-14000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Apache Aries
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Apache Aries
+- ruleID: 3rd-party-15000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Cloudera
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Cloudera
+- ruleID: 3rd-party-16000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - MapR
+  - name: tc-2
+    hasTags:
+    - Embedded framework - MapR
+- ruleID: 3rd-party-17000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - TensorFlow
+  - name: tc-2
+    hasTags:
+    - Embedded framework - TensorFlow
+- ruleID: 3rd-party-18000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Weka
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Weka
+- ruleID: 3rd-party-19000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Apache Mahout
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Apache Mahout

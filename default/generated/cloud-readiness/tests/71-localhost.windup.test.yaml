@@ -1,0 +1,25 @@
+rulesPath: ../71-localhost.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/71-localhost
+- name: builtin
+  dataPath: ./data/71-localhost
+tests:
+- ruleID: localhost-http-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: The app is trying to access local resource by HTTP
+- ruleID: localhost-jdbc-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: The app is trying to access local resource by JDBC
+- ruleID: localhost-ws-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: The app is trying to access local resource using WebSocket

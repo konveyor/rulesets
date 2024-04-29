@@ -1,0 +1,15 @@
+rulesPath: ../118-resteasy30-36.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/118-resteasy30-36
+- name: builtin
+  dataPath: ./data/118-resteasy30-36
+tests:
+- ruleID: resteasy30-36-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application from JBoss EAP from 7.1.1 to
+        7.2.x and want to retain the stricter behavior as defined in the JAX-RS 2.0
+        specification

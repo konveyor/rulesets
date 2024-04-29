@@ -1,0 +1,34 @@
+rulesPath: ../59-xml-moved-components.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/59-xml-moved-components
+- name: builtin
+  dataPath: ./data/59-xml-moved-components
+tests:
+- ruleID: xml-moved-components-00012
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: All the classes from `org.apache.camel.util.component.*
+- ruleID: xml-moved-components-00013
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 3
+      messageMatches: The class `org.apache.camel.impl.*` has been moved to `org.apache.camel.impl.engine`.*
+- ruleID: xml-moved-components-00014
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The class `org.apache.camel.main.Main` has been moved out of
+        `org.apache.camel:camel-core` and into its own JAR named `org.apache.camel:camel-main.*
+- ruleID: xml-moved-components-00015
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you run Camel standalone with just `camel-core` as a dependency,
+        and you want JMX enabled out of the box, then you need to add `org.apache.camel:camel-management`
+        as a dependency.*

@@ -1,0 +1,12 @@
+rulesPath: ../184-xml-sonic-esb.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/184-xml-sonic-esb
+- name: builtin
+  dataPath: ./data/184-xml-sonic-esb
+tests:
+- ruleID: xml-sonic-esb-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - SonicESB Service Configuration

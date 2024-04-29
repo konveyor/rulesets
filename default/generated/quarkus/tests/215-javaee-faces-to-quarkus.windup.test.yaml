@@ -1,0 +1,14 @@
+rulesPath: ../215-javaee-faces-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/215-javaee-faces-to-quarkus
+- name: builtin
+  dataPath: ./data/215-javaee-faces-to-quarkus
+tests:
+- ruleID: javaee-faces-to-quarkus-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: JSF Dependencies with groupId `org.jboss.spec.javax.faces` should
+        be replaced

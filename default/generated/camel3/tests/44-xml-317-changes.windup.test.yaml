@@ -1,0 +1,158 @@
+rulesPath: ../44-xml-317-changes.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/44-xml-317-changes
+- name: builtin
+  dataPath: ./data/44-xml-317-changes
+tests:
+- ruleID: xml-removed-camel317-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-atomix` component has been removed
+        in Camel 3.17..*'
+- ruleID: xml-removed-camel317-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-beanstalk` component has been removed
+        in Camel 3.17..*'
+- ruleID: xml-removed-camel317-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-beanio` component has been removed
+        in Camel 3.17..*'
+- ruleID: xml-removed-camel317-00004
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-etcd` component has been removed in
+        Camel 3.17..*'
+- ruleID: xml-removed-camel317-00005
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-elsql` component has been removed in
+        Camel 3.17..*'
+- ruleID: xml-removed-camel317-00006
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-ganglia` component has been removed
+        in Camel 3.17..*'
+- ruleID: xml-removed-camel317-00007
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-nsq` component has been removed in
+        Camel 3.17..*'
+- ruleID: xml-removed-camel317-00008
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-hystrix` component has been removed
+        in Camel 3.17..*'
+- ruleID: xml-removed-camel317-00009
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-jing` component has been removed in
+        Camel 3.17..*'
+- ruleID: xml-removed-camel317-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-leveldb-legacy` component has been
+        removed in Camel 3.17..*'
+- ruleID: xml-removed-camel317-00011
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-msv` component has been removed in
+        Camel 3.17..*'
+- ruleID: xml-removed-camel317-00012
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-nagios` component has been removed
+        in Camel 3.17..*'
+- ruleID: xml-removed-camel317-00013
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-ribbon` component has been removed
+        in Camel 3.17..*'
+- ruleID: xml-removed-camel317-00014
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-sip` component has been removed in
+        Camel 3.17..*'
+- ruleID: xml-removed-camel317-00015
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-soroush` component has been removed
+        in Camel 3.17..*'
+- ruleID: xml-removed-camel317-00016
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-tagsoup` component has been removed
+        in Camel 3.17..*'
+- ruleID: xml-removed-camel317-00017
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-yammer` component has been removed
+        in Camel 3.17..*'
+- ruleID: xml-legacy-camel317-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel.builder.DeadLetterChannelBuilder` component
+        has been replaced by org.apache.camel.builder.LegacyDeadLetterChannelBuilder
+        in Camel 3.17..*'
+- ruleID: xml-legacy-camel317-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel.builder.DefaultErrorHandlerBuilder` component
+        has been replaced by org.apache.camel.builder.LegacyDefaultErrorHandlerBuilder
+        in Camel 3.17..*'
+- ruleID: xml-legacy-camel317-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel.builder.NoErrorHandlerBuilder` component
+        has been replaced by org.apache.camel.builder.LegacyDeadLetterChannelBuilder
+        in Camel 3.17..*'
+- ruleID: xml-legacy-camel317-00004
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel.spring.spi.TransactionErrorHandlerBuilder`
+        component has been replaced by org.apache.camel.spring.spi.LegacyTransactionErrorHandlerBuilder
+        in Camel 3.17..*'

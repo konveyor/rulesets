@@ -1,0 +1,56 @@
+rulesPath: ../99-jboss-eap4and5to6and7-xml.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/99-jboss-eap4and5to6and7-xml
+- name: builtin
+  dataPath: ./data/99-jboss-eap4and5to6and7-xml
+tests:
+- ruleID: jboss-eap4and5to6and7-xml-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: MBeans were part of the core architecture in previous versions
+        of Red Hat JBoss Enterprise Application Platform
+- ruleID: jboss-eap4and5to6and7-xml-02000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`BarrierController` service is no longer available in JBoss
+        EAP 6'
+- ruleID: jboss-eap4and5to6and7-xml-03000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: '`CompressingMarshaller` marshaller is no longer available in
+        JBoss EAP 6'
+- ruleID: jboss-eap4and5to6and7-xml-04000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: In JBoss EAP 6+, Security is configured in the
+- ruleID: jboss-eap4and5to6and7-xml-05000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 3
+      messageMatches: The `class-loading` and `loader-repository` configuration in
+        `jboss.xml`
+- ruleID: jboss-eap4and5to6and7-xml-06000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: JBoss EAP 6 supports deploying SAR files, however JBoss EAP
+        5 and 6 do not share a lot of the internals
+- ruleID: jboss-eap4and5to6and7-xml-07000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: In JBoss EAP 6 and 7 you can set the JAAS cache timeout, changing
+        the `cache-type` to `infinispan` which uses Infinispan cache which has an
+        expiration capability

@@ -1,0 +1,152 @@
+rulesPath: ../116-hibernate51-53.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/116-hibernate51-53
+- name: builtin
+  dataPath: ./data/116-hibernate51-53
+tests:
+- ruleID: hibernate51-53-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 29
+      messageMatches: '`org.hibernate.engine.spi.SessionImplementor` parameter has
+        to be changed to `org.hibernate.engine.spi.SharedSessionContractImplementor.*'
+- ruleID: hibernate51-53-00100
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: change reference to hibernate-java8 to hibernate-core
+- ruleID: hibernate51-53-00300
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If the `SessionFactory` is built via Hibernate’s native bootstrapping
+        and `org.hibernate.HibernateException.*
+- ruleID: hibernate51-53-00400
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getDefaultQueryResultsCache()`
+        should be used instead of `SessionFactoryImplementor.getQueryCache()` metho.*'
+- ruleID: hibernate51-53-00401
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getDefaultQueryResultsCache(String
+        regionName)` should be used instead of `SessionFactoryImplementor.getQueryCache(String
+        regionName)` method'
+- ruleID: hibernate51-53-00402
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getTimestampsCache()`
+        should be used instead of `SessionFactoryImplementor.getUpdateTimestampsCache()`
+        method'
+- ruleID: hibernate51-53-00403
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getRegion(String
+        regionName)` should be used instead of `SessionFactoryImplementor.getSecondLevelCacheRegion(String
+        regionName)` method'
+- ruleID: hibernate51-53-00404
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Depending on the type of region, the appropriate method should
+        be used instead.*
+- ruleID: hibernate51-53-00405
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getRegion(String
+        regionName)` should be used instead of `SessionFactoryImplementor.getNaturalIdCacheRegion(String
+        regionName)` method'
+- ruleID: hibernate51-53-00406
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.hibernate.engine.spi.SessionFactoryImplementor.getMetamodel().entityPersister(
+        entityName ).getNaturalIdCacheAccessStrategy()` should be used instead of
+        `SessionFactoryImplementor.getNaturalIdCacheRegionAccessStrategy(String regionName)`
+        method'
+- ruleID: hibernate51-53-00407
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getCacheRegionNames()`
+        should be used to obtain all cache region names.*'
+- ruleID: hibernate51-53-00500
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 10
+      messageMatches: Review usage of classes in `org.hibernate.cache.spi.RegionFactory`
+- ruleID: hibernate51-53-00600
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: One potential upgrade concern is any custom `org.hibernate.cache.spi.QueryCacheFactory`
+        implementation.*
+- ruleID: hibernate51-53-00700
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: A change to be aware of is accessing cache entries via `SecondLevelCacheStatistics.getEntries()`
+        and `NaturalIdCacheStatistics.getEntries().*
+- ruleID: hibernate51-53-00701
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: A change to be aware of is accessing cache entries via `NaturalIdCacheStatistics.getEntries().*
+- ruleID: hibernate51-53-00702
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: A change to be aware of is accessing cache entries via `SecondLevelCacheStatistics.getEntries()`.
+- ruleID: hibernate51-53-00800
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 11
+      messageMatches: The SPIs in the `org.hibernat.*
+- ruleID: hibernate51-53-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Define `hibernate.default_schema` or `hibernate.default_catalog`
+- ruleID: hibernate51-53-01001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: If the application uses Hibernate, please define `hibernate.default_schema`
+        or `hibernate.default_catalog`
+- ruleID: hibernate51-53-01100
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Applications using the `@TableGenerator` should set
+- ruleID: hibernate51-53-01200
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: Any references to `org.hibernate.*.getType().*

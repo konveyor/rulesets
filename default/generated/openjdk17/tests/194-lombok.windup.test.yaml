@@ -1,0 +1,13 @@
+rulesPath: ../194-lombok.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/194-lombok
+- name: builtin
+  dataPath: ./data/194-lombok
+tests:
+- ruleID: lombok-incompatibility-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Lombok supports Java 17 since version 1.18.22.*
