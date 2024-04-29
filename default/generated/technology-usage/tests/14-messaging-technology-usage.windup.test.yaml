@@ -1,0 +1,31 @@
+rulesPath: ../14-messaging-technology-usage.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/14-messaging-technology-usage
+- name: builtin
+  dataPath: ./data/14-messaging-technology-usage
+tests:
+- ruleID: technology-usage-messaging-01100
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JMS Topic
+  - name: tc-2
+    hasTags:
+    - JMS Topic
+- ruleID: technology-usage-messaging-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JMS Queue
+  - name: tc-2
+    hasTags:
+    - JMS Queue
+- ruleID: technology-usage-messaging-01200
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JMS Connection Factory
+  - name: tc-2
+    hasTags:
+    - JMS Connection Factory

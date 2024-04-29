@@ -1,0 +1,224 @@
+rulesPath: ../140-websphere-jms.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/140-websphere-jms
+- name: builtin
+  dataPath: ./data/140-websphere-jms
+tests:
+- ruleID: websphere-jms-eap7-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: IBM MQQueueConnectionFactory.*
+  - name: tc-2
+    hasIncidents:
+      atLeast: 1
+      messageMatches: IBM MQXAQueueConnectionFactory.*
+  - name: tc-3
+    hasIncidents:
+      atLeast: 1
+      messageMatches: IBM MQTopicConnectionFactory.*
+  - name: tc-4
+    hasIncidents:
+      atLeast: 1
+      messageMatches: IBM MQXATopicConnectionFactory.*
+  - name: tc-5
+    hasIncidents:
+      atLeast: 1
+      messageMatches: IBM XAConnectionFactory.*
+  - name: tc-6
+    hasIncidents:
+      atLeast: 1
+      messageMatches: MQDestination.* `javax.jms.Destination`.*
+  - name: tc-7
+    hasIncidents:
+      atLeast: 1
+      messageMatches: IBM MQeQueueConnectionFactory.*
+  - name: tc-8
+    hasIncidents:
+      atLeast: 1
+      messageMatches: IBM MQeXAQueueConnectionFactory.*
+  - name: tc-9
+    hasIncidents:
+      atLeast: 1
+      messageMatches: IBM MQeTopicConnectionFactory.*
+  - name: tc-10
+    hasIncidents:
+      atLeast: 1
+      messageMatches: IBM MQeXATopicConnectionFactory.*
+  - name: tc-11
+    hasIncidents:
+      atLeast: 1
+      messageMatches: MQeDestination.* `javax.jms.Destination`.*
+  - name: tc-12
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsTopicConnectionFactory
+  - name: tc-13
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsQueueConnectionFactory.*
+  - name: tc-14
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsConnectionFactory .*
+  - name: tc-15
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsXAConnectionFactory .*
+  - name: tc-16
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsXAQueueConnectionFactory .*
+  - name: tc-17
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsXATopicConnectionFactory .*
+- ruleID: websphere-jms-eap7-00000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - IBM JMS
+- ruleID: websphere-jms-eap7-02000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: IBM JMS API Producers are.*
+  - name: tc-2
+    hasIncidents:
+      atLeast: 1
+      messageMatches: IBM JMS API Consumers are.*
+- ruleID: websphere-jms-eap7-03000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JMSBytesMessage.*
+  - name: tc-2
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JMSMapMessage.*
+  - name: tc-3
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JMSMessage.*
+  - name: tc-4
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JMSStreamMessage.*
+  - name: tc-5
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JMSTextMessage.*
+- ruleID: websphere-jms-eap7-04000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsTopic.*
+  - name: tc-2
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsQueue.*
+  - name: tc-3
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsDestination.*
+  - name: tc-4
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsConnection.*
+  - name: tc-5
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsConnectionMetaData.*
+  - name: tc-6
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsDestination.*
+  - name: tc-7
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsQueue.*
+  - name: tc-8
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsQueueBrowser.*
+  - name: tc-9
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsQueueConnection.*
+  - name: tc-10
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsQueueReceiver.*
+  - name: tc-11
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsQueueSender.*
+  - name: tc-12
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsQueueSession.*
+  - name: tc-13
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsSession.*
+  - name: tc-14
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsTemporaryQueue.*
+  - name: tc-15
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsTemporaryTopic.*
+  - name: tc-16
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*com.ibm.msg.client.jms.JmsTopicPublisher.*
+  - name: tc-17
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsTopicConnection.*
+  - name: tc-18
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsTopicPublisher.*
+  - name: tc-19
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsTopicSession.*
+  - name: tc-20
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsTopicSubscriber.*
+  - name: tc-21
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsXAConnection.*
+  - name: tc-22
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsXAQueueConnection.*
+  - name: tc-23
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsXAQueueSession.*
+  - name: tc-24
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsXASession.*
+  - name: tc-25
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsXATopicConnection.*
+  - name: tc-26
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsXATopicSession.*
+  - name: tc-27
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*JmsTopicPublisher.*

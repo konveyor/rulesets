@@ -1,0 +1,27 @@
+rulesPath: ../141-websphere-mq.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/141-websphere-mq
+- name: builtin
+  dataPath: ./data/141-websphere-mq
+tests:
+- ruleID: websphere-mq-eap7-00000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - IBM MQ
+- ruleID: websphere-mq-eap7-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - IBM MQ Configuration
+  - name: tc-2
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`WMQInitialContextFactory` is an implementation of.*'
+- ruleID: websphere-mq-eap7-02000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: WebSphere `.scp` files contain scripts.*

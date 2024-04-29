@@ -1,0 +1,58 @@
+rulesPath: ../163-javax-to-jakarta-dependencies.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/163-javax-to-jakarta-dependencies
+- name: builtin
+  dataPath: ./data/163-javax-to-jakarta-dependencies
+tests:
+- ruleID: javax-to-jakarta-dependencies-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 26
+      messageMatches: Update the group dependency by replacing the `javax.
+- ruleID: javax-to-jakarta-dependencies-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 25
+      messageMatches: Update artifact dependency by replacing the `javax.
+- ruleID: javax-to-jakarta-dependencies-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Replace the `jaxb-api`
+- ruleID: javax-to-jakarta-dependencies-00004
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Replace dependency groupId `javax.activation`
+- ruleID: javax-to-jakarta-dependencies-00005
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Replace the `javax.faces`
+- ruleID: javax-to-jakarta-dependencies-00006
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: Update group dependency by replacing the `javax` groupId with
+        `jakarta.platform`
+- ruleID: javax-to-jakarta-dependencies-00007
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Update artifact dependency by replacing the `javaee-api` artifactId
+        with `jakarta.jakartaee-api
+- ruleID: javax-to-jakarta-dependencies-00008
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Update artifact dependency by replacing the `javaee-web-api`
+        artifactId

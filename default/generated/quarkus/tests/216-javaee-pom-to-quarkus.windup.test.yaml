@@ -1,0 +1,68 @@
+rulesPath: ../216-javaee-pom-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/216-javaee-pom-to-quarkus
+- name: builtin
+  dataPath: ./data/216-javaee-pom-to-quarkus
+tests:
+- ruleID: javaee-pom-to-quarkus-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The project artifact's current extension (i.e. `<packaging>`
+        tag value) is
+- ruleID: javaee-pom-to-quarkus-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: Use the Quarkus BOM to omit the version of the different Quarkus
+        dependencies
+- ruleID: javaee-pom-to-quarkus-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: Use the Quarkus Maven plugin adding the following sections to
+        the `pom.xml` file
+- ruleID: javaee-pom-to-quarkus-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: Use the Maven Compiler plugin adding the following sections
+        to the `pom.xml` file
+- ruleID: javaee-pom-to-quarkus-00040
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: Use the Maven Surefire plugin adding the following sections
+        to the `pom.xml` file
+- ruleID: javaee-pom-to-quarkus-00050
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: Use the Maven Failsafe plugin adding the following sections
+        to the `pom.xml` file
+- ruleID: javaee-pom-to-quarkus-00060
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: Leverage a Maven profile to run the Quarkus native build adding
+        the following section to the `pom.xml` file
+- ruleID: javaee-pom-to-quarkus-00070
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Configure Quarkus 'hibernate-orm` and jakarta persistence
+- ruleID: javaee-pom-to-quarkus-00080
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use Quarkus junit artifact

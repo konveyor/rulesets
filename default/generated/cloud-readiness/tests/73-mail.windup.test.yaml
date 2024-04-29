@@ -1,0 +1,14 @@
+rulesPath: ../73-mail.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/73-mail
+- name: builtin
+  dataPath: ./data/73-mail
+tests:
+- ruleID: mail-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 17
+      messageMatches: In a cloud environment, mail systems should be considered backing
+        service.*

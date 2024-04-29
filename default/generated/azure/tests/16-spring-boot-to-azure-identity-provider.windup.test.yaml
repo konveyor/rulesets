@@ -1,0 +1,13 @@
+rulesPath: ../16-spring-boot-to-azure-identity-provider.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/16-spring-boot-to-azure-identity-provider
+- name: builtin
+  dataPath: ./data/16-spring-boot-to-azure-identity-provider
+tests:
+- ruleID: spring-boot-to-azure-identity-provider-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: The application uses Spring security.

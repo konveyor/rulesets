@@ -1,0 +1,19 @@
+rulesPath: ../14-spring-boot-to-azure-eureka.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/14-spring-boot-to-azure-eureka
+- name: builtin
+  dataPath: ./data/14-spring-boot-to-azure-eureka
+tests:
+- ruleID: spring-boot-to-azure-eureka-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 3
+      messageMatches: The application uses Eureka.
+- ruleID: spring-boot-to-azure-eureka-02000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: The application uses an eureka connection string.

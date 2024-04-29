@@ -1,0 +1,21 @@
+rulesPath: ../227-springboot-integration-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/227-springboot-integration-to-quarkus
+- name: builtin
+  dataPath: ./data/227-springboot-integration-to-quarkus
+tests:
+- ruleID: springboot-integration-to-quarkus-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: SpringBoot Integration flows are not supported. A migration
+        to Apache Camel route is mandatory.
+- ruleID: springboot-integration-to-quarkus-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: SpringBoot IntegrationFlow class usage is not supported. A migration
+        to Apache Camel route using From is mandatory.

@@ -1,0 +1,14 @@
+rulesPath: ../119-deprecated-singletonpolicy.rhamt.yaml
+providers:
+- name: java
+  dataPath: ./data/119-deprecated-singletonpolicy.rhamt.test.yaml
+- name: builtin
+  dataPath: ./data/119-deprecated-singletonpolicy.rhamt.test.yaml
+tests:
+- ruleID: deprecated-singletonpolicy-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The application imports class `org.wildfly.clustering.singleton.SingletonPolicy`,
+        from deprecated HA Singleton API.

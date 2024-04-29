@@ -1,0 +1,17 @@
+rulesPath: ../89-jrun-catchall.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/89-jrun-catchall
+- name: builtin
+  dataPath: ./data/89-jrun-catchall
+tests:
+- ruleID: jrun-catchall-00000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JRun
+- ruleID: jrun-catchall-00001
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JRunX

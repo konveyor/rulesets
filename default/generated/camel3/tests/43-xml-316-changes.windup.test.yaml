@@ -1,0 +1,21 @@
+rulesPath: ../43-xml-316-changes.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/43-xml-316-changes
+- name: builtin
+  dataPath: ./data/43-xml-316-changes
+tests:
+- ruleID: xml-removed-camel316-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-testcontainers-spring` component has been replaced with
+        camel-test-infr.*'
+- ruleID: xml-removed-camel316-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-testcontainers-spring-junit5` component has been replaced
+        with camel-test-infr.*'

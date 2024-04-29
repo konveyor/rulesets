@@ -1,0 +1,457 @@
+rulesPath: ../178-replace_thorntail_fractions.mta.yaml
+providers:
+- name: java
+  dataPath: ./data/178-replace_thorntail_fractions.mta.test.yaml
+- name: builtin
+  dataPath: ./data/178-replace_thorntail_fractions.mta.test.yaml
+tests:
+- ruleID: replace_thorntail_fractions-01
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:bean-validation` with the related
+        Eclipse MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-02
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:cdi-config` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-03
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:cdi` with the related Eclipse MicroProfile
+        and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-04
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:config-api-runtime` with the related
+        Eclipse MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-05
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:datasources` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-06
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:ee-security` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-07
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:ejb-mdb` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-08
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:ejb` with the related Eclipse MicroProfile
+        and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-09
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:elytron` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-10
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:fraction-metadata` with the related
+        Eclipse MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-11
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:hibernate-validator` with the related
+        Eclipse MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-12
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:hibernate` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-13
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:hystrix` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-14
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:infinispan` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-15
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:jaeger` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-16
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:jaxrs-jaxb` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-17
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:jaxrs-jsonb` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-18
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:jaxrs-jsonp` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-19
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:jaxrs-multipart` with the related
+        Eclipse MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-20
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:jaxrs-validator` with the related
+        Eclipse MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-21
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:jaxrs` with the related Eclipse MicroProfile
+        and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-22
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:jca` with the related Eclipse MicroProfile
+        and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-23
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:jmx` with the related Eclipse MicroProfile
+        and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-24
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:jpa` with the related Eclipse MicroProfile
+        and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-25
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:jsf` with the related Eclipse MicroProfile
+        and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-26
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:jsonb` with the related Eclipse MicroProfile
+        and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-27
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:jsonp` with the related Eclipse MicroProfile
+        and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-28
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:keycloak` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-29
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:logging` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-30
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:management` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-31
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:microprofile-config` with the related
+        Eclipse MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-32
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:microprofile-fault-tolerance` with
+        the related Eclipse MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-33
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:microprofile-health` with the related
+        Eclipse MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-34
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:microprofile-jwt` with the related
+        Eclipse MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-35
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:microprofile-metrics` with the related
+        Eclipse MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-36
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:microprofile-openapi` with the related
+        Eclipse MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-37
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:microprofile-opentracing` with the
+        related Eclipse MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-38
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:microprofile-restclient` with the
+        related Eclipse MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-39
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:microprofile` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-40
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:opentracing` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-41
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:remoting` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-42
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:resource-adapters` with the related
+        Eclipse MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-43
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:spi` with the related Eclipse MicroProfile
+        and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-44
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:topology-openshift` with the related
+        Eclipse MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-45
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:topology-webapp` with the related
+        Eclipse MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-46
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:transactions` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-47
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:undertow` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-48
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:web` with the related Eclipse MicroProfile
+        and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-49
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:archaius` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.
+- ruleID: replace_thorntail_fractions-50
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Fraction `io.thorntail:monitor` with the related Eclipse
+        MicroProfile and/or Jakarta EE artifacts.

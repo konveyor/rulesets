@@ -1,0 +1,13 @@
+rulesPath: ../19-spring-boot-to-azure-jms-broker.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/19-spring-boot-to-azure-jms-broker
+- name: builtin
+  dataPath: ./data/19-spring-boot-to-azure-jms-broker
+tests:
+- ruleID: spring-boot-to-azure-jms-broker-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: The application uses an ActiveMQ message broker.

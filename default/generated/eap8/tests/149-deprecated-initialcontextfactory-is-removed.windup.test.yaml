@@ -1,0 +1,13 @@
+rulesPath: ../149-deprecated-initialcontextfactory-is-removed.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/149-deprecated-initialcontextfactory-is-removed
+- name: builtin
+  dataPath: ./data/149-deprecated-initialcontextfactory-is-removed
+tests:
+- ruleID: deprecated-initialcontextfactory-is-removed-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 3
+      messageMatches: Replace this class with `org.wildfly.naming.client.WildFlyInitialContextFactory`.

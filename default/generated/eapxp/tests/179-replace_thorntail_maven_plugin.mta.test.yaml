@@ -1,0 +1,15 @@
+rulesPath: ../179-replace_thorntail_maven_plugin.mta.yaml
+providers:
+- name: java
+  dataPath: ./data/179-replace_thorntail_maven_plugin.mta.test.yaml
+- name: builtin
+  dataPath: ./data/179-replace_thorntail_maven_plugin.mta.test.yaml
+tests:
+- ruleID: replace_thorntail_maven_plugin-1
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail Maven Plugin with JBoss EAP XP Bootable JAR Maven Plugin.

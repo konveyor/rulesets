@@ -1,0 +1,14 @@
+rulesPath: ../201-deprecation-openjdk21.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/201-deprecation-openjdk21
+- name: builtin
+  dataPath: ./data/201-deprecation-openjdk21
+tests:
+- ruleID: deprecation-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The `load(URL)` method under `SynthLookAndFeel` has been deprecated
+        in JDK 21 for removal in a future release.
