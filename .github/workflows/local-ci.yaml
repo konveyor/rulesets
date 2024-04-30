@@ -5,14 +5,90 @@ on: ["push", "pull_request"]
 jobs:
   test:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v3
 
       - name: Run kantra test
+        id: kantra-test
         run: |
           podman cp $(podman create --name kantra-download quay.io/konveyor/kantra:latest):/usr/local/bin/kantra .
           podman rm kantra-download
-          ./kantra test ./default/generated/ || true
+          ./kantra test ./default/generated/ | tee output.log || true
+          tail -n5 output.log > message.md
+          msg=$(grep -E '.*Rules Summary:' message.md -A1)
+          tests_pass_rate=$(grep -E '.*Rules Summary:' message.md | sed -E 's| *Rules Summary: *(.*)|\1|' | sed -E 's|.*?:||')
+          tcs_pass_rate=$(grep -E '.*Test Cases Summary:' message.md | sed -E 's| *Test Cases Summary: *(.*)|\1|' | sed -E 's|.*?:||')
           
+          echo 'msg<<EOF' >> $GITHUB_OUTPUT
+          echo ${msg} >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
+
+          echo 'tcs_pass_rate<<EOF' >> $GITHUB_OUTPUT
+          echo ${tcs_pass_rate} >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
+
+          echo 'tests_pass_rate<<EOF' >> $GITHUB_OUTPUT
+          echo ${tests_pass_rate} >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
+
+      - name: Comment on the PR
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issue_number = context.payload.pull_request.number;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const body = `${{ steps.kantra-test.outputs.msg }}`;
+
+            const comments = await github.rest.issues.listComments({
+              owner,
+              repo,
+              issue_number
+            });
+
+            const botComment = comments.data.find(comment => 
+              comment.user.login === 'github-actions[bot]');
+            
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner,
+                repo,
+                comment_id: botComment.id,
+                body
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number,
+                body
+              });
+            }
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          debug: true
+
+      - name: Update tests badge
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        uses: RubbaBoy/BYOB@v1.3.0
+        with:
+          NAME: konveyor-rulesets-tests-rate
+          LABEL: Test Status
+          STATUS: ${{ steps.kantra-test.outputs.tests_pass_rate }}
+          COLOR: blue
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update test case badge
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        uses: RubbaBoy/BYOB@v1.3.0
+        with:
+          NAME: konveyor-rulesets-tcs-rate
+          LABEL: Test Case Status
+          STATUS: ${{ steps.kantra-test.outputs.tcs_pass_rate }}
+          COLOR: blue
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             
         
