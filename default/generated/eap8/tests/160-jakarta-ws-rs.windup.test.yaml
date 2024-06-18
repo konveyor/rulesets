@@ -1,0 +1,13 @@
+rulesPath: ../160-jakarta-ws-rs.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/160-jakarta-ws-rs
+- name: builtin
+  dataPath: ./data/160-jakarta-ws-rs
+tests:
+- ruleID: jakarta-ws-rs-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Future versions of this API will no longer support `@Context`

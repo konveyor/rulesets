@@ -1,0 +1,151 @@
+rulesPath: ../63-xml-41-changes.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/63-xml-41-changes
+- name: builtin
+  dataPath: ./data/63-xml-41-changes
+tests:
+- ruleID: xml-removed-camel41-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Dumping routes to JMX no longer includes customId=true in the
+        XML nodes.
+- ruleID: xml-removed-camel41-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The scheduler no longer includes header with the timestamp of
+        when the exchange was fired. This means the exchange by default has no headers,
+        and null body.The option includeMetadata can be set to true on the endpoint
+        or component level, to turn on these additional metadata headers again.
+- ruleID: xml-removed-camel41-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The timer no longer includes header firedTime with the timestamp
+        of when the exchange was fired. This means the exchange by default has no
+        headers, and null body.The firedTime header has been renamed to CamelTimerFireTime.
+        *The option includeMetadata can be set to true on the endpoint or component
+        level, to turn on these additional metadata headers again.
+- ruleID: xml-changed-camel41-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: CamelAwsStateMachineOperation message heade.*
+- ruleID: xml-changed-camel41-00004
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: CamelAwsStateMachinesMaxResults message header has been replaced
+        with CamelAwsStepFunctionsStateMachinesMaxResults
+- ruleID: xml-changed-camel41-00005
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: CamelAwsStepFunctionsStateMachineActivityName message header
+        has been replaced with CamelAwsStepFunctionsActivityName
+- ruleID: xml-changed-camel41-00006
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: CamelAwsStepFunctionsStateMachineActivityArn message header
+        has been replaced with CamelAwsStepFunctionsActivityArn
+- ruleID: xml-changed-camel41-00007
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: CamelAwsStateMachineActivitiesMaxResults message header has
+        been replaced with CamelAwsStepFunctionsActivitiesMaxResults
+- ruleID: xml-changed-camel41-00008
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: CamelAwsStateMachineExecutionArn message header has been replaced
+        with CamelAwsStepFunctionsExecutionArn
+- ruleID: xml-changed-camel41-00009
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: CamelAwsStateMachineExecutionName message header has been replaced
+        with CamelAwsStepFunctionsExecutionName
+- ruleID: xml-changed-camel41-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: CamelAwsStateMachineExecutionInput message header has been replaced
+        with CamelAwsStepFunctionsExecutionInput
+  - name: tc-2
+    hasIncidents:
+      atLeast: 2
+      messageMatches: CamelAwsStateMachineExecutionInput message header has been replaced
+        with CamelAwsStepFunctionsExecutionInput
+- ruleID: xml-changed-camel41-00011
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: CamelAwsStateMachineExecutionTraceHeader message header has
+        been replaced with CamelAwsStepFunctionsExecutionTraceHeader
+- ruleID: xml-changed-camel41-00012
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: CamelAwsStateMachineExecutionHistoryMaxResults message header
+        has been replaced with CamelAwsStepFunctionsExecutionHistoryMaxResults
+- ruleID: xml-changed-camel41-00013
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: CamelAwsStateMachineExecutionHistoryIncludeExecutionData message
+        header has been replaced with CamelAwsStepFunctionsExecutionHistoryIncludeExecutionData
+- ruleID: xml-changed-camel41-00014
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: CamelAwsStateMachineExecutionHistoryReverseOrder message header
+        has been replaced with CamelAwsStepFunctionsExecutionHistoryReverseOrder
+- ruleID: xml-changed-camel41-00015
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: CamelAwsStateMachineExecutionMaxResults message header has been
+        replaced with CamelAwsStepFunctionsExecutionMaxResults
+- ruleID: xml-removed-camel41-00016
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The queueUrl parameter has been replaced by the queueArn parameter.
+- ruleID: xml-removed-camel41-00017
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: 'The Camel-PDF component has been updated to Apache PDFBox 3.0.0
+        and the font parameter is now defined through the following enum values: COURIER,COURIER_BOLD,COURIER_OBLIQUE,COURIER_BOLD_OBLIQUE,
+        HELVETICA,HELVETICA_BOLD,HELVETICA_OBLIQUE,HELVETICA_BOLD_OBLIQUE,TIMES_ROMAN,TIMES_BOLD,TIMES_ITALIC,TIMES_BOLD_ITALIC,SYMBOL
+        and ZAPF_DINGBATS.'
+- ruleID: xml-removed-camel41-00018
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The default value for sessionTimeoutMs has been updated to 45000
+        ms, while the default value for consumerRequestTimeoutMs has been updated
+        to 30000.

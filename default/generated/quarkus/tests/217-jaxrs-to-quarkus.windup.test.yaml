@@ -1,0 +1,14 @@
+rulesPath: ../217-jaxrs-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/217-jaxrs-to-quarkus
+- name: builtin
+  dataPath: ./data/217-jaxrs-to-quarkus
+tests:
+- ruleID: jaxrs-to-quarkus-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Dependency `org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_2.1_spec`
+        has to be replaced with `io.quarkus:quarkus-resteasy-reactive` artifact.
