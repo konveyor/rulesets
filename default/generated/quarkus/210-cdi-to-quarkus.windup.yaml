@@ -80,20 +80,3 @@
     java.referenced:
       location: ANNOTATION
       pattern: javax.enterprise.inject.Produces
-- category: potential
-  customVariables: []
-  description: Stateless annotation can be replaced with scope
-  effort: 1
-  labels:
-  - konveyor.io/source=java-ee
-  - konveyor.io/target=quarkus
-  links:
-  - title: Quarkus CDI reference
-    url: https://quarkus.io/guides/cdi-reference
-  message: Stateless EJBs can be converted to a cdi bean by replacing the `@Stateless`
-    annotation with a scope eg `@ApplicationScoped`
-  ruleID: cdi-to-quarkus-00050
-  when:
-    java.referenced:
-      location: ANNOTATION
-      pattern: javax.ejb.Stateless
