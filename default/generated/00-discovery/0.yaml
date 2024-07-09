@@ -76,6 +76,7 @@
       pattern: "pom.xml"
   tag: ["Maven XML"]
 - ruleID: windup-discover-ejb-configuration
+  description: "EJB XML Configuration"
   labels:
   - konveyor.io/include=always
   - konveyor.io/target=discovery
@@ -84,6 +85,7 @@
     builtin.xml:
       xpath: "/(jboss:ejb-jar or ejb-jar)"
 - ruleID: windup-discover-spring-configuration
+  description: "Spring XML Configuration"
   tag: ["Spring XML"]
   labels:
   - konveyor.io/include=always
@@ -92,6 +94,7 @@
     builtin.xml:
       xpath: "/beans"
 - ruleID: windup-discover-jpa-configuration
+  description: "JPA XML Configuration"
   tag: ["JPA XML"]
   labels:
   - konveyor.io/include=always
@@ -105,6 +108,7 @@
       - builtin.xml:
           xpath: '/persistence[boolean(namespace-uri(/persistence)="https://jakarta.ee/xml/ns/persistence")]'
 - ruleID: windup-discover-web-configuration
+  description: "Web XML Configuration"
   labels:
   - konveyor.io/include=always
   - konveyor.io/target=discovery
