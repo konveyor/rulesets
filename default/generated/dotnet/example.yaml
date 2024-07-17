@@ -1,14 +1,12 @@
 - category: mandatory
-  customVariables: []
   description: MVC Method names have changed from .NET Framework
   effort: 1
   labels:
   - konveyor.io/source=dotnetframework
-  message: |-
-    HttpNotFound was replaced with NotFound in .NET Core
+  - konveyor.io/target=dotnet8
+  message: HttpNotFound was replaced with NotFound in .NET Core
   ruleID: removed-dotnet-framework-00000
   when:
-    or:
-    - dotnet.referenced:
-        pattern: "HttpNotFound"
-        namespace: "System.Web.Mvc"
+    dotnet.referenced:
+      pattern: "HttpNotFound"
+      namespace: "System.Web.Mvc"
