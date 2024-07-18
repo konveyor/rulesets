@@ -407,10 +407,10 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: com.ibm.websphere.management.AdminService.getProcessName*
+        pattern: com.ibm.websphere.management.AdminService.getProcessName(*)
     - java.referenced:
         location: METHOD_CALL
-        pattern: com.ibm.ejs.ras.RasHelper.getServerName*
+        pattern: com.ibm.ejs.ras.RasHelper.getServerName(*)
     - java.referenced:
         location: METHOD_CALL
         pattern: com.ibm.websphere.runtime.ServerName.(getDisplayName|getFullName)*
@@ -1065,7 +1065,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: com.ibm.websphere.security.WSSecurityHelper.(getFirstCaller|getFirstServer|getCallerList|getServerList|getPropagationAttributes|addPropagationAttribute|convertCookieStringToBytes|revokeSSOCookiesForPortlets)*
+      pattern: com.ibm.websphere.security.WSSecurityHelper.(getFirstCaller|getFirstServer|getCallerList|getServerList|getPropagationAttributes|addPropagationAttribute|convertCookieStringToBytes|revokeSSOCookiesForPortlets)(*)
 - category: mandatory
   customVariables: []
   description: The WebSphere Remote Request Dispatcher (RRD) SPIs are unavailable
@@ -1134,7 +1134,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: com.ibm.websphere.security.WSSecurityHelper.revokeSSOCookies*
+      pattern: com.ibm.websphere.security.WSSecurityHelper.revokeSSOCookies(*)
 - category: mandatory
   customVariables: []
   description: Do not use the WSSecurityHelper getLTPACookieFromSSOToken method
@@ -1186,7 +1186,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: com.ibm.websphere.security.WSSecurityHelper.getLTPACookieFromSSOToken*
+      pattern: com.ibm.websphere.security.WSSecurityHelper.getLTPACookieFromSSOToken(*)
 - category: optional
   customVariables: []
   description: Some WebSphere z/OS Optimized Local Adapters APIs are unavailable

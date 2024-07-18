@@ -80,7 +80,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: weblogic.wsee.connection.transport.http.HttpTransportInfo.setUsername*
+      pattern: weblogic.wsee.connection.transport.http.HttpTransportInfo.setUsername(*)
 - category: mandatory
   customVariables: []
   description: WebLogic proprietary web services API - weblogic.wsee.context.WebServiceContext

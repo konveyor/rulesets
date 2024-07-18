@@ -25,13 +25,13 @@
         pattern: javax.swing.plaf.basic.BasicScrollPaneUI.VSBChangeListener
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.swing.plaf.basic.BasicDirectoryModel.intervalAdded*
+        pattern: javax.swing.plaf.basic.BasicDirectoryModel.intervalAdded(*)
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.swing.plaf.basic.BasicDirectoryModel.intervalRemoved*
+        pattern: javax.swing.plaf.basic.BasicDirectoryModel.intervalRemoved(*)
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.swing.plaf.basic.BasicDirectoryModel.lt*
+        pattern: javax.swing.plaf.basic.BasicDirectoryModel.lt(*)
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.swing.plaf.basic.BasicToolBarUI.createFloatingFrame*
+        pattern: javax.swing.plaf.basic.BasicToolBarUI.createFloatingFrame(*)

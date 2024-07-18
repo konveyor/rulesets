@@ -35,7 +35,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.apache.camel.impl.SimpleRegistry.put*
+      pattern: org.apache.camel.impl.SimpleRegistry.put(*)  # put, putIfAbsent, putAll
 - category: optional
   customVariables: []
   description: getOut/hasOut are deprecated
@@ -101,13 +101,13 @@
         pattern: org.apache.camel.CamelContext.(start|stop|suspend|resume)Route*
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.apache.camel.CamelContext.startAllRoutes*
+        pattern: org.apache.camel.CamelContext.startAllRoutes(*)
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.apache.camel.CamelContext.isStartingRoutes*
+        pattern: org.apache.camel.CamelContext.isStartingRoutes(*)
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.apache.camel.CamelContext.getRouteStatus*
+        pattern: org.apache.camel.CamelContext.getRouteStatus(*)
 - category: mandatory
   customVariables:
   - name: param

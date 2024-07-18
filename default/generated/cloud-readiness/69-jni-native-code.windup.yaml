@@ -27,19 +27,19 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.System.load*
+        pattern: java.lang.System.load(*)
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.System.loadLibrary*
+        pattern: java.lang.System.loadLibrary(*)
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.System.mapLibraryName*
+        pattern: java.lang.System.mapLibraryName(*)
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.Runtime.load*
+        pattern: java.lang.Runtime.load(*)
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.Runtime.loadLibrary*
+        pattern: java.lang.Runtime.loadLibrary(*)
     - java.referenced:
         location: CONSTRUCTOR_CALL
         pattern: com.sun.jna*

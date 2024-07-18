@@ -31,10 +31,10 @@
         pattern: java.lang.System.(load|loadLibrary|mapLibraryName)*
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.Runtime.load*
+        pattern: java.lang.Runtime.load(*)
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.Runtime.loadLibrary*
+        pattern: java.lang.Runtime.loadLibrary(*)
 - customVariables: []
   description: JNA usage
   labels:
@@ -59,7 +59,7 @@
         pattern: com.sun.jna*
     - java.referenced:
         location: METHOD_CALL
-        pattern: com.sun.jna*
+        pattern: com.sun.jna(*)
     - java.referenced:
         location: VARIABLE_DECLARATION
         pattern: com.sun.jna*

@@ -813,10 +813,10 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.hibernate.search.query.dsl.QueryBuilder.facet*
+        pattern: org.hibernate.search.query.dsl.QueryBuilder.facet(*)
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.hibernate.search.FullTextQuery.getFacetManager*
+        pattern: org.hibernate.search.FullTextQuery.getFacetManager(*)
     - java.referenced:
         pattern: org.hibernate.search.query.facet.(Facet|FacetingRequest|FacetSelection|FacetSortOrder|RangeFacet)
 - category: optional
@@ -965,7 +965,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.search.cfg.ContainedInMapping.numericField*
+      pattern: org.hibernate.search.cfg.ContainedInMapping.numericField(*)
 - category: optional
   customVariables: []
   description: Hibernate Search 5 - Deprecated method FullTextSharedSessionBuilder#autoClose
@@ -992,7 +992,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.search.FullTextSharedSessionBuilder.autoClose*
+      pattern: org.hibernate.search.FullTextSharedSessionBuilder.autoClose(*)
 - category: optional
   customVariables: []
   description: Hibernate Search 5 - Deprecated method IndexedMapping#cacheFromIndex
@@ -1018,7 +1018,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.search.cfg.IndexedMapping.cacheFromIndex*
+      pattern: org.hibernate.search.cfg.IndexedMapping.cacheFromIndex(*)
 - category: optional
   customVariables: []
   description: Hibernate Search 5 - Deprecated method EntityDescriptor#getCacheInMemory
@@ -1044,7 +1044,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.search.cfg.EntityDescriptor.getCacheInMemory*
+      pattern: org.hibernate.search.cfg.EntityDescriptor.getCacheInMemory(*)
 - category: optional
   customVariables: []
   description: Hibernate Search 5 - Deprecated method HSQuery#getExtendedSearchIntegrator
@@ -1070,7 +1070,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.search.query.engine.spi.HSQuery.getExtendedSearchIntegrator*
+      pattern: org.hibernate.search.query.engine.spi.HSQuery.getExtendedSearchIntegrator(*)
 - category: optional
   customVariables: []
   description: Hibernate Search 5 - Deprecated method DocumentBuilderIndexedEntity#getFieldCacheOption
@@ -1097,7 +1097,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.search.engine.spi.DocumentBuilderIndexedEntity.getFieldCacheOption*
+      pattern: org.hibernate.search.engine.spi.DocumentBuilderIndexedEntity.getFieldCacheOption(*)
 - category: optional
   customVariables: []
   description: Hibernate Search 5 - Deprecated method BuildContext#getIndexingStrategy
@@ -1122,7 +1122,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.search.spi.BuildContext.getIndexingStrategy*
+      pattern: org.hibernate.search.spi.BuildContext.getIndexingStrategy(*)
 - category: optional
   customVariables: []
   description: Hibernate Search 5 - Deprecated method DirectoryHelper#getVerifiedIndexDir
@@ -1148,7 +1148,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.search.store.spi.DirectoryHelper.getVerifiedIndexDir*
+      pattern: org.hibernate.search.store.spi.DirectoryHelper.getVerifiedIndexDir(*)
 - category: optional
   customVariables: []
   description: Hibernate Search 5 - Deprecated method EntityDescriptor#setCacheInMemory
@@ -1175,7 +1175,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.search.cfg.EntityDescriptor.setCacheInMemory*
+      pattern: org.hibernate.search.cfg.EntityDescriptor.setCacheInMemory(*)
 - category: optional
   customVariables: []
   description: Hibernate Search 5 - Deprecated method MassIndexer#threadsForSubsequentFetching
@@ -1202,7 +1202,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.search.MassIndexer.threadsForSubsequentFetching*
+      pattern: org.hibernate.search.MassIndexer.threadsForSubsequentFetching(*)
 - category: optional
   customVariables: []
   description: Hibernate Search 5 - Deprecated method FuzzyContext#withThreshold
@@ -1228,7 +1228,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.search.query.dsl.FuzzyContext.withThreshold*
+      pattern: org.hibernate.search.query.dsl.FuzzyContext.withThreshold(*)
 - category: optional
   customVariables:
   - name: type
@@ -1759,4 +1759,4 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.search.MassIndexer.threadsForIndexWriter*
+      pattern: org.hibernate.search.MassIndexer.threadsForIndexWriter(*)
