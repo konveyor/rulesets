@@ -1,0 +1,715 @@
+- ruleID: dotnet-rules-converted-00001
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: Use appropriate type of files for migration from your Windows Forms-based
+    desktop app from .NET Framework to .NET Core 3.0 or later.
+  description: Use appropriate type of files for migration from your Windows Forms-based
+    desktop app from .NET Framework to .NET Core 3.0 or later.
+  when:
+    dotnet.referenced:
+      namespace: Microsoft.Xrm.Tooling
+      pattern: CrmConnectControl
+- ruleID: dotnet-rules-converted-00002
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: Use appropriate type of files for migration from your Windows Forms-based
+    desktop app from .NET Framework to .NET Core 3.0 or later.
+  description: Use appropriate type of files for migration from your Windows Forms-based
+    desktop app from .NET Framework to .NET Core 3.0 or later.
+  when:
+    dotnet.referenced:
+      namespace: Microsoft.Xrm.Tooling.Ui
+      pattern: Styles
+- ruleID: dotnet-rules-converted-00003
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: 'You could use a converter to create your BitmapImage with whatever settings
+    you need which can also just return null if you see that the file doesn''t exist
+    and then just bind the Image.Source through the converter. '
+  description: 'You could use a converter to create your BitmapImage with whatever
+    settings you need which can also just return null if you see that the file doesn''t
+    exist and then just bind the Image.Source through the converter. '
+  when:
+    dotnet.referenced:
+      namespace: Microsoft.Xrm.Tooling
+      pattern: WebResourceUtility
+- ruleID: dotnet-rules-converted-00004
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The Windows Compatibility Pack may help Windows Forms app become compatible
+    with .NET Core. Update the NuGet packages used by your project
+  description: The Windows Compatibility Pack may help Windows Forms app become compatible
+    with .NET Core. Update the NuGet packages used by your project
+  when:
+    dotnet.referenced:
+      namespace: Microsoft.IdentityModel.Clients.ActiveDirectory
+      pattern: WindowsForms
+- ruleID: dotnet-rules-converted-00005
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The Windows Compatibility Pack may help Windows Forms app become compatible
+    with .NET Core. Update the NuGet packages used by your project
+  description: The Windows Compatibility Pack may help Windows Forms app become compatible
+    with .NET Core. Update the NuGet packages used by your project
+  when:
+    dotnet.referenced:
+      namespace: IpcManagedAPI, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35,
+        FileVersion:1.0.2340
+      pattern: "0"
+- ruleID: dotnet-rules-converted-00006
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The Windows Compatibility Pack may help Windows Forms app become compatible
+    with .NET Core. Update the NuGet packages used by your project
+  description: The Windows Compatibility Pack may help Windows Forms app become compatible
+    with .NET Core. Update the NuGet packages used by your project
+  when:
+    dotnet.referenced:
+      namespace: IpcManagedAPI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null,
+        FileVersion:0.0.0
+      pattern: "0"
+- ruleID: dotnet-rules-converted-00007
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: RoutedEvent is WPF-specific thing.You should remove your reference to WindowsBase
+    and stick to Winforms specific things. Also, try adding Windows.UI.Xaml namespace.
+  description: RoutedEvent is WPF-specific thing.You should remove your reference
+    to WindowsBase and stick to Winforms specific things. Also, try adding Windows.UI.Xaml
+    namespace.
+  when:
+    dotnet.referenced:
+      namespace: ""
+      pattern: AuditEntityData
+- ruleID: dotnet-rules-converted-00008
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: RoutedEvent is WPF-specific thing.You should remove your reference to WindowsBase
+    and stick to Winforms specific things. Also, try adding Windows.UI.Xaml namespace.
+  description: RoutedEvent is WPF-specific thing.You should remove your reference
+    to WindowsBase and stick to Winforms specific things. Also, try adding Windows.UI.Xaml
+    namespace.
+  when:
+    dotnet.referenced:
+      namespace: ""
+      pattern: BulkDeleteExported
+- ruleID: dotnet-rules-converted-00009
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: RoutedEvent is WPF-specific thing.You should remove your reference to WindowsBase
+    and stick to Winforms specific things. Also, try adding Windows.UI.Xaml namespace.
+  description: RoutedEvent is WPF-specific thing.You should remove your reference
+    to WindowsBase and stick to Winforms specific things. Also, try adding Windows.UI.Xaml
+    namespace.
+  when:
+    dotnet.referenced:
+      namespace: ""
+      pattern: CRUDEmailAttachements
+- ruleID: dotnet-rules-converted-00010
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: RoutedEvent is WPF-specific thing.You should remove your reference to WindowsBase
+    and stick to Winforms specific things. Also, try adding Windows.UI.Xaml namespace.
+  description: RoutedEvent is WPF-specific thing.You should remove your reference
+    to WindowsBase and stick to Winforms specific things. Also, try adding Windows.UI.Xaml
+    namespace.
+  when:
+    dotnet.referenced:
+      namespace: ""
+      pattern: DetectMultipleDuplicateRecords
+- ruleID: dotnet-rules-converted-00011
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: RoutedEvent is WPF-specific thing.You should remove your reference to WindowsBase
+    and stick to Winforms specific things. Also, try adding Windows.UI.Xaml namespace.
+  description: RoutedEvent is WPF-specific thing.You should remove your reference
+    to WindowsBase and stick to Winforms specific things. Also, try adding Windows.UI.Xaml
+    namespace.
+  when:
+    dotnet.referenced:
+      namespace: ""
+      pattern: EarlyBoundEntityOperations
+- ruleID: dotnet-rules-converted-00012
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: Check version of System.Xaml.dll used in your project and compare to the
+    .Net version of this project.It might be you are using the old version of System.Xaml.dll.
+    You can find the other dll in folder under Reference Assemblies
+  description: Check version of System.Xaml.dll used in your project and compare to
+    the .Net version of this project.It might be you are using the old version of
+    System.Xaml.dll. You can find the other dll in folder under Reference Assemblies
+  when:
+    dotnet.referenced:
+      namespace: Microsoft.Xrm.Sdk
+      pattern: Workflow
+- ruleID: dotnet-rules-converted-00013
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: 'Manage Nuget packages for solution and install the EntityFramework '
+  description: 'Manage Nuget packages for solution and install the EntityFramework '
+  when:
+    dotnet.referenced:
+      namespace: ""
+      pattern: MovieApp
+- ruleID: dotnet-rules-converted-00014
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: 'Manage Nuget packages for solution and install the EntityFramework '
+  description: 'Manage Nuget packages for solution and install the EntityFramework '
+  when:
+    dotnet.referenced:
+      namespace: System.Web
+      pattern: Mvc
+- ruleID: dotnet-rules-converted-00015
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: 'Manage Nuget packages for solution and install the EntityFramework '
+  description: 'Manage Nuget packages for solution and install the EntityFramework '
+  when:
+    dotnet.referenced:
+      namespace: Models.MoviesDBModel.Designer
+      pattern: cs
+- ruleID: dotnet-rules-converted-00016
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: 'Use byte [] instead of Binary. '
+  description: 'Use byte [] instead of Binary. '
+  when:
+    dotnet.referenced:
+      namespace: System.Web
+      pattern: WebPages
+- ruleID: dotnet-rules-converted-00017
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: 'Add the NuGet package "Microsoft.Extensions.Caching.Memory". '
+  description: 'Add the NuGet package "Microsoft.Extensions.Caching.Memory". '
+  when:
+    dotnet.referenced:
+      namespace: Microsoft.Xrm.Tooling
+      pattern: Connector
+- ruleID: dotnet-rules-converted-00018
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: 'Add the NuGet package "Microsoft.Extensions.Caching.Memory". '
+  description: 'Add the NuGet package "Microsoft.Extensions.Caching.Memory". '
+  when:
+    dotnet.referenced:
+      namespace: System.Web
+      pattern: Helpers
+- ruleID: dotnet-rules-converted-00019
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: 'Add the NuGet package "Microsoft.Extensions.Caching.Memory". '
+  description: 'Add the NuGet package "Microsoft.Extensions.Caching.Memory". '
+  when:
+    dotnet.referenced:
+      namespace: System.Web
+      pattern: Optimization
+- ruleID: dotnet-rules-converted-00020
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: 'Add the NuGet package "Microsoft.Extensions.Caching.Memory". '
+  description: 'Add the NuGet package "Microsoft.Extensions.Caching.Memory". '
+  when:
+    dotnet.referenced:
+      namespace: System.Web.WebPages
+      pattern: Deployment
+- ruleID: dotnet-rules-converted-00021
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The system is not mature enough to suggest recommendations as of today.
+  description: The system is not mature enough to suggest recommendations as of today.
+  when:
+    dotnet.referenced:
+      namespace: System.Web.WebPages
+      pattern: Razor
+- ruleID: dotnet-rules-converted-00022
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The system is not mature enough to suggest recommendations as of today.
+  description: The system is not mature enough to suggest recommendations as of today.
+  when:
+    dotnet.referenced:
+      namespace: System.Web.Http
+      pattern: WebHost
+- ruleID: dotnet-rules-converted-00023
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The system is not mature enough to suggest recommendations as of today.
+  description: The system is not mature enough to suggest recommendations as of today.
+  when:
+    dotnet.referenced:
+      namespace: Microsoft.Web
+      pattern: Infrastructure
+- ruleID: dotnet-rules-converted-00024
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The system is not mature enough to suggest recommendations as of today.(Client
+    side support is included, but there would be no server side)
+  description: The system is not mature enough to suggest recommendations as of today.(Client
+    side support is included, but there would be no server side)
+  when:
+    dotnet.referenced:
+      namespace: Microsoft.Xrm.Sdk
+      pattern: Deployment
+- ruleID: dotnet-rules-converted-00025
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: 'HttpApplication class has to be referenced to System.Web.HttpContext (System.Web)
+    class’s instance in its Context property. '
+  description: 'HttpApplication class has to be referenced to System.Web.HttpContext (System.Web)
+    class’s instance in its Context property. '
+  when:
+    dotnet.referenced:
+      namespace: ""
+      pattern: SimpleSearchMVCApp
+- ruleID: dotnet-rules-converted-00026
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: Microsoft has made available the relevant assemblies as packages on NuGet
+    now. System.ServiceModel.Primitives is the base package; add the others if necessary
+    to your project.
+  description: Microsoft has made available the relevant assemblies as packages on
+    NuGet now. System.ServiceModel.Primitives is the base package; add the others
+    if necessary to your project.
+  when:
+    dotnet.referenced:
+      namespace: Microsoft.Xrm
+      pattern: Sdk
+- ruleID: dotnet-rules-converted-00027
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: Try installing with NuGet a port of the library called System.Drawing.Common.
+  description: Try installing with NuGet a port of the library called System.Drawing.Common.
+  when:
+    dotnet.referenced:
+      namespace: ""
+      pattern: WebGrease
+- ruleID: dotnet-rules-converted-00028
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The system is not mature enough to suggest recommendations as of today.
+  description: The system is not mature enough to suggest recommendations as of today.
+  when:
+    dotnet.referenced:
+      namespace: Newtonsoft
+      pattern: Json
+- ruleID: dotnet-rules-converted-00029
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The system is not mature enough to suggest recommendations as of today.
+  description: The system is not mature enough to suggest recommendations as of today.
+  when:
+    dotnet.referenced:
+      namespace: Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed,
+        FileVersion:11.0.2
+      pattern: "21924"
+- ruleID: dotnet-rules-converted-00030
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: Add a reference to the System.Security.Cryptography.ProtectedData NuGet
+    package.
+  description: Add a reference to the System.Security.Cryptography.ProtectedData NuGet
+    package.
+  when:
+    dotnet.referenced:
+      namespace: Microsoft.IdentityModel.Clients
+      pattern: ActiveDirectory
+- ruleID: dotnet-rules-converted-00031
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: 'Open up the csproj and added a reference to the required file ''System.Security.Permissions''
+    and reload the project '
+  description: 'Open up the csproj and added a reference to the required file ''System.Security.Permissions''
+    and reload the project '
+  when:
+    dotnet.referenced:
+      namespace: Antlr3
+      pattern: Runtime
+- ruleID: dotnet-rules-converted-00032
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: Use configuration appropriate for your application model.  For portable
+    Framework Components, expose API for configuration on type.
+  description: Use configuration appropriate for your application model.  For portable
+    Framework Components, expose API for configuration on type.
+  when:
+    dotnet.referenced:
+      namespace: AzureSearch
+      pattern: SDKHowToSynonyms
+- ruleID: dotnet-rules-converted-00033
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: Use configuration appropriate for your application model.  For portable
+    Framework Components, expose API for configuration on type.
+  description: Use configuration appropriate for your application model.  For portable
+    Framework Components, expose API for configuration on type.
+  when:
+    dotnet.referenced:
+      namespace: ""
+      pattern: AzureSearchDotNetSample
+- ruleID: dotnet-rules-converted-00034
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: Add the package Microsoft.AspNetCore.App for .net core 3 and above.
+  description: Add the package Microsoft.AspNetCore.App for .net core 3 and above.
+  when:
+    dotnet.referenced:
+      namespace: ""
+      pattern: viewer
+- ruleID: dotnet-rules-converted-00035
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: Add the package Microsoft.AspNetCore.App for .net core 3 and above.
+  description: Add the package Microsoft.AspNetCore.App for .net core 3 and above.
+  when:
+    dotnet.referenced:
+      namespace: viewer
+      pattern: Views
+- ruleID: dotnet-rules-converted-00036
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: Add the package Microsoft.AspNetCore.App for .net core 3 and above.
+  description: Add the package Microsoft.AspNetCore.App for .net core 3 and above.
+  when:
+    dotnet.referenced:
+      namespace: T:Microsoft.AspNetCore.Html
+      pattern: IHtmlContent
+- ruleID: dotnet-rules-converted-00037
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The system is not mature enough to suggest recommendations as of today.
+  description: The system is not mature enough to suggest recommendations as of today.
+  when:
+    dotnet.referenced:
+      namespace: ""
+      pattern: DotNetHowTo
+- ruleID: dotnet-rules-converted-00038
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The system is not mature enough to suggest recommendations as of today.
+  description: The system is not mature enough to suggest recommendations as of today.
+  when:
+    dotnet.referenced:
+      namespace: ""
+      pattern: DotNetHowToEncryptionUsingCMK
+- ruleID: dotnet-rules-converted-00039
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The system is not mature enough to suggest recommendations as of today.
+  description: The system is not mature enough to suggest recommendations as of today.
+  when:
+    dotnet.referenced:
+      namespace: ""
+      pattern: DotNetHowToMultipleDataSources
+- ruleID: dotnet-rules-converted-00040
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The system is not mature enough to suggest recommendations as of today.
+  description: The system is not mature enough to suggest recommendations as of today.
+  when:
+    dotnet.referenced:
+      namespace: Microsoft.Azure.Search
+      pattern: Data
+- ruleID: dotnet-rules-converted-00041
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The system is not mature enough to suggest recommendations as of today.
+  description: The system is not mature enough to suggest recommendations as of today.
+  when:
+    dotnet.referenced:
+      namespace: Microsoft.Azure.Search
+      pattern: Service
+- ruleID: dotnet-rules-converted-00042
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The system is not mature enough to suggest recommendations as of today.
+  description: The system is not mature enough to suggest recommendations as of today.
+  when:
+    dotnet.referenced:
+      namespace: ""
+      pattern: DotNetHowToIndexers
+- ruleID: dotnet-rules-converted-00043
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The system is not mature enough to suggest recommendations as of today.
+  description: The system is not mature enough to suggest recommendations as of today.
+  when:
+    dotnet.referenced:
+      namespace: Microsoft.Azure.Search.Data, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35,
+        FileVersion:5.0.0
+      pattern: "0"
+- ruleID: dotnet-rules-converted-00044
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The system is not mature enough to suggest recommendations as of today.
+  description: The system is not mature enough to suggest recommendations as of today.
+  when:
+    dotnet.referenced:
+      namespace: Microsoft.Azure.Search.Service, Version=5.0.0.0, Culture=neutral,
+        PublicKeyToken=31bf3856ad364e35, FileVersion:5.0.0
+      pattern: "0"
+- ruleID: dotnet-rules-converted-00045
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The system is not mature enough to suggest recommendations as of today.
+  description: The system is not mature enough to suggest recommendations as of today.
+  when:
+    dotnet.referenced:
+      namespace: Microsoft.Azure.Search.Service, Version=6.0.0.0, Culture=neutral,
+        PublicKeyToken=31bf3856ad364e35, FileVersion:6.0.0
+      pattern: "0"
+- ruleID: dotnet-rules-converted-00046
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The system is not mature enough to suggest recommendations as of today.
+  description: The system is not mature enough to suggest recommendations as of today.
+  when:
+    dotnet.referenced:
+      namespace: Microsoft.Azure.Search.Data, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35,
+        FileVersion:6.0.0
+      pattern: "0"
+- ruleID: dotnet-rules-converted-00047
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: The system is not mature enough to suggest recommendations as of today.
+  description: The system is not mature enough to suggest recommendations as of today.
+  when:
+    dotnet.referenced:
+      namespace: ""
+      pattern: DotNetETagsExplainer
+- ruleID: dotnet-rules-converted-00048
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: Include necessary NuGet packages and assemblies.
+  description: Include necessary NuGet packages and assemblies.
+  when:
+    dotnet.referenced:
+      namespace: System.Web
+      pattern: Razor
+- ruleID: dotnet-rules-converted-00049
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: 'You could implement a custom HttpMessageHandler to pass into HttpClient
+    that supports AuthenticationLevel. To make it easier to implement, you could base
+    it off an existing HttpMessageHandler such as the Windows one '
+  description: 'You could implement a custom HttpMessageHandler to pass into HttpClient
+    that supports AuthenticationLevel. To make it easier to implement, you could base
+    it off an existing HttpMessageHandler such as the Windows one '
+  when:
+    dotnet.referenced:
+      namespace: Microsoft.Rest
+      pattern: ClientRuntime
+- ruleID: dotnet-rules-converted-00050
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnetframework
+  - konveyor.io/target=dotnet3
+  - konveyor.io/generated=true
+  message: 'You could implement a custom HttpMessageHandler to pass into HttpClient
+    that supports AuthenticationLevel. To make it easier to implement, you could base
+    it off an existing HttpMessageHandler such as the Windows one '
+  description: 'You could implement a custom HttpMessageHandler to pass into HttpClient
+    that supports AuthenticationLevel. To make it easier to implement, you could base
+    it off an existing HttpMessageHandler such as the Windows one '
+  when:
+    dotnet.referenced:
+      namespace: Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35,
+        FileVersion:2.3.11
+      pattern: "0"
