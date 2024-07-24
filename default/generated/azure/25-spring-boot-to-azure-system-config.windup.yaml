@@ -23,13 +23,13 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.System.getenv*
+        pattern: java.lang.System.getenv(*)
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.System.getProperty*
+        pattern: java.lang.System.getProperty(*)
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.System.setProperty*
+        pattern: java.lang.System.setProperty(*)
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.System.setProperties*
+        pattern: java.lang.System.setProperties(*)

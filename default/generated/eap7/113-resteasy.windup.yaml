@@ -841,7 +841,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.jboss.resteasy.plugins.delegates.ServerCookie.checkName*
+      pattern: org.jboss.resteasy.plugins.delegates.ServerCookie.checkName(*)
 - category: optional
   customVariables: []
   description: Deprecated method JAXBContextWrapper#createValidator in RESTEasy 3
@@ -864,7 +864,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.jboss.resteasy.plugins.providers.jaxb.JAXBContextWrapper.createValidator*
+      pattern: org.jboss.resteasy.plugins.providers.jaxb.JAXBContextWrapper.createValidator(*)
 - category: optional
   customVariables: []
   description: Deprecated method ResteasyHttpServletResponseWrapper#encodeRedirectUrl
@@ -890,7 +890,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.jboss.resteasy.core.ResteasyHttpServletResponseWrapper.encodeRedirectUrl*
+      pattern: org.jboss.resteasy.core.ResteasyHttpServletResponseWrapper.encodeRedirectUrl(*)
 - category: optional
   customVariables: []
   description: Deprecated ResteasyHttpServletResponseWrapper#encodeUrl method
@@ -916,7 +916,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.jboss.resteasy.core.ResteasyHttpServletResponseWrapper.encodeUrl*
+      pattern: org.jboss.resteasy.core.ResteasyHttpServletResponseWrapper.encodeUrl(*)
 - category: optional
   customVariables: []
   description: Deprecated method MultipartFormDataInputImpl#getFormData in RESTEasy
@@ -943,7 +943,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInputImpl.getFormData*
+      pattern: org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInputImpl.getFormData(*)
 - category: optional
   customVariables: []
   description: Deprecated method MultipartFormDataInput#getFormData in RESTEasy 3
@@ -969,7 +969,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInput.getFormData*
+      pattern: org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInput.getFormData(*)
 - category: optional
   customVariables: []
   description: Deprecated method ResteasyHttpServletRequestWrapper.isRequestedSessionIdFromURL
@@ -996,7 +996,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.jboss.resteasy.core.ResteasyHttpServletRequestWrapper.isRequestedSessionIdFromUrl*
+      pattern: org.jboss.resteasy.core.ResteasyHttpServletRequestWrapper.isRequestedSessionIdFromUrl(*)
 - category: optional
   customVariables: []
   description: Deprecated method SecureUnmarshaller#isValidating in RESTEasy 3
@@ -1022,7 +1022,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.jboss.resteasy.plugins.providers.jaxb.SecureUnmarshaller.isValidating*
+      pattern: org.jboss.resteasy.plugins.providers.jaxb.SecureUnmarshaller.isValidating(*)
 - category: optional
   customVariables: []
   description: Deprecated method ServerCookie#maybeQuote in RESTEasy 3
@@ -1049,7 +1049,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.jboss.resteasy.plugins.delegates.ServerCookie.maybeQuote*
+      pattern: org.jboss.resteasy.plugins.delegates.ServerCookie.maybeQuote(*)
 - category: optional
   customVariables: []
   description: Deprecated method SecureUnmarshaller#setAdapter in RESTEasy 3
@@ -1075,7 +1075,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.jboss.resteasy.plugins.providers.jaxb.SecureUnmarshaller.setAdapter*
+      pattern: org.jboss.resteasy.plugins.providers.jaxb.SecureUnmarshaller.setAdapter(*)
 - category: optional
   customVariables: []
   description: Deprecated method ResteasyHttpServletResponseWrapper#setStatus in RESTEasy
@@ -1103,7 +1103,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.jboss.resteasy.core.ResteasyHttpServletResponseWrapper.setStatus*
+      pattern: org.jboss.resteasy.core.ResteasyHttpServletResponseWrapper.setStatus(*)
 - category: optional
   customVariables: []
   description: Deprecated method SecureUnmarshaller#setValidating in RESTEasy 3
@@ -1129,7 +1129,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.jboss.resteasy.plugins.providers.jaxb.SecureUnmarshaller.setValidating*
+      pattern: org.jboss.resteasy.plugins.providers.jaxb.SecureUnmarshaller.setValidating(*)
 - category: optional
   customVariables: []
   description: Deprecated method OAuthValidator#validateMessage in RESTEasy 3
@@ -1155,7 +1155,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.jboss.resteasy.auth.oauth.OAuthValidator.validateMessage*
+      pattern: org.jboss.resteasy.auth.oauth.OAuthValidator.validateMessage(*)
 - category: mandatory
   customVariables: []
   description: Resteasy Yaml Provider is deprecated and disabled by default

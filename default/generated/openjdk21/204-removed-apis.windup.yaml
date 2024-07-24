@@ -14,13 +14,13 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.awt.color.ICC_Profile.finalize*
+        pattern: java.awt.color.ICC_Profile.finalize(*)
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.awt.image.ColorModel.finalize*
+        pattern: java.awt.image.ColorModel.finalize(*)
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.awt.image.IndexColorModel.finalize*
+        pattern: java.awt.image.IndexColorModel.finalize(*)
 - category: mandatory
   customVariables: []
   description: Method java.lang.ThreadGroup.allowThreadSuspension() has been removed
@@ -36,7 +36,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: java.lang.ThreadGroup.allowThreadSuspension*
+      pattern: java.lang.ThreadGroup.allowThreadSuspension(*)
 - category: mandatory
   customVariables: []
   description: Method java.lang.Compiler has been removed

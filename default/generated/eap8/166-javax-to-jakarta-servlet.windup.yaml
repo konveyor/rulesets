@@ -54,7 +54,7 @@
         pattern: javax.servlet.http.HttpSessionContext
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.servlet.http.HttpSession.getSessionContext*
+        pattern: javax.servlet.http.HttpSession.getSessionContext(*)
 - category: mandatory
   customVariables: []
   description: The javax.servlet.http.HttpUtils utility class has been removed
@@ -102,7 +102,7 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.servlet.ServletContext.getServlet*
+        pattern: javax.servlet.ServletContext.getServlet(*)
 - category: mandatory
   customVariables: []
   description: Method getServlets in javax.servlet.ServletContext has been removed
@@ -125,7 +125,7 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.servlet.ServletContext.getServlets*
+        pattern: javax.servlet.ServletContext.getServlets(*)
 - category: mandatory
   customVariables: []
   description: Method getServletNames in javax.servlet.ServletContext has been removed
@@ -148,7 +148,7 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.servlet.ServletContext.getServletNames*
+        pattern: javax.servlet.ServletContext.getServletNames(*)
 - category: mandatory
   customVariables: []
   description: Method log(Exception, String) in javax.servlet.ServletContext has been
@@ -195,7 +195,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.servlet.ServletRequest.getRealPath*
+      pattern: javax.servlet.ServletRequest.getRealPath(*)
 - category: mandatory
   customVariables: []
   description: Method in javax.servlet.ServletRequestWrapper has been removed
@@ -239,7 +239,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.servlet.UnavailableException.getServlet*
+      pattern: javax.servlet.UnavailableException.getServlet(*)
 - category: mandatory
   customVariables: []
   description: Constructor UnavailableException(Servlet, String) in javax.servlet.UnavailableException
@@ -287,7 +287,7 @@
   when:
     java.referenced:
       location: CONSTRUCTOR_CALL
-      pattern: javax.servlet.UnavailableException(int, javax.servlet.Servlet*
+      pattern: javax.servlet.UnavailableException(int, javax.servlet.Servlet, java.lang.String)
 - category: mandatory
   customVariables: []
   description: Method isRequestedSessionIdFromUrl in javax.servlet.http.HttpServletRequest
@@ -311,7 +311,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.servlet.http.HttpServletRequest.isRequestedSessionIdFromUrl*
+      pattern: javax.servlet.http.HttpServletRequest.isRequestedSessionIdFromUrl(*)
 - category: mandatory
   customVariables: []
   description: Method isRequestedSessionIdFromUrl in javax.servlet.http.HttpServletRequestWrapper
@@ -335,7 +335,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.servlet.http.HttpServletRequestWrapper.isRequestedSessionIdFromUrl*
+      pattern: javax.servlet.http.HttpServletRequestWrapper.isRequestedSessionIdFromUrl(*)
 - category: mandatory
   customVariables: []
   description: Method encodeUrl in javax.servlet.http.HttpServletResponse has been
@@ -496,7 +496,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.servlet.http.HttpSession.getValue*
+      pattern: javax.servlet.http.HttpSession.getValue(*)
 - category: mandatory
   customVariables: []
   description: Method getValueNames in javax.servlet.http.HttpSession has been removed
@@ -519,7 +519,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.servlet.http.HttpSession.getValueNames*
+      pattern: javax.servlet.http.HttpSession.getValueNames(*)
 - category: mandatory
   customVariables: []
   description: Method putValue in javax.servlet.http.HttpSession has been removed
@@ -542,7 +542,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.servlet.http.HttpSession.putValue*
+      pattern: javax.servlet.http.HttpSession.putValue(*)
 - category: mandatory
   customVariables: []
   description: Method removeValue in javax.servlet.http.HttpSession has been removed
@@ -565,7 +565,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.servlet.http.HttpSession.removeValue*
+      pattern: javax.servlet.http.HttpSession.removeValue(*)
 - category: potential
   customVariables: []
   description: web.xml element references a javax-prefixed class name

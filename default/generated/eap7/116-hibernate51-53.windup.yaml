@@ -136,7 +136,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.engine.spi.SessionFactoryImplementor.getQueryCache*
+      pattern: org.hibernate.engine.spi.SessionFactoryImplementor.getQueryCache(*)
 - category: mandatory
   customVariables: []
   description: Hibernate 5.3 - SessionFactoryImplementor.getQueryCache(String regionName)
@@ -186,7 +186,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.engine.spi.SessionFactoryImplementor.getUpdateTimestampsCache*
+      pattern: org.hibernate.engine.spi.SessionFactoryImplementor.getUpdateTimestampsCache(*)
 - category: mandatory
   customVariables: []
   description: Hibernate 5.3 - SessionFactoryImplementor.getSecondLevelCacheRegion(String
@@ -315,7 +315,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.engine.spi.SessionFactoryImplementor.getAllSecondLevelCacheRegions*
+      pattern: org.hibernate.engine.spi.SessionFactoryImplementor.getAllSecondLevelCacheRegions(*)
 - category: mandatory
   customVariables:
   - name: className

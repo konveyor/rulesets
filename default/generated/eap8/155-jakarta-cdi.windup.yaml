@@ -19,7 +19,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.enterprise.inject.spi.Bean.isNullable*
+      pattern: javax.enterprise.inject.spi.Bean.isNullable(*)
 - category: mandatory
   customVariables: []
   description: Method jakarta.enterprise.inject.spi.BeanManager.createInjectionTarget(AnnotatedType)
@@ -44,7 +44,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: jakarta.enterprise.inject.spi.BeanManager.createInjectionTarget*
+      pattern: jakarta.enterprise.inject.spi.BeanManager.createInjectionTarget(*)
 - category: mandatory
   customVariables: []
   description: Method jakarta.enterprise.inject.spi.BeanManager.fireEvent(Object,
@@ -69,7 +69,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: jakarta.enterprise.inject.spi.BeanManager.fireEvent*
+      pattern: jakarta.enterprise.inject.spi.BeanManager.fireEvent(*)
 - category: potential
   customVariables: []
   description: Method javax.enterprise.inject.spi.BeforeBeanDiscovery.addAnnotatedType(AnnotatedType)
@@ -92,4 +92,4 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.enterprise.inject.spi.BeforeBeanDiscovery.addAnnotatedType*
+      pattern: javax.enterprise.inject.spi.BeforeBeanDiscovery.addAnnotatedType(*)

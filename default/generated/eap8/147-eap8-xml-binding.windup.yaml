@@ -47,7 +47,7 @@
     as: setPropertiesMethodCalls
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.xml.bind.Marshaller.setProperty*
+      pattern: javax.xml.bind.Marshaller.setProperty(*)
 - category: mandatory
   customVariables: []
   description: The URI in the JAXB binding file should be updated
@@ -125,7 +125,7 @@
     as: instanceMethods
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.xml.bind.JAXBContext.newInstance*
+      pattern: javax.xml.bind.JAXBContext.newInstance(*)
 - category: mandatory
   customVariables: []
   description: Usage of this Validator interface or retrieval method should be removed
@@ -153,7 +153,7 @@
         pattern: javax.xml.bind.Validator
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.xml.bind.JAXBContext.createValidator*
+        pattern: javax.xml.bind.JAXBContext.createValidator(*)
 - category: potential
   customVariables: []
   description: Implementation or use by the application of the javax.xml.bind.Marshaller
@@ -180,7 +180,7 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.xml.bind.Marshaller.setAdapter*
+        pattern: javax.xml.bind.Marshaller.setAdapter(*)
 - category: mandatory
   customVariables: []
   description: Outdated JAXB dependency
@@ -231,4 +231,4 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.xml.bind.Marshaller.getAdapter*
+        pattern: javax.xml.bind.Marshaller.getAdapter(*)
