@@ -751,8 +751,20 @@
         pattern: org.hibernate.search.annotations.Field
     - java.referenced:
         pattern: java.util.(Calendar|Date)
+        annotated:
+          pattern: org.hibernate.search.annotations.Field
+    - java.referenced:
+        pattern: java.util.(Calendar|Date)
+        annotated:
+          pattern: org.hibernate.search.annotations.Fields
     - java.referenced:
         pattern: java.lang.(Integer|Long|Float|Double)
+        annotated:
+          pattern: org.hibernate.search.annotations.Field
+    - java.referenced:
+        pattern: java.lang.(Integer|Long|Float|Double)
+        annotated:
+          pattern: org.hibernate.search.annotations.Fields
 - category: optional
   customVariables: []
   description: Hibernate Search 5 - Changes in indexing null values
@@ -849,8 +861,12 @@
     or:
     - java.referenced:
         pattern: java.util.(Calendar|Date)
+        annotated:
+          pattern: org.hibernate.search.annotations.Field
     - java.referenced:
         pattern: java.lang.(Integer|Long|Float|Double)
+        annotated:
+          pattern: org.hibernate.search.annotations.Field
 - customVariables: []
   labels:
   - konveyor.io/source=hibernate-search4
