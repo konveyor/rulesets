@@ -186,12 +186,13 @@
      ```
   ruleID: weblogic-eap7-08000
   when:
-    java.referenced:
-      or:
-      - location: METHOD_CALL
-        pattern: weblogic.transaction.ClientTxHelper.getTransactionManager(*)
-      - location: METHOD_CALL
-        pattern: weblogic.transaction.TxHelper.getTransactionManager(*)
+    or:
+      - java.referenced:
+          location: METHOD_CALL
+          pattern: weblogic.transaction.ClientTxHelper.getTransactionManager(*)
+      - java.referenced:
+          location: METHOD_CALL
+          pattern: weblogic.transaction.TxHelper.getTransactionManager(*)
 - category: mandatory
   customVariables: []
   description: WebLogic proprietary Clob JDBC object (OracleThinClob)
