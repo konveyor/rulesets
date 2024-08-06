@@ -1,0 +1,14 @@
+rulesPath: ../233-springboot-scheduled-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/233-springboot-scheduled-to-quarkus
+- name: builtin
+  dataPath: ./data/233-springboot-scheduled-to-quarkus
+tests:
+- ruleID: springboot-scheduled-to-quarkus-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Replace the Spring Context artifact with Quarkus `spring-scheduled`
+        extension

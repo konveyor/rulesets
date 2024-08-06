@@ -1,0 +1,13 @@
+rulesPath: ../17-spring-boot-to-azure-java-fx.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/17-spring-boot-to-azure-java-fx
+- name: builtin
+  dataPath: ./data/17-spring-boot-to-azure-java-fx
+tests:
+- ruleID: spring-boot-to-azure-java-fx-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 7
+      messageMatches: The application uses JavaFX.

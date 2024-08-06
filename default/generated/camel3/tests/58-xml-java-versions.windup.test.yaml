@@ -1,0 +1,25 @@
+rulesPath: ../58-xml-java-versions.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/58-xml-java-versions
+- name: builtin
+  dataPath: ./data/58-xml-java-versions
+tests:
+- ruleID: xml-java-versions-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`jaxb-api` Maven dependency missin.*'
+- ruleID: xml-java-versions-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`jaxb-core` Maven dependency missin.*'
+- ruleID: xml-java-versions-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`jaxb-impl` Maven dependency missin.*'

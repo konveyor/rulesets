@@ -1,0 +1,231 @@
+rulesPath: ../110-hibernate4.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/110-hibernate4
+- name: builtin
+  dataPath: ./data/110-hibernate4
+tests:
+- ruleID: hibernate4-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.MetadataSources#addFile.*
+- ruleID: hibernate4-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: There is no direct replacement for method .*org.hibernate.cfg.Configuration#add().*
+  - name: tc-2
+    hasIncidents:
+      atLeast: 1
+      messageMatches: There is no direct replacement.
+  - name: tc-3
+    hasIncidents:
+      atLeast: 1
+      messageMatches: There is no direct replacement.
+- ruleID: hibernate4-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: There is no direct replacement for method .*org.hibernate.cfg.Configuration#addXML.*
+- ruleID: hibernate4-00004
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.MetadataSources#addCacheableFile.*
+- ruleID: hibernate4-00005
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.MetadataSources#addURL.* instead.
+- ruleID: hibernate4-00006
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.MetadataSources#addInputStream.* instead.
+- ruleID: hibernate4-00007
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.MetadataSources#addResource.* instead.
+- ruleID: hibernate4-00008
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.MetadataSources#addClass.* instead.
+- ruleID: hibernate4-00009
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.MetadataSources#addAnnotatedClass.*
+        instead.
+- ruleID: hibernate4-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.MetadataSources#addPackage.* instead.
+- ruleID: hibernate4-00011
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.MetadataSources#addJar.*
+- ruleID: hibernate4-00012
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.MetadataSources#addDirectory.*
+- ruleID: hibernate4-00013
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.MetadataBuilder#applyTypes.*
+- ruleID: hibernate4-00014
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.MetadataBuilder#applyBasicType.*
+- ruleID: hibernate4-00015
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.registry.StandardServiceRegistryBuilder#applySetting.*
+- ruleID: hibernate4-00017
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.registry.StandardServiceRegistryBuilder#applySettings
+- ruleID: hibernate4-00021
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.registry.StandardServiceRegistryBuilder#configure.*
+- ruleID: hibernate4-00022
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.SessionFactoryBuilder#applyInterceptor.*
+- ruleID: hibernate4-00023
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.SessionFactoryBuilder#applyEntityNotFoundDelegate.*
+- ruleID: hibernate4-00024
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.SessionFactoryBuilder#addSessionFactoryObservers.*
+- ruleID: hibernate4-00025
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.SessionFactoryBuilder#applyCurrentTenantIdentifierResolver.*
+- ruleID: hibernate4-00026
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.boot.model.*
+- ruleID: hibernate4-00027
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: All functionality from .*org.hibernate.cfg.AnnotationConfiguration.*
+- ruleID: hibernate4-00028
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.hibernate.id.enhanced.SequenceStyleGenerator.*
+- ruleID: hibernate4-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Hibernate 5 moved .*org.hibernate.hql.spi..*
+- ruleID: hibernate4-00031
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Hibernate 5 moved .*org.hibernate.hql.spi.PersistentTableBulkIdStrategy.*
+- ruleID: hibernate4-00032
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Hibernate 5 replaced .*org.hibernate.hql.spi.TemporaryTableBulkIdStrategy.*
+- ruleID: hibernate4-00033
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Hibernate 5 changed contract .*org.hibernate.integrator.spi.Integrator.*
+- ruleID: hibernate4-00034
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Hibernate 5 extracted new interface .*org.hibernate.engine.jdbc.env.spi.JdbcEnvironment.*
+- ruleID: hibernate4-00035
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Hibernate 5 changed the signature of .*org.hibernate.id.Configurable#configure.*
+- ruleID: hibernate4-00036
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Since Hibernate 5, The .*org.hibernate.id.PersistentIdentifierGenerator.*
+- ruleID: hibernate4-00037
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Hibernate 5 removed .*AuditConfiguration.*
+- ruleID: hibernate4-00038
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Built-in implementations of .*org.hibernate.type.descriptor.sql.SqlTypeDescriptor.*
+- ruleID: hibernate4-00039
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 4
+      messageMatches: Previous versions of Hibernate have mapped `byte[]` and `Byte[]`
+  - name: tc-2
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Previous versions of Hibernate have mapped `byte[]` and `Byte[]`
+- ruleID: hibernate4-00040
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: If the migration is from JBoss EAP 6 or Hibernate 4 then the
+        dialect
