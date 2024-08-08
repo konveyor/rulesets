@@ -137,7 +137,7 @@ func main() {
 	}
 
 	// Write the YAML to a file
-	err = os.WriteFile("../../default/generated/dotnet/generated.yaml", yamlData, 0644)
+	err = os.WriteFile("../../preview/dotnet/generated.yaml", yamlData, 0644)
 	if err != nil {
 		log.Fatal(err)
 	}
