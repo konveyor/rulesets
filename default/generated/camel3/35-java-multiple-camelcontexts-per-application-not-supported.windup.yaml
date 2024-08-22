@@ -22,6 +22,10 @@
     java.referenced:
       location: ANNOTATION
       pattern: org.apache.camel.(BeanInject|Consume|DynamicRouter|EndpointInject|Produce|PropertyInject|RecipientList|RoutingSlip)
+      annotated:
+        elements:
+          - name: context
+            value: .*
 - category: mandatory
   customVariables:
   - name: CdiCamelContextName

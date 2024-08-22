@@ -1183,6 +1183,10 @@
     java.referenced:
       location: ANNOTATION
       pattern: javax.ws.rs.Produces
+      annotated:
+        elements:
+          - name: value
+            value: .*yaml
 - category: mandatory
   customVariables: []
   description: Resteasy SerializableProvider is disabled by default
@@ -1210,9 +1214,17 @@
     - java.referenced:
         location: ANNOTATION
         pattern: javax.ws.rs.Produces
+        annotated:
+          elements:
+            - name: value
+              value: application/x-java-serialized-object
     - java.referenced:
         location: ANNOTATION
         pattern: javax.ws.rs.Consumes
+        annotated:
+          elements:
+            - name: value
+              value: application/x-java-serialized-object
 - category: optional
   customVariables: []
   description: RESTEasy Text default charset response changed
@@ -1248,6 +1260,14 @@
     - java.referenced:
         location: ANNOTATION
         pattern: javax.ws.rs.Produces
+        annotated:
+          elements:
+            - name: value
+              value: application/xml{*}
     - java.referenced:
         location: ANNOTATION
         pattern: javax.ws.rs.Produces
+        annotated:
+          elements:
+            - name: value
+              value: text/.*
