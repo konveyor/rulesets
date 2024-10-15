@@ -1,4 +1,5 @@
 - customVariables: []
+  description: Java Connect
   labels:
   - konveyor.io/include=always
   links: []
