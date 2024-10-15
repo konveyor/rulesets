@@ -1,0 +1,31 @@
+rulesPath: ../45-xml-318-changes.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/45-xml-318-changes
+- name: builtin
+  dataPath: ./data/45-xml-318-changes
+tests:
+- ruleID: xml-removed-camel318-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-milo` component has been removed in
+        Camel 3.18..*'
+- ruleID: xml-removed-camel318-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The camel-cxf JAR has been split up into SOAP vs REST and Spring
+        and non Spring JARs in Camel 3.18..*
+- ruleID: xml-removed-camel318-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-cxf-starter` component has been split u.*'
+  - name: tc-2
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-cxf-starter` component has been split u.*'

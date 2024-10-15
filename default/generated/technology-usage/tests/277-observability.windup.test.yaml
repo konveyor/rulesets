@@ -1,0 +1,23 @@
+rulesPath: ../277-observability.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/277-observability
+- name: builtin
+  dataPath: ./data/277-observability
+tests:
+- ruleID: observability-0100
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Spring Boot Actuator
+  - name: tc-2
+    hasTags:
+    - Embedded library - Spring Boot Actuator
+- ruleID: observability-0200
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Spring JMX
+  - name: tc-2
+    hasTags:
+    - Spring JMX configuration detected

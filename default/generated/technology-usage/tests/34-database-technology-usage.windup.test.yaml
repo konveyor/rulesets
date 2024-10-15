@@ -1,0 +1,47 @@
+rulesPath: ../34-database-technology-usage.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/34-database-technology-usage
+- name: builtin
+  dataPath: ./data/34-database-technology-usage
+tests:
+- ruleID: technology-usage-database-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JDBC datasources
+  - name: tc-2
+    hasTags:
+    - JDBC datasources
+- ruleID: technology-usage-database-01001
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JDBC XA datasources
+  - name: tc-2
+    hasTags:
+    - JDBC XA datasources
+- ruleID: technology-usage-database-01100
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JPA entities
+  - name: tc-2
+    hasTags:
+    - JPA entities
+- ruleID: technology-usage-database-01200
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JPA named queries
+  - name: tc-2
+    hasTags:
+    - JPA named queries
+- ruleID: technology-usage-database-01300
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Persistence units
+  - name: tc-2
+    hasTags:
+    - Persistence units

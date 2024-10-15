@@ -1,0 +1,35 @@
+rulesPath: ../241-3rd-party-spring.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/241-3rd-party-spring
+- name: builtin
+  dataPath: ./data/241-3rd-party-spring
+tests:
+- ruleID: 3rd-party-spring-03001
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Spring Boot Configuration
+  - name: tc-2
+    hasTags:
+    - Spring Boot Auto-configuration
+  - name: tc-3
+    hasTags:
+    - Spring Boot Component Scan
+  - name: tc-4
+    hasTags:
+    - Spring Boot Configuration
+  - name: tc-5
+    hasTags:
+    - Spring Boot
+  - name: tc-6
+    hasTags:
+    - Spring Boot Component Scan
+- ruleID: 3rd-party-spring-03002
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Spring Deployable War
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Spring Deployable War

@@ -1,0 +1,27 @@
+rulesPath: ../245-apm.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/245-apm
+- name: builtin
+  dataPath: ./data/245-apm
+tests:
+- ruleID: apm-00000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Application Performance Management (APM) tool - Application Insights
+- ruleID: apm-00001
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Application Performance Management (APM) tool - New Relic
+- ruleID: apm-00002
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Application Performance Management (APM) tool - Elastic APM
+- ruleID: apm-00003
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Application Performance Management (APM) tool - Dynatrace
