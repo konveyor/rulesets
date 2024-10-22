@@ -1,4 +1,5 @@
 - customVariables: []
+  description: Java EE Batch API
   labels:
   - konveyor.io/include=always
   links: []
@@ -14,6 +15,7 @@
         : http://xmlns.jcp.org/xml/ns/javaee
       xpath: //*[local-name() = 'batch-artifacts']
 - customVariables: []
+  description: Java EE Batch
   labels:
   - konveyor.io/include=always
   links: []
@@ -105,6 +107,7 @@
     builtin.hasTags:
     - CDI
 - customVariables: []
+  description: Java EE JSON-P
   labels:
   - konveyor.io/include=always
   links: []
@@ -394,6 +397,7 @@
     builtin.hasTags:
     - Servlet
 - customVariables: []
+  description: JPA Mapping XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -407,6 +411,7 @@
         p: http://xmlns.jcp.org/xml/ns/persistence/orm
       xpath: //p:entity-mappings/@version[matches(self::node(), '(1.0|2.0|2.1|2.2)')]
 - customVariables: []
+  description: JPA Mapping XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -420,6 +425,7 @@
         p: https://jakarta.ee/xml/ns/persistence/orm
       xpath: //p:entity-mappings/@version[matches(self::node(), '(3.0|3.1)')]
 - customVariables: []
+  description: CDI XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -433,6 +439,7 @@
         p: http://xmlns.jcp.org/xml/ns/javaee
       xpath: //p:beans/@version[matches(self::node(), '(1.0|1.1|2.0)')]
 - customVariables: []
+  description: CDI XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -446,6 +453,7 @@
         p: https://jakarta.ee/xml/ns/jakartaee
       xpath: //p:beans/@version[matches(self::node(), '(3.0|4.0)')]
 - customVariables: []
+  description: Java EE XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -459,6 +467,7 @@
         p: http://java.sun.com/xml/ns/javaee
       xpath: //p:application/@version[matches(self::node(), '(5|6)')]
 - customVariables: []
+  description: Java EE XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -472,6 +481,7 @@
         p: http://xmlns.jcp.org/xml/ns/javaee
       xpath: //p:application/@version[matches(self::node(), '(7|8)')]
 - customVariables: []
+  description: Jakarta EE XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -485,6 +495,7 @@
         p: https://jakarta.ee/xml/ns/jakartaee
       xpath: //p:application/@version[matches(self::node(), '(9|10)')]
 - customVariables: []
+  description: Java EE Client XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -498,6 +509,7 @@
         p: http://java.sun.com/xml/ns/javaee
       xpath: //p:application-client/@version[matches(self::node(), '(5|6)')]
 - customVariables: []
+  description: Java EE Client XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -511,6 +523,7 @@
         p: http://xmlns.jcp.org/xml/ns/javaee
       xpath: //p:application-client/@version[matches(self::node(), '(7|8)')]
 - customVariables: []
+  description: Jakarta EE Client XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -524,6 +537,7 @@
         p: https://jakarta.ee/xml/ns/jakartaee
       xpath: //p:application-client/@version[matches(self::node(), '(9|10)')]
 - customVariables: []
+  description: Connector XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -537,6 +551,7 @@
         p: http://java.sun.com/xml/ns/javaee
       xpath: //p:connector/@version[matches(self::node(), '(1.6)')]
 - customVariables: []
+  description: Connector XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -550,6 +565,7 @@
         p: http://xmlns.jcp.org/xml/ns/javaee
       xpath: //p:connector/@version[matches(self::node(), '(1.7)')]
 - customVariables: []
+  description: Connector XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -563,6 +579,7 @@
         p: https://jakarta.ee/xml/ns/jakartaee
       xpath: //p:connector/@version[matches(self::node(), '(2.0|2.1)')]
 - customVariables: []
+  description: JSF XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -576,6 +593,7 @@
         p: http://java.sun.com/xml/ns/javaee
       xpath: //p:faces-config/@version[matches(self::node(), '(1.2|2.0)')]
 - customVariables: []
+  description: JSF XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -589,6 +607,7 @@
         p: http://xmlns.jcp.org/xml/ns/javaee
       xpath: //p:faces-config/@version[matches(self::node(), '(2.2|2.3)')]
 - customVariables: []
+  description: JSF XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -602,6 +621,7 @@
         p: https://jakarta.ee/xml/ns/jakartaee
       xpath: //p:faces-config/@version[matches(self::node(), '(3.0|4.0)')]
 - customVariables: []
+  description: WebServices XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -615,6 +635,7 @@
         p: http://java.sun.com/xml/ns/javaee
       xpath: //p:webservices/@version[matches(self::node(), '(1.2|1.3)')]
 - customVariables: []
+  description: WebServices XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -628,6 +649,7 @@
         p: http://xmlns.jcp.org/xml/ns/javaee
       xpath: //p:webservices/@version[matches(self::node(), '(1.4)')]
 - customVariables: []
+  description: WebServices XML
   labels:
   - konveyor.io/include=always
   links: []

@@ -18,7 +18,8 @@ if not rules_dir or not os.path.isdir(rules_dir):
 checked_cnt = 0
 missing_cnt = 0
 print(rules_dir)
-rulesets = [os.path.join(rules_dir, f) for f in os.listdir(rules_dir) if os.path.isfile(os.path.join(rules_dir, f)) and f.endswith(".yaml") and not f.endswith("ruleset.yaml")]
+rulesets = [os.path.join(rules_dir, f) for f in os.listdir(rules_dir) if os.path.isfile(
+    os.path.join(rules_dir, f)) and f.endswith(".yaml") and not f.endswith("ruleset.yaml")]
 
 for ruleset in rulesets:
    rules = dict()
@@ -38,11 +39,17 @@ for ruleset in rulesets:
                print("  " + rule["ruleID"])
                # Guess based on when condition
                if rule.get("when"):
-                 tags = rule.get("when").get("builtin.hasTags")
+                 tags = rule.get("when").get("builtin.hasTags")   # Guess by Condition Tag
                  if tags and len(tags) == 1:
                     print("    description might be: %s" % tags[0])
                     if rewrite:
                        rule['description'] = tags[0]
+                 else:
+                   tag = rule.get("tag")  # Guess by (given) Tag
+                   if tag and len(tag) == 1:
+                     print("    description might be: %s" % tag[0])
+                     if rewrite:
+                       rule['description'] = tag[0]
       except yaml.YAMLError as exc:
         print(exc)
         exit(1)
