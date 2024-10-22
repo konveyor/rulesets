@@ -1,4 +1,5 @@
 - customVariables: []
+  description: JDBC datasources
   labels:
   - konveyor.io/include=always
   links: []
@@ -12,6 +13,7 @@
       location: ANNOTATION
       pattern: javax.annotation.sql.DataSourceDefinition
 - customVariables: []
+  description: JDBC XA datasources
   labels:
   - konveyor.io/include=always
   links: []

@@ -17,6 +17,7 @@
         location: ANNOTATION
         pattern: jakarta.ws.rs.Path
 - customVariables: []
+  description: JNI usage
   labels:
   - konveyor.io/include=always
   links: []

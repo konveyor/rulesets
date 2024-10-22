@@ -1,4 +1,5 @@
 - customVariables: []
+  description: JTA
   labels:
   - konveyor.io/include=always
   links: []

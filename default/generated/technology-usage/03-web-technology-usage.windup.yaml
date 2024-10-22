@@ -51,6 +51,7 @@
     builtin.hasTags:
     - WebSocket
 - customVariables: []
+  description: Applet
   labels:
   - konveyor.io/include=always
   links: []
