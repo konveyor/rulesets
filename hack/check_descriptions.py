@@ -32,6 +32,12 @@ for ruleset in rulesets:
            if rule.get("description") == None or rule["description"] == "":
               missing_cnt += 1
               print("  " + rule["ruleID"])
+
+              # Guess based on when condition
+              if rule.get("when"):
+                tags = rule.get("when").get("builtin.hasTags")
+                if tags and len(tags) == 1:
+                   print("    description might be: %s" % tags[0])
     except yaml.YAMLError as exc:
         print(exc)
         exit(1)
