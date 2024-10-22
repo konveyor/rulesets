@@ -101,6 +101,7 @@
     builtin.file:
       pattern: persistence\.xml
 - customVariables: []
+  description: HSQLDB Driver
   labels:
   - konveyor.io/include=always
   links: []
@@ -113,6 +114,7 @@
     builtin.hasTags:
     - HSQLDB Driver
 - customVariables: []
+  description: MySQL Driver
   labels:
   - konveyor.io/include=always
   links: []
@@ -125,6 +127,7 @@
     builtin.hasTags:
     - MySQL Driver
 - customVariables: []
+  description: Derby Driver
   labels:
   - konveyor.io/include=always
   links: []
@@ -137,6 +140,7 @@
     builtin.hasTags:
     - Derby Driver
 - customVariables: []
+  description: PostgreSQL Driver
   labels:
   - konveyor.io/include=always
   links: []
@@ -149,6 +153,7 @@
     builtin.hasTags:
     - PostgreSQL Driver
 - customVariables: []
+  description: H2 Driver
   labels:
   - konveyor.io/include=always
   links: []
@@ -161,6 +166,7 @@
     builtin.hasTags:
     - H2 Driver
 - customVariables: []
+  description: Microsoft SQL Driver
   labels:
   - konveyor.io/include=always
   links: []
@@ -173,6 +179,7 @@
     builtin.hasTags:
     - Microsoft SQL Driver
 - customVariables: []
+  description: SQLite Driver
   labels:
   - konveyor.io/include=always
   links: []
@@ -185,6 +192,7 @@
     builtin.hasTags:
     - SQLite Driver
 - customVariables: []
+  description: Oracle DB Driver
   labels:
   - konveyor.io/include=always
   links: []
@@ -197,6 +205,7 @@
     builtin.hasTags:
     - Oracle DB Driver
 - customVariables: []
+  description: Cassandra Client
   labels:
   - konveyor.io/include=always
   links: []
@@ -209,6 +218,7 @@
     builtin.hasTags:
     - Cassandra Client
 - customVariables: []
+  description: Axion Driver
   labels:
   - konveyor.io/include=always
   links: []
@@ -221,6 +231,7 @@
     builtin.hasTags:
     - Axion Driver
 - customVariables: []
+  description: MckoiSQLDB Driver
   labels:
   - konveyor.io/include=always
   links: []
@@ -233,6 +244,7 @@
     builtin.hasTags:
     - MckoiSQLDB Driver
 - customVariables: []
+  description: MongoDB Client
   labels:
   - konveyor.io/include=always
   links: []
@@ -245,6 +257,7 @@
     builtin.hasTags:
     - MongoDB Client
 - customVariables: []
+  description: Spring Data
   labels:
   - konveyor.io/include=always
   links: []
@@ -257,6 +270,7 @@
     builtin.hasTags:
     - Spring Data
 - customVariables: []
+  description: Morphia
   labels:
   - konveyor.io/include=always
   links: []
@@ -269,6 +283,7 @@
     builtin.hasTags:
     - Morphia
 - customVariables: []
+  description: LevelDB Client
   labels:
   - konveyor.io/include=always
   links: []
@@ -281,6 +296,7 @@
     builtin.hasTags:
     - LevelDB Client
 - customVariables: []
+  description: Apache HBase Client
   labels:
   - konveyor.io/include=always
   links: []
@@ -293,6 +309,7 @@
     builtin.hasTags:
     - Apache HBase Client
 - customVariables: []
+  description: Apache Accumulo Client
   labels:
   - konveyor.io/include=always
   links: []
@@ -305,6 +322,7 @@
     builtin.hasTags:
     - Apache Accumulo Client
 - customVariables: []
+  description: Spring Data JPA
   labels:
   - konveyor.io/include=always
   links: []
@@ -317,6 +335,7 @@
     builtin.hasTags:
     - Spring Data JPA
 - customVariables: []
+  description: MariaDB Driver
   labels:
   - konveyor.io/include=always
   links: []

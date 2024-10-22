@@ -27,6 +27,7 @@
         namespaces: {}
         xpath: //*[local-name() = 'login-config']/*[local-name() = 'realm']
 - customVariables: []
+  description: Spring Security
   labels:
   - konveyor.io/include=always
   links: []
@@ -39,6 +40,7 @@
     builtin.hasTags:
     - Spring Security
 - customVariables: []
+  description: Apache Shiro
   labels:
   - konveyor.io/include=always
   links: []
@@ -51,6 +53,7 @@
     builtin.hasTags:
     - Apache Shiro
 - customVariables: []
+  description: Hdiv
   labels:
   - konveyor.io/include=always
   links: []
@@ -63,6 +66,7 @@
     builtin.hasTags:
     - Hdiv
 - customVariables: []
+  description: OACC
   labels:
   - konveyor.io/include=always
   links: []
@@ -75,6 +79,7 @@
     builtin.hasTags:
     - OACC
 - customVariables: []
+  description: PicketLink
   labels:
   - konveyor.io/include=always
   links: []
@@ -87,6 +92,7 @@
     builtin.hasTags:
     - PicketLink
 - customVariables: []
+  description: PicketBox
   labels:
   - konveyor.io/include=always
   links: []
@@ -99,6 +105,7 @@
     builtin.hasTags:
     - PicketBox
 - customVariables: []
+  description: Keyczar
   labels:
   - konveyor.io/include=always
   links: []
@@ -111,6 +118,7 @@
     builtin.hasTags:
     - Keyczar
 - customVariables: []
+  description: XACML
   labels:
   - konveyor.io/include=always
   links: []
@@ -123,6 +131,7 @@
     builtin.hasTags:
     - XACML
 - customVariables: []
+  description: SAML
   labels:
   - konveyor.io/include=always
   links: []
@@ -135,6 +144,7 @@
     builtin.hasTags:
     - SAML
 - customVariables: []
+  description: Bouncy Castle
   labels:
   - konveyor.io/include=always
   links: []
@@ -147,6 +157,7 @@
     builtin.hasTags:
     - Bouncy Castle
 - customVariables: []
+  description: Jasypt
   labels:
   - konveyor.io/include=always
   links: []
@@ -159,6 +170,7 @@
     builtin.hasTags:
     - Jasypt
 - customVariables: []
+  description: Apache Santuario
   labels:
   - konveyor.io/include=always
   links: []
@@ -171,6 +183,7 @@
     builtin.hasTags:
     - Apache Santuario
 - customVariables: []
+  description: SSL
   labels:
   - konveyor.io/include=always
   links: []
@@ -183,6 +196,7 @@
     builtin.hasTags:
     - SSL
 - customVariables: []
+  description: Vlad
   labels:
   - konveyor.io/include=always
   links: []
@@ -195,6 +209,7 @@
     builtin.hasTags:
     - Vlad
 - customVariables: []
+  description: Apache Commons Validator
   labels:
   - konveyor.io/include=always
   links: []
@@ -207,6 +222,7 @@
     builtin.hasTags:
     - Apache Commons Validator
 - customVariables: []
+  description: OWASP ESAPI
   labels:
   - konveyor.io/include=always
   links: []
@@ -219,6 +235,7 @@
     builtin.hasTags:
     - OWASP ESAPI
 - customVariables: []
+  description: WSS4J
   labels:
   - konveyor.io/include=always
   links: []
@@ -231,6 +248,7 @@
     builtin.hasTags:
     - WSS4J
 - customVariables: []
+  description: OpenSAML
   labels:
   - konveyor.io/include=always
   links: []
@@ -243,6 +261,7 @@
     builtin.hasTags:
     - OpenSAML
 - customVariables: []
+  description: OTR4J
   labels:
   - konveyor.io/include=always
   links: []
@@ -255,6 +274,7 @@
     builtin.hasTags:
     - OTR4J
 - customVariables: []
+  description: OWASP CSRF Guard
   labels:
   - konveyor.io/include=always
   links: []
@@ -267,6 +287,7 @@
     builtin.hasTags:
     - OWASP CSRF Guard
 - customVariables: []
+  description: OAUTH
   labels:
   - konveyor.io/include=always
   links: []
@@ -279,6 +300,7 @@
     builtin.hasTags:
     - OAUTH
 - customVariables: []
+  description: Acegi Security
   labels:
   - konveyor.io/include=always
   links: []
@@ -291,6 +313,7 @@
     builtin.hasTags:
     - Acegi Security
 - customVariables: []
+  description: JSecurity
   labels:
   - konveyor.io/include=always
   links: []
@@ -303,6 +326,7 @@
     builtin.hasTags:
     - JSecurity
 - customVariables: []
+  description: AcrIS Security
   labels:
   - konveyor.io/include=always
   links: []
@@ -315,6 +339,7 @@
     builtin.hasTags:
     - AcrIS Security
 - customVariables: []
+  description: Trunk JGuard
   labels:
   - konveyor.io/include=always
   links: []

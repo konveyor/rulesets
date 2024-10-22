@@ -1,4 +1,5 @@
 - customVariables: []
+  description: Liferay
   labels:
   - konveyor.io/include=always
   links: []
@@ -11,6 +12,7 @@
     builtin.hasTags:
     - Liferay
 - customVariables: []
+  description: Oracle Forms
   labels:
   - konveyor.io/include=always
   links: []
@@ -23,6 +25,7 @@
     builtin.hasTags:
     - Oracle Forms
 - customVariables: []
+  description: Spring Boot
   labels:
   - konveyor.io/include=always
   links: []
@@ -35,6 +38,7 @@
     builtin.hasTags:
     - Spring Boot
 - customVariables: []
+  description: Elasticsearch
   labels:
   - konveyor.io/include=always
   links: []
@@ -47,6 +51,7 @@
     builtin.hasTags:
     - Elasticsearch
 - customVariables: []
+  description: Logstash
   labels:
   - konveyor.io/include=always
   links: []
@@ -59,6 +64,7 @@
     builtin.hasTags:
     - Logstash
 - customVariables: []
+  description: Jetty
   labels:
   - konveyor.io/include=always
   links: []
@@ -71,6 +77,7 @@
     builtin.hasTags:
     - Jetty
 - customVariables: []
+  description: Tomcat
   labels:
   - konveyor.io/include=always
   links: []
@@ -83,6 +90,7 @@
     builtin.hasTags:
     - Tomcat
 - customVariables: []
+  description: Kibana
   labels:
   - konveyor.io/include=always
   links: []
@@ -95,6 +103,7 @@
     builtin.hasTags:
     - Kibana
 - customVariables: []
+  description: Apache Karaf
   labels:
   - konveyor.io/include=always
   links: []
@@ -107,6 +116,7 @@
     builtin.hasTags:
     - Apache Karaf
 - customVariables: []
+  description: Neo4j
   labels:
   - konveyor.io/include=always
   links: []
@@ -119,6 +129,7 @@
     builtin.hasTags:
     - Neo4j
 - customVariables: []
+  description: Spark
   labels:
   - konveyor.io/include=always
   links: []
@@ -131,6 +142,7 @@
     builtin.hasTags:
     - Spark
 - customVariables: []
+  description: Apache Hadoop
   labels:
   - konveyor.io/include=always
   links: []
@@ -143,6 +155,7 @@
     builtin.hasTags:
     - Apache Hadoop
 - customVariables: []
+  description: Apache Geronimo
   labels:
   - konveyor.io/include=always
   links: []
@@ -155,6 +168,7 @@
     builtin.hasTags:
     - Apache Geronimo
 - customVariables: []
+  description: Apache Aries
   labels:
   - konveyor.io/include=always
   links: []
@@ -167,6 +181,7 @@
     builtin.hasTags:
     - Apache Aries
 - customVariables: []
+  description: Cloudera
   labels:
   - konveyor.io/include=always
   links: []
@@ -179,6 +194,7 @@
     builtin.hasTags:
     - Cloudera
 - customVariables: []
+  description: MapR
   labels:
   - konveyor.io/include=always
   links: []
@@ -191,6 +207,7 @@
     builtin.hasTags:
     - MapR
 - customVariables: []
+  description: TensorFlow
   labels:
   - konveyor.io/include=always
   links: []
@@ -203,6 +220,7 @@
     builtin.hasTags:
     - TensorFlow
 - customVariables: []
+  description: Weka
   labels:
   - konveyor.io/include=always
   links: []
@@ -215,6 +233,7 @@
     builtin.hasTags:
     - Weka
 - customVariables: []
+  description: Apache Mahout
   labels:
   - konveyor.io/include=always
   links: []

@@ -10,7 +10,8 @@
       filepaths:
       - batch.xml
       namespaces:
-        "": http://xmlns.jcp.org/xml/ns/javaee
+        ? ''
+        : http://xmlns.jcp.org/xml/ns/javaee
       xpath: //*[local-name() = 'batch-artifacts']
 - customVariables: []
   labels:
@@ -29,9 +30,11 @@
         filepaths: '{{xmlfiles1.filepaths}}'
         from: xmlfiles1
         namespaces:
-          "": http://xmlns.jcp.org/xml/ns/javaee
+          ? ''
+          : http://xmlns.jcp.org/xml/ns/javaee
         xpath: //*[local-name() = 'job']
 - customVariables: []
+  description: Java EE Batch API
   labels:
   - konveyor.io/include=always
   links: []
@@ -44,6 +47,7 @@
     builtin.hasTags:
     - Java EE Batch API
 - customVariables: []
+  description: Java EE Batch
   labels:
   - konveyor.io/include=always
   links: []
@@ -112,6 +116,7 @@
       location: PACKAGE
       pattern: javax.json*
 - customVariables: []
+  description: Java EE JSON-P
   labels:
   - konveyor.io/include=always
   links: []
@@ -259,6 +264,7 @@
       location: IMPORT
       pattern: javax.json.bind*
 - customVariables: []
+  description: JACC
   labels:
   - konveyor.io/include=always
   links: []
@@ -271,6 +277,7 @@
     builtin.hasTags:
     - JACC
 - customVariables: []
+  description: MEJB
   labels:
   - konveyor.io/include=always
   links: []
@@ -283,6 +290,7 @@
     builtin.hasTags:
     - MEJB
 - customVariables: []
+  description: EAR
   labels:
   - konveyor.io/include=always
   links: []
@@ -295,6 +303,7 @@
     builtin.hasTags:
     - EAR
 - customVariables: []
+  description: WS Metadata
   labels:
   - konveyor.io/include=always
   links: []
@@ -307,6 +316,7 @@
     builtin.hasTags:
     - WS Metadata
 - customVariables: []
+  description: Common Annotations
   labels:
   - konveyor.io/include=always
   links: []
@@ -319,6 +329,7 @@
     builtin.hasTags:
     - Common Annotations
 - customVariables: []
+  description: JAXB
   labels:
   - konveyor.io/include=always
   links: []
@@ -331,6 +342,7 @@
     builtin.hasTags:
     - JAXB
 - customVariables: []
+  description: JAXR
   labels:
   - konveyor.io/include=always
   links: []
@@ -343,6 +355,7 @@
     builtin.hasTags:
     - JAXR
 - customVariables: []
+  description: Bean Validation
   labels:
   - konveyor.io/include=always
   links: []
@@ -355,6 +368,7 @@
     builtin.hasTags:
     - Bean Validation
 - customVariables: []
+  description: JSON-B
   labels:
   - konveyor.io/include=always
   links: []
@@ -367,6 +381,7 @@
     builtin.hasTags:
     - JSON-B
 - customVariables: []
+  description: Servlet
   labels:
   - konveyor.io/include=always
   links: []
@@ -626,6 +641,7 @@
         p: https://jakarta.ee/xml/ns/jakartaee
       xpath: //p:webservices/@version[matches(self::node(), '(2.0)')]
 - customVariables: []
+  description: JPA Mapping XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -638,6 +654,7 @@
     builtin.hasTags:
     - JPA Mapping XML
 - customVariables: []
+  description: CDI XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -650,6 +667,7 @@
     builtin.hasTags:
     - CDI XML
 - customVariables: []
+  description: Java EE XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -662,6 +680,7 @@
     builtin.hasTags:
     - Java EE XML
 - customVariables: []
+  description: Jakarta EE XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -674,6 +693,7 @@
     builtin.hasTags:
     - Jakarta EE XML
 - customVariables: []
+  description: Java EE Client XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -686,6 +706,7 @@
     builtin.hasTags:
     - Java EE Client XML
 - customVariables: []
+  description: Jakarta EE Client XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -698,6 +719,7 @@
     builtin.hasTags:
     - Jakarta EE Client XML
 - customVariables: []
+  description: Connector XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -710,6 +732,7 @@
     builtin.hasTags:
     - Connector XML
 - customVariables: []
+  description: JSF XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -722,6 +745,7 @@
     builtin.hasTags:
     - JSF XML
 - customVariables: []
+  description: WebServices XML
   labels:
   - konveyor.io/include=always
   links: []
