@@ -1,0 +1,17 @@
+rulesPath: ../spring-framework-5.x-to-6.0-baseline.yaml
+providers:
+- name: java
+  dataPath: ./data
+- name: builtin
+  dataPath: ./data
+tests:
+- ruleID: spring-framework-5.x-to-6.0-baseline-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-baseline-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
