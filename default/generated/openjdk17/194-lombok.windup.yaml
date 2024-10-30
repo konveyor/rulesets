@@ -7,6 +7,8 @@
   - konveyor.io/source=openjdk
   - konveyor.io/target=openjdk17+
   - konveyor.io/target=openjdk
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
   links:
   - title: Upgrade Lombok version to support Java 17
     url: https://github.com/projectlombok/lombok/issues/2898
