@@ -19,7 +19,8 @@
           m: http://maven.apache.org/POM/4.0.0
         xpath: //m:java.version[number(.) < 17]
   description: Spring Framework 6.0 must use at least Java 17
-  message: "Spring Framework 6.0 and above must use at least Java 17. Check the migration guide in the link for more information."
+  message: |
+    Spring Framework 6.0 and above must use at least Java 17. Check the migration guide in the link for more information.
   links:
   - title: 'Spring 6.0 migration guide'
     url: https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#upgrading-to-version-60
@@ -36,7 +37,8 @@
       nameregex: javax.*
       lowerbound: 0.0.0
   description: Spring Framework 6.0 must use at least JakartaEE 9
-  message: "Spring Framework 6.0 and above must use at least JakartaEE 9. Check the migration guide in the link for more information."
+  message: |
+    Spring Framework 6.0 and above must use at least JakartaEE 9. Check the migration guide in the link for more information.
   links:
   - title: 'Spring 6.0 migration guide'
     url: https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#upgrading-to-version-60
