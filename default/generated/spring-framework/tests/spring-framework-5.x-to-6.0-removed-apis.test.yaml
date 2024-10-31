@@ -1,0 +1,12 @@
+rulesPath: ../spring-framework-5.x-to-6.0-removed-apis.yaml
+providers:
+- name: java
+  dataPath: ./data/removed-apis/ehcache-app
+tests:
+- ruleID: spring-framework-5.x-to-6.0-removed-apis-00001
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: "source-only"
+    hasIncidents:
+      exactly: 2

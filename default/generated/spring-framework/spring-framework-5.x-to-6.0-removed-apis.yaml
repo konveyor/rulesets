@@ -1,0 +1,63 @@
+- ruleID: spring-framework-5.x-to-6.0-removed-apis-00001
+  category: mandatory
+  effort: 5
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.cache.ehcache*
+        location: IMPORT
+    - java.dependency:
+        name: net.sf.ehcache.ehcache
+        upperbound: 2.10.9.2
+  description: Spring Framework 6.0 has dropped support for EhCache 2.x
+  message: |
+    The org.springframework.cache.ehcache package has been removed as it was providing support for
+    Ehcache 2.x - with this version, `net.sf.ehcache` is using Java EE APIs and is about to be End Of Life'd.
+    Ehcache 3 is the direct replacement. Please revisit your dependency management to use `org.ehcache:ehcache`
+    (with the jakarta classifier) instead and look into the official migration guide or reach out to the ehcache
+    community for assistance.
+    
+    There is no renewed support or helpers for EhCache 3.0 integration anymore, and the `org.springframework.cache.ehcache`
+    package has been removed. Instead, you can either use the JCache API (JSR-107) or EhCache 3's native API.
+    
+    If you want to use the JCache (JSR-107) integration, Spring's caching abstraction allows for it:
+    
+    1. Enable Caching in Spring as usual:
+    ```java
+    @Configuration
+    @EnableCaching
+    public class CacheConfig {
+        // CacheManager bean configuration goes here
+    }
+    ```
+    2. Configure a JCache `CacheManager`:
+    ```java
+    import javax.cache.Caching;
+    import javax.cache.spi.CachingProvider;
+    import org.springframework.cache.annotation.EnableCaching;
+    import org.springframework.cache.jcache.JCacheCacheManager;
+
+    @Configuration
+    @EnableCaching
+    public class CacheConfig {
+        @Bean
+        public JCacheCacheManager cacheManager() {
+            CachingProvider cachingProvider = Caching.getCachingProvider();
+            javax.cache.CacheManager ehCacheManager = cachingProvider.getCacheManager();
+            return new JCacheCacheManager(ehCacheManager);
+        }
+    }
+    ```
+    
+    Additionally, you may need to adapt your Ehcache 2.x XML configuration to be compatible with Ehcache 3.x
+    if you were previously using XML-based cache configurations.
+    
+    For specifics on how to migrate from Ehcache 2 to 3, please check the link provided.
+  links:
+  - title: 'Spring 6.0 migration guide'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#removed-apis
+  - title: 'Ehcache 2 to 3 migration guide'
+    url: https://www.ehcache.org/documentation/3.10/migration-guide.html
