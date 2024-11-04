@@ -1,0 +1,27 @@
+- ruleID: spring-framework-5.x-to-6.0-core-container-00001
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    or:
+    - java.referenced:
+        pattern: java.beans.Introspector
+        location: IMPORT
+    - java.referenced:
+        pattern: java.beans.BeanInfo
+        location: IMPLEMENTS_TYPE
+  description: Spring Framework 6.0 does not use Introspector anymore
+  message: |
+    The core container now performs basic bean property determination without `java.beans.Introspector` by default.
+
+    In case of sophisticated JavaBeans usage, for full backwards compatibility with 5.3.x, specify the following content
+    in a `META-INF/spring.factories` file, which enables 5.3-style full `java.beans.Introspector` usage:
+    
+    ```
+    org.springframework.beans.BeanInfoFactory=org.springframework.beans.ExtendedBeanInfoFactory
+    ```
+  links:
+  - title: 'Spring 6.0 migration guide'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#core-container
