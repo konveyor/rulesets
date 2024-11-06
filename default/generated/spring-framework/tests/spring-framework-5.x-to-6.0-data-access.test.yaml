@@ -1,0 +1,12 @@
+rulesPath: ../spring-framework-5.x-to-6.0-data-access.yaml
+providers:
+- name: java
+  dataPath: ./data/data-access
+tests:
+- ruleID: spring-framework-5.x-to-6.0-data-access-00001
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: "source-only"
+    hasIncidents:
+      exactly: 1

@@ -1,0 +1,30 @@
+- ruleID: spring-framework-5.x-to-6.0-data-access-00001
+  category: mandatory
+  effort: 5
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    java.dependency:
+      name: org.hibernate.hibernate-core
+      upperbound: 5.5.13.Final
+  description: Spring 6 must use at least Hibernate 5.6.x
+  message: |
+    Due to the Jakarta EE migration, Spring 6 must use at least Hibernate 5.6.x. To make Hibernate 5.6.x compatible with
+    Jakarta, make sure to also switch your hibernate dependency to the `hibernate-core-jakarta` artifact:
+    ```
+    <dependency>
+        <groupId>org.hibernate.orm</groupId>
+        <artifactId>hibernate-core-jakarta</artifactId>
+        <version>5.6.15.Final</version>
+    </dependency>
+    ```
+    Alternatively, consider migrating to Hibernate ORM 6.1 right away (exclusively based on `jakarta.persistence`,
+    compatible with EE 9 as well as EE 10) which is the Hibernate version that Spring Boot 3.0 comes with.
+    
+    Please check the Hibernate 5.6 migration guide in the links provided.
+  links:
+  - title: 'Hibernate 5.5 to 5.6 migration guide'
+    url: https://github.com/hibernate/hibernate-orm/blob/5.6/migration-guide.adoc
+  - title: 'Spring 6.0 migration guide'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#removed-apis
