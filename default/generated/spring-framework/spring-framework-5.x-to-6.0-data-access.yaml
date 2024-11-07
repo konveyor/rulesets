@@ -28,3 +28,36 @@
     url: https://github.com/hibernate/hibernate-orm/blob/5.6/migration-guide.adoc
   - title: 'Spring 6.0 migration guide'
     url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#removed-apis
+
+- ruleID: spring-framework-5.x-to-6.0-data-access-00010
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/target=spring6+
+  when:
+    java.dependency:
+      name: org.hibernate.validator.hibernate-validator
+      upperbound: 6.2.5.Final
+  description: Spring 6 must use at least Hibernate Validator 7.0.x
+  message: |
+    Spring 6 must use at least Hibernate Validator 7.0.x. Consider, though, migrating directly to Hibernate Validator 8.0
+    directly, as it is aligned with Jakarta EE 10.
+    
+    Switch the hibernate validator dependency to
+    ```
+    <dependency>
+        <groupId>org.hibernate.validator</groupId>
+        <artifactId>hibernate-validator</artifactId>
+        <version>7.0.5.Final</version>
+    </dependency>
+    ```
+    
+    Please check the Hibernate Validator migration guidelines in the links for more information.
+  links:
+    - title: 'Hibernate Validator migration guide'
+      url: https://hibernate.org/validator/documentation/migration-guide/
+    - title: 'Hibernate Validator 7.0 release and changelog details'
+      url: https://in.relation.to/2020/12/08/hibernate-validator-700-62-cr1-released/
+    - title: 'Spring 6.0 migration guide'
+      url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#removed-apis
