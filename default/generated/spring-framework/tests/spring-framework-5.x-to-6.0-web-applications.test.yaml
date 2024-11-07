@@ -1,0 +1,12 @@
+rulesPath: ../spring-framework-5.x-to-6.0-web-applications.yaml
+providers:
+- name: java
+  dataPath: ./data/web-applications
+tests:
+- ruleID: spring-framework-5.x-to-6.0-web-applications-00001
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: "source-only"
+    hasIncidents:
+      exactly: 2
