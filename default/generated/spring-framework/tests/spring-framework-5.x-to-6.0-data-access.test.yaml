@@ -10,3 +10,10 @@ tests:
       mode: "source-only"
     hasIncidents:
       exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-data-access-00010
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
