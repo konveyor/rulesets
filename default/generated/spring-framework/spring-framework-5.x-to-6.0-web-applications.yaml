@@ -49,3 +49,31 @@
     url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
   - title: 'Specific Spring Framwork change'
     url: https://github.com/spring-projects/spring-framework/issues/28552
+
+- ruleID: spring-framework-5.x-to-6.0-web-applications-00010
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/target=spring6+
+  when:
+    and:
+      - java.referenced:
+          pattern: org.springframework.web.bind.annotation.RequestMapping
+          location: ANNOTATION
+        as: annotation
+      - java.referenced:
+          pattern: org.springframework.stereotype.Controller
+          location: ANNOTATION
+        not: true
+        from: annotation
+  description: "@RequestMapping does not detect controllers anymore"
+  message: |
+    Spring MVC and Spring WebFlux no longer detect controllers based solely on a type-level @RequestMapping
+    annotation. That means interface-based AOP proxying for web controllers may no longer work. Please, enable
+    class-based proxying for such controllers; otherwise the interface must also be annotated with @Controller.
+  links:
+    - title: 'Spring 6.0 migration guide'
+      url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
+
+
