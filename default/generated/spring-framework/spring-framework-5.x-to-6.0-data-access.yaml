@@ -41,8 +41,7 @@
       upperbound: 6.2.5.Final
   description: Spring 6 must use at least Hibernate Validator 7.0.x
   message: |
-    Spring 6 must use at least Hibernate Validator 7.0.x. Consider, though, migrating directly to Hibernate Validator 8.0
-    directly, as it is aligned with Jakarta EE 10.
+    Spring 6 must use at least Hibernate Validator 8.0.
     
     Switch the hibernate validator dependency to
     ```
