@@ -65,7 +65,9 @@
       - java.referenced:
           pattern: org.springframework.stereotype.Controller
           location: ANNOTATION
+          filepaths: "{{annotation.Filepaths}}"
         not: true
+        ignore: true
         from: annotation
   description: "@RequestMapping does not detect controllers anymore"
   message: |
