@@ -49,3 +49,36 @@
     url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
   - title: 'Specific Spring Framwork change'
     url: https://github.com/spring-projects/spring-framework/issues/28552
+
+- ruleID: spring-framework-5.x-to-6.0-web-applications-00020
+  category: mandatory
+  effort: 5
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    and:
+    - java.referenced:
+        pattern: org.springframework.web.client.RestTemplate
+        location: CONSTRUCTOR_CALL
+    - java.dependency:
+        name: org.apache.httpcomponents.httpclient
+        upperbound: 4.5.999999
+      ignore: true
+  description: RestTemplate now requires Apache HttpClient 5
+  message: |
+    `RestTemplate`, or rather the `HttpComponentsClientHttpRequestFactory`, now requires Apache HttpClient 5.
+    Please upgrade your HttpClient dependency, ideally to the latest version:
+    
+    ```xml
+    <dependency>
+        <groupId>org.apache.httpcomponents.client5</groupId>
+        <artifactId>httpclient5</artifactId>
+        <version>5.4.1</version>
+    </dependency>
+    ```
+  links:
+    - title: 'Spring 6.0 migration guide'
+      url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
+    - title: 'Apache HttpClient 4 to 5 migration guide'
+      url:
