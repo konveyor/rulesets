@@ -81,4 +81,4 @@
     - title: 'Spring 6.0 migration guide'
       url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
     - title: 'Apache HttpClient 4 to 5 migration guide'
-      url:
+      url: https://hc.apache.org/httpcomponents-client-5.4.x/migration-guide/preparation.html
