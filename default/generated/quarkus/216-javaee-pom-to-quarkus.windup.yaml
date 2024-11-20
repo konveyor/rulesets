@@ -192,7 +192,7 @@
   links:
   - title: Using hibernate-orm and jakarta persistence
     url: https://quarkus.io/guides/hibernate-orm
-  message: "Configure Quarkus 'hibernate-orm` and jakarta persistence. \n Add the
+  message: "Configure Quarkus `hibernate-orm` and jakarta persistence. \n Add the
     `quarkus-hibernate-orm` section and one for your preferred jdbc solution to the
     `pom.xml` file, eg for postgres: \n\n ```\n <!-- Hibernate ORM specific dependencies
     -->\n <dependency>\n <groupId>io.quarkus</groupId>\n <artifactId>quarkus-hibernate-orm</artifactId>\n
