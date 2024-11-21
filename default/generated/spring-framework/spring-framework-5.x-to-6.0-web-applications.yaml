@@ -49,3 +49,34 @@
     url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
   - title: 'Specific Spring Framwork change'
     url: https://github.com/spring-projects/spring-framework/issues/28552
+
+- ruleID: spring-framework-5.x-to-6.0-web-applications-00030
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/target=spring6+
+  when:
+    or:
+      - java.referenced:
+          pattern: org.springframework.stereotype.Controller
+          location: ANNOTATION
+        as: class
+        ignore: true
+      - java.referenced:
+          pattern: '* javax.xml.transform.Source'
+          location: METHOD
+          filepaths: "{{class.Filepaths}}"
+        from: class
+  description: "SourceHttpMessageConverter is not configured by default anymore in Spring MVC and RestTemplate"
+  message: |
+    `SourceHttpMessageConverter` is not configured by default anymore in Spring MVC and `RestTemplate`.
+    As a consequence, Spring web applications using `javax.xml.transform.Source` now need to configure
+    `SourceHttpMessageConverter` explicitly. Note that the order of converter registration is important,
+    and `SourceHttpMessageConverter` should typically be registered before "catch-all" converters like
+    `MappingJackson2HttpMessageConverter` for example.
+  links:
+    - title: 'Spring 6.0 migration guide'
+      url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
+    - title: 'GitHub issue: Make SourceHttpMessageConverter optional'
+      url: https://github.com/spring-projects/spring-framework/issues/29535
