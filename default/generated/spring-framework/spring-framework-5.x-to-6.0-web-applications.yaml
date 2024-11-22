@@ -66,4 +66,4 @@
   - title: 'Specific Spring Framework Change'
     url: https://github.com/spring-projects/spring-framework/issues/27697
   - title: 'Spring Documentation'
-    url: https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/HttpMethod.html
+    url: https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/HttpMethod.html 
