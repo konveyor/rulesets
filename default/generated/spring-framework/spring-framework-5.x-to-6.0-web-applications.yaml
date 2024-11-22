@@ -49,3 +49,21 @@
     url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
   - title: 'Specific Spring Framwork change'
     url: https://github.com/spring-projects/spring-framework/issues/28552
+
+- ruleID: spring-framework-5.x-to-6.0-web-applications-00002
+  category: mandatory
+  effort: 1
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    java.referenced:
+      pattern: org.springframework.http.HttpMethod
+      location: IMPORT
+  description: Refactor HttpMethod from enum to class
+  message: "HTTPMethod has been updated from an ENUM to a CLASS"
+  links:
+  - title: 'Specific Spring Framework Change'
+    url: https://github.com/spring-projects/spring-framework/issues/27697
+  - title: 'Spring Documentation'
+    url: https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/HttpMethod.html
