@@ -58,16 +58,25 @@
     - konveyor.io/target=spring6+
   when:
     or:
-      - java.referenced:
-          pattern: org.springframework.stereotype.Controller
-          location: ANNOTATION
-        as: class
-        ignore: true
-      - java.referenced:
-          pattern: '* javax.xml.transform.Source'
-          location: METHOD
-          filepaths: "{{class.Filepaths}}"
-        from: class
+    - and:
+        - or:
+          - java.referenced:
+              pattern: org.springframework.stereotype.Controller
+              location: ANNOTATION
+          - java.referenced:
+              pattern: org.springframework.web.bind.annotation.RestController
+              location: ANNOTATION
+          as: class
+          ignore: true
+        - java.referenced:
+            pattern: '* javax.xml.transform.Source'
+            location: METHOD
+            filepaths: "{{class.Filepaths}}"
+          from: class
+    # TODO: not working atm - fix test cases when working
+    - java.referenced:
+        pattern: 'getForObject()'
+        location: METHOD_CALL
   description: "SourceHttpMessageConverter is not configured by default anymore in Spring MVC and RestTemplate"
   message: |
     `SourceHttpMessageConverter` is not configured by default anymore in Spring MVC and `RestTemplate`.
