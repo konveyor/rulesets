@@ -10,9 +10,17 @@ tests:
       mode: "source-only"
     hasIncidents:
       exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-web-applications-00010
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
 - ruleID: spring-framework-5.x-to-6.0-web-applications-00002
   testCases:
   - name: tc-1
     hasIncidents:
       exactly: 1
-      messageMatches: "HTTPMethod has been updated from an ENUM to a CLASS"
+      messageMatches: "HttpMethod is now a class and no longer an enum. Though the public API has been maintained, some migration might be necessary (i.e. change from EnumSet to Set, use if else instead of switch). Check the specific Spring Framework change for more information in the links"
+
