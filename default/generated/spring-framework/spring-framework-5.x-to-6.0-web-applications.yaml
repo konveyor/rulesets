@@ -51,7 +51,7 @@
     url: https://github.com/spring-projects/spring-framework/issues/28552
 
 - ruleID: spring-framework-5.x-to-6.0-web-applications-00002
-  category: mandatory
+  category: potential
   effort: 1
   labels:
   - konveyor.io/source=spring5
@@ -60,8 +60,8 @@
     java.referenced:
       pattern: org.springframework.http.HttpMethod
       location: IMPORT
-  description: Refactor HttpMethod from enum to class
-  message: "HTTPMethod has been updated from an ENUM to a CLASS"
+  description: HttpMethod has be upgraded from an ENUM to a CLASS
+  message: "HttpMethod is now a class and no longer an enum. Though the public API has been maintained, some migration might be necessary (i.e. change from EnumSet to Set, use if else instead of switch). Check the specific Spring Framework change for more information in the links"
   links:
   - title: 'Specific Spring Framework Change'
     url: https://github.com/spring-projects/spring-framework/issues/27697
