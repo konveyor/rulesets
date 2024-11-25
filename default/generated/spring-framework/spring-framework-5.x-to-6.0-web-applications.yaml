@@ -59,8 +59,7 @@
   when:
     and:
     - java.referenced:
-        pattern: org.springframework.web.client.RestTemplate
-        location: CONSTRUCTOR_CALL
+        pattern: org.springframework.http.client.HttpComponentsClientHttpRequestFactory
     - java.dependency:
         name: org.apache.httpcomponents.httpclient
         upperbound: 4.5.999999
