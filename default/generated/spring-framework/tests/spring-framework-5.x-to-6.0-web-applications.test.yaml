@@ -17,4 +17,4 @@ tests:
       analysisParams:
         mode: "source-only"
       hasIncidents:
-        exactly: 3
+        exactly: 6
