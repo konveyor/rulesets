@@ -113,7 +113,23 @@
   message: |
     `SourceHttpMessageConverter` is not configured by default anymore in Spring MVC and `RestTemplate`.
     As a consequence, Spring web applications using `javax.xml.transform.Source` now need to configure
-    `SourceHttpMessageConverter` explicitly. Note that the order of converter registration is important,
+    `SourceHttpMessageConverter` explicitly. 
+    
+    ```java
+    @EnableWebMvc
+    @Configuration
+    @ComponentScan({ "org.konveyor.web" })
+    public class WebConfig implements WebMvcConfigurer {
+
+      @Override
+      public void configureMessageConverters(List<HttpMessageConverter<?>> messageConverters) {
+          messageConverters.add(new SourceHttpMessageConverter());
+          messageConverters.add(new MappingJackson2HttpMessageConverter());
+      }
+    }
+    ```   
+    
+    Note that the order of converter registration is important,
     and `SourceHttpMessageConverter` should typically be registered before "catch-all" converters like
     `MappingJackson2HttpMessageConverter` for example.
   links:
