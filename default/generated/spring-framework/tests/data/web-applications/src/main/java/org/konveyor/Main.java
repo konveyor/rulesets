@@ -2,13 +2,19 @@ package org.konveyor;
 
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
-import java.beans.IntrospectionException;
 import java.io.StringReader;
+import java.net.URI;
+import java.net.URISyntaxException;
+
+import org.springframework.web.client.RestTemplate;
 
 public class Main {
 
-    public static void main(String[] args) throws IntrospectionException {
-
+    public static void main(String[] args) throws URISyntaxException {
+        RestTemplate rest = new RestTemplate();
+        rest.getForObject(new URI("http://www.example.com/"), Source.class);
+        rest.getForObject("http://www.example.com/", Source.class);
+        rest.getForObject("http://www.example.com/", Source.class, "Hey");
     }
 
     public Source getXmlData() {
