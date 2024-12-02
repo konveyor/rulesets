@@ -1,0 +1,62 @@
+rulesPath: ../134-weblogic-webapp.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/134-weblogic-webapp
+- name: builtin
+  dataPath: ./data/134-weblogic-webapp
+tests:
+- ruleID: weblogic-webapp-eap7-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Virtual directories supported in WebLogic are not supported
+        in JBoss EAP.
+- ruleID: weblogic-webapp-eap7-02000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Replace the proprietary WebLogic .*@WLServlet.*
+- ruleID: weblogic-webapp-eap7-03000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Replace the proprietary WebLogic .*@WLInitParam.*
+- ruleID: weblogic-webapp-eap7-04000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Replace the proprietary WebLogic .*@WLFilter.*
+- ruleID: weblogic-webapp-eap7-05000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: WebLogic .*ApplicationLifecycleEvent.*
+- ruleID: weblogic-webapp-eap7-06000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: WebLogic .*ApplicationLifecycleListener.*
+- ruleID: weblogic-webapp-eap7-07000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The usage of the WebLogic proprietary security API.*
+- ruleID: weblogic-webapp-eap7-08000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: 'Migrate to JBoss EAP 7: .*org.jboss.security.SecurityContextAssociation.*'
+- ruleID: weblogic-webapp-eap7-09000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Oracle WebLogic Server provides a proprietary .*ServletAuthentication.*

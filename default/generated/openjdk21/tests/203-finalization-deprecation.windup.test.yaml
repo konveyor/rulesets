@@ -1,0 +1,14 @@
+rulesPath: ../203-finalization-deprecation.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/203-finalization-deprecation
+- name: builtin
+  dataPath: ./data/203-finalization-deprecation
+tests:
+- ruleID: finalization-deprecation-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 5
+      messageMatches: Finalization has been deprecated for removal in a future release
+        by JDK1.*

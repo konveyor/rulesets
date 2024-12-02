@@ -1,0 +1,13 @@
+rulesPath: ../15-spring-boot-to-azure-feign.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/15-spring-boot-to-azure-feign
+- name: builtin
+  dataPath: ./data/15-spring-boot-to-azure-feign
+tests:
+- ruleID: spring-boot-to-azure-feign-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 3
+      messageMatches: The application uses Feign.

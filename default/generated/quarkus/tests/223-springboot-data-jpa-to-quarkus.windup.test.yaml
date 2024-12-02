@@ -1,0 +1,14 @@
+rulesPath: ../223-springboot-data-jpa-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/223-springboot-data-jpa-to-quarkus
+- name: builtin
+  dataPath: ./data/223-springboot-data-jpa-to-quarkus
+tests:
+- ruleID: springboot-jpa-to-quarkus-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 3
+      messageMatches: Replace the SpringBoot JPA artifact with Quarkus `spring-data-jpa`
+        extension
