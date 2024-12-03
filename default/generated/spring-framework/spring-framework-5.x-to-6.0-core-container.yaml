@@ -51,7 +51,7 @@
     java.referenced:
       pattern: org.springframework.util.concurrent.ListenableFuture*
       location: IMPORT
-  description: ListenableFuture and related types are deprecated from Spring Framework 6.0.  
+  description: ListenableFuture and related types are deprecated since Spring Framework 6.0.  
   message: |
     Spring Framework 6.0 has deprecated support for ListenableFuture and related types (ListenableFutureCallback, SettableListenableFuture, etc.)
     The reason for deprecation is the introduction of CompletableFuture in Java 8, which offers a richer set of features and better integration with the Java ecosystem.
