@@ -40,4 +40,53 @@
   links:
     - title: 'Spring 6.0 migration guide'
       url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#core-container
+      
+- ruleID: spring-framework-5.x-to-6.0-core-container-00020
+  category: potential
+  effort: 3
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    java.referenced:
+      pattern: org.springframework.util.concurrent.ListenableFuture*
+      location: IMPORT
+  description: ListenableFuture and related types are deprecated from Spring Framework 6.0.  
+  message: |
+    Spring Framework 6.0 has deprecated support for ListenableFuture and related types (ListenableFutureCallback, SettableListenableFuture, etc.)
+    The reason for deprecation is the introduction of CompletableFuture in Java 8, which offers a richer set of features and better integration with the Java ecosystem.
+    java.util.concurrent.CompletableFuture is now the recommended way to handle asynchronous operations in Spring applications.
+  Example:
+    
+        import java.util.concurrent.CompletableFuture;
+
+        public class CompletableFutureCallback {
+            public static void main(String[] args) {
+              CompletableFuture<String> completableFuture = new CompletableFuture<>();
+              Runnable runnable = callUpstreamWS(completableFuture);
+              completableFuture.whenComplete((res, error) -> {
+              if (error != null) {
+              // Handle exception
+              } else if (res != null) {
+              // Process data
+              }
+              });
+              new Thread(runnable).start();
+            }
+
+            private static Runnable callUpstreamWS(CompletableFuture<String> completableFuture) {
+                  return () -> {
+                    try {
+                    //Upstream call
+                    Thread.sleep(5000);
+                    } catch (InterruptedException e) {
+                    e.printStackTrace();
+                    }
+                    completableFuture.complete("ws.data");
+                    };
+            }
+        }
+  links:
+  - title: 'Spring 6.0 migration guide'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#core-container
 
