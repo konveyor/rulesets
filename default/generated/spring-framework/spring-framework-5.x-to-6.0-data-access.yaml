@@ -60,3 +60,33 @@
       url: https://in.relation.to/2020/12/08/hibernate-validator-700-62-cr1-released/
     - title: 'Spring 6.0 migration guide'
       url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#removed-apis
+
+- ruleID: spring-framework-5.x-to-6.0-data-access-00020
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/target=spring6+
+  when:
+    java.dependency:
+      name: org.eclipse.persistence.eclipselink
+      upperbound: '2.99999'
+  description: Spring 6 must use at least EclipseLink 3.0
+  message: |
+    Due to the Jakarta EE migration, Spring 6 must use at least EclipseLink 3.0.0, although migration to
+    EclipseLink 4.0 is recommended. Swap your dependency to the following:
+
+    ```
+    <dependency>
+        <groupId>org.eclipse.persistence</groupId>
+        <artifactId>eclipselink</artifactId>
+        <version>4.0.4</version>
+    </dependency>
+    ```
+
+    Please check the EclipseLink release pages in the links provided for more information on how to migrate.
+  links:
+    - title: 'EclipseLink - Previous releases'
+      url: https://eclipse.dev/eclipselink/downloads/previous_releases.php
+    - title: 'Spring 6.0 migration guide'
+      url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#removed-apis
