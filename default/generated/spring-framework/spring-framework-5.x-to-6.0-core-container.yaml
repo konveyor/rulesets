@@ -41,3 +41,29 @@
     - title: 'Spring 6.0 migration guide'
       url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#core-container
 
+- ruleID: spring-framework-5.x-to-6.0-core-container-00020
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    or:
+    - java.referenced:
+        location: FIELD
+        pattern: org.springframework.expression.spel.support.SimpleEvaluationContext
+    - java.referenced:
+        location: CONSTRUCTOR_CALL
+        pattern: org.springframework.expression.spel.support.SimpleEvaluationContext
+  description: Replace SimpleEvaluationContext with StandardEvaluationContext when working with array operations.
+  message: |
+    `SimpleEvaluationContext` now disallows creating arrays inside expressions which aligns with how regular constructor resolution works.
+    
+    Code that relies on creating arrays within expressions using `SimpleEvaluationContext` might malfunction or produce unexpected results.
+  
+    It is recommended to switch to `org.springframework.expression.spel.standard.StandardEvaluationContext` as it offers the full SpEL functionality, 
+    including array creation within expressions as well as improved performance.
+  links:
+  - title: 'Spring 6.0 migration guide'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#core-container
+
