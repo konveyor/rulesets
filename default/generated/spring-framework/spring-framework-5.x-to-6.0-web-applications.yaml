@@ -137,3 +137,21 @@
       url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
     - title: 'GitHub issue: Make SourceHttpMessageConverter optional'
       url: https://github.com/spring-projects/spring-framework/issues/29535
+
+- ruleID: spring-framework-5.x-to-6.0-web-applications-00040
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    java.referenced:
+      pattern: org.springframework.http.HttpMethod
+      location: IMPORT
+  description: HttpMethod has be upgraded from an ENUM to a CLASS
+  message: "HttpMethod is now a class and no longer an enum. Though the public API has been maintained, some migration might be necessary (i.e. change from EnumSet to Set, use if else instead of switch). Check the specific Spring Framework change for more information in the links"
+  links:
+  - title: 'Specific Spring Framework Change'
+    url: https://github.com/spring-projects/spring-framework/issues/27697
+  - title: 'Spring Documentation'
+    url: https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/HttpMethod.html
