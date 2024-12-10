@@ -1,0 +1,44 @@
+rulesPath: ../151-hibernate-6.2.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/151-hibernate-6.2
+- name: builtin
+  dataPath: ./data/151-hibernate-6.2
+tests:
+- ruleID: hibernate-6.2-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: This method has changed from `EntityPersister#multiload(Object[]
+        ids, SharedSessionContractImplementor session, MultiIdLoadOptions loadOptions)`
+        to `EntityPersister#lock(Object[] ids, EventSource session, MultiIdLoadOptions
+        loadOptions)`.*
+- ruleID: hibernate-6.2-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: This method has changed from `Executable#afterDeserialize(SharedSessionContractImplementor
+        session)` to `Executable#afterDeserialize(EventSource eventSource)`.*
+- ruleID: hibernate-6.2-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The return type of `JdbcType#getJdbcRecommendedJavaTypeMapping()`
+        was changed from `BasicJavaType` to `JavaType`.
+- ruleID: hibernate-6.2-00040
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: This class within `org.hibernate.cfg` has been moved; see link
+        for more information.
+- ruleID: hibernate-6.2-00050
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: This class within `org.hibernate.loader` has been moved; see
+        link for more information.

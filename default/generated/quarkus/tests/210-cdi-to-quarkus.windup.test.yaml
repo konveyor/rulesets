@@ -1,0 +1,40 @@
+rulesPath: ../210-cdi-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/210-cdi-to-quarkus
+- name: builtin
+  dataPath: ./data/210-cdi-to-quarkus
+tests:
+- ruleID: cdi-to-quarkus-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Dependency `javax.enterprise:cdi-api` has to be replaced with
+        `io.quarkus:quarkus-arc` artifact
+- ruleID: cdi-to-quarkus-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Dependency `javax.inject:javax.inject` has to be replaced with
+        `io.quarkus:quarkus-arc` artifact
+- ruleID: cdi-to-quarkus-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`beans.xml` descriptor content is ignored and it could be removed
+        from the application'
+- ruleID: cdi-to-quarkus-00040
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: In Quarkus, you can skip the @Produces annotation completely
+- ruleID: cdi-to-quarkus-00050
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Stateless EJBs can be converted to a cdi bean by replacing

@@ -1,0 +1,48 @@
+rulesPath: ../36-connect-technology-usage.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/36-connect-technology-usage
+- name: builtin
+  dataPath: ./data/36-connect-technology-usage
+tests:
+- ruleID: technology-usage-connect-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - RMI
+  - name: tc-2
+    hasTags:
+    - RMI
+- ruleID: technology-usage-connect-01100
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JNI
+- ruleID: technology-usage-connect-01101
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JNA
+- ruleID: technology-usage-connect-01200
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Mail
+- ruleID: technology-usage-connect-01300
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JCA
+  - name: tc-2
+    hasTags:
+    - JCA
+- ruleID: technology-usage-connect-01500
+  testCases:
+  - name: tc-1
+    hasTags:
+    - ActiveMQ library
+- ruleID: technology-usage-connect-02600
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JBossMQ client
