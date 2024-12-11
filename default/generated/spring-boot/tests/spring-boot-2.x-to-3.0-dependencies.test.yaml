@@ -110,3 +110,10 @@ tests:
           mode: "source-only"
         hasIncidents:
           exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-dependencies-00016
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
