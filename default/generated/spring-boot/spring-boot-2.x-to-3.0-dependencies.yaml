@@ -281,3 +281,22 @@
       url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
     - title: 'Spring Cloud - Supported versions and releases'
       url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions#supported-releases
+
+- ruleID: spring-boot-2.x-to-3.0-dependencies-00016
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/target=spring6+
+  when:
+    java.dependency:
+      name: org.springframework.cloud.spring-cloud-dependencies
+      upperbound: 2021.9999.9999
+  description: Spring Boot 3.0 must use at least Spring Cloud 2022
+  message: |
+    In order to use Spring Cloud along with Spring Boot 3, Spring Cloud must be upgraded at least to version 2022
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Spring Cloud - Adding Spring Cloud to an existing Spring Cloud application'
+      url: https://spring.io/projects/spring-cloud
