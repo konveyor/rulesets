@@ -90,3 +90,39 @@
       url: https://eclipse.dev/eclipselink/downloads/previous_releases.php
     - title: 'Spring 6.0 migration guide'
       url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#removed-apis
+
+- ruleID: spring-framework-5.x-to-6.0-data-access-00030
+  category: mandatory
+  effort: 1
+  labels:
+  - konveyor.io/source=springboot2
+  - konveyor.io/target=springboot3
+  tags: 
+  - springframework.dao
+  when:
+    java.referenced:
+      pattern: org.springframework.dao.DeadlockLoserDataAccessException
+      location: IMPORT
+  description: DeadlockLoserDataAccessException is depracated in favor of CannotAcquireLockException
+  message: "DeadlockLoserDataAccessException is depracated in favor of CannotAcquireLockException"
+  links:
+  - title: 'org.springframework.http.HttpMethod Documentation'
+    url: https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/HttpMethod.html
+
+- ruleID: spring-framework-5.x-to-6.0-data-access-00040
+  category: mandatory
+  effort: 1
+  labels:
+  - konveyor.io/source=springboot2
+  - konveyor.io/target=springboot3
+  tags: 
+  - springframework.dao
+  when:
+    java.referenced:
+      pattern: org.springframework.dao.CannotSerializeTransactionException
+      location: IMPORT
+  description: CannotSerializeTransactionException is depracated in favor of CannotAcquireLockException
+  message: "CannotSerializeTransactionException is depracated in favor of CannotAcquireLockException"
+  links:
+  - title: 'org.springframework.http.HttpMethod Documentation'
+    url: https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/HttpMethod.html
