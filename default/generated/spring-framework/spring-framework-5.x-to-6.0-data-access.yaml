@@ -90,3 +90,45 @@
       url: https://eclipse.dev/eclipselink/downloads/previous_releases.php
     - title: 'Spring 6.0 migration guide'
       url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#removed-apis
+
+- ruleID: spring-framework-5.x-to-6.0-data-access-00030
+  category: mandatory
+  effort: 1
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    builtin.file:
+      pattern: sql-error-codes\.xml
+  description: Custom SQL Error Codes detected
+  message: |
+    sql-error-codes.xml file found. Consider re-enabling the legacy SQLErrorCodeSQLExceptionTranslator for database exception handling compatibility.
+
+    **Recommendation**:
+    Add the following bean definition to your Spring configuration:
+    ```
+      <bean id="legacySQLExceptionTranslator" class="org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator">
+        <constructor-arg ref="dataSource"/>
+      </bean>
+    ```
+    
+    or in Java config:
+    ```
+      @Bean
+      public SQLErrorCodeSQLExceptionTranslator legacySQLExceptionTranslator(DataSource dataSource) {
+          return new SQLErrorCodeSQLExceptionTranslator(dataSource);
+      }
+    ```
+
+    This explicitly re-enables the legacy translator, ensuring that the custom mappings are used. 
+    However, in the long term it is recommended to move away from this approach. 
+    Spring Framework 6 has a more refined and extensible system based on `SQLExceptionSubclassTranslator` and `SQLExceptionTranslator` implementations.
+
+    The long-term approach is to rely on Spring's built-in exception translation mechanism, which is more robust and requires less manual configuration.
+    This involves:
+    - `@Repository` **Annotation**: Ensure that your data access classes (DAOs or repositories) are annotated with `@Repository`. This annotation enables automatic exception translation.
+    - **Let Spring Handle It**: Remove the `sql-error-codes.xml` file and the explicit configuration of the `SQLErrorCodeSQLExceptionTranslator`. Spring will now use its more sophisticated `SQLExceptionTranslator` implementations (like `SQLExceptionSubclassTranslator`) to map `SQLExceptions` to `DataAccessExceptions`.
+
+  links:
+  - title: 'Spring 6.0 migration guide'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#data-access-and-transactions
