@@ -29,6 +29,71 @@
   - title: 'Spring 6.0 migration guide'
     url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#removed-apis
 
+- ruleID: spring-framework-5.x-to-6.0-data-access-00002
+  category: mandatory
+  effort: 1
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  - konveyor.io/target=hibernate6+
+  when:
+    or:
+    - builtin.filecontent:
+        filePattern: (hibernate\.properties|persistence\.xml|cfg\.xml|application\.properties|application\.yaml)
+        pattern: hibernate.bytecode.provider=javassist
+    - as: hibernate_cfg
+      builtin.xml:
+        namespaces:
+          s: http://www.hibernate.org/xsd/hibernate-configuration
+        xpath: "/hibernate-configuration/session-factory/property[@name='hibernate.bytecode.provider' and text()='javassist']" 
+    - as: persistence_files
+      builtin.xml:
+        namespaces:
+          s: http://java.sun.com/xml/ns/persistence
+        xpath: /persistence/persistence-unit/properties/property[@name='hibernate.bytecode.provider' and @value='javassist']
+    - java.referenced:
+        pattern: org.hibernate.bytecode.javassist*
+    - builtin.filecontent:
+        filePattern: .*\.java
+        pattern: setProperty\(\"hibernate.bytecode.provider\", \"javassist\"\)
+  description: Javassist no longer supported
+  message: |
+    Explicit configuration of `hibernate.bytecode.provider=javassist` has been detected. Javassist is no longer supported by Hibernate 5.6 and later.
+
+    The simplest and recommended solution is to remove this property entirely. Hibernate will automatically use Byte Buddy, which is the current default.
+  links:
+  - title: 'Hibernate 5.6 migration guide - Javassist removed'
+    url: https://github.com/hibernate/hibernate-orm/blob/5.6/migration-guide.adoc#javassist-removed
+
+- ruleID: spring-framework-5.x-to-6.0-data-access-00003
+  category: potential
+  effort: 5
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  - konveyor.io/target=hibernate6+
+  when:
+    and:
+      - or:  # Check for Hibernate annotations or clob fields
+        - java.referenced:
+            location: ANNOTATION
+            pattern: javax.persistence.Lob
+        - java.referenced:
+            location: FIELD
+            pattern: java.sql.Clob
+      - as: config_files # Check for PostgreSQL 8.1 dialect
+        builtin.filecontent:
+          filePattern: .*\.(java|properties|xml)
+          pattern: org.hibernate.dialect.PostgreSQL81Dialect
+  description: Changes to the DDL type for CLOB
+  message: |
+    Using `@Lob` or `java.sql.Clob` with PostgreSQL 8.1 dialect might require DDL type changes for CLOBs.
+
+    Consider reviewing DDL generation for CLOB columns and potential migration to 'oid' type if necessary.
+  links:
+  - title: 'Hibernate 5.6 migration guide - Changes to the DDL type for CLOB'
+    url: https://github.com/hibernate/hibernate-orm/blob/5.6/migration-guide.adoc#changes-to-the-ddl-type-for-clob-in-postgresql81dialect-and-its-subclasses
+
 - ruleID: spring-framework-5.x-to-6.0-data-access-00010
   category: mandatory
   effort: 3
