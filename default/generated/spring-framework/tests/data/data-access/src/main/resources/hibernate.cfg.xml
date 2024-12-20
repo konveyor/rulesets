@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.cache.provider_class">org.hibernate.cache.EHCacheProvider</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        <property name="connection.pool_size">10</property>
+        <property name="show_sql">false</property>
+        <property name="hibernate.bytecode.provider">javassist</property>
+    </session-factory>
+</hibernate-configuration>
