@@ -1,0 +1,20 @@
+- category: mandatory
+  customVariables: []
+  description: MicroProfile OpenAPI 4.0
+  effort: 1
+  labels:
+  - konveyor.io/source=eapxp
+  - konveyor.io/target=eapxp6
+  - konveyor.io/target=eapxp
+  - JBossEAP
+  - EAPXP
+  links: []
+  message: When migrating an application making use of MicroProfile OpenAPI to JBoss EAP XP 6.0 (or later), please note that MicroProfile OpenAPI 4.0 introduces potentially incompatible changes as documented. See https://download.eclipse.org/microprofile/microprofile-open-api-4.0/microprofile-openapi-spec-4.0.html#incompatible_changes_40
+  ruleID: eapxp_microprofile_openapi_4.0-00001
+  when:
+    or:
+    - java.dependency:
+        name: org.eclipse.microprofile.openapi.microprofile-openapi-api
+        lowerbound: 0.0.0
+    - builtin.file:
+        pattern: openapi\.(yaml|yml|json)
