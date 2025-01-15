@@ -39,16 +39,12 @@
   when:
     or:
     - builtin.filecontent:
-        filePattern: (hibernate\.properties|persistence\.xml|cfg\.xml|application\.properties|application\.yaml)
+        filePattern: .*\.properties
         pattern: hibernate.bytecode.provider=javassist
     - builtin.xml:
         namespaces:
           s: http://www.hibernate.org/xsd/hibernate-configuration
         xpath: "/hibernate-configuration/session-factory/property[@name='hibernate.bytecode.provider' and text()='javassist']" 
-    - builtin.xml:
-        namespaces:
-          s: http://java.sun.com/xml/ns/persistence
-        xpath: /persistence/persistence-unit/properties/property[@name='hibernate.bytecode.provider' and @value='javassist']
     - java.referenced:
         pattern: org.hibernate.bytecode.javassist*
     - builtin.filecontent:
@@ -84,16 +80,21 @@
             filePattern: .*\.(java|properties|xml)
             pattern: org.hibernate.dialect.PostgreSQL81Dialect
         - java.dependency:
-            name: postgresql
+            lowerbound: 0.0.0
+            name: org.postgresql.postgresql
   description: Changes to the DDL type for CLOB
   message: |
     Using `@Lob` or `java.sql.Clob` with PostgreSQL 8.1 dialect might require DDL type changes for CLOBs.
 
     Consider reviewing DDL generation for CLOB columns and potential migration to 'oid' type if necessary.
 
-    All PostgreSQL JDBC drivers unfortunately just store the oid it created for a `java.sql.Clob` into the text column. Although reading back the value with the CLOB API works, PostgreSQL has no knowledge of the reference to the LOB, because the oid is not known to PostgreSQL, leading to data loss when vacuumlo (the utility to clean up unused LOBs) runs. To avoid the data loss, it is required to use the oid type so that vacuumlo can see the reference.
+    All PostgreSQL JDBC drivers unfortunately just store the oid it created for a `java.sql.Clob` into the text column. 
+    Although reading back the value with the CLOB API works, PostgreSQL has no knowledge of the reference to the LOB, 
+    because the oid is not known to PostgreSQL, leading to data loss when vacuumlo (the utility to clean up unused LOBs) runs. 
+    To avoid the data loss, it is required to use the oid type so that vacuumlo can see the reference.
 
-    Updating to 5.6.2 does not require any schema or application changes by default, but we highly recommend that you migrate existing text columns for LOBs to oid to prevent data loss due to the activity of vacuumlo. 
+    Updating to 5.6.2 does not require any schema or application changes by default, but we highly recommend that you migrate 
+    existing text columns for LOBs to oid to prevent data loss due to the activity of vacuumlo. 
   links:
   - title: 'Hibernate 5.6 migration guide - Changes to the DDL type for CLOB'
     url: https://github.com/hibernate/hibernate-orm/blob/5.6/migration-guide.adoc#changes-to-the-ddl-type-for-clob-in-postgresql81dialect-and-its-subclasses
