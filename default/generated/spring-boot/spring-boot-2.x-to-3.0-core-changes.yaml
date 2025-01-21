@@ -1,0 +1,48 @@
+- ruleID: spring-boot-2.x-to-3.0-core-changes-00001
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - builtin.file:
+        pattern: "banner.gif"
+    - builtin.file:
+        pattern: "banner.jpg"
+    - builtin.file:
+        pattern: "banner.png"
+  description: Image banner support removed
+  message: |
+    Support for image-based application banners has been removed. `banner.gif`, `banner.jpg`,
+    and `banner.png` files are now ignored and should be replaced with a text-based `banner.txt` file.
+
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - Core changes'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#image-banner-support-removed
+
+
+- ruleID: spring-boot-2.x-to-3.0-core-changes-00010
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: '*'
+      location: CLASS
+      annotated:
+        pattern: org.springframework.boot.context.properties.ConstructorBinding
+  description: "@ConstructorBinding no longer needed at type level"
+  message: |
+    `@ConstructorBinding` is no longer needed at the type level on `@ConfigurationProperties` classes and should be removed.
+    When a class or record has multiple constructors, it may still be used on a constructor to indicate which one should be used for property binding.
+    
+    If you were relying on autowiring of a dependency into the constructor of a `@ConfigurationProperties` class,
+    you must now annotate it with @Autowired to prevent it being identified as a target for property binding.
+
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - Core changes'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#constructingbinding-no-longer-needed-at-the-type-level
+
