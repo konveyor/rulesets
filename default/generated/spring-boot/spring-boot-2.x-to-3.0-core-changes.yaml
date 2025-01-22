@@ -46,3 +46,42 @@
     - title: 'Spring Boot 3.0 Migration Guide - Core changes'
       url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#constructingbinding-no-longer-needed-at-the-type-level
 
+
+- ruleID: spring-boot-2.x-to-3.0-core-changes-00020
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.boot.json.YamlJsonParser
+  description: YamlJsonParser has been removed in Spring Boot 3.0
+  message: |
+    The class `YamlJsonParser` has been removed in Spring Boot 3.0 because SnakeYAML's JSON parsing was inconsistent with other parsers.
+
+    If you were using `YamlJsonParser`, switch to one of the other implementations of Spring Boot's `JsonParser` interface:
+    - **`JacksonJsonParser`**: Uses Jackson to parse JSON.
+    - **`BasicJsonParser`**: Provides a simple, lightweight JSON parser (less commonly used).
+
+    For example:
+    - Using `JacksonJsonParser`:
+      ```
+      JsonParser parser = new JacksonJsonParser();
+      Map<String, Object> jsonMap = parser.parseMap(jsonInputString);
+      ```
+    - Using `BasicJsonParser`:
+      ```
+      JsonParser parser = new BasicJsonParser();
+      Map<String, Object> jsonMap = parser.parseMap(jsonInputString);
+      ```
+
+    Ensure to update all usages of `YamlJsonParser` to a supported `JsonParser` implementation.
+
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#yamljsonparser
+    - title: 'JacksonJsonParser Documentation'
+      url: https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/json/JacksonJsonParser.html
+    - title: 'BasicJsonParser Documentation'
+      url: https://docs.spring.io/spri
