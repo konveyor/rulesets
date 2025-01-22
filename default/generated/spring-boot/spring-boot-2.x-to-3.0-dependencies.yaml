@@ -2,8 +2,8 @@
   category: mandatory
   effort: 5
   labels:
-    - konveyor.io/source=spring5
-    - konveyor.io/target=spring6+
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
   when:
     java.dependency:
       name: org.springframework.cloud.spring-cloud-bus
@@ -20,8 +20,8 @@
   category: mandatory
   effort: 5
   labels:
-    - konveyor.io/source=spring5
-    - konveyor.io/target=spring6+
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
   when:
     java.dependency:
       nameregex: org.springframework.cloud.spring-cloud-circuitbreaker*
@@ -39,8 +39,8 @@
   category: mandatory
   effort: 5
   labels:
-    - konveyor.io/source=spring5
-    - konveyor.io/target=spring6+
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
   when:
     java.dependency:
       nameregex: org.springframework.cloud.spring-cloud-commons
@@ -58,8 +58,8 @@
   category: mandatory
   effort: 5
   labels:
-    - konveyor.io/source=spring5
-    - konveyor.io/target=spring6+
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
   when:
     java.dependency:
       nameregex: org.springframework.cloud.spring-cloud-config*
@@ -77,8 +77,8 @@
   category: mandatory
   effort: 5
   labels:
-    - konveyor.io/source=spring5
-    - konveyor.io/target=spring6+
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
   when:
     java.dependency:
       nameregex: org.springframework.cloud.spring-cloud-consul*
@@ -96,8 +96,8 @@
   category: mandatory
   effort: 5
   labels:
-    - konveyor.io/source=spring5
-    - konveyor.io/target=spring6+
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
   when:
     java.dependency:
       nameregex: org.springframework.cloud.spring-cloud-contract
@@ -115,8 +115,8 @@
   category: mandatory
   effort: 5
   labels:
-    - konveyor.io/source=spring5
-    - konveyor.io/target=spring6+
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
   when:
     java.dependency:
       name: org.springframework.cloud.spring-cloud-function-core
@@ -134,8 +134,8 @@
   category: mandatory
   effort: 5
   labels:
-    - konveyor.io/source=spring5
-    - konveyor.io/target=spring6+
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
   when:
     java.dependency:
       nameregex: org.springframework.cloud.spring-cloud-gateway.*
@@ -153,8 +153,8 @@
   category: mandatory
   effort: 5
   labels:
-    - konveyor.io/source=spring5
-    - konveyor.io/target=spring6+
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
   when:
     java.dependency:
       nameregex: org.springframework.cloud.spring-cloud-kubernetes
@@ -172,8 +172,8 @@
   category: mandatory
   effort: 5
   labels:
-    - konveyor.io/source=spring5
-    - konveyor.io/target=spring6+
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
   when:
     java.dependency:
       nameregex: org.springframework.cloud.spring-cloud-netflix.*
@@ -191,8 +191,8 @@
   category: mandatory
   effort: 5
   labels:
-    - konveyor.io/source=spring5
-    - konveyor.io/target=spring6+
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
   when:
     java.dependency:
       nameregex: org.springframework.cloud.spring-cloud-openfeign
@@ -210,8 +210,8 @@
   category: mandatory
   effort: 5
   labels:
-    - konveyor.io/source=spring5
-    - konveyor.io/target=spring6+
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
   when:
     java.dependency:
       nameregex: org.springframework.cloud.spring-cloud-stream
@@ -229,8 +229,8 @@
   category: mandatory
   effort: 5
   labels:
-    - konveyor.io/source=spring5
-    - konveyor.io/target=spring6+
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
   when:
     java.dependency:
       nameregex: org.springframework.cloud.spring-cloud-task
@@ -248,8 +248,8 @@
   category: mandatory
   effort: 5
   labels:
-    - konveyor.io/source=spring5
-    - konveyor.io/target=spring6+
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
   when:
     java.dependency:
       nameregex: org.springframework.cloud.spring-cloud-vault
@@ -267,8 +267,8 @@
   category: mandatory
   effort: 5
   labels:
-    - konveyor.io/source=spring5
-    - konveyor.io/target=spring6+
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
   when:
     java.dependency:
       nameregex: org.springframework.cloud.spring-cloud-zookeeper
@@ -286,8 +286,8 @@
   category: mandatory
   effort: 5
   labels:
-    - konveyor.io/source=spring5
-    - konveyor.io/target=spring6+
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
   when:
     java.dependency:
       name: org.springframework.cloud.spring-cloud-dependencies
