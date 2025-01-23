@@ -1,0 +1,48 @@
+- ruleID: spring-boot-2.x-to-3.0-webapp-changes-00000
+  category: optional
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    builtin.filecontent:
+      filePattern: .*\.properties
+      pattern: server\.max-http-header-size
+  description: 'server.max-http-header-size has been deprecated'
+  message: |
+    Previously, the `server.max-http-header-size` was treated inconsistently across the four supported embedded web
+    servers. When using Jetty, Netty, or Undertow it would configure the max HTTP request header size.
+    When using Tomcat it would configure the max HTTP request and response header sizes.
+
+    To address this inconsistency, `server.max-http-header-size` has been deprecated and a replacement,
+    `server.max-http-request-header-size`, has been introduced. Both properties now only apply to the request header
+    size, irrespective of the underlying web server.
+
+    To limit the max header size of an HTTP response on Tomcat or Jetty (the only two servers that support such
+    a setting), use a `WebServerFactoryCustomizer`.
+
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - Web application changes'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#servermax-http-header-size
+
+
+- ruleID: spring-boot-2.x-to-3.0-webapp-changes-00010
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.context.SmartLifecycle
+      location: IMPLEMENTS_TYPE
+  description: "Updated Phases for Graceful Shutdown"
+  message: |
+    The phases used by the `SmartLifecycle` implementations for graceful shutdown have been updated. Graceful shutdown
+    now begins in phase `SmartLifecycle.DEFAULT_PHASE` - 2048 and the web server is stopped in phase
+    `SmartLifecycle.DEFAULT_PHASE` - 1024. Any `SmartLifecycle` implementations that were participating
+    in graceful shutdown should be updated accordingly.
+
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - Web application changes'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#updated-phases-for-graceful-shutdown
