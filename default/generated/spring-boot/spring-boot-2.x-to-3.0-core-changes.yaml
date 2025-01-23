@@ -85,3 +85,33 @@
       url: https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/json/JacksonJsonParser.html
     - title: 'BasicJsonParser Documentation'
       url: https://docs.spring.io/spri
+
+
+- ruleID: spring-boot-2.x-to-3.0-core-changes-00030
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    builtin.file:
+      pattern: "spring.factories"
+  description: "Autoconfiguration mechanism has changed"
+  message: |
+    In Spring Boot 3.0, the `spring.factories` file can no longer be used to register
+    auto-configuration classes under the `EnableAutoConfiguration` key. Instead, these classes
+    must be listed in the new `AutoConfiguration.imports` file.
+
+    Please migrate the entries as follows:
+
+    1. Identify all auto-configuration classes listed under the `EnableAutoConfiguration` key in `spring.factories`.
+    2. Create a new file: `META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports`.
+    3. Copy the auto-configuration class entries into the `AutoConfiguration.imports` file.
+    4. Remove or comment out the `EnableAutoConfiguration` key and its entries from `spring.factories`.
+
+    If your library must support both Spring Boot 2.x and 3.x, you can list the classes in both files.
+    Spring Boot 2.7 will handle this gracefully by deduplicating entries.
+  links:
+    - title: "Spring Boot 3.0 Migration Guide - Autoconfiguration files"
+      url: "https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#auto-configuration-files"
+
