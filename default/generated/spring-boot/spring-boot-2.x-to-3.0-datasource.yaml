@@ -1,0 +1,123 @@
+- ruleID: spring-boot-2.x-to-3.0-datasource-00000
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    builtin.filecontent:
+      filePattern: .*\.properties
+      pattern: spring\.data
+  description: Spring data properties
+  message: |
+    The `spring.data` prefix has been reserved for Spring Data and any properties under the prefix imply
+    that Spring Data is required on the classpath.
+
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - Changes to data properties'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#changes-to-data-properties
+
+- ruleID: spring-boot-2.x-to-3.0-datasource-00010
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      name: org.flywaydb.flyway-core
+      upperbound: 8.9999.999999
+  description: Spring Boot 3.0 uses Flyway 9.0 by default
+  message: |
+    Spring Boot 3.0 uses Flyway 9.0 by default. Please see the Flyway release notes and blog post to learn how this
+    may affect your application.
+  
+    FlywayConfigurationCustomizer beans are now called to customize the FluentConfiguration after any Callback and
+    JavaMigration beans have been added to the configuration. An application that defines Callback and JavaMigration
+    beans and adds callbacks and Java migrations using a customizer may have to be updated to ensure that the intended
+    callbacks and Java migrations are used.
+
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - Flyway'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#flyway
+    - title: 'Flyway - Release notes'
+      url: https://flywaydb.org/documentation/learnmore/releaseNotes#9.0.0
+    - title: 'Flyway - Blog post'
+      url: https://flywaydb.org/blog/version-9-is-coming-what-developers-need-to-know
+
+- ruleID: spring-boot-2.x-to-3.0-datasource-00020
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      name: org.flywaydb.flyway-core
+      upperbound: 8.9999.999999
+  description: Spring Boot 3.0 uses Flyway 9.0 by default
+  message: |
+    Spring Boot 3.0 uses Flyway 9.0 by default. Please see the Flyway release notes and blog post to learn how this
+    may affect your application.
+    
+    FlywayConfigurationCustomizer beans are now called to customize the FluentConfiguration after any Callback and
+    JavaMigration beans have been added to the configuration. An application that defines Callback and JavaMigration
+    beans and adds callbacks and Java migrations using a customizer may have to be updated to ensure that the intended
+    callbacks and Java migrations are used.
+
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - Flyway'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#flyway
+    - title: 'Flyway - Release notes'
+      url: https://flywaydb.org/documentation/learnmore/releaseNotes#9.0.0
+    - title: 'Flyway - Blog post'
+      url: https://flywaydb.org/blog/version-9-is-coming-what-developers-need-to-know
+
+
+- ruleID: spring-boot-2.x-to-3.0-datasource-00030
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      name: org.liquibase.liquibase-core
+      lowerbound: 0.0.0
+  description: Liquibase updates
+  message: |
+    Spring Boot 3.0 uses Liquibase 4.17.x by default. Some users have reported problems with 4.17.x.
+    If your application is affected, consider overriding the Liquibase version to meet your application’s needs.
+    
+    See the potential problems link in the links section.
+
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - Liquibase'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#liquibase
+    - title: 'Liquibase - Potential problems'
+      url: https://github.com/spring-projects/spring-boot/issues/35010
+
+
+- ruleID: spring-boot-2.x-to-3.0-datasource-00040
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      name: de.flapdoodle.embed.de.flapdoodle.embed.mongo
+      lowerbound: 0.0.0
+  description: Autoconfiguration for Flapdoodle has been removed
+  message: |
+    Auto-configuration and dependency management for Flapdoodle embedded MongoDB has been removed. If you are using
+    embedded MongoDB for testing, use the auto-configuration library provided by the Flapdoodle project or modify
+    the tests to use the Testcontainers project instead of embedded MongoDB.
+
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - Embedded MongoDB'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#embedded-mongodb
+    - title: 'Github - Flapdoodle Project'
+      url: https://github.com/flapdoodle-oss/de.flapdoodle.embed.mongo.spring
+    - title: 'Testcontainers'
+      url: https://testcontainers.com/
