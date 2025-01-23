@@ -26,3 +26,10 @@ tests:
           mode: "source-only"
         hasIncidents:
           exactly: 2
+  - ruleID: spring-boot-2.x-to-3.0-core-changes-00030
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
