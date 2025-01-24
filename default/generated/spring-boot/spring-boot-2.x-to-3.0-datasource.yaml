@@ -121,3 +121,57 @@
       url: https://github.com/flapdoodle-oss/de.flapdoodle.embed.mongo.spring
     - title: 'Testcontainers'
       url: https://testcontainers.com/
+
+
+- ruleID: spring-boot-2.x-to-3.0-datasource-00050
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    builtin.filecontent:
+      filePattern: pom\.xml
+      pattern: r2dbc-bom\.version
+  description: R2DBC bom no longer available
+  message: |
+    Spring Boot 3.0 uses R2DBC 1.0 by default. With the 1.0 release, R2DBC no longer publishes a bill of materials (bom) which has affected Spring Boot’s dependency management. The r2dbc-bom.version can no longer be used to override R2DBC’s version. In its place, several new properties for the individual and separately versioned modules are now available:
+  
+    - `oracle-r2dbc.version` (`com.oracle.database.r2dbc:oracle-r2dbc)`
+    - `r2dbc-h2.version` (`io.r2dc:r2dbc-h2)`
+    - `r2dbc-pool.version` (`io.r2dc:r2dbc-pool)`
+    - `r2dbc-postgres.version` (`io.r2dc:r2dbc-postgres)`
+    - `r2dbc-proxy.version` (`io.r2dc:r2dbc-proxy)`
+    - `r2dbc-spi.version` (`io.r2dc:r2dbc-spi)`
+
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - R2DBC 1.0'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#r2dbc-10
+
+
+- ruleID: spring-boot-2.x-to-3.0-datasource-00060
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      name: org.elasticsearch.client.elasticsearch-rest-high-level-client
+      lowerbound: 0.0.0
+
+  description: Elasticsearch high level REST client no longer supported
+  message: |
+    Support for Elasticsearch’s high-level REST client has been removed. In its place, auto-configuration
+    for Elasticsearch’s new Java client has been introduced. Similarly, support for the Spring Data Elasticsearch
+    templates that built on top of the high-level REST client has been removed. In its place, auto-configuration
+    for the new templates that build upon the new Java client has been introduced. See the Elasticsearch section
+    of the reference documentation for further details.
+
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - R2DBC 1.0'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#elasticsearch-clients-and-templates
+    - title: 'Spring Elasticsearch docs'
+      url: https://docs.spring.io/spring-boot/docs/3.0.x/reference/html/data.html#data.nosql.elasticsearch
+
+

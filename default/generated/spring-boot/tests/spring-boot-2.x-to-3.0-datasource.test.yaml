@@ -40,3 +40,17 @@ tests:
           mode: "source-only"
         hasIncidents:
           exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-datasource-00050
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-datasource-00060
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
