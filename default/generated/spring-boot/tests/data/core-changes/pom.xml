@@ -20,7 +20,7 @@
 
 	<properties>
 		<java.version>11</java.version> <!-- Set Java version (11 or later for Spring Boot 2.7.x) -->
-		<r2dbc-bom.version>2.5</r2dbc-bom.version>
+		<r2dbc-bom.version>Arabba-RELEASE</r2dbc-bom.version>
 	</properties>
 
 	<dependencies>
@@ -137,6 +137,11 @@
 			<groupId>org.elasticsearch.client</groupId>
 			<artifactId>elasticsearch-rest-high-level-client</artifactId>
 			<version>7.17.27</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 
 	</dependencies>
