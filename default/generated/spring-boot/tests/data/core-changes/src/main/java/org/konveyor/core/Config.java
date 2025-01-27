@@ -1,5 +1,6 @@
 package org.konveyor.core;
 
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -9,6 +10,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationManagerResolver;
 
 @Configuration
+@EnableBatchProcessing
 @EnableConfigurationProperties(ApplicationProperties.class)
 public class Config {
 
