@@ -156,8 +156,13 @@
       namespaces:
         m: http://maven.apache.org/POM/4.0.0
       xpath: |-
-        /m:project[not(m:build/m:plugins/m:plugin/m:artifactId/text() = 'maven-failsafe-plugin') or
-                        m:build/m:plugins/m:plugin/m:artifactId[text() = 'maven-failsafe-plugin' and not(../m:executions/m:execution/m:configuration/m:systemPropertyVariables/m:native.image.path)]]
+        /m:project[
+            not(m:build/m:plugins/m:plugin/m:artifactId/text() = 'maven-failsafe-plugin') or
+            m:build/m:plugins/m:plugin[m:artifactId[text() = 'maven-failsafe-plugin'] and 
+                not(m:executions/m:execution/m:configuration/m:systemPropertyVariables/m:native.image.path) and
+                not(m:configuration/m:systemPropertyVariables/m:native.image.path)
+            ]
+        ]
 - category: mandatory
   customVariables: []
   description: Add Maven profile to run the Quarkus native build
