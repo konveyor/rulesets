@@ -29,6 +29,76 @@
   - title: 'Spring 6.0 migration guide'
     url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#removed-apis
 
+- ruleID: spring-framework-5.x-to-6.0-data-access-00002
+  category: mandatory
+  effort: 1
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  - konveyor.io/target=hibernate6+
+  when:
+    or:
+    - builtin.filecontent:
+        filePattern: .*\.properties
+        pattern: hibernate.bytecode.provider=javassist
+    - builtin.xml:
+        namespaces:
+          s: http://www.hibernate.org/xsd/hibernate-configuration
+        xpath: "/hibernate-configuration/session-factory/property[@name='hibernate.bytecode.provider' and text()='javassist']" 
+    - java.referenced:
+        pattern: org.hibernate.bytecode.javassist*
+    - builtin.filecontent:
+        filePattern: .*\.java
+        pattern: setProperty\(\"hibernate.bytecode.provider\", \"javassist\"\)
+  description: Javassist no longer supported
+  message: |
+    Explicit configuration of `hibernate.bytecode.provider=javassist` has been detected. Javassist is no longer supported by Hibernate 5.6 and later.
+
+    The simplest and recommended solution is to remove this property entirely. Hibernate will automatically use Byte Buddy, which is the current default.
+  links:
+  - title: 'Hibernate 5.6 migration guide - Javassist removed'
+    url: https://github.com/hibernate/hibernate-orm/blob/5.6/migration-guide.adoc#javassist-removed
+
+- ruleID: spring-framework-5.x-to-6.0-data-access-00003
+  category: potential
+  effort: 5
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  - konveyor.io/target=hibernate6+
+  when:
+    and:
+      - or:  # Check for Hibernate annotations or clob fields
+        - java.referenced:
+            location: ANNOTATION
+            pattern: javax.persistence.Lob
+        - java.referenced:
+            location: FIELD
+            pattern: java.sql.Clob
+      - or:
+        - builtin.filecontent:
+            filePattern: .*\.(java|properties|xml)
+            pattern: org.hibernate.dialect.PostgreSQL81Dialect
+        - java.dependency:
+            lowerbound: 0.0.0
+            name: org.postgresql.postgresql
+  description: Changes to the DDL type for CLOB
+  message: |
+    Using `@Lob` or `java.sql.Clob` with PostgreSQL 8.1 dialect might require DDL type changes for CLOBs.
+
+    Consider reviewing DDL generation for CLOB columns and potential migration to 'oid' type if necessary.
+
+    All PostgreSQL JDBC drivers unfortunately just store the oid it created for a `java.sql.Clob` into the text column. 
+    Although reading back the value with the CLOB API works, PostgreSQL has no knowledge of the reference to the LOB, 
+    because the oid is not known to PostgreSQL, leading to data loss when vacuumlo (the utility to clean up unused LOBs) runs. 
+    To avoid the data loss, it is required to use the oid type so that vacuumlo can see the reference.
+
+    Updating to 5.6.2 does not require any schema or application changes by default, but we highly recommend that you migrate 
+    existing text columns for LOBs to oid to prevent data loss due to the activity of vacuumlo. 
+  links:
+  - title: 'Hibernate 5.6 migration guide - Changes to the DDL type for CLOB'
+    url: https://github.com/hibernate/hibernate-orm/blob/5.6/migration-guide.adoc#changes-to-the-ddl-type-for-clob-in-postgresql81dialect-and-its-subclasses
+
 - ruleID: spring-framework-5.x-to-6.0-data-access-00010
   category: mandatory
   effort: 3
@@ -92,6 +162,48 @@
       url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#removed-apis
 
 - ruleID: spring-framework-5.x-to-6.0-data-access-00030
+  category: mandatory
+  effort: 1
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    builtin.file:
+      pattern: sql-error-codes\.xml
+  description: Custom SQL Error Codes detected
+  message: |
+    sql-error-codes.xml file found. Consider re-enabling the legacy SQLErrorCodeSQLExceptionTranslator for database exception handling compatibility.
+
+    **Recommendation**:
+    Add the following bean definition to your Spring configuration:
+    ```
+      <bean id="legacySQLExceptionTranslator" class="org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator">
+        <constructor-arg ref="dataSource"/>
+      </bean>
+    ```
+    
+    or in Java config:
+    ```
+      @Bean
+      public SQLErrorCodeSQLExceptionTranslator legacySQLExceptionTranslator(DataSource dataSource) {
+          return new SQLErrorCodeSQLExceptionTranslator(dataSource);
+      }
+    ```
+
+    This explicitly re-enables the legacy translator, ensuring that the custom mappings are used. 
+    However, in the long term it is recommended to move away from this approach. 
+    Spring Framework 6 has a more refined and extensible system based on `SQLExceptionSubclassTranslator` and `SQLExceptionTranslator` implementations.
+
+    The long-term approach is to rely on Spring's built-in exception translation mechanism, which is more robust and requires less manual configuration.
+    This involves:
+    - `@Repository` **Annotation**: Ensure that your data access classes (DAOs or repositories) are annotated with `@Repository`. This annotation enables automatic exception translation.
+    - **Let Spring Handle It**: Remove the `sql-error-codes.xml` file and the explicit configuration of the `SQLErrorCodeSQLExceptionTranslator`. Spring will now use its more sophisticated `SQLExceptionTranslator` implementations (like `SQLExceptionSubclassTranslator`) to map `SQLExceptions` to `DataAccessExceptions`.
+
+  links:
+  - title: 'Spring 6.0 migration guide'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#data-access-and-transactions
+    
+- rulID: spring-framework-5.x-to-6.0-data-access-00040
   category: optional
   effort: 1
   labels:
@@ -109,7 +221,7 @@
   - title: 'org.springframework.dao.DeadlockLoserDataAccessException'
     url: https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/dao/DeadlockLoserDataAccessException.html
 
-- ruleID: spring-framework-5.x-to-6.0-data-access-00040
+- ruleID: spring-framework-5.x-to-6.0-data-access-00050
   category: optional
   effort: 1
   labels:
