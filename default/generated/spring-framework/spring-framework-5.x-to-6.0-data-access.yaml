@@ -220,6 +220,9 @@
   links:
   - title: 'org.springframework.dao.DeadlockLoserDataAccessException'
     url: https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/dao/DeadlockLoserDataAccessException.html
+  - title: 'Spring Migration guide'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#:~:text=CannotSerializeTransactionException%20and%20DeadlockLoserDataAccessException,exception%20translation%20scenarios.
+
 
 - ruleID: spring-framework-5.x-to-6.0-data-access-00050
   category: optional
@@ -238,3 +241,5 @@
   links:
   - title: 'org.springframework.dao.CannotSerailizeTransactionException Documentation'
     url: https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/dao/CannotSerializeTransactionException.html
+  - title: 'Spring Migration guide'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#:~:text=CannotSerializeTransactionException%20and%20DeadlockLoserDataAccessException,exception%20translation%20scenarios.
