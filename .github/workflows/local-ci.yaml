@@ -25,8 +25,14 @@ jobs:
       - name: Run kantra test
         id: kantra-test
         run: |
-          podman cp $(podman create --name kantra-download quay.io/konveyor/kantra:latest):/usr/local/bin/kantra .
-          podman rm kantra-download
+          CONTAINER_ID=$(podman create --name kantra-download quay.io/konveyor/kantra:latest)
+          if [ -z "$CONTAINER_ID" ]; then
+            echo "Error: Failed to create container"
+            exit 1
+          fi
+          podman cp ${CONTAINER_ID}:/usr/local/bin/kantra .
+          podman rm ${CONTAINER_ID}
+
           ./kantra test ./default/generated/ | tee output.log || true
           tail -n5 output.log > message.md
           msg=$(grep -E '.*Rules Summary:' message.md -A1)
