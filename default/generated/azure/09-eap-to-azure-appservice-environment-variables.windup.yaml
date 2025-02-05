@@ -26,7 +26,7 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.System.getenv*
+        pattern: java.lang.System.getenv(*)
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.System.getProperty*
+        pattern: java.lang.System.getProperty(*)

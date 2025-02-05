@@ -248,10 +248,10 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: jakarta.persistence.Query.getResultStream*
+        pattern: jakarta.persistence.Query.getResultStream(*)
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.hibernate.query.Query.stream*
+        pattern: org.hibernate.query.Query.stream(*)
 - category: mandatory
   customVariables: []
   description: The signature of the Interceptor#onSave method has been changed
@@ -275,7 +275,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.Interceptor.onSave*
+      pattern: org.hibernate.Interceptor.onSave(*)
 - category: mandatory
   customVariables: []
   description: The contents of the loader.collection package have been restructured
@@ -475,7 +475,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.query.Query.iterate*
+      pattern: org.hibernate.query.Query.iterate(*)
 - category: mandatory
   customVariables: []
   description: Using NativeQuery to call SQL functions and procedures is no longer

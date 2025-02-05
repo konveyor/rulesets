@@ -14,7 +14,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.security.auth.Subject.doAs*
+      pattern: javax.security.auth.Subject.doAs(*)
 - category: mandatory
   customVariables: []
   description: Deprecated method in JDK 18 for removal in future release
@@ -31,4 +31,4 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: java.lang.Thread.stop*
+      pattern: java.lang.Thread.stop(*)

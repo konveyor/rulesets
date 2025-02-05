@@ -183,7 +183,7 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.hibernate.search.backend.elasticsearch.util.spi.URLEncodedString.fromJSon*
+        pattern: org.hibernate.search.backend.elasticsearch.util.spi.URLEncodedString.fromJSon(*)
 - category: mandatory
   customVariables: []
   description: FieldPaths#absolutize(String, String, String) has been removed
@@ -233,7 +233,7 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.hibernate.search.engine.backend.index.spi.IndexManagerImplementor.createIndexingPlan*
+        pattern: org.hibernate.search.engine.backend.index.spi.IndexManagerImplementor.createIndexingPlan(*)
 - category: mandatory
   customVariables: []
   description: IndexIndexingPlan#executeAndReport has changed
@@ -258,7 +258,7 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlan.executeAndReport*
+        pattern: org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlan.executeAndReport(*)
 - category: mandatory
   customVariables: []
   description: IndexSchemaObjectNodeBuilder has changed

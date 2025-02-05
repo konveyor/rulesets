@@ -1,0 +1,160 @@
+- ruleID: spring-framework-5.x-to-6.0-core-container-00001
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    java.referenced:
+      pattern: org.springframework.beans.BeanInfoFactory
+  description: Spring Framework 6.0 does not use Introspector anymore
+  message: |
+    The core container now performs basic bean property determination without `java.beans.Introspector` by default.
+
+    In case of sophisticated JavaBeans usage, for full backwards compatibility with 5.3.x, specify the following content
+    in a `META-INF/spring.factories` file, which enables 5.3-style full `java.beans.Introspector` usage:
+    
+    ```
+    org.springframework.beans.BeanInfoFactory=org.springframework.beans.ExtendedBeanInfoFactory
+    ```
+  links:
+  - title: 'Spring 6.0 migration guide'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#core-container
+
+- ruleID: spring-framework-5.x-to-6.0-core-container-00010
+  category: potential
+  effort: 2
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/target=spring6+
+  when:
+    java.referenced:
+      pattern: org.springframework.scheduling.annotation.Async
+      location: ANNOTATION
+  description: Methods annotated with @Async must return either Future or void
+  message: |
+    Methods annotated with @Async must return either Future or void. This has long been documented but is now also
+    actively checked and enforced, with an exception thrown for any other return type.
+    
+    If your @Async annotated method does not return `Future` or `void`, please change its signature.
+  links:
+    - title: 'Spring 6.0 migration guide'
+      url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#core-container
+      
+- ruleID: spring-framework-5.x-to-6.0-core-container-00020
+  category: optional
+  effort: 2
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    java.referenced:
+      pattern: org.springframework.util.concurrent.ListenableFuture*
+      location: IMPORT
+  description: ListenableFuture and related types are deprecated since Spring Framework 6.0  
+  message: |
+    Spring Framework 6.0 has deprecated support for ListenableFuture and related types (ListenableFutureCallback, SettableListenableFuture, etc.)
+    The reason for deprecation is the introduction of CompletableFuture in Java 8, which offers a richer set of features and better integration with the Java ecosystem.
+    java.util.concurrent.CompletableFuture is now the recommended way to handle asynchronous operations in Spring applications.
+    
+    An example of a migration would be:
+    
+    Before migration:
+    ```
+        import org.springframework.util.concurrent.ListenableFuture;
+        import org.springframework.util.concurrent.ListenableFutureCallback;
+        import org.springframework.util.concurrent.SettableListenableFuture;
+
+        public class ListenableFutureExample {
+
+            public static void main(String[] args) {
+                SettableListenableFuture<String> future = new SettableListenableFuture<>();
+
+                future.addCallback(new ListenableFutureCallback<String>() {
+                    @Override
+                    public void onSuccess(String result) {
+                        System.out.println("Success: " + result);
+                    }
+
+                    @Override
+                    public void onFailure(Throwable ex) {
+                        System.out.println("Failure: " + ex.getMessage());
+                    }
+                });
+
+                // Simulate asynchronous operation
+                new Thread(() -> {
+                    try {
+                        Thread.sleep(1000);
+                        future.set("Hello, World!");
+                    } catch (InterruptedException e) {
+                        future.setException(e);
+                    }
+                }).start();
+            }
+        }
+        
+    ```
+    
+    After migration:
+    ```
+        import java.util.concurrent.CompletableFuture;
+
+        public class CompletableFutureExample {
+          public static void main(String[] args) {
+            CompletableFuture<String> future = new CompletableFuture<>();
+
+            future.whenComplete((result, ex) -> {
+              if (ex != null) {
+                System.out.println("Failure: " + ex.getMessage());
+              } else if (result != null) {
+                System.out.println("Success: " + result);
+              }
+            });
+
+            // Simulate asynchronous operation
+            new Thread(() -> {
+              try {
+                // Thread.currentThread().interrupt();
+                Thread.sleep(1000);
+                future.complete("Hello, World!");
+              } catch (InterruptedException e) {
+                future.completeExceptionally(e);
+              }
+            }).start();
+          }
+
+        }
+
+    ```    
+
+  links:
+  - title: 'Spring 6.0 migration guide'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#core-container
+
+- ruleID: spring-framework-5.x-to-6.0-core-container-00030
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    or:
+    - java.referenced:
+        location: FIELD
+        pattern: org.springframework.expression.spel.support.SimpleEvaluationContext
+    - java.referenced:
+        location: CONSTRUCTOR_CALL
+        pattern: org.springframework.expression.spel.support.SimpleEvaluationContext
+  description: Replace SimpleEvaluationContext with StandardEvaluationContext when working with array operations.
+  message: |
+    `SimpleEvaluationContext` now disallows creating arrays inside expressions which aligns with how regular constructor resolution works.
+    
+    Code that relies on creating arrays within expressions using `SimpleEvaluationContext` might malfunction or produce unexpected results.
+  
+    It is recommended to switch to `org.springframework.expression.spel.standard.StandardEvaluationContext` as it offers the full SpEL functionality, 
+    including array creation within expressions as well as improved performance.
+  links:
+  - title: 'Spring 6.0 migration guide'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#core-container
+

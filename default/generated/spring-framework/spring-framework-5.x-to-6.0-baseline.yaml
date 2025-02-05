@@ -1,0 +1,44 @@
+- ruleID: spring-framework-5.x-to-6.0-baseline-00001
+  category: mandatory
+  effort: 1
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    or:
+    - builtin.xml:
+        filepaths:
+        - pom.xml
+        namespaces:
+          m: http://maven.apache.org/POM/4.0.0
+        xpath: //m:maven.compiler.source[number(.) < 17]
+    - builtin.xml:
+        filepaths:
+        - pom.xml
+        namespaces:
+          m: http://maven.apache.org/POM/4.0.0
+        xpath: //m:java.version[number(.) < 17]
+  description: Spring Framework 6.0 must use at least Java 17
+  message: |
+    Spring Framework 6.0 and above must use at least Java 17. Check the migration guide in the link for more information.
+  links:
+  - title: 'Spring 6.0 migration guide'
+    url: https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#upgrading-to-version-60
+
+- ruleID: spring-framework-5.x-to-6.0-baseline-00010
+  category: mandatory
+  effort: 1
+  labels:
+  - konveyor.io/source=spring
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    java.dependency:
+      nameregex: javax.*
+      lowerbound: 0.0.0
+  description: Spring Framework 6.0 must use at least JakartaEE 9
+  message: |
+    Spring Framework 6.0 and above must use at least JakartaEE 9. Check the migration guide in the link for more information.
+  links:
+  - title: 'Spring 6.0 migration guide'
+    url: https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#upgrading-to-version-60

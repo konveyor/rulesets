@@ -1,0 +1,157 @@
+- ruleID: spring-framework-5.x-to-6.0-web-applications-00001
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    java.referenced:
+      pattern: org.springframework.web.bind.annotation.GetMapping
+      location: ANNOTATION
+      annotated:
+        elements:
+          - name: value
+            value: '.*[^\/]$'
+  description: Trailing slack matching has changed in Spring 6.0
+  message: |
+    As of Spring Framework 6.0, the trailing slash matching configuration option has been deprecated and its default
+    value set to false. This means that previously, the following controller would match both
+    "GET /some/greeting" and "GET /some/greeting/":
+  
+    ```java
+    @RestController
+    public class MyController {
+        @GetMapping("/some/greeting")
+            public String greeting() {
+            return "Hello";
+        }
+    }
+    ```
+  
+    As of this Spring Framework change, "GET /some/greeting/" doesn't match anymore by default and will result in an
+    HTTP 404 error. Developers should instead configure explicit redirects/rewrites through a proxy, a Servlet/web
+    filter, or even declare the additional route explicitly on the controller handler
+    (like @GetMapping("/some/greeting", "/some/greeting/") for more targeted cases.
+    Until your application fully adapts to this change, you can change the default with the following
+    global Spring MVC configuration:
+    
+    ```java
+    @Configuration
+    public class WebConfiguration implements WebMvcConfigurer {
+        @Override
+        public void configurePathMatch(PathMatchConfigurer configurer) {
+            configurer.setUseTrailingSlashMatch(true);
+        }
+    }
+    ```
+  links:
+  - title: 'Spring 6.0 migration guide'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
+  - title: 'Specific Spring Framwork change'
+    url: https://github.com/spring-projects/spring-framework/issues/28552
+
+- ruleID: spring-framework-5.x-to-6.0-web-applications-00010
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/target=spring6+
+  when:
+    and:
+      - java.referenced:
+          pattern: org.springframework.web.bind.annotation.RequestMapping
+          location: ANNOTATION
+        as: annotation
+      - java.referenced:
+          pattern: org.springframework.stereotype.Controller
+          location: ANNOTATION
+          filepaths: "{{annotation.Filepaths}}"
+        not: true
+        ignore: true
+        from: annotation
+  description: "@RequestMapping does not detect controllers anymore"
+  message: |
+    Spring MVC and Spring WebFlux no longer detect controllers based solely on a type-level @RequestMapping
+    annotation. That means interface-based AOP proxying for web controllers may no longer work. Please, enable
+    class-based proxying for such controllers; otherwise the interface must also be annotated with @Controller.
+  links:
+    - title: 'Spring 6.0 migration guide'
+      url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
+
+
+- ruleID: spring-framework-5.x-to-6.0-web-applications-00030
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/target=spring6+
+  when:
+    or:
+      - and:
+          - or:
+              - java.referenced:
+                  pattern: org.springframework.stereotype.Controller
+                  location: ANNOTATION
+              - java.referenced:
+                  pattern: org.springframework.web.bind.annotation.RestController
+                  location: ANNOTATION
+            as: class
+            ignore: true
+          - java.referenced:
+              pattern: '* javax.xml.transform.Source'
+              location: METHOD
+              filepaths: "{{class.Filepaths}}"
+            from: class
+      - or:
+          - java.referenced:
+              pattern: 'getForObject(URI,Class<Source>)'
+              location: METHOD_CALL
+          - java.referenced:
+              pattern: 'getForObject(String,Class<Source>,*)'
+              location: METHOD_CALL
+  description: "SourceHttpMessageConverter is not configured by default anymore in Spring MVC and RestTemplate"
+  message: |
+    `SourceHttpMessageConverter` is not configured by default anymore in Spring MVC and `RestTemplate`.
+    As a consequence, Spring web applications using `javax.xml.transform.Source` now need to configure
+    `SourceHttpMessageConverter` explicitly. 
+    
+    ```java
+    @EnableWebMvc
+    @Configuration
+    @ComponentScan({ "org.konveyor.web" })
+    public class WebConfig implements WebMvcConfigurer {
+
+      @Override
+      public void configureMessageConverters(List<HttpMessageConverter<?>> messageConverters) {
+          messageConverters.add(new SourceHttpMessageConverter());
+          messageConverters.add(new MappingJackson2HttpMessageConverter());
+      }
+    }
+    ```   
+    
+    Note that the order of converter registration is important,
+    and `SourceHttpMessageConverter` should typically be registered before "catch-all" converters like
+    `MappingJackson2HttpMessageConverter` for example.
+  links:
+    - title: 'Spring 6.0 migration guide'
+      url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
+    - title: 'GitHub issue: Make SourceHttpMessageConverter optional'
+      url: https://github.com/spring-projects/spring-framework/issues/29535
+      
+- ruleID: spring-framework-5.x-to-6.0-web-applications-00040
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    java.referenced:
+      pattern: org.springframework.http.HttpMethod
+      location: IMPORT
+  description: HttpMethod has be upgraded from an ENUM to a CLASS
+  message: "HttpMethod is now a class and no longer an enum. Though the public API has been maintained, some migration might be necessary (i.e. change from EnumSet to Set, use if else instead of switch). Check the specific Spring Framework change for more information in the links"
+  links:
+  - title: 'Specific Spring Framework Change'
+    url: https://github.com/spring-projects/spring-framework/issues/27697
+  - title: 'Spring Documentation'
+    url: https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/HttpMethod.html

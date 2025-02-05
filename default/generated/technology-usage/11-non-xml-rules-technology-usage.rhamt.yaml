@@ -1,4 +1,5 @@
 - customVariables: []
+  description: Non-XML EJB
   labels:
   - konveyor.io/include=always
   links: []
@@ -71,6 +72,7 @@
     builtin.hasTags:
     - JDBC
 - customVariables: []
+  description: Non-XML JPA
   labels:
   - konveyor.io/include=always
   links: []

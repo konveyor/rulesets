@@ -1,0 +1,110 @@
+- ruleID: eapxp_microprofile_openapi_4.0-00001
+  description: "Incompatible changes to the Schema model API, reflecting changes in the OpenAPI v3.1 document format."
+  message: "Replace use of `nullable` property with `SchemaType.NULL`."
+  category: mandatory
+  effort: 1
+  links:
+    - url: https://download.eclipse.org/microprofile/microprofile-open-api-4.0/microprofile-openapi-spec-4.0.html#incompatible_changes_40
+      title: "Release Notes for MicroProfile OpenAPI 4.0"
+  when:
+    and:
+      - java.dependency:
+          name: org.eclipse.microprofile.openapi.microprofile-openapi-api
+          lowerbound: "1.0"
+          upperbound: "3.99"
+      - or:
+        - java.referenced:
+            pattern: org.eclipse.microprofile.openapi.models.media.Schema.getNullable
+            location: METHOD_CALL
+        - java.referenced:
+            pattern: org.eclipse.microprofile.openapi.models.media.Schema.setNullable
+            location: METHOD_CALL
+        - java.referenced:
+            pattern: org.eclipse.microprofile.openapi.models.media.Schema.nullable
+            location: METHOD_CALL
+- ruleID: eapxp_microprofile_openapi_4.0-00002
+  description: "Incompatible changes to the Schema model API, reflecting changes in the OpenAPI v3.1 document format."
+  message: "`type` property type changed from `SchemaType` to `List<SchemaType>`."
+  category: potential
+  effort: 1
+  links:
+    - url: https://download.eclipse.org/microprofile/microprofile-open-api-4.0/microprofile-openapi-spec-4.0.html#incompatible_changes_40
+      title: "Release Notes for MicroProfile OpenAPI 4.0"
+  when:
+    and:
+      - java.dependency:
+          name: org.eclipse.microprofile.openapi.microprofile-openapi-api
+          lowerbound: "1.0"
+          upperbound: "3.99"
+      - or:
+        - java.referenced:
+            pattern: org.eclipse.microprofile.openapi.models.media.Schema.getType
+            location: METHOD_CALL
+        - java.referenced:
+            pattern: org.eclipse.microprofile.openapi.models.media.Schema.setType
+            location: METHOD_CALL
+        - java.referenced:
+            pattern: org.eclipse.microprofile.openapi.models.media.Schema.type
+            location: METHOD_CALL
+- ruleID: eapxp_microprofile_openapi_4.0-00003
+  description: "Incompatible changes to the Schema model API, reflecting changes in the OpenAPI v3.1 document format."
+  message: "`exclusiveMinimum` and `exclusiveMaximum` property types changed from `Boolean` to `BigDecimal`."
+  category: potential
+  effort: 1
+  links:
+    - url: https://download.eclipse.org/microprofile/microprofile-open-api-4.0/microprofile-openapi-spec-4.0.html#incompatible_changes_40
+      title: "Release Notes for MicroProfile OpenAPI 4.0"
+  when:
+    and:
+      - java.dependency:
+          name: org.eclipse.microprofile.openapi.microprofile-openapi-api
+          lowerbound: "1.0"
+          upperbound: "3.99"
+      - or:
+        - java.referenced:
+            pattern: org.eclipse.microprofile.openapi.models.media.Schema.getExclusiveMaximum
+            location: METHOD_CALL
+        - java.referenced:
+            pattern: org.eclipse.microprofile.openapi.models.media.Schema.setExclusiveMaximum
+            location: METHOD_CALL
+        - java.referenced:
+            pattern: org.eclipse.microprofile.openapi.models.media.Schema.exclusiveMaximum
+            location: METHOD_CALL
+        - java.referenced:
+            pattern: org.eclipse.microprofile.openapi.models.media.Schema.getExclusiveMinimum
+            location: METHOD_CALL
+        - java.referenced:
+            pattern: org.eclipse.microprofile.openapi.models.media.Schema.setExclusiveMinimum
+            location: METHOD_CALL
+        - java.referenced:
+            pattern: org.eclipse.microprofile.openapi.models.media.Schema.exclusiveMinimum
+            location: METHOD_CALL
+- ruleID: eapxp_microprofile_openapi_4.0-00004
+  description: "Default value of `@RequestBody.required` changed from `false` to `true` to reflect that this is the much more common case where a RESTful resource method accepts a request body."
+  message: "If `@RequestBody` of a resource method is not required, override new default value via `required = false`."
+  category: potential
+  effort: 1
+  links:
+    - url: https://download.eclipse.org/microprofile/microprofile-open-api-4.0/microprofile-openapi-spec-4.0.html#incompatible_changes_40
+      title: "Release Notes for MicroProfile OpenAPI 4.0"
+  when:
+    and:
+      - java.dependency:
+          name: org.eclipse.microprofile.openapi.microprofile-openapi-api
+          lowerbound: "1.0"
+          upperbound: "3.99"
+      - java.referenced:
+          pattern: org.eclipse.microprofile.openapi.annotations.parameters.RequestBody
+          location: ANNOTATION
+- ruleID: eapxp_microprofile_openapi_4.0-00005
+  description: "`/openapi` endpoint now serves documentation in OpenAPI v3.1 format."
+  message: "Static OpenAPI documents should conform to verson 3.1 of the OpenAPI specification."
+  category: potential
+  effort: 1
+  links:
+    - url: https://download.eclipse.org/microprofile/microprofile-open-api-4.0/microprofile-openapi-spec-4.0.html#incompatible_changes_40
+      title: "Release Notes for MicroProfile OpenAPI 4.0"
+  when:
+    builtin.file:
+      pattern: openapi\.(yaml|yml|json)
+
