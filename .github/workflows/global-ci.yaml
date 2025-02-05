@@ -72,3 +72,4 @@ jobs:
     uses: konveyor/ci/.github/workflows/global-ci.yml@main
     with:
       component_name: tackle2-hub
+      api_tests_ref: ${{ github.event.pull_request.base.ref }}
