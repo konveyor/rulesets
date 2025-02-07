@@ -8,11 +8,11 @@
     java.referenced:
       pattern: org.springframework.mock.web.MockHttpServletRequest
       location: IMPORT
-  description: DeadlockLoserDataAccessException is depracated in favor of CannotAcquireLockException
-  message: "The Spring-provided Servlet mocks (MockHttpServletRequest, MockHttpSession) require Servlet 6.0 now, due to a breaking change between the Servlet 5.0 and 6.0 API jars. They can be used for testing Servlet 5.0 based code but need to run against the Servlet 6.0 API (or newer) on the test classpath. Note that your production code may still compile against Servlet 5.0 and get integration-tested with Servlet 5.0 based containers; just mock-based tests need to run against the Servlet 6.0 API jar."
+  description: TODO
+  message: "TODO"
   links:
-  - title: 'org.springframework.http.HttpMethod Documentation'
-    url: https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/HttpMethod.html
+  - title: 'TODO'
+    url: TODO
 
 - ruleID: spring-framework-5.x-to-6.0-demo-00002
   category: potential
@@ -24,9 +24,8 @@
     java.referenced:
       pattern: org.springframework.mock.web.MockHttpSession
       location: IMPORT
-  description: DeadlockLoserDataAccessException is depracated in favor of CannotAcquireLockException
-  message: "The Spring-provided Servlet mocks (MockHttpServletRequest, MockHttpSession) require Servlet 6.0 now, due to a breaking change between the Servlet 5.0 and 6.0 API jars. They can be used for testing Servlet 5.0 based code but need to run against the Servlet 6.0 API (or newer) on the test classpath. Note that your production code may still compile against Servlet 5.0 and get integration-tested with Servlet 5.0 based containers; just mock-based tests need to run against the Servlet 6.0 API jar."
+  description: TODO
+  message: "TODO"
   links:
-  - title: 'org.springframework.http.HttpMethod Documentation'
-    url: https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/HttpMethod.html
-
+  - title: 'TODO'
+    url: TODO
