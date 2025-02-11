@@ -1,0 +1,14 @@
+rulesPath: ../75-socket-communication.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/75-socket-communication
+- name: builtin
+  dataPath: ./data/75-socket-communication
+tests:
+- ruleID: socket-communication-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 63
+      messageMatches: 'Recommendation: Use Java EE standard or loosely coupled protocols
+        such as JMS, JAX-RS, or JAX-WS for backing service interactions'

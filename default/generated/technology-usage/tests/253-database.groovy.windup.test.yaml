@@ -1,0 +1,159 @@
+rulesPath: ../253-database.groovy.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/253-database.groovy
+- name: builtin
+  dataPath: ./data/253-database.groovy
+tests:
+- ruleID: database-01400
+  testCases:
+  - name: tc-1
+    hasTags:
+    - HSQLDB Driver
+  - name: tc-2
+    hasTags:
+    - Embedded HSQLDB Driver
+- ruleID: database-01500
+  testCases:
+  - name: tc-1
+    hasTags:
+    - MySQL Driver
+  - name: tc-2
+    hasTags:
+    - Embedded MySQL Driver
+- ruleID: database-01600
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Derby Driver
+  - name: tc-2
+    hasTags:
+    - Embedded Derby Driver
+- ruleID: database-01700
+  testCases:
+  - name: tc-1
+    hasTags:
+    - PostgreSQL Driver
+  - name: tc-2
+    hasTags:
+    - Embedded PostgreSQL Driver
+- ruleID: database-01800
+  testCases:
+  - name: tc-1
+    hasTags:
+    - H2 Driver
+  - name: tc-2
+    hasTags:
+    - Embedded H2 Driver
+- ruleID: database-01805
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Microsoft SQL Driver
+  - name: tc-2
+    hasTags:
+    - Embedded Microsoft SQL Driver
+- ruleID: database-01900
+  testCases:
+  - name: tc-1
+    hasTags:
+    - SQLite Driver
+  - name: tc-2
+    hasTags:
+    - Embedded SQLite Driver
+- ruleID: database-02000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Oracle DB Driver
+  - name: tc-2
+    hasTags:
+    - Embedded Oracle DB Driver
+- ruleID: database-02100
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Cassandra Client
+  - name: tc-2
+    hasTags:
+    - Embedded Cassandra Client
+- ruleID: database-02200
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Axion Driver
+  - name: tc-2
+    hasTags:
+    - Embedded Axion Driver
+- ruleID: database-02300
+  testCases:
+  - name: tc-1
+    hasTags:
+    - MckoiSQLDB Driver
+  - name: tc-2
+    hasTags:
+    - Embedded MckoiSQLDB Driver
+- ruleID: database-02400
+  testCases:
+  - name: tc-1
+    hasTags:
+    - MongoDB Client
+  - name: tc-2
+    hasTags:
+    - Embedded MongoDB Client
+- ruleID: database-02500
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Spring Data
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Spring Data
+- ruleID: database-02600
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Morphia
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Morphia
+- ruleID: database-02700
+  testCases:
+  - name: tc-1
+    hasTags:
+    - LevelDB Client
+  - name: tc-2
+    hasTags:
+    - Embedded LevelDB Client
+- ruleID: database-02800
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Apache HBase Client
+  - name: tc-2
+    hasTags:
+    - Embedded Apache HBase Client
+- ruleID: database-02900
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Apache Accumulo Client
+  - name: tc-2
+    hasTags:
+    - Embedded Apache Accumulo Client
+- ruleID: database-03000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Spring Data JPA
+  - name: tc-2
+    hasTags:
+    - Embedded Spring Data JPA
+- ruleID: database-03100
+  testCases:
+  - name: tc-1
+    hasTags:
+    - MariaDB Driver
+  - name: tc-2
+    hasTags:
+    - Embedded MariaDB Driver

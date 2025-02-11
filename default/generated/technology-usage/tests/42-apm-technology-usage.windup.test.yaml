@@ -1,0 +1,27 @@
+rulesPath: ../42-apm-technology-usage.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/42-apm-technology-usage
+- name: builtin
+  dataPath: ./data/42-apm-technology-usage
+tests:
+- ruleID: technology-usage-apm-00010
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Application Insights
+- ruleID: technology-usage-apm-00020
+  testCases:
+  - name: tc-1
+    hasTags:
+    - New Relic
+- ruleID: technology-usage-apm-00030
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Elastic APM
+- ruleID: technology-usage-apm-00040
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Dynatrace

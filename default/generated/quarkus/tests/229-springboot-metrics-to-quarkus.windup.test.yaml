@@ -1,0 +1,26 @@
+rulesPath: ../229-springboot-metrics-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/229-springboot-metrics-to-quarkus
+- name: builtin
+  dataPath: ./data/229-springboot-metrics-to-quarkus
+tests:
+- ruleID: springboot-metrics-to-quarkus-0100
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Replace the Micrometer dependency with Quarkus Microprofile
+        'metrics' extension
+- ruleID: springboot-metrics-to-quarkus-0200
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Replace the Micrometer code with Microprofile Metrics code
+- ruleID: springboot-metrics-to-quarkus-0300
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Replace `management.endpoints.web.exposure.include=prometheus`

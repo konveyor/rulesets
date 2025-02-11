@@ -1,0 +1,18 @@
+name: Local CI
+
+on: ["push", "pull_request"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run kantra test
+        run: |
+          podman cp $(podman create --name kantra-download quay.io/konveyor/kantra:latest):/usr/local/bin/kantra .
+          podman rm kantra-download
+          ./kantra test ./default/generated/ || true
+          
+            
+        
