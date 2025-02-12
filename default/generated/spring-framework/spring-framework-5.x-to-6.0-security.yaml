@@ -1,0 +1,157 @@
+- ruleID: spring-framework-5.x-to-6.0-security-00001
+  category: mandatory
+  effort: 3
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/source=spring-boot2
+  - konveyor.io/target=spring6+
+  - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
+      location: INHERITANCE
+  description: WebSecurityConfigurerAdapter has been removed in Spring Security 6.0
+  message: |
+    `WebSecurityConfigurerAdapter` has been removed in Spring Security 6.0. Now, to configure security,
+    instead of extending `WebSecurityConfigurerAdapter`, define a `SecurityFilterChain` bean in a `@Configuration`
+    class:
+    
+    Before:
+    ```java
+    @Configuration
+    @EnableWebSecurity
+    public class SecurityConfig extends WebSecurityConfigurerAdapter {
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            http
+                .authorizeRequests()
+                    .antMatchers("/public").permitAll()
+                    .anyRequest().authenticated()
+                .and()
+                .formLogin();
+        }
+    }
+    ```
+    
+    After:
+    ```java
+    @Configuration
+    @EnableWebSecurity
+    public class SecurityConfig {
+        @Bean
+        public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+            http
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/public").permitAll()
+                .anyRequest().authenticated()
+            )
+            .formLogin(withDefaults());
+            return http.build();
+        }
+    }
+    ```
+    
+  links:
+    - title: 'Spring Security without the WebSecurityConfigurerAdapter'
+      url: https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-00010
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.security.core.context.SecurityContextHolder.getContext()
+        location: METHOD_CALL
+    - java.referenced:
+        pattern: org.springframework.security.core.context.SecurityContextHolder.setContext(*)
+        location: METHOD_CALL
+  description: SecurityContext not automatically saved anymore
+  message: |
+    In Spring Security 5, the default behavior is for the SecurityContext to automatically be saved to the
+    SecurityContextRepository using the SecurityContextPersistenceFilter. Saving must be done just prior to the
+    HttpServletResponse being committed and just before SecurityContextPersistenceFilter. Unfortunately, automatic
+    persistence of the SecurityContext can surprise users when it is done prior to the request completing (i.e. just
+    prior to committing the HttpServletResponse). It also is complex to keep track of the state to determine if a
+    save is necessary causing unnecessary writes to the SecurityContextRepository (i.e. HttpSession) at times.
+  
+    In Spring Security 6, the default behavior is that the SecurityContextHolderFilter will only read the SecurityContext
+    from SecurityContextRepository and populate it in the SecurityContextHolder. Users now must explicitly save the
+    SecurityContext with the SecurityContextRepository if they want the SecurityContext to persist between requests.
+    This removes ambiguity and improves performance by only requiring writing to the SecurityContextRepository
+    (i.e. HttpSession) when it is necessary.
+    
+    So for instance, the following code:
+    ```java
+    SecurityContextHolder.setContext(securityContext);
+    ```
+    
+    should now be:
+    ```java
+    SecurityContextHolder.setContext(securityContext);
+    securityContextRepository.saveContext(securityContext, httpServletRequest, httpServletResponse);
+    ```
+    
+    so that the context is explicitly saved.
+
+  links:
+    - title: 'Session Management Migrations - Spring Security'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/session-management.html#_require_explicit_saving_of_securitycontextrepository
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-00020
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.security.web.context.HttpSessionSecurityContextRepository
+        location: TYPE
+    - java.referenced:
+        pattern: SessionCreationPolicy.IF_REQUIRED
+        location: ENUM
+    - java.referenced:
+        pattern: SessionCreationPolicy.ALWAYS
+        location: ENUM
+    - java.referenced:
+        pattern: org.springframework.security.config.Customizer.withDefaults()
+        location: METHOD_CALL
+    - java.referenced:
+        pattern: org.springframework.web.bind.annotation.SessionAttributes
+        location: ANNOTATION
+  description: Change HttpSessionSecurityContextRepository to DelegatingSecurityContextRepository
+  message: |
+    In Spring Security 5, the default SecurityContextRepository is HttpSessionSecurityContextRepository.
+    In Spring Security 6, the default SecurityContextRepository is DelegatingSecurityContextRepository.
+    To opt into the new Spring Security 6 default, the following configuration can be used:
+    
+    ```java
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+            // ...
+            .securityContext((securityContext) -> securityContext
+                .securityContextRepository(new DelegatingSecurityContextRepository(
+                        new RequestAttributeSecurityContextRepository(),
+                        new HttpSessionSecurityContextRepository()
+                ))
+            );
+        return http.build();
+    }
+    ```
+
+  links:
+    - title: 'Spring Security without the WebSecurityConfigurerAdapter'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/session-management.html#_change_httpsessionsecuritycontextrepository_to_delegatingsecuritycontextrepository
+
