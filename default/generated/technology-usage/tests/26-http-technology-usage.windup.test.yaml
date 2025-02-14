@@ -1,0 +1,23 @@
+rulesPath: ../26-http-technology-usage.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/26-http-technology-usage
+- name: builtin
+  dataPath: ./data/26-http-technology-usage
+tests:
+- ruleID: technology-usage-http-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JAX-RS
+  - name: tc-2
+    hasTags:
+    - JAX-RS
+- ruleID: technology-usage-http-01100
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JAX-WS
+  - name: tc-2
+    hasTags:
+    - JAX-WS
