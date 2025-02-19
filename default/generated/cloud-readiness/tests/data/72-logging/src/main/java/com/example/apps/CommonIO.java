@@ -1,8 +1,14 @@
+package com.example.apps;
+
 import org.apache.commons.io.input.TeeInputStream;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.apache.commons.io.output.TeeOutputStream;
 
-public class CommonsIO {
+import java.io.ByteArrayInputStream;
+import java.io.FilterOutputStream;
+import java.io.IOException;
+
+public class CommonIO {
 
     public static void main(String[] args) throws IOException {
         String str = "Hello World.";

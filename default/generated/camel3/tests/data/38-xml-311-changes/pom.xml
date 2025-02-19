@@ -118,6 +118,19 @@
             <version>5.10.2</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-apns -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-apns</artifactId>
+            <version>3.10.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-saxon -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-saxon</artifactId>
+            <version>3.20.4</version>
+        </dependency>
+
     </dependencies>
 
     <build>

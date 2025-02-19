@@ -1,7 +1,7 @@
 package environment.dependent;
 
 import edu.oswego.cs.dl.util.concurrent.PooledExecutor;
-import edu.oswego.cs.dl.util.concurrent.BoundedBuffer
+import edu.oswego.cs.dl.util.concurrent.BoundedBuffer;
 
 public class OswegoSampleUsage{
     

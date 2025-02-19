@@ -11,7 +11,7 @@ public class TimerProvider extends AbstractExpressoProvider{
 private static final String TIMER_PROPS = "expresso.providers.timer";
 public static HashMap<String, String> timerData = new HashMap<String, String>();
 public static final String TIMER_INTERVAL = "expresso.providers.timer.interval_ms";
-public static final String TIMER_MESSAGE = "expresso.providers.timer.message"
+public static final String TIMER_MESSAGE = "expresso.providers.timer.message";
 
 @Override
 public String getName() 
@@ -56,7 +56,7 @@ public void init()
 //provider in the mobile app. The default value of colour is taken as 
 //white if not set by the provider. 
  
-  setProviderColour(Colour.Grey)
+  setProviderColour(Colour.Grey);
 
         Iterator<String> timerKeys = config.getKeys(TIMER_PROPS);
         while(timerKeys.hasNext()) 

@@ -82,6 +82,20 @@
             <version>3.16.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-hazelcast-starter -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-hazelcast-starter</artifactId>
+            <version>2.24.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-mllp -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-mllp</artifactId>
+            <version>3.21.4</version>
+        </dependency>
+
+
         <!-- Camel -->
         <dependency>
             <groupId>org.apache.camel.springboot</groupId>

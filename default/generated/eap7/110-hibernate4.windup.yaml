@@ -361,7 +361,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.registerTypeOverride(*)
+      pattern: org.hibernate.cfg.Configuration.registerTypeOverride
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.setProperty()
@@ -388,7 +388,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.setProperty(*)
+      pattern: org.hibernate.cfg.Configuration.setProperties
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.setProperties()
@@ -506,7 +506,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.(configure([^)]*))
+      pattern: org.hibernate.cfg.Configuration.configure
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.setInterceptor()
@@ -721,8 +721,9 @@
     package.
   ruleID: hibernate4-00030
   when:
-    java.referenced:
-      pattern: org.hibernate.hql.spi.(MultiTableBulkIdStrategy|MultiTableBulkIdStrategy.DeleteHandler|MultiTableBulkIdStrategy.UpdateHandler|AbstractTableBasedBulkIdHandler|AbstractTableBasedBulkIdHandler.ProcessedWhereClause|TableBasedDeleteHandlerImpl|TableBasedUpdateHandlerImpl)
+    or:
+    - java.referenced:
+        pattern: org.hibernate.hql.spi*
 - category: optional
   customVariables: []
   description: Hibernate 5 - Moved class org.hibernate.hql.spi.PersistentTableBulkIdStrategy

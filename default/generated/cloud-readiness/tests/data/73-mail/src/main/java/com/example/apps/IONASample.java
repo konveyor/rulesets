@@ -1,9 +1,11 @@
-import com.iona.corba.util.SystemExceptionDisplayHelper; 
+package com.example.apps;
 
-import java.io.*; 
-import java.util.*; 
- 
-public class Client  
+import org.omg.CORBA.ORB;
+import org.omg.CORBA.SystemException;
+
+import java.io.*;
+
+public class IONASample
 { 
    
   public static void main(String args[]) 
@@ -12,13 +14,13 @@ public class Client
     props.put("org.omg.CORBA.ORBClass", "com.iona.corba.art.artimpl.ORBImpl"); 
     props.put("org.omg.CORBA.ORBSingletonClass", "com.iona.corba.art.artimpl.ORBSingleton"); 
  
-    ORB orb = ORB.init(args, props); 
+    ORB orb = ORB.init(args, props);
      
     System.out.println("initializing ORB"); 
      
     try  
-    { 
-      orb23 = (org.omg.CORBA_2_3.ORB)orb; 
+    {
+      org.omg.CORBA_2_3.ORB orb23 = (org.omg.CORBA_2_3.ORB) orb;
        
       if (!readCommandLineArguments(args)) 
       { 
@@ -29,13 +31,13 @@ public class Client
       System.out.println("retrieving exported Bank reference"); 
  
       String ior = null; 
-      Bank bank = null; 
-       
-      System.out.println("reading stringified object reference from file"); 
- 
- 
-      InputStreamReader osr=new InputStreamReader(fis); 
-      BufferedReader br=new BufferedReader(osr); 
+
+      System.out.println("reading stringified object reference from file");
+
+
+      InputStream fis = null;
+      InputStreamReader osr=new InputStreamReader(fis);
+      BufferedReader br=new BufferedReader(osr);
       ior = br.readLine(); 
       br.close(); 
  
@@ -44,31 +46,11 @@ public class Client
       org.omg.CORBA.Object o = orb.string_to_object(ior); 
  
       System.out.println("narrowing CORBA::Object"); 
-      bank = BankHelper.narrow(o); 
- 
-      BankMenu bank_menu = new BankMenu(bank, sm_is_interactive); 
-      bank_menu.run(); 
-       
-      try 
-      { 
-        if (!sm_is_interactive) 
-        { 
-          for (int i = 0; i < BankMenu.sm_account_names.length; i++) 
-          { 
-            // Remove database files 
-            // 
-          } 
-        } 
-      } 
-      finally 
-      { 
-        orb.shutdown(true); 
-      } 
+
     } 
-    catch (SystemException ex) { 
+    catch (SystemException ex) {
       System.err.println("Exception during string_to_object() or narrow()"); 
-      System.out.println(SystemExceptionDisplayHelper.toString(ex)); 
-      System.exit(0); 
+      System.exit(0);
     } 
     catch (java.io.IOException io_exc) 
     { 
@@ -76,6 +58,14 @@ public class Client
       io_exc.printStackTrace(); 
       System.exit(0); 
     } 
-  } 
-   
+  }
+
+  private static void usage() {
+
+  }
+
+  private static boolean readCommandLineArguments(String[] args) {
+    return false;
+  }
+
 }

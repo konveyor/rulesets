@@ -8,6 +8,6 @@ tests:
 - ruleID: spring-boot-to-azure-zipkin-01000
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 4
       messageMatches: The application uses Zipkin.

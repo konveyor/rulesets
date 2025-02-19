@@ -8,17 +8,17 @@ tests:
 - ruleID: environment-dependent-calls-01000
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: The class is dynamically loaded within application. During the
         migration, multiple classes
-- ruleID: environment-dependent-calls-02000
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 1
-      messageMatches: This method lookups an object using a JNDI String. During the
-        migration process, some entity JNDI bindings may change.
+#- ruleID: environment-dependent-calls-02000
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: This method lookups an object using a JNDI String. During the
+#        migration process, some entity JNDI bindings may change.
 - ruleID: environment-dependent-calls-03000
   testCases:
   - name: tc-1

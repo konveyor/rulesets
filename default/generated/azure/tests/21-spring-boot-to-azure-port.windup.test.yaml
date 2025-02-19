@@ -8,6 +8,6 @@ tests:
 - ruleID: spring-boot-to-azure-port-01000
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: The application is setting the server port.

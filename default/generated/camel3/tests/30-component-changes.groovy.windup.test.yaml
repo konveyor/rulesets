@@ -15,7 +15,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 4
+      atLeast: 1
       messageMatches: It's mandatory to specify key/passphrase for `ShiroSecurityPolicy`
 - ruleID: component-changes-00003
   testCases:

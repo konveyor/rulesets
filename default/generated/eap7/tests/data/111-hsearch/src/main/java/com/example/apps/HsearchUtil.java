@@ -1,4 +1,4 @@
-//package org.jboss.windup.hsearch;
+package com.example.apps;
 
 
 import org.hibernate.search.impl.SearchMappingBuilder;
@@ -34,6 +34,7 @@ import org.hibernate.search.cfg.SearchMapping;
 import org.hibernate.search.cfg.ContainedInMapping;
 import org.hibernate.search.query.facet.FacetSortOrder;
 
+import java.awt.print.Book;
 import java.io.Serializable;
 import java.lang.annotation.ElementType;
 import java.sql.Connection;
@@ -55,19 +56,18 @@ import org.hibernate.search.cfg.IndexedMapping;
 import org.hibernate.search.engine.spi.DocumentBuilderIndexedEntity;
 import org.hibernate.search.query.engine.spi.HSQuery;
 import org.hibernate.search.spi.BuildContext;
-import org.hibernate.search.store.spi.DirectoryHelper;
 import org.hibernate.search.MassIndexer;
 import org.hibernate.search.query.dsl.FuzzyContext;
 
 import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.queryParser.QueryParser;
-import org.apache.lucene.queryParser.QueryParserToken;
-import org.apache.lucene.queryParser.QueryParserTokenMgrError;
+//import org.apache.lucene.queryParser.QueryParserToken;
+//import org.apache.lucene.queryParser.QueryParserTokenMgrError;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.SimpleAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
-import org.apache.lucene.queryParser.QueryParserToken;
-import org.apache.lucene.queryParser.QueryParserTokenMgrError;
+//import org.apache.lucene.queryParser.QueryParserToken;
+//import org.apache.lucene.queryParser.QueryParserTokenMgrError;
 import org.apache.lucene.analysis.SimpleAnalyzer;
 import org.apache.lucene.analysis.PorterStemFilter;
 import org.apache.lucene.analysis.KeywordMarkerFilter;
@@ -83,15 +83,15 @@ import org.apache.lucene.search.function.ByteFieldSource;
 import org.apache.solr.analysis.TokenizerFactory;
 
 import org.hibernate.search.query.dsl.QueryBuilder;
+import org.hsqldb.Session;
 
 public class HsearchUtil {
 
     public void main(String[] args) {
         
-        Session session = sessionFactory.openSession();
-        FullTextSession fullTextSession = Search.getFullTextSession( session );
+        FullTextSession fullTextSession = Search.getFullTextSession(null);
         
-        FullTextQuery fullTextQuery = fullTextSession.createFullTextQuery( luceneQuery );
+        FullTextQuery fullTextQuery = fullTextSession.createFullTextQuery(null);
         fullTextQuery.setSort(new Sort(new SortField("title", SortField.STRING)));
         
         SearchFactoryImplementor searchFactory = (SearchFactoryImplementor) fullTextSession.getSearchFactory();
@@ -99,7 +99,6 @@ public class HsearchUtil {
         final QueryBuilder b = fullTextSession.getSearchFactory().buildQueryBuilder().forEntity( Book.class ).get();
         
         b.facet();
-        
         
         org.apache.lucene.search.Query luceneQuery =
                     b.keyword()
@@ -113,10 +112,6 @@ public class HsearchUtil {
         fuzzyContext.withThreshold(0.7f);
         
         
-        List result = fullTextQuery.list();
-        
-        DirectoryHelper.getVerifiedIndexDir("indexname",new Properties(), true);
-
         MassIndexer massIndexer = fullTextSession.createIndexer( Hotel.class );
         massIndexer.batchSizeToLoadObjects( 25 );
         massIndexer.cacheMode( CacheMode.NORMAL );

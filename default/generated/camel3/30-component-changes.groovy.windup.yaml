@@ -38,7 +38,7 @@
   when:
     java.referenced:
       location: IMPORT
-      pattern: org.apache.camel.component.shiro.security.ShiroSecurityPolicy*
+      pattern: org.apache.camel.component.shiro.security.ShiroSecurityPolicy
 - category: mandatory
   customVariables: []
   description: Mock API function has been removed
@@ -97,6 +97,7 @@
     builtin.xml:
       namespaces:
         c: http://camel.apache.org/schema/spring
+      # check regex matching its not working
       xpath: //*/c:simple[text()=matches(self::node(), '{*}out.(body|header){*}')]
 - category: mandatory
   customVariables: []

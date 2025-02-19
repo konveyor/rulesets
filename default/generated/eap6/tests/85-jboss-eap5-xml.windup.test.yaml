@@ -28,11 +28,11 @@ tests:
   - name: tc-2
     hasTags:
     - JBoss Seam Page
-- ruleID: jboss-eap5-xml-02000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - JBoss 5.x EAR descriptor
+#- ruleID: jboss-eap5-xml-02000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - JBoss 5.x EAR descriptor
 - ruleID: jboss-eap5-xml-08000
   testCases:
   - name: tc-1

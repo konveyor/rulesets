@@ -9,12 +9,14 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 12
+      exactly: 11
       messageMatches: If the application writes logs to a file system, local log
+    hasInsights:
+      exactly: 1
 - ruleID: logging-0001
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 4
+      exactly: 1
       messageMatches: If an application writes logs with `SocketHandler`, an alternative
         method

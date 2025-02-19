@@ -1,7 +1,11 @@
+package com.example.apps;
+
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import static java.lang.System.out;
 
 public class ServletLifeCycleExample extends HttpServlet {
 

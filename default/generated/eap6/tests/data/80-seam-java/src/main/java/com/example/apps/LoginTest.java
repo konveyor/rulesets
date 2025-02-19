@@ -1,5 +1,5 @@
 //$Id$
-package org.jboss.seam.example.booking.test;
+package com.example.apps;
 
 import org.jboss.seam.Seam;
 import org.jboss.seam.core.Manager;

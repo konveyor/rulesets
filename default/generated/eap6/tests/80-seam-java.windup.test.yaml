@@ -168,7 +168,7 @@ tests:
 - ruleID: seam-java-00240
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: Both Seam 2 and CDI beans may produce and consume events in
         order to communicate with other beans. Unlike method invocation, events allow

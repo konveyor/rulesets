@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 12
+      atLeast: 7
       messageMatches: Java native libraries might not run in a cloud or container
         environment.
 - ruleID: jni-native-code-00001

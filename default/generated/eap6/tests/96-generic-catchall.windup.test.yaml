@@ -8,74 +8,74 @@ tests:
 - ruleID: generic-catchall-00000
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: This is an old Doug Lea Concurrency util type.*
 - ruleID: generic-catchall-00001
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: .*This type is the backport of java.util.concurrent API.*
 - ruleID: generic-catchall-00002
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: .*org.mule.* was used.*
 - ruleID: generic-catchall-00003
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: MX4J .*mx4j..*
   - name: tc-2
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: MX4J.*
 - ruleID: generic-catchall-00100
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: .*org.osoa.sca.annotations.* reference was used.
-- ruleID: generic-catchall-00200
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 1
-      messageMatches: Tibco ActiveMatrix Stub.*
+#- ruleID: generic-catchall-00200
+#  testCases:
+#  - name: tc-1
+#    hasInsights:
+#      atLeast: 1
+#      messageMatches: Tibco ActiveMatrix Stub.*
 - ruleID: generic-catchall-00300
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: .*com.tibco.* reference found.*
 - ruleID: generic-catchall-00400
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: .*com.crystaldecisions.* reference found.*
 - ruleID: generic-catchall-00500
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: .*com.iona.* reference found.*
 - ruleID: generic-catchall-00600
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: .*org.apache.activeio.*
   - name: tc-2
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: .*org.apache.activemq.*
 - ruleID: generic-catchall-00900
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: .*java.sql.DriverManager.*

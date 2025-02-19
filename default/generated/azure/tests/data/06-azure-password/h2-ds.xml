@@ -9,6 +9,7 @@
             <password>sa</password>
         </security>
     </datasource>
+    <!-- if password is placed outside it works. In only won't work when in a similar node-->
     <xa-datasource jndi-name="java:/H2XADS" pool-name="H2XADS">
         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
         <xa-datasource-property name="URL">jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</xa-datasource-property>

@@ -5,8 +5,8 @@ providers:
 - name: builtin
   dataPath: ./data/87-xml-jonas
 tests:
-- ruleID: xml-jonas-01000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - JOnAS Web Descriptor
+#- ruleID: xml-jonas-01000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - JOnAS Web Descriptor

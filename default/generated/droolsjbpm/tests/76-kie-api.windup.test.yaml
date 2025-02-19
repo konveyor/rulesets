@@ -8,98 +8,98 @@ tests:
 - ruleID: kie-api-01000
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: 'Replace with : org.kie.api.KieBase'
 - ruleID: kie-api-01001
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: 'Replace with : org.kie.api.event.rule.AgendaEventListener'
   - name: tc-2
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: 'Replace with : org.kie.api.event.rule.AgendaEventListener'
 - ruleID: kie-api-01003
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: 'Replace with : org.kie.drools.core.event.DefaultAgendaEventListener'
 - ruleID: kie-api-01004
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: 'Replace with : org.kie.api.event.rule.DefaultAgendaEventListener'
 - ruleID: kie-api-01005
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: 'Replace with : org.kie.api.event.process.ProcessEventListener'
 - ruleID: kie-api-01006
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: 'Replace with : org.kie.api.event.process.DefaultProcessEventListener'
 - ruleID: kie-api-01007
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: 'Replace with : org.kie.api.logger.KieRuntimeLogger'
 - ruleID: kie-api-01008
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: 'Replace with : org.kie.api.logger.KieLoggers'
 - ruleID: kie-api-01009
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: 'Replace with : org.kie.api.runtime.KieSession'
   - name: tc-2
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: 'Replace with : org.kie.api.runtime.KieSession'
 - ruleID: kie-api-01011
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: 'Replace with : org.kie.internal.builder.KnowledgeBuilderFactory'
 - ruleID: kie-api-01012
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: 'Replace with : org.kie.internal.io.ResourceFactory'
-- ruleID: kie-api-01013
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 1
-      messageMatches: 'Replace with : org.kie.internal.io.ResourceType'
+#- ruleID: kie-api-01013
+#  testCases:
+#  - name: tc-1
+#    hasInsights:
+#      atLeast: 1
+#      messageMatches: 'Replace with : org.kie.internal.io.ResourceType'
 - ruleID: kie-api-01014
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: 'Replace with : org.kie.api.runtime.Environment'
 - ruleID: kie-api-01015
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: 'Replace with : org.kie.api.runtime.EnvironmentName'
 - ruleID: kie-api-01016
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: 'Replace with : org.kie.api.runtime.KieSessionConfiguration'

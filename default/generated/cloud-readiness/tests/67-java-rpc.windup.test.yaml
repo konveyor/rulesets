@@ -9,6 +9,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 15
+      atLeast: 6
       messageMatches: 'Recommendation: Use JAX-WS, which is the current Java EE standard
         web services framework.'

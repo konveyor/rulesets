@@ -8,7 +8,7 @@ tests:
 - ruleID: spring-boot-to-azure-config-server-01000
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 3
       messageMatches: The application uses a Spring Cloud Config Server connection
         string

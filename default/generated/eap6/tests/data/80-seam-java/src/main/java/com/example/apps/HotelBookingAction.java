@@ -1,5 +1,5 @@
 //$Id: HotelBookingAction.java 5579 2007-06-27 00:06:49Z gavin $
-package org.jboss.seam.example.booking;
+package com.example.apps;
 
 import static javax.persistence.PersistenceContextType.EXTENDED;
 
@@ -25,7 +25,8 @@ import org.jboss.seam.log.Log;
 @Stateful
 @Name("hotelBooking")
 @Restrict("#{identity.loggedIn}")
-public class HotelBookingAction implements HotelBooking
+@Redirect(viewId = "", message = "//error.xhtml")
+public class HotelBookingAction
 {
    
    @PersistenceContext(type=EXTENDED)
@@ -47,7 +48,7 @@ public class HotelBookingAction implements HotelBooking
    @In
    private Events events;
    
-   @Logger 
+   @Logger
    private Log log;
    
    private boolean bookingValid;
@@ -58,14 +59,10 @@ public class HotelBookingAction implements HotelBooking
       hotel = em.merge(selectedHotel);
    }
    
-   @Redirect(//error.xhtml")
    public void bookHotel()
    {      
       booking = new Booking(hotel, user);
       Calendar calendar = Calendar.getInstance();
-      booking.setCheckinDate( calendar.getTime() );
-      calendar.add(Calendar.DAY_OF_MONTH, 1);
-      booking.setCheckoutDate( calendar.getTime() );
    }
    
    public void setBookingDetails()
