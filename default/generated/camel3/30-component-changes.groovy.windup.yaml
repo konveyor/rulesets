@@ -182,6 +182,7 @@
     - builtin.filecontent:
         filePattern: ""
         pattern: .*terser\(.*
+        filepaths: "{{file.Filepaths}}"
       from: file
     - as: file
       java.referenced:

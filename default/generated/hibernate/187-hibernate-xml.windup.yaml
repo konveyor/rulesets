@@ -24,6 +24,7 @@
       builtin.xml:
         namespaces: {}
         xpath: //*[@type='string']
+        filepaths: "{{1.filepaths}}"
       from: "1"
 - category: mandatory
   customVariables: []
@@ -53,6 +54,7 @@
       builtin.xml:
         namespaces: {}
         xpath: //property[@name='hibernate.jdbc.use_streams_for_binary']
+        filepaths: "1.filepaths"
       from: "1"
 - category: mandatory
   customVariables: []
