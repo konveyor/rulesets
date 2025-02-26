@@ -1,4 +1,4 @@
-// Contains code that should match for the following tests:
+package com.example.apps;// Contains code that should match for the following tests:
 //
 // weblogic-09000-test
 // weblogic-10000-test

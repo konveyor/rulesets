@@ -1,4 +1,4 @@
-package org.jboss.windup.hsearch;
+package com.example.apps;
 
 
 import java.io.Serializable;

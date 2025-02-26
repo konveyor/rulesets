@@ -252,10 +252,10 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: jakarta.persistence.Query.getResultStream(*)
+        pattern: jakarta.persistence.Query.getResultStream
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.hibernate.query.Query.stream(*)
+        pattern: org.hibernate.Query.stream
 - category: mandatory
   customVariables: []
   description: The signature of the Interceptor#onSave method has been changed
@@ -279,7 +279,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.Interceptor.onSave(*)
+      pattern: org.hibernate.Interceptor.onSave
 - category: mandatory
   customVariables: []
   description: The contents of the loader.collection package have been restructured
@@ -399,8 +399,49 @@
     through the `SqlAstTranslator` which a `Dialect` exposes a factory for.
   ruleID: hibernate6-00150
   when:
-    java.referenced:
-      pattern: org.hibernate.sql.(ANSICaseFragment|ANSIJoinFragment|CacheJoinFragment|CaseFragment|ConditionFragment|DecodeCaseFragment|DerbyCaseFragment|DisjunctionFragment|HSQLCaseFragment|InsertSelect|JoinFragment|JoinType|MckoiCaseFragment|OracleJoinFragment|QueryJoinFragment|QuerySelect|Select|SelectExpression|SelectFragment|SelectValues|Sybase11JoinFragment)
+    or:
+      - java.referenced:
+          pattern: org.hibernate.sql.ANSICaseFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.ANSIJoinFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.CacheJoinFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.CaseFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.ConditionFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.DecodeCaseFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.DerbyCaseFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.DisjunctionFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.HSQLCaseFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.InsertSelect
+      - java.referenced:
+          pattern: org.hibernate.sql.JoinFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.JoinType
+      - java.referenced:
+          pattern: org.hibernate.sql.MckoiCaseFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.OracleJoinFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.QueryJoinFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.QuerySelect
+      - java.referenced:
+          pattern: org.hibernate.sql.Select
+      - java.referenced:
+          pattern: org.hibernate.sql.SelectExpression
+      - java.referenced:
+          pattern: org.hibernate.sql.SelectFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.SelectValues
+      - java.referenced:
+          pattern: org.hibernate.sql.Sybase11JoinFragment
 - category: mandatory
   customVariables: []
   description: Support for basic property mappings with multiple columns was removed
@@ -479,7 +520,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.query.Query.iterate(*)
+      pattern: org.hibernate.Query.iterate
 - category: mandatory
   customVariables: []
   description: Using NativeQuery to call SQL functions and procedures is no longer

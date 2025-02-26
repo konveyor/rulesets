@@ -2,12 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.jboss.windup.rules.test</groupId>
-        <artifactId>windup-rulesets-test-pom</artifactId>
-        <version>4.2.1_SNAPSHOT</version>
-    </parent>
-
+    <groupId>org.jboss.windup.rules.test</groupId>
+    <version>4.2.1_SNAPSHOT</version>
     <artifactId>maven-javax-to-jakarta</artifactId>
 
     <dependencies>
@@ -15,87 +11,144 @@
         <dependency>
             <groupId>com.sun.mail</groupId>
             <artifactId>javax.mail</artifactId>
+            <version>1.4.4</version>
         </dependency>
         <!-- maven-javax-to-jakarta-00002-test -->
         <dependency>
             <groupId>javax.activation</groupId>
             <artifactId>activation</artifactId>
+            <version>1.1.1</version>
         </dependency>
         <!-- maven-javax-to-jakarta-00003-test -->
         <dependency>
             <groupId>javax.enterprise</groupId>
             <artifactId>cdi-api</artifactId>
+            <version>1.1</version>
         </dependency>
-        <!-- maven-javax-to-jakarta-00004-test -->
+        <!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
+            <version>1.0.0.redhat-00014</version>
         </dependency>
         <!-- maven-javax-to-jakarta-00005-test -->
         <dependency>
             <groupId>javax.json</groupId>
             <artifactId>javax.json-api</artifactId>
+            <version>1.1</version>
         </dependency>
         <!-- maven-javax-to-jakarta-00006-test -->
         <dependency>
             <groupId>javax.json.bind</groupId>
             <artifactId>javax.json.bind-api</artifactId>
+            <version>1.0</version>
         </dependency>
         <!-- maven-javax-to-jakarta-00007-test -->
         <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>javax.persistence-api</artifactId>
+            <version>2.2</version>
         </dependency>
         <!-- maven-javax-to-jakarta-00008-test -->
         <dependency>
             <groupId>javax.security.enterprise</groupId>
             <artifactId>javax.security.enterprise-api</artifactId>
+            <version>1.0</version>
         </dependency>
         <!-- maven-javax-to-jakarta-00009-test -->
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
+            <version>1.1.0.Final</version>
         </dependency>
         <!-- maven-javax-to-jakarta-00010-test -->
         <dependency>
             <groupId>org.jboss.spec.javax.xml.soap</groupId>
             <artifactId>jboss-saaj-api_1.3_spec</artifactId>
+            <version>1.0.6.Final</version>
         </dependency>
         <!-- maven-javax-to-jakarta-00011-test -->
         <dependency>
             <groupId>org.jboss.spec.javax.transaction</groupId>
             <artifactId>jboss-transaction-api_1.2_spec</artifactId>
+            <version>1.1.1.Final</version>
         </dependency>
-        <!-- maven-javax-to-jakarta-00012-test -->
         <dependency>
             <groupId>org.jboss.bom</groupId>
             <artifactId>jboss-eap-javaee8</artifactId>
+            <version>7.3.0.CD17</version>
+            <type>pom</type>
         </dependency>
-        <!-- maven-javax-to-jakarta-00013-test -->
+        <!-- https://mvnrepository.com/artifact/org.jboss.bom/jboss-eap-javaee8 -->
+        <dependency>
+            <groupId>org.jboss.bom</groupId>
+            <artifactId>jboss-eap-javaee8</artifactId>
+            <version>7.2.7.GA</version>
+            <type>pom</type>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jboss.bom/jboss-eap-javaee8-with-spring4 -->
         <dependency>
             <groupId>org.jboss.bom</groupId>
             <artifactId>jboss-eap-javaee8-with-spring4</artifactId>
+            <version>7.3.0.CD17</version>
+            <type>pom</type>
         </dependency>
-        <!-- maven-javax-to-jakarta-00014-test -->
+        <!-- https://mvnrepository.com/artifact/org.jboss.bom/jboss-eap-javaee8-with-tools -->
         <dependency>
             <groupId>org.jboss.bom</groupId>
             <artifactId>jboss-eap-javaee8-with-tools</artifactId>
+            <version>7.3.0.CD17</version>
+            <type>pom</type>
         </dependency>
-        <!-- maven-javax-to-jakarta-00015-test -->
+        <!-- https://mvnrepository.com/artifact/org.jboss.spec/jboss-javaee-8.0 -->
         <dependency>
             <groupId>org.jboss.spec</groupId>
             <artifactId>jboss-javaee-8.0</artifactId>
+            <version>1.0.4.Final-redhat-00001</version>
+            <type>pom</type>
+            <scope>provided</scope>
         </dependency>
-        <!-- maven-javax-to-jakarta-00016-test -->
+        <!-- https://mvnrepository.com/artifact/org.jboss.spec/jboss-javaee-web-8.0 -->
         <dependency>
             <groupId>org.jboss.spec</groupId>
             <artifactId>jboss-javaee-web-8.0</artifactId>
+            <version>1.0.4.Final-redhat-00001</version>
+            <type>pom</type>
         </dependency>
         <!-- maven-javax-to-jakarta-00017-test -->
         <dependency>
             <groupId>org.jboss.spec</groupId>
             <artifactId>jboss-javaee-all-8.0</artifactId>
+            <version>1.0.4.Final</version>
         </dependency>
     </dependencies>
+
+
+    <repositories>
+<!--        <repository>-->
+<!--            <id>jboss-public</id>-->
+<!--            <name>JBoss Public Repository</name>-->
+<!--            <url>https://repository.jboss.org/nexus/content/groups/public/</url>-->
+<!--            <layout>default</layout>-->
+<!--            <snapshots>-->
+<!--                <enabled>true</enabled>-->
+<!--            </snapshots>-->
+<!--            <releases>-->
+<!--                <enabled>true</enabled>-->
+<!--            </releases>-->
+<!--        </repository>-->
+        <repository>
+            <id>jboss-public-ga</id>
+            <name>JBoss Public Repository</name>
+            <url>https://maven.repository.redhat.com/ga/</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
 
 </project>

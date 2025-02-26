@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import org.hibernate.engine.spi.SessionFactoryImplementor;
 
 public class Hibernate51530040X {

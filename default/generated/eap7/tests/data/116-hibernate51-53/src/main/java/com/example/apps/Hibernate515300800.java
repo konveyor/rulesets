@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import org.hibernate.persister.collection.CollectionPersister;
 import org.hibernate.persister.entity.NamedQueryLoader;
 import org.hibernate.persister.spi.PersisterCreationContext;

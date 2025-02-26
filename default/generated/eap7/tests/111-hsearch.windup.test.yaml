@@ -184,7 +184,7 @@ tests:
 - ruleID: hsearch-00200
   testCases:
   - name: tc-1
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: Maven artifact org.hibernate:hibernate-search-analyzers was
         removed from Hibernate Search 5.*

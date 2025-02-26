@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import org.hibernate.stat.SecondLevelCacheStatistics;
 import org.hibernate.stat.NaturalIdCacheStatistics;
 import org.hibernate.SessionFactory;

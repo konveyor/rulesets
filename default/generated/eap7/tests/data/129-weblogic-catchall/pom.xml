@@ -6,5 +6,24 @@
 	<artifactId>sample-project</artifactId>
 	<version>0.0.1</version>
 	<name>Sample Project</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.fabric3</groupId>
+			<artifactId>fabric3-weblogic-mock</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.oracle.coherence.ce</groupId>-->
+<!--			<artifactId>coherence</artifactId>-->
+<!--			<version>24.09</version>-->
+<!--		</dependency>-->
+<!--		 https://mvnrepository.com/artifact/com.oracle.coherence.ce/coherence-->
+		<dependency>
+			<groupId>com.oracle.coherence.ce</groupId>
+			<artifactId>coherence</artifactId>
+			<version>24.09.3</version>
+		</dependency>
+	</dependencies>
 </project>
 		

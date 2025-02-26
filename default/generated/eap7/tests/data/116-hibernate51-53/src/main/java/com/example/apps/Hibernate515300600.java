@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import java.util.Properties;
 
 import org.hibernate.HibernateException;

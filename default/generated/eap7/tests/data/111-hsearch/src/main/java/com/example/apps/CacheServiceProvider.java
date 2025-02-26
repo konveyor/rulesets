@@ -1,22 +1,34 @@
+package com.example.apps;
+
 import java.util.Properties;
+
+import org.hibernate.search.spi.BuildContext;
 import org.hibernate.search.spi.ServiceProvider;
 import org.infinispan.Cache;
-import org.infinispan.manager.CacheManager;
+import org.infinispan.manager.DefaultCacheManager;
+import org.infinispan.manager.EmbeddedCacheManager;
 
 public class CacheServiceProvider implements ServiceProvider<Cache> {
-    private CacheManager manager;
+    private EmbeddedCacheManager manager;
     
 
     public void start(Properties properties) {
         //read configuration
-        manager = new CacheManager(properties);
+        manager = new DefaultCacheManager();
+    }
+
+    @Override
+    public void start(Properties properties, BuildContext buildContext) {
+
     }
 
     public Cache getService() {
-        return manager.getCache(DEFAULT);
+        return manager.getCache("default");
     }
 
-    void stop() {
-        manager.close();
+    @Override
+    public void stop() {
+
     }
+
 }

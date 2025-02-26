@@ -540,10 +540,16 @@
     or:
     - java.referenced:
         location: ENUM_CONSTANT
-        pattern: org.hibernate.search.backend.configuration.impl.IndexWriterSetting.(MAX_THREAD_STATES|TERM_INDEX_INTERVAL)
+        pattern: org.hibernate.search.backend.configuration.impl.IndexWriterSetting.MAX_THREAD_STATES
+    - java.referenced:
+        location: ENUM_CONSTANT
+        pattern: org.hibernate.search.backend.configuration.impl.IndexWriterSetting.TERM_INDEX_INTERVAL
     - java.referenced:
         location: IMPORT
-        pattern: org.hibernate.search.backend.configuration.impl.IndexWriterSetting.(MAX_THREAD_STATES|TERM_INDEX_INTERVAL)
+        pattern: org.hibernate.search.backend.configuration.impl.IndexWriterSetting.MAX_THREAD_STATES
+    - java.referenced:
+        location: IMPORT
+        pattern: org.hibernate.search.backend.configuration.impl.IndexWriterSetting.TERM_INDEX_INTERVAL
 - category: optional
   customVariables: []
   description: Hibernate Search 5 - Renamed SpatialMode.GRID to HASH

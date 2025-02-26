@@ -14,9 +14,9 @@
     `jboss-eap-jakartaee8` \n with group `org.jboss.bom` artifact `jboss-eap-ee`"
   ruleID: jboss-dependencies-00001
   when:
-    java.dependency:
-      lowerbound: 0.0.0
-      name: org.jboss.bom.jboss-eap-jakartaee8
+    - builtin.filecontent:
+        filePattern: pom\.xml
+        pattern: 
 - category: mandatory
   customVariables: []
   description: Replace jboss-eap-jakartaee8-with-tools artifact with jboss-eap-ee-with-tools

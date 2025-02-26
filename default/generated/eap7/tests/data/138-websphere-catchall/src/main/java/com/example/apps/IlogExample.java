@@ -1,8 +1,10 @@
+package com.example.apps;
+
 import ilog.concert.IloException;
 import ilog.concert.IloIntVar;
 import ilog.concert.IloNumVarType;
 import ilog.cplex.IloNumVarType;
-import ilog.cplex.IloCplex.CplexEndedException
+import ilog.cplex.IloCplex.CplexEndedException;
 
 
 public class IlogExample {

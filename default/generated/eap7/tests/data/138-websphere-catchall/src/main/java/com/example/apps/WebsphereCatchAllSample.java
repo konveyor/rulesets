@@ -1,4 +1,4 @@
-package com.ibm.jaxrs.sample.organization;
+package com.example.apps;
 
 import com.websphere.some.Class;
 import com.ibm.db2.jcc.DB2Diagnosable;

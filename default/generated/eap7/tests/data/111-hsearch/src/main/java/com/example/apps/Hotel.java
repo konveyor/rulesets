@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import org.hibernate.search.annotations.Spatial;
 import org.hibernate.search.annotations.SpatialMode;
 import org.hibernate.search.annotations.Indexed;
@@ -8,7 +10,6 @@ import javax.persistence.Entity;
 
 @Spatial(spatialMode = SpatialMode.GRID)
 @Indexed
-@Entity
 public class Hotel
 {
 

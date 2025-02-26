@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import org.hibernate.SessionFactory;
 import javax.persistence.TableGenerator;
 import javax.persistence.Entity;

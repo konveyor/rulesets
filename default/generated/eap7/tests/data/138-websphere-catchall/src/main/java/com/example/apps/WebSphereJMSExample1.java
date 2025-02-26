@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import com.ibm.websphere.sib.api.jms.JmsQueue;
 import com.ibm.websphere.sib.api.jms.JmsConnectionFactory;
 import com.ibm.websphere.sib.api.jms.JmsQueueConnectionFactory;
@@ -15,10 +17,12 @@ import com.ibm.jms.JMSObjectMessage;
 import com.ibm.jms.JMSStreamMessage;
 import com.ibm.jms.JMSTextMessage;
 
+import java.io.IOException;
+
 /**
  * Testing detection of com.ibm.websphere.sib.api.jms.JmsConnectionFactory
  */
-public class WebSphereJMSExample
+public class WebSphereJMSExample1
 {
     public static void main(String[] args) throws IOException, JMSException
     {

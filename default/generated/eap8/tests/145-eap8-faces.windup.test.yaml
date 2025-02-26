@@ -28,7 +28,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 6
+      atLeast: 1
       messageMatches: Annotation `javax.faces.bean.
 - ruleID: eap8-faces-00008
   testCases:

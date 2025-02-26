@@ -1,3 +1,4 @@
+package com.example.apps;
 
 import com.ibm.msg.client.jms.JmsConnection;
 import com.ibm.msg.client.jms.JmsConnectionMetaData;

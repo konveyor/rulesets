@@ -18,11 +18,12 @@ import org.jboss.resteasy.core.ResteasyHttpServletResponseWrapper;
 import org.jboss.resteasy.auth.oauth.OAuthValidator;
 import org.jboss.resteasy.plugins.delegates.ServerCookie;
 import org.jboss.resteasy.spi.Registry;
+import org.jboss.resteasy.annotations.cache.ServerCached;
 
 public class RsCacheClient {
 
 
-    @org.jboss.resteasy.annotations.cache.ServerCached
+    @ServerCached
     public void someMethod() {
         
     }

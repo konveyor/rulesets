@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import org.hibernate.engine.spi.SessionImplementor;
 import org.hibernate.type.Type;
 import org.hibernate.collection.spi.PersistentCollection;

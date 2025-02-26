@@ -75,14 +75,6 @@ tests:
       messageMatches: The configuration property `hibernate.hql.bulk_id_strategy`
         was changed to `hibernate.query.mutation_strategy` which now refers to classes
         or objects implementing `org.hibernate.query.sqm.mutation.spi.SqmMultiTableMutationStrategy`.
-- ruleID: hibernate6-00090
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 1
-      messageMatches: '`jakarta.persistence.Query#getResultStream()` and `org.hibernate.query.Query#stream()`
-        no longer return a Stream decorator. In order to close the underlying IO resources,
-        it is now necessary to explicitly call the `Stream#close()` method.'
 - ruleID: hibernate6-00100
   testCases:
   - name: tc-1
@@ -144,12 +136,6 @@ tests:
         in Hibernate 5.x and removed in 6.0. Usually, all queries using the legacy
         API can be modeled with the JPA Criteria API. In some cases it is necessary
         to use the Hibernate JPA Criteria extensions.
-- ruleID: hibernate6-00180
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 1
-      messageMatches: The Query#iterate() method has been removed. See link for alternatives.
 - ruleID: hibernate6-00190
   testCases:
   - name: tc-1

@@ -1,4 +1,4 @@
-package com.test.project;
+package com.example.apps;
 
 import javax.servlet.Servlet;
 import javax.servlet.ServletContext;
@@ -38,18 +38,25 @@ public class SingleThreadModelImpl implements SingleThreadModel, HttpSessionCont
 
         String str = "string";
         UnavailableException exception1 = new UnavailableException(str);
-        exception1.getServlet();
-        UnavailableException exception2 = new UnavailableException((Servlet) new Object(), str);
-        UnavailableException exception3 = new UnavailableException(0, (Servlet) new Object(), str);
+        Servlet s = exception1.getServlet();
+        UnavailableException exception2 = new UnavailableException(s, str);
+        UnavailableException exception3 = new UnavailableException(0, s, str);
 
         httpSession.getValue("value");
         httpSession.getValueNames();
         httpSession.putValue("key", "value");
         httpSession.removeValue("value");
 
-        throw exception1;
-        throw exception2;
-        throw exception3;
+        if (exception1.isPermanent()) {
+            throw exception1;
+        } else {
+            if (exception2.isPermanent()) {
+                throw exception2;
+            } else {
+                throw exception3;
+
+            }
+        }
     }
 
     public static void handleRequest(ServletRequestWrapper requestWrapper) {

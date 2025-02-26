@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import weblogic.application.ApplicationLifecycleListener;
 import weblogic.application.ApplicationLifecycleEvent;
 

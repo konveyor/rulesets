@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
@@ -5,6 +7,7 @@ import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import org.apache.solr.analysis.LowerCaseFilterFactory;
 import org.apache.solr.analysis.SnowballPorterFilterFactory;
@@ -16,7 +19,6 @@ import org.hibernate.search.annotations.AnalyzerDef;
 import org.hibernate.search.annotations.DateBridge;
 import org.hibernate.search.annotations.CalendarBridge;
 import org.hibernate.search.annotations.DocumentId;
-import org.hibernate.search.annotations.EncodingType;
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.IndexedEmbedded;
@@ -33,9 +35,9 @@ import org.hibernate.search.annotations.NumericField;
 import org.hibernate.search.annotations.NumericFields;
 
 @Entity
-@AnalyzerDef(name = "customanalyzer", tokenizer = @TokenizerDef(factory = org.apache.lucene.analysis.standard.StandardTokenizerFactory.class), filters = {
-            @TokenFilterDef(factory = org.apache.lucene.analysis.core.LowerCaseFilterFactory.class),
-            @TokenFilterDef(factory = org.apache.lucene.analysis.snowball.SnowballPorterFilterFactory.class, params = {
+@AnalyzerDef(name = "customanalyzer", tokenizer = @TokenizerDef(factory = StandardTokenizerFactory.class), filters = {
+            @TokenFilterDef(factory = LowerCaseFilterFactory.class),
+            @TokenFilterDef(factory = SnowballPorterFilterFactory.class, params = {
                         @Parameter(name = "language", value = "English")
             })
 })
@@ -151,7 +153,7 @@ public class Book
         return cal;
     }
 
-    @CalendarBridge(resolution = Resolution.DAY, encoding = EncodingType.NUMERIC)
+    @CalendarBridge(resolution = Resolution.DAY)
     public Calendar getEncodedCalendarPublication()
     {
         Calendar cal = Calendar.getInstance();
@@ -159,7 +161,7 @@ public class Book
         return cal;
     }
 
-    @DateBridge(encoding = EncodingType.STRING, resolution = Resolution.MILLISECOND)
+    @DateBridge(resolution = Resolution.MILLISECOND)
     public Calendar getEncodedDatePublication()
     {
         Calendar cal = Calendar.getInstance();
@@ -176,6 +178,3 @@ public class Book
     }
 }
 
-class Author {
-
-}

@@ -48,7 +48,10 @@
     or:
     - java.dependency:
         lowerbound: 0.0.0
-        name: org.hibernate.{substitution}
+        name: org.hibernate.hibernate-entitymanager
+    - java.dependency:
+        lowerbound: 0.0.0
+        name: org.hibernate.hibernate-java8
     - java.dependency:
         lowerbound: 0.0.0
         name: org.hibernate.hibernate-core
@@ -435,7 +438,7 @@
   when:
     java.referenced:
       location: METHOD
-      pattern: '*.getEntries*'
+      pattern: getEntries
 - category: optional
   customVariables: []
   description: Hibernate 5.3 - SecondLevelCacheStatistics.getEntries() deprecated
@@ -460,7 +463,7 @@
   when:
     java.referenced:
       location: METHOD
-      pattern: '*.getEntries*'
+      pattern: getEntries
 - category: mandatory
   customVariables:
   - name: packages
@@ -487,9 +490,13 @@
     Javadoc for these packages for details."
   ruleID: hibernate51-53-00800
   when:
-    java.referenced:
-      location: IMPORT
-      pattern: org.hibernate.(persister|tuple)*
+    or:
+    - java.referenced:
+        location: IMPORT
+        pattern: org.hibernate.persister*
+    - java.referenced:
+        location: IMPORT
+        pattern: org.hibernate.tuple*
 - category: mandatory
   customVariables: []
   description: Hibernate 5.3 - default_schema or default_catalog must be defined or

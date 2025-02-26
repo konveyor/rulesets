@@ -16,7 +16,7 @@ tests:
     hasTags:
     - WebSphere EAR Application Binding
   - name: tc-2
-    hasIncidents:
+    hasInsights:
       atLeast: 1
       messageMatches: This file contains a specific IBM WebSphere Application binding
         configuration.*

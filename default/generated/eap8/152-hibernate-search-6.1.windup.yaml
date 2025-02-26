@@ -208,8 +208,7 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.hibernate.search.engine.backend.common.spi.FieldPaths.absolutize(java.lang.String,
-          java.lang.String, java.lang.String)
+        pattern: org.hibernate.search.engine.backend.common.spi.FieldPaths.absolutize(java.lang.String,java.lang.String,java.lang.String)
 - category: mandatory
   customVariables: []
   description: IndexManagerImplementor#createIndexingPlan has changed
@@ -234,7 +233,7 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.hibernate.search.engine.backend.index.spi.IndexManagerImplementor.createIndexingPlan(*)
+        pattern: org.hibernate.search.engine.backend.index.spi.IndexManagerImplementor.createIndexingPlan
 - category: mandatory
   customVariables: []
   description: IndexIndexingPlan#executeAndReport has changed

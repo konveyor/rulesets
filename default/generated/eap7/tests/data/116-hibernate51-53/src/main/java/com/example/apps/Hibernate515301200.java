@@ -1,6 +1,10 @@
+package com.example.apps;
+
 import org.hibernate.query.internal.QueryParameterNamedImpl;
 import org.hibernate.engine.query.spi.NamedParameterDescriptor;
 import org.hibernate.query.QueryParameter;
+
+import java.util.Map;
 
 public class Hibernate515301200 {
 
