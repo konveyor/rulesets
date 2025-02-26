@@ -16,7 +16,7 @@
   when:
     - builtin.filecontent:
         filePattern: pom\.xml
-        pattern: 
+        pattern: \"[^\"]*java\:comp/websphere/UserActivitySession[^\"]*\"
 - category: mandatory
   customVariables: []
   description: Replace jboss-eap-jakartaee8-with-tools artifact with jboss-eap-ee-with-tools
