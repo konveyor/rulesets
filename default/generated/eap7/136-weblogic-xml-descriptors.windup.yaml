@@ -239,6 +239,7 @@
           wl: http://www.bea.com/ns/weblogic/weblogic-webservices
           wl9: http://www.bea.com/ns/weblogic/90
         xpath: //webservice-type | //wl:webservice-type | //wl9:webservice-type
+        filepaths: "{{webservices.filepaths}}"
       from: webservices
 - customVariables: []
   description: WebLogic JMS descriptor

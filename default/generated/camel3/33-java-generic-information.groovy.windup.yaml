@@ -196,6 +196,7 @@
       java.referenced:
         location: METHOD
         pattern: '*createRegistry*'
+        filepaths: "{{classes.Filepaths}}"
 - category: mandatory
   customVariables: []
   description: org.apache.camel.management.event package was moved
@@ -245,7 +246,9 @@
       java.referenced:
         location: METHOD
         pattern: '*adviceWith*'
+        filepaths: "{{classes.Filepaths}}"
     - from: classes
       java.referenced:
         location: METHOD_CALL
         pattern: '*adviceWith*'
+        filepaths: "{{classes.Filepaths}}"

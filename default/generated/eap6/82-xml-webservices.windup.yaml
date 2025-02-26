@@ -120,6 +120,7 @@
           jcp: http://xmlns.jcp.org/xml/ns/javaee
           jee: http://java.sun.com/xml/ns/javaee
         xpath: //*[local-name()='handler-class']
+        filepaths: "{{webservices.filepaths}}"
       from: webservices
 - category: optional
   customVariables: []
@@ -150,6 +151,7 @@
           jcp: http://xmlns.jcp.org/xml/ns/javaee
           jee: http://java.sun.com/xml/ns/javaee
         xpath: //*[local-name()='service-endpoint-interface']
+        filepaths: "{{webservices.filepaths}}"
       from: webservices
 - customVariables: []
   description: Apache CXF Bus Extension

@@ -723,6 +723,7 @@
         namespaces:
           p: http://xmlns.jcp.org/xml/ns/persistence
         xpath: p:persistence[@version='2.1']
+        filepaths: "{{xml-file.filepaths}}"
       as: xml-file
       ignore: true
     - from: xml-file
@@ -750,12 +751,14 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')7("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
         namespaces:
           p: http://xmlns.jcp.org/xml/ns/javaee
         xpath: p:permissions[@version='7']
+      ignore: true
 - category: mandatory
   customVariables: []
   description: Replace the Java EE version with the Jakarta equivalent
@@ -778,12 +781,14 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')1.1("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
         namespaces:
           p: http://xmlns.jcp.org/xml/ns/javaee
         xpath: p:beans[@version='1.1']
+      ignore: true
 - category: mandatory
   customVariables: []
   description: Replace the Java EE version with the Jakarta equivalent
@@ -806,12 +811,14 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')2.0("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
         namespaces:
           p: http://xmlns.jcp.org/xml/ns/javaee
         xpath: p:beans[@version='2.0']
+      ignore: true
 - category: mandatory
   customVariables: []
   description: Replace the Java EE version with the Jakarta equivalent
@@ -834,12 +841,14 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')7("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
         namespaces:
           p: http://xmlns.jcp.org/xml/ns/javaee
         xpath: p:application[@version='7']
+        ignore: true
 - category: mandatory
   customVariables: []
   description: Replace the Java EE version with the Jakarta equivalent
@@ -862,12 +871,14 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')8("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
         namespaces:
           p: http://xmlns.jcp.org/xml/ns/javaee
         xpath: p:application[@version='8']
+        ingore: true
 - category: mandatory
   customVariables: []
   description: Replace the Java EE version with the Jakarta equivalent
@@ -890,12 +901,14 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')7("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
         namespaces:
           p: http://xmlns.jcp.org/xml/ns/javaee
         xpath: p:application-client[@version='7']
+      ignore: true
 - category: mandatory
   customVariables: []
   description: Replace the Java EE version with the Jakarta equivalent
@@ -918,6 +931,7 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')8("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
@@ -946,6 +960,7 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')1.7("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
@@ -974,6 +989,7 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')3.2("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
@@ -1002,6 +1018,7 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')1.4("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
@@ -1030,6 +1047,7 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')3.1("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
@@ -1053,13 +1071,14 @@
     with `5.0`'
   ruleID: javaee-to-jakarta-namespaces-00045
   when:
-#    and:
-#    - as: result
-#      builtin.filecontent:
-#        filePattern: ""
-#        pattern: version=("|')4.0("|')
-#      from: xml-file
-#    as: xml-file
+    and:
+    - as: result
+      builtin.filecontent:
+        filePattern: ""
+        pattern: version=("|')4.0("|')
+        filepaths: "{{xml-file.filepaths}}"
+      from: xml-file
+    - as: xml-file
     builtin.xml:
       namespaces:
         p: http://xmlns.jcp.org/xml/ns/javaee
@@ -1086,6 +1105,7 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')3.1("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
@@ -1114,6 +1134,7 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')4.0("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
@@ -1170,6 +1191,7 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')2.3("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
@@ -1226,6 +1248,7 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')2.3("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
@@ -1254,6 +1277,7 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')2.1("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
@@ -1282,6 +1306,7 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')2.0("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
@@ -1310,6 +1335,7 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')2.0("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
@@ -1338,6 +1364,7 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')2.1("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
@@ -1366,6 +1393,7 @@
       builtin.filecontent:
         filePattern: ""
         pattern: version=("|')2.2("|')
+        filepaths: "{{xml-file.filepaths}}"
       from: xml-file
     - as: xml-file
       builtin.xml:
