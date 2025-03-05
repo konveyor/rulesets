@@ -264,7 +264,6 @@
   ruleID: weblogic-eap7-11000
   when:
     java.referenced:
-      location: CONSTRUCTOR_CALL
       pattern: NonCatalogLogger
 - category: mandatory
   customVariables: []
