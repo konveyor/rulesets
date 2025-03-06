@@ -1,0 +1,14 @@
+rulesPath: ../22-spring-boot-to-azure-schedule-job.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/22-spring-boot-to-azure-schedule-job
+- name: builtin
+  dataPath: ./data/22-spring-boot-to-azure-schedule-job
+tests:
+- ruleID: spring-boot-to-azure-schedule-job-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 3
+      messageMatches: Scheduled jobs, such as Quartz Scheduler tasks or cron jobs,
+        can't be used with App Service.
