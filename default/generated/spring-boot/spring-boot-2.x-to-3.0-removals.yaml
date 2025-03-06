@@ -395,7 +395,7 @@
       url: https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#reactive-web-session
 
 # DataSourceInitializationMode does not seem to be present in Spring Boot 3?
-- ruleID: spring-boot-2.x-to-3.0-removals-00010
+- ruleID: spring-boot-2.x-to-3.0-removals-00015
   category: mandatory
   effort: 3
   labels:
