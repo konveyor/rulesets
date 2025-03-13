@@ -1,19 +1,20 @@
-rulesPath: ../226-springboot-generic-catchall.windup.yaml
-providers:
-- name: java
-  dataPath: ./data/226-springboot-generic-catchall
-- name: builtin
-  dataPath: ./data/226-springboot-generic-catchall
-tests:
-- ruleID: springboot-generic-catchall-00100
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 23
-      messageMatches: If the application declares explicitly or uses any of the feature
-        provided by the Spring `.*` component.*
-  - name: tc-2
-    hasIncidents:
-      atLeast: 0
-      messageMatches: If the application declares explicitly or uses any of the feature
-        provided by the Spring `.*` component.*
+# TODO: requires ability to match dependencies using regex
+#rulesPath: ../226-springboot-generic-catchall.windup.yaml
+#providers:
+#- name: java
+#  dataPath: ./data/226-springboot-generic-catchall
+#- name: builtin
+#  dataPath: ./data/226-springboot-generic-catchall
+#tests:
+#- ruleID: springboot-generic-catchall-00100
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 23
+#      messageMatches: If the application declares explicitly or uses any of the feature
+#        provided by the Spring `.*` component.*
+#  - name: tc-2
+#    hasIncidents:
+#      atLeast: 0
+#      messageMatches: If the application declares explicitly or uses any of the feature
+#        provided by the Spring `.*` component.*

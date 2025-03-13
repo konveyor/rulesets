@@ -1,5 +1,6 @@
+package com.example.apps;
 
-import java.lang.SecurityManager
+import java.lang.SecurityManager;
 
 
 
@@ -10,8 +11,9 @@ public class AWTSecurityManagement {
 
         securityManager.checkMemberAccess(AWTSecurityManagement.class, 3);
 
-        return securityManager.checkAwtEventQueueAccess() &&
-                securityManager.checkSystemClipboardAccess() &&
-                securityManager.checkTopLevelWindow(new Object());
+        securityManager.checkAwtEventQueueAccess();
+            securityManager.checkSystemClipboardAccess();
+            securityManager.checkTopLevelWindow(new Object());
+        return false;
     }
 }

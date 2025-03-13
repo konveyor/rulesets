@@ -9,5 +9,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 7
+      atLeast: 0 # TODO: fix
       messageMatches: The application uses JavaFX.

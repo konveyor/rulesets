@@ -52,10 +52,11 @@
   message: Log4j usage without including `log4j.jar`
   ruleID: log4j-removed-00002
   when:
-    and:
-    - java.referenced:
-        location: IMPORT
-        pattern: org.apache.log4j.Logger
+    or:
+    - and:
+      - java.referenced:
+          location: IMPORT
+          pattern: org.apache.log4j.Logger
     - not: true
       or:
       - java.dependency:
@@ -83,8 +84,13 @@
   ruleID: log4j-removed-00003
   when:
     and:
-    - builtin.file:
-        pattern: (log4j\.xml|log4j\.properties|jboss-log4j\.xml)
+    - or:
+        - builtin.file:
+            pattern: log4j\.xml
+        - builtin.file:
+            pattern: log4j\.properties
+        - builtin.file:
+            pattern: jboss-log4j\.xml
     - not: true
       or:
       - java.dependency:

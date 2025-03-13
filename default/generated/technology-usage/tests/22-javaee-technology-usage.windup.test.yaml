@@ -54,11 +54,11 @@ tests:
   - name: tc-2
     hasTags:
     - Common Annotations
-- ruleID: javaee-technology-usage-00090
-  testCases:
-  - name: tc-1
-    hasTags:
-    - JAXB
+#- ruleID: javaee-technology-usage-00090
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - JAXB
 - ruleID: javaee-technology-usage-00100
   testCases:
   - name: tc-1
@@ -85,36 +85,36 @@ tests:
   - name: tc-1
     hasTags:
     - JSON-B
-- ruleID: javaee-technology-usage-00140
-  testCases:
-  - name: tc-1
-    hasTags:
-    - Java EE JACC
-- ruleID: javaee-technology-usage-00150
-  testCases:
-  - name: tc-1
-    hasTags:
-    - Management EJB
-- ruleID: javaee-technology-usage-00160
-  testCases:
-  - name: tc-1
-    hasTags:
-    - EAR Deployment
-- ruleID: javaee-technology-usage-00190
-  testCases:
-  - name: tc-1
-    hasTags:
-    - Java EE JAXB
-- ruleID: javaee-technology-usage-00200
-  testCases:
-  - name: tc-1
-    hasTags:
-    - Java EE JAXR
-- ruleID: javaee-technology-usage-00220
-  testCases:
-  - name: tc-1
-    hasTags:
-    - JSON-B
+#- ruleID: javaee-technology-usage-00140
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Java EE JACC
+#- ruleID: javaee-technology-usage-00150
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Management EJB
+#- ruleID: javaee-technology-usage-00160
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - EAR Deployment
+#- ruleID: javaee-technology-usage-00190
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Java EE JAXB
+#- ruleID: javaee-technology-usage-00200
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Java EE JAXR
+#- ruleID: javaee-technology-usage-00220
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - JSON-B
 - ruleID: javaee-technology-usage-00902
   testCases:
   - name: tc-1

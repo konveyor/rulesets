@@ -6,5 +6,13 @@
 	<artifactId>sample-project</artifactId>
 	<version>0.0.1</version>
 	<name>Sample Project</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>5.3.30</version> <!-- Or the version that matches your Spring setup -->
+		</dependency>
+	</dependencies>
 </project>
 		

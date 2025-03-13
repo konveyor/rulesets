@@ -3,6 +3,7 @@ import java.awt.image.ColorModel;
 import java.awt.image.IndexColorModel;
 import java.lang.Compiler;
 import javax.management.remote.rmi.RMIIIOPServerImpl;
+import java.lang.ThreadGroup;
 
 public class FinalizationDeprecation extends Object {
     

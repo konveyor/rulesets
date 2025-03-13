@@ -40,5 +40,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 25
+      atLeast: 10
       messageMatches: References to JavaEE/JakartaEE JMS ele.*

@@ -18,8 +18,8 @@
   ruleID: finalization-deprecation-00000
   when:
     java.referenced:
-      location: PACKAGE
-      pattern: '*.finalize*'
+      location: METHOD_CALL
+      pattern: 'finalize'
 - category: mandatory
   customVariables: []
   description: Finalization has been deprecated for removal in a future release by

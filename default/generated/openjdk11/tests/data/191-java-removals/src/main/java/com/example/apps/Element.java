@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import java.util.EnumMap;
 import java.util.Locale;
 import java.util.StringTokenizer;
@@ -9,8 +11,9 @@ import sun.reflect.misc.ReflectUtil;
 
 
      // Abstract base class for elements
-private abstract class Element {
-    public final Element parent;         
+abstract class Element {
+    public final Element parent = null;
+    public final ClassLoader classLoader = null;
 
     @CallerSensitive
     public ClassLoader getClassLoader() {
@@ -19,8 +22,8 @@ private abstract class Element {
                 final Class caller = (sm != null) ?
                        Reflection.getCallerClass() :
                         null;
-                return getDefaultClassLoader(caller);
+                return null;
             }        
-
+    return classLoader;
      }
 }

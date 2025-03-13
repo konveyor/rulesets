@@ -14,9 +14,9 @@
     `jboss-eap-jakartaee8` \n with group `org.jboss.bom` artifact `jboss-eap-ee`"
   ruleID: jboss-dependencies-00001
   when:
-    - builtin.filecontent:
-        filePattern: pom\.xml
-        pattern: \"[^\"]*java\:comp/websphere/UserActivitySession[^\"]*\"
+    builtin.filecontent:
+      filePattern: pom\.xml
+      pattern: artifactId>jboss-eap-jakartaee8<
 - category: mandatory
   customVariables: []
   description: Replace jboss-eap-jakartaee8-with-tools artifact with jboss-eap-ee-with-tools
@@ -33,9 +33,9 @@
     `jboss-eap-jakartaee8-with-tools` \n with group `org.jboss.bom` artifact `jboss-eap-ee-with-tools`"
   ruleID: jboss-dependencies-00002
   when:
-    java.dependency:
-      lowerbound: 0.0.0
-      name: org.jboss.bom.jboss-eap-jakartaee8-with-tools
+    builtin.filecontent:
+      filePattern: pom\.xml
+      pattern: artifactId>jboss-eap-jakartaee8-with-tools<
 - category: mandatory
   customVariables: []
   description: Replace jboss-jakartaee-8.0 artifact with jboss-eap-ee
@@ -52,9 +52,9 @@
     `jboss-jakartaee-8.0` \n with group `org.jboss.bom` artifact `jboss-eap-ee`"
   ruleID: jboss-dependencies-00003
   when:
-    java.dependency:
-      lowerbound: 0.0.0
-      name: org.jboss.spec.jboss-jakartaee-8.0
+    builtin.filecontent:
+      filePattern: pom\.xml
+      pattern: artifactId>jboss-jakartaee-8.0<
 - category: mandatory
   customVariables: []
   description: Replace jboss-jakartaee-web-8.0 artifact with jboss-eap-ee
@@ -71,9 +71,9 @@
     `jboss-jakartaee-web-8.0` \n with group `org.jboss.bom` artifact `jboss-eap-ee`"
   ruleID: jboss-dependencies-00004
   when:
-    java.dependency:
-      lowerbound: 0.0.0
-      name: org.jboss.spec.jboss-jakartaee-web-8.0
+    builtin.filecontent:
+      filePattern: pom\.xml
+      pattern: artifactId>jboss-jakartaee-web-8.0<
 - category: mandatory
   customVariables: []
   description: Replace jakarta.activation artifact with jakarta.activation-api
@@ -559,9 +559,9 @@
     `eap-runtime-artifacts` \n with group `org.jboss.bom` artifact `jboss-eap-ee`"
   ruleID: jboss-dependencies-00030
   when:
-    java.dependency:
-      lowerbound: 0.0.0
-      name: org.jboss.bom.eap-runtime-artifacts
+    builtin.filecontent:
+      filePattern: pom\.xml
+      pattern: artifactId>eap-runtime-artifacts<
 - category: mandatory
   customVariables: []
   description: Replace jsr181-api artifact with jboss-jakarta-xml-ws-api_4.0_spec
@@ -597,6 +597,6 @@
     recommended to stop using the deprecated EJB Client Legacy API.
   ruleID: jboss-dependencies-00032
   when:
-    java.dependency:
-      lowerbound: 0.0.0
-      name: org.jboss.bom.wildfly-ejb-client-legacy-bom
+    builtin.filecontent:
+      filePattern: pom\.xml
+      pattern: artifactId>wildfly-ejb-client-legacy-bom<

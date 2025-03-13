@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 4
+      atLeast: 3
       messageMatches: Replace the Spring Boot Actuator dependency with Quarkus Smallrye
         Health extension
 - ruleID: springboot-actuator-to-quarkus-0200

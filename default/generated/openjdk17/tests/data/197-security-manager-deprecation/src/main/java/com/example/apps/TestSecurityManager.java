@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import java.lang.SecurityManager;
 import java.rmi.RMISecurityManager;
 import java.security.AccessController;
@@ -11,7 +13,7 @@ import javax.security.auth.Subject;
 import javax.security.auth.SubjectDomainCombiner;
 import java.util.concurrent.Executors;
 
-public class TestSecurityManager implements runnable
+public class TestSecurityManager implements Runnable
 {
     public static void main (String[] args)
     {

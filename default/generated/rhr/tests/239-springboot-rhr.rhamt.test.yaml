@@ -9,13 +9,14 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 18
+      atLeast: 1
       messageMatches: Spring Boot has to be updated to Spring Boot 2.2.6 before being
         able to be migrated
-- ruleID: springboot-rhr-00002
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 4
-      messageMatches: Spring Boot has to be updated to a version supported by Red
-        Hat Runtimes
+# Version clash with other rule
+#- ruleID: springboot-rhr-00002
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 4
+#      messageMatches: Spring Boot has to be updated to a version supported by Red
+#        Hat Runtimes

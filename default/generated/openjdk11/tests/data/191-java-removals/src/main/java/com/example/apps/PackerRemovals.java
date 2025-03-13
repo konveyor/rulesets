@@ -1,4 +1,4 @@
-package com.test.project;
+package com.example.apps;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;

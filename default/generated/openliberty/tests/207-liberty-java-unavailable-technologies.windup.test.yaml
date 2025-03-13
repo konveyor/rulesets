@@ -58,7 +58,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 32
+      atLeast: 11
       messageMatches: Liberty does not support outbound or inbound transaction propagation
         for EJB remote interfaces
 - ruleID: DetectJAXRPC

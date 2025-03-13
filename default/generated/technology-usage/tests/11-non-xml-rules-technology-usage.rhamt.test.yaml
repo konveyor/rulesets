@@ -1,82 +1,83 @@
-rulesPath: ../11-non-xml-rules-technology-usage.rhamt.yaml
-providers:
-- name: java
-  dataPath: ./data/11-non-xml-rules-technology-usage.rhamt.test.yaml
-- name: builtin
-  dataPath: ./data/11-non-xml-rules-technology-usage.rhamt.test.yaml
-tests:
-- ruleID: non-xml-technology-usage-02000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - EJB XML
-- ruleID: non-xml-technology-usage-05000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - Hibernate Cfg
-- ruleID: non-xml-technology-usage-06000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - Hibernate Mapping
-- ruleID: non-xml-technology-usage-12000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - JBoss EJB XML
-- ruleID: non-xml-technology-usage-13000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - JBoss Web XML
-- ruleID: non-xml-technology-usage-17000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - JPA XML
-- ruleID: non-xml-technology-usage-18000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - Orion EJB XML
-- ruleID: non-xml-technology-usage-19000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - Orion Web XML
-- ruleID: non-xml-technology-usage-20000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - Properties
-- ruleID: non-xml-technology-usage-22000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - WebLogic Web XML
-- ruleID: non-xml-technology-usage-23000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - WebSphere EJB
-- ruleID: non-xml-technology-usage-24000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - WebSphere EJB Ext
-- ruleID: non-xml-technology-usage-25000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - WebSphere Web XML
-- ruleID: non-xml-technology-usage-26000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - WebSphere WS Binding
-- ruleID: non-xml-technology-usage-27000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - WebSphere WS Extension
+# TODO: investigate if the hasTags test condition can actually work - if the data hasn't been tagged previously, it wont work
+#rulesPath: ../11-non-xml-rules-technology-usage.rhamt.yaml
+#providers:
+#- name: java
+#  dataPath: ./data/11-non-xml-rules-technology-usage.rhamt.test.yaml
+#- name: builtin
+#  dataPath: ./data/11-non-xml-rules-technology-usage.rhamt.test.yaml
+#tests:
+#- ruleID: non-xml-technology-usage-02000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - EJB XML
+#- ruleID: non-xml-technology-usage-05000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Hibernate Cfg
+#- ruleID: non-xml-technology-usage-06000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Hibernate Mapping
+#- ruleID: non-xml-technology-usage-12000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - JBoss EJB XML
+#- ruleID: non-xml-technology-usage-13000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - JBoss Web XML
+#- ruleID: non-xml-technology-usage-17000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - JPA XML
+#- ruleID: non-xml-technology-usage-18000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Orion EJB XML
+#- ruleID: non-xml-technology-usage-19000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Orion Web XML
+#- ruleID: non-xml-technology-usage-20000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Properties
+#- ruleID: non-xml-technology-usage-22000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - WebLogic Web XML
+#- ruleID: non-xml-technology-usage-23000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - WebSphere EJB
+#- ruleID: non-xml-technology-usage-24000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - WebSphere EJB Ext
+#- ruleID: non-xml-technology-usage-25000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - WebSphere Web XML
+#- ruleID: non-xml-technology-usage-26000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - WebSphere WS Binding
+#- ruleID: non-xml-technology-usage-27000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - WebSphere WS Extension

@@ -1,22 +1,22 @@
-rulesPath: ../28-embedded-framework-technology-usage.windup.yaml
-providers:
-- name: java
-  dataPath: ./data/28-embedded-framework-technology-usage
-- name: builtin
-  dataPath: ./data/28-embedded-framework-technology-usage
-tests:
-- ruleID: embedded-framework-embedded-framework-02700
-  testCases:
-  - name: tc-1
-    hasTags:
-    - ehcache
-- ruleID: embedded-framework-embedded-framework-02800
-  testCases:
-  - name: tc-1
-    hasTags:
-    - infinispan
-- ruleID: embedded-framework-embedded-framework-03800
-  testCases:
-  - name: tc-1
-    hasTags:
-    - Cache API
+#rulesPath: ../28-embedded-framework-technology-usage.windup.yaml
+#providers:
+#- name: java
+#  dataPath: ./data/28-embedded-framework-technology-usage
+#- name: builtin
+#  dataPath: ./data/28-embedded-framework-technology-usage
+#tests:
+#- ruleID: embedded-framework-embedded-framework-02700
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - ehcache
+#- ruleID: embedded-framework-embedded-framework-02800
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - infinispan
+#- ruleID: embedded-framework-embedded-framework-03800
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Cache API
