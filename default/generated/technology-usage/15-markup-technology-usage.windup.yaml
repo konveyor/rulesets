@@ -1,4 +1,5 @@
 - customVariables: []
+  description: Spring Boot Flo
   labels:
   - konveyor.io/include=always
   links: []
