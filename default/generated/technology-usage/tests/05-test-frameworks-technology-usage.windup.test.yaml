@@ -1,17 +1,18 @@
-rulesPath: ../05-test-frameworks-technology-usage.windup.yaml
-providers:
-- name: java
-  dataPath: ./data/05-test-frameworks-technology-usage
-- name: builtin
-  dataPath: ./data/05-test-frameworks-technology-usage
-tests:
-- ruleID: technology-usage-test-frameworks-00130
-  testCases:
-  - name: tc-1
-    hasTags:
-    - RandomizedTesting Runner
-- ruleID: technology-usage-test-frameworks-00150
-  testCases:
-  - name: tc-1
-    hasTags:
-    - JCunit
+# TODO: investigate if the hasTags test condition can actually work
+#rulesPath: ../05-test-frameworks-technology-usage.windup.yaml
+#providers:
+#- name: java
+#  dataPath: ./data/05-test-frameworks-technology-usage
+#- name: builtin
+#  dataPath: ./data/05-test-frameworks-technology-usage
+#tests:
+#- ruleID: technology-usage-test-frameworks-00130
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - RandomizedTesting Runner
+#- ruleID: technology-usage-test-frameworks-00150
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - JCunit

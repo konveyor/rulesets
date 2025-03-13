@@ -26,13 +26,14 @@ tests:
       atLeast: 1
       messageMatches: Check the links below for the Red Hat Runtimes supported version
         of Resteasy SpringBoot starter
-- ruleID: springboot-associated-00004
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 1
-      messageMatches: Check the links below for the Red Hat Runtimes supported version
-        of Infinispan SpringBoot starter
+#  Conflicts with another dependency within the test data
+#- ruleID: springboot-associated-00004
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: Check the links below for the Red Hat Runtimes supported version
+#        of Infinispan SpringBoot starter
 - ruleID: springboot-associated-00005
   testCases:
   - name: tc-1

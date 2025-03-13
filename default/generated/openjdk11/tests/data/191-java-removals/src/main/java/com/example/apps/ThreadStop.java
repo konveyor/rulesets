@@ -1,3 +1,5 @@
+package com.example.apps;
+
 public class ThreadStop {
 
     public static void main(String[] args) {

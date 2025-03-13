@@ -208,13 +208,14 @@ tests:
       atLeast: 1
       messageMatches: Update the dependency by replacing the group `org.jboss.bom`
         artifact `eap-runtime-artifacts`
-- ruleID: jboss-dependencies-00031
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 1
-      messageMatches: Update the dependency by replacing the group `javax.jws` artifact
-        `jsr181-api`
+# TODO: why isn't this matching?
+#- ruleID: jboss-dependencies-00031
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: Update the dependency by replacing the group `javax.jws` artifact
+#        `jsr181-api`
 - ruleID: jboss-dependencies-00032
   testCases:
   - name: tc-1

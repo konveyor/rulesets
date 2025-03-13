@@ -1,4 +1,4 @@
-package org.springframework.jmx;
+package com.examples.apps;
 
 import org.springframework.jmx.export.annotation.ManagedResource;
 import org.springframework.jmx.export.annotation.ManagedAttribute;

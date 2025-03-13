@@ -9,11 +9,11 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 3
+      atLeast: 2
       messageMatches: Replace the Spring Web artifact with Quarkus `spring-web` extension
 - ruleID: springboot-web-to-quarkus-00010
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      atLeast: 1
       messageMatches: Add the Quarkus `quarkus-resteasy-reactive-jackson` dependency

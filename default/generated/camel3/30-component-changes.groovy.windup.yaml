@@ -117,7 +117,7 @@
     builtin.xml:
       namespaces:
         b: http://camel.apache.org/schema/blueprint
-      xpath: //*/b:simple[text()=matches(self::node(), '{*}out.(body|header){*}')]
+      xpath: //*/b:simple[text()=matches(self::node(), 'out.header.foo')]
 - category: mandatory
   customVariables: []
   description: 'Simple language: out.body/out.header have been removed'

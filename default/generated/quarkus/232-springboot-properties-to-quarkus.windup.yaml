@@ -40,7 +40,7 @@
   ruleID: springboot-properties-to-quarkus-00001
   when:
     builtin.file:
-      pattern: application-\.+\.(properties|yml|yaml)
+      pattern: application-.+\.(properties|yml|yaml)
 - category: mandatory
   customVariables: []
   description: Replace Spring datasource property key/value pairs with Quarkus properties

@@ -1,9 +1,13 @@
+package com.example.apps;
+
 import java.awt.*;
+import java.awt.peer.ComponentPeer;
 
 public class ComponentGetPeer {
     
     public static void main(String[] args) {
-        java.awt.peer.FontPeer peer = new java.awt.Font("Sans", 1, 1).getPeer();
+        Font sans = new Font("Sans", 1, 1);
+        java.awt.peer.FontPeer peer = sans.getPeer();
         String peerName = peer.toString();
         java.awt.Container cont = new java.awt.Container();
         Container c = new Container();
@@ -11,7 +15,7 @@ public class ComponentGetPeer {
         if (count != 0) 
          {
             Component comp = c.getComponent(0);
-            java.awt.ComponentPeer peer1 = comp.getPeer();
+             ComponentPeer peer1 = comp.getPeer();
          }
    }
 }

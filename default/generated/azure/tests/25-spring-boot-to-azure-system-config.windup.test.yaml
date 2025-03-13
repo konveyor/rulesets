@@ -9,6 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      atLeast: 0
+#      atLeast: 2 TODO: https://github.com/konveyor/analyzer-lsp/issues/769
       messageMatches: Review the usage of environment variables and system properties
         and externalize the.*

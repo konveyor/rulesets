@@ -6,5 +6,21 @@
 	<artifactId>sample-project</artifactId>
 	<version>0.0.1</version>
 	<name>Sample Project</name>
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/progress.message/sonic_Client -->
+		<dependency>
+			<groupId>progress.message</groupId>
+			<artifactId>sonic_Client</artifactId>
+			<version>7.5</version>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>aurea</id>
+			<url>https://mvnrepo.cantara.no/content/repositories/releases/</url>
+		</repository>
+	</repositories>
 </project>
 		

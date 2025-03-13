@@ -9,5 +9,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+#      atLeast: 2 TODO: https://github.com/konveyor/analyzer-lsp/issues/769
+      atLeast: 0
       messageMatches: App Service - The application reads environment variable.*

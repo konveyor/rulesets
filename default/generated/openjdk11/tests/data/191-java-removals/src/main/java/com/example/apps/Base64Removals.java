@@ -1,4 +1,4 @@
-package com.test.project;
+package com.example.apps;
 
 import sun.misc.*;
 import sun.misc.BASE64Encoder;
@@ -13,7 +13,7 @@ public class Base64Removals {
 
         try {
             base64Decoder.decodeBuffer("inputString");
-            base64Decoder.bytesPerAtom();
+//            base64Decoder.bytesPerAtom();
             base64Encoder.encodeBuffer(new byte[]{'a', 'b'});
         } catch (IOException e) {
             e.printStackTrace();

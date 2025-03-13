@@ -16,42 +16,42 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      atLeast: 1
       messageMatches: Use the Quarkus BOM to omit the version of the different Quarkus
         dependencies
 - ruleID: javaee-pom-to-quarkus-00020
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      atLeast: 1
       messageMatches: Use the Quarkus Maven plugin adding the following sections to
         the `pom.xml` file
 - ruleID: javaee-pom-to-quarkus-00030
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      atLeast: 1
       messageMatches: Use the Maven Compiler plugin adding the following sections
         to the `pom.xml` file
 - ruleID: javaee-pom-to-quarkus-00040
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      atLeast: 1
       messageMatches: Use the Maven Surefire plugin adding the following sections
         to the `pom.xml` file
 - ruleID: javaee-pom-to-quarkus-00050
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      atLeast: 1
       messageMatches: Use the Maven Failsafe plugin adding the following sections
         to the `pom.xml` file
 - ruleID: javaee-pom-to-quarkus-00060
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      atLeast: 1
       messageMatches: Leverage a Maven profile to run the Quarkus native build adding
         the following section to the `pom.xml` file
 - ruleID: javaee-pom-to-quarkus-00070

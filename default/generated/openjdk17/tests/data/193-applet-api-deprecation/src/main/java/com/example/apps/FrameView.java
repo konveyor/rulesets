@@ -1,9 +1,11 @@
-import java.applet.Applet;
-import java.applet.AppletContext;
-import java.applet.AppletStub;
-import java.applet.AudioClip;
+package com.example.apps;
+
+import java.applet.Applet;  // x
+import java.applet.AppletContext; // x
+import java.applet.AppletStub; // x
+import java.applet.AudioClip; // x
 import java.awt.Dimension;
-import javax.swing.JApplet;
+import javax.swing.JApplet; // x
 import javax.swing.JFrame;
 
 public class FrameView {
@@ -14,7 +16,7 @@ public class FrameView {
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
-    JApplet applet = new ClockComponent();
+    JApplet applet = new ClockComponent(); // x
     frame.getContentPane().add(applet);
     frame.pack();
     frame.setSize(new Dimension(400, 400));

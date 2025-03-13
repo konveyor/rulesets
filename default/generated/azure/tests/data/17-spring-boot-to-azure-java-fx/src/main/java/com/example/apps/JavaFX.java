@@ -1,4 +1,4 @@
-package helloworld;
+package com.example.apps;
  
 import javafx.application.Application;
 import javafx.event.ActionEvent;

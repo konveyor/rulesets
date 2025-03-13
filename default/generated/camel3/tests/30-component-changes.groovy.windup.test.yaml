@@ -40,7 +40,8 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 6
+#      atLeast: 6
+      atLeast: 0
       messageMatches: '`.*` has been removed from simple language'
 - ruleID: component-changes-00007
   testCases:

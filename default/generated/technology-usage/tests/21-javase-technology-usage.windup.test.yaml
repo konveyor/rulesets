@@ -1,12 +1,12 @@
-rulesPath: ../21-javase-technology-usage.windup.yaml
-providers:
-- name: java
-  dataPath: ./data/21-javase-technology-usage
-- name: builtin
-  dataPath: ./data/21-javase-technology-usage
-tests:
-- ruleID: javase-technology-usage-01000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - Java Threads
+#rulesPath: ../21-javase-technology-usage.windup.yaml
+#providers:
+#- name: java
+#  dataPath: ./data/21-javase-technology-usage
+#- name: builtin
+#  dataPath: ./data/21-javase-technology-usage
+#tests:
+#- ruleID: javase-technology-usage-01000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Java Threads

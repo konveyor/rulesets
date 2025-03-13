@@ -84,9 +84,13 @@
   ruleID: log4j-removed-00003
   when:
     or:
-    - and:
+    - or:
       - builtin.file:
-          pattern: (log4j\.xml|log4j\.properties|jboss-log4j\.xml)
+          pattern: log4j\.xml
+      - builtin.file:
+          pattern: log4j\.properties
+      - builtin.file:
+          pattern: jboss-log4j\.xml
     - not: true
       or:
       - java.dependency:
