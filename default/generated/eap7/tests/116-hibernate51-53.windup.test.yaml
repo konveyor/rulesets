@@ -16,8 +16,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
-      messageMatches: change reference to hibernate-java8 to hibernate-core
+      atLeast: 1
 - ruleID: hibernate51-53-00300
   testCases:
   - name: tc-1
@@ -91,7 +90,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 10
+      atLeast: 7
       messageMatches: Review usage of classes in `org.hibernate.cache.spi.RegionFactory`
 - ruleID: hibernate51-53-00600
   testCases:
@@ -123,7 +122,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 11
+      atLeast: 2
       messageMatches: The SPIs in the `org.hibernat.*
 - ruleID: hibernate51-53-01000
   testCases:

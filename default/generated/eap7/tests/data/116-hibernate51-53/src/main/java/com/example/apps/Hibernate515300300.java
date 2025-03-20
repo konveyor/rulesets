@@ -31,6 +31,7 @@ import java.util.Enumeration;
 import java.util.jar.JarFile;
 import java.util.zip.ZipEntry;
 
+import org.hibernate.boot.archive.internal.ExplodedArchiveDescriptor;
 import org.jboss.logging.Logger;
 
 import org.hibernate.jpa.boot.archive.spi.AbstractArchiveDescriptor;

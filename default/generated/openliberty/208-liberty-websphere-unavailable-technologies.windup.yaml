@@ -141,8 +141,7 @@
         filepaths:
         - ejb-jar.xml
         namespaces: {}
-        xpath: //*[local-name()='local' or local-name()='local-home']/text()[matches(self::node(),
-          'com\.ibm\.websphere\.batch\..*')]
+        xpath: //*[local-name()='local' or local-name()='local-home']/text()[matches(self::node(),'com\.ibm\.websphere\.batch\..*')]
 - category: mandatory
   customVariables: []
   description: Web Services Policy Sets are unavailable in Liberty

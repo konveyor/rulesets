@@ -11,6 +11,10 @@
                 <simple>${property.simple-property} == bar</simple>
                 <to uri="mock:barOrders"/>
             </filter>
+            <filter>
+                <simple>${out.header.foo}</simple>
+                <to uri="mock:fooOrders"/>
+            </filter>
             <transform>
                 <marshal>
                     <secureXML secureTag="//cheese:cheesesites/italy" secureTagContents="true"/>

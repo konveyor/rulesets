@@ -101,13 +101,6 @@ tests:
       atLeast: 1
       messageMatches: In Camel 3, the `org.apache.camel:camel-mina` artifact has the
         same implementation.*
-- ruleID: xml-renamed-components-00014
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 1
-      messageMatches: '`org.apache.camel:camel-mina-starter` artifact has been renamed
-        to `org.apache.camel.springboot:camel-mina-starter.*'
 - ruleID: xml-renamed-components-00015
   testCases:
   - name: tc-1

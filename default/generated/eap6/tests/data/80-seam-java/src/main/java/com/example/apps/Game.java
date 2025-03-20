@@ -1,4 +1,4 @@
-package org.jboss.seam.example.poker;
+package com.example.apps;
 
 import java.util.ArrayList;
 import java.util.List;

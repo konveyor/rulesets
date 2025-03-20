@@ -28,9 +28,6 @@
       - java.dependency:
           lowerbound: 0.0.0
           name: log4j.log4j
-      - java.dependency:
-          lowerbound: 0.0.0
-          name: log4j.log4j
       - builtin.file:
           pattern: log4j\.jar
     - java.referenced:
@@ -83,14 +80,14 @@
   message: Log4j configuration without including `log4j.jar`
   ruleID: log4j-removed-00003
   when:
-    and:
+    or:
     - or:
-        - builtin.file:
-            pattern: log4j\.xml
-        - builtin.file:
-            pattern: log4j\.properties
-        - builtin.file:
-            pattern: jboss-log4j\.xml
+      - builtin.file:
+          pattern: log4j\.xml
+      - builtin.file:
+          pattern: log4j\.properties
+      - builtin.file:
+          pattern: jboss-log4j\.xml
     - not: true
       or:
       - java.dependency:
@@ -126,9 +123,6 @@
       - java.dependency:
           lowerbound: 0.0.0
           name: log4j.log4j
-      - java.dependency:
-          lowerbound: 0.0.0
-          name: log4j.log4j
       - builtin.file:
           pattern: log4j\.jar
 - category: mandatory
@@ -157,9 +151,6 @@
           pattern: org.jboss.log4j.logmanager
     - not: true
       or:
-      - java.dependency:
-          lowerbound: 0.0.0
-          name: log4j.log4j
       - java.dependency:
           lowerbound: 0.0.0
           name: log4j.log4j

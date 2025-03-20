@@ -34,7 +34,7 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring.boot-version>${spring-boot-version}</spring.boot-version>
+        <spring.boot-version>2.7.18</spring.boot-version>
     </properties>
 
 
@@ -164,19 +164,19 @@
             </plugin>
 
             <plugin>
-                <groupId>org.apache.camel</groupId>
+                <groupId>org.apache.camel.maven</groupId>
                 <artifactId>camel-debezium-maven-plugin</artifactId>
-                <version>2.19.2</version>
+                <version>3.7.7</version>
             </plugin>
             <plugin>
-                <groupId>org.apache.camel</groupId>
+                <groupId>org.apache.camel.maven</groupId>
                 <artifactId>camel-salesforce-maven-plugin</artifactId>
-                <version>2.19.2</version>
+                <version>3.0.0</version>
             </plugin>
             <plugin>
-                <groupId>org.apache.camel</groupId>
+                <groupId>org.apache.camel.maven</groupId>
                 <artifactId>camel-servicenow-maven-plugin</artifactId>
-                <version>2.19.2</version>
+                <version>3.0.0</version>
             </plugin>
         </plugins>
     </build>

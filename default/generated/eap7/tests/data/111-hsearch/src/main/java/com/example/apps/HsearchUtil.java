@@ -45,7 +45,7 @@ import org.hibernate.search.store.Workspace;
 import org.hibernate.search.filter.FilterKey;
 import org.hibernate.search.filter.StandardFilterKey;
 import org.hibernate.search.impl.FullTextSharedSessionBuilderDelegator;
-//import static org.hibernate.search.backend.configuration.impl.IndexWriterSetting.MAX_THREAD_STATES;
+import static org.hibernate.search.backend.configuration.impl.IndexWriterSetting.MAX_THREAD_STATES;
 import org.hibernate.search.backend.configuration.impl.IndexWriterSetting;
 import org.hibernate.search.bridge.spi.ConversionContext;
 import org.hibernate.search.FullTextSharedSessionBuilder;
@@ -61,6 +61,7 @@ import org.hibernate.search.query.engine.spi.HSQuery;
 import org.hibernate.search.spi.BuildContext;
 import org.hibernate.search.MassIndexer;
 import org.hibernate.search.query.dsl.FuzzyContext;
+import org.hibernate.search.store.spi;
 
 import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.queryParser.QueryParser;
@@ -84,6 +85,7 @@ import org.apache.lucene.search.function.ByteFieldSource;
 import org.apache.solr.analysis.TokenizerFactory;
 
 import org.hibernate.search.query.dsl.QueryBuilder;
+import org.hibernate.search.store.impl.DirectoryProviderHelper;
 import org.hsqldb.Session;
 
 public class HsearchUtil {
@@ -128,6 +130,7 @@ public class HsearchUtil {
 //        context.getIndexingStrategy();
         
         HsearchUtil.setIndexWriterConfig(IndexWriterSetting.TERM_INDEX_INTERVAL);
+
     }
     
     private static void setIndexWriterConfig(IndexWriterSetting setting)

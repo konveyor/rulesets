@@ -30,7 +30,7 @@ tests:
   - name: tc-1
     hasTags:
     - JAX-WS Handler Chain
-#TODO: ignore until namespace query is fixed
+#FIXME: ignore until namespace query is fixed
 #- ruleID: xml-webservices-06000
 #  testCases:
 #  - name: tc-1

@@ -8,6 +8,7 @@ import org.hibernate.cache.spi.Region;
 import org.hibernate.cache.spi.access.CollectionRegionAccessStrategy;
 import org.hibernate.cache.spi.access.EntityRegionAccessStrategy;
 import org.hibernate.stat.SecondLevelCacheStatistics;
+import org.hibernate.stat.internal.CategorizedStatistics;
 
 public class Hibernate515300702 extends CategorizedStatistics implements SecondLevelCacheStatistics {
     private final transient Region region;
@@ -17,10 +18,10 @@ public class Hibernate515300702 extends CategorizedStatistics implements SecondL
     private AtomicLong missCount = new AtomicLong();
     private AtomicLong putCount = new AtomicLong();
 
-    ConcurrentSecondLevelCacheStatisticsImpl(Region region,
-                                             EntityRegionAccessStrategy entityRegionAccessStrategy,
-                                             CollectionRegionAccessStrategy collectionRegionAccessStrategy) {
-        super( region.getName() );
+    Hibernate515300702(Region region,
+                       EntityRegionAccessStrategy entityRegionAccessStrategy,
+                       CollectionRegionAccessStrategy collectionRegionAccessStrategy) {
+        super();
         this.region = region;
         this.entityRegionAccessStrategy = entityRegionAccessStrategy;
         this.collectionRegionAccessStrategy = collectionRegionAccessStrategy;

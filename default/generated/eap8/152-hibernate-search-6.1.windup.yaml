@@ -21,20 +21,12 @@
   ruleID: hibernate-search-6.1-00010
   when:
     and:
-    - or:
-      - java.dependency:
-          name: org.hibernate.hibernate-core
-          upperbound: 5.5.9.Final
-      - java.dependency:
-          name: org.hibernate.hibernate-core
-          upperbound: 5.5.9.Final
-    - or:
-      - java.dependency:
-          lowerbound: 6.1.0.Final
-          name: org.hibernate.search.hibernate-search-mapper-orm
-      - java.dependency:
-          lowerbound: 6.1.0.Final
-          name: org.hibernate.search.hibernate-search-mapper-orm
+    - java.dependency:
+        name: org.hibernate.hibernate-core
+        upperbound: 5.5.9.Final
+    - java.dependency:
+        lowerbound: 6.1.0.Final
+        name: org.hibernate.search.hibernate-search-mapper-orm
 - category: mandatory
   customVariables: []
   description: org.hibernate.search.engine.cfg.spi.ConfigurationPropertySource has
@@ -184,7 +176,7 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.hibernate.search.backend.elasticsearch.util.spi.URLEncodedString.fromJSon(*)
+        pattern: org.hibernate.search.backend.elasticsearch.util.spi.URLEncodedString.fromJsonString
 - category: mandatory
   customVariables: []
   description: FieldPaths#absolutize(String, String, String) has been removed
@@ -258,7 +250,7 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlan.executeAndReport(*)
+        pattern: org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlan.executeAndReport
 - category: mandatory
   customVariables: []
   description: IndexSchemaObjectNodeBuilder has changed

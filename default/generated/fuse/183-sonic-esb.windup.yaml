@@ -122,7 +122,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: com.sonicsw.xq.XQInitContext.getParameters(*)
+      pattern: com.sonicsw.xq.XQInitContext.getParameters
 - category: mandatory
   customVariables: []
   description: Call of com.sonicsw.xq.XQParameters.getParameter
@@ -140,7 +140,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: com.sonicsw.xq.XQParameters.getParameter(*)
+      pattern: com.sonicsw.xq.XQParameters.getParameter
 - category: mandatory
   customVariables: []
   description: Reference to com.sonicsw.xq.XQParameters
@@ -222,7 +222,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: com.sonicsw.xq.XQMessage.getHeaderValue(*)
+      pattern: com.sonicsw.xq.XQMessage.getHeaderValue
 - category: mandatory
   customVariables: []
   description: Call of com.sonicsw.xq.XQMessage.setHeaderValue
@@ -239,7 +239,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: com.sonicsw.xq.XQMessage.setHeaderValue(*)
+      pattern: com.sonicsw.xq.XQMessage.setHeaderValue
 - category: mandatory
   customVariables: []
   description: Call of com.sonicsw.xq.XQMessage.getHeaderNames
@@ -256,7 +256,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: com.sonicsw.xq.XQMessage.getHeaderNames(*)
+      pattern: com.sonicsw.xq.XQMessage.getHeaderNames
 - category: mandatory
   customVariables: []
   description: Reference to com.sonicsw.xq.XQPart
@@ -294,7 +294,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: com.sonicsw.xq.XQMessage.getPartCount(*)
+      pattern: com.sonicsw.xq.XQMessage.getPartCount
 - category: mandatory
   customVariables: []
   description: Call of com.sonicsw.xq.XQMessage.getPart
@@ -311,7 +311,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: com.sonicsw.xq.XQMessage.getPart(*)
+      pattern: com.sonicsw.xq.XQMessage.getPart
 - category: mandatory
   customVariables: []
   description: Reference to com.sonicsw.xq.XQLog
@@ -377,7 +377,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: com.sonicsw.xq.XQMessage.getCorrelationId(*)
+      pattern: com.sonicsw.xq.XQMessage.getCorrelationId
 - category: mandatory
   customVariables: []
   description: Call of com.sonicsw.xq.XQAddressFactory.createEndpointAddress
@@ -399,7 +399,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: com.sonicsw.xq.XQAddressFactory.createEndpointAddress(*)
+      pattern: com.sonicsw.xq.XQAddressFactory.createEndpointAddress
 - category: mandatory
   customVariables: []
   description: Call of com.sonicsw.xq.XQServiceContext.addOutgoing
@@ -420,7 +420,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: com.sonicsw.xq.XQServiceContext.addOutgoing(*)
+      pattern: com.sonicsw.xq.XQServiceContext.addOutgoing
 - category: mandatory
   customVariables: []
   description: Reference to com.sonicsw.xq.XQEnvelope
@@ -458,4 +458,4 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: com.sonicsw.xq.XQEnvelope.getMessage(*)
+      pattern: com.sonicsw.xq.XQEnvelope.getMessage

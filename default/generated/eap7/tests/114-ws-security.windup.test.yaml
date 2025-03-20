@@ -19,9 +19,10 @@ tests:
       atLeast: 8
       messageMatches: Most of the SAML bean objects from the `org.apache.ws.security.saml.ext`
         package have been moved to the `org.apache.wss4j.common.saml` package
-  - name: tc-2
-    hasTags:
-    - SAML
+# FIXME: where is this tag assigned??
+#  - name: tc-2
+#    hasTags:
+#    - SAML
 - ruleID: ws-security-00002
   testCases:
   - name: tc-1

@@ -182,4 +182,4 @@
     as: default
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.management.remote.JMXConnectorFactory.connect(*)
+      pattern: javax.management.remote.JMXConnectorFactory.connect

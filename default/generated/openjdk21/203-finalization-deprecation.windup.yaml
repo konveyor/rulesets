@@ -42,7 +42,7 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.Runtime.runFinalization(*)
+        pattern: java.lang.Runtime.runFinalization
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.System.runFinalization(*)
+        pattern: java.lang.System.runFinalization

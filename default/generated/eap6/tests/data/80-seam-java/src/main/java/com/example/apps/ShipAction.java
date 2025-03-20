@@ -1,18 +1,19 @@
-/*
+package com.example.apps;/*
  * JBoss, Home of Professional Open Source
  *
  * Distributable under LGPL license.
  * See terms of license at gnu.org.
  */ 
-package com.jboss.dvd.seam;
 
 import java.io.Serializable;
 
 import javax.ejb.Remove;
 import javax.ejb.Stateful;
+import javax.persistence.criteria.Order;
 
-import org.hibernate.validator.Length;
-import org.hibernate.validator.NotNull;
+import com.example.apps.Ship;
+//import org.hibernate.validator.Length;
+//import org.hibernate.validator.NotNull;
 import org.jboss.seam.annotations.bpm.BeginTask;
 import org.jboss.seam.annotations.bpm.EndTask;
 import org.jboss.seam.annotations.In;
@@ -26,13 +27,13 @@ public class ShipAction
 {
     private static final long serialVersionUID = -5284603520443473953L;
     
-    @In 
+    @In
     Order order;
     
     String track;
 
-    @NotNull
-    @Length(min=4,max=10)
+//    @NotNull
+//    @Length(min=4,max=10)
     public String getTrack() {
         return track;
     }
@@ -48,7 +49,7 @@ public class ShipAction
     
     @EndTask
     public String ship() {        
-        order.ship(track);
+//        order.ship(track);
         return "admin";
     }
 

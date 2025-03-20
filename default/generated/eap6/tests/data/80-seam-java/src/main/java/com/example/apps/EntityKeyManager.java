@@ -1,4 +1,4 @@
-package org.jboss.seam.trinidad;
+package com.example.apps;
 
 import static org.jboss.seam.ScopeType.PAGE;
 import static org.jboss.seam.annotations.Install.BUILT_IN;

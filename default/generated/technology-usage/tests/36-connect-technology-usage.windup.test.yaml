@@ -36,7 +36,7 @@ tests:
   - name: tc-2
     hasTags:
     - JCA
-# TODO: figure out how to make these pass
+# FIXME: figure out how to make these pass
 #- ruleID: technology-usage-connect-01500
 #  testCases:
 #  - name: tc-1

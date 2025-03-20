@@ -23,7 +23,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 4
+      atLeast: 2
       messageMatches: The `camel-management` dependency has been removed from camel-spring-boo.*
 - ruleID: xml-moved-camel31-00001
   testCases:

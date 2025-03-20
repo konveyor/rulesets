@@ -29,7 +29,7 @@ tests:
     hasIncidents:
       atLeast: 1
       messageMatches: From Hibernate 4.0 there were moved classes from package .*org.hibernate.connection.*
-# TODO: investigate why not working
+# FIXME: investigate why not working
 #- ruleID: hibernate-xml-04000
 #  testCases:
 #  - name: tc-1

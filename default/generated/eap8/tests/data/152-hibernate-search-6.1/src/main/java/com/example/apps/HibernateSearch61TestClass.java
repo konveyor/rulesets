@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurationContext;
 import org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurer;
 import org.hibernate.search.backend.elasticsearch.util.spi.URLEncodedString;
@@ -6,6 +8,8 @@ import org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaObj
 import org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaObjectNodeBuilder;
 import org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaRootNodeBuilder;
 import org.hibernate.search.engine.backend.index.spi.IndexManagerImplementor;
+import org.hibernate.search.engine.backend.types.converter.runtime.FromDocumentFieldValueConvertContext;
+import org.hibernate.search.engine.backend.types.converter.runtime.ToDocumentFieldValueConvertContext;
 import org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlan;
 import org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlanExecutionReport;
 import org.hibernate.search.engine.common.timing.spi.Deadline;
@@ -40,5 +44,15 @@ public class HibernateSearch61TestClass implements org.hibernate.search.engine.b
         IndexSchemaObjectFieldNodeBuilder indexSchemaObjectFieldNodeBuilder;
         IndexSchemaRootNodeBuilder indexSchemaRootNodeBuilder;
 
+    }
+
+    @Override
+    public Object convert(Object o, FromDocumentFieldValueConvertContext fromDocumentFieldValueConvertContext) {
+        return null;
+    }
+
+    @Override
+    public Object convert(Object o, ToDocumentFieldValueConvertContext toDocumentFieldValueConvertContext) {
+        return null;
     }
 }

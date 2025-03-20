@@ -817,7 +817,7 @@
   ruleID: seam-java-00250
   when:
     java.referenced:
-      pattern: org.jboss.seam.annotations.intercept.*
+      pattern: org.jboss.seam.annotations.intercept*
 - category: mandatory
   customVariables: []
   description: Seam API - Asynchronous annotation

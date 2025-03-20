@@ -1,4 +1,4 @@
-package org.jboss.seam.example.quartz.test;
+package com.example.apps;
 
 import static org.jboss.seam.annotations.Install.MOCK;
 
@@ -16,8 +16,6 @@ import org.jboss.seam.annotations.Observer;
 import org.jboss.seam.annotations.Transactional;
 import org.jboss.seam.annotations.async.Asynchronous;
 import org.jboss.seam.async.QuartzTriggerHandle;
-import org.jboss.seam.example.quartz.Payment;
-import org.jboss.seam.example.quartz.PaymentProcessor;
 import org.jboss.seam.log.Log;
 
 /**
@@ -41,12 +39,11 @@ public class TestPaymentProcessor extends PaymentProcessor
     { 
         payment = entityManager.merge(payment);
         
-        log.info("[#0] Processing cron payment #1", System.currentTimeMillis(), payment.getId());
 
         if (payment.getActive()) {
-            BigDecimal balance = payment.getAccount().adjustBalance(payment.getAmount().negate());
-            log.info(":: balance is now #0", balance);
-            payment.setLastPaid(new Date());
+//            BigDecimal balance = payment.getAccount().adjustBalance(payment.getAmount().negate());
+//            log.info(":: balance is now #0", balance);
+//            payment.setLastPaid(new Date());
 
         }
 
@@ -59,11 +56,9 @@ public class TestPaymentProcessor extends PaymentProcessor
     { 
         payment = entityManager.merge(payment);
         
-        log.error("[#0] Processing cron payment #1", System.currentTimeMillis(), payment.getId());
         if (payment.getActive()) {
-            BigDecimal balance = payment.getAccount().adjustBalance(payment.getAmount().negate());
-            log.error(":: balance is now #0", balance);
-            payment.setLastPaid(new Date());
+//            BigDecimal balance = payment.getAccount().adjustBalance(payment.getAmount().negate());
+//            payment.setLastPaid(new Date());
 
         }
 
@@ -74,16 +69,16 @@ public class TestPaymentProcessor extends PaymentProcessor
     @Transactional
     public void observeTransactionSuccess(Payment payment)
     {
-        TransactionStatus.instance().setTransactionSucceded(true);
-        TransactionStatus.instance().setId(payment.getId());
+        org.jboss.seam.example.quartz.test.TransactionStatus.instance().setTransactionSucceded(true);
+        org.jboss.seam.example.quartz.test.TransactionStatus.instance().setId("123");
     }
     
     @Observer("org.jboss.seam.example.quartz.test.transactionCompletion")
     @Transactional
     public void observeTransactionCompletion(Payment payment)
     {
-        TransactionStatus.instance().setTransactionCompleted(true);
-        TransactionStatus.instance().setId(payment.getId());
+        org.jboss.seam.example.quartz.test.TransactionStatus.instance().setTransactionCompleted(true);
+        org.jboss.seam.example.quartz.test.TransactionStatus.instance().setId("123");
     }
 
 }

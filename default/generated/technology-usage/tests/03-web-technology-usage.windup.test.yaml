@@ -1,4 +1,4 @@
-# TODO: investigate if the hasTags test condition can actually work - data must have been tagged previously
+# FIXME: investigate if the hasTags test condition can actually work - data must have been tagged previously
 #rulesPath: ../03-web-technology-usage.windup.yaml
 #providers:
 #- name: java

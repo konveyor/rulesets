@@ -17,7 +17,7 @@ tests:
   - name: tc-1
     hasTags:
     - Log4j Configuration
-# TODO: must fix this rule, comes broken from windup
+# FIXME: must fix this rule, comes broken from windup
 #- ruleID: log4j-03000
 #  testCases:
 #  - name: tc-1

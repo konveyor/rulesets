@@ -98,7 +98,7 @@
       namespaces:
         c: http://camel.apache.org/schema/spring
       # check regex matching its not working
-      xpath: //*/c:simple[text()=matches(self::node(), '{*}out.(body|header){*}')]
+      xpath: //*/c:simple[text()=matches(self::node(), '.*out.(body|header).*')]
 - category: mandatory
   customVariables: []
   description: 'Simple language: out.body/out.header have been removed'
@@ -117,7 +117,7 @@
     builtin.xml:
       namespaces:
         b: http://camel.apache.org/schema/blueprint
-      xpath: //*/b:simple[text()=matches(self::node(), 'out.header.foo')]
+      xpath: //*/b:simple[text()=matches(self::node(), '.*out\.header\.foo.*')]
 - category: mandatory
   customVariables: []
   description: 'Simple language: out.body/out.header have been removed'
@@ -159,11 +159,11 @@
     - builtin.xml:
         namespaces:
           c: http://camel.apache.org/schema/spring
-        xpath: //*/c:simple[text()=matches(self::node(), '{*}property{*}')]
+        xpath: //*/c:simple[text()=matches(self::node(), '*property*')]
     - builtin.xml:
         namespaces:
           b: http://camel.apache.org/schema/blueprint
-        xpath: //*/b:simple[text()=matches(self::node(), '{*}property{*}')]
+        xpath: //*/b:simple[text()=matches(self::node(), '*property*')]
 - category: mandatory
   customVariables: []
   description: 'Terser language: language renamed'
@@ -268,11 +268,11 @@
     - builtin.xml:
         namespaces:
           c: http://camel.apache.org/schema/spring
-        xpath: //*/c:from[@uri=matches(self::node(), '{*}consumer.{*}')]
+        xpath: //*/c:from[@uri=matches(self::node(), '.*consumer\..*')]
     - builtin.xml:
         namespaces:
           b: http://camel.apache.org/schema/blueprint
-        xpath: //*/b:from[@uri=matches(self::node(), '{*}consumer.{*}')]
+        xpath: //*/b:from[@uri=matches(self::node(), '.*consumer\..*')]
 - category: mandatory
   customVariables: []
   description: 'Tracing: Tracer class removed'

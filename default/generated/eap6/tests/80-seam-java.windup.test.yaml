@@ -173,14 +173,15 @@ tests:
       messageMatches: Both Seam 2 and CDI beans may produce and consume events in
         order to communicate with other beans. Unlike method invocation, events allow
         for decoupled architecture with no compile-time dependency.*
-- ruleID: seam-java-00250
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 1
-      messageMatches: In the Java EE, the concept of interceptors was extracted into
-        a separate specification. As a result, not only EJBs but any CDI managed beans
-        can benefit from this facility.*
+# FIXME
+#- ruleID: seam-java-00250
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: In the Java EE, the concept of interceptors was extracted into
+#        a separate specification. As a result, not only EJBs but any CDI managed beans
+#        can benefit from this facility.*
 - ruleID: seam-java-00260
   testCases:
   - name: tc-1

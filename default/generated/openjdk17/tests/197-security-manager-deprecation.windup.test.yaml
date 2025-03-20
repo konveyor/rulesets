@@ -18,7 +18,7 @@ tests:
       atLeast: 3
       messageMatches: References to Java Security Manager API classes deprecated in
         Java 1.*
-# TODO: remove comments when static method matching is fixed
+# FIXME: remove comments when static method matching is fixed
 #- ruleID: security-manager-deprecation-00020
 #  testCases:
 #  - name: tc-1

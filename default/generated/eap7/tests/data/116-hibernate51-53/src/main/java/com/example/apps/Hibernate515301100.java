@@ -1,9 +1,14 @@
 package com.example.apps;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import javax.persistence.GeneratedValue;
 import javax.persistence.TableGenerator;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+
+import static javax.persistence.GenerationType.TABLE;
 
 public class Hibernate515301100 {
     private static SessionFactory factory;

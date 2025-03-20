@@ -4,12 +4,12 @@ providers:
   dataPath: ./data/25-spring-boot-to-azure-system-config
 - name: builtin
   dataPath: ./data/25-spring-boot-to-azure-system-config
-tests:
-- ruleID: spring-boot-to-azure-system-config-01000
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 0
-#      atLeast: 2 TODO: https://github.com/konveyor/analyzer-lsp/issues/769
-      messageMatches: Review the usage of environment variables and system properties
-        and externalize the.*
+tests: []
+#FIXME: https://github.com/konveyor/analyzer-lsp/issues/769
+#- ruleID: spring-boot-to-azure-system-config-01000
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 2
+#      messageMatches: Review the usage of environment variables and system properties
+#        and externalize the.*

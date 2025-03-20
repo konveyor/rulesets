@@ -1,10 +1,9 @@
-/*
+package com.example.apps;/*
  * JBoss, Home of Professional Open Source
  *
  * Distributable under LGPL license.
  * See terms of license at gnu.org.
  */
-package org.jboss.seam.wiki.core.ui;
 
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.util.EnumerationEnumeration;
@@ -15,7 +14,6 @@ import org.jboss.seam.annotations.Startup;
 import org.jboss.seam.annotations.intercept.BypassInterceptors;
 import org.jboss.seam.annotations.web.Filter;
 import org.jboss.seam.web.AbstractFilter;
-import org.tuckey.web.filters.urlrewrite.UrlRewriteFilter;
 
 import javax.servlet.*;
 import java.io.IOException;
@@ -57,7 +55,7 @@ public class WikiUrlRewriteFilter extends AbstractFilter {
         this.initParameters = initParameters;
     }
 
-    private class FilterConfigWrapper implements FilterConfig {
+    class FilterConfigWrapper implements FilterConfig {
 
         private FilterConfig delegate;
         private Map<String, String> parameters;
