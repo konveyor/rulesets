@@ -1,0 +1,12 @@
+rulesPath: ../eapxp_channel_manifest_5_0_upgrade.mta.yaml
+providers:
+  - name: java
+    dataPath: ./data/eapxp_channel_manifest_5_0_upgrade
+  - name: builtin
+    dataPath: ./data/eapxp_channel_manifest_5_0_upgrade
+tests:
+  - ruleID: eapxp_channel_manifest_5_0_upgrade-00001
+    testCases:
+      - name: eapxp_channel_manifest_5_0_upgrade-1
+        hasIncidents:
+          exactly: 1
