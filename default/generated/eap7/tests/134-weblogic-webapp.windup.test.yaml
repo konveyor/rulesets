@@ -12,12 +12,13 @@ tests:
       atLeast: 1
       messageMatches: Virtual directories supported in WebLogic are not supported
         in JBoss EAP.
-- ruleID: weblogic-webapp-eap7-02000
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 1
-      messageMatches: Replace the proprietary WebLogic .*@WLServlet.*
+# FIXME: test depends on propietary dependency being present
+#- ruleID: weblogic-webapp-eap7-02000
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: Replace the proprietary WebLogic .*@WLServlet.*
 - ruleID: weblogic-webapp-eap7-03000
   testCases:
   - name: tc-1

@@ -1,5 +1,4 @@
-package org.jboss.seam.example.restbay.resteasy;
-
+package com.example.apps;
 
 import org.jboss.seam.Component;
 import org.jboss.seam.ScopeType;
@@ -30,8 +29,8 @@ public class TestAuthenticator
    public boolean authenticate()
    {
       // Tests that the SFSB can be obtained in both ContextualHttpRequests (authentication and web service invocation)
-      TestEjbLocal ejb = (TestEjbLocal) Component.getInstance("securedEjb", ScopeType.EVENT);
-      ejb.foo();
+//      TestEjbLocal ejb = (TestEjbLocal) Component.getInstance("securedEjb", ScopeType.EVENT);
+//      ejb.foo();
       
       log.debug("Authenticating username/password: " + credentials.getUsername() + "/" + credentials.getPassword());
       if (credentials.getUsername().equals(credentials.getPassword())) {

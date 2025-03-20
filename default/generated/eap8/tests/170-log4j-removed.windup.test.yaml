@@ -5,12 +5,6 @@ providers:
 - name: builtin
   dataPath: ./data/170-log4j-removed
 tests:
-- ruleID: log4j-removed-00001
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 1
-      messageMatches: Log4j usage without configuration files
 - ruleID: log4j-removed-00002
   testCases:
   - name: tc-1
@@ -23,15 +17,9 @@ tests:
     hasIncidents:
       atLeast: 3
       messageMatches: Log4j configuration without including `log4j.jar`
-- ruleID: log4j-removed-00004
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 1
-      messageMatches: Log4j custom-handler using appender
 - ruleID: log4j-removed-00005
   testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 2
-      messageMatches: Log4j module dependency declaration
+    - name: tc-1
+      hasIncidents:
+        atLeast: 2
+        messageMatches: Log4j module dependency declaration

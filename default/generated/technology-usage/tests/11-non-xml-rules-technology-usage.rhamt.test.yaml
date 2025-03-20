@@ -1,4 +1,4 @@
-# TODO: investigate if the hasTags test condition can actually work - if the data hasn't been tagged previously, it wont work
+# FIXME: investigate if the hasTags test condition can actually work - if the data hasn't been tagged previously, it wont work
 #rulesPath: ../11-non-xml-rules-technology-usage.rhamt.yaml
 #providers:
 #- name: java

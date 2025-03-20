@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import java.lang.instrument.ClassDefinition;
 
 public class DynamicAgents {

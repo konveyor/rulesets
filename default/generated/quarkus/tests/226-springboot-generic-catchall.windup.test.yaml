@@ -1,4 +1,4 @@
-# TODO: requires ability to match dependencies using regex
+# FIXME: requires ability to match dependencies using regex
 #rulesPath: ../226-springboot-generic-catchall.windup.yaml
 #providers:
 #- name: java

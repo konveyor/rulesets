@@ -15,7 +15,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.xml.soap.SOAPElementFactory.newInstance(*)
+      pattern: javax.xml.soap.SOAPElementFactory.newInstance
 - category: mandatory
   customVariables: []
   description: javax.xml.soap.SOAPElementFactory.create() must be replaced
@@ -33,4 +33,4 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.xml.soap.SOAPElementFactory.create(*)
+      pattern: javax.xml.soap.SOAPElementFactory.create

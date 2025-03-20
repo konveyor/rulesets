@@ -1,179 +1,63 @@
 package com.example.apps;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicLong;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReadWriteLock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
-
-import org.hibernate.cache.spi.Region;
-import org.hibernate.cache.spi.access.NaturalIdRegionAccessStrategy;
 import org.hibernate.stat.NaturalIdCacheStatistics;
 
-public class Hibernate515300701 extends CategorizedStatistics implements NaturalIdCacheStatistics {
-    private static final long serialVersionUID = 1L;
-    private final transient Region region;
-    private final transient NaturalIdRegionAccessStrategy accessStrategy;
-    private final AtomicLong hitCount = new AtomicLong();
-    private final AtomicLong missCount = new AtomicLong();
-    private final AtomicLong putCount = new AtomicLong();
-    private final AtomicLong executionCount = new AtomicLong();
-    private final AtomicLong executionMaxTime = new AtomicLong();
-    private final AtomicLong executionMinTime = new AtomicLong( Long.MAX_VALUE );
-    private final AtomicLong totalExecutionTime = new AtomicLong();
+import java.util.Map;
 
-    private final Lock readLock;
-    private final Lock writeLock;
-
-    {
-        final ReadWriteLock lock = new ReentrantReadWriteLock();
-        this.readLock = lock.readLock();
-        this.writeLock = lock.writeLock();
-    }
-
-    ConcurrentNaturalIdCacheStatisticsImpl(Region region, NaturalIdRegionAccessStrategy accessStrategy) {
-        super( region.getName() );
-        this.region = region;
-        this.accessStrategy = accessStrategy;
-    }
+public class Hibernate515300701 implements NaturalIdCacheStatistics {
 
     @Override
     public long getHitCount() {
-        return this.hitCount.get();
+        return 0;
     }
 
     @Override
     public long getMissCount() {
-        return this.missCount.get();
+        return 0;
     }
 
     @Override
     public long getPutCount() {
-        return this.putCount.get();
+        return 0;
     }
 
-    /**
-     * queries executed to the DB
-     */
     @Override
     public long getExecutionCount() {
-        return this.executionCount.get();
+        return 0;
     }
 
-    /**
-     * average time in ms taken by the excution of this query onto the DB
-     */
     @Override
     public long getExecutionAvgTime() {
-        // We write lock here to be sure that we always calculate the average time
-        // with all updates from the executed applied: executionCount and totalExecutionTime
-        // both used in the calculation
-        this.writeLock.lock();
-        try {
-            long avgExecutionTime = 0;
-            if ( this.executionCount.get() > 0 ) {
-                avgExecutionTime = this.totalExecutionTime.get() / this.executionCount.get();
-            }
-            return avgExecutionTime;
-        }
-        finally {
-            this.writeLock.unlock();
-        }
+        return 0;
     }
 
-    /**
-     * max time in ms taken by the excution of this query onto the DB
-     */
     @Override
     public long getExecutionMaxTime() {
-        return this.executionMaxTime.get();
+        return 0;
     }
 
-    /**
-     * min time in ms taken by the excution of this query onto the DB
-     */
     @Override
     public long getExecutionMinTime() {
-        return this.executionMinTime.get();
+        return 0;
     }
 
     @Override
     public long getElementCountInMemory() {
-        return this.region.getElementCountInMemory();
+        return 0;
     }
 
     @Override
     public long getElementCountOnDisk() {
-        return this.region.getElementCountOnDisk();
+        return 0;
     }
 
     @Override
     public long getSizeInMemory() {
-        return this.region.getSizeInMemory();
+        return 0;
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public Map getEntries() {
-        final Map map = new HashMap();
-        for ( Object o : this.region.toMap().entrySet() ) {
-            Map.Entry me = (Map.Entry) o;
-            map.put( accessStrategy.getNaturalIdValues(me.getKey()), me.getValue() );
-        }
-        return map;
-    }
-
-    @Override
-    public String toString() {
-        final StringBuilder buf = new StringBuilder()
-                .append( "NaturalIdCacheStatistics" )
-                .append( "[hitCount=" ).append( this.hitCount )
-                .append( ",missCount=" ).append( this.missCount )
-                .append( ",putCount=" ).append( this.putCount )
-                .append( ",executionCount=" ).append( this.executionCount )
-                .append( ",executionAvgTime=" ).append( this.getExecutionAvgTime() )
-                .append( ",executionMinTime=" ).append( this.executionMinTime )
-                .append( ",executionMaxTime=" ).append( this.executionMaxTime );
-        // not sure if this would ever be null but wanted to be careful
-        if ( this.region != null ) {
-            buf.append( ",elementCountInMemory=" ).append( this.getElementCountInMemory() )
-                    .append( ",elementCountOnDisk=" ).append( this.getElementCountOnDisk() )
-                    .append( ",sizeInMemory=" ).append( this.getSizeInMemory() );
-        }
-        buf.append( ']' );
-        return buf.toString();
-    }
-
-    void incrementHitCount() {
-        this.hitCount.getAndIncrement();
-    }
-
-    void incrementMissCount() {
-        this.missCount.getAndIncrement();
-    }
-
-    void incrementPutCount() {
-        this.putCount.getAndIncrement();
-    }
-
-    void queryExecuted(long time) {
-        // read lock is enough, concurrent updates are supported by the underlying type AtomicLong
-        // this only guards executed(long, long) to be called, when another thread is executing getExecutionAvgTime()
-        this.readLock.lock();
-        try {
-            // Less chances for a context switch
-            //noinspection StatementWithEmptyBody
-            for ( long old = this.executionMinTime.get(); time < old && !this.executionMinTime.compareAndSet( old, time ); old = this.executionMinTime.get() ) {
-            }
-            //noinspection StatementWithEmptyBody
-            for ( long old = this.executionMaxTime.get(); time > old && !this.executionMaxTime.compareAndSet( old, time ); old = this.executionMaxTime.get() ) {
-            }
-            this.executionCount.getAndIncrement();
-            this.totalExecutionTime.addAndGet( time );
-        }
-        finally {
-            this.readLock.unlock();
-        }
+        return Map.of();
     }
 }

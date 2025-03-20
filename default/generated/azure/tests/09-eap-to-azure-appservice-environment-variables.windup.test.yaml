@@ -4,11 +4,11 @@ providers:
   dataPath: ./data/09-eap-to-azure-appservice-environment-variables
 - name: builtin
   dataPath: ./data/09-eap-to-azure-appservice-environment-variables
-tests:
-- ruleID: eap-to-azure-appservice-environment-variables-001
-  testCases:
-  - name: tc-1
-    hasIncidents:
-#      atLeast: 2 TODO: https://github.com/konveyor/analyzer-lsp/issues/769
-      atLeast: 0
-      messageMatches: App Service - The application reads environment variable.*
+tests: []
+# FIXME: https://github.com/konveyor/analyzer-lsp/issues/769
+#- ruleID: eap-to-azure-appservice-environment-variables-001
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 2
+#      messageMatches: App Service - The application reads environment variable.*

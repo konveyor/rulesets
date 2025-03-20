@@ -28,7 +28,9 @@ public class SingleThreadModelImpl implements SingleThreadModel, HttpSessionCont
         context.getServlet("servlet");
         context.getServlets();
         context.getServletNames();
-        context.log(new Exception(), "exception");
+        Exception e = new Exception();
+        String exception = "exception";
+        context.log(e, exception);
 
         handleRequest(null);
         handleHttpRequest(null);

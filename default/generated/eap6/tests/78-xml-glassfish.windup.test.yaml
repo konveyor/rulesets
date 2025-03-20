@@ -5,11 +5,12 @@ providers:
 - name: builtin
   dataPath: ./data/78-xml-glassfish
 tests:
-- ruleID: xml-glassfish-01000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - Glassfish Web Descriptor
+# FIXME: fix https://github.com/konveyor/analyzer-lsp/issues/799
+#- ruleID: xml-glassfish-01000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Glassfish Web Descriptor
 - ruleID: xml-glassfish-02000
   testCases:
   - name: tc-1

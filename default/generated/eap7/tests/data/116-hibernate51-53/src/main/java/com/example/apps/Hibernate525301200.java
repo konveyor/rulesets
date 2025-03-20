@@ -1,12 +1,10 @@
 package com.example.apps;
 
-import org.hibernate.query.internal.QueryParameterNamedImpl;
 import org.hibernate.engine.query.spi.NamedParameterDescriptor;
-import org.hibernate.query.QueryParameter;
 
 import java.util.Map;
 
-public class Hibernate515301200 {
+public class Hibernate525301200 {
 
     public void aMethod(String queryString) {
         for (Map.Entry<QueryParameter, QueryParameterListBinding> entry : parameterListBindingMap.entrySet()) {

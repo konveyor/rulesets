@@ -208,7 +208,7 @@ tests:
       atLeast: 1
       messageMatches: Update the dependency by replacing the group `org.jboss.bom`
         artifact `eap-runtime-artifacts`
-# TODO: why isn't this matching?
+# FIXME: why isn't this matching?
 #- ruleID: jboss-dependencies-00031
 #  testCases:
 #  - name: tc-1

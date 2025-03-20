@@ -23,7 +23,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.addFile(*)
+      pattern: org.hibernate.cfg.Configuration.addFile
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.add()
@@ -49,7 +49,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.add(*)
+      pattern: org.hibernate.cfg.Configuration.add
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.addXML()
@@ -75,7 +75,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.addXML(*)
+      pattern: org.hibernate.cfg.Configuration.addXML
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.addCacheableFile()
@@ -101,7 +101,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.addCacheableFile(*)
+      pattern: org.hibernate.cfg.Configuration.addCacheableFile
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.addURL()
@@ -127,7 +127,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.addURL(*)
+      pattern: org.hibernate.cfg.Configuration.addURL
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.addInputStream()
@@ -153,7 +153,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.addInputStream(*)
+      pattern: org.hibernate.cfg.Configuration.addInputStream
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.addResource()
@@ -179,7 +179,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.addResource(*)
+      pattern: org.hibernate.cfg.Configuration.addResource
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.addClass()
@@ -205,7 +205,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.addClass(*)
+      pattern: org.hibernate.cfg.Configuration.addClass
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.addAnnotatedClass()
@@ -231,7 +231,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.addAnnotatedClass(*)
+      pattern: org.hibernate.cfg.Configuration.addAnnotatedClass
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.addPackage()
@@ -257,7 +257,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.addPackage(*)
+      pattern: org.hibernate.cfg.Configuration.addPackage
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.addJar()
@@ -283,7 +283,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.addJar(*)
+      pattern: org.hibernate.cfg.Configuration.addJar
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.addDirectory()
@@ -309,7 +309,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.addDirectory(*)
+      pattern: org.hibernate.cfg.Configuration.addDirectory
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.registerTypeContributor()
@@ -335,7 +335,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.registerTypeContributor(*)
+      pattern: org.hibernate.cfg.Configuration.registerTypeContributor
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.registerTypeOverride()
@@ -414,7 +414,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.setProperties(*)
+      pattern: org.hibernate.cfg.Configuration.setProperties
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.addProperties()
@@ -441,7 +441,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.addProperties(*)
+      pattern: org.hibernate.cfg.Configuration.addProperties
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.setNamingStrategy()
@@ -476,7 +476,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.setNamingStrategy(*)
+      pattern: org.hibernate.cfg.Configuration.setNamingStrategy
 - category: optional
   customVariables:
   - name: configure
@@ -532,7 +532,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.setInterceptor(*)
+      pattern: org.hibernate.cfg.Configuration.setInterceptor
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.setEntityNotFoundDelegate()
@@ -559,7 +559,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.setEntityNotFoundDelegate(*)
+      pattern: org.hibernate.cfg.Configuration.setEntityNotFoundDelegate
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.setSessionFactoryObserver()
@@ -586,7 +586,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.setSessionFactoryObserver(*)
+      pattern: org.hibernate.cfg.Configuration.setSessionFactoryObserver
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.setCurrentTenantIdentifierResolver()
@@ -613,7 +613,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.setCurrentTenantIdentifierResolver(*)
+      pattern: org.hibernate.cfg.Configuration.setCurrentTenantIdentifierResolver
 - category: optional
   customVariables:
   - name: type

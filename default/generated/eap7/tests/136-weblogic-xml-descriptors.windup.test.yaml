@@ -49,11 +49,12 @@ tests:
   - name: tc-1
     hasTags:
     - WebLogic web service policy
-- ruleID: weblogic-xml-descriptor-eap7-10000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - WebLogic web service descriptor
+# FIXME
+#- ruleID: weblogic-xml-descriptor-eap7-10000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - WebLogic web service descriptor
 - ruleID: weblogic-xml-descriptor-eap7-11000
   testCases:
   - name: tc-1

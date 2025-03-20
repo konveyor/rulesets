@@ -20,7 +20,7 @@ tests:
       - name: MP-OpenAPI-Schema-3
         hasIncidents:
           exactly: 4
-# TODO: ANNOTATION also returning refs to imports and others
+# FIXME: ANNOTATION also returning refs to imports and others
 #  - ruleID: eapxp_microprofile_openapi_4.0-00004
 #    testCases:
 #      - name: MP-OpenAPI-RequestBody-1

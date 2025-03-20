@@ -1,4 +1,4 @@
-# TODO: static method calls
+# FIXME: static method calls
 #rulesPath: ../156-jakarta-el.windup.yaml
 #providers:
 #- name: java

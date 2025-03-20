@@ -1,5 +1,5 @@
 //$Id$
-package org.jboss.seam.example.messages;
+package com.example.apps;
 
 import static javax.persistence.PersistenceContextType.EXTENDED;
 import static org.jboss.seam.ScopeType.SESSION;

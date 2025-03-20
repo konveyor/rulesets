@@ -726,7 +726,7 @@ tests:
       atLeast: 2
       messageMatches: 'The MassIndexer mostly stays the same in Hibernate Search 6,
         but it moved to a different package: `org.hibernate.search.mapper.orm.massindexing.MassIndexer`.*'
-# TODO: Failing for some reason
+# FIXME: Failing for some reason
 #- ruleID: hibernate-search-01030
 #  testCases:
 #  - name: tc-1

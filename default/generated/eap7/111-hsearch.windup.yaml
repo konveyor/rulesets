@@ -318,8 +318,8 @@
   when:
     java.referenced:
       location: CONSTRUCTOR_CALL
-      pattern: org.hibernate.search.cfg.NumericFieldMapping(org.hibernate.search.cfg.PropertyDescriptor,
-        org.hibernate.search.cfg.EntityDescriptor, org.hibernate.search.cfg.SearchMapping)
+#      pattern: org.hibernate.search.cfg.NumericFieldMapping(org.hibernate.search.cfg.PropertyDescriptor,org.hibernate.search.cfg.EntityDescriptor,org.hibernate.search.cfg.SearchMapping)
+      pattern: NumericFieldMapping(PropertyDescriptor,EntityDescriptor,SearchMapping)
 - category: optional
   customVariables: []
   description: Hibernate Search 5 - Deprecated interface org.hibernate.search.store.IndexShardingStrategy

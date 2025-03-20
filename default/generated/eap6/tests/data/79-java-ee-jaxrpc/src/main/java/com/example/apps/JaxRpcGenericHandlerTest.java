@@ -1,9 +1,10 @@
-// Contains code that should match for the following tests:
+package com.example.apps;// Contains code that should match for the following tests:
 //
 // java-ee-jaxrpc-00000-test
 //
 
 import java.util.Map;
+import javax.xml.namespace.QName;
 import javax.xml.rpc.handler.Handler;
 import javax.xml.rpc.handler.GenericHandler;
 import javax.xml.rpc.handler.HandlerInfo;
@@ -21,6 +22,11 @@ public class JaxRpcGenericHandlerTest extends GenericHandler
 
     public void destroy()
     {
+    }
+
+    @Override
+    public QName[] getHeaders() {
+        return new QName[0];
     }
 
     public boolean handleRequest(MessageContext context)

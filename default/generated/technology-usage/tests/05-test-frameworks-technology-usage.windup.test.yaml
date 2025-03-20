@@ -1,4 +1,4 @@
-# TODO: investigate if the hasTags test condition can actually work
+# FIXME: investigate if the hasTags test condition can actually work
 #rulesPath: ../05-test-frameworks-technology-usage.windup.yaml
 #providers:
 #- name: java

@@ -14,8 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package sample.camel;
+package com.example.apps;
 
+import org.apache.camel.http.base.HttpOperationFailedException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.apache.camel.impl.JndiRegistry;
@@ -35,7 +36,7 @@ public class SampleBean {
     private String say;
 
     public String saySomething() {
-	HttpOperationFailedException hofe = new HttpOperationFailedException();
+	HttpOperationFailedException hofe = new HttpOperationFailedException(null, 0, null, null, null, null);
         return say;
     }
 
