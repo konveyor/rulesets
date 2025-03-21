@@ -1,0 +1,14 @@
+rulesPath: ../124-singleton-sessionbean.rhamt.yaml
+providers:
+- name: java
+  dataPath: ./data/124-singleton-sessionbean.rhamt.test.yaml
+- name: builtin
+  dataPath: ./data/124-singleton-sessionbean.rhamt.test.yaml
+tests:
+- ruleID: singleton-sessionbean-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: When a singleton EJB bean class implements `javax.ejb.SessionBean`
+        interface, this interface should be removed from the implements clause.*

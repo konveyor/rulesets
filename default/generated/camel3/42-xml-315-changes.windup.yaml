@@ -12,13 +12,9 @@
   message: JDK 8 no longer supported - In Camel 3.15, JDK 11 or 17 is required.
   ruleID: xml-315-00001
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        nameregex: org\.apache\.camel\..*
-    - java.dependency:
-        lowerbound: 0.0.0
-        nameregex: org\.apache\.camel\..*
+    java.dependency:
+      lowerbound: 0.0.0
+      nameregex: org\.apache\.camel\..*
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-kamelet-reify component has been retired
@@ -33,13 +29,9 @@
   message: '`camel-kamelet-reify` component has been retired in Apache Camel 3.15.'
   ruleID: xml-removed-camel315-00001
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-kamelet-reify
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-kamelet-reify
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-kamelet-reify
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-spring-javaconfig component has been retired
@@ -54,13 +46,9 @@
   message: '`camel-spring-javaconfig` component has been retired in Apache Camel 3.15.'
   ruleID: xml-removed-camel315-00002
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-spring-javaconfig
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-spring-javaconfig
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-spring-javaconfig
 - category: mandatory
   customVariables: []
   description: camel.dataformat.fhirjson configuration key has been renamed to camel.dataformat.fhir-json

@@ -1,0 +1,21 @@
+rulesPath: ../168-keycloak-openid.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/168-keycloak-openid
+- name: builtin
+  dataPath: ./data/168-keycloak-openid
+tests:
+- ruleID: keycloak-openid-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: In order to add support for EAP native OpenID Connect, the `auth-method`
+        must be updated to `OIDC`.
+- ruleID: keycloak-openid-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: In order to add support for EAP native OpenID Connect, the `WEB-INF/keycloak.json`
+        file must be renamed to `WEB-INF/oidc.json`.

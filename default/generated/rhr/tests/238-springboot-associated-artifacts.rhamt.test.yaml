@@ -1,0 +1,121 @@
+rulesPath: ../238-springboot-associated-artifacts.rhamt.yaml
+providers:
+- name: java
+  dataPath: ./data/238-springboot-associated-artifacts.rhamt.test.yaml
+- name: builtin
+  dataPath: ./data/238-springboot-associated-artifacts.rhamt.test.yaml
+tests:
+- ruleID: springboot-associated-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Check the links below for the Red Hat Runtimes supported version
+        of AMQP SpringBoot starter
+- ruleID: springboot-associated-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Check the links below for the Red Hat Runtimes supported version
+        of CXF JAXRS SpringBoot starter
+- ruleID: springboot-associated-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Check the links below for the Red Hat Runtimes supported version
+        of Resteasy SpringBoot starter
+#  Conflicts with another dependency within the test data
+#- ruleID: springboot-associated-00004
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: Check the links below for the Red Hat Runtimes supported version
+#        of Infinispan SpringBoot starter
+- ruleID: springboot-associated-00005
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Check the links below for the Red Hat Runtimes supported version
+        of Keycloak SpringBoot starter
+- ruleID: springboot-associated-00006
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Check the links below for the Red Hat Runtimes supported version
+        of Narayana SpringBoot starter
+- ruleID: springboot-associated-00007
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Check the links below for the Red Hat Runtimes supported version
+        of OpenTracing Spring Jaeger SpringBoot web starter
+- ruleID: springboot-associated-00008
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Migrate `org.amqphub.spring:amqp-10-jms-spring-boot-starter`
+        dependency to a version compatible with the supported versions of the RHOAR
+        components provided in the link.
+- ruleID: springboot-associated-00009
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Migrate `org.apache.cxf:cxf-spring-boot-starter-jaxrs` dependency
+        to a version compatible with the supported versions of the RHOAR components
+        provided in the link.
+- ruleID: springboot-associated-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Migrate `org.jboss.resteasy:resteasy-spring-boot-starter` dependency
+        to a version compatible with the supported versions of the RHOAR components
+        provided in the link.
+- ruleID: springboot-associated-00011
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Migrate `org.infinispan:infinispan-spring-boot-starter-embedded`
+        dependency to a version compatible with the supported versions of the RHOAR
+        components provided in the link.
+- ruleID: springboot-associated-00012
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Migrate `org.infinispan:infinispan-spring-boot-starter-remote`
+        dependency to a version compatible with the supported versions of the RHOAR
+        components provided in the link.
+- ruleID: springboot-associated-00013
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Migrate `org.keycloak:keycloak-spring-boot-starter` dependency
+        to a version compatible with the supported versions of the RHOAR components
+        provided in the link.
+- ruleID: springboot-associated-00014
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Migrate `me.snowdrop:narayana-spring-boot-starter` dependency
+        to a version compatible with the supported versions of the RHOAR components
+        provided in the link.
+- ruleID: springboot-associated-00015
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: Migrate `io.opentracing.contrib:opentracing-spring-jaeger-web-starter`
+        dependency to a version compatible with the supported versions of the RHOAR
+        components provided in the link.

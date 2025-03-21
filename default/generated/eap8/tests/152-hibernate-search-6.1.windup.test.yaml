@@ -1,0 +1,137 @@
+rulesPath: ../152-hibernate-search-6.1.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/152-hibernate-search-6.1
+- name: builtin
+  dataPath: ./data/152-hibernate-search-6.1
+tests:
+- ruleID: hibernate-search-6.1-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Hibernate Search 6.1.x now requires using Hibernate ORM versions
+        from the 5.6.x family.
+- ruleID: hibernate-search-6.1-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: '`org.hibernate.search.engine.cfg.spi.ConfigurationPropertySource`
+        has been moved to `org.hibernate.search.engine.cfg.ConfigurationPropertySource`.'
+- ruleID: hibernate-search-6.1-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: '`org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurer`
+        moved to `org.hibernate.search.backend.elasticsearch.client.ElasticsearchHttpClientConfigurer`
+        and is now an API.'
+- ruleID: hibernate-search-6.1-00040
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: '`org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurationContext`
+        moved to `org.hibernate.search.backend.elasticsearch.client.ElasticsearchHttpClientConfigurationContext`
+        and is now an API.'
+- ruleID: hibernate-search-6.1-00050
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: '`org.hibernate.search.engine.common.timing.spi.Deadline` moved
+        to `org.hibernate.search.engine.common.timing.Deadline` and is now API.'
+- ruleID: hibernate-search-6.1-00060
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: '`org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlanExecutionReport`
+        is now `org.hibernate.search.engine.backend.work.execution.spi.MultiEntityOperationExecutionReport`.'
+- ruleID: hibernate-search-6.1-00070
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`URLEncodedString#fromJsonString` must be removed.'
+# FIXME: static method calls still not working
+#- ruleID: hibernate-search-6.1-00080
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: '`FieldPaths#absolutize(String, String, String)` must be removed.'
+- ruleID: hibernate-search-6.1-00090
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`IndexManagerImplementor#createIndexingPlan` no longer expects
+        an `EntityReferenceFactory` parameter.'
+- ruleID: hibernate-search-6.1-00100
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`IndexIndexingPlan#executeAndReport` now expects an `EntityReferenceFactory`
+        parameter.'
+- ruleID: hibernate-search-6.1-00120
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: '`org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaObjectNodeBuilder`
+        is now `org.hibernate.search.engine.backend.document.model.dsl.spi.IndexCompositeNodeBuilder`'
+- ruleID: hibernate-search-6.1-00130
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: '`org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaObjectFieldNodeBuilder`
+        is now `org.hibernate.search.engine.backend.document.model.dsl.spi.IndexObjectFieldBuilder`'
+- ruleID: hibernate-search-6.1-00140
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: '`org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaRootNodeBuilder`
+        is now `org.hibernate.search.engine.backend.document.model.dsl.spi.IndexRootBuilder`'
+- ruleID: hibernate-search-6.1-00150
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`FromDocumentFieldValueConverter` has been deprecated, implement
+        `FromDocumentValueConverter` instead.'
+- ruleID: hibernate-search-6.1-00160
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`ToDocumentFieldValueConverter` has been deprecated, implement
+        `ToDocumentValueConverter` instead.'
+# FIXME
+#- ruleID: hibernate-search-6.1-00170
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: '`org.hibernate.search.mapper.orm.massindexing.MassIndexingFailureHandler`
+#        has been deprecated, implement `org.hibernate.search.mapper.pojo.massindexing.MassIndexingFailureHandler`
+#        instead.'
+- ruleID: hibernate-search-6.1-00180
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.hibernate.search.mapper.orm.massindexing.MassIndexingMonitor`
+        has been deprecated, implement `org.hibernate.search.mapper.pojo.massindexing.MassIndexingMonitor`
+        instead.'
+- ruleID: hibernate-search-6.1-00190
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: 'Property has been deprecated: use the new configuration property
+        that accepts `true`/`false` instead. See `HibernateOrmMapperSettings#AUTOMATIC_INDEXING_ENABLED`.'

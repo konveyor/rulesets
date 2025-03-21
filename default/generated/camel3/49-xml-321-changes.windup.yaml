@@ -34,13 +34,9 @@
     is no longer possible.
   ruleID: xml-changed-camel321-00002
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-java-joor-dsl
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-java-joor-dsl
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-java-joor-dsl
 - category: mandatory
   customVariables: []
   description: camel-dozer has been deprecated and removed
@@ -55,13 +51,9 @@
   message: camel-dozer has been deprecated and removed.
   ruleID: xml-changed-camel321-00003
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-dozer
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-dozer
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-dozer
 - category: mandatory
   customVariables: []
   description: camel-cmis has been deprecated and removed
@@ -76,13 +68,9 @@
   message: camel-cmis has been deprecated and removed.
   ruleID: xml-changed-camel321-00004
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-cmis
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-cmis
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-cmis
 - category: mandatory
   customVariables: []
   description: The platform-http-starter has been changed from using camel-servlet
@@ -100,10 +88,6 @@
     prefixed with the servlet context-path. See the upgrade guide for an example.
   ruleID: xml-changed-camel321-00005
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.springboot.camel-platform-http-starter
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.springboot.camel-platform-http-starter
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.springboot.camel-platform-http-starter

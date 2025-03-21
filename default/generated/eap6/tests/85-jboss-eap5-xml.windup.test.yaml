@@ -1,0 +1,87 @@
+rulesPath: ../85-jboss-eap5-xml.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/85-jboss-eap5-xml
+- name: builtin
+  dataPath: ./data/85-jboss-eap5-xml
+tests:
+- ruleID: jboss-eap5-xml-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JBoss Cache
+- ruleID: jboss-eap5-xml-03000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JBoss Classloading configuration, typically in jboss-classloading.xml.
+- ruleID: jboss-eap5-xml-05000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JBoss Seam Components
+- ruleID: jboss-eap5-xml-06000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JBoss Seam Pages
+  - name: tc-2
+    hasTags:
+    - JBoss Seam Page
+#- ruleID: jboss-eap5-xml-02000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - JBoss 5.x EAR descriptor
+- ruleID: jboss-eap5-xml-08000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JBoss EAR descriptor
+- ruleID: jboss-eap5-xml-09000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JBoss web application descriptor (jboss-web.xml)
+- ruleID: jboss-eap5-7-xml-10000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: In JBoss EAP 6, the classloading configuration is not done through.*
+- ruleID: jboss-eap5-xml-11000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JBoss module and classloading configuration.*
+- ruleID: jboss-eap5-xml-12000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JBoss EJB 2 CMP Deployment descriptor.*
+- ruleID: jboss-eap5-xml-13000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JBoss EJB XML deployment descriptor prior to EAP 6
+- ruleID: jboss-eap5-xml-14000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`java:/jaas/` is a JBoss EAP `security-domain` URI.'
+- ruleID: jboss-eap5-xml-16000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JBoss security configuration descriptor.*
+  - name: tc-2
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Before JBoss EAP 6, authentication security domains and login
+        modules could be configured in a .*
+- ruleID: jboss-eap5-xml-20000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JBoss EAP 4 JMS configuration

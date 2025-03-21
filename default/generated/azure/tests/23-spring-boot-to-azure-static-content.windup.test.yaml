@@ -1,0 +1,13 @@
+rulesPath: ../23-spring-boot-to-azure-static-content.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/23-spring-boot-to-azure-static-content
+- name: builtin
+  dataPath: ./data/23-spring-boot-to-azure-static-content
+tests:
+- ruleID: spring-boot-to-azure-static-content-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 6
+      messageMatches: Your application currently serves static content

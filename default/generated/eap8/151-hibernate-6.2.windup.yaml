@@ -22,7 +22,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.persister.entity.EntityPersister.multiload(*)
+      pattern: org.hibernate.persister.entity.EntityPersister.multiload
 - category: mandatory
   customVariables: []
   description: Executable#afterDeserialize method has changed
@@ -47,7 +47,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.action.spi.Executable.afterDeserialize(*)
+      pattern: org.hibernate.action.spi.Executable.afterDeserialize
 - category: mandatory
   customVariables: []
   description: JdbcType#getJdbcRecommendedJavaTypeMapping() method has changed
@@ -70,7 +70,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.type.descriptor.jdbc.JdbcType.getJdbcRecommendedJavaTypeMapping(*)
+      pattern: org.hibernate.type.descriptor.jdbc.JdbcType.getJdbcRecommendedJavaTypeMapping
 - category: mandatory
   customVariables:
   - name: className

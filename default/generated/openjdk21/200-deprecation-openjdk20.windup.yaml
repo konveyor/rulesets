@@ -1,4 +1,4 @@
-- category: mandatory
+- category: optional
   customVariables: []
   description: Deprecated class in JDK 20 for removal in future release
   effort: 3

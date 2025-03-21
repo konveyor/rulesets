@@ -1,0 +1,21 @@
+# FIXME: investigate if the hasTags test condition can actually work - data must have been tagged previously
+#rulesPath: ../03-web-technology-usage.windup.yaml
+#providers:
+#- name: java
+#  dataPath: ./data/03-web-technology-usage
+#- name: builtin
+#  dataPath: ./data/03-web-technology-usage
+#tests:
+#- ruleID: technology-usage-web-01100
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - JSP Page
+#- ruleID: technology-usage-web-01000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - JSF Page
+#  - name: tc-2
+#    hasTags:
+#    - JSF Page

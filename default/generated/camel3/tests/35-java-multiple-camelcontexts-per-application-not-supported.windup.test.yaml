@@ -1,0 +1,19 @@
+rulesPath: ../35-java-multiple-camelcontexts-per-application-not-supported.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/35-java-multiple-camelcontexts-per-application-not-supported
+- name: builtin
+  dataPath: ./data/35-java-multiple-camelcontexts-per-application-not-supported
+tests:
+- ruleID: java-multiple-camelcontexts-per-application-not-supported-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 9
+      messageMatches: The `context` attribute o.*
+- ruleID: java-multiple-camelcontexts-per-application-not-supported-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: Support for multiple CamelContexts has been remove.*

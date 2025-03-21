@@ -76,9 +76,13 @@
      To achieve the singleton nature of the `@Service` annotation, use the EJB3.1 spec `@Singleton` bean
   ruleID: jboss-eap5-java-04000
   when:
-    java.referenced:
-      location: IMPORT
-      pattern: org.jboss(.ejb3)?.annotation(.ejb)?.Service
+    or:
+    - java.referenced:
+        location: IMPORT
+        pattern: org.jboss.annotation.ejb.Service
+    - java.referenced:
+        location: IMPORT
+        pattern: org.jboss.ejb3.annotation.Service
 - category: mandatory
   customVariables:
   - name: package
@@ -110,9 +114,13 @@
      To achieve the singleton nature of the `@Service` and `@Management` annotations, use the EJB3.1 spec `@Singleton` bean.
   ruleID: jboss-eap5-java-05000
   when:
-    java.referenced:
-      location: IMPORT
-      pattern: org.jboss(.ejb3)?.annotation(.ejb)?.Management
+    or:
+    - java.referenced:
+        location: IMPORT
+        pattern: org.jboss.ejb3.annotation.Management
+    - java.referenced:
+        location: IMPORT
+        pattern: org.jboss.annotation.ejb.Management
 - category: mandatory
   customVariables: []
   description: org.jboss.annotation.ejb.LocalBinding

@@ -17,8 +17,7 @@
   ruleID: java-rpc-00000
   when:
     or:
-    - as: default
-      java.referenced:
+    - java.referenced:
         location: PACKAGE
         pattern: javax.xml.rpc*
     - java.referenced:
