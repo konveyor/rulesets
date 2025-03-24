@@ -1,0 +1,875 @@
+rulesPath: ../spring-boot-2.x-to-3.0-removals.yaml
+providers:
+  - name: java
+    dataPath: ./data/removals
+  - name: builtin
+    dataPath: ./data/removals
+tests:
+  - ruleID: spring-boot-2.x-to-3.0-removals-00010
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+  - ruleID: spring-boot-2.x-to-3.0-removals-00020
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+  - ruleID: spring-boot-2.x-to-3.0-removals-00030
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+  - ruleID: spring-boot-2.x-to-3.0-removals-00040
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00050
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+  - ruleID: spring-boot-2.x-to-3.0-removals-00060
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00070
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00080
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00090
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00100
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00110
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00120
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00130
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00140
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00150
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00160
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00170
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00190
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00220
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00290
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00300
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00310
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00320
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00330
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00340
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00350
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00360
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00370
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00380
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00390
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00400
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00410
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00420
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00430
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00440
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00450
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00460
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00470
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00480
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00490
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00500
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00510
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00520
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00530
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00540
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00550
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00560
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00570
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00580
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00590
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00600
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00610
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00620
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00630
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00640
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00650
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00660
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00670
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00680
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00690
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00700
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+#
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00710
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+#
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00720
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+#
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00730
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00740
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00750
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00760
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00770
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00780
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00790
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00800
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00810
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00820
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00830
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00840
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00850
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00860
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00870
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00880
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00890
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00900
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00910
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00920
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00930
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00940
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00950
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00960
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00970
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00980
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-00990
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-01000
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-01010
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-01020
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-01030
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-01040
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-01060
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-01070
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-01080
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-01090
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-01100
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-01110
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-01120
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-01140
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-01150
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-01160
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-01170
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-01180
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+  - ruleID: spring-boot-2.x-to-3.0-removals-01190
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+
+#  - ruleID: spring-boot-2.x-to-3.0-removals-01200
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
