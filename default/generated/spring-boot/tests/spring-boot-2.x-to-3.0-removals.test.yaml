@@ -137,6 +137,7 @@ tests:
 #        hasIncidents:
 #          atLeast: 1
 
+
   - ruleID: spring-boot-2.x-to-3.0-removals-00180
     testCases:
       - name: tc-1
@@ -152,6 +153,7 @@ tests:
           mode: "source-only"
         hasIncidents:
           atLeast: 1
+
 
   - ruleID: spring-boot-2.x-to-3.0-removals-00200
     testCases:
@@ -169,6 +171,7 @@ tests:
         hasIncidents:
           atLeast: 1
 
+
   - ruleID: spring-boot-2.x-to-3.0-removals-00220
     testCases:
       - name: tc-1
@@ -176,6 +179,7 @@ tests:
           mode: "source-only"
         hasIncidents:
           atLeast: 1
+
 
   - ruleID: spring-boot-2.x-to-3.0-removals-00250
     testCases:
@@ -809,6 +813,7 @@ tests:
 #        hasIncidents:
 #          atLeast: 1
 
+
 #  - ruleID: spring-boot-2.x-to-3.0-removals-01050
 #    testCases:
 #      - name: tc-1
@@ -816,6 +821,7 @@ tests:
 #          mode: "source-only"
 #        hasIncidents:
 #          atLeast: 1
+
 
 #  - ruleID: spring-boot-2.x-to-3.0-removals-01060
 #    testCases:

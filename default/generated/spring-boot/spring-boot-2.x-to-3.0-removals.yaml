@@ -1,3 +1,5 @@
+# These rules have been generated with the help of a GenAI model (ChatGPT-4-turbo)
+#
 # In this ruleset there are some rules that look for method calls on protected methods. The only way to call a protected
 # method is from a subclass. For some reason, the LS doesn't seem to catch these calls.
 - ruleID: spring-boot-2.x-to-3.0-removals-00010
@@ -806,10 +808,6 @@
       url: https://assertj.github.io/doc/
 
 
-
-
-
-
 - ruleID: spring-boot-2.x-to-3.0-removals-00180
   category: mandatory
   effort: 3
@@ -1048,7 +1046,6 @@
       url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
     - title: 'LocalServerPort API documentation'
       url: https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/web/server/LocalServerPort.html
-
 
 
 - ruleID: spring-boot-2.x-to-3.0-removals-00290
