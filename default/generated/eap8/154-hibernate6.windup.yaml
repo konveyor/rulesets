@@ -36,7 +36,7 @@
   - name: annotation
     nameOfCaptureGroup: annotation
     pattern: org.hibernate.annotations.(?P<annotation>(AnyMetaDef|AnyMetaDefs|TypeDef|TypeDefs))
-  description: String-based approaches for specifying Types to use have been removed
+  description: Approaches for specifying Types to use which are string-based have been removed
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+

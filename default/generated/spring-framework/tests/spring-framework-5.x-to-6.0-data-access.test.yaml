@@ -10,6 +10,20 @@ tests:
       mode: "source-only"
     hasIncidents:
       exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-data-access-00002
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: "source-only"
+    hasIncidents:
+      exactly: 4
+- ruleID: spring-framework-5.x-to-6.0-data-access-00003
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: "source-only"
+    hasIncidents:
+      exactly: 5
 - ruleID: spring-framework-5.x-to-6.0-data-access-00010
   testCases:
     - name: tc-1
@@ -18,6 +32,13 @@ tests:
       hasIncidents:
         exactly: 1
 - ruleID: spring-framework-5.x-to-6.0-data-access-00020
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-data-access-00030
   testCases:
     - name: tc-1
       analysisParams:

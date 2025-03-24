@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "https://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+    <bean id="MySQL" class="org.springframework.jdbc.support.SQLErrorCodes">
+        <property name="badSqlGrammarCodes">
+            <list>
+                <value>1054</value> <value>1064</value> </list>
+        </property>
+        <property name="invalidDataAccessCodes">
+            <list>
+                <value>1364</value> </list>
+        </property>
+        <property name="duplicateKeyCodes">
+            <list>
+                <value>1062</value> </list>
+        </property>
+        <property name="dataIntegrityViolationCodes">
+            <list>
+                <value>1451</value> <value>1452</value> </list>
+        </property>
+        <property name="dataAccessResourceFailureCodes">
+            <list>
+                <value>2006</value> <value>2013</value> </list>
+        </property>
+        <property name="cannotAcquireLockCodes">
+            <list>
+                <value>1205</value> </list>
+        </property>
+        <property name="deadlockLoserCodes">
+            <list>
+                <value>1213</value> </list>
+        </property>
+    </bean>
+
+    <bean id="PostgreSQL" class="org.springframework.jdbc.support.SQLErrorCodes">
+        <property name="badSqlGrammarCodes">
+            <list>
+                <value>42601</value> <value>42703</value> </list>
+        </property>
+         <property name="invalidDataAccessCodes">
+            <list>
+                <value>23502</value> </list>
+        </property>
+        <property name="duplicateKeyCodes">
+            <list>
+                <value>23505</value> </list>
+        </property>
+        <property name="dataIntegrityViolationCodes">
+            <list>
+                <value>23503</value> </list>
+        </property>
+        <property name="dataAccessResourceFailureCodes">
+            <list>
+                <value>08006</value> </list>
+        </property>
+        <property name="cannotAcquireLockCodes">
+          <list>
+            <value>55P03</value></list>
+        </property>
+        <property name="deadlockLoserCodes">
+          <list>
+            <value>40P01</value></list>
+        </property>
+
+    </bean>
+
+    <bean id="H2" class="org.springframework.jdbc.support.SQLErrorCodes">
+        <property name="badSqlGrammarCodes">
+            <list>
+                <value>42101</value>
+            </list>
+        </property>
+        <property name="duplicateKeyCodes">
+            <list>
+                <value>23505</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="DB2" class="org.springframework.jdbc.support.SQLErrorCodes">
+        <property name="duplicateKeyCodes">
+            <list>
+                <value>-803</value>
+            </list>
+        </property>
+    </bean>
+</beans>

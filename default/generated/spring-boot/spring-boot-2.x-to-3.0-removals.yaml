@@ -808,9 +808,34 @@
       url: https://assertj.github.io/doc/
 
 
+- ruleID: spring-boot-2.x-to-3.0-removals-00180
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+  description: SpringPhysicalNamingStrategy has been removed in Spring Boot 3.0
+  message: |
+    The class `SpringPhysicalNamingStrategy` has been removed in Spring Boot 3.0.
+    This class was traditionally used to customize Hibernate's naming strategy for JPA entities.
 
+    To migrate, replace usages of `SpringPhysicalNamingStrategy` with `CamelCaseToUnderscoresNamingStrategy`.
+    The new `CamelCaseToUnderscoresNamingStrategy` provides a similar functionality that converts CamelCase entity names to underscores,
+    ensuring compatibility with standard database naming conventions.
 
+    Update your code to use `CamelCaseToUnderscoresNamingStrategy` instead, and ensure you configure it properly within your JPA setup, typically in
+    your `application.properties` or `application.yml` file.
 
+    If you had previously customized the naming strategy, review your configuration for any specific requirements that may need adjustment with this new alternative.
+
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'CamelCaseToUnderscoresNamingStrategy API documentation'
+      url: https://docs.jboss.org/hibernate/orm/6.6/javadocs/org/hibernate/boot/model/naming/CamelCaseToUnderscoresNamingStrategy.html
 
 
 - ruleID: spring-boot-2.x-to-3.0-removals-00190
@@ -832,6 +857,195 @@
   links:
     - title: 'Spring Boot 3.0 migration guide'
       url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+
+
+- ruleID: spring-boot-2.x-to-3.0-removals-00200
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.boot.autoconfigure.web.reactive.WebFluxProperties.Cookie
+  description: WebFluxProperties.Cookie has been removed in Spring Boot 3.0
+  message: |
+    The class `WebFluxProperties.Cookie` has been removed in Spring Boot 3.0.
+    You should replace usages of `WebFluxProperties.Cookie` with the new `Cookie` class
+    available in the `org.springframework.http` package.
+
+    The new `Cookie` class is a more streamlined and modern approach to handling cookies in a WebFlux environment.
+    Ensure that you update any configuration or logic that references `WebFluxProperties.Cookie` to utilize the `Cookie` class instead.
+
+    Review your code to identify any usages of the old class and refactor appropriately.
+
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Cookie API documentation'
+      url: https://docs.spring.io/spring-boot/docs/3.0.0-M4/api/org/springframework/boot/web/server/Cookie.html
+
+
+- ruleID: spring-boot-2.x-to-3.0-removals-00210
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.boot.autoconfigure.web.reactive.WebFluxProperties.Session
+  description: WebFluxProperties.Session has been removed in Spring Boot 3.0
+  message: |
+    The `Session` class in `WebFluxProperties` has been removed in Spring Boot 3.0.
+    This class was previously used to configure reactive web session properties.
+    To migrate, replace usages of `WebFluxProperties.Session` with the new session management configuration available under `server.reactive.session`.
+
+    You now need to specify session configurations directly under the `server.reactive.session` namespace in your application properties or yaml configuration. For example:
+
+    ```yaml
+    server:
+      reactive:
+        session:
+          timeout: 30 # sets the session timeout in minutes
+          tracking-mode: cookie # sets the session tracking mode
+    ```
+
+    Ensure to review the relevant documentation for additional properties you may want to configure to achieve your desired session management in Spring Boot 3.
+
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Spring Boot Reactive Session Configuration'
+      url: https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#application-properties.server.reactive.session
+
+
+- ruleID: spring-boot-2.x-to-3.0-removals-00220
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.boot.jdbc.DataSourceInitializationMode
+  description: DataSourceInitializationMode has been removed in Spring Boot 3.0
+  message: |
+    The enum `DataSourceInitializationMode` has been removed in Spring Boot 3.0.
+    This enum was used to determine the initialization mode of the database.
+    To migrate, replace usages of `DataSourceInitializationMode` with `DatabaseInitializationMode`.
+
+    The new class `DatabaseInitializationMode` serves the same purpose with improved flexibility and better naming conventions.
+    You should update your configuration to reflect this change, for example:
+
+    ```java
+    // Before
+    someDataSource.setInitializationMode(DataSourceInitializationMode.ALWAYS);
+
+    // After
+    someDataSource.setInitializationMode(DatabaseInitializationMode.ALWAYS);
+    ```
+
+    Make sure to review your existing code to ensure that all instances of `DataSourceInitializationMode` are replaced with `DatabaseInitializationMode`.
+
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'DatabaseInitializationMode API documentation'
+      url: https://docs.spring.io/spring-boot/docs/3.0.0-M4/api/org/springframework/boot/sql/init/DatabaseInitializationMode.html
+
+
+- ruleID: spring-boot-2.x-to-3.0-removals-00250
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.boot.actuate.autoconfigure.web.server.LocalManagementPort
+  description: LocalManagementPort has been removed in Spring Boot 3.0
+  message: |
+    The `LocalManagementPort` class has been removed in Spring Boot 3.0.
+    Instead, you can use `LocalManagementPort` from the `org.springframework.boot.test.web.server` package.
+
+    This change reflects a restructuring of the Spring Boot packages to improve clarity and organization.
+    To migrate, update your code to replace usages of `org.springframework.boot.actuate.autoconfigure.web.server.LocalManagementPort`
+    with `org.springframework.boot.test.web.server.LocalManagementPort`.
+
+    Review your application context configuration and management properties to ensure they are aligned
+    with the new structure and intended usage of the class. Depending on your implementation, you may need
+    to adjust your test infrastructure to accommodate this new reference.
+
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'LocalManagementPort API documentation'
+      url: https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/web/server/LocalManagementPort.html
+
+
+- ruleID: spring-boot-2.x-to-3.0-removals-00260
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.boot.rsocket.context.LocalRSocketServerPort
+  description: LocalRSocketServerPort has been removed in Spring Boot 3.0
+  message: |
+    The class `LocalRSocketServerPort` from the package `org.springframework.boot.rsocket.context` has been removed in Spring Boot 3.0.
+    It is no longer available for use as it was deprecated in favor of a new alternative.
+
+    To migrate, you should replace usages of `LocalRSocketServerPort` with `org.springframework.boot.test.rsocket.LocalRSocketServerPort`.
+    This new alternative can be used in your testing configurations and offers better alignment with the newer structure in Spring Boot 3.
+
+    Make sure to review your method calls where `LocalRSocketServerPort` was used and update these references accordingly to ensure compatibility with Spring Boot 3.
+
+    Also, verify your test configurations to see how `LocalRSocketServerPort` fits within your existing setup.
+
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'LocalRSocketServerPort API documentation'
+      url: https://docs.spring.io/spring-boot/docs/3.0.0-M4/api/org/springframework/boot/test/rsocket/server/LocalRSocketServerPort.html
+
+
+- ruleID: spring-boot-2.x-to-3.0-removals-00270
+  category: mandatory
+  effort: 2
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.boot.web.server.LocalServerPort
+  description: LocalServerPort has been removed in Spring Boot 3.0
+  message: |
+    The class `LocalServerPort` has been removed in Spring Boot 3.0.
+    It was previously used alongside tests to specify the port a web server is running on during integration tests.
+    To migrate, replace usages of `LocalServerPort` with `org.springframework.boot.test.web.server.LocalServerPort`.
+
+    The new class `org.springframework.boot.test.web.server.LocalServerPort` provides similar functionality for test scenarios.
+    Ensure your test class is properly annotated with `@SpringBootTest`, and update any method parameters to use the new `LocalServerPort` where needed.
+
+    Here’s a quick example of the migration:
+    ```java
+    @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+    public class MyApplicationTests {
+        @LocalServerPort
+        private int port;
+
+        // Your test methods here
+    }
+    ```
+
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'LocalServerPort API documentation'
+      url: https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/web/server/LocalServerPort.html
 
 
 - ruleID: spring-boot-2.x-to-3.0-removals-00290
@@ -2975,6 +3189,41 @@
     - title: 'AbstractApplicationContextRunner API documentation'
       url: https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/context/runner/AbstractApplicationContextRunner.html
 
+
+# abstract class method invocation - not detected
+- ruleID: spring-boot-2.x-to-3.0-removals-01050
+  category: mandatory
+  effort: 4
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.boot.test.context.runner.AbstractApplicationContextRunner
+      location: CONSTRUCTOR_CALL
+  description: AbstractApplicationContextRunner constructor with multiple parameters has been removed in Spring Boot 3.0
+  message: |
+    The constructor `AbstractApplicationContextRunner(Supplier<C>, boolean, List<ApplicationContextInitializer<? super C>>,
+    TestPropertyValues, TestPropertyValues, ClassLoader, ApplicationContext,
+    List<AbstractApplicationContextRunner.BeanRegistration<?>>, List<Configurations>)` has been removed in Spring Boot 3.0.
+    This constructor was previously used for creating application context runners with a variety of parameters.
+
+    To migrate, replace usages of the removed constructor with `AbstractApplicationContextRunner(Supplier, Function)`.
+    The new constructor simplifies the creation of application context runners, accepting fewer parameters. You will only need to
+    provide a `Supplier` for the application context and a `Function` to customize the application context.
+
+    Review your code to ensure that the configuration you previously set up is appropriately captured with the streamlined constructor:
+    - Identify and eliminate the parameters that are no longer required.
+    - Use a `Supplier` to provide the application context.
+    - Provide a `Function` for any additional customization.
+
+    This change aligns with the modernized Spring Boot practices, promoting cleaner and more maintainable test context setup.
+
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'AbstractApplicationContextRunner API documentation'
+      url: https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/context/runner/AbstractApplicationContextRunner.html
 
 # abstract class method invocation - not detected
 - ruleID: spring-boot-2.x-to-3.0-removals-01060
