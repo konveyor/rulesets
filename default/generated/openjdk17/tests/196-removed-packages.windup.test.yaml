@@ -5,12 +5,13 @@ providers:
 - name: builtin
   dataPath: ./data/196-removed-packages
 tests:
-- ruleID: removed-packages-00000
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 1
-      messageMatches: RMI activation and its associated daemon, rmid, and code packag.*
+# FIXME: https://github.com/konveyor/analyzer-lsp/issues/803
+#- ruleID: removed-packages-00000
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: RMI activation and its associated daemon, rmid, and code packag.*
 - ruleID: removed-packages-00010
   testCases:
   - name: tc-1
