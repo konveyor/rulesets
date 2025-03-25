@@ -5,9 +5,10 @@ providers:
 - name: builtin
   dataPath: ./data/164-javax-to-jakarta-package
 tests:
-- ruleID: javax-to-jakarta-import-00001
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 19
-      messageMatches: Replace the `javax.
+# FIXME: https://github.com/konveyor/analyzer-lsp/issues/803
+#- ruleID: javax-to-jakarta-import-00001
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 19
+#      messageMatches: Replace the `javax.

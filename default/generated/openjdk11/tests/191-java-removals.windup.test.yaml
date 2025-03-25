@@ -70,13 +70,14 @@ tests:
     hasIncidents:
       atLeast: 2
       messageMatches: The `java.lang.System.runFinalizersOnExit
-- ruleID: java-removals-00140
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 2
-      messageMatches: The `java.awt.Font.getPeer()` and `java.awt.Component.getPeer()`
-        method.*
+# FIXME: https://github.com/konveyor/analyzer-lsp/issues/803
+#- ruleID: java-removals-00140
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 2
+#      messageMatches: The `java.awt.Font.getPeer()` and `java.awt.Component.getPeer()`
+#        method.*
 - ruleID: java-removals-00150
   testCases:
   - name: tc-1

@@ -47,14 +47,15 @@ tests:
       messageMatches: '`org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getTimestampsCache()`
         should be used instead of `SessionFactoryImplementor.getUpdateTimestampsCache()`
         method'
-- ruleID: hibernate51-53-00403
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 1
-      messageMatches: '`org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getRegion(String
-        regionName)` should be used instead of `SessionFactoryImplementor.getSecondLevelCacheRegion(String
-        regionName)` method'
+# FIXME: https://github.com/konveyor/analyzer-lsp/issues/803
+#- ruleID: hibernate51-53-00403
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: '`org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getRegion(String
+#        regionName)` should be used instead of `SessionFactoryImplementor.getSecondLevelCacheRegion(String
+#        regionName)` method'
 - ruleID: hibernate51-53-00404
   testCases:
   - name: tc-1
