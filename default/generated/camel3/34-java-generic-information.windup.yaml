@@ -735,6 +735,10 @@
     java.referenced:
       location: ANNOTATION
       pattern: org.apache.camel.(Consume|EndpointInject|Produce)
+      annotated:
+        elements:
+          - name: uri
+            value: .*
 - category: mandatory
   customVariables:
   - name: class
@@ -757,6 +761,10 @@
     java.referenced:
       location: ANNOTATION
       pattern: org.apache.camel.(Consume|EndpointInject|Produce)
+      annotated:
+        elements:
+          - name: uri
+            value: .*
 - category: mandatory
   customVariables:
   - name: method
