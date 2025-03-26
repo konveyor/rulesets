@@ -12,6 +12,13 @@ tests:
           mode: "source-only"
         hasIncidents:
           atLeast: 1
+  - ruleID: spring-boot-2.x-to-3.0-removals-00015
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
   - ruleID: spring-boot-2.x-to-3.0-removals-00020
     testCases:
       - name: tc-1
