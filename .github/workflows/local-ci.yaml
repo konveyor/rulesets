@@ -1,6 +1,8 @@
 name: Local CI
 
 on: ["push", "pull_request"]
+permissions:
+  pull-requests: write
 
 jobs:
   test:
@@ -13,6 +15,7 @@ jobs:
 
       - name: Run kantra test
         id: kantra-test
+        continue-on-error: true
         run: |
           podman cp $(podman create --name kantra-download quay.io/konveyor/kantra:latest):/usr/local/bin/kantra .
           podman rm kantra-download
@@ -21,6 +24,8 @@ jobs:
           msg=$(grep -E '.*Rules Summary:' message.md -A1)
           tests_pass_rate=$(grep -E '.*Rules Summary:' message.md | sed -E 's| *Rules Summary: *(.*)|\1|' | sed -E 's|.*?:||')
           tcs_pass_rate=$(grep -E '.*Test Cases Summary:' message.md | sed -E 's| *Test Cases Summary: *(.*)|\1|' | sed -E 's|.*?:||')
+          some_test_failed=$(echo ${tests_pass_rate} | awk -F' ' '{print$1}' | awk -F'/' '{print ($1 == $2) ? 0 : 1}')
+          some_tcs_failed=$(echo ${tcs_pass_rate} | awk -F' ' '{print$1}' | awk -F'/' '{print ($1 == $2) ? 0 : 1}')
           
           echo 'msg<<EOF' >> $GITHUB_OUTPUT
           echo ${msg} >> $GITHUB_OUTPUT
@@ -33,6 +38,12 @@ jobs:
           echo 'tests_pass_rate<<EOF' >> $GITHUB_OUTPUT
           echo ${tests_pass_rate} >> $GITHUB_OUTPUT
           echo 'EOF' >> $GITHUB_OUTPUT
+
+          if [[ ${some_test_failed} -eq 1 ]] || [[ ${some_tcs_failed} -eq 1 ]]; then
+            exit 1
+          else
+            exit 0
+          fi
 
       - name: Comment on the PR
         if: ${{ github.event_name == 'pull_request' }}
