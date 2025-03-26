@@ -23,9 +23,9 @@
       ignore: true
     - builtin.xml:
         filepaths: '{{xmlfiles2.filepaths}}'
-        from: xmlfiles2
         namespaces: {}
         xpath: //*[local-name() = 'login-config']/*[local-name() = 'realm']
+      from: xmlfiles2
 - customVariables: []
   labels:
   - konveyor.io/include=always
