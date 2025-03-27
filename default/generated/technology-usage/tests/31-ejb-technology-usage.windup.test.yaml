@@ -5,38 +5,39 @@ providers:
 - name: builtin
   dataPath: ./data/31-ejb-technology-usage
 tests:
-- ruleID: technology-usage-ejb-01000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - Stateless (SLSB)
-  - name: tc-2
-    hasTags:
-    - Stateless (SLSB)
-- ruleID: technology-usage-ejb-01100
-  testCases:
-  - name: tc-1
-    hasTags:
-    - Stateful (SFSB)
-  - name: tc-2
-    hasTags:
-    - Stateful (SFSB)
-- ruleID: technology-usage-ejb-01200
-  testCases:
-  - name: tc-1
-    hasTags:
-    - Message (MDB)
-  - name: tc-2
-    hasTags:
-    - Message (MDB)
-- ruleID: technology-usage-ejb-01300
-  testCases:
-  - name: tc-1
-    hasTags:
-    - Entity Bean
-  - name: tc-2
-    hasTags:
-    - Entity Bean
+# FIXME: these rules haven't been translated: https://github.com/konveyor/rulesets/issues/254:
+#- ruleID: technology-usage-ejb-01000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Stateless (SLSB)
+#  - name: tc-2
+#    hasTags:
+#    - Stateless (SLSB)
+#- ruleID: technology-usage-ejb-01100
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Stateful (SFSB)
+#  - name: tc-2
+#    hasTags:
+#    - Stateful (SFSB)
+#- ruleID: technology-usage-ejb-01200
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Message (MDB)
+#  - name: tc-2
+#    hasTags:
+#    - Message (MDB)
+#- ruleID: technology-usage-ejb-01300
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Entity Bean
+#  - name: tc-2
+#    hasTags:
+#    - Entity Bean
 - ruleID: technology-usage-ejb-01400
   testCases:
   - name: tc-1
