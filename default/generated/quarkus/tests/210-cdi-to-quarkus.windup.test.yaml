@@ -32,9 +32,10 @@ tests:
     hasIncidents:
       atLeast: 1
       messageMatches: In Quarkus, you can skip the @Produces annotation completely
-- ruleID: cdi-to-quarkus-00050
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 1
-      messageMatches: Stateless EJBs can be converted to a cdi bean by replacing
+# FIXME: these rules haven't been translated: https://github.com/konveyor/rulesets/issues/254:
+#- ruleID: cdi-to-quarkus-00050
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: Stateless EJBs can be converted to a cdi bean by replacing
