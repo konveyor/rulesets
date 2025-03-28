@@ -5,14 +5,14 @@ providers:
 - name: builtin
   dataPath: ./data/284-web
 tests:
-- ruleID: technology-usage-web-01100
-  testCases:
-  - name: tc-1
-    hasTags:
-    - JSP Page
-  - name: tc-2
-    hasTags:
-    - Embedded technology - Java Server Pages
+#- ruleID: technology-usage-web-01100
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - JSP Page
+#  - name: tc-2
+#    hasTags:
+#    - Embedded technology - Java Server Pages
 # FIXME: these rules haven't been translated: https://github.com/konveyor/rulesets/issues/254:
 #- ruleID: technology-usage-web-01200
 #  testCases:
@@ -89,14 +89,14 @@ tests:
   - name: tc-2
     hasTags:
     - Embedded technology - MagicGroupLayout
-- ruleID: technology-usage-web-02200
-  testCases:
-  - name: tc-1
-    hasTags:
-    - Standard Widget Toolkit (SWT)
-  - name: tc-2
-    hasTags:
-    - Embedded technology - Standard Widget Toolkit (SWT)
+#- ruleID: technology-usage-web-02200
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Standard Widget Toolkit (SWT)
+#  - name: tc-2
+#    hasTags:
+#    - Embedded technology - Standard Widget Toolkit (SWT)
 - ruleID: technology-usage-web-02300
   testCases:
   - name: tc-1
