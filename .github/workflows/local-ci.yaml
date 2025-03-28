@@ -45,42 +45,42 @@ jobs:
             exit 0
           fi
 
-      - name: Comment on the PR
-        if: ${{ github.event_name == 'pull_request' }}
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const issue_number = context.payload.pull_request.number;
-            const owner = context.repo.owner;
-            const repo = context.repo.repo;
-            const body = `${{ steps.kantra-test.outputs.msg }}`;
-
-            const comments = await github.rest.issues.listComments({
-              owner,
-              repo,
-              issue_number
-            });
-
-            const botComment = comments.data.find(comment => 
-              comment.user.login === 'github-actions[bot]');
-            
-            if (botComment) {
-              await github.rest.issues.updateComment({
-                owner,
-                repo,
-                comment_id: botComment.id,
-                body
-              });
-            } else {
-              await github.rest.issues.createComment({
-                owner,
-                repo,
-                issue_number,
-                body
-              });
-            }
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          debug: true
+#      - name: Comment on the PR
+#        if: ${{ github.event_name == 'pull_request' }}
+#        uses: actions/github-script@v6
+#        with:
+#          script: |
+#            const issue_number = context.payload.pull_request.number;
+#            const owner = context.repo.owner;
+#            const repo = context.repo.repo;
+#            const body = `${{ steps.kantra-test.outputs.msg }}`;
+#
+#            const comments = await github.rest.issues.listComments({
+#              owner,
+#              repo,
+#              issue_number
+#            });
+#
+#            const botComment = comments.data.find(comment =>
+#              comment.user.login === 'github-actions[bot]');
+#
+#            if (botComment) {
+#              await github.rest.issues.updateComment({
+#                owner,
+#                repo,
+#                comment_id: botComment.id,
+#                body
+#              });
+#            } else {
+#              await github.rest.issues.createComment({
+#                owner,
+#                repo,
+#                issue_number,
+#                body
+#              });
+#            }
+#          github-token: ${{ secrets.GITHUB_TOKEN }}
+#          debug: true
 
       - name: Update tests badge
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
