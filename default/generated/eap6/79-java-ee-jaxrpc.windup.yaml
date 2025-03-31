@@ -15,7 +15,6 @@
   - soap
   - JAX-RPC Generic Handler
   when:
-    as: default
     java.referenced:
       location: INHERITANCE
       pattern: javax.xml.rpc.handler.GenericHandler

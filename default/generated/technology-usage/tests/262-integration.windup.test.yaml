@@ -1,0 +1,139 @@
+rulesPath: ../262-integration.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/262-integration
+- name: builtin
+  dataPath: ./data/262-integration
+tests:
+- ruleID: integration-00001
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Camel
+  - name: tc-2
+    hasTags:
+    - Embedded library - Apache Camel
+- ruleID: integration-00002
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Teiid
+  - name: tc-2
+    hasTags:
+    - Embedded library - Teiid
+- ruleID: integration-00003
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Spring Integration
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Spring Integration
+  - name: tc-3
+    hasTags:
+    - Embedded framework - Spring Integration
+  - name: tc-4
+    hasTags:
+    - Embedded framework - Spring Integration
+  - name: tc-5
+    hasTags:
+    - Embedded framework - Spring
+  - name: tc-6
+    hasTags:
+    - Spring
+- ruleID: integration-00004
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Ikasan
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Ikasan
+- ruleID: integration-00005
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Swagger
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Swagger
+- ruleID: integration-00006
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Apiman
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Apiman
+- ruleID: integration-00007
+  testCases:
+  - name: tc-1
+    hasTags:
+    - 3scale
+  - name: tc-2
+    hasTags:
+    - Embedded framework - 3scale
+- ruleID: integration-00008
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Istio
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Istio
+- ruleID: integration-00009
+  testCases:
+  - name: tc-1
+    hasTags:
+    - ServiceMix
+  - name: tc-2
+    hasTags:
+    - Embedded framework - ServiceMix
+- ruleID: integration-00010
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Mule
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Mule
+- ruleID: integration-00011
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Petals EIP
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Petals EIP
+- ruleID: integration-00012
+  testCases:
+  - name: tc-1
+    hasTags:
+    - SwitchYard
+  - name: tc-2
+    hasTags:
+    - Embedded framework - SwitchYard
+- ruleID: integration-00013
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Apache Synapse
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Apache Synapse
+- ruleID: integration-00014
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WSO2
+  - name: tc-2
+    hasTags:
+    - Embedded framework - WSO2
+- ruleID: integration-00015
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Talend ESB
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Talend ESB

@@ -1,0 +1,17 @@
+#rulesPath: ../38-configuration-management-technology-usage.windup.yaml
+#providers:
+#- name: java
+#  dataPath: ./data/38-configuration-management-technology-usage
+#- name: builtin
+#  dataPath: ./data/38-configuration-management-technology-usage
+#tests:
+#- ruleID: configuration-management-technology-usage-0200
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Application Properties File
+#- ruleID: configuration-management-technology-usage-0300
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Spring Properties

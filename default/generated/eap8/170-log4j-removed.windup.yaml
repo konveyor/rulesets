@@ -28,9 +28,6 @@
       - java.dependency:
           lowerbound: 0.0.0
           name: log4j.log4j
-      - java.dependency:
-          lowerbound: 0.0.0
-          name: log4j.log4j
       - builtin.file:
           pattern: log4j\.jar
     - java.referenced:
@@ -84,9 +81,13 @@
   ruleID: log4j-removed-00003
   when:
     or:
-    - and:
+    - or:
       - builtin.file:
-          pattern: (log4j\.xml|log4j\.properties|jboss-log4j\.xml)
+          pattern: log4j\.xml
+      - builtin.file:
+          pattern: log4j\.properties
+      - builtin.file:
+          pattern: jboss-log4j\.xml
     - not: true
       or:
       - java.dependency:
@@ -114,15 +115,11 @@
   ruleID: log4j-removed-00004
   when:
     or:
-    - and:
-      - builtin.filecontent:
-          filePattern: .*\.xml
-          pattern: custom-handler.*org.apache.log4j..*Appender
+    - builtin.filecontent:
+        filePattern: .*\.xml
+        pattern: custom-handler.*org.apache.log4j..*Appender
     - not: true
       or:
-      - java.dependency:
-          lowerbound: 0.0.0
-          name: log4j.log4j
       - java.dependency:
           lowerbound: 0.0.0
           name: log4j.log4j
@@ -155,9 +152,6 @@
             pattern: org.jboss.log4j.logmanager
     - not: true
       or:
-      - java.dependency:
-          lowerbound: 0.0.0
-          name: log4j.log4j
       - java.dependency:
           lowerbound: 0.0.0
           name: log4j.log4j

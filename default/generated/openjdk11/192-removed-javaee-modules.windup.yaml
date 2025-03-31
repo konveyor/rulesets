@@ -19,7 +19,7 @@
   ruleID: removed-javaee-modules-00000
   when:
     java.referenced:
-      location: IMPORT
+      location: PACKAGE
       pattern: javax.activation*
 - category: mandatory
   customVariables: []
@@ -42,13 +42,13 @@
   when:
     or:
     - java.referenced:
-        location: IMPORT
+        location: PACKAGE
         pattern: javax.activity*
     - java.referenced:
-        location: IMPORT
+        location: PACKAGE
         pattern: javax.rmi*
     - java.referenced:
-        location: IMPORT
+        location: PACKAGE
         pattern: com.sun.corba*
 - category: mandatory
   customVariables: []
@@ -72,5 +72,5 @@
   ruleID: removed-javaee-modules-00020
   when:
     java.referenced:
-      location: IMPORT
+      location: PACKAGE
       pattern: javax.annotation*

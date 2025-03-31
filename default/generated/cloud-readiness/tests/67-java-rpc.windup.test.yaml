@@ -1,0 +1,14 @@
+rulesPath: ../67-java-rpc.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/67-java-rpc
+- name: builtin
+  dataPath: ./data/67-java-rpc
+tests:
+- ruleID: java-rpc-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 6
+      messageMatches: 'Recommendation: Use JAX-WS, which is the current Java EE standard
+        web services framework.'

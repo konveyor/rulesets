@@ -36,13 +36,13 @@
     or:
     - java.referenced:
         location: CONSTRUCTOR_CALL
-        pattern: java.io.(FileWriter|FileReader|PrintStream|File|PrintWriter|RandomAccessFile)*
+        pattern: java.io.(FileWriter|FileReader|PrintStream|File|PrintWriter|RandomAccessFile)
     - java.referenced:
         location: CONSTRUCTOR_CALL
-        pattern: java.util.zip.ZipFile*
+        pattern: java.util.zip.ZipFile
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.io.File.createTempFile(*)
+        pattern: java.io.File.createTempFile
     - java.referenced:
         location: METHOD_CALL
         pattern: java.nio.file.Paths.get*

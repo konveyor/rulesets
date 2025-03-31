@@ -1,0 +1,12 @@
+rulesPath: ../94-xml-resin.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/94-xml-resin
+- name: builtin
+  dataPath: ./data/94-xml-resin
+tests:
+- ruleID: xml-resin-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Resin Web Application Descriptor
