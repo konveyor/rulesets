@@ -1,0 +1,124 @@
+rulesPath: ../spring-framework-5.x-to-6.0-security.yaml
+providers:
+- name: java
+  dataPath: ./data/security-b
+tests:
+- ruleID: spring-framework-5.x-to-6.0-security-00030
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-00040
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-00050
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 2
+- ruleID: spring-framework-5.x-to-6.0-security-00060
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-00070
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-00080
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-00090
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 2
+- ruleID: spring-framework-5.x-to-6.0-security-00100
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 2
+- ruleID: spring-framework-5.x-to-6.0-security-00110
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 2
+- ruleID: spring-framework-5.x-to-6.0-security-00120
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-00130
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-00135
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-00140
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-00150
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-00160
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 2
+- ruleID: spring-framework-5.x-to-6.0-security-00170
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-00180
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 2

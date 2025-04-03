@@ -24,3 +24,10 @@ tests:
         mode: "source-only"
       hasIncidents:
         exactly: 7
+- ruleID: spring-framework-5.x-to-6.0-security-00030
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 7
