@@ -931,3 +931,41 @@
     - title: 'Replace hasRole with hasAuthority if using GrantedAuthorityDefaults'
       url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/authorization.html#replace-hasrole-hasauthority
 
+
+# ----------- OAUTH -----------
+- ruleID: spring-framework-5.x-to-6.0-security-00190
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - builtin.filecontent:
+        filePattern: .*\.java
+        pattern: \.hasRole\(.*\)
+    - builtin.filecontent:
+        filePattern: .*\.java
+        pattern: \.hasAuthority\(.*\)
+  description: Change Default oauth2Login() Authorities
+  message: |
+    In Spring Security 5, the default GrantedAuthority given to a user that authenticates with an OAuth2 or
+    OpenID Connect 1.0 provider (via `oauth2Login()`) is `ROLE_USER`.
+    
+    In Spring Security 6, the default authority given to a user authenticating with an OAuth2 provider is `OAUTH2_USER`.
+    The default authority given to a user authenticating with an OpenID Connect 1.0 provider is `OIDC_USER`. These defaults
+    allow clearer distinction of users that have authenticated with an OAuth2 or OpenID Connect 1.0 provider.
+    
+    If you are using authorization rules or expressions such as `hasRole("USER")` or `hasAuthority("ROLE_USER")`
+    to authorize users with this specific authority, the new defaults in Spring Security 6 will impact your application.
+    
+    Check the links for more information.
+
+  links:
+    - title: 'Change Default oauth2Login() Authorities'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/oauth2.html#_change_default_oauth2login_authorities
+    - title: 'Mapping User Autorities'
+      url: https://docs.spring.io/spring-security/reference/5.8/servlet/oauth2/login/advanced.html#oauth2login-advanced-map-authorities
+

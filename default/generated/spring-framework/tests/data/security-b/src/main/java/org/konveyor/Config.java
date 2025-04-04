@@ -48,7 +48,7 @@ public class Config {
                                 .filterSecurityInterceptorOncePerRequest(true)
                                 .mvcMatchers("/app/**").hasRole("APP")
                                 .mvcMatchers("/app/**").access("hasIpAddress('127.0.0.1')")
-                                .mvcMatchers("/complicated/**").access("hasRole('ADMIN') || hasAuthority('SCOPE_read')")
+                                .mvcMatchers("/complicated/**").access("hasRole('USER') || hasAuthority('ROLE_USER')")
                 );
 
         http

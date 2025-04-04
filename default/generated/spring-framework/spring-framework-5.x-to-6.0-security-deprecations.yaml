@@ -1,0 +1,661 @@
+# These rules have been generated with the help of an AI model (GPT-4o-mini)
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00000
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.security.oauth2.client.web.reactive.function.client.ServletOAuth2AuthorizedClientExchangeFilterFunction.setAccessTokenExpiresSkew
+      location: METHOD_CALL
+  description: Use the new setClockSkew methods
+  message: |
+    The `setAccessTokenExpiresSkew(...)` method has been deprecated in Spring Security 6. You should replace it with one
+    of the following alternatives, depending on your application context:
+    
+    - `ClientCredentialsOAuth2AuthorizedClientProvider#setClockSkew(...)`
+    - `RefreshTokenOAuth2AuthorizedClientProvider#setClockSkew(...)`
+    - `JwtBearerOAuth2AuthorizedClientProvider#setClockSkew(...)`
+    
+    Each of these new methods allows you to specify a clock skew configuration that can account for potential clock
+    differences between the authorization server and the resource server.
+    
+    For example, if your original code looked like this:
+    ```java
+    ServletOAuth2AuthorizedClientExchangeFilterFunction filterFunction =
+    new ServletOAuth2AuthorizedClientExchangeFilterFunction(authorizedClientManager);
+    filterFunction.setAccessTokenExpiresSkew(Duration.ofMinutes(5)); // Deprecated & removed in Spring Security 6
+    ```
+    
+    You should update it to one of the new methods as follows:
+    ```java
+    ClientCredentialsOAuth2AuthorizedClientProvider provider = new ClientCredentialsOAuth2AuthorizedClientProvider();
+    provider.setClockSkew(Duration.ofMinutes(5));
+    
+    DefaultOAuth2AuthorizedClientManager authorizedClientManager =
+    new DefaultOAuth2AuthorizedClientManager(authorizedClientRepository, provider);
+    
+    ServletOAuth2AuthorizedClientExchangeFilterFunction filterFunction =
+    new ServletOAuth2AuthorizedClientExchangeFilterFunction(authorizedClientManager);
+    ```
+    
+    Make sure to choose the appropriate provider based on the context of your application. For more information about the changes, please check the attached links.
+
+  links:
+    - title: Spring Security 6.0 migration guide - OAuth deprecations
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/oauth2.html#_address_oauth2_client_deprecations
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00010
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/target=spring6+
+  when:
+    java.referenced:
+      pattern: org.springframework.security.oauth2.client.web.reactive.function.client.ServletOAuth2AuthorizedClientExchangeFilterFunction.setClientCredentialsTokenResponseClient
+      location: METHOD_CALL
+  description: setClientCredentialsTokenResponseClient(...) method has been deprecated
+  message: |
+    In Spring Security 6, the `setClientCredentialsTokenResponseClient(…)` method has been deprecated. 
+    You should replace it with `ServletOAuth2AuthorizedClientExchangeFilterFunction(OAuth2AuthorizedClientManager)`.
+    
+    The new class `ServletOAuth2AuthorizedClientExchangeFilterFunction` provides a more flexible and feature-rich way to handle OAuth2 client exchanges. 
+    Instead of calling the deprecated method, you should create an instance of the new class and use it for your client exchange logic.
+    
+    For example, if you had the following configuration:
+    ```java
+    @Bean
+    public ServletOAuth2AuthorizedClientExchangeFilterFunction oauth2FilterFunction() {
+      ServletOAuth2AuthorizedClientExchangeFilterFunction filterFunction =
+      new ServletOAuth2AuthorizedClientExchangeFilterFunction();
+      
+      // Deprecated in Spring Security 6
+      filterFunction.setClientCredentialsTokenResponseClient(
+        new DefaultClientCredentialsTokenResponseClient()
+      );
+      
+      return filterFunction;
+    }
+    ```
+    
+    This should be refactored to:
+    ```java
+    @Bean
+    public ServletOAuth2AuthorizedClientExchangeFilterFunction oauth2FilterFunction(ClientRegistrationRepository clientRegistrationRepository) {
+      OAuth2AuthorizedClientRepository authorizedClientRepository = new AuthenticatedPrincipalOAuth2AuthorizedClientRepository();
+      
+      // Configure the provider with the custom token response client
+      ClientCredentialsOAuth2AuthorizedClientProvider clientCredentialsProvider = new ClientCredentialsOAuth2AuthorizedClientProvider();
+      clientCredentialsProvider.setAccessTokenResponseClient(new DefaultClientCredentialsTokenResponseClient());
+      
+      // Set up the manager
+      DefaultOAuth2AuthorizedClientManager authorizedClientManager = new DefaultOAuth2AuthorizedClientManager(clientRegistrationRepository, authorizedClientRepository);
+      authorizedClientManager.setAuthorizedClientProvider(new DelegatingOAuth2AuthorizedClientProvider(clientCredentialsProvider));
+      
+      // Use the constructor that takes the manager
+      return new ServletOAuth2AuthorizedClientExchangeFilterFunction(authorizedClientManager);
+    }
+    ```
+    
+    Ensure that you have the necessary dependencies for `ServletOAuth2AuthorizedClientExchangeFilterFunction` as well as `OAuth2AuthorizedClientManager` in your build configuration.
+    
+    For more details about the new approach, check the Spring Security documentation links provided below.
+
+  links:
+    - title: Spring Security 6.0 migration guide - OAuth deprecations
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/oauth2.html#_address_oauth2_client_deprecations
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00020
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/target=spring6+
+  when:
+    java.referenced:
+      pattern: phoneNumberVerified(String)
+      location: METHOD_CALL
+  description: Use the new phoneNumberVerified method signature
+  message: |
+    The method `phoneNumberVerified(String)` has been deprecated in Spring Security 6 and has been replaced by `phoneNumberVerified(Boolean)`.
+    
+    The new method signature accepts a Boolean type instead of a String. This change improves type safety and aligns with the new direction of the API.
+    
+    To migrate to the new signature, you should replace any calls to `phoneNumberVerified(String)` with `phoneNumberVerified(Boolean)` while ensuring that you are passing a Boolean value. 
+    
+    For example, if you previously had:
+    ```java
+    OidcUserInfo userInfo = OidcUserInfo.builder()
+      .subject("user123")
+      .phoneNumber("+123456789")
+      // Deprecated: this takes a String
+      .phoneNumberVerified("true")
+      .build();
+    ```
+    It should be changed to:
+    ```java
+    OidcUserInfo userInfo = OidcUserInfo.builder()
+      .subject("user123")
+      .phoneNumber("+123456789")
+      // ✅ Updated: this takes a Boolean
+      .phoneNumberVerified(true)
+      .build();
+    ```
+    
+    Ensure that any string parsing logic that converts a String to a Boolean is handled prior to the method call to avoid runtime exceptions.
+
+  links:
+    - title: Spring Security 6.0 migration guide - OAuth deprecations
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/oauth2.html#_address_oauth2_client_deprecations
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00030
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.security.oauth2.core.ClaimAccessor.containsClaim
+      location: METHOD_CALL
+  description: Use the new hasClaim method
+  message: |
+    In Spring Security 6, the `containsClaim(...)` method has been deprecated and replaced with the `hasClaim(...)` method.
+    
+    The new `hasClaim(...)` method provides a more intuitive way to check for claims in an authentication object. The change improves code readability and aligns better with the semantic meaning of the operation being performed.
+    
+    For example, if your code contains a check like this:
+    ```java
+    if (authentication.containsClaim("scope", "read")) {
+        // perform some action
+    }
+    ```
+    
+    You will need to replace it with:
+    ```java
+    if (authentication.hasClaim("scope", "read")) {
+        // perform some action
+    }
+    ```
+    
+    Ensure that all occurrences of `containsClaim(...)` in your code are updated to `hasClaim(...)` to avoid any issues with deprecated methods in your Spring Security setup.
+    
+    For more information, refer to the official Spring Security migration documentation.
+
+  links:
+    - title: Spring Security 6.0 migration guide - OAuth deprecations
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/oauth2.html#_address_oauth2_client_deprecations
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00040
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.security.oauth2.client.oidc.web.logout.OidcClientInitiatedLogoutSuccessHandler.setPostLogoutRedirectUri
+      location: METHOD_CALL
+  description: Use the new setPostLogoutRedirectUri(String) method
+  message: |
+    The method `setPostLogoutRedirectUri(URI)` has been deprecated in Spring Security 6. Instead, you should use `setPostLogoutRedirectUri(String)` for configuring the post-logout redirect URI.
+    
+    This change is aimed at providing clearer indications of the URI structure and ensuring better compatibility across different contexts. The new method expects a string representation of the URI, making it easier to work with the configuration.
+    
+    To perform the migration:
+    1. Replace every instance where `setPostLogoutRedirectUri(URI uri)` is used with `setPostLogoutRedirectUri(String uriString)`.
+    2. Ensure that the string being passed corresponds to a valid URI string format.
+    
+    For example, the following code will need to be modified:
+    ```java
+    @Bean
+    public OidcClientInitiatedLogoutSuccessHandler logoutSuccessHandler(ClientRegistrationRepository clientRegistrationRepository) {
+      OidcClientInitiatedLogoutSuccessHandler handler = new OidcClientInitiatedLogoutSuccessHandler(clientRegistrationRepository);
+      handler.setPostLogoutRedirectUri(URI.create("https://example.com/logout-success"));
+      return handler;
+    }
+    ```
+    
+    It should be changed to:
+    ```java
+    @Bean
+    public OidcClientInitiatedLogoutSuccessHandler logoutSuccessHandler(ClientRegistrationRepository clientRegistrationRepository) {
+      OidcClientInitiatedLogoutSuccessHandler handler = new OidcClientInitiatedLogoutSuccessHandler(clientRegistrationRepository);
+      handler.setPostLogoutRedirectUri("https://example.com/logout-success");
+      return handler;
+    }
+    ```
+    
+    Make sure to test your application after making these changes to confirm that logout behavior works as expected.
+
+  links:
+    - title: Spring Security 6.0 migration guide - OAuth deprecations
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/oauth2.html#_address_oauth2_client_deprecations
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00050
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: removeAuthorizationRequest(HttpServletRequest)
+      location: METHOD_CALL
+  description: Use the new removeAuthorizationRequest method
+  message: |
+    In Spring Security 6, the `removeAuthorizationRequest(HttpServletRequest)` method has been deprecated and replaced with `removeAuthorizationRequest(HttpServletRequest, HttpServletResponse)`.
+    
+    This change allows for better handling of the authorization request lifecycle as it now also provides the `HttpServletResponse` parameter. The new method signature enables more comprehensive response management during authorization requests.
+    
+    To migrate your code, simply replace instances of the deprecated method with the new method. Ensure that you provide the `HttpServletResponse` parameter where it wasn't previously necessary. For example, the following usage:
+    
+    ```java
+    authorizationRequestRepository.removeAuthorizationRequest(request);
+    ```
+    
+    should be updated to:
+    
+    ```java
+    authorizationRequestRepository.removeAuthorizationRequest(request, response);
+    ```
+    
+    This change is critical to avoid compilation errors in Spring Security 6 and to utilize the enhanced functionality introduced in the new method.
+
+  links:
+    - title: Spring Security 6.0 migration guide - OAuth deprecations
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/oauth2.html#_address_oauth2_client_deprecations
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00060
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/target=spring6+
+  when:
+    java.referenced:
+      pattern: getRedirectUriTemplate
+      location: METHOD_CALL
+  description: Use the new getRedirectUri method
+  message: |
+    In Spring Security 6, the `getRedirectUriTemplate()` method has been deprecated in favor of the new `getRedirectUri()` method.
+    
+    This change is part of the general improvements to the Spring Security API to create more consistent and secure handling of redirect URIs.
+    
+    To migrate your code, you should replace all instances of the `getRedirectUriTemplate()` method with `getRedirectUri()`. The new method offers a more straightforward approach to obtaining the redirect URI.
+    
+    For example, if you have the following code:
+    ```
+    import org.springframework.security.oauth2.client.registration.ClientRegistration;
+  
+    ClientRegistration registration = getClientRegistration(); // your custom method
+    
+    // Deprecated in 5.8
+    String redirectUri = registration.getRedirectUriTemplate();
+    ```
+    You should change it to:
+    ```
+    import org.springframework.security.oauth2.client.registration.ClientRegistration;
+  
+    ClientRegistration registration = getClientRegistration(); // your custom method
+    
+    // Updated usage
+    String redirectUri = registration.getRedirectUri();
+    ```
+    
+    Be sure to review the surrounding logic to ensure that any dependent functionality responds appropriately to the change in method calls.
+
+  links:
+    - title: Spring Security 6.0 migration guide - OAuth deprecations
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/oauth2.html#_address_oauth2_client_deprecations
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00070
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: redirectUriTemplate
+      location: METHOD_CALL
+  description: Use the new redirectUri method
+  message: |
+    In Spring Security 6, the `redirectUriTemplate(...)` method has been deprecated in favor of the new `redirectUri(...)` method. This change is intended to simplify and standardize how redirect URIs are handled in your security configuration.
+    
+    The new `redirectUri(...)` method provides more flexibility and consistency in defining the URI for redirection. For example, you can now directly specify the redirection URI without the need for a template.
+    
+    To migrate from the deprecated method, you should perform the following changes in your Spring Security configuration:
+    
+    Replace any instances of `redirectUriTemplate(...)` with `redirectUri(...)`. For instance, if your configuration looks like this:
+    ```
+    ClientRegistration registration = ClientRegistration.withRegistrationId("my-client")
+      .clientId("client-id")
+      .clientSecret("secret")
+      .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
+      .redirectUriTemplate("{baseUrl}/login/oauth2/code/{registrationId}") // Deprecated
+      .authorizationUri("https://example.com/oauth2/authorize")
+      .tokenUri("https://example.com/oauth2/token")
+      .build();
+    ```
+    It should be updated to:
+    ```
+    ClientRegistration registration = ClientRegistration.withRegistrationId("my-client")
+      .clientId("client-id")
+      .clientSecret("secret")
+      .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
+      .redirectUri("{baseUrl}/login/oauth2/code/{registrationId}") // Updated method
+      .authorizationUri("https://example.com/oauth2/authorize")
+      .tokenUri("https://example.com/oauth2/token")
+      .build();
+    ```
+    
+    For more information on the changes and best practices, refer to the official migration guide linked below.
+
+  links:
+    - title: Spring Security 6.0 migration guide - OAuth deprecations
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/oauth2.html#_address_oauth2_client_deprecations
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00080
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/target=spring6+
+  when:
+    java.referenced:
+      pattern: org.springframework.security.oauth2.core.http.converter.OAuth2AccessTokenResponseHttpMessageConverter.setTokenResponseConverter
+      location: METHOD_CALL
+  description: Use the new setAccessTokenResponseConverter method
+  message: |
+    In Spring Security 6, the `setTokenResponseConverter(...)` method is deprecated in favor of the new `setAccessTokenResponseConverter(...)` method.
+    
+    To migrate your code, locate the instances where `setTokenResponseConverter(...)` is invoked and replace these calls with `setAccessTokenResponseConverter(...)`.
+    
+    For example, if your existing configuration looks like this:
+    ```
+    OAuth2AccessTokenResponseHttpMessageConverter converter = new OAuth2AccessTokenResponseHttpMessageConverter();
+
+    // Deprecated in 5.8
+    converter.setTokenResponseConverter((Map<String, String> tokenResponseParameters) -> {
+      // convert and return OAuth2AccessTokenResponse
+      return OAuth2AccessTokenResponse.withToken("token").build();
+    });
+    ```
+    You should change it to:
+    ```
+    OAuth2AccessTokenResponseHttpMessageConverter converter = new OAuth2AccessTokenResponseHttpMessageConverter();
+    
+    // Updated method name
+    converter.setAccessTokenResponseConverter((Map<String, Object> tokenResponseParameters) -> {
+      // convert and return OAuth2AccessTokenResponse
+      return OAuth2AccessTokenResponse.withToken("token").build();
+    });
+    ```
+    
+    Make sure that the new converter you are using is compatible with the expected input and output types that the new method supports.
+    
+    For further guidance, refer to the official migration documentation on how to properly configure your OAuth2 clients.
+
+  links:
+    - title: Spring Security 6.0 migration guide - OAuth deprecations
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/oauth2.html#_address_oauth2_client_deprecations
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00090
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.security.oauth2.core.http.converter.OAuth2AccessTokenResponseHttpMessageConverter.setTokenResponseParametersConverter
+      location: METHOD_CALL
+  description: Replace deprecated token response parameters converter method
+  message: |
+    The `setTokenResponseParametersConverter(...)` method has been deprecated in Spring Security 6 in favor of the new `setAccessTokenResponseParametersConverter(...)` method. 
+    As part of your migration, you'll need to replace instances where `setTokenResponseParametersConverter` is called in your code with the updated method.
+    
+    The new `setAccessTokenResponseParametersConverter(...)` method allows for a more structured approach to handling access token response parameters and conforms to the latest best practices in Spring Security.
+    
+    ```
+    OAuth2AccessTokenResponseHttpMessageConverter converter = new OAuth2AccessTokenResponseHttpMessageConverter();
+
+    // Deprecated in 5.8
+    converter.setTokenResponseParametersConverter((Map<String, String> tokenResponseParameters) -> {
+      // convert and return OAuth2AccessTokenResponse
+      return OAuth2AccessTokenResponse.withToken("token").build();
+    });
+    ```
+    You should change it to:
+    ```
+    OAuth2AccessTokenResponseHttpMessageConverter converter = new OAuth2AccessTokenResponseHttpMessageConverter();
+    
+    // Updated method name
+    converter.setAccessTokenResponseParametersConverter((Map<String, Object> tokenResponseParameters) -> {
+      // convert and return OAuth2AccessTokenResponse
+      return OAuth2AccessTokenResponse.withToken("token").build();
+    });
+    ````
+    
+    For more details on the reasons for this change, please refer to the official migration guide.
+
+  links:
+    - title: Spring Security 6.0 migration guide - OAuth deprecations
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/oauth2.html#_address_oauth2_client_deprecations
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00100
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/target=spring6+
+  when:
+    java.referenced:
+      pattern: AbstractOAuth2AuthorizationGrantRequest(AuthorizationGrantType)
+      location: CONSTRUCTOR_CALL
+  description: Use the new constructor for AbstractOAuth2AuthorizationGrantRequest
+  message: |
+    In Spring Security 6, the constructor `AbstractOAuth2AuthorizationGrantRequest(AuthorizationGrantType)` 
+    is deprecated. You should now use the new constructor that takes an additional `ClientRegistration` parameter: 
+    `AbstractOAuth2AuthorizationGrantRequest(AuthorizationGrantType, ClientRegistration)`.
+    
+    This change is essential as it allows you to properly associate the authorization grant request with a client registration,
+    which provides better support for OAuth 2.0 authorization flows. In general, when migrating your code, you should be
+    aware of how client registrations are managed in your application and adapt your grant request implementations accordingly.
+    
+    For example, you can revise your implementation as follows:
+    Before:
+    ```java
+    AbstractOAuth2AuthorizationGrantRequest request =
+    new AbstractOAuth2AuthorizationGrantRequest(AuthorizationGrantType.CLIENT_CREDENTIALS) {
+        // Implement required abstract methods if needed
+    };
+    ```
+    
+    After updating it to:
+    ```java
+    AbstractOAuth2AuthorizationGrantRequest request =
+    new AbstractOAuth2AuthorizationGrantRequest(AuthorizationGrantType.CLIENT_CREDENTIALS, clientRegistration) {
+        // Implement required abstract methods if needed
+    };
+    ```
+    
+    Make sure to also update any code that creates instances of this class to provide the necessary `ClientRegistration` parameter.
+
+  links:
+    - title: Spring Security 6.0 migration guide - OAuth deprecations
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/oauth2.html#_address_oauth2_client_deprecations
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00110
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/target=spring6+
+  when:
+    java.referenced:
+      pattern: org.springframework.security.oauth2.client.endpoint.NimbusAuthorizationCodeTokenResponseClient
+      location: IMPORT
+  description: Use the new DefaultAuthorizationCodeTokenResponseClient
+  message: |
+    In Spring Security 6, the `NimbusAuthorizationCodeTokenResponseClient` class has been deprecated and removed. You should replace it with the new `DefaultAuthorizationCodeTokenResponseClient` class.
+    
+    The `DefaultAuthorizationCodeTokenResponseClient` class offers improved functionality and is designed to provide better defaults for handling authorization code token responses. The migration entails updating your code where `NimbusAuthorizationCodeTokenResponseClient` is imported or instantiated.
+    
+    To perform the migration, replace the usage of `NimbusAuthorizationCodeTokenResponseClient` with `DefaultAuthorizationCodeTokenResponseClient`:
+    ```java
+    OAuth2AccessTokenResponseClient<OAuth2AuthorizationCodeGrantRequest> accessTokenResponseClient =
+    new DefaultAuthorizationCodeTokenResponseClient(); // Replacement
+    ```
+    
+    For more detailed information, check the attached links.
+
+  links:
+    - title: Spring Security 6.0 migration guide - OAuth deprecations
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/oauth2.html#_address_oauth2_client_deprecations
+
+# FIXME: https://github.com/konveyor/analyzer-lsp/issues/809
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00140
+  category: mandatory
+  effort: 2
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/target=spring6+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.security.oauth2.core.ClientAuthenticationMethod.BASIC
+    - java.referenced:
+        pattern: org.springframework.security.oauth2.core.ClientAuthenticationMethod.POST
+  description: Replace deprecated ClientAuthenticationMethod.BASIC and ClientAuthenticationMethod.POST
+  message: |
+    In Spring Security 6, the `ClientAuthenticationMethod.BASIC` has been deprecated in favor of `ClientAuthenticationMethod.CLIENT_SECRET_BASIC`,
+    and the `ClientAuthenticationMethod.POST` member has been deprecated in favor of `ClientAuthenticationMethod.CLIENT_SECRET_POST`.
+    
+    This change is part of an effort to streamline and enhance security practices within Spring Security by encouraging the use of better-defined authentication methods.
+    
+    For more information on authentication methods and best practices in Spring Security, refer to the Spring Security documentation.
+
+  links:
+    - title: Spring Security 6.0 migration guide - OAuth deprecations
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/oauth2.html#_address_oauth2_client_deprecations
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00160
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/target=spring6+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.security.config.annotation.web.configurers.oauth2.client.ImplicitGrantConfigurer
+    - java.referenced:
+        pattern: AuthorizationGrantType.IMPLICIT
+    - java.referenced:
+        pattern: OAuth2AuthorizationResponseType.TOKEN
+    - java.referenced:
+        pattern: OAuth2AuthorizationRequest.implicit
+        location: METHOD_CALL
+  description: Implicit grant flow is now considerer insecure
+  message: |
+    The Implicit Grant flow has been considered insecure, especially in browser-based apps, and has been removed from
+    the OAuth 2.1 draft. It was known for exposing tokens in URLs, no refresh tokens, and lacking confidentiality.
+    
+    Because of this, Spring has removed all support for it, including:
+    - `AuthorizationGrantType.IMPLICIT`
+    - `OAuth2AuthorizationResponseType.TOKEN`
+    - `OAuth2AuthorizationRequest.implicit()`
+    - `ImplicitGrantConfigurer`
+    
+    You should migrate to Authorization Code with PKCE, which is fully supported by Spring Security, more secure and recommended
+    in OAuth 2.1.
+
+  links:
+    - title: Spring Security 6.0 migration guide - OAuth deprecations
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/oauth2.html#_address_oauth2_client_deprecations
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00180
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.security.oauth2.client.web.HttpSessionOAuth2AuthorizationRequestRepository.setAllowMultipleAuthorizationRequests
+      location: METHOD_CALL
+  description: Remove setAllowMultipleAuthorizationRequests method calls
+  message: |
+    In Spring Security 6, the `setAllowMultipleAuthorizationRequests(...)` method from `HttpSessionOAuth2AuthorizationRequestRepository` has been deprecated and subsequently removed. 
+    There is no direct replacement for this method, which means that if your application uses this method, you will need to modify your implementation.
+    
+    Since there's no direct replacement for this setting, you’ll need to rethink how you want to manage multiple authorization requests in your application:
+    - Session or State Management: If your concern is managing multiple OAuth requests within the same session, you'll likely need to use custom session or state management logic to prevent users from triggering multiple OAuth flows simultaneously.
+    - Custom Authorization Request Repository: If you need special handling for multiple authorization requests, you can extend OAuth2AuthorizationRequestRepository and implement your own logic.
+
+  links:
+    - title: Spring Security 6.0 migration guide - OAuth deprecations
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/oauth2.html#_address_oauth2_client_deprecations
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00190
+  category: mandatory
+  effort: 2
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/target=spring6+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.security.oauth2.core.http.converter.OAuth2AccessTokenResponseHttpMessageConverter.setTokenResponseConverter
+        location: METHOD_CALL
+    - java.referenced:
+        pattern: org.springframework.security.oauth2.core.http.converter.OAuth2AccessTokenResponseHttpMessageConverter.setTokenResponseParametersConverter
+        location: METHOD_CALL
+  description: Remove usage of the deprecated setTokenResponseConverter/setTokenResponseParametersConverter
+  message: |
+    The tokenResponseConverter field was used to convert the OAuth2 token response, but in Spring Security 6, this field
+    and the associated methods were replaced with a more general mechanism for managing token response conversion,
+    with an emphasis on flexibility in handling access token responses.
+
+    Instead of using tokenResponseConverter, you now use:
+    - `setAccessTokenResponseConverter` (replaces setTokenResponseConverter)
+    - `setAccessTokenResponseParametersConverter` (replaces setTokenResponseParametersConverter)
+    
+    These methods now give you more control over how you handle the response and parameters related to access tokens.
+
+  links:
+    - title: Spring Security 6.0 migration guide - OAuth deprecations
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/oauth2.html#_address_oauth2_client_deprecations
+
