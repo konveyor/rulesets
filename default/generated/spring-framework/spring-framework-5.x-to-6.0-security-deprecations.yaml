@@ -5,8 +5,10 @@
   labels:
     - konveyor.io/source=spring5
     - konveyor.io/source=spring-boot2
+    - konveyor.io/source=spring-security5
     - konveyor.io/target=spring6+
     - konveyor.io/target=spring-boot3+
+    - konveyor.io/target=spring-security6+
   when:
     java.referenced:
       pattern: org.springframework.security.oauth2.client.web.reactive.function.client.ServletOAuth2AuthorizedClientExchangeFilterFunction.setAccessTokenExpiresSkew
