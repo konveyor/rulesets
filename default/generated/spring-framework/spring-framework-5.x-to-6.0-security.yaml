@@ -1,0 +1,973 @@
+- ruleID: spring-framework-5.x-to-6.0-security-00001
+  category: mandatory
+  effort: 3
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/source=spring-boot2
+  - konveyor.io/source=spring-security5
+  - konveyor.io/target=spring6+
+  - konveyor.io/target=spring-boot3+
+  - konveyor.io/target=spring-security6+
+  when:
+    java.referenced:
+      pattern: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
+      location: INHERITANCE
+  description: WebSecurityConfigurerAdapter has been removed in Spring Security 6.0
+  message: |
+    `WebSecurityConfigurerAdapter` has been removed in Spring Security 6.0. Now, to configure security,
+    instead of extending `WebSecurityConfigurerAdapter`, define a `SecurityFilterChain` bean in a `@Configuration`
+    class:
+    
+    Before:
+    ```java
+    @Configuration
+    @EnableWebSecurity
+    public class SecurityConfig extends WebSecurityConfigurerAdapter {
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            http
+                .authorizeRequests()
+                    .antMatchers("/public").permitAll()
+                    .anyRequest().authenticated()
+                .and()
+                .formLogin();
+        }
+    }
+    ```
+    
+    After:
+    ```java
+    @Configuration
+    @EnableWebSecurity
+    public class SecurityConfig {
+        @Bean
+        public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+            http
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/public").permitAll()
+                .anyRequest().authenticated()
+            )
+            .formLogin(withDefaults());
+            return http.build();
+        }
+    }
+    ```
+    
+  links:
+    - title: 'Spring Security without the WebSecurityConfigurerAdapter'
+      url: https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-00010
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.security.core.context.SecurityContextHolder.getContext()
+        location: METHOD_CALL
+    - java.referenced:
+        pattern: org.springframework.security.core.context.SecurityContextHolder.setContext(*)
+        location: METHOD_CALL
+  description: SecurityContext not automatically saved anymore
+  message: |
+    In Spring Security 5, the default behavior is for the SecurityContext to automatically be saved to the
+    SecurityContextRepository using the SecurityContextPersistenceFilter. Saving must be done just prior to the
+    HttpServletResponse being committed and just before SecurityContextPersistenceFilter. Unfortunately, automatic
+    persistence of the SecurityContext can surprise users when it is done prior to the request completing (i.e. just
+    prior to committing the HttpServletResponse). It also is complex to keep track of the state to determine if a
+    save is necessary causing unnecessary writes to the SecurityContextRepository (i.e. HttpSession) at times.
+  
+    In Spring Security 6, the default behavior is that the SecurityContextHolderFilter will only read the SecurityContext
+    from SecurityContextRepository and populate it in the SecurityContextHolder. Users now must explicitly save the
+    SecurityContext with the SecurityContextRepository if they want the SecurityContext to persist between requests.
+    This removes ambiguity and improves performance by only requiring writing to the SecurityContextRepository
+    (i.e. HttpSession) when it is necessary.
+    
+    So for instance, the following code:
+    ```java
+    SecurityContextHolder.setContext(securityContext);
+    ```
+    
+    should now be:
+    ```java
+    SecurityContextHolder.setContext(securityContext);
+    securityContextRepository.saveContext(securityContext, httpServletRequest, httpServletResponse);
+    ```
+    
+    so that the context is explicitly saved.
+
+  links:
+    - title: 'Session Management Migrations - Spring Security'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/session-management.html#_require_explicit_saving_of_securitycontextrepository
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-00020
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.security.web.context.HttpSessionSecurityContextRepository
+        location: TYPE
+    - java.referenced:
+        pattern: SessionCreationPolicy.IF_REQUIRED
+        location: ENUM
+    - java.referenced:
+        pattern: SessionCreationPolicy.ALWAYS
+        location: ENUM
+    - java.referenced:
+        pattern: org.springframework.security.config.Customizer.withDefaults()
+        location: METHOD_CALL
+    - java.referenced:
+        pattern: org.springframework.web.bind.annotation.SessionAttributes
+        location: ANNOTATION
+  description: Change HttpSessionSecurityContextRepository to DelegatingSecurityContextRepository
+  message: |
+    In Spring Security 5, the default SecurityContextRepository is HttpSessionSecurityContextRepository.
+    In Spring Security 6, the default SecurityContextRepository is DelegatingSecurityContextRepository.
+    To opt into the new Spring Security 6 default, the following configuration can be used:
+    
+    ```java
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+            // ...
+            .securityContext((securityContext) -> securityContext
+                .securityContextRepository(new DelegatingSecurityContextRepository(
+                        new RequestAttributeSecurityContextRepository(),
+                        new HttpSessionSecurityContextRepository()
+                ))
+            );
+        return http.build();
+    }
+    ```
+
+  links:
+    - title: 'Spring Security without the WebSecurityConfigurerAdapter'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/session-management.html#_change_httpsessionsecuritycontextrepository_to_delegatingsecuritycontextrepository
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-00030
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.security.web.context.SecurityContextRepository
+      location: IMPLEMENTS_TYPE
+  description: Address SecurityContextRepository Deprecations
+  message: |
+    In Spring Security 6, the `Supplier<SecurityContext> loadContext(HttpServletRequest request)` method was removed.
+    If you have implemented SecurityContextRepository
+    yourself and added an implementation of the loadContext(request) method, you can prepare for Spring Security 6
+    by removing the implementation of that method and implementing the new method instead.
+
+    To get started implementing the new method, use the following example to provide a DeferredSecurityContext:
+
+    ```
+    @Override
+    public DeferredSecurityContext loadDeferredContext(HttpServletRequest request) {
+        return new DeferredSecurityContext() {
+            private SecurityContext securityContext;
+            private boolean isGenerated;
+
+            @Override
+            public SecurityContext get() {
+                if (this.securityContext == null) {
+                    this.securityContext = getContextOrNull(request);
+                    if (this.securityContext == null) {
+                        SecurityContextHolderStrategy strategy = SecurityContextHolder.getContextHolderStrategy();
+                        this.securityContext = strategy.createEmptyContext();
+                        this.isGenerated = true;
+                    }
+                }
+                return this.securityContext;
+            }
+
+            @Override
+            public boolean isGenerated() {
+                get();
+                return this.isGenerated;
+            }
+        };
+    }
+    ```
+
+  links:
+    - title: 'Address SecurityContextRepository deprecations'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/session-management.html#_address_securitycontextrepository_deprecations
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-00040
+  category: optional
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: '* org.springframework.security.web.DefaultSecurityFilterChain'
+        location: METHOD
+    - java.referenced:
+        pattern: '* org.springframework.security.web.SecurityFilterChain'
+        location: METHOD
+  description: Optimize Querying of RequestCache
+  message: |
+    In Spring Security 5, the default behavior is to query the saved request on every request. This means that in a
+    typical setup, that in order to use the RequestCache the HttpSession is queried on every request.
+
+    In Spring Security 6, the default is that RequestCache will only be queried for a cached request if the HTTP parameter
+    continue is defined. This allows Spring Security to avoid unnecessarily reading the HttpSession with the RequestCache.
+
+    In Spring Security 5 the default is to use HttpSessionRequestCache which will be queried for a cached request on every request.
+    If you are not overriding the defaults (i.e. using NullRequestCache), then the following configuration can be used
+    to explicitly opt into the Spring Security 6 behavior in Spring Security 5.8:
+
+    @Bean
+    DefaultSecurityFilterChain springSecurity(HttpSecurity http) throws Exception {
+      HttpSessionRequestCache requestCache = new HttpSessionRequestCache();
+      requestCache.setMatchingRequestParameterName("continue");
+      http
+        // ...
+        .requestCache((cache) -> cache
+          .requestCache(requestCache)
+        );
+      return http.build();
+    }
+
+  links:
+    - title: 'Optimize querying of RequestCache'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/session-management.html#requestcache-query-optimization
+
+- ruleID: spring-framework-5.x-to-6.0-security-00050
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
+        location: ANNOTATION
+    - java.referenced:
+        pattern: org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity
+        location: ANNOTATION
+    - java.referenced:
+        pattern: org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity
+        location: ANNOTATION
+    - java.referenced:
+        pattern: org.springframework.security.config.annotation.authentication.configuration.EnableGlobalAuthentication
+        location: ANNOTATION
+    - java.referenced:
+        pattern: org.springframework.security.config.annotation.method.configuration.EnableReactiveMethodSecurity
+        location: ANNOTATION
+    - java.referenced:
+        pattern: org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity
+        location: ANNOTATION
+  description: Add @Configuration annotation
+  message: |
+    In 6.0, @Configuration is removed from `@EnableWebSecurity`, `@EnableMethodSecurity`, `@EnableGlobalMethodSecurity`, and `@EnableGlobalAuthentication`.
+    This means that wherever you are using one of these annotations, you may need to add @Configuration. For example, @EnableMethodSecurity changes from:
+    
+    ```
+    @EnableMethodSecurity
+    public class MyConfiguration {
+      // ...
+    }
+    ```
+    to
+    ```
+    @Configuration
+    @EnableMethodSecurity
+    public class MyConfiguration {
+      // ...
+    }
+    ```
+
+  links:
+    - title: 'Add @Configuration annotation'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/config.html#add-configuration-annotation
+
+
+# This rule encompasses both https://docs.spring.io/spring-security/reference/5.8/migration/servlet/config.html#use-new-requestmatchers and
+# https://docs.spring.io/spring-security/reference/5.8/migration/servlet/config.html#use-new-security-matchers
+- ruleID: spring-framework-5.x-to-6.0-security-00060
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+      - java.referenced:
+          pattern: antMatcher
+          location: METHOD_CALL
+      - java.referenced:
+          pattern: mvcMatcher
+          location: METHOD_CALL
+      - java.referenced:
+          pattern: regexMatcher
+          location: METHOD_CALL
+  description: Use the new matcher methods
+  message: |
+    In Spring Security 5.8, the `antMatchers`, `mvcMatchers`, and `regexMatchers` methods were deprecated in favor of new `requestMatchers` methods,
+    and the similarly named methods from `HttpSecurity` too.
+  
+    The new `requestMatchers` methods were added to `authorizeHttpRequests`, `authorizeRequests`, CSRF configuration, `WebSecurityCustomizer`
+    and any other places that had the specialized `RequestMatcher` methods. The deprecated methods are removed in Spring Security 6.
+  
+    These new methods have more secure defaults since they choose the most appropriate RequestMatcher implementation
+    for your application. In summary, the new methods choose the MvcRequestMatcher implementation if your application has Spring
+    MVC in the classpath, falling back to the AntPathRequestMatcher implementation if Spring MVC is not present
+    (aligning the behavior with the Kotlin equivalent methods).
+
+    To start using the new methods, you can replace the deprecated methods with the new ones. For example, the following application configuration:
+    ```
+    @Configuration
+    @EnableWebSecurity
+    public class SecurityConfig {
+      @Bean
+      public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+          .authorizeHttpRequests((authz) -> authz
+            .antMatchers("/api/admin/**").hasRole("ADMIN")
+            .antMatchers("/api/user/**").hasRole("USER")
+            .anyRequest().authenticated()
+          );
+        return http.build();
+      }
+    }
+    ```
+    can be changed to:
+    ```
+    @Configuration
+    @EnableWebSecurity
+    public class SecurityConfig {
+      @Bean
+      public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+          .authorizeHttpRequests((authz) -> authz
+            .requestMatchers("/api/admin/**").hasRole("ADMIN")
+            .requestMatchers("/api/user/**").hasRole("USER")
+            .anyRequest().authenticated()
+          );
+          return http.build();
+      }
+    }
+    ```
+    
+    For more information, check the attached link.
+
+  links:
+    - title: 'Use the new requestMatchers methods'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/config.html#use-new-requestmatchers
+    - title: 'Use the new securityMatchers methods'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/config.html#use-new-security-matchers
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-00070
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
+  description: WebSecurityConfigurerAdapter has been removed
+  message: |
+    `WebSecurityConfigurerAdapter` has been removed. Check the attached links for examples of migration for
+    different usages.
+
+  links:
+    - title: 'Stop Using WebSecurityConfigurerAdapter'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/config.html#_stop_using_websecurityconfigureradapter
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-00080
+  category: optional
+  effort: 3
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices
+      location: IMPORT
+  description: Use SHA-256 in Remember Me
+  message: |
+    The `TokenBasedRememberMeServices` implementation now supports SHA-256 for the Remember Me token and this is the
+    default in Spring Security 6. This change makes the implementation more secure by default since MD5 is already proven
+    to be a weak hashing algorithm and vulnerable against collision attacks and modular differential attacks.
+  
+    The new generated tokens now have the information of which algorithm was used to generate the token and that information
+    is used in order to match it. If the algorithm name is not present, then the matchingAlgorithm property is used to check
+    the token. This allows for a smooth transition from MD5 to SHA-256.
+    
+    To opt into the new Spring Security 6 default to encode the tokens while still being able to decode tokens encoded with MD5,
+    you can set the encodingAlgorithm property to SHA-256 and the matchingAlgorithm property to MD5. See the reference
+    documentation and the API docs for more information.
+
+  links:
+    - title: 'Remember-me Authentication'
+      url: https://docs.spring.io/spring-security/reference/5.8/servlet/authentication/rememberme.html#_tokenbasedremembermeservices
+    - title: 'Authentication Migrations - Use SHA-256 in Remember Me'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/authentication.html#servlet-opt-in-sha256-rememberme
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-00090
+  category: optional
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity
+        location: ANNOTATION
+    - builtin.xml:
+        filepaths:
+          - beans.xml
+        namespaces:
+          security: http://www.springframework.org/schema/security
+        xpath: //*/security:global-method-security
+  description: Replace global method security with method security
+  message: |
+    The `TokenBasedRememberMeServices` implementation now supports SHA-256 for the Remember Me token and this is the
+    default in Spring Security 6. This change makes the implementation more secure by default since MD5 is already proven
+    to be a weak hashing algorithm and vulnerable against collision attacks and modular differential attacks.
+    
+    The new generated tokens now have the information of which algorithm was used to generate the token and that information
+    is used in order to match it. If the algorithm name is not present, then the matchingAlgorithm property is used to check
+    the token. This allows for a smooth transition from MD5 to SHA-256.
+    
+    To opt into the new Spring Security 6 default to encode the tokens while still being able to decode tokens encoded with MD5,
+    you can set the encodingAlgorithm property to SHA-256 and the matchingAlgorithm property to MD5. See the reference
+    documentation and the API docs for more information.
+
+  links:
+    - title: 'Replace global method security with method security'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/authorization.html#servlet-replace-globalmethodsecurity-with-methodsecurity
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-00100
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    and:
+      - java.referenced:
+          pattern: org.springframework.transaction.annotation.EnableTransactionManagement
+          location: ANNOTATION
+      - java.referenced:
+          pattern: org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity
+          location: ANNOTATION
+  description: Change the order value in @EnableTransactionManagement
+  message: |
+    `@EnableTransactionManagement` and `@EnableGlobalMethodSecurity` have the same order value, `Integer.MAX_VALUE`. This means
+    that their order in the Spring AOP Advisor chain relative to each other is undefined.
+  
+    This is often fine since most method security expressions don’t require an open transaction to function correctly;
+    however, historically it was sometimes necessary to ensure one happens before the other by setting their order values.
+    
+    @EnableMethodSecurity does not have an order value since it publishes multiple interceptors. Indeed, it cannot
+    attempt backward-compatibility with @EnableTransactionManagement since it cannot set all the interceptors to be in the same advisor chain location.
+    
+    Instead, the values for the `@EnableMethodSecurity` interceptors are based off of an offset of 0. The `@PreFilter` interceptor
+    has an order of 100; `@PostAuthorize`, 200; and so on.
+
+    So, if after updating you find that your method security expressions are not working due to not having an open
+    transaction, please change your transaction annotation definition from the following:
+
+  links:
+    - title: 'Change the order value in @EnableTransactionManagement'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/authorization.html#_change_the_order_value_in_enabletransactionmanagement
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-00110
+  category: optional
+  effort: 3
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    and:
+    - java.referenced:
+        pattern: org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler
+        location: INHERITANCE
+      as: class
+    - java.referenced:
+        pattern: createSecurityExpressionRoot
+        location: METHOD
+        filepaths: "{{class.Filepaths}}"
+      from: class
+  description: Use a Custom @Bean instead of subclassing DefaultMethodSecurityExpressionHandler
+  message: |
+    As a performance optimization, a new method was introduced to `MethodSecurityExpressionHandler` that takes a `Supplier<Authentication>` instead of an `Authentication`.
+    This allows Spring Security to defer the lookup of the `Authentication`, and is taken advantage of automatically when you use `@EnableMethodSecurity` instead of `@EnableGlobalMethodSecurity`.
+    
+    However, let’s say that your code extends DefaultMethodSecurityExpressionHandler and overrides
+    `createSecurityExpressionRoot(Authentication, MethodInvocation)` to return a custom `SecurityExpressionRoot` instance.
+    This will no longer work because the arrangement that `@EnableMethodSecurity` sets up calls `createEvaluationContext(Supplier<Authentication>, MethodInvocation)` instead.
+    
+    Happily, such a level of customization is often unnecessary. Instead, you can create a custom bean with the authorization methods that you need.
+
+    For example, let’s say you are wanting a custom evaluation of `@PostAuthorize("hasAuthority('ADMIN')")`. You can create a custom `@Bean` like this one:
+    ```
+    class MyAuthorizer {
+      boolean isAdmin(MethodSecurityExpressionOperations root) {
+        boolean decision = root.hasAuthority("ADMIN");
+        // custom work ...
+        return decision;
+      }
+    }
+    ```
+    and then refer to it in the annotation like so:
+    ```
+    @PreAuthorize("@authz.isAdmin(#root)")
+    ```
+    
+    Check the links for more information and alternatives.
+  
+  links:
+    - title: 'Use a Custom @Bean instead of subclassing DefaultMethodSecurityExpressionHandler'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/authorization.html#_use_a_custom_bean_instead_of_subclassing_defaultmethodsecurityexpressionhandler
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-00120
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: '* org.springframework.security.access.PermissionEvaluator'
+      location: METHOD
+      annotated:
+        pattern: org.springframework.context.annotation.Bean
+  description: Publish a MethodSecurityExpressionHandler instead of a PermissionEvaluator
+  message: |
+    @EnableMethodSecurity does not pick up a PermissionEvaluator. This helps keep its API simple. If you have a custom
+    `PermissionEvaluator` `@Bean`, please change it from:
+    ```
+    @Bean
+    static PermissionEvaluator permissionEvaluator() {
+      // ... your evaluator
+    }
+    ```
+    to:
+    ```
+    @Bean
+    static MethodSecurityExpressionHandler expressionHandler() {
+      var expressionHandler = new DefaultMethodSecurityExpressionHandler();
+      expressionHandler.setPermissionEvaluator(myPermissionEvaluator);
+      return expressionHandler;
+    }
+    ```
+
+  links:
+    - title: 'Publish a MethodSecurityExpressionHandler instead of a PermissionEvaluator'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/authorization.html#servlet-replace-permissionevaluator-bean-with-methodsecurityexpression-handler
+
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-00130
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.security.access.AccessDecisionManager
+        location: IMPLEMENTS_TYPE
+    - java.referenced:
+        pattern: org.springframework.security.access.AccessDecisionVoter
+        location: IMPLEMENTS_TYPE
+  description: Replace any custom method-security AccessDecisionManagers
+  message: |
+    Your application may have a custom `AccessDecisionManager` or `AccessDecisionVoter` arrangement.
+    The preparation strategy will depend on your reason for each arrangement. Check the links for more information
+    about the best match for your situation.
+
+# TODO: potentially implement a rule for each case of this migration point?
+  links:
+    - title: 'Replace any custom method-security AccessDecisionManagers'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/authorization.html#_replace_any_custom_method_security_accessdecisionmanagers
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-00135
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.security.config.annotation.web.socket.AbstractSecurityWebSocketMessageBrokerConfigurer
+      location: INHERITANCE
+  description: Ensure all messages have defined authorization rules
+  message: |
+    The now-deprecated message security support permits all messages by default. The new support has the stronger
+    default of denying all messages. To prepare for this, ensure that authorization rules exist are declared
+    for every request. For example, an application configuration like:
+
+    ```
+    @Override
+    protected void configureInbound(MessageSecurityMetadataSourceRegistry messages) {
+      messages
+        .simpDestMatchers("/user/queue/errors").permitAll()
+        .simpDestMatchers("/admin/**").hasRole("ADMIN");
+    }
+    ```
+    should change to:
+    ```
+    @Override
+    protected void configureInbound(MessageSecurityMetadataSourceRegistry messages) {
+      messages
+        .simpTypeMatchers(CONNECT, DISCONNECT, UNSUBSCRIBE).permitAll()
+        .simpDestMatchers("/user/queue/errors").permitAll()
+        .simpDestMatchers("/admin/**").hasRole("ADMIN")
+        .anyMessage().denyAll();
+    }
+    ```
+    
+    Also, you should stop implementing `AbstractSecurityWebSocketMessageBrokerConfigurer` in favor of `WebSocketMessageBrokerConfigurer`.
+
+  links:
+    - title: 'Ensure all messages have defined authorization rules'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/authorization.html#_ensure_all_messages_have_defined_authorization_rules
+    - title: 'Stop Implementing AbstractSecurityWebSocketMessageBrokerConfigurer'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/authorization.html#_stop_implementing_abstractsecuritywebsocketmessagebrokerconfigurer
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-00140
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.security.config.annotation.web.builders.HttpSecurity.authorizeRequests
+      location: METHOD_CALL
+  description: Ensure that all requests have defined authorization rules
+  message: |
+    In Spring Security 5.8 and earlier, requests with no authorization rule are permitted by default. It is a stronger
+    security position to deny by default, thus requiring that authorization rules be clearly defined for every endpoint.
+    As such, in 6.0, Spring Security by default denies any request that is missing an authorization rule.
+    
+    The simplest way to prepare for this change is to introduce an appropriate `anyRequest` rule as the last authorization rule.
+    The recommendation is `denyAll` since that is the implied 6.0 default.
+    
+    Adding `denyAll` to the end looks like changing:
+    ```
+    http
+    .authorizeRequests((authorize) -> authorize
+        .filterSecurityInterceptorOncePerRequest(true)
+        .mvcMatchers("/app/**").hasRole("APP")
+        // ...
+    )
+    // ...
+    ```
+    to:
+    ```
+    http
+    .authorizeRequests((authorize) -> authorize
+        .filterSecurityInterceptorOncePerRequest(true)
+        .mvcMatchers("/app/**").hasRole("APP")
+        // ...
+        .anyRequest().denyAll()
+    )
+    // ...
+    ```
+
+  links:
+    - title: 'Ensure that all requests have defined authorization rules'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/authorization.html#_ensure_that_all_requests_have_defined_authorization_rules
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-00150
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    builtin.filecontent:
+      filePattern: .*\.java
+      pattern: \".*hasIpAddress\(.*\"
+  description: Migrate hasIpAddress to access(AuthorizationManager)
+  message: |
+    `hasIpAddress` has no DSL equivalent in `authorizeHttpRequests`. As such, you need to change any calls to `hasIpAddress` to using an `AuthorizationManager`.
+    
+    First, construct an IpAddressMatcher like so:
+    ```
+    IpAddressMatcher hasIpAddress = new IpAddressMatcher("127.0.0.1");
+    ```
+    and then change from this:
+    ```
+    http
+    .authorizeRequests((authorize) -> authorize
+        .mvcMatchers("/app/**").access("hasIpAddress('127.0.0.1')")
+        .anyRequest().denyAll()
+    )
+    // ...
+    ```
+    to this:
+    ```
+    http
+    .authorizeHttpRequests((authorize) -> authorize
+        .requestMatchers("/app/**").access((authentication, context) ->
+            new AuthorizationDecision(hasIpAddress.matches(context.getRequest()))
+        // ...
+        .anyRequest().denyAll()
+    )
+    // ...
+    ```
+
+  links:
+    - title: 'Migrate hasIpAddress to access(AuthorizationManager)'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/authorization.html#_migrate_hasipaddress_to_accessauthorizationmanager
+
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-00160
+  category: optional
+  effort: 3
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+#      pattern: ExpressionInterceptUrlRegistry.access
+#      pattern: ExpressionUrlAuthorizationConfigurer.ExpressionInterceptUrlRegistry.access(String)
+#      TODO: weak rule. The patterns above does not seem to work, so had to simplify it.
+      pattern: access(String)
+      location: METHOD_CALL
+  description: Migrate SpEL expressions to AuthorizationManager
+  message: |
+    For authorization rules, Java tends to be easier to test and maintain than SpEL. As such, authorizeHttpRequests
+    does not have a method for declaring a String SpEL. Instead, you can implement your own AuthorizationManager
+    implementation or use WebExpressionAuthorizationManager.
+
+    If you have the following SpEL:
+    ```
+    http
+    .authorizeRequests((authorize) -> authorize
+        .filterSecurityInterceptorOncePerRequest(true)
+        .mvcMatchers("/complicated/**").access("hasRole('ADMIN') || hasAuthority('SCOPE_read')")
+        // ...
+        .anyRequest().denyAll()
+    )
+    // ...
+    ```
+    you can compose your own AuthorizationManager with Spring Security authorization primitives like so:
+    ```
+    http
+    .authorizeHttpRequests((authorize) -> authorize
+        .shouldFilterAllDispatcherTypes(false)
+        .mvcMatchers("/complicated/**").access(anyOf(hasRole("ADMIN"), hasAuthority("SCOPE_read"))
+        // ...
+        .anyRequest().denyAll()
+    )
+    // ...
+    ```
+
+  links:
+    - title: 'Migrate SpEL expressions to AuthorizationManager'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/authorization.html#_migrate_spel_expressions_to_authorizationmanager
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-00170
+  category: optional
+  effort: 3
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.security.config.annotation.web.builders.HttpSecurity.authorizeHttpRequests
+      location: METHOD_CALL
+  description: Switch to filter all dispatcher types
+  message: |
+    Spring Security 5.8 and earlier only perform authorization once per request. This means that dispatcher types
+    like FORWARD and INCLUDE that run after REQUEST are not secured by default. It’s recommended that Spring Security
+    secure all dispatch types. As such, in 6.0, Spring Security changes this default.
+
+    To do this, you should change:
+    ```
+    http
+    .authorizeHttpRequests((authorize) -> authorize
+        .shouldFilterAllDispatcherTypes(false)
+        .mvcMatchers("/app/**").hasRole("APP")
+        // ...
+        .anyRequest().denyAll()
+    )
+    // ...
+    ```
+    to
+    ```
+    http
+    .authorizeHttpRequests((authorize) -> authorize
+        .shouldFilterAllDispatcherTypes(true)
+        .mvcMatchers("/app/**").hasRole("APP")
+        // ...
+        .anyRequest().denyAll()
+    )
+    // ...
+    ```
+    And, the FilterChainProxy should be registered for all dispatcher types as well. Check the link for more information.
+
+  links:
+    - title: 'Switch to filter all dispatcher types'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/authorization.html#switch-filter-all-dispatcher-types
+    - title: 'Authorization architecture'
+      url: https://docs.spring.io/spring-security/reference/5.8/servlet/authorization/architecture.html
+
+
+- ruleID: spring-framework-5.x-to-6.0-security-00180
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    and:
+    - java.referenced:
+        pattern: '* org.springframework.security.config.core.GrantedAuthorityDefaults'
+        location: METHOD
+      ignore: true
+    - java.referenced:
+        pattern: hasRole(String)
+        location: METHOD_CALL
+  description: Replace hasRole with hasAuthority if using GrantedAuthorityDefaults
+  message: |
+    Currently, the hasRole method inside authorizeHttpRequests does not support the GrantedAuthorityDefaults bean like
+    the authorizeRequests does. Therefore, if you are using GrantedAuthorityDefaults to change the prefix of your roles,
+    you will need to use hasAuthority instead of hasRole.
+
+    For example, you will have to change from:
+    ```
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+      http
+        .authorizeRequests((authorize) -> authorize
+        .anyRequest().hasRole("ADMIN")
+      );
+      return http.build();
+    }
+    
+    @Bean
+    public GrantedAuthorityDefaults grantedAuthorityDefaults() {
+      return new GrantedAuthorityDefaults("MYPREFIX_");
+    }
+    ```
+    to:
+    ```
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+      http
+        .authorizeHttpRequests((authorize) -> authorize
+        .anyRequest().hasAuthority("MYPREFIX_ADMIN")
+      );
+      return http.build();
+    }
+    ```
+
+  links:
+    - title: 'Replace hasRole with hasAuthority if using GrantedAuthorityDefaults'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/authorization.html#replace-hasrole-hasauthority
+
+
+# ----------- OAUTH -----------
+- ruleID: spring-framework-5.x-to-6.0-security-00190
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring6+
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - builtin.filecontent:
+        filePattern: .*\.java
+        pattern: \.hasRole\(.*\)
+    - builtin.filecontent:
+        filePattern: .*\.java
+        pattern: \.hasAuthority\(.*\)
+  description: Change Default oauth2Login() Authorities
+  message: |
+    In Spring Security 5, the default GrantedAuthority given to a user that authenticates with an OAuth2 or
+    OpenID Connect 1.0 provider (via `oauth2Login()`) is `ROLE_USER`.
+    
+    In Spring Security 6, the default authority given to a user authenticating with an OAuth2 provider is `OAUTH2_USER`.
+    The default authority given to a user authenticating with an OpenID Connect 1.0 provider is `OIDC_USER`. These defaults
+    allow clearer distinction of users that have authenticated with an OAuth2 or OpenID Connect 1.0 provider.
+    
+    If you are using authorization rules or expressions such as `hasRole("USER")` or `hasAuthority("ROLE_USER")`
+    to authorize users with this specific authority, the new defaults in Spring Security 6 will impact your application.
+    
+    Check the links for more information.
+
+  links:
+    - title: 'Change Default oauth2Login() Authorities'
+      url: https://docs.spring.io/spring-security/reference/5.8/migration/servlet/oauth2.html#_change_default_oauth2login_authorities
+    - title: 'Mapping User Autorities'
+      url: https://docs.spring.io/spring-security/reference/5.8/servlet/oauth2/login/advanced.html#oauth2login-advanced-map-authorities
+
