@@ -1,0 +1,12 @@
+rulesPath: ../08-security-technology-usage.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/08-security-technology-usage
+- name: builtin
+  dataPath: ./data/08-security-technology-usage
+tests:
+- ruleID: technology-usage-security-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Security Realm

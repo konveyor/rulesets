@@ -1,0 +1,17 @@
+rulesPath: ../107-eap6-xml.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/107-eap6-xml
+- name: builtin
+  dataPath: ./data/107-eap6-xml
+tests:
+- ruleID: eap6-xml-05000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JMS proprietary resource definitions
+- ruleID: eap6-xml-06000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JBoss deployment structure dependencies (jboss-deployment-structure.xml)

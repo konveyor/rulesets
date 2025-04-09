@@ -1,0 +1,12 @@
+rulesPath: ../256-ejb.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/256-ejb
+- name: builtin
+  dataPath: ./data/256-ejb
+tests:
+- ruleID: ejb-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - EJB Timer

@@ -1,0 +1,13 @@
+rulesPath: ../21-spring-boot-to-azure-port.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/21-spring-boot-to-azure-port
+- name: builtin
+  dataPath: ./data/21-spring-boot-to-azure-port
+tests:
+- ruleID: spring-boot-to-azure-port-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The application is setting the server port.

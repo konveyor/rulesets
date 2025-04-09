@@ -1,0 +1,14 @@
+rulesPath: ../230-springboot-parent-pom-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/230-springboot-parent-pom-to-quarkus
+- name: builtin
+  dataPath: ./data/230-springboot-parent-pom-to-quarkus
+tests:
+- ruleID: springboot-parent-pom-to-quarkus-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: Replace the Spring Parent POM with Quarkus BOM in `<dependencyManagement>`
+        section of the application's `pom.xml` file

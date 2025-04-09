@@ -1,0 +1,419 @@
+rulesPath: ../274-mvc.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/274-mvc
+- name: builtin
+  dataPath: ./data/274-mvc
+tests:
+- ruleID: mvc-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Wicket
+  - name: tc-2
+    hasTags:
+    - Embedded library - Apache Wicket
+- ruleID: mvc-01100
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Struts
+  - name: tc-2
+    hasTags:
+    - Embedded library - Apache Struts
+- ruleID: mvc-01200
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Spring MVC
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Spring MVC
+  - name: tc-3
+    hasTags:
+    - Embedded framework - Spring MVC
+  - name: tc-4
+    hasTags:
+    - Embedded framework - Spring MVC
+- ruleID: mvc-01300
+  testCases:
+  - name: tc-1
+    hasTags:
+    - GWT
+  - name: tc-2
+    hasTags:
+    - Embedded library - GWT
+- ruleID: mvc-01400
+  testCases:
+  - name: tc-1
+    hasTags:
+    - MyFaces
+  - name: tc-2
+    hasTags:
+    - Embedded library - MyFaces
+- ruleID: mvc-01500
+  testCases:
+  - name: tc-1
+    hasTags:
+    - RichFaces
+  - name: tc-2
+    hasTags:
+    - Embedded library - RichFaces
+- ruleID: mvc-01600
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JSF
+  - name: tc-2
+    hasTags:
+    - Embedded library - JSF
+- ruleID: mvc-01700
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Apache Tapestry
+  - name: tc-2
+    hasTags:
+    - Embedded library - Apache Tapestry
+- ruleID: mvc-01800
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Stripes
+  - name: tc-2
+    hasTags:
+    - Embedded library - Stripes
+- ruleID: mvc-01900
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Spark
+  - name: tc-2
+    hasTags:
+    - Embedded library - Spark
+- ruleID: mvc-02000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Vaadin
+  - name: tc-2
+    hasTags:
+    - Embedded library - Vaadin
+- ruleID: mvc-02100
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Grails
+  - name: tc-2
+    hasTags:
+    - Embedded library - Grails
+- ruleID: mvc-02200
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Play
+  - name: tc-2
+    hasTags:
+    - Embedded library - Play
+- ruleID: mvc-02300
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Oracle ADF
+  - name: tc-2
+    hasTags:
+    - Embedded library - Oracle ADF
+- ruleID: mvc-02400
+  testCases:
+  - name: tc-1
+    hasTags:
+    - PrimeFaces
+  - name: tc-2
+    hasTags:
+    - Embedded library - PrimeFaces
+- ruleID: mvc-02500
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JSTL
+  - name: tc-2
+    hasTags:
+    - Embedded library - JSTL
+- ruleID: mvc-02600
+  testCases:
+  - name: tc-1
+    hasTags:
+    - OpenFaces
+  - name: tc-2
+    hasTags:
+    - Embedded library - OpenFaces
+- ruleID: mvc-02700
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JFreeChart
+  - name: tc-2
+    hasTags:
+    - Embedded library - JFreeChart
+- ruleID: mvc-02800
+  testCases:
+  - name: tc-1
+    hasTags:
+    - BootsFaces
+  - name: tc-2
+    hasTags:
+    - Embedded library - BootsFaces
+- ruleID: mvc-02900
+  testCases:
+  - name: tc-1
+    hasTags:
+    - ICEfaces
+  - name: tc-2
+    hasTags:
+    - Embedded library - ICEfaces
+- ruleID: mvc-03000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - BabbageFaces
+  - name: tc-2
+    hasTags:
+    - Embedded library - BabbageFaces
+- ruleID: mvc-03100
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Portlet
+  - name: tc-2
+    hasTags:
+    - Embedded library - Portlet
+- ruleID: mvc-03200
+  testCases:
+  - name: tc-1
+    hasTags:
+    - AngularFaces
+  - name: tc-2
+    hasTags:
+    - Embedded library - AngularFaces
+- ruleID: mvc-03300
+  testCases:
+  - name: tc-1
+    hasTags:
+    - LiferayFaces
+  - name: tc-2
+    hasTags:
+    - Liferay
+  - name: tc-3
+    hasTags:
+    - Embedded library - LiferayFaces
+  - name: tc-4
+    hasTags:
+    - Embedded library - Liferay
+- ruleID: mvc-03500
+  testCases:
+  - name: tc-1
+    hasTags:
+    - ButterFaces
+  - name: tc-2
+    hasTags:
+    - Embedded library - ButterFaces
+- ruleID: mvc-03600
+  testCases:
+  - name: tc-1
+    hasTags:
+    - HighFaces
+  - name: tc-2
+    hasTags:
+    - Embedded library - HighFaces
+- ruleID: mvc-03700
+  testCases:
+  - name: tc-1
+    hasTags:
+    - TieFaces
+  - name: tc-2
+    hasTags:
+    - Embedded library - TieFaces
+- ruleID: mvc-03800
+  testCases:
+  - name: tc-1
+    hasTags:
+    - OmniFaces
+  - name: tc-2
+    hasTags:
+    - Embedded library - OmniFaces
+- ruleID: mvc-03900
+  testCases:
+  - name: tc-1
+    hasTags:
+    - UberFire
+  - name: tc-2
+    hasTags:
+    - Embedded library - UberFire
+- ruleID: mvc-04000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Velocity
+  - name: tc-2
+    hasTags:
+    - Embedded library - Apache Velocity
+- ruleID: mvc-04100
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Thymeleaf
+  - name: tc-2
+    hasTags:
+    - Embedded library - Thymeleaf
+- ruleID: mvc-04200
+  testCases:
+  - name: tc-1
+    hasTags:
+    - FreeMarker
+  - name: tc-2
+    hasTags:
+    - Embedded library - Apache FreeMarker
+- ruleID: mvc-04300
+  testCases:
+  - name: tc-1
+    hasTags:
+    - ANTLR StringTemplate
+  - name: tc-2
+    hasTags:
+    - Embedded library - ANTLR StringTemplate
+- ruleID: mvc-04400
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Handlebars
+  - name: tc-2
+    hasTags:
+    - Embedded library - Handlebars
+- ruleID: mvc-04500
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JMustache
+  - name: tc-2
+    hasTags:
+    - Embedded library - JMustache
+- ruleID: mvc-04600
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Jamon
+  - name: tc-2
+    hasTags:
+    - Embedded library - Jamon
+- ruleID: mvc-04700
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Twirl
+  - name: tc-2
+    hasTags:
+    - Embedded library - Twirl
+- ruleID: mvc-04800
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Scalate
+  - name: tc-2
+    hasTags:
+    - Embedded library - Scalate
+- ruleID: mvc-04900
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Rythm Template Engine
+  - name: tc-2
+    hasTags:
+    - Embedded library - Rythm Template Engine
+- ruleID: mvc-05000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Trimou
+  - name: tc-2
+    hasTags:
+    - Embedded library - Trimou
+- ruleID: mvc-05100
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Jetbrick Template
+  - name: tc-2
+    hasTags:
+    - Embedded library - Jetbrick Template
+- ruleID: mvc-05200
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Chunk Templates
+  - name: tc-2
+    hasTags:
+    - Embedded library - Chunk Templates
+- ruleID: mvc-05300
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JSilver
+  - name: tc-2
+    hasTags:
+    - Embedded library - JSilver
+- ruleID: mvc-05400
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Water Template Engine
+  - name: tc-2
+    hasTags:
+    - Embedded library - Water Template Engine
+- ruleID: mvc-05500
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Ickenham
+  - name: tc-2
+    hasTags:
+    - Embedded library - Ickenham
+- ruleID: mvc-05600
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Mixer
+  - name: tc-2
+    hasTags:
+    - Embedded library - Mixer
+- ruleID: mvc-05700
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Webmacro
+  - name: tc-2
+    hasTags:
+    - Embedded library - Webmacro
+- ruleID: mvc-05800
+  testCases:
+  - name: tc-1
+    hasTags:
+    - DVSL
+  - name: tc-2
+    hasTags:
+    - Embedded library - DVSL
+- ruleID: mvc-05900
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Snippetory Template Engine
+  - name: tc-2
+    hasTags:
+    - Embedded library - Snippetory Template Engine
+- ruleID: mvc-06000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Anakia
+  - name: tc-2
+    hasTags:
+    - Embedded library - Anakia
