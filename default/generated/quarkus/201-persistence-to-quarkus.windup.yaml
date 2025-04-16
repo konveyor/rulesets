@@ -80,4 +80,5 @@
     - java.referenced:
         location: IMPORT
         pattern: javax.persistence.EntityManager
+        filepaths: "{{file.Filepaths}}"
       from: file
