@@ -1,0 +1,10 @@
+name: eap81/eap8
+description: This ruleset provides analysis of Maven built applications when migrating from EAP 6/7/8 to 8.1. This ruleset also applies to migrations from EAP XP 5.0 to 6.0, since EAP XP 6.0 has EAP 8.1 underlying.
+labels:
+  - konveyor.io/source=eap6
+  - konveyor.io/source=eap7
+  - konveyor.io/source=eap8
+  - konveyor.io/target=eap81
+  - konveyor.io/source=eapxp5
+  - konveyor.io/target=eapxp6
+
