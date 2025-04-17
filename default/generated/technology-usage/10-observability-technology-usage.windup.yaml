@@ -1,4 +1,5 @@
 - customVariables: []
+  description: Spring Boot Actuator
   labels:
   - konveyor.io/include=always
   links: []
@@ -11,6 +12,7 @@
     builtin.hasTags:
     - Spring Boot Actuator
 - customVariables: []
+  description: Spring JMX
   labels:
   - konveyor.io/include=always
   links: []

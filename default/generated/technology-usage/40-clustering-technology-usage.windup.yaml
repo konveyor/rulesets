@@ -1,4 +1,5 @@
 - customVariables: []
+  description: Clustering Web Session
   labels:
   - konveyor.io/include=always
   links: []
@@ -11,6 +12,7 @@
     builtin.hasTags:
     - Clustering Web Session
 - customVariables: []
+  description: Clustering EJB
   labels:
   - konveyor.io/include=always
   links: []
