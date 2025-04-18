@@ -22,6 +22,8 @@
       java.referenced:
         location: FIELD_DECLARATION
         pattern: jakarta.faces.context.FacesContext
+        annotated:
+          pattern: jakarta.inject.Inject
     - java.referenced:
         location: RETURN_TYPE
         pattern: jakarta.faces.context.FacesContext
