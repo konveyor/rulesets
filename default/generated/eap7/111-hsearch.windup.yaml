@@ -569,6 +569,10 @@
     java.referenced:
       location: ANNOTATION
       pattern: org.hibernate.search.annotations.Spatial
+      annotated:
+        elements:
+          - name: spatialMode
+            value: SpatialMode.GRID
 - category: optional
   customVariables: []
   description: Hibernate Search 5 - FullTextIndexEventListener class is now final
@@ -746,9 +750,17 @@
     - java.referenced:
         location: ANNOTATION
         pattern: org.hibernate.search.annotations.Field
+        annotated:
+          pattern: org.hibernate.search.annotations.NumericFields
+          elements:
+            - name: index
+              value: Index.YES
     - java.referenced:
         location: ANNOTATION
         pattern: org.hibernate.search.annotations.Field
+        elements:
+          - name: index
+            value: Index.YES
     - java.referenced:
         pattern: java.util.(Calendar|Date)
         annotated:
@@ -794,6 +806,10 @@
     java.referenced:
       location: ANNOTATION
       pattern: org.hibernate.search.annotations.Field
+      annotated:
+        elements:
+          - name: indexNullAs
+            value: .*
 - category: optional
   customVariables: []
   description: Hibernate Search 5 - Improvements in Faceting Engine

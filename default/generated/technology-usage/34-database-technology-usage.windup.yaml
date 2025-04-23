@@ -11,6 +11,10 @@
     java.referenced:
       location: ANNOTATION
       pattern: javax.annotation.sql.DataSourceDefinition
+      annotated:
+        elements:
+          - name: transactional
+            value: false
 - customVariables: []
   labels:
   - konveyor.io/include=always
@@ -24,6 +28,10 @@
     java.referenced:
       location: ANNOTATION
       pattern: javax.annotation.sql.DataSourceDefinition
+      annotated:
+        elements:
+          - name: transactional
+            value: false
 - customVariables: []
   description: JPA Entities
   labels:

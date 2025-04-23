@@ -88,6 +88,10 @@
     java.referenced:
       location: ANNOTATION
       pattern: org.hibernate.annotations.(CollectionType|ParamDef|Type)
+      annotated:
+        elements:
+          - name: type
+            value: .*
 - category: mandatory
   customVariables: []
   description: Basic mappings are no longer configurable through the BasicType contract
@@ -503,6 +507,10 @@
     - java.referenced:
         location: ANNOTATION
         pattern: org.hibernate.annotations.NamedNativeQuery
+        annotated:
+          elements:
+            - name: callable
+              value: true
     - as: xmlfiles1
       builtin.file:
         pattern: .*\.hbm\.xml
