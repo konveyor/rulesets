@@ -4,6 +4,8 @@
   labels:
   - konveyor.io/source=spring5
   - konveyor.io/target=spring6+
+  - konveyor.io/source=spring-boot2
+  - konveyor.io/target=spring-boot3+
   when:
     or:
     - builtin.xml:
