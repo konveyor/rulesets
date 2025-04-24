@@ -53,6 +53,7 @@
           lowerbound: 0.0.0
           name: io.quarkus.quarkus-resteasy-reactive-jackson
         not: true
+    - and:
       - java.dependency:
           lowerbound: 0.0.0
           name: io.quarkus.quarkus-spring-web

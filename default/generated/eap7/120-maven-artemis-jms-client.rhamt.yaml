@@ -18,11 +18,10 @@
     with groupId `org.jboss.eap`, and artifactId `wildfly-client-properties`.
   ruleID: maven-artemis-jms-client-00001
   when:
-    or:
-    - and:
-      - java.dependency:
-          lowerbound: 0.0.0
-          name: org.apache.activemq.artemis-jms-client
+    and:
+    - java.dependency:
+        lowerbound: 0.0.0
+        name: org.apache.activemq.artemis-jms-client
     - java.dependency:
         lowerbound: 0.0.0
         name: org.jboss.eap.wildfly-client-properties
