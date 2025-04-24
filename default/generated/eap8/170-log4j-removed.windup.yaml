@@ -52,11 +52,10 @@
   message: Log4j usage without including `log4j.jar`
   ruleID: log4j-removed-00002
   when:
-    or:
-    - and:
-      - java.referenced:
-          location: IMPORT
-          pattern: org.apache.log4j.Logger
+    and:
+    - java.referenced:
+        location: IMPORT
+        pattern: org.apache.log4j.Logger
     - not: true
       or:
       - java.dependency:
@@ -83,10 +82,9 @@
   message: Log4j configuration without including `log4j.jar`
   ruleID: log4j-removed-00003
   when:
-    or:
-    - and:
-      - builtin.file:
-          pattern: (log4j\.xml|log4j\.properties|jboss-log4j\.xml)
+    and:
+    - builtin.file:
+        pattern: (log4j\.xml|log4j\.properties|jboss-log4j\.xml)
     - not: true
       or:
       - java.dependency:
@@ -113,11 +111,10 @@
   message: Log4j custom-handler using appender
   ruleID: log4j-removed-00004
   when:
-    or:
-    - and:
-      - builtin.filecontent:
-          filePattern: .*\.xml
-          pattern: custom-handler.*org.apache.log4j..*Appender
+    and:
+    - builtin.filecontent:
+        filePattern: .*\.xml
+        pattern: custom-handler.*org.apache.log4j..*Appender
     - not: true
       or:
       - java.dependency:
@@ -144,15 +141,14 @@
   message: Log4j module dependency declaration
   ruleID: log4j-removed-00005
   when:
-    or:
-    - and:
-      - or:
-        - builtin.filecontent:
-            filePattern: jboss-deployment-structure\.xml
-            pattern: org.jboss.log4j.logmanager
-        - builtin.filecontent:
-            filePattern: Manifest\.MF
-            pattern: org.jboss.log4j.logmanager
+    and:
+    - or:
+      - builtin.filecontent:
+          filePattern: jboss-deployment-structure\.xml
+          pattern: org.jboss.log4j.logmanager
+      - builtin.filecontent:
+          filePattern: Manifest\.MF
+          pattern: org.jboss.log4j.logmanager
     - not: true
       or:
       - java.dependency:
