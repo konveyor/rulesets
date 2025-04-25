@@ -60,6 +60,9 @@ jobs:
       env:
         IMG: ttl.sh/konveyor-hub-${{ github.sha }}:4h
       run: |
+        ls -l
+        mkdir -p /tmp/seed
+        cp -r resources/* /tmp/seed
         make podman-build
         podman push $IMG
 
