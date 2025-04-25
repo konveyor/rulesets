@@ -57,9 +57,11 @@ jobs:
 
     - name: Build hub and save image
       working-directory: tackle2-hub
+      env:
+        IMG: ttl.sh/konveyor-hub-${{ github.sha }}:4h
       run: |
-        IMG=ttl.sh/konveyor-hub-${{ github.sha }}:4h make podman-build
-        podman push
+        make podman-build
+        podman push $IMG
 
   e2e:
     needs: build-hub
