@@ -54,15 +54,15 @@ jobs:
       working-directory: tackle2-hub/tackle2-seed
       run: |
         RULESET_ARGS='-r ../../rulesets --yes' make ruleset-patch
-        mkdir -p /opt/app-root/src/tackle2-seed
-        cp -r resources/* /opt/app-root/src/tackle2-seed
+        ls -l || true
+        ls -l resources || true
 
     - name: Build hub and save image
       working-directory: tackle2-hub
       env:
         IMG: ttl.sh/konveyor-hub-${{ github.sha }}:4h
       run: |
-        make podman-build
+        podman build --build-arg SEED_ROOT=tackle2-seed -t $IMG .
         podman push $IMG
 
   e2e:
