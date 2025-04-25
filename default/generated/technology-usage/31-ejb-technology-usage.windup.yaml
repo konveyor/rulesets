@@ -1,4 +1,5 @@
 - customVariables: []
+  description: EJB Timer
   labels:
   - konveyor.io/include=always
   links: []

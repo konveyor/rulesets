@@ -1,4 +1,5 @@
 - customVariables: []
+  description: Spring Boot Configuration
   labels:
   - konveyor.io/include=always
   links: []
@@ -11,6 +12,7 @@
     builtin.hasTags:
     - Spring Boot Configuration
 - customVariables: []
+  description: Spring Boot Auto-configuration
   labels:
   - konveyor.io/include=always
   links: []
@@ -23,6 +25,7 @@
     builtin.hasTags:
     - Spring Boot Auto-configuration
 - customVariables: []
+  description: Spring Boot Component Scan
   labels:
   - konveyor.io/include=always
   links: []
@@ -35,6 +38,7 @@
     builtin.hasTags:
     - Spring Boot Component Scan
 - customVariables: []
+  description: Spring Deployable War
   labels:
   - konveyor.io/include=always
   links: []

@@ -1,4 +1,5 @@
 - customVariables: []
+  description: Embedded framework - Spring Boot
   labels:
   - konveyor.io/include=always
   links: []
