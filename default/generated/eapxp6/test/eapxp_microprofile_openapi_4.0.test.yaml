@@ -1,0 +1,33 @@
+rulesPath: ../eapxp_microprofile_openapi_4.0.mta.yaml
+providers:
+  - name: java
+    dataPath: ./data/eapxp_microprofile_openapi_4.0
+  - name: builtin
+    dataPath: ./data/eapxp_microprofile_openapi_4.0
+tests:
+  - ruleID: eapxp_microprofile_openapi_4.0-00001
+    testCases:
+      - name: MP-OpenAPI-Schema-1
+        hasIncidents:
+          exactly: 2
+  - ruleID: eapxp_microprofile_openapi_4.0-00002
+    testCases:
+      - name: MP-OpenAPI-Schema-2
+        hasIncidents:
+          exactly: 2
+  - ruleID: eapxp_microprofile_openapi_4.0-00003
+    testCases:
+      - name: MP-OpenAPI-Schema-3
+        hasIncidents:
+          exactly: 4
+  - ruleID: eapxp_microprofile_openapi_4.0-00004
+    testCases:
+      - name: MP-OpenAPI-RequestBody-1
+        hasIncidents:
+          exactly: 1
+  - ruleID: eapxp_microprofile_openapi_4.0-00005
+    testCases:
+      - name: MP-OpenAPI-Document-1
+        hasIncidents:
+          exactly: 1
+

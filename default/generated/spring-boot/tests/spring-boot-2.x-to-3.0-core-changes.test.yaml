@@ -1,0 +1,35 @@
+rulesPath: ../spring-boot-2.x-to-3.0-core-changes.yaml
+providers:
+  - name: java
+    dataPath: ./data/core-changes
+  - name: builtin
+    dataPath: ./data/core-changes
+tests:
+  - ruleID: spring-boot-2.x-to-3.0-core-changes-00001
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 3
+  - ruleID: spring-boot-2.x-to-3.0-core-changes-00010
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-core-changes-00020
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 2
+  - ruleID: spring-boot-2.x-to-3.0-core-changes-00030
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1

@@ -1,0 +1,118 @@
+rulesPath: ../spring-framework-5.x-to-6.0-security-deprecations.yaml
+providers:
+- name: java
+  dataPath: ./data/security-deprecations
+tests:
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00000
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: "source-only"
+    hasIncidents:
+      exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00010
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00020
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00030
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00040
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00050
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00060
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00070
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00080
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 2
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00090
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 2
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00100
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00110
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+# FIXME: https://github.com/konveyor/analyzer-lsp/issues/809
+#- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00140
+#  testCases:
+#    - name: tc-1
+#      analysisParams:
+#        mode: "source-only"
+#      hasIncidents:
+#        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00160
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 2
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00180
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-deprecations-00190
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 4

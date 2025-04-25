@@ -439,6 +439,10 @@
     - java.referenced:
         location: ANNOTATION
         pattern: javax.xml.ws.BindingType
+        annotated:
+          elements:
+            - name: value
+              value: .*/soapjms(/.*)?
     - builtin.xml:
         filepaths:
         - .*\.(?i:wsdl)
@@ -1249,6 +1253,10 @@
     - java.referenced:
         location: ANNOTATION
         pattern: javax.ejb.RemoteHome
+        annotated:
+          elements:
+            - name: WOLAMissingClassesRule
+              value: com\.ibm\.websphere\.ola\.ExecuteHome
     - builtin.xml:
         filepaths:
         - ejb-jar.xml

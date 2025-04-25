@@ -74,9 +74,17 @@
     - java.referenced:
         location: ANNOTATION
         pattern: javax.ejb.ActivationConfigProperty
+        annotated:
+          elements:
+            - name: propertyName
+              value: destinationLookup
     - java.referenced:
         location: ANNOTATION
         pattern: jakarta.ejb.ActivationConfigProperty
+        annotated:
+          elements:
+            - name: propertyName
+              value: destinationLookup
 - category: mandatory
   customVariables: []
   description: JMS' Queue must be replaced with an Emitter
@@ -89,7 +97,7 @@
     url: https://quarkus.io/guides
   - title: Emitter (Microprofile Reactive Streams Messaging)
     url: https://smallrye.io/smallrye-reactive-messaging/2.0.2/apidocs/org/eclipse/microprofile/reactive/messaging/Emitter.html
-  message: "JMS `Queue`s should be replaced with Micrometer `Emitter`s feeding a Channel.
+  message: "JMS `Queue`s should be replaced with MicroProfile `Emitter`s feeding a Channel.
     See the following example of migrating\n a Queue to an Emitter:\n \n Before:\n
     ```\n @Resource(lookup = \"java:/queue/HELLOWORLDMDBQueue\")\n private Queue queue;\n
     ```\n \n After:\n ```\n @Inject\n @Channel(\"HELLOWORLDMDBQueue\")\n Emitter<String>
@@ -115,7 +123,7 @@
     url: https://quarkus.io/guides
   - title: Emitter (Microprofile Reactive Streams Messaging)
     url: https://smallrye.io/smallrye-reactive-messaging/2.0.2/apidocs/org/eclipse/microprofile/reactive/messaging/Emitter.html
-  message: "JMS `Topic`s should be replaced with Micrometer `Emitter`s feeding a Channel.
+  message: "JMS `Topic`s should be replaced with MicroProfile `Emitter`s feeding a Channel.
     See the following example of migrating\n a Topic to an Emitter:\n \n Before:\n
     ```\n @Resource(lookup = \"java:/topic/HELLOWORLDMDBTopic\")\n private Topic topic;\n
     ```\n \n After:\n ```\n @Inject\n @Channel(\"HELLOWORLDMDBTopic\")\n Emitter<String>

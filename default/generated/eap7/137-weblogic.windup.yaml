@@ -263,13 +263,8 @@
      ```
   ruleID: weblogic-eap7-11000
   when:
-    or:
-    - java.referenced:
-        location: METHOD_CALL
-        pattern: weblogic.i18n.logging.NonCatalogLogger(*)
-    - java.referenced:
-        location: CONSTRUCTOR_CALL
-        pattern: weblogic.i18n.logging.NonCatalogLogger*
+    java.referenced:
+      pattern: NonCatalogLogger
 - category: mandatory
   customVariables: []
   description: WebLogic Oracle FCF JDBC property

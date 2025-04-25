@@ -9,6 +9,8 @@
   - konveyor.io/target=eap
   - konveyor.io/target=jws6+
   - konveyor.io/target=jws
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
   - konveyor.io/source
   links:
   - title: Red Hat JBoss EAP Application Migration from Jakarta EE 8 to EE 10 - Jakarta

@@ -28,6 +28,7 @@
       - java.dependency:
           name: org.hibernate.hibernate-core
           upperbound: 5.5.9.Final
+    - or:
       - java.dependency:
           lowerbound: 6.1.0.Final
           name: org.hibernate.search.hibernate-search-mapper-orm
