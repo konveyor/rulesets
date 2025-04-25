@@ -58,17 +58,11 @@ jobs:
     - name: Build hub and save image
       working-directory: tackle2-hub
       run: |
-        IMG=quay.io/konveyor/tackle2-hub:latest make podman-build
-        podman save -o /tmp/tackle2-hub.tar quay.io/konveyor/tackle2-hub:latest
+        IMG=ttl.sh/konveyor-hub-${{ github.sha }}:4h make podman-build
+        podman push
 
-    - name: Upload image as artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: tackle2-hub
-        path: /tmp/tackle2-hub.tar
-        retention-days: 1
   e2e:
     needs: build-hub
-    uses: konveyor/ci/.github/workflows/global-ci.yml@main
+    uses: konveyor/ci/.github/workflows/global-ci-bundle.yml@main
     with:
-      component_name: tackle2-hub
+      tackle_hub: ttl.sh/konveyor-hub-${{ github.sha }}:4h
