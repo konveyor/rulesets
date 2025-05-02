@@ -19,7 +19,7 @@ jobs:
         run: |
           podman cp $(podman create --name kantra-download quay.io/konveyor/kantra:latest):/usr/local/bin/kantra .
           podman rm kantra-download
-          ./kantra test ./default/generated/eap8/tests/150-empty-beans-xml.windup.test.yaml | tee output.log || true
+          ./kantra test ./default/generated | tee output.log || true
           tail -n5 output.log > message.md
           msg=$(grep -E '.*Rules Summary:' message.md -A1)
           tests_pass_rate=$(grep -E '.*Rules Summary:' message.md | sed -E 's| *Rules Summary: *(.*)|\1|' | sed -E 's|.*?:||')
