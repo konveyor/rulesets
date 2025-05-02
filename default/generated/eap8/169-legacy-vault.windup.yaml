@@ -13,4 +13,4 @@
   when:
     builtin.filecontent:
       filePattern: .*\.(xml|java)
-      pattern: '$\{VAULT::'
+      pattern: '\${VAULT::'

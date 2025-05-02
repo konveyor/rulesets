@@ -1,0 +1,27 @@
+rulesPath: ../98-jboss-eap4and5to6and7-java.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/98-jboss-eap4and5to6and7-java
+- name: builtin
+  dataPath: ./data/98-jboss-eap4and5to6and7-java
+tests:
+- ruleID: jboss-eap4and5to6and7-java-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Annotation `org.jboss.security.annotation.SecurityDomain` should
+        be replaced by `org.jboss.ejb3.annotation.SecurityDomain`
+- ruleID: jboss-eap4and5to6and7-java-02000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: In JBoss EAP 4 and 5 a lot of the mbean-related components were
+        JBoss specific
+- ruleID: jboss-eap4and5to6and7-java-03000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: JMX / MBeans is still fully supported as it is in the JDK specification

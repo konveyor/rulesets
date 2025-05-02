@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.sample</groupId>
+	<artifactId>sample-project</artifactId>
+	<version>0.0.1</version>
+	<name>Sample Project</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.fabric3</groupId>
+			<artifactId>fabric3-weblogic-mock</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.oracle.coherence.ce</groupId>-->
+<!--			<artifactId>coherence</artifactId>-->
+<!--			<version>24.09</version>-->
+<!--		</dependency>-->
+<!--		 https://mvnrepository.com/artifact/com.oracle.coherence.ce/coherence-->
+		<dependency>
+			<groupId>com.oracle.coherence.ce</groupId>
+			<artifactId>coherence</artifactId>
+			<version>24.09.3</version>
+		</dependency>
+
+		<!-- BEA Jolt (for bea.jolt.JoltService) -->
+		<!-- Not available in Maven Central; requires WebLogic installation -->
+		<!-- Alternative: Download from Oracle and install manually in your repository -->
+
+		<!-- Oracle JDBC (for oracle.sql.OracleConnection) -->
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<version>19.8.0.0</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- Oracle Proprietary Classes (for oracle.somepackage.ClassFactory and com.oracle.ProprietaryOracleClass) -->
+		<!-- These are likely proprietary and require Oracle-provided JARs -->
+
+		<!-- WebLogic (for com.weblogic.ProprietaryWeblogicClass) -->
+		<!-- Not available in Maven Central; requires WebLogic installation -->
+
+	</dependencies>
+</project>
+		

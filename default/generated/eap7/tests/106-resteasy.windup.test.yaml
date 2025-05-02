@@ -1,0 +1,13 @@
+rulesPath: ../106-resteasy.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/106-resteasy
+- name: builtin
+  dataPath: ./data/106-resteasy
+tests:
+- ruleID: resteasy-eap5and6to7-000018
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Use .*org.jboss.resteasy.plugins.cache.server.InfinispanCache.*
