@@ -211,7 +211,7 @@
     - builtin.xml:
         namespaces:
           c: http://camel.apache.org/schema/spring
-        xpath: //*[c:crypto and not(b:crypto/@algorithm)]/c:crypto
+        xpath: //*[c:crypto and not(c:crypto/@algorithm)]/c:crypto
     - builtin.xml:
         namespaces:
           b: http://camel.apache.org/schema/blueprint
@@ -239,11 +239,11 @@
     - builtin.xml:
         namespaces:
           c: http://camel.apache.org/schema/spring
-        xpath: //*[c:secureXML and (count(c:secureXML/@passPhrase)+count(c:secureXML/@passPhraseByte))<1]/c:secureXML/
+        xpath: //*[c:secureXML and (count(c:secureXML/@passPhrase)+count(c:secureXML/@passPhraseByte))<1]
     - builtin.xml:
         namespaces:
           b: http://camel.apache.org/schema/blueprint
-        xpath: //*[b:secureXML and (count(b:secureXML/@passPhrase)+count(b:secureXML/@passPhraseByte))<1]/b:secureXML/
+        xpath: //*[b:secureXML and (count(b:secureXML/@passPhrase)+count(b:secureXML/@passPhraseByte))<1]
 - category: mandatory
   customVariables: []
   description: 'Consumer endpoints: options with consumer. prefix have been removed.'

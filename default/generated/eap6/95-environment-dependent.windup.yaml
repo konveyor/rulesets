@@ -134,7 +134,7 @@
     as: default
     java.referenced:
       location: CONSTRUCTOR_CALL
-      pattern: javax.management.(ObjectName)*
+      pattern: javax.management.ObjectName*
 - category: mandatory
   customVariables:
   - name: suffix
@@ -159,7 +159,7 @@
     as: default
     java.referenced:
       location: CONSTRUCTOR_CALL
-      pattern: javax.management.(remote.JMXServiceURL)*
+      pattern: javax.management.remote.JMXServiceURL*
 - category: mandatory
   customVariables: []
   description: JMX connection factory parameters
