@@ -1,2 +1,2 @@
-name: openjdk17
+name: openjdk21
 description: This ruleset provides analysis regarding deprecated APIs in OpenJDK 21.
