@@ -195,7 +195,7 @@
   when:
     java.referenced:
       location: IMPORT
-      pattern: javax.annotation.PreDestroy|PostConstruct|Resource|Resources
+      pattern: javax.annotation.(PreDestroy|PostConstruct|Resource|Resources)
 - customVariables:
   - name: package
     nameOfCaptureGroup: package

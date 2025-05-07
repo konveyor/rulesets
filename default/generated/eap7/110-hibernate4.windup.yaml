@@ -506,7 +506,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.cfg.Configuration.(configure([^)]*))
+      pattern: org.hibernate.cfg.Configuration.configure(*)
 - category: optional
   customVariables: []
   description: Hibernate 5 - Deprecated method org.hibernate.cfg.Configuration.setInterceptor()
