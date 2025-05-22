@@ -32,13 +32,9 @@
     3.1.'
   ruleID: xml-removed-camel31-00001
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-jaxp
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-jaxp
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-jaxp
 - category: optional
   customVariables: []
   description: The camel-management dependency has been removed from camel-spring-boot
@@ -54,13 +50,9 @@
     - If you need JMX support with Camel Spring Boot, please add a dependency on org.apache.camel:camel-management
   ruleID: xml-removed-camel31-00002
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        nameregex: org\.apache\.camel\.springboot\..*
-    - java.dependency:
-        lowerbound: 0.0.0
-        nameregex: org\.apache\.camel\.springboot\..*
+    java.dependency:
+      lowerbound: 0.0.0
+      nameregex: org\.apache\.camel\.springboot\..*
 - category: mandatory
   customVariables: []
   description: org.apache.camel.http.common.cookie package has been renamed to org.apache.camel.http.base.cookie

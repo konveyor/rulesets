@@ -1,0 +1,17 @@
+rulesPath: ../79-java-ee-jaxrpc.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/79-java-ee-jaxrpc
+- name: builtin
+  dataPath: ./data/79-java-ee-jaxrpc
+tests:
+- ruleID: java-ee-jaxrpc-00000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JAX-RPC Generic Handler
+# FIXME: https://github.com/konveyor/analyzer-lsp/issues/800
+#  - name: tc-2
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: JAX-RPC is no longer supported on JBoss EAP 7.*

@@ -32,13 +32,9 @@
     Please change the `org.apache.camel:camel-blueprint` dependency to `org.apache.came.karaf:camel-blueprint`.'
   ruleID: xml-removed-camel32-00001
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-blueprint
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-blueprint
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-blueprint
 - category: mandatory
   customVariables: []
   description: 'Camel on Apache Karaf / OSGi has been moved to its own project at:
@@ -55,13 +51,9 @@
     Please change the `org.apache.camel:camel-test-blueprint` dependency to `org.apache.camel.karaf:camel-test-blueprint`.'
   ruleID: xml-removed-camel32-00002
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-test-blueprint
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-blueprint
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-blueprint
 - category: mandatory
   customVariables: []
   description: 'Camel on Apache Karaf / OSGi has been moved to its own project at:
@@ -78,13 +70,9 @@
     Please change the `org.apache.camel:camel-test-karaf` dependency to `org.apache.camel.karaf:camel-test-karaf`.'
   ruleID: xml-removed-camel32-00003
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-test-karaf
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-test-karaf
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-test-karaf
 - category: mandatory
   customVariables: []
   description: 'Camel on Apache Karaf / OSGi has been moved to its own project at:
@@ -101,13 +89,9 @@
     Please change the `org.apache.camel:camel-eventadmin` dependency to `org.apache.camel.karaf:camel-eventadmin`.'
   ruleID: xml-removed-camel32-00004
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-eventadmin
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-eventadmin
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-eventadmin
 - category: mandatory
   customVariables: []
   description: 'Camel on Apache Karaf / OSGi has been moved to its own project at:
@@ -124,13 +108,9 @@
     Please change the `org.apache.camel:camel-kura` dependency to `org.apache.camel.karaf:camel-kura`.'
   ruleID: xml-removed-camel32-00005
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-kura
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-kura
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-kura
 - category: mandatory
   customVariables: []
   description: 'Camel on Apache Karaf / OSGi has been moved to its own project at:
@@ -147,13 +127,9 @@
     Please change the `org.apache.camel:camel-osgi-activator` dependency to `org.apache.camel.karaf:camel-osgi-activator`.'
   ruleID: xml-removed-camel32-00006
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-osgi-activator
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-osgi-activator
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-osgi-activator
 - category: mandatory
   customVariables: []
   description: 'Camel on Apache Karaf / OSGi has been moved to its own project at:
@@ -170,13 +146,9 @@
     Please change the `org.apache.camel:camel-paxlogging` dependency to `org.apache.camel.karaf:camel-paxlogging`.'
   ruleID: xml-removed-camel32-00007
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-paxlogging
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-paxlogging
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-paxlogging
 - category: mandatory
   customVariables: []
   description: camel-spark-rest has been removed
@@ -192,13 +164,9 @@
     capable components, such as camel-jetty, camel-netty-http or camel-undertow..
   ruleID: xml-removed-camel32-00008
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-spark-rest
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-spark-rest
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-spark-rest
 - category: mandatory
   customVariables: []
   description: Camel Spring Boot has flattened its option keys and the .configuration
@@ -273,10 +241,6 @@
     JAR into its own JAR named camel-spring-main.
   ruleID: xml-removed-camel32-00010
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-spring
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-spring
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-spring

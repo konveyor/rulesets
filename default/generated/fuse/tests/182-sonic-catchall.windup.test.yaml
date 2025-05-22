@@ -1,0 +1,13 @@
+#rulesPath: ../182-sonic-catchall.windup.yaml
+#providers:
+#- name: java
+#  dataPath: ./data/182-sonic-catchall
+#- name: builtin
+#  dataPath: ./data/182-sonic-catchall
+#tests:
+#- ruleID: sonic-catchall-00000
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: .*is a Sonic proprietary type and needs to be migrated.*

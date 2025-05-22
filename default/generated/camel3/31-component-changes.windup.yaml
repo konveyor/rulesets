@@ -21,15 +21,18 @@
     or:
     - builtin.filecontent:
         filePattern: .*\.java
-        pattern: .to\("kafka:{[^"]+}(circularTopicDetection|bridgeEndpoint)=.*
+        pattern: .to\("kafka:[^"]+(circularTopicDetection|bridgeEndpoint)=.*
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.apache.camel.component.kafka.KafkaConfiguration.(setBridgeEndpoint|setCircularTopicDetection)*
+        pattern: org.apache.camel.component.kafka.KafkaConfiguration.setBridgeEndpoint
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: org.apache.camel.component.kafka.KafkaConfiguration.setCircularTopicDetection
     - builtin.xml:
         namespaces:
           c: http://camel.apache.org/schema/spring
-        xpath: //*/c:to/@uri[matches(self::node(), 'kafka:{*}(circularTopicDetection|bridgeEndpoint){*}')]
+        xpath: //*/c:to/@uri[matches(self::node(), 'kafka:.*(circularTopicDetection|bridgeEndpoint).*')]
     - builtin.xml:
         namespaces:
           c: http://camel.apache.org/schema/blueprint
-        xpath: //*/c:to/@uri[matches(self::node(), 'kafka:{*}(circularTopicDetection|bridgeEndpoint){*}')]
+        xpath: //*/c:to/@uri[matches(self::node(), 'kafka:.*(circularTopicDetection|bridgeEndpoint).*')]

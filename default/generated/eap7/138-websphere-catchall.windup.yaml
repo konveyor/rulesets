@@ -41,9 +41,19 @@
      information about this type.
   ruleID: websphere-catchall-00000
   when:
-    java.referenced:
-      location: PACKAGE
-      pattern: (com.)?(websphere|ibm).*
+    or:
+      - java.referenced:
+          location: PACKAGE
+          pattern: com.websphere*
+      - java.referenced:
+          location: PACKAGE
+          pattern: com.ibm*
+      - java.referenced:
+          location: PACKAGE
+          pattern: websphere*
+      - java.referenced:
+          location: PACKAGE
+          pattern: ibm*
 - category: potential
   customVariables:
   - name: subpackage

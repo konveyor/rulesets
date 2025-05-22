@@ -1,0 +1,13 @@
+rulesPath: ../68-jca.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/68-jca
+- name: builtin
+  dataPath: ./data/68-jca
+tests:
+- ruleID: jca-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*an embedded resource adapter descriptor ('ra.xml').*
