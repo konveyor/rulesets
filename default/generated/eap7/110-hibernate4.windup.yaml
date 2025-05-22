@@ -721,9 +721,8 @@
     package.
   ruleID: hibernate4-00030
   when:
-    or:
-    - java.referenced:
-        pattern: org.hibernate.hql.spi*
+    java.referenced:
+      pattern: org.hibernate.hql.spi*
 - category: optional
   customVariables: []
   description: Hibernate 5 - Moved class org.hibernate.hql.spi.PersistentTableBulkIdStrategy

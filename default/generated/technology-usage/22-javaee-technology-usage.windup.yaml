@@ -193,19 +193,9 @@
   - Common Annotations
   - Common Annotations
   when:
-    or:
-    - java.referenced:
-        location: IMPORT
-        pattern: javax.annotation.PreDestroy
-    - java.referenced:
-        location: IMPORT
-        pattern: javax.annotation.PostConstruct
-    - java.referenced:
-        location: IMPORT
-        pattern: javax.annotation.Resource
-    - java.referenced:
-        location: IMPORT
-        pattern: javax.annotation.Resources
+    java.referenced:
+      location: IMPORT
+      pattern: javax.annotation.(PreDestroy|PostConstruct|Resource|Resources)
 - customVariables:
   - name: package
     nameOfCaptureGroup: package
