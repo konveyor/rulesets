@@ -11,9 +11,16 @@ jobs:
       issues: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Run kantra test
+      - name: Install Java and Maven
+        uses: s4u/setup-maven-action@1.18.0
+        with:
+          java-version: 17
+          java-distribution: temurin
+          maven-version: 3.9.0
+
+      - name: Run rule tests
         id: kantra-test
         continue-on-error: true
         run: |
