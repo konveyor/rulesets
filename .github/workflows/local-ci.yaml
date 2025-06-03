@@ -5,7 +5,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  test-jandepora:
+  test:
     runs-on: ubuntu-latest
     permissions:
       issues: write
