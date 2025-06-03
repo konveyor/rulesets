@@ -97,6 +97,13 @@ jobs:
 #          github-token: ${{ secrets.GITHUB_TOKEN }}
 #          debug: true
 
+      - name: Upload matching folders
+        uses: actions/upload-artifact@v4
+        with:
+          name: rules-test-folders
+          path: /tmp/rules-test-*
+          compression-level: 9
+
       - name: Update tests badge
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         uses: RubbaBoy/BYOB@v1.3.0
