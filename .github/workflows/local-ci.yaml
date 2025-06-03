@@ -5,7 +5,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  test:
+  test-jandepora:
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -18,9 +18,14 @@ jobs:
         continue-on-error: true
         run: |
           set -x
-          podman cp $(podman create --name kantra-download quay.io/konveyor/kantra:latest):/usr/local/bin/kantra .
+        # install kantra, copying from the latest image
+          ID=$(podman create --name kantra-download quay.io/konveyor/kantra:latest)
+          podman cp $(ID):/usr/local/bin/kantra .
+          podman cp $(ID):/usr/local/etc/maven.default.index .
+          podman cp $(ID):/usr/bin/fernflower.jar .
+          podman cp $(ID):/jdtls .
           podman rm kantra-download
-          ./kantra test ./default/generated --prune --log-level 50 | tee output.log || true
+          RUN_LOCAL=1 ./kantra test ./default/generated --log-level 50 | tee output.log || true
           tail -n5 output.log > message.md
           msg=$(grep -E '.*Rules Summary:' message.md -A1)
           tests_pass_rate=$(grep -E '.*Rules Summary:' message.md | sed -E 's| *Rules Summary: *(.*)|\1|' | sed -E 's|.*?:||')
