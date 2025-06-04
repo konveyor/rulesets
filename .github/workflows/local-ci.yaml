@@ -22,17 +22,13 @@ jobs:
 
       - name: Run rule tests
         id: kantra-test
-        continue-on-error: true
         run: |
-          set -x
           ID=$(podman create --name kantra-download quay.io/konveyor/kantra:latest)
           podman cp ${ID}:/usr/local/bin/kantra .
           podman cp ${ID}:/usr/local/etc/maven.default.index .
           podman cp ${ID}:/usr/bin/fernflower.jar .
           podman cp ${ID}:/jdtls .
           mkdir rulesets static-report
-          ls
-          pwd
           podman rm kantra-download
           RUN_LOCAL=1 ./kantra test ./default/generated --log-level 50 | tee output.log || true
           tail -n5 output.log > message.md
