@@ -42,9 +42,16 @@
      The application must be changed to reference to the new package.
   ruleID: ws-security-00001
   when:
-    java.referenced:
-      location: IMPORT
-      pattern: org.apache.ws.security.saml.ext.(bean.|builder.|OpenSAMLBootstrap|OpenSAMLUtil|SAMLCallback)*
+    or:
+    - java.referenced:
+        location: IMPORT
+        pattern: org.apache.ws.security.saml.ext.bean*
+    - java.referenced:
+        location: IMPORT
+        pattern: org.apache.ws.security.saml.ext.builder*
+    - java.referenced:
+        location: IMPORT
+        pattern: org.apache.ws.security.saml.ext.(OpenSAMLBootstrap|OpenSAMLUtil|SAMLCallback)*
 - category: mandatory
   customVariables: []
   description: WS-Security AssertionWrapper renamed and moved

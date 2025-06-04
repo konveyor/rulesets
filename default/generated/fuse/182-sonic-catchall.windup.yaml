@@ -22,6 +22,10 @@
      migration rules about this type.
   ruleID: sonic-catchall-00000
   when:
-    java.referenced:
-      location: PACKAGE
-      pattern: com.(sonic|sonicsw).*
+    or:
+    - java.referenced:
+        location: PACKAGE
+        pattern: com.sonic*
+    - java.referenced:
+        location: PACKAGE
+        pattern: com.sonicsw*

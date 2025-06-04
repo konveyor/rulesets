@@ -26,17 +26,24 @@
   - Connect=JNI
   - Other=JNI
   - Java EE=JNI
+# TODO: make FQN when static method calls work as fully qualified
   when:
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.System.(load|loadLibrary|mapLibraryName)*
+        pattern: java.lang.System.load*
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.Runtime.load(*)
+        pattern: loadLibrary
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.Runtime.loadLibrary(*)
+        pattern: java.lang.System.mapLibraryName*
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: java.lang.Runtime.load
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: java.lang.Runtime.loadLibrary
 - customVariables: []
   description: JNA usage
   labels:
@@ -61,7 +68,7 @@
         pattern: com.sun.jna*
     - java.referenced:
         location: METHOD_CALL
-        pattern: com.sun.jna(*)
+        pattern: com.sun.jna
     - java.referenced:
         location: VARIABLE_DECLARATION
         pattern: com.sun.jna*

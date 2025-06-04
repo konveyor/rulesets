@@ -1,0 +1,47 @@
+rulesPath: ../145-eap8-faces.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/145-eap8-faces
+- name: builtin
+  dataPath: ./data/145-eap8-faces
+tests:
+- ruleID: eap8-faces-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: Dependency on JSF artifacts must be updated
+- ruleID: eap8-faces-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Source reference to `javax.faces.bean.ManagedProperty` must
+        be updated
+- ruleID: eap8-faces-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: JSF ManagedBean has been removed
+- ruleID: eap8-faces-00004
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Annotation `javax.faces.bean.
+- ruleID: eap8-faces-00008
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: ResourceResolvers have been removed
+- ruleID: eap8-faces-00009
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: As of Jakarta EE 10, Jakarta Faces does no longer support JSP
+        as a faces view technology. JSP usage within Jakarta Faces must be removed/substituted.
+        Facelets will remain as the only default view language, and views can also
+        now be created solely using java.

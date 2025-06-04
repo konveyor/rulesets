@@ -13,13 +13,9 @@
     use camel-spring-jdbc if you need Spring and Spring transaction support.'
   ruleID: xml-removed-camel310-00001
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-jdbc
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-jdbc
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-jdbc
 - category: mandatory
   customVariables: []
   description: camel.component.atomix.cluster.service configuration key has been renamed

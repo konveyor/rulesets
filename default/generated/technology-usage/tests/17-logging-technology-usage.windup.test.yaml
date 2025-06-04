@@ -1,0 +1,17 @@
+#rulesPath: ../17-logging-technology-usage.windup.yaml
+#providers:
+#- name: java
+#  dataPath: ./data/17-logging-technology-usage
+#- name: builtin
+#  dataPath: ./data/17-logging-technology-usage
+#tests:
+#- ruleID: technology-usage-logging-00060
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - File system logging
+#- ruleID: technology-usage-logging-00070
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Socket handler logging

@@ -1,0 +1,44 @@
+rulesPath: ../218-jms-to-reactive-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/218-jms-to-reactive-quarkus
+- name: builtin
+  dataPath: ./data/218-jms-to-reactive-quarkus
+tests:
+- ruleID: jms-to-reactive-quarkus-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Usage of JMS is not supported in Quarkus. It is recommende.*
+- ruleID: jms-to-reactive-quarkus-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Enterprise Java Beans (EJBs) are not supported in Quarkus. CDI
+        must be use.*
+- ruleID: jms-to-reactive-quarkus-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The `destinationLookup` property can be migrated by annotati
+- ruleID: jms-to-reactive-quarkus-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: JMS `Queue`s should be replaced with Micromete.*
+- ruleID: jms-to-reactive-quarkus-00040
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: JMS `Topic`s should be replaced with Micromete.*
+- ruleID: jms-to-reactive-quarkus-00050
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 10
+      messageMatches: References to JavaEE/JakartaEE JMS ele.*

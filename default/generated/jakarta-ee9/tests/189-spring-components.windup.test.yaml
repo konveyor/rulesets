@@ -1,0 +1,19 @@
+rulesPath: ../189-spring-components.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/189-spring-components
+- name: builtin
+  dataPath: ./data/189-spring-components
+tests:
+- ruleID: spring-components-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Version 3.0.0 is the minimum version of Spring Boot
+- ruleID: spring-components-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: Version 6.0.0 is the minimum version of Spring

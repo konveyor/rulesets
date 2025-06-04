@@ -1,0 +1,50 @@
+rulesPath: ../36-xml-31-changes.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/36-xml-31-changes
+- name: builtin
+  dataPath: ./data/36-xml-31-changes
+tests:
+- ruleID: classes-removed-camel31-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`HttpOperationFailedException` has moved from package org.apache.camel.http.common
+        to org.apache.camel.http.base in Camel 3.1.'
+- ruleID: xml-removed-camel31-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-jaxp` component has been renamed to camel-xml-jaxp in
+        .*'
+- ruleID: xml-removed-camel31-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: The `camel-management` dependency has been removed from camel-spring-boo.*
+- ruleID: xml-moved-camel31-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel.http.common.cookie` package has been renamed
+        .*'
+- ruleID: xml-moved-camel31-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel.tooling.util.JSonSchemaHelper` class has
+        been removed in Apache Camel 3.1. *Instead you can use utils coming from camel-util-json
+        and the class org.apache.camel.tooling.util.PackageHelper.'
+- ruleID: xml-moved-camel31-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel.processor.validation.PredicateValidatingProcessor`
+        class has been moved from camel-xml-jaxp JAR to camel-support JAR and renamed
+        to org.apache.camel.support.processor.'
