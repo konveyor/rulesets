@@ -4,6 +4,7 @@ package com.example.apps;
 import java.io.Serializable;
 import java.util.Properties;
 
+import org.hibernate.search.Version;
 import org.apache.lucene.document.Document;
 import org.hibernate.search.filter.FullTextFilterImplementor;
 import org.hibernate.search.indexes.spi.IndexManager;
@@ -15,6 +16,7 @@ public class MyStrategy implements IndexShardingStrategy {
     @Override
     public IndexManager getIndexManagerForAddition(Class<?> arg0, Serializable arg1, String arg2, Document arg3)
     {
+        String version = Version.getVersionString();
         // TODO Auto-generated method stub
         return null;
     }

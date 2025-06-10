@@ -126,8 +126,8 @@ public class HsearchUtil {
         HSQuery query = null;
         ExtendedSearchIntegrator searchIntegrator = query.getExtendedSearchIntegrator();
         // hsearch-00218
-//        BuildContext context = (BuildContext) searchIntegrator;
-//        context.getIndexingStrategy();
+        BuildContext context = null;
+        context.getIndexingStrategy();
         
         HsearchUtil.setIndexWriterConfig(IndexWriterSetting.TERM_INDEX_INTERVAL);
 

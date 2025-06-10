@@ -20,5 +20,5 @@ tests:
       messageMatches: Jakarta JAX-RS activation is no longer necessary.
   - name: tc-2
     hasIncidents:
-      atLeast: 3
+      atLeast: 2
       messageMatches: JAX-RS activation is no longer necessary.

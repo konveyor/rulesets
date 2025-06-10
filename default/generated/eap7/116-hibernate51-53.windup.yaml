@@ -111,25 +111,13 @@
         pattern: org.hibernate.type.ProcedureParameterExtractionAware.extract
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.hibernate.type.Type.isDirty
-    - java.referenced:
-        location: METHOD_CALL
-        pattern: org.hibernate.type.Type.isModified
-    - java.referenced:
-        location: METHOD_CALL
         pattern: org.hibernate.type.SingleColumnType.get
-    - java.referenced:
-        location: METHOD_CALL
-        pattern: org.hibernate.type.ProcedureParameterExtractionAware.extract
     - java.referenced:
         location: METHOD_CALL
         pattern: org.hibernate.type.Type.isDirty
     - java.referenced:
         location: METHOD_CALL
         pattern: org.hibernate.type.Type.isModified
-    - java.referenced:
-        location: METHOD_CALL
-        pattern: org.hibernate.type.SingleColumnType.get
     - java.referenced:
         location: METHOD_CALL
         pattern: org.hibernate.type.AbstractStandardBasicType.get

@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 29
+      atLeast: 14
       messageMatches: '`org.hibernate.engine.spi.SessionImplementor` parameter has
         to be changed to `org.hibernate.engine.spi.SharedSessionContractImplementor.*'
 - ruleID: hibernate51-53-00100

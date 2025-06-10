@@ -1254,7 +1254,7 @@
         pattern: javax.ejb.RemoteHome
         annotated:
           elements:
-            - name: WOLAMissingClassesRule
+            - name: value
               value: com\.ibm\.websphere\.ola\.ExecuteHome
     - builtin.xml:
         filepaths:

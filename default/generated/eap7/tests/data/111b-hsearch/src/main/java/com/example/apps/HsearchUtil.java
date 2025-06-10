@@ -17,5 +17,6 @@ public class HsearchUtil {
         System.out.println(s1.toString() + s2);
 
         DirectoryHelper.getVerifiedIndexPath(null, null, false);
+        DirectoryHelper.getVerifiedIndexDir(null, null, false);
     }
 }

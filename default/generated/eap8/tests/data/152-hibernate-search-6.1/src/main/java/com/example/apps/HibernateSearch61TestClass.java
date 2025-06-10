@@ -14,7 +14,9 @@ import org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlan;
 import org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlanExecutionReport;
 import org.hibernate.search.engine.common.timing.spi.Deadline;
 import org.hibernate.search.engine.cfg.spi.ConfigurationPropertySource;
+import org.hibernate.search.mapper.orm.automaticindexing.AutomaticIndexingStrategyName;
 import org.hibernate.search.mapper.orm.massindexing.MassIndexingFailureHandler;
+import org.hibernate.search.mapper.orm.massindexing.MassIndexingMonitor;
 
 public class HibernateSearch61TestClass implements org.hibernate.search.engine.backend.types.converter.FromDocumentFieldValueConverter, org.hibernate.search.engine.backend.types.converter.ToDocumentFieldValueConverter {
 
@@ -25,11 +27,39 @@ public class HibernateSearch61TestClass implements org.hibernate.search.engine.b
         Deadline deadline;
         IndexIndexingPlanExecutionReport indexIndexingPlanExecutionReport;
         URLEncodedString.fromJSon("{hey:1}");
+        URLEncodedString.fromJsonString("{hey:1}");
         FieldPaths.absolutize("1", "2", "3");
         IndexManagerImplementor indexManagerImplementor;
         indexManagerImplementor.createIndexingPlan(null, null, null);
         MassIndexingFailureHandler handler;
         org.hibernate.search.mapper.orm.massindexing.MassIndexingMonitor monitor;
+        AutomaticIndexingStrategyName automaticIndexingStrategyName = AutomaticIndexingStrategyName.of("Hey");
+        MassIndexingMonitor massIndexingMonitor = new MassIndexingMonitor() {
+            @Override
+            public void documentsAdded(long increment) {
+
+            }
+
+            @Override
+            public void documentsBuilt(long increment) {
+
+            }
+
+            @Override
+            public void entitiesLoaded(long increment) {
+
+            }
+
+            @Override
+            public void addToTotalCount(long increment) {
+
+            }
+
+            @Override
+            public void indexingCompleted() {
+
+            }
+        };
 
         org.hibernate.search.mapper.orm.automaticindexing.AutomaticIndexingStrategyName strategyName;
         String strat = org.hibernate.search.mapper.orm.cfg.HibernateOrmMapperSettings.AUTOMATIC_INDEXING_STRATEGY;

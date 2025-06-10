@@ -25,13 +25,13 @@ public class Hibernate515300001_0 {
         type.isDirty(oldState, currentState, checkable, session);
             type.isModified(oldState, currentState, checkable, session);
             type.nullSafeGet(rs, names, session, owner);
-//            type.nullSafeSet(st, value, index, session);
-//            type.replace(o, target, session, owner, copyCache);
-//            type.replace(o, target, session, owner, copyCache, foreignKeyDirection);
-//            type.resolve(value, session, owner);
-//            type.semiResolve(value, session, owner);
-//            type.getHashCode(null);
-//            type.getHashCode(session);
+            type.nullSafeSet(null, null, 8, session);
+            type.replace(null, null, session, owner, null);
+            type.replace(null, null, session, owner, null, null);
+            type.resolve(null, session, owner);
+            type.semiResolve(null, session, owner);
+            type.getHashCode(null);
+            type.getHashCode(session);
         }
 
     public void getDeletes(CollectionPersister persister, boolean indexIsFormula) throws HibernateException {

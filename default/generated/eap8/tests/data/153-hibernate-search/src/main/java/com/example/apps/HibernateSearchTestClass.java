@@ -1,3 +1,8 @@
+package com.example.apps;
+
+import org.apache.lucene.analysis.standard.ClassicTokenizerFactory;
+import org.apache.lucene.analysis.util.TokenizerFactory;
+import org.apache.lucene.search.Query;
 import org.apache.lucene.search.Sort;
 import org.apache.lucene.search.SortField;
 import org.hibernate.search.FullTextQuery;
@@ -62,7 +67,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 @Analyzer
-@AnalyzerDef(name = "name")
+@AnalyzerDef(name = "name", tokenizer = @TokenizerDef(factory = TokenizerFactory.class))
 @AnalyzerDefs(value = HibernateSearchTestClass.class)
 @AnalyzerDiscriminator(impl = HibernateSearchTestClass.class)
 @Boost(value = 0.12f)
@@ -122,7 +127,12 @@ public class HibernateSearchTestClass implements BoostStrategy {
         FullTextQuery fullTextQuery;
         org.hibernate.search.jpa.FullTextQuery fullTextQuery1;
 
-        org.apache.lucene.search.Query q;
+        Query q = new Query() {
+            @Override
+            public String toString(String field) {
+                return "";
+            }
+        };
 
         Sort sort;
         SortField sortField;

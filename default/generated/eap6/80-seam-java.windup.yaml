@@ -75,7 +75,7 @@
   ruleID: seam-java-00010
   when:
     java.referenced:
-      pattern: org.jboss.seam.core.Conversation
+      pattern: org.jboss.seam.core.Conversation*
 - category: mandatory
   customVariables: []
   description: Seam API - org.jboss.seam.Seam

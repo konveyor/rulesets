@@ -440,6 +440,5 @@
     accepts `true`/`false` instead. See `HibernateOrmMapperSettings#AUTOMATIC_INDEXING_ENABLED`.'
   ruleID: hibernate-search-6.1-00190
   when:
-    or:
-    - java.referenced:
-        pattern: org.hibernate.search.mapper.orm.automaticindexing.AutomaticIndexingStrategyName
+    java.referenced:
+      pattern: org.hibernate.search.mapper.orm.automaticindexing.AutomaticIndexingStrategyName

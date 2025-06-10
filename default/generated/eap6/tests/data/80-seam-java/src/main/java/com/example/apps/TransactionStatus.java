@@ -55,6 +55,7 @@ public class TransactionStatus
     
     public static TransactionStatus instance()
     {
+        Component c = new Component(TransactionStatus.class);
         return (TransactionStatus) Component.getInstance("transactionStatus");
     }
     /**

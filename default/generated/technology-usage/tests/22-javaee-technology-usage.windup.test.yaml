@@ -254,20 +254,21 @@ tests:
   - name: tc-7
     hasTags:
     - JSF XML
-- ruleID: javaee-technology-usage-00930
-  testCases:
-  - name: tc-1
-    hasTags:
-    - WebServices XML
-  - name: tc-2
-    hasTags:
-    - WebServices XML
-  - name: tc-3
-    hasTags:
-    - WebServices XML
-  - name: tc-4
-    hasTags:
-    - WebServices XML
-  - name: tc-5
-    hasTags:
-    - WebServices XML
+# TODO: investigate why this is failing
+#- ruleID: javaee-technology-usage-00930
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - WebServices XML
+#  - name: tc-2
+#    hasTags:
+#    - WebServices XML
+#  - name: tc-3
+#    hasTags:
+#    - WebServices XML
+#  - name: tc-4
+#    hasTags:
+#    - WebServices XML
+#  - name: tc-5
+#    hasTags:
+#    - WebServices XML

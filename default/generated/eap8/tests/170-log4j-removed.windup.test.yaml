@@ -17,9 +17,3 @@ tests:
     hasIncidents:
       atLeast: 3
       messageMatches: Log4j configuration without including `log4j.jar`
-- ruleID: log4j-removed-00005
-  testCases:
-    - name: tc-1
-      hasIncidents:
-        atLeast: 2
-        messageMatches: Log4j module dependency declaration

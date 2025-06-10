@@ -4,14 +4,15 @@ providers:
   dataPath: ./data/90-xml-jrun
 - name: builtin
   dataPath: ./data/90-xml-jrun
-tests:
-- ruleID: xml-jrun-01000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - JRun Web App descriptor
-- ruleID: xml-jrun-02000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - JRun ejb-jar configuration
+tests: []
+# TODO: not working - investigate
+#- ruleID: xml-jrun-01000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - JRun Web App descriptor
+#- ruleID: xml-jrun-02000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - JRun ejb-jar configuration

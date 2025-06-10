@@ -17,3 +17,9 @@ tests:
       hasIncidents:
         atLeast: 1
         messageMatches: Log4j custom-handler using appender
+- ruleID: log4j-removed-00005
+  testCases:
+    - name: tc-1
+      hasIncidents:
+        atLeast: 1
+        messageMatches: Log4j module dependency declaration

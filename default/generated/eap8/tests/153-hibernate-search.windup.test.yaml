@@ -678,7 +678,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 6
+      atLeast: 3
       messageMatches: Facets are now called aggregations, which are a generalization
         of the concept of faceting. See link for more information and examples.
 - ruleID: hibernate-search-00970

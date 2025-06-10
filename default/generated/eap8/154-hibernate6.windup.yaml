@@ -85,13 +85,28 @@
     have been removed. See the User Guide for details about mapping your domain model.
   ruleID: hibernate6-00020
   when:
-    java.referenced:
-      location: ANNOTATION
-      pattern: org.hibernate.annotations.(CollectionType|ParamDef|Type)
-      annotated:
-        elements:
-          - name: type
-            value: .*
+    or:
+    - java.referenced:
+        location: ANNOTATION
+        pattern: org.hibernate.annotations.CollectionType
+        annotated:
+          elements:
+            - name: type
+              value: .*
+    - java.referenced:
+        location: ANNOTATION
+        pattern: org.hibernate.annotations.ParamDef
+        annotated:
+          elements:
+            - name: type
+              value: .*
+    - java.referenced:
+        location: ANNOTATION
+        pattern: org.hibernate.annotations.Type
+        annotated:
+          elements:
+            - name: type
+              value: .*
 - category: mandatory
   customVariables: []
   description: Basic mappings are no longer configurable through the BasicType contract
