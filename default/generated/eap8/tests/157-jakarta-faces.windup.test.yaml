@@ -1,0 +1,15 @@
+rulesPath: ../157-jakarta-faces.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/157-jakarta-faces
+- name: builtin
+  dataPath: ./data/157-jakarta-faces
+tests:
+- ruleID: jakarta-faces-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The `@Produces` annotation for instantiating `FacesContext`
+        is not necessary anymore, as CDI injection for `FacesContext` works out of
+        the box.

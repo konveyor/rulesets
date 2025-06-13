@@ -1,0 +1,173 @@
+rulesPath: ../268-jta.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/268-jta
+- name: builtin
+  dataPath: ./data/268-jta
+tests:
+- ruleID: jta-00020
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JTA
+  - name: tc-2
+    hasTags:
+    - JTA
+  - name: tc-3
+    hasTags:
+    - Mycontainer JTA
+  - name: tc-4
+    hasTags:
+    - Embedded library - Mycontainer JTA
+- ruleID: jta-00030
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Geronimo JTA
+  - name: tc-2
+    hasTags:
+    - Embedded library - Geronimo JTA
+- ruleID: jta-00040
+  testCases:
+  - name: tc-1
+    hasTags:
+    - OW2 JTA
+  - name: tc-2
+    hasTags:
+    - Embedded library - OW2 JTA
+- ruleID: jta-00050
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Evo JTA
+  - name: tc-2
+    hasTags:
+    - Embedded library - Evo JTA
+- ruleID: jta-00060
+  testCases:
+  - name: tc-1
+    hasTags:
+    - AKKA JTA
+  - name: tc-2
+    hasTags:
+    - Embedded library - AKKA JTA
+- ruleID: jta-00070
+  testCases:
+  - name: tc-1
+    hasTags:
+    - KumuluzEE JTA
+  - name: tc-2
+    hasTags:
+    - Embedded library - KumuluzEE JTA
+- ruleID: jta-00080
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Ignite JTA
+  - name: tc-2
+    hasTags:
+    - Embedded library - Ignite JTA
+- ruleID: jta-00090
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Nuxeo JTA/JCA
+  - name: tc-2
+    hasTags:
+    - Embedded library - Nuxeo JTA/JCA
+- ruleID: jta-00100
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Everit JTA
+  - name: tc-2
+    hasTags:
+    - Embedded library - Everit JTA
+- ruleID: jta-00110
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Demoiselle JTA
+  - name: tc-2
+    hasTags:
+    - Embedded library - Demoiselle JTA
+- ruleID: jta-00120
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Apache Meecrowave JTA
+  - name: tc-2
+    hasTags:
+    - Embedded library - Apache Meecrowave JTA
+- ruleID: jta-00130
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Apache Sirona JTA
+  - name: tc-2
+    hasTags:
+    - Embedded library - Apache Sirona JTA
+- ruleID: jta-00140
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Lift JTA
+  - name: tc-2
+    hasTags:
+    - Embedded library - Lift JTA
+- ruleID: jta-00150
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WF Core JTA
+  - name: tc-2
+    hasTags:
+    - Embedded library - WF Core JTA
+- ruleID: jta-00160
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Java Transaction API
+  - name: tc-2
+    hasTags:
+    - Embedded library - Java Transaction API (JTA)
+- ruleID: jta-00170
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JBoss Transactions
+  - name: tc-2
+    hasTags:
+    - Embedded library - JBoss Transactions
+- ruleID: jta-00180
+  testCases:
+  - name: tc-1
+    hasTags:
+    - GlassFish JTA
+  - name: tc-2
+    hasTags:
+    - Embedded library - GlassFish JTA
+- ruleID: jta-00190
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Atomikos JTA
+  - name: tc-2
+    hasTags:
+    - Embedded library - Atomikos JTA
+- ruleID: jta-00200
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Narayana Arjuna
+  - name: tc-2
+    hasTags:
+    - Embedded library - Narayana Arjuna
+- ruleID: jta-00210
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Spring Transactions
+  - name: tc-2
+    hasTags:
+    - Embedded library - Spring Transactions

@@ -60,7 +60,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: java.net.URLEncoder.encode(*)
+      pattern: java.net.URLEncoder.encode
 - category: potential
   customVariables: []
   description: The java.net.URLDecoder.decode method uses UTF-8 by default
@@ -79,4 +79,4 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: java.net.URLDecoder.decode(*)
+      pattern: java.net.URLDecoder.decode

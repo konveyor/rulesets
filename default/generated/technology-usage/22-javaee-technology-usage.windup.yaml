@@ -627,7 +627,6 @@
   tag:
   - WebServices XML
   when:
-    as: xml-file
     builtin.xml:
       namespaces:
         p: http://java.sun.com/xml/ns/javaee

@@ -25,9 +25,13 @@
   - websphere
   - IBM MQe client API
   when:
-    java.referenced:
-      location: PACKAGE
-      pattern: com.ibm.*(mqe)*
+    or:
+    - java.referenced:
+        location: PACKAGE
+        pattern: com.ibm*
+    - java.referenced:
+        location: PACKAGE
+        pattern: com.ibm.mqe*
 - category: mandatory
   customVariables: []
   description: IBM MQe adapters are provided for plug-in communications or data storage for queue managers. These can be deployed to JBoss EAP.
@@ -50,9 +54,10 @@
      be deployed to JBoss EAP.
   ruleID: websphere-mqe-eap7-01000
   when:
+    # Can't find docs on other adapters inside this package
     java.referenced:
       location: INHERITANCE
-      pattern: com.ibm.mqe.adapters.MQe{type}Adapter
+      pattern: com.ibm.mqe.adapters.MQeDiskFieldsAdapter
 - category: mandatory
   customVariables: []
   description: The JMS destinations in IBM MQe administration API can be configured with the JBoss Admin CLI in JBoss EAP 7
@@ -76,8 +81,9 @@
   ruleID: websphere-mqe-eap7-02000
   when:
     java.referenced:
+      # Can't find docs on other adapters inside this package
       location: INHERITANCE
-      pattern: com.ibm.mqe.administration.MQe{type}AdminMsg
+      pattern: com.ibm.mqe.administration.MQeQueueAdminMsg
 - category: mandatory
   customVariables: []
   description: IBM MQe com.ibm.mqe.jms.MQeJMSAuthenticator

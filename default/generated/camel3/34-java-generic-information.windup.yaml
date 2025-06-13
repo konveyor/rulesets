@@ -646,7 +646,7 @@
   when:
     java.dependency:
       name: org.apache.camel.camel-fhir
-      upperbound: "2"
+      upperbound: "2.999999"
 - category: mandatory
   customVariables:
   - name: method

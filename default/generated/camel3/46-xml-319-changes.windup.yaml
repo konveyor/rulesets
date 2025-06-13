@@ -14,13 +14,9 @@
     to TLSv1.3.'
   ruleID: xml-removed-camel319-00001
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-ftp
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-ftp
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-ftp
 - category: mandatory
   customVariables: []
   description: camel-kafka default TLS protocol is TLSv1.2,TLSv1.3
@@ -37,13 +33,9 @@
     can fall back to v1.2). in Camel 3.19.0.'
   ruleID: xml-removed-camel319-00002
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-kafka
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-kafka
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-kafka
 - category: mandatory
   customVariables: []
   description: camel-netty default TLS protocol is TLSv1.2,TLSv1.3
@@ -59,13 +51,9 @@
     TLSv1,TLSv1.1,TLSv1.2 to TLSv1.2,TLSv1.3 in Camel 3.19.0.'
   ruleID: xml-removed-camel319-00003
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-netty
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-netty
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-netty
 - category: mandatory
   customVariables: []
   description: camel-netty-http default TLS protocol is TLSv1.2,TLSv1.3
@@ -81,13 +69,9 @@
     from TLSv1,TLSv1.1,TLSv1.2 to TLSv1.2,TLSv1.3 in Camel 3.19.0.'
   ruleID: xml-removed-camel319-00004
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-netty-http
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-netty-http
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-netty-http
 - category: mandatory
   customVariables: []
   description: camel-ahc component has been removed
@@ -102,13 +86,9 @@
   message: '`org.apache.camel:camel-ahc` component has been removed in Camel 3.19.0.'
   ruleID: xml-removed-camel319-00005
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-ahc
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-ahc
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-ahc
 - category: mandatory
   customVariables: []
   description: camel-ahc-ws component has been removed
@@ -123,10 +103,6 @@
   message: '`org.apache.camel:camel-ahc-ws` component has been removed in Camel 3.19.0.'
   ruleID: xml-removed-camel319-00006
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-ahc-ws
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-ahc-ws
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-ahc-ws

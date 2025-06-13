@@ -16,5 +16,5 @@
   ruleID: spring-boot-to-azure-java-fx-01000
   when:
     java.referenced:
-      location: IMPORT
+      location: PACKAGE
       pattern: javafx*

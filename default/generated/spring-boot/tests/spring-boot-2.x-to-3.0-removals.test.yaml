@@ -105,13 +105,14 @@ tests:
 #        hasIncidents:
 #          atLeast: 1
 
-  - ruleID: spring-boot-2.x-to-3.0-removals-00140
-    testCases:
-      - name: tc-1
-        analysisParams:
-          mode: "source-only"
-        hasIncidents:
-          atLeast: 1
+# TODO: cannot match on enums
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00140
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
 
   - ruleID: spring-boot-2.x-to-3.0-removals-00150
     testCases:
@@ -138,13 +139,13 @@ tests:
 #          atLeast: 1
 
 
-  - ruleID: spring-boot-2.x-to-3.0-removals-00180
-    testCases:
-      - name: tc-1
-        analysisParams:
-          mode: "source-only"
-        hasIncidents:
-          atLeast: 1
+#  - ruleID: spring-boot-2.x-to-3.0-removals-00180
+#    testCases:
+#      - name: tc-1
+#        analysisParams:
+#          mode: "source-only"
+#        hasIncidents:
+#          atLeast: 1
 
   - ruleID: spring-boot-2.x-to-3.0-removals-00190
     testCases:

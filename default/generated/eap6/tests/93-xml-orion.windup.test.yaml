@@ -1,0 +1,22 @@
+rulesPath: ../93-xml-orion.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/93-xml-orion
+- name: builtin
+  dataPath: ./data/93-xml-orion
+tests:
+- ruleID: xml-orion-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Oracle Application Platform EJB Descriptor
+- ruleID: xml-orion-02000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Oracle Application Platform Web Descriptor
+- ruleID: xml-orion-03000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Oracle Application EAR configuration file
