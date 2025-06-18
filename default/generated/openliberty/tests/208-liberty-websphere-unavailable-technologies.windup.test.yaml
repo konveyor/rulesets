@@ -1,0 +1,326 @@
+rulesPath: ../208-liberty-websphere-unavailable-technologies.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/208-liberty-websphere-unavailable-technologies
+- name: builtin
+  dataPath: ./data/208-liberty-websphere-unavailable-technologies
+tests:
+# FIXME: certain tests depend on propietary software which cannot be bundled in the test data - they are commented for now
+- ruleID: ActivitySessionRule
+  testCases:
+  - name: tc-1
+    hasIncidents:
+#      TODO: fix
+#      atLeast: 7
+      atLeast: 4
+      messageMatches: The Activity Session service is unavailable
+- ruleID: AppProfileRule
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: WebSphere Application Profiling APIs are not available on Liberty
+- ruleID: AsyncBeansSchedulerRule
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: WebSphere Asynchronous Beans API
+- ruleID: BatchFeaturePackRule
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 7
+      messageMatches: WebSphere Batch API and SPI are unavailable on Liberty
+#- ruleID: DetectPolicySetAndWsSecurity
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 6
+#      messageMatches: web services Policy Sets in WebSphere traditional
+#- ruleID: DetectWSATXML
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 4
+#      messageMatches: This rule flags the following unsupported WS-AT attributes in
+#        IBM deployment descriptor extensions
+- ruleID: DetectWSBAJava
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: Web Services Business Activity (WS-BA) is unavailable
+- ruleID: DynamicCacheRule
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 4
+      messageMatches: On Liberty, the dynamic cache service is provided by the Distributed
+        Map Interface for Dynamic Caching feature
+- ruleID: DynamicQueryRule
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: The WebSphere Enterprise JavaBeans (EJB) query service is not
+        available
+- ruleID: I18nRule
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: WebSphere i18n APIs and SPIs are not available
+# FIXME: test failing intermitently
+#- ruleID: MTOMRule
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: DataHandler object can be written to an output stream only once
+- ruleID: ServerName
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 3
+      messageMatches: com.ibm.websphere.management.AdminService.getProcessName
+- ruleID: SOAPOverJMSRule
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Liberty does not support Simple Object Access Protocol
+- ruleID: StartupBeanRule
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: The WebSphere startup bean service was superseded by the startup
+        beans
+- ruleID: WebSphereSdoRule
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: The following WebSphere Service Data Objects
+- ruleID: WebSphereSchedulerRule
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: The WebSphere Scheduler API was superseded by
+- ruleID: WebSphereServletRule
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 3
+      messageMatches: The WebSphere Servlet API was superseded by standard
+- ruleID: WebSphereUnavailableAPIsAppClient
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The following WebSphere Application Client APIs are not available
+        on Liberty
+- ruleID: WebSphereUnavailableAPIsConnectorArchitecture
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The following WebSphere Connector Architecture APIs are not
+        available on Liberty
+- ruleID: WebSphereUnavailableAPIsEnterpriseJavaBeans
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 4
+      messageMatches: The following WebSphere Enterprise JavaBeans APIs and SPIs are
+        not available on Liberty
+- ruleID: WebSphereUnavailableAPIsExceptions
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 3
+      messageMatches: The following WebSphere Exception APIs and SPIs are not available
+        on Liberty
+- ruleID: WebSphereUnavailableAPIsExtensionRegistry
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The following Extension Registry APIs are not available on Liberty
+- ruleID: WebSphereUnavailableAPIsISC
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The following Integrated Solutions Console
+- ruleID: WebSphereUnavailableAPIsLoggingAndRAS
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 10
+      messageMatches: The following WebSphere logging and RAS APIs and SPIs are not
+        available on Liberty
+- ruleID: WebSphereUnavailableAPIsManagement
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 8
+      messageMatches: he following WebSphere Management APIs and SPIs are not available
+        on Liberty
+- ruleID: WebSphereUnavailableAPIsORB
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: The following WebSphere ORB Extensions APIs are not available
+        on Liberty
+- ruleID: WebSphereUnavailableAPIsPMI
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 4
+      messageMatches: he following WebSphere Performance Monitoring Infrastructure
+- ruleID: WebSphereUnavailableAPIsPortal
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The following WebSphere Portal APIs are not available on Liberty
+- ruleID: WebSphereUnavailableAPIsResourceAdapter
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 3
+      messageMatches: The following WebSphere Resource Adapter APIs and SPIs are not
+        available on Liberty
+- ruleID: WebSphereUnavailableAPIsSecurity
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 14
+      messageMatches: The following WebSphere Security APIs and SPIs are not available
+        on Liberty
+- ruleID: WebSphereUnavailableAPIsSIB
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: The following WebSphere Service Integration Bus (SIB) APIs are
+        not available on Liberty
+- ruleID: WebSphereUnavailableAPIsSMF
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The following WebSphere SMF recording APIs are not available
+        on Liberty
+- ruleID: WebSphereUnavailableAPIsTPV
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The following Tivoli Performance Viewer SPIs are not available
+        on Liberty
+- ruleID: WebSphereUnavailableAPIsExtHelper
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The following WebSphere Extension Helper SPIs are not available
+        on Liberty
+- ruleID: WebSphereUnavailableAPIsUDDI
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The following Universal Description, Discovery and Integration
+- ruleID: WebSphereUnavailableAPIsWLM
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: The following WebSphere Workload Manager APIs are not available
+        on Liberty
+- ruleID: WebSphereUnavailableAPIsWSADIE
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 16
+      messageMatches: The following WebSphere Studio Application Developer Integration
+        Edition APIs are not available on Liberty
+- ruleID: WebSphereUnavailableAPIsWSSecurityHelper
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 8
+      messageMatches: The following WSSecurityHelper methods are not available on
+        Liberty
+  - name: tc-2
+    hasIncidents:
+      atLeast: 1
+      messageMatches: getLTPACookieFromSSOToken()
+- ruleID: WebSphereUnavailableSPIsRRD
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The following WebSphere Remote Request Dispatcher
+- ruleID: WebSphereUnavailableSSOCookieMethod
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: revokeSSOCookies(HttpServletRequest req, HttpServletResponse
+        res)
+- ruleID: WOLAMissingClassesRule
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 9
+      messageMatches: Liberty supports a subset of the WebSphere Optimized Local Adapters
+        (WOLA) APIs. This rule flags the use of APIs that are unsupported on Liberty.
+- ruleID: WOLARule
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 8
+      messageMatches: Liberty supports some com.ibm.websphere.ola APIs, but there
+        are differences from the support provided on WebSphere Application Server
+        traditional
+- ruleID: WorkAreaRule
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: The following WebSphere Work Area APIs and SPIs are not available
+        on Liberty
+#- ruleID: WSNotificationRuleJava
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: The following WebSphere Web Services Notification (WS-Notification)
+#        APIs are not available on Liberty
+- ruleID: XMLFeaturePackRule
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: To use the WebSphere XPath, XQuery, and XSLT API, applications
+        must be configured to use the XML thin client JAR file
+- ruleID: WebSphereWebServicesRule
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 14
+      messageMatches: The following WebSphere web services APIs and SPIs are not available
+        on Liberty
+#- ruleID: WebSphereWebServicesGeneratedClassesRule
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 14
+#      messageMatches: The WSDL2Java emitter generates Java classes from JAX-RPC WSDL
+#        files

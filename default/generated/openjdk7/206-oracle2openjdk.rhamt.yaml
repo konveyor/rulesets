@@ -20,7 +20,7 @@
   ruleID: oracle2openjdk-00000
   when:
     java.referenced:
-      location: IMPORT
+      location: PACKAGE
       pattern: javafx*
 - category: potential
   customVariables: []
@@ -147,10 +147,10 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.security.KeyPairGenerator.getInstance(*)
+        pattern: java.security.KeyPairGenerator.getInstance
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.crypto.KeyAgreement.getInstance(*)
+        pattern: javax.crypto.KeyAgreement.getInstance
     - java.referenced:
         location: CONSTRUCTOR_CALL
         pattern: java.security.spec.EC*
@@ -162,7 +162,7 @@
         pattern: java.security.spec.EC*
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.security.spec.EC(*)
+        pattern: java.security.spec.EC
     - java.referenced:
         location: VARIABLE_DECLARATION
         pattern: java.security.spec.EC*
@@ -177,7 +177,7 @@
         pattern: java.security.spec.EllipticCurve*
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.security.spec.EllipticCurve(*)
+        pattern: java.security.spec.EllipticCurve
     - java.referenced:
         location: VARIABLE_DECLARATION
         pattern: java.security.spec.EllipticCurve*

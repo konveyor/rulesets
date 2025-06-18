@@ -119,7 +119,6 @@
     or:
     - java.referenced:
         pattern: org.springframework.security.web.context.HttpSessionSecurityContextRepository
-        location: TYPE
     - java.referenced:
         pattern: SessionCreationPolicy.IF_REQUIRED
         location: ENUM
@@ -127,7 +126,7 @@
         pattern: SessionCreationPolicy.ALWAYS
         location: ENUM
     - java.referenced:
-        pattern: org.springframework.security.config.Customizer.withDefaults()
+        pattern: org.springframework.security.config.Customizer.withDefaults
         location: METHOD_CALL
     - java.referenced:
         pattern: org.springframework.web.bind.annotation.SessionAttributes

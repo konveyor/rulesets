@@ -33,7 +33,7 @@
       annotated:
         elements:
           - name: transactional
-            value: false
+            value: true
 - customVariables: []
   description: JPA Entities
   labels:

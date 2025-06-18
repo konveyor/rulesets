@@ -42,7 +42,7 @@
         pattern: java.util.zip.ZipFile*
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.io.File.createTempFile(*)
+        pattern: java.io.File.createTempFile
     - java.referenced:
         location: METHOD_CALL
         pattern: java.nio.file.Paths.get*

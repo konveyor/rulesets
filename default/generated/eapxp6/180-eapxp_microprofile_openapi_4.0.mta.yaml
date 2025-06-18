@@ -12,6 +12,7 @@
           name: org.eclipse.microprofile.openapi.microprofile-openapi-api
           lowerbound: "1.0"
           upperbound: "3.99"
+        ignore: true
       - or:
         - java.referenced:
             pattern: org.eclipse.microprofile.openapi.models.media.Schema.getNullable
@@ -36,6 +37,7 @@
           name: org.eclipse.microprofile.openapi.microprofile-openapi-api
           lowerbound: "1.0"
           upperbound: "3.99"
+        ignore: true
       - or:
         - java.referenced:
             pattern: org.eclipse.microprofile.openapi.models.media.Schema.getType
@@ -60,6 +62,7 @@
           name: org.eclipse.microprofile.openapi.microprofile-openapi-api
           lowerbound: "1.0"
           upperbound: "3.99"
+        ignore: true
       - or:
         - java.referenced:
             pattern: org.eclipse.microprofile.openapi.models.media.Schema.getExclusiveMaximum

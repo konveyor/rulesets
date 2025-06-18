@@ -20,10 +20,10 @@
         xpath: /jrun-web-app
     - builtin.xmlPublicID:
         namespaces: {}
-        regex: ""
+        regex: "Macromedia, Inc.//DTD jrun-web 1.."
     - builtin.xmlPublicID:
         namespaces: {}
-        regex: ""
+        regex: "Adobe, Inc.//DTD jrun-web 1.."
 - customVariables: []
   description: JRun ejb-jar configuration
   labels:
@@ -47,4 +47,4 @@
         xpath: /*[local-name()='jrun-ejb-jar']
     - builtin.xmlPublicID:
         namespaces: {}
-        regex: ""
+        regex: "Macromedia, Inc.//DTD jrun-ejb-jar ..."

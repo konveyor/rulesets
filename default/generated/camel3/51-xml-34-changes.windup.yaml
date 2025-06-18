@@ -14,13 +14,9 @@
     to org.apache.camel:camel-management.'
   ruleID: xml-removed-camel34-00001
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-test
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-test
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-test
 - category: mandatory
   customVariables: []
   description: camel.service.lra keys have been flattened to camel.lra

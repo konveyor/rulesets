@@ -234,8 +234,7 @@
           wl: http://www.bea.com/ns/weblogic/weblogic-webservices
           wl9: http://www.bea.com/ns/weblogic/90
         xpath: /weblogic-webservices | /wl:weblogic-webservices | /wl9:weblogic-webservices
-    - as: webservices-types
-      builtin.xml:
+    - builtin.xml:
         namespaces:
           wl: http://www.bea.com/ns/weblogic/weblogic-webservices
           wl9: http://www.bea.com/ns/weblogic/90

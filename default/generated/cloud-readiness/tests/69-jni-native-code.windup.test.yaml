@@ -1,0 +1,20 @@
+rulesPath: ../69-jni-native-code.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/69-jni-native-code
+- name: builtin
+  dataPath: ./data/69-jni-native-code
+tests:
+- ruleID: jni-native-code-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 7
+      messageMatches: Java native libraries might not run in a cloud or container
+        environment.
+- ruleID: jni-native-code-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 3
+      messageMatches: Native Processes might not run in a cloud or container environment
