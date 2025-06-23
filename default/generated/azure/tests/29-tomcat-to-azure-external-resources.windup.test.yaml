@@ -9,6 +9,8 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+#      TODO: fix, see https://github.com/konveyor/analyzer-lsp/issues/795
+#      atLeast: 2
+      atLeast: 1
       messageMatches: External resources, such as data sources, JMS message brokers,
         and others are injected via Java Naming and Directory Interface (JNDI)
