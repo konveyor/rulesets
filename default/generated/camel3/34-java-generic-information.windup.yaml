@@ -50,23 +50,23 @@
   - konveyor.io/target=camel3+
   - konveyor.io/target=camel
   links: []
-  message: '`zip` and `gzip` dataformats were renamed to `zipdeflater and `gzipdeflater`'
+  message: '`zip` and `gzip` dataformats were renamed to `zipdeflater` and `gzipdeflater`'
   ruleID: java-generic-information-00002
   when:
     or:
-    - or:
-      - builtin.filecontent:
-          filePattern: ""
-          pattern: .zip\(.*\)
-        from: routeBuilders
-      - builtin.filecontent:
-          filePattern: ""
-          pattern: .gzip\(.*\)
-        from: routeBuilders
+    - builtin.filecontent:
+        filePattern: ""
+        pattern: .zip\(.*\)
+      from: routeBuilders
+    - builtin.filecontent:
+        filePattern: ""
+        pattern: .gzip\(.*\)
+      from: routeBuilders
     - as: routeBuilders
       java.referenced:
         location: INHERITANCE
         pattern: org.apache.camel.builder.RouteBuilder
+      ignore: true
 - category: mandatory
   customVariables:
   - name: registry
