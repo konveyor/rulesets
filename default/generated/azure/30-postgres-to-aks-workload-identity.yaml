@@ -1,0 +1,46 @@
+- ruleID: postgres-to-aks-workload-identity-01000
+  customVariables: []
+  description: PostgreSQL basic authentication (username/password) detected
+  category: mandatory
+  effort: 2
+  labels:
+    - konveyor.io/source
+    - konveyor.io/target=azure-aks
+    - postgres
+  message: >
+    PostgreSQL basic authentication is in use. When migrating to AKS,
+    replace username/password authentication with Azure AD / AKS Workload
+    Identity (managed identity). See the reference links for guidance.
+  tag:
+    - Auth=Basic
+    - Database=PostgreSQL
+  links:
+    - url: https://learn.microsoft.com/azure/aks/workload-identity-overview
+      title: AKS Workload Identity overview
+    - url: https://learn.microsoft.com/azure/postgresql/flexible-server/how-to-connect-with-managed-identity
+      title: Connect to PostgreSQL using Azure AD
+  when:
+    or:
+      # 1. Hard-coded JDBC URL containing user/password in Java source
+      - builtin.filecontent:
+          pattern: 'jdbc:postgresql:.*(user=.+|password=.+)'
+          filePattern: '.*\.java'
+      # 2. DriverManager.getConnection(String url, String user, String pwd)
+      - java.referenced:
+          location: METHOD_CALL
+          pattern: 'java.sql.DriverManager.getConnection(java.lang.String,java.lang.String,java.lang.String)'
+      # 3. DataSource.setPassword / setUser invocations
+      - java.referenced:
+          location: METHOD_CALL
+          pattern: 'org.postgresql.ds.*DataSource.setPassword(*)'
+      - java.referenced:
+          location: METHOD_CALL
+          pattern: 'org.postgresql.ds.*DataSource.setUser(*)'
+      # 4. Spring Boot properties with username/password
+      - builtin.filecontent:
+          pattern: 'spring\.datasource\.(username|password)\s*='
+          filePattern: 'application.*\.properties'
+      # 5. Spring Boot YAML with username/password
+      - builtin.filecontent:
+          pattern: '^\s*(username|password):\s*.+'
+          filePattern: 'application.*\.yml'
