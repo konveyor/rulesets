@@ -24,9 +24,6 @@
     - java.dependency:
         lowerbound: 0.0.0
         name: org.springframework.boot.spring-boot-starter-web
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.springframework.spring-web
 - category: mandatory
   customVariables: []
   description: Add the Quarkus 'quarkus-resteasy-reactive-jackson' dependency

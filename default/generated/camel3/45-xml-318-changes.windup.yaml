@@ -12,13 +12,9 @@
   message: '`org.apache.camel:camel-milo` component has been removed in Camel 3.18.0.'
   ruleID: xml-removed-camel318-00001
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-milo
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-milo
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-milo
 - category: mandatory
   customVariables: []
   description: camel-cxf component has been split up
@@ -35,13 +31,9 @@
     on which artifacts to migrate camel-cxf to.
   ruleID: xml-removed-camel318-00002
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-cxf
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-cxf
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-cxf
 - category: mandatory
   customVariables: []
   description: camel-cxf-starter component has been split up
@@ -59,13 +51,9 @@
     artifacts to migrate camel-cxf-starter to.'
   ruleID: xml-removed-camel318-00003
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-cxf-starter
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-cxf-starter
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-cxf-starter
 - category: mandatory
   customVariables: []
   description: camel-cxf-starter component has been split up
@@ -83,10 +71,6 @@
     artifacts to migrate camel-cxf-starter to.'
   ruleID: xml-removed-camel318-00004
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.springboot.camel-cxf-starter
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.springboot.camel-cxf-starter
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.springboot.camel-cxf-starter

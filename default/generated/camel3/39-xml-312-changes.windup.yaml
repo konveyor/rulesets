@@ -14,13 +14,9 @@
     removed in Apache Camel 3.12.'
   ruleID: xml-removed-camel312-00001
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.springboot.camel-spring-cloud-starter
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.springboot.camel-spring-cloud-starter
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.springboot.camel-spring-cloud-starter
 - category: mandatory
   customVariables: []
   description: org.apache.camel.springboot:camel-spring-cloud-consul-starter starter
@@ -37,13 +33,9 @@
     removed in Apache Camel 3.12.'
   ruleID: xml-removed-camel312-00002
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.springboot.camel-spring-cloud-consul-starter
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.springboot.camel-spring-cloud-consul-starter
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.springboot.camel-spring-cloud-consul-starter
 - category: mandatory
   customVariables: []
   description: org.apache.camel.springboot:camel-spring-cloud-netflix-starter starter
@@ -60,13 +52,9 @@
     has been removed in Apache Camel 3.12.'
   ruleID: xml-removed-camel312-00003
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.springboot.camel-spring-cloud-netflix-starter
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.springboot.camel-spring-cloud-netflix-starter
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.springboot.camel-spring-cloud-netflix-starter
 - category: mandatory
   customVariables: []
   description: org.apache.camel.springboot:camel-spring-cloud-zookeeper-starter starter
@@ -83,10 +71,6 @@
     has been removed in Apache Camel 3.12.'
   ruleID: xml-removed-camel312-00004
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.springboot.camel-spring-cloud-zookeeper-starter
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.springboot.camel-spring-cloud-zookeeper-starter
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.springboot.camel-spring-cloud-zookeeper-starter

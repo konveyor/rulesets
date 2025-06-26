@@ -1,0 +1,51 @@
+rulesPath: ../95-environment-dependent.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/95-environment-dependent
+- name: builtin
+  dataPath: ./data/95-environment-dependent
+tests:
+- ruleID: environment-dependent-calls-01000
+  testCases:
+  - name: tc-1
+    hasInsights:
+      atLeast: 1
+      messageMatches: The class is dynamically loaded within application. During the
+        migration, multiple classes
+#- ruleID: environment-dependent-calls-02000
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: This method lookups an object using a JNDI String. During the
+#        migration process, some entity JNDI bindings may change.
+- ruleID: environment-dependent-calls-03000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*InitialContext.* should be instantiated with no arguments.*
+- ruleID: environment-dependent-calls-03500
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JNDI properties file
+- ruleID: environment-dependent-calls-04000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: nsure that the .*javax.management.remote.JMXServiceURL.* does
+        not need to change for JBoss EAP
+  - name: tc-2
+    hasIncidents:
+      atLeast: 1
+      messageMatches: nsure that the .*javax.management.ObjectName.* does not need
+        to change for JBoss EAP
+- ruleID: environment-dependent-calls-05000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: After migration, JMX connection String or parameters may be
+        different than the one provided by previous server.

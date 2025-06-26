@@ -1,0 +1,50 @@
+rulesPath: ../206-oracle2openjdk.rhamt.yaml
+providers:
+- name: java
+  dataPath: ./data/206-oracle2openjdk.rhamt.test.yaml
+- name: builtin
+  dataPath: ./data/206-oracle2openjdk.rhamt.test.yaml
+tests:
+- ruleID: oracle2openjdk-00000
+  testCases:
+  - name: tc-1
+    hasInsights:
+      atLeast: 7
+      messageMatches: Currently OpenJFX
+- ruleID: oracle2openjdk-00001
+  testCases:
+  - name: tc-1
+    hasInsights:
+      atLeast: 5
+      messageMatches: The font library is different in OpenJDK compared to OracleJDK
+- ruleID: oracle2openjdk-00002
+  testCases:
+  - name: tc-1
+    hasInsights:
+      atLeast: 1
+      messageMatches: OpenJDK does not support the resource management API for Java
+- ruleID: oracle2openjdk-00003
+  testCases:
+  - name: tc-1
+    hasInsights:
+      atLeast: 3
+      messageMatches: OracleJDK used to use KCMS as color mangement system up until
+        JDK7 by default
+- ruleID: oracle2openjdk-00004
+  testCases:
+  - name: tc-1
+    hasInsights:
+      atLeast: 3
+      messageMatches: OpenJDK has its own 2D library
+- ruleID: oracle2openjdk-00005
+  testCases:
+  - name: tc-1
+    hasInsights:
+      atLeast: 7
+      messageMatches: OpenJDK uses the NSS crypto library from RHEL
+- ruleID: oracle2openjdk-00006
+  testCases:
+  - name: tc-1
+    hasInsights:
+      atLeast: 1
+      messageMatches: Replace the use of classes and methods from the `com.sun.image.codec.jpeg`

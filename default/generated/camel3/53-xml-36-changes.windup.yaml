@@ -31,10 +31,6 @@
   message: '`camel-hipchat` component has been removed.'
   ruleID: xml-removed-camel36-00001
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-hipchat
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-hipchat
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-hipchat

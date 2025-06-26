@@ -1,0 +1,13 @@
+rulesPath: ../08-eap-to-azure-appservice-datasource-driver.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/08-eap-to-azure-appservice-datasource-driver
+- name: builtin
+  dataPath: ./data/08-eap-to-azure-appservice-datasource-driver
+tests:
+- ruleID: eap-to-azure-appservice-datasource-driver-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 17
+      messageMatches: A datasource driver was found in a configuration fil.*

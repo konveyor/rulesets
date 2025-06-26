@@ -1,0 +1,22 @@
+rulesPath: ../198-deprecation-openjdk18.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/198-deprecation-openjdk18
+- name: builtin
+  dataPath: ./data/198-deprecation-openjdk18
+tests:
+- ruleID: deprecation-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: This `doAs` signature has been deprecated in JDK18 for removal
+        in a future release.
+# FIXME: static method - uncomment when fixed
+#- ruleID: deprecation-00005
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: The `Thread.stop()` signature has been deprecated in JDK18 for
+#        removal in a future release.

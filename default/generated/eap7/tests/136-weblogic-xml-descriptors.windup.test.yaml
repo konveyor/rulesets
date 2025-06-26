@@ -1,0 +1,98 @@
+rulesPath: ../136-weblogic-xml-descriptors.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/136-weblogic-xml-descriptors
+- name: builtin
+  dataPath: ./data/136-weblogic-xml-descriptors
+tests:
+- ruleID: weblogic-xml-descriptor-eap7-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WebLogic EAR application descriptor
+- ruleID: weblogic-xml-descriptor-eap7-02000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WebLogic Entity EJB configuration
+- ruleID: weblogic-xml-descriptor-eap7-03000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*delay-updates-until-end-of-tx.*
+- ruleID: weblogic-xml-descriptor-eap7-04000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: The elements of proprietary .*weblogic-ejb-jar.xml.*
+- ruleID: weblogic-xml-descriptor-eap7-06001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Replace WebLogic proprietary configuration by Java EE annotation
+        .*@AccessTimeout.*
+- ruleID: weblogic-xml-descriptor-eap7-07000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WebLogic SOAP client mapping
+- ruleID: weblogic-xml-descriptor-eap7-08000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WebLogic Java to WSDL Mapping
+- ruleID: weblogic-xml-descriptor-eap7-09000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WebLogic web service policy
+# FIXME
+#- ruleID: weblogic-xml-descriptor-eap7-10000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - WebLogic web service descriptor
+- ruleID: weblogic-xml-descriptor-eap7-11000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WebLogic JMS descriptor
+- ruleID: weblogic-xml-descriptor-eap7-12000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WebLogic web application descriptor.*
+- ruleID: weblogic-xml-descriptor-eap7-14000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WebLogic web service type mapping
+- ruleID: weblogic-xml-descriptor-eap7-15000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WebLogic services configuration
+- ruleID: weblogic-xml-descriptor-eap7-16000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WebLogic specific webservice ant tasks
+- ruleID: weblogic-xml-descriptor-eap7-17000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WebLogic annotation manifest
+- ruleID: weblogic-xml-descriptor-eap7-18000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WebLogic plan.xml deployment descriptor
+- ruleID: weblogic-xml-descriptor-19000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*trans-timeout-seconds.*

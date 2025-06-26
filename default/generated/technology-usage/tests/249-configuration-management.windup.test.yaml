@@ -1,0 +1,35 @@
+rulesPath: ../249-configuration-management.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/249-configuration-management
+- name: builtin
+  dataPath: ./data/249-configuration-management
+tests:
+- ruleID: configuration-management-0100
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Spring Cloud Config
+  - name: tc-2
+    hasTags:
+    - Embedded library - Spring Cloud Config
+- ruleID: configuration-management-0200
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Application properties file detected
+- ruleID: configuration-management-0300
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Spring datasource properties detected
+- ruleID: configuration-management-0400
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Spring logging properties detected
+- ruleID: configuration-management-0500
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Spring configuration properties annotation detected

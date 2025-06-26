@@ -25,7 +25,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: java.lang.Class.forName(*)
+      pattern: forName
 - category: mandatory
   customVariables: []
   description: Call of JNDI lookup
@@ -59,7 +59,7 @@
     as: default
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.naming.Context.lookup(*)
+      pattern: javax.naming.Context.lookup
 - category: mandatory
   customVariables: []
   description: Proprietary InitialContext initialization
@@ -85,7 +85,7 @@
     as: default
     java.referenced:
       location: CONSTRUCTOR_CALL
-      pattern: javax.naming.InitialContext(java.util.Hashtable*
+      pattern: InitialContext(Hashtable)
 - customVariables: []
   description: JNDI properties file
   labels:
@@ -134,7 +134,7 @@
     as: default
     java.referenced:
       location: CONSTRUCTOR_CALL
-      pattern: javax.management.ObjectName*
+      pattern: javax.management.ObjectName
 - category: mandatory
   customVariables:
   - name: suffix
@@ -182,4 +182,4 @@
     as: default
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.management.remote.JMXConnectorFactory.connect(*)
+      pattern: javax.management.remote.JMXConnectorFactory.connect

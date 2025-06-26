@@ -1053,17 +1053,17 @@
     with `5.0`'
   ruleID: javaee-to-jakarta-namespaces-00045
   when:
-    and:
-    - as: result
-      builtin.filecontent:
-        filePattern: ""
-        pattern: version=("|')4.0("|')
-      from: xml-file
-    - as: xml-file
-      builtin.xml:
-        namespaces:
-          p: http://xmlns.jcp.org/xml/ns/javaee
-        xpath: p:web-app[@version='4.0']
+#    and:
+#    - as: result
+#      builtin.filecontent:
+#        filePattern: ""
+#        pattern: version=("|')4.0("|')
+#      from: xml-file
+#    as: xml-file
+    builtin.xml:
+      namespaces:
+        p: http://xmlns.jcp.org/xml/ns/javaee
+      xpath: p:web-app[@version='4.0']
 - category: mandatory
   customVariables: []
   description: Replace the Java EE version with the Jakarta equivalent

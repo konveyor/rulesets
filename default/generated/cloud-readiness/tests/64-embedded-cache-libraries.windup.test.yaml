@@ -1,0 +1,174 @@
+rulesPath: ../64-embedded-cache-libraries.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/64-embedded-cache-libraries
+- name: builtin
+  dataPath: ./data/64-embedded-cache-libraries
+tests:
+- ruleID: embedded-cache-libraries-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Caching - Ehcache embedded library
+  - name: tc-2
+    hasTags:
+    - Ehcache embedded library
+- ruleID: embedded-cache-libraries-02000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Caching - Coherence embedded library
+  - name: tc-2
+    hasTags:
+    - Coherence embedded library
+  - name: tc-3
+    hasTags:
+    - Coherence
+- ruleID: embedded-cache-libraries-03000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Caching - Apache Commons JCS embedded library
+  - name: tc-2
+    hasTags:
+    - Apache Commons JCS embedded library
+  - name: tc-3
+    hasTags:
+    - Apache Commons JCS
+- ruleID: embedded-cache-libraries-04000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Caching - Dynacache embedded library
+  - name: tc-2
+    hasTags:
+    - Dynacache embedded library
+  - name: tc-3
+    hasTags:
+    - Dynacache
+- ruleID: embedded-cache-libraries-05000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Caching - Embedded library
+  - name: tc-2
+    hasTags:
+    - Embedded library
+- ruleID: embedded-cache-libraries-06000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Caching - Hazelcast embedded library
+  - name: tc-2
+    hasTags:
+    - Hazelcast embedded library
+  - name: tc-3
+    hasTags:
+    - Hazelcast
+- ruleID: embedded-cache-libraries-07000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Caching - Apache Ignite embedded library
+  - name: tc-2
+    hasTags:
+    - Apache Ignite embedded library
+  - name: tc-3
+    hasTags:
+    - Apache Ignite
+- ruleID: embedded-cache-libraries-08000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Caching - Infinispan embedded library
+  - name: tc-2
+    hasTags:
+    - Infinispan embedded library
+- ruleID: embedded-cache-libraries-09000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Caching - JBoss Cache embedded library
+  - name: tc-2
+    hasTags:
+    - JBoss Cache embedded library
+  - name: tc-3
+    hasTags:
+    - JBoss Cache
+- ruleID: embedded-cache-libraries-10000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Caching - JCache embedded library
+  - name: tc-2
+    hasTags:
+    - JCache embedded library
+  - name: tc-3
+    hasTags:
+    - JCache
+- ruleID: embedded-cache-libraries-11000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Caching - Memcached client embedded library
+  - name: tc-2
+    hasTags:
+    - Memcached client embedded library
+  - name: tc-3
+    hasTags:
+    - Memcached
+- ruleID: embedded-cache-libraries-12000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Caching - Oscache embedded library
+  - name: tc-2
+    hasTags:
+    - Oscache embedded library
+  - name: tc-3
+    hasTags:
+    - Oscache
+- ruleID: embedded-cache-libraries-13000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Caching - ShiftOne (Java Object Cache) embedded library
+  - name: tc-3
+    hasTags:
+    - ShiftOne
+- ruleID: embedded-cache-libraries-14000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Caching - SwarmCache embedded library
+  - name: tc-2
+    hasTags:
+    - SwarmCache embedded library
+  - name: tc-3
+    hasTags:
+    - SwarmCache
+- ruleID: embedded-cache-libraries-15000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Caching - Spring Boot Cache library
+  - name: tc-2
+    hasTags:
+    - Spring Boot Cache library
+  - name: tc-3
+    hasTags:
+    - Spring
+  - name: tc-4
+    hasTags:
+    - Spring Boot Cache
+- ruleID: embedded-cache-libraries-16000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Caching - Redis Cache library
+  - name: tc-2
+    hasTags:
+    - Redis Cache library
+  - name: tc-3
+    hasTags:
+    - Redis

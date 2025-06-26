@@ -1,0 +1,53 @@
+rulesPath: ../144-websphere-xml.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/144-websphere-xml
+- name: builtin
+  dataPath: ./data/144-websphere-xml
+tests:
+- ruleID: eap7-websphere-xml-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - IBM Process Server Rules 6.0
+- ruleID: eap7-websphere-xml-02000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WebSphere EAR Application Binding
+  - name: tc-2
+    hasInsights:
+      atLeast: 1
+      messageMatches: This file contains a specific IBM WebSphere Application binding
+        configuration.*
+- ruleID: eap7-websphere-xml-03500
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: This file contains WebSphere proprietary JSP engine configuration.*
+  - name: tc-2
+    hasIncidents:
+      atLeast: 1
+      messageMatches: This file contains WebSphere proprietary JSP engine configuration.*
+- ruleID: eap7-websphere-xml-06000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: This file contains WebSphere proprietary binding configuration.*
+- ruleID: eap7-websphere-xml-07000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WebSphere web service client extension descriptor
+- ruleID: eap7-websphere-xml-08000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WebSphere web service client binding descriptor (ibm-webservicesclient-bnd)
+- ruleID: eap7-websphere-xml-09000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WebSphere deployment descriptor (deployment.xml)

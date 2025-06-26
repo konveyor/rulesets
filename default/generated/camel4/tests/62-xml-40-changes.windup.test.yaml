@@ -1,0 +1,218 @@
+rulesPath: ../62-xml-40-changes.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/62-xml-40-changes
+- name: builtin
+  dataPath: ./data/62-xml-40-changes
+tests:
+- ruleID: xml-removed-camel4-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-activemq` component has been remove.*'
+- ruleID: xml-removed-camel4-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-any23` component has been remove.*'
+- ruleID: xml-removed-camel4-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-atmos` component has been remove.*'
+- ruleID: xml-removed-camel4-00004
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-caffeine-lrucache` component has been remove.*'
+- ruleID: xml-removed-camel4-00005
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-cdi` component has been remove.*'
+- ruleID: xml-removed-camel4-00006
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-directvm` component has been remove.*'
+- ruleID: xml-removed-camel4-00007
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-dozer` component has been remove.*'
+- ruleID: xml-removed-camel4-00008
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-elasticsearch-rest` component has been remove.*'
+- ruleID: xml-removed-camel4-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-gora` component has been remove.*'
+- ruleID: xml-removed-camel4-00011
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-hbase` component has been remove.*'
+- ruleID: xml-removed-camel4-00012
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-iota` component has been remove.*'
+- ruleID: xml-removed-camel4-00013
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-ipfs` component has been remove.*'
+- ruleID: xml-removed-camel4-00014
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-jbpm` component has been remove.*'
+- ruleID: xml-removed-camel4-00015
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-jclouds` component has been remove.*'
+- ruleID: xml-removed-camel4-00016
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-johnzon` component has been remove.*'
+- ruleID: xml-removed-camel4-00017
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-microprofile-metrics` component has been remove.*'
+- ruleID: xml-removed-camel4-00018
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-milo` component has been remove.*'
+- ruleID: xml-removed-camel4-00019
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-opentracing` component has been remove.*'
+- ruleID: xml-removed-camel4-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-optaplanner` component has been remove.*'
+- ruleID: xml-removed-camel4-00021
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-rabbitmq` component has been remove.*'
+- ruleID: xml-removed-camel4-00022
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-rest-swagger` component has been remove.*'
+- ruleID: xml-removed-camel4-00023
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-restdsl-swagger-plugin` component has been remove.*'
+- ruleID: xml-removed-camel4-00024
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-resteasy` component has been remove.*'
+- ruleID: xml-removed-camel4-00025
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-spark` component has been remove.*'
+- ruleID: xml-removed-camel4-00026
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-spring-integration` component has been remove.*'
+- ruleID: xml-removed-camel4-00027
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-swift` component has been remove.*'
+- ruleID: xml-removed-camel4-00028
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-swagger-java` component has been remove.*'
+- ruleID: xml-removed-camel4-00029
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-websocket` component has been remove.*'
+- ruleID: xml-removed-camel4-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-websocket-jsr356` component has been remove.*'
+- ruleID: xml-removed-camel4-00031
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-vertx-kafka` component has been remove.*'
+- ruleID: xml-removed-camel4-00032
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-vm` component has been remove.*'
+- ruleID: xml-removed-camel4-00033
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-xstream` component has been remove.*'
+- ruleID: xml-removed-camel4-00034
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-zipkin` component has been remove.*'
+- ruleID: xml-changedcomponent-camel4-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-platform-http-starter` as been changed from using camel-servlet
+        to use Spring HTTP server directl.*'
+- ruleID: xml-changedcomponent-camel4-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`camel-micrometer-starter` has been change.*'

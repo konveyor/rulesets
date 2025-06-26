@@ -56,7 +56,7 @@
         pattern: javax.servlet.http.HttpSessionContext
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.servlet.http.HttpSession.getSessionContext(*)
+        pattern: javax.servlet.http.HttpSession.getSessionContext
 - category: mandatory
   customVariables: []
   description: The javax.servlet.http.HttpUtils utility class has been removed
@@ -104,7 +104,7 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.servlet.ServletContext.getServlet(*)
+        pattern: javax.servlet.ServletContext.getServlet
 - category: mandatory
   customVariables: []
   description: Method getServlets in javax.servlet.ServletContext has been removed
@@ -127,7 +127,7 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.servlet.ServletContext.getServlets(*)
+        pattern: javax.servlet.ServletContext.getServlets
 - category: mandatory
   customVariables: []
   description: Method getServletNames in javax.servlet.ServletContext has been removed
@@ -150,7 +150,7 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.servlet.ServletContext.getServletNames(*)
+        pattern: javax.servlet.ServletContext.getServletNames
 - category: mandatory
   customVariables: []
   description: Method log(Exception, String) in javax.servlet.ServletContext has been
@@ -174,7 +174,8 @@
   when:
     or:
     - java.referenced:
-        pattern: javax.servlet.ServletContext.log(java.lang.Exception, java.lang.String)
+        pattern: ServletContext.log(Exception,String)
+        location: METHOD_CALL
 - category: mandatory
   customVariables: []
   description: Method in javax.servlet.ServletRequest has been removed
@@ -197,7 +198,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.servlet.ServletRequest.getRealPath(*)
+      pattern: javax.servlet.ServletRequest.getRealPath
 - category: mandatory
   customVariables: []
   description: Method in javax.servlet.ServletRequestWrapper has been removed
@@ -219,7 +220,8 @@
   ruleID: javax-to-jakarta-servlet-00060
   when:
     java.referenced:
-      pattern: javax.servlet.ServletRequestWrapper.getRealPath(java.lang.String)
+      pattern: javax.servlet.ServletRequestWrapper.getRealPath
+      location: METHOD_CALL
 - category: mandatory
   customVariables: []
   description: Method getServlet in javax.servlet.UnavailableException has been removed
@@ -241,7 +243,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.servlet.UnavailableException.getServlet(*)
+      pattern: javax.servlet.UnavailableException.getServlet
 - category: mandatory
   customVariables: []
   description: Constructor UnavailableException(Servlet, String) in javax.servlet.UnavailableException
@@ -264,8 +266,9 @@
   ruleID: javax-to-jakarta-servlet-00071
   when:
     java.referenced:
+#     TODO: removing FQN (https://github.com/konveyor/analyzer-lsp/issues/781)
       location: CONSTRUCTOR_CALL
-      pattern: javax.servlet.UnavailableException(javax.servlet.Servlet*
+      pattern: UnavailableException(Servlet,String)
 - category: mandatory
   customVariables: []
   description: Constructor UnavailableException(int, Servlet, String) in javax.servlet.UnavailableException
@@ -289,7 +292,7 @@
   when:
     java.referenced:
       location: CONSTRUCTOR_CALL
-      pattern: javax.servlet.UnavailableException(int, javax.servlet.Servlet, java.lang.String)
+      pattern: UnavailableException(int,Servlet,String)
 - category: mandatory
   customVariables: []
   description: Method isRequestedSessionIdFromUrl in javax.servlet.http.HttpServletRequest
@@ -313,7 +316,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.servlet.http.HttpServletRequest.isRequestedSessionIdFromUrl(*)
+      pattern: javax.servlet.http.HttpServletRequest.isRequestedSessionIdFromUrl
 - category: mandatory
   customVariables: []
   description: Method isRequestedSessionIdFromUrl in javax.servlet.http.HttpServletRequestWrapper
@@ -337,7 +340,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.servlet.http.HttpServletRequestWrapper.isRequestedSessionIdFromUrl(*)
+      pattern: javax.servlet.http.HttpServletRequestWrapper.isRequestedSessionIdFromUrl
 - category: mandatory
   customVariables: []
   description: Method encodeUrl in javax.servlet.http.HttpServletResponse has been
@@ -360,7 +363,8 @@
   ruleID: javax-to-jakarta-servlet-00100
   when:
     java.referenced:
-      pattern: javax.servlet.http.HttpServletResponse.encodeUrl(java.lang.String)
+      pattern: HttpServletResponse.encodeUrl
+      location: METHOD_CALL
 - category: mandatory
   customVariables: []
   description: Method encodeRedirectUrl in javax.servlet.http.HttpServletResponse
@@ -383,7 +387,8 @@
   ruleID: javax-to-jakarta-servlet-00101
   when:
     java.referenced:
-      pattern: javax.servlet.http.HttpServletResponse.encodeRedirectUrl(java.lang.String)
+      pattern: HttpServletResponse.encodeRedirectUrl
+      location: METHOD_CALL
 - category: mandatory
   customVariables: []
   description: Method setStatus(int, String) in javax.servlet.http.HttpServletResponse
@@ -406,7 +411,8 @@
   ruleID: javax-to-jakarta-servlet-00102
   when:
     java.referenced:
-      pattern: javax.servlet.http.HttpServletResponse.setStatus(int, java.lang.String)
+      pattern: HttpServletResponse.setStatus(int,String)
+      location: METHOD_CALL
 - category: mandatory
   customVariables: []
   description: Method encodeUrl in javax.servlet.http.HttpServletResponseWrapper has
@@ -429,7 +435,8 @@
   ruleID: javax-to-jakarta-servlet-00110
   when:
     java.referenced:
-      pattern: javax.servlet.http.HttpServletResponseWrapper.encodeUrl(java.lang.String)
+      pattern: HttpServletResponseWrapper.encodeUrl
+      location: METHOD_CALL
 - category: mandatory
   customVariables: []
   description: Method encodeRedirectUrl in javax.servlet.http.HttpServletResponseWrapper
@@ -452,7 +459,8 @@
   ruleID: javax-to-jakarta-servlet-00111
   when:
     java.referenced:
-      pattern: javax.servlet.http.HttpServletResponseWrapper.encodeRedirectUrl(java.lang.String)
+      pattern: HttpServletResponseWrapper.encodeRedirectUrl
+      location: METHOD_CALL
 - category: mandatory
   customVariables: []
   description: Method setStatus(int, String) in javax.servlet.http.HttpServletResponseWrapper
@@ -475,7 +483,8 @@
   ruleID: javax-to-jakarta-servlet-00112
   when:
     java.referenced:
-      pattern: javax.servlet.http.HttpServletResponseWrapper.setStatus(int, java.lang.String)
+      pattern: HttpServletResponseWrapper.setStatus(int,String)
+      location: METHOD_CALL
 - category: mandatory
   customVariables: []
   description: Method getValue in javax.servlet.http.HttpSession has been removed
@@ -498,7 +507,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.servlet.http.HttpSession.getValue(*)
+      pattern: javax.servlet.http.HttpSession.getValue
 - category: mandatory
   customVariables: []
   description: Method getValueNames in javax.servlet.http.HttpSession has been removed
@@ -521,7 +530,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.servlet.http.HttpSession.getValueNames(*)
+      pattern: javax.servlet.http.HttpSession.getValueNames
 - category: mandatory
   customVariables: []
   description: Method putValue in javax.servlet.http.HttpSession has been removed
@@ -544,7 +553,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.servlet.http.HttpSession.putValue(*)
+      pattern: javax.servlet.http.HttpSession.putValue
 - category: mandatory
   customVariables: []
   description: Method removeValue in javax.servlet.http.HttpSession has been removed
@@ -567,7 +576,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.servlet.http.HttpSession.removeValue(*)
+      pattern: javax.servlet.http.HttpSession.removeValue
 - category: potential
   customVariables: []
   description: web.xml element references a javax-prefixed class name

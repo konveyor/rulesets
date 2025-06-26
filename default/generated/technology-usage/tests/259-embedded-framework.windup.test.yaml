@@ -1,0 +1,495 @@
+#rulesPath: ../259-embedded-framework.windup.yaml
+#providers:
+#- name: java
+#  dataPath: ./data/259-embedded-framework
+#- name: builtin
+#  dataPath: ./data/259-embedded-framework
+#tests:
+#- ruleID: embedded-framework-01000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Axis
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Apache Axis
+#- ruleID: embedded-framework-01010
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Axis2
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Apache Axis2
+#- ruleID: embedded-framework-01100
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - CXF
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Apache CXF
+#- ruleID: embedded-framework-01200
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - XFire
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - XFire
+#- ruleID: embedded-framework-01300
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Jersey
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Jersey
+#- ruleID: embedded-framework-01400
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Unirest
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Unirest
+#- ruleID: embedded-framework-01600
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Hibernate OGM
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Hibernate OGM
+#- ruleID: embedded-framework-01700
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - EclipseLink
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - EclipseLink
+#- ruleID: embedded-framework-02000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Spring Batch
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Spring Batch
+#  - name: tc-3
+#    hasTags:
+#    - Embedded framework - Spring
+#  - name: tc-4
+#    hasTags:
+#    - Embedded framework - Spring
+#- ruleID: embedded-framework-02200
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - AspectJ
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - AspectJ
+#- ruleID: embedded-framework-02300
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - JBPM
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - JBPM
+#- ruleID: embedded-framework-02400
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - iLog
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - iLog
+#- ruleID: embedded-framework-03000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Camunda
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Camunda
+#- ruleID: embedded-framework-03100
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Pega
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Pega
+#  - name: tc-3
+#    hasTags:
+#    - Embedded framework - Easy Rules
+#- ruleID: embedded-framework-03200
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Blaze
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Blaze
+#- ruleID: embedded-framework-03300
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - MRules
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - MRules
+#- ruleID: embedded-framework-03400
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Easy Rules
+#- ruleID: embedded-framework-04700
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - AOP Alliance
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - AOP Alliance
+#- ruleID: embedded-framework-05000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - SNMP4J
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - SNMP4J
+#- ruleID: embedded-framework-05100
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - HTTP Client
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - HTTP Client
+#- ruleID: embedded-framework-05300
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Javax Inject
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Javax Inject
+#- ruleID: embedded-framework-05400
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Google Guice
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Google Guice
+#- ruleID: embedded-framework-05600
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Plexus Container
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Plexus Container
+#- ruleID: embedded-framework-05700
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Weld
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Weld
+#- ruleID: embedded-framework-05800
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Dagger
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Dagger
+#- ruleID: embedded-framework-05900
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - GIN
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - GIN
+#- ruleID: embedded-framework-06000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - PicoContainer
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - PicoContainer
+#- ruleID: embedded-framework-06100
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Scaldi
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Scaldi
+#- ruleID: embedded-framework-06200
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Macros
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Macros
+#- ruleID: embedded-framework-06300
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Injekt for Kotlin
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Injekt for Kotlin
+#- ruleID: embedded-framework-06400
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Kodein
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Kodein
+#- ruleID: embedded-framework-06500
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Peaberry
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Peaberry
+#- ruleID: embedded-framework-06600
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Sticky Configured
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Sticky Configured
+#- ruleID: embedded-framework-06700
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Ka DI
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Ka DI
+#- ruleID: embedded-framework-06800
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Polyforms DI
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Polyforms DI
+#- ruleID: embedded-framework-06900
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - JayWire
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - JayWire
+#- ruleID: embedded-framework-07000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Silk DI
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Silk DI
+#- ruleID: embedded-framework-07100
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Grapht DI
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Grapht DI
+#- ruleID: embedded-framework-07200
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Syringe
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Syringe
+#- ruleID: embedded-framework-07300
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Cfg Engine
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Cfg Engine
+#- ruleID: embedded-framework-07400
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - BeanInject
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - BeanInject
+#- ruleID: embedded-framework-07500
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Tornado Inject
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Tornado Inject
+#- ruleID: embedded-framework-07600
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Airframe
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Airframe
+#- ruleID: embedded-framework-07700
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Winter
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Winter
+#- ruleID: embedded-framework-07800
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - KouInject
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - KouInject
+#- ruleID: embedded-framework-07900
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Iroh
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Iroh
+#- ruleID: embedded-framework-08000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Micro DI
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Micro DI
+#- ruleID: embedded-framework-08100
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - SubCut
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - SubCut
+#- ruleID: embedded-framework-08200
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Spring DI
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Spring DI
+#- ruleID: embedded-framework-08300
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Micrometer
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Micrometer
+#- ruleID: embedded-framework-08400
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Spring Web
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Spring Web
+#- ruleID: embedded-framework-08500
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Spring Shell
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Spring Shell
+#- ruleID: embedded-framework-08700
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Spring Scheduled
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Spring Scheduled
+#- ruleID: embedded-framework-08800
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Spring Cloud Function
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Spring Cloud Function
+#- ruleID: embedded-framework-08900
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Quartz
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Quartz
+#- ruleID: embedded-framework-09000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Feign
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Feign
+#- ruleID: embedded-framework-09100
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Zipkin
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Zipkin
+#- ruleID: embedded-framework-09300
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Eureka
+#  - name: tc-2
+#    hasTags:
+#    - Embedded framework - Eureka
+#- ruleID: embedded-framework-01500
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Embedded framework - Hibernate
+#- ruleID: embedded-framework-05500
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Embedded framework - CDI
+#- ruleID: embedded-framework-08600
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Embedded framework - Spring Boot Flo
+#  - name: tc-2
+#    hasTags:
+#    - Spring Boot Flo

@@ -1,0 +1,46 @@
+rulesPath: ../135-weblogic-webservices.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/135-weblogic-webservices
+- name: builtin
+  dataPath: ./data/135-weblogic-webservices
+tests:
+- ruleID: weblogic-webservices-eap7-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: This web service stub uses the WebLogic proprietary web service
+        implementation class.*
+- ruleID: weblogic-webservices-eap7-02000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*WebLogic proprietary Asynchronous Web Service Client API.*
+- ruleID: weblogic-webservices-eap7-03000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*Replace proprietary web-service authentication with JAX-WS
+        standard calls. To attach authentication with JBoss EAP.*
+- ruleID: weblogic-webservices-eap7-04000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*This code uses the WebLogic specific class .*weblogic.wsee.context.WebServiceContext.*
+- ruleID: weblogic-webservices-eap7-05000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: .*This exception (.*weblogic.wsee.context.ContextNotFoundException.*
+- ruleID: weblogic-webservices-07000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Replace WebLogic proprietary web-service annotation `@Transactional`
+        by the standard Java EE annotation `@TransactionAttribute.*

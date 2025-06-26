@@ -20,9 +20,19 @@
     about this type.
   ruleID: weblogic-catchall-01000
   when:
-    java.referenced:
-      location: PACKAGE
-      pattern: (com.weblogic[^.]*.)|(com.bea[^.]*.)|(bea.)|(weblogic.)*
+    or:
+    - java.referenced:
+        location: IMPORT
+        pattern: com.weblogic*
+    - java.referenced:
+        location: IMPORT
+        pattern: com.bea*
+    - java.referenced:
+        location: IMPORT
+        pattern: bea*
+    - java.referenced:
+        location: IMPORT
+        pattern: weblogic*
 - category: optional
   customVariables:
   - name: remainder

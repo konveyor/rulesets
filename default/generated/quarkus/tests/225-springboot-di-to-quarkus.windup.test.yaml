@@ -1,0 +1,27 @@
+rulesPath: ../225-springboot-di-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/225-springboot-di-to-quarkus
+- name: builtin
+  dataPath: ./data/225-springboot-di-to-quarkus
+tests:
+- ruleID: springboot-di-to-quarkus-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Replace the SpringBoot Dependency Injection artifact with Quarkus
+        `spring-di` extension
+- ruleID: springboot-di-to-quarkus-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 3
+      messageMatches: Quarkus only supports the java-based configuration of Spring
+        beans
+- ruleID: springboot-di-to-quarkus-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 5
+      messageMatches: Spring infrastructure classe.*

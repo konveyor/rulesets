@@ -1,0 +1,20 @@
+rulesPath: ../115-hibernate50-51.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/115-hibernate50-51
+- name: builtin
+  dataPath: ./data/115-hibernate50-51
+tests:
+- ruleID: hibernate50-51-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Previous releases of Hibernate interpreted all null column values
+        for an `@Embeddable`
+- ruleID: hibernate50-51-00100
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 5
+      messageMatches: The changes mainly focused on

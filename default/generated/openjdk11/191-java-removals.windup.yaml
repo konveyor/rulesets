@@ -18,10 +18,10 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.Thread.stop(Throwable)
+        pattern: Thread.stop(Throwable)
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.Thread.destroy(*)
+        pattern: java.lang.Thread.destroy
 - category: mandatory
   customVariables: []
   description: sun.reflect.Reflection class was deprecated in Java 9
@@ -47,7 +47,7 @@
         pattern: sun.reflect.Reflection*
     - java.referenced:
         location: METHOD_CALL
-        pattern: sun.reflect.Reflection(*)
+        pattern: sun.reflect.Reflection.*
 - category: mandatory
   customVariables: []
   description: sun.reflect.CallerSensitive annotation was deprecated in Java 9
@@ -152,7 +152,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: java.lang.SecurityManager.checkMemberAccess(*)
+      pattern: java.lang.SecurityManager.checkMemberAccess
 - category: mandatory
   customVariables: []
   description: The java.util.logging.LogManager.addPropertyChangeListener() method
@@ -174,7 +174,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: java.util.logging.LogManager.addPropertyChangeListener(*)
+      pattern: java.util.logging.LogManager.addPropertyChangeListener
 - category: mandatory
   customVariables: []
   description: The java.util.logging.LogManager.removePropertyChangeListener() method
@@ -196,7 +196,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: java.util.logging.LogManager.removePropertyChangeListener(*)
+      pattern: java.util.logging.LogManager.removePropertyChangeListener
 - category: mandatory
   customVariables: []
   description: Property listener methods on `Pack200.Packer` and `Pack200.Unpacker`
@@ -221,16 +221,16 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.util.jar.Pack200.Packer.addPropertyChangeListener(*)
+        pattern: java.util.jar.Pack200.Packer.addPropertyChangeListener
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.util.jar.Pack200.Packer.removePropertyChangeListener(*)
+        pattern: java.util.jar.Pack200.Packer.removePropertyChangeListener
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.util.jar.Pack200.Unpacker.addPropertyChangeListener(*)
+        pattern: java.util.jar.Pack200.Unpacker.addPropertyChangeListener
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.util.jar.Pack200.Unpacker.removePropertyChangeListener(*)
+        pattern: java.util.jar.Pack200.Unpacker.removePropertyChangeListener
 - category: mandatory
   customVariables:
   - name: methodName
@@ -292,9 +292,13 @@
     below."
   ruleID: java-removals-00120
   when:
-    java.referenced:
-      location: IMPORT
-      pattern: sun.misc.BASE64(Encoder|Decoder)*
+    or:
+    - java.referenced:
+        location: IMPORT
+        pattern: sun.misc.BASE64Encoder*
+    - java.referenced:
+        location: IMPORT
+        pattern: sun.misc.BASE64Decoder*
 - category: mandatory
   customVariables: []
   description: The `runFinalizersOnExit` methods have been removed
@@ -318,10 +322,10 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.System.runFinalizersOnExit(*)
+        pattern: runFinalizersOnExit
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.Runtime.runFinalizersOnExit(*)
+        pattern: runFinalizersOnExit
 - category: mandatory
   customVariables: []
   description: The `java.awt.Font.getPeer()` and `java.awt.Component.getPeer()` methods
@@ -347,10 +351,10 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.awt.Font.getPeer(*)
+        pattern: Font.getPeer
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.awt.Component.getPeer(*)
+        pattern: Component.getPeer
 - category: potential
   customVariables: []
   description: Changes in ClassLoader hierarchy in JDK 11 may impact code
@@ -372,4 +376,4 @@
   ruleID: java-removals-00150
   when:
     java.referenced:
-      pattern: java.lang.ClassLoader
+      pattern: ClassLoader

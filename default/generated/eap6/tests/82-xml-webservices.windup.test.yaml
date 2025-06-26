@@ -1,0 +1,68 @@
+rulesPath: ../82-xml-webservices.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/82-xml-webservices
+- name: builtin
+  dataPath: ./data/82-xml-webservices
+tests:
+- ruleID: xml-webservices-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Apache Axis Service Group
+- ruleID: xml-webservices-02000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Apache Axis Module
+- ruleID: xml-webservices-03000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Apache Axis Configuration
+- ruleID: xml-webservices-04000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - XFire 1.x Configuration
+- ruleID: xml-webservices-05000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JAX-WS Handler Chain
+#FIXME: ignore until namespace query is fixed
+#- ruleID: xml-webservices-06000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Java Webservice Configuration
+#  - name: tc-2
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: .*JAX-WS Web Services Common API
+#- ruleID: xml-webservices-06001
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: .*JAX-WS Web Services Endpoints
+- ruleID: xml-webservices-07000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Apache CXF Bus Extension
+- ruleID: xml-webservices-08000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WS-Policy
+- ruleID: xml-webservices-09000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - SOAP Envelope
+- ruleID: xml-webservices-10000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WSDL Definition

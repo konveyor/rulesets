@@ -13,13 +13,9 @@
     3.9. Please use camel-azure-storage-blob or camel-azure-storage-queue.'
   ruleID: xml-removed-camel39-00002
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-azure
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-azure
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-azure
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-aws-sdb artifact has been removed
@@ -37,13 +33,9 @@
     AWS console.'
   ruleID: xml-removed-camel39-00004
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-sdb
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-sdb
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-aws-sdb
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-aws-translate artifact has been removed - please
@@ -60,13 +52,9 @@
     Camel 3.9. Please use camel-aws2-translate instead.'
   ruleID: xml-removed-camel39-00005
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-translate
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-translate
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-aws-translate
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-aws-sqs artifact has been removed - please use
@@ -83,13 +71,9 @@
     3.9. Please use camel-aws2-sqs instead.'
   ruleID: xml-removed-camel39-00006
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-sqs
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-sqs
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-aws-sqs
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-aws-sns artifact has been removed - please use
@@ -106,13 +90,9 @@
     3.9. Please use camel-aws2-sns instead.'
   ruleID: xml-removed-camel39-00007
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-sns
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-sns
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-aws-sns
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-aws-msk artifact has been removed - please use
@@ -129,13 +109,9 @@
     3.9. Please use camel-aws2-msk instead.'
   ruleID: xml-removed-camel39-00008
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-msk
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-msk
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-aws-msk
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-aws-mq artifact has been removed - please use
@@ -152,13 +128,9 @@
     3.9. Please use camel-aws2-mq instead.'
   ruleID: xml-removed-camel39-00009
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-mq
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-mq
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-aws-mq
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-aws-kms artifact has been removed - please use
@@ -175,13 +147,9 @@
     3.9. Please use camel-aws2-kms instead.'
   ruleID: xml-removed-camel39-00010
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-kms
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-kms
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-aws-kms
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-aws-kinesis artifact has been removed - please
@@ -198,13 +166,9 @@
     Camel 3.9. Please use camel-aws2-kinesis instead.'
   ruleID: xml-removed-camel39-00011
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-kinesis
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-kinesis
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-aws-kinesis
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-aws-kinesis-firehose artifact has been removed
@@ -221,13 +185,9 @@
     in Apache Camel 3.9. Please use camel-aws2-kinesis-firehose instead.'
   ruleID: xml-removed-camel39-00012
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-kinesis-firehose
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-kinesis-firehose
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-aws-kinesis-firehose
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-aws-iam artifact has been removed - please use
@@ -244,13 +204,9 @@
     3.9. Please use camel-aws2-iam instead.'
   ruleID: xml-removed-camel39-00013
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-iam
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-iam
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-aws-iam
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-aws-eks artifact has been removed - please use
@@ -267,13 +223,9 @@
     3.9. Please use camel-aws2-eks instead.'
   ruleID: xml-removed-camel39-00014
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-eks
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-eks
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-aws-eks
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-aws-ecs artifact has been removed - please use
@@ -290,13 +242,9 @@
     3.9. Please use camel-aws2-ecs instead.'
   ruleID: xml-removed-camel39-00015
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-ecs
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-ecs
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-aws-ecs
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-aws-ecs2 artifact has been removed - please
@@ -313,13 +261,9 @@
     Camel 3.9. Please use camel-aws2-ecs2 instead.'
   ruleID: xml-removed-camel39-00016
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-ecs2
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-ecs2
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-aws-ecs2
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-aws-ddb artifact has been removed - please use
@@ -336,13 +280,9 @@
     3.9. Please use camel-aws2-ddb instead.'
   ruleID: xml-removed-camel39-00017
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-ddb
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-ddb
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-aws-ddb
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-aws-cw artifact has been removed - please use
@@ -359,13 +299,9 @@
     3.9. Please use camel-aws2-cw instead.'
   ruleID: xml-removed-camel39-00018
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-cw
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-cw
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-aws-cw
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-aws-s3 artifact has been removed - please use
@@ -382,13 +318,9 @@
     3.9. Please use camel-aws2-s3 instead.'
   ruleID: xml-removed-camel39-00019
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-s3
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-s3
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-aws-s3
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-aws-swf artifact has been removed - no replacement
@@ -404,10 +336,6 @@
     3.9. The migration guide notes that there will not be a replacement for it.'
   ruleID: xml-removed-camel39-00020
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-swf
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws-swf
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-aws-swf

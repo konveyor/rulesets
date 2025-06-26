@@ -20,7 +20,7 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.security.KeyStore.getInstance(*)
+        pattern: java.security.KeyStore.getInstance
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.security.KeyStore.load(*)
+        pattern: java.security.KeyStore.load

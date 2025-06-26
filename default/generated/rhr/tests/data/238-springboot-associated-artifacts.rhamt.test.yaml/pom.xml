@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.sample</groupId>
+    <artifactId>sample-project</artifactId>
+    <version>0.0.1</version>
+    <name>Sample Project</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.opentracing.contrib</groupId>
+            <artifactId>opentracing-spring-jaeger-web-starter</artifactId>
+            <version>2.1.6</version>
+        </dependency>
+        <dependency>
+            <groupId>io.opentracing.contrib</groupId>
+            <artifactId>opentracing-spring-jaeger-web-starter</artifactId>
+            <version>2.0.0.redhat-00003</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.30</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.amqphub.spring/amqp-10-jms-spring-boot-starter -->
+        <dependency>
+            <groupId>org.amqphub.spring</groupId>
+            <artifactId>amqp-10-jms-spring-boot-starter</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-spring-boot-starter-jaxrs -->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-spring-boot-starter-jaxrs</artifactId>
+            <version>3.1.16</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-spring-boot-starter -->
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-spring-boot-starter</artifactId>
+            <version>3.1.0.Final</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.keycloak/keycloak-spring-boot-starter -->
+        <dependency>
+            <groupId>org.keycloak</groupId>
+            <artifactId>keycloak-spring-boot-starter</artifactId>
+            <version>9.0.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.opentracing.contrib/opentracing-spring-jaeger-web-starter -->
+        <dependency>
+            <groupId>io.opentracing.contrib</groupId>
+            <artifactId>opentracing-spring-jaeger-web-starter</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.opentracing.contrib/opentracing-spring-jaeger-web-starter -->
+        <dependency>
+            <groupId>io.opentracing.contrib</groupId>
+            <artifactId>opentracing-spring-jaeger-web-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.infinispan/infinispan-spring-boot-starter-remote -->
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-spring-boot-starter-remote</artifactId>
+            <version>12.0.1.Final</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.infinispan/infinispan-spring-boot-starter-embedded -->
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-spring-boot-starter-embedded</artifactId>
+            <version>12.1.0.Final</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/me.snowdrop/narayana-spring-boot-starter -->
+        <dependency>
+            <groupId>me.snowdrop</groupId>
+            <artifactId>narayana-spring-boot-starter</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+
+
+
+    </dependencies>
+
+</project>

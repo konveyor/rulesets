@@ -19,4 +19,4 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.picketlink.identity.federation.api.wstrust.WSTrustClient.issueToken(*)
+      pattern: org.picketlink.identity.federation.api.wstrust.WSTrustClient.issueToken

@@ -1,0 +1,14 @@
+rulesPath: ../221-springboot-cache-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/221-springboot-cache-to-quarkus
+- name: builtin
+  dataPath: ./data/221-springboot-cache-to-quarkus
+tests:
+- ruleID: springboot-cache-to-quarkus-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Replace the SpringBoot Cache module artifact with Quarkus `spring-cache`
+        extension

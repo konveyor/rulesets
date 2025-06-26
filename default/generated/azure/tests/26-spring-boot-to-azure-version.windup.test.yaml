@@ -1,0 +1,26 @@
+rulesPath: ../26-spring-boot-to-azure-version.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/26-spring-boot-to-azure-version
+- name: builtin
+  dataPath: ./data/26-spring-boot-to-azure-version
+tests: []
+#- ruleID: spring-boot-to-azure-version-01000
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: The application uses Spring Boot 1.x, which is too low.
+#- ruleID: spring-boot-to-azure-version-02000
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 2
+#      atLeast: 0
+#      messageMatches: Spring boot version is out of any spring boot support scope.
+#- ruleID: spring-boot-to-azure-version-03000
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 3
+#      messageMatches: Spring Boot version is out of open source software support.

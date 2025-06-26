@@ -1,0 +1,57 @@
+rulesPath: ../197-security-manager-deprecation.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/197-security-manager-deprecation
+- name: builtin
+  dataPath: ./data/197-security-manager-deprecation
+tests:
+- ruleID: security-manager-deprecation-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 7
+      messageMatches: The Java Security Manager API is deprecated in Java 1.*
+- ruleID: security-manager-deprecation-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 3
+      messageMatches: References to Java Security Manager API classes deprecated in
+        Java 1.*
+# FIXME: remove comments when static method matching is fixed
+#- ruleID: security-manager-deprecation-00020
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 2
+#      messageMatches: The java.lang.System::getSecurityManage.*
+#- ruleID: security-manager-deprecation-00030
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: The java.lang.Thread::checkAccess metho.*
+#- ruleID: security-manager-deprecation-00040
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 2
+#      messageMatches: The java.lang.ThreadGroup::checkAccess metho.*
+#- ruleID: security-manager-deprecation-00050
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: The java.util.logging.LogManager::checkAccess metho.*
+- ruleID: security-manager-deprecation-00060
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 3
+      messageMatches: The java.util.concurrent.Executor.*
+- ruleID: security-manager-deprecation-00070
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: The javax.security.auth.Subjec.*

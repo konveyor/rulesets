@@ -1,0 +1,14 @@
+rulesPath: ../222-springboot-cloud-config-client-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/222-springboot-cloud-config-client-to-quarkus
+- name: builtin
+  dataPath: ./data/222-springboot-cloud-config-client-to-quarkus
+tests:
+- ruleID: springboot-cloud-config-client-to-quarkus-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Replace the Spring Cloud Config Client artifact with Quarkus
+        `quarkus-spring-cloud-config-client` extension

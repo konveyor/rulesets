@@ -1,0 +1,24 @@
+rulesPath: ../214-jakarta-jaxrs-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/214-jakarta-jaxrs-to-quarkus
+- name: builtin
+  dataPath: ./data/214-jakarta-jaxrs-to-quarkus
+tests:
+- ruleID: jakarta-jaxrs-to-quarkus-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Dependency `javax.ws.rs:javax.ws.rs-api` has to be replaced
+        with `io.quarkus:quarkus-resteasy-reactive` artifact.
+- ruleID: jakarta-jaxrs-to-quarkus-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: Jakarta JAX-RS activation is no longer necessary.
+  - name: tc-2
+    hasIncidents:
+      atLeast: 2
+      messageMatches: JAX-RS activation is no longer necessary.

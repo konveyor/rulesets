@@ -1,0 +1,208 @@
+rulesPath: ../61-xml-renamed-components.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/61-xml-renamed-components
+- name: builtin
+  dataPath: ./data/61-xml-renamed-components
+tests:
+- ruleID: xml-renamed-components-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-http4` artifact has been renamed in
+        Apache Camel 3 to `org.apache.camel:camel-http` artifact'
+- ruleID: xml-renamed-components-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-http4-starter` artifact has been renamed
+        in Apache Camel 3 to `org.apache.camel.springboot:camel-http-starter` artifact'
+- ruleID: xml-renamed-components-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-rxjava2` artifact has been renamed
+        in Apache Camel 3 to `org.apache.camel:camel-rxjava` artifact'
+- ruleID: xml-renamed-components-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-rxjava2-starter` artifact has been
+        renamed in Apache Camel 3 to `org.apache.camel.springboot:camel-rxjava-starter`
+        artifact'
+- ruleID: xml-renamed-components-00004
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-zookeeper-starter` artifact has been
+        renamed in Apache Camel 3 to `org.apache.camel.springboot:camel-zookeeper-starter`
+        artifact'
+  - name: tc-2
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-mina2-starter` artifact has been renamed'
+- ruleID: xml-renamed-components-00005
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-mongodb3` artifact has been renamed
+        to `org.apache.camel:camel-mongodb`'
+- ruleID: xml-renamed-components-00006
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-mongodb3-starter` artifact has been
+        renamed to `org.apache.camel.springboot:camel-mongodb-starter`'
+- ruleID: xml-renamed-components-00007
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-hdfs2` artifact has been renamed to
+        `org.apache.camel:camel-hdfs`'
+- ruleID: xml-renamed-components-00008
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-hdfs2-starter` artifact has been renamed
+        to `org.apache.camel.springboot:camel-hdfs-starter.*'
+- ruleID: xml-renamed-components-00009
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: In Camel 3, the `org.apache.camel:camel-hdfs` artifact has the
+        same implementation as the Camel .*
+- ruleID: xml-renamed-components-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-hdfs-starter` artifact has been renamed
+        to `org.apache.camel.springboot:camel-hdfs-starter.*'
+- ruleID: xml-renamed-components-00011
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-mina2` artifact has been renamed'
+- ruleID: xml-renamed-components-00013
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: In Camel 3, the `org.apache.camel:camel-mina` artifact has the
+        same implementation.*
+- ruleID: xml-renamed-components-00015
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-netty4` artifact has been renamed to
+        `org.apache.camel:camel-netty`'
+- ruleID: xml-renamed-components-00016
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-netty4-starter` artifact has been renamed
+        to `org.apache.camel.springboot:camel-netty-starter.*'
+- ruleID: xml-renamed-components-00017
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: In Camel 3, the `org.apache.camel:camel-netty` artifact has
+        the same implementation as the Camel .*
+- ruleID: xml-renamed-components-00018
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-netty-starter` artifact has been renamed
+        to `org.apache.camel.springboot:camel-netty-starter.*'
+- ruleID: xml-renamed-components-000019
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-netty4-http` artifact has been renamed
+        to `org.apache.camel:camel-netty-http`'
+- ruleID: xml-renamed-components-000020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-netty4-http` artifact has been renamed
+        to `org.apache.camel.springboot:camel-netty-http-starter`'
+- ruleID: xml-renamed-components-00021
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: In Camel 3, the `org.apache.camel:camel-netty-http` artifact
+        has the same implementation as the Camel 2
+- ruleID: xml-renamed-components-00022
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-netty-http-starter` artifact has been
+        renamed to `org.apache.camel.springboot:camel-netty-http-starter.*'
+- ruleID: xml-renamed-components-000023
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-quartz2` artifact has been renamed
+        to `org.apache.camel:camel-quartz`'
+- ruleID: xml-renamed-components-000024
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-quartz2-starter` artifact has been
+        renamed to `org.apache.camel.springboot:camel-quartz-starter`'
+- ruleID: xml-renamed-components-00025
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: In Camel 3, the `org.apache.camel:camel-quartz` artifact has
+        the same implementation as the Camel .*
+- ruleID: xml-renamed-components-00026
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-quartz-starter` artifact has been renamed
+        to `org.apache.camel.springboot:camel-quartz-starter.*'
+- ruleID: xml-renamed-components-000027
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-jetty9` artifact has been renamed to
+        `org.apache.camel:camel-jetty`'
+- ruleID: xml-renamed-components-000028
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.camel:camel-jetty9-starter` artifact has been renamed
+        to `org.apache.camel.springboot:camel-jetty-starter`'
+- ruleID: xml-renamed-components-000029
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: '`org.apache.activemq:activemq-camel` artifact has been moved
+        to `org.apache.camel:camel-activemq`'
