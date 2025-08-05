@@ -1,0 +1,12 @@
+- ruleID: eapxp_microprofile_bom_renamed-00001
+  description: "The JBoss EAP XP MicroProfile BOM has been renamed as Expansion BOM, and its Maven coordinates have changed."
+  category: mandatory
+  effort: 1
+  #links:
+  #  - url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/8.1/html/jboss_eap_xp_6.0_upgrade_and_migration_guide/application_migration_default
+  #    title: "JBoss EAP XP 5.0 upgrade and migration guide: Chapter 3. Application Migration"
+  message: The JBoss EAP MicroProfile BOM has been renamed to JBoss EAP Expansion, and its Maven Coordinates have been changed, from `org.jboss.bom:jboss-eap-xp-microprofile` to `org.jboss.bom:jboss-eap-expansion`
+  when:
+    builtin.filecontent:
+      filePattern: pom\.xml
+      pattern: artifactId>jboss-eap-xp-microprofile<
