@@ -1,0 +1,12 @@
+- ruleID: eapxp_channel_manifest_5_0_upgrade-00001
+  description: "The JBoss EAP XP Channel Manifest 5.0 should be upgraded."
+  category: mandatory
+  effort: 1
+  #links:
+  #  - url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/8.1/html/jboss_eap_xp_6.0_upgrade_and_migration_guide/application_migration_default
+  #    title: "JBoss EAP XP 6.0 upgrade and migration guide: Chapter 3. Application Migration"
+  message: The JBoss EAP XP Channel Manifest `5.0` should be upgraded
+  when:
+    builtin.filecontent:
+      filePattern: pom\.xml
+      pattern: artifactId>eap-xp-5.0<
