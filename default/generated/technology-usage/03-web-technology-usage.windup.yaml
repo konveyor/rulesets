@@ -61,9 +61,8 @@
   - Rich=Applet
   - Java EE=Applet
   when:
-    or:
-    - builtin.hasTags:
-      - Applet
+    builtin.hasTags:
+    - Applet
 - customVariables: []
   description: JNLP
   labels:

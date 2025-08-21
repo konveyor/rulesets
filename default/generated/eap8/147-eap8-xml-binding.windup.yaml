@@ -176,10 +176,9 @@
      to conform to the more fully specified generic type signatures in Jakarta Xml Binding 4.0.
   ruleID: eap8-xml-binding-00007
   when:
-    or:
-    - java.referenced:
-        location: METHOD_CALL
-        pattern: javax.xml.bind.Marshaller.setAdapter
+    java.referenced:
+      location: METHOD_CALL
+      pattern: javax.xml.bind.Marshaller.setAdapter
 - category: mandatory
   customVariables: []
   description: Outdated JAXB dependency
@@ -227,7 +226,6 @@
      to conform to the more fully specified generic type signatures in Jakarta Xml Binding 4.0.
   ruleID: eap8-xml-binding-00009
   when:
-    or:
-    - java.referenced:
-        location: METHOD_CALL
-        pattern: javax.xml.bind.Marshaller.getAdapter
+    java.referenced:
+      location: METHOD_CALL
+      pattern: javax.xml.bind.Marshaller.getAdapter

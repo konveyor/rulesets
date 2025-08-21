@@ -45,10 +45,9 @@
   - configuration
   - JBoss deployment structure dependencies (jboss-deployment-structure.xml)
   when:
-    or:
-    - builtin.xml:
-        filepaths:
-        - jboss-deployment-structure.xml
-        namespaces: {}
-        xpath: /*[local-name()='jboss-deployment-structure']/*[local-name()='deployment'
-          or local-name()='sub-deployment' or local-name()='module']/*[local-name()='dependencies']
+    builtin.xml:
+      filepaths:
+      - jboss-deployment-structure.xml
+      namespaces: {}
+      xpath: /*[local-name()='jboss-deployment-structure']/*[local-name()='deployment'
+        or local-name()='sub-deployment' or local-name()='module']/*[local-name()='dependencies']

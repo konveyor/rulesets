@@ -50,10 +50,9 @@
   ruleID: log4j-removed-00002
   when:
     or:
-    - and:
-      - java.referenced:
-          location: IMPORT
-          pattern: org.apache.log4j.Logger
+    - java.referenced:
+        location: IMPORT
+        pattern: org.apache.log4j.Logger
     - not: true
       or:
       - java.dependency:
