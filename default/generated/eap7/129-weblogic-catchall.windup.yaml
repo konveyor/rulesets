@@ -7,7 +7,7 @@
     nameOfCaptureGroup: prefix
     pattern: (?P<prefix>(com\.weblogic[^.]*\.)|(com\.bea[^.]*\.)|(bea\.)|(weblogic\.))?(?P<remainder>.*)
   description: WebLogic proprietary type reference
-  effort: 0
+  effort: 1
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
@@ -39,7 +39,7 @@
     nameOfCaptureGroup: remainder
     pattern: oracle.sql.(?P<remainder>.*)
   description: Oracle proprietary SQL type reference
-  effort: 0
+  effort: 1
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
@@ -65,7 +65,7 @@
     nameOfCaptureGroup: type
     pattern: com.tangosol(?P<subpackage>(\..*)?.)?(?P<type>[^.]+)
   description: Tangosol Proprietary type reference
-  effort: 0
+  effort: 1
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
@@ -93,7 +93,7 @@
     nameOfCaptureGroup: type
     pattern: (?P<com>(com\.)?)?oracle(?P<subpackage>(\..*)?.)?(?P<type>[^.]+)
   description: Oracle proprietary type reference
-  effort: 0
+  effort: 1
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
@@ -115,7 +115,7 @@
     nameOfCaptureGroup: remainder
     pattern: oracle.jdbc.(?P<remainder>.*)
   description: Oracle proprietary JDBC type reference
-  effort: 0
+  effort: 1
   labels:
   - konveyor.io/source=weblogic
   - konveyor.io/target=eap7
