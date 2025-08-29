@@ -540,10 +540,9 @@
     out of `org.apache.camel:camel-core` and into `org.apache.camel:camel-support`.
   ruleID: java-generic-information-00029
   when:
-    or:
-    - java.referenced:
-        location: IMPORT
-        pattern: org.apache.camel.processor.idempotent.(FileIdempotentRepository|MemoryIdempotentRepository)
+    java.referenced:
+      location: IMPORT
+      pattern: org.apache.camel.processor.idempotent.(FileIdempotentRepository|MemoryIdempotentRepository)
 - category: mandatory
   customVariables: []
   description: Annotation `org.apache.camel.FallbackConverter` has been removed

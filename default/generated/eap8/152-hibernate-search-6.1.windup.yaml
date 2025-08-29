@@ -49,9 +49,8 @@
     been moved to `org.hibernate.search.engine.cfg.ConfigurationPropertySource`.'
   ruleID: hibernate-search-6.1-00020
   when:
-    or:
-    - java.referenced:
-        pattern: org.hibernate.search.engine.cfg.spi.ConfigurationPropertySource
+    java.referenced:
+      pattern: org.hibernate.search.engine.cfg.spi.ConfigurationPropertySource
 - category: mandatory
   customVariables: []
   description: org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurer
@@ -75,9 +74,8 @@
     and is now an API.'
   ruleID: hibernate-search-6.1-00030
   when:
-    or:
-    - java.referenced:
-        pattern: org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurer
+    java.referenced:
+      pattern: org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurer
 - category: mandatory
   customVariables: []
   description: org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurationContext
@@ -101,9 +99,8 @@
     and is now an API.'
   ruleID: hibernate-search-6.1-00040
   when:
-    or:
-    - java.referenced:
-        pattern: org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurationContext
+    java.referenced:
+      pattern: org.hibernate.search.backend.elasticsearch.client.spi.ElasticsearchHttpClientConfigurationContext
 - category: mandatory
   customVariables: []
   description: org.hibernate.search.engine.common.timing.spi.Deadline has moved
@@ -125,9 +122,8 @@
     and is now API.'
   ruleID: hibernate-search-6.1-00050
   when:
-    or:
-    - java.referenced:
-        pattern: org.hibernate.search.engine.common.timing.spi.Deadline
+    java.referenced:
+      pattern: org.hibernate.search.engine.common.timing.spi.Deadline
 - category: mandatory
   customVariables: []
   description: org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlanExecutionReport
@@ -150,9 +146,8 @@
     is now `org.hibernate.search.engine.backend.work.execution.spi.MultiEntityOperationExecutionReport`.'
   ruleID: hibernate-search-6.1-00060
   when:
-    or:
-    - java.referenced:
-        pattern: org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlanExecutionReport
+    java.referenced:
+      pattern: org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlanExecutionReport
 - category: mandatory
   customVariables: []
   description: URLEncodedString#fromJsonString was removed
@@ -173,10 +168,9 @@
   message: '`URLEncodedString#fromJsonString` must be removed.'
   ruleID: hibernate-search-6.1-00070
   when:
-    or:
-    - java.referenced:
-        location: METHOD_CALL
-        pattern: org.hibernate.search.backend.elasticsearch.util.spi.URLEncodedString.fromJsonString
+    java.referenced:
+      location: METHOD_CALL
+      pattern: org.hibernate.search.backend.elasticsearch.util.spi.URLEncodedString.fromJsonString
 - category: mandatory
   customVariables: []
   description: FieldPaths#absolutize(String, String, String) has been removed
@@ -197,10 +191,9 @@
   message: '`FieldPaths#absolutize(String, String, String)` must be removed.'
   ruleID: hibernate-search-6.1-00080
   when:
-    or:
-    - java.referenced:
-        location: METHOD_CALL
-        pattern: org.hibernate.search.engine.backend.common.spi.FieldPaths.absolutize(java.lang.String,java.lang.String,java.lang.String)
+    java.referenced:
+      location: METHOD_CALL
+      pattern: org.hibernate.search.engine.backend.common.spi.FieldPaths.absolutize(java.lang.String,java.lang.String,java.lang.String)
 - category: mandatory
   customVariables: []
   description: IndexManagerImplementor#createIndexingPlan has changed
@@ -222,10 +215,9 @@
     parameter.'
   ruleID: hibernate-search-6.1-00090
   when:
-    or:
-    - java.referenced:
-        location: METHOD_CALL
-        pattern: org.hibernate.search.engine.backend.index.spi.IndexManagerImplementor.createIndexingPlan
+    java.referenced:
+      location: METHOD_CALL
+      pattern: org.hibernate.search.engine.backend.index.spi.IndexManagerImplementor.createIndexingPlan
 - category: mandatory
   customVariables: []
   description: IndexIndexingPlan#executeAndReport has changed
@@ -247,10 +239,9 @@
     parameter.'
   ruleID: hibernate-search-6.1-00100
   when:
-    or:
-    - java.referenced:
-        location: METHOD_CALL
-        pattern: org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlan.executeAndReport
+    java.referenced:
+      location: METHOD_CALL
+      pattern: org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlan.executeAndReport
 - category: mandatory
   customVariables: []
   description: IndexSchemaObjectNodeBuilder has changed
@@ -272,9 +263,8 @@
     is now `org.hibernate.search.engine.backend.document.model.dsl.spi.IndexCompositeNodeBuilder`'
   ruleID: hibernate-search-6.1-00120
   when:
-    or:
-    - java.referenced:
-        pattern: org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaObjectNodeBuilder
+    java.referenced:
+      pattern: org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaObjectNodeBuilder
 - category: mandatory
   customVariables: []
   description: IndexSchemaObjectNodeBuilder has changed
@@ -296,9 +286,8 @@
     is now `org.hibernate.search.engine.backend.document.model.dsl.spi.IndexObjectFieldBuilder`'
   ruleID: hibernate-search-6.1-00130
   when:
-    or:
-    - java.referenced:
-        pattern: org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaObjectFieldNodeBuilder
+    java.referenced:
+      pattern: org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaObjectFieldNodeBuilder
 - category: mandatory
   customVariables: []
   description: IndexSchemaObjectNodeBuilder has changed
@@ -320,9 +309,8 @@
     is now `org.hibernate.search.engine.backend.document.model.dsl.spi.IndexRootBuilder`'
   ruleID: hibernate-search-6.1-00140
   when:
-    or:
-    - java.referenced:
-        pattern: org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaObjectFieldNodeBuilder
+    java.referenced:
+      pattern: org.hibernate.search.engine.backend.document.model.dsl.spi.IndexSchemaObjectFieldNodeBuilder
 - category: optional
   customVariables: []
   description: FromDocumentFieldValueConverter has been deprecated

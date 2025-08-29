@@ -101,10 +101,9 @@
   message: Method getServlet in javax.servlet.ServletContext has been removed.
   ruleID: javax-to-jakarta-servlet-00040
   when:
-    or:
-    - java.referenced:
-        location: METHOD_CALL
-        pattern: javax.servlet.ServletContext.getServlet
+    java.referenced:
+      location: METHOD_CALL
+      pattern: javax.servlet.ServletContext.getServlet
 - category: mandatory
   customVariables: []
   description: Method getServlets in javax.servlet.ServletContext has been removed
@@ -124,10 +123,9 @@
   message: Method getServlets in javax.servlet.ServletContext has been removed.
   ruleID: javax-to-jakarta-servlet-00041
   when:
-    or:
-    - java.referenced:
-        location: METHOD_CALL
-        pattern: javax.servlet.ServletContext.getServlets
+    java.referenced:
+      location: METHOD_CALL
+      pattern: javax.servlet.ServletContext.getServlets
 - category: mandatory
   customVariables: []
   description: Method getServletNames in javax.servlet.ServletContext has been removed
@@ -147,10 +145,9 @@
   message: Method getServletNames in javax.servlet.ServletContext has been removed.
   ruleID: javax-to-jakarta-servlet-00042
   when:
-    or:
-    - java.referenced:
-        location: METHOD_CALL
-        pattern: javax.servlet.ServletContext.getServletNames
+    java.referenced:
+      location: METHOD_CALL
+      pattern: javax.servlet.ServletContext.getServletNames
 - category: mandatory
   customVariables: []
   description: Method log(Exception, String) in javax.servlet.ServletContext has been
@@ -172,10 +169,9 @@
     removed. Use log(String, Throwable) instead.
   ruleID: javax-to-jakarta-servlet-00043
   when:
-    or:
-    - java.referenced:
-        pattern: ServletContext.log(Exception,String)
-        location: METHOD_CALL
+    java.referenced:
+      pattern: ServletContext.log(Exception,String)
+      location: METHOD_CALL
 - category: mandatory
   customVariables: []
   description: Method in javax.servlet.ServletRequest has been removed
