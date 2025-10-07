@@ -29,10 +29,10 @@
         pattern: com.bea*
     - java.referenced:
         location: IMPORT
-        pattern: bea*
+        pattern: bea.jolt*
     - java.referenced:
         location: IMPORT
-        pattern: weblogic*
+        pattern: weblogic.(apache|application|cluster|coherence|common|connector|deploy|descriptor|diagnostics|ejb|health|i18n|i18ntools|jdbc|jms|jndi|jws|logging|management|messaging|net|protocol|rmi|security|server|servlet|socket|time|transaction|utils|websocket|workarea|wsee|wtc|xml)*
 - category: optional
   customVariables:
   - name: remainder
