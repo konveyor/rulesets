@@ -9,49 +9,49 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: org.apache.camel.processor.interceptor.BreakpointSupport moved
         to to org.apache.camel.support.BreakpointSuppor.*
 - ruleID: java-generic-information-camel37-00001
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class org.apache.camel.impl.validator.ProcessorValidator
         moved to org.apache.camel.processor.validator.ProcessorValidato.*
 - ruleID: java-generic-information-camel37-00002
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class org.apache.camel.impl.transformer.ProcessorTransformer
         moved to org.apache.camel.processor.transformer.ProcessorTransforme.*
 - ruleID: java-generic-information-camel37-00003
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class org.apache.camel.impl.transformer.DataFormatTransformer
         moved to org.apache.camel.processor.transformer.DataFormatTransforme.*
 - ruleID: java-generic-information-camel37-00004
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class org.apache.camel.impl.validator.ValidatorKey moved
         to org.apache.camel.impl.engine.ValidatorKe.*
 - ruleID: java-generic-information-camel37-00005
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class org.apache.camel.impl.transformer.TransformerKey moved
         to org.apache.camel.impl.engine.TransformerKe.*
 - ruleID: java-generic-information-camel37-00006
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class org.apache.camel.impl.DefaultExecutorServiceManager
         was moved from camel-core-engine JAR to org.apache.camel.impl.engine.DefaultExecutorServiceManager
         in the camel-base JA.*
@@ -59,13 +59,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class org.apache.camel.processor.ConvertBodyProcessor was
         moved to org.apache.camel.support.ConvertBodyProcessor in the camel-support
         JA.*
   - name: tc-2
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class org.apache.camel.impl.engine.DefaultClaimCheckRepository
         moved to org.apache.camel.processor.DefaultClaimCheckRepository in the camel-core-processor
         JA.*
@@ -73,62 +73,62 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class org.apache.camel.impl.engine.DefaultProducerCache
         was moved to org.apache.camel.support.cache.DefaultProducerCach.*
 - ruleID: java-generic-information-camel37-00009
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class org.apache.camel.impl.engine.DefaultConsumerCache
         was moved to org.apache.camel.support.cache.DefaultConsumerCach.*
 - ruleID: java-generic-information-camel37-00010
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class org.apache.camel.impl.engine.EmptyProducerCache was
         moved to org.apache.camel.support.cache.EmptyProducerCach.*
 - ruleID: java-generic-information-camel37-00011
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class org.apache.camel.impl.engine.ServicePool was moved
         to org.apache.camel.support.cache.ServicePoo.*
 - ruleID: java-generic-information-camel37-00012
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class org.apache.camel.impl.engine.ProducerServicePool was
         moved to org.apache.camel.support.cache.ProducerServicePoo.*
 - ruleID: java-generic-information-camel37-00013
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class org.apache.camel.impl.engine.PollingConsumerServicePool
         was moved to org.apache.camel.support.cache.PollingConsumerServicePoo.*
 - ruleID: java-generic-information-camel37-00014
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class org.apache.camel.impl.engine.EventNotifierCallback
         was moved to org.apache.camel.support.cache.EventNotifierCallbac.*
 - ruleID: java-generic-information-camel37-00015
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class org.apache.camel.impl.saga.InMemorySagaService was
         moved to org.apache.camel.saga.InMemorySagaServic.*
 - ruleID: java-generic-information-camel37-00016
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class org.apache.camel.impl.saga.InMemorySagaCoordinator
         was moved to org.apache.camel.saga.InMemorySagaCoordinato.*

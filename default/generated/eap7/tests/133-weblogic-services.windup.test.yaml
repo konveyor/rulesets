@@ -9,17 +9,17 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace this class with a class using the EJB 3.2 .*@Singleton.*
 - ruleID: weblogic-services-eap7-02000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*T3ServicesDef.* provides access to core services of the container.*
 - ruleID: weblogic-services-eap7-03000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: Oracle WebLogic logging classes should be replaced with SLF4J.*

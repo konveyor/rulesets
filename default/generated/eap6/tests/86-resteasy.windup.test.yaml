@@ -9,6 +9,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Use of .*org.jboss.resteasy.plugins.cache.server.SimpleServerCache.*
         is not supported in JBoss EAP 6

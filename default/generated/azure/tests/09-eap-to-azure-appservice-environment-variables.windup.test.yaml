@@ -10,5 +10,5 @@ tests: []
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 2
+#      exactly: 2
 #      messageMatches: App Service - The application reads environment variable.*

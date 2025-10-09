@@ -9,5 +9,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Get started with JBoss EAP on App Servic.*

@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 4
+      exactly: 4
       messageMatches: The legacy custom login modules have been removed. Applications
         must be changed either use some of the already existing elytron security realms,
         or implement a custom security realm or migrate to the elytron's jaas realm.

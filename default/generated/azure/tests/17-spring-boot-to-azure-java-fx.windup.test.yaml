@@ -10,5 +10,5 @@ tests: []
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 7
+#      exactly: 7
 #      messageMatches: The application uses JavaFX.

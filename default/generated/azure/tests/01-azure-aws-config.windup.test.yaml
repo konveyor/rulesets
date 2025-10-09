@@ -9,29 +9,29 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 8
+      exactly: 8
       messageMatches: The application contains AWS credential configuration
 - ruleID: azure-aws-config-region-02000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The application contains AWS region configuration
 - ruleID: azure-aws-config-s3-03000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 3
       messageMatches: The application contains AWS S3 configuration
 - ruleID: azure-aws-config-sqs-04000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: The application contains Amazon Simple Queue Service configuration
 - ruleID: azure-aws-config-secret-manager-05000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: The application contains AWS Secrets Manager configuration.

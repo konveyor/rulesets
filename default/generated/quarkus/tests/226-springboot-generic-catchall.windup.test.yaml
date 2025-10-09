@@ -10,11 +10,11 @@
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 23
+#      exactly: 23
 #      messageMatches: If the application declares explicitly or uses any of the feature
 #        provided by the Spring `.*` component.*
 #  - name: tc-2
 #    hasIncidents:
-#      atLeast: 0
+#      exactly: 0
 #      messageMatches: If the application declares explicitly or uses any of the feature
 #        provided by the Spring `.*` component.*

@@ -9,6 +9,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: JBoss EAP 7.2 PicketLink STS issues tokens with a different
         format

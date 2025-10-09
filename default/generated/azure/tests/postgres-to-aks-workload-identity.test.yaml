@@ -11,4 +11,4 @@ tests:
         analysisParams:
           mode: "source-only"
         hasIncidents:
-          atLeast: 8
+          exactly: 8

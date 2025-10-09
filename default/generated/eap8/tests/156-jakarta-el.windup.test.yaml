@@ -10,13 +10,13 @@
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: The incorrectly spelled `javax.el.MethodExpression.isParmetersProvided()`
 #        method has been removed. Use `MethodExpression.isParametersProvided()` instead.
 #- ruleID: jakarta-el-00020
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: The incorrectly spelled `jakarta.el.MethodExpression.isParmetersProvided()`
 #        method has been removed. Use `MethodExpression.isParametersProvided()` instead.

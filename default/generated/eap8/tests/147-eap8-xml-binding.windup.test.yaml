@@ -9,58 +9,58 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: Implementation class packages must be updated
 - ruleID: eap8-xml-binding-00002
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Marshaller property package names must be updated
 - ruleID: eap8-xml-binding-00003
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The URI in JAXB binding files should be updated
 - ruleID: eap8-xml-binding-00004
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: Deprecated steps in the implementation lookup algorithm have
         been removed
 - ruleID: eap8-xml-binding-00005
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: Searches for implementation class names
 - ruleID: eap8-xml-binding-00006
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: Usage of this Validator interface or retrieval method should
         be removed
 - ruleID: eap8-xml-binding-00007
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Implementation or use by the application of the `javax.xml.bind.Marshaller`
         `setAdapter()` method may need to be update.*
 - ruleID: eap8-xml-binding-00008
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Pom dependency to outdated xml binding version must be updated
         to Jakarta XML Binding 4.0 for EAP8.
 - ruleID: eap8-xml-binding-00009
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Implementation or use by the application of the `javax.xml.bind.Marshaller`
         `getAdapter()` method may need to be update.*

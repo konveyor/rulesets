@@ -9,11 +9,11 @@ tests:
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 3
+      exactly: 3
       messageMatches: The application uses Eureka.
 - ruleID: spring-boot-to-azure-eureka-02000
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 2
+      exactly: 2
       messageMatches: The application uses an eureka connection string.

@@ -9,18 +9,18 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace the Micrometer dependency with Quarkus Microprofile
         'metrics' extension
 - ruleID: springboot-metrics-to-quarkus-0200
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace the Micrometer code with Microprofile Metrics code
 - ruleID: springboot-metrics-to-quarkus-0300
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `management.endpoints.web.exposure.include=prometheus`

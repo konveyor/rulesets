@@ -9,6 +9,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The dump model classes in package org.apache.camel.support.dump
         have been removed as they were not in use by Came.*

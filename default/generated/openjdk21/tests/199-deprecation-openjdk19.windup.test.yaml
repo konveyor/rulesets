@@ -9,6 +9,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 9
+      exactly: 9
       messageMatches: Several classes under `javax.swing.plaf.basic` have been deprecated
         in JDK 19 for remova.*

@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Migrate a client application that performs a remote JNDI lookup
         using an `org.jboss.naming.remote.client.InitialContext` class, which is backed
         by an `org.jboss.naming.remote.client.InitialContextFactory` class, to Elytron.
@@ -17,6 +17,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Remote EJB client must be configured following one of the two
         options defined in the link below.

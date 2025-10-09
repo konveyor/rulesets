@@ -9,12 +9,12 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Previous releases of Hibernate interpreted all null column values
         for an `@Embeddable`
 - ruleID: hibernate50-51-00100
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 5
+      exactly: 5
       messageMatches: The changes mainly focused on

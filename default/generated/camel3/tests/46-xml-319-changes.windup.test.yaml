@@ -9,40 +9,40 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`org.apache.camel:camel-ftp` default TLS protocol is changed
         from TLSv1.2 to TLSv1..*'
 - ruleID: xml-removed-camel319-00002
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel-kafka` default TLS protocol is TLSv1.2,TLSv1..*'
 - ruleID: xml-removed-camel319-00003
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`org.apache.camel:camel-netty` - the default TLS protocol is
         changed from TLSv1,TLSv1.1,TLSv1.2 to TLSv1.2,TLSv1.3 in Camel 3.19..*'
 - ruleID: xml-removed-camel319-00004
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`org.apache.camel:camel-netty-http` - the default TLS protocol
         is changed from TLSv1,TLSv1.1,TLSv1.2 to TLSv1.2,TLSv1.3 in Camel 3.19..*'
 - ruleID: xml-removed-camel319-00005
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`org.apache.camel:camel-ahc` component has been removed in
         Camel 3.19..*'
 - ruleID: xml-removed-camel319-00006
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`org.apache.camel:camel-ahc-ws` component has been removed
         in Camel 3.19..*'

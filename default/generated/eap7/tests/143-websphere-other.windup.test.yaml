@@ -9,11 +9,11 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: WebSphere Asynchronous Work is a Work Manager
 - ruleID: websphere-other-eap7-02000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: WebSphere Startup Service serves

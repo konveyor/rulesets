@@ -10,6 +10,6 @@
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: The `load(URL)` method under `SynthLookAndFeel` has been deprecated
 #        in JDK 21 for removal in a future release.

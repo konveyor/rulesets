@@ -9,23 +9,23 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 5
+      exactly: 5
       messageMatches: If not supplied, the `java.io.
 - ruleID: utf-8-by-default-00010
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: If not supplied, the `java.util.
 - ruleID: utf-8-by-default-00020
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If not supplied, the `java.net.URLEncoder.encode`
 - ruleID: utf-8-by-default-00030
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If not supplied, the `java.net.URLDecoder.decode`

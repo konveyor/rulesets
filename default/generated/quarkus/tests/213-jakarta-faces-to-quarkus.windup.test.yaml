@@ -9,13 +9,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Faces Dependencies with groupId `jakarta.faces` should be replaced
         with
 - ruleID: jakarta-faces-to-quarkus-00010
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Faces Dependencies with artifactId `jakarta.faces` should be
         replaced with

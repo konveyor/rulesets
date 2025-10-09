@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If you migrate your application from JBoss EAP from 7.1.1 to
         7.2.x and want to retain the stricter behavior as defined in the JAX-RS 2.0
         specification

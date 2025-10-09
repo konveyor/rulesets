@@ -9,27 +9,27 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`org.apache.camel:camel-apns` component has been retired in
         Apache Camel 3.1.*'
 - ruleID: xml-changed-camel311-00001
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`org.apache.camel:camel-saxon` no longer depends on camel-saxon-xslt
         in 3.1.*'
 - ruleID: properties-removed-camel311-00001
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel.component.consul.service-registry` configuration key
         has been renamed to camel.cloud.consu.*'
 - ruleID: properties-removed-camel311-00002
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel.cloud.consul.service-registry` configuration key has
         been renamed to camel.cloud.consu.*'

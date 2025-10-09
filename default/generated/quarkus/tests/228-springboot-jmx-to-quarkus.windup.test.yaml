@@ -9,11 +9,11 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: 'Spring JMX XML configuration detected:'
 - ruleID: springboot-jmx-to-quarkus-00001
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: 'Spring JMX annotation configuration detected:'

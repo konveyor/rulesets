@@ -9,290 +9,290 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Caching in the RESTEasy client framework in resteasy-jaxrs is
         replaced by caching in the JAX-RS 2.0.*
 - ruleID: resteasy-eap6-000002
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace class .*org.jboss.resteasy.client.ClientRequest`.*
 - ruleID: resteasy-eap6-000003
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace .*org.jboss.resteasy.client.ClientResponse.*
 - ruleID: resteasy-eap6-000004
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace this class with .*org.jboss.resteasy.client.jaxrs.
 - ruleID: resteasy-eap6-000005
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: There is no direct replacement for .*org.jboss.resteasy.client.EntityTypeFactory.*
 - ruleID: resteasy-eap6-000006
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace the .*org.jboss.resteasy.client.ClientExecutor.*
 - ruleID: resteasy-eap6-000007
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace the .*org.jboss.resteasy.client.ClientRequestFactory.*
 - ruleID: resteasy-eap6-000008
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace the .*org.jboss.resteasy.client.ClientResponseFailure.*
 - ruleID: resteasy-eap6-000009
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace .*org.jboss.resteasy.spi.StringConverter.*
 - ruleID: resteasy-eap6-000010
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*InjectorFactory.*
 - ruleID: resteasy-eap6-000011
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The interface .*org.jboss.resteasy.spi.interception.MessageBodyWriterInterceptor.*
 - ruleID: resteasy-eap6-000012
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The interface .*org.jboss.resteasy.spi.interception.MessageBodyReaderInterceptor.*
 - ruleID: resteasy-eap6-000013
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The interface .*org.jboss.resteasy.spi.interception.MessageBodyWriterContext.*
 - ruleID: resteasy-eap6-000014
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*org.jboss.resteasy.core.interception.InterceptorRegistry.*
 - ruleID: resteasy-eap6-000015
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*org.jboss.resteasy.core.interception.InterceptorRegistryListener.*
 - ruleID: resteasy-eap6-000017
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: No direct replacement.*
 - ruleID: resteasy-eap6-000019
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Use .*javax.ws.rs.container.DynamicFeature.*
 - ruleID: resteasy-eap6-000020
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Remove annotation .*@org.jboss.resteasy.annotations.cache.ServerCached.*
 - ruleID: resteasy-eap6-000021
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replaced by .*javax.ws.rs.core.Link.*
 - ruleID: resteasy-eap6-000022
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*org.jboss.resteasy.spi.interception.ClientExecutionContext.*
 - ruleID: resteasy-eap6-000023
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Use .*javax.ws.rs.client.Invocation.*
 - ruleID: resteasy-eap6-000024
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Most of the .*org.jboss.resteasy.spi.ResteasyProviderFactory#add.*
 - ruleID: resteasy-eap6-000025
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Use .*javax.ws.rs.ext.ReaderInterceptorContext.*
 - ruleID: resteasy-eap6-000029
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Use .*javax.ws.rs.container.ContainerResponseFilter.*
 - ruleID: resteasy-eap6-000030
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Use .*javax.ws.rs.container.ContainerRequestFilter.*
 - ruleID: resteasy-eap6-000032
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: There were multiple changes on adding/removing methods on.*Registry.*
 - ruleID: resteasy-eap6-000101
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replaced by .*javax.ws.rs.ForbiddenException.*
 - ruleID: resteasy-eap6-000103
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replaced by .*javax.ws.rs.NotAllowedException.*
 - ruleID: resteasy-eap6-000104
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replaced by .*javax.ws.rs.NotAcceptableException.*
 - ruleID: resteasy-eap6-000105
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replaced by .*javax.ws.rs.NotFoundException.*
 - ruleID: resteasy-eap6-000106
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replaced by .*javax.ws.rs.NotAuthorizedException.*
 - ruleID: resteasy-eap6-000107
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replaced by .*javax.ws.rs.NotSupportedException.*
 - ruleID: resteasy-eap6-000118
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: RESTEasy 3 deprecates method .*org.jboss.resteasy.plugins.delegates.ServerCookie#checkName.*
 - ruleID: resteasy-eap6-000119
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Empty
 - ruleID: resteasy-eap6-000120
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace method calls of .*encodeRedirectUrl.*
 - ruleID: resteasy-eap6-000121
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace .*ResteasyHttpServletResponseWrapper#encodeURL.*
 - ruleID: resteasy-eap6-000122
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*MultipartFormDataInputImpl#getFormData.*
 - ruleID: resteasy-eap6-000123
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*MultipartFormDataInput#getFormData.* method will be removed.*
 - ruleID: resteasy-eap6-000125
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: As of Version 2.1 of the Java Servlet API, use .*ResteasyHttpServletRequestWrapper.isRequestedSessionIdFromURL.*
 - ruleID: resteasy-eap6-000126
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Method .*org.jboss.resteasy.plugins.providers.jaxb.SecureUnmarshaller#isValidating.*
 - ruleID: resteasy-eap6-000127
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: RESTEasy 3 deprecates method .*org.jboss.resteasy.plugins.delegates.ServerCookie#maybeQuote.*
 - ruleID: resteasy-eap6-000128
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Method .*org.jboss.resteasy.plugins.providers.jaxb.SecureUnmarshaller#setAdapter.*
 - ruleID: resteasy-eap6-000129
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: As of version 2.1, due to ambiguous meaning of the message parameter.
         To set a status code use .*setStatus.*
 - ruleID: resteasy-eap6-000130
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: RESTEasy 3 deprecates method .*org.jboss.resteasy.plugins.providers.jaxb.SecureUnmarshaller#setValidating.*
 - ruleID: resteasy-eap6-000131
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: RESTEasy 3 deprecates .*org.jboss.resteasy.auth.oauth.OAuthValidator#validateMessage.*
 - ruleID: resteasy-eap6-000140
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 3
+      exactly: 3
       messageMatches: The resteasy-yaml-provider module.*
 - ruleID: resteasy-eap6-000141
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Deserializing Java objects from untrusted sources is not safe.*
 - ruleID: resteasy-eap6-000142
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 4
+      exactly: 4
       messageMatches: RESTEasy fixes the issue when it doesn't set/add correctly character
         set meta data.*

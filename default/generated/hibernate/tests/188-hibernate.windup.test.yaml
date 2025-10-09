@@ -9,20 +9,20 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: In versions of Hibernate prior to 3.5, text type was mapped
         to JDBC CLOB
 - ruleID: hibernate-02000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The return types of the numeric aggregate criteria projections
         has changed to Long in hibernate 4. This change may introduce conflicts in
         the code.
   - name: tc-2
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The return types of the numeric aggregate criteria projections
         has changed to Long in hibernate 4. This change may introduce conflicts in
         the code.
@@ -30,41 +30,41 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The deprecated classes in org.hibernate.classic package.*
 - ruleID: hibernate-05000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace org.hibernate.dialect.resolver.DialectResolver.*
 - ruleID: hibernate-06000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace org.hibernate.jdbc.BatcherFactory.*
   - name: tc-2
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace org.hibernate.jdbc.Batcher.*
 - ruleID: hibernate-08000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace org.hibernate.engine.SessionImplementor.*
 - ruleID: hibernate-09000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The classes in org.hibernate.connection.*
 - ruleID: hibernate-10000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class org.hibernate.collection.PersistentBag was.*
 - ruleID: hibernate-10100
   testCases:
@@ -73,5 +73,5 @@ tests:
     - Hibernate 2.x
   - name: tc-2
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*This is an old Hibernate package name.*

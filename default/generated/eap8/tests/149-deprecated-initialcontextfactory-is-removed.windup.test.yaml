@@ -9,5 +9,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 3
+      exactly: 3
       messageMatches: Replace this class with `org.wildfly.naming.client.WildFlyInitialContextFactory`.

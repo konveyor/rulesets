@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`org.apache.camel:camel-bom` no longer includes dependencies
         with a type of test-jar, and the entries to several maven plugins have changed
         to include the correct groupId of org.apache.camel.maven'
@@ -18,24 +18,24 @@ tests:
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: '`camel-debezium-maven-plugin` has a new groupId of org.apache.camel.maven'
 #- ruleID: xml-changed-camel320-00003
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: '`camel-salesforce-maven-plugin` has a new groupId of org.apache.camel.maven'
 #- ruleID: xml-changed-camel320-00004
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: '`camel-servicenow-maven-plugin` has a new groupId of org.apache.camel.maven'
 - ruleID: xml-changed-camel320-00005
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The Camel Google Pubsub headers have been renamed, since dotted
         keys are not allowe.*

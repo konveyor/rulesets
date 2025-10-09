@@ -9,5 +9,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 6
+      exactly: 6
       messageMatches: Your application currently serves static content

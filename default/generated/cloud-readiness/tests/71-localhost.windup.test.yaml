@@ -9,17 +9,17 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: The app is trying to access local resource by HTTP
 - ruleID: localhost-jdbc-00002
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: The app is trying to access local resource by JDBC
 - ruleID: localhost-ws-00003
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: The app is trying to access local resource using WebSocket

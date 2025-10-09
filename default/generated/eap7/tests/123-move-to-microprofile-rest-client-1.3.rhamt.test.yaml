@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The application imports class `org.jboss.resteasy.client.microprofile.MicroprofileClientBuilderResolver`,
         and should be changed to use instead `org.eclipse.microprofile.rest.client.RestClientBuilder`,
         from Microprofile REST Client 1.3.

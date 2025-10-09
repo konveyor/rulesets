@@ -9,124 +9,124 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 3
+      exactly: 3
       messageMatches: JDK 8 no longer supporte.*
 - ruleID: xml-removed-camel315-00001
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel-kamelet-reify` component has been retired in Apache
         Camel 3.1.*'
 - ruleID: xml-removed-camel315-00002
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel-spring-javaconfig` component has been retired in Apache
         Camel 3.1.*'
 - ruleID: properties-removed-camel315-00001
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel.dataformat.fhirjson` configuration key has been renamed
         to camel.dataformat.fhir-jso.*'
 - ruleID: properties-removed-camel315-00002
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel.dataformat.fhirxml` configuration key has been renamed
         to camel.dataformat.fhir-xm.*'
 - ruleID: properties-removed-camel315-00003
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel.dataformat.gzipdeflater` configuration key has been
         renamed to camel.dataformat.gzip-deflate.*'
 - ruleID: properties-removed-camel315-00004
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel.dataformat.jacksonxml` configuration key has been renamed
         to camel.dataformat.jackson-xm.*'
 - ruleID: properties-removed-camel315-00005
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel.dataformat.jsonapi` configuration key has been renamed
         to camel.dataformat.json-ap.*'
 - ruleID: properties-removed-camel315-00006
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel.dataformat.mimemultipart` configuration key has been
         renamed to camel.dataformat.mime-multipar.*'
 - ruleID: properties-removed-camel315-00007
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel.dataformat.securexml` configuration key has been renamed
         to camel.dataformat.xml-securit.*'
 - ruleID: properties-removed-camel315-00008
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel.dataformat.tarfile` configuration key has been renamed
         to camel.dataformat.tar-fil.*'
 - ruleID: properties-removed-camel315-00009
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel.dataformat.tidymarkup` configuration key has been renamed
         to camel.dataformat.tidy-marku.*'
 - ruleID: properties-removed-camel315-00010
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel.dataformat.univocitycsv` configuration key has been
         renamed to camel.dataformat.univocity-cs.*'
 - ruleID: properties-removed-camel315-00011
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel.dataformat.univocityfixed` configuration key has been
         renamed to camel.dataformat.univocity-fixe.*'
 - ruleID: properties-removed-camel315-00012
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel.dataformat.univocitytsv` configuration key has been
         renamed to camel.dataformat.univocity-ts.*'
 - ruleID: properties-removed-camel315-00013
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel.dataformat.yaml-snakeyaml` configuration key has been
         renamed to camel.dataformat.snake-yam.*'
 - ruleID: properties-removed-camel315-00014
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel.dataformat.zipdeflater` configuration key has been renamed
         to camel.dataformat.zip-deflate.*'
 - ruleID: properties-removed-camel315-00015
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel.dataformat.zipfile` configuration key has been renamed
         to camel.dataformat.zip-fil.*'

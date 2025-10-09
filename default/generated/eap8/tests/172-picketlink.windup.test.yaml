@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 15
+      exactly: 15
       messageMatches: The PicketLink subsystem has been removed. This legacy security
         system was deprecated in EAP6 and removed in EAP8. All related configuration
         must be removed.*
@@ -17,7 +17,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Configure an RH-SSO SAML client and then generate a keycloak-saml.xml
         file using the RH-SSO admin console. Add the keycloak-saml.xml file to the
         deployment’s WEB-INF directory. Set the auth-method to KEYCLOAK-SAML in the

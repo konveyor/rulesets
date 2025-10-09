@@ -9,103 +9,103 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: PostgreSQL database
 - ruleID: eap4-eap6-26000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Oracle Database
 - ruleID: eap4-eap6-27000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Microsoft SQL Server
 - ruleID: eap4-eap6-28000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Connector port=
 - ruleID: eap4-eap6-29000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Connector protocol=
 - ruleID: eap4-eap6-30000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Connector maxThreads=
 - ruleID: eap4-eap6-31000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Connector connectionTimeout=
 - ruleID: eap4-eap6-32000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: emptySessionPath
 - ruleID: eap4-eap6-33000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: enables DNS lookup through `request.getRemoteHost()`.
 - ruleID: eap4-eap6-34000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Connector redirectPort=
 - ruleID: eap4-eap6-35000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: web connector scheme, such as HTTP or HTTPS.
 - ruleID: eap4-eap6-36000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The `secure` option
 - ruleID: eap4-eap6-37000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: In JBoss Web, the `jvmRoute` attribute
 - ruleID: eap4-eap6-38000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Extending `"Standard Stateless SessionBean"`
 - ruleID: eap4-eap6-39000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Extending `"Clustered Stateless SessionBean"`
 - ruleID: eap4-eap6-40000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Extending `"Standard Message Driven Bean"`
   - name: tc-2
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Extending `"Standard Message Driven Bean"`
   - name: tc-3
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Extending `"Standard Message Driven Bean"`

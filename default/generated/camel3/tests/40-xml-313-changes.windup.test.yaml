@@ -9,13 +9,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`org.apache.camel.springboot:camel-hazelzcast-starter` starter
         no longer has customer auto configuration options in Apache Camel 3.1.*'
 - ruleID: xml-removed-camel313-00003
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: This component has been refactored to be similar to other Camel
         component.*

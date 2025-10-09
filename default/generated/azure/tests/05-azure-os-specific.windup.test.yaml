@@ -9,19 +9,19 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 4
+      exactly: 4
       messageMatches: This file system path is Microsoft Windows platform dependent
   - name: tc-2
     hasIncidents:
-      atLeast: 4
+      exactly: 4
       messageMatches: This file system path is Microsoft Windows platform dependent.*
 - ruleID: azure-os-specific-00002
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: This Dynamic-Link Library is Microsoft Windows platform dependent
   - name: tc-2
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: This Dynamic-Link Library is Microsoft Windows platform dependent.*

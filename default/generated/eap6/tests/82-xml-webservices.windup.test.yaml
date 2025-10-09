@@ -38,13 +38,13 @@ tests:
 #    - Java Webservice Configuration
 #  - name: tc-2
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: .*JAX-WS Web Services Common API
 #- ruleID: xml-webservices-06001
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: .*JAX-WS Web Services Endpoints
 - ruleID: xml-webservices-07000
   testCases:

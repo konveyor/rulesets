@@ -10,11 +10,11 @@ tests:
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 2
+#      exactly: 2
 #      messageMatches: The .*IndexWriterSetting.*
 - ruleID: hsearch-00219
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The .*DirectoryHelper#getVerifiedIndexDir.*

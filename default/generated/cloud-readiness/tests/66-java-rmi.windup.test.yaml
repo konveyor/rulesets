@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Java RMI is a tightly coupled service. Tight coupling is
 - ruleID: java-rmi-00001
   testCases:

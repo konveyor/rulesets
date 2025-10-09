@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: This `doAs` signature has been deprecated in JDK18 for removal
         in a future release.
 # FIXME: static method - uncomment when fixed
@@ -17,6 +17,6 @@ tests:
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: The `Thread.stop()` signature has been deprecated in JDK18 for
 #        removal in a future release.

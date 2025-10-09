@@ -10,21 +10,21 @@
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: Replace this method call with `false` (which is the value that
 #        CDI implementations have returned for many years now).
 #- ruleID: jakarta-cdi-00002
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: Replace this method call with with BeanManager.getInjectionTargetFactory(AnnotatedType)
 #        and use the returned factory to create injection targets.
 #- ruleID: jakarta-cdi-00003
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: jakarta.enterprise.inject.spi.BeanManager.fireEvent(Object,
 #        Annotation) has been removed. Use BeanManager.getEvent() as an entry point
 #        to a similar API.
@@ -32,7 +32,7 @@
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: If you application is calling method BeforeBeanDiscovery.addAnnotatedType(AnnotatedType)
 #        replace it with BeforeBeanDiscovery.addAnnotatedType(AnnotatedType, (String)
 #        null)
