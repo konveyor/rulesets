@@ -13,7 +13,7 @@ tests:
 #    - JSF Seam 2.x tag library usage
 #  - name: tc-2
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: .*Seam UI's `<s:button>`.*
 - ruleID: seam-ui-jsf-00002
   testCases:
@@ -24,179 +24,179 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*should be replaced by `<h:link>`.*
 - ruleID: seam-ui-jsf-01001
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:conversationId>`.*
 - ruleID: seam-ui-jsf-01002
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:conversationPropagation>`.*
 - ruleID: seam-ui-jsf-01003
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:taskId>`.*
 - ruleID: seam-ui-jsf-01004
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:defaultAction>`.*
 - ruleID: seam-ui-jsf-01005
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*should be replaced by `<f:convertDateTime.*
 - ruleID: seam-ui-jsf-01006
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*Seam UI's `<s:convertEntity>` should be replaced by .*
 - ruleID: seam-ui-jsf-01007
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:enumItem>`.*
 - ruleID: seam-ui-jsf-01008
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:token>`.*
 - ruleID: seam-ui-jsf-01009
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:formattedText>`.*
 - ruleID: seam-ui-jsf-01010
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:cache>`.*
 - ruleID: seam-ui-jsf-01011
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:resource>`.*
 - ruleID: seam-ui-jsf-01012
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:download>`.*
 - ruleID: seam-ui-jsf-01013
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:remote>`.*
 - ruleID: seam-ui-jsf-01014
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*should be replaced by `<h:selectItems>`.*
 - ruleID: seam-ui-jsf-01015
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*should be replaced by `<f:validateBean>`.*
 - ruleID: seam-ui-jsf-01016
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*should be replaced by `<ui:fragment>`.*
 - ruleID: seam-ui-jsf-01017
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:convertEnum>`.*
 - ruleID: seam-ui-jsf-01018
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:convertAtomicBoolean>`.*
 - ruleID: seam-ui-jsf-01019
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:convertAtomicInteger>`.*
 - ruleID: seam-ui-jsf-01020
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:convertAtomicLong>`.*
 - ruleID: seam-ui-jsf-01021
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:validateEquality>`.*
 - ruleID: seam-ui-jsf-01022
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:validateAll>`.*
 - ruleID: seam-ui-jsf-01023
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:decorate>`.*
 - ruleID: seam-ui-jsf-01024
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:div>`.*
 - ruleID: seam-ui-jsf-01025
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:span>`.*
 - ruleID: seam-ui-jsf-01026
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:label>`.*
 - ruleID: seam-ui-jsf-01027
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*Use `<h:message for=.*
 - ruleID: seam-ui-jsf-01028
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:fileUpload>`.*
 - ruleID: seam-ui-jsf-01029
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*There is no direct mapping for `<s:graphicImage>`.*

@@ -19,19 +19,19 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*delay-updates-until-end-of-tx.*
 - ruleID: weblogic-xml-descriptor-eap7-04000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The elements of proprietary .*weblogic-ejb-jar.xml.*
 - ruleID: weblogic-xml-descriptor-eap7-06001
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace WebLogic proprietary configuration by Java EE annotation
         .*@AccessTimeout.*
 - ruleID: weblogic-xml-descriptor-eap7-07000
@@ -95,5 +95,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*trans-timeout-seconds.*

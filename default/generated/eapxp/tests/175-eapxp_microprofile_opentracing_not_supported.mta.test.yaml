@@ -9,6 +9,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: If you migrate your application to JBoss EAP XP 5.0 (or later),
         please note that MicroProfile OpenTracing is not supported.

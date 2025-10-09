@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: By default, types annotated with the `jakarta.json.bind.annotation.JsonbCreator`
         annotation no longer require all parameters to be present in the JSON content.
         Default values will be used if the JSON being parsed is missing one of the

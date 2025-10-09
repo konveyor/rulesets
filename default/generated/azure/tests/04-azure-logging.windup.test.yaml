@@ -9,6 +9,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 12
+      exactly: 12
       messageMatches: Logging to the file system is not recommended when running applications
         in the cloud.

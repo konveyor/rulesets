@@ -9,13 +9,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: SpringBoot Integration flows are not supported. A migration
         to Apache Camel route is mandatory.
 - ruleID: springboot-integration-to-quarkus-00020
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: SpringBoot IntegrationFlow class usage is not supported. A migration
         to Apache Camel route using From is mandatory.

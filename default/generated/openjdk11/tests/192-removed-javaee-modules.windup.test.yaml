@@ -9,20 +9,20 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Add the `jakarta.activation` dependency to your application's
         `pom.xml`..*
 - ruleID: removed-javaee-modules-00010
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 3
+      exactly: 3
       messageMatches: The `java.corba` (CORBA) module has been removed from OpenJDK
         11.*
 - ruleID: removed-javaee-modules-00020
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Add the `jakarta.annotation` dependency to your application's
         `pom.xml`..*

@@ -9,17 +9,17 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 5
+      exactly: 5
       messageMatches: The application uses Java APIs to read/write from the file system.
 - ruleID: azure-file-system-02000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: Relative path found.
 - ruleID: azure-file-system-03000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Home path found.

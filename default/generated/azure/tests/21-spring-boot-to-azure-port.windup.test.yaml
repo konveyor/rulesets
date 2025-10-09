@@ -9,5 +9,5 @@ tests:
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: The application is setting the server port.

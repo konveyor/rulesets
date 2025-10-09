@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If you migrate your application to JBoss EAP 7.3 (or later),
         and want to ensure its Maven building, running or testing works as expected,
         use instead the Jakarta EE dependency with groupId `com.sun.mail`, and artifactId
@@ -18,7 +18,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If you migrate your application to JBoss EAP 7.3, or later,
         and want to ensure its Maven building, running or testing works as expected,
         use instead the Jakarta EE dependency with groupId `com.sun.activation`
@@ -26,7 +26,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If you migrate your application to JBoss EAP 7.3, or later,
         and want to ensure its Maven building, running or testing works as expected,
         use instead the Jakarta EE dependency with artifactId `jakarta.activation`
@@ -34,7 +34,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 7
+      exactly: 7
       messageMatches: If you migrate your application to JBoss EAP 7.3, or later,
         and want to ensure its Maven building, running or testing works as expected,
         use instead the Jakarta EE dependency - groupId `jakarta.
@@ -42,7 +42,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 4
+      exactly: 4
       messageMatches: If you migrate your application to JBoss EAP 7.3, or later,
         and want to ensure its Maven building, running or testing works as expected,
         use instead the Jakarta EE dependency with groupId `jakarta.
@@ -50,7 +50,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If you migrate your application to JBoss EAP 7.3, or later,
         and want to ensure its Maven building, running or testing works as expected,
         use instead the Jakarta EE dependency with artifactId `jakarta.enterprise.cdi-api`
@@ -58,7 +58,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If you migrate your application to JBoss EAP 7.3, or later,
         and want to ensure its Maven building, running or testing works as expected,
         use instead the Jakarta EE dependency with artifactId `jakarta.validation-api`
@@ -66,7 +66,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If you migrate your application to JBoss EAP 7.3, or later,
         and want to ensure its Maven building, running or testing works as expected,
         use instead the Jakarta EE dependency with artifactId `jakarta.inject-api`
@@ -74,7 +74,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If you migrate your application to JBoss EAP 7.3 (or later),
         and want to ensure its Maven building, running or testing works as expected,
         use instead the Jakarta EE dependency with groupId `org.jboss.spec.javax.xml.soap`,
@@ -83,7 +83,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If you migrate your application to JBoss EAP 7.3 (or later),
         and want to ensure its Maven building, running or testing works as expected,
         use instead the Jakarta EE dependency with groupId `org.jboss.spec.javax.transaction`,
@@ -92,7 +92,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If you migrate your application to JBoss EAP 7.3 (or later),
         and want to ensure its Maven building, running or testing works as expected,
         use instead the JBoss EAP Jakarta EE BOM with groupId `org.jboss.bom`, and
@@ -101,7 +101,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If you migrate your application to JBoss EAP 7.3 (or later),
         and want to ensure its Maven building, running or testing works as expected,
         use instead the JBoss EAP Jakarta EE BOM with groupId `org.jboss.bom`, and
@@ -110,7 +110,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If you migrate your application to JBoss EAP 7.3 (or later),
         and want to ensure its Maven building, running or testing works as expected,
         use instead the JBoss EAP Jakarta EE BOM with groupId `org.jboss.bom`, and
@@ -119,7 +119,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If you migrate your application to JBoss EAP 7.3 (or later),
         and want to ensure its Maven building, running or testing works as expected,
         use instead the JBoss Jakarta EE BOM with groupId `org.jboss.spec`, and artifactId
@@ -128,7 +128,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If you migrate your application to JBoss EAP 7.3 (or later),
         and want to ensure its Maven building, running or testing works as expected,
         use instead the JBoss Jakarta EE BOM with groupId `org.jboss.spec`, and artifactId
@@ -137,7 +137,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If you migrate your application to JBoss EAP 7.3 (or later),
         and want to ensure its Maven building, running or testing works as expected,
         use instead the JBoss Jakarta EE BOM with groupId `org.jboss.spec`, and artifactId

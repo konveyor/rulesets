@@ -9,11 +9,11 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 5
+      exactly: 5
       messageMatches: Several classes under `javax` have been deprecated in JDK 20
         for removal in a future release.
   - name: tc-2
     hasIncidents:
-      atLeast: 5
+      exactly: 5
       messageMatches: Several classes under `javax` have been deprecated in JDK 20
         for removal in a future release.

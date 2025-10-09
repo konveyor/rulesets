@@ -14,23 +14,23 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: IBM MQe DiskFields
 - ruleID: websphere-mqe-eap7-02000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: IBM MQe Queue administration API
 - ruleID: websphere-mqe-eap7-03000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`MQeJMSAuthenticator` is a WebSphere proprietary.*'
 - ruleID: websphere-mqe-eap7-04000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: IBM MQe constants are used.*

@@ -17,11 +17,11 @@ tests:
     - IBM MQ Configuration
   - name: tc-2
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`WMQInitialContextFactory` is an implementation of.*'
 - ruleID: websphere-mq-eap7-02000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: WebSphere `.scp` files contain scripts.*

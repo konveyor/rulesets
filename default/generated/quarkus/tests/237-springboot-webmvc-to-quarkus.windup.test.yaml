@@ -9,9 +9,9 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Spring MVC is not supported by Quarkus
   - name: tc-2
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Spring WebFlux is not supported by Quarkus
