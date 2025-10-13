@@ -12,6 +12,8 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for proper diff comparison
 
       - name: Install Java and Maven
         uses: s4u/setup-maven-action@v1.18.0
@@ -20,8 +22,31 @@ jobs:
           java-distribution: temurin
           maven-version: 3.9.0
 
+      - name: Determine rulesets to test
+        id: get-rulesets
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "Running in PR mode - detecting changed rulesets..."
+            CHANGED_RULESETS=$(bash hack/get-changed-rulesets.sh origin/${{ github.base_ref }} | paste -sd ' ' -)
+
+            if [ -z "$CHANGED_RULESETS" ]; then
+              echo "No ruleset changes detected in this PR"
+              echo "skip_tests=true" >> $GITHUB_OUTPUT
+              echo "test_paths=" >> $GITHUB_OUTPUT
+            else
+              echo "Changed rulesets: $CHANGED_RULESETS"
+              echo "skip_tests=false" >> $GITHUB_OUTPUT
+              echo "test_paths=$CHANGED_RULESETS" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "Running in push mode - testing all rulesets"
+            echo "skip_tests=false" >> $GITHUB_OUTPUT
+            echo "test_paths=./default/generated" >> $GITHUB_OUTPUT
+          fi
+
       - name: Run rule tests
         id: kantra-test
+        if: steps.get-rulesets.outputs.skip_tests != 'true'
         run: |
           ID=$(podman create --name kantra-download quay.io/konveyor/kantra:latest)
           podman cp ${ID}:/usr/local/bin/kantra .
@@ -30,7 +55,24 @@ jobs:
           podman cp ${ID}:/jdtls .
           mkdir rulesets static-report
           podman rm kantra-download
-          RUN_LOCAL=1 ./kantra test ./default/generated --log-level 50 | tee output.log || true
+
+          # Run tests on the determined paths
+          TEST_PATHS="${{ steps.get-rulesets.outputs.test_paths }}"
+          echo "Testing rulesets: $TEST_PATHS"
+
+          # Run kantra test for each ruleset path
+          OVERALL_RESULT=0
+          for TEST_PATH in $TEST_PATHS; do
+            echo "Testing ruleset: $TEST_PATH"
+            RUN_LOCAL=1 ./kantra test "$TEST_PATH" --log-level 50 | tee -a output.log || OVERALL_RESULT=$?
+          done
+
+          # Exit with failure if any test failed
+          if [[ $OVERALL_RESULT -ne 0 ]]; then
+            echo "Some tests failed"
+            cat output.log
+            exit 1
+          fi
           tail -n5 output.log > message.md
           msg=$(grep -E '.*Rules Summary:' message.md -A1)
           tests_pass_rate=$(grep -E '.*Rules Summary:' message.md | sed -E 's| *Rules Summary: *(.*)|\1|' | sed -E 's|.*?:||')
@@ -55,6 +97,21 @@ jobs:
           else
             exit 0
           fi
+
+      - name: Handle skipped tests
+        id: skip-handler
+        if: steps.get-rulesets.outputs.skip_tests == 'true'
+        run: |
+          echo "No ruleset changes detected in this PR - skipping tests"
+          echo 'msg<<EOF' >> $GITHUB_OUTPUT
+          echo "No ruleset changes detected - tests skipped" >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
+          echo 'tests_pass_rate<<EOF' >> $GITHUB_OUTPUT
+          echo "N/A" >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
+          echo 'tcs_pass_rate<<EOF' >> $GITHUB_OUTPUT
+          echo "N/A" >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
 
 #      - name: Comment on the PR
 #        if: ${{ github.event_name == 'pull_request' }}
@@ -94,6 +151,7 @@ jobs:
 #          debug: true
 
       - name: Upload matching folders
+        if: steps.get-rulesets.outputs.skip_tests != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: rules-test-folders
