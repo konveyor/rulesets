@@ -1,0 +1,23 @@
+rulesPath: ../240-jdbc-jpa-mixed-to-quarkus.yaml
+providers:
+- name: java
+  dataPath: ./data/240-jdbc-jpa-mixed-to-quarkus
+tests:
+- ruleID: jdbc-jpa-mixed-to-quarkus-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: This file uses both JPA .* and direct JDBC
+- ruleID: jdbc-jpa-mixed-to-quarkus-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Direct JDBC Connection usage detected
+- ruleID: jdbc-jpa-mixed-to-quarkus-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Direct JDBC Statement usage detected

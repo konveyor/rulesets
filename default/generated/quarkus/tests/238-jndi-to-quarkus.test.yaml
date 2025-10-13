@@ -1,0 +1,17 @@
+rulesPath: ../238-jndi-to-quarkus.yaml
+providers:
+- name: java
+  dataPath: ./data/238-jndi-to-quarkus
+tests:
+- ruleID: jndi-to-quarkus-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: JNDI lookups via `InitialContext` are not supported in Quarkus
+- ruleID: jndi-to-quarkus-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: JNDI lookups using the `lookup()` method are not supported in Quarkus

@@ -1,0 +1,23 @@
+rulesPath: ../239-transaction-to-quarkus.yaml
+providers:
+- name: java
+  dataPath: ./data/239-transaction-to-quarkus
+tests:
+- ruleID: transaction-to-quarkus-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Methods that modify data using EntityManager operations .* must be annotated with `@Transactional`
+- ruleID: transaction-to-quarkus-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Methods that modify data using EntityManager operations .* must be annotated with `@Transactional`
+- ruleID: transaction-to-quarkus-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Methods that modify data using EntityManager operations .* must be annotated with `@Transactional`
