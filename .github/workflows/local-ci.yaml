@@ -61,10 +61,14 @@ jobs:
           echo "Testing rulesets: $TEST_PATHS"
 
           # Run kantra test for each ruleset path
+          set -o pipefail
+          : > output.log
           OVERALL_RESULT=0
           for TEST_PATH in $TEST_PATHS; do
             echo "Testing ruleset: $TEST_PATH"
-            RUN_LOCAL=1 ./kantra test "$TEST_PATH" --log-level 50 | tee -a output.log || OVERALL_RESULT=$?
+            if ! RUN_LOCAL=1 ./kantra test "$TEST_PATH" --log-level 50 | tee -a output.log; then
+              OVERALL_RESULT=1
+            fi
           done
 
           # Exit with failure if any test failed
