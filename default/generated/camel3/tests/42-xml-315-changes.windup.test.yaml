@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 3
+      exactly: 5
       messageMatches: JDK 8 no longer supporte.*
 - ruleID: xml-removed-camel315-00001
   testCases:

@@ -14,72 +14,52 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 4
       messageMatches: Oracle JMS sessions are used for producing.*
 - ruleID: weblogic-jms-eap7-02000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Oracle JMS queue browsers are used for browsing messages in
         a JMS queue.*
 - ruleID: weblogic-jms-eap7-03000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: Oracle JMS producers are used for sending messages to a destination.*
 - ruleID: weblogic-jms-eap7-04000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: Oracle JMS consumers are used for receiving messages sent to
         a destination.*
 - ruleID: weblogic-jms-eap7-05000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: Oracle JMS connections represent virtual connections with a
         JMS provider.*
 - ruleID: weblogic-jms-eap7-06000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
-      messageMatches: Oracle JMS Text messages represent.*
-  - name: tc-2
-    hasIncidents:
-      exactly: 1
-      messageMatches: Oracle JMS Stream messages represent.*
-  - name: tc-3
-    hasIncidents:
-      exactly: 1
-      messageMatches: Oracle JMS Object messages represent.*
-  - name: tc-4
-    hasIncidents:
-      exactly: 1
-      messageMatches: Oracle JMS Map messages represent.*
-  - name: tc-5
-    hasIncidents:
-      exactly: 1
-      messageMatches: Oracle JMS Bytes messages represent.*
-  - name: tc-6
-    hasIncidents:
-      exactly: 1
-      messageMatches: Oracle JMS *messages represent.*
+      exactly: 13
+      messageMatches: Oracle JMS.*?messages represent.*
 - ruleID: weblogic-jms-eap7-07000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Oracle JMS destinations are the objects.*
 - ruleID: weblogic-jms-eap7-08000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: Oracle ConnectionFactory is an encapsulation.*
   - name: tc-2
     hasIncidents:

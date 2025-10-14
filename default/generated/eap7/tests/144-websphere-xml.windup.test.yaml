@@ -24,17 +24,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
-      messageMatches: This file contains WebSphere proprietary JSP engine configuration.*
-  - name: tc-2
-    hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: This file contains WebSphere proprietary JSP engine configuration.*
 - ruleID: eap7-websphere-xml-06000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: This file contains WebSphere proprietary binding configuration.*
 - ruleID: eap7-websphere-xml-07000
   testCases:

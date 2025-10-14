@@ -16,26 +16,26 @@ tests:
   - name: tc-1
     hasIncidents:
       exactly: 1
-      messageMatches: Enterprise Java Beans (EJBs) are not supported in Quarkus. CDI
+      messageMatches: Enterprise Java Beans \(EJBs\) are not supported in Quarkus. CDI
         must be use.*
 - ruleID: jms-to-reactive-quarkus-00020
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: The `destinationLookup` property can be migrated by annotati
 - ruleID: jms-to-reactive-quarkus-00030
   testCases:
   - name: tc-1
     hasIncidents:
       exactly: 1
-      messageMatches: JMS `Queue`s should be replaced with Micromete.*
+      messageMatches: JMS `Queue`s should be replaced with MicroProfile
 - ruleID: jms-to-reactive-quarkus-00040
   testCases:
   - name: tc-1
     hasIncidents:
       exactly: 1
-      messageMatches: JMS `Topic`s should be replaced with Micromete.*
+      messageMatches: JMS `Topic`s should be replaced with MicroProfile.*
 - ruleID: jms-to-reactive-quarkus-00050
   testCases:
   - name: tc-1

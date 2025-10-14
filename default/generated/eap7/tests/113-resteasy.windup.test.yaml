@@ -9,26 +9,26 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: Caching in the RESTEasy client framework in resteasy-jaxrs is
         replaced by caching in the JAX-RS 2.0.*
 - ruleID: resteasy-eap6-000002
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 6
       messageMatches: Replace class .*org.jboss.resteasy.client.ClientRequest`.*
 - ruleID: resteasy-eap6-000003
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: Replace .*org.jboss.resteasy.client.ClientResponse.*
 - ruleID: resteasy-eap6-000004
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: Replace this class with .*org.jboss.resteasy.client.jaxrs.
 - ruleID: resteasy-eap6-000005
   testCases:
@@ -40,7 +40,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: Replace the .*org.jboss.resteasy.client.ClientExecutor.*
 - ruleID: resteasy-eap6-000007
   testCases:
@@ -58,43 +58,43 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Replace .*org.jboss.resteasy.spi.StringConverter.*
 - ruleID: resteasy-eap6-000010
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: .*InjectorFactory.*
 - ruleID: resteasy-eap6-000011
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: The interface .*org.jboss.resteasy.spi.interception.MessageBodyWriterInterceptor.*
 - ruleID: resteasy-eap6-000012
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: The interface .*org.jboss.resteasy.spi.interception.MessageBodyReaderInterceptor.*
 - ruleID: resteasy-eap6-000013
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: The interface .*org.jboss.resteasy.spi.interception.MessageBodyWriterContext.*
 - ruleID: resteasy-eap6-000014
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: .*org.jboss.resteasy.core.interception.InterceptorRegistry.*
 - ruleID: resteasy-eap6-000015
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: .*org.jboss.resteasy.core.interception.InterceptorRegistryListener.*
 - ruleID: resteasy-eap6-000017
   testCases:
@@ -106,7 +106,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Use .*javax.ws.rs.container.DynamicFeature.*
 - ruleID: resteasy-eap6-000020
   testCases:
@@ -136,25 +136,25 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Most of the .*org.jboss.resteasy.spi.ResteasyProviderFactory#add.*
 - ruleID: resteasy-eap6-000025
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Use .*javax.ws.rs.ext.ReaderInterceptorContext.*
 - ruleID: resteasy-eap6-000029
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Use .*javax.ws.rs.container.ContainerResponseFilter.*
 - ruleID: resteasy-eap6-000030
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Use .*javax.ws.rs.container.ContainerRequestFilter.*
 - ruleID: resteasy-eap6-000032
   testCases:
@@ -167,13 +167,13 @@ tests:
   - name: tc-1
     hasIncidents:
       exactly: 1
-      messageMatches: Replaced by .*javax.ws.rs.ForbiddenException.*
+      messageMatches: Replaced by .*?javax.ws.rs.ForbiddenException.*
 - ruleID: resteasy-eap6-000103
   testCases:
   - name: tc-1
     hasIncidents:
       exactly: 1
-      messageMatches: Replaced by .*javax.ws.rs.NotAllowedException.*
+      messageMatches: Replaced by .*?javax.ws.rs.NotAllowedException.*
 - ruleID: resteasy-eap6-000104
   testCases:
   - name: tc-1
@@ -226,13 +226,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: .*MultipartFormDataInputImpl#getFormData.*
 - ruleID: resteasy-eap6-000123
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: .*MultipartFormDataInput#getFormData.* method will be removed.*
 - ruleID: resteasy-eap6-000125
   testCases:

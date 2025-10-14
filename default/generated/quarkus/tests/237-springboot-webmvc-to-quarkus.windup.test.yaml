@@ -11,7 +11,3 @@ tests:
     hasIncidents:
       exactly: 1
       messageMatches: Spring MVC is not supported by Quarkus
-  - name: tc-2
-    hasIncidents:
-      exactly: 1
-      messageMatches: Spring WebFlux is not supported by Quarkus

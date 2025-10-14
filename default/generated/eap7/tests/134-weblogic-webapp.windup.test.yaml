@@ -23,7 +23,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 4
       messageMatches: Replace the proprietary WebLogic .*@WLInitParam.*
 - ruleID: weblogic-webapp-eap7-04000
   testCases:
@@ -35,7 +35,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: WebLogic .*ApplicationLifecycleEvent.*
 - ruleID: weblogic-webapp-eap7-06000
   testCases:
@@ -47,17 +47,17 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: The usage of the WebLogic proprietary security API.*
 - ruleID: weblogic-webapp-eap7-08000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: 'Migrate to JBoss EAP 7: .*org.jboss.security.SecurityContextAssociation.*'
 - ruleID: weblogic-webapp-eap7-09000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: Oracle WebLogic Server provides a proprietary .*ServletAuthentication.*

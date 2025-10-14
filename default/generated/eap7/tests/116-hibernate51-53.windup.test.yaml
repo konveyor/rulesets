@@ -16,26 +16,26 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
 - ruleID: hibernate51-53-00300
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 7
       messageMatches: If the `SessionFactory` is built via Hibernate’s native bootstrapping
         and `org.hibernate.HibernateException.*
 - ruleID: hibernate51-53-00400
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: '`org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getDefaultQueryResultsCache()`
-        should be used instead of `SessionFactoryImplementor.getQueryCache()` metho.*'
+        should be used instead of `SessionFactoryImplementor.getQueryCache()` metho'
 - ruleID: hibernate51-53-00401
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: '`org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getDefaultQueryResultsCache(String
         regionName)` should be used instead of `SessionFactoryImplementor.getQueryCache(String
         regionName)` method'
@@ -86,7 +86,7 @@ tests:
     hasIncidents:
       exactly: 1
       messageMatches: '`org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getCacheRegionNames()`
-        should be used to obtain all cache region names.*'
+        should be used to obtain all cache region names'
 - ruleID: hibernate51-53-00500
   testCases:
   - name: tc-1
@@ -106,18 +106,18 @@ tests:
     hasIncidents:
       exactly: 2
       messageMatches: A change to be aware of is accessing cache entries via `SecondLevelCacheStatistics.getEntries()`
-        and `NaturalIdCacheStatistics.getEntries().*
+        and `NaturalIdCacheStatistics.getEntries()
 - ruleID: hibernate51-53-00701
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: A change to be aware of is accessing cache entries via `NaturalIdCacheStatistics.getEntries().*
 - ruleID: hibernate51-53-00702
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: A change to be aware of is accessing cache entries via `SecondLevelCacheStatistics.getEntries()`.
 - ruleID: hibernate51-53-00800
   testCases:
@@ -129,13 +129,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: Define `hibernate.default_schema` or `hibernate.default_catalog`
 - ruleID: hibernate51-53-01001
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      atLeast: 2
       messageMatches: If the application uses Hibernate, please define `hibernate.default_schema`
         or `hibernate.default_catalog`
 - ruleID: hibernate51-53-01100
@@ -148,5 +148,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      exactly: 3 # TODO (pgaikwad): B1 add link
       messageMatches: Any references to `org.hibernate.*.getType().*

@@ -16,5 +16,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: The Nashorn scripting implementatio.*

@@ -49,7 +49,7 @@ tests:
     hasIncidents:
       exactly: 1
       messageMatches: Implementation or use by the application of the `javax.xml.bind.Marshaller`
-        `setAdapter()` method may need to be update.*
+        `setAdapter\(\)` method may need to be update.*
 - ruleID: eap8-xml-binding-00008
   testCases:
   - name: tc-1
@@ -63,4 +63,4 @@ tests:
     hasIncidents:
       exactly: 1
       messageMatches: Implementation or use by the application of the `javax.xml.bind.Marshaller`
-        `getAdapter()` method may need to be update.*
+        `getAdapter\(\)` method may need to be update.*

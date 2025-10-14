@@ -59,7 +59,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: JAX-RPC support was removed in JBoss EAP 7.
 - ruleID: jboss-eap5and6to7-xml-34000
   testCases:

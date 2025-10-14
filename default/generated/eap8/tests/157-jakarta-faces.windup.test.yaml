@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: The `@Produces` annotation for instantiating `FacesContext`
         is not necessary anymore, as CDI injection for `FacesContext` works out of
         the box.

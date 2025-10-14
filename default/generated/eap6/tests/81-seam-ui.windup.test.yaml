@@ -24,7 +24,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: .*should be replaced by `<h:link>`.*
 - ruleID: seam-ui-jsf-01001
   testCases:
@@ -54,7 +54,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: .*should be replaced by `<f:convertDateTime.*
 - ruleID: seam-ui-jsf-01006
   testCases:
@@ -156,13 +156,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: .*There is no direct mapping for `<s:validateAll>`.*
 - ruleID: seam-ui-jsf-01023
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 7
       messageMatches: .*There is no direct mapping for `<s:decorate>`.*
 - ruleID: seam-ui-jsf-01024
   testCases:

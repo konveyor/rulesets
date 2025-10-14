@@ -231,7 +231,7 @@ tests:
   testCases:
   - name: tc-1
     hasInsights:
-      exactly: 3
+      exactly: 3 # TODO (pgaikwad): B4 bug in the bundle
       messageMatches: The `ref` attribute in th.*
 - ruleID: java-generic-information-00050
   testCases:

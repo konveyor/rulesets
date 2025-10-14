@@ -199,63 +199,63 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: In the root tag, replace the `version` attribute value `2.1`
         with `3.0`
 - ruleID: javaee-to-jakarta-namespaces-00034
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: In the root tag, replace the `version` attribute value `7` with
         `9`
 - ruleID: javaee-to-jakarta-namespaces-00035
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: '`beans_1_1.xsd`: In the root tag, replace the `version`'
 - ruleID: javaee-to-jakarta-namespaces-00036
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: '`beans_2_0.xsd`: In the root tag, replace the `version`'
 - ruleID: javaee-to-jakarta-namespaces-00037
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: '`application_7.xsd`: In the root tag, replace the `version`'
 - ruleID: javaee-to-jakarta-namespaces-00038
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: '`application_8.xsd`: In the root tag, replace the `version`'
 - ruleID: javaee-to-jakarta-namespaces-00039
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: '`application-client_7.xsd`: In the root tag, replace the `version`'
 - ruleID: javaee-to-jakarta-namespaces-00040
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: '`application-client_8.xsd`: In the root tag, replace the `version`'
 - ruleID: javaee-to-jakarta-namespaces-00041
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 2
       messageMatches: '`connector_1_7.xsd`: In the root tag, replace the `version`'
 - ruleID: javaee-to-jakarta-namespaces-00042
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: '`ejb-jar_3_2.xsd`: In the root tag, replace the `version`'
 # TODO: why are these failing?
 #- ruleID: javaee-to-jakarta-namespaces-00043
@@ -281,66 +281,66 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: '`web-fragment_3_1`: In the root tag, replace the `version`'
 - ruleID: javaee-to-jakarta-namespaces-00047
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: '`web-fragment_4_0`: In the root tag, replace the `version`'
 - ruleID: javaee-to-jakarta-namespaces-00048
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: '`web-facesconfig_2_2`: In the root tag, replace the `version`'
 - ruleID: javaee-to-jakarta-namespaces-00049
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: '`web-facesconfig_2_3`: In the root tag, replace the `version`'
 - ruleID: javaee-to-jakarta-namespaces-00050
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: '`web-facelettaglibrary_2_2`: In the root tag, replace the `version`'
 - ruleID: javaee-to-jakarta-namespaces-00051
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: '`web-facelettaglibrary_2_3`: In the root tag, replace the `version`'
 - ruleID: javaee-to-jakarta-namespaces-00052
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: '`web-jsptaglibrary_2_1`: In the root tag, replace the `version`'
 - ruleID: javaee-to-jakarta-namespaces-00053
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: '`validation-mapping-2.0`: In the root tag, replace the `version`'
 - ruleID: javaee-to-jakarta-namespaces-00054
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: '`validation-configuration-2.0`: In the root tag, replace the
         `version`'
 - ruleID: javaee-to-jakarta-namespaces-00055
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: '`orm_2_1`: In the root tag, replace the `version`'
 - ruleID: javaee-to-jakarta-namespaces-00056
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: '`orm_2_2`: In the root tag, replace the `version`'

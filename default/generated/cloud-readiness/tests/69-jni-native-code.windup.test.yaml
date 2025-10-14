@@ -16,5 +16,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 3
+      exactly: 5
       messageMatches: Native Processes might not run in a cloud or container environment

@@ -67,7 +67,9 @@ tests:
       exactly: 1
       messageMatches: '`org.apache.camel:camel-boon-starter` artifact has been deprecated
         in Apache Camel .*'
-  - name: tc-2
+- ruleID: xml-removed-components-00007-01
+  testCases:
+  - name: tc-1
     hasIncidents:
       exactly: 1
       messageMatches: '`org.apache.camel:camel-core-starter` artifact has been remove.*'
@@ -78,7 +80,9 @@ tests:
       exactly: 3
       messageMatches: '`twitter-streaming` component has been deprecated in Apache
         Camel .*'
-  - name: tc-2
+- ruleID: xml-removed-components-00008-01
+  testCases:
+  - name: tc-1
     hasIncidents:
-      exactly: 2
+      exactly: 1
       messageMatches: The `camel-maven-plugin` has been split up into two Maven plugin.*

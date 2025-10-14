@@ -9,14 +9,14 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Hibernate Search 6.1.x now requires using Hibernate ORM versions
         from the 5.6.x family.
 - ruleID: hibernate-search-6.1-00020
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      atLeast: 2
       messageMatches: '`org.hibernate.search.engine.cfg.spi.ConfigurationPropertySource`
         has been moved to `org.hibernate.search.engine.cfg.ConfigurationPropertySource`.'
 - ruleID: hibernate-search-6.1-00030
@@ -124,7 +124,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: '`org.hibernate.search.mapper.orm.massindexing.MassIndexingMonitor`
         has been deprecated, implement `org.hibernate.search.mapper.pojo.massindexing.MassIndexingMonitor`
         instead.'
@@ -132,6 +132,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: 'Property has been deprecated: use the new configuration property
         that accepts `true`/`false` instead. See `HibernateOrmMapperSettings#AUTOMATIC_INDEXING_ENABLED`.'

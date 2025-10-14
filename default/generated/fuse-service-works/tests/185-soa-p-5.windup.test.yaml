@@ -12,7 +12,7 @@ tests:
     - JBoss ESB 5 Action Handler
   - name: tc-2
     hasIncidents:
-      exactly: 1
+      exactly: 7
       messageMatches: Custom action classes should be migrated to CDI Beans in Fuse
         Service Works
 - ruleID: soa-p-5-02000
@@ -48,7 +48,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Each .*? definition in SOA-P 5 represents a service which can
         be
 - ruleID: soa-p-5-08000
@@ -63,13 +63,13 @@ tests:
   - name: tc-1
     hasIncidents:
       exactly: 1
-      messageMatches: Although Camel has both Hibernate and JPA components that are.*[n]*.*useful
-        in consuming records, there isn't any support for Hibernate events.
+      messageMatches: Although Camel has both Hibernate and JPA components that are
+        useful in consuming records, there isn't any support for Hibernate events.
 - ruleID: soa-p-5-10000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: A jms-bus definition can be converted to a JMS or JCA gateway
 - ruleID: soa-p-5-11000
   testCases:
@@ -292,7 +292,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 1 # TODO (pgaikwad): B5 recheck
       messageMatches: JBoss ESB uses the Aggregator action to aggregate a message
         sequence into a single aggregated message.
   - name: tc-2

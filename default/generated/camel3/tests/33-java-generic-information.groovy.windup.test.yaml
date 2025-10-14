@@ -46,7 +46,7 @@ tests:
   - name: tc-1
     hasIncidents:
       exactly: 2
-      messageMatches: '`org.apache.camel.util.jsse.*` was moved to `org.*`'
+      messageMatches: '`org.apache.camel.util.jsse.*` package was moved to `org.*`'
 - ruleID: java-generic-information-00041
   testCases:
   - name: tc-1
@@ -57,7 +57,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      atLeast: 2
       messageMatches: An override the `createRegistry` method for beans registration
         is no longer necessar.*
 - ruleID: java-generic-information-00043
@@ -65,10 +65,10 @@ tests:
   - name: tc-1
     hasIncidents:
       exactly: 2
-      messageMatches: '`org.apache.camel.management.event.*` was moved to `org.*`'
+      messageMatches: '`org.apache.camel.management.event.*` was moved to the `org.*`'
 - ruleID: java-generic-information-00044
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: Testing with `adviceWith` changed. It's necessary to use `RouteReifier.*

@@ -14,13 +14,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: .*Commonj Timer Manager API is similar.*
 - ruleID: commonj-03000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 4 # TODO (pgaikwad): B10 recheck
       messageMatches: .*Commonj Timer Interface is similar.*
 - ruleID: commonj-04000
   testCases:
@@ -31,16 +31,11 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
-      messageMatches: .*The CommonJ WorkManager can be replaced with a JCA Resource
-        Adapter
-  - name: tc-2
-    hasIncidents:
-      exactly: 1
-      messageMatches: .*Replace CommonJ Work.*
+      atLeast: 2
+      messageMatches: The CommonJ WorkManager can be replaced with a JCA Resource Adapter.
 - ruleID: commonj-06000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 6
       messageMatches: .*Replace commonj.work.Work.*

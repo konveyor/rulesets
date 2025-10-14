@@ -7,26 +7,26 @@ providers:
 tests:
 - ruleID: jboss-eap5-java-01000
   testCases:
-  - name: tc-1
+  - name: tc-1 # TODO (pgaikwad): B4 recheck
     hasTags:
     - JBoss EAP 5 JMX ManagementBean
 - ruleID: jboss-eap5-java-02000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: '`QueueConnectionFactory`'
 - ruleID: jboss-eap5-java-04000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 4
       messageMatches: The `@Service` annotation
 - ruleID: jboss-eap5-java-05000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: The `@Management` annotation
 - ruleID: jboss-eap5-java-06000
   testCases:
@@ -38,7 +38,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: The `@Depends` annotation
 - ruleID: jboss-eap5-java-08000
   testCases:
@@ -84,7 +84,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: This package has been relocated to `org.jboss.ws.api.tools`
         as specified in the
 - ruleID: jboss-eap5-java-08600
@@ -112,7 +112,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 4
       messageMatches: This package has been relocated to `org.jboss.ws.common` as
         specified in the
 - ruleID: jboss-eap5-java-09100

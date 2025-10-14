@@ -267,7 +267,7 @@
   ruleID: weblogic-eap7-11000
   when:
     java.referenced:
-      pattern: NonCatalogLogger
+      pattern: weblogic.*NonCatalogLogger
 - category: mandatory
   customVariables: []
   description: WebLogic Oracle FCF JDBC property

@@ -23,7 +23,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: The `javax.servlet.http.HttpUtils` utility class has
 - ruleID: javax-to-jakarta-servlet-00040
   testCases:
@@ -63,7 +63,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Method `getRealPath` in javax.servlet.ServletRequestWrapper
         has been removed
 - ruleID: javax-to-jakarta-servlet-00070

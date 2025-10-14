@@ -25,14 +25,14 @@ tests:
         analysisParams:
           mode: "source-only"
         hasIncidents:
-          exactly: 1
+          exactly: 3
   - ruleID: spring-boot-2.x-to-3.0-removals-00040
     testCases:
       - name: tc-1
         analysisParams:
           mode: "source-only"
         hasIncidents:
-          exactly: 1
+          exactly: 2
 #  - ruleID: spring-boot-2.x-to-3.0-removals-00050
 #    testCases:
 #      - name: tc-1
@@ -46,7 +46,7 @@ tests:
         analysisParams:
           mode: "source-only"
         hasIncidents:
-          exactly: 1
+          exactly: 3
 
 
   - ruleID: spring-boot-2.x-to-3.0-removals-00070
@@ -55,7 +55,7 @@ tests:
         analysisParams:
           mode: "source-only"
         hasIncidents:
-          exactly: 1
+          exactly: 2
 
   - ruleID: spring-boot-2.x-to-3.0-removals-00080
     testCases:
@@ -63,7 +63,7 @@ tests:
         analysisParams:
           mode: "source-only"
         hasIncidents:
-          exactly: 1
+          exactly: 2
 
   - ruleID: spring-boot-2.x-to-3.0-removals-00090
     testCases:
@@ -71,7 +71,7 @@ tests:
         analysisParams:
           mode: "source-only"
         hasIncidents:
-          exactly: 1
+          exactly: 2
 
   - ruleID: spring-boot-2.x-to-3.0-removals-00100
     testCases:
@@ -120,7 +120,7 @@ tests:
         analysisParams:
           mode: "source-only"
         hasIncidents:
-          exactly: 1
+          exactly: 2
 
   - ruleID: spring-boot-2.x-to-3.0-removals-00160
     testCases:
@@ -128,7 +128,7 @@ tests:
         analysisParams:
           mode: "source-only"
         hasIncidents:
-          exactly: 1
+          exactly: 2
 
 #  - ruleID: spring-boot-2.x-to-3.0-removals-00170
 #    testCases:
@@ -153,7 +153,7 @@ tests:
         analysisParams:
           mode: "source-only"
         hasIncidents:
-          exactly: 1
+          exactly: 2
 
 
   - ruleID: spring-boot-2.x-to-3.0-removals-00200
@@ -162,7 +162,7 @@ tests:
         analysisParams:
           mode: "source-only"
         hasIncidents:
-          exactly: 1
+          exactly: 2
 
   - ruleID: spring-boot-2.x-to-3.0-removals-00210
     testCases:
@@ -188,7 +188,7 @@ tests:
         analysisParams:
           mode: "source-only"
         hasIncidents:
-          exactly: 1
+          exactly: 2
 
   - ruleID: spring-boot-2.x-to-3.0-removals-00260
     testCases:
@@ -196,7 +196,7 @@ tests:
         analysisParams:
           mode: "source-only"
         hasIncidents:
-          exactly: 1
+          exactly: 2
 
   - ruleID: spring-boot-2.x-to-3.0-removals-00270
     testCases:
@@ -204,7 +204,7 @@ tests:
         analysisParams:
           mode: "source-only"
         hasIncidents:
-          exactly: 1
+          exactly: 2
 
   - ruleID: spring-boot-2.x-to-3.0-removals-00290
     testCases:
@@ -380,7 +380,7 @@ tests:
         analysisParams:
           mode: "source-only"
         hasIncidents:
-          exactly: 1
+          exactly: 2
 
   - ruleID: spring-boot-2.x-to-3.0-removals-00510
     testCases:

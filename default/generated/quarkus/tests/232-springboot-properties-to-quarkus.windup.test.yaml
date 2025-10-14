@@ -22,7 +22,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 6
       messageMatches: Spring datasource property key/value pairs have been detected
         in the application property file.
 - ruleID: springboot-properties-to-quarkus-00003

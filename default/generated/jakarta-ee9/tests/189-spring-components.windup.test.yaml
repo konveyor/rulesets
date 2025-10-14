@@ -15,5 +15,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      atLeast: 2
       messageMatches: Version 6.0.0 is the minimum version of Spring

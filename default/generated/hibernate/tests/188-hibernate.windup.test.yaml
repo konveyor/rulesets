@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: In versions of Hibernate prior to 3.5, text type was mapped
         to JDBC CLOB
 - ruleID: hibernate-02000
@@ -64,7 +64,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: The class org.hibernate.collection.PersistentBag was.*
 - ruleID: hibernate-10100
   testCases:
@@ -73,5 +73,5 @@ tests:
     - Hibernate 2.x
   - name: tc-2
     hasIncidents:
-      exactly: 1
+      exactly: 6
       messageMatches: .*This is an old Hibernate package name.*

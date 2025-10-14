@@ -942,6 +942,10 @@
      For more information, see the
      [Camel Aggregator Documentation](http://camel.apache.org/aggregator.html).
   ruleID: soa-p-43000
+  customVariables:
+  - name: javaclassname
+    nameOfCaptureGroup: javaclassname
+    pattern: org.jboss.soa.esb.actions.(?P<javaclassname>(StreamingAggregator)|(Aggregator))
   when:
     builtin.xml:
       namespaces: {}
