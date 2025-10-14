@@ -9,6 +9,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 7
+      exactly: 8
       messageMatches: The `org.apache.camel:camel-kafka` component has removed the
         options `bridgeEndpoint` and `circularEndpointDetection`

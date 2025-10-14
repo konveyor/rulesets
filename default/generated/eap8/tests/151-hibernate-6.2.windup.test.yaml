@@ -13,14 +13,14 @@ tests:
       messageMatches: This method has changed from `EntityPersister#multiload(Object[]
         ids, SharedSessionContractImplementor session, MultiIdLoadOptions loadOptions)`
         to `EntityPersister#lock(Object[] ids, EventSource session, MultiIdLoadOptions
-        loadOptions)`.*
+        loadOptions)`
 - ruleID: hibernate-6.2-00020
   testCases:
   - name: tc-1
     hasIncidents:
       exactly: 1
       messageMatches: This method has changed from `Executable#afterDeserialize(SharedSessionContractImplementor
-        session)` to `Executable#afterDeserialize(EventSource eventSource)`.*
+        session)` to `Executable#afterDeserialize(EventSource eventSource)`
 - ruleID: hibernate-6.2-00030
   testCases:
   - name: tc-1

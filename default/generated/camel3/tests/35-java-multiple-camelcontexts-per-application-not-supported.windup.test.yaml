@@ -10,7 +10,7 @@ tests:
   - name: tc-1
     hasIncidents:
 #      exactly: 9     TODO: fix this
-      exactly: 8
+      exactly: 8 # TODO (pgaikwad): B4 recheck
       messageMatches: The `context` attribute o.*
 - ruleID: java-multiple-camelcontexts-per-application-not-supported-00001
   testCases:

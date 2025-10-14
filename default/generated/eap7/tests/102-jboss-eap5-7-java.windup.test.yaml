@@ -9,13 +9,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: '`QueueConnectionFactory`'
 - ruleID: jboss-eap5-7-java-03000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: The purpose of `@Service`
 - ruleID: jboss-eap5-7-java-05000
   testCases:
@@ -27,13 +27,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: The `@LocalBinding` annotation
 - ruleID: jboss-eap5-7-java-07000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: The `@Depends` annotation
 - ruleID: jboss-eap5-7-java-08000
   testCases:
@@ -79,7 +79,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: This package has been relocated to `org.jboss.ws.api.tools`
         as specified in the
 - ruleID: jboss-eap5-7-java-08600
@@ -107,7 +107,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 4
       messageMatches: This package has been relocated to `org.jboss.ws.common` as
         specified in the
 - ruleID: jboss-eap5-7-java-09100

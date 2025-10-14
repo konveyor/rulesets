@@ -814,7 +814,6 @@
       filePattern: (hibernate\.properties|persistence\.xml|cfg\.xml|application\.properties|application\.yaml)
       pattern: hibernate.ejb.loaded.classes
 - category: mandatory
-  customVariables: []
   description: The hibernate property under 'hibernate.ejb' has been renamed.
   effort: 1
   labels:
@@ -830,6 +829,10 @@
   - title: Hibernate ORM 6 migration guide - Configuration property renames
     url: https://github.com/hibernate/hibernate-orm/blob/6.0/migration-guide.adoc#configuration-property-renames
   message: 'This property has been removed: please use `hibernate.{{property}}` instead'
+  customVariables:
+  - name: property
+    nameOfCaptureGroup: property
+    pattern: (?P<property>(persistenceUnitName|discard_pc_on_close|session_factory_observer|identifier_generator_strategy_provider|classcache|collectioncache|event))
   ruleID: hibernate6-00255
   when:
     builtin.filecontent:

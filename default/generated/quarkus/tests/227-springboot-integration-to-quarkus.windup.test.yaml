@@ -16,6 +16,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: SpringBoot IntegrationFlow class usage is not supported. A migration
         to Apache Camel route using From is mandatory.

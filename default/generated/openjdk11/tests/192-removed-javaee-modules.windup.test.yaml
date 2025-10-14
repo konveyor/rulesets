@@ -17,7 +17,7 @@ tests:
   - name: tc-1
     hasIncidents:
       exactly: 3
-      messageMatches: The `java.corba` (CORBA) module has been removed from OpenJDK
+      messageMatches: The `java.corba` \(CORBA\) module has been removed from OpenJDK
         11.*
 - ruleID: removed-javaee-modules-00020
   testCases:

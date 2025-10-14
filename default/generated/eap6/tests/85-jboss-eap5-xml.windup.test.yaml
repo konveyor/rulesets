@@ -48,7 +48,7 @@ tests:
   - name: tc-1
     hasIncidents:
       exactly: 1
-      messageMatches: In JBoss EAP 6, the classloading configuration is not done through.*
+      messageMatches: The `jboss-classloading.xml` file allows customization of classloading in JBoss EAP 5
 - ruleID: jboss-eap5-xml-11000
   testCases:
   - name: tc-1
@@ -68,7 +68,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: '`java:/jaas/` is a JBoss EAP `security-domain` URI.'
 - ruleID: jboss-eap5-xml-16000
   testCases:

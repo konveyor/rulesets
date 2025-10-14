@@ -115,7 +115,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      exactly: 3
       messageMatches: Migrate `io.opentracing.contrib:opentracing-spring-jaeger-web-starter`
         dependency to a version compatible with the supported versions of the RHOAR
         components provided in the link.

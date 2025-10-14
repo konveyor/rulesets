@@ -38,13 +38,13 @@
   customVariables:
   - name: prefix
     nameOfCaptureGroup: prefix
-    pattern: (?P<package>com.ibm(\.[^.]*)*\.jms.)?(?P<prefix>(Jms|MQeJNDI|MQe|MQ)?)?(?P<type>[^.]*?)?ConnectionFactory
+    pattern: (?P<package>(?:com\.ibm(?:\.[^.]+)*\.jms\.)?)(?P<prefix>(?:Jms|MQeJNDI|MQe|MQ)?)(?P<type>[A-Za-z0-9_]+)?ConnectionFactory\b
   - name: type
     nameOfCaptureGroup: type
-    pattern: (?P<package>com.ibm(\.[^.]*)*\.jms.)?(?P<prefix>(Jms|MQeJNDI|MQe|MQ)?)?(?P<type>[^.]*?)?ConnectionFactory
+    pattern: (?P<package>(?:com\.ibm(?:\.[^.]+)*\.jms\.)?)(?P<prefix>(?:Jms|MQeJNDI|MQe|MQ)?)(?P<type>[A-Za-z0-9_]+)?ConnectionFactory\b
   - name: package
     nameOfCaptureGroup: package
-    pattern: (?P<package>com.ibm(\.[^.]*)*\.jms.)?(?P<prefix>(Jms|MQeJNDI|MQe|MQ)?)?(?P<type>[^.]*?)?ConnectionFactory
+    pattern: (?P<package>(?:com\.ibm(?:\.[^.]+)*\.jms\.)?)(?P<prefix>(?:Jms|MQeJNDI|MQe|MQ)?)(?P<type>[A-Za-z0-9_]+)?ConnectionFactory\b
   description: IBM {prefix}{type}ConnectionFactory reference
   effort: 1
   labels:
@@ -69,10 +69,10 @@
   customVariables:
   - name: package
     nameOfCaptureGroup: package
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?JmsMsg(?P<type>(Producer|Consumer))
+    pattern: (?P<package>(?:com\.ibm(?:\.[^.]+)*\.jms\.)?)JmsMsg(?P<type>Producer|Consumer)\b
   - name: type
     nameOfCaptureGroup: type
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?JmsMsg(?P<type>(Producer|Consumer))
+    pattern: (?P<package>(?:com\.ibm(?:\.[^.]+)*\.jms\.)?)JmsMsg(?P<type>Producer|Consumer)\b
   description: IBM JMS topic/queue message
   effort: 1
   labels:
@@ -119,13 +119,13 @@
   customVariables:
   - name: type
     nameOfCaptureGroup: type
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
+    pattern: (?P<package>(?:com\.ibm(?:\.[^.]+)*\.jms\.)?)(?P<prefix>(?:JMS|MQe|MQ)?)(?P<type>(?:Text|Stream|Object|Map|Bytes)?)Message\b
   - name: prefix
     nameOfCaptureGroup: prefix
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
+    pattern: (?P<package>(?:com\.ibm(?:\.[^.]+)*\.jms\.)?)(?P<prefix>(?:JMS|MQe|MQ)?)(?P<type>(?:Text|Stream|Object|Map|Bytes)?)Message\b
   - name: package
     nameOfCaptureGroup: package
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(JMS|MQe|MQ))?(?P<type>(Text|Stream|Object|Map|Bytes)?)?Message
+    pattern: (?P<package>(?:com\.ibm(?:\.[^.]+)*\.jms\.)?)(?P<prefix>(?:JMS|MQe|MQ)?)(?P<type>(?:Text|Stream|Object|Map|Bytes)?)Message\b
   description: IBM JMS destination message
   effort: 1
   labels:
@@ -148,13 +148,13 @@
   customVariables:
   - name: package
     nameOfCaptureGroup: package
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)
+    pattern: (?P<package>(?:com\.ibm(?:\.[^.]+)*\.jms\.)?)(?P<prefix>(Jms|MQe|MQ))(?P<type>[A-Z][A-Za-z0-9_]*)\b
   - name: prefix
     nameOfCaptureGroup: prefix
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)
+    pattern: (?P<package>(?:com\.ibm(?:\.[^.]+)*\.jms\.)?)(?P<prefix>(Jms|MQe|MQ))(?P<type>[A-Z][A-Za-z0-9_]*)\b
   - name: type
     nameOfCaptureGroup: type
-    pattern: (?P<package>com.ibm(\..*)?\.jms.)?(?P<prefix>(Jms|MQe|MQ))?(?P<type>[^.]+)
+    pattern: (?P<package>(?:com\.ibm(?:\.[^.]+)*\.jms\.)?)(?P<prefix>(Jms|MQe|MQ))(?P<type>[A-Z][A-Za-z0-9_]*)\b
   description: IBM JMS interface
   effort: 1
   labels:

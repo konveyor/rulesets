@@ -162,14 +162,14 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: This property is not available anymore. There is no substitute
         in Hibernate Search 6.
 - ruleID: hibernate-search-00240
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: 'This property is not available anymore. Substitute with the
         Hibernate Search 6 equivalent: `hibernate.search.backend.directory.type` (for
         global defaults.*'
@@ -185,7 +185,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: No equivalent in Hibernate Search 6. The name of an index can
         still be customized in the mapping, usin.*
 - ruleID: hibernate-search-00270
@@ -200,7 +200,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: No equivalent in Hibernate Search 6. This property was not documented
         in Hibernate Search 5.
 - ruleID: hibernate-search-00290
@@ -247,52 +247,42 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: No direct equivalent in Hibernate Search 6. To enable async
         reader refresh, set hibernate.search.backend.io.refresh_interval or hibernate.search.backend.indexes.<index-name>.io.refresh_interva.*
 - ruleID: hibernate-search-00350
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: This property is not available anymore. The filesystem-slave
         directory provider is no longer supported. See links for more information.
 - ruleID: hibernate-search-00360
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 4
       messageMatches: This property is not available anymore. Sharding is configured
         differently. See links for more information.
 - ruleID: hibernate-search-00370
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: This property is not available anymore. The similarity is configured
         through the analysis configurer. See links for more information.
 - ruleID: hibernate-search-00380
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
-      messageMatches: This property is not available anymore. The JMS/JGroups backends
-        are no longer supported. See links for more information.
-  - name: tc-2
-    hasIncidents:
-      exactly: 1
-      messageMatches: This property is not available anymore. The JMS/JGroups backends
-        are no longer supported. See links for more information.
-  - name: tc-3
-    hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: This property is not available anymore. The JMS/JGroups backends
         are no longer supported. See links for more information.
 - ruleID: hibernate-search-00390
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: This property is not available anymore. Setting hibernate.search.automatic_indexing.synchronization.strategy
         to async or sync will produce results similar to setting hibernate.search.<index-name>.worker.execution
         to the same value. See links for more information.
@@ -457,16 +447,8 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Annotation-based analyzer definitions are no longer supported.
-  - name: tc-2
-    hasIncidents:
-      exactly: 1
-      messageMatches: Annotation-based analyzer definitions are no longer supported.*
-  - name: tc-3
-    hasIncidents:
-      exactly: 1
-      messageMatches: Annotation-based analyzer definitions are no longer supported.*
 - ruleID: hibernate-search-00640
   testCases:
   - name: tc-1
@@ -513,12 +495,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
-      messageMatches: The bridge API was completely reworked in Hibernate Search 6.
-        See link for more information.
-  - name: tc-2
-    hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: The bridge API was completely reworked in Hibernate Search 6.
         See link for more information.
 - ruleID: hibernate-search-00700
@@ -547,21 +524,21 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Facets are now called aggregations, which are a generalization
         of the concept of faceting. See link for more information.
 - ruleID: hibernate-search-00750
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: The @Field annotation was split into multiple annotations, specific
         to each field type. See link for more information.
 - ruleID: hibernate-search-00770
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Full-text filters have no direct equivalent in Hibernate Search
         6. See link for more information.
 - ruleID: hibernate-search-00780
@@ -605,12 +582,12 @@ tests:
       exactly: 1
       messageMatches: In Hibernate Search 5, `@Normalizer` could point directly to
         a class extending `org.apache.lucene.analysis.Analyzer`, for example with
-        `@Normalizer(impl = MyNormalizer.class)`.*
+        `@Normalizer(impl = MyNormalizer.class)`
 - ruleID: hibernate-search-00850
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: '@NumericField no longer exists in Hibernate Search 6.*'
 - ruleID: hibernate-search-00860
   testCases:
@@ -623,20 +600,20 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
-      messageMatches: '@SortableField(s) no longer exists in Hibernate Search 6. Instead,
+      exactly: 2
+      messageMatches: '@SortableField\(s\) no longer exists in Hibernate Search 6. Instead,
         .*'
 - ruleID: hibernate-search-00880
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 2
       messageMatches: '@Spatial has no direct equivalent in Hibernate Search 6.*'
 - ruleID: hibernate-search-00890
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: '@TikaBridge has no equivalent in Hibernate Search 6 yet.'
 - ruleID: hibernate-search-00910
   testCases:
@@ -649,14 +626,14 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 3
+      exactly: 4
       messageMatches: Search APIs have changed significantly in order to implement
         several improvements. The recommended way to build searc.*
 - ruleID: hibernate-search-00930
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Lucene queries are replaced with Lucene-independent "search
         predicates" in Hibernate Search 6. See link for guide and examples.
 - ruleID: hibernate-search-00940

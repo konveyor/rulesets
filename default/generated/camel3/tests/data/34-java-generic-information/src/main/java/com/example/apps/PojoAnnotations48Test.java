@@ -37,7 +37,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 @Ignore("Requires a running Kubernetes Cluster")
-public class KubernetesNamespacesConsumerTest extends KubernetesTestSupport {
+public class KubernetesNamespacesConsumerTest2 extends KubernetesTestSupport {
 
     @EndpointInject(ref = "testEndpoint")
     protected MockEndpoint mockResultEndpoint;

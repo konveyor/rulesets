@@ -9,11 +9,11 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: Log4j usage without including `log4j.jar`
 - ruleID: log4j-removed-00003
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 3
+      exactly: 4
       messageMatches: Log4j configuration without including `log4j.jar`

@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 15
+      exactly: 17
       messageMatches: The PicketLink subsystem has been removed. This legacy security
         system was deprecated in EAP6 and removed in EAP8. All related configuration
         must be removed.*

@@ -17,7 +17,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: As part of the Hibernate ORM 6.0 release, mapping annotations
         have been modernised and made more type-safe. These annotations must be removed.
         See the User Guide for details about mapping your domain model.
@@ -43,28 +43,28 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: The `StandardBasicTypes` class previously exposed `BasicType`
         instance fields, which now have been replaced with fields of the type `BasicTypeReference`.
 - ruleID: hibernate6-00050
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: The interface `org.hibernate.type.descriptor.java.JavaTypeDescriptor`
         must be renamed to `org.hibernate.type.descriptor.java.JavaType`.
 - ruleID: hibernate6-00060
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: The interface `org.hibernate.type.descriptor.sql.SqlTypeDescriptor`
         has been renamed to `org.hibernate.type.descriptor.jdbc.JdbcType`.
 - ruleID: hibernate6-00070
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: The CompositeUserType interface was re-implemented to be able
         to model user types as proper embeddable types. See the migration guide for
         more information.
@@ -103,7 +103,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: The contents of `loader.entity` and `loader.plan` were removed
 - ruleID: hibernate6-00140
   testCases:
@@ -115,7 +115,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Classes of the sql package that were previously used for building
         SQL, but aren’t needed anymore, were removed. The SQL generation is now fully
         handled through the `SqlAstTranslator` which a `Dialect` exposes a factory
@@ -172,7 +172,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 4
       messageMatches: 'These properties are deprecated: use `hibernate.classLoaders`
         instead.'
 - ruleID: hibernate6-00240
@@ -217,7 +217,7 @@ tests:
       exactly: 1
       messageMatches: 'This property has been removed: please use `hibernate.loaded_classes`
         instead'
-- ruleID: hibernate6-00255
+- ruleID: hibernate6-00255 # TODO (pgaikwad): B5 fix rule
   testCases:
   - name: tc-1
     hasIncidents:

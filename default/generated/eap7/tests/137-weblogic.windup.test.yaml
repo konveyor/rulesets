@@ -27,20 +27,20 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 4
       messageMatches: Replace with the Java EE standard .*javax.transaction.TransactionManager.*
 - ruleID: weblogic-eap7-05000
   testCases:
   - name: tc-1
     hasIncidents:
       exactly: 1
-      messageMatches: Replace with the Java EE standard method .*javax.transaction.TransactionManager.resume(Transaction
-        tx).*
+      messageMatches: Replace with the Java EE standard method .*?javax.transaction.TransactionManager.resume\(Transaction
+        tx\)
 - ruleID: weblogic-eap7-06000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: Replace with the Java EE standard .*javax.transaction.TransactionManager.suspend.*
 - ruleID: weblogic-eap7-07000
   testCases:
@@ -59,20 +59,20 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: .*This Oracle and WebLogic proprietary code (.*OracleThinClob.*
 - ruleID: weblogic-eap7-10000
   testCases:
   - name: tc-1
     hasIncidents:
       exactly: 1
-      messageMatches: .*This code is specific to WebLogic and should be replaced with
-        .*java.sql.Clob.setCharacterStream(1).*
+      messageMatches: .*?This code is specific to WebLogic and should be replaced with
+        .*?java.sql.Clob.setCharacterStream.*
 - ruleID: weblogic-eap7-11000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: The WebLogic .*NonCatalogLogger.* is not supported.*
 - ruleID: weblogic-eap7-12000
   testCases:
@@ -97,12 +97,12 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: .*weblogic.jndi.WLInitialContextFactory.*
 - ruleID: weblogic-eap7-017000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Weblogic’s implementation of the RMI specification uses a proprietary
         protocol known as T3. T3S.*

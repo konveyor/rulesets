@@ -14,42 +14,44 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: You can use Java EE .*javax.enterprise.context.Conversation
 - ruleID: seam-java-00030
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 4
       messageMatches: There is no direct replacement for this Seam API. The .*org.jboss.seam.Seam.*
 - ruleID: seam-java-00040
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 10
       messageMatches: CDI supports static injection in comparison to Seam 2 dynamic
         injection. So you don't need to have .*@Named.*
 - ruleID: seam-java-00050
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 6
       messageMatches: Convert to a valid CDI scope. CDI scopes has its own annotation.*
 - ruleID: seam-java-00060
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 10
       messageMatches: Convert Seam annotation .*@In.*
-  - name: tc-2
+- ruleID: seam-java-00061
+  testCases:
+  - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Remove this Seam annotation .*@AutoCreate.*
 - ruleID: seam-java-00070
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: CDI does not support bijection and does a static injection in
         comparison to Seam 2, where it is performed dynamically.*
 - ruleID: seam-java-00071
@@ -63,7 +65,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Java EE uses for such use case .*@javax.ejb.Singleton.*
 - ruleID: seam-java-00090
   testCases:
@@ -83,7 +85,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 8
       messageMatches: There is no direct replacement, but it can be implemented with
         CDI Conversation support.
 - ruleID: seam-java-00110
@@ -103,13 +105,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: .*@Install.*
 - ruleID: seam-java-00140
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Rework code with a default Java Servlet .*javax.servlet.Filter.*
 - ruleID: seam-java-00150
   testCases:
@@ -121,7 +123,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Rework using CDI's injected concrete context.
 - ruleID: seam-java-00170
   testCases:
@@ -132,7 +134,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 17
       messageMatches: Rework with CDI conversation context .*javax.enterprise.context.Conversation.*
 - ruleID: seam-java-00190
   testCases:
@@ -144,7 +146,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Rework with .*javax.enterprise.context.Conversation.end().*
 - ruleID: seam-java-00210
   testCases:
@@ -156,13 +158,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 4
       messageMatches: Seam 2 provides a built-in logger implementation.*
 - ruleID: seam-java-00230
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: In Java EE, the Expression Language Specification has evolved
         and allows parameters to be passed to EL method expressions.*
 - ruleID: seam-java-00240
@@ -192,5 +194,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 8
       messageMatches: Replace with Java EE annotation .*@javax.transaction.Transactional.*

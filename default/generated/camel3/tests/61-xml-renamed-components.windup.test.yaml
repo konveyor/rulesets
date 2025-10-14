@@ -38,14 +38,9 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
-      messageMatches: '`org.apache.camel:camel-zookeeper-starter` artifact has been
-        renamed in Apache Camel 3 to `org.apache.camel.springboot:camel-zookeeper-starter`
-        artifact'
-  - name: tc-2
-    hasIncidents:
-      exactly: 1
-      messageMatches: '`org.apache.camel:camel-mina2-starter` artifact has been renamed'
+      atLeast: 2
+      messageMatches: Spring Boot related Camel starter artifact groupIds have been moved from `org.apache.camel` to `org.apache.camel.springboot`
+        in Apache Camel 3
 - ruleID: xml-renamed-components-00005
   testCases:
   - name: tc-1

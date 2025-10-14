@@ -63,7 +63,9 @@ tests:
       messageMatches: The class org.apache.camel.processor.ConvertBodyProcessor was
         moved to org.apache.camel.support.ConvertBodyProcessor in the camel-support
         JA.*
-  - name: tc-2
+- ruleID: java-generic-information-camel37-00007-01
+  testCases:
+  - name: tc-1
     hasIncidents:
       exactly: 1
       messageMatches: The class org.apache.camel.impl.engine.DefaultClaimCheckRepository

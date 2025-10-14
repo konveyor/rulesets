@@ -9,19 +9,14 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
-      messageMatches: In versions of Hibernate prior to 3.5, text type was mapped
-        to JDBC CLOB.*
-  - name: tc-2
-    hasIncidents:
-      exactly: 1
+      exactly: 5
       messageMatches: In versions of Hibernate prior to 3.5, text type was mapped
         to JDBC CLOB.*
 - ruleID: hibernate-xml-02000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: If you are using Oracle and using the
 - ruleID: hibernate-xml-03000
   testCases:

@@ -9,13 +9,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 7
+      exactly: 8
       messageMatches: The Java Security Manager API is deprecated in Java 1.*
 - ruleID: security-manager-deprecation-00010
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 3
+      exactly: 4
       messageMatches: References to Java Security Manager API classes deprecated in
         Java 1.*
 # FIXME: remove comments when static method matching is fixed

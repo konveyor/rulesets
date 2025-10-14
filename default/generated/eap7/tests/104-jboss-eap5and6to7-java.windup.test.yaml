@@ -55,6 +55,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 4
       messageMatches: JBoss Logging annotations in package `org.jboss.logging` are
         deprecated

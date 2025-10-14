@@ -27,13 +27,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Connector port=
 - ruleID: eap4-eap6-29000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Connector protocol=
 - ruleID: eap4-eap6-30000
   testCases:

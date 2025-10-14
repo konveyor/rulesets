@@ -50,7 +50,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: The class .*org.hibernate.search.SearchException.*
 - ruleID: hsearch-00008
   testCases:
@@ -74,7 +74,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: The class .*org.hibernate.search.Version.*
 - ruleID: hsearch-00100
   testCases:
@@ -86,7 +86,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: .*org.hibernate.search.store.IndexShardingStrategy.*
 - ruleID: hsearch-00103
   testCases:
@@ -98,20 +98,20 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: Custom filter keys are deprecated and are scheduled for removal
         in Hibernate Search 6..*
 - ruleID: hsearch-00106
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: Custom filter keys .*StandardFilterKey.*
 - ruleID: hsearch-00107
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 4
       messageMatches: Remove the .*@FieldCacheType.*
 - ruleID: hsearch-00108
   testCases:
@@ -161,19 +161,19 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 17
       messageMatches: Numbers and dates are now indexed as numeric fields by default.*
 - ruleID: hsearch-00117
   testCases:
   - name: tc-1
     hasIncidents:
       exactly: 1
-      messageMatches: When using .*@Field(indexNullAs=).*
+      messageMatches: When using .*?@Field\(indexNullAs=\).*
 - ruleID: hsearch-00118
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Significant improvements were made to the faceting engine.*
 - ruleID: hsearch-00200
   testCases:
@@ -258,11 +258,14 @@ tests:
   - name: tc-1
     hasIncidents:
       exactly: 1
-      messageMatches: Lucene's core .*org.apache.lucene.queryParser.ParseException.*
+      messageMatches: Lucene's core .*?org.apache.lucene.queryParser.ParseException.*
   - name: tc-2
     hasIncidents:
-      exactly: 1
-      messageMatches: Lucene's core .*org.apache.lucene.queryParser.QueryParserToken.*
+      exactly: 6
+  - name: tc-3
+    hasIncidents:
+      exactly: 3
+      messageMatches: Lucene's core .*?org.apache.lucene.queryParser.QueryParser.*
 - ruleID: hsearch-00226
   testCases:
   - name: tc-1
@@ -273,7 +276,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: .*org.apache.lucene.analysis.* to .*org.apache.lucene.analysis.core.*
 - ruleID: hsearch-00228
   testCases:

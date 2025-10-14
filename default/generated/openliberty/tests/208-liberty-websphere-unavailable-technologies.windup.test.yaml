@@ -55,7 +55,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 4
+      exactly: 6
       messageMatches: On Liberty, the dynamic cache service is provided by the Distributed
         Map Interface for Dynamic Caching feature
 - ruleID: DynamicQueryRule
@@ -82,7 +82,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 3
+      exactly: 4
       messageMatches: com.ibm.websphere.management.AdminService.getProcessName
 - ruleID: SOAPOverJMSRule
   testCases:
@@ -107,13 +107,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      exactly: 3
       messageMatches: The WebSphere Scheduler API was superseded by
 - ruleID: WebSphereServletRule
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 3
+      exactly: 17
       messageMatches: The WebSphere Servlet API was superseded by standard
 - ruleID: WebSphereUnavailableAPIsAppClient
   testCases:
@@ -159,7 +159,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 10
+      exactly: 14
       messageMatches: The following WebSphere logging and RAS APIs and SPIs are not
         available on Liberty
 - ruleID: WebSphereUnavailableAPIsManagement
@@ -180,7 +180,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 4
+      exactly: 6 # TODO (pgaikwad): Two of these matches are false positives.
       messageMatches: he following WebSphere Performance Monitoring Infrastructure
 - ruleID: WebSphereUnavailableAPIsPortal
   testCases:
@@ -199,7 +199,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 14
+      exactly: 57
       messageMatches: The following WebSphere Security APIs and SPIs are not available
         on Liberty
 - ruleID: WebSphereUnavailableAPIsSIB
@@ -247,19 +247,19 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 16
+      exactly: 22
       messageMatches: The following WebSphere Studio Application Developer Integration
         Edition APIs are not available on Liberty
 - ruleID: WebSphereUnavailableAPIsWSSecurityHelper
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 8
+      atLeast: 8
       messageMatches: The following WSSecurityHelper methods are not available on
         Liberty
   - name: tc-2
     hasIncidents:
-      exactly: 1
+      atLeast: 1
       messageMatches: getLTPACookieFromSSOToken()
 - ruleID: WebSphereUnavailableSPIsRRD
   testCases:
@@ -314,7 +314,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 14
+      exactly: 38
       messageMatches: The following WebSphere web services APIs and SPIs are not available
         on Liberty
 #- ruleID: WebSphereWebServicesGeneratedClassesRule

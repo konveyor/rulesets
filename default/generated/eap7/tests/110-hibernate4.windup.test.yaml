@@ -96,7 +96,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Use .*org.hibernate.boot.MetadataBuilder#applyBasicType.*
 - ruleID: hibernate4-00015
   testCases:
@@ -114,7 +114,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Use .*org.hibernate.boot.registry.StandardServiceRegistryBuilder#configure.*
 - ruleID: hibernate4-00022
   testCases:
@@ -144,25 +144,25 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Use .*org.hibernate.boot.model.*
 - ruleID: hibernate4-00027
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: All functionality from .*org.hibernate.cfg.AnnotationConfiguration.*
 - ruleID: hibernate4-00028
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Use .*org.hibernate.id.enhanced.SequenceStyleGenerator.*
 - ruleID: hibernate4-00030
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Hibernate 5 moved .*org.hibernate.hql.spi..*
 - ruleID: hibernate4-00031
   testCases:
@@ -174,7 +174,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Hibernate 5 replaced .*org.hibernate.hql.spi.TemporaryTableBulkIdStrategy.*
 - ruleID: hibernate4-00033
   testCases:
@@ -186,13 +186,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 4
       messageMatches: Hibernate 5 extracted new interface .*org.hibernate.engine.jdbc.env.spi.JdbcEnvironment.*
 - ruleID: hibernate4-00035
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Hibernate 5 changed the signature of .*org.hibernate.id.Configurable#configure.*
 - ruleID: hibernate4-00036
   testCases:
@@ -204,7 +204,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Hibernate 5 removed .*AuditConfiguration.*
 - ruleID: hibernate4-00038
   testCases:
@@ -216,16 +216,12 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 4
-      messageMatches: Previous versions of Hibernate have mapped `byte[]` and `Byte[]`
-  - name: tc-2
-    hasIncidents:
-      exactly: 1
+      exactly: 8
       messageMatches: Previous versions of Hibernate have mapped `byte[]` and `Byte[]`
 - ruleID: hibernate4-00040
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      exactly: 7
       messageMatches: If the migration is from JBoss EAP 6 or Hibernate 4 then the
         dialect

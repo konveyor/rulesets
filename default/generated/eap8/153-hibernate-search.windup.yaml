@@ -380,7 +380,7 @@
   when:
     builtin.filecontent:
       filePattern: .*\.properties
-      pattern: hibernate.search.default.elasticsearch.max_total_connection
+      pattern: hibernate.search.default.elasticsearch.max_total_connection=
 - category: mandatory
   customVariables: []
   description: Property hibernate.search.default.elasticsearch.password not available
