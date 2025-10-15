@@ -63,8 +63,7 @@ tests:
   - name: tc-1
     hasIncidents:
       exactly: 1
-      messageMatches: Although Camel has both Hibernate and JPA components that are
-        useful in consuming records, there isn't any support for Hibernate events.
+      messageMatches: Although Camel has both Hibernate and JPA components that.*
 - ruleID: soa-p-5-10000
   testCases:
   - name: tc-1

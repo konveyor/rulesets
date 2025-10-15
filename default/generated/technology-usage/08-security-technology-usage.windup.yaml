@@ -12,7 +12,7 @@
     or:
     - java.referenced:
         location: ANNOTATION
-        pattern: javax.annotation.security*
+        pattern: javax.annotation.security.*
     - builtin.xml:
         filepaths:
         - web.xml
