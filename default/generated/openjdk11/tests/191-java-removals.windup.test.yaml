@@ -83,6 +83,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      exactly: 3
       messageMatches: The changes that were implemented in JDK 9 may impact code that
         creates class loaders with null
