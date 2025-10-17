@@ -1,0 +1,137 @@
+- category: optional
+  customVariables: []
+  description: Mixed JDBC and JPA usage detected
+  effort: 5
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus Hibernate ORM Guide
+    url: https://quarkus.io/guides/hibernate-orm
+  - title: Quarkus Agroal Datasource Guide
+    url: https://quarkus.io/guides/datasource
+  message: |-
+    This file uses both JPA (EntityManager) and direct JDBC (PreparedStatement).
+    Consider using JPA/JPQL consistently for better code maintainability and portability.
+
+    Benefits of using JPA consistently:
+    - Better object-relational mapping
+    - Database vendor independence
+    - Easier transaction management
+    - Type-safe queries with Criteria API or Panache
+
+    If you need direct JDBC for specific performance reasons or complex queries,
+    consider using Quarkus Panache which provides a simplified JPA experience:
+    ```java
+    // Instead of direct JDBC
+    // Use Panache Active Record pattern
+    public class MyEntity extends PanacheEntity {
+        public String name;
+
+        public static List<MyEntity> findByName(String name) {
+            return find("name", name).list();
+        }
+    }
+    ```
+
+    Or use native queries in JPA when needed:
+    ```java
+    @Inject
+    EntityManager em;
+
+    public List<MyEntity> complexQuery() {
+        return em.createNativeQuery("SELECT * FROM my_entity WHERE ...", MyEntity.class)
+                 .getResultList();
+    }
+    ```
+  ruleID: jdbc-jpa-mixed-to-quarkus-00001
+  when:
+    and:
+    - java.referenced:
+        location: IMPORT
+        pattern: "*EntityManager"
+      as: hasEntityManager
+    - java.referenced:
+        location: IMPORT
+        pattern: java.sql.PreparedStatement
+      from: hasEntityManager
+- category: optional
+  customVariables: []
+  description: Direct JDBC Connection usage detected
+  effort: 3
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus Agroal Datasource Guide
+    url: https://quarkus.io/guides/datasource
+  - title: Quarkus Hibernate ORM Guide
+    url: https://quarkus.io/guides/hibernate-orm
+  message: |-
+    Direct JDBC Connection usage detected.
+
+    In Quarkus, if you need to use direct JDBC, inject the AgroalDataSource:
+    ```java
+    import io.agroal.api.AgroalDataSource;
+    import jakarta.inject.Inject;
+
+    @Inject
+    AgroalDataSource dataSource;
+
+    public void query() throws SQLException {
+        try (Connection conn = dataSource.getConnection()) {
+            // Use connection
+        }
+    }
+    ```
+
+    However, consider using JPA/Hibernate or Quarkus Panache for most database operations,
+    as they provide better abstraction and are more idiomatic in Quarkus applications.
+  ruleID: jdbc-jpa-mixed-to-quarkus-00002
+  when:
+    java.referenced:
+      location: IMPORT
+      pattern: java.sql.Connection
+- category: optional
+  customVariables: []
+  description: Statement usage should be reviewed
+  effort: 3
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus Agroal Datasource Guide
+    url: https://quarkus.io/guides/datasource
+  - title: Quarkus Hibernate ORM Guide
+    url: https://quarkus.io/guides/hibernate-orm
+  message: |-
+    Direct JDBC Statement usage detected.
+
+    Consider migrating to JPA/JPQL or Quarkus Panache for better maintainability.
+    If direct JDBC is required, use PreparedStatement instead of Statement to prevent SQL injection.
+
+    In Quarkus, inject the datasource:
+    ```java
+    import io.agroal.api.AgroalDataSource;
+    import jakarta.inject.Inject;
+
+    @Inject
+    AgroalDataSource dataSource;
+
+    public void query(String param) throws SQLException {
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM table WHERE col = ?")) {
+            stmt.setString(1, param);
+            ResultSet rs = stmt.executeQuery();
+            // Process results
+        }
+    }
+    ```
+  ruleID: jdbc-jpa-mixed-to-quarkus-00003
+  when:
+    java.referenced:
+      location: IMPORT
+      pattern: java.sql.Statement

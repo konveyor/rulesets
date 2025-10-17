@@ -43,6 +43,69 @@
         pattern: persistence\.xml
     - builtin.file:
         pattern: .*-ds\.xml
+- category: optional
+  customVariables: []
+  description: Replace @PersistenceContext with @Inject
+  effort: 1
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: Using Hibernate ORM and Jakarta persistence
+    url: https://quarkus.io/guides/hibernate-orm
+  message: |-
+    Replace `@PersistenceContext` with `@Inject` for EntityManager injection in Quarkus.
+
+    In Java EE/Jakarta EE, `@PersistenceContext` was used to inject EntityManager:
+    ```java
+    @PersistenceContext
+    EntityManager entityManager;
+    ```
+
+    In Quarkus, use `@Inject` instead:
+    ```java
+    @Inject
+    EntityManager entityManager;
+    ```
+
+    Ensure your datasource is properly configured in `application.properties`.
+  ruleID: persistence-to-quarkus-00010
+  when:
+    java.referenced:
+      location: ANNOTATION
+      pattern: javax.persistence.PersistenceContext
+- category: optional
+  customVariables: []
+  description: Replace @PersistenceContext with @Inject (Jakarta)
+  effort: 1
+  labels:
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: Using Hibernate ORM and Jakarta persistence
+    url: https://quarkus.io/guides/hibernate-orm
+  message: |-
+    Replace `@PersistenceContext` with `@Inject` for EntityManager injection in Quarkus.
+
+    In Jakarta EE, `@PersistenceContext` was used to inject EntityManager:
+    ```java
+    @PersistenceContext
+    EntityManager entityManager;
+    ```
+
+    In Quarkus, use `@Inject` instead:
+    ```java
+    @Inject
+    EntityManager entityManager;
+    ```
+
+    Ensure your datasource is properly configured in `application.properties`.
+  ruleID: persistence-to-quarkus-00012
+  when:
+    java.referenced:
+      location: ANNOTATION
+      pattern: jakarta.persistence.PersistenceContext
 - category: potential
   customVariables: []
   description: '@Produces cannot annotate an EntityManager'

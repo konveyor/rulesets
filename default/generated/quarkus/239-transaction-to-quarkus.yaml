@@ -1,0 +1,111 @@
+- category: mandatory
+  customVariables: []
+  description: EntityManager persistence operations require @Transactional in Quarkus
+  effort: 3
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus Hibernate ORM Guide
+    url: https://quarkus.io/guides/hibernate-orm
+  - title: Quarkus Transaction Guide
+    url: https://quarkus.io/guides/transaction
+  message: |-
+    Methods that modify data using EntityManager operations (persist, merge, remove) must be annotated with `@Transactional` in Quarkus.
+
+    Ensure that methods containing `entityManager.persist()` are properly annotated:
+    ```java
+    import jakarta.transaction.Transactional;
+
+    @Transactional
+    public void saveEntity(MyEntity entity) {
+        entityManager.persist(entity);
+    }
+    ```
+
+    Note: In Java EE/Jakarta EE application servers, transactions are often managed automatically by the container (CMT - Container Managed Transactions).
+    In Quarkus, you must explicitly mark transactional boundaries using `@Transactional` annotation.
+  ruleID: transaction-to-quarkus-00001
+  when:
+    or:
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: javax.persistence.EntityManager.persist*
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: jakarta.persistence.EntityManager.persist*
+- category: mandatory
+  customVariables: []
+  description: EntityManager merge operations require @Transactional in Quarkus
+  effort: 3
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus Hibernate ORM Guide
+    url: https://quarkus.io/guides/hibernate-orm
+  - title: Quarkus Transaction Guide
+    url: https://quarkus.io/guides/transaction
+  message: |-
+    Methods that modify data using EntityManager operations (persist, merge, remove) must be annotated with `@Transactional` in Quarkus.
+
+    Ensure that methods containing `entityManager.merge()` are properly annotated:
+    ```java
+    import jakarta.transaction.Transactional;
+
+    @Transactional
+    public void updateEntity(MyEntity entity) {
+        entityManager.merge(entity);
+    }
+    ```
+
+    Note: In Java EE/Jakarta EE application servers, transactions are often managed automatically by the container (CMT - Container Managed Transactions).
+    In Quarkus, you must explicitly mark transactional boundaries using `@Transactional` annotation.
+  ruleID: transaction-to-quarkus-00002
+  when:
+    or:
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: javax.persistence.EntityManager.merge*
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: jakarta.persistence.EntityManager.merge*
+- category: mandatory
+  customVariables: []
+  description: EntityManager remove operations require @Transactional in Quarkus
+  effort: 3
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus Hibernate ORM Guide
+    url: https://quarkus.io/guides/hibernate-orm
+  - title: Quarkus Transaction Guide
+    url: https://quarkus.io/guides/transaction
+  message: |-
+    Methods that modify data using EntityManager operations (persist, merge, remove) must be annotated with `@Transactional` in Quarkus.
+
+    Ensure that methods containing `entityManager.remove()` are properly annotated:
+    ```java
+    import jakarta.transaction.Transactional;
+
+    @Transactional
+    public void deleteEntity(MyEntity entity) {
+        entityManager.remove(entity);
+    }
+    ```
+
+    Note: In Java EE/Jakarta EE application servers, transactions are often managed automatically by the container (CMT - Container Managed Transactions).
+    In Quarkus, you must explicitly mark transactional boundaries using `@Transactional` annotation.
+  ruleID: transaction-to-quarkus-00003
+  when:
+    or:
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: javax.persistence.EntityManager.remove*
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: jakarta.persistence.EntityManager.remove*
