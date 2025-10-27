@@ -18,7 +18,7 @@
     or:
     - builtin.filecontent:
         filePattern: ""
-        pattern: aws_access_key_id
+        pattern: aws_access_key_id_TEST
     - builtin.filecontent:
         filePattern: ""
         pattern: aws_secret_access_key
