@@ -55,7 +55,8 @@
     - java.referenced:
         location: IMPORT
         pattern: java.sql.PreparedStatement
-      from: hasEntityManager
+        filePaths:
+        - "{{hasEntityManager.filePaths}}"
 - category: optional
   customVariables: []
   description: Direct JDBC Connection usage detected
