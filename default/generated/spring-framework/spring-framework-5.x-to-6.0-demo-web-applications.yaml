@@ -1,0 +1,31 @@
+- ruleID: spring-framework-5.x-to-6.0-demo-00001
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    java.referenced:
+      pattern: org.springframework.mock.web.MockHttpServletRequest
+      location: IMPORT
+  description: TODO
+  message: "TODO"
+  links:
+  - title: 'TODO'
+    url: TODO
+
+- ruleID: spring-framework-5.x-to-6.0-demo-00002
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    java.referenced:
+      pattern: org.springframework.mock.web.MockHttpSession
+      location: IMPORT
+  description: TODO
+  message: "TODO"
+  links:
+  - title: 'TODO'
+    url: TODO
