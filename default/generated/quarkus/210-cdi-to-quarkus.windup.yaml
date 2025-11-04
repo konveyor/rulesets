@@ -64,7 +64,7 @@
       xpath: /b:beans
 - category: potential
   customVariables: []
-  description: Producer annotation no longer required
+  description: @Produces annotation no longer required
   effort: 1
   labels:
   - konveyor.io/source=java-ee
