@@ -108,7 +108,7 @@
   when:
     java.referenced:
       location: PACKAGE
-      pattern: (com.)?oracle.*
+      pattern: (com.oracle.*|oracle.*)
 - category: optional
   customVariables:
   - name: remainder
