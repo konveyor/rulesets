@@ -71,13 +71,8 @@
     em;\n }}\n ```"
   ruleID: persistence-to-quarkus-00011
   when:
-    and:
-    - java.referenced:
-        location: IMPORT
+    java.referenced:
+      location: RETURN_TYPE
+      pattern: javax.persistence.EntityManager
+      annotated:
         pattern: javax.enterprise.inject.Produces
-      as: file
-      ignore: true
-    - java.referenced:
-        location: IMPORT
-        pattern: javax.persistence.EntityManager
-      from: file
