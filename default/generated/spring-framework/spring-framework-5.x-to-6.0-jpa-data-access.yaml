@@ -1,0 +1,35 @@
+- ruleID: spring-framework-5.x-to-6.0-data-access-00040
+  category: optional
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/target=spring6+
+  tag:
+    - Spring Framework
+  when:
+    java.referenced:
+      pattern: org.springframework.dao.DeadlockLoserDataAccessException
+      location: IMPORT
+  description: DeadlockLoserDataAccessException is deprecated in favor of CannotAcquireLockException
+  message: "DeadlockLoserDataAccessException is deprecated in favor of CannotAcquireLockException"
+  links:
+  - title: 'org.springframework.dao.DeadlockLoserDataAccessException'
+    url: https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/dao/DeadlockLoserDataAccessException.html
+
+- ruleID: spring-framework-5.x-to-6.0-data-access-00050
+  category: optional
+  effort: 1
+  labels:
+    - konveyor.io/source=spring5
+    - konveyor.io/target=spring6+
+  tag:
+    - Spring Framework
+  when:
+    java.referenced:
+      pattern: org.springframework.dao.CannotSerializeTransactionException
+      location: IMPORT
+  description: CannotSerializeTransactionException is deprecated in favor of CannotAcquireLockException
+  message: "CannotSerializeTransactionException is deprecated in favor of CannotAcquireLockException"
+  links:
+  - title: 'org.springframework.dao.CannotSerailizeTransactionException Documentation'
+    url: https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/dao/CannotSerializeTransactionException.html
