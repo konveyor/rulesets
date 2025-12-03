@@ -14,26 +14,16 @@
     There was a typo in FormFiledGroupHeaderTitleTextObject interface. It
     was renamed to the intended FormFieldGroupHeaderTitleTextObject.
 
-
-    Replace `import {{{ component }}} from "@patternfly/react-core"` with `import
-    {{{ component }}} from "@patternfly/react-core"`.
-
+    Replace `import { {{ component }} } from "@patternfly/react-core"` with `import { {{ component }} } from "@patternfly/react-core"`.
 
     Before:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core"
-
     ```
-
 
     After:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core"
-
     ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10016

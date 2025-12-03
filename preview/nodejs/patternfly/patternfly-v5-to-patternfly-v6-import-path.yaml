@@ -14,26 +14,16 @@
     The previous implementation of Modal has been deprecated and moved to
     the deprecated directory.
 
-
-    Replace `import {{{ component }}} from "@patternfly/react-core"` with `import
-    {{{ component }}} from "@patternfly/react-core/deprecated"`.
-
+    Replace `import { {{ component }} } from "@patternfly/react-core"` with `import { {{ component }} } from "@patternfly/react-core/deprecated"`.
 
     Before:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core";
-
     ```
-
 
     After:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core/deprecated";
-
     ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10358
@@ -58,15 +48,14 @@
   message: |-
     The Next implementation of Modal has been promoted as the recommended
     implementation.
-    
-    Replace `import {{{ component }}} from "@patternfly/react-core/next"` with `import
-    {{{ component }}} from "@patternfly/react-core"`.
-    
+
+    Replace `import { {{ component }} } from "@patternfly/react-core/next"` with `import { {{ component }} } from "@patternfly/react-core"`.
+
     Before:
     ```
     import { {{ component }} } from "@patternfly/react-core/next";
     ```
-    
+
     After:
     ```
     import { {{ component }} } from "@patternfly/react-core";
@@ -93,15 +82,14 @@
       filePattern: \.(j|t)sx?$
   message: |-
     Tile has been deprecated. Use Card instead.
-    
-    Replace `import {{{ component }}} from "@patternfly/react-core"` with `import
-    {{{ component }}} from "@patternfly/react-core/deprecated"`.
-    
+
+    Replace `import { {{ component }} } from "@patternfly/react-core"` with `import { {{ component }} } from "@patternfly/react-core/deprecated"`.
+
     Before:
     ```
     import { {{ component }} } from "@patternfly/react-core";
     ```
-    
+
     After:
     ```
     import { {{ component }} } from "@patternfly/react-core/deprecated";

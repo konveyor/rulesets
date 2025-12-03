@@ -12,24 +12,18 @@
       filePattern: \.(j|t)sx?$
   message: |-
     PatternFly 6 requires more specific imports from component subdirectories
-    
-    Replace `import {{{ component }}} from "@patternfly/react-core"` with `import
-    {{{ component }}} from "@patternfly/react-core/dist/esm/components/..."`.
-    
+
+    Replace `import { {{ component }} } from "@patternfly/react-core"` with `import { {{ component }} } from "@patternfly/react-core/dist/esm/components/..."`.
+
     Before:
     ```
-    import { {{ component }} } from "@patternfly/react-core'
-
+    import { {{ component }} } from "@patternfly/react-core"
     ```
-
 
     After:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core/dist/esm/components/Button"
-
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade/
     title: PatternFly v6 Upgrade Guide

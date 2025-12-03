@@ -13,26 +13,16 @@
   message: |-
     Chip has been deprecated. Use Label instead.
 
-
-    Replace `import {{{ component }}} from '@patternfly/react-core'` with `import
-    {{{ component }}} from '@patternfly/react-core/deprecated'`.
-
+    Replace `import { {{ component }} } from '@patternfly/react-core'` with `import { {{ component }} } from '@patternfly/react-core/deprecated'`.
 
     Before:
-
     ```
-
     import { {{ component }} } from '@patternfly/react-core'
-
     ```
-
 
     After:
-
     ```
-
     import { {{ component }} } from '@patternfly/react-core/deprecated'
-
     ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10049
@@ -57,23 +47,18 @@
   message: |-
     DragDrop has been deprecated. Use the new drag and drop implementation
     (DragDropSort component) from '@patternfly/react-drag-drop' package.
-    
-    Replace `import {{{ component }}} from '@patternfly/react-core'` with `import
-    {{{ component }}} from '@patternfly/react-core/deprecated'`.
-    
+
+    Replace `import { {{ component }} } from '@patternfly/react-core'` with `import { {{ component }} } from '@patternfly/react-core/deprecated'`.
+
     Before:
     ```
     import { {{ component }} } from '@patternfly/react-core'
     ```
 
-
     After:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core/deprecated"
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10181
     title: patternfly-v6 Documentation
@@ -97,23 +82,18 @@
   message: |-
     DragDrop components have been deprecated. Use the new drag and drop implementation
     from '@patternfly/react-drag-drop' package.
-    
-    Replace `import {{{ component }}} from '@patternfly/react-core'` with `import
-    {{{ component }}} from '@patternfly/react-core/deprecated'`.
-    
+
+    Replace `import { {{ component }} } from '@patternfly/react-core'` with `import { {{ component }} } from '@patternfly/react-core/deprecated'`.
+
     Before:
     ```
     import { {{ component }} } from '@patternfly/react-core'
     ```
 
-
     After:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core/deprecated"
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10181
     title: patternfly-v6 Documentation
@@ -137,23 +117,18 @@
   message: |-
     DragDrop components have been deprecated. Use the new drag and drop implementation
     from '@patternfly/react-drag-drop' package.
-    
-    Replace `import {{{ component }}} from '@patternfly/react-core'` with `import
-    {{{ component }}} from '@patternfly/react-core/deprecated'`.
-    
+
+    Replace `import { {{ component }} } from '@patternfly/react-core'` with `import { {{ component }} } from '@patternfly/react-core/deprecated'`.
+
     Before:
     ```
     import { {{ component }} } from '@patternfly/react-core'
     ```
 
-
     After:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core/deprecated"
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10181
     title: patternfly-v6 Documentation
@@ -177,19 +152,18 @@
   message: |-
     The previous implementation of DualListSelector has been deprecated. Use
     the newly promoted implementation.
-    
-    Replace `import {{{ component }}} from "@patternfly/react-core"` with `import
-    {{{ component }}} from '@patternfly/react-core/deprecated'`.
-    
+
+    Replace `import { {{ component }} } from "@patternfly/react-core"` with `import { {{ component }} } from '@patternfly/react-core/deprecated'`.
+
     Before:
     ```
     import { {{ component }} } from "@patternfly/react-core"
     ```
-    
+
     After:
     ```
     import { {{ component }} } from '@patternfly/react-core/deprecated'
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10359
     title: patternfly-v6 Documentation

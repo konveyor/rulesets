@@ -14,26 +14,16 @@
     The Next implementation of DualListSelector has been promoted as the recommended
     implementation.
 
-
-    Replace `import {{{ component }}} from "@patternfly/react-core/next"` with `import
-    {{{ component }}} from '@patternfly/react-core'`.
-
+    Replace `import { {{ component }} } from "@patternfly/react-core/next"` with `import { {{ component }} } from '@patternfly/react-core'`.
 
     Before:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core/next"
-
     ```
-
 
     After:
-
     ```
-
     import { {{ component }} } from '@patternfly/react-core'
-
     ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10359

@@ -169,15 +169,14 @@
       filePattern: \.(j|t)sx?$
   message: |-
     Text component has been renamed to Content component in PatternFly 6
-    
-    Replace `import {{{ component }}} from '@patternfly/react-core';` with `import
-    {{{ component }}} from '@patternfly/react-core';`.
-    
+
+    Replace `import { {{ component }} } from '@patternfly/react-core';` with `import { {{ component }} } from '@patternfly/react-core';`.
+
     Before:
     ```
     import { {{ component }} } from '@patternfly/react-core';
     ```
-    
+
     After:
     ```
     import { {{ component }} } from '@patternfly/react-core';

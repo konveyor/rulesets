@@ -13,7 +13,7 @@
   message: |-
     Victory-based charts have moved to a "victory" directory in @patternfly/react-charts
 
-    Replace `import {{{ component }}} from "@patternfly/react-charts";` with `import {{{ component }}} from "@patternfly/react-charts/victory";`.
+    Replace `import { {{ component }} } from "@patternfly/react-charts";` with `import { {{ component }} } from "@patternfly/react-charts/victory";`.
 
     Before:
     ```

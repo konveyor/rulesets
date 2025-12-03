@@ -49,15 +49,14 @@
       filePattern: \.(j|t)sx?$
   message: |-
     In react-component-groups, we've renamed ContentHeader component to PageHeader
-    
-    Replace `import {{{ component }}} from "@patternfly/react-component-groups"` with
-    `import {{{ component }}} from "@patternfly/react-component-groups"`.
-    
+
+    Replace `import { {{ component }} } from "@patternfly/react-component-groups"` with `import { {{ component }} } from "@patternfly/react-component-groups"`.
+
     Before:
     ```
     import { {{ component }} } from "@patternfly/react-component-groups";
     ```
-    
+
     After:
     ```
     import { {{ component }} } from "@patternfly/react-component-groups";

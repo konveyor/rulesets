@@ -14,28 +14,17 @@
     KebabToggle has been removed from PatternFly. Use MenuToggle component
     instead.
 
-
-    Replace `import {{{ component }}} from "@patternfly/react-core/deprecated"` with
-    `import {{{ component }}} from "@patternfly/react-core"`.
-
+    Replace `import { {{ component }} } from "@patternfly/react-core/deprecated"` with `import { {{ component }} } from "@patternfly/react-core"`.
 
     Before:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core/deprecated"
-
     ```
-
 
     After:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core"
-
     import EllipsisVIcon from "@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon"
-
     ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10345

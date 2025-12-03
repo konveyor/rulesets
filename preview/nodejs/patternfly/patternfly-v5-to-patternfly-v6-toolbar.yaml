@@ -166,15 +166,14 @@
       filePattern: \.(j|t)sx?$
   message: |-
     The ToolbarChipGroupContent component has been renamed to ToolbarLabelGroupContent
-    
-    Replace `import {{{ component }}} from "@patternfly/react-core"` with `import
-    {{{ component }}} from "@patternfly/react-core"`.
-    
+
+    Replace `import { {{ component }} } from "@patternfly/react-core"` with `import { {{ component }} } from "@patternfly/react-core"`.
+
     Before:
     ```
     import { {{ component }} } from "@patternfly/react-core";
     ```
-    
+
     After:
     ```
     import { {{ component }} } from "@patternfly/react-core";

@@ -51,15 +51,14 @@
   message: |-
     In react-component-groups, the NotAuthorized component has been renamed
     to UnauthorizedAccess
-    
-    Replace `import {{{ component }}} from "@patternfly/react-component-groups"` with
-    `import {{{ component }}} from "@patternfly/react-component-groups"`.
-    
+
+    Replace `import { {{ component }} } from "@patternfly/react-component-groups"` with `import { {{ component }} } from "@patternfly/react-component-groups"`.
+
     Before:
     ```
     import { {{ component }} } from "@patternfly/react-component-groups";
     ```
-    
+
     After:
     ```
     import { {{ component }} } from "@patternfly/react-component-groups";
