@@ -198,7 +198,7 @@
     After:
     ```
     import { Modal } from '@patternfly/react-core/deprecated'
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10358
     title: patternfly-v6 Documentation
