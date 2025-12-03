@@ -707,6 +707,9 @@
     <AccordionToggle />
     </AccordionItem>
     ```
+  links:
+  - url: https://github.com/patternfly/patternfly-react/pull/10013
+    title: patternfly-v6 Documentation
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-component-props-00220
   description: Modal title should be replaced with Modal titleText
