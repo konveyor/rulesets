@@ -35,6 +35,9 @@
     import { {{ component }} } from '@patternfly/react-core'
 
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables:
   - pattern: import {(?P<imports>[A-z,\s]+)}
     name: component
@@ -72,6 +75,9 @@
     import { {{ component }} } from "@patternfly/react-core"
 
     ```'
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables:
   - pattern: import {(?P<imports>[A-z,\s]+)}
     name: component
@@ -102,6 +108,9 @@
     ```
     var(--pf-v6-global--Color--100)
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00030
   description: Button isActive should be replaced with Button isPressed
@@ -131,6 +140,9 @@
     ```
     <Button isPressed />
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00040
   description: ButtonVariant.control should be replaced with ButtonVariant.plain
@@ -157,6 +169,9 @@
     ```
     ButtonVariant.plain
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00050
   description: ButtonVariant.buttonGroup should be replaced with ButtonVariant.actionGroup
@@ -183,6 +198,9 @@
     ```
     ButtonVariant.actionGroup
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00060
   description: AccordionToggle isExpanded should be replaced with AccordionItem isExpanded
@@ -212,6 +230,9 @@
     ```
     <AccordionItem isExpanded={isExpanded}><AccordionToggle /></AccordionItem>
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00070
   description: AccordionContent isHidden should be replaced with AccordionContent
@@ -242,6 +263,9 @@
     ```
     <AccordionContent />
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00080
   description: Modal title should be replaced with Modal titleText
@@ -271,6 +295,9 @@
     ```
     <Modal titleText="Modal Title" />
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00090
   description: Pagination isCompact should be replaced with Pagination variant="compact"
@@ -300,6 +327,9 @@
     ```
     <Pagination variant="compact" />
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00100
   description: TextInput isDisabled should be replaced with TextInput isDisabled
@@ -330,6 +360,9 @@
     ```
     <TextInput disabled />
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00110
   description: TextArea isDisabled should be replaced with TextArea disabled
@@ -360,6 +393,9 @@
     ```
     <TextArea disabled />
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00120
   description: Select isDisabled should be replaced with Select isDisabled
@@ -390,6 +426,9 @@
     ```
     <Select disabled />
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00130
   description: FormSelect isDisabled should be replaced with FormSelect disabled
@@ -420,6 +459,9 @@
     ```
     <FormSelect disabled />
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00140
   description: Radio isDisabled should be replaced with Radio disabled
@@ -450,6 +492,9 @@
     ```
     <Radio disabled />
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00150
   description: Checkbox isDisabled should be replaced with Checkbox disabled
@@ -480,6 +525,9 @@
     ```
     <Checkbox disabled />
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00160
   description: alignLeft should be replaced with alignStart
@@ -506,6 +554,9 @@
     ```
     alignStart
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00170
   description: alignRight should be replaced with alignEnd
@@ -532,6 +583,9 @@
     ```
     alignEnd
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00180
   description: 576px should be replaced with 36rem
@@ -558,6 +612,9 @@
     ```
     36rem
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00190
   description: 768px should be replaced with 48rem
@@ -584,6 +641,9 @@
     ```
     48rem
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00200
   description: 992px should be replaced with 62rem
@@ -610,6 +670,9 @@
     ```
     62rem
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00210
   description: 1200px should be replaced with 75rem
@@ -636,6 +699,9 @@
     ```
     75rem
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00220
   description: 1450px should be replaced with 90.625rem
@@ -662,4 +728,7 @@
     ```
     90.625rem
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []

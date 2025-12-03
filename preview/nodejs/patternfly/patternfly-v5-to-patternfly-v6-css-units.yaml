@@ -32,6 +32,9 @@
     width: 36rem;
 
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-css-units-00010
   description: 768px should be replaced with 48rem
@@ -58,6 +61,9 @@
     ```
     width: 48rem;
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-css-units-00020
   description: 992px should be replaced with 62rem
@@ -84,6 +90,9 @@
     ```
     width: 62rem;
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-css-units-00030
   description: 1200px should be replaced with 75rem
@@ -110,4 +119,7 @@
     ```
     width: 75rem;
     ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
