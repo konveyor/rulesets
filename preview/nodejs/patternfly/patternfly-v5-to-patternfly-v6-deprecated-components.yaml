@@ -45,8 +45,9 @@
       pattern: import.*DragDrop.*from.*@patternfly/react-core$
       filePattern: \.(j|t)sx?$
   message: |-
-    DragDrop has been deprecated. Use the new drag and drop implementation
-    (DragDropSort component) from '@patternfly/react-drag-drop' package.
+    DragDrop has been deprecated. For PatternFly 6 compatibility, update imports to '@patternfly/react-core/deprecated'.
+
+    For the long-term migration path, use the new DragDropSort component from '@patternfly/react-drag-drop' package.
 
     Replace `import { {{ component }} } from '@patternfly/react-core'` with `import { {{ component }} } from '@patternfly/react-core/deprecated'`.
 
@@ -80,8 +81,9 @@
       pattern: import.*Droppable.*from.*@patternfly/react-core$
       filePattern: \.(j|t)sx?$
   message: |-
-    DragDrop components have been deprecated. Use the new drag and drop implementation
-    from '@patternfly/react-drag-drop' package.
+    DragDrop components have been deprecated. For PatternFly 6 compatibility, update imports to '@patternfly/react-core/deprecated'.
+
+    For the long-term migration path, use the new drag and drop implementation from '@patternfly/react-drag-drop' package.
 
     Replace `import { {{ component }} } from '@patternfly/react-core'` with `import { {{ component }} } from '@patternfly/react-core/deprecated'`.
 
@@ -115,8 +117,9 @@
       pattern: import.*Draggable.*from.*@patternfly/react-core$
       filePattern: \.(j|t)sx?$
   message: |-
-    DragDrop components have been deprecated. Use the new drag and drop implementation
-    from '@patternfly/react-drag-drop' package.
+    DragDrop components have been deprecated. For PatternFly 6 compatibility, update imports to '@patternfly/react-core/deprecated'.
+
+    For the long-term migration path, use the new drag and drop implementation from '@patternfly/react-drag-drop' package.
 
     Replace `import { {{ component }} } from '@patternfly/react-core'` with `import { {{ component }} } from '@patternfly/react-core/deprecated'`.
 
