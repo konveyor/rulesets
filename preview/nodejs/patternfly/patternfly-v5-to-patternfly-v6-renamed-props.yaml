@@ -60,7 +60,7 @@
     
     After:
     ```
-    <NotAuthorized bodyText="Description text" />
+    <UnauthorizedAccess bodyText="Description text" />
     ```
   links:
   - url: https://github.com/patternfly/react-component-groups/pull/145
@@ -93,7 +93,7 @@
     
     After:
     ```
-    <NotAuthorized titleText="Title text" />
+    <UnauthorizedAccess titleText="Title text" />
     ```
   links:
   - url: https://github.com/patternfly/react-component-groups/pull/145
