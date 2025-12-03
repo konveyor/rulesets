@@ -14,25 +14,21 @@
     There was a typo in FormFiledGroupHeaderTitleTextObject interface. It
     was renamed to the intended FormFieldGroupHeaderTitleTextObject.
 
-    Replace `import { {{ component }} } from "@patternfly/react-core"` with `import { {{ component }} } from "@patternfly/react-core"`.
+    Replace `import { FormFiledGroupHeaderTitleTextObject } from "@patternfly/react-core"` with `import { FormFieldGroupHeaderTitleTextObject } from "@patternfly/react-core"`.
 
     Before:
     ```
-    import { {{ component }} } from "@patternfly/react-core"
+    import { FormFiledGroupHeaderTitleTextObject } from "@patternfly/react-core"
     ```
 
     After:
     ```
-    import { {{ component }} } from "@patternfly/react-core"
+    import { FormFieldGroupHeaderTitleTextObject } from "@patternfly/react-core"
     ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10016
     title: patternfly-v6 Documentation
-  customVariables:
-  - pattern: import {(?P<imports>[A-Za-z,\s]+)}
-    name: component
-    nameOfCaptureGroup: imports
-    defaultValue: Component
+  customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-interface-renames-00010
   description: FormFiledGroupHeaderTitleTextObject should be replaced with FormFieldGroupHeaderTitleTextObject
   effort: 3
