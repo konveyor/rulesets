@@ -153,8 +153,7 @@
     title: patternfly-v6 Documentation
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-toolbar-00040
-  description: imports  from '@patternfly/react-core'; should be replaced with imports
-    from '@patternfly/react-core';
+  description: ToolbarChipGroupContent should be replaced with ToolbarLabelGroupContent
   effort: 3
   category: potential
   labels:
@@ -167,16 +166,16 @@
   message: |-
     The ToolbarChipGroupContent component has been renamed to ToolbarLabelGroupContent
 
-    Replace `import { {{ component }} } from "@patternfly/react-core"` with `import { {{ component }} } from "@patternfly/react-core"`.
+    Replace `import { ToolbarChipGroupContent } from "@patternfly/react-core"` with `import { ToolbarLabelGroupContent } from "@patternfly/react-core"`.
 
     Before:
     ```
-    import { {{ component }} } from "@patternfly/react-core";
+    import { ToolbarChipGroupContent } from "@patternfly/react-core";
     ```
 
     After:
     ```
-    import { {{ component }} } from "@patternfly/react-core";
+    import { ToolbarLabelGroupContent } from "@patternfly/react-core";
     ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649

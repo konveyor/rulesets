@@ -513,10 +513,10 @@
     ```
     <ToolbarChipGroupContent chipGroupContentRef />
     ```
-    
+
     After:
     ```
-    <ToolbarChipGroupContent labelGroupContentRef />
+    <ToolbarLabelGroupContent labelGroupContentRef />
     ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
