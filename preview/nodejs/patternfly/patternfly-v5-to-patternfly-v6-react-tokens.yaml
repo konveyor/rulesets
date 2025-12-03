@@ -8,7 +8,8 @@
   when:
     nodejs.referenced:
       pattern: global_FontSize_lg
-  message: 'React token naming has changed in PatternFly 6 with the new design token
+  message: |-
+    React token naming has changed in PatternFly 6 with the new design token
     system
 
 
@@ -19,7 +20,7 @@
 
     ```
 
-    import { global_FontSize_lg } from ''@patternfly/react-tokens'';
+    import { global_FontSize_lg } from '@patternfly/react-tokens';
 
     ```
 
@@ -28,9 +29,9 @@
 
     ```
 
-    import { t_global_font_size_lg } from ''@patternfly/react-tokens'';
+    import { t_global_font_size_lg } from '@patternfly/react-tokens';
 
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -45,29 +46,21 @@
   when:
     nodejs.referenced:
       pattern: global_breakpoint_xs
-  message: 'React token naming has changed in PatternFly 6 with the new design token
+  message: |-
+    React token naming has changed in PatternFly 6 with the new design token
     system
-
-
+    
     Replace `global_breakpoint_xs` with `t_global_breakpoint_xs`.
-
-
+    
     Before:
-
     ```
-
-    import { global_breakpoint_xs } from ''@patternfly/react-tokens'';
-
+    import { global_breakpoint_xs } from '@patternfly/react-tokens';
     ```
-
-
+    
     After:
-
     ```
-
-    import { t_global_breakpoint_xs } from ''@patternfly/react-tokens'';
-
-    ```'
+    import { t_global_breakpoint_xs } from '@patternfly/react-tokens';
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -82,29 +75,21 @@
   when:
     nodejs.referenced:
       pattern: global_breakpoint_sm
-  message: 'React token naming has changed in PatternFly 6 with the new design token
+  message: |-
+    React token naming has changed in PatternFly 6 with the new design token
     system
-
-
+    
     Replace `global_breakpoint_sm` with `t_global_breakpoint_sm`.
-
-
+    
     Before:
-
     ```
-
-    import { global_breakpoint_sm } from ''@patternfly/react-tokens'';
-
+    import { global_breakpoint_sm } from '@patternfly/react-tokens';
     ```
-
-
+    
     After:
-
     ```
-
-    import { t_global_breakpoint_sm } from ''@patternfly/react-tokens'';
-
-    ```'
+    import { t_global_breakpoint_sm } from '@patternfly/react-tokens';
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -119,29 +104,21 @@
   when:
     nodejs.referenced:
       pattern: global_breakpoint_md
-  message: 'React token naming has changed in PatternFly 6 with the new design token
+  message: |-
+    React token naming has changed in PatternFly 6 with the new design token
     system
-
-
+    
     Replace `global_breakpoint_md` with `t_global_breakpoint_md`.
-
-
+    
     Before:
-
     ```
-
-    import { global_breakpoint_md } from ''@patternfly/react-tokens'';
-
+    import { global_breakpoint_md } from '@patternfly/react-tokens';
     ```
-
-
+    
     After:
-
     ```
-
-    import { t_global_breakpoint_md } from ''@patternfly/react-tokens'';
-
-    ```'
+    import { t_global_breakpoint_md } from '@patternfly/react-tokens';
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -156,29 +133,21 @@
   when:
     nodejs.referenced:
       pattern: global_breakpoint_lg
-  message: 'React token naming has changed in PatternFly 6 with the new design token
+  message: |-
+    React token naming has changed in PatternFly 6 with the new design token
     system
-
-
+    
     Replace `global_breakpoint_lg` with `t_global_breakpoint_lg`.
-
-
+    
     Before:
-
     ```
-
-    import { global_breakpoint_lg } from ''@patternfly/react-tokens'';
-
+    import { global_breakpoint_lg } from '@patternfly/react-tokens';
     ```
-
-
+    
     After:
-
     ```
-
-    import { t_global_breakpoint_lg } from ''@patternfly/react-tokens'';
-
-    ```'
+    import { t_global_breakpoint_lg } from '@patternfly/react-tokens';
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -193,29 +162,21 @@
   when:
     nodejs.referenced:
       pattern: global_breakpoint_xl
-  message: 'React token naming has changed in PatternFly 6 with the new design token
+  message: |-
+    React token naming has changed in PatternFly 6 with the new design token
     system
-
-
+    
     Replace `global_breakpoint_xl` with `t_global_breakpoint_xl`.
-
-
+    
     Before:
-
     ```
-
-    import { global_breakpoint_xl } from ''@patternfly/react-tokens'';
-
+    import { global_breakpoint_xl } from '@patternfly/react-tokens';
     ```
-
-
+    
     After:
-
     ```
-
-    import { t_global_breakpoint_xl } from ''@patternfly/react-tokens'';
-
-    ```'
+    import { t_global_breakpoint_xl } from '@patternfly/react-tokens';
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -230,29 +191,21 @@
   when:
     nodejs.referenced:
       pattern: global_breakpoint_2xl
-  message: 'React token naming has changed in PatternFly 6 with the new design token
+  message: |-
+    React token naming has changed in PatternFly 6 with the new design token
     system
-
-
+    
     Replace `global_breakpoint_2xl` with `t_global_breakpoint_2xl`.
-
-
+    
     Before:
-
     ```
-
-    import { global_breakpoint_2xl } from ''@patternfly/react-tokens'';
-
+    import { global_breakpoint_2xl } from '@patternfly/react-tokens';
     ```
-
-
+    
     After:
-
     ```
-
-    import { t_global_breakpoint_2xl } from ''@patternfly/react-tokens'';
-
-    ```'
+    import { t_global_breakpoint_2xl } from '@patternfly/react-tokens';
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation

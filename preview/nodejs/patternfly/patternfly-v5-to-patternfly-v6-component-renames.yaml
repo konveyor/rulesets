@@ -10,7 +10,8 @@
     builtin.filecontent:
       pattern: import.*ContentHeader.*from.*@patternfly/react-component-groups$
       filePattern: \.(j|t)sx?$
-  message: 'In react-component-groups, ContentHeader component has been renamed to
+  message: |-
+    In react-component-groups, ContentHeader component has been renamed to
     PageHeader
 
 
@@ -33,7 +34,7 @@
 
     import { {{ component }} } from "@patternfly/react-component-groups"
 
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/react-component-groups/pull/313
     title: patternfly-v6 Documentation
@@ -53,29 +54,21 @@
     builtin.filecontent:
       pattern: <ContentHeader
       filePattern: \.(j|t)sx?$
-  message: 'In react-component-groups, ContentHeader component has been renamed to
+  message: |-
+    In react-component-groups, ContentHeader component has been renamed to
     PageHeader
-
-
+    
     Replace `<ContentHeader` with `<PageHeader`.
-
-
+    
     Before:
-
     ```
-
     <ContentHeader />
-
     ```
-
-
+    
     After:
-
     ```
-
     <PageHeader />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/react-component-groups/pull/313
     title: patternfly-v6 Documentation
@@ -92,30 +85,22 @@
     builtin.filecontent:
       pattern: import.*MastheadBrand.*from.*@patternfly/react-core$
       filePattern: \.(j|t)sx?$
-  message: 'Our old implementation of MastheadBrand has been renamed to MastheadLogo,
+  message: |-
+    Our old implementation of MastheadBrand has been renamed to MastheadLogo,
     which must be wrapped by our new implementation of MastheadBrand.
-
-
+    
     Replace `import {{{ component }}} from "@patternfly/react-core"` with `import
     {{{ component }}} from "@patternfly/react-core"`.
-
-
+    
     Before:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core"
-
     ```
-
-
+    
     After:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core"
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10809
     title: patternfly-v6 Documentation
@@ -135,29 +120,21 @@
     builtin.filecontent:
       pattern: <MastheadBrand
       filePattern: \.(j|t)sx?$
-  message: 'Our old implementation of MastheadBrand has been renamed to MastheadLogo,
+  message: |-
+    Our old implementation of MastheadBrand has been renamed to MastheadLogo,
     which must be wrapped by our new implementation of MastheadBrand.
-
-
+    
     Replace `<MastheadBrand` with `<MastheadLogo`.
-
-
+    
     Before:
-
     ```
-
     <MastheadBrand>Logo</MastheadBrand>
-
     ```
-
-
+    
     After:
-
     ```
-
     <MastheadLogo>Logo</MastheadLogo>
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10809
     title: patternfly-v6 Documentation

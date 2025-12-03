@@ -13,8 +13,9 @@
     - builtin.filecontent:
         pattern: <ToolbarGroup[^>]*\balign[^>]*alignLeft\b
         filePattern: \.(j|t)sx?$
-  message: 'The values for the align property on ToolbarGroup have been updated from
-    ''alignLeft'' to ''alignStart''
+  message: |-
+    The values for the align property on ToolbarGroup have been updated from
+    'alignLeft' to 'alignStart'
 
 
     Replace `ToolbarGroup align="alignLeft"` with `ToolbarGroup align="alignStart"`.
@@ -35,7 +36,7 @@
 
     <ToolbarGroup align={{ default: "alignStart" }} />
 
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10366
     title: patternfly-v6 Documentation
@@ -54,10 +55,10 @@
     - builtin.filecontent:
         pattern: <ToolbarItem[^>]*\balign[^>]*alignLeft\b
         filePattern: \.(j|t)sx?$
-  message: 'The values for the align property on ToolbarItem have been updated from
-    ''alignLeft'' to ''alignStart''
-
-
+  message: |-
+    The values for the align property on ToolbarItem have been updated from
+    'alignLeft' to 'alignStart'
+    
     Replace `ToolbarItem align="alignLeft"` with `ToolbarItem align="alignStart"`.
 
 
@@ -96,10 +97,10 @@
     - builtin.filecontent:
         pattern: <ToolbarToggleGroup[^>]*\balignment[^>]*alignLeft\b
         filePattern: \.(j|t)sx?$
-  message: 'The values for the alignment property on ToolbarToggleGroup have been
-    updated from ''alignLeft'' to ''alignStart''
-
-
+  message: |-
+    The values for the alignment property on ToolbarToggleGroup have been
+    updated from 'alignLeft' to 'alignStart'
+    
     Replace `ToolbarToggleGroup alignment="alignLeft"` with `ToolbarToggleGroup alignment="alignStart"`.
 
 
@@ -133,28 +134,20 @@
   when:
     nodejs.referenced:
       pattern: ToolbarChipGroupContent
-  message: 'The ToolbarChipGroupContent component has been renamed to ToolbarLabelGroupContent
-
-
+  message: |-
+    The ToolbarChipGroupContent component has been renamed to ToolbarLabelGroupContent
+    
     Replace `ToolbarChipGroupContent` with `ToolbarLabelGroupContent`.
-
-
+    
     Before:
-
     ```
-
     <ToolbarChipGroupContent />
-
     ```
-
-
+    
     After:
-
     ```
-
     <ToolbarLabelGroupContent />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation
@@ -171,29 +164,21 @@
     builtin.filecontent:
       pattern: import.*ToolbarChipGroupContent.*from.*@patternfly/react-core$
       filePattern: \.(j|t)sx?$
-  message: 'The ToolbarChipGroupContent component has been renamed to ToolbarLabelGroupContent
-
-
+  message: |-
+    The ToolbarChipGroupContent component has been renamed to ToolbarLabelGroupContent
+    
     Replace `import {{{ component }}} from "@patternfly/react-core"` with `import
     {{{ component }}} from "@patternfly/react-core"`.
-
-
+    
     Before:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core";
-
     ```
-
-
+    
     After:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core";
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation
@@ -213,10 +198,10 @@
     builtin.filecontent:
       pattern: variant="chip-group"
       filePattern: \.(j|t)sx?$
-  message: 'The variant prop for ToolbarItem has been updated: ''chip-group'' was
-    renamed to ''label-group''
-
-
+  message: |-
+    The variant prop for ToolbarItem has been updated: 'chip-group' was
+    renamed to 'label-group'
+    
     Replace `variant="chip-group"` with `variant="label-group"`.
 
 
@@ -251,29 +236,21 @@
     builtin.filecontent:
       pattern: variant="bulk-select"
       filePattern: \.(j|t)sx?$
-  message: 'The variant prop for ToolbarItem has been updated: ''bulk-select'' was
+  message: |-
+    The variant prop for ToolbarItem has been updated: 'bulk-select' was
     removed
-
-
+    
     Replace `variant="bulk-select"` with `variant removed`.
-
-
+    
     Before:
-
     ```
-
     <ToolbarItem variant="bulk-select" />
-
     ```
-
-
+    
     After:
-
     ```
-
     <ToolbarItem />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation
@@ -289,29 +266,21 @@
     builtin.filecontent:
       pattern: variant="overflow-menu"
       filePattern: \.(j|t)sx?$
-  message: 'The variant prop for ToolbarItem has been updated: ''overflow-menu'' was
+  message: |-
+    The variant prop for ToolbarItem has been updated: 'overflow-menu' was
     removed
-
-
+    
     Replace `variant="overflow-menu"` with `variant removed`.
-
-
+    
     Before:
-
     ```
-
     <ToolbarItem variant="overflow-menu" />
-
     ```
-
-
+    
     After:
-
     ```
-
     <ToolbarItem />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation
@@ -327,29 +296,21 @@
     builtin.filecontent:
       pattern: variant="search-filter"
       filePattern: \.(j|t)sx?$
-  message: 'The variant prop for ToolbarItem has been updated: ''search-filter'' was
+  message: |-
+    The variant prop for ToolbarItem has been updated: 'search-filter' was
     removed
-
-
+    
     Replace `variant="search-filter"` with `variant removed`.
-
-
+    
     Before:
-
     ```
-
     <ToolbarItem variant="search-filter" />
-
     ```
-
-
+    
     After:
-
     ```
-
     <ToolbarItem />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation

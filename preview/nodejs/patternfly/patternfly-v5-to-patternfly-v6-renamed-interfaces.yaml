@@ -8,7 +8,8 @@
   when:
     nodejs.referenced:
       pattern: ToolbarChipGroupContentProps
-  message: 'The ToolbarChipGroupContentProps interface has been renamed to ToolbarLabelGroupContentProps.
+  message: |-
+    The ToolbarChipGroupContentProps interface has been renamed to ToolbarLabelGroupContentProps.
 
 
     Replace `ToolbarChipGroupContentProps` with `ToolbarLabelGroupContentProps`.
@@ -29,7 +30,7 @@
 
     interface MyInterface extends ToolbarLabelGroupContentProps {}
 
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation
@@ -44,28 +45,20 @@
   when:
     nodejs.referenced:
       pattern: ToolbarChipGroup
-  message: 'The ToolbarChipGroup interface has been renamed to ToolbarLabelGroup.
-
-
+  message: |-
+    The ToolbarChipGroup interface has been renamed to ToolbarLabelGroup.
+    
     Replace `ToolbarChipGroup` with `ToolbarLabelGroup`.
-
-
+    
     Before:
-
     ```
-
     let typedThing: ToolbarChipGroup;
-
     ```
-
-
+    
     After:
-
     ```
-
     let typedThing: ToolbarLabelGroup;
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation
@@ -80,28 +73,20 @@
   when:
     nodejs.referenced:
       pattern: ToolbarChip
-  message: 'The ToolbarChip interface has been renamed to ToolbarLabel.
-
-
+  message: |-
+    The ToolbarChip interface has been renamed to ToolbarLabel.
+    
     Replace `ToolbarChip` with `ToolbarLabel`.
-
-
+    
     Before:
-
     ```
-
     interface MyInterface extends ToolbarChip {}
-
     ```
-
-
+    
     After:
-
     ```
-
     interface MyInterface extends ToolbarLabel {}
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation

@@ -10,7 +10,8 @@
     builtin.filecontent:
       pattern: import.*DualListSelector.*from.*@patternfly/react-core$
       filePattern: \.(j|t)sx?$
-  message: 'Our previous implementation of DualListSelector has been deprecated. Codemods
+  message: |-
+    Our previous implementation of DualListSelector has been deprecated. Codemods
     will update import paths to our deprecated directory, but we recommend using our
     newly promoted implementation.
 
@@ -32,9 +33,9 @@
 
     ```
 
-    import { {{ component }} } from ''@patternfly/react-core/deprecated'';
+    import { {{ component }} } from '@patternfly/react-core/deprecated';
 
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10359
     title: patternfly-v6 Documentation
@@ -55,30 +56,22 @@
     builtin.filecontent:
       pattern: import.*DualListSelector.*from.*@patternfly/react-core/next$
       filePattern: \.(j|t)sx?$
-  message: 'Our Next implementation of DualListSelector has been promoted as our recommended
+  message: |-
+    Our Next implementation of DualListSelector has been promoted as our recommended
     implementation. Codemods will update import paths.
-
-
+    
     Replace `import { {{ component }} }; from DualListSelector import from next` with
     `import { {{ component }} } from DualListSelector import`.
-
-
+    
     Before:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core/next";
-
     ```
-
-
+    
     After:
-
     ```
-
-    import { {{ component }} } from ''@patternfly/react-core'';
-
-    ```'
+    import { {{ component }} } from '@patternfly/react-core';
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10359
     title: patternfly-v6 Documentation

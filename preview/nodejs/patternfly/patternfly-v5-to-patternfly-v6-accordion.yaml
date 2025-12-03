@@ -12,29 +12,20 @@
     - builtin.filecontent:
         pattern: <AccordionContent[^>]*\bisHidden\b
         filePattern: \.(j|t)sx?$
-  message: 'The isHidden prop has been removed from AccordionContent, as its visibility
-    will now be set automatically based on the isExpanded prop on AccordionItem.
-
+  message: |-
+    The isHidden prop has been removed from AccordionContent, as its visibility will now be set automatically based on the isExpanded prop on AccordionItem.
 
     Replace `AccordionContent isHidden` with `AccordionContent`.
 
-
     Before:
-
     ```
-
     <AccordionContent isHidden />
-
     ```
-
 
     After:
-
     ```
-
     <AccordionContent />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/9876
     title: patternfly-v6 Documentation
@@ -53,11 +44,24 @@
     - builtin.filecontent:
         pattern: <AccordionToggle[^>]*\bisExpanded\b
         filePattern: \.(j|t)sx?$
-  message: "The isExpanded prop for AccordionToggle has been moved to AccordionItem.\n\
-    \nReplace `AccordionToggle isExpanded` with `AccordionItem isExpanded`.\n\nBefore:\n\
-    ```\n<AccordionItem>\n  <AccordionToggle isExpanded />\n</AccordionItem>\n```\n\
-    \nAfter:\n```\n<AccordionItem isExpanded>\n  <AccordionToggle />\n</AccordionItem>\n\
-    ```"
+  message: |-
+    The isExpanded prop for AccordionToggle has been moved to AccordionItem.
+
+    Replace `AccordionToggle isExpanded` with `AccordionItem isExpanded`.
+
+    Before:
+    ```
+    <AccordionItem>
+      <AccordionToggle isExpanded />
+    </AccordionItem>
+    ```
+
+    After:
+    ```
+    <AccordionItem isExpanded>
+      <AccordionToggle />
+    </AccordionItem>
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/9876
     title: patternfly-v6 Documentation

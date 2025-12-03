@@ -10,18 +10,15 @@
     builtin.filecontent:
       pattern: import.*from '@patternfly/react-core'$
       filePattern: \.(j|t)sx?$
-  message: 'PatternFly 6 requires more specific imports from component subdirectories
-
-
-    Replace `import {{{ component }}} from ''@patternfly/react-core''` with `import
-    {{{ component }}} from ''@patternfly/react-core/dist/esm/components/...''`.
-
-
+  message: |-
+    PatternFly 6 requires more specific imports from component subdirectories
+    
+    Replace `import {{{ component }}} from "@patternfly/react-core"` with `import
+    {{{ component }}} from "@patternfly/react-core/dist/esm/components/..."`.
+    
     Before:
-
     ```
-
-    import { {{ component }} } from ''@patternfly/react-core''
+    import { {{ component }} } from "@patternfly/react-core'
 
     ```
 
@@ -30,7 +27,7 @@
 
     ```
 
-    import { {{ component }} } from ''@patternfly/react-core/dist/esm/components/Button''
+    import { {{ component }} } from "@patternfly/react-core/dist/esm/components/Button"
 
     ```'
   customVariables:

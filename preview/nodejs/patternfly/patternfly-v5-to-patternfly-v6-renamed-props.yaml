@@ -9,7 +9,8 @@
     builtin.filecontent:
       pattern: variant="tertiary"
       filePattern: \.(j|t)sx?$
-  message: 'The "tertiary" Nav variant is no longer supported. Use variant="horizontal-subnav"
+  message: |-
+    The "tertiary" Nav variant is no longer supported. Use variant="horizontal-subnav"
     instead.
 
 
@@ -31,7 +32,7 @@
 
     <Nav variant="horizontal-subnav" />
 
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/9948
     title: patternfly-v6 Documentation
@@ -46,29 +47,21 @@
   when:
     nodejs.referenced:
       pattern: description
-  message: 'In react-component-groups, NotAuthorized''s prop description has been
+  message: |-
+    In react-component-groups, NotAuthorized's prop description has been
     renamed to bodyText.
-
-
+    
     Replace `description` with `bodyText`.
-
-
+    
     Before:
-
     ```
-
     <NotAuthorized description="Description text" />
-
     ```
-
-
+    
     After:
-
     ```
-
     <NotAuthorized bodyText="Description text" />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/react-component-groups/pull/145
     title: patternfly-v6 Documentation
@@ -83,29 +76,21 @@
   when:
     nodejs.referenced:
       pattern: title
-  message: 'In react-component-groups, NotAuthorized''s prop title has been renamed
+  message: |-
+    In react-component-groups, NotAuthorized's prop title has been renamed
     to titleText.
-
-
+    
     Replace `title` with `titleText`.
-
-
+    
     Before:
-
     ```
-
     <NotAuthorized title="Title text" />
-
     ```
-
-
+    
     After:
-
     ```
-
     <NotAuthorized titleText="Title text" />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/react-component-groups/pull/145
     title: patternfly-v6 Documentation
@@ -121,28 +106,20 @@
     builtin.filecontent:
       pattern: header=
       filePattern: \.(j|t)sx?$
-  message: 'The header prop for Page has been renamed to masthead.
-
-
+  message: |-
+    The header prop for Page has been renamed to masthead.
+    
     Replace `header=` with `masthead=`.
-
-
+    
     Before:
-
     ```
-
     <Page header={<Masthead />} />
-
     ```
-
-
+    
     After:
-
     ```
-
     <Page masthead={<Masthead />} />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10454
     title: patternfly-v6 Documentation
@@ -157,28 +134,20 @@
   when:
     nodejs.referenced:
       pattern: isTertiaryNavGrouped
-  message: 'The isTertiaryNavGrouped prop has been renamed to isHorizontalSubnavGrouped.
-
-
+  message: |-
+    The isTertiaryNavGrouped prop has been renamed to isHorizontalSubnavGrouped.
+    
     Replace `isTertiaryNavGrouped` with `isHorizontalSubnavGrouped`.
-
-
+    
     Before:
-
     ```
-
     <Page isTertiaryNavGrouped />
-
     ```
-
-
+    
     After:
-
     ```
-
     <Page isHorizontalSubnavGrouped />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/9948
     title: patternfly-v6 Documentation
@@ -193,28 +162,20 @@
   when:
     nodejs.referenced:
       pattern: isTertiaryNavWidthLimited
-  message: 'The isTertiaryNavWidthLimited prop has been renamed to isHorizontalSubnavWidthLimited.
-
-
+  message: |-
+    The isTertiaryNavWidthLimited prop has been renamed to isHorizontalSubnavWidthLimited.
+    
     Replace `isTertiaryNavWidthLimited` with `isHorizontalSubnavWidthLimited`.
-
-
+    
     Before:
-
     ```
-
     <Page isTertiaryNavWidthLimited />
-
     ```
-
-
+    
     After:
-
     ```
-
     <Page isHorizontalSubnavWidthLimited />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/9948
     title: patternfly-v6 Documentation
@@ -229,28 +190,20 @@
   when:
     nodejs.referenced:
       pattern: tertiaryNav
-  message: 'The tertiaryNav prop has been renamed to horizontalSubnav.
-
-
+  message: |-
+    The tertiaryNav prop has been renamed to horizontalSubnav.
+    
     Replace `tertiaryNav` with `horizontalSubnav`.
-
-
+    
     Before:
-
     ```
-
     <Page tertiaryNav />
-
     ```
-
-
+    
     After:
-
     ```
-
     <Page horizontalSubnav />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/9948
     title: patternfly-v6 Documentation
@@ -265,28 +218,20 @@
   when:
     nodejs.referenced:
       pattern: isSecondary
-  message: 'The isSecondary prop for Tabs has been renamed to isSubtab.
-
-
+  message: |-
+    The isSecondary prop for Tabs has been renamed to isSubtab.
+    
     Replace `isSecondary` with `isSubtab`.
-
-
+    
     Before:
-
     ```
-
     <Tabs isSecondary />
-
     ```
-
-
+    
     After:
-
     ```
-
     <Tabs isSubtab />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10044
     title: patternfly-v6 Documentation
@@ -302,29 +247,21 @@
     builtin.filecontent:
       pattern: variant='light300'
       filePattern: \.(j|t)sx?$
-  message: 'The "light300" value for the variant prop on Tabs has been replaced with
+  message: |-
+    The "light300" value for the variant prop on Tabs has been replaced with
     the "secondary" value.
-
-
-    Replace `variant=''light300''` with `variant="secondary"`.
-
-
+    
+    Replace `variant='light300'` with `variant="secondary"`.
+    
     Before:
-
     ```
-
-    <Tabs variant=''light300'' />
-
+    <Tabs variant='light300' />
     ```
-
-
+    
     After:
-
     ```
-
     <Tabs variant="secondary" />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/9930
     title: patternfly-v6 Documentation
@@ -339,28 +276,20 @@
   when:
     nodejs.referenced:
       pattern: customChipGroupContent
-  message: 'The customChipGroupContent prop has been renamed to customLabelGroupContent.
-
-
+  message: |-
+    The customChipGroupContent prop has been renamed to customLabelGroupContent.
+    
     Replace `customChipGroupContent` with `customLabelGroupContent`.
-
-
+    
     Before:
-
     ```
-
     <Toolbar customChipGroupContent />
-
     ```
-
-
+    
     After:
-
     ```
-
     <Toolbar customLabelGroupContent />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation
@@ -375,28 +304,20 @@
   when:
     nodejs.referenced:
       pattern: chipContainerRef
-  message: 'The chipContainerRef prop has been renamed to labelContainerRef.
-
-
+  message: |-
+    The chipContainerRef prop has been renamed to labelContainerRef.
+    
     Replace `chipContainerRef` with `labelContainerRef`.
-
-
+    
     Before:
-
     ```
-
     <ToolbarExpandableContent chipContainerRef />
-
     ```
-
-
+    
     After:
-
     ```
-
     <ToolbarExpandableContent labelContainerRef />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation
@@ -411,28 +332,20 @@
   when:
     nodejs.referenced:
       pattern: chips
-  message: 'The chips prop has been renamed to labels.
-
-
+  message: |-
+    The chips prop has been renamed to labels.
+    
     Replace `chips` with `labels`.
-
-
+    
     Before:
-
     ```
-
     <ToolbarFilter chips />
-
     ```
-
-
+    
     After:
-
     ```
-
     <ToolbarFilter labels />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation
@@ -447,28 +360,20 @@
   when:
     nodejs.referenced:
       pattern: deleteChipGroup
-  message: 'The deleteChipGroup prop has been renamed to deleteLabelGroup.
-
-
+  message: |-
+    The deleteChipGroup prop has been renamed to deleteLabelGroup.
+    
     Replace `deleteChipGroup` with `deleteLabelGroup`.
-
-
+    
     Before:
-
     ```
-
     <ToolbarFilter deleteChipGroup />
-
     ```
-
-
+    
     After:
-
     ```
-
     <ToolbarFilter deleteLabelGroup />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation
@@ -483,28 +388,20 @@
   when:
     nodejs.referenced:
       pattern: deleteChip
-  message: 'The deleteChip prop has been renamed to deleteLabel.
-
-
+  message: |-
+    The deleteChip prop has been renamed to deleteLabel.
+    
     Replace `deleteChip` with `deleteLabel`.
-
-
+    
     Before:
-
     ```
-
     <ToolbarFilter deleteChip />
-
     ```
-
-
+    
     After:
-
     ```
-
     <ToolbarFilter deleteLabel />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation
@@ -519,28 +416,20 @@
   when:
     nodejs.referenced:
       pattern: chipGroupExpandedText
-  message: 'The chipGroupExpandedText prop has been renamed to labelGroupExpandedText.
-
-
+  message: |-
+    The chipGroupExpandedText prop has been renamed to labelGroupExpandedText.
+    
     Replace `chipGroupExpandedText` with `labelGroupExpandedText`.
-
-
+    
     Before:
-
     ```
-
     <ToolbarFilter chipGroupExpandedText />
-
     ```
-
-
+    
     After:
-
     ```
-
     <ToolbarFilter labelGroupExpandedText />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation
@@ -555,28 +444,20 @@
   when:
     nodejs.referenced:
       pattern: chipGroupCollapsedText
-  message: 'The chipGroupCollapsedText prop has been renamed to labelGroupCollapsedText.
-
-
+  message: |-
+    The chipGroupCollapsedText prop has been renamed to labelGroupCollapsedText.
+    
     Replace `chipGroupCollapsedText` with `labelGroupCollapsedText`.
-
-
+    
     Before:
-
     ```
-
     <ToolbarFilter chipGroupCollapsedText />
-
     ```
-
-
+    
     After:
-
     ```
-
     <ToolbarFilter labelGroupCollapsedText />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation
@@ -591,28 +472,20 @@
   when:
     nodejs.referenced:
       pattern: expandableChipContainerRef
-  message: 'The expandableChipContainerRef prop has been renamed to expandableLabelContainerRef.
-
-
+  message: |-
+    The expandableChipContainerRef prop has been renamed to expandableLabelContainerRef.
+    
     Replace `expandableChipContainerRef` with `expandableLabelContainerRef`.
-
-
+    
     Before:
-
     ```
-
     <ToolbarFilter expandableChipContainerRef />
-
     ```
-
-
+    
     After:
-
     ```
-
     <ToolbarFilter expandableLabelContainerRef />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation
@@ -627,28 +500,20 @@
   when:
     nodejs.referenced:
       pattern: chipGroupContentRef
-  message: 'The chipGroupContentRef prop has been renamed to labelGroupContentRef.
-
-
+  message: |-
+    The chipGroupContentRef prop has been renamed to labelGroupContentRef.
+    
     Replace `chipGroupContentRef` with `labelGroupContentRef`.
-
-
+    
     Before:
-
     ```
-
     <ToolbarChipGroupContent chipGroupContentRef />
-
     ```
-
-
+    
     After:
-
     ```
-
     <ToolbarChipGroupContent labelGroupContentRef />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation
@@ -663,31 +528,23 @@
   when:
     nodejs.referenced:
       pattern: spacer
-  message: 'The spacer property has been removed from ToolbarGroup, ToolbarItem, and
+  message: |-
+    The spacer property has been removed from ToolbarGroup, ToolbarItem, and
     ToolbarToggleGroup. Use gap, columnGap, or rowGap properties instead.
-
-
+    
     Replace `spacer` with `gap`.
-
-
+    
     Before:
-
     ```
-
     <ToolbarGroup spacer={{ default: "spacerNone", md: "spacerSm", lg: "spacerMd"
     }} />
-
     ```
-
-
+    
     After:
-
     ```
-
     <ToolbarGroup gap={{ default: "spacerNone", md: "spacerSm", lg: "spacerMd" }}
     />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10418
     title: patternfly-v6 Documentation

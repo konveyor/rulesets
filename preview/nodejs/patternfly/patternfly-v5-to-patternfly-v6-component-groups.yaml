@@ -8,7 +8,8 @@
   when:
     nodejs.referenced:
       pattern: ContentHeader
-  message: 'In react-component-groups, we''ve renamed ContentHeader component to PageHeader
+  message: |-
+    In react-component-groups, we've renamed ContentHeader component to PageHeader
 
 
     Replace `ContentHeader` with `PageHeader`.
@@ -29,7 +30,7 @@
 
     <PageHeader />
 
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/react-component-groups/pull/313
     title: patternfly-v6 Documentation
@@ -46,29 +47,21 @@
     builtin.filecontent:
       pattern: import.*ContentHeader.*from.*@patternfly/react-component-groups$
       filePattern: \.(j|t)sx?$
-  message: 'In react-component-groups, we''ve renamed ContentHeader component to PageHeader
-
-
+  message: |-
+    In react-component-groups, we've renamed ContentHeader component to PageHeader
+    
     Replace `import {{{ component }}} from "@patternfly/react-component-groups"` with
     `import {{{ component }}} from "@patternfly/react-component-groups"`.
-
-
+    
     Before:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-component-groups";
-
     ```
-
-
+    
     After:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-component-groups";
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/react-component-groups/pull/313
     title: patternfly-v6 Documentation
@@ -91,29 +84,21 @@
     - builtin.filecontent:
         pattern: <ErrorState[^>]*\berrorTitle\b
         filePattern: \.(j|t)sx?$
-  message: 'In react-component-groups, we''ve renamed some ErrorState props to comply
+  message: |-
+    In react-component-groups, we've renamed some ErrorState props to comply
     with its base component, EmptyState.
-
-
+    
     Replace `ErrorState errorTitle` with `ErrorState titleText`.
-
-
+    
     Before:
-
     ```
-
     <ErrorState errorTitle="Sample error title" />
-
     ```
-
-
+    
     After:
-
     ```
-
     <ErrorState titleText="Sample error title" />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/react-component-groups/pull/145
     title: patternfly-v6 Documentation
@@ -133,29 +118,21 @@
     - builtin.filecontent:
         pattern: <InvalidObject[^>]*\binvalidObjectTitleText\b
         filePattern: \.(j|t)sx?$
-  message: 'In react-component-groups, we''ve renamed InvalidObject''s props invalidObjectTitleText
+  message: |-
+    In react-component-groups, we've renamed InvalidObject's props invalidObjectTitleText
     to titleText and invalidObjectBodyText to bodyText.
-
-
+    
     Replace `InvalidObject invalidObjectTitleText` with `InvalidObject titleText`.
-
-
+    
     Before:
-
     ```
-
     <InvalidObject invalidObjectTitleText="Sample title" />
-
     ```
-
-
+    
     After:
-
     ```
-
     <InvalidObject titleText="Sample title" />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/react-component-groups/pull/145
     title: patternfly-v6 Documentation
@@ -174,32 +151,24 @@
     - builtin.filecontent:
         pattern: <LogSnippet[^>]*\bleftBorderVariant\b
         filePattern: \.(j|t)sx?$
-  message: 'In react-component-groups, we''ve renamed LogSnippet''s prop leftBorderVariant
-    to variant and replaced LogSnippetBorderVariant enum with PatternFly''s AlertVariant
+  message: |-
+    In react-component-groups, we've renamed LogSnippet's prop leftBorderVariant
+    to variant and replaced LogSnippetBorderVariant enum with PatternFly's AlertVariant
     enum.
-
-
+    
     Replace `LogSnippet leftBorderVariant` with `LogSnippet variant`.
-
-
+    
     Before:
-
     ```
-
     <LogSnippet message="Failure - check logs for details" logSnippet="code" leftBorderVariant={LogSnippetBorderVariant.success}
     />
-
     ```
-
-
+    
     After:
-
     ```
-
     <LogSnippet message="Failure - check logs for details" logSnippet="code" variant={"success"}
     />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/react-component-groups/pull/145
     title: patternfly-v6 Documentation

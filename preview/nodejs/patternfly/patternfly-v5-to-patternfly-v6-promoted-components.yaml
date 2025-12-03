@@ -10,12 +10,13 @@
     builtin.filecontent:
       pattern: import.*DualListSelector.*from.*@patternfly/react-core/next$
       filePattern: \.(j|t)sx?$
-  message: 'The Next implementation of DualListSelector has been promoted as the recommended
+  message: |-
+    The Next implementation of DualListSelector has been promoted as the recommended
     implementation.
 
 
     Replace `import {{{ component }}} from "@patternfly/react-core/next"` with `import
-    {{{ component }}} from ''@patternfly/react-core''`.
+    {{{ component }}} from '@patternfly/react-core'`.
 
 
     Before:
@@ -31,9 +32,9 @@
 
     ```
 
-    import { {{ component }} } from ''@patternfly/react-core''
+    import { {{ component }} } from '@patternfly/react-core'
 
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10359
     title: patternfly-v6 Documentation
@@ -53,29 +54,21 @@
   when:
     nodejs.referenced:
       pattern: Modal
-  message: 'The Next implementation of Modal has been promoted as the recommended
+  message: |-
+    The Next implementation of Modal has been promoted as the recommended
     implementation.
-
-
+    
     Replace `import { Modal } from "@patternfly/react-core/next"` with `import { Modal
-    } from ''@patternfly/react-core''`.
-
-
+    } from '@patternfly/react-core'`.
+    
     Before:
-
     ```
-
     import { Modal } from "@patternfly/react-core/next"
-
     ```
-
-
+    
     After:
-
     ```
-
-    import { Modal } from ''@patternfly/react-core''
-
+    import { Modal } from '@patternfly/react-core'
     ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10358

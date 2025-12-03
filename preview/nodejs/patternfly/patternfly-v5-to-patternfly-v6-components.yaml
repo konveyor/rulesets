@@ -8,7 +8,8 @@
   when:
     nodejs.referenced:
       pattern: Chip
-  message: 'The Chip component has been replaced with the Label component
+  message: |-
+    The Chip component has been replaced with the Label component
 
 
     Replace `Chip component` with `Label component`.
@@ -29,7 +30,7 @@
 
     <Label>Example</Label>
 
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -44,28 +45,20 @@
   when:
     nodejs.referenced:
       pattern: Tile
-  message: 'The Tile component has been replaced with the Card component
-
-
+  message: |-
+    The Tile component has been replaced with the Card component
+    
     Replace `Tile component` with `Card component`.
-
-
+    
     Before:
-
     ```
-
     <Tile>Example</Tile>
-
     ```
-
-
+    
     After:
-
     ```
-
     <Card>Example</Card>
-
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -80,28 +73,20 @@
   when:
     nodejs.referenced:
       pattern: Text
-  message: 'The Text component has been renamed to Content
-
-
+  message: |-
+    The Text component has been renamed to Content
+    
     Replace `Text component` with `Content component`.
-
-
+    
     Before:
-
     ```
-
     <Text>Example</Text>
-
     ```
-
-
+    
     After:
-
     ```
-
     <Content>Example</Content>
-
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -120,28 +105,20 @@
     - builtin.filecontent:
         pattern: <ExpandableSection[^>]*\bisActive\b
         filePattern: \.(j|t)sx?$
-  message: 'The isActive prop has been removed from ExpandableSection
-
-
+  message: |-
+    The isActive prop has been removed from ExpandableSection
+    
     Replace `ExpandableSection isActive` with `ExpandableSection`.
-
-
+    
     Before:
-
     ```
-
     <ExpandableSection isActive>Content</ExpandableSection>
-
     ```
-
-
+    
     After:
-
     ```
-
     <ExpandableSection>Content</ExpandableSection>
-
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -160,28 +137,20 @@
     - builtin.filecontent:
         pattern: <Button[^>]*\bisActive\b
         filePattern: \.(j|t)sx?$
-  message: 'Button''s isActive prop has been renamed to isPressed
-
-
+  message: |-
+    Button's isActive prop has been renamed to isPressed
+    
     Replace `Button isActive` with `Button isPressed`.
-
-
+    
     Before:
-
     ```
-
     <Button isActive>Click me</Button>
-
     ```
-
-
+    
     After:
-
     ```
-
     <Button isPressed>Click me</Button>
-
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade/release-notes
     title: patternfly-v6 Documentation
@@ -198,29 +167,21 @@
     builtin.filecontent:
       pattern: import.*Text.*from '@patternfly/react-core'$
       filePattern: \.(j|t)sx?$
-  message: 'Text component has been renamed to Content component in PatternFly 6
-
-
-    Replace `import {{{ component }}} from ''@patternfly/react-core'';` with `import
-    {{{ component }}} from ''@patternfly/react-core'';`.
-
-
+  message: |-
+    Text component has been renamed to Content component in PatternFly 6
+    
+    Replace `import {{{ component }}} from '@patternfly/react-core';` with `import
+    {{{ component }}} from '@patternfly/react-core';`.
+    
     Before:
-
     ```
-
-    import { {{ component }} } from ''@patternfly/react-core'';
-
+    import { {{ component }} } from '@patternfly/react-core';
     ```
-
-
+    
     After:
-
     ```
-
-    import { {{ component }} } from ''@patternfly/react-core'';
-
-    ```'
+    import { {{ component }} } from '@patternfly/react-core';
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -239,29 +200,21 @@
   when:
     nodejs.referenced:
       pattern: isActive
-  message: 'The isActive prop has been removed from ExpandableSection component in
+  message: |-
+    The isActive prop has been removed from ExpandableSection component in
     PatternFly 6
-
-
+    
     Replace `isActive` with `Remove isActive prop`.
-
-
+    
     Before:
-
     ```
-
     <ExpandableSection isActive>Content</ExpandableSection>
-
     ```
-
-
+    
     After:
-
     ```
-
     <ExpandableSection>Content</ExpandableSection>
-
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation

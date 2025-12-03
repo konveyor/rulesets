@@ -8,7 +8,8 @@
   when:
     nodejs.referenced:
       pattern: NotAuthorized
-  message: 'In react-component-groups, the NotAuthorized component has been renamed
+  message: |-
+    In react-component-groups, the NotAuthorized component has been renamed
     to UnauthorizedAccess
 
 
@@ -30,7 +31,7 @@
 
     <UnauthorizedAccess />
 
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/react-component-groups/pull/313
     title: patternfly-v6 Documentation
@@ -47,30 +48,22 @@
     builtin.filecontent:
       pattern: import.*NotAuthorized.*from.*@patternfly/react-component-groups$
       filePattern: \.(j|t)sx?$
-  message: 'In react-component-groups, the NotAuthorized component has been renamed
+  message: |-
+    In react-component-groups, the NotAuthorized component has been renamed
     to UnauthorizedAccess
-
-
+    
     Replace `import {{{ component }}} from "@patternfly/react-component-groups"` with
     `import {{{ component }}} from "@patternfly/react-component-groups"`.
-
-
+    
     Before:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-component-groups";
-
     ```
-
-
+    
     After:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-component-groups";
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/react-component-groups/pull/313
     title: patternfly-v6 Documentation

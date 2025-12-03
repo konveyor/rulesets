@@ -13,30 +13,22 @@
     - builtin.filecontent:
         pattern: <UnavailableContent[^>]*\bunavailableBodyPreStatusLinkText\b
         filePattern: \.(j|t)sx?$
-  message: 'UnavailableContent''s props unavailableBodyPreStatusLinkText and unavailableBodyPostStatusLinkText
+  message: |-
+    UnavailableContent"s props unavailableBodyPreStatusLinkText and unavailableBodyPostStatusLinkText
     have been replaced with one bodyText prop
-
-
+    
     Replace `UnavailableContent unavailableBodyPreStatusLinkText` with `UnavailableContent
     bodyText`.
-
-
+    
     Before:
-
     ```
-
     <UnavailableContent unavailableBodyPreStatusLinkText="Visit our" />
-
     ```
-
-
+    
     After:
-
     ```
-
     <UnavailableContent bodyText="Visit our status page for known outages." />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/react-component-groups/pull/244
     title: patternfly-v6 Documentation

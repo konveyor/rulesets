@@ -10,29 +10,20 @@
     builtin.filecontent:
       pattern: import.*from.*@patternfly/react-charts$
       filePattern: \.(j|t)sx?$
-  message: 'Victory-based charts have moved to a ''victory'' directory in @patternfly/react-charts
+  message: |-
+    Victory-based charts have moved to a "victory" directory in @patternfly/react-charts
 
-
-    Replace `import {{{ component }}} from ''@patternfly/react-charts'';` with `import
-    {{{ component }}} from ''@patternfly/react-charts/victory'';`.
-
+    Replace `import {{{ component }}} from "@patternfly/react-charts";` with `import {{{ component }}} from "@patternfly/react-charts/victory";`.
 
     Before:
-
     ```
-
-    import { {{ component }} } from ''@patternfly/react-charts'';
-
+    import { {{ component }} } from "@patternfly/react-charts";
     ```
-
 
     After:
-
     ```
-
-    import { {{ component }} } from ''@patternfly/react-charts/victory'';
-
-    ```'
+    import { {{ component }} } from "@patternfly/react-charts/victory";
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation

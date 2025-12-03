@@ -8,30 +8,22 @@
   when:
     nodejs.referenced:
       pattern: KebabToggle
-  message: 'KebabToggle has been removed from PatternFly. We recommend using our MenuToggle
+  message: |-
+    KebabToggle has been removed from PatternFly. We recommend using our MenuToggle
     component instead.
-
-
+    
     Replace `KebabToggle` with `MenuToggle with EllipsisVIcon`.
-
-
+    
     Before:
-
     ```
-
     <KebabToggle onToggle={() => {}} />
-
     ```
-
-
+    
     After:
-
     ```
-
     <MenuToggle variant="plain" icon={<EllipsisVIcon aria-hidden="true" />} onClick={()
     => {}} />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10345
     title: patternfly-v6 Documentation

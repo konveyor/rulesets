@@ -10,7 +10,8 @@
     builtin.filecontent:
       pattern: import.*Modal.*from.*@patternfly/react-core$
       filePattern: \.(j|t)sx?$
-  message: 'The previous implementation of Modal has been deprecated and moved to
+  message: |-
+    The previous implementation of Modal has been deprecated and moved to
     the deprecated directory.
 
 
@@ -33,7 +34,7 @@
 
     import { {{ component }} } from "@patternfly/react-core/deprecated";
 
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10358
     title: patternfly-v6 Documentation
@@ -54,30 +55,22 @@
     builtin.filecontent:
       pattern: import.*Modal.*from.*@patternfly/react-core/next$
       filePattern: \.(j|t)sx?$
-  message: 'The Next implementation of Modal has been promoted as the recommended
+  message: |-
+    The Next implementation of Modal has been promoted as the recommended
     implementation.
-
-
+    
     Replace `import {{{ component }}} from "@patternfly/react-core/next"` with `import
     {{{ component }}} from "@patternfly/react-core"`.
-
-
+    
     Before:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core/next";
-
     ```
-
-
+    
     After:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core";
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10358
     title: patternfly-v6 Documentation
@@ -98,29 +91,21 @@
     builtin.filecontent:
       pattern: import.*Tile.*from.*@patternfly/react-core$
       filePattern: \.(j|t)sx?$
-  message: 'Tile has been deprecated. Use Card instead.
-
-
+  message: |-
+    Tile has been deprecated. Use Card instead.
+    
     Replace `import {{{ component }}} from "@patternfly/react-core"` with `import
     {{{ component }}} from "@patternfly/react-core/deprecated"`.
-
-
+    
     Before:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core";
-
     ```
-
-
+    
     After:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core/deprecated";
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10821
     title: patternfly-v6 Documentation
@@ -141,30 +126,22 @@
     builtin.filecontent:
       pattern: import.*from.*@patternfly/react-tokens/dist/esm/color_$
       filePattern: \.(j|t)sx?$
-  message: 'React tokens, whose value is a Patternfly token variable (with prefix
+  message: |-
+    React tokens, whose value is a Patternfly token variable (with prefix
     --pf-t), are now prefixed with t_
-
-
+    
     Replace `import { {{ component }} }; from import from @patternfly/react-tokens/dist/esm/color_`
     with `import { {{ component }} } from import from @patternfly/react-tokens/dist/esm/t_color_`.
-
-
+    
     Before:
-
     ```
-
     import color_green_10 from "@patternfly/react-tokens/dist/esm/color_green_10";
-
     ```
-
-
+    
     After:
-
     ```
-
     import t_color_green_10 from "@patternfly/react-tokens/dist/esm/t_color_green_10";
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/11002
     title: patternfly-v6 Documentation

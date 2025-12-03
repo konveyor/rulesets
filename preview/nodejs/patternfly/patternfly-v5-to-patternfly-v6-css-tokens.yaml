@@ -9,29 +9,21 @@
     builtin.filecontent:
       pattern: --pf-v5-global--
       filePattern: \.(css|scss|js|jsx|ts|tsx)$
-  message: 'CSS tokens have been updated. Global non-color tokens have been replaced
+  message: |-
+    CSS tokens have been updated. Global non-color tokens have been replaced
     with newer ones.
-
-
+    
     Replace `--pf-v5-global--` with `--pf-t--global--`.
-
-
+    
     Before:
-
     ```
-
     borderWidth: "var(--pf-v5-global--BorderWidth--lg)"
-
     ```
-
-
+    
     After:
-
     ```
-
     borderWidth: "var(--pf-t--global--border--width--extra-strong)"
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/11002
     title: patternfly-v6 Documentation

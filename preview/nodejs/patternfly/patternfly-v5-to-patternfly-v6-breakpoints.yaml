@@ -9,28 +9,20 @@
     builtin.filecontent:
       pattern: --pf-v5-global--breakpoint--xs
       filePattern: \.(css|scss|j|t)sx?$
-  message: 'Breakpoint token naming has changed in PatternFly 6
-
+  message: |-
+    Breakpoint token naming has changed in PatternFly 6
 
     Replace `--pf-v5-global--breakpoint--xs` with `--pf-t--global--breakpoint--xs`.
 
-
     Before:
-
     ```
-
     var(--pf-v5-global--breakpoint--xs)
-
     ```
-
 
     After:
-
     ```
-
     var(--pf-t--global--breakpoint--xs)
-
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -46,28 +38,20 @@
     builtin.filecontent:
       pattern: 576px
       filePattern: \.(css|scss|j|t)sx?$
-  message: 'PatternFly 6 uses rem units for breakpoints instead of pixels
-
+  message: |-
+    PatternFly 6 uses rem units for breakpoints instead of pixels
 
     Replace `576px` with `36rem`.
 
-
     Before:
-
     ```
-
     @media (min-width: 576px)
-
     ```
-
 
     After:
-
     ```
-
     @media (min-width: 36rem)
-
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -83,28 +67,20 @@
     builtin.filecontent:
       pattern: 768px
       filePattern: \.(css|scss|j|t)sx?$
-  message: 'PatternFly 6 uses rem units for breakpoints instead of pixels
-
+  message: |-
+    PatternFly 6 uses rem units for breakpoints instead of pixels
 
     Replace `768px` with `48rem`.
 
-
     Before:
-
     ```
-
     @media (min-width: 768px)
-
     ```
-
 
     After:
-
     ```
-
     @media (min-width: 48rem)
-
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -120,28 +96,20 @@
     builtin.filecontent:
       pattern: 992px
       filePattern: \.(css|scss|j|t)sx?$
-  message: 'PatternFly 6 uses rem units for breakpoints instead of pixels
-
+  message: |-
+    PatternFly 6 uses rem units for breakpoints instead of pixels
 
     Replace `992px` with `62rem`.
 
-
     Before:
-
     ```
-
     @media (min-width: 992px)
-
     ```
-
 
     After:
-
     ```
-
     @media (min-width: 62rem)
-
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -157,28 +125,20 @@
     builtin.filecontent:
       pattern: 1200px
       filePattern: \.(css|scss|j|t)sx?$
-  message: 'PatternFly 6 uses rem units for breakpoints instead of pixels
-
+  message: |-
+    PatternFly 6 uses rem units for breakpoints instead of pixels
 
     Replace `1200px` with `75rem`.
 
-
     Before:
-
     ```
-
     @media (min-width: 1200px)
-
     ```
-
 
     After:
-
     ```
-
     @media (min-width: 75rem)
-
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -194,28 +154,20 @@
     builtin.filecontent:
       pattern: 1450px
       filePattern: \.(css|scss|j|t)sx?$
-  message: 'PatternFly 6 uses rem units for breakpoints instead of pixels
-
+  message: |-
+    PatternFly 6 uses rem units for breakpoints instead of pixels
 
     Replace `1450px` with `90.625rem`.
 
-
     Before:
-
     ```
-
     @media (min-width: 1450px)
-
     ```
-
 
     After:
-
     ```
-
     @media (min-width: 90.625rem)
-
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -231,29 +183,20 @@
     builtin.filecontent:
       pattern: --pf-v5-global--breakpoint--sm
       filePattern: \.(css|scss|j|t)sx?$
-  message: 'CSS variable naming has changed in PatternFly 6 with the new design token
-    system
-
+  message: |-
+    CSS variable naming has changed in PatternFly 6 with the new design token system
 
     Replace `--pf-v5-global--breakpoint--sm` with `--pf-t--global--breakpoint--sm`.
 
-
     Before:
-
     ```
-
     var(--pf-v5-global--breakpoint--sm)
-
     ```
-
 
     After:
-
     ```
-
     var(--pf-t--global--breakpoint--sm)
-
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -269,29 +212,20 @@
     builtin.filecontent:
       pattern: --pf-v5-global--breakpoint--md
       filePattern: \.(css|scss|j|t)sx?$
-  message: 'CSS variable naming has changed in PatternFly 6 with the new design token
-    system
-
+  message: |-
+    CSS variable naming has changed in PatternFly 6 with the new design token system
 
     Replace `--pf-v5-global--breakpoint--md` with `--pf-t--global--breakpoint--md`.
 
-
     Before:
-
     ```
-
     var(--pf-v5-global--breakpoint--md)
-
     ```
-
 
     After:
-
     ```
-
     var(--pf-t--global--breakpoint--md)
-
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -307,29 +241,20 @@
     builtin.filecontent:
       pattern: --pf-v5-global--breakpoint--lg
       filePattern: \.(css|scss|j|t)sx?$
-  message: 'CSS variable naming has changed in PatternFly 6 with the new design token
-    system
-
+  message: |-
+    CSS variable naming has changed in PatternFly 6 with the new design token system
 
     Replace `--pf-v5-global--breakpoint--lg` with `--pf-t--global--breakpoint--lg`.
 
-
     Before:
-
     ```
-
     var(--pf-v5-global--breakpoint--lg)
-
     ```
-
 
     After:
-
     ```
-
     var(--pf-t--global--breakpoint--lg)
-
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -345,29 +270,20 @@
     builtin.filecontent:
       pattern: --pf-v5-global--breakpoint--xl
       filePattern: \.(css|scss|j|t)sx?$
-  message: 'CSS variable naming has changed in PatternFly 6 with the new design token
-    system
-
+  message: |-
+    CSS variable naming has changed in PatternFly 6 with the new design token system
 
     Replace `--pf-v5-global--breakpoint--xl` with `--pf-t--global--breakpoint--xl`.
 
-
     Before:
-
     ```
-
     var(--pf-v5-global--breakpoint--xl)
-
     ```
-
 
     After:
-
     ```
-
     var(--pf-t--global--breakpoint--xl)
-
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
@@ -383,29 +299,20 @@
     builtin.filecontent:
       pattern: --pf-v5-global--breakpoint--2xl
       filePattern: \.(css|scss|j|t)sx?$
-  message: 'CSS variable naming has changed in PatternFly 6 with the new design token
-    system
-
+  message: |-
+    CSS variable naming has changed in PatternFly 6 with the new design token system
 
     Replace `--pf-v5-global--breakpoint--2xl` with `--pf-t--global--breakpoint--2xl`.
 
-
     Before:
-
     ```
-
     var(--pf-v5-global--breakpoint--2xl)
-
     ```
-
 
     After:
-
     ```
-
     var(--pf-t--global--breakpoint--2xl)
-
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation

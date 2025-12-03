@@ -10,18 +10,19 @@
     builtin.filecontent:
       pattern: import.*Chip.*from.*@patternfly/react-core$
       filePattern: \.(j|t)sx?$
-  message: 'Chip has been deprecated. Use Label instead.
+  message: |-
+    Chip has been deprecated. Use Label instead.
 
 
-    Replace `import {{{ component }}} from ''@patternfly/react-core''` with `import
-    {{{ component }}} from ''@patternfly/react-core/deprecated''`.
+    Replace `import {{{ component }}} from '@patternfly/react-core'` with `import
+    {{{ component }}} from '@patternfly/react-core/deprecated'`.
 
 
     Before:
 
     ```
 
-    import { {{ component }} } from ''@patternfly/react-core''
+    import { {{ component }} } from '@patternfly/react-core'
 
     ```
 
@@ -30,9 +31,9 @@
 
     ```
 
-    import { {{ component }} } from ''@patternfly/react-core/deprecated''
+    import { {{ component }} } from '@patternfly/react-core/deprecated'
 
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10049
     title: patternfly-v6 Documentation
@@ -53,20 +54,16 @@
     builtin.filecontent:
       pattern: import.*DragDrop.*from.*@patternfly/react-core$
       filePattern: \.(j|t)sx?$
-  message: 'DragDrop has been deprecated. Use the new drag and drop implementation
-    (DragDropSort component) from ''@patternfly/react-drag-drop'' package.
-
-
-    Replace `import {{{ component }}} from ''@patternfly/react-core''` with `import
-    {{{ component }}} from ''@patternfly/react-core/deprecated''`.
-
-
+  message: |-
+    DragDrop has been deprecated. Use the new drag and drop implementation
+    (DragDropSort component) from '@patternfly/react-drag-drop' package.
+    
+    Replace `import {{{ component }}} from '@patternfly/react-core'` with `import
+    {{{ component }}} from '@patternfly/react-core/deprecated'`.
+    
     Before:
-
     ```
-
-    import { {{ component }} } from ''@patternfly/react-core''
-
+    import { {{ component }} } from '@patternfly/react-core'
     ```
 
 
@@ -74,7 +71,7 @@
 
     ```
 
-    import { {{ component }} } from ''@patternfly/react-core/deprecated''
+    import { {{ component }} } from "@patternfly/react-core/deprecated"
 
     ```'
   links:
@@ -97,20 +94,16 @@
     builtin.filecontent:
       pattern: import.*Droppable.*from.*@patternfly/react-core$
       filePattern: \.(j|t)sx?$
-  message: 'DragDrop components have been deprecated. Use the new drag and drop implementation
-    from ''@patternfly/react-drag-drop'' package.
-
-
-    Replace `import {{{ component }}} from ''@patternfly/react-core''` with `import
-    {{{ component }}} from ''@patternfly/react-core/deprecated''`.
-
-
+  message: |-
+    DragDrop components have been deprecated. Use the new drag and drop implementation
+    from '@patternfly/react-drag-drop' package.
+    
+    Replace `import {{{ component }}} from '@patternfly/react-core'` with `import
+    {{{ component }}} from '@patternfly/react-core/deprecated'`.
+    
     Before:
-
     ```
-
-    import { {{ component }} } from ''@patternfly/react-core''
-
+    import { {{ component }} } from '@patternfly/react-core'
     ```
 
 
@@ -118,7 +111,7 @@
 
     ```
 
-    import { {{ component }} } from ''@patternfly/react-core/deprecated''
+    import { {{ component }} } from "@patternfly/react-core/deprecated"
 
     ```'
   links:
@@ -141,20 +134,16 @@
     builtin.filecontent:
       pattern: import.*Draggable.*from.*@patternfly/react-core$
       filePattern: \.(j|t)sx?$
-  message: 'DragDrop components have been deprecated. Use the new drag and drop implementation
-    from ''@patternfly/react-drag-drop'' package.
-
-
-    Replace `import {{{ component }}} from ''@patternfly/react-core''` with `import
-    {{{ component }}} from ''@patternfly/react-core/deprecated''`.
-
-
+  message: |-
+    DragDrop components have been deprecated. Use the new drag and drop implementation
+    from '@patternfly/react-drag-drop' package.
+    
+    Replace `import {{{ component }}} from '@patternfly/react-core'` with `import
+    {{{ component }}} from '@patternfly/react-core/deprecated'`.
+    
     Before:
-
     ```
-
-    import { {{ component }} } from ''@patternfly/react-core''
-
+    import { {{ component }} } from '@patternfly/react-core'
     ```
 
 
@@ -162,7 +151,7 @@
 
     ```
 
-    import { {{ component }} } from ''@patternfly/react-core/deprecated''
+    import { {{ component }} } from "@patternfly/react-core/deprecated"
 
     ```'
   links:
@@ -185,29 +174,21 @@
     builtin.filecontent:
       pattern: import.*DualListSelector.*from.*@patternfly/react-core$
       filePattern: \.(j|t)sx?$
-  message: 'The previous implementation of DualListSelector has been deprecated. Use
+  message: |-
+    The previous implementation of DualListSelector has been deprecated. Use
     the newly promoted implementation.
-
-
+    
     Replace `import {{{ component }}} from "@patternfly/react-core"` with `import
-    {{{ component }}} from ''@patternfly/react-core/deprecated''`.
-
-
+    {{{ component }}} from '@patternfly/react-core/deprecated'`.
+    
     Before:
-
     ```
-
     import { {{ component }} } from "@patternfly/react-core"
-
     ```
-
-
+    
     After:
-
     ```
-
-    import { {{ component }} } from ''@patternfly/react-core/deprecated''
-
+    import { {{ component }} } from '@patternfly/react-core/deprecated'
     ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10359
@@ -228,29 +209,21 @@
   when:
     nodejs.referenced:
       pattern: Modal
-  message: 'The previous implementation of Modal has been deprecated and moved to
+  message: |-
+    The previous implementation of Modal has been deprecated and moved to
     the deprecated directory.
-
-
+    
     Replace `import { Modal } from "@patternfly/react-core"` with `import { Modal
-    } from ''@patternfly/react-core/deprecated''`.
-
-
+    } from '@patternfly/react-core/deprecated'`.
+    
     Before:
-
     ```
-
     import { Modal } from "@patternfly/react-core"
-
     ```
-
-
+    
     After:
-
     ```
-
-    import { Modal } from ''@patternfly/react-core/deprecated''
-
+    import { Modal } from '@patternfly/react-core/deprecated'
     ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10358
@@ -267,29 +240,21 @@
   when:
     nodejs.referenced:
       pattern: Tile
-  message: 'Tile has been deprecated. Use Card instead.
-
-
+  message: |-
+    Tile has been deprecated. Use Card instead.
+    
     Replace `import { Tile } from "@patternfly/react-core"` with `import { Tile }
     from "@patternfly/react-core/deprecated"`.
-
-
+    
     Before:
-
     ```
-
     import { Tile } from "@patternfly/react-core"
-
     ```
-
-
+    
     After:
-
     ```
-
     import { Tile } from "@patternfly/react-core/deprecated"
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10821
     title: patternfly-v6 Documentation

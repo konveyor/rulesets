@@ -12,7 +12,8 @@
     - builtin.filecontent:
         pattern: <DrawerHead[^>]*\bhasNoPadding\b
         filePattern: \.(j|t)sx?$
-  message: 'The hasNoPadding prop has been removed from DrawerHead.
+  message: |-
+    The hasNoPadding prop has been removed from DrawerHead.
 
 
     Replace `DrawerHead hasNoPadding` with `DrawerHead`.
@@ -33,7 +34,7 @@
 
     <DrawerHead />
 
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10036
     title: patternfly-v6 Documentation
@@ -53,30 +54,22 @@
     - builtin.filecontent:
         pattern: <DrawerContent[^>]*\bcolorVariant=['"]light-200['"]
         filePattern: \.(j|t)sx?$
-  message: 'The "light-200" value for the colorVariant prop has been replaced with
+  message: |-
+    The "light-200" value for the colorVariant prop has been replaced with
     the "secondary" value for DrawerContent, DrawerPanelContent, and DrawerSection
     components.
-
-
-    Replace `DrawerContent colorVariant=''light-200''` with `DrawerContent colorVariant=''secondary''`.
-
-
+    
+    Replace `DrawerContent colorVariant='light-200'` with `DrawerContent colorVariant='secondary'`.
+    
     Before:
-
     ```
-
-    <DrawerContent colorVariant=''light-200'' />
-
+    <DrawerContent colorVariant='light-200' />
     ```
-
-
+    
     After:
-
     ```
-
     <DrawerContent colorVariant="secondary" />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10017
     title: patternfly-v6 Documentation
@@ -96,31 +89,23 @@
     - builtin.filecontent:
         pattern: <DrawerPanelContent[^>]*\bcolorVariant=['"]light-200['"]
         filePattern: \.(j|t)sx?$
-  message: 'The "light-200" value for the colorVariant prop has been replaced with
+  message: |-
+    The "light-200" value for the colorVariant prop has been replaced with
     the "secondary" value for DrawerContent, DrawerPanelContent, and DrawerSection
     components.
-
-
-    Replace `DrawerPanelContent colorVariant=''light-200''` with `DrawerPanelContent
-    colorVariant=''secondary''`.
-
-
+    
+    Replace `DrawerPanelContent colorVariant='light-200'` with `DrawerPanelContent
+    colorVariant='secondary'`.
+    
     Before:
-
     ```
-
-    <DrawerPanelContent colorVariant=''light-200'' />
-
+    <DrawerPanelContent colorVariant='light-200' />
     ```
-
-
+    
     After:
-
     ```
-
     <DrawerPanelContent colorVariant="secondary" />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10017
     title: patternfly-v6 Documentation
@@ -140,30 +125,22 @@
     - builtin.filecontent:
         pattern: <DrawerSection[^>]*\bcolorVariant=['"]light-200['"]
         filePattern: \.(j|t)sx?$
-  message: 'The "light-200" value for the colorVariant prop has been replaced with
+  message: |-
+    The "light-200" value for the colorVariant prop has been replaced with
     the "secondary" value for DrawerContent, DrawerPanelContent, and DrawerSection
     components.
-
-
-    Replace `DrawerSection colorVariant=''light-200''` with `DrawerSection colorVariant=''secondary''`.
-
-
+    
+    Replace `DrawerSection colorVariant='light-200'` with `DrawerSection colorVariant='secondary'`.
+    
     Before:
-
     ```
-
-    <DrawerSection colorVariant=''light-200'' />
-
+    <DrawerSection colorVariant='light-200' />
     ```
-
-
+    
     After:
-
     ```
-
     <DrawerSection colorVariant="secondary" />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10017
     title: patternfly-v6 Documentation
@@ -179,29 +156,21 @@
     builtin.filecontent:
       pattern: DrawerColorVariant.light200
       filePattern: \.(j|t)sx?$
-  message: 'The light200 property for the DrawerColorVariant enum has been replaced
+  message: |-
+    The light200 property for the DrawerColorVariant enum has been replaced
     with the secondary property.
-
-
+    
     Replace `DrawerColorVariant.light200` with `DrawerColorVariant.secondary`.
-
-
+    
     Before:
-
     ```
-
     colorVariant={DrawerColorVariant.light200}
-
     ```
-
-
+    
     After:
-
     ```
-
     colorVariant={DrawerColorVariant.secondary}
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10017
     title: patternfly-v6 Documentation

@@ -8,7 +8,8 @@
   when:
     nodejs.referenced:
       pattern: FormFiledGroupHeaderTitleTextObject
-  message: 'There was a typo in FormFiledGroupHeaderTitleTextObject interface. It
+  message: |-
+    There was a typo in FormFiledGroupHeaderTitleTextObject interface. It
     was renamed to the intended FormFieldGroupHeaderTitleTextObject.
 
 
@@ -30,7 +31,7 @@
 
     import { FormFieldGroupHeaderTitleTextObject } from "@patternfly/react-core";
 
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10016
     title: patternfly-v6 Documentation
@@ -49,29 +50,21 @@
     - builtin.filecontent:
         pattern: <FormGroup[^>]*\blabelIcon\b
         filePattern: \.(j|t)sx?$
-  message: 'The labelIcon prop for FormGroup has been renamed to labelHelp. We recommend
+  message: |-
+    The labelIcon prop for FormGroup has been renamed to labelHelp. We recommend
     using FormGroupLabelHelp element for the labelHelp prop.
-
-
+    
     Replace `FormGroup labelIcon` with `FormGroup labelHelp`.
-
-
+    
     Before:
-
     ```
-
     <FormGroup labelIcon={<>Help icon</>} />
-
     ```
-
-
+    
     After:
-
     ```
-
     <FormGroup labelHelp={<>Help icon</>} />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10016
     title: patternfly-v6 Documentation

@@ -10,11 +10,12 @@
     builtin.filecontent:
       pattern: export.*EmptyStateHeader.*from.*@patternfly/react-core
       filePattern: \.(j|t)sx?$
-  message: 'EmptyStateHeader and EmptyStateIcon are no longer exported by PatternFly.
+  message: |-
+    EmptyStateHeader and EmptyStateIcon are no longer exported by PatternFly.
     Codemods will apply fixes for exports of these components.
 
 
-    Replace `EmptyStateHeader export` with `Remove EmptyStateHeader export`.'
+    Replace `EmptyStateHeader export` with `Remove EmptyStateHeader export`.
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10364
     title: patternfly-v6 Documentation
@@ -31,11 +32,11 @@
     builtin.filecontent:
       pattern: export.*EmptyStateIcon.*from.*@patternfly/react-core
       filePattern: \.(j|t)sx?$
-  message: 'EmptyStateHeader and EmptyStateIcon are no longer exported by PatternFly.
+  message: |-
+    EmptyStateHeader and EmptyStateIcon are no longer exported by PatternFly.
     Codemods will apply fixes for exports of these components.
-
-
-    Replace `EmptyStateIcon export` with `Remove EmptyStateIcon export`.'
+    
+    Replace `EmptyStateIcon export` with `Remove EmptyStateIcon export`.
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10364
     title: patternfly-v6 Documentation
@@ -50,12 +51,28 @@
   when:
     nodejs.referenced:
       pattern: EmptyStateHeader
-  message: "EmptyStateHeader and EmptyStateIcon are now rendered internally within\
-    \ EmptyState and should only be customized using props.\n\nReplace `EmptyStateHeader`\
-    \ with `EmptyState with props`.\n\nBefore:\n```\n<EmptyState>\n  <EmptyStateHeader\
-    \ titleText=\"Empty state\" headingLevel=\"h4\" icon={<EmptyStateIcon icon={CubesIcon}\
-    \ />} />\n</EmptyState>\n```\n\nAfter:\n```\n<EmptyState headingLevel=\"h4\" icon={CubesIcon}\
-    \ titleText=\"Empty state\">\n</EmptyState>\n```"
+  message: |-
+    EmptyStateHeader and EmptyStateIcon are now rendered internally within\
+    \ EmptyState and should only be customized using props.
+    
+    Replace `EmptyStateHeader`\
+    \ with `EmptyState with props`.
+    
+    Before:
+    ```
+    <EmptyState>
+    <EmptyStateHeader\
+    \ titleText="Empty state" headingLevel="h4" icon={<EmptyStateIcon icon={CubesIcon}\
+    \ />} />
+    </EmptyState>
+    ```
+    
+    After:
+    ```
+    <EmptyState headingLevel="h4" icon={CubesIcon}\
+    \ titleText="Empty state">
+    </EmptyState>
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/9947
     title: patternfly-v6 Documentation
@@ -70,13 +87,31 @@
   when:
     nodejs.referenced:
       pattern: EmptyStateIcon
-  message: "EmptyStateHeader and EmptyStateIcon are now rendered internally within\
+  message: |-
+    EmptyStateHeader and EmptyStateIcon are now rendered internally within\
     \ EmptyState and should only be customized using props. Content passed to the\
-    \ icon prop on EmptyState will also be wrapped by EmptyStateIcon automatically.\n\
-    \nReplace `EmptyStateIcon` with `EmptyState with icon prop`.\n\nBefore:\n```\n\
-    <EmptyState>\n  <EmptyStateIcon icon={CubesIcon} />\n  <EmptyStateBody>Body</EmptyStateBody>\n\
-    </EmptyState>\n```\n\nAfter:\n```\n<EmptyState icon={CubesIcon}>\n  <EmptyStateBody>Body</EmptyStateBody>\n\
-    </EmptyState>\n```"
+    \ icon prop on EmptyState will also be wrapped by EmptyStateIcon automatically.
+    \
+    
+    Replace `EmptyStateIcon` with `EmptyState with icon prop`.
+    
+    Before:
+    ```
+    \
+    <EmptyState>
+    <EmptyStateIcon icon={CubesIcon} />
+    <EmptyStateBody>Body</EmptyStateBody>
+    \
+    </EmptyState>
+    ```
+    
+    After:
+    ```
+    <EmptyState icon={CubesIcon}>
+    <EmptyStateBody>Body</EmptyStateBody>
+    \
+    </EmptyState>
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/9947
     title: patternfly-v6 Documentation

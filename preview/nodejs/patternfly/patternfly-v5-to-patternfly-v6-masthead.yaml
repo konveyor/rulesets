@@ -8,7 +8,8 @@
   when:
     nodejs.referenced:
       pattern: MastheadBrand
-  message: 'Our old implementation of MastheadBrand has been renamed to MastheadLogo,
+  message: |-
+    Our old implementation of MastheadBrand has been renamed to MastheadLogo,
     which must be wrapped by our new implementation of MastheadBrand.
 
 
@@ -30,7 +31,7 @@
 
     <MastheadLogo>Logo</MastheadLogo>
 
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10809
     title: patternfly-v6 Documentation
@@ -49,29 +50,21 @@
     - builtin.filecontent:
         pattern: <Masthead[^>]*\bbackgroundColor\b
         filePattern: \.(j|t)sx?$
-  message: 'We''ve removed the backgroundColor prop from Masthead as theming is no
+  message: |-
+    We've removed the backgroundColor prop from Masthead as theming is no
     longer handled React-side.
-
-
+    
     Replace `Masthead backgroundColor` with `Masthead`.
-
-
+    
     Before:
-
     ```
-
     <Masthead backgroundColor />
-
     ```
-
-
+    
     After:
-
     ```
-
     <Masthead />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/9774
     title: patternfly-v6 Documentation

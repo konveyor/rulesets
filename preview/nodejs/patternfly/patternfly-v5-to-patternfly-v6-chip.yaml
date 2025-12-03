@@ -9,30 +9,20 @@
     builtin.filecontent:
       pattern: import.*Chip.*from.*@patternfly/react-core$
       filePattern: \.(j|t)sx?$
-  message: 'Chip has been deprecated. Running the fix flag will update your imports
-    to our deprecated package, but we suggest using Label instead.
+  message: |-
+    Chip has been deprecated. Running the fix flag will update your imports to our deprecated package, but we suggest using Label instead.
 
-
-    Replace `import { {{ component }} }; from Chip import` with `import { {{ component
-    }} } from Chip import from deprecated`.
-
+    Replace `import { {{ component }} }; from Chip import` with `import { {{ component }} } from Chip import from deprecated`.
 
     Before:
-
     ```
-
-    import { {{ component }} } from ''@patternfly/react-core'';
-
+    import { {{ component }} } from "@patternfly/react-core";
     ```
-
 
     After:
-
     ```
-
-    import { {{ component }} } from ''@patternfly/react-core/deprecated'';
-
-    ```'
+    import { {{ component }} } from "@patternfly/react-core/deprecated";
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10049
     title: patternfly-v6 Documentation
@@ -52,30 +42,20 @@
     builtin.filecontent:
       pattern: import.*ChipGroup.*from.*@patternfly/react-core$
       filePattern: \.(j|t)sx?$
-  message: 'ChipGroup has been deprecated. Running the fix flag will update your imports
-    to our deprecated package, but we suggest using LabelGroup instead.
+  message: |-
+    ChipGroup has been deprecated. Running the fix flag will update your imports to our deprecated package, but we suggest using LabelGroup instead.
 
-
-    Replace `import { {{ component }} }; from ChipGroup import` with `import { {{
-    component }} } from ChipGroup import from deprecated`.
-
+    Replace `import { {{ component }} }; from ChipGroup import` with `import { {{ component }} } from ChipGroup import from deprecated`.
 
     Before:
-
     ```
-
-    import { {{ component }} } from ''@patternfly/react-core'';
-
+    import { {{ component }} } from "@patternfly/react-core";
     ```
-
 
     After:
-
     ```
-
-    import { {{ component }} } from ''@patternfly/react-core/deprecated'';
-
-    ```'
+    import { {{ component }} } from "@patternfly/react-core/deprecated";
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10049
     title: patternfly-v6 Documentation

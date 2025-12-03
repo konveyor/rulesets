@@ -10,7 +10,8 @@
     builtin.filecontent:
       pattern: import.*FormFiledGroupHeaderTitleTextObject.*from.*@patternfly/react-core$
       filePattern: \.(j|t)sx?$
-  message: 'There was a typo in FormFiledGroupHeaderTitleTextObject interface. It
+  message: |-
+    There was a typo in FormFiledGroupHeaderTitleTextObject interface. It
     was renamed to the intended FormFieldGroupHeaderTitleTextObject.
 
 
@@ -33,7 +34,7 @@
 
     import { {{ component }} } from "@patternfly/react-core"
 
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10016
     title: patternfly-v6 Documentation
@@ -52,31 +53,23 @@
   when:
     nodejs.referenced:
       pattern: FormFiledGroupHeaderTitleTextObject
-  message: 'There was a typo in FormFiledGroupHeaderTitleTextObject interface. It
+  message: |-
+    There was a typo in FormFiledGroupHeaderTitleTextObject interface. It
     was renamed to the intended FormFieldGroupHeaderTitleTextObject.
-
-
+    
     Replace `FormFiledGroupHeaderTitleTextObject` with `FormFieldGroupHeaderTitleTextObject`.
-
-
+    
     Before:
-
     ```
-
     const titleTextObject: FormFiledGroupHeaderTitleTextObject = { text: "Some title",
     id: "form-field-group-header-title-text" }
-
     ```
-
-
+    
     After:
-
     ```
-
     const titleTextObject: FormFieldGroupHeaderTitleTextObject = { text: "Some title",
     id: "form-field-group-header-title-text" }
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10016
     title: patternfly-v6 Documentation

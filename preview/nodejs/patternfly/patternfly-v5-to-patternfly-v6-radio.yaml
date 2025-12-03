@@ -12,29 +12,21 @@
     - builtin.filecontent:
         pattern: <Radio[^>]*\bisLabelBeforeButton\b
         filePattern: \.(j|t)sx?$
-  message: 'The isLabelBeforeButton prop in Checkbox and Radio has been replaced with
+  message: |-
+    The isLabelBeforeButton prop in Checkbox and Radio has been replaced with
     labelPosition="start"
-
-
+    
     Replace `Radio isLabelBeforeButton` with `Radio labelPosition="start"`.
-
-
+    
     Before:
-
     ```
-
     <Radio isLabelBeforeButton />
-
     ```
-
-
+    
     After:
-
     ```
-
     <Radio labelPosition="start" />
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10016
     title: patternfly-v6 Documentation
