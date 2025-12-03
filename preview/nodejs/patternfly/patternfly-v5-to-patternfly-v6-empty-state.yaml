@@ -1,0 +1,83 @@
+- ruleID: patternfly-v5-to-patternfly-v6-empty-state-00000
+  description: EmptyStateHeader export should be replaced with Remove EmptyStateHeader
+    export
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=patternfly-v5
+  - konveyor.io/target=patternfly-v6
+  when:
+    builtin.filecontent:
+      pattern: export.*EmptyStateHeader.*from.*@patternfly/react-core
+      filePattern: \.(j|t)sx?$
+  message: 'EmptyStateHeader and EmptyStateIcon are no longer exported by PatternFly.
+    Codemods will apply fixes for exports of these components.
+
+
+    Replace `EmptyStateHeader export` with `Remove EmptyStateHeader export`.'
+  links:
+  - url: https://github.com/patternfly/patternfly-react/pull/10364
+    title: patternfly-v6 Documentation
+  customVariables: []
+- ruleID: patternfly-v5-to-patternfly-v6-empty-state-00010
+  description: EmptyStateIcon export should be replaced with Remove EmptyStateIcon
+    export
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=patternfly-v5
+  - konveyor.io/target=patternfly-v6
+  when:
+    builtin.filecontent:
+      pattern: export.*EmptyStateIcon.*from.*@patternfly/react-core
+      filePattern: \.(j|t)sx?$
+  message: 'EmptyStateHeader and EmptyStateIcon are no longer exported by PatternFly.
+    Codemods will apply fixes for exports of these components.
+
+
+    Replace `EmptyStateIcon export` with `Remove EmptyStateIcon export`.'
+  links:
+  - url: https://github.com/patternfly/patternfly-react/pull/10364
+    title: patternfly-v6 Documentation
+  customVariables: []
+- ruleID: patternfly-v5-to-patternfly-v6-empty-state-00020
+  description: EmptyStateHeader should be replaced with EmptyState with props
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=patternfly-v5
+  - konveyor.io/target=patternfly-v6
+  when:
+    nodejs.referenced:
+      pattern: EmptyStateHeader
+  message: "EmptyStateHeader and EmptyStateIcon are now rendered internally within\
+    \ EmptyState and should only be customized using props.\n\nReplace `EmptyStateHeader`\
+    \ with `EmptyState with props`.\n\nBefore:\n```\n<EmptyState>\n  <EmptyStateHeader\
+    \ titleText=\"Empty state\" headingLevel=\"h4\" icon={<EmptyStateIcon icon={CubesIcon}\
+    \ />} />\n</EmptyState>\n```\n\nAfter:\n```\n<EmptyState headingLevel=\"h4\" icon={CubesIcon}\
+    \ titleText=\"Empty state\">\n</EmptyState>\n```"
+  links:
+  - url: https://github.com/patternfly/patternfly-react/pull/9947
+    title: patternfly-v6 Documentation
+  customVariables: []
+- ruleID: patternfly-v5-to-patternfly-v6-empty-state-00030
+  description: EmptyStateIcon should be replaced with EmptyState with icon prop
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=patternfly-v5
+  - konveyor.io/target=patternfly-v6
+  when:
+    nodejs.referenced:
+      pattern: EmptyStateIcon
+  message: "EmptyStateHeader and EmptyStateIcon are now rendered internally within\
+    \ EmptyState and should only be customized using props. Content passed to the\
+    \ icon prop on EmptyState will also be wrapped by EmptyStateIcon automatically.\n\
+    \nReplace `EmptyStateIcon` with `EmptyState with icon prop`.\n\nBefore:\n```\n\
+    <EmptyState>\n  <EmptyStateIcon icon={CubesIcon} />\n  <EmptyStateBody>Body</EmptyStateBody>\n\
+    </EmptyState>\n```\n\nAfter:\n```\n<EmptyState icon={CubesIcon}>\n  <EmptyStateBody>Body</EmptyStateBody>\n\
+    </EmptyState>\n```"
+  links:
+  - url: https://github.com/patternfly/patternfly-react/pull/9947
+    title: patternfly-v6 Documentation
+  customVariables: []
