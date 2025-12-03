@@ -111,9 +111,12 @@
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    builtin.filecontent:
-      pattern: header=
-      filePattern: \.(j|t)sx?$
+    and:
+    - nodejs.referenced:
+        pattern: Page
+    - builtin.filecontent:
+        pattern: <Page[^>]*\bheader=
+        filePattern: \.(j|t)sx?$
   message: |-
     The header prop for Page has been renamed to masthead.
     
