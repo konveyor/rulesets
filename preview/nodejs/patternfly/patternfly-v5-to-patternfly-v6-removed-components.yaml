@@ -36,7 +36,7 @@
     defaultValue: Component
 - ruleID: patternfly-v5-to-patternfly-v6-removed-components-00010
   description: <KebabToggle should be replaced with <MenuToggle variant="plain" icon={<EllipsisVIcon
-    aria-hidden="true" />}
+    aria-hidden="true" />} and update onToggle to onClick
   effort: 5
   category: mandatory
   labels:
@@ -48,20 +48,20 @@
       filePattern: \.(j|t)sx?$
   message: |-
     KebabToggle has been removed from PatternFly. Use MenuToggle component
-    instead.
-    
-    Replace `<KebabToggle` with `<MenuToggle variant="plain" icon={<EllipsisVIcon
-    aria-hidden="true" />}`.
-    
+    instead with variant="plain" and an icon prop.
+
+    IMPORTANT: The event handler prop has changed from onToggle to onClick.
+
+    Replace `<KebabToggle onToggle={...}` with `<MenuToggle variant="plain" icon={<EllipsisVIcon aria-hidden="true" />} onClick={...}`.
+
     Before:
     ```
     <KebabToggle onToggle={() => {}} />
     ```
-    
+
     After:
     ```
-    <MenuToggle variant="plain" icon={<EllipsisVIcon aria-hidden="true" />} onClick={()
-    => {}} />
+    <MenuToggle variant="plain" icon={<EllipsisVIcon aria-hidden="true" />} onClick={() => {}} />
     ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10345
