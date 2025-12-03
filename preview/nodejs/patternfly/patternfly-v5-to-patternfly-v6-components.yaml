@@ -6,8 +6,12 @@
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    nodejs.referenced:
-      pattern: Chip
+    and:
+    - nodejs.referenced:
+        pattern: Chip
+    - builtin.filecontent:
+        pattern: <Chip[^>]*>
+        filePattern: \.(j|t)sx?$
   message: |-
     The Chip component has been replaced with the Label component
 
@@ -43,8 +47,12 @@
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    nodejs.referenced:
-      pattern: Tile
+    and:
+    - nodejs.referenced:
+        pattern: Tile
+    - builtin.filecontent:
+        pattern: <Tile[^>]*>
+        filePattern: \.(j|t)sx?$
   message: |-
     The Tile component has been replaced with the Card component
     
@@ -71,8 +79,12 @@
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    nodejs.referenced:
-      pattern: Text
+    and:
+    - nodejs.referenced:
+        pattern: Text
+    - builtin.filecontent:
+        pattern: <Text[^>]*>
+        filePattern: \.(j|t)sx?$
   message: |-
     The Text component has been renamed to Content
     
