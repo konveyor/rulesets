@@ -45,8 +45,12 @@
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    nodejs.referenced:
-      pattern: description
+    and:
+    - nodejs.referenced:
+        pattern: NotAuthorized
+    - builtin.filecontent:
+        pattern: <NotAuthorized[^>]*\bdescription\b
+        filePattern: \.(j|t)sx?$
   message: |-
     In react-component-groups, NotAuthorized's prop description has been
     renamed to bodyText.
