@@ -57,7 +57,7 @@
   - url: https://www.patternfly.org/get-started/upgrade/
     title: PatternFly v6 Upgrade Guide
   customVariables:
-  - pattern: import {(?P<imports>[A-z,\s]+)}
+  - pattern: import {(?P<imports>[A-Za-z,\s]+)}
     name: component
     nameOfCaptureGroup: imports
     defaultValue: Component

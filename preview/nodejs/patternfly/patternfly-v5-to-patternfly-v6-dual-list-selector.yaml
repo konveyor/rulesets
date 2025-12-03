@@ -40,7 +40,7 @@
   - url: https://github.com/patternfly/patternfly-react/pull/10359
     title: patternfly-v6 Documentation
   customVariables:
-  - pattern: import {(?P<imports>[A-z,\s]+)}
+  - pattern: import {(?P<imports>[A-Za-z,\s]+)}
     name: component
     nameOfCaptureGroup: imports
     defaultValue: Component
@@ -76,7 +76,7 @@
   - url: https://github.com/patternfly/patternfly-react/pull/10359
     title: patternfly-v6 Documentation
   customVariables:
-  - pattern: import {(?P<imports>[A-z,\s]+)}
+  - pattern: import {(?P<imports>[A-Za-z,\s]+)}
     name: component
     nameOfCaptureGroup: imports
     defaultValue: Component
