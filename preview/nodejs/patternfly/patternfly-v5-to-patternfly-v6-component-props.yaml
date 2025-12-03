@@ -1219,6 +1219,9 @@
     ```
     <Button disabled />
     ```
+  links:
+  - url: https://github.com/patternfly/patternfly-react/pull/10536
+    title: patternfly-v6 Documentation
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-component-props-00390
   description: isExpanded should be replaced with expanded
@@ -1246,6 +1249,9 @@
     ```
     <Accordion expanded />
     ```
+  links:
+  - url: https://github.com/patternfly/patternfly-react/pull/10536
+    title: patternfly-v6 Documentation
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-component-props-00400
   description: isOpen should be replaced with open
@@ -1273,4 +1279,7 @@
     ```
     <Modal open />
     ```
+  links:
+  - url: https://github.com/patternfly/patternfly-react/pull/10536
+    title: patternfly-v6 Documentation
   customVariables: []
