@@ -74,8 +74,12 @@
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    nodejs.referenced:
-      pattern: title
+    and:
+    - nodejs.referenced:
+        pattern: NotAuthorized
+    - builtin.filecontent:
+        pattern: <NotAuthorized[^>]*\btitle\b
+        filePattern: \.(j|t)sx?$
   message: |-
     In react-component-groups, NotAuthorized's prop title has been renamed
     to titleText.
