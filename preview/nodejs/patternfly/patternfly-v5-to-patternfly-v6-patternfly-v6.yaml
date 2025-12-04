@@ -15,8 +15,8 @@
     from @patternfly/react-core
 
 
-    Replace `import { {{ component }} }; from import from @patternfly/react-core/dist/js/components`
-    with `import { {{ component }} } from import from @patternfly/react-core`.
+    Replace `import { {{ component }} } from @patternfly/react-core/dist/js/components`
+    with `import { {{ component }} } from @patternfly/react-core`.
 
 
     Before:
@@ -59,8 +59,8 @@
     Imports from @patternfly/react-core/dist/esm/components should now be
     imported from @patternfly/react-core
     
-    Replace `import { {{ component }} }; from import from @patternfly/react-core/dist/esm/components`
-    with `import { {{ component }} } from import from @patternfly/react-core`.
+    Replace `import { {{ component }} } from @patternfly/react-core/dist/esm/components`
+    with `import { {{ component }} } from @patternfly/react-core`.
     
     Before:
     ```
@@ -74,7 +74,7 @@
 
     import { {{ component }} } from "@patternfly/react-core"
 
-    ```'
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade/
     title: PatternFly v6 Upgrade Guide

@@ -118,8 +118,8 @@
     React tokens, whose value is a Patternfly token variable (with prefix
     --pf-t), are now prefixed with t_
     
-    Replace `import { {{ component }} }; from import from @patternfly/react-tokens/dist/esm/color_`
-    with `import { {{ component }} } from import from @patternfly/react-tokens/dist/esm/t_color_`.
+    Replace `import { {{ component }} } from @patternfly/react-tokens/dist/esm/color_`
+    with `import { {{ component }} } from @patternfly/react-tokens/dist/esm/t_color_`.
     
     Before:
     ```
