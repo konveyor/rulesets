@@ -332,7 +332,7 @@
     title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00100
-  description: TextInput isDisabled should be replaced with TextInput isDisabled
+  description: TextInput isDisabled should be replaced with TextInput disabled
   effort: 5
   category: potential
   labels:
@@ -349,7 +349,7 @@
     TextInput's isDisabled prop has been replaced with the standard HTML
     disabled attribute
     
-    Replace `TextInput isDisabled` with `TextInput isDisabled`.
+    Replace `TextInput isDisabled` with `TextInput disabled`.
     
     Before:
     ```
@@ -398,7 +398,7 @@
     title: PatternFly v6 Upgrade Guide
   customVariables: []
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00120
-  description: Select isDisabled should be replaced with Select isDisabled
+  description: Select isDisabled should be replaced with Select disabled
   effort: 5
   category: potential
   labels:
@@ -415,7 +415,7 @@
     Select's isDisabled prop has been replaced with the standard HTML disabled
     attribute
     
-    Replace `Select isDisabled` with `Select isDisabled`.
+    Replace `Select isDisabled` with `Select disabled`.
     
     Before:
     ```
