@@ -44,7 +44,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: <KebabToggle
+      pattern: <KebabToggle[\s>]
       filePattern: \.(j|t)sx?$
   message: |-
     KebabToggle has been removed from PatternFly. Use MenuToggle component
