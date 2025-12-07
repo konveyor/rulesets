@@ -134,7 +134,7 @@
   - url: https://github.com/patternfly/patternfly-react/pull/11002
     title: patternfly-v6 Documentation
   customVariables:
-  - pattern: import {(?P<imports>[A-Za-z,\s]+)}
+  - pattern: import\s+(?P<imports>[A-Za-z_0-9]+)\s+from
     name: component
     nameOfCaptureGroup: imports
     defaultValue: Component
