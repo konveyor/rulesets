@@ -1,0 +1,35 @@
+- ruleID: patternfly-v5-to-patternfly-v6-button-00000
+  description: Button variant='plain' with icon children should be replaced with Button
+    icon prop
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=patternfly-v5
+  - konveyor.io/target=patternfly-v6
+  when:
+    and:
+    - nodejs.referenced:
+        pattern: Button
+    - builtin.filecontent:
+        pattern: <Button[^>]*\bvariant=['"]plain['"][^>]*>
+        filePattern: \.(j|t)sx?$
+  message: |-
+    Icons must now be passed to the icon prop of Button instead of as children.
+
+    Replace `Button variant="plain" with icon children` with `Button icon prop`.
+
+    Before:
+    ```
+    <Button variant="plain">
+      <span>Icon</span>
+    </Button>
+    ```
+
+    After:
+    ```
+    <Button icon={<span>Icon</span>} variant="plain"></Button>
+    ```
+  links:
+  - url: https://github.com/patternfly/patternfly-react/pull/10663
+    title: patternfly-v6 Documentation
+  customVariables: []
