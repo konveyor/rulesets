@@ -113,10 +113,10 @@
   when:
     and:
     - builtin.filecontent:
-        pattern: from ['"]@patternfly/react-core['"]
+        pattern: "@patternfly/react-core"
         filePattern: \.(j|t)sx?$
     - builtin.filecontent:
-        pattern: <Page[^>]*\bheader=
+        pattern: "header="
         filePattern: \.(j|t)sx?$
   message: |-
     The header prop for Page has been renamed to masthead.
