@@ -45,7 +45,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*NotAuthorized.*from.*@patternfly/react-component-groups$
+      pattern: import[\s\S]*NotAuthorized[\s\S]*from[\s\S]*['"]@patternfly/react-component-groups['"]
       filePattern: \.(j|t)sx?$
   message: |-
     In react-component-groups, the NotAuthorized component has been renamed

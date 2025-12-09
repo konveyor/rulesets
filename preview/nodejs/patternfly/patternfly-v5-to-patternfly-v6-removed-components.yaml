@@ -8,7 +8,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*KebabToggle.*from.*@patternfly/react-core/deprecated$
+      pattern: import[\s\S]*KebabToggle[\s\S]*from[\s\S]*['"]@patternfly/react-core/deprecated['"]
       filePattern: \.(j|t)sx?$
   message: |-
     KebabToggle has been removed from PatternFly. Use MenuToggle component

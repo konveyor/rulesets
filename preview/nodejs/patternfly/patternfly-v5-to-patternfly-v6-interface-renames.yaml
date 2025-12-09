@@ -8,7 +8,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*FormFiledGroupHeaderTitleTextObject.*from.*@patternfly/react-core$
+      pattern: import[\s\S]*FormFiledGroupHeaderTitleTextObject[\s\S]*from[\s\S]*['"]@patternfly/react-core['"]
       filePattern: \.(j|t)sx?$
   message: |-
     There was a typo in FormFiledGroupHeaderTitleTextObject interface. It
