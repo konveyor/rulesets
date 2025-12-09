@@ -112,8 +112,9 @@
   - konveyor.io/target=patternfly-v6
   when:
     and:
-    - nodejs.referenced:
-        pattern: Page
+    - builtin.filecontent:
+        pattern: from ['"]@patternfly/react-core['"]
+        filePattern: \.(j|t)sx?$
     - builtin.filecontent:
         pattern: <Page[^>]*\bheader=
         filePattern: \.(j|t)sx?$
