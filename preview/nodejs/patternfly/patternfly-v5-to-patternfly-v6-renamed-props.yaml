@@ -112,10 +112,11 @@
   - konveyor.io/target=patternfly-v6
   when:
     and:
-    - nodejs.referenced:
-        pattern: Page
     - builtin.filecontent:
-        pattern: <Page[^>]*\bheader=
+        pattern: "@patternfly/react-core"
+        filePattern: \.(j|t)sx?$
+    - builtin.filecontent:
+        pattern: "header="
         filePattern: \.(j|t)sx?$
   message: |-
     The header prop for Page has been renamed to masthead.
