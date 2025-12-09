@@ -7,7 +7,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*from.*@patternfly/react-core/v5$
+      pattern: import[\s\S]*from[\s\S]*['"]@patternfly/react-core/v5['"]
       filePattern: \.(j|t)sx?$
   message: |-
     Import paths need to be updated from v5 to v6

@@ -8,7 +8,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*DualListSelector.*from.*@patternfly/react-core/next$
+      pattern: import[\s\S]*DualListSelector[\s\S]*from[\s\S]*['"]@patternfly/react-core/next['"]
       filePattern: \.(j|t)sx?$
   message: |-
     The Next implementation of DualListSelector has been promoted as the recommended

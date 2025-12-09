@@ -8,7 +8,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*Chip.*from.*@patternfly/react-core$
+      pattern: import[\s\S]*Chip[\s\S]*from[\s\S]*['"]@patternfly/react-core['"]
       filePattern: \.(j|t)sx?$
   message: |-
     Chip has been deprecated. Use Label instead.
@@ -42,7 +42,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*DragDrop.*from.*@patternfly/react-core$
+      pattern: import[\s\S]*DragDrop[\s\S]*from[\s\S]*['"]@patternfly/react-core['"]
       filePattern: \.(j|t)sx?$
   message: |-
     DragDrop has been deprecated. For PatternFly 6 compatibility, update imports to '@patternfly/react-core/deprecated'.
@@ -78,7 +78,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*Droppable.*from.*@patternfly/react-core$
+      pattern: import[\s\S]*Droppable[\s\S]*from[\s\S]*['"]@patternfly/react-core['"]
       filePattern: \.(j|t)sx?$
   message: |-
     DragDrop components have been deprecated. For PatternFly 6 compatibility, update imports to '@patternfly/react-core/deprecated'.
@@ -114,7 +114,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*Draggable.*from.*@patternfly/react-core$
+      pattern: import[\s\S]*Draggable[\s\S]*from[\s\S]*['"]@patternfly/react-core['"]
       filePattern: \.(j|t)sx?$
   message: |-
     DragDrop components have been deprecated. For PatternFly 6 compatibility, update imports to '@patternfly/react-core/deprecated'.
@@ -150,7 +150,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*DualListSelector.*from.*@patternfly/react-core$
+      pattern: import[\s\S]*DualListSelector[\s\S]*from[\s\S]*['"]@patternfly/react-core['"]
       filePattern: \.(j|t)sx?$
   message: |-
     The previous implementation of DualListSelector has been deprecated. Use

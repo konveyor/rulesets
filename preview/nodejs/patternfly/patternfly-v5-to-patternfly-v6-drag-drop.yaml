@@ -7,7 +7,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*DragDrop.*from.*@patternfly/react-core$
+      pattern: import[\s\S]*DragDrop[\s\S]*from[\s\S]*['"]@patternfly/react-core['"]
       filePattern: \.(j|t)sx?$
   message: |-
     DragDrop has been deprecated. Running the fix flag will update your imports
@@ -52,7 +52,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*Draggable.*from.*@patternfly/react-core$
+      pattern: import[\s\S]*Draggable[\s\S]*from[\s\S]*['"]@patternfly/react-core['"]
       filePattern: \.(j|t)sx?$
   message: |-
     DragDrop has been deprecated. Running the fix flag will update your imports
@@ -88,7 +88,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*Droppable.*from.*@patternfly/react-core$
+      pattern: import[\s\S]*Droppable[\s\S]*from[\s\S]*['"]@patternfly/react-core['"]
       filePattern: \.(j|t)sx?$
   message: |-
     DragDrop has been deprecated. Running the fix flag will update your imports

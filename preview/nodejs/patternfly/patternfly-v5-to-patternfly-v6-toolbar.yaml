@@ -161,7 +161,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*ToolbarChipGroupContent.*from.*@patternfly/react-core$
+      pattern: import[\s\S]*ToolbarChipGroupContent[\s\S]*from[\s\S]*['"]@patternfly/react-core['"]
       filePattern: \.(j|t)sx?$
   message: |-
     The ToolbarChipGroupContent component has been renamed to ToolbarLabelGroupContent

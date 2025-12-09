@@ -45,7 +45,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*ContentHeader.*from.*@patternfly/react-component-groups$
+      pattern: import[\s\S]*ContentHeader[\s\S]*from[\s\S]*['"]@patternfly/react-component-groups['"]
       filePattern: \.(j|t)sx?$
   message: |-
     In react-component-groups, we've renamed ContentHeader component to PageHeader

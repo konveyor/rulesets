@@ -8,7 +8,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*from.*@patternfly/react-core/dist/js/components$
+      pattern: import[\s\S]*from[\s\S]*['"]@patternfly/react-core/dist/js/components['"]
       filePattern: \.(j|t)sx?$
   message: |-
     Imports from @patternfly/react-core/dist/js/components should now be imported
@@ -53,7 +53,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*from.*@patternfly/react-core/dist/esm/components$
+      pattern: import[\s\S]*from[\s\S]*['"]@patternfly/react-core/dist/esm/components['"]
       filePattern: \.(j|t)sx?$
   message: |-
     Imports from @patternfly/react-core/dist/esm/components should now be

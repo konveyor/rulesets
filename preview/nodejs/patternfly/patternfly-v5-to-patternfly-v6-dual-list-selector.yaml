@@ -8,7 +8,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*DualListSelector.*from.*@patternfly/react-core$
+      pattern: import[\s\S]*DualListSelector[\s\S]*from[\s\S]*['"]@patternfly/react-core['"]
       filePattern: \.(j|t)sx?$
   message: |-
     Our previous implementation of DualListSelector has been deprecated. Codemods
@@ -54,7 +54,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*DualListSelector.*from.*@patternfly/react-core/next$
+      pattern: import[\s\S]*DualListSelector[\s\S]*from[\s\S]*['"]@patternfly/react-core/next['"]
       filePattern: \.(j|t)sx?$
   message: |-
     Our Next implementation of DualListSelector has been promoted as our recommended

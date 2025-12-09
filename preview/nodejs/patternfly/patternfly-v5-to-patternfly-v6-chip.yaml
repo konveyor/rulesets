@@ -7,7 +7,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*Chip.*from.*@patternfly/react-core$
+      pattern: import[\s\S]*Chip[\s\S]*from[\s\S]*['"]@patternfly/react-core['"]
       filePattern: \.(j|t)sx?$
   message: |-
     Chip has been deprecated. Running the fix flag will update your imports to our deprecated package, but we suggest using Label instead.
@@ -40,7 +40,7 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: import.*ChipGroup.*from.*@patternfly/react-core$
+      pattern: import[\s\S]*ChipGroup[\s\S]*from[\s\S]*['"]@patternfly/react-core['"]
       filePattern: \.(j|t)sx?$
   message: |-
     ChipGroup has been deprecated. Running the fix flag will update your imports to our deprecated package, but we suggest using LabelGroup instead.
