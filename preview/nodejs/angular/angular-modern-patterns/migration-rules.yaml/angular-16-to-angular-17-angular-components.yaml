@@ -1,0 +1,38 @@
+- ruleID: angular-16-to-angular-17-angular-components-00000
+  description: '@Component({ selector: ''app-my'', template: ''...'' }) should be
+    replaced with @Component({ selector: ''app-my'', template: ''...'', standalone:
+    true, imports: [...] })'
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-16
+  - konveyor.io/target=angular-17
+  when:
+    builtin.filecontent:
+      pattern: '@Component'
+      filePattern: \.(ts)$
+  message: 'Components should now be marked as standalone in Angular 17
+
+
+    Replace `@Component({ selector: ''app-my'', template: ''...'' })` with `@Component({
+    selector: ''app-my'', template: ''...'', standalone: true, imports: [...] })`.
+
+
+    Before:
+
+    ```
+
+    @Component({ selector: ''app-my'', template: ''...'' })
+
+    ```
+
+
+    After:
+
+    ```
+
+    @Component({ selector: ''app-my'', template: ''...'', standalone: true, imports:
+    [...] })
+
+    ```'
+  customVariables: []

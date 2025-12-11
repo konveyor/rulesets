@@ -1,0 +1,38 @@
+- ruleID: angular-12-to-angular-13-debugging-00000
+  description: ng.getDirectives error handling should be replaced with ng.getDirectives
+    without relying on errors
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-12
+  - konveyor.io/target=angular-13
+  when:
+    builtin.filecontent:
+      pattern: ng\.getDirectives
+      filePattern: \.(j|t)s$
+  message: 'Don''t rely on ng.getDirectives throwing an error if it can''t find a
+    directive associated with a particular DOM node
+
+
+    Replace `ng.getDirectives error handling` with `ng.getDirectives without relying
+    on errors`.
+
+
+    Before:
+
+    ```
+
+    try { ng.getDirectives(element); } catch (e) { /* handle error */ }
+
+    ```
+
+
+    After:
+
+    ```
+
+    const directives = ng.getDirectives(element); if (directives.length === 0) { /*
+    handle no directives */ }
+
+    ```'
+  customVariables: []

@@ -1,0 +1,34 @@
+- ruleID: angularjs-to-angular-interpolation-00000
+  description: '{{ctrl. should be replaced with {{'
+  effort: 3
+  category: mandatory
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: \{\{ctrl\.
+      filePattern: \.(html|htm|component\.ts)$
+  message: 'AngularJS controller aliases in templates should be removed in Angular
+
+
+    Replace `{{ctrl.` with `{{`.
+
+
+    Before:
+
+    ```
+
+    <div>{{ctrl.name}}</div>
+
+    ```
+
+
+    After:
+
+    ```
+
+    <div>{{name}}</div>
+
+    ```'
+  customVariables: []

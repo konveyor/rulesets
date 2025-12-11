@@ -1,0 +1,34 @@
+- ruleID: angular-16-to-angular-21-router-event-type-change-00000
+  description: RouterEvent should be replaced with Event|RouterEvent
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angular-16
+  - konveyor.io/target=angular-21
+  when:
+    nodejs.referenced:
+      pattern: Event
+  message: 'RouterEvent is no longer part of the Event union type, requiring explicit
+    inclusion.
+
+
+    Replace `RouterEvent` with `Event|RouterEvent`.
+
+
+    Before:
+
+    ```
+
+    (e: Event)
+
+    ```
+
+
+    After:
+
+    ```
+
+    (e: Event|RouterEvent)
+
+    ```'
+  customVariables: []

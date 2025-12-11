@@ -1,0 +1,37 @@
+- ruleID: angular-9-to-angular-10-forms-00000
+  description: ngForm element selector should be replaced with ng-form element selector
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angular-9
+  - konveyor.io/target=angular-10
+  when:
+    nodejs.referenced:
+      pattern: ngForm
+  message: 'Angular 10 recommends using ''ng-form'' instead of ''ngForm'' element
+    selector for better consistency.
+
+
+    Replace `ngForm element selector` with `ng-form element selector`.
+
+
+    Before:
+
+    ```
+
+    <form ngForm></form>
+
+    ```
+
+
+    After:
+
+    ```
+
+    <form ng-form></form>
+
+    ```'
+  links:
+  - url: https://angular.io/guide/forms
+    title: angular-10 Documentation
+  customVariables: []

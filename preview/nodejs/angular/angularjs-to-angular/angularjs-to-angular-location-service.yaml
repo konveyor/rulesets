@@ -1,0 +1,68 @@
+- ruleID: angularjs-to-angular-location-service-00000
+  description: $location.path should be replaced with Router.navigate
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: \$location\.path
+      filePattern: \.(j|t)sx?$
+  message: 'AngularJS $location.path should be replaced with Angular Router.navigate
+
+
+    Replace `$location.path` with `Router.navigate`.
+
+
+    Before:
+
+    ```
+
+    $location.path(''/new-path'');
+
+    ```
+
+
+    After:
+
+    ```
+
+    this.router.navigate([''/new-path'']);
+
+    ```'
+  customVariables: []
+- ruleID: angularjs-to-angular-location-service-00010
+  description: $location.url should be replaced with Router.navigate
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: \$location\.url
+      filePattern: \.(j|t)sx?$
+  message: 'AngularJS $location.url should be replaced with Angular Router.navigate
+
+
+    Replace `$location.url` with `Router.navigate`.
+
+
+    Before:
+
+    ```
+
+    $location.url(''/new-path'');
+
+    ```
+
+
+    After:
+
+    ```
+
+    this.router.navigate([''/new-path'']);
+
+    ```'
+  customVariables: []

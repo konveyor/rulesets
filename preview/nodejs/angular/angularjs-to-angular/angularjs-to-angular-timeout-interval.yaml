@@ -1,0 +1,32 @@
+- ruleID: angularjs-to-angular-timeout-interval-00000
+  description: $timeout should be replaced with setTimeout
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: \$timeout
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS $timeout should be replaced with native setTimeout or RxJS timer\n\
+    \nReplace `$timeout` with `setTimeout`.\n\nBefore:\n```\n$timeout(function() {\n\
+    \ $scope.message = 'Updated';\n}, 1000);\n```\n\nAfter:\n```\nsetTimeout(() =>\
+    \ {\n this.message = 'Updated';\n}, 1000);\n```"
+  customVariables: []
+- ruleID: angularjs-to-angular-timeout-interval-00010
+  description: $interval should be replaced with setInterval
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: \$interval
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS $interval should be replaced with native setInterval or RxJS\
+    \ interval\n\nReplace `$interval` with `setInterval`.\n\nBefore:\n```\n$interval(function()\
+    \ {\n $scope.count++;\n}, 1000);\n```\n\nAfter:\n```\nsetInterval(() => {\n this.count++;\n\
+    }, 1000);\n```"
+  customVariables: []

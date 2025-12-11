@@ -1,0 +1,33 @@
+- ruleID: angular-14-to-angular-15-angular-upgrade-00000
+  description: aotSummaries should be replaced with Remove aotSummaries usage
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-14
+  - konveyor.io/target=angular-15
+  when:
+    nodejs.referenced:
+      pattern: aotSummaries
+  message: 'Angular no longer needs aotSummaries in Ivy
+
+
+    Replace `aotSummaries` with `Remove aotSummaries usage`.
+
+
+    Before:
+
+    ```
+
+    TestBed.aotSummaries(() => [MyComponent])
+
+    ```
+
+
+    After:
+
+    ```
+
+    TestBed.configureTestingModule({ declarations: [MyComponent] })
+
+    ```'
+  customVariables: []

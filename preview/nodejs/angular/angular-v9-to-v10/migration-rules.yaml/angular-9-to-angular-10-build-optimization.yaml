@@ -1,0 +1,68 @@
+- ruleID: angular-9-to-angular-10-build-optimization-00000
+  description: es5BrowserSupport flag in angular.json should be replaced with Remove
+    es5BrowserSupport flag
+  effort: 1
+  category: mandatory
+  labels:
+  - konveyor.io/source=angular-9
+  - konveyor.io/target=angular-10
+  when:
+    builtin.filecontent:
+      pattern: es5BrowserSupport
+      filePattern: \.json$
+  message: 'Angular now uses browserslist to determine if an ES5 build is needed,
+    making es5BrowserSupport flag obsolete.
+
+
+    Replace `es5BrowserSupport flag in angular.json` with `Remove es5BrowserSupport
+    flag`.
+
+
+    Before:
+
+    ```json
+
+    {
+      "projects": {
+        "my-app": {
+          "architect": {
+            "build": {
+              "configurations": {
+                "production": {
+                  "es5BrowserSupport": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    ```
+
+
+    After:
+
+    ```json
+
+    {
+      "projects": {
+        "my-app": {
+          "architect": {
+            "build": {
+              "configurations": {
+                "production": {
+                  // Remove es5BrowserSupport - now configured via browserslist
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    ```'
+  links:
+  - url: https://angular.io/guide/browser-support
+    title: angular-10 Documentation
+  customVariables: []

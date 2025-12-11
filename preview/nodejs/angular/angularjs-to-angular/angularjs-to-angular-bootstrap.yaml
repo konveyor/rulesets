@@ -1,0 +1,34 @@
+- ruleID: angularjs-to-angular-bootstrap-00000
+  description: angular.bootstrap should be replaced with platformBrowserDynamic().bootstrapModule
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: angular\.bootstrap
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS manual bootstrap should be replaced with Angular platformBrowserDynamic\n\
+    \nReplace `angular.bootstrap` with `platformBrowserDynamic().bootstrapModule`.\n\
+    \nBefore:\n```\nangular.element(document).ready(function() {\n angular.bootstrap(document,\
+    \ ['app']);\n});\n```\n\nAfter:\n```\nplatformBrowserDynamic().bootstrapModule(AppModule);\n\
+    ```"
+  customVariables: []
+- ruleID: angularjs-to-angular-bootstrap-00010
+  description: angular.element(document).ready should be replaced with platformBrowserDynamic().bootstrapModule
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: angular\.element\(document\)\.ready
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS document ready handler should be replaced with Angular bootstrap\n\
+    \nReplace `angular.element(document).ready` with `platformBrowserDynamic().bootstrapModule`.\n\
+    \nBefore:\n```\nangular.element(document).ready(function() {\n // initialize app\n\
+    });\n```\n\nAfter:\n```\nplatformBrowserDynamic().bootstrapModule(AppModule);\n\
+    ```"
+  customVariables: []

@@ -1,0 +1,36 @@
+- ruleID: angular-2-to-angular-8-renderer-deprecation-00000
+  description: Renderer.invokeElementMethod should be replaced with No direct replacement,
+    refactor to use Renderer2 methods
+  effort: 7
+  category: mandatory
+  labels:
+  - konveyor.io/source=angular-2
+  - konveyor.io/target=angular-8
+  when:
+    nodejs.referenced:
+      pattern: Renderer.invokeElementMethod
+  message: 'Renderer.invokeElementMethod has been removed in favor of more secure
+    Renderer2
+
+
+    Replace `Renderer.invokeElementMethod` with `No direct replacement, refactor to
+    use Renderer2 methods`.
+
+
+    Before:
+
+    ```
+
+    this.renderer.invokeElementMethod(el, ''focus'', []);
+
+    ```
+
+
+    After:
+
+    ```
+
+    this.renderer2.invokeElementMethod(el, ''focus'');
+
+    ```'
+  customVariables: []
