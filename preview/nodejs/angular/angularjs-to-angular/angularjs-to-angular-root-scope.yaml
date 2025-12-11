@@ -1,0 +1,16 @@
+- ruleID: angularjs-to-angular-root-scope-00000
+  description: $rootScope should be replaced with Injectable service
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: \$rootScope
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS $rootScope should be replaced with Angular services\n\nReplace\
+    \ `$rootScope` with `Injectable service`.\n\nBefore:\n```\n$rootScope.globalData\
+    \ = 'value';\n```\n\nAfter:\n```\n@Injectable({ providedIn: 'root' })\nexport\
+    \ class GlobalDataService {\n globalData = 'value';\n}\n```"
+  customVariables: []

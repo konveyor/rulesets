@@ -1,0 +1,34 @@
+- ruleID: angular-2-to-angular-8-directive-update-00000
+  description: ngOutletContext should be replaced with ngTemplateOutletContext
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angular-2
+  - konveyor.io/target=angular-8
+  when:
+    nodejs.referenced:
+      pattern: ngOutletContext
+  message: 'ngOutletContext is replaced by ngTemplateOutletContext to align with naming
+    conventions
+
+
+    Replace `ngOutletContext` with `ngTemplateOutletContext`.
+
+
+    Before:
+
+    ```
+
+    <ng-container *ngTemplateOutlet="template; context: ctx"></ng-container>
+
+    ```
+
+
+    After:
+
+    ```
+
+    <ng-container *ngTemplateOutlet="template; context: ngTemplateOutletContext: ctx"></ng-container>
+
+    ```'
+  customVariables: []

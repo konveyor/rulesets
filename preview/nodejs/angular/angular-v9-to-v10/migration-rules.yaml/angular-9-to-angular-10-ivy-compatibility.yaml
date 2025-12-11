@@ -1,0 +1,18 @@
+- ruleID: angular-9-to-angular-10-ivy-compatibility-00000
+  description: entryComponents in NgModule should be replaced with Remove entryComponents
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angular-9
+  - konveyor.io/target=angular-10
+  when:
+    nodejs.referenced:
+      pattern: entryComponents
+  message: "With Ivy, Angular no longer requires entryComponents in NgModules.\n\n\
+    Replace `entryComponents in NgModule` with `Remove entryComponents`.\n\nBefore:\n\
+    ```\n@NgModule({\n  entryComponents: [MyComponent]\n})\n```\n\nAfter:\n```\n@NgModule({})\n\
+    ```"
+  links:
+  - url: https://angular.io/guide/ivy
+    title: angular-10 Documentation
+  customVariables: []

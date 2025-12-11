@@ -1,0 +1,68 @@
+- ruleID: angularjs-to-angular-http-service-00000
+  description: $http.get should be replaced with HttpClient.get
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: \$http\.get
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS $http service should be replaced with Angular HttpClient\n\n\
+    Replace `$http.get` with `HttpClient.get`.\n\nBefore:\n```\n$http.get('/api/data').success(function(data)\
+    \ {\n $scope.data = data;\n}).error(function(err) {\n console.error(err);\n});\n\
+    ```\n\nAfter:\n```\nthis.http.get('/api/data').subscribe(\n data => this.data\
+    \ = data,\n err => console.error(err)\n);\n```"
+  customVariables: []
+- ruleID: angularjs-to-angular-http-service-00010
+  description: $http.post should be replaced with HttpClient.post
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: \$http\.post
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS $http service should be replaced with Angular HttpClient\n\n\
+    Replace `$http.post` with `HttpClient.post`.\n\nBefore:\n```\n$http.post('/api/data',\
+    \ payload).success(function(data) {\n $scope.data = data;\n}).error(function(err)\
+    \ {\n console.error(err);\n});\n```\n\nAfter:\n```\nthis.http.post('/api/data',\
+    \ payload).subscribe(\n data => this.data = data,\n err => console.error(err)\n\
+    );\n```"
+  customVariables: []
+- ruleID: angularjs-to-angular-http-service-00020
+  description: .success() should be replaced with .subscribe()
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: \.success\(
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS $http success callback should be replaced with Observable subscribe\n\
+    \nReplace `.success()` with `.subscribe()`.\n\nBefore:\n```\n$http.get('/api/data').success(function(data)\
+    \ {\n $scope.data = data;\n});\n```\n\nAfter:\n```\nthis.http.get('/api/data').subscribe(\n\
+    \ data => this.data = data\n);\n```"
+  customVariables: []
+- ruleID: angularjs-to-angular-http-service-00030
+  description: .error() should be replaced with .subscribe() error handler
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: \.error\(
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS $http error callback should be replaced with Observable subscribe\
+    \ error handler\n\nReplace `.error()` with `.subscribe() error handler`.\n\nBefore:\n\
+    ```\n$http.get('/api/data').error(function(err) {\n console.error(err);\n});\n\
+    ```\n\nAfter:\n```\nthis.http.get('/api/data').subscribe(\n data => {},\n err\
+    \ => console.error(err)\n);\n```"
+  customVariables: []

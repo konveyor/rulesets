@@ -1,0 +1,35 @@
+- ruleID: angular-16-to-angular-21-renderer-type-style-change-00000
+  description: RendererType2.styles nested arrays should be replaced with RendererType2.styles
+    flat arrays
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-16
+  - konveyor.io/target=angular-21
+  when:
+    nodejs.referenced:
+      pattern: RendererType2.styles
+  message: 'RendererType2.styles no longer accepts nested arrays, only flat arrays
+    are allowed.
+
+
+    Replace `RendererType2.styles nested arrays` with `RendererType2.styles flat arrays`.
+
+
+    Before:
+
+    ```
+
+    RendererType2.styles = [[styles]]
+
+    ```
+
+
+    After:
+
+    ```
+
+    RendererType2.styles = [styles]
+
+    ```'
+  customVariables: []

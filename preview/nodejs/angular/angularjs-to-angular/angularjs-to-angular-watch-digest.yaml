@@ -1,0 +1,67 @@
+- ruleID: angularjs-to-angular-watch-digest-00000
+  description: $scope.$watch should be replaced with ngOnChanges
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: \$scope\.\$watch
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS $watch should be replaced with Angular component lifecycle hooks\n\
+    \nReplace `$scope.$watch` with `ngOnChanges`.\n\nBefore:\n```\n$scope.$watch('value',\
+    \ function(newVal, oldVal) {\n console.log('Value changed');\n});\n```\n\nAfter:\n\
+    ```\nngOnChanges(changes: SimpleChanges) {\n if (changes['value']) {\n console.log('Value\
+    \ changed');\n }\n}\n```"
+  customVariables: []
+- ruleID: angularjs-to-angular-watch-digest-00010
+  description: $scope.$apply should be replaced with NgZone.run
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: \$scope\.\$apply
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS $apply should be replaced with Angular NgZone.run\n\nReplace\
+    \ `$scope.$apply` with `NgZone.run`.\n\nBefore:\n```\n$scope.$apply(function()\
+    \ {\n $scope.data = newData;\n});\n```\n\nAfter:\n```\nthis.ngZone.run(() => {\n\
+    \ this.data = newData;\n});\n```"
+  customVariables: []
+- ruleID: angularjs-to-angular-watch-digest-00020
+  description: $scope.$digest should be replaced with NgZone.run
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: \$scope\.\$digest
+      filePattern: \.(j|t)sx?$
+  message: 'AngularJS $digest should be replaced with Angular NgZone.run
+
+
+    Replace `$scope.$digest` with `NgZone.run`.
+
+
+    Before:
+
+    ```
+
+    $scope.$digest();
+
+    ```
+
+
+    After:
+
+    ```
+
+    this.ngZone.run(() => {});
+
+    ```'
+  customVariables: []

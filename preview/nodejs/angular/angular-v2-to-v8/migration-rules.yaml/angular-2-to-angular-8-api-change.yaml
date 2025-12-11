@@ -1,0 +1,34 @@
+- ruleID: angular-2-to-angular-8-api-change-00000
+  description: CollectionChangeRecord should be replaced with IterableChangeRecord
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angular-2
+  - konveyor.io/target=angular-8
+  when:
+    nodejs.referenced:
+      pattern: CollectionChangeRecord
+  message: 'CollectionChangeRecord is replaced by IterableChangeRecord to better reflect
+    its usage
+
+
+    Replace `CollectionChangeRecord` with `IterableChangeRecord`.
+
+
+    Before:
+
+    ```
+
+    import { CollectionChangeRecord } from ''@angular/core'';
+
+    ```
+
+
+    After:
+
+    ```
+
+    import { IterableChangeRecord } from ''@angular/core'';
+
+    ```'
+  customVariables: []

@@ -1,0 +1,34 @@
+- ruleID: angular-2-to-angular-8-router-update-00000
+  description: preserveQueryParams should be replaced with queryParamsHandling
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-2
+  - konveyor.io/target=angular-8
+  when:
+    nodejs.referenced:
+      pattern: preserveQueryParams
+  message: 'preserveQueryParams is deprecated, use queryParamsHandling for more explicit
+    control
+
+
+    Replace `preserveQueryParams` with `queryParamsHandling`.
+
+
+    Before:
+
+    ```
+
+    this.router.navigate([''/path''], { preserveQueryParams: true });
+
+    ```
+
+
+    After:
+
+    ```
+
+    this.router.navigate([''/path''], { queryParamsHandling: ''preserve'' });
+
+    ```'
+  customVariables: []
