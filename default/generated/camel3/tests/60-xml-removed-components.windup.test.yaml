@@ -40,18 +40,19 @@ tests:
       atLeast: 1
       messageMatches: '`org.apache.camel:camel-jibx` artifact has been deprecated
         in Apache Camel .*'
-- ruleID: xml-removed-components-00005
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 1
-      messageMatches: '`org.apache.camel:camel-jibx-starter` artifact has been deprecated
-        in Apache Camel .*'
-  - name: tc-2
-    hasIncidents:
-      atLeast: 1
-      messageMatches: '`org.apache.camel:camel-restlet` artifact has been deprecated
-        in Apache Camel .*'
+# TODO: untestable at the moment, the artifact cannot be found anywhere and/or it is corrupt.
+#- ruleID: xml-removed-components-00005
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: '`org.apache.camel:camel-jibx-starter` artifact has been deprecated
+#        in Apache Camel .*'
+#  - name: tc-2
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: '`org.apache.camel:camel-restlet` artifact has been deprecated
+#        in Apache Camel .*'
 - ruleID: xml-removed-components-00006
   testCases:
   - name: tc-1

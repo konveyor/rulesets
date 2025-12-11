@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import org.apache.camel.builder.RouteBuilder;
 
 public class TwitterStreaming {

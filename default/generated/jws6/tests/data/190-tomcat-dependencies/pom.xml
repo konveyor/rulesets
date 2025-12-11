@@ -120,12 +120,6 @@
             <artifactId>postgresql</artifactId>
             <version>42.2.23</version>
         </dependency>
-        <!-- Corporate libraries -->
-        <dependency>
-            <groupId>io.konveyor.demo</groupId>
-            <artifactId>config-utils</artifactId>
-            <version>1.0.0</version>
-        </dependency>
 
     </dependencies>
     <build>

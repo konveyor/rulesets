@@ -11,17 +11,7 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-security</artifactId>
-      <version>5.0.10.Final</version>
-    </dependency>
-    <dependency>
-      <groupId>not-tested</groupId>
-      <artifactId>spring-boot-starter-security</artifactId>
-      <version>5.0.10.Final</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.security</groupId>
-      <artifactId>tested</artifactId>
-      <version>5.0.10.Final</version>
+      <version>3.4.10</version>
     </dependency>
   </dependencies>
 </project>

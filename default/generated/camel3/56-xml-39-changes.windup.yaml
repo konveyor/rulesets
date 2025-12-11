@@ -171,25 +171,6 @@
       name: org.apache.camel.camel-aws-kinesis
 - category: mandatory
   customVariables: []
-  description: org.apache.camel:camel-aws-kinesis-firehose artifact has been removed
-    - please use camel-aws2-kinesis-firehose
-  effort: 5
-  labels:
-  - konveyor.io/source=camel
-  - konveyor.io/target=camel3.9+
-  - konveyor.io/target=camel
-  links:
-  - title: 'Camel 3 - Migration Guide: JAVAX.SCRIPT'
-    url: https://camel.apache.org/manual/camel-3x-upgrade-guide-3_9.html#_camel_aws_components_removed
-  message: '`org.apache.camel:camel-aws-kinesis-firehose` artifact has been removed
-    in Apache Camel 3.9. Please use camel-aws2-kinesis-firehose instead.'
-  ruleID: xml-removed-camel39-00012
-  when:
-    java.dependency:
-      lowerbound: 0.0.0
-      name: org.apache.camel.camel-aws-kinesis-firehose
-- category: mandatory
-  customVariables: []
   description: org.apache.camel:camel-aws-iam artifact has been removed - please use
     camel-aws2-iam
   effort: 5
@@ -245,25 +226,6 @@
     java.dependency:
       lowerbound: 0.0.0
       name: org.apache.camel.camel-aws-ecs
-- category: mandatory
-  customVariables: []
-  description: org.apache.camel:camel-aws-ecs2 artifact has been removed - please
-    use camel-aws2-ecs2
-  effort: 5
-  labels:
-  - konveyor.io/source=camel
-  - konveyor.io/target=camel3.9+
-  - konveyor.io/target=camel
-  links:
-  - title: 'Camel 3 - Migration Guide: JAVAX.SCRIPT'
-    url: https://camel.apache.org/manual/camel-3x-upgrade-guide-3_9.html#_camel_aws_components_removed
-  message: '`org.apache.camel:camel-aws-ecs2` artifact has been removed in Apache
-    Camel 3.9. Please use camel-aws2-ecs2 instead.'
-  ruleID: xml-removed-camel39-00016
-  when:
-    java.dependency:
-      lowerbound: 0.0.0
-      name: org.apache.camel.camel-aws-ecs2
 - category: mandatory
   customVariables: []
   description: org.apache.camel:camel-aws-ddb artifact has been removed - please use

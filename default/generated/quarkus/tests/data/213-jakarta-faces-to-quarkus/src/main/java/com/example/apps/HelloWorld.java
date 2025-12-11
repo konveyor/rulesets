@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jboss.as.quickstarts.rshelloworld;
+package com.example.apps;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -34,14 +34,14 @@ public class HelloWorld {
     @Path("/json")
     @Produces({ "application/json" })
     public String getHelloWorldJSON() {
-        return "{\"result\":\"" + helloService.createHelloMessage("World") + "\"}";
+        return "{\"result\":\"" + "World" + "\"}";
     }
 
     @GET
     @Path("/xml")
     @Produces({ "application/xml" })
     public String getHelloWorldXML() {
-        return "<xml><result>" + helloService.createHelloMessage("World") + "</result></xml>";
+        return "<xml><result>" + "World" + "</result></xml>";
     }
 
 }

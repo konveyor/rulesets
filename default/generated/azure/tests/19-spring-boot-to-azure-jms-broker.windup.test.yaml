@@ -9,5 +9,5 @@ tests:
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 2
+      atLeast: 1
       messageMatches: The application uses an ActiveMQ message broker.

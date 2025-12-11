@@ -41,50 +41,50 @@
         <!-- Spring Boot -->
         <dependency>
 	        <groupId>org.apache.camel</groupId>
-            <artifactId>camel-aws2-pdf</artifactId>
-            <version>3.0.1</version>
+            <artifactId>camel-pdf</artifactId>
+            <version>3.20.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-aws2-sns</artifactId>
-            <version>3.0.1</version>
+            <version>3.20.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-kafka</artifactId>
-            <version>3.0.1</version>
+            <version>3.20.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-management</artifactId>
-            <version>3.0.1</version>
+            <version>3.20.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-scheduler</artifactId>
-            <version>3.0.1</version>
+            <version>3.20.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-timer</artifactId>
-            <version>3.0.1</version>
+            <version>3.20.1</version>
         </dependency>
 
         <!-- Camel -->
         <dependency>
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-spring-boot-xml-starter</artifactId>
-            <version>3.0.1</version>
+            <version>3.20.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-xml-jaxb-dsl-starter</artifactId>
-            <version>3.0.1</version>
+            <version>3.20.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-stream-starter</artifactId>
-            <version>3.0.1</version>
+            <version>3.20.1</version>
         </dependency>
 
     </dependencies>

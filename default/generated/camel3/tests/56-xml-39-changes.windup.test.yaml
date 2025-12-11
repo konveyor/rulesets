@@ -68,13 +68,6 @@ tests:
       atLeast: 1
       messageMatches: '`org.apache.camel:camel-aws-kinesis` artifact has been removed
         in Apache Camel 3..*'
-- ruleID: xml-removed-camel39-00012
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 1
-      messageMatches: '`org.apache.camel:camel-aws-kinesis-firehose` artifact has
-        been removed in Apache Camel 3..*'
 - ruleID: xml-removed-camel39-00013
   testCases:
   - name: tc-1
@@ -95,13 +88,6 @@ tests:
     hasIncidents:
       atLeast: 1
       messageMatches: '`org.apache.camel:camel-aws-ecs` artifact has been removed
-        in Apache Camel 3..*'
-- ruleID: xml-removed-camel39-00016
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      atLeast: 1
-      messageMatches: '`org.apache.camel:camel-aws-ecs2` artifact has been removed
         in Apache Camel 3..*'
 - ruleID: xml-removed-camel39-00017
   testCases:
