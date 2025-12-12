@@ -1,4 +1,4 @@
-package com.example.demointegrationbatch;
+package com.example.apps;
 
 import java.io.File;
 import java.util.Scanner;
@@ -69,7 +69,7 @@ public class JavaDSLFileCopyConfig {
     
     @Bean
     public IntegrationFlow fileMover() {
-        return IntegrationFlows.from(sourceDirectory(), configurer -> configurer.poller(Pollers.fixedDelay(10000)))
+        return IntegrationFlows.from(sourceDirectory(), configurer.poller(Pollers.fixedDelay(10000)))
             .filter(onlyJpgs())
             .handle(targetDirectory())
             .get();

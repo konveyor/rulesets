@@ -41,7 +41,7 @@ public class JaxRsWebService extends AbstractEaoService implements Serializable 
     @Path("/div")
     public Integer div(Integer a, Integer b)
     {
-        if (b === 0)
+        if (b == 0)
         {
             throw new IllegalArgumentException("b cannot be 0");
         }
