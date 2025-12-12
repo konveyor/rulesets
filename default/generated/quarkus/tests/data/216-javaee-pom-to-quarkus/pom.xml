@@ -22,7 +22,7 @@
     <artifactId>helloworld-rs</artifactId>
     <groupId>io.konveyor</groupId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>ear</packaging>
     <name>Quickstart: helloworld-rs</name>
     <description>A simple Hello World project that uses JAX-RS</description>
 
@@ -64,6 +64,12 @@
             <version>3.0.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.9</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
