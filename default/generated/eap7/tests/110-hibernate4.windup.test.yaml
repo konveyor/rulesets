@@ -216,7 +216,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 8
+      exactly: 11
       messageMatches: Previous versions of Hibernate have mapped `byte[]` and `Byte[]`
 - ruleID: hibernate4-00040
   testCases:

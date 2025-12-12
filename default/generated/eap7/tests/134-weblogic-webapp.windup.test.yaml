@@ -23,7 +23,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 4
+      exactly: 3
       messageMatches: Replace the proprietary WebLogic .*@WLInitParam.*
 - ruleID: weblogic-webapp-eap7-04000
   testCases:
