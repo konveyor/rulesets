@@ -30,5 +30,5 @@
   ruleID: eap-to-azure-appservice-pom-001
   when:
     java.dependency:
-      lowerbound: 7.3.0.Final
+      lowerbound: 7.3.0.GA
       name: org.jboss.bom.eap-runtime-artifacts

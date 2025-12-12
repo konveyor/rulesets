@@ -472,13 +472,9 @@
     and ZAPF_DINGBATS.'
   ruleID: xml-removed-camel41-00017
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws2-pdf
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-aws2-pdf
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-pdf
 - category: mandatory
   customVariables: []
   description: The default value for sessionTimeoutMs has been updated to 45000 ms,

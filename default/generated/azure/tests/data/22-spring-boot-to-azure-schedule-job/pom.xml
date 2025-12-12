@@ -4,34 +4,14 @@
 
     <groupId>org.jboss.windup.rules.test</groupId>
     <artifactId>spring-boot-to-azure-schedule-job</artifactId>
-    <version>4.2.1_SNAPSHOT</version>
+    <version>4.2.1-SNAPSHOT</version>
     <name>Determine whether application relies on scheduled jobs.</name>
 
     <dependencies>
         <dependency>
-            <groupId>org.quartz-scheduler</groupId>
-            <artifactId>should-be-tested-one</artifactId>
-            <version>5.0.10.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>org.quartz-scheduler</groupId>
-            <artifactId>should-be-tested-two</artifactId>
-            <version>5.0.10.Final</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-quartz</artifactId>
-            <version>5.0.10.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>not-tested</groupId>
-            <artifactId>spring-boot-starter-quartz</artifactId>
-            <version>5.0.10.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>not-tested</artifactId>
-            <version>5.0.10.Final</version>
+            <version>3.4.9</version>
         </dependency>
     </dependencies>
 </project>

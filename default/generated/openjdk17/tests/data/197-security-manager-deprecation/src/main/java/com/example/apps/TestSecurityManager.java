@@ -11,7 +11,10 @@ import java.security.PolicySpi;
 import java.security.Policy.Parameters;
 import javax.security.auth.Subject;
 import javax.security.auth.SubjectDomainCombiner;
+import java.security.PrivilegedAction;
+import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
 
 public class TestSecurityManager implements Runnable
 {

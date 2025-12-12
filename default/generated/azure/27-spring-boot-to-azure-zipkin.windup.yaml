@@ -20,7 +20,7 @@
     or:
     - java.dependency:
         lowerbound: 0.0.0
-        name: org.springframework.boot.spring-cloud-starter-zipkin
+        name: org.springframework.cloud.spring-cloud-starter-zipkin
     - java.dependency:
         lowerbound: 0.0.0
         nameregex: io\.zipkin.*

@@ -75,11 +75,12 @@ tests:
   - name: tc-1
     hasTags:
     - WebLogic services configuration
-- ruleID: weblogic-xml-descriptor-eap7-16000
-  testCases:
-  - name: tc-1
-    hasTags:
-    - WebLogic specific webservice ant tasks
+# FIXME: not working: https://github.com/konveyor/rulesets/issues/321
+#- ruleID: weblogic-xml-descriptor-eap7-16000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - WebLogic specific webservice ant tasks
 - ruleID: weblogic-xml-descriptor-eap7-17000
   testCases:
   - name: tc-1

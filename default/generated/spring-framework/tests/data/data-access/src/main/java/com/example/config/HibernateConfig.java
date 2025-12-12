@@ -1,14 +1,12 @@
 package com.example.config;
 
 import org.apache.commons.dbcp2.BasicDataSource; // Or your preferred DataSource
-import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.hibernate.bytecode.javassist.FieldHandled;
 
 import javax.sql.DataSource;
 import java.util.Properties;
@@ -21,7 +19,7 @@ public class HibernateConfig {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
         sessionFactoryBean.setDataSource(dataSource()); // Set the DataSource
-        sessionFactoryBean.setPackagesToScan("com.example.entity"); // Package containing your entities
+        sessionFactoryBean.setPackagesToScan("com.example"); // Package containing your entities
 
         Properties properties = new Properties();
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.H2Dialect"); // Database dialect

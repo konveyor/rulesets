@@ -2,12 +2,12 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-@javax.annotation.security.DeclareRoles()
-@javax.annotation.security.RolesAllowed()
+@javax.annotation.security.DeclareRoles("hey")
+@javax.annotation.security.RolesAllowed("hey")
 public class SecuredServlet extends HttpServlet {
     public void init() throws ServletException {
           // Do required initialization
-          message = "Hello World";
+          String message = "Hello World";
        }
 
        public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -18,7 +18,7 @@ public class SecuredServlet extends HttpServlet {
 
           // Actual logic goes here.
           PrintWriter out = response.getWriter();
-          out.println("<h1>" + message + "</h1>");
+          out.println("<h1>" + "message" + "</h1>");
        }
 
        public void destroy() {

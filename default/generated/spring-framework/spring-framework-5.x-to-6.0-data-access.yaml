@@ -47,8 +47,6 @@
         namespaces:
           s: http://www.hibernate.org/xsd/hibernate-configuration
         xpath: "/hibernate-configuration/session-factory/property[@name='hibernate.bytecode.provider' and text()='javassist']" 
-    - java.referenced:
-        pattern: org.hibernate.bytecode.javassist*
     - builtin.filecontent:
         filePattern: .*\.java
         pattern: setProperty\(\"hibernate.bytecode.provider\", \"javassist\"\)

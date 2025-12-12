@@ -4,34 +4,14 @@
 
   <groupId>org.jboss.windup.rules.test</groupId>
   <artifactId>spring-boot-to-azure-jms-broker</artifactId>
-  <version>4.2.1_SNAPSHOT</version>
+  <version>4.2.1-SNAPSHOT</version>
   <name>Determine whether application relies on a message broker.</name>
 
   <dependencies>
     <dependency>
-      <groupId>org.apache.activemq</groupId>
-      <artifactId>should-be-tested</artifactId>
-      <version>5.0.10.Final</version>
-    </dependency>
-    <dependency>
-      <groupId>activemq</groupId>
-      <artifactId>should-not-be-tested</artifactId>
-      <version>5.0.10.Final</version>
-    </dependency>
-    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-activemq</artifactId>
-      <version>5.0.10.Final</version>
-    </dependency>
-    <dependency>
-      <groupId>not-tested</groupId>
-      <artifactId>spring-boot-starter-activemq</artifactId>
-      <version>5.0.10.Final</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>not-tested</artifactId>
-      <version>5.0.10.Final</version>
+      <version>3.4.12</version>
     </dependency>
   </dependencies>
 </project>

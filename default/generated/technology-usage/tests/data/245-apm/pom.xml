@@ -30,11 +30,6 @@
             <version>1.28.0</version>
         </dependency>
 
-        <!-- Fake -->
-        <dependency>
-            <groupId>fake</groupId>
-            <artifactId>oneagent-fake</artifactId>
-            <version>1.7.0</version>
-        </dependency>
+
     </dependencies>
 </project>
