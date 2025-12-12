@@ -16,7 +16,7 @@ tests:
     analysisParams:
       mode: "source-only"
     hasIncidents:
-      exactly: 4
+      exactly: 3
 - ruleID: spring-framework-5.x-to-6.0-data-access-00003
   testCases:
   - name: tc-1
