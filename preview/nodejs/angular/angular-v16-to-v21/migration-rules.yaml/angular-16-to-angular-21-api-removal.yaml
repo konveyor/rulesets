@@ -8,26 +8,31 @@
   when:
     nodejs.referenced:
       pattern: ComponentFactoryResolver
-  message: 'ComponentFactoryResolver has been removed from Router APIs.
+  message: 'ComponentFactoryResolver has been removed from Angular APIs.
 
 
-    Replace `ComponentFactoryResolver` with `removed`.
+    The factory pattern is no longer needed. Use ViewContainerRef.createComponent() directly with the component class.
 
 
     Before:
 
-    ```
+    ```typescript
 
-    router.createComponent(ComponentFactoryResolver);
+    constructor(private resolver: ComponentFactoryResolver, private vcr: ViewContainerRef) {
+      const factory = this.resolver.resolveComponentFactory(MyComponent);
+      this.vcr.createComponent(factory);
+    }
 
     ```
 
 
     After:
 
-    ```
+    ```typescript
 
-    router.createComponent();
+    constructor(private vcr: ViewContainerRef) {
+      this.vcr.createComponent(MyComponent);
+    }
 
     ```'
   customVariables: []

@@ -7,7 +7,7 @@
   - konveyor.io/target=angular-21
   when:
     nodejs.referenced:
-      pattern: Event
+      pattern: RouterEvent
   message: 'RouterEvent is no longer part of the Event union type, requiring explicit
     inclusion.
 
