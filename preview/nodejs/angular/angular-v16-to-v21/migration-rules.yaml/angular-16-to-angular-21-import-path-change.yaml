@@ -13,8 +13,8 @@
     of other packages.
 
 
-    Replace `import { {{ component }} }; from ApplicationConfig` with `import { {{
-    component }} } from @angular/core`.
+    Replace `import { {{ component }} } from ''some_old_package''` with `import { {{
+    component }} } from ''@angular/core''`.
 
 
     Before:
@@ -53,8 +53,8 @@
   message: 'XhrFactory should now be imported from @angular/common instead of @angular/common/http.
 
 
-    Replace `import { {{ component }} }; from XhrFactory from @angular/common/http`
-    with `import { {{ component }} } from XhrFactory from @angular/common`.
+    Replace `import { {{ component }} } from ''@angular/common/http''` with `import
+    { {{ component }} } from ''@angular/common''`.
 
 
     Before:
