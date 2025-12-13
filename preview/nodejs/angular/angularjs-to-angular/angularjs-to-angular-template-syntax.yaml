@@ -308,3 +308,43 @@
 
     ```'
   customVariables: []
+- ruleID: angularjs-to-angular-template-syntax-00090
+  description: ng-view should be replaced with router-outlet
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: ng-view
+      filePattern: \.(html|htm|jsp|component\.ts)$
+  message: 'AngularJS ng-view directive should be replaced with Angular router-outlet
+
+
+    Replace `ng-view` with `<router-outlet></router-outlet>`. The ng-view directive
+    is the main router outlet for ngRoute and must be replaced with Angular Router''s
+    router-outlet component.
+
+
+    Before:
+
+    ```
+
+    <div ng-view></div>
+
+    ```
+
+
+    After:
+
+    ```
+
+    <router-outlet></router-outlet>
+
+    ```
+
+
+    Note: This change requires migrating from ngRoute to Angular Router. Ensure your
+    routing configuration is also updated.'
+  customVariables: []

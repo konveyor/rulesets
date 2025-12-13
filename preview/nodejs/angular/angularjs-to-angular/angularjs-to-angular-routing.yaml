@@ -7,7 +7,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \$routeProvider
+      pattern: $routeProvider
       filePattern: \.(j|t)sx?$
   message: "AngularJS $routeProvider should be replaced with Angular Router configuration\n\
     \nReplace `$routeProvider` with `RouterModule.forRoot(routes)`.\n\nBefore:\n```\n\
@@ -26,7 +26,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \$route
+      pattern: $route
       filePattern: \.(j|t)sx?$
   message: 'AngularJS $route service should be replaced with Angular Router
 
@@ -60,7 +60,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \$stateProvider
+      pattern: $stateProvider
       filePattern: \.(j|t)sx?$
   message: "AngularJS UI-Router $stateProvider should be replaced with Angular Router\
     \ configuration\n\nReplace `$stateProvider` with `RouterModule.forRoot(routes)`.\n\

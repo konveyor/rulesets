@@ -8,7 +8,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \[.*function\(.*\).*\]
+      pattern: "['$scope'"
       filePattern: \.(j|t)sx?$
   message: "AngularJS array-style dependency injection should be replaced with Angular\
     \ TypeScript constructor parameter typing\n\nReplace `Array-style DI annotation`\

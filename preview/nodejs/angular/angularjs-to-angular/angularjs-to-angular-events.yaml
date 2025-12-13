@@ -7,7 +7,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \$broadcast
+      pattern: $broadcast
       filePattern: \.(j|t)sx?$
   message: 'AngularJS $broadcast should be replaced with Angular EventEmitter
 
@@ -43,7 +43,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \$emit
+      pattern: $emit
       filePattern: \.(j|t)sx?$
   message: 'AngularJS $emit should be replaced with Angular EventEmitter
 
@@ -79,7 +79,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \$on
+      pattern: $on
       filePattern: \.(j|t)sx?$
   message: "AngularJS $on event listeners should be replaced with Angular @Input properties\
     \ or services\n\nReplace `$on` with `Component @Input or service`.\n\nBefore:\n\

@@ -7,7 +7,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \$http\.get
+      pattern: $http.get
       filePattern: \.(j|t)sx?$
   message: "AngularJS $http service should be replaced with Angular HttpClient\n\n\
     Replace `$http.get` with `HttpClient.get`.\n\nBefore:\n```\n$http.get('/api/data').success(function(data)\
@@ -24,7 +24,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \$http\.post
+      pattern: $http.post
       filePattern: \.(j|t)sx?$
   message: "AngularJS $http service should be replaced with Angular HttpClient\n\n\
     Replace `$http.post` with `HttpClient.post`.\n\nBefore:\n```\n$http.post('/api/data',\
@@ -42,7 +42,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \.success\(
+      pattern: .success(
       filePattern: \.(j|t)sx?$
   message: "AngularJS $http success callback should be replaced with Observable subscribe\n\
     \nReplace `.success()` with `.subscribe()`.\n\nBefore:\n```\n$http.get('/api/data').success(function(data)\
@@ -58,11 +58,125 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \.error\(
+      pattern: .error(
       filePattern: \.(j|t)sx?$
   message: "AngularJS $http error callback should be replaced with Observable subscribe\
     \ error handler\n\nReplace `.error()` with `.subscribe() error handler`.\n\nBefore:\n\
     ```\n$http.get('/api/data').error(function(err) {\n console.error(err);\n});\n\
     ```\n\nAfter:\n```\nthis.http.get('/api/data').subscribe(\n data => {},\n err\
     \ => console.error(err)\n);\n```"
+  customVariables: []
+- ruleID: angularjs-to-angular-http-service-00040
+  description: $httpProvider.interceptors should be replaced with HttpInterceptor
+  effort: 8
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: $httpProvider.interceptors
+      filePattern: \.(j|t)sx?$
+  message: 'AngularJS HTTP interceptors should be replaced with Angular HttpInterceptor
+
+
+    The `$httpProvider.interceptors` pattern is used for request/response interception
+    (authentication, error handling, etc.). In Angular, this should be replaced with
+    the `HttpInterceptor` interface.
+
+
+    Replace `$httpProvider.interceptors.push` with Angular `HttpInterceptor`.
+
+
+    Before:
+
+    ```
+
+    module.config([''$httpProvider'', function ($httpProvider) {
+
+    $httpProvider.interceptors.push([''$q'', function ($q) {
+
+    return {
+
+    ''request'': function (config) {
+
+    config.headers.Authorization = ''Bearer '' + token;
+
+    return config;
+
+    },
+
+    ''responseError'': function (response) {
+
+    if (response.status === 401) {
+
+    // Handle unauthorized
+
+    }
+
+    return $q.reject(response);
+
+    }
+
+    };
+
+    }]);
+
+    }]);
+
+    ```
+
+
+    After:
+
+    ```
+
+    @Injectable()
+
+    export class AuthInterceptor implements HttpInterceptor {
+
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>
+    {
+
+    const authReq = req.clone({
+
+    headers: req.headers.set(''Authorization'', `Bearer ${token}`)
+
+    });
+
+
+    return next.handle(authReq).pipe(
+
+    catchError((error: HttpErrorResponse) => {
+
+    if (error.status === 401) {
+
+    // Handle unauthorized
+
+    }
+
+    return throwError(() => error);
+
+    })
+
+    );
+
+    }
+
+    }
+
+
+    // Register in providers:
+
+    providers: [
+
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+
+    ]
+
+    ```
+
+
+    Note: This is a high-effort migration as interceptors often handle critical cross-cutting
+    concerns like authentication, caching, and error handling.'
   customVariables: []

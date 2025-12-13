@@ -7,7 +7,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \$rootScope
+      pattern: $rootScope
       filePattern: \.(j|t)sx?$
   message: "AngularJS $rootScope should be replaced with Angular services\n\nReplace\
     \ `$rootScope` with `Injectable service`.\n\nBefore:\n```\n$rootScope.globalData\
