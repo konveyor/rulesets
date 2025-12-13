@@ -7,7 +7,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \$scope\.\$watch
+      pattern: $scope.$watch
       filePattern: \.(j|t)sx?$
   message: "AngularJS $watch should be replaced with Angular component lifecycle hooks\n\
     \nReplace `$scope.$watch` with `ngOnChanges`.\n\nBefore:\n```\n$scope.$watch('value',\
@@ -24,7 +24,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \$scope\.\$apply
+      pattern: $scope.$apply
       filePattern: \.(j|t)sx?$
   message: "AngularJS $apply should be replaced with Angular NgZone.run\n\nReplace\
     \ `$scope.$apply` with `NgZone.run`.\n\nBefore:\n```\n$scope.$apply(function()\
@@ -40,7 +40,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \$scope\.\$digest
+      pattern: $scope.$digest
       filePattern: \.(j|t)sx?$
   message: 'AngularJS $digest should be replaced with Angular NgZone.run
 

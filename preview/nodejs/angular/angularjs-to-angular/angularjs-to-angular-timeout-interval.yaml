@@ -7,7 +7,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \$timeout
+      pattern: \$timeout\b
       filePattern: \.(j|t)sx?$
   message: "AngularJS $timeout should be replaced with native setTimeout or RxJS timer\n\
     \nReplace `$timeout` with `setTimeout`.\n\nBefore:\n```\n$timeout(function() {\n\
@@ -23,7 +23,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \$interval
+      pattern: \$interval\b
       filePattern: \.(j|t)sx?$
   message: "AngularJS $interval should be replaced with native setInterval or RxJS\
     \ interval\n\nReplace `$interval` with `setInterval`.\n\nBefore:\n```\n$interval(function()\
