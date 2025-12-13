@@ -7,7 +7,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \{\{ctrl\.
+      pattern: "{{ctrl."
       filePattern: \.(html|htm|component\.ts)$
   message: 'AngularJS controller aliases in templates should be removed in Angular
 

@@ -317,7 +317,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: ng-view\b
+      pattern: ng-view
       filePattern: \.(html|htm|jsp|component\.ts)$
   message: 'AngularJS ng-view directive should be replaced with Angular router-outlet
 

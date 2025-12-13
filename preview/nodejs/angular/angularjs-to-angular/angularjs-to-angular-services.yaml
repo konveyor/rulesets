@@ -7,7 +7,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \.service\(
+      pattern: .service(
       filePattern: \.(j|t)sx?$
   message: "AngularJS services should be converted to Angular injectable services\n\
     \nReplace `.service()` with `@Injectable class`.\n\nBefore:\n```\nangular.module('app').service('ProductService',\
@@ -25,7 +25,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \.factory\(
+      pattern: .factory(
       filePattern: \.(j|t)sx?$
   message: "AngularJS factories should be converted to Angular injectable services\n\
     \nReplace `.factory()` with `@Injectable class`.\n\nBefore:\n```\nangular.module('app').factory('ProductService',\

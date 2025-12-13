@@ -7,7 +7,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \$scope\.
+      pattern: $scope.
       filePattern: \.(j|t)sx?$
   message: "$scope variables should be converted to class properties and methods in\
     \ Angular components\n\nReplace `$scope.` with `class property/method`.\n\nBefore:\n\

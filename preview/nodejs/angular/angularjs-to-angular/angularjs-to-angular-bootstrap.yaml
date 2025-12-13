@@ -7,7 +7,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: angular\.bootstrap
+      pattern: angular.bootstrap
       filePattern: \.(j|t)sx?$
   message: "AngularJS manual bootstrap should be replaced with Angular platformBrowserDynamic\n\
     \nReplace `angular.bootstrap` with `platformBrowserDynamic().bootstrapModule`.\n\
@@ -24,7 +24,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: angular\.element\(document\)\.ready
+      pattern: angular.element(document).ready
       filePattern: \.(j|t)sx?$
   message: "AngularJS document ready handler should be replaced with Angular bootstrap\n\
     \nReplace `angular.element(document).ready` with `platformBrowserDynamic().bootstrapModule`.\n\
@@ -41,7 +41,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: angular\.injector
+      pattern: angular.injector
       filePattern: \.(j|t)sx?$
   message: 'AngularJS manual injector for pre-bootstrap configuration should be replaced
     with Angular APP_INITIALIZER

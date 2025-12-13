@@ -7,7 +7,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: \$q\.defer
+      pattern: $q.defer
       filePattern: \.(j|t)sx?$
   message: "AngularJS $q promises should be replaced with RxJS Observables\n\nReplace\
     \ `$q.defer` with `Observable`.\n\nBefore:\n```\nfunction getData($q, $http) {\n\
@@ -24,7 +24,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: deferred\.promise
+      pattern: deferred.promise
       filePattern: \.(j|t)sx?$
   message: 'AngularJS promise objects should be replaced with RxJS Observables
 
@@ -58,7 +58,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: deferred\.resolve
+      pattern: deferred.resolve
       filePattern: \.(j|t)sx?$
   message: 'AngularJS promise resolution should be replaced with RxJS Observable next
     and complete
@@ -95,7 +95,7 @@
   - konveyor.io/target=angular
   when:
     builtin.filecontent:
-      pattern: deferred\.reject
+      pattern: deferred.reject
       filePattern: \.(j|t)sx?$
   message: 'AngularJS promise rejection should be replaced with RxJS Observable error
 
