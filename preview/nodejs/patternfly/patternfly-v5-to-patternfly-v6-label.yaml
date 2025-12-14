@@ -12,22 +12,32 @@
     - builtin.filecontent:
         pattern: <Label[^>]*\bcolor=['"]gold['"]
         filePattern: \.(j|t)sx?$
-  message: |-
-    The color prop on Banner and Label has been updated to replace "gold"
+  message: 'The color prop on Banner and Label has been updated to replace "gold"
+
     with "yellow".
-    
+
+
     Replace `Label color="gold"` with `Label color="yellow"`.
-    
+
+
     Before:
+
     ```
+
     <Label color="gold" />
+
     ```
-    
+
+
     After:
+
     ```
+
     <Label color="yellow" />
-    ```
+
+    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10661
     title: patternfly-v6 Documentation
   customVariables: []
+  migration_complexity: low

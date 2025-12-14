@@ -12,21 +12,30 @@
     - builtin.filecontent:
         pattern: <WizardStep[^>]*\bbody={null}\b
         filePattern: \.(j|t)sx?$
-  message: |-
-    The body prop on WizardStep no longer accepts a value of null
-    
+  message: 'The body prop on WizardStep no longer accepts a value of null
+
+
     Replace `WizardStep body={null}` with `WizardStep`.
-    
+
+
     Before:
+
     ```
+
     <WizardStep body={null} />
+
     ```
-    
+
+
     After:
+
     ```
+
     <WizardStep />
-    ```
+
+    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10637
     title: patternfly-v6 Documentation
   customVariables: []
+  migration_complexity: low

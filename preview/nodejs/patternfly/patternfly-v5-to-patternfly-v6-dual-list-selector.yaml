@@ -1,6 +1,5 @@
 - ruleID: patternfly-v5-to-patternfly-v6-dual-list-selector-00000
-  description: DualListSelector import should be replaced with DualListSelector import
-    from deprecated
+  description: DualListSelector import should be replaced with DualListSelector import from deprecated
   effort: 3
   category: potential
   labels:
@@ -10,32 +9,43 @@
     builtin.filecontent:
       pattern: import[\s\S]*DualListSelector[\s\S]*from[\s\S]*['"]@patternfly/react-core['"]
       filePattern: \.(j|t)sx?$
-  message: |-
-    Our previous implementation of DualListSelector has been deprecated. Codemods
+  message: 'Our previous implementation of DualListSelector has been deprecated. Codemods
+
     will update import paths to our deprecated directory, but we recommend using our
+
     newly promoted implementation.
 
 
+
     Replace `import { {{ component }} }; from DualListSelector import` with `import
+
     { {{ component }} } from DualListSelector import from deprecated`.
+
 
 
     Before:
 
+
     ```
+
 
     import { {{ component }} } from "@patternfly/react-core";
 
+
     ```
+
 
 
     After:
 
-    ```
-
-    import { {{ component }} } from '@patternfly/react-core/deprecated';
 
     ```
+
+
+    import { {{ component }} } from ''@patternfly/react-core/deprecated'';
+
+
+    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10359
     title: patternfly-v6 Documentation
@@ -44,9 +54,9 @@
     name: component
     nameOfCaptureGroup: imports
     defaultValue: Component
+  migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-dual-list-selector-00010
-  description: DualListSelector import from next should be replaced with DualListSelector
-    import
+  description: DualListSelector import from next should be replaced with DualListSelector import
   effort: 3
   category: potential
   labels:
@@ -56,22 +66,32 @@
     builtin.filecontent:
       pattern: import[\s\S]*DualListSelector[\s\S]*from[\s\S]*['"]@patternfly/react-core/next['"]
       filePattern: \.(j|t)sx?$
-  message: |-
-    Our Next implementation of DualListSelector has been promoted as our recommended
+  message: 'Our Next implementation of DualListSelector has been promoted as our recommended
+
     implementation. Codemods will update import paths.
-    
+
+
     Replace `import { {{ component }} }; from DualListSelector import from next` with
+
     `import { {{ component }} } from DualListSelector import`.
-    
+
+
     Before:
+
     ```
+
     import { {{ component }} } from "@patternfly/react-core/next";
+
     ```
-    
+
+
     After:
+
     ```
-    import { {{ component }} } from '@patternfly/react-core';
-    ```
+
+    import { {{ component }} } from ''@patternfly/react-core'';
+
+    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10359
     title: patternfly-v6 Documentation
@@ -80,3 +100,4 @@
     name: component
     nameOfCaptureGroup: imports
     defaultValue: Component
+  migration_complexity: low
