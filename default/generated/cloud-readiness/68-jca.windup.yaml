@@ -21,4 +21,4 @@
   ruleID: jca-00000
   when:
     builtin.file:
-      pattern: ra\.xml
+      pattern: ra\.xmllll

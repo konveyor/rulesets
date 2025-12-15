@@ -20,6 +20,104 @@ jobs:
           java-distribution: temurin
           maven-version: 3.9.0
 
+      - name: Fetch main branch for comparison
+        run: |
+          git fetch origin main:main || true
+
+      - name: Find changed rule files and their tests
+        id: find-tests
+        run: |
+          # For push to main, run all tests (original behavior)
+          if [ "${{ github.event_name }}" == "push" ] && [ "${{ github.ref }}" == "refs/heads/main" ]; then
+            echo "Running all tests for push to main"
+            echo "run_all_tests=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Always compare against main
+          BASE_REF="origin/main"
+
+          echo "run_all_tests=false" >> $GITHUB_OUTPUT
+
+          # Get changed rule files from entire repository
+          # Exclude test files (.test.yaml) and ruleset.yaml from the initial grep
+          changed_files=$(git diff --name-only ${BASE_REF}...HEAD | grep -E "\.(yaml|windup\.yaml|mta\.yaml)$" | grep -v "\.test\.yaml$" | grep -v "ruleset\.yaml$" || true)
+
+          # Also get changed test files separately (if someone changes a test file directly)
+          changed_test_files=$(git diff --name-only ${BASE_REF}...HEAD | grep -E "\.test\.yaml$" || true)
+
+          if [ -z "$changed_files" ] && [ -z "$changed_test_files" ]; then
+            echo "No rule or test files changed. Skipping tests."
+            echo "has_tests=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Collect test files to run
+          test_files=()
+
+          # First, add directly changed test files
+          if [ -n "$changed_test_files" ]; then
+            while IFS= read -r test_file; do
+              # Skip empty lines
+              [ -z "$test_file" ] && continue
+
+              # Check if test file exists (it should, since it's in the diff)
+              if [ -f "$test_file" ]; then
+                test_files+=("$test_file")
+                echo "Found changed test file: $test_file"
+              fi
+            done <<< "$changed_test_files"
+          fi
+
+          # Second, find test files for changed rule files
+          if [ -n "$changed_files" ]; then
+            while IFS= read -r rule_file; do
+              # Skip empty lines
+              [ -z "$rule_file" ] && continue
+
+              # Get directory of the rule file
+              rule_dir=$(dirname "$rule_file")
+              rule_name=$(basename "$rule_file")
+
+              # Construct test file path: <rule_dir>/tests/<rule_name>.test.yaml
+              test_file="${rule_dir}/tests/${rule_name}.test.yaml"
+
+              # Check if test file exists and not already in the list
+              if [ -f "$test_file" ]; then
+                # Check if already added (avoid duplicates)
+                already_added=false
+                for existing_test in "${test_files[@]}"; do
+                  if [ "$existing_test" == "$test_file" ]; then
+                    already_added=true
+                    break
+                  fi
+                done
+
+                if [ "$already_added" == "false" ]; then
+                  test_files+=("$test_file")
+                  echo "Found test for changed rule $rule_file: $test_file"
+                fi
+              else
+                echo "No test file found for $rule_file (expected at $test_file)"
+              fi
+            done <<< "$changed_files"
+          fi
+
+          # If no test files found, exit early
+          if [ ${#test_files[@]} -eq 0 ]; then
+            echo "No test files found for changed rules. Skipping tests."
+            echo "has_tests=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Create a space-separated list of test files
+          test_files_list=$(IFS=' '; echo "${test_files[*]}")
+          echo "Test files to run: $test_files_list"
+          echo "has_tests=true" >> $GITHUB_OUTPUT
+          echo "test_files<<EOF" >> $GITHUB_OUTPUT
+          echo "$test_files_list" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
       - name: Run rule tests
         id: kantra-test
         run: |
@@ -75,19 +173,34 @@ jobs:
           podman cp ${ID}:/usr/local/etc/maven.default.index .
           podman cp ${ID}:/usr/bin/fernflower.jar .
           podman cp ${ID}:/jdtls .
-          mkdir static-report
+          mkdir rulesets static-report
           podman rm kantra-download
-
-          JVM_MAX_MEM=3072m RUN_LOCAL=1 ./kantra test ./rulesets/ --log-level 50 | tee output.log || true
-
-          tail -n5 output.log > message.md
-          msg=$(grep -E '.*Rules Summary:' message.md -A1)
-          tests_pass_rate=$(grep -E '.*Rules Summary:' message.md | sed -E 's| *Rules Summary: *(.*)|\1|' | sed -E 's|.*?:||')
-          tcs_pass_rate=$(grep -E '.*Test Cases Summary:' message.md | sed -E 's| *Test Cases Summary: *(.*)|\1|' | sed -E 's|.*?:||')
-          
-          tcs_percent=$(echo "${tcs_pass_rate}" | grep -oE '\([0-9.]+%\)' | tr -d '()%')
-          
           echo 'msg<<EOF' >> $GITHUB_OUTPUT
+
+          # Determine what to test
+          if [ "${{ steps.find-tests.outputs.run_all_tests }}" == "true" ]; then
+            # Run all tests (original behavior for push to main)
+            echo "Running all tests"
+            JVM_MAX_MEM=3072m RUN_LOCAL=1 ./kantra test ./default/generated --log-level 50 | tee output.log || true
+          elif [ "${{ steps.find-tests.outputs.has_tests }}" == "true" ]; then
+            # Run tests for changed rules only
+            test_files="${{ steps.find-tests.outputs.test_files }}"
+            echo "Running tests for changed rules: $test_files"
+            JVM_MAX_MEM=3072m RUN_LOCAL=1 ./kantra test $test_files --log-level 50 | tee output.log || true
+          else
+            # No tests to run
+            echo "No tests to run"
+            echo "Rules Summary: 0/0" > message.md
+            echo "Test Cases Summary: 0/0" >> message.md
+          fi
+
+          tail -n5 output.log > message.md 2>/dev/null || true
+          msg=$(grep -E '.*Rules Summary:' message.md -A1 || echo "Rules Summary: N/A")
+          tests_pass_rate=$(grep -E '.*Rules Summary:' message.md | sed -E 's| *Rules Summary: *(.*)|\1|' | sed -E 's|.*?:||' || echo "0/0")
+          tcs_pass_rate=$(grep -E '.*Test Cases Summary:' message.md | sed -E 's| *Test Cases Summary: *(.*)|\1|' | sed -E 's|.*?:||' || echo "0/0")
+          some_test_failed=$(echo ${tests_pass_rate} | awk -F' ' '{print$1}' | awk -F'/' '{print ($1 == $2) ? 0 : 1}')
+          some_tcs_failed=$(echo ${tcs_pass_rate} | awk -F' ' '{print$1}' | awk -F'/' '{print ($1 == $2) ? 0 : 1}')
+
           echo ${msg} >> $GITHUB_OUTPUT
           echo 'EOF' >> $GITHUB_OUTPUT
 
@@ -99,12 +212,9 @@ jobs:
           echo ${tests_pass_rate} >> $GITHUB_OUTPUT
           echo 'EOF' >> $GITHUB_OUTPUT
 
-          # Fail only if test case pass rate is below 99%
-          if (( $(echo "${tcs_percent:-0} < 99" | bc -l) )); then
-            echo "Test case pass rate ${tcs_percent}% is below 99% threshold"
+          if [[ ${some_test_failed} -eq 1 ]] || [[ ${some_tcs_failed} -eq 1 ]]; then
             exit 1
           else
-            echo "Test case pass rate ${tcs_percent}% meets 99% threshold"
             exit 0
           fi
 
