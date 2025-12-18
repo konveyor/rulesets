@@ -16,21 +16,27 @@ jobs:
       - name: Install Java and Maven
         uses: s4u/setup-maven-action@v1.18.0
         with:
-          java-version: 17
+          java-version: 21
           java-distribution: temurin
           maven-version: 3.9.0
 
       - name: Run rule tests
         id: kantra-test
         run: |
-          mkdir -p rulesets static-report ~/.config/.kantra ~/.config/.kantra/rulesets ~/.config/.kantra/static-report
+          mkdir -p ~/.config/.kantra
+          mv ./default/generated ~/.config/.kantra/rulesets
+          cd ~/.config/.kantra
           ID=$(podman create --name kantra-download quay.io/konveyor/kantra:latest)
           podman cp ${ID}:/usr/local/etc/maven.default.index ~/.config/.kantra
           podman cp ${ID}:/usr/bin/fernflower.jar ~/.config/.kantra
           podman cp ${ID}:/jdtls ~/.config/.kantra
           podman cp ${ID}:/usr/local/bin/kantra .
+          podman cp ${ID}:/usr/local/etc/maven.default.index .
+          podman cp ${ID}:/usr/bin/fernflower.jar .
+          podman cp ${ID}:/jdtls .
+          mkdir static-report
           podman rm kantra-download
-          RUN_LOCAL=1 ./kantra test ./default/generated --log-level 50 | tee output.log || true
+          RUN_LOCAL=1 ./kantra test ./rulesets --log-level 50 | tee output.log || true
           tail -n5 output.log > message.md
           msg=$(grep -E '.*Rules Summary:' message.md -A1)
           tests_pass_rate=$(grep -E '.*Rules Summary:' message.md | sed -E 's| *Rules Summary: *(.*)|\1|' | sed -E 's|.*?:||')
