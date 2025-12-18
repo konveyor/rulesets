@@ -1,0 +1,12 @@
+rulesPath: ../patternfly-v5-to-patternfly-v6-import-paths.yaml
+providers:
+- name: builtin
+  dataPath: ./data/import-paths
+- name: nodejs
+  dataPath: ./data/import-paths
+tests:
+- ruleID: patternfly-v5-to-patternfly-v6-import-paths-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
