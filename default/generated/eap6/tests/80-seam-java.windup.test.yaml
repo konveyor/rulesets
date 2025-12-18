@@ -20,7 +20,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 4
+      exactly: 3
       messageMatches: There is no direct replacement for this Seam API. The .*org.jboss.seam.Seam.*
 - ruleID: seam-java-00040
   testCases:

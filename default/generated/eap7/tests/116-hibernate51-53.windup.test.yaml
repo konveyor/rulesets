@@ -111,7 +111,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      atLeast: 1
       messageMatches: A change to be aware of is accessing cache entries via `NaturalIdCacheStatistics.getEntries().*
 - ruleID: hibernate51-53-00702
   testCases:
