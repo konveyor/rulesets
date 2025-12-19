@@ -9,15 +9,19 @@
     builtin.filecontent:
       pattern: import[\s\S]*from[\s\S]*['"]@patternfly/react-core/v5['"]
       filePattern: \.(j|t)sx?$
-  message: |-
-    Import paths need to be updated from v5 to v6
-    
+  message: 'Import paths need to be updated from v5 to v6
+
+
     Replace `import { {{ component }} }; from patternfly-v5 imports` with `import
+
     { {{ component }} } from patternfly-v6 imports`.
-    
+
+
     Before:
+
     ```
-    import { {{ component }} } from "@patternfly/react-core/v5'
+
+    import { {{ component }} } from "@patternfly/react-core/v5"
 
     ```
 
@@ -37,3 +41,4 @@
     name: component
     nameOfCaptureGroup: imports
     defaultValue: Component
+  migration_complexity: low

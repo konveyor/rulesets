@@ -9,32 +9,43 @@
     builtin.filecontent:
       pattern: import[\s\S]*DragDrop[\s\S]*from[\s\S]*['"]@patternfly/react-core['"]
       filePattern: \.(j|t)sx?$
-  message: |-
-    DragDrop has been deprecated. Running the fix flag will update your imports
+  message: 'DragDrop has been deprecated. Running the fix flag will update your imports
+
     to our deprecated package, but we suggest using our new drag and drop implementation
-    (DragDropSort component), that lives in '@patternfly/react-drag-drop' package.
+
+    (DragDropSort component), that lives in ''@patternfly/react-drag-drop'' package.
+
 
 
     Replace `import { {{ component }} }; from DragDrop import` with `import { {{ component
+
     }} } from DragDrop import from deprecated`.
+
 
 
     Before:
 
-    ```
-
-    import { {{ component }} } from '@patternfly/react-core';
 
     ```
+
+
+    import { {{ component }} } from ''@patternfly/react-core'';
+
+
+    ```
+
 
 
     After:
 
-    ```
-
-    import { {{ component }} } from '@patternfly/react-core/deprecated';
 
     ```
+
+
+    import { {{ component }} } from ''@patternfly/react-core/deprecated'';
+
+
+    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10181
     title: patternfly-v6 Documentation
@@ -43,6 +54,7 @@
     name: component
     nameOfCaptureGroup: imports
     defaultValue: Component
+  migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-drag-drop-00010
   description: Draggable import should be replaced with Draggable import from deprecated
   effort: 3
@@ -54,23 +66,34 @@
     builtin.filecontent:
       pattern: import[\s\S]*Draggable[\s\S]*from[\s\S]*['"]@patternfly/react-core['"]
       filePattern: \.(j|t)sx?$
-  message: |-
-    DragDrop has been deprecated. Running the fix flag will update your imports
+  message: 'DragDrop has been deprecated. Running the fix flag will update your imports
+
     to our deprecated package, but we suggest using our new drag and drop implementation
-    (DragDropSort component), that lives in '@patternfly/react-drag-drop' package.
-    
+
+    (DragDropSort component), that lives in ''@patternfly/react-drag-drop'' package.
+
+
     Replace `import { {{ component }} }; from Draggable import` with `import { {{
+
     component }} } from Draggable import from deprecated`.
-    
+
+
     Before:
+
     ```
-    import { {{ component }} } from '@patternfly/react-core';
+
+    import { {{ component }} } from ''@patternfly/react-core'';
+
     ```
-    
+
+
     After:
+
     ```
-    import { {{ component }} } from '@patternfly/react-core/deprecated';
-    ```
+
+    import { {{ component }} } from ''@patternfly/react-core/deprecated'';
+
+    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10181
     title: patternfly-v6 Documentation
@@ -79,6 +102,7 @@
     name: component
     nameOfCaptureGroup: imports
     defaultValue: Component
+  migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-drag-drop-00020
   description: Droppable import should be replaced with Droppable import from deprecated
   effort: 3
@@ -90,23 +114,34 @@
     builtin.filecontent:
       pattern: import[\s\S]*Droppable[\s\S]*from[\s\S]*['"]@patternfly/react-core['"]
       filePattern: \.(j|t)sx?$
-  message: |-
-    DragDrop has been deprecated. Running the fix flag will update your imports
+  message: 'DragDrop has been deprecated. Running the fix flag will update your imports
+
     to our deprecated package, but we suggest using our new drag and drop implementation
-    (DragDropSort component), that lives in '@patternfly/react-drag-drop' package.
-    
+
+    (DragDropSort component), that lives in ''@patternfly/react-drag-drop'' package.
+
+
     Replace `import { {{ component }} }; from Droppable import` with `import { {{
+
     component }} } from Droppable import from deprecated`.
-    
+
+
     Before:
+
     ```
-    import { {{ component }} } from '@patternfly/react-core';
+
+    import { {{ component }} } from ''@patternfly/react-core'';
+
     ```
-    
+
+
     After:
+
     ```
-    import { {{ component }} } from '@patternfly/react-core/deprecated';
-    ```
+
+    import { {{ component }} } from ''@patternfly/react-core/deprecated'';
+
+    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10181
     title: patternfly-v6 Documentation
@@ -115,3 +150,4 @@
     name: component
     nameOfCaptureGroup: imports
     defaultValue: Component
+  migration_complexity: low

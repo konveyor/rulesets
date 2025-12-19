@@ -1,0 +1,20 @@
+rulesPath: ../patternfly-v5-to-patternfly-v6-renamed-interfaces.yaml
+providers:
+- name: nodejs
+  dataPath: ./data/renamed-interfaces
+tests:
+- ruleID: patternfly-v5-to-patternfly-v6-renamed-interfaces-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: patternfly-v5-to-patternfly-v6-renamed-interfaces-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: patternfly-v5-to-patternfly-v6-renamed-interfaces-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

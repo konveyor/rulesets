@@ -1,0 +1,17 @@
+rulesPath: ../patternfly-v5-to-patternfly-v6-cleanup.yaml
+providers:
+- name: builtin
+  dataPath: ./data/cleanup
+- name: nodejs
+  dataPath: ./data/cleanup
+tests:
+- ruleID: patternfly-v5-to-patternfly-v6-cleanup-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: patternfly-v5-to-patternfly-v6-cleanup-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

@@ -8,34 +8,44 @@
   when:
     nodejs.referenced:
       pattern: NotAuthorized
-  message: |-
-    In react-component-groups, the NotAuthorized component has been renamed
+  message: 'In react-component-groups, the NotAuthorized component has been renamed
+
     to UnauthorizedAccess
+
 
 
     Replace `NotAuthorized` with `UnauthorizedAccess`.
 
 
+
     Before:
 
+
     ```
+
 
     <NotAuthorized />
 
+
     ```
+
 
 
     After:
 
+
     ```
+
 
     <UnauthorizedAccess />
 
-    ```
+
+    ```'
   links:
   - url: https://github.com/patternfly/react-component-groups/pull/313
     title: patternfly-v6 Documentation
   customVariables: []
+  migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-unauthorized-access-00010
   description: Imports of NotAuthorized should reference UnauthorizedAccess in '@patternfly/react-component-groups'
   effort: 3
@@ -47,21 +57,31 @@
     builtin.filecontent:
       pattern: import[\s\S]*NotAuthorized[\s\S]*from[\s\S]*['"]@patternfly/react-component-groups['"]
       filePattern: \.(j|t)sx?$
-  message: |-
-    In react-component-groups, the NotAuthorized component has been renamed
+  message: 'In react-component-groups, the NotAuthorized component has been renamed
+
     to UnauthorizedAccess
 
-    Replace `import { NotAuthorized } from "@patternfly/react-component-groups"` with `import { UnauthorizedAccess } from "@patternfly/react-component-groups"`.
+
+    Replace `import { NotAuthorized } from "@patternfly/react-component-groups"` with `import { UnauthorizedAccess } from
+    "@patternfly/react-component-groups"`.
+
 
     Before:
-    ```
-    import { NotAuthorized } from "@patternfly/react-component-groups";
+
     ```
 
+    import { NotAuthorized } from "@patternfly/react-component-groups";
+
+    ```
+
+
     After:
+
     ```
+
     import { UnauthorizedAccess } from "@patternfly/react-component-groups";
-    ```
+
+    ```'
   links:
   - url: https://github.com/patternfly/react-component-groups/pull/313
     title: patternfly-v6 Documentation
@@ -70,3 +90,4 @@
     name: component
     nameOfCaptureGroup: imports
     defaultValue: Component
+  migration_complexity: low

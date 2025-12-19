@@ -12,27 +12,35 @@
     - builtin.filecontent:
         pattern: <Card[^>]*\bisSelectableRaised\b
         filePattern: \.(j|t)sx?$
-  message: |-
-    Props related to raised or clickable cards have been removed.
+  message: 'Props related to raised or clickable cards have been removed.
+
 
     Replace `Card isSelectableRaised` with `Card`.
 
+
     Before:
-    ```
-    <Card isSelectableRaised />
+
     ```
 
+    <Card isSelectableRaised />
+
+    ```
+
+
     After:
+
     ```
+
     <Card />
-    ```
+
+    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10056
     title: patternfly-v6 Documentation
   customVariables: []
+  migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-card-00010
-  description: CardHeader selectableActions.name should be replaced with CardHeader
-    selectableActions
+  description: CardHeader selectableActions.name should be replaced with CardHeader selectableActions
   effort: 5
   category: potential
   labels:
@@ -45,21 +53,31 @@
     - builtin.filecontent:
         pattern: <CardHeader[^>]*\bselectableActions\b
         filePattern: \.(j|t)sx?$
-  message: |-
-    The markup for clickable-only cards has been updated. Additionally, the selectableActions.selectableActionId and selectableActions.name props are no longer necessary to pass to CardHeader for clickable-only cards.
+  message: 'The markup for clickable-only cards has been updated. Additionally, the selectableActions.selectableActionId and
+    selectableActions.name props are no longer necessary to pass to CardHeader for clickable-only cards.
+
 
     Replace `CardHeader selectableActions.name` with `CardHeader selectableActions`.
 
+
     Before:
-    ```
-    <CardHeader selectableActions={{ to: "#", name: "Test", selectableActionId: () => {} }} />
+
     ```
 
+    <CardHeader selectableActions={{ to: "#", name: "Test", selectableActionId: () => {} }} />
+
+    ```
+
+
     After:
+
     ```
+
     <CardHeader selectableActions={{to: "#"}} />
-    ```
+
+    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10859
     title: patternfly-v6 Documentation
   customVariables: []
+  migration_complexity: medium

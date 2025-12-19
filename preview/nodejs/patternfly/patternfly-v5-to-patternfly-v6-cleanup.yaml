@@ -9,27 +9,36 @@
     builtin.filecontent:
       pattern: data-codemods
       filePattern: \.(j|t)sx?$
-  message: |-
-    Codemods will remove data-codemods attributes and comments, which were introduced by our codemods in order to work correctly.
+  message: 'Codemods will remove data-codemods attributes and comments, which were introduced by our codemods in order to
+    work correctly.
+
 
     Replace `data-codemods attribute` with `remove data-codemods`.
 
+
     Before:
-    ```
-    <Component data-codemods="true" />
+
     ```
 
+    <Component data-codemods="true" />
+
+    ```
+
+
     After:
+
     ```
+
     <Component />
-    ```
+
+    ```'
   links:
   - url: https://www.patternfly.org/get-started/upgrade/
     title: PatternFly v6 Upgrade Guide
   customVariables: []
+  migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-cleanup-00010
-  description: data-codemods comments should be replaced with remove data-codemods
-    comments
+  description: data-codemods comments should be replaced with remove data-codemods comments
   effort: 1
   category: mandatory
   labels:
@@ -39,20 +48,29 @@
     builtin.filecontent:
       pattern: /\* data-codemods \*/$
       filePattern: \.(j|t)sx?$
-  message: |-
-    Codemods will remove data-codemods comments, which were introduced by our codemods in order to work correctly.
+  message: 'Codemods will remove data-codemods comments, which were introduced by our codemods in order to work correctly.
 
-    Replace `import { {{ component }} }; from data-codemods comments` with `import { {{ component }} } from remove data-codemods comments`.
+
+    Replace `import { {{ component }} }; from data-codemods comments` with `import { {{ component }} } from remove data-codemods
+    comments`.
+
 
     Before:
-    ```
-    import { Component /* data-codemods */ } from "@patternfly/react-core";
+
     ```
 
+    import { Component /* data-codemods */ } from "@patternfly/react-core";
+
+    ```
+
+
     After:
+
     ```
+
     import { {{ component }} } from "@patternfly/react-core";
-    ```
+
+    ```'
   links:
   - url: https://www.patternfly.org/get-started/upgrade/
     title: PatternFly v6 Upgrade Guide
@@ -61,3 +79,4 @@
     name: component
     nameOfCaptureGroup: imports
     defaultValue: Component
+  migration_complexity: low

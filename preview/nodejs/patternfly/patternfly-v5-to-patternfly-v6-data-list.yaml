@@ -12,22 +12,32 @@
     - builtin.filecontent:
         pattern: <DataListAction[^>]*\bisPlainButtonAction\b
         filePattern: \.(j|t)sx?$
-  message: |-
-    The isPlainButtonAction prop has been removed from DataListAction as a
+  message: 'The isPlainButtonAction prop has been removed from DataListAction as a
+
     wrapper is no longer needed.
-    
+
+
     Replace `DataListAction isPlainButtonAction` with `DataListAction`.
-    
+
+
     Before:
+
     ```
+
     <DataListAction isPlainButtonAction/>
+
     ```
-    
+
+
     After:
+
     ```
+
     <DataListAction />
-    ```
+
+    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10939
     title: patternfly-v6 Documentation
   customVariables: []
+  migration_complexity: low

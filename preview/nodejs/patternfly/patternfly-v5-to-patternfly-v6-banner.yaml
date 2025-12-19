@@ -12,21 +12,31 @@
     - builtin.filecontent:
         pattern: <Banner[^>]*\bvariant=['"]default['"]
         filePattern: \.(j|t)sx?$
-  message: |-
-    The variant property has been removed from Banner. We recommend using our new color or status properties, depending on the original intent of the variant property.
+  message: 'The variant property has been removed from Banner. We recommend using our new color or status properties, depending
+    on the original intent of the variant property.
+
 
     Replace `Banner variant="default"` with `Banner`.
 
+
     Before:
-    ```
-    <Banner variant="default" />
+
     ```
 
+    <Banner variant="default" />
+
+    ```
+
+
     After:
+
     ```
+
     <Banner />
-    ```
+
+    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/9891
     title: patternfly-v6 Documentation
   customVariables: []
+  migration_complexity: low
