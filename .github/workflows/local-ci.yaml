@@ -23,6 +23,43 @@ jobs:
       - name: Run rule tests
         id: kantra-test
         run: |
+          #### Block_Start ####
+          # This block cleans up old java processes to avoid leaking memory, this will be removed when we fix the memory leak in the java provider.
+          # Function to cleanup old processes matching a pattern, keeping only the newest
+          # Uses pgrep -f for pattern matching (matches against full command line)
+          # Example patterns: "java", "jdtls", "org.eclipse"
+          cleanup_old_processes() {
+            local pattern="$1"
+            local interval="${2:-30}"
+            
+            while true; do
+              # Get PIDs of processes matching the pattern (pgrep -f matches full command line)
+              pids=$(pgrep -f "$pattern" 2>/dev/null | grep -v $$ || true)
+              if [[ -n "$pids" ]]; then
+                # Debug: show matching processes with details
+                echo "[cleanup] Matching '$pattern' processes:"
+                echo "$pids" | xargs -I{} ps -p {} -o pid,etimes,rss,comm --no-headers 2>/dev/null || true
+                
+                # Sort by elapsed time descending (oldest first has largest elapsed time)
+                sorted_pids=$(echo "$pids" | xargs -I{} ps -p {} -o pid=,etimes= 2>/dev/null | sort -k2 -rn | awk '{print $1}')
+                count=$(echo "$sorted_pids" | grep -c . 2>/dev/null || echo 0)
+                
+                if [[ $count -gt 1 ]]; then
+                  # Kill all but the last one (newest has smallest elapsed time)
+                  to_kill=$(echo "$sorted_pids" | head -n -1)
+                  echo "[cleanup] Found $count processes matching '$pattern', killing $((count - 1)) oldest: $(echo $to_kill | tr '\n' ' ')"
+                  echo "$to_kill" | xargs -r kill -9 2>/dev/null || true
+                fi
+              fi
+              sleep "$interval"
+            done
+          }
+
+          # Start background cleanup for JDT Language Server processes started by the Java provider
+          cleanup_old_processes "org.eclipse.jdt.ls" 30 &
+          CLEANUP_PID=$!
+          #### Block_End ####
+          
           mkdir -p ~/.config/.kantra
           mv ./default/generated ~/.config/.kantra/rulesets
           cd ~/.config/.kantra
