@@ -8,15 +8,32 @@
   when:
     nodejs.referenced:
       pattern: PageNavigation
-  message: 'The PageNavigation component has been removed from PatternFly.\n\nReplace\
+  message: 'The PageNavigation component has been removed from PatternFly.
 
 
-    \ `PageNavigation component` with `Remove PageNavigation component`.\n\nBefore:\n\
-
-    ```\n<PageNavigation>\n  <div>Some internal content</div>\n</PageNavigation>\n\
+    Replace `PageNavigation component` with its content.
 
 
-    ```\n\nAfter:\n```\n<div>Some internal content</div>\n```'
+    Before:
+
+    ```
+
+    <PageNavigation>
+
+      <div>Some internal content</div>
+
+    </PageNavigation>
+
+    ```
+
+
+    After:
+
+    ```
+
+    <div>Some internal content</div>
+
+    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10650
     title: patternfly-v6 Documentation

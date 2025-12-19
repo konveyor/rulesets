@@ -12,7 +12,7 @@
     - builtin.filecontent:
         pattern: <UnavailableContent[^>]*\bunavailableBodyPreStatusLinkText\b
         filePattern: \.(j|t)sx?$
-  message: 'UnavailableContent"s props unavailableBodyPreStatusLinkText and unavailableBodyPostStatusLinkText
+  message: 'UnavailableContent''s props unavailableBodyPreStatusLinkText and unavailableBodyPostStatusLinkText
 
     have been replaced with one bodyText prop
 

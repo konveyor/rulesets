@@ -1,0 +1,14 @@
+{
+  "name": "patternfly-v5-to-v6-migration-test",
+  "version": "1.0.0",
+  "description": "Test application for PatternFly v5 to v6 migration",
+  "main": "index.js",
+  "dependencies": {
+    "@patternfly/patternfly": "^5.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}

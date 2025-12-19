@@ -42,7 +42,7 @@
     ```
 
 
-    import { {{ component }} } from ''@patternfly/react-core/deprecated'';
+    import { {{ component }} } from "@patternfly/react-core/deprecated";
 
 
     ```'
@@ -89,7 +89,7 @@
 
     ```
 
-    import { {{ component }} } from ''@patternfly/react-core'';
+    import { {{ component }} } from "@patternfly/react-core";
 
     ```'
   links:

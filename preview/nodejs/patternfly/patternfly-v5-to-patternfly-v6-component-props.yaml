@@ -12,9 +12,32 @@
     - builtin.filecontent:
         pattern: <MenuToggle[^>]*>[\s\S]*?<[^>]*Icon
         filePattern: \.(j|t)sx?$
-  message: "Icons should be passed to the icon prop instead of as children for proper styling.\n\nReplace `MenuToggle with\
-    \ icon as children` with `MenuToggle with icon prop`.\n\nBefore:\n```\n<MenuToggle variant='plain'>\n  <EllipsisVIcon\
-    \ />\n</MenuToggle>\n```\n\nAfter:\n```\n<MenuToggle icon={EllipsisVIcon} variant='plain' />\n```"
+  message: 'Icons should be passed to the icon prop instead of as children for proper styling.
+
+
+    Replace `MenuToggle with icon as children` with `MenuToggle with icon prop`.
+
+
+    Before:
+
+    ```
+
+    <MenuToggle variant=''plain''>
+
+      <EllipsisVIcon />
+
+    </MenuToggle>
+
+    ```
+
+
+    After:
+
+    ```
+
+    <MenuToggle icon={EllipsisVIcon} variant=''plain'' />
+
+    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10097
     title: patternfly-v6 Documentation

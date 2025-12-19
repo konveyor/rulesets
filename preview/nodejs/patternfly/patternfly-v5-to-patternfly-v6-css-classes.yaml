@@ -8,7 +8,7 @@
   when:
     builtin.filecontent:
       pattern: pf-v5-
-      filePattern: \.(css|scss|j|t)sx?$
+      filePattern: \.(css|scss|(j|t)sx?)$
   message: 'CSS class prefixes have been updated from pf-v5- to pf-v6-
 
 

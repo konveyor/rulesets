@@ -21,23 +21,18 @@
 
     ```
 
-    import { {{ component }} } from "@patternfly/react-core/v5''
-
+    import { {{ component }} } from "@patternfly/react-core/v5"
 
     ```
-
 
 
     After:
 
-
     ```
-
 
     import { {{ component }} } from "@patternfly/react-core"
 
-
-    ```'''
+    ```'
   links:
   - url: https://www.patternfly.org/get-started/upgrade/
     title: PatternFly v6 Upgrade Guide

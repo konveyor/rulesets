@@ -8,7 +8,7 @@
   when:
     builtin.filecontent:
       pattern: 576px
-      filePattern: \.(css|scss|j|t)sx?$
+      filePattern: \.(css|scss|(j|t)sx?)$
   message: 'Breakpoint values have changed from pixels to rem units
 
 
@@ -55,7 +55,7 @@
   when:
     builtin.filecontent:
       pattern: 768px
-      filePattern: \.(css|scss|j|t)sx?$
+      filePattern: \.(css|scss|(j|t)sx?)$
   message: 'Breakpoint values have changed from pixels to rem units
 
 
@@ -93,7 +93,7 @@
   when:
     builtin.filecontent:
       pattern: 992px
-      filePattern: \.(css|scss|j|t)sx?$
+      filePattern: \.(css|scss|(j|t)sx?)$
   message: 'Breakpoint values have changed from pixels to rem units
 
 
@@ -131,7 +131,7 @@
   when:
     builtin.filecontent:
       pattern: 1200px
-      filePattern: \.(css|scss|j|t)sx?$
+      filePattern: \.(css|scss|(j|t)sx?)$
   message: 'Breakpoint values have changed from pixels to rem units
 
 
@@ -169,7 +169,7 @@
   when:
     builtin.filecontent:
       pattern: 1450px
-      filePattern: \.(css|scss|j|t)sx?$
+      filePattern: \.(css|scss|(j|t)sx?)$
   message: 'Breakpoint values have changed from pixels to rem units
 
 

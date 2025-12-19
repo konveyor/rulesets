@@ -8,7 +8,7 @@
   when:
     builtin.filecontent:
       pattern: --pf-v5-global--breakpoint--xs
-      filePattern: \.(css|scss|j|t)sx?$
+      filePattern: \.(css|scss|(j|t)sx?)$
   message: 'Breakpoint token naming has changed in PatternFly 6
 
 
@@ -46,7 +46,7 @@
   when:
     builtin.filecontent:
       pattern: 576px
-      filePattern: \.(css|scss|j|t)sx?$
+      filePattern: \.(css|scss|(j|t)sx?)$
   message: 'PatternFly 6 uses rem units for breakpoints instead of pixels
 
 
@@ -84,7 +84,7 @@
   when:
     builtin.filecontent:
       pattern: 768px
-      filePattern: \.(css|scss|j|t)sx?$
+      filePattern: \.(css|scss|(j|t)sx?)$
   message: 'PatternFly 6 uses rem units for breakpoints instead of pixels
 
 
@@ -122,7 +122,7 @@
   when:
     builtin.filecontent:
       pattern: 992px
-      filePattern: \.(css|scss|j|t)sx?$
+      filePattern: \.(css|scss|(j|t)sx?)$
   message: 'PatternFly 6 uses rem units for breakpoints instead of pixels
 
 
@@ -160,7 +160,7 @@
   when:
     builtin.filecontent:
       pattern: 1200px
-      filePattern: \.(css|scss|j|t)sx?$
+      filePattern: \.(css|scss|(j|t)sx?)$
   message: 'PatternFly 6 uses rem units for breakpoints instead of pixels
 
 
@@ -198,7 +198,7 @@
   when:
     builtin.filecontent:
       pattern: 1450px
-      filePattern: \.(css|scss|j|t)sx?$
+      filePattern: \.(css|scss|(j|t)sx?)$
   message: 'PatternFly 6 uses rem units for breakpoints instead of pixels
 
 
@@ -236,7 +236,7 @@
   when:
     builtin.filecontent:
       pattern: --pf-v5-global--breakpoint--sm
-      filePattern: \.(css|scss|j|t)sx?$
+      filePattern: \.(css|scss|(j|t)sx?)$
   message: 'CSS variable naming has changed in PatternFly 6 with the new design token system
 
 
@@ -274,7 +274,7 @@
   when:
     builtin.filecontent:
       pattern: --pf-v5-global--breakpoint--md
-      filePattern: \.(css|scss|j|t)sx?$
+      filePattern: \.(css|scss|(j|t)sx?)$
   message: 'CSS variable naming has changed in PatternFly 6 with the new design token system
 
 
@@ -312,7 +312,7 @@
   when:
     builtin.filecontent:
       pattern: --pf-v5-global--breakpoint--lg
-      filePattern: \.(css|scss|j|t)sx?$
+      filePattern: \.(css|scss|(j|t)sx?)$
   message: 'CSS variable naming has changed in PatternFly 6 with the new design token system
 
 
@@ -350,7 +350,7 @@
   when:
     builtin.filecontent:
       pattern: --pf-v5-global--breakpoint--xl
-      filePattern: \.(css|scss|j|t)sx?$
+      filePattern: \.(css|scss|(j|t)sx?)$
   message: 'CSS variable naming has changed in PatternFly 6 with the new design token system
 
 
@@ -388,7 +388,7 @@
   when:
     builtin.filecontent:
       pattern: --pf-v5-global--breakpoint--2xl
-      filePattern: \.(css|scss|j|t)sx?$
+      filePattern: \.(css|scss|(j|t)sx?)$
   message: 'CSS variable naming has changed in PatternFly 6 with the new design token system
 
 

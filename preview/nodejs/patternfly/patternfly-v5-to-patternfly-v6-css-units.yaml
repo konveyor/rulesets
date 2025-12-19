@@ -8,7 +8,7 @@
   when:
     builtin.filecontent:
       pattern: 576px
-      filePattern: \.(css|scss|less|j|t)sx?$
+      filePattern: \.(css|scss|less|(j|t)sx?)$
   message: 'PatternFly v6 uses rem units instead of pixels for better accessibility
 
 
@@ -55,7 +55,7 @@
   when:
     builtin.filecontent:
       pattern: 768px
-      filePattern: \.(css|scss|less|j|t)sx?$
+      filePattern: \.(css|scss|less|(j|t)sx?)$
   message: 'PatternFly v6 uses rem units instead of pixels for better accessibility
 
 
@@ -93,7 +93,7 @@
   when:
     builtin.filecontent:
       pattern: 992px
-      filePattern: \.(css|scss|less|j|t)sx?$
+      filePattern: \.(css|scss|less|(j|t)sx?)$
   message: 'PatternFly v6 uses rem units instead of pixels for better accessibility
 
 
@@ -131,7 +131,7 @@
   when:
     builtin.filecontent:
       pattern: 1200px
-      filePattern: \.(css|scss|less|j|t)sx?$
+      filePattern: \.(css|scss|less|(j|t)sx?)$
   message: 'PatternFly v6 uses rem units instead of pixels for better accessibility
 
 

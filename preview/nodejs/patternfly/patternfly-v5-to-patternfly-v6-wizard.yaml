@@ -10,7 +10,7 @@
     - nodejs.referenced:
         pattern: WizardStep
     - builtin.filecontent:
-        pattern: <WizardStep[^>]*\bbody={null}\b
+        pattern: <WizardStep[^>]*\bbody={null}
         filePattern: \.(j|t)sx?$
   message: 'The body prop on WizardStep no longer accepts a value of null
 
