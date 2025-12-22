@@ -22,6 +22,8 @@ jobs:
 
       - name: Run rule tests
         id: kantra-test
+        env:
+          JVM_MAX_MEM: "2560m" 
         run: |
           #### Block_Start ####
           # This block cleans up old java processes to avoid leaking memory, this will be removed when we fix the memory leak in the java provider.
@@ -55,9 +57,60 @@ jobs:
             done
           }
 
+          # Background system monitor to debug hangs
+          monitor_system() {
+            local interval="${1:-60}"
+            local iteration=0
+            
+            while true; do
+              iteration=$((iteration + 1))
+              echo ""
+              echo "========== [MONITOR #$iteration @ $(date)] =========="
+              
+              # Memory usage
+              echo "--- MEMORY ---"
+              free -h
+              
+              # Disk usage
+              echo "--- DISK ---"
+              df -h / /tmp 2>/dev/null || df -h
+              
+              # Top 10 memory-consuming processes
+              echo "--- TOP 10 PROCESSES BY MEMORY ---"
+              ps aux --sort=-%mem | head -11
+              
+              # Count of java/jdt processes
+              echo "--- JAVA PROCESS COUNT ---"
+              echo "Total java processes: $(pgrep -f java 2>/dev/null | wc -l)"
+              echo "JDT-LS processes: $(pgrep -f 'org.eclipse.jdt.ls' 2>/dev/null | wc -l)"
+              
+              # Check for OOM killer activity
+              echo "--- OOM KILLER CHECK ---"
+              dmesg 2>/dev/null | grep -i "out of memory\|oom\|killed process" | tail -5 || echo "No OOM events (or no access to dmesg)"
+              
+              # Check if kantra is still running
+              echo "--- KANTRA STATUS ---"
+              if pgrep -f "kantra test" > /dev/null 2>&1; then
+                echo "kantra test is running (PID: $(pgrep -f 'kantra test'))"
+              else
+                echo "kantra test is NOT running"
+              fi
+              
+              echo "========== [END MONITOR #$iteration] =========="
+              echo ""
+              
+              sleep "$interval"
+            done
+          }
+
           # Start background cleanup for JDT Language Server processes started by the Java provider
           cleanup_old_processes "org.eclipse.jdt.ls" 30 &
           CLEANUP_PID=$!
+          
+          # Start background system monitor (logs every 60 seconds)
+          monitor_system 60 &
+          MONITOR_PID=$!
+          echo "Started background monitor (PID: $MONITOR_PID) and cleanup (PID: $CLEANUP_PID)"
           #### Block_End ####
           
           mkdir -p ~/.config/.kantra
