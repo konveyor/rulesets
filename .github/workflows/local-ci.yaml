@@ -23,12 +23,12 @@ jobs:
       - name: Run rule tests
         id: kantra-test
         run: |
+          mkdir -p rulesets static-report ~/.config/.kantra ~/.config/.kantra/rulesets ~/.config/.kantra/static-report
           ID=$(podman create --name kantra-download quay.io/konveyor/kantra:latest)
+          podman cp ${ID}:/usr/local/etc/maven.default.index ~/.config/.kantra
+          podman cp ${ID}:/usr/bin/fernflower.jar ~/.config/.kantra
+          podman cp ${ID}:/jdtls ~/.config/.kantra
           podman cp ${ID}:/usr/local/bin/kantra .
-          podman cp ${ID}:/usr/local/etc/maven.default.index .
-          podman cp ${ID}:/usr/bin/fernflower.jar .
-          podman cp ${ID}:/jdtls .
-          mkdir rulesets static-report
           podman rm kantra-download
           RUN_LOCAL=1 ./kantra test ./default/generated --log-level 50 | tee output.log || true
           tail -n5 output.log > message.md
@@ -56,68 +56,11 @@ jobs:
             exit 0
           fi
 
-#      - name: Comment on the PR
-#        if: ${{ github.event_name == 'pull_request' }}
-#        uses: actions/github-script@v6
-#        with:
-#          script: |
-#            const issue_number = context.payload.pull_request.number;
-#            const owner = context.repo.owner;
-#            const repo = context.repo.repo;
-#            const body = `${{ steps.kantra-test.outputs.msg }}`;
-#
-#            const comments = await github.rest.issues.listComments({
-#              owner,
-#              repo,
-#              issue_number
-#            });
-#
-#            const botComment = comments.data.find(comment =>
-#              comment.user.login === 'github-actions[bot]');
-#
-#            if (botComment) {
-#              await github.rest.issues.updateComment({
-#                owner,
-#                repo,
-#                comment_id: botComment.id,
-#                body
-#              });
-#            } else {
-#              await github.rest.issues.createComment({
-#                owner,
-#                repo,
-#                issue_number,
-#                body
-#              });
-#            }
-#          github-token: ${{ secrets.GITHUB_TOKEN }}
-#          debug: true
 
       - name: Upload matching folders
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: rules-test-folders
           path: /tmp/rules-test-*
           compression-level: 9
-
-      - name: Update tests badge
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-        uses: RubbaBoy/BYOB@v1.3.0
-        with:
-          NAME: konveyor-rulesets-tests-rate
-          LABEL: Test Status
-          STATUS: ${{ steps.kantra-test.outputs.tests_pass_rate }}
-          COLOR: blue
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Update test case badge
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-        uses: RubbaBoy/BYOB@v1.3.0
-        with:
-          NAME: konveyor-rulesets-tcs-rate
-          LABEL: Test Case Status
-          STATUS: ${{ steps.kantra-test.outputs.tcs_pass_rate }}
-          COLOR: blue
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            
-        
