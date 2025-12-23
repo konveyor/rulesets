@@ -25,10 +25,10 @@ jobs:
         run: |
           mkdir -p rulesets static-report ~/.config/.kantra ~/.config/.kantra/rulesets ~/.config/.kantra/static-report
           ID=$(podman create --name kantra-download quay.io/konveyor/kantra:latest)
-          podman cp ${ID}:/usr/local/bin/kantra ~/.config/.kantra
           podman cp ${ID}:/usr/local/etc/maven.default.index ~/.config/.kantra
           podman cp ${ID}:/usr/bin/fernflower.jar ~/.config/.kantra
           podman cp ${ID}:/jdtls ~/.config/.kantra
+          podman cp ${ID}:/usr/local/bin/kantra .
           podman rm kantra-download
           RUN_LOCAL=1 ./kantra test ./default/generated --log-level 50 | tee output.log || true
           tail -n5 output.log > message.md
