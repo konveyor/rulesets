@@ -9,7 +9,7 @@ tests:
     analysisParams:
       mode: "source-only"
     hasIncidents:
-      exactly: 1
+      exactly: 2
 # FIXME
 #- ruleID: spring-framework-5.x-to-6.0-web-applications-00010
 #  testCases:
