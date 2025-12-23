@@ -13,13 +13,13 @@
       annotated:
         elements:
           - name: value
-            value: '.*[^\/]$'
-  description: Trailing slack matching has changed in Spring 6.0
+            value: '.*\/$'
+  description: Trailing slash matching has changed in Spring 6.0
   message: |
     As of Spring Framework 6.0, the trailing slash matching configuration option has been deprecated and its default
     value set to false. This means that previously, the following controller would match both
     "GET /some/greeting" and "GET /some/greeting/":
-  
+
     ```java
     @RestController
     public class MyController {
@@ -29,14 +29,14 @@
         }
     }
     ```
-  
+
     As of this Spring Framework change, "GET /some/greeting/" doesn't match anymore by default and will result in an
     HTTP 404 error. Developers should instead configure explicit redirects/rewrites through a proxy, a Servlet/web
     filter, or even declare the additional route explicitly on the controller handler
     (like @GetMapping("/some/greeting", "/some/greeting/") for more targeted cases.
     Until your application fully adapts to this change, you can change the default with the following
     global Spring MVC configuration:
-    
+
     ```java
     @Configuration
     public class WebConfiguration implements WebMvcConfigurer {
@@ -115,8 +115,8 @@
   message: |
     `SourceHttpMessageConverter` is not configured by default anymore in Spring MVC and `RestTemplate`.
     As a consequence, Spring web applications using `javax.xml.transform.Source` now need to configure
-    `SourceHttpMessageConverter` explicitly. 
-    
+    `SourceHttpMessageConverter` explicitly.
+
     ```java
     @EnableWebMvc
     @Configuration
@@ -129,8 +129,8 @@
           messageConverters.add(new MappingJackson2HttpMessageConverter());
       }
     }
-    ```   
-    
+    ```
+
     Note that the order of converter registration is important,
     and `SourceHttpMessageConverter` should typically be registered before "catch-all" converters like
     `MappingJackson2HttpMessageConverter` for example.
@@ -139,7 +139,7 @@
       url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
     - title: 'GitHub issue: Make SourceHttpMessageConverter optional'
       url: https://github.com/spring-projects/spring-framework/issues/29535
-      
+
 - ruleID: spring-framework-5.x-to-6.0-web-applications-00040
   category: potential
   effort: 1
