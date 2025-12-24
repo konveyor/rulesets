@@ -164,7 +164,7 @@
   customVariables: []
   
 - ruleID: astro-4-to-astro-5-api-removal-00003
-  description: hybrid output mode should be replaced with server mode
+  description: Dynamic prerender values are no longer supported
   effort: 7
   category: mandatory
   labels:
