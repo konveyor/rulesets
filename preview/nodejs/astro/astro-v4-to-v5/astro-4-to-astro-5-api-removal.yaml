@@ -6,7 +6,7 @@
   - konveyor.io/source=astro-v4
   - konveyor.io/target=astro-v5
   when:
-    nodejs.referenced:
+    builtin.filecontent:
       pattern: Astro.glob
   message: 'Astro.glob() has been removed in Astro 5.
 
@@ -57,8 +57,12 @@
   - konveyor.io/source=astro-v4
   - konveyor.io/target=astro-v5
   when:
-    builtin.filecontent:
-      pattern: "lit\\(\\)"
+    or:
+    - builtin.filecontent:
+        pattern: "lit\\(\\)"
+    - builtin.filecontent: 
+        pattern: "@astrojs/lit"
+      
   message: 'The official Lit integration has been removed in Astro 5.
 
 
