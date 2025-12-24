@@ -1,4 +1,4 @@
-# Contributing to [Project Name]
+# Contributing to Konveyor Rulesets
 
 Thank you for considering contributing to the Konveyor Rulesets project! We welcome all contributions—whether they’re issues, code, documentation, or suggestions for new features. Below, you’ll find our guidelines for contributing.
 

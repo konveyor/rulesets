@@ -1,0 +1,10 @@
+/* astro-4-to-astro-5-css-changes-00000 */
+pre {
+  color: var(--astro-code-color-text);
+  background: var(--astro-code-color-background);
+  padding: 1rem;
+}
+
+code {
+  color: var(--astro-code-color-text);
+}

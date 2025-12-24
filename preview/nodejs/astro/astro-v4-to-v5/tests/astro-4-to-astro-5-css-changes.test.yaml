@@ -1,0 +1,12 @@
+rulesPath: ../astro-4-to-astro-5-css-changes.yaml
+providers:
+- name: builtin
+  dataPath: ./data/css-changes
+- name: nodejs
+  dataPath: ./data/css-changes
+tests:
+- ruleID: astro-4-to-astro-5-css-changes-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
