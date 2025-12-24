@@ -1,0 +1,183 @@
+- ruleID: astro-4-to-astro-5-api-removal-00000
+  description: Astro.glob() should be replaced with import.meta.glob()
+  effort: 5
+  category: mandatory
+  labels:
+  - konveyor.io/source=astro-v4
+  - konveyor.io/target=astro-v5
+  when:
+    nodejs.referenced:
+      pattern: Astro.glob
+  message: 'Astro.glob() has been removed in Astro 5.
+
+
+    Replace `Astro.glob()` with Vite''s `import.meta.glob()` or use content collections.
+
+
+    Before:
+
+    ```typescript
+
+    const posts = await Astro.glob(''./posts/*.md'');
+
+    ```
+
+
+    After:
+
+    ```typescript
+
+    const posts = await import.meta.glob(''./posts/*.md'', { eager: true });
+
+    ```
+
+
+    Or use content collections for a more structured approach:
+
+    ```typescript
+
+    import { getCollection } from ''astro:content'';
+    const posts = await getCollection(''blog'');
+
+    ```'
+  links:
+  - url: https://docs.astro.build/en/guides/upgrade-to/v5/
+    title: Astro v5 Migration Guide
+  - url: https://docs.astro.build/en/guides/upgrade-to/v5/#deprecated-astroglob
+    title: Astro Glob deprecation note
+  - url: https://vitejs.dev/guide/features.html#glob-import
+    title: Vite Glob Import Documentation
+  customVariables: []
+  
+- ruleID: astro-4-to-astro-5-api-removal-00001
+  description: Lit integration dependency should be removed
+  effort: 10
+  category: mandatory
+  labels:
+  - konveyor.io/source=astro-v4
+  - konveyor.io/target=astro-v5
+  when:
+    builtin.filecontent:
+      pattern: "lit\\(\\)"
+  message: 'The official Lit integration has been removed in Astro 5.
+
+
+    Remove `@astrojs/lit` from dependencies and remove the integration from astro.config.
+
+
+    Before (package.json):
+
+    ```json
+
+    {
+      "dependencies": {
+        "@astrojs/lit": "^4.0.0"
+      }
+    }
+
+    ```
+
+
+    Before (astro.config.mjs):
+
+    ```typescript
+
+    import lit from ''@astrojs/lit'';
+
+    export default defineConfig({
+      integrations: [lit()]
+    });
+
+    ```
+
+
+    After:
+
+    Remove the dependency and integration. Consider using custom elements or alternative web component solutions.'
+  links:
+  - url: https://docs.astro.build/en/guides/upgrade-to/v5/
+    title: Astro v5 Migration Guide
+  - url: https://docs.astro.build/en/guides/upgrade-to/v5/#removed-the-lit-integration
+    title: Astro v5 Lit removal
+  
+- ruleID: astro-4-to-astro-5-api-removal-00002
+  description: hybrid output mode should be replaced with server mode
+  effort: 7
+  category: mandatory
+  labels:
+  - konveyor.io/source=astro-v4
+  - konveyor.io/target=astro-v5
+  when:
+    builtin.filecontent:
+      pattern: "output:\\s*['\"]hybrid['\"]"
+      filePattern: "astro.config.*"
+  message: 'The `hybrid` rendering mode has been removed in Astro 5.
+
+
+    In Astro v4.x, Astro provided three rendering output rendering modes: static, hybrid, and server
+
+    Astro v5.0 merges the output: ''hybrid'' and output: ''static'' configurations into one single configuration (now called ''static'') that works the same way as the previous hybrid option.
+
+    It is no longer necessary to specify output: ''hybrid'' in your Astro config to use server-rendered pages. The new output: ''static'' has this capability included.
+
+    Astro will now automatically allow you to opt out of prerendering in your static site with no change to your output configuration required. Any page route or endpoint can include export const prerender = false to be server-rendered on demand, while the rest of your site is statically generated.
+
+
+    Before (astro.config.mjs):
+
+    ```typescript
+
+    export default defineConfig({
+      output: ''hybrid''
+    });
+
+    ```
+
+
+    After (astro.config.mjs):
+
+    ```typescript
+
+    export default defineConfig({});
+
+    ```
+
+
+    For pages that should be statically generated, add to the page file:
+
+    ```astro
+
+    ---
+    export const prerender = true;
+    ---
+
+    ```'
+  links:
+  - url: https://docs.astro.build/en/guides/upgrade-to/v5/
+    title: Astro v5 Migration Guide
+  - url: https://docs.astro.build/en/guides/upgrade-to/v5/#removed-hybrid-rendering-mode
+    title: hybrid rendering mode removal
+  customVariables: []
+  
+- ruleID: astro-4-to-astro-5-api-removal-00003
+  description: hybrid output mode should be replaced with server mode
+  effort: 7
+  category: mandatory
+  labels:
+  - konveyor.io/source=astro-v4
+  - konveyor.io/target=astro-v5
+  when:
+    builtin.filecontent:
+      pattern: "^export\\s+const\\s+prerender\\s*=\\s*(?!true\\s*;|false\\s*;).+"
+  message: 'Removed: support for dynamic prerender values in routes.
+
+   In Astro 4.x, environment variables could be used to dynamically set the value of prerender exports in routes, for example `export const prerender = import.meta.env.SOME_VAR.`
+   Astro v5.0 removes support for dynamic values in prerender exports. Only the static values true and false are supported.
+    ```'
+  links:
+  - url: https://docs.astro.build/en/guides/upgrade-to/v5/
+    title: Astro v5 Migration Guide
+  - url: https://docs.astro.build/en/guides/upgrade-to/v5/#removed-support-for-dynamic-prerender-values-in-routes
+    title: dynamic prerender values removal
+  customVariables: []
+  

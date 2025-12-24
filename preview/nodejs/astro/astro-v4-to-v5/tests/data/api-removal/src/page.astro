@@ -1,0 +1,14 @@
+---
+// astro-4-to-astro-5-api-removal-00003
+// This should trigger the dynamic prerender rule
+export const prerender = import.meta.env.PRERENDER_VALUE;
+---
+
+<html>
+  <head>
+    <title>Test Page</title>
+  </head>
+  <body>
+    <h1>Dynamic Prerender Test</h1>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+- ruleID: astro-4-to-astro-5-async-changes-00000
+  description: compiledContent() is now an async function
+  effort: 5
+  category: mandatory
+  labels:
+  - konveyor.io/source=astro-v4
+  - konveyor.io/target=astro-v5
+  when:
+    builtin.filecontent:
+      pattern: "^(?!.*\\bawait\\b).*\\.compiledContent\\s*\\(\\s*\\)"
+  message: 'The `compiledContent()` function is now asynchronous in Astro 5.
+
+
+    Update all calls to `compiledContent()` to use `await`.
+
+
+    Before:
+
+    ```typescript
+
+    ---
+    const content = myPost.compiledContent();
+    ---
+
+    ```
+
+
+    After:
+
+    ```typescript
+
+    ---
+    const content = await myPost.compiledContent();
+    ---
+
+    ```'
+  links:
+  - url: https://docs.astro.build/en/guides/upgrade-to/v5/
+    title: Astro v5 Migration Guide
+  - url: https://docs.astro.build/en/guides/upgrade-to/v5/#changed-compiledcontent-is-now-an-async-function
+    title: compiledContent asynchronous update 
+  customVariables: []
+  

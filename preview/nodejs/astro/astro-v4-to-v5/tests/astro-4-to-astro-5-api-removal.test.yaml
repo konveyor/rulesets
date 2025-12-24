@@ -1,0 +1,27 @@
+rulesPath: ../astro-4-to-astro-5-api-removal.yaml
+providers:
+- name: builtin
+  dataPath: ./data/api-removal
+- name: nodejs
+  dataPath: ./data/api-removal
+tests:
+- ruleID: astro-4-to-astro-5-api-removal-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: astro-4-to-astro-5-api-removal-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: astro-4-to-astro-5-api-removal-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: astro-4-to-astro-5-api-removal-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

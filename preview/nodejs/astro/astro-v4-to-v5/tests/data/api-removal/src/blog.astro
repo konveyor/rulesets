@@ -1,0 +1,21 @@
+---
+// astro-4-to-astro-5-api-removal-00000
+const posts = await Astro.glob('./posts/*.md');
+
+// astro-4-to-astro-5-api-removal-00030
+import { getCollection } from 'astro:content';
+---
+
+<div>
+  <h1>Blog Posts</h1>
+  <ul>
+    {posts.map(post => (
+      <li>{post.frontmatter.title}</li>
+    ))}
+  </ul>
+</div>
+
+<script>
+  // This will trigger a warning in v5
+  import { getCollection } from 'astro:content';
+</script>
