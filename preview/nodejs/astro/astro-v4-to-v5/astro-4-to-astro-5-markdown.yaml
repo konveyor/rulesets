@@ -8,10 +8,15 @@
   when:
     and:
     - builtin.file:
-        pattern: "**/*.{md,mdx}"
-    - builtin.filecontent:
+        pattern: .*\.(md|mdx|astro)
+    - as: html 
+      builtin.filecontent:
+        pattern: <html
+    - not: true
+      from: html
+      builtin.filecontent:
         pattern: charset
-      not: true
+      
 
   message: 'Markdown and MDX pages no longer automatically add `charset=utf-8` to the meta tag in Astro 5.
 
