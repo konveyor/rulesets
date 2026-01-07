@@ -117,16 +117,13 @@ jobs:
           mv ./default/generated ~/.config/.kantra/rulesets
           cd ~/.config/.kantra
           ID=$(podman create --name kantra-download quay.io/konveyor/kantra:latest)
-          podman cp ${ID}:/usr/local/etc/maven.default.index ~/.config/.kantra
-          podman cp ${ID}:/usr/bin/fernflower.jar ~/.config/.kantra
-          podman cp ${ID}:/jdtls ~/.config/.kantra
           podman cp ${ID}:/usr/local/bin/kantra .
           podman cp ${ID}:/usr/local/etc/maven.default.index .
           podman cp ${ID}:/usr/bin/fernflower.jar .
           podman cp ${ID}:/jdtls .
           mkdir static-report
           podman rm kantra-download
-          RUN_LOCAL=1 ./kantra test ./rulesets --log-level 50 | tee output.log || true
+          JVM_MAX_MEM=2560m RUN_LOCAL=1 ./kantra test ./rulesets --log-level 50 | tee output.log || true
           tail -n5 output.log > message.md
           msg=$(grep -E '.*Rules Summary:' message.md -A1)
           tests_pass_rate=$(grep -E '.*Rules Summary:' message.md | sed -E 's| *Rules Summary: *(.*)|\1|' | sed -E 's|.*?:||')
@@ -151,7 +148,6 @@ jobs:
           else
             exit 0
           fi
-
 
       - name: Upload matching folders
         if: always()
