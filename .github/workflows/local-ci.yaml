@@ -23,7 +23,7 @@ jobs:
       - name: Run rule tests
         id: kantra-test
         env:
-          JVM_MAX_MEM: "2560m" 
+          JVM_MAX_MEM: "4G" 
         run: |
           #### Block_Start ####
           # This block cleans up old java processes to avoid leaking memory, this will be removed when we fix the memory leak in the java provider.
@@ -46,10 +46,10 @@ jobs:
                 sorted_pids=$(echo "$pids" | xargs -I{} ps -p {} -o pid=,etimes= 2>/dev/null | sort -k2 -rn | awk '{print $1}')
                 count=$(echo "$sorted_pids" | grep -c . 2>/dev/null || echo 0)
                 
-                if [[ $count -gt 1 ]]; then
-                  # Kill all but the last one (newest has smallest elapsed time)
-                  to_kill=$(echo "$sorted_pids" | head -n -1)
-                  echo "[cleanup] Found $count processes matching '$pattern', killing $((count - 1)) oldest: $(echo $to_kill | tr '\n' ' ')"
+                if [[ $count -gt 3 ]]; then
+                  # Kill all but the last 3 (newest have smallest elapsed time)
+                  to_kill=$(echo "$sorted_pids" | head -n -3)
+                  echo "[cleanup] Found $count processes matching '$pattern', killing $((count - 3)) oldest: $(echo $to_kill | tr '\n' ' ')"
                   echo "$to_kill" | xargs -r kill -9 2>/dev/null || true
                 fi
               fi
@@ -88,17 +88,6 @@ jobs:
               echo "--- OOM KILLER CHECK ---"
               dmesg 2>/dev/null | grep -i "out of memory\|oom\|killed process" | tail -5 || echo "No OOM events (or no access to dmesg)"
               
-              # Check if kantra is still running
-              echo "--- KANTRA STATUS ---"
-              if pgrep -f "kantra test" > /dev/null 2>&1; then
-                echo "kantra test is running (PID: $(pgrep -f 'kantra test'))"
-              else
-                echo "kantra test is NOT running"
-              fi
-              
-              echo "========== [END MONITOR #$iteration] =========="
-              echo ""
-              
               sleep "$interval"
             done
           }
@@ -123,7 +112,7 @@ jobs:
           podman cp ${ID}:/jdtls .
           mkdir static-report
           podman rm kantra-download
-          JVM_MAX_MEM=2560m RUN_LOCAL=1 ./kantra test ./rulesets --log-level 50 | tee output.log || true
+          JVM_MAX_MEM=4G RUN_LOCAL=1 ./kantra test ./rulesets --log-level 50 | tee output.log || true
           tail -n5 output.log > message.md
           msg=$(grep -E '.*Rules Summary:' message.md -A1)
           tests_pass_rate=$(grep -E '.*Rules Summary:' message.md | sed -E 's| *Rules Summary: *(.*)|\1|' | sed -E 's|.*?:||')
