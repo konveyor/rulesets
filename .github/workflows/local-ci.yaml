@@ -78,7 +78,7 @@ jobs:
           mkdir static-report
           podman rm kantra-download
 
-          JVM_MAX_MEM=3072m RUN_LOCAL=1 ./kantra test ./rulesets/spring-boot/tests/spring-boot-2.x-to-3.0-removals.test.yaml --log-level 50 | tee output.log || true
+          JVM_MAX_MEM=3072m RUN_LOCAL=1 ./kantra test ./rulesets/ --log-level 50 | tee output.log || true
 
           tail -n5 output.log > message.md
           msg=$(grep -E '.*Rules Summary:' message.md -A1)
