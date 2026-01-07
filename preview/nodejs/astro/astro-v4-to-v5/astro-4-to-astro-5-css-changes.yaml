@@ -7,8 +7,8 @@
   - konveyor.io/target=astro-v5
   when:
     builtin.filecontent:
-      pattern: "--astro-code-color-(text|background)"
-      filePattern: "*.{css,scss,sass,less,astro,vue,svelte}"
+      pattern: "\\--astro-code-color-(text|background)"
+      #filePattern: "*.{css,scss,sass,less,astro,vue,svelte}"
   message: 'Shiki theme color token CSS variable names have been renamed in Astro 5.
 
 
