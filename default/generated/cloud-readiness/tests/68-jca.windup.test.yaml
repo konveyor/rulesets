@@ -9,5 +9,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*an embedded resource adapter descriptor ('ra.xml').*
+      exactly: 1
+      messageMatches: The application contains an embedded resource adapter descriptor ('ra.xml'), which implements

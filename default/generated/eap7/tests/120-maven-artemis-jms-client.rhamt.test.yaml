@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If you migrate your application to JBoss EAP 7.3 (or later),
         and want to ensure its Maven building, running or testing works as expected,
         if the application depends on Artemis JMS Client artifact then it should also

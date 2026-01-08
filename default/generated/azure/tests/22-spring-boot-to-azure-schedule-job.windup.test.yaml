@@ -9,6 +9,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: Scheduled jobs, such as Quartz Scheduler tasks or cron jobs,
         can't be used with App Service.

@@ -9,44 +9,44 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace the SpringBoot artifact with Quarkus `spring-boot-properties`
         extension
 - ruleID: springboot-properties-to-quarkus-00001
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Spring property profile in separate file
 - ruleID: springboot-properties-to-quarkus-00002
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 6
       messageMatches: Spring datasource property key/value pairs have been detected
         in the application property file.
 - ruleID: springboot-properties-to-quarkus-00003
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Spring log level property configuration have been detected in
         the application property file
 - ruleID: springboot-properties-to-quarkus-00004
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `spring.jpa.hibernate.ddl-auto=create-drop` with `quarkus.hibernate-orm.database.generation=drop-and-create`
 - ruleID: springboot-properties-to-quarkus-00005
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `springdoc.swagger-ui.path` with `quarkus.swagger-ui.path.*
 - ruleID: springboot-properties-to-quarkus-00006
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `springdoc.api-docs.path` with `quarkus.smallrye-openapi.path.*

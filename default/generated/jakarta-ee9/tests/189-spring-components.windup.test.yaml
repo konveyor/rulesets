@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Version 3.0.0 is the minimum version of Spring Boot
 - ruleID: spring-components-00002
   testCases:

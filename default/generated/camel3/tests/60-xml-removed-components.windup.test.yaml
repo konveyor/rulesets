@@ -9,35 +9,35 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`org.apache.camel:camel-linkedin` artifact has been removed
         in Apache Camel 3 so it won''t be available'
 - ruleID: xml-removed-components-00001
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`org.apache.camel:camel-linkedin-starter` artifact has been
         removed in Apache Camel 3 so it won''t be available'
 - ruleID: xml-removed-components-00002
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`org.apache.camel:camel-script` artifact has been deprecated
         in Apache Camel .*'
 - ruleID: xml-removed-components-00003
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`org.apache.camel:camel-script-starter` artifact has been deprecated
         in Apache Camel .*'
 - ruleID: xml-removed-components-00004
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`org.apache.camel:camel-jibx` artifact has been deprecated
         in Apache Camel .*'
 # TODO: untestable at the moment, the artifact cannot be found anywhere and/or it is corrupt.
@@ -57,28 +57,32 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`org.apache.camel:camel-boon` artifact has been deprecated
         in Apache Camel .*'
 - ruleID: xml-removed-components-00007
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`org.apache.camel:camel-boon-starter` artifact has been deprecated
         in Apache Camel .*'
-  - name: tc-2
+- ruleID: xml-removed-components-00007-01
+  testCases:
+  - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`org.apache.camel:camel-core-starter` artifact has been remove.*'
 - ruleID: xml-removed-components-00008
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 3
+      exactly: 3
       messageMatches: '`twitter-streaming` component has been deprecated in Apache
         Camel .*'
-  - name: tc-2
+- ruleID: xml-removed-components-00008-01
+  testCases:
+  - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 1
       messageMatches: The `camel-maven-plugin` has been split up into two Maven plugin.*

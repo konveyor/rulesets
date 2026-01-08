@@ -9,233 +9,233 @@ tests:
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class `org.apache.camel.processor.aggregate.AggregationStrategy`
         has been moved to `org.apache.camel.AggregationStrategy`
 - ruleID: java-generic-information-00002
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 2
+      exactly: 2
       messageMatches: zip` and `gzip` dataformats were renamed.*
 - ruleID: java-generic-information-00004
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 2
+      exactly: 2
       messageMatches: The class `org.apache.camel.impl.*` has been removed. Use `org.apache.camel.support.DefaultRegistry`
         instead.
 - ruleID: java-generic-information-00005
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class `org.apache.camel.processor.loadbalancer.SimpleLoadBalancerSupport`
         has been removed.*
 - ruleID: java-generic-information-00006
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class `org.apache.camel.support.ReloadStrategySupport` has
         been removed.
   - name: tc-2
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class `org.apache.camel.impl.FileWatcherReloadStrategy`
         has been removed.
 - ruleID: java-generic-information-00008
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 2
+      exactly: 2
       messageMatches: The class `org.apache.camel.util.toolbox.AggregationStrategies`
         has been moved to `org.apache.camel.builder.AggregationStrategies`.
 - ruleID: java-generic-information-00009
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class `org.apache.camel.management.JmxSystemPropertyKeys`
         has been moved to ` org.apache.camel.api.management.JmxSystemPropertyKeys`.
 - ruleID: java-generic-information-00010
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`includeRoutes` method has been removed'
 - ruleID: java-generic-information-00011
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: Annotation `org.apache.camel.language.Bean.*
 - ruleID: java-generic-information-00012
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: Annotation `org.apache.camel.language.Simple.*
 - ruleID: java-generic-information-00013
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: Annotation `org.apache.camel.language.SpEL
 - ruleID: java-generic-information-00014
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 2
+      exactly: 2
       messageMatches: Annotation `org.apache.camel.InvokeOnHeader.*
 - ruleID: java-generic-information-00015
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: Annotation `org.apache.camel.Constant
 - ruleID: java-generic-information-00016
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: Class `org.apache.camel.builder.xml.XPathBuilder.*
 - ruleID: java-generic-information-00017
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: Annotation `org.apache.camel.language.XPath
 - ruleID: java-generic-information-00018
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: Exception `org.apache.camel.builder.xml.InvalidXPathExpression.*
 - ruleID: java-generic-information-00019
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: Exception `org.apache.camel.processor.validation.PredicateValidationException.*
 - ruleID: java-generic-information-00021
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: xslt method was removed from `org.apache.camel.util.toolbox.AggregationStrategies.*
 - ruleID: java-generic-information-00022
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class `org.apache.camel.language.LanguageAnnotation` has
         been moved to `org.apache.camel.support.language.LanguageAnnotation.*
 - ruleID: java-generic-information-00023
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 3
+      exactly: 3
       messageMatches: The class `org.apache.camel.util.*` has been moved to `org.apache.camel.support.*`*.
         It has been moved out of `org.apache.camel:camel-core` and into `org.apache.camel:camel-support
 - ruleID: java-generic-information-00024
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class `org.apache.camel.util.ServiceHelper` has been moved
         to `org.apache.camel.support.service.ServiceHelper.*
 - ruleID: java-generic-information-00025
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class `org.apache.camel.spi.RestProducerFactoryHelper` has
         been moved to `org.apache.camel.support.RestProducerFactoryHelper.*
 - ruleID: java-generic-information-00026
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class `org.apache.camel.util.ObjectHelper` has been moved
         out of the `org.apache.camel:camel-core` and has been split into two classe.*
 - ruleID: java-generic-information-00027
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class `org.apache.camel.support.RoutePolicySupport` has
         been move.*
 - ruleID: java-generic-information-00028
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class `org.apache.camel.impl.ThrottlingInflightRoutePolicy`
         has been moved to `org.apache.camel.throttling.ThrottlingInflightRoutePolicy.*
 - ruleID: java-generic-information-00029
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 2
+      exactly: 2
       messageMatches: The class `org.apache.camel.processor.idempoten.*
 - ruleID: java-generic-information-00030
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: Annotation `org.apache.camel.FallbackConverter` has been remove.*
 - ruleID: java-generic-information-00031
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 3
+      exactly: 3
       messageMatches: The class `org.apache.camel.util.toolbox.XsltAggregationStrategy`
         has been move.*
 - ruleID: java-generic-information-00032
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 3
+      exactly: 3
       messageMatches: The `getProperties` and `setProperty` methods have been remove.*
 - ruleID: java-generic-information-00033
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: The default FHIR specificatio.*
 - ruleID: java-generic-information-00045
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: Routes with multiple inputs such as `.*`
   - name: tc-2
     hasInsights:
-      atLeast: 15
+      exactly: 15
       messageMatches: The method `org.apache.camel.CamelContex.*
 - ruleID: java-generic-information-00046
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 6
+      exactly: 6
       messageMatches: The functionality to change the simple language tokens for start/end
         functions has been remove.*
 - ruleID: java-generic-information-00047
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 3
+      exactly: 3
       messageMatches: The `uri` attribute in th.*
 - ruleID: java-generic-information-00048
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 3
+      exactly: 3 # TODO (pgaikwad): B4 bug in the bundle
       messageMatches: The `ref` attribute in th.*
 - ruleID: java-generic-information-00050
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 2
+      exactly: 2
       messageMatches: The duplicate method `org.apache.camel.CamelContex.*

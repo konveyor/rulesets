@@ -9,5 +9,5 @@
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: .*is a Sonic proprietary type and needs to be migrated.*

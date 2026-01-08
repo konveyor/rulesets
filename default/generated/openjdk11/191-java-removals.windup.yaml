@@ -295,10 +295,10 @@
     or:
     - java.referenced:
         location: IMPORT
-        pattern: sun.misc.BASE64Encoder*
+        pattern: sun.misc.BASE64Encoder
     - java.referenced:
         location: IMPORT
-        pattern: sun.misc.BASE64Decoder*
+        pattern: sun.misc.BASE64Decoder
 - category: mandatory
   customVariables: []
   description: The `runFinalizersOnExit` methods have been removed

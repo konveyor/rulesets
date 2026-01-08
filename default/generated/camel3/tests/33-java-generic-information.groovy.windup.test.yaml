@@ -9,49 +9,49 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`org.apache.camel.ThreadPoolRejectedPolicy` was moved to `org.*`'
 - ruleID: java-generic-information-00035
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`The org.apache.camel.support.DefaultRegistry.*`'
 - ruleID: java-generic-information-00036
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: Methods `getOut`, `hasOut` on `Exchange.*`
 - ruleID: java-generic-information-00037
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 4
+      exactly: 4
       messageMatches: Fault API was removed from `org.apache.camel.Message.*`
 - ruleID: java-generic-information-00038
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: Methods for controlling routes were moved from `CamelContext.*`
 - ruleID: java-generic-information-00039
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 3
+      exactly: 3
       messageMatches: The methods `getCamelContextMap.*`
 - ruleID: java-generic-information-00040
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
-      messageMatches: '`org.apache.camel.util.jsse.*` was moved to `org.*`'
+      exactly: 2
+      messageMatches: '`org.apache.camel.util.jsse.*` package was moved to `org.*`'
 - ruleID: java-generic-information-00041
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`org.apache.camel.util.jndi.JndiContext` was moved to `org.*`'
 - ruleID: java-generic-information-00042
   testCases:
@@ -64,8 +64,8 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
-      messageMatches: '`org.apache.camel.management.event.*` was moved to `org.*`'
+      exactly: 2
+      messageMatches: '`org.apache.camel.management.event.*` was moved to the `org.*`'
 - ruleID: java-generic-information-00044
   testCases:
   - name: tc-1

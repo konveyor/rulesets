@@ -15,5 +15,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 3
+      exactly: 4
       messageMatches: Log4j configuration without including `log4j.jar`

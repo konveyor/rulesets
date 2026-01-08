@@ -9,18 +9,18 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: Methods relying on `java.security.Identity` have been removed
 - ruleID: eap8-ejb-00002
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Method was deprecated and has now been removed
 - ruleID: eap8-ejb-00003
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Methods relying on Jakarta XML RPC have been removed from the
         Jakarta Enterprise Beans 4.0 specification and api.

@@ -9,32 +9,32 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: Dependency on JSF artifacts must be updated
 - ruleID: eap8-faces-00002
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Source reference to `javax.faces.bean.ManagedProperty` must
         be updated
 - ruleID: eap8-faces-00003
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: JSF ManagedBean has been removed
 - ruleID: eap8-faces-00004
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Annotation `javax.faces.bean.
 - ruleID: eap8-faces-00008
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: ResourceResolvers have been removed
 - ruleID: eap8-faces-00009
   testCases:

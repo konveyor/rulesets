@@ -9,13 +9,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel-testcontainers-spring` component has been replaced with
         camel-test-infr.*'
 - ruleID: xml-removed-camel316-00002
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel-testcontainers-spring-junit5` component has been replaced
         with camel-test-infr.*'

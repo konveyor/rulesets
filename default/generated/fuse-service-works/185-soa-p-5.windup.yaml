@@ -925,8 +925,7 @@
     builtin.xml:
       namespaces: {}
       xpath: //*[local-name()='action' and @class='org.jboss.soa.esb.actions.scripting.ScriptingAction']/@class
-- customVariables: []
-  description: JBoss ESB message aggregation must be changed to Camel routing
+- description: JBoss ESB message aggregation must be changed to Camel routing
   effort: 3
   labels:
   - konveyor.io/source=soa-p5-
@@ -942,6 +941,10 @@
      For more information, see the
      [Camel Aggregator Documentation](http://camel.apache.org/aggregator.html).
   ruleID: soa-p-43000
+  customVariables:
+  - name: javaclassname
+    nameOfCaptureGroup: javaclassname
+    pattern: org.jboss.soa.esb.actions.(?P<javaclassname>(StreamingAggregator)|(Aggregator))
   when:
     builtin.xml:
       namespaces: {}

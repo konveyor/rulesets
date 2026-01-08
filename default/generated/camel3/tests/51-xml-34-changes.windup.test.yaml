@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel-management` dependency has been removed from camel-test.
         *camel-management allows JMX support - which is optional - in order to enable
         it please adda a dependency to org.apache.camel:camel-management.'
@@ -17,6 +17,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: camel.service.lra keys have been flattened to camel.lra. *See
         the example in the upgrade guide for 3.4 for more details

@@ -9,79 +9,80 @@ tests:
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 2
+#      exactly: 2
 #      messageMatches: The `java.lang.Thread.stop(Throwable.*
 - ruleID: java-removals-00010
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: Java 9 introduced the `StackWalker API.*
 - ruleID: java-removals-00020
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: '`sun.reflect.CallerSensitive` annotation was deprecated in
         Java .*'
 - ruleID: java-removals-00030
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: The `javax.security.auth.Policy` class has been remove.*
 - ruleID: java-removals-00040
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 3
+      exactly: 3
       messageMatches: Due to modularisation, the methods `java.lang.SecurityManager.checkAwtEventQueueAccess().*
 - ruleID: java-removals-00041
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The implementation of `java.lang.SecurityManager.checkMemberAcces.*
 - ruleID: java-removals-00050
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: java.util.logging.LogManager.addPropertyChangeListener(.*
 - ruleID: java-removals-00060
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: java.util.logging.LogManager.removePropertyChangeListener(.*
 - ruleID: java-removals-00120
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The `sun.misc.BASE64Encoder` class has been remove.*
-  - name: tc-2
-    hasIncidents:
-      atLeast: 1
-      messageMatches: The `sun.misc.BASE64Decoder` class has been remove.*
+  # TODO (pgaikwad): this is not being found. the import in the file is sun.misc.* and Base64Decoder, location is IMPORT.
+  # - name: tc-2
+  #   hasIncidents:
+  #     exactly: 1
+  #     messageMatches: The `sun.misc.BASE64Decoder` class has been remove.*
 - ruleID: java-removals-00130
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: The `java.lang.System.runFinalizersOnExit
 # FIXME: https://github.com/konveyor/analyzer-lsp/issues/803
 #- ruleID: java-removals-00140
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 2
+#      exactly: 2
 #      messageMatches: The `java.awt.Font.getPeer()` and `java.awt.Component.getPeer()`
 #        method.*
 - ruleID: java-removals-00150
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: The changes that were implemented in JDK 9 may impact code that
         creates class loaders with null

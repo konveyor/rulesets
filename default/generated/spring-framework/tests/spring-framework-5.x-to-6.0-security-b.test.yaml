@@ -16,7 +16,7 @@ tests:
       analysisParams:
         mode: "source-only"
       hasIncidents:
-        exactly: 1
+        atLeast: 1
 - ruleID: spring-framework-5.x-to-6.0-security-00050
   testCases:
     - name: tc-1

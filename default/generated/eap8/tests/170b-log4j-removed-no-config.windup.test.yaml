@@ -9,17 +9,17 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Log4j usage without configuration files
 - ruleID: log4j-removed-00004
   testCases:
     - name: tc-1
       hasIncidents:
-        atLeast: 1
+        exactly: 1
         messageMatches: Log4j custom-handler using appender
 - ruleID: log4j-removed-00005
   testCases:
     - name: tc-1
       hasIncidents:
-        atLeast: 1
+        exactly: 1
         messageMatches: Log4j module dependency declaration

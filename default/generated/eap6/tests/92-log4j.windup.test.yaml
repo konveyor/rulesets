@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 1
+      exactly: 1
       messageMatches: Deploying log4j.jar can result in non-deterministic ClassLoading
         issues.*
 - ruleID: log4j-02000
@@ -22,9 +22,9 @@ tests:
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: Using ConsoleAppender configured in log4j.properties.*
 #  - name: tc-2
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: Using ConsoleAppender configured in log4j.xml.*

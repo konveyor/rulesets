@@ -19,7 +19,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: This entity needs to be migrated using JPA persistence.xml or
         using JPA annotations.
 - ruleID: jboss-eap5and6to7-java-04000
@@ -31,19 +31,19 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: This class is using JSR 88 specific classes.
 - ruleID: jboss-eap5and6to7-java-06000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: EAP 7 includes a new API for building Singleton services,
 - ruleID: jboss-eap5and6to7-java-07000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The .*@Clustered.* annotation is ignored in EAP 7 and is not
         useful.
 - ruleID: jboss-eap5and6to7-java-08000
@@ -55,6 +55,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 4
       messageMatches: JBoss Logging annotations in package `org.jboss.logging` are
         deprecated
