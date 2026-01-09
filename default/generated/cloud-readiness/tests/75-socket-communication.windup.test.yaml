@@ -9,6 +9,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 10
+      exactly: 10
       messageMatches: 'Recommendation: Use Java EE standard or loosely coupled protocols
         such as JMS, JAX-RS, or JAX-WS for backing service interactions'

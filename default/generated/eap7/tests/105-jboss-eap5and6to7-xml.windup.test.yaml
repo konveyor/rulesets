@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The .*clustered.* element is ignored in EAP 7 and is not useful.
 - ruleID: jboss-eap5and6to7-xml-05000
   testCases:
@@ -38,28 +38,28 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: CMP configuration provided in this ejb-jar.xml should be configured
         using JPA persistence.xml or using JPA annotations.
 - ruleID: jboss-eap5and6to7-xml-31500
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: BMP configuration provided in this ejb-jar.xml should be configured
         using JPA persistence.xml or using JPA annotations.
 - ruleID: jboss-eap5and6to7-xml-32000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: JBoss Web was replaced by Undertow, which does not contain support
         for the Valve functionality.
 - ruleID: jboss-eap5and6to7-xml-33000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 2
       messageMatches: JAX-RPC support was removed in JBoss EAP 7.
 - ruleID: jboss-eap5and6to7-xml-34000
   testCases:
@@ -70,60 +70,60 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The EAP 7 Web Session Clustering configuration deprecates .*replication-trigger.*
 - ruleID: jboss-eap5and6to7-xml-38001
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The EAP 7 Web Session Clustering configuration deprecates element
         .*replication-mode.*
 - ruleID: jboss-eap5and6to7-xml-38002
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The EAP 7 Web Session Clustering configuration deprecates .*backups.*
 - ruleID: jboss-eap5and6to7-xml-38003
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The EAP 7 Web Session Clustering configuration deprecates .*use-jk.*
 - ruleID: jboss-eap5and6to7-xml-38004
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The EAP 7 Web Session Clustering configuration deprecates .*max-unreplicated-interval.*
 - ruleID: jboss-eap5and6to7-xml-38005
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The EAP 7 Web Session Clustering configuration deprecates .*snapshot-mode.*
 - ruleID: jboss-eap5and6to7-xml-38006
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: .*The EAP 7 Web Session Clustering configuration removed .*snapshot-interval.*
 - ruleID: jboss-eap5and6to7-xml-38007
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The EAP 7 Web Session Clustering configuration deprecates .*session-notification-policy.*
 - ruleID: jboss-eap5and6to7-xml-39000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The EAP 7 Web Session Clustering configuration deprecates .*passivation-config.*
 - ruleID: jboss-eap5and6to7-xml-40000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The EAP 7 Web Session Clustering configuration changed .*max-active-sessions.*

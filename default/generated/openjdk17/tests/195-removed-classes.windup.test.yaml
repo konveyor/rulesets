@@ -9,5 +9,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 11
       messageMatches: After being deprecated in OpenJDK 11, the pack20.*

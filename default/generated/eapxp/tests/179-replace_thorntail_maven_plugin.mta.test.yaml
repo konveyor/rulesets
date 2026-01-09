@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
         and want to ensure its Maven building, running or testing works as expected,
         replace Thorntail Maven Plugin with JBoss EAP XP Bootable JAR Maven Plugin.

@@ -9,12 +9,12 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class CamelFileDataSource has moved from camel-http-common
         package org.apache.camel.http.common to camel-attachments package org.apache.camel.attachmen.*
 - ruleID: xml-removed-camel36-00001
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: '`camel-hipchat` component has been removed.'

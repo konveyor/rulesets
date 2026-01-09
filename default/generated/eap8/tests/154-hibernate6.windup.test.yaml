@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The way in which Hibernate determines implicit names for sequences
         and tables associated with identifier generation has changed in 6.0 which
         may affect migrating application.*
@@ -17,7 +17,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 2
       messageMatches: As part of the Hibernate ORM 6.0 release, mapping annotations
         have been modernised and made more type-safe. These annotations must be removed.
         See the User Guide for details about mapping your domain model.
@@ -26,7 +26,7 @@ tests:
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: As part of the Hibernate ORM 6.0 release, mapping annotations
 #        have been modernised and made more type-safe. Annotation attributes accepting
 #        types as String have been removed. See the User Guide for details about mapping
@@ -35,7 +35,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Basic mappings are no longer configurable through the BasicType
         contract. Instead, users configure the different aspects of mapping the basic
         value to the database. See migration guide for more details.
@@ -43,28 +43,28 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 2
       messageMatches: The `StandardBasicTypes` class previously exposed `BasicType`
         instance fields, which now have been replaced with fields of the type `BasicTypeReference`.
 - ruleID: hibernate6-00050
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 2
       messageMatches: The interface `org.hibernate.type.descriptor.java.JavaTypeDescriptor`
         must be renamed to `org.hibernate.type.descriptor.java.JavaType`.
 - ruleID: hibernate6-00060
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 2
       messageMatches: The interface `org.hibernate.type.descriptor.sql.SqlTypeDescriptor`
         has been renamed to `org.hibernate.type.descriptor.jdbc.JdbcType`.
 - ruleID: hibernate6-00070
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 2
       messageMatches: The CompositeUserType interface was re-implemented to be able
         to model user types as proper embeddable types. See the migration guide for
         more information.
@@ -72,7 +72,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The configuration property `hibernate.hql.bulk_id_strategy`
         was changed to `hibernate.query.mutation_strategy` which now refers to classes
         or objects implementing `org.hibernate.query.sqm.mutation.spi.SqmMultiTableMutationStrategy`.
@@ -80,7 +80,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The signature of the `Interceptor#onSave` method has been changed
         to account for the general change in expected identifier type from `Serializable`
         to `Object`. See migration guide for more information.
@@ -88,7 +88,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The contents of the `loader.collection` package were restructured
         into `loader.ast.spi` and `loader.ast.internal` as well as adapted to the
         SQM API.
@@ -96,26 +96,26 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The contents of the `loader.custom` package were adapted and
         moved to `query.sql`.
 - ruleID: hibernate6-00130
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 2
       messageMatches: The contents of `loader.entity` and `loader.plan` were removed
 - ruleID: hibernate6-00140
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The contents of `sql.ordering` were adapted and moved to `metamodel.mapping.ordering.ast`.
 - ruleID: hibernate6-00150
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 2
       messageMatches: Classes of the sql package that were previously used for building
         SQL, but aren’t needed anymore, were removed. The SQL generation is now fully
         handled through the `SqlAstTranslator` which a `Dialect` exposes a factory
@@ -124,7 +124,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: In Hibernate 6.0 the support for basic property mappings with
         multiple columns was removed. The only use case for that was when a `CompositeUserType`
         was in use, which was reworked to now work on top of components.
@@ -132,7 +132,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The legacy Hibernate Criteria API which was deprecated back
         in Hibernate 5.x and removed in 6.0. Usually, all queries using the legacy
         API can be modeled with the JPA Criteria API. In some cases it is necessary
@@ -141,7 +141,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: Using `NativeQuery` to call SQL functions and procedures is
         no longer supported. `org.hibernate.procedure.ProcedureCall` or `jakarta.persistence.StoredProcedureQuery`
         should be used instead. `@NamedNativeQuery` references defining execution
@@ -151,127 +151,127 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The fetch all properties clause was removed from the HQL language
         without a replacement. See link for replacement info.
 - ruleID: hibernate6-00210
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Hibernate no longer provides built-in support for integrating
         itself with JMX environments.
 - ruleID: hibernate6-00220
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Hibernate no longer provides built-in support for integrating
         itself with JACC environments.
 - ruleID: hibernate6-00230
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 4
       messageMatches: 'These properties are deprecated: use `hibernate.classLoaders`
         instead.'
 - ruleID: hibernate6-00240
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: 'This property has been removed: use `jakarta.persistence.create-database-schemas`
         or `hibernate.hbm2ddl.create_namespaces` instead'
 - ruleID: hibernate6-00250
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: 'This property has been removed: please use `hibernate.jpa.metamodel.population`
         instead'
 - ruleID: hibernate6-00251
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: 'This property has been removed: please use `hibernate.cfg_xml_file`
         instead'
 - ruleID: hibernate6-00252
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: 'This property has been removed: please use `hibernate.orm_xml_files`
         instead'
 - ruleID: hibernate6-00253
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: 'This property has been removed: please use `hibernate.hbm_xml_files`
         instead'
 - ruleID: hibernate6-00254
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: 'This property has been removed: please use `hibernate.loaded_classes`
         instead'
-- ruleID: hibernate6-00255
+- ruleID: hibernate6-00255 # TODO (pgaikwad): B5 fix rule
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: 'This property has been removed: please use `hibernate.persistenceUnitName`
         instead'
   - name: tc-2
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: 'This property has been removed: please use `hibernate.discard_pc_on_close`
         instead'
   - name: tc-3
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: 'This property has been removed: please use `hibernate.session_factory_observer`
         instead'
   - name: tc-4
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: 'This property has been removed: please use `hibernate.identifier_generator_strategy_provider`
         instead'
   - name: tc-5
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: 'This property has been removed: please use `hibernate.classcache`
         instead'
   - name: tc-6
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: 'This property has been removed: please use `hibernate.collectioncache`
         instead'
   - name: tc-7
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: 'This property has been removed: please use `hibernate.event`
         instead'
 - ruleID: hibernate6-00257
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: 'This property has been removed: please use `hibernate.session_factory_name`
         instead'
 - ruleID: hibernate6-00270
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: As of Hibernate 6.0, some dialect classes that are maintained
         by vendors or individuals, as op.*
 - ruleID: hibernate6-00280
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 3
+      exactly: 3
       messageMatches: Multitenancy in Hibernate ORM has been simplified. Hibernate
         will now infer whether multitenancy is enabled or not automaticall.*

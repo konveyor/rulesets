@@ -68,7 +68,7 @@
     or:
     - java.referenced:
         location: ANNOTATION
-        pattern: javax.ejb*
+        pattern: javax.ejb.*
     - java.referenced:
         location: ANNOTATION
-        pattern: jakarta.ejb*
+        pattern: jakarta.ejb.*

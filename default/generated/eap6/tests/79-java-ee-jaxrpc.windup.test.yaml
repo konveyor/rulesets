@@ -13,5 +13,5 @@ tests:
 # FIXME: https://github.com/konveyor/analyzer-lsp/issues/800
 #  - name: tc-2
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: JAX-RPC is no longer supported on JBoss EAP 7.*

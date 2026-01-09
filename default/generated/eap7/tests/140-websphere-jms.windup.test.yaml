@@ -9,72 +9,76 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
-      messageMatches: IBM MQQueueConnectionFactory.*
+      exactly: 2
+      messageMatches: IBM MQConnectionFactory.*
   - name: tc-2
     hasIncidents:
-      atLeast: 1
-      messageMatches: IBM MQXAQueueConnectionFactory.*
+      exactly: 2
+      messageMatches: IBM MQeXAQueueConnectionFactory.*
   - name: tc-3
     hasIncidents:
-      atLeast: 1
-      messageMatches: IBM MQTopicConnectionFactory.*
+      exactly: 2
+      messageMatches: IBM MQXAConnectionFactory.*
   - name: tc-4
     hasIncidents:
-      atLeast: 1
-      messageMatches: IBM MQXATopicConnectionFactory.*
+      exactly: 2
+      messageMatches: IBM MQXAQueueConnectionFactory.*
   - name: tc-5
     hasIncidents:
-      atLeast: 1
-      messageMatches: IBM XAConnectionFactory.*
-  - name: tc-6
-    hasIncidents:
-      atLeast: 1
-      messageMatches: MQDestination.* `javax.jms.Destination`.*
-  - name: tc-7
-    hasIncidents:
-      atLeast: 1
-      messageMatches: IBM MQeQueueConnectionFactory.*
+      exactly: 2
+      messageMatches: IBM QueueConnectionFactory.*
   - name: tc-8
     hasIncidents:
-      atLeast: 1
-      messageMatches: IBM MQeXAQueueConnectionFactory.*
+      exactly: 2
+      messageMatches: IBM TopicConnectionFactory.*
   - name: tc-9
     hasIncidents:
-      atLeast: 1
-      messageMatches: IBM MQeTopicConnectionFactory.*
+      exactly: 2
+      messageMatches: IBM XAConnectionFactory.*
   - name: tc-10
     hasIncidents:
-      atLeast: 1
-      messageMatches: IBM MQeXATopicConnectionFactory.*
+      exactly: 2
+      messageMatches: IBM XAQueueConnectionFactory.*
   - name: tc-11
     hasIncidents:
-      atLeast: 1
-      messageMatches: MQeDestination.* `javax.jms.Destination`.*
+      exactly: 2
+      messageMatches: IBM XATopicConnectionFactory.*
   - name: tc-12
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsTopicConnectionFactory
+      exactly: 3
+      messageMatches: IBM JmsConnectionFactory.*
   - name: tc-13
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsQueueConnectionFactory.*
+      exactly: 3
+      messageMatches: IBM JmsXAConnectionFactory.*
   - name: tc-14
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsConnectionFactory .*
+      exactly: 3
+      messageMatches: IBM JmsXAQueueConnectionFactory.*
   - name: tc-15
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsXAConnectionFactory .*
+      exactly: 4
+      messageMatches: IBM MQXATopicConnectionFactory
   - name: tc-16
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsXAQueueConnectionFactory .*
+      exactly: 6
+      messageMatches: IBM MQQueueConnectionFactory.*
   - name: tc-17
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsXATopicConnectionFactory .*
+      exactly: 6
+      messageMatches: IBM MQTopicConnectionFactory.*
+  - name: tc-18
+    hasIncidents:
+      exactly: 7
+      messageMatches: IBM JmsQueueConnectionFactory.*
+  - name: tc-19
+    hasIncidents:
+      exactly: 8
+      messageMatches: IBM JmsTopicConnectionFactory.*
+  - name: tc-20
+    hasIncidents:
+      exactly: 8
+      messageMatches: IBM JmsXATopicConnectionFactory.*
 - ruleID: websphere-jms-eap7-00000
   testCases:
   - name: tc-1
@@ -84,141 +88,145 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 3
       messageMatches: IBM JMS API Producers are.*
   - name: tc-2
     hasIncidents:
-      atLeast: 1
+      exactly: 3
       messageMatches: IBM JMS API Consumers are.*
 - ruleID: websphere-jms-eap7-03000
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JMSBytesMessage.*
+      exactly: 3
+      messageMatches: .*?JMSBytesMessage` messages represent.*
   - name: tc-2
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JMSMapMessage.*
+      exactly: 3
+      messageMatches: .*?JMSMapMessage` messages represent.*
   - name: tc-3
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JMSMessage.*
+      exactly: 3
+      messageMatches: .*?JMSMessage` messages represent.*
   - name: tc-4
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JMSStreamMessage.*
+      exactly: 3
+      messageMatches: .*?JMSStreamMessage` messages represent.*
   - name: tc-5
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JMSTextMessage.*
+      exactly: 3
+      messageMatches: .*?JMSTextMessage` messages represent.*
 - ruleID: websphere-jms-eap7-04000
   testCases:
-  - name: tc-1
+  - name: tc-01
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsTopic.*
-  - name: tc-2
+      exactly: 4
+      messageMatches: .*?JmsTopic` is an.*
+  - name: tc-02
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsQueue.*
-  - name: tc-3
+      exactly: 5
+      messageMatches: .*?JmsTopicConnectionFactory` is an.*
+  - name: tc-03
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsDestination.*
-  - name: tc-4
+      exactly: 2
+      messageMatches: .*?JmsTopicSubscriber` is an.*
+  - name: tc-04
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsConnection.*
-  - name: tc-5
+      exactly: 2
+      messageMatches: .*?JmsTopicSession` is an.*
+  - name: tc-05
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsConnectionMetaData.*
-  - name: tc-6
+      exactly: 2
+      messageMatches: .*?JmsTopicPublisher` is an.*
+  - name: tc-06
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsDestination.*
-  - name: tc-7
+      exactly: 2
+      messageMatches: .*?JmsTopicConnection` is an.*
+  - name: tc-07
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsQueue.*
-  - name: tc-8
+      exactly: 5
+      messageMatches: .*?JmsQueueConnectionFactory` is an.*
+  - name: tc-08
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsQueueBrowser.*
-  - name: tc-9
+      exactly: 4
+      messageMatches: .*?JmsQueue` is an.*
+  - name: tc-09
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsQueueConnection.*
+      exactly: 2
+      messageMatches: .*?JmsQueueSession` is an.*
   - name: tc-10
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsQueueReceiver.*
+      exactly: 2
+      messageMatches: .*?JmsQueueSender` is an.*
   - name: tc-11
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsQueueSender.*
+      exactly: 2
+      messageMatches: .*?JmsQueueReceiver` is an.*
   - name: tc-12
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsQueueSession.*
+      exactly: 2
+      messageMatches: .*?JmsQueueBrowser` is an.*
   - name: tc-13
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsSession.*
+      exactly: 2
+      messageMatches: .*?JmsQueueConnection` is an.*
   - name: tc-14
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsTemporaryQueue.*
+      exactly: 4
+      messageMatches: .*?JmsDestination` is an.*
   - name: tc-15
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsTemporaryTopic.*
+      exactly: 2
+      messageMatches: .*?JmsConnection` is an.*
   - name: tc-16
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*com.ibm.msg.client.jms.JmsTopicPublisher.*
+      exactly: 2
+      messageMatches: .*?JmsConnectionMetaData` is an.*
   - name: tc-17
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsTopicConnection.*
+      exactly: 2
+      messageMatches: .*?JmsConnectionFactory` is an.*
   - name: tc-18
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsTopicPublisher.*
+      exactly: 2
+      messageMatches: .*?JmsSession` is an.*
   - name: tc-19
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsTopicSession.*
+      exactly: 2
+      messageMatches: .*?JmsTemporaryQueue` is an.*
   - name: tc-20
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsTopicSubscriber.*
+      exactly: 2
+      messageMatches: .*?JmsTemporaryTopic` is an.*
   - name: tc-21
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsXAConnection.*
+      exactly: 2
+      messageMatches: .*?JmsXAConnection` is an.*
   - name: tc-22
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsXAQueueConnection.*
+      exactly: 2
+      messageMatches: .*?JmsXAConnectionFactory` is an.*
   - name: tc-23
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsXAQueueSession.*
+      exactly: 2
+      messageMatches: .*?JmsXAQueueConnection` is an.*
   - name: tc-24
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsXASession.*
+      exactly: 2
+      messageMatches: .*?JmsXAQueueConnectionFactory` is an.*
   - name: tc-25
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsXATopicConnection.*
+      exactly: 2
+      messageMatches: .*?JmsXAQueueSession` is an.*
   - name: tc-26
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsXATopicSession.*
+      exactly: 2
+      messageMatches: .*?JmsXASession` is an.*
   - name: tc-27
     hasIncidents:
-      atLeast: 1
-      messageMatches: .*JmsTopicPublisher.*
+      exactly: 2
+      messageMatches: .*?JmsXATopicConnection` is an.*
+  - name: tc-28
+    hasIncidents:
+      exactly: 5
+      messageMatches: .*?JmsXATopicConnectionFactory` is an.*

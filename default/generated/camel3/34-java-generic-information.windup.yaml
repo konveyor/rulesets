@@ -762,7 +762,7 @@
       pattern: org.apache.camel.(Consume|EndpointInject|Produce)
       annotated:
         elements:
-          - name: uri
+          - name: ref
             value: .*
 - category: mandatory
   customVariables:

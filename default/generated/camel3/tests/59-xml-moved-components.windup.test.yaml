@@ -9,26 +9,26 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: All the classes from `org.apache.camel.util.component.*
 - ruleID: xml-moved-components-00013
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 3
+      exactly: 3
       messageMatches: The class `org.apache.camel.impl.*` has been moved to `org.apache.camel.impl.engine`.*
 - ruleID: xml-moved-components-00014
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The class `org.apache.camel.main.Main` has been moved out of
         `org.apache.camel:camel-core` and into its own JAR named `org.apache.camel:camel-main.*
 - ruleID: xml-moved-components-00015
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: If you run Camel standalone with just `camel-core` as a dependency,
         and you want JMX enabled out of the box, then you need to add `org.apache.camel:camel-management`
         as a dependency.*

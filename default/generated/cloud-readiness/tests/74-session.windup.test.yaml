@@ -9,13 +9,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Session replication ensures that client sessions are not disrupted
         by node failure
 - ruleID: session-00001
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: In a cloud environment, a restart can wipe out HTTP session
         data in the memory of a running container

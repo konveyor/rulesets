@@ -9,6 +9,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: The application imports class `org.wildfly.clustering.singleton.SingletonPolicy`,
         from deprecated HA Singleton API.

@@ -35,8 +35,8 @@
     \n <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id> \n
     <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id> \n
     <quarkus.platform.version>3.1.0.Final</quarkus.platform.version>\n </properties>
-    \n <dependencyManagement> \n <dependencies> \n <dependency> \n <groupId>${{quarkus.platform.group-id}}</groupId>
-    \n <artifactId>${{quarkus.platform.artifact-id}}</artifactId> \n <version>${{quarkus.platform.version}}</version>
+    \n <dependencyManagement> \n <dependencies> \n <dependency> \n <groupId>${quarkus.platform.group-id}</groupId>
+    \n <artifactId>${quarkus.platform.artifact-id}</artifactId> \n <version>${quarkus.platform.version}</version>
     \n <type>pom</type> \n <scope>import</scope> \n </dependency> \n </dependencies>
     \n </dependencyManagement> \n ```\n Check the latest Quarkus version available
     from the `Quarkus - Releases` link below."
@@ -63,8 +63,8 @@
   message: "Use the Quarkus Maven plugin adding the following sections to the `pom.xml`
     file: \n\n ```xml\n <properties> \n <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
     \n <quarkus.platform.version>3.1.0.Final</quarkus.platform.version>\n </properties>
-    \n <build>\n <plugins>\n <plugin>\n <groupId>${{quarkus.platform.group-id}}</groupId>\n
-    <artifactId>quarkus-maven-plugin</artifactId>\n <version>${{quarkus.platform.version}}</version>\n
+    \n <build>\n <plugins>\n <plugin>\n <groupId>${quarkus.platform.group-id}</groupId>\n
+    <artifactId>quarkus-maven-plugin</artifactId>\n <version>${quarkus.platform.version}</version>\n
     <extensions>true</extensions>\n <executions>\n <execution>\n <goals>\n <goal>build</goal>\n
     <goal>generate-code</goal>\n <goal>generate-code-tests</goal>\n </goals>\n </execution>\n
     </executions>\n </plugin>\n </plugins>\n </build>\n ```"
@@ -89,7 +89,7 @@
   message: "Use the Maven Compiler plugin adding the following sections to the `pom.xml`
     file: \n\n ```xml\n <properties> \n <compiler-plugin.version>3.10.1</compiler-plugin.version>\n
     <maven.compiler.release>11</maven.compiler.release>\n </properties> \n <build>\n
-    <plugins>\n <plugin>\n <artifactId>maven-compiler-plugin</artifactId>\n <version>${{compiler-plugin.version}}</version>\n
+    <plugins>\n <plugin>\n <artifactId>maven-compiler-plugin</artifactId>\n <version>${compiler-plugin.version}</version>\n
     <configuration>\n <compilerArgs>\n <arg>-parameters</arg>\n </compilerArgs>\n
     </configuration>\n </plugin>\n </plugins>\n </build>\n ```"
   ruleID: javaee-pom-to-quarkus-00030
@@ -115,9 +115,9 @@
   message: "Use the Maven Surefire plugin adding the following sections to the `pom.xml`
     file: \n\n ```xml\n <properties> \n <surefire-plugin.version>3.0.0</compiler-plugin.version>\n
     </properties> \n <build>\n <plugins>\n <plugin>\n <artifactId>maven-surefire-plugin</artifactId>\n
-    <version>${{surefire-plugin.version}}</version>\n <configuration>\n <systemPropertyVariables>\n
+    <version>${surefire-plugin.version}</version>\n <configuration>\n <systemPropertyVariables>\n
     <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>\n
-    <maven.home>${{maven.home}}</maven.home>\n </systemPropertyVariables>\n </configuration>\n
+    <maven.home>${maven.home}</maven.home>\n </systemPropertyVariables>\n </configuration>\n
     </plugin>\n </plugins>\n </build>\n ```"
   ruleID: javaee-pom-to-quarkus-00040
   when:
@@ -142,11 +142,11 @@
   message: "Use the Maven Failsafe plugin adding the following sections to the `pom.xml`
     file: \n\n ```xml\n <properties> \n <surefire-plugin.version>3.0.0</compiler-plugin.version>\n
     </properties> \n <build>\n <plugins>\n <plugin>\n <artifactId>maven-failsafe-plugin</artifactId>\n
-    <version>${{surefire-plugin.version}}</version>\n <executions>\n <execution>\n
+    <version>${surefire-plugin.version}</version>\n <executions>\n <execution>\n
     <goals>\n <goals>integration-test</goal>\n <goals>verify</goal>\n </goals>\n <configuration>\n
-    <systemPropertyVariables>\n <native.image.path>${{project.build.directory}}/${{project.build.finalName}}-runner</native.image.path>\n
+    <systemPropertyVariables>\n <native.image.path>${project.build.directory}/${project.build.finalName}-runner</native.image.path>\n
     <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>\n
-    <maven.home>${{maven.home}}</maven.home>\n </systemPropertyVariables>\n </configuration>\n
+    <maven.home>${maven.home}</maven.home>\n </systemPropertyVariables>\n </configuration>\n
     </execution>\n </executions>\n </plugin>\n </plugins>\n </build>\n ```"
   ruleID: javaee-pom-to-quarkus-00050
   when:

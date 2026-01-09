@@ -9,5 +9,5 @@ tests:
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 4
+      exactly: 4
       messageMatches: The application uses Zipkin.

@@ -9,6 +9,6 @@ tests:
   testCases:
   - name: tc-1
     hasInsights:
-      atLeast: 3
+      exactly: 3
       messageMatches: The application uses a Spring Cloud Config Server connection
         string

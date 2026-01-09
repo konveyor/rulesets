@@ -9,6 +9,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 2
       messageMatches: This API is not considered a public API for EAP. For JDK 8.,
         the recommended solution is to migrate to

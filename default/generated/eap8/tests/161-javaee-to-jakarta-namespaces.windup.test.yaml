@@ -7,199 +7,199 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 70
+      exactly: 70
       messageMatches: Replace `http://xmlns.jcp.org/xml/ns/javaee`
 - ruleID: javaee-to-jakarta-namespaces-00002
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 9
+      exactly: 9
       messageMatches: Replace `http://xmlns.jcp.org/xml/ns/persistence`
 - ruleID: javaee-to-jakarta-namespaces-00003
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 5
+      exactly: 5
       messageMatches: Replace `http://xmlns.jcp.org/xml/ns/validation`
 - ruleID: javaee-to-jakarta-namespaces-00004
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `javaee_web_services_metadata_handler_2_0.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00005
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `batchXML_1_0.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00006
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `beans_1_1.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00007
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `beans_2_0.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00008
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 2
+      exactly: 2
       messageMatches: Replace `jobXML_1_0.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00009
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `application_7.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00010
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `application_8.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00011
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `application-client_7.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00012
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `application-client_8.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00013
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `connector_1_7.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00014
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `ejb-jar_3_2.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00015
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `javaee_web_services_1_4.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00016
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `permissions_7.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00017
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `web-app_3_1.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00018
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `web-app_4_0.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00019
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `web-fragment_3_1.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00020
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `web-fragment_4_0.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00021
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `web-facesconfig_2_2.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00022
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `web-facesconfig_2_3.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00023
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `web-facelettaglibrary_2_2.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00024
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `web-facelettaglibrary_2_3.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00025
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `web-partialresponse_2_2.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00026
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `web-partialresponse_2_3.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00027
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `web-jsptaglibrary_2_1.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00028
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `validation-mapping-2.0.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00029
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `validation-configuration-2.0.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00030
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `persistence_2_1.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00031
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `orm_2_1.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00032
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: Replace `orm_2_2.xsd`
 - ruleID: javaee-to-jakarta-namespaces-00033
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 3
       messageMatches: In the root tag, replace the `version` attribute value `2.1`
         with `3.0`
 - ruleID: javaee-to-jakarta-namespaces-00034
@@ -249,7 +249,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      atLeast: 2
       messageMatches: '`connector_1_7.xsd`: In the root tag, replace the `version`'
 - ruleID: javaee-to-jakarta-namespaces-00042
   testCases:
@@ -262,20 +262,20 @@ tests:
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: '`javaee_web_services_1_4.xsd`: In the root tag, replace the
 #        `version`'
 #- ruleID: javaee-to-jakarta-namespaces-00044
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: '`web-app_3_1`: In the root tag, replace the `version`'
 #- ruleID: javaee-to-jakarta-namespaces-00045
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: '`web-app_4_0`: In the root tag, replace the `version`'
 - ruleID: javaee-to-jakarta-namespaces-00046
   testCases:

@@ -9,12 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
-      messageMatches: In versions of Hibernate prior to 3.5, text type was mapped
-        to JDBC CLOB.*
-  - name: tc-2
-    hasIncidents:
-      atLeast: 1
+      exactly: 5
       messageMatches: In versions of Hibernate prior to 3.5, text type was mapped
         to JDBC CLOB.*
 - ruleID: hibernate-xml-02000
@@ -27,7 +22,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 1
+      exactly: 1
       messageMatches: From Hibernate 4.0 there were moved classes from package .*org.hibernate.connection.*
 # FIXME: investigate why not working
 #- ruleID: hibernate-xml-04000

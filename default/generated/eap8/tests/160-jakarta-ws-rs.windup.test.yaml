@@ -10,5 +10,5 @@ tests: []
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: Future versions of this API will no longer support `@Context`
