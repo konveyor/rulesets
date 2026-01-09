@@ -172,7 +172,7 @@
   - konveyor.io/target=astro-v5
   when:
     builtin.filecontent:
-      pattern: "^export\\s+const\\s+prerender\\s*=\\s*(?!true\\s*;|false\\s*;).+"
+      pattern: "^export\\s+const\\s+prerender\\s*=\\s*(?!true\\s*|false\\s*).+"
   message: 'Removed: support for dynamic prerender values in routes.
 
    In Astro 4.x, environment variables could be used to dynamically set the value of prerender exports in routes, for example `export const prerender = import.meta.env.SOME_VAR.`
