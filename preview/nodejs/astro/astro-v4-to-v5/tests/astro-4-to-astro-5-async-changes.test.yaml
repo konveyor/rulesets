@@ -1,0 +1,12 @@
+rulesPath: ../astro-4-to-astro-5-async-changes.yaml
+providers:
+- name: builtin
+  dataPath: ./data/async-changes
+- name: nodejs
+  dataPath: ./data/async-changes
+tests:
+- ruleID: astro-4-to-astro-5-async-changes-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
