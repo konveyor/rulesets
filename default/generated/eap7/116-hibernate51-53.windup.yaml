@@ -617,6 +617,7 @@
           s: http://java.sun.com/xml/ns/persistence
         xpath: //s:properties[count(s:property[@name='hibernate.default_schema'])=0
           and count(s:property[@name='hibernate.default_catalog'])=0]
+        filepaths: "{{persistence_files.filepaths}}"
       from: persistence_files
 - category: potential
   customVariables: []
@@ -649,6 +650,7 @@
           s: http://java.sun.com/xml/ns/persistence
         xpath: //s:properties[count(s:property[@name='hibernate.default_schema'])=0
           and count(s:property[@name='hibernate.default_catalog'])=0]
+        filepaths: "{{persistence_files.filepaths}}"
       from: persistence_files
 - category: potential
   customVariables: []

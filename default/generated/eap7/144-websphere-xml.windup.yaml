@@ -74,6 +74,7 @@
         namespaces:
           webappext: webappext.xmi
         xpath: /webappext:WebAppExtension
+        filepaths: "{{files.filepaths}}"
       from: files
     - builtin.xml:
         namespaces:

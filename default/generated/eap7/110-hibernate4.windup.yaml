@@ -1008,11 +1008,13 @@
       java.referenced:
         location: RETURN_TYPE
         pattern: java.lang.Byte*
+        filepaths: "{{java_entities.Filepaths}}"
     - as: mappings2
       from: java_entities
       java.referenced:
         location: RETURN_TYPE
         pattern: byte*
+        filepaths: "{{java_entities.Filepaths}}"
 - category: mandatory
   customVariables:
   - name: param_classes_setfirstresult

@@ -57,10 +57,12 @@
     - builtin.filecontent:
         filePattern: ""
         pattern: .zip\(.*\)
+        filepaths: "{{routeBuilders.Filepath}}"
       from: routeBuilders
     - builtin.filecontent:
         filePattern: ""
         pattern: .gzip\(.*\)
+        filepaths: "{{routeBuilders.Filepath}}"
       from: routeBuilders
     - as: routeBuilders
       java.referenced:

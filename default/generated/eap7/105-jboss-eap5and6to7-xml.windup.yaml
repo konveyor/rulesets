@@ -106,9 +106,9 @@
       ignore: true
     - builtin.xml:
         filepaths: '{{xmlfiles1.filepaths}}'
-        from: xmlfiles1
         namespaces: {}
         xpath: /page
+      from: xmlfiles1
 - customVariables: []
   description: JBoss web application descriptor (jboss-web.xml)
   labels:

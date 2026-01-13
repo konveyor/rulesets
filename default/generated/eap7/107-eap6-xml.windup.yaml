@@ -25,10 +25,10 @@
       ignore: true
     - builtin.xml:
         filepaths: '{{xmlfiles1.filepaths}}'
-        from: xmlfiles1
         namespaces:
           msg: urn:jboss:messaging-deployment:1.0
         xpath: /msg:messaging-deployment
+      from: xmlfiles1
 - customVariables: []
   description: JBoss deployment structure dependencies (jboss-deployment-structure.xml)
   labels:

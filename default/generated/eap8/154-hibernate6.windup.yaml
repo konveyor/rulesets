@@ -485,10 +485,10 @@
       ignore: true
     - builtin.xml:
         filepaths: '{{xmlfiles1.filepaths}}'
-        from: xmlfiles1
         namespaces:
           h: http://www.hibernate.org/xsd/hibernate-mapping
         xpath: //*/h:property[count(h:column) > 1]
+      from: xmlfiles1
 - category: mandatory
   customVariables: []
   description: Legacy Hibernate Criteria API has been removed
@@ -573,10 +573,10 @@
       ignore: true
     - builtin.xml:
         filepaths: '{{xmlfiles1.filepaths}}'
-        from: xmlfiles1
         namespaces:
           h: http://www.hibernate.org/xsd/hibernate-mapping
         xpath: //*/h:sql-query[@callable = 'true']
+      from: xmlfiles1
 - category: mandatory
   customVariables: []
   description: Using NativeQuery to call SQL functions and procedures is no longer
@@ -605,9 +605,9 @@
       ignore: true
     - builtin.xml:
         filepaths: '{{xmlfiles1.filepaths}}'
-        from: xmlfiles1
         namespaces: {}
         xpath: //text()[contains(., 'fetch all properties')]
+      from: xmlfiles1
 - category: mandatory
   customVariables: []
   description: Hibernate no longer provides built-in support for integrating itself
