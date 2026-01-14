@@ -45,14 +45,6 @@ tests:
     hasInsights:
       atLeast: 1
       messageMatches: Tibco ActiveMatrix Stub.*
-# TODO: these two are not matching for some reason - probably something to do with the test data
-#- ruleID: generic-catchall-00300
-#  testCases:
-#  - name: tc-1
-#    hasInsights:
-<<<<<<< Updated upstream
-#      exactly: 1
-#      messageMatches: Tibco ActiveMatrix Stub.*
 - ruleID: generic-catchall-00300
   testCases:
   - name: tc-1
@@ -65,16 +57,6 @@ tests:
     hasInsights:
       exactly: 1
       messageMatches: .*com.crystaldecisions.* reference found.*
-=======
-#      atLeast: 1
-#      messageMatches: .*com.tibco.* reference found.*
-#- ruleID: generic-catchall-00400
-#  testCases:
-#  - name: tc-1
-#    hasInsights:
-#      atLeast: 1
-#      messageMatches: .*com.crystaldecisions.* reference found.*
->>>>>>> Stashed changes
 - ruleID: generic-catchall-00500
   testCases:
   - name: tc-1
