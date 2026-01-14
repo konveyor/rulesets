@@ -6,5 +6,18 @@
 	<artifactId>sample-project</artifactId>
 	<version>0.0.1</version>
 	<name>Sample Project</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>javax.el-api</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.el</groupId>
+			<artifactId>jakarta.el-api</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+	</dependencies>
 </project>
 		

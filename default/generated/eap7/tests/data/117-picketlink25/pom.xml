@@ -6,5 +6,20 @@
 	<artifactId>sample-project</artifactId>
 	<version>0.0.1</version>
 	<name>Sample Project</name>
+
+	<repositories>
+		<repository>
+			<id>jboss-eap</id>
+			<url>https://maven.repository.redhat.com/ga/</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.picketlink</groupId>
+			<artifactId>picketlink-federation</artifactId>
+			<version>2.7.1.Final</version>
+		</dependency>
+	</dependencies>
 </project>
 		

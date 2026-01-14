@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import com.ibm.websphere.ant.tasks.TestClass1;
 import com.ibm.websphere.hamanager.jmx.TestClass2;
 import com.ibm.websphere.interrupt.TestClass3;

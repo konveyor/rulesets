@@ -1,5 +1,6 @@
 package org.windup.examples.technology.http;
 
+import java.io.Serializable;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.CookieParam;
 import javax.ws.rs.GET;
@@ -41,7 +42,7 @@ public class JaxRsWebService extends AbstractEaoService implements Serializable 
     @Path("/div")
     public Integer div(Integer a, Integer b)
     {
-        if (b === 0)
+        if (b == 0)
         {
             throw new IllegalArgumentException("b cannot be 0");
         }

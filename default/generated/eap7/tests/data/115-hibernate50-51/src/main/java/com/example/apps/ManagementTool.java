@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import org.hibernate.tool.schema.internal.HibernateSchemaManagementTool;
 import org.hibernate.tool.schema.spi.SchemaManagementTool;
 

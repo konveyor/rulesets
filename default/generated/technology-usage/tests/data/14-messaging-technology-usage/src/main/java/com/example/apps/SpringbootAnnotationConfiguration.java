@@ -6,7 +6,7 @@ import org.springframework.jmx.export.annotation.ManagedAttribute;
 @ManagedResource(objectName="bean:name=jmxTestBean", description="Test Bean")
 public class SpringbootAnnotationConfiguration implements IJmxTestBean {
 
-    private String item;
+    private int item;
 
     @ManagedAttribute(description="Item", currencyTimeLimit=15)
     public int getItem() {

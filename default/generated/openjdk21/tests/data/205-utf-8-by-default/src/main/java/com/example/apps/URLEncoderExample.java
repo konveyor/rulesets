@@ -1,9 +1,11 @@
+package com.example.apps;
+
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
   
-public class UrlEncoderExample 
+public class URLEncoderExample
 {
     public static void main(String[] args) throws MalformedURLException, 
                                    UnsupportedEncodingException 

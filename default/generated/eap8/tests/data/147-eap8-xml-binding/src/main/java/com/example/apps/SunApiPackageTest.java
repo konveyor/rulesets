@@ -1,7 +1,8 @@
-package com.jboss.test;
+package com.example.apps;
 
 import com.sun.xml.bind.api.*;
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,8 +10,8 @@ import javax.xml.bind.Validator;
 
 public class SunApiPackageTest
 {
-    public void  setProperties() {
-        Class[] classes = {com.acme.Foo.class};
+    public void  setProperties() throws JAXBException {
+        Class[] classes = {com.example.apps.A.class};
         Map properties = new HashMap();
         properties.put("property1", "javax.xml.bind.context.factory");
         JAXBContext jc = JAXBContext.newInstance( classes, properties);

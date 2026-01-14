@@ -1,3 +1,4 @@
+package com.example.apps;
 import javax.ejb.Stateless;
 
 @Stateless

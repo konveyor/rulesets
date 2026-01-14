@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import java.io.Serializable;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,7 +9,8 @@ import org.hibernate.HibernateException;
 import org.hibernate.MappingException;
 import org.hibernate.dialect.Dialect;
 import org.hibernate.engine.SessionImplementor;
-import org.hibernate.exception.JDBCExceptionHelper;
+//import org.hibernate.engine.spi.SessionImplementor;
+//import org.hibernate.exception.JDBCExceptionHelper;
 import org.hibernate.id.Configurable;
 import org.hibernate.id.IdentifierGenerator;
 import org.hibernate.id.PersistentIdentifierGenerator;
@@ -18,9 +21,7 @@ public class CustomGenerator implements PersistentIdentifierGenerator, Configura
 
     private String tableName;
 
-    @Override
-    public Serializable generate(SessionImplementor sessionImplemetor, Object object) throws HibernateException
-    {
+    public Serializable generate(SessionImplementor sessionImplemetor, Object object) throws HibernateException, SQLException {
 
         return getNextNumber(sessionImplemetor);
 
@@ -32,14 +33,12 @@ public class CustomGenerator implements PersistentIdentifierGenerator, Configura
         tableName = params.getProperty(PersistentIdentifierGenerator.TABLE);
     }
 
-    private Long getNextNumber(SessionImplementor session)
-    {
+    private Long getNextNumber(SessionImplementor session) throws SQLException {
         String sql = "{call stored procedure name}";
         Long nextValue = null;
         try
         {
-            PreparedStatement st =
-                        session.getBatcher().prepareSelectStatement(sql);
+            PreparedStatement st = null;
             st.setString(1, tableName);
             try
             {
@@ -58,17 +57,32 @@ public class CustomGenerator implements PersistentIdentifierGenerator, Configura
             }
             finally
             {
-                session.getBatcher().closeStatement(st);
             }
         }
         catch (SQLException sqle)
         {
-            throw JDBCExceptionHelper.convert(session.getFactory()
-                        .getSQLExceptionConverter(), sqle,
-                        "could not fetch initial value for increment generator",
-                        sql);
+            throw sqle;
         }
         return null;
     }
 
+    @Override
+    public String[] sqlCreateStrings(Dialect dialect) throws HibernateException {
+        return new String[0];
+    }
+
+    @Override
+    public String[] sqlDropStrings(Dialect dialect) throws HibernateException {
+        return new String[0];
+    }
+
+    @Override
+    public Object generatorKey() {
+        return null;
+    }
+
+    @Override
+    public Serializable generate(org.hibernate.engine.spi.SessionImplementor sessionImplementor, Object o) throws HibernateException {
+        return null;
+    }
 }

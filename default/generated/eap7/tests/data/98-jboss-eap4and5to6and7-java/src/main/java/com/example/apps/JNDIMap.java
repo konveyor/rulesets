@@ -1,4 +1,8 @@
+package com.example.apps;
+
 import org.jboss.system.ServiceMBeanSupport;
+
+import javax.naming.NamingException;
 
 public class JNDIMap extends ServiceMBeanSupport implements JNDIMapMBean
 {
@@ -9,7 +13,7 @@ public class JNDIMap extends ServiceMBeanSupport implements JNDIMapMBean
         return jndiName;
     }
 
-    public void setJndiName(String jndiName) throws NamingException 
+    public void setJndiName(String jndiName) throws NamingException
     {
     }
 }

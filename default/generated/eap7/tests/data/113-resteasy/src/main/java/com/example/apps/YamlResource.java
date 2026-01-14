@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -11,7 +13,11 @@ public class YamlResource {
   public MyObject getMyObject() {
     return createMyObject();
   }
-  
+
+  private MyObject createMyObject() {
+    return null;
+  }
+
   @GET
   @Produces("text/yaml")
   public MyObject getMyObject1() {
@@ -37,9 +43,4 @@ public class YamlResource {
       return "";
   }
 
-  @GET
-  @Produces("application/xml")
-  public String getResult() {
-      return "";
-  }
 }

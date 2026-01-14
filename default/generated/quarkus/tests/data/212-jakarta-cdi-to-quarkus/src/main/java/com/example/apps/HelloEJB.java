@@ -1,4 +1,4 @@
-package sample;
+package com.example.apps;
 
 import jakarta.ejb.Stateless;
 

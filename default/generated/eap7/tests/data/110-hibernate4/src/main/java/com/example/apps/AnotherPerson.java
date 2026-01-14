@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,10 +14,10 @@ public class AnotherPerson {
     private byte[] photo;
     private Byte[] foo;
 
-    public Person() {
+    public AnotherPerson() {
     }
 
-    public Person(String name) {
+    public AnotherPerson(String name) {
         this.name = name;
     }
 

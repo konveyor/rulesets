@@ -1,4 +1,4 @@
-package com.jboss.windup.test;
+package com.example.apps;
 
 import java.io.IOException;
 import java.io.PrintWriter;

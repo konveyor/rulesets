@@ -6,5 +6,21 @@
 	<artifactId>sample-project</artifactId>
 	<version>0.0.1</version>
 	<name>Sample Project</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jboss.naming</groupId>
+			<artifactId>jboss-remote-naming</artifactId>
+			<version>2.0.4.Final</version>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>jboss-public-repository-group</id>
+			<url>https://repository.jboss.org/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
+
 </project>
 		

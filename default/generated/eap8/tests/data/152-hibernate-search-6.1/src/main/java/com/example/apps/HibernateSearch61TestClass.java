@@ -15,6 +15,7 @@ import org.hibernate.search.engine.backend.work.execution.spi.IndexIndexingPlanE
 import org.hibernate.search.engine.common.timing.spi.Deadline;
 import org.hibernate.search.engine.cfg.spi.ConfigurationPropertySource;
 import org.hibernate.search.mapper.orm.automaticindexing.AutomaticIndexingStrategyName;
+import org.hibernate.search.mapper.orm.cfg.HibernateOrmMapperSettings;
 import org.hibernate.search.mapper.orm.massindexing.MassIndexingFailureHandler;
 import org.hibernate.search.mapper.orm.massindexing.MassIndexingMonitor;
 
@@ -29,8 +30,8 @@ public class HibernateSearch61TestClass implements org.hibernate.search.engine.b
         URLEncodedString.fromJSon("{hey:1}");
         URLEncodedString.fromJsonString("{hey:1}");
         FieldPaths.absolutize("1", "2", "3");
-        IndexManagerImplementor indexManagerImplementor;
-        indexManagerImplementor.createIndexingPlan(null, null, null);
+        IndexManagerImplementor indexManagerImplementor = new IndexManagerImplementorImpl();
+        indexManagerImplementor.createIndexingPlan(null, null, null, null);
         MassIndexingFailureHandler handler;
         org.hibernate.search.mapper.orm.massindexing.MassIndexingMonitor monitor;
         AutomaticIndexingStrategyName automaticIndexingStrategyName = AutomaticIndexingStrategyName.of("Hey");
@@ -65,7 +66,7 @@ public class HibernateSearch61TestClass implements org.hibernate.search.engine.b
         String strat = org.hibernate.search.mapper.orm.cfg.HibernateOrmMapperSettings.AUTOMATIC_INDEXING_STRATEGY;
         String strat2 = org.hibernate.search.mapper.orm.cfg.HibernateOrmMapperSettings.Radicals.AUTOMATIC_INDEXING_STRATEGY;
         String strat3 = org.hibernate.search.mapper.orm.cfg.HibernateOrmMapperSettings.AutomaticIndexingRadicals.STRATEGY;
-        String strat4 = org.hibernate.search.mapper.orm.cfg.HibernateOrmMapperSettings.Defaults.AUTOMATIC_INDEXING_STRATEGY;
+        AutomaticIndexingStrategyName strat4 = HibernateOrmMapperSettings.Defaults.AUTOMATIC_INDEXING_STRATEGY;
 
         IndexIndexingPlan indexIndexingPlan = null;
         indexIndexingPlan.executeAndReport();

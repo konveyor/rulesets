@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 

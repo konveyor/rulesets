@@ -217,12 +217,22 @@ tests:
     hasIncidents:
       exactly: 1
       messageMatches: This will be removed with no replacement.
+<<<<<<< Updated upstream
 - ruleID: hsearch-00216
   testCases:
   - name: tc-1
     hasIncidents:
       exactly: 1
       messageMatches: should be at most SearchIntegrator, preferably removed altogether.*
+=======
+# IGNORED: cannot create test data for this
+#- ruleID: hsearch-00216
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: should be at most SearchIntegrator, preferably removed altogether.*
+>>>>>>> Stashed changes
 - ruleID: hsearch-00217
   testCases:
   - name: tc-1

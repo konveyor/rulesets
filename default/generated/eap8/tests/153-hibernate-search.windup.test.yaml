@@ -575,6 +575,7 @@ tests:
       exactly: 1
       messageMatches: '`@Longitude` is still available in Hibernate Search 6, but
         moved to a different package: `org.hibernate.search.annotations.Longitude`.'
+<<<<<<< Updated upstream
 - ruleID: hibernate-search-00830
   testCases:
   - name: tc-1
@@ -583,6 +584,17 @@ tests:
       messageMatches: In Hibernate Search 5, `@Normalizer` could point directly to
         a class extending `org.apache.lucene.analysis.Analyzer`, for example with
         `@Normalizer(impl = MyNormalizer.class)`
+=======
+# This annotation can not actually be used in code because it has no target
+#- ruleID: hibernate-search-00830
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: In Hibernate Search 5, `@Normalizer` could point directly to
+#        a class extending `org.apache.lucene.analysis.Analyzer`, for example with
+#        `@Normalizer(impl = MyNormalizer.class)`.*
+>>>>>>> Stashed changes
 - ruleID: hibernate-search-00850
   testCases:
   - name: tc-1

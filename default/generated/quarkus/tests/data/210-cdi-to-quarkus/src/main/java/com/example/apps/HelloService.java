@@ -1,4 +1,4 @@
-package sample;
+package com.example.apps;
 
 import javax.enterprise.context.Dependent;
 import javax.enterprise.inject.Produces;

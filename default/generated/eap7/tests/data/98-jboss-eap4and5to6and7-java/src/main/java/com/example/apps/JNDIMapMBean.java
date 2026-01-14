@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import org.jboss.system.ServiceMBean;
 import javax.naming.NamingException;
 

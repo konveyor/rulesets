@@ -21,7 +21,11 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
+<<<<<<< Updated upstream
       exactly: 2
+=======
+      exactly: 1
+>>>>>>> Stashed changes
       messageMatches: The `@Management` annotation
 - ruleID: jboss-eap5-7-java-06000
   testCases:

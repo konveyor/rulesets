@@ -6,5 +6,15 @@
 	<artifactId>sample-project</artifactId>
 	<version>0.0.1</version>
 	<name>Sample Project</name>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jboss</groupId>
+			<artifactId>jboss-common-core</artifactId>
+			<version>2.5.0.Final</version>
+		</dependency>
+	</dependencies>
+
 </project>
 		

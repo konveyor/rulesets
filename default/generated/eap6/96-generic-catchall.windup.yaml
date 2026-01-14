@@ -18,9 +18,13 @@
      There is currently no detailed information about this type.
   ruleID: generic-catchall-00000
   when:
-    java.referenced:
-      location: PACKAGE
-      pattern: (edu|EDU).oswego.cs.dl.util.concurrent*
+    or:
+    - java.referenced:
+        location: PACKAGE
+        pattern: edu.oswego.cs.dl.util.concurrent*
+    - java.referenced:
+        location: PACKAGE
+        pattern: EDU.oswego.cs.dl.util.concurrent*
 - category: optional
   customVariables: []
   description: backport-util-concurrent type reference
@@ -133,8 +137,8 @@
   ruleID: generic-catchall-00200
   when:
     java.referenced:
-      location: IMPORT
-      pattern: amx_*
+      location: PACKAGE
+      pattern: amx.*
 - category: optional
   customVariables:
   - name: packageRemainder

@@ -1,3 +1,4 @@
+package com.example.apps;
 // Contains code that should match for the following tests:
 //
 // soa-p-5-01000-test
@@ -17,7 +18,7 @@ public class UnusedAction extends AbstractActionLifecycle
 
     public Message displayMessage(Message message) {
         System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-        System.out.println("Body: " + message.getBody().get()) ;
+        System.out.println("Body: " + message.getBody().get());
         System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
         return message;
     }

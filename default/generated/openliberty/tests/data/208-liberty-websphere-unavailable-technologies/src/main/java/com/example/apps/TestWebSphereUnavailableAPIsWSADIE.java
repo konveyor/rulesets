@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import com.ibm.etools.ctc.plugin.binding.connector.TestClass1;
 import com.ibm.etools.ctc.physicalrep.TestClass2;
 import com.ibm.etools.ctc.wsdl.extensions.physicalrep.TestClass3;

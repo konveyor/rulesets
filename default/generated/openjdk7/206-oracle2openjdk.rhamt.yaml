@@ -20,8 +20,8 @@
   ruleID: oracle2openjdk-00000
   when:
     java.referenced:
-      location: PACKAGE
-      pattern: javafx*
+      location: IMPORT
+      pattern: javafx.*
 - category: potential
   customVariables: []
   description: Fonts usage
@@ -72,8 +72,8 @@
   ruleID: oracle2openjdk-00002
   when:
     java.referenced:
-      location: PACKAGE
-      pattern: jdk.management.resource*
+      location: IMPORT
+      pattern: jdk.management.resource.*
 - category: potential
   customVariables: []
   description: Color management usage
@@ -207,16 +207,16 @@
     or:
     - java.referenced:
         location: CONSTRUCTOR_CALL
-        pattern: com.sun.image.codec.jpeg*
+        pattern: com.sun.image.codec.jpeg.*
     - java.referenced:
         location: IMPORT
-        pattern: com.sun.image.codec.jpeg*
+        pattern: com.sun.image.codec.jpeg.*
     - java.referenced:
         location: INHERITANCE
-        pattern: com.sun.image.codec.jpeg*
+        pattern: com.sun.image.codec.jpeg.*
     - java.referenced:
         location: METHOD_CALL
-        pattern: com.sun.image.codec.jpeg*
+        pattern: com.sun.image.codec.jpeg.*
     - java.referenced:
         location: VARIABLE_DECLARATION
-        pattern: com.sun.image.codec.jpeg*
+        pattern: com.sun.image.codec.jpeg.*

@@ -1,6 +1,6 @@
 package com.jboss.windup.test;
 
-public class Main extends Thread {
+class Main extends Thread {
 
     public static void main(String[] args) {
 

@@ -1,6 +1,13 @@
-import org.springframework.boot.context.properties.ConfigurationProperties;
+package com.example.apps;
 
-@ConfigurationProperties(prefix="my")
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@ConfigurationPropertiesScan
+@ConfigurationProperties
 public class Config {
 
     private List<String> servers = new ArrayList<String>();

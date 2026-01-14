@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 import javax.xml.ws.WebEndpoint;
@@ -35,9 +37,6 @@ public class RestaurantServiceATService extends Service {
                 "http://www.jboss.org/jboss-jdf/jboss-as-quickstart/wsat/simple/Restaurant", "RestaurantServiceATService"));
     }
 
-    *
-     *
-     * @return returns RestaurantServiceAT
 
     @WebEndpoint(name = "RestaurantServiceAT")
     public RestaurantServiceAT getRestaurantServiceAT() {
@@ -45,11 +44,6 @@ public class RestaurantServiceATService extends Service {
                 "RestaurantServiceAT"), RestaurantServiceAT.class);
     }
 
-    *
-     *
-     * @param features A list of {@link javax.xml.ws.WebServiceFeature} to configure on the proxy. Supported features not in the
-     *        <code>features</code> parameter will have their default values.
-     * @return returns RestaurantServiceAT
 
     @WebEndpoint(name = "RestaurantServiceAT")
     public RestaurantServiceAT getRestaurantServiceAT(WebServiceFeature... features) {

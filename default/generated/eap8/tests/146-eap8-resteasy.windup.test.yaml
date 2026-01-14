@@ -69,7 +69,11 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
+<<<<<<< Updated upstream
       exactly: 2
+=======
+      atLeast: 1
+>>>>>>> Stashed changes
       messageMatches: '`org.jboss.resteasy.plugins.interceptors.encoding` classes
         have been removed.'
 - ruleID: eap8-resteasy-00011

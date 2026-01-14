@@ -5,6 +5,7 @@ providers:
 - name: builtin
   dataPath: ./data/151-hibernate-6.2
 tests:
+<<<<<<< Updated upstream
 - ruleID: hibernate-6.2-00010
   testCases:
   - name: tc-1
@@ -14,6 +15,18 @@ tests:
         ids, SharedSessionContractImplementor session, MultiIdLoadOptions loadOptions)`
         to `EntityPersister#lock(Object[] ids, EventSource session, MultiIdLoadOptions
         loadOptions)`
+=======
+# FIXME: https://github.com/konveyor/analyzer-lsp/issues/1044
+#- ruleID: hibernate-6.2-00010
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      atLeast: 1
+#      messageMatches: This method has changed from `EntityPersister#multiload(Object[]
+#        ids, SharedSessionContractImplementor session, MultiIdLoadOptions loadOptions)`
+#        to `EntityPersister#lock(Object[] ids, EventSource session, MultiIdLoadOptions
+#        loadOptions)`.*
+>>>>>>> Stashed changes
 - ruleID: hibernate-6.2-00020
   testCases:
   - name: tc-1

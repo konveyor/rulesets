@@ -33,7 +33,7 @@ public class JaxWsWebService extends AbstractEaoService implements Serializable 
 
     public Integer div(Integer a, Integer b)
     {
-        if (b === 0)
+        if (b == 0)
         {
             throw new IllegalArgumentException("b cannot be 0");
         }

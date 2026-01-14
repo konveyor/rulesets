@@ -45,7 +45,7 @@ import org.hibernate.search.store.Workspace;
 import org.hibernate.search.filter.FilterKey;
 import org.hibernate.search.filter.StandardFilterKey;
 import org.hibernate.search.impl.FullTextSharedSessionBuilderDelegator;
-import static org.hibernate.search.backend.configuration.impl.IndexWriterSetting.MAX_THREAD_STATES;
+//import static org.hibernate.search.backend.configuration.impl.IndexWriterSetting.MAX_THREAD_STATES;
 import org.hibernate.search.backend.configuration.impl.IndexWriterSetting;
 import org.hibernate.search.bridge.spi.ConversionContext;
 import org.hibernate.search.FullTextSharedSessionBuilder;
@@ -61,7 +61,7 @@ import org.hibernate.search.query.engine.spi.HSQuery;
 import org.hibernate.search.spi.BuildContext;
 import org.hibernate.search.MassIndexer;
 import org.hibernate.search.query.dsl.FuzzyContext;
-import org.hibernate.search.store.spi;
+//import org.hibernate.search.store.spi;
 
 import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.queryParser.QueryParser;
@@ -124,7 +124,7 @@ public class HsearchUtil {
         massIndexer.startAndWait();
 
         HSQuery query = null;
-        ExtendedSearchIntegrator searchIntegrator = query.getExtendedSearchIntegrator();
+//        ExtendedSearchIntegrator searchIntegrator = query.getExtendedSearchIntegrator();
         // hsearch-00218
         BuildContext context = null;
         context.getIndexingStrategy();

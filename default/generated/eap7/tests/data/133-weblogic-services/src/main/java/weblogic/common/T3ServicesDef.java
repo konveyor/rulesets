@@ -1,0 +1,6 @@
+package weblogic.common;
+
+public interface T3ServicesDef {
+    // T3ServicesDef interface
+}
+

@@ -114,7 +114,7 @@
   ruleID: websphere-jms-eap7-02500
   when:
     java.referenced:
-      pattern: com.ibm.mqe.jms.{type}Queue
+      pattern: com.ibm.mqe.jms.*Queue
 - category: mandatory
   customVariables:
   - name: type
@@ -144,6 +144,7 @@
   when:
     java.referenced:
       pattern: com.ibm.*jms.(JMS|MQe|MQ)(Text|Stream|Object|Map|Bytes)?Message
+# FIXME: this rule does not seem to work
 - category: mandatory
   customVariables:
   - name: package

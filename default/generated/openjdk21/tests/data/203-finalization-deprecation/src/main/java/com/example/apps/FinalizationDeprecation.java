@@ -1,9 +1,11 @@
+package com.example.apps;
+
 import javax.imageio.stream.FileImageOutputStream;
 import java.io.File;
 
 public class FinalizationDeprecation extends Object {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Throwable {
         FinalizationDeprecation o1 = new FinalizationDeprecation();
         o1.finalize();
 
@@ -11,9 +13,6 @@ public class FinalizationDeprecation extends Object {
         runtime.runFinalization();
         
         System.runFinalization();
-
-        FileImageOutputStream stream = new FileImageOutputStream(new File("hey"));
-        stream.finalize();
     }
 
     @Override

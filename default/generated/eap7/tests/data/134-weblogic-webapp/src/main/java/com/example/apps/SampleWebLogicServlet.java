@@ -1,4 +1,4 @@
-// Contains code that should match for the following tests:
+package com.example.apps;// Contains code that should match for the following tests:
 //
 // weblogic-webapp-02000-test
 // weblogic-webapp-03000-test
@@ -24,7 +24,7 @@ import weblogic.servlet.annotation.WLServlet;
  */
 @WLServlet (
     name = "catalog",
-    runAs = "SuperEditor"
+    runAs = "SuperEditor",
     initParams = {
         @WLInitParam (name="catalog", value="spring"),
         @WLInitParam (name="language", value="English")
