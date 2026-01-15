@@ -48,19 +48,19 @@ jobs:
         fetch-depth: 0
         repository: konveyor/tackle2-seed
         ref: ${{ github.event_name == 'push' && github.ref || github.base_ref }}
-        path: tackle2-hub/tackle2-seed
+        path: tackle2-seed
 
     - name: Update the seed repo
-      working-directory: tackle2-hub/tackle2-seed
+      working-directory: seed
       run: |
-        RULESET_ARGS='-r ../../rulesets --yes' make ruleset-patch
+        RULESET_ARGS='-r ../rulesets --yes' make ruleset-patch
 
     - name: Build hub and save image
       working-directory: tackle2-hub
       env:
         IMG: ttl.sh/konveyor-hub-${{ github.sha }}:4h
       run: |
-        podman build --build-arg SEED_ROOT=/opt/app-root/src/tackle2-seed -t $IMG .
+        podman build --build-arg SEED_ROOT=/opt/app-root/src/seed -t $IMG .
         podman push $IMG
 
   e2e:
