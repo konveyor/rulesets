@@ -51,7 +51,7 @@ jobs:
         path: tackle2-seed
 
     - name: Update the seed repo
-      working-directory: seed
+      working-directory: tackle2-seed
       run: |
         RULESET_ARGS='-r ../rulesets --yes' make ruleset-patch
 
