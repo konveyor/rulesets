@@ -12,38 +12,21 @@ tests:
       exactly: 3
       messageMatches: This finalization method has been removed between JDK 18 and
         21 and must b.*
-<<<<<<< Updated upstream
-- ruleID: removed-apis-00005
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      exactly: 1
-      messageMatches: The `java.lang.ThreadGroup.allowThreadSuspension` method has
-        been removed and cannot be used anymore.
-- ruleID: removed-apis-00010
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      exactly: 1
-      messageMatches: The `java.lang.Compiler` method has been removed and cannot
-        be used anymore.
-=======
 # FIXME: java.lang matching issues?
 #- ruleID: removed-apis-00005
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: The `java.lang.ThreadGroup.allowThreadSuspension` method has
 #        been removed and cannot be used anymore.
 #- ruleID: removed-apis-00010
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: The `java.lang.Compiler` method has been removed and cannot
 #        be used anymore.
->>>>>>> Stashed changes
 - ruleID: removed-apis-00015
   testCases:
   - name: tc-1

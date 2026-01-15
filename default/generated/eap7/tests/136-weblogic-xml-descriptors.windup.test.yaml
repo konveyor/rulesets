@@ -75,11 +75,7 @@ tests:
   - name: tc-1
     hasTags:
     - WebLogic services configuration
-<<<<<<< Updated upstream
 # FIXME: not working: https://github.com/konveyor/rulesets/issues/321
-=======
-# FIXME: broken for some reason
->>>>>>> Stashed changes
 #- ruleID: weblogic-xml-descriptor-eap7-16000
 #  testCases:
 #  - name: tc-1

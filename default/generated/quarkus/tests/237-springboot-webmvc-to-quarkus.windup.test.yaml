@@ -9,14 +9,9 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-<<<<<<< Updated upstream
-      exactly: 1
-      messageMatches: Spring MVC is not supported by Quarkus
-=======
       exactly: 2
 - ruleID: springboot-webmvc-to-quarkus-01000
   testCases:
     - name: tc-1
       hasIncidents:
         exactly: 2
->>>>>>> Stashed changes

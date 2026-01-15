@@ -240,11 +240,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-<<<<<<< Updated upstream
-      exactly: 2
-=======
-      atLeast: 1
->>>>>>> Stashed changes
+      exactly: 1
       messageMatches: The following WebSphere Workload Manager APIs are not available
         on Liberty
 - ruleID: WebSphereUnavailableAPIsWSADIE

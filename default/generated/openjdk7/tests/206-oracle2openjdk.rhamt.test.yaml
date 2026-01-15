@@ -5,42 +5,24 @@ providers:
 - name: builtin
   dataPath: ./data/206-oracle2openjdk.rhamt.test.yaml
 tests:
-<<<<<<< Updated upstream
 - ruleID: oracle2openjdk-00000
   testCases:
   - name: tc-1
     hasInsights:
       exactly: 7
       messageMatches: Currently OpenJFX
-=======
-#- ruleID: oracle2openjdk-00000
-#  testCases:
-#  - name: tc-1
-#    hasInsights:
-#      atLeast: 7
-#      messageMatches: Currently OpenJFX
->>>>>>> Stashed changes
 - ruleID: oracle2openjdk-00001
   testCases:
   - name: tc-1
     hasInsights:
       exactly: 5
       messageMatches: The font library is different in OpenJDK compared to OracleJDK
-<<<<<<< Updated upstream
 - ruleID: oracle2openjdk-00002
   testCases:
   - name: tc-1
     hasInsights:
       exactly: 1
       messageMatches: OpenJDK does not support the resource management API for Java
-=======
-#- ruleID: oracle2openjdk-00002
-#  testCases:
-#  - name: tc-1
-#    hasInsights:
-#      atLeast: 1
-#      messageMatches: OpenJDK does not support the resource management API for Java
->>>>>>> Stashed changes
 - ruleID: oracle2openjdk-00003
   testCases:
   - name: tc-1

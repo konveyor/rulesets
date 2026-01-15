@@ -204,21 +204,12 @@ tests:
     hasIncidents:
       exactly: 1
       messageMatches: RESTEasy 3 deprecates method .*org.jboss.resteasy.plugins.delegates.ServerCookie#checkName.*
-<<<<<<< Updated upstream
-- ruleID: resteasy-eap6-000119
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      exactly: 1
-      messageMatches: Empty
-=======
 #- ruleID: resteasy-eap6-000119
 #  testCases:
 #  - name: tc-1
 #    hasIncidents:
-#      atLeast: 1
+#      exactly: 1
 #      messageMatches: Empty
->>>>>>> Stashed changes
 - ruleID: resteasy-eap6-000120
   testCases:
   - name: tc-1

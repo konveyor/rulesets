@@ -9,11 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-<<<<<<< Updated upstream
-      exactly: 2
-=======
       exactly: 1
->>>>>>> Stashed changes
       messageMatches: This `doAs` signature has been deprecated in JDK18 for removal
         in a future release.
 # FIXME: method from a java.lang class is not matched
