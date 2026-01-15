@@ -114,7 +114,6 @@ tests:
       messageMatches: .*?JMSStreamMessage` messages represent.*
   - name: tc-5
     hasIncidents:
-<<<<<<< Updated upstream
       exactly: 3
       messageMatches: .*?JMSTextMessage` messages represent.*
 - ruleID: websphere-jms-eap7-04000
