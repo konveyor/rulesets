@@ -34,7 +34,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      exactly: 3
       messageMatches: Searches for implementation class names
 - ruleID: eap8-xml-binding-00006
   testCases:

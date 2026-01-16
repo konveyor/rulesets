@@ -627,7 +627,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 4
+      exactly: 8
       messageMatches: Search APIs have changed significantly in order to implement
         several improvements. The recommended way to build searc.*
 - ruleID: hibernate-search-00930

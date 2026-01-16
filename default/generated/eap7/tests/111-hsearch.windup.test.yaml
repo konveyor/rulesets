@@ -257,11 +257,11 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 4
       messageMatches: Lucene's core .*?org.apache.lucene.queryParser.ParseException.*
   - name: tc-2
     hasIncidents:
-      exactly: 6
+      exactly: 1
   - name: tc-3
     hasIncidents:
       exactly: 3

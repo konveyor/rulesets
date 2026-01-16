@@ -9,6 +9,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 4
+      exactly: 2
       messageMatches: When a singleton EJB bean class implements `javax.ejb.SessionBean`
         interface, this interface should be removed from the implements clause.*

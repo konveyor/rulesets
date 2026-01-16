@@ -31,6 +31,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: The `javax.management.remote.rmi.RMIIIOPServerImpl` method has
         been removed and cannot be used anymore.

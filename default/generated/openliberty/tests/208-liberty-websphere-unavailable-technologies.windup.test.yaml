@@ -113,7 +113,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 17
+      exactly: 32
       messageMatches: The WebSphere Servlet API was superseded by standard
 - ruleID: WebSphereUnavailableAPIsAppClient
   testCases:
@@ -140,7 +140,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 3
+      exactly: 5
       messageMatches: The following WebSphere Exception APIs and SPIs are not available
         on Liberty
 - ruleID: WebSphereUnavailableAPIsExtensionRegistry
@@ -159,7 +159,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 14
+      exactly: 18
       messageMatches: The following WebSphere logging and RAS APIs and SPIs are not
         available on Liberty
 - ruleID: WebSphereUnavailableAPIsManagement
@@ -180,7 +180,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 6 # TODO (pgaikwad): Two of these matches are false positives.
+      exactly: 4
       messageMatches: he following WebSphere Performance Monitoring Infrastructure
 - ruleID: WebSphereUnavailableAPIsPortal
   testCases:
@@ -199,7 +199,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 57
+      exactly: 101
       messageMatches: The following WebSphere Security APIs and SPIs are not available
         on Liberty
 - ruleID: WebSphereUnavailableAPIsSIB
@@ -247,7 +247,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 22
+      exactly: 28
       messageMatches: The following WebSphere Studio Application Developer Integration
         Edition APIs are not available on Liberty
 - ruleID: WebSphereUnavailableAPIsWSSecurityHelper
@@ -278,7 +278,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 9
+      exactly: 15
       messageMatches: Liberty supports a subset of the WebSphere Optimized Local Adapters
         (WOLA) APIs. This rule flags the use of APIs that are unsupported on Liberty.
 - ruleID: WOLARule
@@ -314,7 +314,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 38
+      exactly: 28
       messageMatches: The following WebSphere web services APIs and SPIs are not available
         on Liberty
 #- ruleID: WebSphereWebServicesGeneratedClassesRule

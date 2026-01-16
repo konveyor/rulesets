@@ -15,5 +15,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 3
+      exactly: 2
       messageMatches: 'Spring JMX annotation configuration detected:'

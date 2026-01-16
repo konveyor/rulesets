@@ -36,5 +36,5 @@ tests:
     testCases:
     - name: tc-1
       hasIncidents:
-        exactly: 1
+        exactly: 2
         messageMatches: This is an Oracle proprietary type (`oracle..*

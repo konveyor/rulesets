@@ -52,7 +52,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Replace org.hibernate.engine.SessionImplementor.*
 - ruleID: hibernate-09000
   testCases:

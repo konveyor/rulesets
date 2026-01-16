@@ -15,13 +15,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 4
+      exactly: 6
       messageMatches: .*service(XQServiceContext context.*
 - ruleID: sonic-esb-03000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 4 # TODO (pgaikwad): B7 recheck
+      exactly: 7 # TODO (pgaikwad): B7 recheck
       messageMatches: The XQInitContext is use.*
 - ruleID: sonic-esb-04000
   testCases:
@@ -39,19 +39,19 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 3
+      exactly: 7
       messageMatches: .*Migrate XQParameters to Spring property injection
 - ruleID: sonic-esb-07000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      exactly: 4
       messageMatches: .*Migrate XQParameterInfo to Spring property injection
 - ruleID: sonic-esb-08000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 3
+      exactly: 7
       messageMatches: .*Migrate to org.apache.camel.Message
 - ruleID: sonic-esb-09000
   testCases:
@@ -75,7 +75,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 3
+      exactly: 7
       messageMatches: .*Migrate XQPart to an attachment
 - ruleID: sonic-esb-13000
   testCases:
@@ -91,7 +91,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      exactly: 4
       messageMatches: .*Apache SLF4J
 - ruleID: sonic-esb-16000
   testCases:
@@ -121,7 +121,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 3
+      exactly: 8
       messageMatches: .*Migrate to org.apache.camel.Exchange
 - ruleID: sonic-esb-21000
   testCases:

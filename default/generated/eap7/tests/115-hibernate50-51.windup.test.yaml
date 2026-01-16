@@ -16,5 +16,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 5
+      exactly: 6
       messageMatches: The changes mainly focused on

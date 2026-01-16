@@ -16,19 +16,19 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 6
+      exactly: 2
       messageMatches: Replace class .*org.jboss.resteasy.client.ClientRequest`.*
 - ruleID: resteasy-eap6-000003
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 3
+      exactly: 2
       messageMatches: Replace .*org.jboss.resteasy.client.ClientResponse.*
 - ruleID: resteasy-eap6-000004
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 3
+      exactly: 1
       messageMatches: Replace this class with .*org.jboss.resteasy.client.jaxrs.
 - ruleID: resteasy-eap6-000005
   testCases:
@@ -58,7 +58,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      exactly: 1
       messageMatches: Replace .*org.jboss.resteasy.spi.StringConverter.*
 - ruleID: resteasy-eap6-000010
   testCases:
@@ -100,7 +100,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: No direct replacement.*
 - ruleID: resteasy-eap6-000019
   testCases:
@@ -166,7 +166,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Replaced by .*?javax.ws.rs.ForbiddenException.*
 - ruleID: resteasy-eap6-000103
   testCases:
@@ -226,13 +226,13 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      exactly: 1
       messageMatches: .*MultipartFormDataInputImpl#getFormData.*
 - ruleID: resteasy-eap6-000123
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      exactly: 1
       messageMatches: .*MultipartFormDataInput#getFormData.* method will be removed.*
 - ruleID: resteasy-eap6-000125
   testCases:

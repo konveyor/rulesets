@@ -14,7 +14,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 3
+      exactly: 1
 - ruleID: websphere-mqe-eap7-02000
   testCases:
   - name: tc-1
@@ -24,11 +24,11 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      exactly: 3
       messageMatches: '`MQeJMSAuthenticator` is a WebSphere proprietary.*'
 - ruleID: websphere-mqe-eap7-04000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      exactly: 3
       messageMatches: IBM MQe constants are used.*

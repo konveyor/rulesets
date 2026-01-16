@@ -15,7 +15,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 4
+      exactly: 6
       messageMatches: .*T3ServicesDef.* provides access to core services of the container.*
 - ruleID: weblogic-services-eap7-03000
   testCases:

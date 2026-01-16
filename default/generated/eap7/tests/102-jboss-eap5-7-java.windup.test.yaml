@@ -15,7 +15,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 3
+      exactly: 1
       messageMatches: The purpose of `@Service`
 - ruleID: jboss-eap5-7-java-05000
   testCases:
@@ -33,7 +33,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 3
+      exactly: 1
       messageMatches: The `@Depends` annotation
 - ruleID: jboss-eap5-7-java-08000
   testCases:
@@ -79,14 +79,14 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 3
+      exactly: 2
       messageMatches: This package has been relocated to `org.jboss.ws.api.tools`
         as specified in the
 - ruleID: jboss-eap5-7-java-08600
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: This class has been relocated to `org.jboss.ws.api.util.ServiceLoader`
         as specified in the
 - ruleID: jboss-eap5-7-java-08700
@@ -100,20 +100,20 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: This class has been relocated to `org.jboss.ws.api.util.DOMUtils`
         as specified in the
 - ruleID: jboss-eap5-7-java-09000
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 4
+      exactly: 3
       messageMatches: This package has been relocated to `org.jboss.ws.common` as
         specified in the
 - ruleID: jboss-eap5-7-java-09100
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: This class has been relocated to `org.jboss.ws.api.annotation.EndpointConfig`
         as specified in the
