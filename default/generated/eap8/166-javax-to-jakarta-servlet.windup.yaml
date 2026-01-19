@@ -359,7 +359,7 @@
   ruleID: javax-to-jakarta-servlet-00100
   when:
     java.referenced:
-      pattern: HttpServletResponse.encodeUrl
+      pattern: javax.servlet.http.HttpServletResponse.encodeUrl
       location: METHOD_CALL
 - category: mandatory
   customVariables: []
@@ -383,7 +383,7 @@
   ruleID: javax-to-jakarta-servlet-00101
   when:
     java.referenced:
-      pattern: HttpServletResponse.encodeRedirectUrl
+      pattern: javax.servlet.http.HttpServletResponse.encodeRedirectUrl
       location: METHOD_CALL
 - category: mandatory
   customVariables: []
@@ -407,7 +407,7 @@
   ruleID: javax-to-jakarta-servlet-00102
   when:
     java.referenced:
-      pattern: HttpServletResponse.setStatus(int,String)
+      pattern: javax.servlet.http.HttpServletResponse.setStatus(Integer,String)
       location: METHOD_CALL
 - category: mandatory
   customVariables: []
@@ -431,7 +431,7 @@
   ruleID: javax-to-jakarta-servlet-00110
   when:
     java.referenced:
-      pattern: HttpServletResponseWrapper.encodeUrl
+      pattern: javax.servlet.http.HttpServletResponseWrapper.encodeUrl
       location: METHOD_CALL
 - category: mandatory
   customVariables: []
@@ -455,7 +455,7 @@
   ruleID: javax-to-jakarta-servlet-00111
   when:
     java.referenced:
-      pattern: HttpServletResponseWrapper.encodeRedirectUrl
+      pattern: javax.servlet.http.HttpServletResponseWrapper.encodeRedirectUrl
       location: METHOD_CALL
 - category: mandatory
   customVariables: []
@@ -479,7 +479,7 @@
   ruleID: javax-to-jakarta-servlet-00112
   when:
     java.referenced:
-      pattern: HttpServletResponseWrapper.setStatus(int,String)
+      pattern: javax.servlet.http.HttpServletResponseWrapper.setStatus(Integer,String)
       location: METHOD_CALL
 - category: mandatory
   customVariables: []
