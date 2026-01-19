@@ -720,44 +720,6 @@
     title: PatternFly v6 Upgrade Guide
   customVariables: []
   migration_complexity: medium
-- ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00170
-  description: alignRight should be replaced with alignEnd
-  effort: 5
-  category: potential
-  labels:
-  - konveyor.io/source=patternfly-v5
-  - konveyor.io/target=patternfly-v6
-  when:
-    builtin.filecontent:
-      pattern: alignRight
-      filePattern: \.(j|t)sx?$
-  message: 'alignRight has been renamed to alignEnd for better RTL support
-
-
-    Replace `alignRight` with `alignEnd`.
-
-
-    Before:
-
-    ```
-
-    alignRight
-
-    ```
-
-
-    After:
-
-    ```
-
-    alignEnd
-
-    ```'
-  links:
-  - url: https://www.patternfly.org/get-started/upgrade/
-    title: PatternFly v6 Upgrade Guide
-  customVariables: []
-  migration_complexity: medium
 - ruleID: patternfly-v5-to-patternfly-v6-patternfly-v6-00180
   description: 576px should be replaced with 36rem
   effort: 3
