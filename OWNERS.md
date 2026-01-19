@@ -1,13 +1,14 @@
 # Owners
 
+## Maintainers
+- Juan Manuel Leflet Estrada (https://github.com/jmle)
+
 ## Approvers
 - Juan Manuel Leflet Estrada (https://github.com/jmle)
 - Shawn Hurley (https://github.com/shawn-hurley)
 - Pranav Gaikwad (https://github.com/pranavgaikwad)
 - Ramón Román Nissen (https://github.com/rromannissen)
-
-## Maintainers
-- Juan Manuel Leflet Estrada (https://github.com/jmle)
+- Emily McMullan (https://github.com/eemcmullan)
 
 
 Contact us via [Konveyor channel on Slack](https://www.konveyor.io/slack/).
