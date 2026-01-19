@@ -1,6 +1,7 @@
 package com.example.apps;
 
 import org.apache.lucene.analysis.standard.ClassicTokenizerFactory;
+import org.apache.lucene.analysis.util.CharFilterFactory;
 import org.apache.lucene.analysis.util.TokenizerFactory;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.Sort;
@@ -62,31 +63,32 @@ import org.hibernate.search.jpa.FullTextEntityManager;
 import org.hibernate.search.store.IndexShardingStrategy;
 import org.hibernate.search.store.ShardIdentifierProvider;
 import org.hibernate.search.store.ShardIdentifierProviderTemplate;
+import org.hibernate.search.analyzer.Discriminator;
 
 import java.util.Calendar;
 import java.util.Date;
 
 @Analyzer
 @AnalyzerDef(name = "name", tokenizer = @TokenizerDef(factory = TokenizerFactory.class))
-@AnalyzerDefs(value = HibernateSearchTestClass.class)
+@AnalyzerDefs(value = {})
 @AnalyzerDiscriminator(impl = HibernateSearchTestClass.class)
 @Boost(value = 0.12f)
 @CacheFromIndex
-@CharFilterDef()
-@ClassBridge()
+@CharFilterDef(factory = Additional.class)
+@ClassBridge(impl = Additional.class)
 @ClassBridges
-@ContainedIn
 @FullTextFilterDef(name = "filter", impl = HibernateSearchTestClass.class)
-@FullTextFilterDefs()
+@FullTextFilterDefs(value = {})
 @Indexed
-@Normalizer
-@NormalizerDef()
-@NormalizerDefs()
-@TikaBridge
-@TokenFilterDef()
-@TokenizerDef()
-public class HibernateSearchTestClass implements BoostStrategy {
+@ProvidedId
+@NormalizerDef(name = "")
+@NormalizerDefs(value = {})
+@TokenFilterDef(factory = Additional2.class)
+@TokenizerDef(factory = Additional3.class)
+public class HibernateSearchTestClass implements BoostStrategy, Discriminator {
 
+    @Normalizer
+    @TikaBridge
     @CalendarBridge(resolution = Resolution.DAY)
     Calendar calendar;
 
@@ -97,21 +99,20 @@ public class HibernateSearchTestClass implements BoostStrategy {
     @DocumentId
     @IndexedEmbedded
     @NumericField
-    @NumericFields()
+    @ContainedIn
+    @NumericFields(value = {})
     Integer id;
 
     @Facet
-    @Facets(value = "value")
-    @ProvidedId
+    @Facets(value = {})
     @SortableField
-    @SortableFields()
+    @SortableFields(value = {})
     String field1;
 
     @Field
-    @Fields()
+    @Fields(value = {})
     @Spatial
-    @Spatials()
-    @Factory
+    @Spatials(value = {})
     String field2;
 
     @FieldBridge
@@ -119,6 +120,7 @@ public class HibernateSearchTestClass implements BoostStrategy {
     @Longitude
     String field3;
 
+    @Factory
     @Key
     public String method1() {
         FullTextEntityManager fullTextEntityManager;
@@ -161,5 +163,15 @@ public class HibernateSearchTestClass implements BoostStrategy {
     Environment environment;
 
     ElasticsearchEnvironment elasticsearchEnvironment;
+
+    @Override
+    public String getAnalyzerDefinitionName(Object o, Object o1, String s) {
+        return "";
+    }
+
+    @Override
+    public float defineBoost(Object o) {
+        return 0;
+    }
 }
 

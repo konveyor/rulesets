@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jboss.as.quickstarts.rshelloworld;
+package com.example.apps;
 
 /**
  * A simple CDI service which is able to say hello to someone

@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import javax.annotation.sql.DataSourceDefinition;
 import javax.annotation.sql.DataSourceDefinitions;
 

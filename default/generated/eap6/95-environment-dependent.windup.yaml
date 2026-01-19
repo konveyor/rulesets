@@ -25,6 +25,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
+#      pattern: java.lang.Class.forName   # FIXME: probably failing because it's a java.lang class?
       pattern: forName
 - category: mandatory
   customVariables: []
@@ -56,7 +57,6 @@
      ```
   ruleID: environment-dependent-calls-02000
   when:
-    as: default
     java.referenced:
       location: METHOD_CALL
       pattern: javax.naming.Context.lookup
@@ -82,10 +82,9 @@
      ```
   ruleID: environment-dependent-calls-03000
   when:
-    as: default
     java.referenced:
       location: CONSTRUCTOR_CALL
-      pattern: InitialContext(Hashtable)
+      pattern: javax.naming.InitialContext(java.util.Hashtable)
 - customVariables: []
   description: JNDI properties file
   labels:
@@ -107,7 +106,6 @@
   - webservice
   - JNDI properties file
   when:
-    as: default
     builtin.file:
       pattern: jndi\.properties
 - category: mandatory
@@ -131,7 +129,6 @@
      Ensure that the `javax.management.{{suffix}}` does not need to change for JBoss EAP.
   ruleID: environment-dependent-calls-04000
   when:
-    as: default
     java.referenced:
       location: CONSTRUCTOR_CALL
       pattern: javax.management.ObjectName
@@ -156,10 +153,9 @@
      Ensure that the `javax.management.{{suffix}}` does not need to change for JBoss EAP.
   ruleID: environment-dependent-calls-04001
   when:
-    as: default
     java.referenced:
       location: CONSTRUCTOR_CALL
-      pattern: javax.management.remote.JMXServiceURL*
+      pattern: javax.management.remote.JMXServiceURL
 - category: mandatory
   customVariables: []
   description: JMX connection factory parameters
@@ -179,7 +175,6 @@
      Ensure that any of the parameters does not need to change for JBoss EAP.
   ruleID: environment-dependent-calls-05000
   when:
-    as: default
     java.referenced:
       location: METHOD_CALL
       pattern: javax.management.remote.JMXConnectorFactory.connect

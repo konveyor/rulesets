@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import com.ibm.websphere.servlet.request.TestClass1;
 import com.ibm.websphere.webcontainer.async.TestClass2;
 

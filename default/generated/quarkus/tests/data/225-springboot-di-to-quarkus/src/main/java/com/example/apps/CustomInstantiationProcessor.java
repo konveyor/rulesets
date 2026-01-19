@@ -1,18 +1,21 @@
+package com.example.apps;
+
+import org.springframework.beans.BeansException;
+import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
+import java.beans.PropertyDescriptor;
 
 public class CustomInstantiationProcessor implements InstantiationAwareBeanPostProcessor {
 
     public CustomInstantiationProcessor() {
-        log.info("InstantiationAwareBeanPostProcessor In other bean Create before create");
+        System.out.println("InstantiationAwareBeanPostProcessor In other bean Create before create");
     }
 
     /** Call before other bean instantiation */
     @Override
-    public Object postProcessBeforeInstantiation(Class
-  
-   beanClass, String beanName) throws BeansException {
+    public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
         if (beanClass.equals(SimpleBean.class)) {
-            log.info("{} About to instantiate", beanName);
+            System.out.println(beanName + " About to instantiate");
         }
         return null;
     }
@@ -21,9 +24,24 @@ public class CustomInstantiationProcessor implements InstantiationAwareBeanPostP
     @Override
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
         if (bean instanceof SimpleBean) {
-            log.info("{} Instantiation complete", beanName);
+            System.out.println(beanName + " Instantiation complete");
         }
         return true;
+    }
+
+    @Override
+    public PropertyValues postProcessPropertyValues(PropertyValues pvs, PropertyDescriptor[] pds, Object bean, String beanName) throws BeansException {
+        return pvs;
+    }
+
+    @Override
+    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+        return bean;
+    }
+
+    @Override
+    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+        return bean;
     }
 
 }

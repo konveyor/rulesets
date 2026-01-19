@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import com.ibm.websphere.ssl.protocol.TestClass1;
 import com.ibm.IExtendedSecurity.TestClass2;
 import com.ibm.websphere.security.oidc.util.TestClass3;

@@ -1,4 +1,4 @@
-package com.acme;
+package com.example.apps;
 
 import java.awt.Color;
 

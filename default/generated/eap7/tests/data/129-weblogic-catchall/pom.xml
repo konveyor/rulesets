@@ -19,11 +19,11 @@
 <!--			<version>24.09</version>-->
 <!--		</dependency>-->
 <!--		 https://mvnrepository.com/artifact/com.oracle.coherence.ce/coherence-->
-		<dependency>
-			<groupId>com.oracle.coherence.ce</groupId>
-			<artifactId>coherence</artifactId>
-			<version>24.09.3</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.oracle.coherence.ce</groupId>-->
+<!--			<artifactId>coherence</artifactId>-->
+<!--			<version>24.09.3</version>-->
+<!--		</dependency>-->
 
 		<!-- BEA Jolt (for bea.jolt.JoltService) -->
 		<!-- Not available in Maven Central; requires WebLogic installation -->

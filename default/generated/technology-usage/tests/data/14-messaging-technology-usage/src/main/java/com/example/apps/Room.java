@@ -1,3 +1,5 @@
+package com.example.apps;
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -43,8 +45,12 @@ public class Room implements Serializable
     public Room(Integer building, String number)
     {
         // constructor with required field
-        notNull(building, "Method called with null parameter (application)");
-        notNull(number, "Method called with null parameter (name)");
+        if (building == null) {
+            throw new IllegalArgumentException("Method called with null parameter (application)");
+        }
+        if (number == null) {
+            throw new IllegalArgumentException("Method called with null parameter (name)");
+        }
 
         this.building = building;
         this.number = number;
@@ -60,9 +66,13 @@ public class Room implements Serializable
         // a room can be uniquely identified by it's number and the building it belongs to; normally I would use a UUID in any case but this is just
         // to illustrate the usage of getId()
         final Room other = (Room) otherObj;
-        return new EqualsBuilder().append(getNumber(), other.getNumber())
-                    .append(getBuilding().getId(), other.getBuilding().getId())
-                    .isEquals();
+        if (getNumber() == null || other.getNumber() == null) {
+            return false;
+        }
+        if (getBuilding() == null || other.getBuilding() == null) {
+            return false;
+        }
+        return getNumber().equals(other.getNumber()) && getBuilding().equals(other.getBuilding());
         // this assumes that Building.id is annotated with @Access(value = AccessType.PROPERTY)
     }
 
@@ -84,7 +94,10 @@ public class Room implements Serializable
     @Override
     public int hashCode()
     {
-        return new HashCodeBuilder().append(getNumber()).append(getBuilding().getId()).toHashCode();
+        int result = 17;
+        result = 31 * result + (getNumber() != null ? getNumber().hashCode() : 0);
+        result = 31 * result + (getBuilding() != null ? getBuilding().hashCode() : 0);
+        return result;
     }
 
     public void setCapacity(Integer capacity)

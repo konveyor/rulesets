@@ -1,3 +1,4 @@
+package com.example.apps;
 import javax.ejb.Schedule;
 import javax.ejb.Stateless;
 

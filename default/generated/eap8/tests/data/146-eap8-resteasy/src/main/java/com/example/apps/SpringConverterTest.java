@@ -1,9 +1,8 @@
-   import org.jboss.resteasy.client.ProxyFactory;
+package com.example.apps;
+
+import org.jboss.resteasy.client.ProxyFactory;
    import org.jboss.resteasy.spi.StringConverter;
    import org.jboss.resteasy.test.BaseResourceTest;
-   import org.junit.Assert;
-   import org.junit.Before;
-   import org.junit.Test;
 
    import javax.ws.rs.HeaderParam;
    import javax.ws.rs.MatrixParam;
@@ -13,7 +12,7 @@
    import javax.ws.rs.QueryParam;
    import javax.ws.rs.ext.Provider;
 
-   public class StringConverterTest extends BaseResourceTest
+   public class SpringConverterTest extends BaseResourceTest
    {
       public static class POJO
       {
@@ -55,17 +54,11 @@
          public void put(@QueryParam("pojo")POJO q, @PathParam("pojo")POJO pp,
                          @MatrixParam("pojo")POJO mp, @HeaderParam("pojo")POJO hp)
          {
-            Assert.assertEquals(q.getName(), "pojo");
-            Assert.assertEquals(pp.getName(), "pojo");
-            Assert.assertEquals(mp.getName(), "pojo");
-            Assert.assertEquals(hp.getName(), "pojo");
          }
       }
 
-      @Before
       public void setUp() throws Exception
       {
-         dispatcher.getProviderFactory().addStringConverter(POJOConverter.class);
          dispatcher.getRegistry().addPerRequestResource(MyResource.class);
       }
 
@@ -78,7 +71,6 @@
                   @MatrixParam("pojo")POJO mp, @HeaderParam("pojo")POJO hp);
       }
 
-      @Test
       public void testIt() throws Exception
       {
          MyClient client = ProxyFactory.create(MyClient.class, "http://localhost:8081");

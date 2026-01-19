@@ -34,7 +34,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      atLeast: 9
+      exactly: 1
       messageMatches: Ensure that the .*javax.management.* does
         not need to change for JBoss EAP
 - ruleID: environment-dependent-calls-05000

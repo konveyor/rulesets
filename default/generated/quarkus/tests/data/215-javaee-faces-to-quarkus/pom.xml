@@ -6,5 +6,15 @@
 	<artifactId>sample-project</artifactId>
 	<version>0.0.1</version>
 	<name>Sample Project</name>
+
+	<dependencies>
+		<!-- Java EE API - includes EJB, JAX-RS, JMS, Servlet, CDI, and other Java EE APIs -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>8.0</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
 </project>
 		

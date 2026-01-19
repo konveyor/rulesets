@@ -1,7 +1,8 @@
-package com.jboss.test;
+package com.example.apps;
 
 import com.sun.xml.bind.v2.*;
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import java.util.Map;
 import java.util.HashMap;
@@ -12,7 +13,7 @@ import javax.xml.bind.annotation.adapters.NormalizedStringAdapter;
 
 public class SunV2PackageTest
 {
-    public void  setProperties() {
+    public void  setProperties() throws JAXBException {
         Map properties = new HashMap();
         properties.put("property1", "javax.xml.bind.JAXBContext");
         URL url = null;
@@ -28,7 +29,8 @@ public class SunV2PackageTest
         }
         Marshaller m = jc.createMarshaller();
         m.setAdapter(new NormalizedStringAdapter());
-        m.getAdapter(String.class);
-        JAXBContext.createValidator();
+        m.getAdapter(A.class);
+        JAXBContext context = JAXBContext.newInstance(A.class);
+        context.createValidator();
     }
 }

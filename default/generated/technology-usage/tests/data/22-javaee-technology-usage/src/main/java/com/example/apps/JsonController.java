@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-//package org.jboss.as.quickstarts.jsonp;
+package com.example.apps;
 
 import java.io.StringReader;
 

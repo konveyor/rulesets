@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Dependency `jakarta.enterprise:jakarta.enterprise.cdi-api`
 - ruleID: jakarta-cdi-to-quarkus-00020
   testCases:

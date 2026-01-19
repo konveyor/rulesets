@@ -30,6 +30,8 @@ import jakarta.ws.rs.Produces;
 
 @Path("/")
 public class HelloWorld {
+    private HelloService helloService;
+
     @GET
     @Path("/json")
     @Produces({ "application/json" })

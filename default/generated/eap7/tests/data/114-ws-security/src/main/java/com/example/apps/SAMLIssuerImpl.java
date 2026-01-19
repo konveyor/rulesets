@@ -1,4 +1,4 @@
-/**
+package com.example.apps; /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements. See the NOTICE file
  * distributed with this work for additional information
@@ -21,6 +21,7 @@ import org.apache.ws.security.WSSecurityException;
 import org.apache.ws.security.components.crypto.Crypto;
 import org.apache.ws.security.components.crypto.CryptoFactory;
 
+import org.apache.ws.security.saml.SAMLIssuer;
 import org.apache.ws.security.saml.ext.AssertionWrapper;
 import org.apache.ws.security.saml.ext.SAMLParms;
 import org.apache.ws.security.util.Loader;
@@ -35,8 +36,7 @@ import javax.security.auth.callback.CallbackHandler;
  */
 public class SAMLIssuerImpl implements SAMLIssuer {
 
-    private static final org.apache.commons.logging.Log LOG =
-            org.apache.commons.logging.LogFactory.getLog(SAMLIssuerImpl.class);
+//    private static final org.apache.commons.logging.Log LOG = org.apache.commons.logging.LogFactory.getLog(SAMLIssuerImpl.class);
 
     private Properties properties = null;
 
@@ -111,11 +111,11 @@ public class SAMLIssuerImpl implements SAMLIssuer {
      * @return a new AssertionWrapper.
      */
     public AssertionWrapper newAssertion() throws WSSecurityException {
-        if (LOG.isDebugEnabled()) {
-            LOG.debug(
-                    "Entering AssertionWrapper.newAssertion() ... creating SAML token"
-            );
-        }
+//        if (LOG.isDebugEnabled()) {
+//            LOG.debug(
+//                    "Entering AssertionWrapper.newAssertion() ... creating SAML token"
+//            );
+//        }
 
         if (callbackHandler == null && properties != null) {
             try {

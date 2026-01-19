@@ -1,4 +1,4 @@
-/*
+package com.example.apps;/*
  * JBoss, Home of Professional Open Source 
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors 
  * by the @authors tag. See the copyright.txt in the distribution for a 
@@ -19,8 +19,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org. 
  */
-package org.jboss.seam.resteasy; 
- 
+
 import org.jboss.resteasy.spi.ResourceFactory; 
 import org.jboss.resteasy.spi.InjectorFactory; 
 import org.jboss.resteasy.spi.HttpRequest; 
@@ -43,13 +42,13 @@ public class SeamResteasyResourceFactory implements ResourceFactory
    Log log = Logging.getLog(SeamResteasyResourceFactory.class); 
  
    private final Class<?> resourceType; 
-   private final org.hibernate.mapping.Component seamComponent; 
+//   private final org.hibernate.mapping.Component seamComponent;
    private final ResteasyProviderFactory providerFactory; 
  
    public SeamResteasyResourceFactory(Class<?> resourceType, Component seamComponent, ResteasyProviderFactory providerFactory) 
    { 
       this.resourceType = resourceType; 
-      this.seamComponent = seamComponent; 
+//      this.seamComponent = seamComponent;
       this.providerFactory = providerFactory; 
    } 
  
@@ -61,23 +60,22 @@ public class SeamResteasyResourceFactory implements ResourceFactory
    public void registered(InjectorFactory factory) 
    { 
       // Wrap the Resteasy PropertyInjectorImpl in a Seam interceptor (for @Context injection) 
-      seamComponent.addInterceptor( 
-            new ResteasyContextInjectionInterceptor( 
-                  new PropertyInjectorImpl(getScannableClass(), providerFactory) 
-            ) 
-      ); 
- 
-      factory.createPropertyInjector(seamComponent.getClass(), factory);
+//            new ResteasyContextInjectionInterceptor(
+//                  new PropertyInjectorImpl(getScannableClass(), providerFactory)
+//            );
+
+//      factory.createPropertyInjector(seamComponent.getClass(), factory);
  
    } 
  
    public Object createResource(HttpRequest request, HttpResponse response, InjectorFactory factory) 
    { 
       // Push this onto event context so we have it available in ResteasyContextInjectionInterceptor 
-      Contexts.getEventContext().set(ResteasyContextInjectionInterceptor.RE_HTTP_REQUEST_VAR, request); 
-      Contexts.getEventContext().set(ResteasyContextInjectionInterceptor.RE_HTTP_RESPONSE_VAR, response); 
-      log.debug("creating RESTEasy resource instance by looking up Seam component: " + seamComponent.getName()); 
-      return Component.getInstance(seamComponent.getName()); 
+//      Contexts.getEventContext().set(ResteasyContextInjectionInterceptor.RE_HTTP_REQUEST_VAR, request);
+//      Contexts.getEventContext().set(ResteasyContextInjectionInterceptor.RE_HTTP_RESPONSE_VAR, response);
+//      log.debug("creating RESTEasy resource instance by looking up Seam component: " + seamComponent.getName());
+//      return Component.getInstance(seamComponent.getName());
+      return null;
    } 
  
    public void requestFinished(HttpRequest request, HttpResponse response, Object resource) 

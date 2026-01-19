@@ -1,12 +1,8 @@
-package org.jboss.resteasy.plugins.providers.jaxb;
+package com.example.apps;
 
-import org.jboss.resteasy.util.NoContent;
 import org.jboss.resteasy.util.Types;
 import org.jboss.resteasy.plugins.providers.jaxb.SecureUnmarshaller;
 import org.xml.sax.InputSource;
-
-import BoundType;
-import ValueType;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
@@ -45,10 +41,9 @@ import java.lang.reflect.Type;
 @Provider
 @Produces({ "application/*+xml", "text/*+xml" })
 @Consumes({ "application/*+xml", "text/*+xml" })
-public class JAXBElementProvider extends AbstractJAXBProvider<JAXBElement<?>>
+public class JAXBElementProvider
 {
 
-    @Override
     protected boolean isReadWritable(Class<?> type,
                 Type genericType,
                 Annotation[] annotations,
@@ -66,86 +61,45 @@ public class JAXBElementProvider extends AbstractJAXBProvider<JAXBElement<?>>
                 Annotation[] annotations,
                 MediaType mediaType,
                 MultivaluedMap<String, String> httpHeaders,
-                InputStream entityStream) throws IOException
-    {
-        NoContent.contentLengthCheck(httpHeaders);
+                InputStream entityStream) throws Exception {
         Class<?> typeArg = Object.class;
         if (genericType != null)
             typeArg = Types.getTypeArgument(genericType);
         JAXBContext jaxb = null;
-        try
-        {
-            jaxb = findJAXBContext(typeArg, annotations, mediaType, true);
-        }
-        catch (JAXBException e)
-        {
-            throw new JAXBUnmarshalException(e);
-        }
         JAXBElement<?> result;
-        try
-        {
+        try {
             Unmarshaller unmarshaller = jaxb.createUnmarshaller();
-            unmarshaller = decorateUnmarshaller(type, annotations, mediaType, unmarshaller);
+//            unmarshaller = decorateUnmarshaller(type, annotations, mediaType, unmarshaller);
 
-            if (needsSecurity())
-            {
-                SecureUnmarshaller unmarshaller1 = new SecureUnmarshaller(unmarshaller, isDisableExternalEntities(), isEnableSecureProcessingFeature(), isDisableDTDs());
-                if (!unmarshaller1.isValidating())
+            if (true) {
+                SecureUnmarshaller unmarshaller1 = new SecureUnmarshaller();
+                if (!unmarshaller1.isValidating()) {
                     unmarshaller1.setValidating(true);
-                unmarshaller1.setAdapter(new XmlAdapter<ValueType, BoundType>()
-                {
-                    @Override
-                    public ValueType marshal(BoundType v) throws Exception
-                    {
-                        // TODO Auto-generated method stub
-                        return null;
-                    }
-
-                    @Override
-                    public BoundType unmarshal(ValueType v) throws Exception
-                    {
-                        // TODO Auto-generated method stub
-                        return null;
-                    }
-                });
-                SAXSource source = null;
-                if (getCharset(mediaType) == null)
-                {
-                    source = new SAXSource(new InputSource(new InputStreamReader(entityStream, "UTF-8")));
-                }
-                else
-                {
+                    unmarshaller1.setAdapter(null);
+                    SAXSource source = null;
                     source = new SAXSource(new InputSource(entityStream));
-                }
-                result = unmarshaller.unmarshal(source, (Class<?>) typeArg);
-            }
-            else
-            {
-                if (getCharset(mediaType) == null)
-                {
-                    InputSource is = new InputSource(entityStream);
-                    is.setEncoding("UTF-8");
-                    StreamSource source = new StreamSource(new InputStreamReader(entityStream, "UTF-8"));
-                    source.setInputStream(entityStream);
                     result = unmarshaller.unmarshal(source, (Class<?>) typeArg);
-                }
-                else
-                {
-                    JAXBElement<?> e = unmarshaller.unmarshal(new StreamSource(entityStream), (Class<?>) typeArg);
-                    result = e;
+                } else {
+                    if (true) {
+                        InputSource is = new InputSource(entityStream);
+                        is.setEncoding("UTF-8");
+                        StreamSource source = new StreamSource(new InputStreamReader(entityStream, "UTF-8"));
+                        source.setInputStream(entityStream);
+                        result = unmarshaller.unmarshal(source, (Class<?>) typeArg);
+                    } else {
+                        JAXBElement<?> e = unmarshaller.unmarshal(new StreamSource(entityStream), (Class<?>) typeArg);
+                        result = e;
+                    }
                 }
             }
-            ;
+            JAXBElement<?> element = result;
+            return element;
+        } catch (JAXBException e) {
+
         }
-        catch (JAXBException e)
-        {
-            throw new JAXBUnmarshalException(e);
-        }
-        JAXBElement<?> element = result;
-        return element;
+        return null;
     }
 
-    @Override
     public void writeTo(JAXBElement<?> t,
                 Class<?> type,
                 Type genericType,
@@ -158,7 +112,7 @@ public class JAXBElementProvider extends AbstractJAXBProvider<JAXBElement<?>>
         Class<?> typeArg = Object.class;
         if (genericType != null)
             typeArg = Types.getTypeArgument(genericType);
-        super.writeTo(t, typeArg, genericType, annotations, mediaType, httpHeaders, outputStream);
+//        super.writeTo(t, typeArg, genericType, annotations, mediaType, httpHeaders, outputStream);
     }
 
 }

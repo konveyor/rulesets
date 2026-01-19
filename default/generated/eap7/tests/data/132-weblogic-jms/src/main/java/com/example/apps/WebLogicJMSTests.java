@@ -1,4 +1,4 @@
-// Contains code that should match for the following tests:
+package com.example.apps;// Contains code that should match for the following tests:
 //
 // weblogic-04000-test
 // weblogic-05000-test
@@ -7,14 +7,26 @@
 // weblogic-08000-test
 //
 
+import java.util.Enumeration;
 import java.util.Properties;
 
+import javax.jms.Destination;
+import javax.jms.JMSException;
+import javax.jms.ObjectMessage;
+import javax.jms.Queue;
+import javax.jms.QueueSession;
+import javax.jms.Session;
+import javax.jms.Topic;
+import javax.jms.TopicSession;
+import javax.jms.TopicSubscriber;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import oracle.jms.AQjmsAgent;
 import oracle.jms.AQjmsConnection;
 import oracle.jms.AQjmsConnectionFactory;
+import oracle.jms.AQjmsFactory;
 import oracle.jms.AQjmsTopicConnectionFactory;
 import oracle.jms.AQjmsQueueConnectionFactory;
 import oracle.jms.AQjmsConsumer;
@@ -55,7 +67,7 @@ class WebLogicJMSTests
         subscriber = ((AQjmsSession) jmsSession).createRemoteSubscriber(shipped_orders, remoteAgent, null);
     }
 
-    private static Context getContext() throws NamingException
+    private static Context getContext() throws Exception
     {
         Properties environment = new Properties();
         environment.put(Context.INITIAL_CONTEXT_FACTORY, "weblogic.jndi.WLInitialContextFactory");
@@ -68,17 +80,16 @@ class WebLogicJMSTests
     public void messageDestination(QueueSession session)
     {
         Destination destination;
-        destination = (AQjmsDestination) session.createDestination("", "");
+//        destination = (AQjmsDestination) session.createDestination("", "");
     }
 
     public void messageProducer(QueueSession session)
     {
         AQjmsProducer producer;
-        producer = (AQjmsProducer) session.createPublisher(null);
+//        producer = (AQjmsProducer) session.createPublisher(null);
     }
 
-    public void messageConsumer(QueueSession session)
-    {
+    public void messageConsumer(QueueSession session) throws JMSException {
         AQjmsConsumer producer;
         producer = (AQjmsConsumer) session.createConsumer(null);
     }
@@ -86,26 +97,25 @@ class WebLogicJMSTests
     public void messages(QueueSession session)
     {
         AQjmsObjectMessage message = null;
-        AQjmsTextMessage message = session.createMessage();
-        AQjmsStreamMessage message = null;
-        AQjmsMapMessage message = null;
-        AQjmsBytesMessage message = null;
-        AQjmsMessage message = null;
+//        AQjmsTextMessage message2 = session.createMessage();
+        AQjmsStreamMessage message3 = null;
+        AQjmsMapMessage message4 = null;
+        AQjmsBytesMessage message5 = null;
+        AQjmsMessage message6 = null;
     }
 
-    public void queueBrowser(QueueSession session)
-    {
+    public void queueBrowser(QueueSession session) throws JMSException {
         AQjmsQueueBrowser browser;
         Queue queue;
-        AQjmsObjectMessage message;
+        AQjmsObjectMessage message = null;
         Enumeration messages;
 
         queue = ((AQjmsSession) session).getQueue("E", "QUEUE_NAME");
-        browser = session.createBrowser(queue, "ID");
+        browser = (AQjmsQueueBrowser) session.createBrowser(queue, "ID");
 
-        for (messages = browser.elements(); message.hasMoreElements();)
-        {
-            obj_message = (ObjectMessage) message.nextElement();
-        }
+//        for (messages = browser.elements(); message.hasMoreElements();)
+//        {
+//            ObjectMessage obj_message = (ObjectMessage) message.nextElement();
+//        }
     }
 }

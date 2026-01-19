@@ -18,14 +18,14 @@ import java.security.PrivilegedActionException;
 import java.security.PrivilegedExceptionAction;
 import java.text.ParseException;
 import java.util.Enumeration;
+import java.util.HashSet;
 import java.util.Set;
-import javax.lang.ThreadDeath;
+//import javax.lang.ThreadDeath;
 import javax.swing.plaf.synth.SynthLookAndFeel;
 
 public class Deprecation extends BasicMenuItemUI {
 
     public static void main(String[] args) throws IOException, ParseException, PrivilegedActionException {
-        MouseInputHandler mouseInputHandler = new BasicMenuItemUI.MouseInputHandler();
 
         BasicDirectoryModel basicDirectoryModel = new BasicDirectoryModel(null);
         basicDirectoryModel.intervalAdded(null);
@@ -46,12 +46,12 @@ public class Deprecation extends BasicMenuItemUI {
         MLetMBean mLetMBean = new MLetMBean() {
             @Override
             public Set<Object> getMBeansFromURL(String url) throws ServiceNotFoundException {
-                return Set.of();
+                return new HashSet<>();
             }
 
             @Override
             public Set<Object> getMBeansFromURL(URL url) throws ServiceNotFoundException {
-                return Set.of();
+                return new HashSet<>();
             }
 
             @Override

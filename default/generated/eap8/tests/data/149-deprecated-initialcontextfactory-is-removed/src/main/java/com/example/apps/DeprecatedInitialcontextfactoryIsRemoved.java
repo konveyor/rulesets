@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import org.jboss.naming.remote.client.InitialContextFactory;
 
 public class DeprecatedInitialcontextfactoryIsRemoved {

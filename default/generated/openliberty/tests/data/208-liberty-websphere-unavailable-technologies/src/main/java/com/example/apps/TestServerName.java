@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import com.ibm.websphere.management.AdminService;
 import com.ibm.ejs.ras.RasHelper;
 import com.ibm.websphere.runtime.ServerName;
