@@ -106,7 +106,7 @@ public class HibernateUtil
 //            CustomUserType customUserType = new CustomUserType();
 //            configuration.registerTypeOverride((UserType) customUserType,
 //                    new String[] { customUserType.returnedClass().getName() });
-//            configuration.registerTypeContributor(customUserType);
+            configuration.registerTypeContributor(null);
 //            configuration.registerTypeOverride();
 
             Properties properties = new Properties();
@@ -119,8 +119,8 @@ public class HibernateUtil
             configuration.setProperties(properties);
             configuration.addProperties(properties);
             
-//            configuration.setInterceptor(new MyInterceptor ());
-//            configuration.setEntityNotFoundDelegate(new MyEntityNotFoundDelegate());
+            configuration.setInterceptor(null);
+            configuration.setEntityNotFoundDelegate(null);
 //            configuration.setPhysicalNamingStrategy(new UpperCaseNamingStrategy());
             configuration.setSessionFactoryObserver(new SessionFactoryObserver() {
                 private static final long serialVersionUID = 1L;

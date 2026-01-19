@@ -172,5 +172,5 @@
   ruleID: websphere-jms-eap7-04000
   when:
     java.referenced:
-      location: PACKAGE
+      location: IMPORT
       pattern: com.ibm.*jms.(Jms|MQe|MQ)*

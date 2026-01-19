@@ -30,7 +30,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: The deprecated classes in org.hibernate.classic package.*
 - ruleID: hibernate-05000
   testCases:

@@ -217,12 +217,6 @@ tests:
     hasIncidents:
       exactly: 1
       messageMatches: This will be removed with no replacement.
-- ruleID: hsearch-00216
-  testCases:
-  - name: tc-1
-    hasIncidents:
-      exactly: 1
-      messageMatches: should be at most SearchIntegrator, preferably removed altogether.*
 - ruleID: hsearch-00217
   testCases:
   - name: tc-1
@@ -257,14 +251,14 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 4
+      exactly: 1
       messageMatches: Lucene's core .*?org.apache.lucene.queryParser.ParseException.*
   - name: tc-2
     hasIncidents:
-      exactly: 1
+      exactly: 4
   - name: tc-3
     hasIncidents:
-      exactly: 3
+      exactly: 1
       messageMatches: Lucene's core .*?org.apache.lucene.queryParser.QueryParser.*
 - ruleID: hsearch-00226
   testCases:

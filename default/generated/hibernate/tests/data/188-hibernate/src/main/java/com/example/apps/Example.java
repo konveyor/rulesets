@@ -25,6 +25,7 @@ import org.hibernate.Interceptor;
 import org.hibernate.Query;
 import org.hibernate.ScrollMode;
 import org.hibernate.ScrollableResults;
+import org.hibernate.classic.ValidationFailure;
 import org.hibernate.collection.PersistentCollection;
 //import org.hibernate.connection.C3P0ConnectionProvider;
 import org.hibernate.dialect.resolver.DialectResolver;
@@ -46,8 +47,10 @@ import org.hibernate.collection.PersistentBag;
 import org.hibernate.loader.custom.CustomQuery;
 import org.hibernate.persister.entity.EntityPersister;
 import org.hibernate.type.Type;
+import org.hibernate.classic.Validatable;
+import org.hibernate.connection.ConnectionProviderFactory;
 
-public class Example
+public class Example implements Validatable
 {
 
     private static SessionFactory _sessions = null;
@@ -59,7 +62,7 @@ public class Example
     {
         try
         {
-
+            ConnectionProviderFactory factory = null;
             InputStream stream = Thread.currentThread().getContextClassLoader().getResource("hibernate.properties").openStream();// Example.class.getResourceAsStream("hibernate.properties");
             try
             {
@@ -119,6 +122,11 @@ public class Example
         {
             session.close();
         }
+
+    }
+
+    @Override
+    public void validate() throws ValidationFailure {
 
     }
 

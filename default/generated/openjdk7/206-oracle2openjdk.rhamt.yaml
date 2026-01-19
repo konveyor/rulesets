@@ -20,8 +20,8 @@
   ruleID: oracle2openjdk-00000
   when:
     java.referenced:
-      location: IMPORT
-      pattern: javafx.*
+      location: PACKAGE
+      pattern: javafx*
 - category: potential
   customVariables: []
   description: Fonts usage
@@ -72,8 +72,8 @@
   ruleID: oracle2openjdk-00002
   when:
     java.referenced:
-      location: IMPORT
-      pattern: jdk.management.resource.*
+      location: PACKAGE
+      pattern: jdk.management.resource*
 - category: potential
   customVariables: []
   description: Color management usage

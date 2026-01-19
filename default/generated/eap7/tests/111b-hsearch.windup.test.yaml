@@ -18,3 +18,9 @@ tests:
     hasIncidents:
       exactly: 1
       messageMatches: The .*DirectoryHelper#getVerifiedIndexDir.*
+- ruleID: hsearch-00216
+  testCases:
+    - name: tc-1
+      hasIncidents:
+        exactly: 1
+        messageMatches: should be at most SearchIntegrator, preferably removed altogether.*

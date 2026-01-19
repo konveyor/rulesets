@@ -164,7 +164,7 @@
   ruleID: generic-catchall-00300
   when:
     java.referenced:
-      location: PACKAGE
+      location: IMPORT
       pattern: com.tibco.*
 - category: optional
   customVariables:
@@ -191,7 +191,7 @@
   ruleID: generic-catchall-00400
   when:
     java.referenced:
-      location: PACKAGE
+      location: IMPORT
       pattern: com.crystaldecisions.*
 - category: optional
   customVariables:

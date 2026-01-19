@@ -17,8 +17,14 @@
             <artifactId>hibernate-search</artifactId>
             <version>5.7.0.Final</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-search-engine</artifactId>
+            <version>5.6.6.Final</version> <!-- or any other 5.x release -->
+        </dependency>
 
-<!--        <dependency>-->
+
+        <!--        <dependency>-->
 <!--            <groupId>org.hibernate</groupId>-->
 <!--            <artifactId>hibernate-core</artifactId>-->
 <!--&lt;!&ndash;            <version>3.5.6-Final</version> &lt;!&ndash; Ensure this matches the version you're using &ndash;&gt;&ndash;&gt;-->
