@@ -4,6 +4,7 @@
 - Juan Manuel Leflet Estrada (https://github.com/jmle)
 - Shawn Hurley (https://github.com/shawn-hurley)
 - Pranav Gaikwad (https://github.com/pranavgaikwad)
+- Ramón Román Nissen (https://github.com/rromannissen)
 
 ## Maintainers
 - Juan Manuel Leflet Estrada (https://github.com/jmle)
