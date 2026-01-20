@@ -1,0 +1,232 @@
+- ruleID: spring-boot-2.x-to-3.0-micrometer-00010
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.boot.actuate.metrics.web.servlet.WebMvcTagsProvider
+    - java.referenced:
+        pattern: org.springframework.boot.actuate.metrics.web.servlet.WebMvcTagsContributor
+    - java.referenced:
+        pattern: org.springframework.boot.actuate.metrics.web.reactive.server.WebFluxTagsProvider
+    - java.referenced:
+        pattern: org.springframework.boot.actuate.metrics.web.reactive.server.WebFluxTagsContributor
+  description: Tag providers and contributors have been replaced with ObservationConvention
+  message: |
+    The Micrometer tag providers and contributors have been replaced with `ObservationConvention`
+    in Spring Boot 3.0 as part of the migration to Micrometer Observation API.
+
+    **Deprecated/Removed:**
+    - `WebMvcTagsProvider` → Use `ServerRequestObservationConvention`
+    - `WebMvcTagsContributor` → Use `ServerRequestObservationConvention`
+    - `WebFluxTagsProvider` → Use `ServerRequestObservationConvention`
+    - `WebFluxTagsContributor` → Use `ServerRequestObservationConvention`
+
+    **Migration Example:**
+
+    **Before (Spring Boot 2.x):**
+    ```java
+    @Component
+    public class CustomWebMvcTagsProvider implements WebMvcTagsProvider {
+        @Override
+        public Iterable<Tag> getTags(HttpServletRequest request, 
+                                      HttpServletResponse response,
+                                      Object handler, 
+                                      Throwable exception) {
+            return Tags.of("custom", "value");
+        }
+    }
+    ```
+
+    **After (Spring Boot 3.0):**
+    ```java
+    @Component
+    public class CustomObservationConvention extends DefaultServerRequestObservationConvention {
+        @Override
+        public KeyValues getLowCardinalityKeyValues(ServerRequestObservationContext context) {
+            return super.getLowCardinalityKeyValues(context)
+                .and("custom", "value");
+        }
+    }
+    ```
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - Micrometer'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#micrometer-and-metrics-changes
+    - title: 'Micrometer Observation'
+      url: https://micrometer.io/docs/observation
+
+- ruleID: spring-boot-2.x-to-3.0-micrometer-00020
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: io.micrometer.core.instrument.binder.jvm.JvmInfoMetrics
+    - java.referenced:
+        pattern: io.micrometer.core.instrument.binder.jvm.JvmMemoryMetrics
+  description: JvmInfoMetrics is now auto-configured in Spring Boot 3.0
+  message: |
+    Micrometer's `JvmInfoMetrics` is now auto-configured in Spring Boot 3.0.
+    Any manually configured `JvmInfoMetrics` bean definition can be removed.
+
+    **Before (Spring Boot 2.x - manual configuration):**
+    ```java
+    @Configuration
+    public class MetricsConfig {
+        @Bean
+        public JvmInfoMetrics jvmInfoMetrics() {
+            return new JvmInfoMetrics();
+        }
+    }
+    ```
+
+    **After (Spring Boot 3.0 - remove manual configuration):**
+    ```java
+    @Configuration
+    public class MetricsConfig {
+        // JvmInfoMetrics is auto-configured, remove the bean
+    }
+    ```
+
+    **Auto-configured JVM Metrics:**
+    - `JvmInfoMetrics` - JVM version, vendor information
+    - `JvmMemoryMetrics` - Heap and non-heap memory
+    - `JvmGcMetrics` - Garbage collection metrics
+    - `JvmThreadMetrics` - Thread counts and states
+
+    If you need to customize JVM metrics, implement a `MeterBinder` instead.
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - JvmInfoMetrics'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#auto-configuration-of-micrometers-jvminfometrics
+
+- ruleID: spring-boot-2.x-to-3.0-micrometer-00030
+  category: mandatory
+  effort: 4
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.dependency:
+        name: io.micrometer.micrometer-core
+        upperbound: 1.9.99
+    - java.referenced:
+        pattern: io.micrometer.core.instrument.MeterRegistry
+  description: Micrometer has been upgraded to 1.10+ in Spring Boot 3.0
+  message: |
+    Spring Boot 3.0 uses Micrometer 1.10+ which introduces the new Observation API.
+    This is a significant change that affects how metrics and tracing are handled.
+
+    **Key Changes:**
+    - New Observation API for unified metrics and tracing
+    - Observation context replaces individual tag providers
+    - Tracing is now integrated via Micrometer Tracing
+
+    **New Concepts:**
+
+    1. **Observations** - Unified way to record metrics and traces:
+    ```java
+    @Component
+    public class MyService {
+        private final ObservationRegistry observationRegistry;
+        
+        public void doWork() {
+            Observation.createNotStarted("my.operation", observationRegistry)
+                .observe(() -> {
+                    // Your business logic
+                });
+        }
+    }
+    ```
+
+    2. **Observation Conventions** - Customize key values:
+    ```java
+    public class CustomConvention implements Observation.ObservationConvention<CustomContext> {
+        @Override
+        public KeyValues getLowCardinalityKeyValues(CustomContext context) {
+            return KeyValues.of("key", "value");
+        }
+    }
+    ```
+
+    **Dependency Updates:**
+    ```xml
+    <dependency>
+        <groupId>io.micrometer</groupId>
+        <artifactId>micrometer-observation</artifactId>
+    </dependency>
+    ```
+  links:
+    - title: 'Micrometer Observation Documentation'
+      url: https://micrometer.io/docs/observation
+    - title: 'Spring Boot Observability'
+      url: https://docs.spring.io/spring-boot/docs/3.0.x/reference/html/actuator.html#actuator.observability
+
+- ruleID: spring-boot-2.x-to-3.0-micrometer-00040
+  category: potential
+  effort: 2
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: io.micrometer.core.instrument.Timer
+    - java.referenced:
+        pattern: io.micrometer.core.instrument.Counter
+    - java.referenced:
+        pattern: io.micrometer.core.instrument.Gauge
+  description: Review direct Micrometer instrumentation for Spring Boot 3.0
+  message: |
+    Direct Micrometer instrumentation should be reviewed when upgrading to Spring Boot 3.0.
+    Consider using the new Observation API for better tracing integration.
+
+    **Current Approach (still works but consider migration):**
+    ```java
+    @Component
+    public class MetricsService {
+        private final MeterRegistry registry;
+        private final Counter requestCounter;
+        
+        public MetricsService(MeterRegistry registry) {
+            this.registry = registry;
+            this.requestCounter = Counter.builder("requests.total")
+                .tag("type", "api")
+                .register(registry);
+        }
+        
+        public void recordRequest() {
+            requestCounter.increment();
+        }
+    }
+    ```
+
+    **Recommended Approach (Observation API):**
+    ```java
+    @Component
+    public class MetricsService {
+        private final ObservationRegistry observationRegistry;
+        
+        public void doWork() {
+            Observation.createNotStarted("my.work", observationRegistry)
+                .lowCardinalityKeyValue("type", "api")
+                .observe(() -> {
+                    // Business logic - automatically creates timer metrics
+                });
+        }
+    }
+    ```
+
+    The Observation API provides:
+    - Unified metrics and traces
+    - Automatic context propagation
+    - Better integration with distributed tracing
+  links:
+    - title: 'Micrometer Observation'
+      url: https://micrometer.io/docs/observation

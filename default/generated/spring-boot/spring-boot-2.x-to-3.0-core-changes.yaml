@@ -115,4 +115,150 @@
     - title: "Spring Boot 3.0 Migration Guide - Autoconfiguration files"
       url: "https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#auto-configuration-files"
 
+- ruleID: spring-boot-2.x-to-3.0-core-changes-00040
+  category: optional
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - builtin.file:
+        pattern: "pom.xml"
+    - builtin.file:
+        pattern: "build.gradle"
+  description: Consider using the Spring Boot Properties Migrator
+  message: |
+    Spring Boot 3.0 has renamed or removed many configuration properties. To help identify
+    properties that need to be updated, add the `spring-boot-properties-migrator` module
+    to your project temporarily.
+
+    **Maven:**
+    ```xml
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-properties-migrator</artifactId>
+        <scope>runtime</scope>
+    </dependency>
+    ```
+
+    **Gradle:**
+    ```groovy
+    runtime 'org.springframework.boot:spring-boot-properties-migrator'
+    ```
+
+    Once added, the migrator will:
+    - Analyze your `application.properties` or `application.yml` at runtime
+    - Log warnings for deprecated properties
+    - Temporarily migrate properties at runtime where possible
+
+    **Important:** Remove this dependency after completing the migration, as it is intended
+    for development use only and adds startup overhead.
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - Configuration Properties'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#configuration-properties-migration
+
+- ruleID: spring-boot-2.x-to-3.0-core-changes-00050
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - builtin.filecontent:
+        pattern: "logging.pattern.dateformat"
+        filePattern: "application*.properties"
+    - builtin.filecontent:
+        pattern: "logging.pattern.dateformat"
+        filePattern: "application*.yml"
+    - builtin.filecontent:
+        pattern: "LOG_DATEFORMAT_PATTERN"
+        filePattern: "*.properties"
+  description: Logging date format has changed in Spring Boot 3.0
+  message: |
+    The default date format used in log messages has changed in Spring Boot 3.0.
+
+    **Old format (Spring Boot 2.x):** `yyyy-MM-dd HH:mm:ss.SSS`
+    **New format (Spring Boot 3.0):** `yyyy-MM-dd'T'HH:mm:ss.SSSXXX` (ISO-8601)
+
+    The new format includes timezone offset information (e.g., `+00:00` or `Z`).
+
+    **If you need to preserve the old format:**
+
+    Add to `application.properties`:
+    ```properties
+    logging.pattern.dateformat=yyyy-MM-dd HH:mm:ss.SSS
+    ```
+
+    Or set the environment variable:
+    ```
+    LOG_DATEFORMAT_PATTERN=yyyy-MM-dd HH:mm:ss.SSS
+    ```
+
+    **Note:** The new ISO-8601 format is recommended for better interoperability with
+    log aggregation systems and international applications.
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - Logging Date Format'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#logging-date-format
+
+- ruleID: spring-boot-2.x-to-3.0-core-changes-00060
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.dependency:
+        name: javax.servlet.javax.servlet-api
+        lowerbound: 0.0.0
+    - java.referenced:
+        pattern: javax.servlet*
+        location: IMPORT
+  description: Jakarta EE 9+ is required for Spring Boot 3.0
+  message: |
+    Spring Boot 3.0 requires Jakarta EE 9 or later. All `javax.*` namespace dependencies
+    must be migrated to `jakarta.*`.
+
+    **Key Changes:**
+    - `javax.servlet` → `jakarta.servlet`
+    - `javax.persistence` → `jakarta.persistence`
+    - `javax.validation` → `jakarta.validation`
+    - `javax.annotation` → `jakarta.annotation`
+    - `javax.transaction` → `jakarta.transaction`
+
+    **Maven Dependency Updates:**
+    ```xml
+    <!-- Before -->
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+    </dependency>
+
+    <!-- After -->
+    <dependency>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
+        <version>6.0.0</version>
+    </dependency>
+    ```
+
+    **Import Updates:**
+    ```java
+    // Before
+    import javax.servlet.http.HttpServletRequest;
+    
+    // After
+    import jakarta.servlet.http.HttpServletRequest;
+    ```
+
+    **Tools to help migration:**
+    - OpenRewrite recipes for Jakarta EE migration
+    - Eclipse Transformer for binary migration
+    - IntelliJ IDEA migration assistance
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - Jakarta EE'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#jakarta-ee
+
 

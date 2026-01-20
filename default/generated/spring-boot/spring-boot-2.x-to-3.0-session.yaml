@@ -16,7 +16,100 @@
     needs, you can define your own `SessionRepository` bean and cause the auto-configuration to back off.
 
   links:
-    - title: 'Spring Boot 3.0 Migration Guide - Spring batch'
-      link: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#spring-session-store-type
+    - title: 'Spring Boot 3.0 Migration Guide - Spring Session'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#spring-session-store-type
     - title: "Spring documentation - Spring session"
-      link: https://docs.spring.io/spring-boot/docs/3.0.x/reference/html/web.html#web.spring-session
+      url: https://docs.spring.io/spring-boot/docs/3.0.x/reference/html/web.html#web.spring-session
+
+- ruleID: spring-boot-2.x-to-3.0-session-00010
+  category: mandatory
+  effort: 2
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.dependency:
+        name: org.springframework.session.spring-session-core
+        upperbound: 2.99.99
+    - java.dependency:
+        name: org.springframework.session.spring-session-data-redis
+        upperbound: 2.99.99
+    - java.dependency:
+        name: org.springframework.session.spring-session-jdbc
+        upperbound: 2.99.99
+  description: Spring Session 3.0 is required for Spring Boot 3.0
+  message: |
+    Spring Boot 3.0 requires Spring Session 3.0 or later. Spring Session 3.0 includes
+    Jakarta EE 9+ support and other breaking changes.
+
+    **Maven Dependency Updates:**
+    ```xml
+    <!-- Spring Boot manages the version automatically -->
+    <dependency>
+        <groupId>org.springframework.session</groupId>
+        <artifactId>spring-session-core</artifactId>
+    </dependency>
+    ```
+
+    **Key Changes in Spring Session 3.0:**
+    - Moved to `jakarta.*` namespace
+    - `SessionRepository` API changes
+    - Configuration property updates
+
+    **For Gradle users:**
+    Ensure you're using Spring Boot's dependency management:
+    ```groovy
+    implementation 'org.springframework.session:spring-session-core'
+    // Version managed by Spring Boot
+    ```
+  links:
+    - title: 'Spring Session 3.0 Release Notes'
+      url: https://github.com/spring-projects/spring-session/wiki/Spring-Session-3.0-Release-Notes
+
+- ruleID: spring-boot-2.x-to-3.0-session-00020
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - builtin.filecontent:
+        pattern: "spring.session"
+        filePattern: "build.gradle"
+    - builtin.filecontent:
+        pattern: "spring-session"
+        filePattern: "pom.xml"
+  description: Review Spring Session configuration for Spring Boot 3.0
+  message: |
+    Spring Session configuration may need updates for Spring Boot 3.0.
+
+    **Key Configuration Changes:**
+
+    1. **Store Type Configuration:**
+       - `spring.session.store-type` is no longer supported
+       - Auto-detection is used based on classpath
+
+    2. **Redis Configuration:**
+    ```properties
+    # New namespace
+    spring.session.redis.namespace=spring:session
+    spring.session.redis.flush-mode=on_save
+    ```
+
+    3. **JDBC Configuration:**
+    ```properties
+    spring.session.jdbc.table-name=SPRING_SESSION
+    spring.session.jdbc.initialize-schema=embedded
+    ```
+
+    4. **Cookie Configuration:**
+    ```properties
+    server.servlet.session.cookie.same-site=lax
+    ```
+
+    Review your application.properties/yml for deprecated or renamed properties.
+  links:
+    - title: 'Spring Boot 3.0 Spring Session Configuration'
+      url: https://docs.spring.io/spring-boot/docs/3.0.x/reference/html/web.html#web.spring-session

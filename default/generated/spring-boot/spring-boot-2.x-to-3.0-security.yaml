@@ -43,4 +43,185 @@
 
   links:
     - title: 'Spring Boot 3.0 Migration Guide - Spring Security'
-      link: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#saml2-relying-party-configuration
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#saml2-relying-party-configuration
+
+- ruleID: spring-boot-2.x-to-3.0-security-00020
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
+    - java.referenced:
+        pattern: org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration
+  description: WebSecurityConfigurerAdapter has been removed in Spring Security 6.0
+  message: |
+    `WebSecurityConfigurerAdapter` has been deprecated in Spring Security 5.7 and removed in 6.0.
+    You must migrate to component-based security configuration.
+
+    **Before (Spring Security 5.x):**
+    ```java
+    @Configuration
+    @EnableWebSecurity
+    public class SecurityConfig extends WebSecurityConfigurerAdapter {
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            http.authorizeRequests()
+                .antMatchers("/public/**").permitAll()
+                .anyRequest().authenticated();
+        }
+    }
+    ```
+
+    **After (Spring Security 6.0):**
+    ```java
+    @Configuration
+    @EnableWebSecurity
+    public class SecurityConfig {
+        @Bean
+        public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+            http.authorizeHttpRequests(auth -> auth
+                .requestMatchers("/public/**").permitAll()
+                .anyRequest().authenticated()
+            );
+            return http.build();
+        }
+    }
+    ```
+
+    **Key Changes:**
+    - Replace `antMatchers()` with `requestMatchers()`
+    - Replace `authorizeRequests()` with `authorizeHttpRequests()`
+    - Use lambda DSL for configuration
+    - Return `SecurityFilterChain` bean instead of extending adapter
+  links:
+    - title: 'Spring Security 6.0 Migration Guide'
+      url: https://docs.spring.io/spring-security/reference/6.0/migration/index.html
+    - title: 'Spring Boot 3.0 Migration Guide - Spring Security'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#spring-security
+
+- ruleID: spring-boot-2.x-to-3.0-security-00030
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.security.config.annotation.web.builders.HttpSecurity.authorizeRequests*
+    - java.referenced:
+        pattern: org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer
+  description: authorizeRequests() is deprecated - use authorizeHttpRequests()
+  message: |
+    The `authorizeRequests()` method is deprecated in Spring Security 6.0. 
+    Use `authorizeHttpRequests()` instead for improved type safety and functionality.
+
+    **Before:**
+    ```java
+    http.authorizeRequests()
+        .antMatchers("/admin/**").hasRole("ADMIN")
+        .antMatchers("/user/**").hasAnyRole("USER", "ADMIN")
+        .anyRequest().authenticated();
+    ```
+
+    **After:**
+    ```java
+    http.authorizeHttpRequests(auth -> auth
+        .requestMatchers("/admin/**").hasRole("ADMIN")
+        .requestMatchers("/user/**").hasAnyRole("USER", "ADMIN")
+        .anyRequest().authenticated()
+    );
+    ```
+
+    **Additional Changes:**
+    - `antMatchers()` → `requestMatchers()`
+    - `mvcMatchers()` → `requestMatchers()` with MVC patterns
+    - `regexMatchers()` → `requestMatchers()` with regex patterns
+  links:
+    - title: 'Spring Security 6.0 Migration Guide'
+      url: https://docs.spring.io/spring-security/reference/6.0/migration/servlet/authorization.html
+
+- ruleID: spring-boot-2.x-to-3.0-security-00040
+  category: mandatory
+  effort: 2
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer.and
+  description: Method chaining with and() is deprecated in Spring Security 6.0
+  message: |
+    The `and()` method for chaining security configurations is deprecated in Spring Security 6.0.
+    Use the lambda DSL instead for cleaner, more readable configuration.
+
+    **Before:**
+    ```java
+    http
+        .csrf().disable()
+        .and()
+        .authorizeRequests()
+        .anyRequest().authenticated()
+        .and()
+        .formLogin();
+    ```
+
+    **After:**
+    ```java
+    http
+        .csrf(csrf -> csrf.disable())
+        .authorizeHttpRequests(auth -> auth
+            .anyRequest().authenticated()
+        )
+        .formLogin(Customizer.withDefaults());
+    ```
+
+    The lambda DSL is now the recommended approach for configuring Spring Security.
+  links:
+    - title: 'Spring Security Lambda DSL'
+      url: https://docs.spring.io/spring-security/reference/servlet/configuration/java.html#jc-httpsecurity
+
+- ruleID: spring-boot-2.x-to-3.0-security-00050
+  category: mandatory
+  effort: 2
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.security.access.annotation.Secured
+      location: ANNOTATION
+  description: Review @Secured annotation usage for Spring Security 6.0
+  message: |
+    The `@Secured` annotation behavior has been refined in Spring Security 6.0.
+    Authorization is now denied by default for all dispatcher types except REQUEST.
+
+    **Key Changes:**
+    - `@Secured` requires explicit role prefix handling
+    - Method security defaults have changed
+    - Consider migrating to `@PreAuthorize` for more flexibility
+
+    **If using @Secured:**
+    ```java
+    // Ensure roles are prefixed correctly
+    @Secured("ROLE_ADMIN")  // Note: ROLE_ prefix
+    public void adminMethod() { }
+    
+    // Or use @PreAuthorize for more control
+    @PreAuthorize("hasRole('ADMIN')")
+    public void adminMethod() { }
+    ```
+
+    **Enable method security:**
+    ```java
+    @Configuration
+    @EnableMethodSecurity(securedEnabled = true)
+    public class MethodSecurityConfig { }
+    ```
+  links:
+    - title: 'Spring Security Method Security'
+      url: https://docs.spring.io/spring-security/reference/servlet/authorization/method-security.html
