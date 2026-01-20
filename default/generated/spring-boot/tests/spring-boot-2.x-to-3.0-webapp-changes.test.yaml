@@ -19,3 +19,5 @@ tests:
           mode: "source-only"
         hasIncidents:
           exactly: 1
+# Note: Rules 00020-00040 require specific dependency/config detection
+# which would need more complex test data setup

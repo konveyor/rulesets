@@ -300,3 +300,80 @@
       url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
     - title: 'Spring Cloud - Adding Spring Cloud to an existing Spring Cloud application'
       url: https://spring.io/projects/spring-cloud
+
+- ruleID: spring-boot-2.x-to-3.0-dependencies-00020
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      name: org.springframework.boot.spring-boot-starter-parent
+      upperbound: 2.99.99
+  description: Spring Boot parent version must be upgraded to 3.0+
+  message: |
+    Your project is using Spring Boot 2.x. To migrate to Spring Boot 3.0, update your parent version.
+
+    **Maven:**
+    ```xml
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.0.0</version>
+        <relativePath/>
+    </parent>
+    ```
+
+    **Gradle:**
+    ```groovy
+    plugins {
+        id 'org.springframework.boot' version '3.0.0'
+        id 'io.spring.dependency-management' version '1.1.0'
+    }
+    ```
+
+    **Before upgrading, ensure:**
+    - Java 17+ is configured
+    - All dependencies are Jakarta EE 9+ compatible
+    - Spring Cloud version is 2022.x or later (if used)
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide
+
+- ruleID: spring-boot-2.x-to-3.0-dependencies-00021
+  category: potential
+  effort: 2
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.dependency:
+        name: com.hazelcast.hazelcast
+        upperbound: 4.99.99
+    - java.dependency:
+        name: com.hazelcast.hazelcast-all
+        upperbound: 4.99.99
+  description: Hazelcast 3.x support has been removed in Spring Boot 3.0
+  message: |
+    Support for Hazelcast 3.x has been removed in Spring Boot 3.0. You must upgrade to Hazelcast 5.x.
+
+    **Dependency Update:**
+    ```xml
+    <dependency>
+        <groupId>com.hazelcast</groupId>
+        <artifactId>hazelcast</artifactId>
+        <version>5.2.0</version>
+    </dependency>
+    ```
+
+    **Key Changes:**
+    - Configuration API changes
+    - Some deprecated features removed
+    - Jakarta EE namespace support
+
+    Refer to the Hazelcast migration guide for detailed changes.
+  links:
+    - title: 'Hazelcast 5.x Migration Guide'
+      url: https://docs.hazelcast.com/hazelcast/5.2/migrate/migration-guide-5-0

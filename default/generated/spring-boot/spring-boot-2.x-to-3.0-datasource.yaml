@@ -174,4 +174,49 @@
     - title: 'Spring Elasticsearch docs'
       url: https://docs.spring.io/spring-boot/docs/3.0.x/reference/html/data.html#data.nosql.elasticsearch
 
+- ruleID: spring-boot-2.x-to-3.0-datasource-00070
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      name: mysql.mysql-connector-java
+      lowerbound: 0.0.0
+  description: MySQL JDBC driver coordinates have changed
+  message: |
+    The coordinates of the MySQL JDBC driver have changed in Spring Boot 3.0.
+
+    **Old coordinates:**
+    ```xml
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+    ```
+
+    **New coordinates:**
+    ```xml
+    <dependency>
+        <groupId>com.mysql</groupId>
+        <artifactId>mysql-connector-j</artifactId>
+    </dependency>
+    ```
+
+    **Gradle:**
+    ```groovy
+    // Before
+    implementation 'mysql:mysql-connector-java'
+    
+    // After
+    implementation 'com.mysql:mysql-connector-j'
+    ```
+
+    **Note:** The driver class name remains `com.mysql.cj.jdbc.Driver`.
+    Spring Boot 3.0 manages the version automatically if you use the starter.
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - MySQL JDBC Driver'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#mysql-jdbc-driver
+
 

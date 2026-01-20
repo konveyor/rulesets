@@ -1,0 +1,21 @@
+rulesPath: ../spring-boot-2.x-to-3.0-actuator.yaml
+providers:
+  - name: java
+    dataPath: ./data/actuator
+  - name: builtin
+    dataPath: ./data/actuator
+tests:
+  - ruleID: spring-boot-2.x-to-3.0-actuator-00020
+    testCases:
+      - name: tc-custom-endpoint
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+  - ruleID: spring-boot-2.x-to-3.0-actuator-00030
+    testCases:
+      - name: tc-health-indicator
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1

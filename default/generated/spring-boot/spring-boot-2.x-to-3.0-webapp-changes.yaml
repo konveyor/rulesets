@@ -46,3 +46,123 @@
   links:
     - title: 'Spring Boot 3.0 Migration Guide - Web application changes'
       url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#updated-phases-for-graceful-shutdown
+
+- ruleID: spring-boot-2.x-to-3.0-webapp-changes-00020
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.dependency:
+        name: org.eclipse.jetty.jetty-server
+        upperbound: 10.99.99
+    - java.dependency:
+        name: org.eclipse.jetty.jetty-webapp
+        upperbound: 10.99.99
+  description: Jetty must be upgraded to version 11+ for Spring Boot 3.0
+  message: |
+    Spring Boot 3.0 requires Jetty 11 or later. Jetty 11 is the first version to support
+    Jakarta EE 9 (Servlet 5.0 API with `jakarta.servlet` namespace).
+
+    **Migration Steps:**
+
+    1. **Update Jetty dependencies:**
+    ```xml
+    <!-- Maven - Spring Boot will manage the version -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-jetty</artifactId>
+    </dependency>
+    ```
+
+    2. **If using explicit Jetty version:**
+    ```xml
+    <properties>
+        <jetty.version>11.0.15</jetty.version>
+    </properties>
+    ```
+
+    3. **Key Jetty 11 changes:**
+    - All `javax.servlet` → `jakarta.servlet`
+    - WebSocket API changes
+    - Some deprecated APIs removed
+
+    **Note:** Ensure all Jetty-related libraries are compatible with Jetty 11.
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - Jetty'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#jetty
+    - title: 'Jetty 11 Release Notes'
+      url: https://github.com/eclipse/jetty.project/releases/tag/jetty-11.0.0
+
+- ruleID: spring-boot-2.x-to-3.0-webapp-changes-00030
+  category: potential
+  effort: 2
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - builtin.filecontent:
+        pattern: "spring.mvc.pathmatch.matching-strategy"
+        filePattern: "application*.properties"
+    - builtin.filecontent:
+        pattern: "pathmatch"
+        filePattern: "application*.yml"
+  description: Path matching strategy defaults have changed
+  message: |
+    In Spring Boot 3.0, the default path matching strategy for Spring MVC has changed.
+
+    **Key Changes:**
+    - Default matching strategy is now `PathPatternParser` instead of `AntPathMatcher`
+    - Trailing slash matching is disabled by default
+    - Suffix pattern matching is disabled by default
+
+    **If you need the old behavior:**
+    ```properties
+    # Use AntPathMatcher (legacy behavior)
+    spring.mvc.pathmatch.matching-strategy=ant_path_matcher
+    ```
+
+    **Recommended approach:** Update your application to work with the new defaults,
+    as `PathPatternParser` offers better performance.
+
+    **Note:** If using Spring Security or Actuator, ensure consistent path matching
+    configuration across all components.
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - Web Applications'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#spring-mvc-and-webflux-url-matching-changes
+
+- ruleID: spring-boot-2.x-to-3.0-webapp-changes-00040
+  category: potential
+  effort: 2
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.boot.web.servlet.error.ErrorController
+      location: IMPLEMENTS_TYPE
+  description: ErrorController implementations may need updates
+  message: |
+    The `ErrorController` interface and error handling behavior has been refined in Spring Boot 3.0.
+
+    **Key Changes:**
+    - The `getErrorPath()` method has been removed from `ErrorController`
+    - Error attribute handling has been updated
+    - Custom error pages may need adjustment
+
+    **Migration:**
+    If your `ErrorController` implementation overrides `getErrorPath()`, remove that method
+    and configure the error path via properties instead:
+
+    ```properties
+    server.error.path=/error
+    ```
+
+    Review your error handling logic to ensure compatibility with the updated error
+    attribute structure.
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide

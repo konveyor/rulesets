@@ -1,0 +1,21 @@
+rulesPath: ../spring-boot-2.x-to-3.0-micrometer.yaml
+providers:
+  - name: java
+    dataPath: ./data/micrometer
+  - name: builtin
+    dataPath: ./data/micrometer
+tests:
+  - ruleID: spring-boot-2.x-to-3.0-micrometer-00010
+    testCases:
+      - name: tc-tags-provider
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+  - ruleID: spring-boot-2.x-to-3.0-micrometer-00020
+    testCases:
+      - name: tc-jvm-metrics
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
