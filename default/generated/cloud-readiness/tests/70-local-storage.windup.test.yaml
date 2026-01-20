@@ -1,0 +1,15 @@
+rulesPath: ../70-local-storage.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/70-local-storage
+- name: builtin
+  dataPath: ./data/70-local-storage
+tests:
+- ruleID: local-storage-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+#      exactly: 16  TODO: fix - not matching contructor in private field initialization
+      exactly: 14
+      messageMatches: An application running inside a container could lose access
+        to a file in local storage

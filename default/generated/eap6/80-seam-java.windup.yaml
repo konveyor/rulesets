@@ -75,7 +75,7 @@
   ruleID: seam-java-00010
   when:
     java.referenced:
-      pattern: org.jboss.seam.core.Conversation
+      pattern: org.jboss.seam.core.Conversation*
 - category: mandatory
   customVariables: []
   description: Seam API - org.jboss.seam.Seam
@@ -103,7 +103,6 @@
   ruleID: seam-java-00030
   when:
     java.referenced:
-      location: METHOD_CALL
       pattern: org.jboss.seam.Seam*
 - category: mandatory
   customVariables: []
@@ -422,8 +421,8 @@
   ruleID: seam-java-00110
   when:
     java.referenced:
-      location: METHOD_CALL
-      pattern: org.jboss.seam.Component*
+      location: CONSTRUCTOR_CALL
+      pattern: org.jboss.seam.Component
 - category: mandatory
   customVariables: []
   description: Seam API - org.jboss.seam.annotations.Redirect
@@ -555,8 +554,7 @@
   ruleID: seam-java-00160
   when:
     java.referenced:
-      location: METHOD_CALL
-      pattern: org.jboss.seam.contexts.Contexts*
+      pattern: org.jboss.seam.contexts.Contexts
 - customVariables: []
   description: Seam integration with jBPM
   labels:
@@ -584,7 +582,7 @@
   when:
     java.referenced:
       location: ANNOTATION
-      pattern: org.jboss.seam.annotations.bpm*
+      pattern: org.jboss.seam.annotations.bpm.*
 - category: mandatory
   customVariables: []
   description: Seam API - org.jboss.seam.core.ConversationEntry
@@ -790,8 +788,8 @@
         location: ANNOTATION
         pattern: org.jboss.seam.annotations.Observer
     - java.referenced:
-        location: METHOD_CALL
-        pattern: org.jboss.seam.core.Events*
+        location: CONSTRUCTOR_CALL
+        pattern: org.jboss.seam.core.Events
 - customVariables: []
   description: Seam API - Interceptors
   effort: 0
@@ -819,7 +817,6 @@
   ruleID: seam-java-00250
   when:
     java.referenced:
-      location: ANNOTATION
       pattern: org.jboss.seam.annotations.intercept*
 - category: mandatory
   customVariables: []

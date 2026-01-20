@@ -1,0 +1,19 @@
+rulesPath: ../143-websphere-other.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/143-websphere-other
+- name: builtin
+  dataPath: ./data/143-websphere-other
+tests:
+- ruleID: websphere-other-eap7-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: WebSphere Asynchronous Work is a Work Manager
+- ruleID: websphere-other-eap7-02000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: WebSphere Startup Service serves

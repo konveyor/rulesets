@@ -1,0 +1,146 @@
+- ruleID: angularjs-to-angular-location-service-00000
+  description: $location.path should be replaced with Router.navigate
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: $location.path
+      filePattern: \.(j|t)sx?$
+  message: 'AngularJS $location.path should be replaced with Angular Router.navigate
+
+
+    Replace `$location.path` with `Router.navigate`.
+
+
+    Before:
+
+    ```
+
+    $location.path(''/new-path'');
+
+    ```
+
+
+    After:
+
+    ```
+
+    this.router.navigate([''/new-path'']);
+
+    ```'
+  customVariables: []
+- ruleID: angularjs-to-angular-location-service-00010
+  description: $location.url should be replaced with Router.navigate
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: $location.url
+      filePattern: \.(j|t)sx?$
+  message: 'AngularJS $location.url should be replaced with Angular Router.navigate
+
+
+    Replace `$location.url` with `Router.navigate`.
+
+
+    Before:
+
+    ```
+
+    $location.url(''/new-path'');
+
+    ```
+
+
+    After:
+
+    ```
+
+    this.router.navigate([''/new-path'']);
+
+    ```'
+  customVariables: []
+- ruleID: angularjs-to-angular-location-service-00020
+  description: $location.protocol should be replaced with window.location.protocol
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: $location.protocol
+      filePattern: \.(j|t)sx?$
+  message: 'AngularJS $location.protocol should be replaced with native window.location.protocol
+    or platform service
+
+
+    Replace `$location.protocol()` with `window.location.protocol`.
+
+
+    Before:
+
+    ```
+
+    if ($location.protocol() === ''https'') { ... }
+
+    ```
+
+
+    After:
+
+    ```
+
+    if (window.location.protocol === ''https:'') { ... }
+
+    ```
+
+
+    Note: For server-side rendering (SSR) compatibility, consider using Angular''s
+    DOCUMENT token or a platform service instead of direct window access.'
+  customVariables: []
+- ruleID: angularjs-to-angular-location-service-00030
+  description: $location.host should be replaced with window.location.hostname
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: $location.host
+      filePattern: \.(j|t)sx?$
+  message: 'AngularJS $location.host should be replaced with native window.location.hostname
+    or platform service
+
+
+    Replace `$location.host()` with `window.location.hostname`.
+
+
+    Before:
+
+    ```
+
+    const hostname = $location.host();
+
+    ```
+
+
+    After:
+
+    ```
+
+    const hostname = window.location.hostname;
+
+    ```
+
+
+    Note: For server-side rendering (SSR) compatibility, consider using Angular''s
+    DOCUMENT token or a platform service instead of direct window access.'
+  customVariables: []

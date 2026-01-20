@@ -1,0 +1,19 @@
+rulesPath: ../228-springboot-jmx-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/228-springboot-jmx-to-quarkus
+- name: builtin
+  dataPath: ./data/228-springboot-jmx-to-quarkus
+tests:
+- ruleID: springboot-jmx-to-quarkus-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: 'Spring JMX XML configuration detected:'
+- ruleID: springboot-jmx-to-quarkus-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: 'Spring JMX annotation configuration detected:'

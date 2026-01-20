@@ -1,0 +1,88 @@
+- ruleID: angular-16-to-angular-21-api-removal-00000
+  description: ComponentFactoryResolver should be replaced with removed
+  effort: 7
+  category: mandatory
+  labels:
+  - konveyor.io/source=angular-16
+  - konveyor.io/target=angular-21
+  when:
+    nodejs.referenced:
+      pattern: ComponentFactoryResolver
+  message: 'ComponentFactoryResolver has been removed from Angular APIs.
+
+
+    The factory pattern is no longer needed. Use ViewContainerRef.createComponent() directly with the component class.
+
+
+    Before:
+
+    ```typescript
+
+    constructor(private resolver: ComponentFactoryResolver, private vcr: ViewContainerRef) {
+      const factory = this.resolver.resolveComponentFactory(MyComponent);
+      this.vcr.createComponent(factory);
+    }
+
+    ```
+
+
+    After:
+
+    ```typescript
+
+    constructor(private vcr: ViewContainerRef) {
+      this.vcr.createComponent(MyComponent);
+    }
+
+    ```'
+  customVariables: []
+- ruleID: angular-16-to-angular-21-api-removal-00010
+  description: BrowserTransferStateModule should be replaced with removed
+  effort: 7
+  category: mandatory
+  labels:
+  - konveyor.io/source=angular-16
+  - konveyor.io/target=angular-21
+  when:
+    nodejs.referenced:
+      pattern: BrowserTransferStateModule
+  message: 'BrowserTransferStateModule is no longer available and should be removed
+    from applications.
+
+
+    Replace `BrowserTransferStateModule` with `removed`.
+
+
+    Before:
+
+    ```typescript
+
+    import { BrowserTransferStateModule } from ''@angular/platform-browser'';
+
+    @NgModule({
+      imports: [
+        BrowserModule,
+        BrowserTransferStateModule
+      ]
+    })
+    export class AppModule { }
+
+    ```
+
+
+    After:
+
+    ```typescript
+
+    import { BrowserModule } from ''@angular/platform-browser'';
+
+    @NgModule({
+      imports: [
+        BrowserModule
+        // BrowserTransferStateModule removed - no longer needed
+      ]
+    })
+    export class AppModule { }
+
+    ```'
+  customVariables: []

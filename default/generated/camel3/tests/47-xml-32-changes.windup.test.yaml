@@ -1,0 +1,89 @@
+rulesPath: ../47-xml-32-changes.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/47-xml-32-changes
+- name: builtin
+  dataPath: ./data/47-xml-32-changes
+tests:
+- ruleID: jndiregistry-removed-camel32-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.apache.camel.impl.JndiRegistry` has been removed - please
+        use org.apache.camel.support.jndi.JndiBeanRepository in org.apache.camel:camel-support
+        instead.'
+- ruleID: xml-removed-camel32-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Camel on Apache Karaf / OSGi has been moved to its own project
+        a.*
+  - name: tc-2
+    hasIncidents:
+      exactly: 1
+      messageMatches: Camel on Apache Karaf / OSGi has been moved to its own project
+        a.*
+  - name: tc-3
+    hasIncidents:
+      exactly: 1
+      messageMatches: Camel on Apache Karaf / OSGi has been moved to its own project
+        a.*
+  - name: tc-4
+    hasIncidents:
+      exactly: 1
+      messageMatches: Camel on Apache Karaf / OSGi has been moved to its own project
+        a.*
+  - name: tc-5
+    hasIncidents:
+      exactly: 1
+      messageMatches: Camel on Apache Karaf / OSGi has been moved to its own project
+        a.*
+  - name: tc-6
+    hasIncidents:
+      exactly: 1
+      messageMatches: Camel on Apache Karaf / OSGi has been moved to its own project
+        a.*
+  - name: tc-7
+    hasIncidents:
+      exactly: 1
+      messageMatches: Camel on Apache Karaf / OSGi has been moved to its own project
+        a.*
+- ruleID: xml-removed-camel32-00008
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: camel-spark-rest component has been removed - please any of
+        the other REST capable components, such as camel-jetty, camel-netty-http or
+        camel-undertow..
+- ruleID: xml-moved-camel32-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: Camel Spring Boot has flattened its option keys and the .configuration
+        prefix has been remove.*
+- ruleID: xml-moved-camel32-00004
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: broker-u-r-l in Spring Boot properties renamed to broker-url.
+        *See the example in the upgrade guide for 3.2 for more details
+- ruleID: xml-moved-camel32-00005
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: org.apache.camel.cluster has been moved out of org.apache.camel:camel-core-engine
+        into org.apache.camel:camel-cluster. *See the example in the upgrade guide
+        for 3.2 for more details
+- ruleID: xml-removed-camel32-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The org.apache.camel.spring.Main class has been moved out of
+        camel-spring JAR into its own JAR named camel-spring-main.

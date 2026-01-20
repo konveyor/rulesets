@@ -1,0 +1,37 @@
+- ruleID: angular-12-to-angular-13-initialization-00000
+  description: APP_INITIALIZER without null check should be replaced with APP_INITIALIZER
+    with more specific return types
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-12
+  - konveyor.io/target=angular-13
+  when:
+    nodejs.referenced:
+      pattern: APP_INITIALIZER
+  message: 'The initializer callbacks now have more specific return types, which may
+    require update of your code if you are getting an APP_INITIALIZER instance via
+    Injector.get or TestBed.inject
+
+
+    Replace `APP_INITIALIZER without null check` with `APP_INITIALIZER with more specific
+    return types`.
+
+
+    Before:
+
+    ```
+
+    const initializer = injector.get(APP_INITIALIZER);
+
+    ```
+
+
+    After:
+
+    ```
+
+    const initializer: (() => Observable<any> | Promise<any> | void)[] = injector.get(APP_INITIALIZER);
+
+    ```'
+  customVariables: []

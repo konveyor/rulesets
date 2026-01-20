@@ -1,0 +1,23 @@
+rulesPath: ../15-markup-technology-usage.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/15-markup-technology-usage
+- name: builtin
+  dataPath: ./data/15-markup-technology-usage
+tests: []
+# FIXME: these rules haven't been translated: https://github.com/konveyor/rulesets/issues/254:
+#- ruleID: technology-usage-markup-01000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - HTML
+#- ruleID: technology-usage-markup-01100
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - CSS
+#- ruleID: technology-usage-markup-01200
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - JavaScript

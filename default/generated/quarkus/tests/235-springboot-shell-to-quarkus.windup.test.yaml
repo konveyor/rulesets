@@ -1,0 +1,14 @@
+rulesPath: ../235-springboot-shell-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/235-springboot-shell-to-quarkus
+- name: builtin
+  dataPath: ./data/235-springboot-shell-to-quarkus
+tests:
+- ruleID: springboot-shell-to-quarkus-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Replace the SpringBoot Shell artifacts with Quarkus `picocli`
+        extension

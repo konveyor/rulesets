@@ -1,0 +1,40 @@
+rulesPath: ../49-xml-321-changes.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/49-xml-321-changes
+- name: builtin
+  dataPath: ./data/49-xml-321-changes
+tests:
+- ruleID: xml-changed-camel321-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The class org.apache.camel.impl.console.AbstractDevConsole has
+        moved from camel-console to camel-suppor.*
+- ruleID: xml-changed-camel321-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: camel-java-joor-dsl can no longer load routes defined in class
+        file.*
+- ruleID: xml-changed-camel321-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: camel-dozer has been deprecated and remove.*
+- ruleID: xml-changed-camel321-00004
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: camel-cmis has been deprecated and remove.*
+- ruleID: xml-changed-camel321-00005
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The platform-http-starter has been changed from using camel-servlet
+        to use Spring HTTP server directl.*

@@ -1,0 +1,34 @@
+- ruleID: angular-2-to-angular-8-token-replacement-00000
+  description: OpaqueToken should be replaced with InjectionToken
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angular-2
+  - konveyor.io/target=angular-8
+  when:
+    nodejs.referenced:
+      pattern: OpaqueToken
+  message: 'OpaqueToken is deprecated and replaced by InjectionToken for better type
+    safety
+
+
+    Replace `OpaqueToken` with `InjectionToken`.
+
+
+    Before:
+
+    ```
+
+    import { OpaqueToken } from ''@angular/core'';
+
+    ```
+
+
+    After:
+
+    ```
+
+    import { InjectionToken } from ''@angular/core'';
+
+    ```'
+  customVariables: []

@@ -1,0 +1,13 @@
+rulesPath: ../164-javax-to-jakarta-package.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/164-javax-to-jakarta-package
+- name: builtin
+  dataPath: ./data/164-javax-to-jakarta-package
+tests:
+- ruleID: javax-to-jakarta-import-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 25
+      messageMatches: Replace the `javax.

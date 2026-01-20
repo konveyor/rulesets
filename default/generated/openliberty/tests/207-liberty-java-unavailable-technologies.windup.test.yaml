@@ -1,0 +1,70 @@
+rulesPath: ../207-liberty-java-unavailable-technologies.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/207-liberty-java-unavailable-technologies
+- name: builtin
+  dataPath: ./data/207-liberty-java-unavailable-technologies
+tests:
+- ruleID: DetectJavaApplicationDeploymentJava
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The Java EE Application Deployment API is not supported on Liberty
+        or Liberty Core
+- ruleID: DetectJavaPortlet
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: The Java Portlet API and its deployment descriptors are not
+        supported on Liberty
+- ruleID: DetectJAXRJava
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: The Java API for XML Registries (JAXR) is not supported on Liberty
+        or Liberty Core
+- ruleID: DetectRemoteBundleRepositoriesJava
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The OSGI repository service APIs is not supported in Liberty
+        or Liberty Core
+- ruleID: DetectRemoteServicesJava
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The OSGI Remote Service Admin is not supported in Liberty or
+        Liberty Core
+- ruleID: DetectWSNotificationJava
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Web Services Notification (WS-Notification) is not supported
+        on Liberty or Liberty Core
+- ruleID: DetectEJBEntityBeansXML
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Entity beans are optional in the EJB 3.2 specification and are
+        not supported on Liberty or Liberty Core
+- ruleID: DetectTransactionPropagationEJBRemote
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 11
+      messageMatches: Liberty does not support outbound or inbound transaction propagation
+        for EJB remote interfaces
+- ruleID: DetectJAXRPC
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 6
+      messageMatches: This rule flags the use of any JAX-RPC specific packages and
+        configuration files

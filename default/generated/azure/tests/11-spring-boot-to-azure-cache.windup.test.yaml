@@ -1,0 +1,20 @@
+rulesPath: ../11-spring-boot-to-azure-cache.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/11-spring-boot-to-azure-cache
+- name: builtin
+  dataPath: ./data/11-spring-boot-to-azure-cache
+tests:
+- ruleID: spring-boot-to-azure-cache-redis-01000
+  testCases:
+  - name: tc-1
+    hasInsights:
+      exactly: 4
+      messageMatches: The application uses a Redis Cache.
+- ruleID: spring-boot-to-azure-cache-redis-02000
+  testCases:
+  - name: tc-1
+    hasInsights:
+      exactly: 4
+      messageMatches: Redis Cache connection string, username, or password used in
+        this application

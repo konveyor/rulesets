@@ -1,0 +1,13 @@
+rulesPath: ../211-dependency-removal-for-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/211-dependency-removal-for-quarkus
+- name: builtin
+  dataPath: ./data/211-dependency-removal-for-quarkus
+tests:
+- ruleID: dependency-removal-for-quarkus-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 3
+      messageMatches: Non-quarkus dependencies are no longer required and can be removed

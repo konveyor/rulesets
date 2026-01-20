@@ -1,0 +1,27 @@
+rulesPath: ../20-spring-boot-to-azure-mq-config.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/20-spring-boot-to-azure-mq-config
+- name: builtin
+  dataPath: ./data/20-spring-boot-to-azure-mq-config
+tests:
+- ruleID: spring-boot-to-azure-mq-config-kafka-01000
+  testCases:
+  - name: tc-1
+    hasInsights:
+      exactly: 3
+      messageMatches: The application uses a Kafka connection string or password
+- ruleID: spring-boot-to-azure-mq-config-rabbitmq-01000
+  testCases:
+  - name: tc-1
+    hasInsights:
+      exactly: 1
+      messageMatches: The application uses a RabbitMQ connection string, username,
+        or password
+- ruleID: spring-boot-to-azure-mq-config-artemis-01000
+  testCases:
+  - name: tc-1
+    hasInsights:
+      exactly: 1
+      messageMatches: The application uses an ActiveMQ Artemis connection string,
+        username, or password

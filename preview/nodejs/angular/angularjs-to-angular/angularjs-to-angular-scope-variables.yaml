@@ -1,0 +1,17 @@
+- ruleID: angularjs-to-angular-scope-variables-00000
+  description: $scope. should be replaced with class property/method
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: $scope.
+      filePattern: \.(j|t)sx?$
+  message: "$scope variables should be converted to class properties and methods in\
+    \ Angular components\n\nReplace `$scope.` with `class property/method`.\n\nBefore:\n\
+    ```\nfunction MyController($scope) {\n $scope.name = 'John';\n $scope.updateName\
+    \ = function() { ... };\n}\n```\n\nAfter:\n```\nexport class MyComponent {\n name\
+    \ = 'John';\n updateName() { ... }\n}\n```"
+  customVariables: []

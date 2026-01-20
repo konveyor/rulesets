@@ -1,0 +1,105 @@
+- ruleID: angularjs-to-angular-routing-00000
+  description: $routeProvider should be replaced with RouterModule.forRoot(routes)
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: $routeProvider
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS $routeProvider should be replaced with Angular Router configuration\n\
+    \nReplace `$routeProvider` with `RouterModule.forRoot(routes)`.\n\nBefore:\n```\n\
+    angular.module('app').config(function($routeProvider) {\n $routeProvider\n .when('/home',\
+    \ {\n templateUrl: 'home.html',\n controller: 'HomeController'\n });\n});\n```\n\
+    \nAfter:\n```\nconst routes: Routes = [\n { path: 'home', component: HomeComponent\
+    \ }\n];\n\n@NgModule({\n imports: [RouterModule.forRoot(routes)]\n})\nexport class\
+    \ AppRoutingModule { }\n```"
+  customVariables: []
+- ruleID: angularjs-to-angular-routing-00010
+  description: $route should be replaced with Router
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: $route
+      filePattern: \.(j|t)sx?$
+  message: 'AngularJS $route service should be replaced with Angular Router
+
+
+    Replace `$route` with `Router`.
+
+
+    Before:
+
+    ```
+
+    $route.reload();
+
+    ```
+
+
+    After:
+
+    ```
+
+    this.router.navigate([this.router.url]);
+
+    ```'
+  customVariables: []
+- ruleID: angularjs-to-angular-routing-00020
+  description: $stateProvider should be replaced with RouterModule.forRoot(routes)
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: $stateProvider
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS UI-Router $stateProvider should be replaced with Angular Router\
+    \ configuration\n\nReplace `$stateProvider` with `RouterModule.forRoot(routes)`.\n\
+    \nBefore:\n```\n$stateProvider.state('home', {\n url: '/home',\n templateUrl:\
+    \ 'home.html',\n controller: 'HomeController'\n});\n```\n\nAfter:\n```\nconst\
+    \ routes: Routes = [\n { path: 'home', component: HomeComponent }\n];\n```"
+  customVariables: []
+- ruleID: angularjs-to-angular-routing-00030
+  description: ui-sref should be replaced with routerLink
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: ui-sref
+      filePattern: \.(html|htm|component\.ts)$
+  message: 'AngularJS UI-Router ui-sref directive should be replaced with Angular
+    routerLink
+
+
+    Replace `ui-sref` with `routerLink`.
+
+
+    Before:
+
+    ```
+
+    <a ui-sref="home">Home</a>
+
+    ```
+
+
+    After:
+
+    ```
+
+    <a [routerLink]="[''/home'']">Home</a>
+
+    ```'
+  customVariables: []

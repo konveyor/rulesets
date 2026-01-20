@@ -1,0 +1,10 @@
+rulesPath: ../patternfly-v5-to-patternfly-v6-menu.yaml
+providers:
+- name: nodejs
+  dataPath: ./data/menu
+tests:
+- ruleID: patternfly-v5-to-patternfly-v6-menu-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

@@ -1,0 +1,33 @@
+- ruleID: angular-14-to-angular-15-angular-cdk-upgrade-00000
+  description: CdkStepper._orientation should be replaced with CdkStepper.orientation
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-14
+  - konveyor.io/target=angular-15
+  when:
+    nodejs.referenced:
+      pattern: CdkStepper._orientation
+  message: 'Use public API orientation instead of private _orientation
+
+
+    Replace `CdkStepper._orientation` with `CdkStepper.orientation`.
+
+
+    Before:
+
+    ```
+
+    this.stepper._orientation = ''horizontal'';
+
+    ```
+
+
+    After:
+
+    ```
+
+    this.stepper.orientation = ''horizontal'';
+
+    ```'
+  customVariables: []

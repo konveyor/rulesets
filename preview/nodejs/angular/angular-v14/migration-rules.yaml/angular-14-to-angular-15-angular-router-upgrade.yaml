@@ -1,0 +1,35 @@
+- ruleID: angular-14-to-angular-15-angular-router-upgrade-00000
+  description: 'initialNavigation: ''enabled'' should be replaced with initialNavigation:
+    ''enabledBlocking'''
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-14
+  - konveyor.io/target=angular-15
+  when:
+    builtin.filecontent:
+      pattern: 'initialNavigation: ''enabled'''
+      filePattern: \.(j|t)sx?$
+  message: 'Update initialNavigation to ''enabledBlocking'' for stricter routing behavior
+
+
+    Replace `initialNavigation: ''enabled''` with `initialNavigation: ''enabledBlocking''`.
+
+
+    Before:
+
+    ```
+
+    initialNavigation: ''enabled''
+
+    ```
+
+
+    After:
+
+    ```
+
+    initialNavigation: ''enabledBlocking''
+
+    ```'
+  customVariables: []

@@ -1,0 +1,14 @@
+rulesPath: ../234-springboot-security-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/234-springboot-security-to-quarkus
+- name: builtin
+  dataPath: ./data/234-springboot-security-to-quarkus
+tests:
+- ruleID: springboot-security-to-quarkus-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: Replace the SpringBoot Security artifact with Quarkus `spring-security`
+        extension

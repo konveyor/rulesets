@@ -1,0 +1,19 @@
+rulesPath: ../201-persistence-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/201-persistence-to-quarkus
+- name: builtin
+  dataPath: ./data/201-persistence-to-quarkus
+tests:
+- ruleID: persistence-to-quarkus-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: It is recommended to move persistence related configuration from an XML file to a properties one
+- ruleID: persistence-to-quarkus-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: Replace `@PersistenceContext` with `@Inject` for EntityManager injection in Quarkus

@@ -1,0 +1,68 @@
+- category: mandatory
+  customVariables: []
+  description: JNDI InitialContext is not supported in Quarkus
+  effort: 5
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus CDI Reference
+    url: https://quarkus.io/guides/cdi-reference
+  message: |-
+    JNDI lookups via `InitialContext` are not supported in Quarkus.
+    Use CDI `@Inject` instead to inject dependencies directly.
+
+    Replace JNDI lookups with CDI injection:
+    ```java
+    // Before (Java EE/Jakarta EE):
+    InitialContext ctx = new InitialContext();
+    MyService service = (MyService) ctx.lookup("java:app/MyService");
+
+    // After (Quarkus with CDI):
+    @Inject
+    MyService service;
+    ```
+  ruleID: jndi-to-quarkus-00001
+  when:
+    java.referenced:
+      location: CONSTRUCTOR_CALL
+      pattern: javax.naming.InitialContext
+- category: mandatory
+  customVariables: []
+  description: JNDI lookup() method is not supported in Quarkus
+  effort: 5
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus CDI Reference
+    url: https://quarkus.io/guides/cdi-reference
+  message: |-
+    JNDI lookups using the `lookup()` method are not supported in Quarkus.
+    Use CDI `@Inject` instead to inject dependencies directly.
+
+    Replace JNDI lookups with CDI injection:
+    ```java
+    // Before (Java EE/Jakarta EE):
+    Context ctx = new InitialContext();
+    DataSource ds = (DataSource) ctx.lookup("java:jboss/datasources/MyDS");
+
+    // After (Quarkus with CDI):
+    @Inject
+    AgroalDataSource dataSource;
+    ```
+
+    For datasources specifically, configure them in `application.properties`:
+    ```
+    quarkus.datasource.db-kind=postgresql
+    quarkus.datasource.username=username
+    quarkus.datasource.password=password
+    quarkus.datasource.jdbc.url=jdbc:postgresql://localhost:5432/mydb
+    ```
+  ruleID: jndi-to-quarkus-00002
+  when:
+    java.referenced:
+      location: METHOD_CALL
+      pattern: javax.naming.Context.lookup*

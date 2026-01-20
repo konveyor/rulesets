@@ -1,0 +1,13 @@
+rulesPath: ../18-spring-boot-to-azure-jks.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/18-spring-boot-to-azure-jks
+- name: builtin
+  dataPath: ./data/18-spring-boot-to-azure-jks
+tests:
+- ruleID: spring-boot-to-azure-jks-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Java KeyStore file is found.

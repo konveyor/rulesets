@@ -1,0 +1,13 @@
+rulesPath: ../165-javax-to-jakarta-properties.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/165-javax-to-jakarta-properties
+- name: builtin
+  dataPath: ./data/165-javax-to-jakarta-properties
+tests:
+- ruleID: javax-to-jakarta-properties-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 3
+      messageMatches: Rename properties prefixed by `javax` with `jakarta`

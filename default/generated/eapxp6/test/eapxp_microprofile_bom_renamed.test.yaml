@@ -1,0 +1,12 @@
+rulesPath: ../eapxp_microprofile_bom_renamed.mta.yaml
+providers:
+  - name: java
+    dataPath: ./data/eapxp_microprofile_bom_renamed
+  - name: builtin
+    dataPath: ./data/eapxp_microprofile_bom_renamed
+tests:
+  - ruleID: eapxp_microprofile_bom_renamed-00001
+    testCases:
+      - name: eapxp_microprofile_bom_renamed-1
+        hasIncidents:
+          exactly: 1

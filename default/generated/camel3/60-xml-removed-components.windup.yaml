@@ -177,11 +177,11 @@
     - builtin.xml:
         namespaces:
           c: http://camel.apache.org/schema/spring
-        xpath: //*/c:from/@uri[matches(self::node(), 'twitter-streaming:{*}')]
+        xpath: //*/c:from/@uri[matches(self::node(), 'twitter-streaming:.*')]
     - builtin.xml:
         namespaces:
           c: http://camel.apache.org/schema/blueprint
-        xpath: //*/c:from/@uri[matches(self::node(), 'twitter-streaming:{*}')]
+        xpath: //*/c:from/@uri[matches(self::node(), 'twitter-streaming:.*')]
 - category: mandatory
   customVariables: []
   description: '`org.apache.camel:camel-restlet` artifact has been removed'

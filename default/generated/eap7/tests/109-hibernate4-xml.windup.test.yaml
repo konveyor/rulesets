@@ -1,0 +1,37 @@
+rulesPath: ../109-hibernate4-xml.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/109-hibernate4-xml
+- name: builtin
+  dataPath: ./data/109-hibernate4-xml
+tests:
+- ruleID: hibernate4-xml-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: .*Replace configuration transaction property .*hibernate.transaction.factory_class.*
+- ruleID: hibernate4-xml-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*Use .*org.hibernate.id.enhanced.SequenceStyleGenerator.*
+- ruleID: hibernate4-xml-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Identifier generator.*
+- ruleID: hibernate4-xml-00004
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Since Hibernate 5, the .*org.hibernate.hql.spi.TemporaryTableBulkIdStrategy.*
+- ruleID: hibernate4-xml-00005
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: Since Hibernate 5, the .*org.hibernate.hql.spi.PersistentTableBulkIdStrategy.*

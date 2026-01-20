@@ -1,0 +1,80 @@
+- ruleID: angular-16-to-angular-21-import-path-change-00000
+  description: ApplicationConfig should be replaced with @angular/core
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angular-16
+  - konveyor.io/target=angular-21
+  when:
+    builtin.filecontent:
+      pattern: ApplicationConfig$
+      filePattern: \.(j|t)sx?$
+  message: 'Imports of ApplicationConfig should now be from @angular/core instead
+    of other packages.
+
+
+    Replace `import { {{ component }} } from ''some_old_package''` with `import { {{
+    component }} } from ''@angular/core''`.
+
+
+    Before:
+
+    ```
+
+    import { {{ component }} } from ''some_old_package'';
+
+    ```
+
+
+    After:
+
+    ```
+
+    import { {{ component }} } from ''@angular/core'';
+
+    ```'
+  customVariables:
+  - pattern: import {(?P<imports>[A-z,\s]+)}
+    name: component
+    nameOfCaptureGroup: imports
+    defaultValue: Component
+- ruleID: angular-16-to-angular-21-import-path-change-00010
+  description: XhrFactory from @angular/common/http should be replaced with XhrFactory
+    from @angular/common
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angular-16
+  - konveyor.io/target=angular-21
+  when:
+    builtin.filecontent:
+      pattern: XhrFactory$
+      filePattern: \.(j|t)sx?$
+  message: 'XhrFactory should now be imported from @angular/common instead of @angular/common/http.
+
+
+    Replace `import { {{ component }} } from ''@angular/common/http''` with `import
+    { {{ component }} } from ''@angular/common''`.
+
+
+    Before:
+
+    ```
+
+    import { {{ component }} } from ''@angular/common/http'';
+
+    ```
+
+
+    After:
+
+    ```
+
+    import { {{ component }} } from ''@angular/common'';
+
+    ```'
+  customVariables:
+  - pattern: import {(?P<imports>[A-z,\s]+)}
+    name: component
+    nameOfCaptureGroup: imports
+    defaultValue: Component

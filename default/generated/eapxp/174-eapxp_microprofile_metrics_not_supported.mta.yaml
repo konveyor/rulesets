@@ -19,4 +19,4 @@
         name: org.eclipse.microprofile.metrics.microprofile-metrics-api
     - java.referenced:
         location: IMPORT
-        pattern: org.eclipse.microprofile.metric*
+        pattern: org.eclipse.microprofile.metrics.*

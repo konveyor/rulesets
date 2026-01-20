@@ -36,7 +36,7 @@
   - name: annotation
     nameOfCaptureGroup: annotation
     pattern: org.hibernate.annotations.(?P<annotation>(AnyMetaDef|AnyMetaDefs|TypeDef|TypeDefs))
-  description: String-based approaches for specifying Types to use have been removed
+  description: Approaches for specifying Types to use which are string-based have been removed
   effort: 1
   labels:
   - konveyor.io/target=hibernate6+
@@ -85,9 +85,28 @@
     have been removed. See the User Guide for details about mapping your domain model.
   ruleID: hibernate6-00020
   when:
-    java.referenced:
-      location: ANNOTATION
-      pattern: org.hibernate.annotations.(CollectionType|ParamDef|Type)
+    or:
+    - java.referenced:
+        location: ANNOTATION
+        pattern: org.hibernate.annotations.CollectionType
+        annotated:
+          elements:
+            - name: type
+              value: .*
+    - java.referenced:
+        location: ANNOTATION
+        pattern: org.hibernate.annotations.ParamDef
+        annotated:
+          elements:
+            - name: type
+              value: .*
+    - java.referenced:
+        location: ANNOTATION
+        pattern: org.hibernate.annotations.Type
+        annotated:
+          elements:
+            - name: type
+              value: .*
 - category: mandatory
   customVariables: []
   description: Basic mappings are no longer configurable through the BasicType contract
@@ -248,10 +267,10 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: jakarta.persistence.Query.getResultStream(*)
+        pattern: jakarta.persistence.Query.getResultStream
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.hibernate.query.Query.stream(*)
+        pattern: org.hibernate.Query.stream
 - category: mandatory
   customVariables: []
   description: The signature of the Interceptor#onSave method has been changed
@@ -275,7 +294,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.Interceptor.onSave(*)
+      pattern: org.hibernate.Interceptor.onSave
 - category: mandatory
   customVariables: []
   description: The contents of the loader.collection package have been restructured
@@ -395,8 +414,49 @@
     through the `SqlAstTranslator` which a `Dialect` exposes a factory for.
   ruleID: hibernate6-00150
   when:
-    java.referenced:
-      pattern: org.hibernate.sql.(ANSICaseFragment|ANSIJoinFragment|CacheJoinFragment|CaseFragment|ConditionFragment|DecodeCaseFragment|DerbyCaseFragment|DisjunctionFragment|HSQLCaseFragment|InsertSelect|JoinFragment|JoinType|MckoiCaseFragment|OracleJoinFragment|QueryJoinFragment|QuerySelect|Select|SelectExpression|SelectFragment|SelectValues|Sybase11JoinFragment)
+    or:
+      - java.referenced:
+          pattern: org.hibernate.sql.ANSICaseFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.ANSIJoinFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.CacheJoinFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.CaseFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.ConditionFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.DecodeCaseFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.DerbyCaseFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.DisjunctionFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.HSQLCaseFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.InsertSelect
+      - java.referenced:
+          pattern: org.hibernate.sql.JoinFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.JoinType
+      - java.referenced:
+          pattern: org.hibernate.sql.MckoiCaseFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.OracleJoinFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.QueryJoinFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.QuerySelect
+      - java.referenced:
+          pattern: org.hibernate.sql.Select
+      - java.referenced:
+          pattern: org.hibernate.sql.SelectExpression
+      - java.referenced:
+          pattern: org.hibernate.sql.SelectFragment
+      - java.referenced:
+          pattern: org.hibernate.sql.SelectValues
+      - java.referenced:
+          pattern: org.hibernate.sql.Sybase11JoinFragment
 - category: mandatory
   customVariables: []
   description: Support for basic property mappings with multiple columns was removed
@@ -425,10 +485,10 @@
       ignore: true
     - builtin.xml:
         filepaths: '{{xmlfiles1.filepaths}}'
-        from: xmlfiles1
         namespaces:
           h: http://www.hibernate.org/xsd/hibernate-mapping
         xpath: //*/h:property[count(h:column) > 1]
+      from: xmlfiles1
 - category: mandatory
   customVariables: []
   description: Legacy Hibernate Criteria API has been removed
@@ -475,7 +535,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.hibernate.query.Query.iterate(*)
+      pattern: org.hibernate.Query.iterate
 - category: mandatory
   customVariables: []
   description: Using NativeQuery to call SQL functions and procedures is no longer
@@ -503,16 +563,20 @@
     - java.referenced:
         location: ANNOTATION
         pattern: org.hibernate.annotations.NamedNativeQuery
+        annotated:
+          elements:
+            - name: callable
+              value: true
     - as: xmlfiles1
       builtin.file:
         pattern: .*\.hbm\.xml
       ignore: true
     - builtin.xml:
         filepaths: '{{xmlfiles1.filepaths}}'
-        from: xmlfiles1
         namespaces:
           h: http://www.hibernate.org/xsd/hibernate-mapping
         xpath: //*/h:sql-query[@callable = 'true']
+      from: xmlfiles1
 - category: mandatory
   customVariables: []
   description: Using NativeQuery to call SQL functions and procedures is no longer
@@ -541,9 +605,9 @@
       ignore: true
     - builtin.xml:
         filepaths: '{{xmlfiles1.filepaths}}'
-        from: xmlfiles1
         namespaces: {}
         xpath: //text()[contains(., 'fetch all properties')]
+      from: xmlfiles1
 - category: mandatory
   customVariables: []
   description: Hibernate no longer provides built-in support for integrating itself
@@ -750,7 +814,6 @@
       filePattern: (hibernate\.properties|persistence\.xml|cfg\.xml|application\.properties|application\.yaml)
       pattern: hibernate.ejb.loaded.classes
 - category: mandatory
-  customVariables: []
   description: The hibernate property under 'hibernate.ejb' has been renamed.
   effort: 1
   labels:
@@ -766,6 +829,10 @@
   - title: Hibernate ORM 6 migration guide - Configuration property renames
     url: https://github.com/hibernate/hibernate-orm/blob/6.0/migration-guide.adoc#configuration-property-renames
   message: 'This property has been removed: please use `hibernate.{{property}}` instead'
+  customVariables:
+  - name: property
+    nameOfCaptureGroup: property
+    pattern: (?P<property>(persistenceUnitName|discard_pc_on_close|session_factory_observer|identifier_generator_strategy_provider|classcache|collectioncache|event))
   ruleID: hibernate6-00255
   when:
     builtin.filecontent:

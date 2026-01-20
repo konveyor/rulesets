@@ -13,10 +13,9 @@
   - configuration
   - Glassfish Web Descriptor
   when:
-    as: default
     builtin.xmlPublicID:
       namespaces: {}
-      regex: ""
+      regex: ".*GlassFish Application Server.+Servlet"
 - customVariables: []
   description: Glassfish EJB Descriptor
   labels:

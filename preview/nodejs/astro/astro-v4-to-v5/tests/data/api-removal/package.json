@@ -1,0 +1,8 @@
+{
+  "name": "astro-api-removal-test",
+  "version": "1.0.0",
+  "dependencies": {
+    "astro": "^4.0.0",
+    "@astrojs/lit": "^4.0.0"
+  }
+}

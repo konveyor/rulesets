@@ -1,0 +1,110 @@
+- ruleID: angular-12-to-angular-13-queries-00000
+  description: 'emitDistinctChangesOnly: true should be replaced with emitDistinctChangesOnly:
+    false'
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-12
+  - konveyor.io/target=angular-13
+  when:
+    builtin.filecontent:
+      pattern: emitDistinctChangesOnly:\s*true
+      filePattern: \.(j|t)s$
+  message: 'In Angular 12, emitDistinctChangesOnly defaults to true. To maintain previous
+    behavior, set it to false.
+
+
+    Replace `emitDistinctChangesOnly: true` with `emitDistinctChangesOnly: false`.
+
+
+    Before:
+
+    ```
+
+    @ContentChildren(ChildComponent, { emitDistinctChangesOnly: true })
+
+    ```
+
+
+    After:
+
+    ```
+
+    @ContentChildren(ChildComponent, { emitDistinctChangesOnly: false })
+
+    ```'
+  customVariables: []
+- ruleID: angular-12-to-angular-13-queries-00010
+  description: '@ContentChildren without emitDistinctChangesOnly should be replaced
+    with @ContentChildren with emitDistinctChangesOnly: false'
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-12
+  - konveyor.io/target=angular-13
+  when:
+    builtin.filecontent:
+      pattern: '@ContentChildren\([^{]*\)'
+      filePattern: \.(j|t)s$
+  message: 'In Angular 12, emitDistinctChangesOnly defaults to true. To maintain previous
+    behavior, set it to false.
+
+
+    Replace `@ContentChildren without emitDistinctChangesOnly` with `@ContentChildren
+    with emitDistinctChangesOnly: false`.
+
+
+    Before:
+
+    ```
+
+    @ContentChildren(ChildComponent)
+
+    ```
+
+
+    After:
+
+    ```
+
+    @ContentChildren(ChildComponent, { emitDistinctChangesOnly: false })
+
+    ```'
+  customVariables: []
+- ruleID: angular-12-to-angular-13-queries-00020
+  description: '@ViewChildren without emitDistinctChangesOnly should be replaced with
+    @ViewChildren with emitDistinctChangesOnly: false'
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-12
+  - konveyor.io/target=angular-13
+  when:
+    builtin.filecontent:
+      pattern: '@ViewChildren\([^{]*\)'
+      filePattern: \.(j|t)s$
+  message: 'In Angular 12, emitDistinctChangesOnly defaults to true. To maintain previous
+    behavior, set it to false.
+
+
+    Replace `@ViewChildren without emitDistinctChangesOnly` with `@ViewChildren with
+    emitDistinctChangesOnly: false`.
+
+
+    Before:
+
+    ```
+
+    @ViewChildren(ChildComponent)
+
+    ```
+
+
+    After:
+
+    ```
+
+    @ViewChildren(ChildComponent, { emitDistinctChangesOnly: false })
+
+    ```'
+  customVariables: []

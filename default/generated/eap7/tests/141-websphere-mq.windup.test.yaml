@@ -1,0 +1,27 @@
+rulesPath: ../141-websphere-mq.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/141-websphere-mq
+- name: builtin
+  dataPath: ./data/141-websphere-mq
+tests:
+- ruleID: websphere-mq-eap7-00000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - IBM MQ
+- ruleID: websphere-mq-eap7-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - IBM MQ Configuration
+  - name: tc-2
+    hasIncidents:
+      exactly: 1
+      messageMatches: 'The WebSphere MQ client API is used to communicate with the MQ server'
+- ruleID: websphere-mq-eap7-02000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 4
+      messageMatches: WebSphere `.scp` files contain scripts.*

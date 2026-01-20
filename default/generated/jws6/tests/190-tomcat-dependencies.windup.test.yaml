@@ -1,0 +1,13 @@
+rulesPath: ../190-tomcat-dependencies.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/190-tomcat-dependencies
+- name: builtin
+  dataPath: ./data/190-tomcat-dependencies
+tests:
+- ruleID: upgrade-tomcat-dependencies-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: Version 10.1.0 is the minimum version recommended

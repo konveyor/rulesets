@@ -1,0 +1,34 @@
+- ruleID: angular-2-to-angular-8-dependency-injection-00000
+  description: ReflectiveInjector should be replaced with StaticInjector
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-2
+  - konveyor.io/target=angular-8
+  when:
+    nodejs.referenced:
+      pattern: ReflectiveInjector
+  message: 'ReflectiveInjector is deprecated in favor of StaticInjector for performance
+    improvements
+
+
+    Replace `ReflectiveInjector` with `StaticInjector`.
+
+
+    Before:
+
+    ```
+
+    const injector = ReflectiveInjector.resolveAndCreate([MyService]);
+
+    ```
+
+
+    After:
+
+    ```
+
+    const injector = StaticInjector.resolveAndCreate([MyService]);
+
+    ```'
+  customVariables: []

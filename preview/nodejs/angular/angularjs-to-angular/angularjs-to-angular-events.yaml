@@ -1,0 +1,88 @@
+- ruleID: angularjs-to-angular-events-00000
+  description: $broadcast should be replaced with EventEmitter
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: $broadcast
+      filePattern: \.(j|t)sx?$
+  message: 'AngularJS $broadcast should be replaced with Angular EventEmitter
+
+
+    Replace `$broadcast` with `EventEmitter`.
+
+
+    Before:
+
+    ```
+
+    $scope.$broadcast(''event-name'', data);
+
+    ```
+
+
+    After:
+
+    ```
+
+    @Output() eventName = new EventEmitter<any>();
+
+    this.eventName.emit(data);
+
+    ```'
+  customVariables: []
+- ruleID: angularjs-to-angular-events-00010
+  description: $emit should be replaced with EventEmitter
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: $emit
+      filePattern: \.(j|t)sx?$
+  message: 'AngularJS $emit should be replaced with Angular EventEmitter
+
+
+    Replace `$emit` with `EventEmitter`.
+
+
+    Before:
+
+    ```
+
+    $scope.$emit(''event-name'', data);
+
+    ```
+
+
+    After:
+
+    ```
+
+    @Output() eventName = new EventEmitter<any>();
+
+    this.eventName.emit(data);
+
+    ```'
+  customVariables: []
+- ruleID: angularjs-to-angular-events-00020
+  description: $on should be replaced with Component @Input or service
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: $on
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS $on event listeners should be replaced with Angular @Input properties\
+    \ or services\n\nReplace `$on` with `Component @Input or service`.\n\nBefore:\n\
+    ```\n$scope.$on('event-name', function(event, data) { });\n```\n\nAfter:\n```\n\
+    @Input() set eventData(data: any) {\n // handle data\n}\n```"
+  customVariables: []

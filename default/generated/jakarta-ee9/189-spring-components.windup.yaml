@@ -15,13 +15,9 @@
     9+ compatible
   ruleID: spring-components-00001
   when:
-    or:
-    - java.dependency:
-        nameregex: org\.springframework\.boot\..*
-        upperbound: 2.99.999
-    - java.dependency:
-        nameregex: org\.springframework\.boot\..*
-        upperbound: 2.99.999
+    java.dependency:
+      nameregex: org\.springframework\.boot\..*
+      upperbound: 2.99.999
 - category: mandatory
   customVariables: []
   description: Version of Spring not compatible with Jakarta EE 9+

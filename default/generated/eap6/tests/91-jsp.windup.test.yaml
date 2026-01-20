@@ -1,0 +1,13 @@
+rulesPath: ../91-jsp.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/91-jsp
+- name: builtin
+  dataPath: ./data/91-jsp
+tests:
+- ruleID: jsp-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*Empty import definition.*

@@ -1,0 +1,13 @@
+rulesPath: ../224-springboot-devtools-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/224-springboot-devtools-to-quarkus
+- name: builtin
+  dataPath: ./data/224-springboot-devtools-to-quarkus
+tests:
+- ruleID: springboot-devtools-to-quarkus-0000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Remove the spring-boot-devtools dependency

@@ -15,13 +15,9 @@
     the correct groupId of org.apache.camel.maven'
   ruleID: xml-changed-camel320-00001
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-bom
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-bom
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-bom
 - category: mandatory
   customVariables: []
   description: camel-debezium-maven-plugin has a new groupId of org.apache.camel.maven
@@ -53,13 +49,9 @@
   message: '`camel-salesforce-maven-plugin` has a new groupId of org.apache.camel.maven'
   ruleID: xml-changed-camel320-00003
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-salesforce-maven-plugin
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-salesforce-maven-plugin
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-salesforce-maven-plugin
 - category: mandatory
   customVariables: []
   description: camel-servicenow-maven-plugin has a new groupId of org.apache.camel.maven
@@ -74,13 +66,9 @@
   message: '`camel-servicenow-maven-plugin` has a new groupId of org.apache.camel.maven'
   ruleID: xml-changed-camel320-00004
   when:
-    or:
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-servicenow-maven-plugin
-    - java.dependency:
-        lowerbound: 0.0.0
-        name: org.apache.camel.camel-servicenow-maven-plugin
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.apache.camel.camel-servicenow-maven-plugin
 - category: mandatory
   customVariables: []
   description: The Camel Google Pubsub headers have been renamed, since dotted keys

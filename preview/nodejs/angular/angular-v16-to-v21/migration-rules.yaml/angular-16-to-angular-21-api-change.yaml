@@ -1,0 +1,33 @@
+- ruleID: angular-16-to-angular-21-api-change-00000
+  description: ReflectiveInjector should be replaced with Injector.create
+  effort: 5
+  category: mandatory
+  labels:
+  - konveyor.io/source=angular-16
+  - konveyor.io/target=angular-21
+  when:
+    nodejs.referenced:
+      pattern: ReflectiveInjector
+  message: 'ReflectiveInjector is removed, use Injector.create instead.
+
+
+    Replace `ReflectiveInjector` with `Injector.create`.
+
+
+    Before:
+
+    ```
+
+    ReflectiveInjector.resolveAndCreate([providers])
+
+    ```
+
+
+    After:
+
+    ```
+
+    Injector.create({providers: [providers]})
+
+    ```'
+  customVariables: []

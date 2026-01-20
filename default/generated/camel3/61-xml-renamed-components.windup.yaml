@@ -74,7 +74,7 @@
     java.dependency:
       lowerbound: 0.0.0
       name: org.apache.camel.camel-rxjava2-starter
-- category: mandatory
+- category: potential
   customVariables: []
   description: 'The `org.apache.camel:camel-*starter` artifacts have been renamed in Apache Camel 3.'
   effort: 1
@@ -87,14 +87,13 @@
   - title: 'Camel 3 - Migration Guide: the Maven `groupId` for the Camel Spring Boot
       starters have changed'
     url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_spring_boot_starters_maven_coordinate_change
-  message: '`org.apache.camel:camel-{{substitution}}-starter` artifact has been renamed
-    in Apache Camel 3 to `org.apache.camel.springboot:camel-{{substitution}}-starter`
-    artifact'
+  message: 'Spring Boot related Camel starter artifact groupIds have been moved from `org.apache.camel` to `org.apache.camel.springboot`
+    in Apache Camel 3'
   ruleID: xml-renamed-components-00004
   when:
     java.dependency:
       lowerbound: 0.0.0
-      name: org.apache.camel.camel-{substitution}-starter
+      nameregex: org\.apache\.camel\.camel\-.*\-starter
 - category: mandatory
   customVariables: []
   description: '`org.apache.camel:camel-mongodb3` artifact has been renamed'
@@ -195,7 +194,7 @@
   when:
     java.dependency:
       name: org.apache.camel.camel-hdfs
-      upperbound: "2"
+      upperbound: 2.9999.9999
 - category: mandatory
   customVariables: []
   description: '`org.apache.camel:camel-hdfs-starter` artifact has been renamed'
@@ -273,27 +272,8 @@
   ruleID: xml-renamed-components-00013
   when:
     java.dependency:
-      name: org.apache.camel.camel-mina
-      upperbound: "2"
-- category: mandatory
-  customVariables: []
-  description: '`org.apache.camel:camel-mina-starter` artifact has been renamed'
-  effort: 1
-  labels:
-  - konveyor.io/source=camel2
-  - konveyor.io/source=camel
-  - konveyor.io/target=camel3+
-  - konveyor.io/target=camel
-  links:
-  - title: Camel 3 - Renamed Components
-    url: https://camel.apache.org/manual/latest/camel-3-migration-guide.html#_renamed_components
-  message: '`org.apache.camel:camel-mina-starter` artifact has been renamed to `org.apache.camel.springboot:camel-mina-starter`.
-    The component now depends on Mina 2.x, upgrade efforts may vary.'
-  ruleID: xml-renamed-components-00014
-  when:
-    java.dependency:
-      lowerbound: 0.0.0
-      name: org.apache.camel.camel-mina-starter
+      name: org.apache.camel.camel-mina2
+      upperbound: 2.9999.9999
 - category: mandatory
   customVariables: []
   description: '`org.apache.camel:camel-netty4` artifact has been renamed'
@@ -353,7 +333,7 @@
   when:
     java.dependency:
       name: org.apache.camel.camel-netty
-      upperbound: "2"
+      upperbound: 2.9999.9999
 - category: mandatory
   customVariables: []
   description: '`org.apache.camel:camel-netty-starter` artifact has been renamed'
@@ -432,7 +412,7 @@
   when:
     java.dependency:
       name: org.apache.camel.camel-netty-http
-      upperbound: "2"
+      upperbound: 2.9999.9999
 - category: mandatory
   customVariables: []
   description: '`org.apache.camel:camel-netty-http-starter` artifact has been renamed'
@@ -513,7 +493,7 @@
   when:
     java.dependency:
       name: org.apache.camel.camel-quartz
-      upperbound: "2"
+      upperbound: 2.9999.9999
 - category: mandatory
   customVariables: []
   description: '`org.apache.camel:camel-quartz-starter` artifact has been renamed'

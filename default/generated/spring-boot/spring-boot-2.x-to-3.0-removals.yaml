@@ -1,3 +1,5 @@
+# These rules have been generated with the help of a GenAI model (ChatGPT-4-turbo)
+#
 # In this ruleset there are some rules that look for method calls on protected methods. The only way to call a protected
 # method is from a subclass. For some reason, the LS doesn't seem to catch these calls.
 - ruleID: spring-boot-2.x-to-3.0-removals-00010
@@ -395,7 +397,7 @@
       url: https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#reactive-web-session
 
 # DataSourceInitializationMode does not seem to be present in Spring Boot 3?
-- ruleID: spring-boot-2.x-to-3.0-removals-00015
+- ruleID: spring-boot-2.x-to-3.0-removals-00120
   category: mandatory
   effort: 3
   labels:
@@ -452,7 +454,7 @@
       url: https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/jdbc/DataSourceInitializationMode.html
 
 # inner enums don't seem to be properly detected
-- ruleID: spring-boot-2.x-to-3.0-removals-00120
+- ruleID: spring-boot-2.x-to-3.0-removals-00130
   category: mandatory
   effort: 3
   labels:
@@ -506,7 +508,7 @@
       url: https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/actuate/autoconfigure/endpoint/expose/EndpointExposure.html
 
 
-- ruleID: spring-boot-2.x-to-3.0-removals-00130
+- ruleID: spring-boot-2.x-to-3.0-removals-00140
   category: mandatory
   effort: 3
   labels:
@@ -563,7 +565,7 @@
       url: https://docs.spring.io/spring-boot/docs/3.0.0-M4/api/org/springframework/boot/web/server/Cookie.SameSite.html
 
 
-- ruleID: spring-boot-2.x-to-3.0-removals-00140
+- ruleID: spring-boot-2.x-to-3.0-removals-00150
   category: mandatory
   effort: 3
   labels:
@@ -625,7 +627,7 @@
       url: https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/web/server/LocalManagementPort.html
 
 
-- ruleID: spring-boot-2.x-to-3.0-removals-00150
+- ruleID: spring-boot-2.x-to-3.0-removals-00160
   category: mandatory
   effort: 3
   labels:
@@ -687,7 +689,7 @@
       url: https://docs.spring.io/spring-boot/docs/3.0.0-M4/api/org/springframework/boot/test/rsocket/server/LocalRSocketServerPort.html
 
 
-- ruleID: spring-boot-2.x-to-3.0-removals-00160
+- ruleID: spring-boot-2.x-to-3.0-removals-00170
   category: mandatory
   effort: 3
   labels:
@@ -749,7 +751,7 @@
       url: https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/web/server/LocalServerPort.html
 
 
-- ruleID: spring-boot-2.x-to-3.0-removals-00170
+- ruleID: spring-boot-2.x-to-3.0-removals-00180
   category: mandatory
   effort: 3
   labels:
@@ -806,11 +808,7 @@
       url: https://assertj.github.io/doc/
 
 
-
-
-
-
-- ruleID: spring-boot-2.x-to-3.0-removals-00180
+- ruleID: spring-boot-2.x-to-3.0-removals-00190
   category: mandatory
   effort: 3
   labels:
@@ -840,7 +838,7 @@
       url: https://docs.jboss.org/hibernate/orm/6.6/javadocs/org/hibernate/boot/model/naming/CamelCaseToUnderscoresNamingStrategy.html
 
 
-- ruleID: spring-boot-2.x-to-3.0-removals-00190
+- ruleID: spring-boot-2.x-to-3.0-removals-00200
   category: mandatory
   effort: 3
   labels:
@@ -861,7 +859,7 @@
       url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
 
 
-- ruleID: spring-boot-2.x-to-3.0-removals-00200
+- ruleID: spring-boot-2.x-to-3.0-removals-00210
   category: mandatory
   effort: 3
   labels:
@@ -888,7 +886,7 @@
       url: https://docs.spring.io/spring-boot/docs/3.0.0-M4/api/org/springframework/boot/web/server/Cookie.html
 
 
-- ruleID: spring-boot-2.x-to-3.0-removals-00210
+- ruleID: spring-boot-2.x-to-3.0-removals-00220
   category: mandatory
   effort: 3
   labels:
@@ -922,7 +920,7 @@
       url: https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#application-properties.server.reactive.session
 
 
-- ruleID: spring-boot-2.x-to-3.0-removals-00220
+- ruleID: spring-boot-2.x-to-3.0-removals-00230
   category: mandatory
   effort: 3
   labels:
@@ -1048,7 +1046,6 @@
       url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
     - title: 'LocalServerPort API documentation'
       url: https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/web/server/LocalServerPort.html
-
 
 
 - ruleID: spring-boot-2.x-to-3.0-removals-00290

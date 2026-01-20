@@ -1,0 +1,20 @@
+rulesPath: ../196-removed-packages.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/196-removed-packages
+- name: builtin
+  dataPath: ./data/196-removed-packages
+tests:
+# FIXME: https://github.com/konveyor/analyzer-lsp/issues/803
+#- ruleID: removed-packages-00000
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 1
+#      messageMatches: RMI activation and its associated daemon, rmid, and code packag.*
+- ruleID: removed-packages-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 3
+      messageMatches: The Nashorn scripting implementatio.*

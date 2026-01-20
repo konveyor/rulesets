@@ -1,0 +1,98 @@
+rulesPath: ../37-xml-310-changes.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/37-xml-310-changes
+- name: builtin
+  dataPath: ./data/37-xml-310-changes
+tests:
+- ruleID: xml-removed-camel310-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.apache.camel:camel-jdbc` no longer depends on Spring Framework.
+        *Please use camel-spring-jdbc if you need Spring and Spring transaction suppor.*'
+- ruleID: properties-removed-camel310-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`camel.component.atomix.cluster.service` configuration key
+        has been renamed to camel.cluster.atomi.*'
+- ruleID: properties-removed-camel310-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`camel.component.consul.cluster.service` configuration key
+        has been renamed to camel.cluster.consu.*'
+- ruleID: properties-removed-camel310-00004
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`camel.component.consul.service-registry` configuration key
+        has been renamed to camel.cloud.consul.service-registr.*'
+- ruleID: properties-removed-camel310-00005
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`camel.component.file.cluster.service` configuration key has
+        been renamed to camel.cluster.fil.*'
+- ruleID: properties-removed-camel310-00006
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`camel.component.hystrix.mapping` configuration key has been
+        renamed to camel.hystrix.mappin.*'
+- ruleID: properties-removed-camel310-00007
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`camel.component.jgroups.lock.cluster.service` configuration
+        key has been renamed to camel.cluster.jgroup.*'
+- ruleID: properties-removed-camel310-00008
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`camel.component.jgroups.raft.cluster.service` configuration
+        key has been renamed to camel.cluster.jgroups-raf.*'
+- ruleID: properties-removed-camel310-00009
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`camel.component.kubernetes.cluster.service` configuration
+        key has been renamed to camel.cluster.kubernete.*'
+- ruleID: properties-removed-camel310-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`camel.component.servlet.mapping` configuration key has been
+        renamed to camel.servlet.mappin.*'
+- ruleID: properties-removed-camel310-00011
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`camel.component.undertow.spring.security` configuration key
+        has been renamed to camel.security.underto.*'
+- ruleID: properties-removed-camel310-00012
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`camel.component.zookeeper.cluster.service` configuration key
+        has been renamed to camel.cluster.zookeepe.*'
+- ruleID: properties-removed-camel310-00013
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`camel.component.zookeeper.service-registry` configuration
+        key has been renamed to camel.cloud.zookeepe.*'

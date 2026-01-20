@@ -1,0 +1,131 @@
+rulesPath: ../183-sonic-esb.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/183-sonic-esb
+- name: builtin
+  dataPath: ./data/183-sonic-esb
+tests:
+# FIXME: propietary deps, maybe that's why it's failing?
+#- ruleID: sonic-esb-01000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Sonic ESB Service
+- ruleID: sonic-esb-02000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 6
+      messageMatches: .*service(XQServiceContext context.*
+- ruleID: sonic-esb-03000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 7 # TODO (pgaikwad): B7 recheck
+      messageMatches: The XQInitContext is use.*
+- ruleID: sonic-esb-04000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*Migrate XQInitContext.getParameters to Spring property injection
+- ruleID: sonic-esb-05000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*Migrate XQParameters.getParameter to Spring property injection
+- ruleID: sonic-esb-06000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 7
+      messageMatches: .*Migrate XQParameters to Spring property injection
+- ruleID: sonic-esb-07000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 4
+      messageMatches: .*Migrate XQParameterInfo to Spring property injection
+- ruleID: sonic-esb-08000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 7
+      messageMatches: .*Migrate to org.apache.camel.Message
+- ruleID: sonic-esb-09000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Migrate to org.apache.camel.Message.getHeade.*
+- ruleID: sonic-esb-10000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Migrate to org.apache.camel.Message.setHeader
+- ruleID: sonic-esb-11000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Migrate to org.apache.camel.Message.getHeaders
+- ruleID: sonic-esb-12000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 7
+      messageMatches: .*Migrate XQPart to an attachment
+- ruleID: sonic-esb-13000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*Migrate to org.apache.camel.Message.getAttachment.*
+  - name: tc-2
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*Migrate to org.apache.camel.Message.getAttachment
+- ruleID: sonic-esb-15000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 4
+      messageMatches: .*Apache SLF4J
+- ruleID: sonic-esb-16000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 2
+      messageMatches: .*Create a custom ServiceException class
+- ruleID: sonic-esb-17000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*Correlation is handled several ways in Camel
+- ruleID: sonic-esb-18000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*Sonic ESB Service is routing
+- ruleID: sonic-esb-19000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*Sonic ESB uses the addOutgoin.*
+- ruleID: sonic-esb-20000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 8
+      messageMatches: .*Migrate to org.apache.camel.Exchange
+- ruleID: sonic-esb-21000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Migrate to org.apache.camel.Message.getI.*

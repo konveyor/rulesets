@@ -1,3 +1,8 @@
+
+![](https://byob.yarr.is/konveyor/rulesets/konveyor-rulesets-tests-rate)
+
+![](https://byob.yarr.is/konveyor/rulesets/konveyor-rulesets-tcs-rate)
+
 # Overview
 This repository is a future home for Konveyor's static code analysis Rulesets.  It is intended to contain future rules to aid static code analysis as well as issues shared by subject matter experts to aid creation of richer Rulesets.
 * Intended for [Rules](https://github.com/konveyor/analyzer-lsp/blob/main/docs/rules.md) compatible with [konveyor/analyzer-lsp](https://github.com/konveyor/analyzer-lsp)

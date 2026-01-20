@@ -1,0 +1,122 @@
+- ruleID: angularjs-to-angular-promises-00000
+  description: $q.defer should be replaced with Observable
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: $q.defer
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS $q promises should be replaced with RxJS Observables\n\nReplace\
+    \ `$q.defer` with `Observable`.\n\nBefore:\n```\nfunction getData($q, $http) {\n\
+    \ var deferred = $q.defer();\n $http.get('/api').success(function(data) {\n deferred.resolve(data);\n\
+    \ });\n return deferred.promise;\n}\n```\n\nAfter:\n```\ngetData(): Observable<any>\
+    \ {\n return this.http.get('/api');\n}\n```"
+  customVariables: []
+- ruleID: angularjs-to-angular-promises-00010
+  description: deferred.promise should be replaced with Observable
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: deferred.promise
+      filePattern: \.(j|t)sx?$
+  message: 'AngularJS promise objects should be replaced with RxJS Observables
+
+
+    Replace `deferred.promise` with `Observable`.
+
+
+    Before:
+
+    ```
+
+    return deferred.promise;
+
+    ```
+
+
+    After:
+
+    ```
+
+    return new Observable(observer => { ... });
+
+    ```'
+  customVariables: []
+- ruleID: angularjs-to-angular-promises-00020
+  description: deferred.resolve should be replaced with observer.next and observer.complete
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: deferred.resolve
+      filePattern: \.(j|t)sx?$
+  message: 'AngularJS promise resolution should be replaced with RxJS Observable next
+    and complete
+
+
+    Replace `deferred.resolve` with `observer.next and observer.complete`.
+
+
+    Before:
+
+    ```
+
+    deferred.resolve(data);
+
+    ```
+
+
+    After:
+
+    ```
+
+    observer.next(data);
+
+    observer.complete();
+
+    ```'
+  customVariables: []
+- ruleID: angularjs-to-angular-promises-00030
+  description: deferred.reject should be replaced with observer.error
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: deferred.reject
+      filePattern: \.(j|t)sx?$
+  message: 'AngularJS promise rejection should be replaced with RxJS Observable error
+
+
+    Replace `deferred.reject` with `observer.error`.
+
+
+    Before:
+
+    ```
+
+    deferred.reject(error);
+
+    ```
+
+
+    After:
+
+    ```
+
+    observer.error(error);
+
+    ```'
+  customVariables: []

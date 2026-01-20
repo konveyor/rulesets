@@ -35,7 +35,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: org.apache.camel.impl.SimpleRegistry.put(*)  # put, putIfAbsent, putAll
+      pattern: org.apache.camel.impl.SimpleRegistry.put*  # put, putIfAbsent, putAll
 - category: optional
   customVariables: []
   description: getOut/hasOut are deprecated
@@ -52,9 +52,13 @@
     of using `getMessage` instead.
   ruleID: java-generic-information-00036
   when:
-    java.referenced:
-      location: METHOD_CALL
-      pattern: org.apache.camel.Exchange.{get|has}Out*
+    or:
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: org.apache.camel.Exchange.getOut*
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: org.apache.camel.Exchange.hasOut*
 - category: mandatory
   customVariables: []
   description: Fault API on Message was removed
@@ -101,13 +105,13 @@
         pattern: org.apache.camel.CamelContext.(start|stop|suspend|resume)Route*
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.apache.camel.CamelContext.startAllRoutes(*)
+        pattern: org.apache.camel.CamelContext.startAllRoutes
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.apache.camel.CamelContext.isStartingRoutes(*)
+        pattern: org.apache.camel.CamelContext.isStartingRoutes
     - java.referenced:
         location: METHOD_CALL
-        pattern: org.apache.camel.CamelContext.getRouteStatus(*)
+        pattern: org.apache.camel.CamelContext.getRouteStatus
 - category: mandatory
   customVariables:
   - name: param
@@ -129,7 +133,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: '*.Main.getCamelContext(s|map)*'
+      pattern: getCamelContexts
 - category: mandatory
   customVariables: []
   description: org.apache.camel.util.jsse packages were moved
@@ -192,6 +196,7 @@
       java.referenced:
         location: METHOD
         pattern: '*createRegistry*'
+        filepaths: "{{classes.Filepaths}}"
 - category: mandatory
   customVariables: []
   description: org.apache.camel.management.event package was moved
@@ -241,7 +246,9 @@
       java.referenced:
         location: METHOD
         pattern: '*adviceWith*'
+        filepaths: "{{classes.Filepaths}}"
     - from: classes
       java.referenced:
         location: METHOD_CALL
         pattern: '*adviceWith*'
+        filepaths: "{{classes.Filepaths}}"

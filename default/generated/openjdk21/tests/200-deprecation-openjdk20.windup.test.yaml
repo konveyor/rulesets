@@ -1,0 +1,14 @@
+rulesPath: ../200-deprecation-openjdk20.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/200-deprecation-openjdk20
+- name: builtin
+  dataPath: ./data/200-deprecation-openjdk20
+tests:
+- ruleID: deprecation-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 8
+      messageMatches: Several classes under `javax` have been deprecated in JDK 20
+        for removal in a future release.

@@ -1,0 +1,22 @@
+rulesPath: ../126-elytron.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/126-elytron
+- name: builtin
+  dataPath: ./data/126-elytron
+tests:
+- ruleID: elytron-eap71-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Migrate a client application that performs a remote JNDI lookup
+        using an `org.jboss.naming.remote.client.InitialContext` class, which is backed
+        by an `org.jboss.naming.remote.client.InitialContextFactory` class, to Elytron.
+- ruleID: elytron-eap71-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Remote EJB client must be configured following one of the two
+        options defined in the link below.

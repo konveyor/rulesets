@@ -1,0 +1,14 @@
+rulesPath: ../100-base64.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/100-base64
+- name: builtin
+  dataPath: ./data/100-base64
+tests:
+- ruleID: base64-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: This API is not considered a public API for EAP. For JDK 8.,
+        the recommended solution is to migrate to

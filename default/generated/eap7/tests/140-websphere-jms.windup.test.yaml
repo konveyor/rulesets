@@ -1,0 +1,32 @@
+rulesPath: ../140-websphere-jms.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/140-websphere-jms
+- name: builtin
+  dataPath: ./data/140-websphere-jms
+tests:
+- ruleID: websphere-jms-eap7-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 3
+- ruleID: websphere-jms-eap7-00000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - IBM JMS
+- ruleID: websphere-jms-eap7-02000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 3
+- ruleID: websphere-jms-eap7-03000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 3
+- ruleID: websphere-jms-eap7-04000
+  testCases:
+  - name: tc-01
+    hasIncidents:
+      exactly: 5

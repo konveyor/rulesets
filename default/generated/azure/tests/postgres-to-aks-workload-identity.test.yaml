@@ -1,0 +1,14 @@
+rulesPath: ../30-postgres-to-aks-workload-identity.yaml
+providers:
+  - name: java
+    dataPath: ./data/postgres-auth
+  - name: builtin
+    dataPath: ./data/postgres-auth
+tests:
+  - ruleID: postgres-to-aks-workload-identity-01000
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 12

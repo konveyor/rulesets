@@ -1,0 +1,39 @@
+rulesPath: ../125-microprofile_removed_from_eap.mta.yaml
+providers:
+- name: java
+  dataPath: ./data/125-microprofile_removed_from_eap.mta.test.yaml
+- name: builtin
+  dataPath: ./data/125-microprofile_removed_from_eap.mta.test.yaml
+tests:
+- ruleID: microprofile_removed_from_eap-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: This application depends on Eclipse MicroProfile Config, which is no longer
+        supported by JBoss EAP 7.4 (or later), unless the JBoss EAP expansion pack is
+        installed.
+- ruleID: microprofile_removed_from_eap-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: This application depends on Eclipse MicroProfile Health, which
+        is no longer supported by JBoss EAP 7.4 (or later), unless the JBoss EAP expansion
+        pack is installed.
+- ruleID: microprofile_removed_from_eap-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: This application depends on Eclipse MicroProfile Metrics, which
+        is no longer supported by JBoss EAP 7.4 (or later), unless the JBoss EAP expansion
+        pack is installed.
+- ruleID: microprofile_removed_from_eap-00004
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: This application depends on Eclipse MicroProfile REST Client,
+        which is no longer supported by JBoss EAP 7.4 (or later), unless the JBoss
+        EAP expansion pack is installed.

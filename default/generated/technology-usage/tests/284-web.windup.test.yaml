@@ -1,0 +1,120 @@
+rulesPath: ../284-web.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/284-web
+- name: builtin
+  dataPath: ./data/284-web
+tests:
+#- ruleID: technology-usage-web-01100
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - JSP Page
+#  - name: tc-2
+#    hasTags:
+#    - Embedded technology - Java Server Pages
+# FIXME: these rules haven't been translated: https://github.com/konveyor/rulesets/issues/254:
+#- ruleID: technology-usage-web-01200
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Web XML File
+#  - name: tc-2
+#    hasTags:
+#    - Embedded technology - Web XML
+- ruleID: technology-usage-web-01300
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WebSocket
+  - name: tc-2
+    hasTags:
+    - Embedded technology - WebSocket
+- ruleID: technology-usage-web-01400
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Applet
+  - name: tc-2
+    hasTags:
+    - Embedded technology - Applet
+- ruleID: technology-usage-web-01500
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JNLP
+  - name: tc-2
+    hasTags:
+    - Embedded technology - JNLP
+  - name: tc-3
+    hasTags:
+    - Embedded technology - JNLP
+- ruleID: technology-usage-web-01700
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Swing
+  - name: tc-2
+    hasTags:
+    - Embedded technology - Swing
+- ruleID: technology-usage-web-01800
+  testCases:
+  - name: tc-1
+    hasTags:
+    - MiGLayout
+  - name: tc-2
+    hasTags:
+    - Embedded technology - MiGLayout
+- ruleID: technology-usage-web-01900
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JGoodies
+  - name: tc-2
+    hasTags:
+    - Embedded technology - JGoodies
+- ruleID: technology-usage-web-02000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - FormLayoutMaker
+  - name: tc-2
+    hasTags:
+    - Embedded technology - FormLayoutMaker
+- ruleID: technology-usage-web-02100
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Magicgrouplayout
+  - name: tc-2
+    hasTags:
+    - Embedded technology - MagicGroupLayout
+#- ruleID: technology-usage-web-02200
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Standard Widget Toolkit (SWT)
+#  - name: tc-2
+#    hasTags:
+#    - Embedded technology - Standard Widget Toolkit (SWT)
+- ruleID: technology-usage-web-02300
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JavaFX
+  - name: tc-2
+    hasTags:
+    - Embedded technology - JavaFX
+- ruleID: technology-usage-web-02400
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Eclipse RCP
+  - name: tc-2
+    hasTags:
+    - Embedded technology - Eclipse RCP
+- ruleID: web-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Embedded technology - Java Server Faces

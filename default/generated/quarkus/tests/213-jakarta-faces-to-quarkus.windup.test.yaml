@@ -1,0 +1,21 @@
+rulesPath: ../213-jakarta-faces-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/213-jakarta-faces-to-quarkus
+- name: builtin
+  dataPath: ./data/213-jakarta-faces-to-quarkus
+tests:
+- ruleID: jakarta-faces-to-quarkus-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Faces Dependencies with groupId `jakarta.faces` should be replaced
+        with
+- ruleID: jakarta-faces-to-quarkus-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Faces Dependencies with artifactId `jakarta.faces` should be
+        replaced with

@@ -1,0 +1,12 @@
+rulesPath: ../patternfly-v5-to-patternfly-v6-login.yaml
+providers:
+- name: builtin
+  dataPath: ./data/login
+- name: nodejs
+  dataPath: ./data/login
+tests:
+- ruleID: patternfly-v5-to-patternfly-v6-login-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

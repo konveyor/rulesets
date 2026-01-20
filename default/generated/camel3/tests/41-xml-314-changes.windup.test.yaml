@@ -1,0 +1,13 @@
+rulesPath: ../41-xml-314-changes.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/41-xml-314-changes
+- name: builtin
+  dataPath: ./data/41-xml-314-changes
+tests:
+- ruleID: xml-314-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: org.apache.kafka.clients.producer.KafkaProducer and org.apache.kafka.clients.consumer.KafkaConsume.*

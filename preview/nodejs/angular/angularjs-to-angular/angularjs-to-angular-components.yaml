@@ -1,0 +1,18 @@
+- ruleID: angularjs-to-angular-components-00000
+  description: .controller() should be replaced with @Component class
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: .controller(
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS controllers should be converted to Angular components\n\nReplace\
+    \ `.controller()` with `@Component class`.\n\nBefore:\n```\nangular.module('app').controller('ProductController',\
+    \ function($scope) {\n $scope.products = [];\n $scope.addProduct = function()\
+    \ { ... };\n});\n```\n\nAfter:\n```\n@Component({\n selector: 'product-list',\n\
+    \ templateUrl: './product-list.component.html'\n})\nexport class ProductListComponent\
+    \ {\n products = [];\n addProduct() { ... }\n}\n```"
+  customVariables: []

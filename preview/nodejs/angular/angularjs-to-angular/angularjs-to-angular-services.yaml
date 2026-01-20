@@ -1,0 +1,36 @@
+- ruleID: angularjs-to-angular-services-00000
+  description: .service() should be replaced with @Injectable class
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: .service(
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS services should be converted to Angular injectable services\n\
+    \nReplace `.service()` with `@Injectable class`.\n\nBefore:\n```\nangular.module('app').service('ProductService',\
+    \ function($http) {\n this.getProducts = function() {\n return $http.get('/api/products');\n\
+    \ };\n});\n```\n\nAfter:\n```\n@Injectable({ providedIn: 'root' })\nexport class\
+    \ ProductService {\n constructor(private http: HttpClient) {}\n\n getProducts()\
+    \ {\n return this.http.get('/api/products');\n }\n}\n```"
+  customVariables: []
+- ruleID: angularjs-to-angular-services-00010
+  description: .factory() should be replaced with @Injectable class
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: .factory(
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS factories should be converted to Angular injectable services\n\
+    \nReplace `.factory()` with `@Injectable class`.\n\nBefore:\n```\nangular.module('app').factory('ProductService',\
+    \ function($http) {\n return {\n getProducts: function() {\n return $http.get('/api/products');\n\
+    \ }\n };\n});\n```\n\nAfter:\n```\n@Injectable({ providedIn: 'root' })\nexport\
+    \ class ProductService {\n constructor(private http: HttpClient) {}\n\n getProducts()\
+    \ {\n return this.http.get('/api/products');\n }\n}\n```"
+  customVariables: []

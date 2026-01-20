@@ -1,0 +1,272 @@
+- ruleID: angularjs-to-angular-module-system-00000
+  description: angular.module() should be replaced with @NgModule
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: angular.module(
+      filePattern: \.(j|t)sx?$
+  message: "Angular modules are defined using @NgModule decorator instead of angular.module()\
+    \ function\n\nReplace `angular.module()` with `@NgModule`.\n\nBefore:\n```\nangular.module('app',\
+    \ ['ngRoute', 'ngAnimate']);\n```\n\nAfter:\n```\n@NgModule({\n imports: [RouterModule,\
+    \ BrowserAnimationsModule]\n})\nexport class AppModule { }\n```"
+  customVariables: []
+- ruleID: angularjs-to-angular-module-system-00010
+  description: module.constant should be replaced with InjectionToken
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: .constant(
+      filePattern: \.(j|t)sx?$
+  message: 'AngularJS module.constant should be replaced with Angular InjectionToken
+
+
+    The `module.constant()` method is used to define injectable constants in AngularJS.
+    In Angular, use `InjectionToken` or environment configuration.
+
+
+    Replace `module.constant()` with `InjectionToken`.
+
+
+    Before:
+
+    ```
+
+    angular.module(''app'').constant(''API_URL'', ''https://api.example.com'');
+
+
+    // Usage in controller
+
+    function MyController(API_URL) {
+
+    console.log(API_URL);
+
+    }
+
+    ```
+
+
+    After (Option 1 - InjectionToken):
+
+    ```
+
+    // config.tokens.ts
+
+    export const API_URL = new InjectionToken<string>(''API_URL'', {
+
+    providedIn: ''root'',
+
+    factory: () => ''https://api.example.com''
+
+    });
+
+
+    // Usage in component
+
+    export class MyComponent {
+
+    constructor(@Inject(API_URL) private apiUrl: string) {
+
+    console.log(this.apiUrl);
+
+    }
+
+    }
+
+    ```
+
+
+    After (Option 2 - Environment files):
+
+    ```
+
+    // environment.ts
+
+    export const environment = {
+
+    apiUrl: ''https://api.example.com''
+
+    };
+
+
+    // Usage in component
+
+    import { environment } from ''../environments/environment'';
+
+
+    export class MyComponent {
+
+    apiUrl = environment.apiUrl;
+
+    }
+
+    ```
+
+
+    Note: Use InjectionToken for runtime configuration or values that need dependency
+    injection. Use environment files for build-time configuration.'
+  customVariables: []
+- ruleID: angularjs-to-angular-module-system-00020
+  description: module.value should be replaced with InjectionToken
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: .value(
+      filePattern: \.(j|t)sx?$
+  message: 'AngularJS module.value should be replaced with Angular InjectionToken
+    or service
+
+
+    The `module.value()` method is used to define injectable values in AngularJS.
+    In Angular, use `InjectionToken` for simple values or a service for complex objects.
+
+
+    Replace `module.value()` with `InjectionToken` or service.
+
+
+    Before:
+
+    ```
+
+    angular.module(''app'').value(''appConfig'', {
+
+    debugMode: true,
+
+    version: ''1.0.0''
+
+    });
+
+    ```
+
+
+    After (Option 1 - InjectionToken):
+
+    ```
+
+    export const APP_CONFIG = new InjectionToken<any>(''APP_CONFIG'', {
+
+    providedIn: ''root'',
+
+    factory: () => ({
+
+    debugMode: true,
+
+    version: ''1.0.0''
+
+    })
+
+    });
+
+
+    // Usage
+
+    constructor(@Inject(APP_CONFIG) private config: any) {}
+
+    ```
+
+
+    After (Option 2 - Service):
+
+    ```
+
+    @Injectable({ providedIn: ''root'' })
+
+    export class AppConfigService {
+
+    config = {
+
+    debugMode: true,
+
+    version: ''1.0.0''
+
+    };
+
+    }
+
+
+    // Usage
+
+    constructor(private configService: AppConfigService) {}
+
+    ```'
+  customVariables: []
+- ruleID: angularjs-to-angular-module-system-00030
+  description: module.config should be replaced with providers or APP_INITIALIZER
+  effort: 6
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: .config(
+      filePattern: \.(j|t)sx?$
+  message: 'AngularJS module.config should be replaced with Angular module providers
+    or APP_INITIALIZER
+
+
+    The `module.config()` method is used for module configuration in AngularJS (routing,
+    HTTP interceptors, etc.). In Angular, use module providers, router configuration,
+    or APP_INITIALIZER.
+
+
+    Replace `module.config()` with appropriate Angular pattern.
+
+
+    Before:
+
+    ```
+
+    angular.module(''app'').config([''$routeProvider'', function($routeProvider)
+    {
+
+    $routeProvider.when(''/home'', {
+
+    templateUrl: ''home.html'',
+
+    controller: ''HomeController''
+
+    });
+
+    }]);
+
+    ```
+
+
+    After (Router configuration):
+
+    ```
+
+    const routes: Routes = [
+
+    { path: ''home'', component: HomeComponent }
+
+    ];
+
+
+    @NgModule({
+
+    imports: [RouterModule.forRoot(routes)]
+
+    })
+
+    export class AppModule { }
+
+    ```
+
+
+    Note: Different config() use cases map to different Angular patterns: routing
+    → RouterModule, HTTP interceptors → HTTP_INTERCEPTORS provider, general initialization
+    → APP_INITIALIZER.'
+  customVariables: []

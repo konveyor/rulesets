@@ -1,0 +1,225 @@
+rulesPath: ../167-jboss-dependencies.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/167-jboss-dependencies
+- name: builtin
+  dataPath: ./data/167-jboss-dependencies
+tests:
+- ruleID: jboss-dependencies-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.bom`
+        artifact `jboss-eap-jakartaee8`
+- ruleID: jboss-dependencies-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.bom`
+        artifcat `jboss-eap-jakartaee8-with-tools`
+- ruleID: jboss-dependencies-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec`
+        artifact `jboss-jakartaee-8.0`
+- ruleID: jboss-dependencies-00004
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec`
+        artifact `jboss-jakartaee-web-8.0`
+- ruleID: jboss-dependencies-00005
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `com.sun.activation`
+        artifact `jakarta.activation`
+- ruleID: jboss-dependencies-00006
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec.javax.annotation`
+        artifact `jboss-annotations-api_1.3_spec`
+- ruleID: jboss-dependencies-00007
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec.javax.security.auth.message`
+        artifact `jboss-jaspi-api_1.0_spec`
+- ruleID: jboss-dependencies-00008
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec.javax.security.jacc`
+        artifact `jboss-jacc-api_1.5_spec`
+- ruleID: jboss-dependencies-00009
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec.javax.batch`
+        artifact `jboss-batch-api_1.0_spec`
+- ruleID: jboss-dependencies-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec.javax.ejb`
+        artifact `jboss-ejb-api_3.2_spec`
+- ruleID: jboss-dependencies-00011
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec.javax.el`
+        artifact `jboss-el-api_3.0_spec`
+- ruleID: jboss-dependencies-00012
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec.javax.enterprise.concurrent`
+        artifact `jboss-concurrency-api_1.0_spec`
+- ruleID: jboss-dependencies-00013
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec.javax.faces`
+        artifact `jboss-jsf-api_2.3_spec`
+- ruleID: jboss-dependencies-00014
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec.javax.interceptor`
+        artifact `jboss-interceptors-api_1.2_spec`
+- ruleID: jboss-dependencies-00015
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec.javax.jms`
+        artifact `jboss-jms-api_2.0_spec`
+- ruleID: jboss-dependencies-00016
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `com.sun.mail`
+        artifact `jakarta.mail`
+- ruleID: jboss-dependencies-00017
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec.javax.resource`
+        artifact `jboss-connector-api_1.7_spec`
+- ruleID: jboss-dependencies-00018
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec.javax.servlet`
+        artifact `jboss-servlet-api_4.0_spec`
+- ruleID: jboss-dependencies-00019
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec.javax.servlet.jsp`
+        artifact `jboss-jsp-api_2.3_spec`
+- ruleID: jboss-dependencies-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.apache.taglibs`
+        artifact `taglibs-standard-spec`
+- ruleID: jboss-dependencies-00021
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec.javax.transaction`
+        artifact `jboss-transaction-api_1.3_spec`
+- ruleID: jboss-dependencies-00022
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec.javax.xml.bind`
+        artifact `jboss-jaxb-api_2.3_spec`
+- ruleID: jboss-dependencies-00023
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec.javax.xml.ws`
+        artifact `jboss-jaxws-api_2.3_spec`
+- ruleID: jboss-dependencies-00024
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec.javax.websocket`
+        artifact `jboss-websocket-api_1.1_spec`
+- ruleID: jboss-dependencies-00025
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec.javax.ws.rs`
+        artifact `jboss-jaxrs-api_2.1_spec`
+- ruleID: jboss-dependencies-00026
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.spec.javax.xml.soap`
+        artifact `jboss-saaj-api_1.4_spec`
+- ruleID: jboss-dependencies-00027
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.hibernate`
+        artifact `hibernate-core`
+- ruleID: jboss-dependencies-00028
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.hibernate`
+        artifact `hibernate-jpamodelgen`
+- ruleID: jboss-dependencies-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Update the dependency by replacing the group `org.jboss.bom`
+        artifact `eap-runtime-artifacts`
+# FIXME: why isn't this matching?
+#- ruleID: jboss-dependencies-00031
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 1
+#      messageMatches: Update the dependency by replacing the group `javax.jws` artifact
+#        `jsr181-api`
+- ruleID: jboss-dependencies-00032
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The current version of the BOM may continue to be used, but
+        it's strongly recommended to stop using the deprecated EJB Client Legacy API.

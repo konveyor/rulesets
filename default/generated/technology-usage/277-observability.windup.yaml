@@ -34,7 +34,7 @@
     or:
     - java.referenced:
         location: ANNOTATION
-        pattern: org.springframework.jmx*
+        pattern: org.springframework.jmx.*
     - builtin.xml:
         namespaces:
           c: http://www.springframework.org/schema/beans

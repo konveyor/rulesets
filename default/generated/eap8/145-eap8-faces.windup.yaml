@@ -244,6 +244,7 @@
       - builtin.filecontent:
           filePattern: .*\.jsp
           pattern: <%
+    - or:
       - java.dependency:
           lowerbound: 0.0.0
           nameregex: org\.jboss\.spec\.javax\.faces\..*

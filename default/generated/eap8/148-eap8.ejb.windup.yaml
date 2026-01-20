@@ -20,10 +20,10 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.ejb.EJBContext.getCallerIdentity(*)
+        pattern: javax.ejb.EJBContext.getCallerIdentity
     - java.referenced:
         location: METHOD_CALL
-        pattern: javax.ejb.EJBContext.isCallerInRole(*)
+        pattern: javax.ejb.EJBContext.isCallerInRole
 - category: mandatory
   customVariables: []
   description: javax.ejb.EJBContext.getEnvironment() method removed
@@ -45,7 +45,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.ejb.EJBContext.getEnvironment(*)
+      pattern: javax.ejb.EJBContext.getEnvironment
 - category: mandatory
   customVariables: []
   description: javax.ejb.SessionContext.getMessageContext() method removed
@@ -66,4 +66,4 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: javax.ejb.SessionContext.getMessageContext(*)
+      pattern: javax.ejb.SessionContext.getMessageContext

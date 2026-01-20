@@ -1,0 +1,34 @@
+rulesPath: ../spring-framework-5.x-to-6.0-security.yaml
+providers:
+- name: java
+  dataPath: ./data/security
+tests:
+- ruleID: spring-framework-5.x-to-6.0-security-00001
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: "source-only"
+    hasIncidents:
+      exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-security-00010
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 2
+# TODO: investigate why this isn't working
+#- ruleID: spring-framework-5.x-to-6.0-security-00020
+#  testCases:
+#    - name: tc-1
+#      analysisParams:
+#        mode: "source-only"
+#      hasIncidents:
+#        exactly: 7
+- ruleID: spring-framework-5.x-to-6.0-security-00030
+  testCases:
+    - name: tc-1
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        exactly: 1

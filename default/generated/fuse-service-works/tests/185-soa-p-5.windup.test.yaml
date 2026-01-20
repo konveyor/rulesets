@@ -1,0 +1,350 @@
+rulesPath: ../185-soa-p-5.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/185-soa-p-5
+- name: builtin
+  dataPath: ./data/185-soa-p-5
+tests:
+- ruleID: soa-p-5-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JBoss ESB 5 Action Handler
+  - name: tc-2
+    hasIncidents:
+      exactly: 8
+      messageMatches: Custom action classes should be migrated to CDI Beans in Fuse
+        Service Works
+- ruleID: soa-p-5-02000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JBoss ESB Deployment Descriptor
+- ruleID: soa-p-5-03000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JBoss ESB Pipeline Configuration
+- ruleID: soa-p-5-04000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Smooks Configuration
+- ruleID: soa-p-5-05000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: This listener requires a composite service binding in Fuse Service
+        Works.
+- ruleID: soa-p-5-06000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: An ESB-aware listener is no longer required in Fuse Service
+        Works
+- ruleID: soa-p-5-07000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: Each .*? definition in SOA-P 5 represents a service which can
+        be
+- ruleID: soa-p-5-08000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The logic and execution flow of a service in SOA-P 5 is defined
+        in an
+- ruleID: soa-p-5-09000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Although Camel has both Hibernate and JPA components that.*
+- ruleID: soa-p-5-10000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: A jms-bus definition can be converted to a JMS or JCA gateway
+- ruleID: soa-p-5-11000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: A ftp-bus definition can be converted to a FTP gateway
+- ruleID: soa-p-5-12000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: A camel-bus definition can be converted to a Camel gateway
+- ruleID: soa-p-5-13000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: A UDP Listener definition can be converted to a TCP/UDP
+- ruleID: soa-p-5-14000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: A jms-jca-provider definition can be converted to a JCA
+- ruleID: soa-p-5-15000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: A http-provider definition can be converted to a HTTP gateway
+- ruleID: soa-p-16000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: A cron-schedule definition can be converted to a Quartz
+- ruleID: soa-p-17000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: This listener requires a composite service binding in Fuse Service
+        Works. The configuration for a FTP binding
+- ruleID: soa-p-18000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The configuration for a Camel binding can be found in the camel-bus
+        definition associated
+- ruleID: soa-p-19000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: A .*?http-gateway.* can be replaced in Fuse Service Works by
+        a http binding added to your composite service.
+- ruleID: soa-p-20000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: of as SmooksAction to transform message content. You most likely
+        will want to use a Smooks transform
+  - name: tc-2
+    hasIncidents:
+      exactly: 1
+      messageMatches: to specify your Smooks configuration and from/to types.
+- ruleID: soa-p-21000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: In a Fuse Service Works Smooks transform, you can specify your
+        Smooks configuration with the .*?config.* attribute.
+- ruleID: soa-p-23000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Instead of the JBoss ESB SOAPProxy action which transforms a
+        specified WSDL and rewrites the address to the JBoss ESB server,
+- ruleID: soa-p-24000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: you may want to create a Bean service which logs the message
+        in the manner you wish
+- ruleID: soa-p-25000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Fuse Service Works, you should use Camel's routing (either through
+        Java DSL routes or route.xml).
+- ruleID: soa-p-26000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: In order to replace the use of the JMSRouter in Fuse Service
+        Works, you should use a JMS binding. You may need to review the options for
+        JMS bindings in
+- ruleID: soa-p-27000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: TestMessageStore is an out-of-the-box ESB action that is used
+        in JBoss Application Server
+- ruleID: soa-p-28000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The GroovyActionProcessor action executes a Groovy script. You
+        can duplicate this functionality in
+- ruleID: soa-p-29000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The BpmProcessor makes calls to jBPM 3 through the jBPM command
+        API. Fuse Service Works supports jBPM 5, so you will need
+- ruleID: soa-p-30000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: A fs-bus definition can be converted to a Camel binding on a
+        composite service in Fuse Service Works.
+- ruleID: soa-p-31000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: JBoss ESB uses notifiers to transform ESB aware messages to
+        a format that ESB-unaware services can handle. Fuse Service Works uses bi-directional
+        gateways to transfer messages
+- ruleID: soa-p-32000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: JBoss ESB uses a ByteArrayToString action to do conversion on
+        a message body. In Fuse Service Works
+- ruleID: soa-p-33000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: JBoss ESB uses the LongToDateConverter action to do conversion
+        on a message body.
+- ruleID: soa-p-34000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: JBoss ESB uses the ObjectToCSVString action to do conversion
+        on a message body. Fuse Service Works
+- ruleID: soa-p-35000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: JBoss ESB uses a ObjectInvoke action to invoke a processor on
+        a message.
+- ruleID: soa-p-36000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: JBoss ESB uses an ObjectToXStream action to do convert an Object
+        payload to XML using the XStream
+- ruleID: soa-p-37000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: JBoss ESB uses an XStreamToObject action to convert XML in a
+        payload to an object using the XStream processor.
+- ruleID: soa-p-38000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: JBoss ESB uses the XsltAction action to transform documents
+        in a payload. Fuse Service Works would use Camel to do this type of
+- ruleID: soa-p-39000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Fuse Service Works uses a .*?transform.*? to replace the invocation
+        of a SmooksTransformer to transform message content.
+- ruleID: soa-p-40000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: JBoss ESB uses the MessagePersister action to persist a message.
+        Fuse Service Works would use
+- ruleID: soa-p-41000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: JBoss ESB uses the EJBProcessor action to invoke a stateless
+        session bean with the contents of a message.
+- ruleID: soa-p-42000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The ScriptingAction executes a script using the BeanScriptingFramework.
+        You can duplicate this functionality in Fuse Service Works
+- ruleID: soa-p-43000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1 # TODO (pgaikwad): B5 recheck
+      messageMatches: JBoss ESB uses the Aggregator action to aggregate a message
+        sequence into a single aggregated message.
+  - name: tc-2
+    hasIncidents:
+      exactly: 1
+      messageMatches: JBoss ESB uses the StreamingAggregator action to aggregate a
+        message sequence into a single aggregated message.
+- ruleID: soa-p-44000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: In order to replace the use of the HttpRouter in JBoss ESB,
+        you should use a HTTP reference binding.
+- ruleID: soa-p-45000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: In order to replace the use of the EmailRouter in Fuse Service
+        Works, you should use a mail reference binding.
+- ruleID: soa-p-46000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: In order to replace the use of the ContentBasedRouter in Fuse
+        Service Works, you should use Camel to route messages.
+- ruleID: soa-p-47000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: In order to replace the use of the StaticWiretap in Fuse Service
+        Works, you should use a
+- ruleID: soa-p-48000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: In order to replace the use of the StaticRouter in Fuse Service
+        Works, you should use Camel to route messages.
+- ruleID: soa-p-49000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: In order to replace the use of the SOAPProcessor you should
+        use a SOAP reference binding in Fuse Service Works.
+- ruleID: soa-p-50000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: In order to replace the use of the SOAPClient in Fuse Service
+        Works, you should use a SOAP reference

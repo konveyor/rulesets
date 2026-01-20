@@ -1,0 +1,19 @@
+rulesPath: ../03-azure-java-version.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/03-azure-java-version
+- name: builtin
+  dataPath: ./data/03-azure-java-version
+tests:
+- ruleID: azure-java-version-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The application is using non-LTS version Java.
+- ruleID: azure-java-version-02000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The application is using Java version lower than JAVA_8.
