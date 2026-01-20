@@ -8,8 +8,7 @@
   links:
   - title: Quarkus - Guide;
     url: https://quarkus.io/guides/maven-tooling#build-tool-maven;
-  message: The project artifact's current extension (i.e. `<packaging>` tag value)
-    is `{{notJar}}` but the expected value should be `jar`
+  message: The expected value of the pom's artifact element should be jar
   ruleID: javaee-pom-to-quarkus-00000
   when:
     builtin.xml:
