@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import weblogic.javaee.TransactionTimeoutSeconds;
 import weblogic.ejbgen.ActivationConfigProperties;
 import weblogic.ejbgen.ActivationConfigProperty;
@@ -15,7 +17,7 @@ import weblogic.ejb.GenericMessageDrivenBean;
 @MessageDriven(ejbName = "MyMessageDrivenBean",
         destinationJndiName = "MyMessageDrivenBeanJndiName",
         destinationType = "javax.jms.Queue")
-public class MyMessageDrivenBean 
+public class WebLogicEJBTest
         extends GenericMessageDrivenBean
 {
     private String property;

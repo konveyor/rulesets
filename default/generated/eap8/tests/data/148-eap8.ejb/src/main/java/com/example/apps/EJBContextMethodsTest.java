@@ -1,4 +1,4 @@
-package data.ejb;
+package com.example.apps;
 
 
 import javax.ejb.EJBContext;
@@ -28,5 +28,7 @@ public class EJBContextMethodsTest  {
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
+
+        return "";
     }
 }

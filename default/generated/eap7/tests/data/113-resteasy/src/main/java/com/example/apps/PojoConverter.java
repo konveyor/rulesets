@@ -1,9 +1,11 @@
+package com.example.apps;
+
 import org.jboss.resteasy.client.ProxyFactory;
 import org.jboss.resteasy.spi.StringConverter;
 import javax.ws.rs.ext.Provider;
 
 @Provider
-public static class PojoConverter implements StringConverter<Pojo>
+public class PojoConverter implements StringConverter<POJO>
 {
     public POJO fromString(String str)
     {
@@ -17,19 +19,4 @@ public static class PojoConverter implements StringConverter<Pojo>
     {
         return value.getName();
     }
-}
-
-public static class POJO
-{
-   private String name;
-
-   public String getName()
-   {
-      return name;
-   }
-
-   public void setName(String name)
-   {
-      this.name = name;
-   }
 }

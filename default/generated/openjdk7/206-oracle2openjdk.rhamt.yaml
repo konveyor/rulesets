@@ -207,16 +207,16 @@
     or:
     - java.referenced:
         location: CONSTRUCTOR_CALL
-        pattern: com.sun.image.codec.jpeg*
+        pattern: com.sun.image.codec.jpeg.*
     - java.referenced:
         location: IMPORT
-        pattern: com.sun.image.codec.jpeg*
+        pattern: com.sun.image.codec.jpeg.*
     - java.referenced:
         location: INHERITANCE
-        pattern: com.sun.image.codec.jpeg*
+        pattern: com.sun.image.codec.jpeg.*
     - java.referenced:
         location: METHOD_CALL
-        pattern: com.sun.image.codec.jpeg*
+        pattern: com.sun.image.codec.jpeg.*
     - java.referenced:
         location: VARIABLE_DECLARATION
-        pattern: com.sun.image.codec.jpeg*
+        pattern: com.sun.image.codec.jpeg.*

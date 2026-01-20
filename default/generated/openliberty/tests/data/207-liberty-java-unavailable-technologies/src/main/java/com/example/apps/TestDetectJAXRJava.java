@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import javax.xml.registry.TestClass1;
 import javax.xml.registry.infomodel.TestClass2;
 

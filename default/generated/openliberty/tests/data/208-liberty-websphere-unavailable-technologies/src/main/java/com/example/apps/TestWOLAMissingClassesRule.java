@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import com.ibm.websphere.ola.OLAConnectionHandle;
 import com.ibm.websphere.ola.OLAHeader;
 import com.ibm.websphere.ola.OLARGE;
@@ -8,7 +10,7 @@ import com.ibm.websphere.ola.OLAStatusInformation;
 
 import javax.ejb.RemoteHome;
 
-@RemoteHome("com.ibm.websphere.ola.ExecuteHome")
+@RemoteHome(TestWOLAMissingClassesRule.class)
 public class TestWOLAMissingClassesRule {
 
 }

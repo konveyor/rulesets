@@ -1,4 +1,4 @@
-package sample;
+package com.example.apps;
 
 import jakarta.enterprise.context.Dependent;
 import jakarta.enterprise.inject.Produces;

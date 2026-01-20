@@ -12,7 +12,7 @@ tests:
     - JBoss ESB 5 Action Handler
   - name: tc-2
     hasIncidents:
-      exactly: 7
+      exactly: 8
       messageMatches: Custom action classes should be migrated to CDI Beans in Fuse
         Service Works
 - ruleID: soa-p-5-02000

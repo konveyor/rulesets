@@ -9,5 +9,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 17
+      exactly: 16
       messageMatches: A datasource driver was found in a configuration fil.*

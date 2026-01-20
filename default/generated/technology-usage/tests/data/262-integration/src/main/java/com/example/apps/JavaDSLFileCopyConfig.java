@@ -1,4 +1,4 @@
-package com.example.demointegrationbatch;
+package com.example.apps;
 
 import java.io.File;
 import java.util.Scanner;

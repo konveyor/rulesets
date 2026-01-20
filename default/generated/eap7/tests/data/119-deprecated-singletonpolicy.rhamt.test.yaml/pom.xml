@@ -6,5 +6,21 @@
 	<artifactId>sample-project</artifactId>
 	<version>0.0.1</version>
 	<name>Sample Project</name>
+
+	<repositories>
+		<repository>
+			<id>redhat-ga</id>
+			<url>https://maven.repository.redhat.com/ga/</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jboss.eap</groupId>
+			<artifactId>wildfly-clustering-singleton-api</artifactId>
+			<version>7.3.7.GA-redhat-00002</version>
+		</dependency>
+
+	</dependencies>
 </project>
 		

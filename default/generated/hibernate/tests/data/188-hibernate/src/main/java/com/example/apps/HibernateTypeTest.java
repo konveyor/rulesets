@@ -1,10 +1,10 @@
-package hibernatetest;
+package com.example.apps;
 
 import org.hibernate.annotations.Type;
 import org.hibernate.criterion.Projections;
 import org.hibernate.cfg.AnnotationConfiguration;
 
-public class SimpleEntity {
+public class HibernateTypeTest {
 
 	@Type(type = "text")
 	String myType;

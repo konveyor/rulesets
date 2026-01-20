@@ -9,7 +9,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: Dependency `javax.enterprise:cdi-api` has to be replaced with
         `io.quarkus:quarkus-arc` artifact
 - ruleID: cdi-to-quarkus-00020

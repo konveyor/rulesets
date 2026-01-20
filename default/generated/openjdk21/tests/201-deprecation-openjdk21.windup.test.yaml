@@ -1,4 +1,4 @@
-#FIXME: uncomment when method calls with args work
+#FIXME: not working, why?
 #rulesPath: ../201-deprecation-openjdk21.windup.yaml
 #providers:
 #- name: java

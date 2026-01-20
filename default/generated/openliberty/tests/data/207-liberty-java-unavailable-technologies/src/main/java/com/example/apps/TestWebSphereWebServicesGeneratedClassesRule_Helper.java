@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import com.ibm.websphere.webservices.TestClass1;
 import com.ibm.websphere.websvcs.rm.TestClass2;
 import com.ibm.websphere.wsaddressing.TestClass3;

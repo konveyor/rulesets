@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import com.ibm.websphere.batch.TestClass;
 import com.ibm.websphere.ci.TestClass2;
 import com.ibm.websphere.grid.spi.TestClass3;

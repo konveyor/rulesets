@@ -1,5 +1,6 @@
-package org.jboss.eap.xp.test;
+package com.example.apps;
 
-import org.eclipse.microprofile.metric.*;
+import org.eclipse.microprofile.metrics.*;
+
 public class MicroProfileApplication {
 }

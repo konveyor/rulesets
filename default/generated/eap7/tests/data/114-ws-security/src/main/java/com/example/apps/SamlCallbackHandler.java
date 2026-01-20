@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.cert.X509Certificate;
@@ -19,7 +21,7 @@ import org.apache.ws.security.saml.ext.bean.KeyInfoBean.CERT_IDENTIFIER;
 import org.apache.ws.security.saml.ext.bean.SubjectBean;
 import org.apache.ws.security.saml.ext.builder.SAML1Constants;
 import org.apache.ws.security.saml.ext.builder.SAML2Constants;
-import org.opensaml.common.SAMLVersion;
+//import org.opensaml.common.SAMLVersion;
 
 public class SamlCallbackHandler implements CallbackHandler
 {
@@ -50,7 +52,8 @@ public class SamlCallbackHandler implements CallbackHandler
                 SAMLCallback callback = (SAMLCallback) callbacks[i];
                 if (this.saml2)
                 {
-                    callback.setSamlVersion(SAMLVersion.VERSION_20);
+//                    callback.setSamlVersion(SAMLVersion.VERSION_20);
+                    callback.setSamlVersion(null);
                 }
                 callback.setIssuer("sts");
                 String subjectName = "uid=sts-client,o=jbws-cxf-sts.com";

@@ -1,4 +1,4 @@
-package com.acme.sample;
+package com.example.apps;
 
 import com.sonicsw.xq.XQServiceContext;
 import com.sonicsw.xq.XQInitContext;
@@ -12,6 +12,9 @@ import com.sonicsw.xq.XQEnvelope;
 
 import com.sonicsw.xq.XQService;
 import com.sonicsw.xq.XQAddressFactory;
+import com.sonicsw.xq.XQConstants;
+
+import java.util.List;
 
 /**
  * This is a snippet of java code for testing Sonic ESB windup rules.
@@ -42,7 +45,8 @@ public class ExampleSonicService implements XQService {
     }
     public void testWindupRules(){
         XQAddressFactory.createEndpointAddress("http:/test.com/myendpoint");
-        
+
+
         XQParameters params = initContext.getParameters(); 
         Object intruder = params.getParameter("Intruder", XQConstants.PARAM_OBJECT);
         
@@ -59,7 +63,7 @@ public class ExampleSonicService implements XQService {
         
         if (initContext instanceof  XQServiceContext) {
             XQServiceContext serviceContext = (XQServiceContext) initContext;
-            serviceContext.addOutgoing(xqEnvelope);
+            serviceContext.addOutgoing(xqenvelope);
         }
         
     }

@@ -1,4 +1,4 @@
-/*
+package com.example.apps;/*
  *  Copyright 2013 Christopher Pheby 
  * 
  *  Licensed under the Apache License, Version 2.0 (the "License"); 

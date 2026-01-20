@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import org.x.Annotation;
 
 public class LegacyVault {

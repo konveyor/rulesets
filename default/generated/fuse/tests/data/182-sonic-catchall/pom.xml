@@ -21,6 +21,10 @@
 			<id>aurea</id>
 			<url>https://mvnrepo.cantara.no/content/repositories/releases/</url>
 		</repository>
+		<repository>
+			<id>central</id>
+			<url>https://repo.maven.apache.org/maven2</url>
+		</repository>
 	</repositories>
 </project>
 		

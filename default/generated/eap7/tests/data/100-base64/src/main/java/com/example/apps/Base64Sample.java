@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import org.jboss.util.Base64;
 
 public class Base64Sample {

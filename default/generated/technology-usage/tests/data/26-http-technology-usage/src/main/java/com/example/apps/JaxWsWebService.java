@@ -1,4 +1,4 @@
-package org.windup.examples.technology.http;
+package com.example.apps;
 
 import java.io.Serializable;
 import java.util.Iterator;
@@ -13,7 +13,7 @@ import javax.persistence.Query;
 @Stateless
 @LocalBean
 @WebService
-public class JaxWsWebService extends AbstractEaoService implements Serializable {
+public class JaxWsWebService implements Serializable {
     private static final long serialVersionUID = 1L;
 
     public Integer sum(Integer a, Integer b)
@@ -33,7 +33,7 @@ public class JaxWsWebService extends AbstractEaoService implements Serializable 
 
     public Integer div(Integer a, Integer b)
     {
-        if (b === 0)
+        if (b == 0)
         {
             throw new IllegalArgumentException("b cannot be 0");
         }

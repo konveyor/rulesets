@@ -1,6 +1,8 @@
+package com.example.apps;
+
 import javax.xml.ws.BindingType;
 
+@BindingType("test/soapjms")
 public class TestSOAPOverJMSRule {
-	@BindingType("test/soapjms")
 	public String bindingString = "hi";
 }

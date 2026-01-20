@@ -1,13 +1,19 @@
-// Contains code that should match for the following tests:
+package com.example.apps;// Contains code that should match for the following tests:
 //
 // weblogic-webapp-07000-test
 // weblogic-webapp-08000-test
 //
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.security.Principal;
 
 import weblogic.security.Security;
 import weblogic.security.spi.WLSUser;
 import weblogic.security.spi.WLSGroup;
+
+import javax.security.auth.Subject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 class SampleWebLogicSecurity
 {

@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.MessageDriven;
 import javax.jms.Message;

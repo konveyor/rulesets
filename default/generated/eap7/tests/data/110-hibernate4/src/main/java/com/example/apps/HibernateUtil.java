@@ -1,4 +1,4 @@
-
+package com.example.apps;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,14 +22,15 @@ import org.hibernate.context.spi.CurrentTenantIdentifierResolver;
 import org.hibernate.id.TableGenerator;
 import org.hibernate.id.SequenceHiLoGenerator;
 
+import org.hibernate.internal.util.xml.XmlDocumentImpl;
 import org.hibernate.service.ServiceRegistryBuilder;
 import org.hibernate.type.BasicType;
 import org.hibernate.type.CurrencyType;
 import org.hibernate.usertype.UserType;
 import org.hibernate.metamodel.spi.TypeContributor;
 import org.hibernate.metamodel.spi.TypeContributions;
-import org.hibernate.boot.Metadata; 
-import org.hibernate.boot.spi.MetadataImplementor; 
+//import org.hibernate.boot.Metadata;
+//import org.hibernate.boot.spi.MetadataImplementor;
 import org.hibernate.cfg.Configuration; 
 import org.hibernate.engine.jdbc.spi.JdbcServices; 
 import org.hibernate.engine.spi.SessionFactoryImplementor; 
@@ -81,7 +82,6 @@ public class HibernateUtil
             Configuration configuration = new Configuration();
             configuration.configure();
             configuration.add(new XmlDocumentImpl(null, null));
-            configuration.setImplicitNamingStrategy();
             configuration.addXML(xml);
             configuration.addCacheableFile("");
             configuration.addURL( new URL(""));
@@ -97,17 +97,17 @@ public class HibernateUtil
                 }
             });
             configuration.addResource( "");
-            configuration.addClass(ClassTest.class);
-            configuration.addAnnotatedClass( UserEntity.class);
+            configuration.addClass(MyIntegrator.class);
+            configuration.addAnnotatedClass( Person.class);
             configuration.addPackage("com.example.domain");
             configuration.addJar(new File("jar"));
             configuration.addDirectory( new File("path_to_dir"));
             
-            CustomUserType customUserType = new CustomUserType();
-            configuration.registerTypeOverride((UserType) customUserType,
-                    new String[] { customUserType.returnedClass().getName() });
-            configuration.registerTypeContributor(customUserType);
-            configuration.registerTypeOverride();
+//            CustomUserType customUserType = new CustomUserType();
+//            configuration.registerTypeOverride((UserType) customUserType,
+//                    new String[] { customUserType.returnedClass().getName() });
+            configuration.registerTypeContributor(null);
+//            configuration.registerTypeOverride();
 
             Properties properties = new Properties();
             properties.put(AvailableSettings.DIALECT, "org.hibernate.dialect.MySQLDialect");
@@ -119,9 +119,9 @@ public class HibernateUtil
             configuration.setProperties(properties);
             configuration.addProperties(properties);
             
-            configuration.setInterceptor(new MyInterceptor ());
-            configuration.setEntityNotFoundDelegate(new MyEntityNotFoundDelegate());
-            configuration.setPhysicalNamingStrategy(new UpperCaseNamingStrategy());
+            configuration.setInterceptor(null);
+            configuration.setEntityNotFoundDelegate(null);
+//            configuration.setPhysicalNamingStrategy(new UpperCaseNamingStrategy());
             configuration.setSessionFactoryObserver(new SessionFactoryObserver() {
                 private static final long serialVersionUID = 1L;
 
@@ -156,17 +156,17 @@ public class HibernateUtil
         boolean use42Api;
            if (jdbc42Apis == null) {
 
-               if (JavaVersion.getMajorVersion() >= 1 && JavaVersion.getMinorVersion() >= 8) {
-                
+               if (true) {
+
                 Connection conn = null;
                 try {
                        JdbcServices jdbcServices = sessionFactory.getServiceRegistry().getService(JdbcServices.class);
-                       conn = jdbcServices.getBootstrapJdbcConnectionAccess().obtainConnection();
-                       
+//                       conn = jdbcServices.getBootstrapJdbcConnectionAccess().obtainConnection();
+
                        DatabaseMetaData dmd = conn.getMetaData();
                        int driverMajorVersion = dmd.getDriverMajorVersion();
                        int driverMinorVersion = dmd.getDriverMinorVersion();
-                       
+
                        if (driverMajorVersion >= 5) {
                            use42Api = true;
                        } else if (driverMajorVersion >= 4 && driverMinorVersion >= 2) {
@@ -180,7 +180,7 @@ public class HibernateUtil
                      // Occurs in Hibernate 4.2.12
                        use42Api = false;
                    } finally {
-                       
+
                        if (conn != null) {
                            try {
                                conn.close();

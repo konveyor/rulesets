@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import org.jboss.security.annotation.SecurityDomain;
 import org.jboss.mx.util.MBeanProxyExt;
 import org.jboss.system.ServiceMBean;

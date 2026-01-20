@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import java.io.FileReader;
 
 class FileReaderExample {
