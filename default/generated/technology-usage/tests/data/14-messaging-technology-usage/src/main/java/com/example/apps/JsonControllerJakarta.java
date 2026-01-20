@@ -15,19 +15,33 @@
  * limitations under the License.
  */
 //package org.jboss.as.quickstarts.jsonp;
+package com.example.apps;
 
 import java.io.StringReader;
 
-import jakarta.enterprise.inject.Model;
-import jakarta.faces.application.FacesMessage;
-import jakarta.faces.context.FacesContext;
-import jakarta.inject.Inject;
-import jakarta.json.Json;
-import jakarta.json.JsonException;
-import jakarta.json.stream.JsonParser;
-import jakarta.json.stream.JsonParser.Event;
+// Commented out Jakarta imports - using javax equivalents for compilation
+// import jakarta.enterprise.context.RequestScoped;
+// import jakarta.inject.Named;
+// import jakarta.faces.application.FacesMessage;
+// import jakarta.faces.context.FacesContext;
+// import jakarta.inject.Inject;
+// import jakarta.json.Json;
+// import jakarta.json.JsonException;
+// import jakarta.json.stream.JsonParser;
+// import jakarta.json.stream.JsonParser.Event;
 
-@Model
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+import javax.inject.Inject;
+import javax.json.Json;
+import javax.json.JsonException;
+import javax.json.stream.JsonParser;
+import javax.json.stream.JsonParser.Event;
+
+@Named
+@RequestScoped
 public class JsonControllerJakarta {
 
     @Inject

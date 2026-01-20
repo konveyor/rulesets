@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import javax.ejb.Timeout;
 import javax.ejb.Stateless;
 

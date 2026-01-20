@@ -1,12 +1,16 @@
+package com.example.apps;
+
 import java.util.Properties;
 import java.util.Date;
-import javax.mail.MimeMessage; //1
+import javax.mail.Message;
+import javax.mail.internet.MimeMessage; //1
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.MessagingException;
 import com.sun.mail.smtp.SMTPMessage;
-import org.simplejavamail.email.Email;
-import org.apache.commons.mail.Email; // 7
+// Note: Email classes from different packages - use fully qualified names if needed
+// import org.simplejavamail.email.Email;
+// import org.apache.commons.mail.Email; // 7
 
 public class Mail {
 	
@@ -25,7 +29,7 @@ public class Mail {
 	        msg.setSentDate(new Date());
 	        msg.setText("Hello, world!\n");
 	        Transport.send(msg, "me@example.com", "my-password"); // 14, 15???
-	    } catch (MyMessagingException mex) { // 16
+	    } catch (MessagingException mex) { // 16
 	        System.out.println("send failed, exception: " + mex); // 17???
 	    }
 	}

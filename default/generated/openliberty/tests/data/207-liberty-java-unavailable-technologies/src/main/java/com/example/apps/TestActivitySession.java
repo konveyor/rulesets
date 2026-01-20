@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import com.ibm.websphere.ActivitySession.test;
 
 public class TestActivitySession {

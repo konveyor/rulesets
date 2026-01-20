@@ -50,7 +50,7 @@
   message: |-
     This is an Oracle proprietary SQL type (`oracle.sql.{{remainder}}`).
 
-     It should be migrated to a compatible API either if you consider replacing your Oracle database or if you want to get rid of the Oracle proprietary API usage.
+    It should be migrated to a compatible API either if you consider replacing your Oracle database or if you want to get rid of the Oracle proprietary API usage.
   ruleID: weblogic-catchall-02000
   when:
     java.referenced:
@@ -106,9 +106,13 @@
     about this type.
   ruleID: weblogic-catchall-06000
   when:
-    java.referenced:
-      location: PACKAGE
-      pattern: (com.)?oracle.*
+    or:
+    - java.referenced:
+        location: PACKAGE
+        pattern: oracle.*
+    - java.referenced:
+        location: PACKAGE
+        pattern: com.oracle.*
 - category: optional
   customVariables:
   - name: remainder

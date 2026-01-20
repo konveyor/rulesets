@@ -1,13 +1,15 @@
+package com.example.apps;
+
 public class NotEntityPerson {
     private int id;
     private String name;
     private byte[] photo;
     private Byte[] foo;
 
-    public Person() {
+    public NotEntityPerson() {
     }
 
-    public Person(String name) {
+    public NotEntityPerson(String name) {
         this.name = name;
     }
 

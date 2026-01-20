@@ -15,8 +15,8 @@
   ruleID: springboot-webmvc-to-quarkus-00000
   when:
     java.referenced:
-      location: ANNOTATION
-      pattern: org.springframework.web.servlet.mvc.Controller
+      location: IMPORT
+      pattern: org.springframework.web.servlet.mvc*
 - category: mandatory
   customVariables: []
   description: Spring WebFlux is not supported by Quarkus

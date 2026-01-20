@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import javax.websocket.OnClose;
 import javax.websocket.OnError;
 import javax.websocket.OnMessage;

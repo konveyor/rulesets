@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import javax.annotation.sql.DataSourceDefinition;
 
 /**
@@ -10,7 +12,7 @@ import javax.annotation.sql.DataSourceDefinition;
         serverName="example.com",
         user="lance",
         password="secret"
-),
+)
 public class AnnotationSingleDs
 {
 }

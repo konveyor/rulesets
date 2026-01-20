@@ -1,4 +1,4 @@
-package com.example;
+package com.example.apps;
 
 import com.sonicsw.xq.XQServiceContext;
 import com.sonicsw.xq.XQInitContext;
@@ -20,6 +20,6 @@ import com.sonicsw.xq.XQAddressFactory;
  * @author mnovotny
  *
  */
-public interface ExampleSonicService extends XQService {
+public interface ExampleSonicService2 extends XQService {
 
 }

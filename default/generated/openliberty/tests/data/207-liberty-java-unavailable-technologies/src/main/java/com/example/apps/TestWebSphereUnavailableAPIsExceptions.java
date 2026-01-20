@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import com.ibm.websphere.exception.DistributedEJBCreateException;
 import com.ibm.websphere.exception.DistributedEJBRemoveException;
 

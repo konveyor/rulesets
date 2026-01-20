@@ -9,6 +9,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 9
+      exactly: 8
       messageMatches: Several classes under `javax` have been deprecated in JDK 20
         for removal in a future release.

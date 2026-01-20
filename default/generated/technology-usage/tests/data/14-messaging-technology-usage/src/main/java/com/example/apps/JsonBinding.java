@@ -1,4 +1,6 @@
 package com.jboss.windup.test;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import javax.json.bind.annotation.JsonbProperty;
 import javax.json.bind.annotation.JsonbTransient;
 import javax.json.bind.annotation.JsonbDateFormat;

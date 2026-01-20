@@ -89,47 +89,6 @@
     title: patternfly-v6 Documentation
   customVariables: []
   migration_complexity: medium
-- ruleID: patternfly-v5-to-patternfly-v6-components-00020
-  description: Text component should be replaced with Content component
-  effort: 5
-  category: potential
-  labels:
-  - konveyor.io/source=patternfly-v5
-  - konveyor.io/target=patternfly-v6
-  when:
-    and:
-    - nodejs.referenced:
-        pattern: Text
-    - builtin.filecontent:
-        pattern: <Text[^>]*>
-        filePattern: \.(j|t)sx?$
-  message: 'The Text component has been renamed to Content
-
-
-    Replace `Text component` with `Content component`.
-
-
-    Before:
-
-    ```
-
-    <Text>Example</Text>
-
-    ```
-
-
-    After:
-
-    ```
-
-    <Content>Example</Content>
-
-    ```'
-  links:
-  - url: https://www.patternfly.org/get-started/upgrade
-    title: patternfly-v6 Documentation
-  customVariables: []
-  migration_complexity: medium
 - ruleID: patternfly-v5-to-patternfly-v6-components-00030
   description: ExpandableSection isActive should be replaced with ExpandableSection
   effort: 5

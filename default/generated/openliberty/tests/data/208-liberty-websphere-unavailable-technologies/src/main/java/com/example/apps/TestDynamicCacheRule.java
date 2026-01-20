@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import com.ibm.websphere.cache.TestClass1;
 import com.ibm.websphere.servlet.cache.TestClass2;
 import com.ibm.ws.cache.TestClass3;

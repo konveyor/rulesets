@@ -19,11 +19,8 @@ class NonCatalogLoggerTest
 
     public void log()
     {
+        ReadBuffer readBuffer = new ReadBuffer();
         LOG.alert("logged!");
     }
 
-    private class MyOracleConnection implements OracleConnection {
-
-
-    }
 }

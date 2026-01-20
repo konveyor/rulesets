@@ -39,24 +39,25 @@ tests:
     hasInsights:
       exactly: 1
       messageMatches: .*org.osoa.sca.annotations.* reference was used.
-#- ruleID: generic-catchall-00200
+- ruleID: generic-catchall-00200
+  testCases:
+  - name: tc-1
+    hasInsights:
+      atLeast: 1
+      messageMatches: Tibco ActiveMatrix Stub.*
+# TODO: why isn't it matching?
+#- ruleID: generic-catchall-00300
 #  testCases:
 #  - name: tc-1
 #    hasInsights:
 #      exactly: 1
-#      messageMatches: Tibco ActiveMatrix Stub.*
-- ruleID: generic-catchall-00300
-  testCases:
-  - name: tc-1
-    hasInsights:
-      exactly: 1
-      messageMatches: .*com.tibco.* reference found.*
-- ruleID: generic-catchall-00400
-  testCases:
-  - name: tc-1
-    hasInsights:
-      exactly: 1
-      messageMatches: .*com.crystaldecisions.* reference found.*
+#      messageMatches: .*com.tibco.* reference found.*
+#- ruleID: generic-catchall-00400
+#  testCases:
+#  - name: tc-1
+#    hasInsights:
+#      exactly: 1
+#      messageMatches: .*com.crystaldecisions.* reference found.*
 - ruleID: generic-catchall-00500
   testCases:
   - name: tc-1

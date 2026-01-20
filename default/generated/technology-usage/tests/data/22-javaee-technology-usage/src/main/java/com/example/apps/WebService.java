@@ -1,7 +1,7 @@
-package com.jboss.windup.test;
+package com.example.apps;
 
 import javax.annotation.PostConstruct;
-import javax.jws.WebService;
+import javax.jws.WebMethod;
 import javax.xml.bind.JAXBContext;
 import javax.xml.registry.BulkResponse;
 import javax.xml.registry.BusinessLifeCycleManager;
@@ -14,14 +14,12 @@ import javax.xml.registry.infomodel.Organization;
 import javax.validation.constraints.NotNull;
 
 
-@WebService()
-public class Hello {
+@javax.jws.WebService()
+public class WebService {
     @NotNull
     private String myAttribute;
     
     private String message = new String("Hello, ");
-
-    public void Hello() {}
 
     @WebMethod()
     public String sayHello(String name) {
@@ -30,9 +28,13 @@ public class Hello {
     
     @PostConstruct
     public void postConstruct() {
-        JAXBContext jc = JAXBContext.newInstance( "com.acme.foo" );
-        ConnectionFactory connectionFactory = ConnectionFactory.newInstance();
-        System.out.println("nothing");
+        try {
+            JAXBContext jc = JAXBContext.newInstance( "com.acme.foo" );
+            ConnectionFactory connectionFactory = ConnectionFactory.newInstance();
+            System.out.println("nothing");
+        } catch (javax.xml.bind.JAXBException e) {
+            // Handle exception
+        }
     }
 
 

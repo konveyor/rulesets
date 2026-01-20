@@ -46,16 +46,15 @@
   ruleID: hibernate-xml-02000
   when:
     and:
-    - as: "1"
+    - as: xmlfiles
       builtin.xml:
         namespaces: {}
         xpath: /hibernate-configuration
-    - as: "2"
-      builtin.xml:
+    - builtin.xml:
         namespaces: {}
         xpath: //property[@name='hibernate.jdbc.use_streams_for_binary']
-        filepaths: "1.filepaths"
-      from: "1"
+        filepaths: "{{xmlfiles.filepaths}}"
+      from: xmlfiles
 - category: mandatory
   customVariables: []
   description: 'Hibernate: Removed package org.hibernate.connection'

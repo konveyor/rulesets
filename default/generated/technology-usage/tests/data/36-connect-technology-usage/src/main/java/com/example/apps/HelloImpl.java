@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -9,7 +11,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import javax.ws.rs.Path;
 
-@Path
+@Path("")
 public class HelloImpl extends UnicastRemoteObject implements Hello
 {
     private File file = new File("/tmp/log") ;

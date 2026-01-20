@@ -1,7 +1,10 @@
+package com.example.apps;
+
 // Contains code that should match for the following tests:
 //
 // soa-p-5-01000-test
 //
+
 import org.jboss.soa.esb.actions.AbstractActionLifecycle;
 import org.jboss.soa.esb.message.Message;
 import org.jboss.soa.esb.helpers.ConfigTree;

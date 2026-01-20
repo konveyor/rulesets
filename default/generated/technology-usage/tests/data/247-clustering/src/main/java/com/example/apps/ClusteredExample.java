@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import org.jboss.ejb3.annotation.Clustered;
 
 public class ClusteredExample

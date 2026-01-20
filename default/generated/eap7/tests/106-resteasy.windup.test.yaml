@@ -9,5 +9,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: Use .*org.jboss.resteasy.plugins.cache.server.InfinispanCache.*

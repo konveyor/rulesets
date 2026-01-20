@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import com.ibm.websphere.wsba.TestClass;
 
 public class TestDetectWSBAJava {

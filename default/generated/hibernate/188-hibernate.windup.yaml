@@ -85,7 +85,7 @@
   links:
   - title: 'JBoss EAP - Migration Guide: Hibernate and JPA Changes'
     url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/#sect-Hibernate_and_JPA_Changes
-  message: The deprecated classes in org.hibernate.classic package was removed in
+  message: The deprecated classes in org.hibernate.classic package were removed in
     Hibernate 4.
   ruleID: hibernate-04000
   when:

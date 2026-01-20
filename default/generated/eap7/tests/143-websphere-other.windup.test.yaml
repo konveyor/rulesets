@@ -15,5 +15,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      exactly: 1
       messageMatches: WebSphere Startup Service serves

@@ -96,7 +96,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 2
+      exactly: 1
       messageMatches: Use .*org.hibernate.boot.MetadataBuilder#applyBasicType.*
 - ruleID: hibernate4-00015
   testCases:
@@ -222,6 +222,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 7
+      exactly: 2
       messageMatches: If the migration is from JBoss EAP 6 or Hibernate 4 then the
         dialect

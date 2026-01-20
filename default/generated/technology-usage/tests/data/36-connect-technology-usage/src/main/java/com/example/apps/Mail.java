@@ -1,16 +1,20 @@
+package com.example.apps;
+
 import java.util.Properties;
 import java.util.Date;
-import javax.mail.MimeMessage; //1
+import javax.mail.Message;
+import javax.mail.MessagingException;
 import javax.mail.Session;
 import javax.mail.Transport;
-import javax.mail.MessagingException;
-import com.sun.mail.smtp.SMTPMessage;
-import org.simplejavamail.email.Email;
-import org.apache.commons.mail.Email; // 7
+import javax.mail.internet.MimeMessage;
 
 public class Mail {
 	
-	private class MyMessagingException extends MessagingException{} // 8
+	private static class MyMessagingException extends MessagingException {
+		public MyMessagingException(String message) {
+			super(message);
+		}
+	}
 	
 	public static void main(String argv[]) {
 	    Properties props = new Properties();
@@ -18,15 +22,15 @@ public class Mail {
 	    Session session = Session.getInstance(props, null); // 9, 10
 
 	    try {
-	        MimeMessage msg = new MimeMessage(session); // 11, 12,
+	        MimeMessage msg = new MimeMessage(session);
 	        msg.setFrom("me@example.com");
-	        msg.setRecipients(Message.RecipientType.TO, "you@example.com"); // 13
+	        msg.setRecipients(Message.RecipientType.TO, "you@example.com");
 	        msg.setSubject("JavaMail hello world example");
 	        msg.setSentDate(new Date());
 	        msg.setText("Hello, world!\n");
-	        Transport.send(msg, "me@example.com", "my-password"); // 14, 15???
-	    } catch (MyMessagingException mex) { // 16
-	        System.out.println("send failed, exception: " + mex); // 17???
+	        Transport.send(msg, "me@example.com", "my-password");
+	    } catch (MessagingException mex) {
+	        System.out.println("send failed, exception: " + mex);
 	    }
 	}
 }

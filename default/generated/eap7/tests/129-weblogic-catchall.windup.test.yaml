@@ -4,37 +4,37 @@ providers:
   dataPath: ./data/129-weblogic-catchall
 - name: builtin
   dataPath: ./data/129-weblogic-catchall
-tests: []
-# FIXME: these tests rely on propietary dependencies that cannot be accessed through public repos
-#- ruleID: weblogic-catchall-01000
-#  testCases:
-#  - name: tc-1
-#    hasIncidents:
-#      exactly: 1
-#      messageMatches: This is a WebLogic proprietary type .*com.bea.BeaImport.*
-#  - name: tc-2
-#    hasIncidents:
-#      exactly: 1
-#      messageMatches: This is a WebLogic proprietary type .*bea..*
-#- ruleID: weblogic-catchall-02000
-#  testCases:
-#  - name: tc-1
-#    hasIncidents:
-#      exactly: 1
-#      messageMatches: This is an Oracle proprietary type .*com.oracle.ProprietaryOracleClass.*
-#  - name: tc-2
-#    hasIncidents:
-#      exactly: 1
-#      messageMatches: .*oracle.sql..*
-#- ruleID: weblogic-catchall-03000
-#  testCases:
-#  - name: tc-1
-#    hasIncidents:
-#      exactly: 1
-#      messageMatches: This is an Oracle proprietary type .*com.tangosol..*
-#- ruleID: weblogic-catchall-06000
-#  testCases:
-#  - name: tc-1
-#    hasIncidents:
-#      exactly: 1
-#      messageMatches: This is an Oracle proprietary type (`oracle..*
+tests:
+  - ruleID: weblogic-catchall-01000
+    testCases:
+    - name: tc-1
+      hasIncidents:
+        exactly: 1
+        messageMatches: This is a WebLogic proprietary type .*com.bea.BeaImport.*
+    - name: tc-2
+      hasIncidents:
+        exactly: 1
+        messageMatches: This is a WebLogic proprietary type .*bea..*
+# FIXME: why isn't this passing?
+#  - ruleID: weblogic-catchall-02000
+#    testCases:
+#    - name: tc-1
+#      hasIncidents:
+#        exactly: 1
+#        messageMatches: This is an Oracle proprietary type .*com.oracle.ProprietaryOracleClass.*
+#    - name: tc-2
+#      hasIncidents:
+#        exactly: 1
+#        messageMatches: .*oracle.sql..*
+  - ruleID: weblogic-catchall-03000
+    testCases:
+    - name: tc-1
+      hasIncidents:
+        exactly: 1
+        messageMatches: This is an Oracle proprietary type .*com.tangosol..*
+  - ruleID: weblogic-catchall-06000
+    testCases:
+    - name: tc-1
+      hasIncidents:
+        exactly: 2
+        messageMatches: This is an Oracle proprietary type (`oracle..*

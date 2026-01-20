@@ -1,3 +1,5 @@
+package com.example.apps;
+
 import jakarta.inject.Inject;
 import jakarta.faces.context.FacesContext;
 import jakarta.enterprise.inject.Model;

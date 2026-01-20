@@ -32,8 +32,10 @@ import javax.resource.cci.Connection;
 import javax.resource.cci.ConnectionFactory;
 import javax.transaction.xa.XAException;
 
-import org.jboss.logging.Logger;
-import org.jboss.mx.util.MBeanServerLocator;
+import java.util.logging.Logger;
+// Commented out JBoss-specific imports
+// import org.jboss.logging.Logger;
+// import org.jboss.mx.util.MBeanServerLocator;
 import org.jboss.test.jca.adapter.TestConnection;
 import org.jboss.test.jca.adapter.TestConnectionFactory;
 
@@ -57,7 +59,7 @@ public class XAExceptionSessionBean implements SessionBean
     /** The serialVersionUID */
     private static final long serialVersionUID = 1L;
 
-    private Logger log = Logger.getLogger(XAExceptionSessionBean.class);
+    private Logger log = Logger.getLogger(XAExceptionSessionBean.class.getName());
 
     private SessionContext sessionContext;
 
@@ -102,7 +104,7 @@ public class XAExceptionSessionBean implements SessionBean
         }
         catch (Exception e)
         {
-            log.warn("Unexpected: ", e);
+            log.warning("Unexpected: " + e.getMessage());
             throw new EJBException("unexpected exception: " + e);
         }
     }
@@ -132,7 +134,7 @@ public class XAExceptionSessionBean implements SessionBean
         }
         catch (Exception e)
         {
-            log.warn("Unexpected: ", e);
+            log.warning("Unexpected: " + e.getMessage());
             throw new EJBException("unexpected exception: " + e);
         }
     }
@@ -163,7 +165,7 @@ public class XAExceptionSessionBean implements SessionBean
         {
             if (e.getMessage().equals("Simulated exception") == false)
             {
-                log.warn("Unexpected: ", e);
+                log.warning("Unexpected: " + e.getMessage());
                 throw new EJBException(e.getMessage());
             }
             else
@@ -213,7 +215,7 @@ public class XAExceptionSessionBean implements SessionBean
         {
             if (e.getMessage().equals("Simulated exception") == false)
             {
-                log.warn("Unexpected: ", e);
+                log.warning("Unexpected: " + e.getMessage());
                 throw new EJBException(e.getMessage());
             }
             else
@@ -252,7 +254,7 @@ public class XAExceptionSessionBean implements SessionBean
         }
         catch (Exception e)
         {
-            log.warn("Unexpected: ", e);
+            log.warning("Unexpected: " + e.getMessage());
             throw new EJBException(e.getMessage());
         }
     }
@@ -288,7 +290,7 @@ public class XAExceptionSessionBean implements SessionBean
         }
         catch (Exception e)
         {
-            log.warn("Unexpected: ", e);
+            log.warning("Unexpected: " + e.getMessage());
             throw new EJBException(e.getMessage());
         }
         finally
@@ -301,7 +303,9 @@ public class XAExceptionSessionBean implements SessionBean
 
     public long getAvailableConnections() throws Exception
     {
-        MBeanServer server = MBeanServerLocator.locateJBoss();
+        // Commented out JBoss-specific MBeanServerLocator
+        // MBeanServer server = MBeanServerLocator.locateJBoss();
+        MBeanServer server = javax.management.MBeanServerFactory.createMBeanServer();
         return ((Long) server.getAttribute(new ObjectName("jboss.jca:service=ManagedConnectionPool,name=JBossTestCF"),
                 "AvailableConnectionCount")).longValue();
     }

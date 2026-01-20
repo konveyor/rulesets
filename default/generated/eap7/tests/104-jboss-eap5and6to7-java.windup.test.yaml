@@ -31,7 +31,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: This class is using JSR 88 specific classes.
 - ruleID: jboss-eap5and6to7-java-06000
   testCases:
@@ -43,7 +43,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 2
       messageMatches: The .*@Clustered.* annotation is ignored in EAP 7 and is not
         useful.
 - ruleID: jboss-eap5and6to7-java-08000
@@ -55,6 +55,6 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 4
+      exactly: 1
       messageMatches: JBoss Logging annotations in package `org.jboss.logging` are
         deprecated
