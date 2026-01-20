@@ -1,0 +1,122 @@
+- ruleID: spring-framework-5.x-to-6.0-httpclient-00010
+  category: mandatory
+  effort: 5
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  - konveyor.io/source=spring-boot2
+  - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.apache.http.client.HttpClient
+    - java.referenced:
+        pattern: org.apache.http.impl.client.CloseableHttpClient
+    - java.referenced:
+        pattern: org.apache.http.impl.client.HttpClients
+    - java.referenced:
+        pattern: org.apache.http.impl.client.HttpClientBuilder
+    - java.referenced:
+        pattern: org.apache.http.client.methods*
+  description: Apache HttpClient 4.x must be migrated to HttpClient 5.x for Spring 6
+  message: |
+    Spring Framework 6.0 requires Apache HttpClient 5.x. The `org.apache.http.*` packages from 
+    HttpClient 4.x are no longer compatible.
+
+    **Migration Guidance:**
+
+    Update your dependencies and code to use HttpClient 5.x:
+
+    **Maven Dependency Update:**
+    ```xml
+    <!-- Remove HttpClient 4.x -->
+    <!-- <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+    </dependency> -->
+    
+    <!-- Add HttpClient 5.x -->
+    <dependency>
+        <groupId>org.apache.httpcomponents.client5</groupId>
+        <artifactId>httpclient5</artifactId>
+        <version>5.2.1</version>
+    </dependency>
+    ```
+
+    **Package Changes:**
+    - `org.apache.http.client.HttpClient` → `org.apache.hc.client5.http.classic.HttpClient`
+    - `org.apache.http.impl.client.HttpClients` → `org.apache.hc.client5.http.impl.classic.HttpClients`
+    - `org.apache.http.client.methods.HttpGet` → `org.apache.hc.client5.http.classic.methods.HttpGet`
+
+    **Code Example:**
+    ```java
+    // Before (HttpClient 4.x)
+    import org.apache.http.impl.client.CloseableHttpClient;
+    import org.apache.http.impl.client.HttpClients;
+    import org.apache.http.client.methods.HttpGet;
+
+    CloseableHttpClient client = HttpClients.createDefault();
+    HttpGet request = new HttpGet("http://example.com");
+    
+    // After (HttpClient 5.x)
+    import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+    import org.apache.hc.client5.http.impl.classic.HttpClients;
+    import org.apache.hc.client5.http.classic.methods.HttpGet;
+
+    CloseableHttpClient client = HttpClients.createDefault();
+    HttpGet request = new HttpGet("http://example.com");
+    ```
+  links:
+  - title: 'Apache HttpClient 5 Migration Guide'
+    url: https://hc.apache.org/httpcomponents-client-5.2.x/migration-guide/index.html
+  - title: 'Spring 6.0 migration guide'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes
+
+- ruleID: spring-framework-5.x-to-6.0-httpclient-00020
+  category: mandatory
+  effort: 3
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  - konveyor.io/source=spring-boot2
+  - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      name: org.apache.httpcomponents.httpclient
+      upperbound: 4.99.99
+  description: Apache HttpClient 4.x dependency detected - upgrade required for Spring 6
+  message: |
+    Your project uses Apache HttpClient 4.x which is not compatible with Spring Framework 6.0.
+    Spring 6.0's `RestTemplate` with Apache HttpClient support requires HttpClient 5.x.
+
+    **Migration Guidance:**
+
+    Update your Maven/Gradle dependencies:
+
+    **Maven:**
+    ```xml
+    <!-- Remove -->
+    <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+    </dependency>
+
+    <!-- Add -->
+    <dependency>
+        <groupId>org.apache.httpcomponents.client5</groupId>
+        <artifactId>httpclient5</artifactId>
+        <version>5.2.1</version>
+    </dependency>
+    ```
+
+    **Gradle:**
+    ```groovy
+    // Remove
+    // implementation 'org.apache.httpcomponents:httpclient'
+    
+    // Add
+    implementation 'org.apache.httpcomponents.client5:httpclient5:5.2.1'
+    ```
+  links:
+  - title: 'Apache HttpClient 5 Migration Guide'
+    url: https://hc.apache.org/httpcomponents-client-5.2.x/migration-guide/index.html

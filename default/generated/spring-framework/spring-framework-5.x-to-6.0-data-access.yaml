@@ -202,3 +202,168 @@
   links:
   - title: 'Spring 6.0 migration guide'
     url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#data-access-and-transactions
+
+- ruleID: spring-framework-5.x-to-6.0-data-access-00040
+  category: potential
+  effort: 1
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  - konveyor.io/source=spring-boot2
+  - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.dao.CannotSerializeTransactionException
+    - java.referenced:
+        pattern: org.springframework.dao.DeadlockLoserDataAccessException
+  description: Deprecated data access exceptions detected in Spring 6
+  message: |
+    `CannotSerializeTransactionException` and `DeadlockLoserDataAccessException` are deprecated as of 
+    Spring Framework 6.0.3 due to their inconsistent JDBC semantics.
+
+    **Migration Guidance:**
+    
+    Replace usage of these deprecated exceptions with the `PessimisticLockingFailureException` base class 
+    or its common `CannotAcquireLockException` subclass, which provides consistent semantics aligned with 
+    JPA/Hibernate in all default exception translation scenarios.
+
+    **Before:**
+    ```java
+    try {
+        // database operation
+    } catch (CannotSerializeTransactionException e) {
+        // handle serialization failure
+    } catch (DeadlockLoserDataAccessException e) {
+        // handle deadlock
+    }
+    ```
+
+    **After:**
+    ```java
+    try {
+        // database operation
+    } catch (CannotAcquireLockException e) {
+        // handle lock acquisition failure (includes serialization and deadlock scenarios)
+    }
+    // Or use the base class for broader catch:
+    catch (PessimisticLockingFailureException e) {
+        // handle any pessimistic locking failure
+    }
+    ```
+  links:
+  - title: 'Spring 6.0 migration guide - Data Access'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#data-access-and-transactions
+
+- ruleID: spring-framework-5.x-to-6.0-data-access-00050
+  category: potential
+  effort: 2
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  - konveyor.io/source=spring-boot2
+  - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.jdbc.support.SQLStateSQLExceptionTranslator
+    - java.referenced:
+        pattern: org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator
+    - java.referenced:
+        pattern: org.springframework.jdbc.support.SQLExceptionTranslator
+  description: JDBC exception translator default has changed in Spring 6
+  message: |
+    Spring Framework 6.0 has changed the default JDBC exception translator to `SQLExceptionSubclassTranslator`.
+    This translator detects JDBC driver subclasses and common SQL state indications without database product 
+    name resolution at runtime.
+
+    **Key Changes:**
+    - Default translator is now `SQLExceptionSubclassTranslator` (JDBC 4 based)
+    - Common SQL state check for `DuplicateKeyException` is now included
+    - Database product name resolution is no longer done at runtime by default
+
+    **Impact Assessment:**
+    
+    If your code explicitly uses or extends these classes:
+    - `SQLStateSQLExceptionTranslator`
+    - `SQLErrorCodeSQLExceptionTranslator`
+    - `SQLExceptionTranslator`
+    
+    Review if the behavior change affects your exception handling logic.
+
+    **For backwards compatibility:**
+    If you need the legacy behavior, explicitly configure `SQLErrorCodeSQLExceptionTranslator`:
+    
+    ```java
+    @Bean
+    public SQLExceptionTranslator exceptionTranslator(DataSource dataSource) {
+        return new SQLErrorCodeSQLExceptionTranslator(dataSource);
+    }
+    ```
+  links:
+  - title: 'Spring 6.0 migration guide - Data Access'
+    url: https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#data-access-and-transactions-1
+
+- ruleID: spring-framework-5.x-to-6.0-data-access-00060
+  category: mandatory
+  effort: 3
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  - konveyor.io/source=spring-boot2
+  - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.dependency:
+        name: org.hibernate.validator.hibernate-validator
+        upperbound: 6.99.99
+    - java.referenced:
+        pattern: javax.validation*
+        location: IMPORT
+  description: Hibernate Validator must be upgraded to 7.0+ for Spring 6
+  message: |
+    Spring Framework 6.0 requires Hibernate Validator 7.0.x or later due to the Jakarta EE 9+ baseline.
+    Hibernate Validator 7.0 is the first version to use the `jakarta.validation` namespace instead of 
+    `javax.validation`.
+
+    **Migration Guidance:**
+
+    **Update Dependencies:**
+    ```xml
+    <!-- Remove Hibernate Validator 6.x -->
+    <!-- <dependency>
+        <groupId>org.hibernate.validator</groupId>
+        <artifactId>hibernate-validator</artifactId>
+        <version>6.x.x</version>
+    </dependency> -->
+    
+    <!-- Add Hibernate Validator 7.0+ -->
+    <dependency>
+        <groupId>org.hibernate.validator</groupId>
+        <artifactId>hibernate-validator</artifactId>
+        <version>7.0.5.Final</version>
+    </dependency>
+    ```
+
+    **Update Imports:**
+    ```java
+    // Before
+    import javax.validation.Valid;
+    import javax.validation.constraints.NotNull;
+    import javax.validation.constraints.Size;
+
+    // After
+    import jakarta.validation.Valid;
+    import jakarta.validation.constraints.NotNull;
+    import jakarta.validation.constraints.Size;
+    ```
+
+    **Key Changes in Hibernate Validator 7.0:**
+    - All `javax.validation.*` → `jakarta.validation.*`
+    - `javax.el` → `jakarta.el` for Expression Language
+    - Compatible with Jakarta EE 9+
+  links:
+  - title: 'Hibernate Validator 7.0 Release Announcement'
+    url: https://in.relation.to/2020/12/08/hibernate-validator-700-62-cr1-released/
+  - title: 'Hibernate Validator Migration Guide'
+    url: https://hibernate.org/validator/documentation/migration-guide/
