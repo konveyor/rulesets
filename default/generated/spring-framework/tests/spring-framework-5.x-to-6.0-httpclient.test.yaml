@@ -1,0 +1,12 @@
+rulesPath: ../spring-framework-5.x-to-6.0-httpclient.yaml
+providers:
+- name: java
+  dataPath: ./data/httpclient
+tests:
+- ruleID: spring-framework-5.x-to-6.0-httpclient-00010
+  testCases:
+  - name: tc-httpclient4
+    analysisParams:
+      mode: "source-only"
+    hasIncidents:
+      atLeast: 1

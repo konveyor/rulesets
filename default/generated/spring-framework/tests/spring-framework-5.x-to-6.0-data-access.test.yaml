@@ -45,3 +45,24 @@ tests:
         mode: "source-only"
       hasIncidents:
         exactly: 1
+- ruleID: spring-framework-5.x-to-6.0-data-access-00040
+  testCases:
+    - name: tc-deprecated-exceptions
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        atLeast: 2
+- ruleID: spring-framework-5.x-to-6.0-data-access-00050
+  testCases:
+    - name: tc-jdbc-exception-translator
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        atLeast: 1
+- ruleID: spring-framework-5.x-to-6.0-data-access-00060
+  testCases:
+    - name: tc-hibernate-validator
+      analysisParams:
+        mode: "source-only"
+      hasIncidents:
+        atLeast: 1

@@ -157,3 +157,253 @@
     url: https://github.com/spring-projects/spring-framework/issues/27697
   - title: 'Spring Documentation'
     url: https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/HttpMethod.html
+
+- ruleID: spring-framework-5.x-to-6.0-web-applications-00050
+  category: mandatory
+  effort: 3
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  - konveyor.io/source=spring-boot2
+  - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.web.multipart.commons.CommonsMultipartResolver
+    - java.referenced:
+        pattern: org.springframework.web.multipart.commons.CommonsMultipartFile
+    - java.referenced:
+        pattern: org.springframework.web.multipart.commons*
+  description: CommonsMultipartResolver has been removed in Spring 6
+  message: |
+    `CommonsMultipartResolver` and the `org.springframework.web.multipart.commons` package have been 
+    removed in Spring Framework 6.0.
+
+    **Migration Guidance:**
+
+    Use the standard Servlet multipart support with `StandardServletMultipartResolver` instead:
+
+    **Before:**
+    ```java
+    @Bean
+    public CommonsMultipartResolver multipartResolver() {
+        CommonsMultipartResolver resolver = new CommonsMultipartResolver();
+        resolver.setMaxUploadSize(10485760); // 10MB
+        return resolver;
+    }
+    ```
+
+    **After:**
+    ```java
+    @Bean
+    public StandardServletMultipartResolver multipartResolver() {
+        return new StandardServletMultipartResolver();
+    }
+    ```
+
+    Configure multipart settings in `application.properties` (Spring Boot):
+    ```properties
+    spring.servlet.multipart.max-file-size=10MB
+    spring.servlet.multipart.max-request-size=10MB
+    ```
+
+    Or configure via `MultipartConfigElement` for standalone Spring MVC.
+  links:
+  - title: 'Spring 6.0 migration guide - Web Applications'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
+
+- ruleID: spring-framework-5.x-to-6.0-web-applications-00060
+  category: mandatory
+  effort: 5
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  - konveyor.io/source=spring-boot2
+  - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.web.servlet.view.tiles3*
+    - java.referenced:
+        pattern: org.springframework.web.servlet.view.tiles2*
+  description: Apache Tiles integration has been removed in Spring 6
+  message: |
+    Apache Tiles integration (`org.springframework.web.servlet.view.tiles3`) has been removed in 
+    Spring Framework 6.0.
+
+    **Migration Guidance:**
+
+    Consider migrating to alternative view technologies:
+
+    1. **Thymeleaf** - Modern server-side template engine with excellent Spring integration
+    2. **JSP** - Traditional JavaServer Pages (if Jakarta EE compatible)
+    3. **FreeMarker** - Template engine (note: JSP macros for FreeMarker also removed)
+
+    **Thymeleaf Example:**
+    ```java
+    @Configuration
+    public class ThymeleafConfig {
+        @Bean
+        public SpringTemplateEngine templateEngine(ITemplateResolver templateResolver) {
+            SpringTemplateEngine engine = new SpringTemplateEngine();
+            engine.setTemplateResolver(templateResolver);
+            return engine;
+        }
+        
+        @Bean
+        public ThymeleafViewResolver viewResolver(SpringTemplateEngine templateEngine) {
+            ThymeleafViewResolver resolver = new ThymeleafViewResolver();
+            resolver.setTemplateEngine(templateEngine);
+            return resolver;
+        }
+    }
+    ```
+  links:
+  - title: 'Spring 6.0 migration guide - Web Applications'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
+
+- ruleID: spring-framework-5.x-to-6.0-web-applications-00070
+  category: mandatory
+  effort: 3
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  - konveyor.io/source=spring-boot2
+  - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer
+    - java.referenced:
+        pattern: org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver
+  description: FreeMarker JSP support has been removed in Spring 6
+  message: |
+    FreeMarker JSP support (Spring JSP macros for FreeMarker) has been removed in Spring Framework 6.0.
+    The core FreeMarker integration is still available but without JSP tag library support.
+
+    **Migration Guidance:**
+
+    If you were using FreeMarker with JSP macros (like `spring.ftl`), you need to:
+
+    1. **Use native FreeMarker macros** instead of JSP-based Spring macros
+    2. **Consider Thymeleaf** as an alternative with built-in Spring integration
+
+    The basic FreeMarker configuration remains the same:
+    ```java
+    @Bean
+    public FreeMarkerConfigurer freeMarkerConfigurer() {
+        FreeMarkerConfigurer configurer = new FreeMarkerConfigurer();
+        configurer.setTemplateLoaderPath("/WEB-INF/views/");
+        return configurer;
+    }
+    ```
+
+    But ensure your templates don't rely on removed JSP macro functionality.
+  links:
+  - title: 'Spring 6.0 migration guide - Web Applications'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
+
+- ruleID: spring-framework-5.x-to-6.0-web-applications-00080
+  category: potential
+  effort: 2
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  - konveyor.io/source=spring-boot2
+  - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.referenced:
+        pattern: org.springframework.mock.web.MockHttpServletRequest
+    - java.referenced:
+        pattern: org.springframework.mock.web.MockHttpServletResponse
+    - java.referenced:
+        pattern: org.springframework.mock.web.MockHttpSession
+    - java.referenced:
+        pattern: org.springframework.mock.web.MockFilterChain
+  description: Spring Servlet mocks now require Servlet API 6.0
+  message: |
+    The Spring-provided Servlet mocks (`MockHttpServletRequest`, `MockHttpServletResponse`, 
+    `MockHttpSession`, etc.) are now based on Servlet API 6.0.
+
+    **Migration Guidance:**
+
+    Ensure your test dependencies include a Servlet 6.0 compatible API:
+
+    **Maven:**
+    ```xml
+    <dependency>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
+        <version>6.0.0</version>
+        <scope>test</scope>
+    </dependency>
+    ```
+
+    **Gradle:**
+    ```groovy
+    testImplementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+    ```
+
+    If you're running on an older Servlet container for testing, you may need to upgrade 
+    your embedded test container (e.g., Tomcat 10.1+, Jetty 11+).
+
+    **Note:** If using `MockHttpServletRequestBuilder.setRemoteAddress()`, this is a new method 
+    available in Spring 6.0.
+  links:
+  - title: 'Spring 6.0 migration guide - Testing'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#testing
+
+- ruleID: spring-framework-5.x-to-6.0-web-applications-00090
+  category: potential
+  effort: 3
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  - konveyor.io/source=spring-boot2
+  - konveyor.io/target=spring-boot3+
+  when:
+    or:
+    - java.dependency:
+        name: org.apache.tomcat.embed.tomcat-embed-core
+        upperbound: 9.99.99
+    - java.dependency:
+        name: org.eclipse.jetty.jetty-server
+        upperbound: 10.99.99
+    - java.dependency:
+        name: io.undertow.undertow-core
+        upperbound: 2.2.18.Final
+  description: Web server must be upgraded for Spring 6 compatibility
+  message: |
+    Spring Framework 6.0 requires updated web server versions that support Jakarta EE 9+:
+
+    **Minimum Required Versions:**
+    - **Tomcat 10.1+** (implements Servlet 6.0)
+    - **Jetty 11+** (implements Servlet 5.0/Jakarta EE 9)
+    - **Undertow 2.2.19+** (with Jakarta EE 9 support)
+
+    **Migration Guidance:**
+
+    Update your server dependencies:
+
+    **Maven (Spring Boot):**
+    ```xml
+    <!-- Spring Boot 3.x automatically uses compatible versions -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.0.0</version>
+    </parent>
+    ```
+
+    **For standalone Tomcat deployment:**
+    Download and deploy to Apache Tomcat 10.1.x or later.
+
+    **Key Changes:**
+    - Servlet API moves from `javax.servlet` to `jakarta.servlet`
+    - All Jakarta EE APIs follow the `jakarta.*` namespace
+  links:
+  - title: 'Spring 6.0 migration guide - Web Applications'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
+  - title: 'Tomcat 10.1 Migration Guide'
+    url: https://tomcat.apache.org/migration-10.html

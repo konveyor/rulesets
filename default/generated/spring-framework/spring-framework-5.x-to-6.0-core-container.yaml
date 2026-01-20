@@ -160,3 +160,115 @@
   - title: 'Spring 6.0 migration guide'
     url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#core-container
 
+- ruleID: spring-framework-5.x-to-6.0-core-container-00040
+  category: mandatory
+  effort: 1
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  - konveyor.io/source=spring-boot2
+  - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: javax.inject.Inject
+      location: ANNOTATION
+  description: JSR-330 @Inject annotation must be migrated to Jakarta namespace
+  message: |
+    The JSR-330 based `@Inject` annotation is to be found in `jakarta.inject` now. The `javax.inject` package 
+    is no longer supported in Spring Framework 6.0 as part of the Jakarta EE 9+ baseline migration.
+
+    **Migration Guidance:**
+
+    Update your imports from `javax.inject` to `jakarta.inject`:
+
+    **Before:**
+    ```java
+    import javax.inject.Inject;
+    import javax.inject.Named;
+
+    @Named
+    public class MyService {
+        @Inject
+        private MyRepository repository;
+    }
+    ```
+
+    **After:**
+    ```java
+    import jakarta.inject.Inject;
+    import jakarta.inject.Named;
+
+    @Named
+    public class MyService {
+        @Inject
+        private MyRepository repository;
+    }
+    ```
+
+    **Maven Dependency Update:**
+    ```xml
+    <!-- Before -->
+    <dependency>
+        <groupId>javax.inject</groupId>
+        <artifactId>javax.inject</artifactId>
+        <version>1</version>
+    </dependency>
+
+    <!-- After -->
+    <dependency>
+        <groupId>jakarta.inject</groupId>
+        <artifactId>jakarta.inject-api</artifactId>
+        <version>2.0.1</version>
+    </dependency>
+    ```
+  links:
+  - title: 'Spring 6.0 migration guide - Core Container'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#core-container
+
+- ruleID: spring-framework-5.x-to-6.0-core-container-00050
+  category: potential
+  effort: 2
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  - konveyor.io/source=spring-boot2
+  - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.core.LocalVariableTableParameterNameDiscoverer
+  description: LocalVariableTableParameterNameDiscoverer is deprecated in Spring 6
+  message: |
+    `LocalVariableTableParameterNameDiscoverer` is deprecated in Spring Framework 6.0 in favor of 
+    `StandardReflectionParameterNameDiscoverer`.
+
+    The `LocalVariableTableParameterNameDiscoverer` reads parameter names from the debug information in 
+    class files, which requires classes to be compiled with debug information. The new 
+    `StandardReflectionParameterNameDiscoverer` uses the standard Java reflection API which is more 
+    reliable and doesn't require debug symbols.
+
+    **Migration Guidance:**
+
+    **Before:**
+    ```java
+    import org.springframework.core.LocalVariableTableParameterNameDiscoverer;
+
+    LocalVariableTableParameterNameDiscoverer discoverer = 
+        new LocalVariableTableParameterNameDiscoverer();
+    String[] paramNames = discoverer.getParameterNames(method);
+    ```
+
+    **After:**
+    ```java
+    import org.springframework.core.StandardReflectionParameterNameDiscoverer;
+
+    StandardReflectionParameterNameDiscoverer discoverer = 
+        new StandardReflectionParameterNameDiscoverer();
+    String[] paramNames = discoverer.getParameterNames(method);
+    ```
+
+    **Note:** Ensure your code is compiled with the `-parameters` flag to retain parameter names 
+    in the bytecode for reflection access.
+  links:
+  - title: 'Spring 6.0 migration guide - Core Container'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#core-container
+
