@@ -1,0 +1,86 @@
+- ruleID: angularjs-to-angular-pipes-00000
+  description: .filter() should be replaced with @Pipe
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: .filter(
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS filters should be converted to Angular pipes\n\nReplace `.filter()`\
+    \ with `@Pipe`.\n\nBefore:\n```\nangular.module('app').filter('capitalize', function()\
+    \ {\n return function(input) {\n return input.charAt(0).toUpperCase() + input.slice(1);\n\
+    \ };\n});\n```\n\nAfter:\n```\n@Pipe({ name: 'capitalize' })\nexport class CapitalizePipe\
+    \ implements PipeTransform {\n transform(value: string): string {\n return value.charAt(0).toUpperCase()\
+    \ + value.slice(1);\n }\n}\n```"
+  customVariables: []
+- ruleID: angularjs-to-angular-pipes-00010
+  description: $filter service should be replaced with Pipe injection or template pipes
+  effort: 4
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: $filter
+      filePattern: \.(j|t)sx?$
+  message: 'AngularJS $filter service should be replaced with Angular Pipes
+
+
+    The `$filter` service is used to programmatically apply filters in AngularJS
+    controllers. In Angular, this should be replaced with Pipe classes.
+
+
+    Replace `$filter` with Pipe injection and usage.
+
+
+    Before:
+
+    ```
+
+    function MyController($scope, $filter) {
+
+    $scope.total = $filter(''currency'')(data.cartTotal);
+
+    }
+
+    ```
+
+
+    After (Option 1 - Inject Pipe):
+
+    ```
+
+    export class MyComponent {
+
+    constructor(private currencyPipe: CurrencyPipe) {}
+
+
+    getTotal(amount: number): string {
+
+    return this.currencyPipe.transform(amount);
+
+    }
+
+    }
+
+    ```
+
+
+    After (Option 2 - Use in template):
+
+    ```
+
+    <!-- In template -->
+
+    {{ cartTotal | currency }}
+
+    ```
+
+
+    Note: For built-in filters like currency, date, uppercase, etc., use Angular''s
+    built-in pipes. For custom filters, convert them to custom Pipe classes.'
+  customVariables: []

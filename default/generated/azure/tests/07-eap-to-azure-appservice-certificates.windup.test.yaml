@@ -1,0 +1,13 @@
+rulesPath: ../07-eap-to-azure-appservice-certificates.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/07-eap-to-azure-appservice-certificates
+- name: builtin
+  dataPath: ./data/07-eap-to-azure-appservice-certificates
+tests:
+- ruleID: eap-to-azure-appservice-certificates-001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: Azure - The application loads certificates into a KeyStor.*

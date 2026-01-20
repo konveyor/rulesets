@@ -148,8 +148,9 @@
   when:
     builtin.xml:
       filepaths:
-      - jboss(-web
-      - -service)?.xml
+      - jboss.xml
+      - jboss-web.xml
+      - jboss-service.xml
       namespaces: {}
       xpath: //class-loading/loader-repository
 - category: mandatory

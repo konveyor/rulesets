@@ -1,0 +1,73 @@
+- ruleID: angular-12-to-angular-13-router-00000
+  description: routerLinkActiveOptions type should be replaced with routerLinkActiveOptions
+    with more specific type
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-12
+  - konveyor.io/target=angular-13
+  when:
+    nodejs.referenced:
+      pattern: routerLinkActiveOptions
+  message: 'The routerLinkActiveOptions property of RouterLinkActive now has a more
+    specific type
+
+
+    Replace `routerLinkActiveOptions type` with `routerLinkActiveOptions with more
+    specific type`.
+
+
+    Before:
+
+    ```
+
+    const options = this.routerLinkActive.routerLinkActiveOptions;
+
+    ```
+
+
+    After:
+
+    ```
+
+    const options: { exact: boolean } = this.routerLinkActive.routerLinkActiveOptions;
+
+    ```'
+  customVariables: []
+- ruleID: angular-12-to-angular-13-router-00010
+  description: router fragments without null check should be replaced with router
+    fragments with null check
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-12
+  - konveyor.io/target=angular-13
+  when:
+    builtin.filecontent:
+      pattern: \.fragment\.
+      filePattern: \.(j|t)s$
+  message: 'The router fragments now could be null. Add null checks to avoid TypeScript
+    failing with type errors
+
+
+    Replace `router fragments without null check` with `router fragments with null
+    check`.
+
+
+    Before:
+
+    ```
+
+    const fragment = this.route.snapshot.fragment;
+
+    ```
+
+
+    After:
+
+    ```
+
+    const fragment = this.route.snapshot.fragment || null;
+
+    ```'
+  customVariables: []

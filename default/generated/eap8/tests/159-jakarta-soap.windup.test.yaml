@@ -1,0 +1,22 @@
+rulesPath: ../159-jakarta-soap.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/159-jakarta-soap
+- name: builtin
+  dataPath: ./data/159-jakarta-soap
+tests:
+- ruleID: jakarta-soap-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`javax.xml.soap.SOAPElementFactory.newInstance()` must be replaced
+        with `jakarta.xml.soap.SOAPFactory.newInstance()`.'
+- ruleID: jakarta-soap-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 3
+      messageMatches: '`javax.xml.soap.SOAPElementFactory.create()` must be replaced
+        with `jakarta.xml.soap.SOAPFactory.createElement()`. If `javax.xml.soap.Name`
+        is passed as a parameter, it must be replaced with `jakarta.xml.soap.Name`.'

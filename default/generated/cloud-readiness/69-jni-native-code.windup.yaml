@@ -23,23 +23,24 @@
      * Reuse or embed the native library or application in a cloud environment, for example, in a JBoss module.
      * Replace, remove, or rewrite the native library or application using a cloud-compatible equivalent.
   ruleID: jni-native-code-00000
+#  TODO: Static method calls are not properly detected for some reason
   when:
     or:
+#    - java.referenced:
+#        location: METHOD_CALL
+#        pattern: System.load
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.System.load(*)
+        pattern: loadLibrary
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.System.loadLibrary(*)
+        pattern: mapLibraryName
+#    - java.referenced:
+#        location: METHOD_CALL
+#        pattern: Runtime.load
     - java.referenced:
         location: METHOD_CALL
-        pattern: java.lang.System.mapLibraryName(*)
-    - java.referenced:
-        location: METHOD_CALL
-        pattern: java.lang.Runtime.load(*)
-    - java.referenced:
-        location: METHOD_CALL
-        pattern: java.lang.Runtime.loadLibrary(*)
+        pattern: loadLibrary
     - java.referenced:
         location: CONSTRUCTOR_CALL
         pattern: com.sun.jna*

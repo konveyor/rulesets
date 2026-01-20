@@ -1,0 +1,14 @@
+rulesPath: ../202-dynamic-agents.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/202-dynamic-agents
+- name: builtin
+  dataPath: ./data/202-dynamic-agents
+tests:
+- ruleID: dynamic-agents-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Dynamic loading of agents will be restricted at a later JDK
+        release.*

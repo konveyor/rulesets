@@ -85,8 +85,11 @@
   message: Replace with the Java EE standard [javax.transaction.TransactionManager](http://docs.oracle.com/javaee/7/api/javax/transaction/TransactionManager.html)
   ruleID: weblogic-eap7-04000
   when:
-    java.referenced:
-      pattern: weblogic.transaction.(Client)*TransactionManager
+    or:
+    - java.referenced:
+        pattern: weblogic.transaction.TransactionManager
+    - java.referenced:
+        pattern: weblogic.transaction.ClientTransactionManager
 - category: mandatory
   customVariables: []
   description: WebLogic TransactionManager usage of resume method
@@ -106,16 +109,16 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: weblogic.transaction.TransactionManager.resume(*)
+        pattern: weblogic.transaction.TransactionManager.resume
     - java.referenced:
         location: METHOD_CALL
-        pattern: weblogic.transaction.TransactionManager.forceResume(*)
+        pattern: weblogic.transaction.TransactionManager.forceResume
     - java.referenced:
         location: METHOD_CALL
-        pattern: weblogic.transaction.ClientTransactionManager.resume(*)
+        pattern: weblogic.transaction.ClientTransactionManager.resume
     - java.referenced:
         location: METHOD_CALL
-        pattern: weblogic.transaction.ClientTransactionManager.forceResume(*)
+        pattern: weblogic.transaction.ClientTransactionManager.forceResume
 - category: mandatory
   customVariables: []
   description: WebLogic TransactionManager usage of suspend method
@@ -134,16 +137,16 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: weblogic.transaction.TransactionManager.suspend(*)
+        pattern: weblogic.transaction.TransactionManager.suspend
     - java.referenced:
         location: METHOD_CALL
-        pattern: weblogic.transaction.TransactionManager.forceSuspend(*)
+        pattern: weblogic.transaction.TransactionManager.forceSuspend
     - java.referenced:
         location: METHOD_CALL
-        pattern: weblogic.transaction.ClientTransactionManager.suspend(*)
+        pattern: weblogic.transaction.ClientTransactionManager.suspend
     - java.referenced:
         location: METHOD_CALL
-        pattern: weblogic.transaction.ClientTransactionManager.forceSuspend(*)
+        pattern: weblogic.transaction.ClientTransactionManager.forceSuspend
 - category: mandatory
   customVariables: []
   description: WebLogic TxHelper usage
@@ -189,10 +192,10 @@
     or:
       - java.referenced:
           location: METHOD_CALL
-          pattern: weblogic.transaction.ClientTxHelper.getTransactionManager(*)
+          pattern: weblogic.transaction.ClientTxHelper.getTransactionManager
       - java.referenced:
           location: METHOD_CALL
-          pattern: weblogic.transaction.TxHelper.getTransactionManager(*)
+          pattern: weblogic.transaction.TxHelper.getTransactionManager
 - category: mandatory
   customVariables: []
   description: WebLogic proprietary Clob JDBC object (OracleThinClob)
@@ -236,7 +239,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: weblogic.jdbc.vendor.oracle.OracleThinClob.getCharacterOutputStream(*)
+      pattern: weblogic.jdbc.vendor.oracle.OracleThinClob.getCharacterOutputStream
 - category: mandatory
   customVariables: []
   description: WebLogic proprietary logger (NonCatalogLogger)
@@ -264,8 +267,7 @@
   ruleID: weblogic-eap7-11000
   when:
     java.referenced:
-      location: CONSTRUCTOR_CALL
-      pattern: NonCatalogLogger
+      pattern: weblogic.*NonCatalogLogger
 - category: mandatory
   customVariables: []
   description: WebLogic Oracle FCF JDBC property

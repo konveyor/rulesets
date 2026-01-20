@@ -1,0 +1,21 @@
+rulesPath: ../156-jakarta-el.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/156-jakarta-el
+- name: builtin
+  dataPath: ./data/156-jakarta-el
+tests:
+- ruleID: jakarta-el-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The incorrectly spelled `javax.el.MethodExpression.isParmetersProvided()`
+        method has been removed. Use `MethodExpression.isParametersProvided()` instead.
+- ruleID: jakarta-el-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The incorrectly spelled `jakarta.el.MethodExpression.isParmetersProvided()`
+        method has been removed. Use `MethodExpression.isParametersProvided()` instead.

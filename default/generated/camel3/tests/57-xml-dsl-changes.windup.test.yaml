@@ -1,0 +1,62 @@
+rulesPath: ../57-xml-dsl-changes.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/57-xml-dsl-changes
+- name: builtin
+  dataPath: ./data/57-xml-dsl-changes
+tests:
+- ruleID: xml-dsl-changes-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: zip` and `gzip` dataformats were renamed.*
+- ruleID: xml-dsl-changes-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: '`custom` load balancer was renamed to `customLoadBalancer`'
+- ruleID: xml-dsl-changes-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`zipFile` data format was renamed to `zipfile'
+- ruleID: xml-dsl-changes-00004
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`keyOrTrustStoreParametersId` attribute was renamed to `keyOrTrustStoreParametersRef`'
+- ruleID: xml-dsl-changes-00005
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Hystrix circuit breaker has been generalized as circuit breaker.
+        Use `circuitBreaker.*`
+- ruleID: xml-dsl-changes-00006
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Use `completionSizeExpression` instead of `completionSize*`
+- ruleID: xml-dsl-changes-00007
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Use `completionTimeoutExpression` instead of `completionTimeout*`
+- ruleID: xml-dsl-changes-00008
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The attribute `headerName` was renamed to `name`.
+- ruleID: xml-dsl-changes-00009
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The attribute `propertyName` was renamed to `name`.

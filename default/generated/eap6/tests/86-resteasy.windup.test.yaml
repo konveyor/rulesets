@@ -1,0 +1,14 @@
+rulesPath: ../86-resteasy.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/86-resteasy
+- name: builtin
+  dataPath: ./data/86-resteasy
+tests:
+- ruleID: resteasy-eap5-000001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Use of .*org.jboss.resteasy.plugins.cache.server.SimpleServerCache.*
+        is not supported in JBoss EAP 6

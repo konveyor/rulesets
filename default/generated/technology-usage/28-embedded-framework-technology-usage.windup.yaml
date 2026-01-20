@@ -1,4 +1,5 @@
 - customVariables: []
+  description: Apache Axis
   labels:
   - konveyor.io/include=always
   links: []
@@ -11,6 +12,7 @@
     builtin.hasTags:
     - Apache Axis
 - customVariables: []
+  description: Apache Axis2
   labels:
   - konveyor.io/include=always
   links: []
@@ -23,6 +25,7 @@
     builtin.hasTags:
     - Apache Axis2
 - customVariables: []
+  description: Apache CXF
   labels:
   - konveyor.io/include=always
   links: []
@@ -35,6 +38,7 @@
     builtin.hasTags:
     - Apache CXF
 - customVariables: []
+  description: XFire
   labels:
   - konveyor.io/include=always
   links: []
@@ -47,6 +51,7 @@
     builtin.hasTags:
     - XFire
 - customVariables: []
+  description: Jersey
   labels:
   - konveyor.io/include=always
   links: []
@@ -59,6 +64,7 @@
     builtin.hasTags:
     - Jersey
 - customVariables: []
+  description: Unirest
   labels:
   - konveyor.io/include=always
   links: []
@@ -71,6 +77,7 @@
     builtin.hasTags:
     - Unirest
 - customVariables: []
+  description: Hibernate
   labels:
   - konveyor.io/include=always
   links: []
@@ -83,6 +90,7 @@
     builtin.hasTags:
     - Hibernate
 - customVariables: []
+  description: Hibernate OGM
   labels:
   - konveyor.io/include=always
   links: []
@@ -95,6 +103,7 @@
     builtin.hasTags:
     - Hibernate OGM
 - customVariables: []
+  description: EclipseLink
   labels:
   - konveyor.io/include=always
   links: []
@@ -107,6 +116,7 @@
     builtin.hasTags:
     - EclipseLink
 - customVariables: []
+  description: Spring Batch
   labels:
   - konveyor.io/include=always
   links: []
@@ -119,6 +129,7 @@
     builtin.hasTags:
     - Spring Batch
 - customVariables: []
+  description: Spring
   labels:
   - konveyor.io/include=always
   links: []
@@ -131,6 +142,7 @@
     builtin.hasTags:
     - Spring
 - customVariables: []
+  description: AspectJ
   labels:
   - konveyor.io/include=always
   links: []
@@ -143,6 +155,7 @@
     builtin.hasTags:
     - AspectJ
 - customVariables: []
+  description: JBPM
   labels:
   - konveyor.io/include=always
   links: []
@@ -155,6 +168,7 @@
     builtin.hasTags:
     - JBPM
 - customVariables: []
+  description: iLog
   labels:
   - konveyor.io/include=always
   links: []
@@ -167,6 +181,7 @@
     builtin.hasTags:
     - iLog
 - customVariables: []
+  description: Ehcache
   labels:
   - konveyor.io/include=always
   links: []
@@ -179,6 +194,7 @@
     builtin.hasTags:
     - Ehcache
 - customVariables: []
+  description: Infinispan
   labels:
   - konveyor.io/include=always
   links: []
@@ -191,6 +207,7 @@
     builtin.hasTags:
     - Infinispan
 - customVariables: []
+  description: Drools
   labels:
   - konveyor.io/include=always
   links: []
@@ -203,6 +220,7 @@
     builtin.hasTags:
     - Drools
 - customVariables: []
+  description: Camunda
   labels:
   - konveyor.io/include=always
   links: []
@@ -215,6 +233,7 @@
     builtin.hasTags:
     - Camunda
 - customVariables: []
+  description: Pega
   labels:
   - konveyor.io/include=always
   links: []
@@ -227,6 +246,7 @@
     builtin.hasTags:
     - Pega
 - customVariables: []
+  description: Blaze
   labels:
   - konveyor.io/include=always
   links: []
@@ -239,6 +259,7 @@
     builtin.hasTags:
     - Blaze
 - customVariables: []
+  description: MRules
   labels:
   - konveyor.io/include=always
   links: []
@@ -251,6 +272,7 @@
     builtin.hasTags:
     - MRules
 - customVariables: []
+  description: Easy Rules
   labels:
   - konveyor.io/include=always
   links: []
@@ -263,6 +285,7 @@
     builtin.hasTags:
     - Easy Rules
 - customVariables: []
+  description: Coherence
   labels:
   - konveyor.io/include=always
   links: []
@@ -275,6 +298,7 @@
     builtin.hasTags:
     - Coherence
 - customVariables: []
+  description: Apache Commons JCS
   labels:
   - konveyor.io/include=always
   links: []
@@ -287,6 +311,7 @@
     builtin.hasTags:
     - Apache Commons JCS
 - customVariables: []
+  description: Dynacache
   labels:
   - konveyor.io/include=always
   links: []
@@ -299,6 +324,7 @@
     builtin.hasTags:
     - Dynacache
 - customVariables: []
+  description: Cache API
   labels:
   - konveyor.io/include=always
   links: []
@@ -311,6 +337,7 @@
     builtin.hasTags:
     - Cache API
 - customVariables: []
+  description: Hazelcast
   labels:
   - konveyor.io/include=always
   links: []
@@ -323,6 +350,7 @@
     builtin.hasTags:
     - Hazelcast
 - customVariables: []
+  description: Apache Ignite
   labels:
   - konveyor.io/include=always
   links: []
@@ -335,6 +363,7 @@
     builtin.hasTags:
     - Apache Ignite
 - customVariables: []
+  description: JBoss Cache
   labels:
   - konveyor.io/include=always
   links: []
@@ -347,6 +376,7 @@
     builtin.hasTags:
     - JBoss Cache
 - customVariables: []
+  description: JCache
   labels:
   - konveyor.io/include=always
   links: []
@@ -359,6 +389,7 @@
     builtin.hasTags:
     - JCache
 - customVariables: []
+  description: Memcached client
   labels:
   - konveyor.io/include=always
   links: []
@@ -371,6 +402,7 @@
     builtin.hasTags:
     - Memcached client
 - customVariables: []
+  description: Oscache
   labels:
   - konveyor.io/include=always
   links: []
@@ -383,6 +415,7 @@
     builtin.hasTags:
     - Oscache
 - customVariables: []
+  description: ShiftOne
   labels:
   - konveyor.io/include=always
   links: []
@@ -395,6 +428,7 @@
     builtin.hasTags:
     - ShiftOne
 - customVariables: []
+  description: SwarmCache
   labels:
   - konveyor.io/include=always
   links: []
@@ -407,6 +441,7 @@
     builtin.hasTags:
     - SwarmCache
 - customVariables: []
+  description: AOP Alliance
   labels:
   - konveyor.io/include=always
   links: []
@@ -419,6 +454,7 @@
     builtin.hasTags:
     - AOP Alliance
 - customVariables: []
+  description: SNMP4J
   labels:
   - konveyor.io/include=always
   links: []
@@ -431,6 +467,7 @@
     builtin.hasTags:
     - SNMP4J
 - customVariables: []
+  description: HTTP Client
   labels:
   - konveyor.io/include=always
   links: []
@@ -443,6 +480,7 @@
     builtin.hasTags:
     - HTTP Client
 - customVariables: []
+  description: Javax Inject
   labels:
   - konveyor.io/include=always
   links: []
@@ -455,6 +493,7 @@
     builtin.hasTags:
     - Javax Inject
 - customVariables: []
+  description: Google Guice
   labels:
   - konveyor.io/include=always
   links: []
@@ -467,6 +506,7 @@
     builtin.hasTags:
     - Google Guice
 - customVariables: []
+  description: Plexus Container
   labels:
   - konveyor.io/include=always
   links: []
@@ -479,6 +519,7 @@
     builtin.hasTags:
     - Plexus Container
 - customVariables: []
+  description: Weld
   labels:
   - konveyor.io/include=always
   links: []
@@ -491,6 +532,7 @@
     builtin.hasTags:
     - Weld
 - customVariables: []
+  description: Dagger
   labels:
   - konveyor.io/include=always
   links: []
@@ -503,6 +545,7 @@
     builtin.hasTags:
     - Dagger
 - customVariables: []
+  description: GIN
   labels:
   - konveyor.io/include=always
   links: []
@@ -515,6 +558,7 @@
     builtin.hasTags:
     - GIN
 - customVariables: []
+  description: PicoContainer
   labels:
   - konveyor.io/include=always
   links: []
@@ -527,6 +571,7 @@
     builtin.hasTags:
     - PicoContainer
 - customVariables: []
+  description: Scaldi
   labels:
   - konveyor.io/include=always
   links: []
@@ -539,6 +584,7 @@
     builtin.hasTags:
     - Scaldi
 - customVariables: []
+  description: Macros
   labels:
   - konveyor.io/include=always
   links: []
@@ -551,6 +597,7 @@
     builtin.hasTags:
     - Macros
 - customVariables: []
+  description: Injekt for Kotlin
   labels:
   - konveyor.io/include=always
   links: []
@@ -563,6 +610,7 @@
     builtin.hasTags:
     - Injekt for Kotlin
 - customVariables: []
+  description: Kodein
   labels:
   - konveyor.io/include=always
   links: []
@@ -575,6 +623,7 @@
     builtin.hasTags:
     - Kodein
 - customVariables: []
+  description: Peaberry
   labels:
   - konveyor.io/include=always
   links: []
@@ -587,6 +636,7 @@
     builtin.hasTags:
     - Peaberry
 - customVariables: []
+  description: Sticky Configured
   labels:
   - konveyor.io/include=always
   links: []
@@ -599,6 +649,7 @@
     builtin.hasTags:
     - Sticky Configured
 - customVariables: []
+  description: Ka DI
   labels:
   - konveyor.io/include=always
   links: []
@@ -611,6 +662,7 @@
     builtin.hasTags:
     - Ka DI
 - customVariables: []
+  description: Polyforms DI
   labels:
   - konveyor.io/include=always
   links: []
@@ -623,6 +675,7 @@
     builtin.hasTags:
     - Polyforms DI
 - customVariables: []
+  description: JayWire
   labels:
   - konveyor.io/include=always
   links: []
@@ -635,6 +688,7 @@
     builtin.hasTags:
     - JayWire
 - customVariables: []
+  description: Silk DI
   labels:
   - konveyor.io/include=always
   links: []
@@ -647,6 +701,7 @@
     builtin.hasTags:
     - Silk DI
 - customVariables: []
+  description: Grapht DI
   labels:
   - konveyor.io/include=always
   links: []
@@ -659,6 +714,7 @@
     builtin.hasTags:
     - Grapht DI
 - customVariables: []
+  description: Syringe
   labels:
   - konveyor.io/include=always
   links: []
@@ -671,6 +727,7 @@
     builtin.hasTags:
     - Syringe
 - customVariables: []
+  description: Cfg Engine
   labels:
   - konveyor.io/include=always
   links: []
@@ -683,6 +740,7 @@
     builtin.hasTags:
     - Cfg Engine
 - customVariables: []
+  description: BeanInject
   labels:
   - konveyor.io/include=always
   links: []
@@ -695,6 +753,7 @@
     builtin.hasTags:
     - BeanInject
 - customVariables: []
+  description: Tornado Inject
   labels:
   - konveyor.io/include=always
   links: []
@@ -707,6 +766,7 @@
     builtin.hasTags:
     - Tornado Inject
 - customVariables: []
+  description: Airframe
   labels:
   - konveyor.io/include=always
   links: []
@@ -719,6 +779,7 @@
     builtin.hasTags:
     - Airframe
 - customVariables: []
+  description: Winter
   labels:
   - konveyor.io/include=always
   links: []
@@ -731,6 +792,7 @@
     builtin.hasTags:
     - Winter
 - customVariables: []
+  description: KouInject
   labels:
   - konveyor.io/include=always
   links: []
@@ -743,6 +805,7 @@
     builtin.hasTags:
     - KouInject
 - customVariables: []
+  description: Iroh
   labels:
   - konveyor.io/include=always
   links: []
@@ -755,6 +818,7 @@
     builtin.hasTags:
     - Iroh
 - customVariables: []
+  description: Micro DI
   labels:
   - konveyor.io/include=always
   links: []
@@ -767,6 +831,7 @@
     builtin.hasTags:
     - Micro DI
 - customVariables: []
+  description: SubCut
   labels:
   - konveyor.io/include=always
   links: []
@@ -779,6 +844,7 @@
     builtin.hasTags:
     - SubCut
 - customVariables: []
+  description: Spring DI
   labels:
   - konveyor.io/include=always
   links: []
@@ -791,6 +857,7 @@
     builtin.hasTags:
     - Spring DI
 - customVariables: []
+  description: Micrometer
   labels:
   - konveyor.io/include=always
   links: []
@@ -803,6 +870,7 @@
     builtin.hasTags:
     - Micrometer
 - customVariables: []
+  description: Spring Web
   labels:
   - konveyor.io/include=always
   links: []
@@ -815,6 +883,7 @@
     builtin.hasTags:
     - Spring Web
 - customVariables: []
+  description: Spring Boot Cache
   labels:
   - konveyor.io/include=always
   links: []
@@ -827,6 +896,7 @@
     builtin.hasTags:
     - Spring Boot Cache
 - customVariables: []
+  description: Spring Shell
   labels:
   - konveyor.io/include=always
   links: []
@@ -839,6 +909,7 @@
     builtin.hasTags:
     - Spring Shell
 - customVariables: []
+  description: Spring Scheduled
   labels:
   - konveyor.io/include=always
   links: []
@@ -851,6 +922,7 @@
     builtin.hasTags:
     - Spring Scheduled
 - customVariables: []
+  description: Spring Cloud Function
   labels:
   - konveyor.io/include=always
   links: []
@@ -863,6 +935,7 @@
     builtin.hasTags:
     - Spring Cloud Function
 - customVariables: []
+  description: Quartz
   labels:
   - konveyor.io/include=always
   links: []
@@ -875,6 +948,7 @@
     builtin.hasTags:
     - Quartz
 - customVariables: []
+  description: Feign
   labels:
   - konveyor.io/include=always
   links: []
@@ -887,6 +961,7 @@
     builtin.hasTags:
     - Feign
 - customVariables: []
+  description: Zipkin
   labels:
   - konveyor.io/include=always
   links: []
@@ -899,6 +974,7 @@
     builtin.hasTags:
     - Zipkin
 - customVariables: []
+  description: Redis
   labels:
   - konveyor.io/include=always
   links: []
@@ -911,6 +987,7 @@
     builtin.hasTags:
     - Redis
 - customVariables: []
+  description: Eureka
   labels:
   - konveyor.io/include=always
   links: []

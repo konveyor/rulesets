@@ -1,0 +1,23 @@
+rulesPath: ../78-xml-glassfish.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/78-xml-glassfish
+- name: builtin
+  dataPath: ./data/78-xml-glassfish
+tests:
+# FIXME: fix https://github.com/konveyor/analyzer-lsp/issues/799
+#- ruleID: xml-glassfish-01000
+#  testCases:
+#  - name: tc-1
+#    hasTags:
+#    - Glassfish Web Descriptor
+- ruleID: xml-glassfish-02000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Glassfish EJB Descriptor
+- ruleID: xml-glassfish-03000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Glassfish Application EAR configuration file

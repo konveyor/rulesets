@@ -1,0 +1,18 @@
+- ruleID: angularjs-to-angular-directives-00000
+  description: .directive() should be replaced with @Component or @Directive
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: .directive(
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS directives should be converted to Angular components or directives\n\
+    \nReplace `.directive()` with `@Component or @Directive`.\n\nBefore:\n```\nangular.module('app').directive('myDirective',\
+    \ function() {\n return {\n restrict: 'E',\n template: '<div>{{data}}</div>',\n\
+    \ scope: {\n data: '='\n }\n };\n});\n```\n\nAfter:\n```\n@Component({\n selector:\
+    \ 'my-directive',\n template: '<div>{{data}}</div>'\n})\nexport class MyDirectiveComponent\
+    \ {\n @Input() data: string;\n}\n```"
+  customVariables: []

@@ -1,0 +1,27 @@
+rulesPath: ../patternfly-v5-to-patternfly-v6-empty-state.yaml
+providers:
+- name: builtin
+  dataPath: ./data/empty-state
+- name: nodejs
+  dataPath: ./data/empty-state
+tests:
+- ruleID: patternfly-v5-to-patternfly-v6-empty-state-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: patternfly-v5-to-patternfly-v6-empty-state-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: patternfly-v5-to-patternfly-v6-empty-state-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: patternfly-v5-to-patternfly-v6-empty-state-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

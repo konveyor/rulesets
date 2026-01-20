@@ -1,0 +1,19 @@
+rulesPath: ../170-log4j-removed.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/170-log4j-removed
+- name: builtin
+  dataPath: ./data/170-log4j-removed
+tests:
+- ruleID: log4j-removed-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Log4j usage without including `log4j.jar`
+- ruleID: log4j-removed-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 4
+      messageMatches: Log4j configuration without including `log4j.jar`

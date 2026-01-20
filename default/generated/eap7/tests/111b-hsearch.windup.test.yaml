@@ -1,0 +1,26 @@
+rulesPath: ../111-hsearch.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/111b-hsearch
+- name: builtin
+  dataPath: ./data/111b-hsearch
+tests:
+# FIXME: https://github.com/konveyor/analyzer-lsp/issues/761
+#- ruleID: hsearch-00110
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 2
+#      messageMatches: The .*IndexWriterSetting.*
+- ruleID: hsearch-00219
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The .*DirectoryHelper#getVerifiedIndexDir.*
+- ruleID: hsearch-00216
+  testCases:
+    - name: tc-1
+      hasIncidents:
+        exactly: 1
+        messageMatches: should be at most SearchIntegrator, preferably removed altogether.*

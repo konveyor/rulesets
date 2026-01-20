@@ -20,7 +20,10 @@
   when:
     or:
     - builtin.filecontent:
-        filePattern: log{back,4j}.*\.(xml|properties)
+        filePattern: log4j.*\.(xml|properties)
+        pattern: (?i)((Daily)?Rolling)?FileAppender|type\s*=\s*((Daily)?Rolling)?File|<\/((Daily)?Rolling)?File>
+    - builtin.filecontent:
+        filePattern: logback.*\.(xml|properties)
         pattern: (?i)((Daily)?Rolling)?FileAppender|type\s*=\s*((Daily)?Rolling)?File|<\/((Daily)?Rolling)?File>
     - java.referenced:
         location: IMPORT

@@ -1,0 +1,13 @@
+rulesPath: ../231-springboot-plugins-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/231-springboot-plugins-to-quarkus
+- name: builtin
+  dataPath: ./data/231-springboot-plugins-to-quarkus
+tests:
+- ruleID: springboot-plugins-to-quarkus-0000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Replace the `spring-boot-maven-plugin` dependency

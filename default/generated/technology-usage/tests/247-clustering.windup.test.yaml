@@ -1,0 +1,23 @@
+rulesPath: ../247-clustering.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/247-clustering
+- name: builtin
+  dataPath: ./data/247-clustering
+tests:
+- ruleID: clustering-00000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Web Session
+  - name: tc-2
+    hasTags:
+    - Clustering Web Session
+- ruleID: clustering-00001
+  testCases:
+  - name: tc-1
+    hasTags:
+    - EJB
+  - name: tc-2
+    hasTags:
+    - Clustering EJB

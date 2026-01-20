@@ -1,0 +1,18 @@
+rulesPath: ../66-java-rmi.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/66-java-rmi
+- name: builtin
+  dataPath: ./data/66-java-rmi
+tests:
+- ruleID: java-rmi-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Java RMI is a tightly coupled service. Tight coupling is
+- ruleID: java-rmi-00001
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Java Remote Method Invocation (RMI) API

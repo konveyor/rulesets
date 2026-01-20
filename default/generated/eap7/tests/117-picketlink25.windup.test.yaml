@@ -1,0 +1,14 @@
+rulesPath: ../117-picketlink25.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/117-picketlink25
+- name: builtin
+  dataPath: ./data/117-picketlink25
+tests:
+- ruleID: picketlink25-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: JBoss EAP 7.2 PicketLink STS issues tokens with a different
+        format

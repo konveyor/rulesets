@@ -141,8 +141,7 @@
         filepaths:
         - ejb-jar.xml
         namespaces: {}
-        xpath: //*[local-name()='local' or local-name()='local-home']/text()[matches(self::node(),
-          'com\.ibm\.websphere\.batch\..*')]
+        xpath: //*[local-name()='local' or local-name()='local-home']/text()[matches(self::node(),'com\.ibm\.websphere\.batch\..*')]
 - category: mandatory
   customVariables: []
   description: Web Services Policy Sets are unavailable in Liberty
@@ -407,10 +406,10 @@
     or:
     - java.referenced:
         location: METHOD_CALL
-        pattern: com.ibm.websphere.management.AdminService.getProcessName(*)
+        pattern: com.ibm.websphere.management.AdminService.getProcessName
     - java.referenced:
         location: METHOD_CALL
-        pattern: com.ibm.ejs.ras.RasHelper.getServerName(*)
+        pattern: com.ibm.ejs.ras.RasHelper.getServerName
     - java.referenced:
         location: METHOD_CALL
         pattern: com.ibm.websphere.runtime.ServerName.(getDisplayName|getFullName)*
@@ -439,6 +438,10 @@
     - java.referenced:
         location: ANNOTATION
         pattern: javax.xml.ws.BindingType
+        annotated:
+          elements:
+            - name: value
+              value: .*/soapjms(/.*)?
     - builtin.xml:
         filepaths:
         - .*\.(?i:wsdl)
@@ -1063,9 +1066,31 @@
     the application so that it can run on Liberty.</p> \n</div>"
   ruleID: WebSphereUnavailableAPIsWSSecurityHelper
   when:
-    java.referenced:
-      location: METHOD_CALL
-      pattern: com.ibm.websphere.security.WSSecurityHelper.(getFirstCaller|getFirstServer|getCallerList|getServerList|getPropagationAttributes|addPropagationAttribute|convertCookieStringToBytes|revokeSSOCookiesForPortlets)(*)
+    or:
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: com.ibm.websphere.security.WSSecurityHelper.getFirstCaller
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: com.ibm.websphere.security.WSSecurityHelper.getFirstServer
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: com.ibm.websphere.security.WSSecurityHelper.getCallerList
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: com.ibm.websphere.security.WSSecurityHelper.getServerList
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: com.ibm.websphere.security.WSSecurityHelper.getPropagationAttributes
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: com.ibm.websphere.security.WSSecurityHelper.addPropagationAttribute
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: com.ibm.websphere.security.WSSecurityHelper.convertCookieStringToBytes
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: com.ibm.websphere.security.WSSecurityHelper.revokeSSOCookiesForPortlets
 - category: mandatory
   customVariables: []
   description: The WebSphere Remote Request Dispatcher (RRD) SPIs are unavailable
@@ -1134,7 +1159,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: com.ibm.websphere.security.WSSecurityHelper.revokeSSOCookies(*)
+      pattern: com.ibm.websphere.security.WSSecurityHelper.revokeSSOCookies
 - category: mandatory
   customVariables: []
   description: Do not use the WSSecurityHelper getLTPACookieFromSSOToken method
@@ -1186,7 +1211,7 @@
   when:
     java.referenced:
       location: METHOD_CALL
-      pattern: com.ibm.websphere.security.WSSecurityHelper.getLTPACookieFromSSOToken(*)
+      pattern: com.ibm.websphere.security.WSSecurityHelper.getLTPACookieFromSSOToken
 - category: optional
   customVariables: []
   description: Some WebSphere z/OS Optimized Local Adapters APIs are unavailable
@@ -1249,6 +1274,10 @@
     - java.referenced:
         location: ANNOTATION
         pattern: javax.ejb.RemoteHome
+        annotated:
+          elements:
+            - name: value
+              value: com\.ibm\.websphere\.ola\.ExecuteHome
     - builtin.xml:
         filepaths:
         - ejb-jar.xml

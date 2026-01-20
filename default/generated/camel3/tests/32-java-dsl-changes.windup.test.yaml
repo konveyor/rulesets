@@ -1,0 +1,14 @@
+rulesPath: ../32-java-dsl-changes.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/32-java-dsl-changes
+- name: builtin
+  dataPath: ./data/32-java-dsl-changes
+tests:
+- ruleID: java-dsl-changes-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Hystrix circuit breaker has been generalized as circuit breaker.
+        Use `circuitBreaker().*`

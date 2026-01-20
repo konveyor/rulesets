@@ -1,0 +1,119 @@
+rulesPath: ../56-xml-39-changes.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/56-xml-39-changes
+- name: builtin
+  dataPath: ./data/56-xml-39-changes
+tests:
+- ruleID: xml-removed-camel39-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.apache.camel:camel-azure` artifact has been removed in
+        Apache Camel 3..*'
+- ruleID: xml-removed-camel39-00004
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.apache.camel:camel-aws-sdb` artifact has been removed
+        in Apache Camel 3..*'
+- ruleID: xml-removed-camel39-00005
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.apache.camel:camel-aws-translate` artifact has been removed
+        in Apache Camel 3..*'
+- ruleID: xml-removed-camel39-00006
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.apache.camel:camel-aws-sqs` artifact has been removed
+        in Apache Camel 3.9. Please use camel-aws2-sqs instea.*'
+- ruleID: xml-removed-camel39-00007
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.apache.camel:camel-aws-sns` artifact has been removed
+        in Apache Camel 3.9. Please use camel-aws2-sns instea.*'
+- ruleID: xml-removed-camel39-00008
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.apache.camel:camel-aws-msk` artifact has been removed
+        in Apache Camel 3..*'
+- ruleID: xml-removed-camel39-00009
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.apache.camel:camel-aws-mq` artifact has been removed in
+        Apache Camel 3..*'
+- ruleID: xml-removed-camel39-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.apache.camel:camel-aws-kms` artifact has been removed
+        in Apache Camel 3..*'
+- ruleID: xml-removed-camel39-00011
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.apache.camel:camel-aws-kinesis` artifact has been removed
+        in Apache Camel 3..*'
+- ruleID: xml-removed-camel39-00013
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.apache.camel:camel-aws-iam` artifact has been removed
+        in Apache Camel 3..*'
+- ruleID: xml-removed-camel39-00014
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.apache.camel:camel-aws-eks` artifact has been removed
+        in Apache Camel 3..*'
+- ruleID: xml-removed-camel39-00015
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.apache.camel:camel-aws-ecs` artifact has been removed
+        in Apache Camel 3..*'
+- ruleID: xml-removed-camel39-00017
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.apache.camel:camel-aws-ddb` artifact has been removed
+        in Apache Camel 3..*'
+- ruleID: xml-removed-camel39-00018
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.apache.camel:camel-aws-cw` artifact has been removed in
+        Apache Camel 3..*'
+- ruleID: xml-removed-camel39-00019
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.apache.camel:camel-aws-s3` artifact has been removed in
+        Apache Camel 3..*'
+- ruleID: xml-removed-camel39-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.apache.camel:camel-aws-swf` artifact has been removed
+        in Apache Camel 3..*'

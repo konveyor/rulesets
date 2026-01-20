@@ -1,0 +1,22 @@
+rulesPath: ../239-springboot-rhr.rhamt.yaml
+providers:
+- name: java
+  dataPath: ./data/239-springboot-rhr.rhamt.test.yaml
+- name: builtin
+  dataPath: ./data/239-springboot-rhr.rhamt.test.yaml
+tests:
+- ruleID: springboot-rhr-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Spring Boot has to be updated to Spring Boot 2.2.6 before being
+        able to be migrated
+# Version clash with other rule
+#- ruleID: springboot-rhr-00002
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 4
+#      messageMatches: Spring Boot has to be updated to a version supported by Red
+#        Hat Runtimes

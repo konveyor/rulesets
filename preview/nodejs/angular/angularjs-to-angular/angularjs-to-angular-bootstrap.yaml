@@ -1,0 +1,156 @@
+- ruleID: angularjs-to-angular-bootstrap-00000
+  description: angular.bootstrap should be replaced with platformBrowserDynamic().bootstrapModule
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: angular.bootstrap
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS manual bootstrap should be replaced with Angular platformBrowserDynamic\n\
+    \nReplace `angular.bootstrap` with `platformBrowserDynamic().bootstrapModule`.\n\
+    \nBefore:\n```\nangular.element(document).ready(function() {\n angular.bootstrap(document,\
+    \ ['app']);\n});\n```\n\nAfter:\n```\nplatformBrowserDynamic().bootstrapModule(AppModule);\n\
+    ```"
+  customVariables: []
+- ruleID: angularjs-to-angular-bootstrap-00010
+  description: angular.element(document).ready should be replaced with platformBrowserDynamic().bootstrapModule
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: angular.element(document).ready
+      filePattern: \.(j|t)sx?$
+  message: "AngularJS document ready handler should be replaced with Angular bootstrap\n\
+    \nReplace `angular.element(document).ready` with `platformBrowserDynamic().bootstrapModule`.\n\
+    \nBefore:\n```\nangular.element(document).ready(function() {\n // initialize app\n\
+    });\n```\n\nAfter:\n```\nplatformBrowserDynamic().bootstrapModule(AppModule);\n\
+    ```"
+  customVariables: []
+- ruleID: angularjs-to-angular-bootstrap-00020
+  description: angular.injector should be replaced with APP_INITIALIZER
+  effort: 8
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: angular.injector
+      filePattern: \.(j|t)sx?$
+  message: 'AngularJS manual injector for pre-bootstrap configuration should be replaced
+    with Angular APP_INITIALIZER
+
+
+    The `angular.injector()` pattern is often used to load configuration or perform
+    initialization before bootstrapping the application. In Angular, this should
+    be replaced with the `APP_INITIALIZER` token.
+
+
+    Replace `angular.injector()` with `APP_INITIALIZER`.
+
+
+    Before:
+
+    ```
+
+    angular.element(document).ready(function () {
+
+    var initInjector = angular.injector([''ng'']);
+
+    var $http = initInjector.get(''$http'');
+
+
+    $http.get(''config.json'').then(function (response) {
+
+    module.constant(''CONFIG'', response.data);
+
+    angular.bootstrap(document, [''app'']);
+
+    });
+
+    });
+
+    ```
+
+
+    After:
+
+    ```
+
+    // config.service.ts
+
+    @Injectable({ providedIn: ''root'' })
+
+    export class ConfigService {
+
+    private config: any;
+
+
+    constructor(private http: HttpClient) {}
+
+
+    loadConfig(): Observable<any> {
+
+    return this.http.get(''/config.json'').pipe(
+
+    tap(config => this.config = config)
+
+    );
+
+    }
+
+
+    getConfig() {
+
+    return this.config;
+
+    }
+
+    }
+
+
+    // app.module.ts
+
+    export function initializeApp(configService: ConfigService) {
+
+    return (): Observable<any> => configService.loadConfig();
+
+    }
+
+
+    @NgModule({
+
+    // ...
+
+    providers: [
+
+    {
+
+    provide: APP_INITIALIZER,
+
+    useFactory: initializeApp,
+
+    deps: [ConfigService],
+
+    multi: true
+
+    }
+
+    ]
+
+    })
+
+    export class AppModule { }
+
+    ```
+
+
+    Note: APP_INITIALIZER ensures the configuration is loaded before the application
+    starts, similar to the AngularJS pre-bootstrap pattern.'
+  customVariables: []

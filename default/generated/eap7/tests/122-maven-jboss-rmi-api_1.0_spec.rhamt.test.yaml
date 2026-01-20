@@ -1,0 +1,16 @@
+rulesPath: ../122-maven-jboss-rmi-api_1.0_spec.rhamt.yaml
+providers:
+- name: java
+  dataPath: ./data/122-maven-jboss-rmi-api_1.0_spec.rhamt.test.yaml
+- name: builtin
+  dataPath: ./data/122-maven-jboss-rmi-api_1.0_spec.rhamt.test.yaml
+tests:
+- ruleID: maven-jboss-rmi-api_1.0_spec-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: If you migrate your application to JBoss EAP 7.3 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        remove any dependency on unsupported artifact with groupId `org.jboss.spec.javax.rmi`,
+        and artifactId `jboss-rmi-api_1.0_spec`.

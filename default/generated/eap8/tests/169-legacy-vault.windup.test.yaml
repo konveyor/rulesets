@@ -1,0 +1,14 @@
+rulesPath: ../169-legacy-vault.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/169-legacy-vault
+- name: builtin
+  dataPath: ./data/169-legacy-vault
+tests:
+- ruleID: legacy-vault-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: Vault support has been removed in EAP8; migration to Elytron
+        credential store is mandatory.

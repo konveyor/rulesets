@@ -1,0 +1,108 @@
+- ruleID: angular-16-to-angular-17-angular-directives-00000
+  description: <div *ngIf="condition">Content</div> should be replaced with @if (condition)
+    { <div>Content</div> }
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-16
+  - konveyor.io/target=angular-17
+  when:
+    builtin.filecontent:
+      pattern: '*ngIf'
+      filePattern: \.(html)$
+  message: '*ngIf directive is replaced with @if in Angular 17
+
+
+    Replace `<div *ngIf="condition">Content</div>` with `@if (condition) { <div>Content</div>
+    }`.
+
+
+    Before:
+
+    ```
+
+    <div *ngIf="condition">Content</div>
+
+    ```
+
+
+    After:
+
+    ```
+
+    @if (condition) { <div>Content</div> }
+
+    ```'
+  customVariables: []
+- ruleID: angular-16-to-angular-17-angular-directives-00010
+  description: '<div [ngClass]="{ ''active'': isActive, ''disabled'': isDisabled }">
+    should be replaced with <div [class.active]="isActive" [class.disabled]="isDisabled">'
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-16
+  - konveyor.io/target=angular-17
+  when:
+    builtin.filecontent:
+      pattern: '[ngClass]'
+      filePattern: \.(html)$
+  message: '[ngClass] usage is replaced with class bindings in Angular 17
+
+
+    Replace `<div [ngClass]="{ ''active'': isActive, ''disabled'': isDisabled }">`
+    with `<div [class.active]="isActive" [class.disabled]="isDisabled">`.
+
+
+    Before:
+
+    ```
+
+    <div [ngClass]="{ ''active'': isActive, ''disabled'': isDisabled }">
+
+    ```
+
+
+    After:
+
+    ```
+
+    <div [class.active]="isActive" [class.disabled]="isDisabled">
+
+    ```'
+  customVariables: []
+- ruleID: angular-16-to-angular-17-angular-directives-00020
+  description: '<div [ngStyle]="{ ''color'': textColor, ''font-size'': fontSize }">
+    should be replaced with <div [style.color]="textColor" [style.font-size]="fontSize">'
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-16
+  - konveyor.io/target=angular-17
+  when:
+    builtin.filecontent:
+      pattern: '[ngStyle]'
+      filePattern: \.(html)$
+  message: '[ngStyle] usage is replaced with style bindings in Angular 17
+
+
+    Replace `<div [ngStyle]="{ ''color'': textColor, ''font-size'': fontSize }">`
+    with `<div [style.color]="textColor" [style.font-size]="fontSize">`.
+
+
+    Before:
+
+    ```
+
+    <div [ngStyle]="{ ''color'': textColor, ''font-size'': fontSize }">
+
+    ```
+
+
+    After:
+
+    ```
+
+    <div [style.color]="textColor" [style.font-size]="fontSize">
+
+    ```'
+  customVariables: []

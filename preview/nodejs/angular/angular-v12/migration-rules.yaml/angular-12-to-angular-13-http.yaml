@@ -1,0 +1,78 @@
+- ruleID: angular-12-to-angular-13-http-00000
+  description: imports  from '@angular/common/http'; should be replaced with imports
+    from '@angular/common';
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-12
+  - konveyor.io/target=angular-13
+  when:
+    builtin.filecontent:
+      pattern: import.*XhrFactory.*from.*@angular/common/http$
+      filePattern: \.(j|t)s$
+  message: 'XhrFactory has been moved from @angular/common/http to @angular/common
+
+
+    Replace `import {{{ component }}} from ''@angular/common/http''` with `import
+    {{{ component }}} from ''@angular/common''`.
+
+
+    Before:
+
+    ```
+
+    import { {{ component }} } from ''@angular/common/http'';
+
+    ```
+
+
+    After:
+
+    ```
+
+    import { {{ component }} } from ''@angular/common'';
+
+    ```'
+  customVariables:
+  - pattern: import {(?P<imports>[A-z,\s]+)}
+    name: component
+    nameOfCaptureGroup: imports
+    defaultValue: Component
+- ruleID: angular-12-to-angular-13-http-00010
+  description: HttpParams class extension should be replaced with HttpParams class
+    extension with updated method signatures
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-12
+  - konveyor.io/target=angular-13
+  when:
+    builtin.filecontent:
+      pattern: extends HttpParams
+      filePattern: \.(j|t)s$
+  message: 'The HttpParams class has updated method signatures that may require updates
+    in custom extensions
+
+
+    Replace `HttpParams class extension` with `HttpParams class extension with updated
+    method signatures`.
+
+
+    Before:
+
+    ```
+
+    class CustomParams extends HttpParams { /* old implementation */ }
+
+    ```
+
+
+    After:
+
+    ```
+
+    class CustomParams extends HttpParams { /* updated implementation with new signatures
+    */ }
+
+    ```'
+  customVariables: []

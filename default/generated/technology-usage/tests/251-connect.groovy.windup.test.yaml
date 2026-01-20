@@ -1,0 +1,129 @@
+rulesPath: ../251-connect.groovy.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/251-connect.groovy
+- name: builtin
+  dataPath: ./data/251-connect.groovy
+tests:
+- ruleID: connect-01400
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Resource Adapter
+  - name: tc-2
+    hasTags:
+    - Embedded Resource Adapter
+- ruleID: connect-01600
+  testCases:
+  - name: tc-1
+    hasTags:
+    - OpenWS
+  - name: tc-2
+    hasTags:
+    - Embedded library - OpenWS
+- ruleID: connect-01700
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WSDL
+  - name: tc-2
+    hasTags:
+    - Embedded library - WSDL
+- ruleID: connect-01800
+  testCases:
+  - name: tc-1
+    hasTags:
+    - RabbitMQ Client
+  - name: tc-2
+    hasTags:
+    - Embedded library - RabbitMQ Client
+- ruleID: connect-01900
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Spring Messaging Client
+  - name: tc-2
+    hasTags:
+    - Embedded library - Spring Messaging Client
+- ruleID: connect-02000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Camel Messaging Client
+  - name: tc-2
+    hasTags:
+    - Embedded library - Camel Messaging Client
+- ruleID: connect-02100
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Amazon SQS Client
+  - name: tc-2
+    hasTags:
+    - Embedded library - Amazon SQS Client
+- ruleID: connect-02200
+  testCases:
+  - name: tc-1
+    hasTags:
+    - HornetQ Client
+  - name: tc-2
+    hasTags:
+    - Embedded library - HornetQ Client
+- ruleID: connect-02300
+  testCases:
+  - name: tc-1
+    hasTags:
+    - AMQP Client
+  - name: tc-2
+    hasTags:
+    - Embedded library - AMQP Client
+- ruleID: connect-02400
+  testCases:
+  - name: tc-1
+    hasTags:
+    - RocketMQ Client
+  - name: tc-2
+    hasTags:
+    - Embedded library - RocketMQ Client
+- ruleID: connect-02500
+  testCases:
+  - name: tc-1
+    hasTags:
+    - 0MQ Client
+  - name: tc-2
+    hasTags:
+    - Embedded library - 0MQ Client
+- ruleID: connect-02700
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Zbus Client
+  - name: tc-2
+    hasTags:
+    - Embedded library - Zbus Client
+- ruleID: connect-02800
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Qpid Client
+  - name: tc-2
+    hasTags:
+    - Embedded library - Qpid Client
+- ruleID: connect-02900
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Kafka Client
+  - name: tc-2
+    hasTags:
+    - Embedded library - Kafka Client
+- ruleID: connect-01500
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Embedded library - ActiveMQ
+- ruleID: connect-02600
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Embedded library - JBossMQ Client

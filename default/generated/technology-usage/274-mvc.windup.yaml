@@ -45,8 +45,8 @@
   - Embedded framework - Spring MVC
   when:
     java.referenced:
-      location: ANNOTATION
-      pattern: org.springframework.web.servlet.mvc.Controller
+      location: IMPORT
+      pattern: org.springframework.web.servlet.mvc.*
 - customVariables: []
   description: Embedded framework - Spring MVC
   labels:

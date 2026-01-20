@@ -1,0 +1,21 @@
+rulesPath: ../40-xml-313-changes.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/40-xml-313-changes
+- name: builtin
+  dataPath: ./data/40-xml-313-changes
+tests:
+- ruleID: xml-removed-camel313-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.apache.camel.springboot:camel-hazelzcast-starter` starter
+        no longer has customer auto configuration options in Apache Camel 3.1.*'
+- ruleID: xml-removed-camel313-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: This component has been refactored to be similar to other Camel
+        component.*

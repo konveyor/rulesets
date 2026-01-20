@@ -23,5 +23,7 @@
         pattern: java.applet*
     - java.referenced:
         pattern: java.beans.AppletInitializer
+        location: IMPLEMENTS_TYPE
     - java.referenced:
         pattern: javax.swing.JApplet
+        location: TYPE

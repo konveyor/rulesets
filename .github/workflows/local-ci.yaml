@@ -1,0 +1,117 @@
+name: Local CI
+
+on: ["push", "pull_request"]
+permissions:
+  pull-requests: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Java and Maven
+        uses: s4u/setup-maven-action@v1.18.0
+        with:
+          java-version: 21
+          java-distribution: temurin
+          maven-version: 3.9.0
+
+      - name: Run rule tests
+        id: kantra-test
+        run: |
+          #### Block_Start ####
+          # This block cleans up old java processes to avoid leaking memory, this will be removed when we fix the memory leak in the java provider.
+          cleanup_old_processes() {
+            local pattern="$1"
+            local interval="${2:-30}"
+            
+            while true; do
+              # Get PIDs of processes matching the pattern (pgrep -f matches full command line)
+              pids=$(pgrep -f "$pattern" 2>/dev/null | grep -v $$ || true)
+              if [[ -n "$pids" ]]; then                
+                # Sort by elapsed time descending (oldest first has largest elapsed time)
+                sorted_pids=$(echo "$pids" | xargs -I{} ps -p {} -o pid=,etimes= 2>/dev/null | sort -k2 -rn | awk '{print $1}')
+                count=$(echo "$sorted_pids" | grep -c . 2>/dev/null || echo 0)
+                
+                if [[ $count -gt 2 ]]; then
+                  # Kill all but the last 2 (newest have smallest elapsed time)
+                  to_kill=$(echo "$sorted_pids" | head -n -2)
+                  echo "[cleanup] Found $count processes matching '$pattern', killing $((count - 3)) oldest: $(echo $to_kill | tr '\n' ' ')"
+                  echo "$to_kill" | xargs -r kill -9 2>/dev/null || true
+                fi
+              fi
+              sleep "$interval"
+            done
+          }
+
+          # Start background cleanup for JDT Language Server processes started by the Java provider
+          cleanup_old_processes "org.eclipse.jdt.ls" 30 &
+          CLEANUP_PID=$!
+          
+          # Periodic jstack thread dumps for debugging hangs
+          jstack_monitor() {
+            local interval="${1:-60}"
+            while true; do
+              sleep "$interval"
+              local java_pid=$(pgrep -f 'org.eclipse.jdt.ls' 2>/dev/null | head -1)
+              if [[ -n "$java_pid" ]] && command -v jstack &>/dev/null; then
+                echo "[jstack @ $(date)] PID: $java_pid"
+                jstack "$java_pid" 2>/dev/null | grep -A 2 "java.lang.Thread.State:" | head -30 || true
+              fi
+            done
+          }
+          # jstack_monitor 60 &
+          #### Block_End ####
+          
+          mkdir -p ~/.config/.kantra
+          mv ./default/generated ~/.config/.kantra/rulesets
+          cd ~/.config/.kantra
+          ID=$(podman create --name kantra-download quay.io/konveyor/kantra:latest)
+          podman cp ${ID}:/usr/local/bin/kantra .
+          podman cp ${ID}:/usr/local/etc/maven.default.index .
+          podman cp ${ID}:/usr/bin/fernflower.jar .
+          podman cp ${ID}:/jdtls .
+          mkdir static-report
+          podman rm kantra-download
+
+          JVM_MAX_MEM=3072m RUN_LOCAL=1 ./kantra test ./rulesets/ --log-level 50 | tee output.log || true
+
+          tail -n5 output.log > message.md
+          msg=$(grep -E '.*Rules Summary:' message.md -A1)
+          tests_pass_rate=$(grep -E '.*Rules Summary:' message.md | sed -E 's| *Rules Summary: *(.*)|\1|' | sed -E 's|.*?:||')
+          tcs_pass_rate=$(grep -E '.*Test Cases Summary:' message.md | sed -E 's| *Test Cases Summary: *(.*)|\1|' | sed -E 's|.*?:||')
+          
+          tcs_percent=$(echo "${tcs_pass_rate}" | grep -oE '\([0-9.]+%\)' | tr -d '()%')
+          
+          echo 'msg<<EOF' >> $GITHUB_OUTPUT
+          echo ${msg} >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
+
+          echo 'tcs_pass_rate<<EOF' >> $GITHUB_OUTPUT
+          echo ${tcs_pass_rate} >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
+
+          echo 'tests_pass_rate<<EOF' >> $GITHUB_OUTPUT
+          echo ${tests_pass_rate} >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
+
+          # Fail only if test case pass rate is below 99%
+          if (( $(echo "${tcs_percent:-0} < 99" | bc -l) )); then
+            echo "Test case pass rate ${tcs_percent}% is below 99% threshold"
+            exit 1
+          else
+            echo "Test case pass rate ${tcs_percent}% meets 99% threshold"
+            exit 0
+          fi
+
+      - name: Upload matching folders
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rules-test-folders
+          path: /tmp/rules-test-*
+          compression-level: 9

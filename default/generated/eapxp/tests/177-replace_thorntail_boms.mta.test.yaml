@@ -1,0 +1,25 @@
+rulesPath: ../177-replace_thorntail_boms.mta.yaml
+providers:
+- name: java
+  dataPath: ./data/177-replace_thorntail_boms.mta.test.yaml
+- name: builtin
+  dataPath: ./data/177-replace_thorntail_boms.mta.test.yaml
+tests:
+- ruleID: replace_thorntail_boms-1
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail BOM `io.thorntail:bom` with JBoss EAP XP MicroProfile BOM
+        and/or JBoss EAP Jakarta EE BOM.
+- ruleID: replace_thorntail_boms-2
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: If you migrate your application to JBoss EAP XP 2.0 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        replace Thorntail BOM `io.thorntail:bom-certified` with JBoss EAP XP MicroProfile
+        BOM and/or JBoss EAP Jakarta EE BOM.

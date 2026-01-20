@@ -1,0 +1,17 @@
+rulesPath: ../237-springboot-webmvc-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/237-springboot-webmvc-to-quarkus
+- name: builtin
+  dataPath: ./data/237-springboot-webmvc-to-quarkus
+tests:
+- ruleID: springboot-webmvc-to-quarkus-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+- ruleID: springboot-webmvc-to-quarkus-01000
+  testCases:
+    - name: tc-1
+      hasIncidents:
+        exactly: 2

@@ -12,7 +12,6 @@
     JDK 21 for removal in a future release.
   ruleID: deprecation-00030
   when:
-    or:
-    - java.referenced:
-        location: METHOD_CALL
-        pattern: javax.swing.plaf.synth.SynthLookAndFeel.load(java.net.URL)
+    java.referenced:
+      location: METHOD_CALL
+      pattern: javax.swing.plaf.synth.SynthLookAndFeel.load(java.net.URL)

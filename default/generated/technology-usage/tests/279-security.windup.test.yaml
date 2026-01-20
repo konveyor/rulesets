@@ -1,0 +1,207 @@
+rulesPath: ../279-security.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/279-security
+- name: builtin
+  dataPath: ./data/279-security
+tests:
+- ruleID: security-01100
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Spring Security
+  - name: tc-2
+    hasTags:
+    - Embedded framework - Spring Security
+  - name: tc-3
+    hasTags:
+    - Embedded framework - Spring Security
+- ruleID: security-01200
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Shiro
+  - name: tc-2
+    hasTags:
+    - Embedded library - Apache Shiro
+- ruleID: security-01300
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Hdiv
+  - name: tc-2
+    hasTags:
+    - Embedded library - Hdiv
+- ruleID: security-01400
+  testCases:
+  - name: tc-1
+    hasTags:
+    - OACC
+  - name: tc-2
+    hasTags:
+    - Embedded library - OACC
+- ruleID: security-01500
+  testCases:
+  - name: tc-1
+    hasTags:
+    - PicketLink
+  - name: tc-2
+    hasTags:
+    - Embedded library - PicketLink
+- ruleID: security-01600
+  testCases:
+  - name: tc-1
+    hasTags:
+    - PicketBox
+  - name: tc-2
+    hasTags:
+    - Embedded library - PicketBox
+- ruleID: security-01700
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Keyczar
+  - name: tc-2
+    hasTags:
+    - Embedded library - Keyczar
+- ruleID: security-01800
+  testCases:
+  - name: tc-1
+    hasTags:
+    - XACML
+  - name: tc-2
+    hasTags:
+    - Embedded library - XACML
+- ruleID: security-02000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Bouncy Castle
+  - name: tc-2
+    hasTags:
+    - Embedded library - Bouncy Castle
+- ruleID: security-02100
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Jasypt
+  - name: tc-2
+    hasTags:
+    - Embedded library - Jasypt
+- ruleID: security-02200
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Santuario
+  - name: tc-2
+    hasTags:
+    - Embedded library - Apache Santuario
+- ruleID: security-02300
+  testCases:
+  - name: tc-1
+    hasTags:
+    - SSL
+  - name: tc-2
+    hasTags:
+    - Embedded library - SSL
+- ruleID: security-02400
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Vlad
+  - name: tc-2
+    hasTags:
+    - Embedded library - Vlad
+- ruleID: security-02500
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Apache Commons Validator
+  - name: tc-2
+    hasTags:
+    - Embedded library - Apache Commons Validator
+- ruleID: security-02600
+  testCases:
+  - name: tc-1
+    hasTags:
+    - OWASP ESAPI
+  - name: tc-2
+    hasTags:
+    - Embedded library - OWASP ESAPI
+- ruleID: security-02700
+  testCases:
+  - name: tc-1
+    hasTags:
+    - WSS4J
+  - name: tc-2
+    hasTags:
+    - Embedded library - WSS4J
+- ruleID: security-02800
+  testCases:
+  - name: tc-1
+    hasTags:
+    - OpenSAML
+  - name: tc-2
+    hasTags:
+    - Embedded library - OpenSAML
+- ruleID: security-02900
+  testCases:
+  - name: tc-1
+    hasTags:
+    - OTR4J
+  - name: tc-2
+    hasTags:
+    - Embedded library - OTR4J
+- ruleID: security-03000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - OWASP CSRF Guard
+  - name: tc-2
+    hasTags:
+    - Embedded library - OWASP CSRF Guard
+- ruleID: security-03100
+  testCases:
+  - name: tc-1
+    hasTags:
+    - OAUTH
+  - name: tc-2
+    hasTags:
+    - Embedded library - OAUTH
+- ruleID: security-03200
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Acegi Security
+  - name: tc-2
+    hasTags:
+    - Embedded library - Acegi Security
+- ruleID: security-03300
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JSecurity
+  - name: tc-2
+    hasTags:
+    - Embedded library - JSecurity
+- ruleID: security-03400
+  testCases:
+  - name: tc-1
+    hasTags:
+    - AcrIS Security
+  - name: tc-2
+    hasTags:
+    - Embedded library - AcrIS Security
+- ruleID: security-03500
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Trunk JGuard
+  - name: tc-2
+    hasTags:
+    - Embedded library - Trunk JGuard
+- ruleID: security-01900
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Embedded library - SAML

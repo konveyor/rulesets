@@ -1,0 +1,350 @@
+rulesPath: ../111-hsearch.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/111-hsearch
+- name: builtin
+  dataPath: ./data/111-hsearch
+tests:
+- ruleID: hsearch-00000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Hibernate Search - API usage
+- ruleID: hsearch-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The class .*org.hibernate.search.impl.SearchMappingBuilder.*
+- ruleID: hsearch-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The class .*org.hibernate.search.Environment.*
+- ruleID: hsearch-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The class .*org.hibernate.search.FullTextFilter.*
+- ruleID: hsearch-00004
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The class .*org.hibernate.search.indexes.impl.DirectoryBasedIndexManager.*
+- ruleID: hsearch-00005
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The class .*org.hibernate.search.infinispan.impl.InfinispanDirectoryProvider.*
+- ruleID: hsearch-00006
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The class .*org.hibernate.search.ProjectionConstants.*
+- ruleID: hsearch-00007
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: The class .*org.hibernate.search.SearchException.*
+- ruleID: hsearch-00008
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The class .*org.hibernate.search.spi.MassIndexerFactory.*
+- ruleID: hsearch-00009
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The class .*org.hibernate.search.spi.SearchFactoryBuilder.*
+- ruleID: hsearch-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Do not use .*org.hibernate.search.spi.SearchFactoryIntegrator.*
+- ruleID: hsearch-00011
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: The class .*org.hibernate.search.Version.*
+- ruleID: hsearch-00100
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: Use .*NumericFieldMapping.*
+- ruleID: hsearch-00101
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: .*org.hibernate.search.store.IndexShardingStrategy.*
+- ruleID: hsearch-00103
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*org.hibernate.search.store.Workspace.*
+- ruleID: hsearch-00104
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 3
+      messageMatches: Custom filter keys are deprecated and are scheduled for removal
+        in Hibernate Search 6..*
+- ruleID: hsearch-00106
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 3
+      messageMatches: Custom filter keys .*StandardFilterKey.*
+- ruleID: hsearch-00107
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 4
+      messageMatches: Remove the .*@FieldCacheType.*
+- ruleID: hsearch-00108
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Remove the .*@CacheFromIndex.*
+- ruleID: hsearch-00109
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Custom filter cache keys are a deprecated feature and are scheduled
+        to be removed in Hibernate Search 6.*
+- ruleID: hsearch-00111
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The enum value .*SpatialMode.GRID.*
+- ruleID: hsearch-00112
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The class .*FullTextIndexEventListener.*
+- ruleID: hsearch-00113
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The JMS backend was depending to Hibernate ORM. This dependency
+        was removed.*
+- ruleID: hsearch-00114
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The .*org.hibernate.search.spi.ServiceProvider.*
+- ruleID: hsearch-00115
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*When using an .*@IndexedEmbedded.*
+- ruleID: hsearch-00116
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 17
+      messageMatches: Numbers and dates are now indexed as numeric fields by default.*
+- ruleID: hsearch-00117
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: When using .*?@Field\(indexNullAs=\).*
+- ruleID: hsearch-00118
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: Significant improvements were made to the faceting engine.*
+- ruleID: hsearch-00200
+  testCases:
+  - name: tc-1
+    hasInsights:
+      exactly: 1
+      messageMatches: Maven artifact org.hibernate:hibernate-search-analyzers was
+        removed from Hibernate Search 5.*
+- ruleID: hsearch-00201
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The hibernate-search-analyzers module was removed.*
+- ruleID: hsearch-00210
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The Lucene SortField API requires the following application
+        code change.*
+- ruleID: hsearch-00211
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Method .*ContainedInMapping#numericField.*
+- ruleID: hsearch-00213
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Don't use .*FullTextSharedSessionBuilder#autoclose.*
+- ruleID: hsearch-00214
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: This will be removed with no replacement.
+  - name: tc-2
+    hasIncidents:
+      exactly: 1
+      messageMatches: This will be removed with no replacement.
+- ruleID: hsearch-00217
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The .*DocumentBuilderIndexedEntity#getFieldCacheOption.*
+- ruleID: hsearch-00218
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The .*BuildContext#getIndexingStrategy.*
+- ruleID: hsearch-00220
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Method .*org.hibernate.search.cfg.EntityDescriptor.setCacheInMemory.*
+- ruleID: hsearch-00221
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Method .*org.hibernate.search.MassIndexer.threadsForSubsequentFetching.*
+- ruleID: hsearch-00222
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Use .*FuzzyContext.withEditDistanceUpTo.*
+- ruleID: hsearch-00224
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Lucene's core .*?org.apache.lucene.queryParser.ParseException.*
+  - name: tc-2
+    hasIncidents:
+      exactly: 4
+  - name: tc-3
+    hasIncidents:
+      exactly: 1
+      messageMatches: Lucene's core .*?org.apache.lucene.queryParser.QueryParser.*
+- ruleID: hsearch-00226
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Lucene's core .*org.apache.lucene.queryParser.QueryParserTokenMgrError.*
+- ruleID: hsearch-00227
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 3
+      messageMatches: .*org.apache.lucene.analysis.* to .*org.apache.lucene.analysis.core.*
+- ruleID: hsearch-00228
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*org.apache.lucene.analysis.PorterStemFilter.*
+- ruleID: hsearch-00229
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*org.apache.lucene.analysis.miscellaneous.*
+- ruleID: hsearch-00230
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*org.apache.lucene.analysis.TeeSinkTokenFilter.*
+- ruleID: hsearch-00231
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*org.apache.lucene.analysis.charfilter.*
+- ruleID: hsearch-00232
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*org.apache.lucene.analysis.util..*
+  - name: tc-2
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*org.apache.lucene.analysis.util.*
+- ruleID: hsearch-00233
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*org.apache.lucene.analysis.ReusableAnalyzerBase.*
+- ruleID: hsearch-00234
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*org.apache.lucene.util.CharacterUtils.*
+- ruleID: hsearch-00235
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*org.apache.lucene.queries.*
+- ruleID: hsearch-00236
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*org.apache.lucene.search.function.NumericIndexDocValueSource.*
+- ruleID: hsearch-00237
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*org.apache.lucene.search.function.ValueSource.*
+- ruleID: hsearch-00238
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*org.apache.lucene.queries.function.valuesources.*
+- ruleID: hsearch-00240
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: .*threadsForIndexWriter.*

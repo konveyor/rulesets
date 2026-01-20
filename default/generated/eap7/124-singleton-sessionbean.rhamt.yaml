@@ -21,8 +21,8 @@
       java.referenced:
         location: ANNOTATION
         pattern: javax.ejb.Singleton
-    - as: sessionbean
-      from: singleton
+    - from: singleton
       java.referenced:
         location: IMPLEMENTS_TYPE
         pattern: javax.ejb.SessionBean
+        filepaths: "{{singleton.Filepaths}}"

@@ -1,0 +1,17 @@
+rulesPath: ../171-login-modules.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/171-login-modules
+- name: builtin
+  dataPath: ./data/171-login-modules
+tests:
+- ruleID: login-modules-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 4
+      messageMatches: The legacy custom login modules have been removed. Applications
+        must be changed either use some of the already existing elytron security realms,
+        or implement a custom security realm or migrate to the elytron's jaas realm.
+        The jaas-realm can be used only if the custom login module does not use or
+        depend on Picketbox.

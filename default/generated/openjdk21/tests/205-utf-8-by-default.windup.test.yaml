@@ -1,0 +1,31 @@
+rulesPath: ../205-utf-8-by-default.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/205-utf-8-by-default
+- name: builtin
+  dataPath: ./data/205-utf-8-by-default
+tests:
+- ruleID: utf-8-by-default-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 5
+      messageMatches: If not supplied, the `java.io.
+- ruleID: utf-8-by-default-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: If not supplied, the `java.util.
+- ruleID: utf-8-by-default-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: If not supplied, the `java.net.URLEncoder.encode`
+- ruleID: utf-8-by-default-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: If not supplied, the `java.net.URLDecoder.decode`

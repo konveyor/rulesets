@@ -1,0 +1,71 @@
+- ruleID: astro-4-to-astro-5-markdown-00000
+  description: Markdown/MDX pages require explicit charset meta tag in layout
+  effort: 3
+  category: mandatory
+  labels:
+  - konveyor.io/source=astro-v4
+  - konveyor.io/target=astro-v5
+  when:
+    and:
+    - builtin.file:
+        pattern: .*\.(md|mdx|astro)
+    - as: html 
+      builtin.filecontent:
+        pattern: <html
+    - not: true
+      from: html
+      builtin.filecontent:
+        pattern: charset
+      
+
+  message: 'Markdown and MDX pages no longer automatically add `charset=utf-8` to the meta tag in Astro 5.
+
+
+    Ensure your layout component includes the charset meta tag explicitly.
+
+
+    Before (Astro 4 - automatic):
+
+    Markdown files automatically included charset without layout specification.
+
+
+    After (Astro 5 - explicit in layout):
+
+    Layout file (e.g., src/layouts/MarkdownLayout.astro):
+
+    ```astro
+
+    ---
+    const { frontmatter } = Astro.props;
+    ---
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <title>{frontmatter.title}</title>
+        <slot name="head" />
+      </head>
+      <body>
+        <slot />
+      </body>
+    </html>
+
+    ```
+
+
+    Markdown frontmatter:
+
+    ```markdown
+
+    ---
+    layout: ../layouts/MarkdownLayout.astro
+    title: My Page
+    ---
+
+    ```'
+  links:
+  - url: https://docs.astro.build/en/guides/upgrade-to/v5/
+    title: Astro v5 Migration Guide
+  - url: https://docs.astro.build/en/guides/upgrade-to/v5/#changed-automatic-charsetutf-8-behavior-for-markdown-and-mdx-pages
+    title: Automatic charset behavior change
+  customVariables: []
+  

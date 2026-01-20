@@ -83,7 +83,7 @@
   tag: ["EJB XML"]
   when:
     builtin.xml:
-      xpath: "/(jboss:ejb-jar or ejb-jar)"
+      xpath: "/jboss:ejb-jar | /ejb-jar"
 - ruleID: windup-discover-spring-configuration
   description: "Spring XML Configuration"
   tag: ["Spring XML"]

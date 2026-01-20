@@ -1,0 +1,14 @@
+rulesPath: ../193-applet-api-deprecation.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/193-applet-api-deprecation
+- name: builtin
+  dataPath: ./data/193-applet-api-deprecation
+tests:
+- ruleID: applet-api-deprecation-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 10
+      messageMatches: The Java Applet API has been deprecated and will be removed
+        in future release.*

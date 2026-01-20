@@ -1,0 +1,12 @@
+rulesPath: ../eap_channel_manifest_8_0_upgrade.mta.yaml
+providers:
+  - name: java
+    dataPath: ./data/eap_channel_manifest_8_0_upgrade
+  - name: builtin
+    dataPath: ./data/eap_channel_manifest_8_0_upgrade
+tests:
+  - ruleID: eap_channel_manifest_8_0_upgrade-00001
+    testCases:
+      - name: eap_channel_manifest_8_0_upgrade-1
+        hasIncidents:
+          exactly: 1

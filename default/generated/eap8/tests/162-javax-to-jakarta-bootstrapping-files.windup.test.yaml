@@ -1,0 +1,13 @@
+rulesPath: ../162-javax-to-jakarta-bootstrapping-files.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/162-javax-to-jakarta-bootstrapping-files
+- name: builtin
+  dataPath: ./data/162-javax-to-jakarta-bootstrapping-files
+tests:
+- ruleID: javax-to-jakarta-bootstrapping-files-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Replace the bootstrapping file name prefix `javax.` with `jakarta.`

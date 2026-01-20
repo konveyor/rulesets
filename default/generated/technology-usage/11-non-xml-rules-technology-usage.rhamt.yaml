@@ -12,6 +12,7 @@
     builtin.hasTags:
     - EJB XML
 - customVariables: []
+  description: Hibernate Cfg
   labels:
   - konveyor.io/include=always
   links: []
@@ -24,6 +25,7 @@
     builtin.hasTags:
     - Hibernate Cfg
 - customVariables: []
+  description: Hibernate Mapping
   labels:
   - konveyor.io/include=always
   links: []
@@ -36,6 +38,7 @@
     builtin.hasTags:
     - Hibernate Mapping
 - customVariables: []
+  description: JBoss EJB XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -48,6 +51,7 @@
     builtin.hasTags:
     - JBoss EJB XML
 - customVariables: []
+  description: JBoss Web XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -60,6 +64,7 @@
     builtin.hasTags:
     - JBoss Web XML
 - customVariables: []
+  description: JDBC
   labels:
   - konveyor.io/include=always
   links: []
@@ -85,6 +90,7 @@
     builtin.hasTags:
     - JPA XML
 - customVariables: []
+  description: Orion EJB XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -97,6 +103,7 @@
     builtin.hasTags:
     - Orion EJB XML
 - customVariables: []
+  description: Orion Web XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -109,6 +116,7 @@
     builtin.hasTags:
     - Orion Web XML
 - customVariables: []
+  description: Properties
   labels:
   - konveyor.io/include=always
   links: []
@@ -121,6 +129,7 @@
     builtin.hasTags:
     - Properties
 - customVariables: []
+  description: Seam
   labels:
   - konveyor.io/include=always
   links: []
@@ -133,6 +142,7 @@
     builtin.hasTags:
     - Seam
 - customVariables: []
+  description: WebLogic Web XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -145,6 +155,7 @@
     builtin.hasTags:
     - WebLogic Web XML
 - customVariables: []
+  description: WebSphere EJB
   labels:
   - konveyor.io/include=always
   links: []
@@ -157,6 +168,7 @@
     builtin.hasTags:
     - WebSphere EJB
 - customVariables: []
+  description: WebSphere EJB Ext
   labels:
   - konveyor.io/include=always
   links: []
@@ -169,6 +181,7 @@
     builtin.hasTags:
     - WebSphere EJB Ext
 - customVariables: []
+  description: WebSphere Web XML
   labels:
   - konveyor.io/include=always
   links: []
@@ -181,6 +194,7 @@
     builtin.hasTags:
     - WebSphere Web XML
 - customVariables: []
+  description: WebSphere WS Binding
   labels:
   - konveyor.io/include=always
   links: []
@@ -193,6 +207,7 @@
     builtin.hasTags:
     - WebSphere WS Binding
 - customVariables: []
+  description: WebSphere WS Extension
   labels:
   - konveyor.io/include=always
   links: []

@@ -1,0 +1,125 @@
+rulesPath: ../30-component-changes.groovy.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/30-component-changes.groovy
+- name: builtin
+  dataPath: ./data/30-component-changes.groovy
+tests: []
+# FIXME: investigate these errors
+#- ruleID: component-changes-00001
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 2
+#      messageMatches: Authorization token was moved from uri-path '*.
+#- ruleID: component-changes-00002
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 1
+#      messageMatches: It's mandatory to specify key/passphrase for `ShiroSecurityPolicy`
+#- ruleID: component-changes-00003
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 3
+#      messageMatches: '`.*` has been removed from the mock component''s assertion
+#        api.'
+#- ruleID: component-changes-00004
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 2
+#      messageMatches: '`@OutHeaders` annotation has been removed. Use `@Headers*`'
+#- ruleID: component-changes-00005
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 6
+#      messageMatches: '`.*` has been removed from simple language'
+#- ruleID: component-changes-00006
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+##      exactly: 6
+#      exactly: 0
+#      messageMatches: '`.*` has been removed from simple language'
+#- ruleID: component-changes-00007
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 6
+#      messageMatches: '`.*` has been removed from simple language'
+#- ruleID: component-changes-00008
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 1
+#      messageMatches: '`property` function has been removed from simple language.
+#        Use `exchangeProperty.*`'
+#- ruleID: component-changes-00009
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 1
+#      messageMatches: terser` language renamed to `hl7terser`
+#- ruleID: component-changes-00010
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 2
+#      messageMatches: The default encryption algorithm is mandatory changed from `DES/CBC/PKCS5Padding.*`
+#- ruleID: component-changes-00011
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 3
+#      messageMatches: The default encryption key has been removed, so it is now mandatory
+#        to suppl.*
+#- ruleID: component-changes-00012
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 3
+#      messageMatches: Consumer.options with `consumer.*`
+#- ruleID: component-changes-00013
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 2
+#      messageMatches: org.apache.camel.processor.interceptor.Tracer` class has been
+#        removed.*
+#- ruleID: component-changes-00014
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 1
+#      messageMatches: '`org.apache.camel.processor.interceptor.DefaultTraceFormatter`
+#        class has been removed.*'
+#- ruleID: component-changes-00015
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 1
+#      messageMatches: '`BacklogTracer` is no longer enabled by default in JMX.*'
+#- ruleID: component-changes-00016
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 5
+#      messageMatches: The default signature algorithm in the XMLSecurity component
+#        has changed `SHA1WithDSA.*`
+#- ruleID: component-changes-00017
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 3
+#      messageMatches: The default signature algorithm in the Crypto component has
+#        changed from `SHA1WithDSA.*`
+#- ruleID: component-changes-00018
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 3
+#      messageMatches: The XSLT component has moved out of `camel-core` into `camel-xslt`
+#        and `camel-xslt-saxon*`

@@ -1,0 +1,179 @@
+rulesPath: ../166-javax-to-jakarta-servlet.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/166-javax-to-jakarta-servlet
+- name: builtin
+  dataPath: ./data/166-javax-to-jakarta-servlet
+tests:
+#FIXME: tests commented out because of https://github.com/konveyor/analyzer-lsp/issues/781
+- ruleID: javax-to-jakarta-servlet-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The `javax.servlet.SingleThreadModel` marker interface has bee.*
+- ruleID: javax-to-jakarta-servlet-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: The `javax.servlet.http.HttpSessionContext` interface has been
+        remove.*
+- ruleID: javax-to-jakarta-servlet-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: The `javax.servlet.http.HttpUtils` utility class has
+- ruleID: javax-to-jakarta-servlet-00040
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Method getServlet in javax.servlet.ServletContext has been removed.
+- ruleID: javax-to-jakarta-servlet-00041
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Method getServlets in javax.servlet.ServletContext has been
+        removed.
+- ruleID: javax-to-jakarta-servlet-00042
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Method getServletNames in javax.servlet.ServletContext has been
+        removed.
+#- ruleID: javax-to-jakarta-servlet-00043
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 1
+#      messageMatches: Method log(Exception, String) in javax.servlet.ServletContext
+#        has been removed. Use log(String, Throwable) instead.
+- ruleID: javax-to-jakarta-servlet-00050
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Method `getRealPath(String)` in javax.servlet.ServletRequest
+        has been removed
+- ruleID: javax-to-jakarta-servlet-00060
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: Method `getRealPath` in javax.servlet.ServletRequestWrapper
+        has been removed
+- ruleID: javax-to-jakarta-servlet-00070
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Method getServlet in javax.servlet.UnavailableException has
+        been removed
+- ruleID: javax-to-jakarta-servlet-00071
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Constructor UnavailableException(Servlet, String) in javax.servlet.UnavailableException
+        has been removed. Use UnavailableException(String) instead.
+- ruleID: javax-to-jakarta-servlet-00072
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Constructor UnavailableException(int, Servlet, String) in javax.servlet.UnavailableException
+        has been removed. Use UnavailableException(String, int) instead.
+- ruleID: javax-to-jakarta-servlet-00080
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Method `isRequestedSessionIdFromUrl` in javax.servlet.http.HttpServletRequest
+        has been removed
+- ruleID: javax-to-jakarta-servlet-00090
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Method `isRequestedSessionIdFromUrl` in javax.servlet.http.HttpServletRequestWrapper
+        has been removed
+- ruleID: javax-to-jakarta-servlet-00100
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Method encodeURL in javax.servlet.http.HttpServletResponse has
+        been removed. Use encodeURL(String) instead.
+- ruleID: javax-to-jakarta-servlet-00101
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Method encodeRedirectUrl(String) in javax.servlet.http.HttpServletResponse
+        has been removed. Use encodeRedirectURL(String) instead.
+#- ruleID: javax-to-jakarta-servlet-00102
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 1
+#      messageMatches: Method setStatus(int, String) in javax.servlet.http.HttpServletResponse
+#        has been removed. Use sendError(int, String) instead.
+- ruleID: javax-to-jakarta-servlet-00110
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Method encodeUrl in javax.servlet.http.HttpServletResponseWrapper
+        has been removed. Use encodeURL instead.
+- ruleID: javax-to-jakarta-servlet-00111
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Method encodeRedirectUrl in javax.servlet.http.HttpServletResponseWrapper
+        has been removed. Use encodeRedirectURL instead.
+#- ruleID: javax-to-jakarta-servlet-00112
+#  testCases:
+#  - name: tc-1
+#    hasIncidents:
+#      exactly: 1
+#      messageMatches: Method setStatus(int, String) in javax.servlet.http.HttpServletResponseWrapper
+#        has been removed. Use sendError(int, String) instead.
+- ruleID: javax-to-jakarta-servlet-00120
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Method getValue in javax.servlet.http.HttpSession has been removed.
+        Use getAttribute instead.
+- ruleID: javax-to-jakarta-servlet-00121
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Method getValueNames in javax.servlet.http.HttpSession has been
+        removed. Use getAttributeNames instead.
+- ruleID: javax-to-jakarta-servlet-00122
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Method putValue in javax.servlet.http.HttpSession has been removed.
+        Use setAttribute instead.
+- ruleID: javax-to-jakarta-servlet-00123
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Method removeValue in javax.servlet.http.HttpSession has been
+        removed. Use removeAttribute instead.
+- ruleID: javax-to-jakarta-servlet-00130
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: web.xml element references a javax-prefixed class name

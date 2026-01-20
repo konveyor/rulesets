@@ -50,23 +50,25 @@
   - konveyor.io/target=camel3+
   - konveyor.io/target=camel
   links: []
-  message: '`zip` and `gzip` dataformats were renamed to `zipdeflater and `gzipdeflater`'
+  message: '`zip` and `gzip` dataformats were renamed to `zipdeflater` and `gzipdeflater`'
   ruleID: java-generic-information-00002
   when:
     or:
-    - or:
-      - builtin.filecontent:
-          filePattern: ""
-          pattern: .zip\(.*\)
-        from: routeBuilders
-      - builtin.filecontent:
-          filePattern: ""
-          pattern: .gzip\(.*\)
-        from: routeBuilders
+    - builtin.filecontent:
+        filePattern: ""
+        pattern: .zip\(.*\)
+        filepaths: "{{routeBuilders.Filepath}}"
+      from: routeBuilders
+    - builtin.filecontent:
+        filePattern: ""
+        pattern: .gzip\(.*\)
+        filepaths: "{{routeBuilders.Filepath}}"
+      from: routeBuilders
     - as: routeBuilders
       java.referenced:
         location: INHERITANCE
         pattern: org.apache.camel.builder.RouteBuilder
+      ignore: true
 - category: mandatory
   customVariables:
   - name: registry
@@ -540,10 +542,9 @@
     out of `org.apache.camel:camel-core` and into `org.apache.camel:camel-support`.
   ruleID: java-generic-information-00029
   when:
-    or:
-    - java.referenced:
-        location: IMPORT
-        pattern: org.apache.camel.processor.idempotent.(FileIdempotentRepository|MemoryIdempotentRepository)
+    java.referenced:
+      location: IMPORT
+      pattern: org.apache.camel.processor.idempotent.(FileIdempotentRepository|MemoryIdempotentRepository)
 - category: mandatory
   customVariables: []
   description: Annotation `org.apache.camel.FallbackConverter` has been removed
@@ -646,7 +647,7 @@
   when:
     java.dependency:
       name: org.apache.camel.camel-fhir
-      upperbound: "2"
+      upperbound: "2.999999"
 - category: mandatory
   customVariables:
   - name: method
@@ -735,6 +736,10 @@
     java.referenced:
       location: ANNOTATION
       pattern: org.apache.camel.(Consume|EndpointInject|Produce)
+      annotated:
+        elements:
+          - name: uri
+            value: .*
 - category: mandatory
   customVariables:
   - name: class
@@ -757,6 +762,10 @@
     java.referenced:
       location: ANNOTATION
       pattern: org.apache.camel.(Consume|EndpointInject|Produce)
+      annotated:
+        elements:
+          - name: ref
+            value: .*
 - category: mandatory
   customVariables:
   - name: method

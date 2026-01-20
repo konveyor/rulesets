@@ -1,0 +1,44 @@
+rulesPath: ../127-embedded-framework-libraries.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/127-embedded-framework-libraries
+- name: builtin
+  dataPath: ./data/127-embedded-framework-libraries
+tests:
+- ruleID: embedded-framework-libraries-01000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Embedded library - Drools
+  - name: tc-2
+    hasTags:
+    - Drools
+- ruleID: embedded-framework-libraries-02000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Hibernate embedded library
+  - name: tc-2
+    hasTags:
+    - Hibernate
+- ruleID: embedded-framework-libraries-04000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Embedded library - JDBC
+  - name: tc-2
+    hasTags:
+    - JDBC
+- ruleID: embedded-framework-libraries-05000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - JSF embedded library
+- ruleID: embedded-framework-libraries-06000
+  testCases:
+  - name: tc-1
+    hasTags:
+    - Seam 2 embedded library
+  - name: tc-2
+    hasTags:
+    - Seam

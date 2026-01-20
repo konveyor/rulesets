@@ -1,0 +1,64 @@
+- ruleID: spring-boot-2.x-to-3.0-batch-00000
+  category: optional
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.referenced:
+      pattern: org.springframework.batch.core.configuration.annotation.EnableBatchProcessing
+      location: ANNOTATION
+  description: "@EnableBatchProcessing not needed anymore"
+  message: |
+    Previously, `@EnableBatchProcessing` could be used to enable Spring Boot’s auto-configuration of Spring Batch. It is
+    no longer required and should be removed from applications that want to use Boot’s auto-configuration. A bean that
+    is annotated with `@EnableBatchProcessing` or that extends Batch’s `DefaultBatchConfiguration` can now be defined to
+    tell the auto-configuration to back off, allowing the application to take complete control of how Batch is configured.
+
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - Spring Batch'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#enablebatchprocessing-is-now-discouraged
+
+- ruleID: spring-boot-2.x-to-3.0-batch-00010
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      name: org.springframework.batch.spring-batch-core
+      lowerbound: 0.0.0
+  description: Running multiple batch jobs is no longer supported
+  message: |
+    Running multiple batch jobs is no longer supported. If the auto-configuration detects a single job is, it will be
+    executed on startup. If multiple jobs are found in the context, a job name to execute on startup must be supplied
+    by the user using the `spring.batch.job.name` property.
+
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - Spring Batch'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#multiple-batch-jobs
+
+
+- ruleID: spring-boot-2.x-to-3.0-batch-00020
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    builtin.filecontent:
+      pattern: spring\.session\.store-type
+      filePattern: .*\.properties
+  description: Store type explicit config no longer supported
+  message: |
+    Explicitly configuring the store type for Spring session via `spring.session.store-type` is no longer supported.
+    In case multiple session store repository implementations are detected on the classpath, a fixed order is used to
+    determine which SessionRepository should be auto-configured. If Spring Boot’s defined ordering doesn’t meet your
+    needs, you can define your own `SessionRepository` bean and cause the auto-configuration to back off.
+
+  links:
+    - title: 'Spring Boot 3.0 Migration Guide - Spring batch'
+      link: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#spring-session-store-type
+    - title: "Spring documentation - Spring session"
+      link: https://docs.spring.io/spring-boot/docs/3.0.x/reference/html/web.html#web.spring-session

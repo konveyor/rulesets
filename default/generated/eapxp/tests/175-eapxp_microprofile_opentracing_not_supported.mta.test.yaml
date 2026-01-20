@@ -1,0 +1,14 @@
+rulesPath: ../175-eapxp_microprofile_opentracing_not_supported.mta.yaml
+providers:
+- name: java
+  dataPath: ./data/175-eapxp_microprofile_opentracing_not_supported.mta.test.yaml
+- name: builtin
+  dataPath: ./data/175-eapxp_microprofile_opentracing_not_supported.mta.test.yaml
+tests:
+- ruleID: eapxp_microprofile_opentracing_not_supported-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: If you migrate your application to JBoss EAP XP 5.0 (or later),
+        please note that MicroProfile OpenTracing is not supported.

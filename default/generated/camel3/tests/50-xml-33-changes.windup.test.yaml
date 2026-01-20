@@ -1,0 +1,14 @@
+rulesPath: ../50-xml-33-changes.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/50-xml-33-changes
+- name: builtin
+  dataPath: ./data/50-xml-33-changes
+tests:
+- ruleID: java-camel33-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The dump model classes in package org.apache.camel.support.dump
+        have been removed as they were not in use by Came.*

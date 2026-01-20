@@ -1,0 +1,99 @@
+- ruleID: angular-14-to-angular-15-angular-material-upgrade-00000
+  description: MatVerticalStepper should be replaced with MatStepper
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-14
+  - konveyor.io/target=angular-15
+  when:
+    nodejs.referenced:
+      pattern: MatVerticalStepper
+  message: 'Use MatStepper instead of MatVerticalStepper
+
+
+    Replace `MatVerticalStepper` with `MatStepper`.
+
+
+    Before:
+
+    ```
+
+    import { MatVerticalStepper } from ''@angular/material'';
+
+    ```
+
+
+    After:
+
+    ```
+
+    import { MatStepper } from ''@angular/material'';
+
+    ```'
+  customVariables: []
+- ruleID: angular-14-to-angular-15-angular-material-upgrade-00010
+  description: MatHorizontalStepper should be replaced with MatStepper
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-14
+  - konveyor.io/target=angular-15
+  when:
+    nodejs.referenced:
+      pattern: MatHorizontalStepper
+  message: 'Use MatStepper instead of MatHorizontalStepper
+
+
+    Replace `MatHorizontalStepper` with `MatStepper`.
+
+
+    Before:
+
+    ```
+
+    import { MatHorizontalStepper } from ''@angular/material'';
+
+    ```
+
+
+    After:
+
+    ```
+
+    import { MatStepper } from ''@angular/material'';
+
+    ```'
+  customVariables: []
+- ruleID: angular-14-to-angular-15-angular-material-upgrade-00020
+  description: MatSelectionListChange.option should be replaced with MatSelectionListChange.options
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-14
+  - konveyor.io/target=angular-15
+  when:
+    nodejs.referenced:
+      pattern: MatSelectionListChange.option
+  message: 'Use options instead of option to align with API changes
+
+
+    Replace `MatSelectionListChange.option` with `MatSelectionListChange.options`.
+
+
+    Before:
+
+    ```
+
+    selectionChange.option
+
+    ```
+
+
+    After:
+
+    ```
+
+    selectionChange.options
+
+    ```'
+  customVariables: []

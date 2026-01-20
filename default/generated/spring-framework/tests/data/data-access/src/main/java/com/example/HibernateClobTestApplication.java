@@ -1,6 +1,5 @@
-package com.example.hibernateclobtest;
+package com.example;
 
-import org.hibernate.annotations.DialectOverride;
 import org.hibernate.dialect.PostgreSQL81Dialect;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,11 +18,6 @@ public class HibernateClobTestApplication {
 }
 
 @Entity
-@DialectOverride.Overrides({
-        @DialectOverride(dialect = PostgreSQL81Dialect.class, overrides = {
-                @DialectOverride.Override(sqlType = "TEXT", type = String.class)
-        })
-})
 class MyEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

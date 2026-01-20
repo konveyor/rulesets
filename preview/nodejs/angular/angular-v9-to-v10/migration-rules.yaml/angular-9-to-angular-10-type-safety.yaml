@@ -1,0 +1,39 @@
+- ruleID: angular-9-to-angular-10-type-safety-00000
+  description: ModuleWithProviders without generic type should be replaced with ModuleWithProviders
+    with generic type
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-9
+  - konveyor.io/target=angular-10
+  when:
+    nodejs.referenced:
+      pattern: ModuleWithProviders
+  message: 'Angular 10 requires specifying a generic type for ModuleWithProviders
+    to ensure better type safety.
+
+
+    Replace `ModuleWithProviders without generic type` with `ModuleWithProviders with
+    generic type`.
+
+
+    Before:
+
+    ```
+
+    export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+
+    ```
+
+
+    After:
+
+    ```
+
+    export const routing: ModuleWithProviders<AppRoutingModule> = RouterModule.forRoot(routes);
+
+    ```'
+  links:
+  - url: https://angular.io/guide/migration-module-with-providers
+    title: angular-10 Documentation
+  customVariables: []

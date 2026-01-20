@@ -1,0 +1,36 @@
+- ruleID: angular-9-to-angular-10-testing-00000
+  description: TestBed.get should be replaced with TestBed.inject
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angular-9
+  - konveyor.io/target=angular-10
+  when:
+    nodejs.referenced:
+      pattern: TestBed.get
+  message: 'TestBed.inject is type-safe and is the recommended method in Angular 10.
+
+
+    Replace `TestBed.get` with `TestBed.inject`.
+
+
+    Before:
+
+    ```
+
+    const service = TestBed.get(MyService);
+
+    ```
+
+
+    After:
+
+    ```
+
+    const service = TestBed.inject(MyService);
+
+    ```'
+  links:
+  - url: https://angular.io/guide/testing
+    title: angular-10 Documentation
+  customVariables: []

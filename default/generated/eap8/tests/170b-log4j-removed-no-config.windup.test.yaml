@@ -1,0 +1,25 @@
+rulesPath: ../170-log4j-removed.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/170b-log4j-removed-no-config
+- name: builtin
+  dataPath: ./data/170b-log4j-removed-no-config
+tests:
+- ruleID: log4j-removed-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Log4j usage without configuration files
+- ruleID: log4j-removed-00004
+  testCases:
+    - name: tc-1
+      hasIncidents:
+        exactly: 1
+        messageMatches: Log4j custom-handler using appender
+- ruleID: log4j-removed-00005
+  testCases:
+    - name: tc-1
+      hasIncidents:
+        exactly: 1
+        messageMatches: Log4j module dependency declaration

@@ -1,0 +1,35 @@
+- ruleID: angular-2-to-angular-8-syntax-update-00000
+  description: template should be replaced with ng-template
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angular-2
+  - konveyor.io/target=angular-8
+  when:
+    builtin.filecontent:
+      pattern: template
+      filePattern: \.(html)$
+  message: 'The ''template'' tag is deprecated and replaced by ''ng-template'' to
+    avoid confusion with HTML5 semantics
+
+
+    Replace `template` with `ng-template`.
+
+
+    Before:
+
+    ```
+
+    <template #ref let-item>Content here</template>
+
+    ```
+
+
+    After:
+
+    ```
+
+    <ng-template #ref let-item>Content here</ng-template>
+
+    ```'
+  customVariables: []

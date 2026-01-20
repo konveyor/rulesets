@@ -1,0 +1,24 @@
+rulesPath: ../172-picketlink.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/172-picketlink
+- name: builtin
+  dataPath: ./data/172-picketlink
+tests:
+- ruleID: picketlink-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 17
+      messageMatches: The PicketLink subsystem has been removed. This legacy security
+        system was deprecated in EAP6 and removed in EAP8. All related configuration
+        must be removed.*
+- ruleID: picketlink-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Configure an RH-SSO SAML client and then generate a keycloak-saml.xml
+        file using the RH-SSO admin console. Add the keycloak-saml.xml file to the
+        deployment’s WEB-INF directory. Set the auth-method to KEYCLOAK-SAML in the
+        deployment’s web.xml file.

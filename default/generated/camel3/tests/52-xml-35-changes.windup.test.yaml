@@ -1,0 +1,14 @@
+rulesPath: ../52-xml-35-changes.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/52-xml-35-changes
+- name: builtin
+  dataPath: ./data/52-xml-35-changes
+tests:
+- ruleID: xml-removed-camel35-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Camel has been migrated to using JUnit 5 as the default testing
+        framewor.*

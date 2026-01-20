@@ -1,0 +1,350 @@
+- ruleID: angularjs-to-angular-template-syntax-00000
+  description: ng-repeat should be replaced with *ngFor
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: ng-repeat
+      filePattern: \.(html|htm|component\.ts)$
+  message: 'AngularJS ng-repeat directive should be replaced with Angular *ngFor
+
+
+    Replace `ng-repeat` with `*ngFor`.
+
+
+    Before:
+
+    ```
+
+    <div ng-repeat="item in items">{{item.name}}</div>
+
+    ```
+
+
+    After:
+
+    ```
+
+    <div *ngFor="let item of items">{{item.name}}</div>
+
+    ```'
+  customVariables: []
+- ruleID: angularjs-to-angular-template-syntax-00010
+  description: ng-if should be replaced with *ngIf
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: ng-if
+      filePattern: \.(html|htm|component\.ts)$
+  message: 'AngularJS ng-if directive should be replaced with Angular *ngIf
+
+
+    Replace `ng-if` with `*ngIf`.
+
+
+    Before:
+
+    ```
+
+    <div ng-if="isVisible">Content</div>
+
+    ```
+
+
+    After:
+
+    ```
+
+    <div *ngIf="isVisible">Content</div>
+
+    ```'
+  customVariables: []
+- ruleID: angularjs-to-angular-template-syntax-00020
+  description: ng-show should be replaced with [hidden]
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: ng-show
+      filePattern: \.(html|htm|component\.ts)$
+  message: 'AngularJS ng-show directive should be replaced with Angular [hidden] property
+    (with negated value)
+
+
+    Replace `ng-show` with `[hidden]`.
+
+
+    Before:
+
+    ```
+
+    <div ng-show="isVisible">Content</div>
+
+    ```
+
+
+    After:
+
+    ```
+
+    <div [hidden]="!isVisible">Content</div>
+
+    ```'
+  customVariables: []
+- ruleID: angularjs-to-angular-template-syntax-00030
+  description: ng-hide should be replaced with [hidden]
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: ng-hide
+      filePattern: \.(html|htm|component\.ts)$
+  message: 'AngularJS ng-hide directive should be replaced with Angular [hidden] property
+
+
+    Replace `ng-hide` with `[hidden]`.
+
+
+    Before:
+
+    ```
+
+    <div ng-hide="isHidden">Content</div>
+
+    ```
+
+
+    After:
+
+    ```
+
+    <div [hidden]="isHidden">Content</div>
+
+    ```'
+  customVariables: []
+- ruleID: angularjs-to-angular-template-syntax-00040
+  description: ng-class should be replaced with [ngClass]
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: ng-class
+      filePattern: \.(html|htm|component\.ts)$
+  message: 'AngularJS ng-class directive should be replaced with Angular [ngClass]
+
+
+    Replace `ng-class` with `[ngClass]`.
+
+
+    Before:
+
+    ```
+
+    <div ng-class="{active: isActive}">Content</div>
+
+    ```
+
+
+    After:
+
+    ```
+
+    <div [ngClass]="{active: isActive}">Content</div>
+
+    ```'
+  customVariables: []
+- ruleID: angularjs-to-angular-template-syntax-00050
+  description: ng-model should be replaced with [(ngModel)]
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: ng-model
+      filePattern: \.(html|htm|component\.ts)$
+  message: 'AngularJS ng-model directive should be replaced with Angular [(ngModel)]
+
+
+    Replace `ng-model` with `[(ngModel)]`.
+
+
+    Before:
+
+    ```
+
+    <input ng-model="username">
+
+    ```
+
+
+    After:
+
+    ```
+
+    <input [(ngModel)]="username">
+
+    ```'
+  customVariables: []
+- ruleID: angularjs-to-angular-template-syntax-00060
+  description: ng-click should be replaced with (click)
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: ng-click
+      filePattern: \.(html|htm|component\.ts)$
+  message: 'AngularJS ng-click directive should be replaced with Angular (click) event
+    binding
+
+
+    Replace `ng-click` with `(click)`.
+
+
+    Before:
+
+    ```
+
+    <button ng-click="doAction()">Click</button>
+
+    ```
+
+
+    After:
+
+    ```
+
+    <button (click)="doAction()">Click</button>
+
+    ```'
+  customVariables: []
+- ruleID: angularjs-to-angular-template-syntax-00070
+  description: ng-src should be replaced with [src]
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: ng-src
+      filePattern: \.(html|htm|component\.ts)$
+  message: 'AngularJS ng-src directive should be replaced with Angular [src] property
+    binding
+
+
+    Replace `ng-src` with `[src]`.
+
+
+    Before:
+
+    ```
+
+    <img ng-src="{{imageUrl}}">
+
+    ```
+
+
+    After:
+
+    ```
+
+    <img [src]="imageUrl">
+
+    ```'
+  customVariables: []
+- ruleID: angularjs-to-angular-template-syntax-00080
+  description: ng-href should be replaced with [href]
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: ng-href
+      filePattern: \.(html|htm|component\.ts)$
+  message: 'AngularJS ng-href directive should be replaced with Angular [href] property
+    binding
+
+
+    Replace `ng-href` with `[href]`.
+
+
+    Before:
+
+    ```
+
+    <a ng-href="{{linkUrl}}">Link</a>
+
+    ```
+
+
+    After:
+
+    ```
+
+    <a [href]="linkUrl">Link</a>
+
+    ```'
+  customVariables: []
+- ruleID: angularjs-to-angular-template-syntax-00090
+  description: ng-view should be replaced with router-outlet
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angularjs
+  - konveyor.io/target=angular
+  when:
+    builtin.filecontent:
+      pattern: ng-view
+      filePattern: \.(html|htm|jsp|component\.ts)$
+  message: 'AngularJS ng-view directive should be replaced with Angular router-outlet
+
+
+    Replace `ng-view` with `<router-outlet></router-outlet>`. The ng-view directive
+    is the main router outlet for ngRoute and must be replaced with Angular Router''s
+    router-outlet component.
+
+
+    Before:
+
+    ```
+
+    <div ng-view></div>
+
+    ```
+
+
+    After:
+
+    ```
+
+    <router-outlet></router-outlet>
+
+    ```
+
+
+    Note: This change requires migrating from ngRoute to Angular Router. Ensure your
+    routing configuration is also updated.'
+  customVariables: []

@@ -1,0 +1,38 @@
+rulesPath: ../108-eap6.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/108-eap6
+- name: builtin
+  dataPath: ./data/108-eap6
+tests:
+- ruleID: eap6-08000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Default Remote JNDI Provider URL has changed in EAP 7.*
+- ruleID: eap6-08001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The default remote connection port has changed in .*jboss-ejb-client.properties.*
+- ruleID: eap6-08002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The default remote connection port has changed from.*
+- ruleID: eap6-11000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The value of JSF constant `FaceletContext.FACELET_CONTEXT_KEY`
+        has changed
+- ruleID: eap6-12000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: In EAP 6, you could disable the HTTPS URL hostname check against.*

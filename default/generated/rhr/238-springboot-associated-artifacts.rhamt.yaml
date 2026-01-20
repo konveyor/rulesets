@@ -71,9 +71,13 @@
     SpringBoot starter
   ruleID: springboot-associated-00004
   when:
-    java.dependency:
-      name: org.infinispan.{infinispanArtifactName}
-      upperbound: 2.2.2
+    or:
+    - java.dependency:
+        name: org.infinispan.infinispan-spring-boot-starter-embedded
+        upperbound: 2.2.2
+    - java.dependency:
+        name: org.infinispan.infinispan-spring-boot-starter-remote
+        upperbound: 2.2.2
 - category: potential
   customVariables: []
   description: Unsupported version of Keycloak SpringBoot starter

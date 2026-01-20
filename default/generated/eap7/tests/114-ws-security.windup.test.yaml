@@ -1,0 +1,33 @@
+rulesPath: ../114-ws-security.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/114-ws-security
+- name: builtin
+  dataPath: ./data/114-ws-security
+tests:
+- ruleID: ws-security-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The `org.apache.ws.security.WSPasswordCallback` class has moved
+        to package `org.apache.wss4j.common.ext`
+- ruleID: ws-security-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 8
+      messageMatches: Most of the SAML bean objects from the `org.apache.ws.security.saml.ext`
+        package have been moved to the `org.apache.wss4j.common.saml` package
+# FIXME: where is this tag assigned??
+#  - name: tc-2
+#    hasTags:
+#    - SAML
+- ruleID: ws-security-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The `org.apache.ws.security.saml.ext.AssertionWrapper` class
+        have been renamed and moved to the `org.apache.wss4j.common.saml.SamlAssertionWrapper`
+        class

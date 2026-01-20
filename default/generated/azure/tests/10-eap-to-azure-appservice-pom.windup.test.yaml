@@ -1,0 +1,13 @@
+rulesPath: ../10-eap-to-azure-appservice-pom.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/10-eap-to-azure-appservice-pom
+- name: builtin
+  dataPath: ./data/10-eap-to-azure-appservice-pom
+tests:
+- ruleID: eap-to-azure-appservice-pom-001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Get started with JBoss EAP on App Servic.*

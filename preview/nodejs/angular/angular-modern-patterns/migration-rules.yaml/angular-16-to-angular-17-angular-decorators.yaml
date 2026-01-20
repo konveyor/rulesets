@@ -1,0 +1,105 @@
+- ruleID: angular-16-to-angular-17-angular-decorators-00000
+  description: '@Input() name: string; should be replaced with name = input<string>('''');'
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-16
+  - konveyor.io/target=angular-17
+  when:
+    builtin.filecontent:
+      pattern: '@Input'
+      filePattern: \.(ts)$
+  message: '@Input decorators are replaced with input() signals in Angular 17
+
+
+    Replace `@Input() name: string;` with `name = input<string>('''');`.
+
+
+    Before:
+
+    ```
+
+    @Input() name: string;
+
+    ```
+
+
+    After:
+
+    ```
+
+    name = input<string>('''');
+
+    ```'
+  customVariables: []
+- ruleID: angular-16-to-angular-17-angular-decorators-00010
+  description: '@Output() nameChange = new EventEmitter<string>(); should be replaced
+    with nameChange = output<string>();'
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-16
+  - konveyor.io/target=angular-17
+  when:
+    builtin.filecontent:
+      pattern: '@Output'
+      filePattern: \.(ts)$
+  message: '@Output decorators are replaced with output() function in Angular 17
+
+
+    Replace `@Output() nameChange = new EventEmitter<string>();` with `nameChange
+    = output<string>();`.
+
+
+    Before:
+
+    ```
+
+    @Output() nameChange = new EventEmitter<string>();
+
+    ```
+
+
+    After:
+
+    ```
+
+    nameChange = output<string>();
+
+    ```'
+  customVariables: []
+- ruleID: angular-16-to-angular-17-angular-decorators-00020
+  description: '@ViewChild(''myRef'') myRef?: ElementRef; should be replaced with
+    myRef = viewChild<ElementRef>(''myRef'');'
+  effort: 5
+  category: potential
+  labels:
+  - konveyor.io/source=angular-16
+  - konveyor.io/target=angular-17
+  when:
+    builtin.filecontent:
+      pattern: '@ViewChild'
+      filePattern: \.(ts)$
+  message: '@ViewChild decorators are replaced with viewChild() in Angular 17
+
+
+    Replace `@ViewChild(''myRef'') myRef?: ElementRef;` with `myRef = viewChild<ElementRef>(''myRef'');`.
+
+
+    Before:
+
+    ```
+
+    @ViewChild(''myRef'') myRef?: ElementRef;
+
+    ```
+
+
+    After:
+
+    ```
+
+    myRef = viewChild<ElementRef>(''myRef'');
+
+    ```'
+  customVariables: []

@@ -1,0 +1,80 @@
+rulesPath: ../146-eap8-resteasy.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/146-eap8-resteasy
+- name: builtin
+  dataPath: ./data/146-eap8-resteasy
+tests:
+- ruleID: eap8-resteasy-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: The `org.jboss.resteasy.resteasy-jettison-provider` module has
+        been removed
+- ruleID: eap8-resteasy-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The `org.jboss.resteasy:resteasy-jettison-provider` artifact
+        has been removed.
+- ruleID: eap8-resteasy-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: The `org.jboss.resteasy.resteasy-yaml-provider` module has been
+        removed
+- ruleID: eap8-resteasy-00004
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The `org.jboss.resteasy:resteasy-yaml-provider` artifact has
+        been removed
+- ruleID: eap8-resteasy-00005
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The `org.jboss.resteasy:resteasy-spring` artifact has been renamed
+        to `org.jboss.resteasy.spring:resteasy-spring`
+- ruleID: eap8-resteasy-00006
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: '`org.jboss.resteasy.spi.StringConverter` has been removed.'
+- ruleID: eap8-resteasy-00007
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: '`org.jboss.resteasy.spi.AsynchronousResponse` has been removed.'
+- ruleID: eap8-resteasy-00008
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: '`org.jboss.resteasy.annotations.Suspend` has been removed.'
+- ruleID: eap8-resteasy-00009
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.jboss.resteasy.core.ResourceInvoker` interface have been
+        removed.'
+- ruleID: eap8-resteasy-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: '`org.jboss.resteasy.plugins.interceptors.encoding` classes
+        have been removed.'
+- ruleID: eap8-resteasy-00011
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: The `org.jboss.resteasy.resteasy-jaxrs` module has been deprecated

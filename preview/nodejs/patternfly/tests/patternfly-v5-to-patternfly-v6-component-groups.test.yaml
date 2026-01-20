@@ -1,0 +1,32 @@
+rulesPath: ../patternfly-v5-to-patternfly-v6-component-groups.yaml
+providers:
+- name: builtin
+  dataPath: ./data/component-groups
+- name: nodejs
+  dataPath: ./data/component-groups
+tests:
+- ruleID: patternfly-v5-to-patternfly-v6-component-groups-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: patternfly-v5-to-patternfly-v6-component-groups-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: patternfly-v5-to-patternfly-v6-component-groups-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: patternfly-v5-to-patternfly-v6-component-groups-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: patternfly-v5-to-patternfly-v6-component-groups-00040
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

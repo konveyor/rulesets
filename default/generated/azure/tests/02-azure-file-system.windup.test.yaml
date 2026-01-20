@@ -1,0 +1,25 @@
+rulesPath: ../02-azure-file-system.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/02-azure-file-system
+- name: builtin
+  dataPath: ./data/02-azure-file-system
+tests:
+- ruleID: azure-file-system-01000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 5
+      messageMatches: The application uses Java APIs to read/write from the file system.
+- ruleID: azure-file-system-02000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: Relative path found.
+- ruleID: azure-file-system-03000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Home path found.

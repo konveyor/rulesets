@@ -1,0 +1,16 @@
+rulesPath: ../120-maven-artemis-jms-client.rhamt.yaml
+providers:
+- name: java
+  dataPath: ./data/120-maven-artemis-jms-client.rhamt.test.yaml
+- name: builtin
+  dataPath: ./data/120-maven-artemis-jms-client.rhamt.test.yaml
+tests:
+- ruleID: maven-artemis-jms-client-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: If you migrate your application to JBoss EAP 7.3 (or later),
+        and want to ensure its Maven building, running or testing works as expected,
+        if the application depends on Artemis JMS Client artifact then it should also
+        depend on artifact with groupId `org.jboss.eap`, and artifactId `wildfly-client-properties`.

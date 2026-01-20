@@ -1,0 +1,12 @@
+rulesPath: ../astro-4-to-astro-5-markdown.yaml
+providers:
+- name: builtin
+  dataPath: ./data/markdown
+- name: nodejs
+  dataPath: ./data/markdown
+tests:
+- ruleID: astro-4-to-astro-5-markdown-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

@@ -1,0 +1,15 @@
+rulesPath: ../123-move-to-microprofile-rest-client-1.3.rhamt.yaml
+providers:
+- name: java
+  dataPath: ./data/123-move-to-microprofile-rest-client-1.3.rhamt.test.yaml
+- name: builtin
+  dataPath: ./data/123-move-to-microprofile-rest-client-1.3.rhamt.test.yaml
+tests:
+- ruleID: move-to-microprofile-rest-client-1.3-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: The application imports class `org.jboss.resteasy.client.microprofile.MicroprofileClientBuilderResolver`,
+        and should be changed to use instead `org.eclipse.microprofile.rest.client.RestClientBuilder`,
+        from Microprofile REST Client 1.3.

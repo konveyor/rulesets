@@ -74,9 +74,17 @@
     - java.referenced:
         location: ANNOTATION
         pattern: javax.ejb.ActivationConfigProperty
+        annotated:
+          elements:
+            - name: propertyName
+              value: destinationLookup
     - java.referenced:
         location: ANNOTATION
         pattern: jakarta.ejb.ActivationConfigProperty
+        annotated:
+          elements:
+            - name: propertyName
+              value: destinationLookup
 - category: mandatory
   customVariables: []
   description: JMS' Queue must be replaced with an Emitter
