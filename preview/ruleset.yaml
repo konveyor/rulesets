@@ -1,7 +1,0 @@
-name: preview-rulesets
-description: Preview rulesets for PatternFly and .NET migrations
-
-includes:
-  - nodejs/patternfly/ruleset.yaml
-  - nodejs/astro/ruleset.yaml
-  - dotnet/ruleset.yaml
