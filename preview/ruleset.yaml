@@ -1,0 +1,2 @@
+name: preview/ruleset
+description: Empty ruleset - remove file after first preview rules are committed.
