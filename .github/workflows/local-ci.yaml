@@ -167,7 +167,7 @@ jobs:
           podman cp ${ID}:/usr/local/etc/maven.default.index .
           podman cp ${ID}:/usr/bin/fernflower.jar .
           podman cp ${ID}:/jdtls .
-          mkdir rulesets static-report
+          mkdir static-report
           podman rm kantra-download
           echo 'msg<<EOF' >> $GITHUB_OUTPUT
 
