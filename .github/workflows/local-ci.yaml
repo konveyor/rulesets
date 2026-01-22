@@ -44,13 +44,7 @@ jobs:
 
           git fetch origin $BASE_SHA --depth=50 || true
 
-          changed_files=$(
-            git diff --name-only $BASE_SHA HEAD \
-            | grep -E '\.(yaml|windup\.yaml|mta\.yaml)$' \
-            | grep -v '\.test\.yaml$' \
-            | grep -v 'ruleset\.yaml$' \
-            || true
-          )"
+          changed_files=$(git diff --name-only $BASE_SHA HEAD | grep -E '\.(yaml|windup\.yaml|mta\.yaml)$' | grep -v '\.test\.yaml$' | grep -v 'ruleset\.yaml$' || true)
 
           echo "run_all_tests=false" >> $GITHUB_OUTPUT
 
