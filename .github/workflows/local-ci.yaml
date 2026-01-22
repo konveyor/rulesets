@@ -88,22 +88,16 @@ jobs:
 
               # Get directory of the rule file
               rule_dir=$(dirname "$rule_file")
-              rule_name=$(basename "$rule_file")
+              rule_basename=$(basename "$rule_file")
               
-              # Strip file extension (.yaml, .mta.yaml, or .windup.yaml) before constructing test file path
-              # Order matters: check longer extensions first
-              if [[ "$rule_name" == *.windup.yaml ]]; then
-                rule_name="${rule_name%.windup.yaml}"
-              elif [[ "$rule_name" == *.mta.yaml ]]; then
-                rule_name="${rule_name%.mta.yaml}"
-              elif [[ "$rule_name" == *.yaml ]]; then
-                rule_name="${rule_name%.yaml}"
-              fi
+              # Strip file extension to get base name (remove everything after first dot)
+              rule_base="${rule_basename%%.*}"
 
-              # Construct test file path: <rule_dir>/tests/<rule_name>.test.yaml
-              test_file="${rule_dir}/tests/${rule_name}.test.yaml"
+              # Construct test file path: <rule_dir>/tests/<rule_base>.test.yaml
+              # The basename (without extension) is the same for rule and test
+              test_file="${rule_dir}/tests/${rule_base}.test.yaml"
               
-              echo "Looking for test file: $test_file (from rule: $rule_file)"
+              echo "Looking for test file: $test_file (from rule: $rule_file, base: $rule_base)"
 
               # Check if test file exists and not already in the list
               if [ -f "$test_file" ]; then
