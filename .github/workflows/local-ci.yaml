@@ -44,12 +44,13 @@ jobs:
 
           git fetch origin $BASE_SHA --depth=50 || true
 
-          changed_files=$(git diff --name-only $BASE_SHA HEAD | grep -E '\.(yaml|windup\.yaml|mta\.yaml)$' | grep -v '\.test\.yaml$' | grep -v 'ruleset\.yaml$' || true)
+          # Get changed rule files, excluding .github directory, test files, and ruleset.yaml
+          changed_files=$(git diff --name-only $BASE_SHA HEAD | grep -E '\.(yaml|windup\.yaml|mta\.yaml)$' | grep -v '^\.github/' | grep -v '\.test\.yaml$' | grep -v 'ruleset\.yaml$' || true)
 
           echo "run_all_tests=false" >> $GITHUB_OUTPUT
 
           # Also get changed test files separately (if someone changes a test file directly)
-          changed_test_files=$(git diff --name-only ${BASE_REF}...HEAD | grep -E "\.test\.yaml$" || true)
+          changed_test_files=$(git diff --name-only $BASE_SHA HEAD | grep -E "\.test\.yaml$" || true)
 
           echo "Changed rule files:"
           echo "$changed_files" || echo "(none)"
@@ -90,10 +91,19 @@ jobs:
               rule_name=$(basename "$rule_file")
               
               # Strip file extension (.yaml, .mta.yaml, or .windup.yaml) before constructing test file path
-              rule_name=$(echo "$rule_name" | sed 's/\.\(windup\.yaml\|mta\.yaml\|yaml\)$//')
+              # Order matters: check longer extensions first
+              if [[ "$rule_name" == *.windup.yaml ]]; then
+                rule_name="${rule_name%.windup.yaml}"
+              elif [[ "$rule_name" == *.mta.yaml ]]; then
+                rule_name="${rule_name%.mta.yaml}"
+              elif [[ "$rule_name" == *.yaml ]]; then
+                rule_name="${rule_name%.yaml}"
+              fi
 
               # Construct test file path: <rule_dir>/tests/<rule_name>.test.yaml
               test_file="${rule_dir}/tests/${rule_name}.test.yaml"
+              
+              echo "Looking for test file: $test_file (from rule: $rule_file)"
 
               # Check if test file exists and not already in the list
               if [ -f "$test_file" ]; then
