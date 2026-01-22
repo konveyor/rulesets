@@ -18,8 +18,6 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 100
 
       - name: Install Java and Maven
         uses: s4u/setup-maven-action@v1.18.0
@@ -42,14 +40,19 @@ jobs:
             exit 0
           fi
 
-          # Always compare against origin/main
-          BASE_REF="origin/main"
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+
+          git fetch origin $BASE_SHA --depth=50 || true
+
+          changed_files=$(
+            git diff --name-only $BASE_SHA HEAD \
+            | grep -E '\.(yaml|windup\.yaml|mta\.yaml)$' \
+            | grep -v '\.test\.yaml$' \
+            | grep -v 'ruleset\.yaml$' \
+            || true
+          )"
 
           echo "run_all_tests=false" >> $GITHUB_OUTPUT
-
-          # Get changed rule files from entire repository
-          # Exclude test files (.test.yaml) and ruleset.yaml from the initial grep
-          changed_files=$(git diff --name-only ${BASE_REF}...HEAD | grep -E "\.(yaml|windup\.yaml|mta\.yaml)$" | grep -v "\.test\.yaml$" | grep -v "ruleset\.yaml$" || true)
 
           # Also get changed test files separately (if someone changes a test file directly)
           changed_test_files=$(git diff --name-only ${BASE_REF}...HEAD | grep -E "\.test\.yaml$" || true)
