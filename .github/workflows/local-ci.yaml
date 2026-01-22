@@ -106,20 +106,8 @@ jobs:
                 test_basename="${rule_basename}.test.yaml"
               fi
 
-              # Try both tests/ and test/ directories (some use singular, some use plural)
-              test_file_tests="${rule_dir}/tests/${test_basename}"
-              test_file_test="${rule_dir}/test/${test_basename}"
-              
-              # Check which one exists
-              if [ -f "$test_file_tests" ]; then
-                test_file="$test_file_tests"
-              elif [ -f "$test_file_test" ]; then
-                test_file="$test_file_test"
-              else
-                test_file="$test_file_tests"  # Default to tests/ for error message
-              fi
-              
-              echo "Looking for test file: $test_file (from rule: $rule_file, test basename: $test_basename)"
+              # Construct test file path: <rule_dir>/tests/<test_basename>
+              test_file="${rule_dir}/tests/${test_basename}"
 
               # Check if test file exists and not already in the list
               if [ -f "$test_file" ]; then
