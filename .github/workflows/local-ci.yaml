@@ -18,6 +18,8 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 100
 
       - name: Install Java and Maven
         uses: s4u/setup-maven-action@v1.18.0
