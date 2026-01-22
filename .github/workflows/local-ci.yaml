@@ -84,6 +84,9 @@ jobs:
               # Get directory of the rule file
               rule_dir=$(dirname "$rule_file")
               rule_name=$(basename "$rule_file")
+              
+              # Strip file extension (.yaml, .mta.yaml, or .windup.yaml) before constructing test file path
+              rule_name=$(echo "$rule_name" | sed 's/\.\(windup\.yaml\|mta\.yaml\|yaml\)$//')
 
               # Construct test file path: <rule_dir>/tests/<rule_name>.test.yaml
               test_file="${rule_dir}/tests/${rule_name}.test.yaml"
@@ -180,7 +183,7 @@ jobs:
           podman cp ${ID}:/usr/local/etc/maven.default.index .
           podman cp ${ID}:/usr/bin/fernflower.jar .
           podman cp ${ID}:/jdtls .
-          mkdir rulesets static-report
+          mkdir -p static-report
           podman rm kantra-download
           echo 'msg<<EOF' >> $GITHUB_OUTPUT
 
@@ -188,7 +191,7 @@ jobs:
           if [ "${{ steps.find-tests.outputs.run_all_tests }}" == "true" ]; then
             # Run all tests (for nightly runs or manual workflow_dispatch)
             echo "Running all tests"
-            JVM_MAX_MEM=3072m RUN_LOCAL=1 ./kantra test ./default/generated --log-level 50 | tee output.log || true
+            JVM_MAX_MEM=3072m RUN_LOCAL=1 ./kantra test ./rulesets --log-level 50 | tee output.log || true
           elif [ "${{ steps.find-tests.outputs.has_tests }}" == "true" ]; then
             # Run tests for changed rules only
             test_files="${{ steps.find-tests.outputs.test_files }}"
@@ -201,7 +204,9 @@ jobs:
             echo "Test Cases Summary: 0/0" >> message.md
           fi
 
-          tail -n5 output.log > message.md 2>/dev/null || true
+          if [ -f output.log ]; then
+            tail -n5 output.log > message.md
+          fi
           msg=$(grep -E '.*Rules Summary:' message.md -A1 || echo "Rules Summary: N/A")
           tests_pass_rate=$(grep -E '.*Rules Summary:' message.md | sed -E 's| *Rules Summary: *(.*)|\1|' | sed -E 's|.*?:||' || echo "0/0")
           tcs_pass_rate=$(grep -E '.*Test Cases Summary:' message.md | sed -E 's| *Test Cases Summary: *(.*)|\1|' | sed -E 's|.*?:||' || echo "0/0")
