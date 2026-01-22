@@ -27,13 +27,6 @@ jobs:
       - name: Find changed rule files and their tests
         id: find-tests
         run: |
-          # For push to main, run all tests (original behavior)
-          if [ "${{ github.event_name }}" == "push" ] && [ "${{ github.ref }}" == "refs/heads/main" ]; then
-            echo "Running all tests for push to main"
-            echo "run_all_tests=true" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-
           # Always compare against main
           BASE_REF="origin/main"
 
@@ -165,6 +158,7 @@ jobs:
           # jstack_monitor 60 &
           #### Block_End ####
           
+          # Install kantra
           mkdir -p ~/.config/.kantra
           mv ./default/generated ~/.config/.kantra/rulesets
           cd ~/.config/.kantra
