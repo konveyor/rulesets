@@ -28,7 +28,7 @@ jobs:
 
       - name: Fetch main branch for comparison
         run: |
-          git fetch origin main:main || true
+          git fetch origin main || true
 
       - name: Find changed rule files and their tests
         id: find-tests
@@ -40,8 +40,8 @@ jobs:
             exit 0
           fi
 
-          # Always compare against main (use local main branch that was just fetched)
-          BASE_REF="main"
+          # Always compare against origin/main
+          BASE_REF="origin/main"
 
           echo "run_all_tests=false" >> $GITHUB_OUTPUT
 
