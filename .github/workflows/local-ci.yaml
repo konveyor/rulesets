@@ -22,7 +22,7 @@ jobs:
 
       - name: Fetch main branch for comparison
         run: |
-          git fetch origin main:main || true
+          git fetch origin main:refs/remotes/origin/main || true
 
       - name: Find changed rule files and their tests
         id: find-tests
