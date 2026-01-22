@@ -9,4 +9,4 @@
   when:
     builtin.filecontent:
       filePattern: pom\.xml
-      pattern: artifactId>jboss-eap-xp-microprofile<jarl
+      pattern: artifactId>jboss-eap-xp-microprofile<

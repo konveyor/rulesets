@@ -15,7 +15,7 @@
         ignore: true
       - or:
         - java.referenced:
-            pattern: org.eclipse.microprofile.openapi.models.media.Schema.getNullableWhatever
+            pattern: org.eclipse.microprofile.openapi.models.media.Schema.getNullable
             location: METHOD_CALL
         - java.referenced:
             pattern: org.eclipse.microprofile.openapi.models.media.Schema.setNullable
