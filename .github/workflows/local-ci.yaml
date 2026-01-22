@@ -90,14 +90,36 @@ jobs:
               rule_dir=$(dirname "$rule_file")
               rule_basename=$(basename "$rule_file")
               
-              # Strip file extension to get base name (remove everything after first dot)
-              rule_base="${rule_basename%%.*}"
+              # Determine test file name based on rule file extension
+              # Pattern: .windup.yaml -> .windup.test.yaml, .mta.yaml -> .test.yaml, .yaml -> .test.yaml
+              if [[ "$rule_basename" == *.windup.yaml ]]; then
+                # Keep .windup part: 68-jca.windup.yaml -> 68-jca.windup.test.yaml
+                test_basename="${rule_basename%.yaml}.test.yaml"
+              elif [[ "$rule_basename" == *.mta.yaml ]]; then
+                # Remove .mta part: 180-eapxp_microprofile_openapi_4.0.mta.yaml -> 180-eapxp_microprofile_openapi_4.0.test.yaml
+                test_basename="${rule_basename%.mta.yaml}.test.yaml"
+              elif [[ "$rule_basename" == *.yaml ]]; then
+                # Simple case: a.yaml -> a.test.yaml
+                test_basename="${rule_basename%.yaml}.test.yaml"
+              else
+                # Fallback: just add .test.yaml
+                test_basename="${rule_basename}.test.yaml"
+              fi
 
-              # Construct test file path: <rule_dir>/tests/<rule_base>.test.yaml
-              # The basename (without extension) is the same for rule and test
-              test_file="${rule_dir}/tests/${rule_base}.test.yaml"
+              # Try both tests/ and test/ directories (some use singular, some use plural)
+              test_file_tests="${rule_dir}/tests/${test_basename}"
+              test_file_test="${rule_dir}/test/${test_basename}"
               
-              echo "Looking for test file: $test_file (from rule: $rule_file, base: $rule_base)"
+              # Check which one exists
+              if [ -f "$test_file_tests" ]; then
+                test_file="$test_file_tests"
+              elif [ -f "$test_file_test" ]; then
+                test_file="$test_file_test"
+              else
+                test_file="$test_file_tests"  # Default to tests/ for error message
+              fi
+              
+              echo "Looking for test file: $test_file (from rule: $rule_file, test basename: $test_basename)"
 
               # Check if test file exists and not already in the list
               if [ -f "$test_file" ]; then
