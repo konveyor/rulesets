@@ -63,71 +63,72 @@ jobs:
             exit 0
           fi
 
+          # Helper function to check if a test file is already in the list
+          is_test_already_added() {
+            local test_to_check="$1"
+            for existing_test in "${test_files[@]}"; do
+              if [ "$existing_test" == "$test_to_check" ]; then
+                return 0  # Already added
+              fi
+            done
+            return 1  # Not added yet
+          }
+
           # Collect test files to run
           test_files=()
 
-          # First, add directly changed test files
-          if [ -n "$changed_test_files" ]; then
-            while IFS= read -r test_file; do
+          # Process all changed files (both rule files and test files) in a single loop
+          all_changed_files=$(echo -e "$changed_files\n$changed_test_files" | grep -v '^$' || true)
+          
+          if [ -n "$all_changed_files" ]; then
+            while IFS= read -r file; do
               # Skip empty lines
-              [ -z "$test_file" ] && continue
+              [ -z "$file" ] && continue
 
-              # Check if test file exists (it should, since it's in the diff)
-              if [ -f "$test_file" ]; then
-                test_files+=("$test_file")
-                echo "Found changed test file: $test_file"
-              fi
-            done <<< "$changed_test_files"
-          fi
-
-          # Second, find test files for changed rule files
-          if [ -n "$changed_files" ]; then
-            while IFS= read -r rule_file; do
-              # Skip empty lines
-              [ -z "$rule_file" ] && continue
-
-              # Get directory of the rule file
-              rule_dir=$(dirname "$rule_file")
-              rule_basename=$(basename "$rule_file")
-              
-              # Determine test file name based on rule file extension
-              # Pattern: .windup.yaml -> .windup.test.yaml, .mta.yaml -> .test.yaml, .yaml -> .test.yaml
-              if [[ "$rule_basename" == *.windup.yaml ]]; then
-                # Keep .windup part: 68-jca.windup.yaml -> 68-jca.windup.test.yaml
-                test_basename="${rule_basename%.yaml}.test.yaml"
-              elif [[ "$rule_basename" == *.mta.yaml ]]; then
-                # Remove .mta part: 180-eapxp_microprofile_openapi_4.0.mta.yaml -> 180-eapxp_microprofile_openapi_4.0.test.yaml
-                test_basename="${rule_basename%.mta.yaml}.test.yaml"
-              elif [[ "$rule_basename" == *.yaml ]]; then
-                # Simple case: a.yaml -> a.test.yaml
-                test_basename="${rule_basename%.yaml}.test.yaml"
-              else
-                # Fallback: just add .test.yaml
-                test_basename="${rule_basename}.test.yaml"
-              fi
-
-              # Construct test file path: <rule_dir>/tests/<test_basename>
-              test_file="${rule_dir}/tests/${test_basename}"
-
-              # Check if test file exists and not already in the list
-              if [ -f "$test_file" ]; then
-                # Check if already added (avoid duplicates)
-                already_added=false
-                for existing_test in "${test_files[@]}"; do
-                  if [ "$existing_test" == "$test_file" ]; then
-                    already_added=true
-                    break
+              # Check if this is a test file (ends with .test.yaml)
+              if [[ "$file" == *.test.yaml ]]; then
+                # It's a test file - add it directly if it exists
+                if [ -f "$file" ]; then
+                  if ! is_test_already_added "$file"; then
+                    test_files+=("$file")
+                    echo "Found changed test file: $file"
                   fi
-                done
-
-                if [ "$already_added" == "false" ]; then
-                  test_files+=("$test_file")
-                  echo "Found test for changed rule $rule_file: $test_file"
                 fi
               else
-                echo "No test file found for $rule_file (expected at $test_file)"
+                # It's a rule file - find its corresponding test file
+                rule_dir=$(dirname "$file")
+                rule_basename=$(basename "$file")
+                
+                # Determine test file name based on rule file extension
+                # Pattern: .windup.yaml -> .windup.test.yaml, .mta.yaml -> .test.yaml, .yaml -> .test.yaml
+                if [[ "$rule_basename" == *.windup.yaml ]]; then
+                  # Keep .windup part: 68-jca.windup.yaml -> 68-jca.windup.test.yaml
+                  test_basename="${rule_basename%.yaml}.test.yaml"
+                elif [[ "$rule_basename" == *.mta.yaml ]]; then
+                  # Remove .mta part: 180-eapxp_microprofile_openapi_4.0.mta.yaml -> 180-eapxp_microprofile_openapi_4.0.test.yaml
+                  test_basename="${rule_basename%.mta.yaml}.test.yaml"
+                elif [[ "$rule_basename" == *.yaml ]]; then
+                  # Simple case: a.yaml -> a.test.yaml
+                  test_basename="${rule_basename%.yaml}.test.yaml"
+                else
+                  # Fallback: just add .test.yaml
+                  test_basename="${rule_basename}.test.yaml"
+                fi
+
+                # Construct test file path: <rule_dir>/tests/<test_basename>
+                test_file="${rule_dir}/tests/${test_basename}"
+
+                # Check if test file exists and not already in the list
+                if [ -f "$test_file" ]; then
+                  if ! is_test_already_added "$test_file"; then
+                    test_files+=("$test_file")
+                    echo "Found test for changed rule $file: $test_file"
+                  fi
+                else
+                  echo "No test file found for $file (expected at $test_file)"
+                fi
               fi
-            done <<< "$changed_files"
+            done <<< "$all_changed_files"
           fi
 
           # If no test files found, exit early
