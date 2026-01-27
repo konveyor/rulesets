@@ -1,0 +1,186 @@
+- ruleID: patternfly-v5-to-patternfly-v6-pagesection-00000
+  description: PageSection variant="light" should be replaced with variant="secondary"
+  effort: 3
+  category: mandatory
+  labels:
+  - konveyor.io/source=patternfly-v5
+  - konveyor.io/target=patternfly-v6
+  when:
+    and:
+    - nodejs.referenced:
+        pattern: PageSection
+    - builtin.filecontent:
+        pattern: <PageSection[^>]*\bvariant=["']light["']
+        filePattern: \.(j|t)sx?$
+  message: |
+    The `variant="light"` prop on PageSection has been renamed to `variant="secondary"` in PatternFly 6.
+
+    Note: The `hasBodyWrapper` prop is unrelated to the variant - it controls whether children
+    are wrapped in a PageBody component, not the background color.
+
+    Replace `variant="light"` with `variant="secondary"`.
+
+    Before:
+
+    ```tsx
+    <PageSection variant="light" className="my-section">
+      {content}
+    </PageSection>
+    ```
+
+    After:
+
+    ```tsx
+    <PageSection variant="secondary" className="my-section">
+      {content}
+    </PageSection>
+    ```
+  links:
+  - url: https://www.patternfly.org/components/page/
+    title: PatternFly Page Component
+  customVariables: []
+  migration_complexity: low
+
+- ruleID: patternfly-v5-to-patternfly-v6-pagesection-00010
+  description: PageSection variant="dark" has been removed in PatternFly 6
+  effort: 5
+  category: mandatory
+  labels:
+  - konveyor.io/source=patternfly-v5
+  - konveyor.io/target=patternfly-v6
+  when:
+    and:
+    - nodejs.referenced:
+        pattern: PageSection
+    - builtin.filecontent:
+        pattern: <PageSection[^>]*\bvariant=["']dark["']
+        filePattern: \.(j|t)sx?$
+  message: |
+    The `variant="dark"` prop on PageSection has been removed in PatternFly 6.
+
+    PatternFly 6 supports only "default" and "secondary" variants. For dark-themed sections,
+    you should either:
+
+    1. Use the dark theme class on the section or its parent
+    2. Apply custom CSS with the inverse background token
+
+    Before:
+
+    ```tsx
+    <PageSection variant="dark">
+      {content}
+    </PageSection>
+    ```
+
+    After (Option 1 - custom class):
+
+    ```tsx
+    <PageSection className="pf-v6-theme-dark">
+      {content}
+    </PageSection>
+    ```
+
+    After (Option 2 - custom CSS):
+
+    ```tsx
+    <PageSection style={{ backgroundColor: 'var(--pf-t--global--background--color--inverse--default)' }}>
+      {content}
+    </PageSection>
+    ```
+  links:
+  - url: https://www.patternfly.org/components/page/
+    title: PatternFly Page Component
+  customVariables: []
+  migration_complexity: medium
+
+- ruleID: patternfly-v5-to-patternfly-v6-pagesection-00020
+  description: PageSection hasBodyWrapper is not a replacement for variant prop
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=patternfly-v5
+  - konveyor.io/target=patternfly-v6
+  when:
+    and:
+    - nodejs.referenced:
+        pattern: PageSection
+    - builtin.filecontent:
+        pattern: <PageSection[^>]*\bhasBodyWrapper=\{false\}[^>]*(?!variant)
+        filePattern: \.(j|t)sx?$
+  message: |
+    Found PageSection with `hasBodyWrapper={false}` but no `variant` prop.
+
+    During migration, `hasBodyWrapper={false}` may have been incorrectly used as a replacement
+    for `variant="light"`. These props serve different purposes:
+
+    - **variant**: Controls the background color (default, secondary)
+    - **hasBodyWrapper**: Controls whether children are wrapped in a PageBody component
+
+    If this section previously had `variant="light"`, add `variant="secondary"`:
+
+    Before (incorrect migration):
+
+    ```tsx
+    <PageSection hasBodyWrapper={false} className="my-header">
+    ```
+
+    After (if section should have light/secondary background):
+
+    ```tsx
+    <PageSection variant="secondary" hasBodyWrapper={false} className="my-header">
+    ```
+
+    If the section should use the default background, the current code is correct.
+  links:
+  - url: https://www.patternfly.org/components/page/
+    title: PatternFly Page Component
+  customVariables: []
+  migration_complexity: low
+
+- ruleID: patternfly-v5-to-patternfly-v6-pagesection-00030
+  description: PageSection isFilled prop has been removed
+  effort: 3
+  category: mandatory
+  labels:
+  - konveyor.io/source=patternfly-v5
+  - konveyor.io/target=patternfly-v6
+  when:
+    and:
+    - nodejs.referenced:
+        pattern: PageSection
+    - builtin.filecontent:
+        pattern: <PageSection[^>]*\bisFilled\b
+        filePattern: \.(j|t)sx?$
+  message: |
+    The `isFilled` prop on PageSection has been removed in PatternFly 6.
+
+    Use CSS flex properties to control how PageSection fills available space.
+
+    Before:
+
+    ```tsx
+    <PageSection isFilled>
+      {content}
+    </PageSection>
+    ```
+
+    After:
+
+    ```tsx
+    <PageSection style={{ flex: '1 1 auto' }}>
+      {content}
+    </PageSection>
+    ```
+
+    Or use a custom class:
+
+    ```tsx
+    <PageSection className="pf-m-fill">
+      {content}
+    </PageSection>
+    ```
+  links:
+  - url: https://www.patternfly.org/components/page/
+    title: PatternFly Page Component
+  customVariables: []
+  migration_complexity: low

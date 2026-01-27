@@ -1,5 +1,5 @@
 - ruleID: patternfly-v5-to-patternfly-v6-css-variables-00000
-  description: --pf-v5-global--FontSize--lg should be replaced with --pf-t--global--font--size--lg
+  description: --pf-v5-global--FontSize--lg should be replaced with --pf-t--global--font--size--body--lg
   effort: 3
   category: potential
   labels:
@@ -8,42 +8,37 @@
   when:
     builtin.filecontent:
       pattern: --pf-v5-global--FontSize--lg
-      filePattern: \.(css|scss)$
-  message: 'CSS variable naming has changed in PatternFly 6 with the new design token
+      filePattern: \.(css|scss|js|jsx|ts|tsx)$
+  message: |
+    CSS variable naming has changed in PatternFly 6 with the new design token system.
 
-    system
+    Replace `--pf-v5-global--FontSize--lg` with `--pf-t--global--font--size--body--lg`.
 
-
-
-    Replace `--pf-v5-global--FontSize--lg` with `--pf-t--global--font--size--lg`.
-
-
+    Common font size mappings:
+    - `--pf-v5-global--FontSize--xs` → `--pf-t--global--font--size--body--sm`
+    - `--pf-v5-global--FontSize--sm` → `--pf-t--global--font--size--body--sm`
+    - `--pf-v5-global--FontSize--md` → `--pf-t--global--font--size--body--default`
+    - `--pf-v5-global--FontSize--lg` → `--pf-t--global--font--size--body--lg`
+    - `--pf-v5-global--FontSize--xl` → `--pf-t--global--font--size--heading--md`
+    - `--pf-v5-global--FontSize--2xl` → `--pf-t--global--font--size--heading--lg`
+    - `--pf-v5-global--FontSize--3xl` → `--pf-t--global--font--size--heading--xl`
+    - `--pf-v5-global--FontSize--4xl` → `--pf-t--global--font--size--heading--h1`
 
     Before:
 
-
+    ```css
+    font-size: var(--pf-v5-global--FontSize--lg);
     ```
-
-
-    var(--pf-v5-global--FontSize--lg)
-
-
-    ```
-
-
 
     After:
 
-
+    ```css
+    font-size: var(--pf-t--global--font--size--body--lg);
     ```
-
-
-    var(--pf-t--global--font--size--lg)
-
-
-    ```'
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
+  - url: https://www.patternfly.org/tokens/all-patternfly-tokens/
+    title: PatternFly v6 Token Reference
   customVariables: []
   migration_complexity: low
