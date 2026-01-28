@@ -68,7 +68,7 @@ jobs:
           #### Block_End ####
           
           mkdir -p ~/.config/.kantra
-          mv ./default/generated ~/.config/.kantra/rulesets
+          mv ./stable ~/.config/.kantra/rulesets
           cd ~/.config/.kantra
           ID=$(podman create --name kantra-download quay.io/konveyor/kantra:latest)
           podman cp ${ID}:/usr/local/bin/kantra .
