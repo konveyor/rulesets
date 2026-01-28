@@ -160,7 +160,7 @@
   - drools
   - jbpm
   links: []
-  message: 'Replace with : org.kie.api.logger.KieRuntimeLogger'
+  message: 'Replace with: org.kie.api.logger.KieRuntimeLogger'
   ruleID: kie-api-01007
   when:
     java.referenced:
