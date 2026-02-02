@@ -12,10 +12,13 @@ jobs:
     steps:
       - name: Get Token
         id: get_workflow_token
-        uses: peter-murray/workflow-application-token-action@v3
+        uses: peter-murray/workflow-application-token-action@v4
         with:
           application_id: ${{ vars.KONVEYOR_BOT_ID }}
           application_private_key: ${{ secrets.KONVEYOR_BOT_KEY }}
+          # Permission needed to send repository_dispatch (trigger workflow in target repo)
+          permissions: "actions:write"
+          revoke_token: true
       - name: Dispatch event to create seed PR
         uses: peter-evans/repository-dispatch@v4
         with:
