@@ -40,17 +40,22 @@ jobs:
             exit 0
           fi
 
-          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          # Base for comparison: PR base SHA or origin/main for push
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            BASE_REF="${{ github.event.pull_request.base.sha }}"
+            git fetch origin $BASE_REF --depth=50 || true
+          else
+            BASE_REF="origin/main"
+            git fetch origin main || true
+          fi
 
-          git fetch origin $BASE_SHA --depth=50 || true
-
-          # Get changed rule files, excluding .github directory, test files, and ruleset.yaml
-          changed_files=$(git diff --name-only $BASE_SHA HEAD | grep -E '\.(yaml|windup\.yaml|mta\.yaml)$' | grep -v '^\.github/' | grep -v '\.test\.yaml$' | grep -v 'ruleset\.yaml$' || true)
+          # Get changed rule files under stable/ or preview/, excluding test files and ruleset.yaml
+          changed_files=$(git diff --name-only $BASE_REF HEAD | grep -E '^stable/|^preview/' | grep -E '\.(yaml|windup\.yaml|mta\.yaml)$' | grep -v '\.test\.yaml$' | grep -v 'ruleset\.yaml$' || true)
 
           echo "run_all_tests=false" >> $GITHUB_OUTPUT
 
-          # Also get changed test files separately (if someone changes a test file directly)
-          changed_test_files=$(git diff --name-only $BASE_SHA HEAD | grep -E "\.test\.yaml$" || true)
+          # Also get changed test files under stable/ or preview/ (if someone changes a test file directly)
+          changed_test_files=$(git diff --name-only $BASE_REF HEAD | grep -E '^stable/|^preview/' | grep -E "\.test\.yaml$" || true)
 
           echo "Changed rule files:"
           echo "$changed_files" || echo "(none)"
@@ -196,9 +201,10 @@ jobs:
           # Store repo root before changing directories
           REPO_ROOT=$(pwd)
           
-          # Install kantra
-          mkdir -p ~/.config/.kantra
-          mv ./default/generated ~/.config/.kantra/rulesets
+          # Install kantra: rules live under stable/ and preview/
+          mkdir -p ~/.config/.kantra/rulesets
+          mv ./stable ~/.config/.kantra/rulesets/stable
+          mv ./preview ~/.config/.kantra/rulesets/preview
           cd ~/.config/.kantra
           ID=$(podman create --name kantra-download quay.io/konveyor/kantra:latest)
           podman cp ${ID}:/usr/local/bin/kantra .
@@ -216,38 +222,27 @@ jobs:
             JVM_MAX_MEM=3072m RUN_LOCAL=1 ./kantra test ./rulesets --log-level 50 | tee output.log || true
           elif [ "${{ steps.find-tests.outputs.has_tests }}" == "true" ]; then
             # Run tests for changed rules only
-            # Convert test file paths to work with moved rulesets directory
+            # Test file paths are under stable/ or preview/; after move they are under ./rulesets/stable/ or ./rulesets/preview/
             test_files="${{ steps.find-tests.outputs.test_files }}"
             echo "Running tests for changed rules: $test_files"
-            # Adjust paths: replace repo-relative paths with paths relative to current directory
             adjusted_test_files=""
             for test_file in $test_files; do
-              # If test file is in default/generated, adjust to point to moved location
-              if [[ "$test_file" == default/generated/* ]]; then
-                # Remove 'default/generated' prefix and prepend './rulesets'
-                adjusted_path="./rulesets/${test_file#default/generated/}"
-                if [ -f "$adjusted_path" ]; then
-                  adjusted_test_files="${adjusted_test_files} ${adjusted_path}"
-                  echo "Adjusted path: $test_file -> $adjusted_path"
-                else
-                  echo "Warning: Test file not found at adjusted path: $adjusted_path (original: $test_file)"
-                fi
+              if [[ "$test_file" == stable/* ]]; then
+                adjusted_path="./rulesets/${test_file}"
+              elif [[ "$test_file" == preview/* ]]; then
+                adjusted_path="./rulesets/${test_file}"
               else
-                # For other directories (like preview), use absolute path from repo root
-                absolute_path="${REPO_ROOT}/${test_file}"
-                if [ -f "$absolute_path" ]; then
-                  adjusted_test_files="${adjusted_test_files} ${absolute_path}"
-                  echo "Using absolute path: $absolute_path"
-                else
-                  echo "Warning: Test file not found: $absolute_path"
-                fi
+                adjusted_path="${REPO_ROOT}/${test_file}"
+              fi
+              if [ -f "$adjusted_path" ]; then
+                adjusted_test_files="${adjusted_test_files} ${adjusted_path}"
+              else
+                echo "Warning: Test file not found: $adjusted_path (from $test_file)"
               fi
             done
             if [ -n "$adjusted_test_files" ]; then
-              echo "Final test files to run: $adjusted_test_files"
               JVM_MAX_MEM=3072m RUN_LOCAL=1 ./kantra test $adjusted_test_files --log-level 50 | tee output.log || true
             else
-              echo "Warning: No test files found at specified paths after adjustment"
               echo "Rules Summary: 0/0" > message.md
               echo "Test Cases Summary: 0/0" >> message.md
             fi
