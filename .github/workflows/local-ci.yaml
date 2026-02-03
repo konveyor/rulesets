@@ -1,6 +1,12 @@
 name: Local CI
 
-on: ["push", "pull_request"]
+on:
+  push:
+  pull_request:
+  schedule:
+    # Run nightly at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
 permissions:
   pull-requests: write
 
@@ -20,6 +26,126 @@ jobs:
           java-distribution: temurin
           maven-version: 3.9.0
 
+      - name: Fetch main branch for comparison
+        run: |
+          git fetch origin main || true
+
+      - name: Find changed rule files and their tests
+        id: find-tests
+        run: |
+          # For scheduled (nightly) runs or manual workflow_dispatch, run all tests
+          if [ "${{ github.event_name }}" == "schedule" ] || [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "Running all tests for nightly/manual run"
+            echo "run_all_tests=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+
+          git fetch origin $BASE_SHA --depth=50 || true
+
+          # Get changed rule files, excluding .github directory, test files, and ruleset.yaml
+          changed_files=$(git diff --name-only $BASE_SHA HEAD | grep -E '\.(yaml|windup\.yaml|mta\.yaml)$' | grep -v '^\.github/' | grep -v '\.test\.yaml$' | grep -v 'ruleset\.yaml$' || true)
+
+          echo "run_all_tests=false" >> $GITHUB_OUTPUT
+
+          # Also get changed test files separately (if someone changes a test file directly)
+          changed_test_files=$(git diff --name-only $BASE_SHA HEAD | grep -E "\.test\.yaml$" || true)
+
+          echo "Changed rule files:"
+          echo "$changed_files" || echo "(none)"
+          echo "Changed test files:"
+          echo "$changed_test_files" || echo "(none)"
+
+          if [ -z "$changed_files" ] && [ -z "$changed_test_files" ]; then
+            echo "No rule or test files changed. Skipping tests."
+            echo "has_tests=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Helper function to check if a test file is already in the list
+          is_test_already_added() {
+            local test_to_check="$1"
+            for existing_test in "${test_files[@]}"; do
+              if [ "$existing_test" == "$test_to_check" ]; then
+                return 0  # Already added
+              fi
+            done
+            return 1  # Not added yet
+          }
+
+          # Collect test files to run
+          test_files=()
+
+          # Process all changed files (both rule files and test files) in a single loop
+          all_changed_files=$(echo -e "$changed_files\n$changed_test_files" | grep -v '^$' || true)
+          
+          if [ -n "$all_changed_files" ]; then
+            while IFS= read -r file; do
+              # Skip empty lines
+              [ -z "$file" ] && continue
+
+              # Check if this is a test file (ends with .test.yaml)
+              if [[ "$file" == *.test.yaml ]]; then
+                # It's a test file - add it directly if it exists
+                if [ -f "$file" ]; then
+                  if ! is_test_already_added "$file"; then
+                    test_files+=("$file")
+                    echo "Found changed test file: $file"
+                  fi
+                fi
+              else
+                # It's a rule file - find its corresponding test file
+                rule_dir=$(dirname "$file")
+                rule_basename=$(basename "$file")
+          
+                # Determine test file name based on rule file extension
+                # Pattern: .windup.yaml -> .windup.test.yaml, .mta.yaml -> .test.yaml, .yaml -> .test.yaml
+                if [[ "$rule_basename" == *.windup.yaml ]]; then
+                  # Keep .windup part: 68-jca.windup.yaml -> 68-jca.windup.test.yaml
+                  test_basename="${rule_basename%.yaml}.test.yaml"
+                elif [[ "$rule_basename" == *.mta.yaml ]]; then
+                  # Remove .mta part: 180-eapxp_microprofile_openapi_4.0.mta.yaml -> 180-eapxp_microprofile_openapi_4.0.test.yaml
+                  test_basename="${rule_basename%.mta.yaml}.test.yaml"
+                elif [[ "$rule_basename" == *.yaml ]]; then
+                  # Simple case: a.yaml -> a.test.yaml
+                  test_basename="${rule_basename%.yaml}.test.yaml"
+                else
+                  # Fallback: just add .test.yaml
+                  test_basename="${rule_basename}.test.yaml"
+                fi
+
+                # Construct test file path: <rule_dir>/tests/<test_basename>
+                test_file="${rule_dir}/tests/${test_basename}"
+
+                # Check if test file exists and not already in the list
+                if [ -f "$test_file" ]; then
+                  if ! is_test_already_added "$test_file"; then
+                    test_files+=("$test_file")
+                    echo "Found test for changed rule $file: $test_file"
+                  fi
+                else
+                  echo "No test file found for $file (expected at $test_file)"
+                fi
+              fi
+            done <<< "$all_changed_files"
+          fi
+
+          # If no test files found, exit early
+          if [ ${#test_files[@]} -eq 0 ]; then
+            echo "No test files found for changed rules. Skipping tests."
+            echo "has_tests=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Create a space-separated list of test files
+          test_files_list=$(IFS=' '; echo "${test_files[*]}")
+          echo "Test files to run: $test_files_list"
+          echo "has_tests=true" >> $GITHUB_OUTPUT
+          echo "test_files<<EOF" >> $GITHUB_OUTPUT
+          echo "$test_files_list" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
       - name: Run rule tests
         id: kantra-test
         run: |
@@ -28,7 +154,7 @@ jobs:
           cleanup_old_processes() {
             local pattern="$1"
             local interval="${2:-30}"
-            
+          
             while true; do
               # Get PIDs of processes matching the pattern (pgrep -f matches full command line)
               pids=$(pgrep -f "$pattern" 2>/dev/null | grep -v $$ || true)
@@ -36,7 +162,7 @@ jobs:
                 # Sort by elapsed time descending (oldest first has largest elapsed time)
                 sorted_pids=$(echo "$pids" | xargs -I{} ps -p {} -o pid=,etimes= 2>/dev/null | sort -k2 -rn | awk '{print $1}')
                 count=$(echo "$sorted_pids" | grep -c . 2>/dev/null || echo 0)
-                
+          
                 if [[ $count -gt 2 ]]; then
                   # Kill all but the last 2 (newest have smallest elapsed time)
                   to_kill=$(echo "$sorted_pids" | head -n -2)
@@ -67,27 +193,80 @@ jobs:
           # jstack_monitor 60 &
           #### Block_End ####
           
+          # Store repo root before changing directories
+          REPO_ROOT=$(pwd)
+          
+          # Install kantra
           mkdir -p ~/.config/.kantra
-          mv ./stable ~/.config/.kantra/rulesets
+          mv ./default/generated ~/.config/.kantra/rulesets
           cd ~/.config/.kantra
           ID=$(podman create --name kantra-download quay.io/konveyor/kantra:latest)
           podman cp ${ID}:/usr/local/bin/kantra .
           podman cp ${ID}:/usr/local/etc/maven.default.index .
           podman cp ${ID}:/usr/bin/fernflower.jar .
           podman cp ${ID}:/jdtls .
-          mkdir static-report
+          mkdir -p static-report
           podman rm kantra-download
-
-          JVM_MAX_MEM=3072m RUN_LOCAL=1 ./kantra test ./rulesets/ --log-level 50 | tee output.log || true
-
-          tail -n5 output.log > message.md
-          msg=$(grep -E '.*Rules Summary:' message.md -A1)
-          tests_pass_rate=$(grep -E '.*Rules Summary:' message.md | sed -E 's| *Rules Summary: *(.*)|\1|' | sed -E 's|.*?:||')
-          tcs_pass_rate=$(grep -E '.*Test Cases Summary:' message.md | sed -E 's| *Test Cases Summary: *(.*)|\1|' | sed -E 's|.*?:||')
-          
-          tcs_percent=$(echo "${tcs_pass_rate}" | grep -oE '\([0-9.]+%\)' | tr -d '()%')
-          
           echo 'msg<<EOF' >> $GITHUB_OUTPUT
+
+          # Determine what to test
+          if [ "${{ steps.find-tests.outputs.run_all_tests }}" == "true" ]; then
+            # Run all tests (for nightly runs or manual workflow_dispatch)
+            echo "Running all tests"
+            JVM_MAX_MEM=3072m RUN_LOCAL=1 ./kantra test ./rulesets --log-level 50 | tee output.log || true
+          elif [ "${{ steps.find-tests.outputs.has_tests }}" == "true" ]; then
+            # Run tests for changed rules only
+            # Convert test file paths to work with moved rulesets directory
+            test_files="${{ steps.find-tests.outputs.test_files }}"
+            echo "Running tests for changed rules: $test_files"
+            # Adjust paths: replace repo-relative paths with paths relative to current directory
+            adjusted_test_files=""
+            for test_file in $test_files; do
+              # If test file is in default/generated, adjust to point to moved location
+              if [[ "$test_file" == default/generated/* ]]; then
+                # Remove 'default/generated' prefix and prepend './rulesets'
+                adjusted_path="./rulesets/${test_file#default/generated/}"
+                if [ -f "$adjusted_path" ]; then
+                  adjusted_test_files="${adjusted_test_files} ${adjusted_path}"
+                  echo "Adjusted path: $test_file -> $adjusted_path"
+                else
+                  echo "Warning: Test file not found at adjusted path: $adjusted_path (original: $test_file)"
+                fi
+              else
+                # For other directories (like preview), use absolute path from repo root
+                absolute_path="${REPO_ROOT}/${test_file}"
+                if [ -f "$absolute_path" ]; then
+                  adjusted_test_files="${adjusted_test_files} ${absolute_path}"
+                  echo "Using absolute path: $absolute_path"
+                else
+                  echo "Warning: Test file not found: $absolute_path"
+                fi
+              fi
+            done
+            if [ -n "$adjusted_test_files" ]; then
+              echo "Final test files to run: $adjusted_test_files"
+              JVM_MAX_MEM=3072m RUN_LOCAL=1 ./kantra test $adjusted_test_files --log-level 50 | tee output.log || true
+            else
+              echo "Warning: No test files found at specified paths after adjustment"
+              echo "Rules Summary: 0/0" > message.md
+              echo "Test Cases Summary: 0/0" >> message.md
+            fi
+          else
+            # No tests to run
+            echo "No tests to run"
+            echo "Rules Summary: 0/0" > message.md
+            echo "Test Cases Summary: 0/0" >> message.md
+          fi
+
+          if [ -f output.log ]; then
+            tail -n5 output.log > message.md
+          fi
+          msg=$(grep -E '.*Rules Summary:' message.md -A1 || echo "Rules Summary: N/A")
+          tests_pass_rate=$(grep -E '.*Rules Summary:' message.md | sed -E 's| *Rules Summary: *(.*)|\1|' | sed -E 's|.*?:||' || echo "0/0")
+          tcs_pass_rate=$(grep -E '.*Test Cases Summary:' message.md | sed -E 's| *Test Cases Summary: *(.*)|\1|' | sed -E 's|.*?:||' || echo "0/0")
+          some_test_failed=$(echo ${tests_pass_rate} | awk -F' ' '{print$1}' | awk -F'/' '{print ($1 == $2) ? 0 : 1}')
+          some_tcs_failed=$(echo ${tcs_pass_rate} | awk -F' ' '{print$1}' | awk -F'/' '{print ($1 == $2) ? 0 : 1}')
+
           echo ${msg} >> $GITHUB_OUTPUT
           echo 'EOF' >> $GITHUB_OUTPUT
 
@@ -99,12 +278,9 @@ jobs:
           echo ${tests_pass_rate} >> $GITHUB_OUTPUT
           echo 'EOF' >> $GITHUB_OUTPUT
 
-          # Fail only if test case pass rate is below 99%
-          if (( $(echo "${tcs_percent:-0} < 99" | bc -l) )); then
-            echo "Test case pass rate ${tcs_percent}% is below 99% threshold"
+          if [[ ${some_test_failed} -eq 1 ]] || [[ ${some_tcs_failed} -eq 1 ]]; then
             exit 1
           else
-            echo "Test case pass rate ${tcs_percent}% meets 99% threshold"
             exit 0
           fi
 
