@@ -12,7 +12,7 @@
       - batch.xml
       namespaces:
         "": http://xmlns.jcp.org/xml/ns/javaee
-      xpath: //*[local-name() = 'batch-artifacts']
+      xpath: "//*[local-name() = 'batch-artifacts']"
 - customVariables: []
   description: Java EE Batch
   labels:
@@ -31,7 +31,7 @@
         filepaths: '{{xmlfiles1.filepaths}}'
         namespaces:
           "": http://xmlns.jcp.org/xml/ns/javaee
-        xpath: //*[local-name() = 'job']
+        xpath: "//*[local-name() = 'job']"
       from: xmlfiles1
 - customVariables: []
   description: Java EE Batch API
@@ -407,7 +407,7 @@
     builtin.xml:
       namespaces:
         p: http://xmlns.jcp.org/xml/ns/persistence/orm
-      xpath: //p:entity-mappings/@version[matches(self::node(), '(1.0|2.0|2.1|2.2)')]
+      xpath: "//p:entity-mappings/@version[matches(self::node(), '(1.0|2.0|2.1|2.2)')]"
 - customVariables: []
   description: JPA Mapping XML
   labels:
@@ -421,7 +421,7 @@
     builtin.xml:
       namespaces:
         p: https://jakarta.ee/xml/ns/persistence/orm
-      xpath: //p:entity-mappings/@version[matches(self::node(), '(3.0|3.1)')]
+      xpath: "//p:entity-mappings/@version[matches(self::node(), '(3.0|3.1)')]"
 - customVariables: []
   description: CDI XML
   labels:
@@ -435,7 +435,7 @@
     builtin.xml:
       namespaces:
         p: http://xmlns.jcp.org/xml/ns/javaee
-      xpath: //p:beans/@version[matches(self::node(), '(1.0|1.1|2.0)')]
+      xpath: "//p:beans/@version[matches(self::node(), '(1.0|1.1|2.0)')]"
 - customVariables: []
   description: CDI XML
   labels:
@@ -449,7 +449,7 @@
     builtin.xml:
       namespaces:
         p: https://jakarta.ee/xml/ns/jakartaee
-      xpath: //p:beans/@version[matches(self::node(), '(3.0|4.0)')]
+      xpath: "//p:beans/@version[matches(self::node(), '(3.0|4.0)')]"
 - customVariables: []
   description: Java EE XML
   labels:
@@ -463,7 +463,7 @@
     builtin.xml:
       namespaces:
         p: http://java.sun.com/xml/ns/javaee
-      xpath: //p:application/@version[matches(self::node(), '(5|6)')]
+      xpath: "//p:application/@version[matches(self::node(), '(5|6)')]"
 - customVariables: []
   description: Java EE XML
   labels:
@@ -477,7 +477,7 @@
     builtin.xml:
       namespaces:
         p: http://xmlns.jcp.org/xml/ns/javaee
-      xpath: //p:application/@version[matches(self::node(), '(7|8)')]
+      xpath: "//p:application/@version[matches(self::node(), '(7|8)')]"
 - customVariables: []
   description: Jakarta EE XML
   labels:
@@ -491,7 +491,7 @@
     builtin.xml:
       namespaces:
         p: https://jakarta.ee/xml/ns/jakartaee
-      xpath: //p:application/@version[matches(self::node(), '(9|10)')]
+      xpath: "//p:application/@version[matches(self::node(), '(9|10)')]"
 - customVariables: []
   description: Java EE Client XML
   labels:
@@ -505,7 +505,7 @@
     builtin.xml:
       namespaces:
         p: http://java.sun.com/xml/ns/javaee
-      xpath: //p:application-client/@version[matches(self::node(), '(5|6)')]
+      xpath: "//p:application-client/@version[matches(self::node(), '(5|6)')]"
 - customVariables: []
   description: Java EE Client XML
   labels:
@@ -519,7 +519,7 @@
     builtin.xml:
       namespaces:
         p: http://xmlns.jcp.org/xml/ns/javaee
-      xpath: //p:application-client/@version[matches(self::node(), '(7|8)')]
+      xpath: "//p:application-client/@version[matches(self::node(), '(7|8)')]"
 - customVariables: []
   description: Jakarta EE Client XML
   labels:
@@ -533,7 +533,7 @@
     builtin.xml:
       namespaces:
         p: https://jakarta.ee/xml/ns/jakartaee
-      xpath: //p:application-client/@version[matches(self::node(), '(9|10)')]
+      xpath: "//p:application-client/@version[matches(self::node(), '(9|10)')]"
 - customVariables: []
   description: Connector XML
   labels:
@@ -547,7 +547,7 @@
     builtin.xml:
       namespaces:
         p: http://java.sun.com/xml/ns/javaee
-      xpath: //p:connector/@version[matches(self::node(), '(1.6)')]
+      xpath: "//p:connector/@version[matches(self::node(), '(1.6)')]"
 - customVariables: []
   description: Connector XML
   labels:
@@ -561,7 +561,7 @@
     builtin.xml:
       namespaces:
         p: http://xmlns.jcp.org/xml/ns/javaee
-      xpath: //p:connector/@version[matches(self::node(), '(1.7)')]
+      xpath: "//p:connector/@version[matches(self::node(), '(1.7)')]"
 - customVariables: []
   description: Connector XML
   labels:
@@ -575,7 +575,7 @@
     builtin.xml:
       namespaces:
         p: https://jakarta.ee/xml/ns/jakartaee
-      xpath: //p:connector/@version[matches(self::node(), '(2.0|2.1)')]
+      xpath: "//p:connector/@version[matches(self::node(), '(2.0|2.1)')]"
 - customVariables: []
   description: JSF XML
   labels:
@@ -589,7 +589,7 @@
     builtin.xml:
       namespaces:
         p: http://java.sun.com/xml/ns/javaee
-      xpath: //p:faces-config/@version[matches(self::node(), '(1.2|2.0)')]
+      xpath: "//p:faces-config/@version[matches(self::node(), '(1.2|2.0)')]"
 - customVariables: []
   description: JSF XML
   labels:
@@ -603,7 +603,7 @@
     builtin.xml:
       namespaces:
         p: http://xmlns.jcp.org/xml/ns/javaee
-      xpath: //p:faces-config/@version[matches(self::node(), '(2.2|2.3)')]
+      xpath: "//p:faces-config/@version[matches(self::node(), '(2.2|2.3)')]"
 - customVariables: []
   description: JSF XML
   labels:
@@ -617,7 +617,7 @@
     builtin.xml:
       namespaces:
         p: https://jakarta.ee/xml/ns/jakartaee
-      xpath: //p:faces-config/@version[matches(self::node(), '(3.0|4.0)')]
+      xpath: "//p:faces-config/@version[matches(self::node(), '(3.0|4.0)')]"
 - customVariables: []
   description: WebServices XML
   labels:
@@ -630,7 +630,7 @@
     builtin.xml:
       namespaces:
         p: http://java.sun.com/xml/ns/javaee
-      xpath: //p:webservices/@version[matches(self::node(), '(1.2|1.3)')]
+      xpath: "//p:webservices/@version[matches(self::node(), '(1.2|1.3)')]"
 - customVariables: []
   description: WebServices XML
   labels:
@@ -644,7 +644,7 @@
     builtin.xml:
       namespaces:
         p: http://xmlns.jcp.org/xml/ns/javaee
-      xpath: //p:webservices/@version[matches(self::node(), '(1.4)')]
+      xpath: "//p:webservices/@version[matches(self::node(), '(1.4)')]"
 - customVariables: []
   description: WebServices XML
   labels:
@@ -658,7 +658,7 @@
     builtin.xml:
       namespaces:
         p: https://jakarta.ee/xml/ns/jakartaee
-      xpath: //p:webservices/@version[matches(self::node(), '(2.0)')]
+      xpath: "//p:webservices/@version[matches(self::node(), '(2.0)')]"
 - customVariables: []
   description: JPA Mapping XML
   labels:
