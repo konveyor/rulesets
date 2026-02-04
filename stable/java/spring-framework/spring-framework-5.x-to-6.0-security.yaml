@@ -743,7 +743,7 @@
   when:
     builtin.filecontent:
       filePattern: .*\.java
-      pattern: \".*hasIpAddress\(.*\"
+      pattern: '".*hasIpAddress\(.*"'
   description: Migrate hasIpAddress to access(AuthorizationManager)
   message: |
     `hasIpAddress` has no DSL equivalent in `authorizeHttpRequests`. As such, you need to change any calls to `hasIpAddress` to using an `AuthorizationManager`.
