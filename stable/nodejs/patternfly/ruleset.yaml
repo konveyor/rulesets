@@ -21,8 +21,6 @@ includes:
   - patternfly-v5-to-patternfly-v6-components.yaml
   - patternfly-v5-to-patternfly-v6-css-classes.yaml
   - patternfly-v5-to-patternfly-v6-css-tokens.yaml
-  - patternfly-v5-to-patternfly-v6-css-units.yaml
-  - patternfly-v5-to-patternfly-v6-css-values.yaml
   - patternfly-v5-to-patternfly-v6-css-variables.yaml
   - patternfly-v5-to-patternfly-v6-data-list.yaml
   - patternfly-v5-to-patternfly-v6-deprecated-components.yaml
