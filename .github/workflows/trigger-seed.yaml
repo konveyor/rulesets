@@ -16,8 +16,8 @@ jobs:
         with:
           application_id: ${{ vars.KONVEYOR_BOT_ID }}
           application_private_key: ${{ secrets.KONVEYOR_BOT_KEY }}
-          # Permission needed to send repository_dispatch (trigger workflow in target repo)
-          permissions: "actions:write"
+          # Permission needed to send repository_dispatch
+          permissions: "contents:write"
           revoke_token: true
       - name: Dispatch event to create seed PR
         uses: peter-evans/repository-dispatch@v4
