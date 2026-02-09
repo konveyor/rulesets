@@ -1,6 +1,7 @@
 name: Trigger seed in tackle2-hub
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
