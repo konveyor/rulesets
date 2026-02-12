@@ -20,3 +20,4 @@
     java.dependency:
       lowerbound: 0.0.0
       name: org.jboss.spec.javax.ws.rs.jboss-jaxrs-api_2.0_spec
+
