@@ -159,11 +159,11 @@
     - builtin.xml:
         namespaces:
           c: http://camel.apache.org/schema/spring
-        xpath: //*/c:simple[text()=matches(self::node(), '*property*')]
+        xpath: //*/c:simple[text()=matches(self::node(), '.*property.*')]
     - builtin.xml:
         namespaces:
           b: http://camel.apache.org/schema/blueprint
-        xpath: //*/b:simple[text()=matches(self::node(), '*property*')]
+        xpath: //*/b:simple[text()=matches(self::node(), '.*property.*')]
 - category: mandatory
   customVariables: []
   description: 'Terser language: language renamed'
