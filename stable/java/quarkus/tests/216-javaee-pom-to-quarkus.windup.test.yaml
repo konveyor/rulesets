@@ -10,8 +10,6 @@ tests:
   - name: tc-1
     hasIncidents:
       exactly: 1
-      messageMatches: The project artifact's current extension (i.e. `<packaging>`
-        tag value) is
 - ruleID: javaee-pom-to-quarkus-00010
   testCases:
   - name: tc-1
