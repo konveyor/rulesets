@@ -80,6 +80,37 @@
     - title: 'Spring 6.0 migration guide'
       url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
 
+- ruleID: spring-framework-5.x-to-6.0-web-applications-00020
+  category: mandatory
+  effort: 5
+  labels:
+  - konveyor.io/source=spring5
+  - konveyor.io/target=spring6+
+  when:
+    and:
+    - java.referenced:
+        pattern: org.springframework.http.client.HttpComponentsClientHttpRequestFactory
+    - java.dependency:
+        name: org.apache.httpcomponents.httpclient
+        upperbound: 4.5.999999
+        ignore: true
+  description: RestTemplate now requires Apache HttpClient 5
+  message: |
+    `RestTemplate`, or rather the `HttpComponentsClientHttpRequestFactory`, now requires Apache HttpClient 5.
+    Please upgrade your HttpClient dependency, ideally to the latest version:
+
+    ```xml
+    <dependency>
+        <groupId>org.apache.httpcomponents.client5</groupId>
+        <artifactId>httpclient5</artifactId>
+        <version>5.4.1</version>
+    </dependency>
+    ```
+  links:
+  - title: 'Spring 6.0 migration guide'
+    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
+  - title: 'Apache HttpClient 4 to 5 migration guide'
+    url: https://hc.apache.org/httpcomponents-client-5.4.x/migration-guide/preparation.html
 
 - ruleID: spring-framework-5.x-to-6.0-web-applications-00030
   category: mandatory
@@ -353,57 +384,3 @@
   links:
   - title: 'Spring 6.0 migration guide - Testing'
     url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#testing
-
-- ruleID: spring-framework-5.x-to-6.0-web-applications-00090
-  category: potential
-  effort: 3
-  labels:
-  - konveyor.io/source=spring5
-  - konveyor.io/target=spring6+
-  - konveyor.io/source=spring-boot2
-  - konveyor.io/target=spring-boot3+
-  when:
-    or:
-    - java.dependency:
-        name: org.apache.tomcat.embed.tomcat-embed-core
-        upperbound: 9.99.99
-    - java.dependency:
-        name: org.eclipse.jetty.jetty-server
-        upperbound: 10.99.99
-    - java.dependency:
-        name: io.undertow.undertow-core
-        upperbound: 2.2.18.Final
-  description: Web server must be upgraded for Spring 6 compatibility
-  message: |
-    Spring Framework 6.0 requires updated web server versions that support Jakarta EE 9+:
-
-    **Minimum Required Versions:**
-    - **Tomcat 10.1+** (implements Servlet 6.0)
-    - **Jetty 11+** (implements Servlet 5.0/Jakarta EE 9)
-    - **Undertow 2.2.19+** (with Jakarta EE 9 support)
-
-    **Migration Guidance:**
-
-    Update your server dependencies:
-
-    **Maven (Spring Boot):**
-    ```xml
-    <!-- Spring Boot 3.x automatically uses compatible versions -->
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.0</version>
-    </parent>
-    ```
-
-    **For standalone Tomcat deployment:**
-    Download and deploy to Apache Tomcat 10.1.x or later.
-
-    **Key Changes:**
-    - Servlet API moves from `javax.servlet` to `jakarta.servlet`
-    - All Jakarta EE APIs follow the `jakarta.*` namespace
-  links:
-  - title: 'Spring 6.0 migration guide - Web Applications'
-    url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#web-applications
-  - title: 'Tomcat 10.1 Migration Guide'
-    url: https://tomcat.apache.org/migration-10.html

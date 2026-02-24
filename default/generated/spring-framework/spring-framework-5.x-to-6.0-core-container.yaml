@@ -176,6 +176,7 @@
   message: |
     The JSR-330 based `@Inject` annotation is to be found in `jakarta.inject` now. The `javax.inject` package 
     is no longer supported in Spring Framework 6.0 as part of the Jakarta EE 9+ baseline migration.
+    The corresponding JSR-250 based annotations `@PostConstruct` and `@PreDestroy` are to be found in `jakarta.annotation`.
 
     **Migration Guidance:**
 

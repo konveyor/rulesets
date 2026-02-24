@@ -126,8 +126,6 @@
   links:
   - title: 'Spring 6.0 migration guide - Removed APIs'
     url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.0-Release-Notes#removed-apis
-  - title: 'Spring Issue #27422'
-    url: https://github.com/spring-projects/spring-framework/issues/27422
 
 - ruleID: spring-framework-5.x-to-6.0-removed-apis-00020
   category: mandatory
