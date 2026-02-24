@@ -13,7 +13,7 @@
   - drools
   - jbpm
   links: []
-  message: 'Replace with : org.kie.api.KieBase'
+  message: 'Replace with: org.kie.api.KieBase'
   ruleID: kie-api-01000
   when:
     java.referenced:
@@ -34,7 +34,7 @@
   - drools
   - jbpm
   links: []
-  message: 'Replace with : org.kie.api.event.rule.AgendaEventListener'
+  message: 'Replace with: org.kie.api.event.rule.AgendaEventListener'
   ruleID: kie-api-01001
   when:
     java.referenced:
@@ -55,7 +55,7 @@
   - drools
   - jbpm
   links: []
-  message: 'Replace with : org.kie.api.event.rule.AgendaEventListener'
+  message: 'Replace with: org.kie.api.event.rule.AgendaEventListener'
   ruleID: kie-api-01002
   when:
     java.referenced:
@@ -76,7 +76,7 @@
   - drools
   - jbpm
   links: []
-  message: 'Replace with : org.kie.drools.core.event.DefaultAgendaEventListener'
+  message: 'Replace with: org.kie.drools.core.event.DefaultAgendaEventListener'
   ruleID: kie-api-01003
   when:
     java.referenced:
@@ -97,7 +97,7 @@
   - drools
   - jbpm
   links: []
-  message: 'Replace with : org.kie.api.event.rule.DefaultAgendaEventListener'
+  message: 'Replace with: org.kie.api.event.rule.DefaultAgendaEventListener'
   ruleID: kie-api-01004
   when:
     java.referenced:
@@ -118,7 +118,7 @@
   - drools
   - jbpm
   links: []
-  message: 'Replace with : org.kie.api.event.process.ProcessEventListener'
+  message: 'Replace with: org.kie.api.event.process.ProcessEventListener'
   ruleID: kie-api-01005
   when:
     java.referenced:
@@ -139,7 +139,7 @@
   - drools
   - jbpm
   links: []
-  message: 'Replace with : org.kie.api.event.process.DefaultProcessEventListener'
+  message: 'Replace with: org.kie.api.event.process.DefaultProcessEventListener'
   ruleID: kie-api-01006
   when:
     java.referenced:
@@ -160,7 +160,7 @@
   - drools
   - jbpm
   links: []
-  message: 'Replace with : org.kie.api.logger.KieRuntimeLogger'
+  message: 'Replace with: org.kie.api.logger.KieRuntimeLogger'
   ruleID: kie-api-01007
   when:
     java.referenced:
@@ -181,7 +181,7 @@
   - drools
   - jbpm
   links: []
-  message: 'Replace with : org.kie.api.logger.KieLoggers'
+  message: 'Replace with: org.kie.api.logger.KieLoggers'
   ruleID: kie-api-01008
   when:
     java.referenced:
@@ -202,7 +202,7 @@
   - drools
   - jbpm
   links: []
-  message: 'Replace with : org.kie.api.runtime.KieSession'
+  message: 'Replace with: org.kie.api.runtime.KieSession'
   ruleID: kie-api-01009
   when:
     java.referenced:
@@ -223,7 +223,7 @@
   - drools
   - jbpm
   links: []
-  message: 'Replace with : org.kie.api.runtime.KieSession'
+  message: 'Replace with: org.kie.api.runtime.KieSession'
   ruleID: kie-api-01010
   when:
     java.referenced:
@@ -244,7 +244,7 @@
   - drools
   - jbpm
   links: []
-  message: 'Replace with : org.kie.internal.builder.KnowledgeBuilderFactory'
+  message: 'Replace with: org.kie.internal.builder.KnowledgeBuilderFactory'
   ruleID: kie-api-01011
   when:
     java.referenced:
@@ -265,7 +265,7 @@
   - drools
   - jbpm
   links: []
-  message: 'Replace with : org.kie.internal.io.ResourceFactory'
+  message: 'Replace with: org.kie.internal.io.ResourceFactory'
   ruleID: kie-api-01012
   when:
     java.referenced:
@@ -286,7 +286,7 @@
   - drools
   - jbpm
   links: []
-  message: 'Replace with : org.kie.internal.io.ResourceType'
+  message: 'Replace with: org.kie.internal.io.ResourceType'
   ruleID: kie-api-01013
   when:
     java.referenced:
@@ -307,7 +307,7 @@
   - drools
   - jbpm
   links: []
-  message: 'Replace with : org.kie.api.runtime.Environment'
+  message: 'Replace with: org.kie.api.runtime.Environment'
   ruleID: kie-api-01014
   when:
     java.referenced:
@@ -328,7 +328,7 @@
   - drools
   - jbpm
   links: []
-  message: 'Replace with : org.kie.api.runtime.EnvironmentName'
+  message: 'Replace with: org.kie.api.runtime.EnvironmentName'
   ruleID: kie-api-01015
   when:
     java.referenced:
@@ -349,7 +349,7 @@
   - drools
   - jbpm
   links: []
-  message: 'Replace with : org.kie.api.runtime.KieSessionConfiguration'
+  message: 'Replace with: org.kie.api.runtime.KieSessionConfiguration'
   ruleID: kie-api-01016
   when:
     java.referenced:
