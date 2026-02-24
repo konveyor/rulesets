@@ -8,10 +8,10 @@
     or:
     - builtin.filecontent:
         pattern: "management.endpoints.jmx.exposure"
-        filePattern: "application*.properties"
+        filePattern: ".*\\.properties"
     - builtin.filecontent:
         pattern: "management.endpoints.web.exposure"
-        filePattern: "application*.properties"
+        filePattern: ".*\\.properties"
   description: Actuator endpoint exposure configuration has changed
   message: |
     Actuator endpoint exposure configuration has been updated in Spring Boot 3.0.
@@ -40,7 +40,7 @@
       url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#actuator-changes
 
 - ruleID: spring-boot-2.x-to-3.0-actuator-00020
-  category: mandatory
+  category: potential
   effort: 3
   labels:
     - konveyor.io/source=spring-boot2
@@ -81,73 +81,21 @@
     - Operation annotations are correct
     - Return types are serializable
   links:
+    - title: 'Spring Boot 3.0 Migration Guide - Actuator'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#actuator-changes
     - title: 'Spring Boot Actuator Custom Endpoints'
       url: https://docs.spring.io/spring-boot/docs/3.0.x/reference/html/actuator.html#actuator.endpoints.implementing-custom
 
 - ruleID: spring-boot-2.x-to-3.0-actuator-00030
   category: potential
-  effort: 2
-  labels:
-    - konveyor.io/source=spring-boot2
-    - konveyor.io/target=spring-boot3+
-  when:
-    or:
-    - java.referenced:
-        pattern: org.springframework.boot.actuate.health.HealthIndicator
-        location: IMPLEMENTS_TYPE
-    - java.referenced:
-        pattern: org.springframework.boot.actuate.health.AbstractHealthIndicator
-  description: HealthIndicator implementation updates for Spring Boot 3.0
-  message: |
-    `HealthIndicator` implementations may need updates for Spring Boot 3.0.
-
-    **Key Changes:**
-    - `Health.Builder` API updates
-    - Reactive health indicators have new base classes
-    - Health groups configuration has changed
-
-    **Example Migration:**
-    ```java
-    @Component
-    public class CustomHealthIndicator implements HealthIndicator {
-        
-        @Override
-        public Health health() {
-            // Check health logic
-            boolean healthy = checkHealth();
-            
-            if (healthy) {
-                return Health.up()
-                    .withDetail("custom", "All systems operational")
-                    .build();
-            }
-            return Health.down()
-                .withDetail("custom", "System unavailable")
-                .build();
-        }
-    }
-    ```
-
-    **Configuration Updates:**
-    ```properties
-    # Health groups
-    management.endpoint.health.group.custom.include=customHealthIndicator
-    management.endpoint.health.group.custom.show-details=always
-    ```
-  links:
-    - title: 'Spring Boot Health Information'
-      url: https://docs.spring.io/spring-boot/docs/3.0.x/reference/html/actuator.html#actuator.endpoints.health
-
-- ruleID: spring-boot-2.x-to-3.0-actuator-00040
-  category: potential
   effort: 1
   labels:
-    - konveyor.io/source=spring-boot2
-    - konveyor.io/target=spring-boot3+
+  - konveyor.io/source=spring-boot2
+  - konveyor.io/target=spring-boot3+
   when:
     builtin.filecontent:
       pattern: "management.server.base-path"
-      filePattern: "application*.properties"
+      filePattern: ".*\\.properties"
   description: Actuator base path configuration review
   message: |
     The actuator base path configuration may need review in Spring Boot 3.0.
@@ -171,5 +119,7 @@
 
     Verify your actuator endpoint paths are correctly configured and accessible.
   links:
-    - title: 'Spring Boot Actuator HTTP Endpoints'
-      url: https://docs.spring.io/spring-boot/docs/3.0.x/reference/html/actuator.html#actuator.endpoints.exposing
+  - title: 'Spring Boot 3.0 Migration Guide - Actuator'
+    url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#actuator-changes
+  - title: 'Spring Boot Actuator HTTP Endpoints'
+    url: https://docs.spring.io/spring-boot/docs/3.0.x/reference/html/actuator.html#actuator.endpoints.exposing

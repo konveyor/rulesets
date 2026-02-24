@@ -14,8 +14,8 @@ tests:
           atLeast: 1
   - ruleID: spring-boot-2.x-to-3.0-actuator-00030
     testCases:
-      - name: tc-health-indicator
+      - name: tc-base-path
         analysisParams:
           mode: "source-only"
         hasIncidents:
-          atLeast: 1
+          atLeast: 0

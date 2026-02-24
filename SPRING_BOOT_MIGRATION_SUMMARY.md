@@ -4,27 +4,29 @@ This document summarizes the issues addressed in this PR for the `spring-boot-mi
 
 ## Issues Addressed (17)
 
-All issues with the `spring-boot-migration/3.0` label have been addressed:
+This PR aims to address all issues with the `spring-boot-migration/3.0` label:
 
 | Issue | Title | Rule File | Rule ID(s) |
 |-------|-------|-----------|------------|
-| #180 | Dependency review | dependencies.yaml | 00020, 00021 |
-| #181 | Spring Security 6.0 migration | security.yaml | 00020-00050 |
-| #183 | Configuration properties migrator | core-changes.yaml | 00040 |
-| #184 | JakartaEE requirements | core-changes.yaml | 00060 |
-| #185 | Core changes | core-changes.yaml | 00040-00060 |
-| #186 | Web application changes | webapp-changes.yaml | 00020-00040 |
-| #187 | Actuator changes | actuator.yaml (new) | 00010-00040 |
-| #188 | Micrometer and metrics changes | micrometer.yaml (new) | 00010-00040 |
-| #189 | Spring Security changes | security.yaml | 00020-00050 |
-| #190 | Session changes | session.yaml | 00010-00020 |
-| #208 | Logging date format | core-changes.yaml | 00050 |
-| #215 | Jetty | webapp-changes.yaml | 00020 |
-| #217 | Micrometer deprecation | micrometer.yaml | 00010, 00030 |
-| #218 | Tag providers migration | micrometer.yaml | 00010 |
-| #219 | JvmInfoMetrics auto-config | micrometer.yaml | 00020 |
-| #227 | MySQL JDBC Driver | datasource.yaml | 00070 |
-| #233 | Gradle and Maven session | session.yaml | 00010-00020 |
+| #180 | Dependency review | spring-boot-2.x-to-3.0-dependencies.yaml | 00020, 00021 |
+| #181 | Spring Security 6.0 migration | Spring Framework 5.x→6.0 ruleset | (see stable/java/spring-framework) |
+| #183 | Configuration properties migrator | spring-boot-2.x-to-3.0-core-changes.yaml | 00040 |
+| #184 | JakartaEE requirements | spring-boot-2.x-to-3.0-core-changes.yaml | 00060 |
+| #185 | Core changes | spring-boot-2.x-to-3.0-core-changes.yaml | 00040-00060 |
+| #186 | Web application changes | spring-boot-2.x-to-3.0-webapp-changes.yaml | 00020-00040 |
+| #187 | Actuator changes | spring-boot-2.x-to-3.0-actuator.yaml (new) | 00010-00030 |
+| #188 | Micrometer and metrics changes | spring-boot-2.x-to-3.0-micrometer.yaml (new) | 00010-00040 |
+| #189 | Spring Security changes | Spring Framework 5.x→6.0 ruleset | (see stable/java/spring-framework) |
+| #190 | Session changes | spring-boot-2.x-to-3.0-session.yaml | 00010-00020 |
+| #208 | Logging date format | spring-boot-2.x-to-3.0-core-changes.yaml | 00050 |
+| #215 | Jetty | spring-boot-2.x-to-3.0-webapp-changes.yaml | 00020 |
+| #217 | Micrometer deprecation | spring-boot-2.x-to-3.0-micrometer.yaml | 00010, 00030 |
+| #218 | Tag providers migration | spring-boot-2.x-to-3.0-micrometer.yaml | 00010 |
+| #219 | JvmInfoMetrics auto-config | spring-boot-2.x-to-3.0-micrometer.yaml | 00020 |
+| #227 | MySQL JDBC Driver | spring-boot-2.x-to-3.0-datasource.yaml | 00070 |
+| #233 | Gradle and Maven session | spring-boot-2.x-to-3.0-session.yaml | 00010-00020 |
+
+**Note:** Spring Security 6.0 migration rules (WebSecurityConfigurerAdapter, authorizeRequests, Lambda DSL, @Secured) live in the Spring Framework 5.x to 6.0 ruleset, not in spring-boot-2.x-to-3.0-security.yaml.
 
 ## New Rule Files Created
 
@@ -43,11 +45,8 @@ All issues with the `spring-boot-migration/3.0` label have been addressed:
 - Path matching strategy changes
 - ErrorController updates
 
-### Security (4 new rules)
-- WebSecurityConfigurerAdapter removal
-- authorizeRequests() deprecation
-- Lambda DSL migration
-- @Secured annotation review
+### Security
+- Existing Spring Boot 3.0 security rules (SAML2, etc.) remain; Spring Security 6.0 rules are in the Spring Framework 5.x→6.0 ruleset.
 
 ### Session (2 new rules)
 - Spring Session 3.0 requirement
@@ -60,10 +59,9 @@ All issues with the `spring-boot-migration/3.0` label have been addressed:
 - Spring Boot parent version check
 - Hazelcast 5.x requirement
 
-### Actuator (4 new rules)
+### Actuator (3 new rules)
 - Endpoint exposure configuration
 - Custom endpoint updates
-- Health indicator updates
 - Base path configuration
 
 ### Micrometer (4 new rules)

@@ -168,13 +168,13 @@
     or:
     - builtin.filecontent:
         pattern: "logging.pattern.dateformat"
-        filePattern: "application*.properties"
+        filePattern: ".*\\.properties"
     - builtin.filecontent:
         pattern: "logging.pattern.dateformat"
-        filePattern: "application*.yml"
+        filePattern: ".*\\.(yml|yaml)"
     - builtin.filecontent:
         pattern: "LOG_DATEFORMAT_PATTERN"
-        filePattern: "*.properties"
+        filePattern: ".*\\.properties"
   description: Logging date format has changed in Spring Boot 3.0
   message: |
     The default date format used in log messages has changed in Spring Boot 3.0.

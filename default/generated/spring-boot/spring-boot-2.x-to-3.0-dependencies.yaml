@@ -357,7 +357,9 @@
         upperbound: 4.99.99
   description: Hazelcast 3.x support has been removed in Spring Boot 3.0
   message: |
-    Support for Hazelcast 3.x has been removed in Spring Boot 3.0. You must upgrade to Hazelcast 5.x.
+    Support for Hazelcast 3.x has been removed in Spring Boot 3.0. Spring Boot 3.x dependency
+    management aligns with Hazelcast 5.x; verify the migration guide and your BOM for the
+    required version.
 
     **Dependency Update:**
     ```xml
@@ -375,5 +377,7 @@
 
     Refer to the Hazelcast migration guide for detailed changes.
   links:
-    - title: 'Hazelcast 5.x Migration Guide'
-      url: https://docs.hazelcast.com/hazelcast/5.2/migrate/migration-guide-5-0
+    - title: 'Spring Boot 3.0 Migration Guide - Dependencies'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Hazelcast Platform release notes (5.x)'
+      url: https://docs.hazelcast.com/hazelcast/5.6/release-notes/releases

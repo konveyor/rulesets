@@ -1,6 +1,6 @@
 - ruleID: spring-boot-2.x-to-3.0-micrometer-00010
   category: mandatory
-  effort: 5
+  effort: 1
   labels:
     - konveyor.io/source=spring-boot2
     - konveyor.io/target=spring-boot3+
@@ -60,7 +60,7 @@
 
 - ruleID: spring-boot-2.x-to-3.0-micrometer-00020
   category: mandatory
-  effort: 3
+  effort: 2
   labels:
     - konveyor.io/source=spring-boot2
     - konveyor.io/target=spring-boot3+
@@ -107,7 +107,7 @@
 
 - ruleID: spring-boot-2.x-to-3.0-micrometer-00030
   category: mandatory
-  effort: 4
+  effort: 3
   labels:
     - konveyor.io/source=spring-boot2
     - konveyor.io/target=spring-boot3+
@@ -170,7 +170,7 @@
 
 - ruleID: spring-boot-2.x-to-3.0-micrometer-00040
   category: potential
-  effort: 2
+  effort: 5
   labels:
     - konveyor.io/source=spring-boot2
     - konveyor.io/target=spring-boot3+
@@ -228,5 +228,7 @@
     - Automatic context propagation
     - Better integration with distributed tracing
   links:
+    - title: 'Spring Boot 3.0 Migration Guide - Micrometer'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#micrometer-and-metrics-changes
     - title: 'Micrometer Observation'
       url: https://micrometer.io/docs/observation

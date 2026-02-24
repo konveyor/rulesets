@@ -6,7 +6,7 @@
     - konveyor.io/target=spring-boot3+
   when:
     builtin.filecontent:
-      filePattern: .*\.properties
+      filePattern: ".*\\.properties"
       pattern: server\.max-http-header-size
   description: 'server.max-http-header-size has been deprecated'
   message: |
@@ -63,8 +63,9 @@
         upperbound: 10.99.99
   description: Jetty must be upgraded to version 11+ for Spring Boot 3.0
   message: |
-    Spring Boot 3.0 requires Jetty 11 or later. Jetty 11 is the first version to support
-    Jakarta EE 9 (Servlet 5.0 API with `jakarta.servlet` namespace).
+    Spring Boot 3.0 is compatible with Jetty 11+. Note: Jetty does not yet support
+    Servlet 6.0. To use Jetty with Spring Boot 3.0, you may need to downgrade the
+    Servlet API to 5.0 using the `jakarta.servlet.version` property (see migration guide).
 
     **Migration Steps:**
 
@@ -106,10 +107,10 @@
     or:
     - builtin.filecontent:
         pattern: "spring.mvc.pathmatch.matching-strategy"
-        filePattern: "application*.properties"
+        filePattern: ".*\\.properties"
     - builtin.filecontent:
         pattern: "pathmatch"
-        filePattern: "application*.yml"
+        filePattern: ".*\\.(yml|yaml)"
   description: Path matching strategy defaults have changed
   message: |
     In Spring Boot 3.0, the default path matching strategy for Spring MVC has changed.
@@ -164,5 +165,7 @@
     Review your error handling logic to ensure compatibility with the updated error
     attribute structure.
   links:
+    - title: 'Spring Boot 3.0 Migration Guide - Web Applications'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#web-applications
     - title: 'Spring Boot 3.0 Migration Guide'
       url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide
