@@ -93,7 +93,7 @@
     - java.dependency:
         name: org.apache.httpcomponents.httpclient
         upperbound: 4.5.999999
-        ignore: true
+      ignore: true
   description: RestTemplate now requires Apache HttpClient 5
   message: |
     `RestTemplate`, or rather the `HttpComponentsClientHttpRequestFactory`, now requires Apache HttpClient 5.

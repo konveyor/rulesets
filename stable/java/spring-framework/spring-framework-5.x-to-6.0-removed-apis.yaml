@@ -9,7 +9,7 @@
   when:
     or:
     - java.referenced:
-        pattern: org.springframework.cache.ehcache*
+        pattern: org.springframework.cache.ehcache.*
         location: IMPORT
     - java.dependency:
         name: net.sf.ehcache.ehcache
@@ -75,15 +75,15 @@
   when:
     or:
     - java.referenced:
-        pattern: org.springframework.remoting.rmi*
+        pattern: org.springframework.remoting.rmi.*
     - java.referenced:
-        pattern: org.springframework.remoting.httpinvoker*
+        pattern: org.springframework.remoting.httpinvoker.*
     - java.referenced:
-        pattern: org.springframework.remoting.jaxws*
+        pattern: org.springframework.remoting.jaxws.*
     - java.referenced:
-        pattern: org.springframework.remoting.caucho*
+        pattern: org.springframework.remoting.caucho.*
     - java.referenced:
-        pattern: org.springframework.jms.remoting*
+        pattern: org.springframework.jms.remoting.*
   description: RPC-style remoting has been removed in Spring 6
   message: |
     RPC-style remoting that has been officially and/or effectively deprecated for several years has been 
@@ -138,9 +138,9 @@
   when:
     or:
     - java.referenced:
-        pattern: org.springframework.ejb.access*
+        pattern: org.springframework.ejb.access.*
     - java.referenced:
-        pattern: org.springframework.ejb.config*
+        pattern: org.springframework.ejb.config.*
   description: Dedicated EJB access has been removed in Spring 6
   message: |
     Dedicated EJB access support has been removed in Spring Framework 6.0.
