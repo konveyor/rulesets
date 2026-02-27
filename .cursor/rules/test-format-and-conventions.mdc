@@ -1,0 +1,39 @@
+---
+description: "Test YAML format and conventions for Konveyor rule tests. Apply when creating or editing test files (*.test.yaml) under stable/ or preview/."
+globs: "**/*.test.yaml"
+alwaysApply: false
+---
+
+# Test file format and conventions
+
+Reference for creating or editing **test YAML files** for rules in this repository.
+
+## Location and naming
+
+- For a rule file **`<name>.yaml`**, the test file is **`tests/<name>.test.yaml`** in the **same directory** as the rule file.
+- Test data lives under **`tests/data/<logical-name>/`** (e.g. `tests/data/actuator/`, `tests/data/core-changes/`). Subfolders under `data/` are often named per test case (e.g. `tc-custom-endpoint`).
+- Each test file declares **`rulesPath`** relative to the test file (e.g. `../spring-boot-2.x-to-3.0-actuator.yaml`).
+
+## Test file schema
+
+- **`rulesPath`** (required): Relative path to the rule YAML file (e.g. `../my-rules.yaml`).
+- **`providers`** (required): List of providers that supply analysis context:
+  - `name`: e.g. `java`, `builtin`.
+  - `dataPath`: path to data directory for this provider (e.g. `./data/actuator`), relative to the test file.
+- **`tests`** (required): List of entries, one per rule under test:
+  - **`ruleID`**: Must match a rule ID in the rule file.
+  - **`testCases`**: List of test cases:
+    - **`name`**: Identifies the folder under `data/<provider-dataPath>/<name>/` (e.g. `tc-custom-endpoint`).
+    - **`analysisParams`**: e.g. `mode: "source-only"`.
+    - **`hasIncidents`**: Expectation — `exactly: N`, `atLeast: N`, or `atMost: N`.
+
+## Providers
+
+- Match the rule’s **`when`**: Java rules need the **`java`** provider with `dataPath` pointing at a directory that contains Java sources; file-content rules need **`builtin`** pointing at a directory that contains the config files (e.g. `application.properties`).
+- If a rule uses both Java and `builtin.filecontent`, list both providers and point both **`dataPath`** at the **same** data directory so the same inputs are used.
+
+## What works / what doesn’t
+
+1. **Test case `name`** selects the folder under `data/<provider-dataPath>/<test-case-name>/`. Ensure that folder exists and contains the expected sources/config.
+2. Use **`atLeast: 0`** when the rule may or may not fire on the given input (e.g. optional or path-dependent rules).
+3. **One test file per rule file** keeps CI’s “find test for changed rule” logic simple (see `.github/workflows/local-ci.yaml`).

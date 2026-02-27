@@ -1,0 +1,112 @@
+---
+description: "Rule YAML format and conventions for Konveyor rulesets. Apply when creating or editing rule definition files (YAML under stable/ or preview/ that define rules, not test files or ruleset.yaml)."
+globs: "stable/**/*.yaml,preview/**/*.yaml"
+alwaysApply: false
+---
+
+# Rule file format and conventions
+
+Reference for creating or editing **rule YAML files** in this repository. For test files, see the test-format rule.
+
+## Location and layout
+
+- Rules live under **`stable/<language>/<technology>/`** or **`preview/...`** (e.g. `stable/java/spring-boot/`, `stable/dotnet/`, `stable/nodejs/`).
+- Use **one rule file per concern** (e.g. `spring-boot-2.x-to-3.0-actuator.yaml`, `spring-boot-2.x-to-3.0-dependencies.yaml`). This keeps tests and data manageable.
+- Each directory under each language is a **target technology directory**, and contains rule files that aid in the migration of that target technology (e.g. **`stable/java/spring-boot`** contains rules for the migration of the spring boot framework).
+- Each technology directory must have a **`ruleset.yaml`** with `name` and `description` for that ruleset.
+- **Note:** CONTRIBUTING.md still mentions `default/generated`; the repo uses **`stable/`** and **`preview/`** — follow the current layout.
+
+## Rule entry schema
+
+Each rule is a list item with these fields:
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `ruleID` | Yes | Unique ID. Convention: `<ruleset-prefix>-<5-digit-number>` (e.g. `spring-boot-2.x-to-3.0-actuator-00010`), increment by 10 within a file. |
+| `category` | Yes | One of `mandatory`, `optional`, `potential` (as used in this codebase). Indicates if the issue raised by the rule is mandatory to do the migration, optional (for instance, a deprecated but still supported field), or potential (when there is not enough information to know if it's mandatory or optional) |
+| `effort` | Yes | Integer (e.g. 3) indicating migration effort. Uses the fibbonacci sequence in a manner similar to assigning story points in scrum fashion. |
+| `labels` | No | List of labels, e.g. `konveyor.io/source=spring-boot2`, `konveyor.io/target=spring-boot3+`. Mainly used to indicate the sources and target technologies. |
+| `when` | Yes | Condition(s) that trigger the rule (see below). |
+| `description` | Yes | Short one-line description. |
+| `message` | No | Longer message (often multi-line with `\|`) with guidance, examples, and links. It should contain "before and after" examples of code migrations to aid in the migration and potential AI agents. |
+| `links` | No | List of `title`/`url` objects for migration guides or docs. |
+
+## When conditions
+
+When conditions are dependent on the provider that implements them. Their format is `<provider>.<capability>`. Combine conditions with **`and`** / **`or`** as needed.
+
+### builtin provider
+
+- **`builtin.filecontent`**  
+  - `pattern`: text or regex to find in file content.  
+  - `filePattern`: which files to search. Use **quoted** regex with escaped dot, e.g. `".*\\.properties"`, `".*\\.(yml|yaml)"` for consistency.
+
+- **`builtin.file`**  
+  - `pattern`: file name or path pattern (e.g. `"banner.gif"`, `"spring.factories"`, `"pom.xml"`). Matches presence of a file, not its content.
+
+- **`builtin.xml`**  
+  - `xpath`: XPath expression to match in XML files (e.g. for `session-factory` or specific elements). Used together with file scope where applicable.
+
+### java.referenced
+
+Matches references to Java types, annotations, methods, or other elements in code.
+
+- **`pattern`**: Java class, annotation, method signature, or pattern (e.g. `org.springframework.boot.actuate.endpoint.annotation.Endpoint`, `'* javax.xml.transform.Source'` for method return type, `'getForObject(URI,Class<Source>)'` for method call).
+- **`location`**: where to look for the match. Common values:
+  - **ANNOTATION** — element is annotated with the pattern (e.g. a class/method with `@GetMapping`).
+  - **METHOD** — a method matching the pattern (e.g. return type, name).
+  - **FIELD** — a field of the given type.
+  - **CLASS** — a class (e.g. `pattern: '*'` for any class); often used with **`annotated`** to filter by annotation.
+  - **IMPLEMENTS_TYPE** — type implements the given interface.
+  - **INHERITANCE** — type extends the given class.
+  - **IMPORT** — the type is imported.
+  - **METHOD_CALL** — invocation of the given method.
+  - **CONSTRUCTOR_CALL** — `new` of the given type.
+  - **ENUM**, **VARIABLE_DECLARATION**, **FIELD_DECLARATION**, **PACKAGE** — other locations used in the codebase.
+
+- **`annotated`** (optional): narrow the match when **location** is ANNOTATION, METHOD, FIELD, or CLASS.
+  - **`annotated.pattern`**: the matched element must also be annotated with this annotation (e.g. a CLASS annotated with `@ConstructorBinding`, or a METHOD annotated with `@Bean`).
+  - **`annotated.elements`**: the matched annotation must have these attribute values. List of `name` / `value`; `value` can be a Java regex for string attributes (e.g. `name: value`, `value: '.*\/$'` for trailing slash in `@GetMapping`; or `name: transactional`, `value: false`).
+
+- **`filepaths`**: restrict this condition to specific file path(s). Often used with chaining: `filepaths: "{{namedMatch.Filepaths}}"`.
+
+### java.dependency
+
+Matches dependency coordinates (e.g. from Maven/Gradle).
+
+- **`name`** or **`nameregex`**: dependency identifier (e.g. `org.springframework.boot.spring-boot-starter-web`).
+- **`upperbound`**: version upper bound; rule fires when dependency is below this version.
+- **`lowerbound`** (optional): version lower bound; rule fires when dependency is present and at or above this version (e.g. `lowerbound: 0.0.0` to require the dependency to exist).
+
+### Condition chaining (as, from, filepaths, ignore, not)
+
+Use these to tie multiple conditions together (e.g. “find a class, then find a method in that same class”).
+
+- **`as`**: give the current match a name so other conditions can reference it (e.g. `as: class`, `as: annotation`). The name is used in **`from`** and **`filepaths`**.
+- **`from`**: require the *next* condition in the same **`and`** block to be satisfied only within the file(s) (or scope) of the named match. Example: match a class with `as: class`, then match a method with `from: class` and `filepaths: "{{class.Filepaths}}"` so the method must be in that class’s file.
+- **`filepaths`**: restrict to paths; use variable interpolation from a named match, e.g. `filepaths: "{{class.Filepaths}}"`.
+- **`ignore`**: when used with **`as`**, the named condition does not by itself trigger the rule; it only provides context. The rule fires when the *other* condition(s) in the **`and`** block match (e.g. find `@RequestMapping` as `annotation` with `ignore: true`, then require `@Controller` *not* in the same file via `from: annotation` and `not: true`).
+- **`not`**: invert the condition (e.g. “Controller not present in the same file as RequestMapping”).
+
+**Example (chaining):** “Fire when a class extends `DefaultMethodSecurityExpressionHandler` and that class defines a method `createSecurityExpressionRoot`”:
+
+```yaml
+when:
+  and:
+  - java.referenced:
+      pattern: org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler
+      location: INHERITANCE
+    as: class
+  - java.referenced:
+      pattern: createSecurityExpressionRoot
+      location: METHOD
+      filepaths: "{{class.Filepaths}}"
+    from: class
+```
+
+## What works / what doesn’t
+
+1. Use **quoted `filePattern`** with regex like `".*\\.properties"` so the engine gets the intended pattern.
+2. Prefer **one concern per rule file** to keep tests and data organized.
+3. Add **migration-guide or doc links** in `links` where relevant.
+4. Canonical rule schema: [analyzer-lsp rules](https://github.com/konveyor/analyzer-lsp/blob/main/docs/rules.md).
