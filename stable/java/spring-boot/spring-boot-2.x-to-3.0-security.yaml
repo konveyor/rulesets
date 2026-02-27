@@ -34,7 +34,7 @@
   when:
     builtin.filecontent:
       pattern: spring\.security\.saml2\.relyingparty\.registration\..*\.identity-provider
-      filePattern: .*\.properties
+      filePattern: ".*\\.properties"
   description: SAML2 relying party configuration
   message: |
     Support for properties under spring.security.saml2.relyingparty.registration.{id}.identity-provider
@@ -43,4 +43,4 @@
 
   links:
     - title: 'Spring Boot 3.0 Migration Guide - Spring Security'
-      link: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#saml2-relying-party-configuration
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#saml2-relying-party-configuration

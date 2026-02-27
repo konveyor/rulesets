@@ -33,3 +33,17 @@ tests:
           mode: "source-only"
         hasIncidents:
           exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-core-changes-00040
+    testCases:
+      - name: tc-properties-migrator
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
+  - ruleID: spring-boot-2.x-to-3.0-core-changes-00060
+    testCases:
+      - name: tc-jakarta-ee
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          atLeast: 1
