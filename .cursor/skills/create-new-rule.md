@@ -1,6 +1,6 @@
-# Skill: Create a new rule (and optional test)
+# Skill: Create a new rule (and test)
 
-Use this workflow when the user asks to add a new rule (or rules) for a technology.
+Use this workflow when the user asks to add a new rule (or rules) for a technology. Each new rule should have a corresponding test.
 
 ## Steps
 

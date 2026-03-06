@@ -3,7 +3,6 @@ description: "Rule YAML format and conventions for Konveyor rulesets. Apply when
 globs: "stable/**/*.yaml,preview/**/*.yaml"
 alwaysApply: false
 ---
-
 # Rule file format and conventions
 
 Reference for creating or editing **rule YAML files** in this repository. For test files, see the test-format rule.
@@ -14,7 +13,7 @@ Reference for creating or editing **rule YAML files** in this repository. For te
 - Use **one rule file per concern** (e.g. `spring-boot-2.x-to-3.0-actuator.yaml`, `spring-boot-2.x-to-3.0-dependencies.yaml`). This keeps tests and data manageable.
 - Each directory under each language is a **target technology directory**, and contains rule files that aid in the migration of that target technology (e.g. **`stable/java/spring-boot`** contains rules for the migration of the spring boot framework).
 - Each technology directory must have a **`ruleset.yaml`** with `name` and `description` for that ruleset.
-- **Note:** CONTRIBUTING.md still mentions `default/generated`; the repo uses **`stable/`** and **`preview/`** — follow the current layout.
+- **Note:** CONTRIBUTING.md describes the directory structure; use the **`stable/`** and **`preview/`** layout.
 
 ## Rule entry schema
 
@@ -77,6 +76,19 @@ Matches dependency coordinates (e.g. from Maven/Gradle).
 - **`name`** or **`nameregex`**: dependency identifier (e.g. `org.springframework.boot.spring-boot-starter-web`).
 - **`upperbound`**: version upper bound; rule fires when dependency is below this version.
 - **`lowerbound`** (optional): version lower bound; rule fires when dependency is present and at or above this version (e.g. `lowerbound: 0.0.0` to require the dependency to exist).
+
+### nodejs.referenced
+
+Used in **`stable/nodejs/`** rules (e.g. PatternFly). Matches references in JavaScript/TypeScript (e.g. props, imports).
+
+- **`pattern`**: symbol or text to match (e.g. prop name, component name). Use with **`builtin.filecontent`** and **`filePattern`** (e.g. `\.(j|t)sx?$`) when matching in JSX/TSX content.
+
+### dotnet.referenced
+
+Used in **`stable/dotnet/`** rules. Matches references in .NET (C#) code.
+
+- **`pattern`**: type, member, or identifier to match.
+- **`namespace`** (optional): namespace to scope the match (e.g. `Microsoft.Xrm.Tooling`, or `""` for global).
 
 ### Condition chaining (as, from, filepaths, ignore, not)
 
