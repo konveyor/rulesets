@@ -419,7 +419,7 @@
   labels:
   - konveyor.io/include=always
   links: []
-  ruleID: technology-usage-mvc-0x4200
+  ruleID: technology-usage-mvc-04200
   tag:
   - View=FreeMarker
   - Embedded=FreeMarker
