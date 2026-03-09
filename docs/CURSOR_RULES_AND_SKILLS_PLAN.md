@@ -53,7 +53,7 @@ Rules would live in `.cursor/rules/` as `.mdc` files so they can be auto-attache
 
 ## 4. Proposed Cursor Skills (Workflows)
 
-Skills would live in `.cursor/skills/` (or the equivalent Cursor uses). Each skill is a markdown workflow the AI can follow when the user asks for that task.
+Skills live in **`.skills/`** at the repo root, following the open spec so different implementors can discover them. Each skill is a markdown workflow the AI can follow when the user asks for that task.
 
 ### 4.1 Skill: “Create a new rule (and optional test)”
 
@@ -101,10 +101,10 @@ Skills would live in `.cursor/skills/` (or the equivalent Cursor uses). Each ski
   rules/
     rule-format-and-conventions.mdc   # globs: stable/**/*.yaml, preview/**/*.yaml (exclude *.test.yaml, ruleset.yaml)
     test-format-and-conventions.mdc  # globs: **/*.test.yaml or **/tests/*.yaml
-  skills/
-    create-new-rule.md                # workflow: create rule (+ optional test)
-    add-or-update-tests.md            # workflow: add/update tests for a rule
-    run-rule-tests.md                # workflow: run tests locally / CI
+.skills/                              # open spec: implementors look here for skills
+  create-new-rule.md                  # workflow: create rule and test
+  add-or-update-tests.md              # workflow: add/update tests for a rule
+  run-rule-tests.md                   # workflow: run tests locally / CI
 ```
 
 No AGENTS.md is proposed here; the rules above are scoped by globs and descriptions so the right context loads when editing rules or tests. If we later want a short “project overview” that’s always available, we could add a small AGENTS.md or an always-applied rule.
@@ -113,7 +113,7 @@ No AGENTS.md is proposed here; the rules above are scoped by globs and descripti
 
 ## 7. Next Steps (When Implementing)
 
-1. Create `.cursor/rules/` and `.cursor/skills/` (if Cursor expects this layout).
+1. Create `.cursor/rules/` and **`.skills/`** (skills in `.skills/` per open spec for implementor discovery).
 2. Add the two rule files with the content and globs described in §3.
 3. Add the three skill files with the step-by-step workflows in §4.
 4. Optionally update CONTRIBUTING.md to use `stable/` and `preview/` and point to `.cursor/rules/` or this doc for “how the AI gets context.”

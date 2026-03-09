@@ -35,5 +35,5 @@ Use this workflow when the user asks to add a new rule (or rules) for a technolo
 
 - Rule format: see **rule-format-and-conventions** (`.cursor/rules/`).
 - Test format: see **test-format-and-conventions** (`.cursor/rules/`).
-- Add or update tests skill: see **add-or-update-tests.md** (`.cursor/skills/`).
+- Add or update tests skill: see **add-or-update-tests.md** (`.skills/`).
 - Canonical rule schema: [analyzer-lsp rules](https://github.com/konveyor/analyzer-lsp/blob/main/docs/rules.md).
