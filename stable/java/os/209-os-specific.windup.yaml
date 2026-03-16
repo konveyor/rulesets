@@ -13,7 +13,7 @@
   when:
     builtin.filecontent:
       filePattern: .*\.(java|properties|jsp|jspf|tag|xml|txt)
-      pattern: '[A-z]:([\\][^\n\t]+)+|(\\\\([^\\\,\n\t]+)\\\S+)+'
+      pattern: '(?<![A-Za-z])[A-Za-z]:([\\/][^\n\t]+)+|(\\\\/([^\\/\,\n\t]+)\\/\S+)+'
 - category: mandatory
   customVariables: []
   description: Dynamic-Link Library (DLL)
