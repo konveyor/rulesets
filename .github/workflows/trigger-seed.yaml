@@ -1,14 +1,31 @@
 name: Trigger seed in tackle2-hub
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
       - 'release-*'
 
 jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      rules_changed: ${{ steps.filter.outputs.rules_changed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            rules_changed:
+              - 'stable/**/*.yaml'
+              - '!**/*.test.yaml'
+
   trigger-seed:
+    needs: filter
+    if: needs.filter.outputs.rules_changed == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Get Token
