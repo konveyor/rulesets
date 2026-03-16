@@ -36,30 +36,29 @@ document.
 There are a few conventions that we follow when creating rules:
 
 #### Directory structure
-Rules can be found within the `default/generated` folder. Within this folder, rules are organized by target technology.
-**_Source_** and **_target_** technologies are the technologies to migrate **_to_** and **_from_**, respectively.
-If a new target technology is to be added, a new folder should be created to cover for it. Within each target directories,
-additional directories can be created to further segregate the rules according to their source technologies. For instance,
-Within the `eap8` target folder, we could have `eap6` and `eap7` folders covering for migration to eap8 from eap 6 and 7
-respectively.
+Rules live under the **`stable/`** and **`preview/`** directories. Under each, rules are organized by language and then by target technology (e.g. `stable/java/spring-boot/`, `stable/dotnet/`, `preview/...`).
+**_Source_** and **_target_** technologies are the technologies to migrate **_from_** and **_to_**, respectively.
+If a new target technology is to be added, create a new folder under the appropriate language in `stable/` or `preview/`.
+Within each technology directory, you can add subdirectories to segregate rules by source technology or migration path (e.g. migration from Spring Boot 2.x to 3.0).
 
-Additionally, within each rules directory, a `test` directory should be created to place the rules's tests. Since each
-test needs data, a `data` directory must also be created inside `test`. For instance:
+Additionally, within each rules directory, a **`tests`** directory should be created to hold the rules' tests. Since each
+test needs data, a **`data`** directory must also be created inside **`tests`**. For instance:
 
 ```shell
 .
-└── target
-    ├── source1
-    │   ├── rules-1.yaml
-    │   ├── rules-2.yaml
-    │   └── tests
-    │       ├── data
-    │       │   ├── rules-1
-    │       │   └── rules-2
-    │       ├── rules-1.test.yaml
-    │       └── rules-2.test.yaml
-    └── source2
-        └── ...
+├── stable
+│   └── java
+│       └── spring-boot
+│           ├── rules-1.yaml
+│           ├── rules-2.yaml
+│           └── tests
+│               ├── data
+│               │   ├── rules-1
+│               │   └── rules-2
+│               ├── rules-1.test.yaml
+│               └── rules-2.test.yaml
+└── preview
+    └── ...
 ```
 Inside of each `data` folder, it is recommended to segregate the test data, so that each folder within it contains the
 data for the tests of a single rules file. This way, other tests will be less affected by changes in the data.
