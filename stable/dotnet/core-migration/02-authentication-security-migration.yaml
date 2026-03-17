@@ -1,0 +1,220 @@
+- category: mandatory
+  customVariables: []
+  description: WebMatrix.WebData.WebSecurity is not available in .NET Core
+  effort: 8
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Introduction to Identity on ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity
+  - title: Migrate Authentication and Identity to ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/migration/identity
+  message: |
+    WebMatrix.WebData.WebSecurity is not available in .NET Core and must be replaced with ASP.NET Core Identity.
+
+    Migration actions:
+    - Add Microsoft.AspNetCore.Identity.EntityFrameworkCore NuGet package
+    - Create ApplicationUser class inheriting from IdentityUser
+    - Update DbContext to inherit from IdentityDbContext<ApplicationUser>
+    - Replace WebSecurity.Login with SignInManager.PasswordSignInAsync
+    - Replace WebSecurity.Logout with SignInManager.SignOutAsync
+    - Replace WebSecurity.CreateUserAndAccount with UserManager.CreateAsync
+    - Replace WebSecurity.ChangePassword with UserManager.ChangePasswordAsync
+    - Configure Identity in Startup.ConfigureServices with AddIdentity or AddDefaultIdentity
+  ruleID: dotnet-core-websecurity-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: WebMatrix.WebData.WebSecurity
+
+- category: mandatory
+  customVariables: []
+  description: Microsoft.Web.WebPages.OAuth.OAuthWebSecurity is not available in .NET Core
+  effort: 8
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: External OAuth authentication providers
+    url: https://learn.microsoft.com/en-us/aspnet/core/security/authentication/social/
+  - title: Google external login setup
+    url: https://learn.microsoft.com/en-us/aspnet/core/security/authentication/social/google-logins
+  - title: Facebook external login setup
+    url: https://learn.microsoft.com/en-us/aspnet/core/security/authentication/social/facebook-logins
+  message: |
+    Microsoft.Web.WebPages.OAuth.OAuthWebSecurity is not available in .NET Core.
+    External authentication is handled differently in ASP.NET Core.
+
+    Migration actions:
+    - Replace OAuthWebSecurity.RegisterGoogleClient with AddGoogle extension
+    - Replace OAuthWebSecurity.RegisterFacebookClient with AddFacebook extension
+    - Replace OAuthWebSecurity.RegisterTwitterClient with AddTwitter extension
+    - Replace OAuthWebSecurity.RegisterMicrosoftClient with AddMicrosoftAccount extension
+    - Configure external providers in Startup.ConfigureServices using AddAuthentication()
+    - Add required NuGet packages (e.g., Microsoft.AspNetCore.Authentication.Google)
+    - Update authentication flow to use ASP.NET Core Identity external login pattern
+  ruleID: dotnet-core-oauth-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: Microsoft.Web.WebPages.OAuth.OAuthWebSecurity
+
+- category: mandatory
+  customVariables: []
+  description: System.Web.Security.Membership is not available in .NET Core
+  effort: 7
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Migrate from ASP.NET membership to ASP.NET Core Identity
+    url: https://learn.microsoft.com/en-us/aspnet/core/migration/identity
+  message: |
+    System.Web.Security.Membership is not available in .NET Core and must be replaced with ASP.NET Core Identity.
+
+    Migration actions:
+    - Replace Membership provider with ASP.NET Core Identity UserManager
+    - Update membership-related code to use UserManager methods
+    - Replace MembershipCreateUserException with IdentityResult error handling
+    - Configure password policies using IdentityOptions in Startup
+    - Migrate membership database schema to Identity schema
+  ruleID: dotnet-core-membership-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: System.Web.Security.Membership
+
+- category: mandatory
+  customVariables: []
+  description: System.Web.Security.FormsAuthentication is not available in .NET Core
+  effort: 7
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Cookie authentication without ASP.NET Core Identity
+    url: https://learn.microsoft.com/en-us/aspnet/core/security/authentication/cookie
+  message: |
+    System.Web.Security.FormsAuthentication is not available in .NET Core.
+    Cookie-based authentication is handled differently in ASP.NET Core.
+
+    Migration actions:
+    - Use ASP.NET Core Identity for most scenarios (recommended)
+    - Or use cookie authentication middleware with AddAuthentication().AddCookie()
+    - Replace FormsAuthentication.SignOut with SignInManager.SignOutAsync
+    - Replace FormsAuthentication.SetAuthCookie with SignInManager.SignInAsync
+    - Update authentication configuration in Startup instead of Web.config
+  ruleID: dotnet-core-forms-auth-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: System.Web.Security.FormsAuthentication
+
+- category: mandatory
+  customVariables: []
+  description: DotNetOpenAuth library is not compatible with .NET Core
+  effort: 8
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: External OAuth authentication providers
+    url: https://learn.microsoft.com/en-us/aspnet/core/security/authentication/social/
+  message: |
+    DotNetOpenAuth is not compatible with .NET Core and there is no direct replacement.
+    Use ASP.NET Core's built-in OAuth authentication instead.
+
+    Migration actions:
+    - Replace DotNetOpenAuth OAuth implementation with ASP.NET Core OAuth providers
+    - Use AddAuthentication().AddOAuth() for custom OAuth providers
+    - Use built-in providers (AddGoogle, AddFacebook, etc.) for common providers
+    - Implement IAuthenticationHandler for custom authentication schemes if needed
+  ruleID: dotnet-core-dotnetopenauth-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.DotNetOpenAuth.*"
+
+- category: mandatory
+  customVariables: []
+  description: System.Transactions.TransactionScope requires configuration in .NET Core
+  effort: 3
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: System.Transactions in .NET Core
+    url: https://learn.microsoft.com/en-us/dotnet/api/system.transactions
+  message: |
+    System.Transactions.TransactionScope is available in .NET Core but with limitations.
+    Distributed transactions are not supported on all platforms.
+
+    Migration actions:
+    - Review usage of distributed transactions - they may not work on Linux/macOS
+    - Consider using database transactions instead (DbContext.Database.BeginTransaction)
+    - For distributed scenarios on Windows, add System.Transactions.Local package
+    - Test transaction behavior on target platform
+  ruleID: dotnet-core-transactionscope-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: System.Transactions.TransactionScope
+
+- category: optional
+  customVariables: []
+  description: ValidateAntiForgeryToken works similarly but review implementation
+  effort: 1
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Prevent Cross-Site Request Forgery (XSRF/CSRF) attacks
+    url: https://learn.microsoft.com/en-us/aspnet/core/security/anti-request-forgery
+  message: |
+    ValidateAntiForgeryToken attribute exists in ASP.NET Core but works slightly differently.
+
+    Review actions:
+    - Ensure anti-forgery tokens are properly configured in Startup
+    - The attribute should work without changes in most cases
+    - Consider using [AutoValidateAntiforgeryToken] globally in filters
+    - Review any custom anti-forgery validation logic
+  ruleID: dotnet-core-antiforgery-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "System.Web.Mvc.ValidateAntiForgeryToken*"
+
+- category: mandatory
+  customVariables: []
+  description: MachineKey is not available in ASP.NET Core
+  effort: 5
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Data Protection in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/security/data-protection/introduction
+  - title: Replace ASP.NET machineKey
+    url: https://learn.microsoft.com/en-us/aspnet/core/security/data-protection/compatibility/replacing-machinekey
+  message: |
+    MachineKey class is not available in ASP.NET Core.
+    Encryption and validation functions are replaced by the Data Protection API.
+
+    Migration actions:
+    - Replace MachineKey.Protect with IDataProtector.Protect
+    - Replace MachineKey.Unprotect with IDataProtector.Unprotect
+    - Replace MachineKey.Encode with IDataProtectionProvider
+    - Replace MachineKey.Decode with IDataProtectionProvider
+    - Add Microsoft.AspNetCore.DataProtection NuGet package if needed
+    - Inject IDataProtectionProvider via dependency injection
+    - Create purpose-specific protectors: var protector = provider.CreateProtector("purpose")
+    - Configure data protection in Startup.ConfigureServices with AddDataProtection()
+    - For cross-app compatibility, configure key storage and application name
+    - Review key management and rotation policies
+    - Update any custom encryption/decryption code
+  ruleID: dotnet-core-machinekey-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.MachineKey.*"

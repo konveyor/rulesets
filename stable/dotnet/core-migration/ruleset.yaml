@@ -1,0 +1,33 @@
+name: dotnet-core-migration
+description: |
+  Ruleset for migrating ASP.NET MVC applications to ASP.NET Core / .NET Core.
+
+  This ruleset identifies incompatible APIs, frameworks, and patterns that need to be
+  updated when migrating from .NET Framework to .NET Core/.NET 5+.
+
+  The rules are organized into the following categories:
+  - Web Framework Migration (System.Web to ASP.NET Core)
+  - Authentication and Security Migration
+  - Entity Framework to EF Core Migration
+  - Configuration and State Management Migration
+  - Runtime and Utility Class Migration
+
+labels:
+- konveyor.io/source=dotnet
+- konveyor.io/target=dotnet-core
+
+ruleSets:
+- name: 01-web-framework-migration
+  description: Rules for migrating System.Web components to ASP.NET Core
+
+- name: 02-authentication-security-migration
+  description: Rules for migrating authentication and security components
+
+- name: 03-entity-framework-migration
+  description: Rules for migrating Entity Framework 6 to Entity Framework Core
+
+- name: 04-configuration-migration
+  description: Rules for migrating configuration and application state
+
+- name: 05-runtime-utilities-migration
+  description: Rules for migrating runtime and utility classes
