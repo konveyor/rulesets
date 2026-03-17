@@ -1,0 +1,314 @@
+- category: mandatory
+  customVariables: []
+  description: ASP.NET System.Web namespace is not available in .NET Core
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Migrate from ASP.NET to ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/migration/proper-to-2x
+  - title: System.Web namespace migration
+    url: https://learn.microsoft.com/en-us/aspnet/core/migration/mvc
+  message: |
+    The System.Web namespace is not available in .NET Core.
+    This namespace contains types that are specific to ASP.NET web applications and is replaced by ASP.NET Core components.
+
+    Migration actions:
+    - Replace System.Web.Mvc with Microsoft.AspNetCore.Mvc
+    - Replace System.Web.Http with ASP.NET Core Web API
+    - Update controller base classes and routing
+    - Migrate to ASP.NET Core middleware pipeline
+  ruleID: dotnet-core-system-web-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: System.Web.Mvc.*
+
+- category: mandatory
+  customVariables: []
+  description: System.Web.HttpApplication base class not available in .NET Core
+  effort: 5
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: App startup in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/startup
+  message: |
+    System.Web.HttpApplication is not available in .NET Core.
+    Global.asax and the HttpApplication class are replaced by the Startup class and Program.cs in ASP.NET Core.
+
+    Migration actions:
+    - Create a Startup.cs class with Configure and ConfigureServices methods
+    - Move Application_Start logic to Configure method
+    - Move dependency registration to ConfigureServices method
+    - Use middleware pipeline instead of HTTP modules and handlers
+  ruleID: dotnet-core-httpapplication-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: System.Web.HttpApplication.*
+
+#- category: mandatory
+#  customVariables: []
+#  description: System.Web.Mvc.Controller must be replaced with ASP.NET Core MVC controller
+#  effort: 3
+#  labels:
+#  - konveyor.io/source=dotnet
+#  - konveyor.io/target=dotnet-core
+#  links:
+#  - title: Migrate controllers to ASP.NET Core
+#    url: https://learn.microsoft.com/en-us/aspnet/core/migration/mvc/controllers
+#  message: |
+#    System.Web.Mvc.Controller is replaced by Microsoft.AspNetCore.Mvc.Controller in ASP.NET Core.
+#
+#    Migration actions:
+#    - Change using statement from System.Web.Mvc to Microsoft.AspNetCore.Mvc
+#    - Review controller action return types (ActionResult patterns remain similar)
+#    - Update routing attributes if using attribute routing
+#    - Review filter attributes (some have changed)
+#  ruleID: dotnet-core-mvc-controller-01
+#  when:
+#    csharp.referenced:
+#      location: CLASS
+#      pattern: System.Web.Mvc.Controller.*
+
+- category: mandatory
+  customVariables: []
+  description: System.Web.Routing is replaced by ASP.NET Core routing
+  effort: 5
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Routing in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/routing
+  message: |
+    System.Web.Routing is not available in .NET Core and is replaced by ASP.NET Core routing.
+
+    Migration actions:
+    - Move route registration from RouteConfig.RegisterRoutes to Startup.Configure
+    - Use app.UseRouting() and app.UseEndpoints() in the middleware pipeline
+    - Consider using endpoint routing with MapControllerRoute
+    - Update any custom route constraints
+  ruleID: dotnet-core-routing-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: System.Web.Routing.*
+
+- category: mandatory
+  customVariables: []
+  description: System.Web.Optimization bundling is not available in .NET Core
+  effort: 5
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Bundle and minify static assets in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/client-side/bundling-and-minification
+  message: |
+    System.Web.Optimization is not available in .NET Core.
+    Bundling and minification are handled differently in ASP.NET Core.
+
+    Migration actions:
+    - Remove BundleConfig.cs
+    - Use BuildBundlerMinifier NuGet package, or
+    - Use Webpack, Gulp, or other build-time bundlers, or
+    - Use ASP.NET Core bundling libraries like WebOptimizer
+    - Update views to reference individual files or new bundle definitions
+  ruleID: dotnet-core-optimization-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: System.Web.Optimization.*
+
+- category: mandatory
+  customVariables: []
+  description: System.Web.Http.ApiController must be replaced with ASP.NET Core API controller
+  effort: 3
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Migrate Web API to ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/migration/webapi
+  message: |
+    System.Web.Http.ApiController is replaced by Microsoft.AspNetCore.Mvc.ControllerBase in ASP.NET Core.
+
+    Migration actions:
+    - Change base class from ApiController to ControllerBase
+    - Change using from System.Web.Http to Microsoft.AspNetCore.Mvc
+    - Add [ApiController] attribute to controller classes
+    - Update response types to use ActionResult<T> pattern
+    - Review routing (Web API routing differs from ASP.NET Core)
+  ruleID: dotnet-core-webapi-controller-01
+  when:
+    csharp.referenced:
+      location: CLASS
+      pattern: System.Web.Http.ApiController.*
+
+- category: mandatory
+  customVariables: []
+  description: AreaRegistration is replaced by area routing in ASP.NET Core
+  effort: 3
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Areas in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/mvc/controllers/areas
+  message: |
+    AreaRegistration.RegisterAllAreas() is not available in ASP.NET Core.
+    Areas still exist but are registered differently.
+
+    Migration actions:
+    - Remove AreaRegistration.RegisterAllAreas() call
+    - Use [Area] attribute on controllers
+    - Configure area routes using MapAreaControllerRoute in Startup.Configure
+  ruleID: dotnet-core-area-registration-01
+  when:
+    csharp.referenced:
+      location: METHOD
+      pattern: "*.AreaRegistration.RegisterAllAreas"
+
+- category: mandatory
+  customVariables: []
+  description: HttpContext.Current is not available in ASP.NET Core
+  effort: 3
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Migrate HttpContext.Current to ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/migration/claimsprincipal-current
+  - title: Access HttpContext in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/http-context
+  message: |
+    HttpContext.Current static property is not available in ASP.NET Core.
+    ASP.NET Core does not use ambient context and requires explicit dependency injection.
+
+    Migration actions:
+    - In controllers: Access HttpContext property directly (inherited from ControllerBase)
+    - In views: Use @Context to access HttpContext
+    - In middleware: HttpContext is passed as parameter to Invoke method
+    - In other classes: Inject IHttpContextAccessor via dependency injection
+    - Register IHttpContextAccessor: services.AddHttpContextAccessor() in Startup.ConfigureServices
+    - Access via: private readonly IHttpContextAccessor _httpContextAccessor
+    - Get context: _httpContextAccessor.HttpContext
+    - Consider if HttpContext access is truly needed - prefer explicit parameters
+  ruleID: dotnet-core-httpcontext-current-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.HttpContext.Current"
+
+- category: mandatory
+  customVariables: []
+  description: Server.MapPath is not available in ASP.NET Core
+  effort: 2
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: File providers in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/file-providers
+  message: |
+    Server.MapPath is not available in ASP.NET Core.
+    Path mapping is handled differently using environment abstractions.
+
+    Migration actions:
+    - Inject IWebHostEnvironment (or IHostEnvironment) via dependency injection
+    - Use IWebHostEnvironment.WebRootPath for wwwroot folder (equivalent to "~/" in MapPath)
+    - Use IWebHostEnvironment.ContentRootPath for application root
+    - For combining paths: Path.Combine(env.WebRootPath, "subfolder", "file.txt")
+    - In Razor views: Inject @inject IWebHostEnvironment HostEnvironment
+    - Register in Startup.ConfigureServices if needed (registered by default)
+    - Update file access patterns to use the new API
+  ruleID: dotnet-core-server-mappath-01
+  when:
+    csharp.referenced:
+      location: METHOD
+      pattern: "*.Server.MapPath"
+
+- category: mandatory
+  customVariables: []
+  description: System.Web.UI (Web Forms) is not available in .NET Core
+  effort: 10
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Migrate from ASP.NET Web Forms
+    url: https://learn.microsoft.com/en-us/aspnet/core/migration/proper-to-2x/
+  - title: Blazor as Web Forms alternative
+    url: https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor
+  message: |
+    System.Web.UI namespace (ASP.NET Web Forms) is not available in .NET Core.
+    Web Forms is a .NET Framework-only technology and requires complete application rewrite.
+
+    Migration options:
+
+    Option 1 - Blazor (Recommended for component-based UI):
+    - Blazor Server for server-side rendering with SignalR
+    - Blazor WebAssembly for client-side execution
+    - Similar component model to Web Forms
+    - Supports C# for client-side logic
+    - Gradual migration possible with Blazor in ASP.NET Core
+
+    Option 2 - ASP.NET Core MVC/Razor Pages:
+    - Razor Pages for page-focused scenarios (similar to Web Forms pages)
+    - MVC for full Model-View-Controller pattern
+    - More control over HTML output
+    - Better separation of concerns
+
+    Option 3 - Keep on .NET Framework:
+    - Continue running Web Forms on .NET Framework 4.8
+    - .NET Framework 4.8 has long-term support
+    - Consider this if migration cost is too high
+
+    Migration actions:
+    - Analyze application complexity and choose migration strategy
+    - Plan incremental migration if possible
+    - Rewrite server controls as Razor components or tag helpers
+    - Convert ViewState to proper state management
+    - Migrate code-behind to MVC controllers or Blazor components
+    - Update postback patterns to AJAX or form submissions
+    - This is a major migration effort requiring architectural changes
+  ruleID: dotnet-core-webforms-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: System.Web.UI.*
+
+- category: optional
+  customVariables: []
+  description: HttpRuntime is not available in ASP.NET Core
+  effort: 3
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: App state in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/app-state
+  - title: Caching in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/performance/caching/memory
+  message: |
+    HttpRuntime class is not available in ASP.NET Core.
+    Various HttpRuntime members have different replacements in ASP.NET Core.
+
+    Migration actions:
+    - HttpRuntime.Cache: Replace with IMemoryCache or IDistributedCache
+      * Inject IMemoryCache via DI
+      * Register with services.AddMemoryCache() in Startup.ConfigureServices
+    - HttpRuntime.AppDomainAppPath: Use IWebHostEnvironment.ContentRootPath
+    - HttpRuntime.AppDomainAppVirtualPath: Use IWebHostEnvironment or path configuration
+    - HttpRuntime.BinDirectory: Use AppContext.BaseDirectory or IWebHostEnvironment
+    - HttpRuntime.IsOnServer: Not needed in ASP.NET Core (always server-side)
+    - HttpRuntime.UnloadAppDomain: Not supported, use process restart
+    - Review all HttpRuntime usages and migrate to appropriate ASP.NET Core APIs
+  ruleID: dotnet-core-httpruntime-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.HttpRuntime.*"

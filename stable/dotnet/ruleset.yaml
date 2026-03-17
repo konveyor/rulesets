@@ -1,3 +1,0 @@
-name: dotnet/dotnetframework
-description: This ruleset provides analysis with respect to API changes between
-  .NET Framework and newer versions of .NET.

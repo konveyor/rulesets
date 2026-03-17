@@ -1,0 +1,302 @@
+#- category: mandatory
+#  customVariables: []
+#  description: System.EnterpriseServices (COM+) is not supported in .NET Core
+#  effort: 10
+#  labels:
+#  - konveyor.io/source=dotnet
+#  - konveyor.io/target=dotnet-core
+#  links:
+#  - title: .NET Framework technologies unavailable on .NET Core
+#    url: https://learn.microsoft.com/en-us/dotnet/core/porting/net-framework-tech-unavailable
+#  message: |
+#    System.EnterpriseServices (COM+) is not available in .NET Core and has no direct replacement.
+#    This namespace provided enterprise-level service configuration including transactions, object pooling, and role-based security.
+#
+#    Migration actions:
+#    - Remove dependencies on System.EnterpriseServices
+#    - Replace ServicedComponent base class with alternative patterns
+#    - Use database transactions instead of distributed transactions where possible
+#    - Implement object pooling using ObjectPool<T> from Microsoft.Extensions.ObjectPool
+#    - Replace role-based security with ASP.NET Core authorization policies
+#    - Consider redesigning architecture to use modern patterns (microservices, containers)
+#    - For distributed transactions on Windows, evaluate System.Transactions.Local package (limited support)
+#  ruleID: dotnet-core-enterpriseservices-01
+#  when:
+#    csharp.referenced:
+#      location: ALL
+#      pattern: System.EnterpriseServices
+
+#- category: mandatory
+#  customVariables: []
+#  description: Workflow Foundation is not included in .NET Core
+#  effort: 10
+#  labels:
+#  - konveyor.io/source=dotnet
+#  - konveyor.io/target=dotnet-core
+#  links:
+#  - title: CoreWF - Community port of Workflow Foundation
+#    url: https://github.com/UiPath/corewf
+#  - title: .NET Framework technologies unavailable on .NET Core
+#    url: https://learn.microsoft.com/en-us/dotnet/core/porting/net-framework-tech-unavailable
+#  message: |
+#    Windows Workflow Foundation (WF) is not included in .NET Core.
+#    A community-maintained port called CoreWF is available as an alternative.
+#
+#    Migration actions:
+#    - Evaluate if workflow functionality is still needed
+#    - Install CoreWF NuGet package (UiPath.Workflow or CoreWF)
+#    - Update namespace references from System.Activities to UiPath.Workflow
+#    - Test workflows thoroughly as CoreWF may have behavioral differences
+#    - Consider alternative workflow engines or business process management systems
+#    - Evaluate modern alternatives like Elsa Workflows, Workflow Core, or custom state machines
+#    - Review workflow persistence and hosting requirements
+#  ruleID: dotnet-core-workflow-foundation-01
+#  when:
+#    csharp.referenced:
+#      location: ALL
+#      pattern: System.(Activities|Workflow)
+
+- category: mandatory
+  customVariables: []
+  description: XSLT script blocks are not supported in .NET Core
+  effort: 5
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: .NET Framework technologies unavailable on .NET Core
+    url: https://learn.microsoft.com/en-us/dotnet/core/porting/net-framework-tech-unavailable
+  - title: XslCompiledTransform class
+    url: https://learn.microsoft.com/en-us/dotnet/api/system.xml.xsl.xslcompiledtransform
+  message: |
+    XSLT script blocks (msxsl:script) are only supported in .NET Framework.
+    XslCompiledTransform with EnableScript is not supported in .NET Core.
+
+    Migration actions:
+    - Remove script blocks from XSLT files
+    - Implement custom logic in C# code instead of XSLT scripts
+    - Use XsltArgumentList to pass extension objects with custom methods
+    - Refactor XSLT transformations to use standard XSLT functions
+    - Consider alternatives to XSLT (LINQ to XML, custom transformations)
+    - If EnableScript is set to true, remove this setting and refactor
+  ruleID: dotnet-core-xslt-scripts-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.(XslCompiledTransform.*EnableScript|msxsl:script)"
+
+- category: mandatory
+  customVariables: []
+  description: AssemblyBuilder.Save is not supported in .NET Core through .NET 8
+  effort: 7
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Reflection.Emit save assemblies in .NET 9+
+    url: https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/runtime#reflection
+  - title: .NET Framework technologies unavailable on .NET Core
+    url: https://learn.microsoft.com/en-us/dotnet/core/porting/net-framework-tech-unavailable
+  message: |
+    AssemblyBuilder.Save() and related APIs for saving generated assemblies are not available in .NET Core through .NET 8.
+    Support was added in .NET 9 with PersistedAssemblyBuilder.
+
+    Migration actions for .NET 5-8:
+    - Use in-memory assemblies only (AssemblyBuilder.DefineDynamicAssembly with RunAccess)
+    - Remove calls to AssemblyBuilder.Save()
+    - Keep generated code in memory and load dynamically
+    - Consider using source generators instead of runtime code generation
+
+    Migration actions for .NET 9+:
+    - Migrate to PersistedAssemblyBuilder if targeting .NET 9 or later
+    - Use System.Reflection.Emit.PersistedAssemblyBuilder
+    - Update code to use the new persisted assembly API
+    - Review and test assembly generation logic thoroughly
+  ruleID: dotnet-core-assembly-save-01
+  when:
+    csharp.referenced:
+      location: METHOD
+      pattern: "*.(AssemblyBuilder.Save|ModuleBuilder.CreateGlobalFunctions)"
+
+#- category: optional
+#  customVariables: []
+#  description: Security Transparency attributes are not supported in .NET Core
+#  effort: 3
+#  labels:
+#  - konveyor.io/source=dotnet
+#  - konveyor.io/target=dotnet-core
+#  links:
+#  - title: .NET Framework technologies unavailable on .NET Core
+#    url: https://learn.microsoft.com/en-us/dotnet/core/porting/net-framework-tech-unavailable
+#  - title: Code Access Security is obsolete
+#    url: https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/5.0/code-access-security-apis-obsolete
+#  message: |
+#    Security Transparency attributes (SecurityTransparent, SecurityCritical, SecuritySafeCritical) are not supported in .NET Core.
+#    These were part of the Code Access Security (CAS) model which is obsolete.
+#
+#    Migration actions:
+#    - Remove [SecurityTransparent] attributes from assemblies and types
+#    - Remove [SecurityCritical] attributes from methods and types
+#    - Remove [SecuritySafeCritical] attributes from methods
+#    - Remove [AllowPartiallyTrustedCallers] attribute if present
+#    - Redesign security model using OS-level security boundaries
+#    - Use process isolation, containers, or virtualization for sandboxing
+#    - Implement security checks in application code where needed
+#    - Review security requirements and use modern security patterns
+#  ruleID: dotnet-core-security-transparency-01
+#  when:
+#    csharp.referenced:
+#      location: ALL
+#      pattern: "*.(SecurityTransparent|SecurityCritical|SecuritySafeCritical|AllowPartiallyTrustedCallers)"
+
+- category: optional
+  customVariables: []
+  description: Multi-module assemblies are not supported in .NET Core
+  effort: 5
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: .NET Framework technologies unavailable on .NET Core
+    url: https://learn.microsoft.com/en-us/dotnet/core/porting/net-framework-tech-unavailable
+  message: |
+    Multi-module assemblies (assemblies composed of multiple .netmodule files) are not supported in .NET Core.
+    Only single-file assemblies are supported.
+
+    Migration actions:
+    - Merge multiple modules into a single assembly
+    - Combine all .netmodule files into one assembly project
+    - Update build process to produce single-file assemblies
+    - Remove /addmodule compiler references
+    - If using AL.exe (Assembly Linker) to combine modules, refactor to standard build
+    - Consider splitting large assemblies into separate assembly projects if modularity is needed
+  ruleID: dotnet-core-multimodule-assembly-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.(DefineDynamicModule.*fileName|Assembly.LoadModule)"
+
+- category: optional
+  customVariables: []
+  description: System.Drawing is Windows-only in .NET Core and not recommended for cross-platform
+  effort: 5
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: System.Drawing.Common only supported on Windows
+    url: https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/6.0/system-drawing-common-windows-only
+  - title: ImageSharp library
+    url: https://github.com/SixLabors/ImageSharp
+  - title: SkiaSharp library
+    url: https://github.com/mono/SkiaSharp
+  message: |
+    System.Drawing.Common is available in .NET Core but only supported on Windows as of .NET 6.
+    For cross-platform applications, use alternative imaging libraries.
+
+    Migration actions:
+    - For cross-platform: Replace with ImageSharp (SixLabors.ImageSharp) or SkiaSharp
+    - ImageSharp is recommended for image processing (resize, crop, format conversion)
+    - SkiaSharp is recommended for 2D graphics and drawing operations
+    - System.Drawing.Primitives (Point, Size, Rectangle, Color) remain cross-platform
+    - If Windows-only: Can continue using System.Drawing.Common with understanding of limitations
+
+    Common migrations:
+    - Image loading/saving: Use ImageSharp.Image.Load() and Save()
+    - Image manipulation: Use ImageSharp mutate operations
+    - Drawing/graphics: Use SkiaSharp.SKCanvas
+    - Review all System.Drawing usage except Primitives namespace
+    - Test on target platforms (Linux, macOS) if cross-platform is required
+  ruleID: dotnet-core-system-drawing-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: System.Drawing
+
+- category: optional
+  customVariables: []
+  description: System.Windows.Forms is Windows-only and not recommended for new cross-platform apps
+  effort: 10
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Windows Forms on .NET Core
+    url: https://learn.microsoft.com/en-us/dotnet/desktop/winforms/
+  - title: Avalonia UI
+    url: https://avaloniaui.net/
+  - title: .NET MAUI
+    url: https://learn.microsoft.com/en-us/dotnet/maui/
+  message: |
+    System.Windows.Forms is available in .NET Core but is Windows-only.
+    For cross-platform desktop applications, consider modern alternatives.
+
+    Migration options:
+
+    Option 1 - Keep Windows Forms (Windows-only):
+    - Windows Forms is supported in .NET 6+ but Windows-only
+    - Use for Windows-specific applications
+    - Requires Microsoft.NET.Sdk.WindowsDesktop SDK
+    - Set <UseWindowsForms>true</UseWindowsForms> in project file
+
+    Option 2 - Avalonia UI (Recommended for cross-platform):
+    - Cross-platform (Windows, Linux, macOS, mobile, web)
+    - XAML-based similar to WPF
+    - Active community and good documentation
+    - Can reuse some WPF knowledge
+
+    Option 3 - .NET MAUI:
+    - Cross-platform (Windows, macOS, iOS, Android)
+    - Modern Microsoft framework
+    - Good for mobile-first applications
+    - Single codebase for desktop and mobile
+
+    Option 4 - Blazor Hybrid:
+    - Use web technologies (HTML/CSS) with native container
+    - Cross-platform
+    - Reuse web development skills
+
+    Migration actions:
+    - If targeting only Windows: Continue using Windows Forms
+    - If targeting cross-platform: Plan migration to Avalonia or MAUI
+    - This is a significant rewrite for cross-platform scenarios
+    - Consider application requirements and target platforms
+  ruleID: dotnet-core-winforms-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: System.Windows.Forms
+
+- category: optional
+  customVariables: []
+  description: AssemblyBuilderAccess enum values for saving assemblies not supported in .NET Core 5-8
+  effort: 3
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: .NET Framework technologies unavailable on .NET Core
+    url: https://learn.microsoft.com/en-us/dotnet/core/porting/net-framework-tech-unavailable
+  - title: Reflection.Emit in .NET 9+
+    url: https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/runtime#reflection
+  message: |
+    AssemblyBuilderAccess enum values for saving assemblies are not supported in .NET Core through .NET 8.
+    Only RunAccess (in-memory) is supported. Save support added in .NET 9 with PersistedAssemblyBuilder.
+
+    Migration actions for .NET 5-8:
+    - Replace AssemblyBuilderAccess.Save with AssemblyBuilderAccess.Run
+    - Replace AssemblyBuilderAccess.RunAndSave with AssemblyBuilderAccess.Run
+    - Remove AssemblyBuilderAccess.ReflectionOnly (not supported)
+    - Keep generated assemblies in memory only
+    - Remove any code that saves assemblies to disk
+    - Consider using source generators instead of runtime code generation
+
+    Migration actions for .NET 9+:
+    - Use PersistedAssemblyBuilder for assemblies that need to be saved
+    - Migrate to the new persisted assembly API
+    - Update assembly generation code accordingly
+  ruleID: dotnet-core-assemblybuilder-access-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.AssemblyBuilderAccess.(Save|RunAndSave|ReflectionOnly)"

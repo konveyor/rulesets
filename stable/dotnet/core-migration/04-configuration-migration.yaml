@@ -1,0 +1,267 @@
+- category: mandatory
+  customVariables: []
+  description: System.Web.Configuration.WebConfigurationManager is not available in .NET Core
+  effort: 5
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Configuration in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/
+  message: |
+    System.Web.Configuration.WebConfigurationManager is not available in .NET Core.
+    Configuration is handled differently using the configuration API and appsettings.json.
+
+    Migration actions:
+    - Move configuration from Web.config to appsettings.json
+    - Replace WebConfigurationManager.AppSettings with IConfiguration
+    - Inject IConfiguration into controllers or services
+    - Use IOptions<T> pattern for strongly-typed configuration
+    - Access app settings via Configuration["key"] or Configuration.GetValue<T>("key")
+    - Create configuration classes for complex settings
+  ruleID: dotnet-core-webconfig-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: System.Web.Configuration.WebConfigurationManager
+
+- category: mandatory
+  customVariables: []
+  description: ConfigurationManager.AppSettings must be replaced with IConfiguration
+  effort: 5
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Configuration in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/
+  message: |
+    ConfigurationManager.AppSettings is not the recommended approach in .NET Core.
+    Use the ASP.NET Core configuration system instead.
+
+    Migration actions:
+    - Move app settings from Web.config/app.config to appsettings.json
+    - Use dependency injection to access IConfiguration
+    - Replace ConfigurationManager.AppSettings["key"] with Configuration["key"]
+    - Use environment-specific configuration files (appsettings.Development.json, etc.)
+    - Consider using user secrets for sensitive data in development
+  ruleID: dotnet-core-configmanager-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.ConfigurationManager.AppSettings"
+
+- category: mandatory
+  customVariables: []
+  description: ConfigurationManager.ConnectionStrings must be replaced with IConfiguration
+  effort: 3
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Connection strings in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/
+  message: |
+    ConfigurationManager.ConnectionStrings is not the recommended approach in .NET Core.
+
+    Migration actions:
+    - Move connection strings from Web.config to appsettings.json ConnectionStrings section
+    - Access via Configuration.GetConnectionString("name")
+    - Or use Configuration["ConnectionStrings:name"]
+    - Configure DbContext using connection string in Startup.ConfigureServices
+  ruleID: dotnet-core-connectionstrings-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.ConfigurationManager.ConnectionStrings"
+
+- category: optional
+  customVariables: []
+  description: Review HttpContext.Application usage - replaced by different patterns
+  effort: 5
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: App state in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/app-state
+  message: |
+    HttpContext.Application (Application state) is not available in .NET Core.
+    Application state storage has different patterns in ASP.NET Core.
+
+    Migration actions:
+    - For application-wide state, use singleton services registered in DI
+    - For caching, use IMemoryCache or IDistributedCache
+    - Review if state is truly needed across the application
+    - Consider using configuration or static fields for truly static data
+  ruleID: dotnet-core-application-state-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.(Application|HttpContext.Application)"
+
+- category: optional
+  customVariables: []
+  description: Review Session usage - works differently in .NET Core
+  effort: 3
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Session state in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/app-state#session-state
+  message: |
+    Session state is available in ASP.NET Core but requires explicit configuration.
+
+    Review actions:
+    - Add Microsoft.AspNetCore.Session NuGet package
+    - Call services.AddSession() in Startup.ConfigureServices
+    - Call app.UseSession() in Startup.Configure (before UseRouting)
+    - Session API has changed - review access patterns
+    - Use extension methods for complex types: GetString, SetString, GetInt32, SetInt32
+    - Consider if session state is needed or if other patterns are better
+  ruleID: dotnet-core-session-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.(Session|HttpContext.Session)"
+
+- category: mandatory
+  customVariables: []
+  description: GlobalConfiguration is not available in .NET Core
+  effort: 5
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Web API in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/web-api/
+  message: |
+    GlobalConfiguration for Web API is not available in .NET Core.
+    API configuration is done in Startup.ConfigureServices.
+
+    Migration actions:
+    - Remove WebApiConfig.Register(GlobalConfiguration.Configuration) call
+    - Move Web API configuration to Startup.ConfigureServices
+    - Use services.AddControllers() or AddMvc() to configure API services
+    - Configure JSON serialization using AddJsonOptions
+    - Web API and MVC controllers are unified in ASP.NET Core
+  ruleID: dotnet-core-globalconfig-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.GlobalConfiguration"
+
+- category: mandatory
+  customVariables: []
+  description: GlobalFilters is replaced by MVC options configuration
+  effort: 3
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Filters in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/mvc/controllers/filters
+  message: |
+    GlobalFilters.Filters is not available in .NET Core.
+    Global filters are configured differently.
+
+    Migration actions:
+    - Move global filter registration to Startup.ConfigureServices
+    - Use services.AddMvc(options => options.Filters.Add(...))
+    - Or use AddControllersWithViews for MVC applications
+    - Register filters by type or instance
+    - Review custom filters for compatibility with ASP.NET Core
+  ruleID: dotnet-core-globalfilters-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.GlobalFilters.Filters"
+
+- category: mandatory
+  customVariables: []
+  description: RouteTable is replaced by endpoint routing
+  effort: 5
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Routing in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/routing
+  message: |
+    RouteTable.Routes is not available in .NET Core.
+    Routing is configured in the middleware pipeline.
+
+    Migration actions:
+    - Move route configuration from RouteConfig to Startup.Configure
+    - Use endpoint routing with app.UseRouting() and app.UseEndpoints()
+    - Define routes using MapControllerRoute or attribute routing
+    - Default route: endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}")
+    - Consider using attribute routing for cleaner code
+  ruleID: dotnet-core-routetable-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.RouteTable.Routes"
+
+- category: mandatory
+  customVariables: []
+  description: BundleTable is not available in .NET Core
+  effort: 7
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Bundle and minify in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/client-side/bundling-and-minification
+  message: |
+    BundleTable.Bundles is not available in .NET Core.
+    Bundling and minification are handled differently.
+
+    Migration actions:
+    - Remove BundleConfig.cs and bundle definitions
+    - Choose a bundling strategy:
+      * BuildBundlerMinifier (MSBuild-based, simple)
+      * WebOptimizer (runtime bundling)
+      * Webpack/Rollup (full-featured build tools)
+      * Vite (modern, fast build tool)
+    - Update _ViewImports.cshtml or layout files
+    - Update script and style references in views
+    - Configure bundling for development and production environments
+  ruleID: dotnet-core-bundletable-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.BundleTable.Bundles"
+
+- category: optional
+  customVariables: []
+  description: System.Configuration.Install is not supported in .NET Core
+  effort: 5
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: .NET Framework technologies unavailable on .NET Core
+    url: https://learn.microsoft.com/en-us/dotnet/core/porting/net-framework-tech-unavailable
+  message: |
+    System.Configuration.Install namespace (Installer classes) is not supported in .NET Core.
+    This namespace was used for creating Windows Installer custom actions and installable components.
+
+    Migration actions:
+    - Remove dependencies on Installer, InstallContext, and related classes
+    - Remove [RunInstaller] attributes from components
+    - Redesign installation logic using modern deployment approaches:
+      * Use MSI or setup.exe installers without custom .NET installer classes
+      * Implement installation/configuration logic in the application itself (first-run setup)
+      * Use PowerShell scripts for installation tasks
+      * Use Windows Services if needed (with sc.exe or PowerShell)
+      * For database setup, use EF Core migrations or SQL scripts
+      * For file/registry operations, run during app initialization
+    - Consider containerization (Docker) which eliminates traditional installation
+    - For Windows Services, use BackgroundService in ASP.NET Core or Worker Services
+  ruleID: dotnet-core-install-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.System.Configuration.Install"
