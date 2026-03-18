@@ -1,0 +1,129 @@
+- category: mandatory
+  customVariables: []
+  description: System.Data.Entity.DbContext must be replaced with Entity Framework Core
+  effort: 7
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Porting from EF6 to EF Core
+    url: https://learn.microsoft.com/en-us/ef/efcore-and-ef6/porting/
+  - title: Compare EF6 and EF Core
+    url: https://learn.microsoft.com/en-us/ef/efcore-and-ef6/
+  message: |
+    System.Data.Entity is not available in .NET Core. Entity Framework 6 must be migrated to Entity Framework Core.
+
+    Migration actions:
+    - Install Microsoft.EntityFrameworkCore NuGet package
+    - Install database provider package (e.g., Microsoft.EntityFrameworkCore.SqlServer)
+    - Change using from System.Data.Entity to Microsoft.EntityFrameworkCore
+    - Review DbContext configuration - some APIs have changed
+    - Update connection string configuration (moved from Web.config to appsettings.json)
+    - Review LINQ queries - some EF6 features are not supported in EF Core
+    - Test thoroughly as EF Core has different behavior in some scenarios
+  ruleID: dotnet-core-ef-dbcontext-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: System.Data.Entity.DbContext
+
+- category: mandatory
+  customVariables: []
+  description: Entity Framework Database.SetInitializer is not available in EF Core
+  effort: 5
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Managing database schemas in EF Core
+    url: https://learn.microsoft.com/en-us/ef/core/managing-schemas/
+  message: |
+    Database.SetInitializer is not available in Entity Framework Core.
+    Database initialization is handled differently in EF Core.
+
+    Migration actions:
+    - Remove Database.SetInitializer calls
+    - Use EF Core migrations for schema management (recommended)
+    - Or use Database.EnsureCreated() for development/testing scenarios
+    - Or use Database.Migrate() to apply migrations at runtime
+    - Configure database initialization in Startup or Program.cs
+  ruleID: dotnet-core-ef-initializer-01
+  when:
+    csharp.referenced:
+      location: METHOD
+      pattern: "*.Database.SetInitializer"
+
+- category: optional
+  customVariables: []
+  description: Review DbSet usage for EF Core compatibility
+  effort: 3
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: DbSet in EF Core
+    url: https://learn.microsoft.com/en-us/ef/core/querying/
+  message: |
+    DbSet is available in EF Core but some behaviors have changed.
+
+    Review actions:
+    - DbSet API is largely compatible but review LINQ query behavior
+    - Some LINQ operators may require client evaluation in EF Core 2.x (throws exception in 3.0+)
+    - Check for use of unsupported query patterns
+    - Add .AsNoTracking() where appropriate for better performance
+    - Review any custom DbSet implementations
+  ruleID: dotnet-core-ef-dbset-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.DbSet"
+
+- category: mandatory
+  customVariables: []
+  description: System.Data.Entity.Spatial is not available in early EF Core versions
+  effort: 5
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Spatial Data in EF Core
+    url: https://learn.microsoft.com/en-us/ef/core/modeling/spatial
+  message: |
+    System.Data.Entity.Spatial (spatial/geography types) support was added in EF Core 2.2.
+
+    Migration actions:
+    - Use EF Core 2.2 or later for spatial data support
+    - Add Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite package
+    - Replace DbGeography/DbGeometry with NetTopologySuite types
+    - Update spatial queries to use NetTopologySuite syntax
+    - Review model binders for geography types (e.g., DbGeographyModelBinder)
+  ruleID: dotnet-core-ef-spatial-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: System.Data.Entity.Spatial
+
+- category: optional
+  customVariables: []
+  description: Review Entity Framework lazy loading configuration
+  effort: 3
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Lazy loading in EF Core
+    url: https://learn.microsoft.com/en-us/ef/core/querying/related-data/lazy
+  message: |
+    Lazy loading works differently in EF Core and requires explicit configuration.
+
+    Review actions:
+    - Lazy loading is opt-in in EF Core (was default in EF6)
+    - Add Microsoft.EntityFrameworkCore.Proxies for lazy loading support
+    - Call UseLazyLoadingProxies() in DbContext configuration
+    - Or mark navigation properties as virtual and inject ILazyLoader
+    - Consider using explicit loading or eager loading instead for better performance
+  ruleID: dotnet-core-ef-lazy-loading-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: System.Data.Entity

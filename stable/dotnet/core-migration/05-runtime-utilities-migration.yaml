@@ -1,0 +1,358 @@
+- category: mandatory
+  customVariables: []
+  description: Thread.Abort is not supported in .NET Core
+  effort: 7
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Thread.Abort not supported
+    url: https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/5.0/thread-abort-obsolete
+  message: |
+    Thread.Abort is not supported in .NET Core and .NET 5+.
+    This method throws PlatformNotSupportedException.
+
+    Migration actions:
+    - Redesign code to use cooperative cancellation with CancellationToken
+    - Use Task-based async patterns instead of thread-based approaches
+    - Implement graceful shutdown logic in long-running operations
+    - Review threading model for better patterns
+  ruleID: dotnet-core-thread-abort-01
+  when:
+    csharp.referenced:
+      location: METHOD
+      pattern: "*.Thread.Abort"
+
+- category: mandatory
+  customVariables: []
+  description: BinaryFormatter serialization is dangerous and unsupported
+  effort: 7
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: BinaryFormatter serialization is obsolete
+    url: https://learn.microsoft.com/en-us/dotnet/standard/serialization/binaryformatter-security-guide
+  message: |
+    BinaryFormatter is obsolete and dangerous due to security vulnerabilities.
+    It throws NotSupportedException in .NET 5+ unless specifically enabled.
+
+    Migration actions:
+    - Use System.Text.Json for JSON serialization (recommended)
+    - Or use Newtonsoft.Json (Json.NET) for complex scenarios
+    - For binary serialization, use protobuf-net or MessagePack
+    - Review all serialization scenarios
+    - Update serialized data formats
+  ruleID: dotnet-core-binaryformatter-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.BinaryFormatter"
+
+- category: mandatory
+  customVariables: []
+  description: AppDomain.CreateDomain is not supported in .NET Core
+  effort: 7
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: AppDomain in .NET Core
+    url: https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/5.0/appdomain-apis-throw-exception
+  - title: AssemblyLoadContext
+    url: https://learn.microsoft.com/en-us/dotnet/core/dependency-loading/understanding-assemblyloadcontext
+  message: |
+    AppDomain.CreateDomain is not supported in .NET Core and throws PlatformNotSupportedException.
+    Only a single AppDomain exists in .NET Core applications.
+
+    Migration actions:
+    - Use AssemblyLoadContext for assembly isolation and unloading
+    - Create custom AssemblyLoadContext for plugin scenarios
+    - Use collectible AssemblyLoadContext for assemblies that need to be unloaded
+    - Example: var context = new AssemblyLoadContext("PluginContext", isCollectible: true)
+    - Load assemblies: context.LoadFromAssemblyPath(assemblyPath)
+    - Unload context: context.Unload()
+    - Use process isolation for stronger isolation requirements
+    - Consider separate processes for untrusted code execution
+  ruleID: dotnet-core-appdomain-createdomain-01
+  when:
+    csharp.referenced:
+      location: METHOD
+      pattern: "*.AppDomain.CreateDomain"
+
+- category: mandatory
+  customVariables: []
+  description: AppDomain.Unload is not supported in .NET Core
+  effort: 5
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: AppDomain in .NET Core
+    url: https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/5.0/appdomain-apis-throw-exception
+  - title: AssemblyLoadContext
+    url: https://learn.microsoft.com/en-us/dotnet/core/dependency-loading/understanding-assemblyloadcontext
+  message: |
+    AppDomain.Unload is not supported in .NET Core and throws PlatformNotSupportedException.
+
+    Migration actions:
+    - Use AssemblyLoadContext.Unload() instead
+    - Create collectible AssemblyLoadContext: new AssemblyLoadContext("name", isCollectible: true)
+    - Load assemblies into the context
+    - Call context.Unload() when done
+    - Hold WeakReference to context to verify unloading
+    - Note: Unloading is cooperative and may not happen immediately
+    - Ensure no references to loaded types remain before unloading
+  ruleID: dotnet-core-appdomain-unload-01
+  when:
+    csharp.referenced:
+      location: METHOD
+      pattern: "*.AppDomain.Unload"
+
+- category: optional
+  customVariables: []
+  description: Review AppDomain usage - limited support in .NET Core
+  effort: 7
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: AppDomain in .NET Core
+    url: https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/5.0/appdomain-apis-throw-exception
+  message: |
+    Many AppDomain APIs are not supported in .NET Core.
+    Only a single AppDomain is supported, and creating new AppDomains throws exceptions.
+
+    Review actions:
+    - AppDomain.CreateDomain throws PlatformNotSupportedException
+    - AppDomain.Unload throws PlatformNotSupportedException
+    - AppDomain.CurrentDomain is available but with limited functionality
+    - Redesign plugin/isolation scenarios using AssemblyLoadContext
+    - Use process isolation instead of AppDomain isolation
+  ruleID: dotnet-core-appdomain-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.AppDomain"
+
+- category: mandatory
+  customVariables: []
+  description: .NET Remoting is not supported in .NET Core
+  effort: 10
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: .NET Remoting not supported
+    url: https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/5.0/remoting-apis-obsolete
+  message: |
+    .NET Remoting is not supported in .NET Core and throws PlatformNotSupportedException.
+
+    Migration actions:
+    - Replace with gRPC for high-performance RPC scenarios (recommended)
+    - Or use WCF (limited support via CoreWCF community project)
+    - Or use REST APIs with ASP.NET Core Web API
+    - Or use message queues for async communication
+    - Complete redesign of remoting infrastructure required
+  ruleID: dotnet-core-remoting-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: System.Runtime.Remoting
+
+- category: optional
+  customVariables: []
+  description: Review Assembly.CodeBase usage - not recommended in .NET Core
+  effort: 3
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Assembly.CodeBase obsolete
+    url: https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/5.0/assembly-codebase-obsolete
+  message: |
+    Assembly.CodeBase is obsolete in .NET 5+ and may return unexpected values in .NET Core.
+
+    Migration actions:
+    - Use Assembly.Location instead for file path
+    - Be aware that Location may be empty for assemblies loaded from memory
+    - Review use cases - many scenarios have better alternatives
+    - For application directory, use AppContext.BaseDirectory
+  ruleID: dotnet-core-assembly-codebase-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.Assembly.CodeBase"
+
+- category: optional
+  customVariables: []
+  description: Review ReflectionOnlyLoad usage - not supported in .NET Core
+  effort: 5
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Reflection-only load not supported
+    url: https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/5.0/assembly-reflectiononlyload-throws-exception
+  message: |
+    Assembly.ReflectionOnlyLoad and related methods are not supported in .NET Core.
+
+    Migration actions:
+    - Use MetadataLoadContext for metadata-only inspection
+    - Add System.Reflection.MetadataLoadContext NuGet package
+    - Update code to use MetadataLoadContext API
+    - Review if reflection-only loading is necessary
+  ruleID: dotnet-core-reflection-only-01
+  when:
+    csharp.referenced:
+      location: METHOD
+      pattern: "*.ReflectionOnlyLoad"
+
+#- category: optional
+#  customVariables: []
+#  description: Review Code Access Security (CAS) usage - not supported
+#  effort: 5
+#  labels:
+#  - konveyor.io/source=dotnet
+#  - konveyor.io/target=dotnet-core
+#  links:
+#  - title: Code Access Security not supported
+#    url: https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/5.0/code-access-security-apis-obsolete
+#  message: |
+#    Code Access Security (CAS) is not supported in .NET Core.
+#    All CAS-related APIs throw PlatformNotSupportedException.
+#
+#    Review actions:
+#    - Remove all CAS-related code (SecurityPermission, CodeAccessPermission, etc.)
+#    - Redesign security model using OS-level security
+#    - Use principle of least privilege at the process level
+#    - Review security requirements and implement using supported mechanisms
+#  ruleID: dotnet-core-cas-01
+#  when:
+#    csharp.referenced:
+#      location: ALL
+#      pattern: "*.(CodeAccessPermission|SecurityPermission)"
+
+- category: optional
+  customVariables: []
+  description: Review ChildActionOnly usage - concept removed in ASP.NET Core
+  effort: 5
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Tag Helpers in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro
+  - title: View Components in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/mvc/views/view-components
+  message: |
+    ChildActionOnly attribute and Html.Action/Html.RenderAction are not available in ASP.NET Core.
+
+    Migration actions:
+    - Replace with View Components (recommended for complex logic)
+    - Or use Partial Views for simple rendering
+    - Or use Tag Helpers for reusable components
+    - Remove [ChildActionOnly] attributes
+    - Convert action methods to View Component InvokeAsync methods
+  ruleID: dotnet-core-childaction-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.ChildActionOnly"
+
+- category: optional
+  customVariables: []
+  description: Review ModelBinderProviders usage for ASP.NET Core compatibility
+  effort: 5
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Model binding in ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/mvc/models/model-binding
+  message: |
+    Model binding works differently in ASP.NET Core.
+    ModelBinderProviders API has changed.
+
+    Migration actions:
+    - Implement IModelBinder interface (similar but with changes)
+    - Implement IModelBinderProvider to create binder instances
+    - Register custom model binders in Startup.ConfigureServices
+    - Use options.ModelBinderProviders.Insert(0, new MyBinderProvider())
+    - Review and update custom model binder implementations
+  ruleID: dotnet-core-modelbinder-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "*.ModelBinderProviders"
+
+#- category: mandatory
+#  customVariables: []
+#  description: Delegate.BeginInvoke/EndInvoke async pattern not supported in .NET Core
+#  effort: 3
+#  labels:
+#  - konveyor.io/source=dotnet
+#  - konveyor.io/target=dotnet-core
+#  links:
+#  - title: .NET Framework technologies unavailable on .NET Core
+#    url: https://learn.microsoft.com/en-us/dotnet/core/porting/net-framework-tech-unavailable
+#  - title: Task-based asynchronous pattern (TAP)
+#    url: https://learn.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap
+#  message: |
+#    Delegate.BeginInvoke and Delegate.EndInvoke are not supported in .NET Core.
+#    These methods are part of the legacy Asynchronous Programming Model (APM) pattern.
+#
+#    Migration actions:
+#    - Replace BeginInvoke/EndInvoke with Task-based async pattern
+#    - Use Task.Run() to execute delegates asynchronously
+#    - Use async/await pattern for asynchronous operations
+#    - Example: Instead of delegate.BeginInvoke(...), use await Task.Run(() => delegate())
+#    - For event handlers, consider using asynchronous event patterns
+#    - Review callback patterns and convert to Task continuations
+#  ruleID: dotnet-core-delegate-begininvoke-01
+#  when:
+#    csharp.referenced:
+#      location: METHOD
+#      pattern: "*.(BeginInvoke|EndInvoke)"
+
+- category: mandatory
+  customVariables: []
+  description: System.ServiceModel (WCF) is not included in .NET Core
+  effort: 10
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: CoreWCF - Community port of WCF
+    url: https://github.com/CoreWCF/CoreWCF
+  - title: Migrate WCF to gRPC
+    url: https://learn.microsoft.com/en-us/dotnet/architecture/grpc-for-wcf-developers/
+  message: |
+    Windows Communication Foundation (WCF) is not included in .NET Core by default.
+    A community-maintained port called CoreWCF is available for server-side scenarios.
+
+    Migration actions for WCF Services (server-side):
+    - Install CoreWCF NuGet packages (CoreWCF.Primitives, CoreWCF.Http, etc.)
+    - Update namespace references from System.ServiceModel to CoreWCF
+    - Configure services in ASP.NET Core startup
+    - Test thoroughly as CoreWCF may have behavioral differences
+    - Consider migrating to gRPC for new high-performance RPC scenarios
+
+    Migration actions for WCF Clients:
+    - Use System.ServiceModel.Http NuGet package for BasicHttpBinding clients
+    - Or use CoreWCF client libraries
+    - Or migrate to REST APIs with HttpClient
+    - Or migrate to gRPC clients
+    - Update service references and bindings
+    - Review security and authentication mechanisms
+
+    Alternative approaches:
+    - gRPC (recommended for new development, high performance)
+    - REST APIs with ASP.NET Core Web API
+    - SignalR for real-time communication
+    - Message queues for async communication
+  ruleID: dotnet-core-wcf-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: System.ServiceModel
