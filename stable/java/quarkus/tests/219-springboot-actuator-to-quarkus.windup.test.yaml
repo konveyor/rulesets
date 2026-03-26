@@ -10,11 +10,16 @@ tests:
   - name: tc-1
     hasIncidents:
       exactly: 3
-      messageMatches: Replace the Spring Boot Actuator dependency with Quarkus Smallrye
-        Health extension
+      messageMatches: Spring Boot Actuator dependency detected
 - ruleID: springboot-actuator-to-quarkus-0200
   testCases:
   - name: tc-1
     hasIncidents:
       exactly: 1
       messageMatches: Replace `management.endpoints.web.exposure.include=health`
+- ruleID: springboot-actuator-to-quarkus-0210
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Spring Actuator non-health web endpoint exposure detected
