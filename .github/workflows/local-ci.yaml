@@ -219,7 +219,7 @@ jobs:
           if [ "${{ steps.find-tests.outputs.run_all_tests }}" == "true" ]; then
             # Run all tests (for nightly runs or manual workflow_dispatch)
             echo "Running all tests"
-            JVM_MAX_MEM=3072m RUN_LOCAL=1 ./kantra test ./rulesets --log-level 50 | tee output.log || true
+            JVM_MAX_MEM=3072m ./kantra test ./rulesets --log-level 50 --run-local=true | tee output.log || true
           elif [ "${{ steps.find-tests.outputs.has_tests }}" == "true" ]; then
             # Run tests for changed rules only
             # Test file paths are under stable/ or preview/; after move they are under ./rulesets/stable/ or ./rulesets/preview/
@@ -241,7 +241,7 @@ jobs:
               fi
             done
             if [ -n "$adjusted_test_files" ]; then
-              JVM_MAX_MEM=3072m RUN_LOCAL=1 ./kantra test $adjusted_test_files --log-level 50 | tee output.log || true
+              JVM_MAX_MEM=3072m ./kantra test $adjusted_test_files --log-level 50 --run-local=true | tee output.log || true
             else
               echo "Rules Summary: 0/0" > message.md
               echo "Test Cases Summary: 0/0" >> message.md
