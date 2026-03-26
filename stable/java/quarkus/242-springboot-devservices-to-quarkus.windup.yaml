@@ -1,0 +1,47 @@
+- category: potential
+  customVariables: []
+  description: Use Quarkus Dev Services as a local development alternative for Spring infrastructure dependencies
+  effort: 2
+  labels:
+  - konveyor.io/source=springboot
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus Dev Services overview
+    url: https://quarkus.io/guides/dev-services
+  - title: Quarkus Dev Services for databases
+    url: https://quarkus.io/guides/databases-dev-services
+  - title: Quarkus Dev Services for Kafka
+    url: https://quarkus.io/guides/kafka-dev-services
+  message: |-
+    Spring dependency with local infrastructure expectations detected.
+
+    During migration to Quarkus, prefer Quarkus Dev Services in dev/test mode to run backing services automatically (when no explicit external connection is configured), instead of manually provisioning local containers.
+
+    Suggested mapping (examples):
+    - `spring-boot-starter-data-jpa` -> Quarkus datasource/JDBC extension + Dev Services for databases
+    - `spring-boot-starter-data-mongodb` -> Quarkus MongoDB extension + Dev Services
+    - `spring-boot-starter-data-redis` -> Quarkus Redis extension + Dev Services
+    - `spring-kafka` -> Quarkus Kafka extension + Dev Services for Kafka
+    - `spring-boot-starter-amqp` -> Quarkus AMQP / messaging extension + Dev Services
+
+    Notes:
+    - Dev Services are mainly for development and test workflows.
+    - Most Dev Services require a working container runtime (Docker/Podman).
+  ruleID: springboot-devservices-to-quarkus-00000
+  when:
+    or:
+    - java.dependency:
+        lowerbound: 0.0.0
+        name: org.springframework.boot.spring-boot-starter-data-jpa
+    - java.dependency:
+        lowerbound: 0.0.0
+        name: org.springframework.boot.spring-boot-starter-data-mongodb
+    - java.dependency:
+        lowerbound: 0.0.0
+        name: org.springframework.boot.spring-boot-starter-data-redis
+    - java.dependency:
+        lowerbound: 0.0.0
+        name: org.springframework.kafka.spring-kafka
+    - java.dependency:
+        lowerbound: 0.0.0
+        name: org.springframework.boot.spring-boot-starter-amqp
