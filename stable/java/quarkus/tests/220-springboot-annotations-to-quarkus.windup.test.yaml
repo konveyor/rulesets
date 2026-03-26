@@ -10,4 +10,22 @@ tests:
   - name: tc-1
     hasIncidents:
       exactly: 1
-      messageMatches: Remove the SpringBoot @SpringBootApplication annotation
+      messageMatches: Remove or refactor the SpringBoot `@SpringBootApplication` bootstrap model for Quarkus
+- ruleID: springboot-annotations-to-quarkus-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Spring `@EnableAutoConfiguration` detected
+- ruleID: springboot-annotations-to-quarkus-00002
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Spring `@ComponentScan` detected
+- ruleID: springboot-annotations-to-quarkus-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Spring `@SpringBootConfiguration` detected
