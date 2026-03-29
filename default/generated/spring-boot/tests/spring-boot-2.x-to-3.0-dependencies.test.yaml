@@ -1,0 +1,119 @@
+rulesPath: ../spring-boot-2.x-to-3.0-dependencies.yaml
+providers:
+  - name: java
+    dataPath: ./data/dependencies
+  - name: builtin
+    dataPath: ./data/dependencies
+tests:
+  - ruleID: spring-boot-2.x-to-3.0-dependencies-00001
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-dependencies-00002
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-dependencies-00003
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-dependencies-00004
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-dependencies-00005
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-dependencies-00006
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-dependencies-00007
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-dependencies-00008
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-dependencies-00009
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-dependencies-00010
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-dependencies-00011
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-dependencies-00012
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-dependencies-00013
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-dependencies-00014
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-dependencies-00015
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
+  - ruleID: spring-boot-2.x-to-3.0-dependencies-00016
+    testCases:
+      - name: tc-1
+        analysisParams:
+          mode: "source-only"
+        hasIncidents:
+          exactly: 1
