@@ -208,6 +208,7 @@ jobs:
           cd ~/.config/.kantra
           ID=$(podman create --name kantra-download quay.io/konveyor/kantra:latest)
           podman cp ${ID}:/usr/local/bin/kantra .
+          podman cp ${ID}:/usr/local/bin/java-external-provider .
           podman cp ${ID}:/usr/local/etc/maven.default.index .
           podman cp ${ID}:/usr/bin/fernflower.jar .
           podman cp ${ID}:/jdtls .
