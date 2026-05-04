@@ -23,7 +23,7 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 5
+      exactly: 12
       messageMatches: Spring infrastructure extension points like.*
 - ruleID: springboot-di-to-quarkus-00003
   testCases:

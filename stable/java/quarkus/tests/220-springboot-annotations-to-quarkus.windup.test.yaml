@@ -15,17 +15,17 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 4
       messageMatches: Spring `@EnableAutoConfiguration` detected
 - ruleID: springboot-annotations-to-quarkus-00002
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 8
       messageMatches: Spring `@ComponentScan` detected
 - ruleID: springboot-annotations-to-quarkus-00003
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 1
+      exactly: 3
       messageMatches: Spring `@SpringBootConfiguration` detected
