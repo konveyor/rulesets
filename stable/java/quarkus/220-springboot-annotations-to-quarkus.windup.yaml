@@ -1,22 +1,87 @@
 - category: mandatory
   customVariables: []
-  description: Remove the SpringBoot @SpringBootApplication annotation
+  description: Replace SpringBootApplication bootstrap model with Quarkus bootstrap and CDI
   effort: 1
   labels:
   - konveyor.io/source=springboot
   - konveyor.io/target=quarkus
-  links: []
-  message: "Remove the SpringBoot @SpringBootApplication annotation.\n\n A Spring
-    Boot application contains a \"main\" class with the @SpringBootApplication annotation.
-    A Quarkus application does not have such a class. Two different alternatives can
-    be followed - either\n to remove the \"main\" class associated with the annotation,
-    or add the `org.springframework.boot:spring-boot-autoconfigure` dependency as
-    an `optional` Maven dependency. An optional dependency \n is available when an
-    application compiles but is not packaged with the application at runtime. Doing
-    this would allow the application to compile without modification, but you\n would
-    also need to maintain a Spring version along with the Quarkus application."
+  links:
+  - title: Quarkus CDI reference
+    url: https://quarkus.io/guides/cdi-reference
+  - title: Quarkus Spring DI guide
+    url: https://quarkus.io/guides/spring-di
+  - title: Quarkus testing guide
+    url: https://quarkus.io/guides/getting-started-testing
+  message: |-
+    Remove or refactor the SpringBoot `@SpringBootApplication` bootstrap model for Quarkus.
+
+    `@SpringBootApplication` combines three concerns; in Quarkus they map differently:
+    - `@EnableAutoConfiguration`: Quarkus configures features by adding Quarkus extensions at build time (no Spring Boot auto-configuration runtime model).
+    - `@ComponentScan`: Quarkus uses CDI bean discovery with bean-defining annotations (for example `@ApplicationScoped`, `@Singleton`), not Spring component scanning semantics.
+    - `@SpringBootConfiguration`: use CDI scopes and producer methods (`@Produces`) for bean registration; for tests, use Quarkus testing patterns instead of Spring Boot configuration detection.
+
+    If needed as an intermediate step, keeping `org.springframework.boot:spring-boot-autoconfigure` as `optional` may allow compilation, but this keeps Spring compatibility baggage and should not be the target end state.
   ruleID: springboot-annotations-to-quarkus-00000
   when:
     java.referenced:
       location: ANNOTATION
       pattern: org.springframework.boot.autoconfigure.SpringBootApplication
+- category: mandatory
+  customVariables: []
+  description: Replace Spring EnableAutoConfiguration with Quarkus extension-driven configuration
+  effort: 1
+  labels:
+  - konveyor.io/source=springboot
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus extensions catalog
+    url: https://quarkus.io/extensions/
+  message: |-
+    Spring `@EnableAutoConfiguration` detected.
+
+    Quarkus does not use Spring Boot runtime auto-configuration. Select and configure the required Quarkus extensions explicitly (for example web, data, security, observability) and move related settings to `application.properties`.
+  ruleID: springboot-annotations-to-quarkus-00001
+  when:
+    java.referenced:
+      location: ANNOTATION
+      pattern: org.springframework.boot.autoconfigure.EnableAutoConfiguration
+- category: mandatory
+  customVariables: []
+  description: Replace Spring ComponentScan with CDI bean discovery conventions
+  effort: 1
+  labels:
+  - konveyor.io/source=springboot
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus CDI reference
+    url: https://quarkus.io/guides/cdi-reference
+  message: |-
+    Spring `@ComponentScan` detected.
+
+    Quarkus relies on CDI bean discovery and bean-defining annotations (for example `@ApplicationScoped`, `@Singleton`, `@Dependent`) instead of Spring component scanning behavior. Review package and bean scope assumptions accordingly.
+  ruleID: springboot-annotations-to-quarkus-00002
+  when:
+    java.referenced:
+      location: ANNOTATION
+      pattern: org.springframework.context.annotation.ComponentScan
+- category: mandatory
+  customVariables: []
+  description: Replace SpringBootConfiguration with CDI configuration and Quarkus testing patterns
+  effort: 1
+  labels:
+  - konveyor.io/source=springboot
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus CDI reference
+    url: https://quarkus.io/guides/cdi-reference
+  - title: Quarkus testing guide
+    url: https://quarkus.io/guides/getting-started-testing
+  message: |-
+    Spring `@SpringBootConfiguration` detected.
+
+    In Quarkus, register beans using CDI scopes and producer methods instead of relying on Spring Boot configuration class detection. Update integration tests to Quarkus testing conventions.
+  ruleID: springboot-annotations-to-quarkus-00003
+  when:
+    java.referenced:
+      location: ANNOTATION
+      pattern: org.springframework.boot.SpringBootConfiguration

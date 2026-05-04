@@ -1,4 +1,4 @@
-- category: potential
+- category: mandatory
   customVariables: []
   description: Replace the SpringBoot Dependency Injection artifact with Quarkus 'spring-di'
     extension
@@ -54,8 +54,14 @@
   links:
   - title: Quarkus DI Guide - important technical note
     url: https://quarkus.io/guides/spring-di#important-technical-note
-  message: Spring infrastructure classes (like `org.springframework.beans.factory.config.BeanPostProcessor`
-    , `org.springframework.context.ApplicationContext` for example) will not be executed.
+  - title: Quarkus CDI reference
+    url: https://quarkus.io/guides/cdi-reference
+  message: |-
+    Spring infrastructure extension points like `BeanFactoryPostProcessor` and `BeanPostProcessor` are not executed by Quarkus Spring DI.
+
+    Use CDI-native alternatives depending on the use case:
+    - Generic container lifecycle customization: CDI extensions (for example observing `ProcessInjectionTarget`)
+    - Cross-cutting behavior on selected beans: CDI interceptors (`@Interceptor`) or decorators (`@Decorator`)
   ruleID: springboot-di-to-quarkus-00002
   when:
     or:
@@ -74,3 +80,75 @@
     - java.referenced:
         location: IMPLEMENTS_TYPE
         pattern: org.springframework.beans.factory.config.SmartInstantiationAwareBeanPostProcessor
+- category: mandatory
+  customVariables: []
+  description: Apply Quarkus Spring DI conversion guidance for common Spring DI annotations
+  effort: 3
+  labels:
+  - konveyor.io/source=springboot
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus Spring DI conversion table
+    url: https://quarkus.io/guides/spring-di#conversion-table
+  - title: Quarkus CDI reference
+    url: https://quarkus.io/guides/cdi-reference
+  message: |-
+    Spring DI annotation usage detected. Verify each annotation against Quarkus Spring DI compatibility and CDI equivalents.
+
+    Common conversions:
+    - `@Autowired` -> `@Inject`
+    - `@Component` / `@Service` / `@Repository` -> CDI bean-defining annotations (for example `@ApplicationScoped`, `@Singleton`)
+    - `@Qualifier` -> CDI `@Qualifier`
+    - `@Value` -> `@ConfigProperty` (MicroProfile Config)
+    - `@Bean` / `@Configuration` -> CDI producer methods (`@Produces`) and CDI bean scopes
+  ruleID: springboot-di-to-quarkus-00003
+  when:
+    or:
+    - java.referenced:
+        location: ANNOTATION
+        pattern: org.springframework.beans.factory.annotation.Autowired
+    - java.referenced:
+        location: ANNOTATION
+        pattern: org.springframework.beans.factory.annotation.Qualifier
+    - java.referenced:
+        location: ANNOTATION
+        pattern: org.springframework.beans.factory.annotation.Value
+    - java.referenced:
+        location: ANNOTATION
+        pattern: org.springframework.stereotype.Component
+    - java.referenced:
+        location: ANNOTATION
+        pattern: org.springframework.stereotype.Service
+    - java.referenced:
+        location: ANNOTATION
+        pattern: org.springframework.stereotype.Repository
+    - java.referenced:
+        location: ANNOTATION
+        pattern: org.springframework.context.annotation.Bean
+    - java.referenced:
+        location: ANNOTATION
+        pattern: org.springframework.context.annotation.Configuration
+- category: mandatory
+  customVariables: []
+  description: Replace Spring ApplicationContext bean lookup with CDI programmatic lookup
+  effort: 3
+  labels:
+  - konveyor.io/source=springboot
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus CDI reference - programmatic lookup
+    url: https://quarkus.io/guides/cdi-reference
+  message: |-
+    Spring `ApplicationContext` usage detected.
+
+    Quarkus Spring DI does not execute the Spring `ApplicationContext` runtime model. Replace programmatic bean lookup patterns like `applicationContext.getBean(...)` with CDI programmatic lookup, for example:
+    `CDI.current().select(MyService.class).get()`
+  ruleID: springboot-di-to-quarkus-00004
+  when:
+    or:
+    - java.referenced:
+        location: IMPORT
+        pattern: org.springframework.context.ApplicationContext
+    - java.referenced:
+        location: METHOD_CALL
+        pattern: org.springframework.context.ApplicationContext.getBean*
