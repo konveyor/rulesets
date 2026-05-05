@@ -1,5 +1,5 @@
 - ruleID: patternfly-v5-to-patternfly-v6-card-00000
-  description: Card isSelectableRaised should be replaced with Card
+  description: Card isSelectableRaised prop has been removed
   effort: 3
   category: mandatory
   labels:
@@ -12,28 +12,24 @@
     - builtin.filecontent:
         pattern: <Card[^>]*\bisSelectableRaised\b
         filePattern: \.(j|t)sx?$
-  message: 'Props related to raised or clickable cards have been removed.
+  message: |
+    The `isSelectableRaised` prop has been removed from Card in PatternFly 6.
+    Props related to raised or clickable cards have been removed as the raised styling
+    is now built into the default Card component.
 
-
-    Replace `Card isSelectableRaised` with `Card`.
-
+    Remove the `isSelectableRaised` prop. If you need a selectable card, use `isSelectable` instead.
 
     Before:
 
+    ```tsx
+    <Card isSelectableRaised isSelected={isSelected} />
     ```
-
-    <Card isSelectableRaised />
-
-    ```
-
 
     After:
 
+    ```tsx
+    <Card isSelectable isSelected={isSelected} />
     ```
-
-    <Card />
-
-    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10056
     title: patternfly-v6 Documentation
