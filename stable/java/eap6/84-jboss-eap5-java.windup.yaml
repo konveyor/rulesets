@@ -31,7 +31,7 @@
   - ejb
   links:
   - title: JBoss EAP 6 - Messaging Configuration
-    url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html/Administration_and_Configuration_Guide/sect-Configuration1.html#Configure_the_JMS_Server1
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#Configure_the_JMS_Server1
   - title: JavaEE 6 - JMS Interfaces
     url: https://docs.oracle.com/javaee/6/api/javax/jms/package-summary.html#package_description
   message: |-
