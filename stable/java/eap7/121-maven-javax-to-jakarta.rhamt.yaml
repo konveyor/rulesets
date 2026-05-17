@@ -13,7 +13,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
       EE'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
   message: If you migrate your application to JBoss EAP 7.3 (or later), and want to
     ensure its Maven building, running or testing works as expected, use instead the
     Jakarta EE dependency with groupId `com.sun.mail`, and artifactId `jakarta.mail`.
@@ -37,7 +37,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
       EE'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
   message: If you migrate your application to JBoss EAP 7.3, or later, and want to
     ensure its Maven building, running or testing works as expected, use instead the
     Jakarta EE dependency with groupId `com.sun.activation`
@@ -61,7 +61,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
       EE'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
   message: If you migrate your application to JBoss EAP 7.3, or later, and want to
     ensure its Maven building, running or testing works as expected, use instead the
     Jakarta EE dependency with artifactId `jakarta.activation`
@@ -85,7 +85,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
       EE'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
   message: If you migrate your application to JBoss EAP 7.3, or later, and want to
     ensure its Maven building, running or testing works as expected, use instead the
     Jakarta EE dependency - groupId `jakarta.{{renamedG}}`.
@@ -109,7 +109,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
       EE'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
   message: If you migrate your application to JBoss EAP 7.3, or later, and want to
     ensure its Maven building, running or testing works as expected, use instead the
     Jakarta EE dependency with groupId `jakarta.{{renamedA}}`, and artifactId `jakarta.{{renamedA}}-api`.
@@ -133,7 +133,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
       EE'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
   message: If you migrate your application to JBoss EAP 7.3, or later, and want to
     ensure its Maven building, running or testing works as expected, use instead the
     Jakarta EE dependency with artifactId `jakarta.enterprise.cdi-api`
@@ -157,7 +157,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
       EE'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
   message: If you migrate your application to JBoss EAP 7.3, or later, and want to
     ensure its Maven building, running or testing works as expected, use instead the
     Jakarta EE dependency with artifactId `jakarta.validation-api`
@@ -181,7 +181,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
       EE'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
   message: If you migrate your application to JBoss EAP 7.3, or later, and want to
     ensure its Maven building, running or testing works as expected, use instead the
     Jakarta EE dependency with artifactId `jakarta.inject-api`
@@ -205,7 +205,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
       EE'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
   message: If you migrate your application to JBoss EAP 7.3 (or later), and want to
     ensure its Maven building, running or testing works as expected, use instead the
     Jakarta EE dependency with groupId `org.jboss.spec.javax.xml.soap`, and artifactId
@@ -230,7 +230,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Maven Artifact Changes for Jakarta
       EE'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#maven-artifact-changes-for-jakarta-ee_default
   message: If you migrate your application to JBoss EAP 7.3 (or later), and want to
     ensure its Maven building, running or testing works as expected, use instead the
     Jakarta EE dependency with groupId `org.jboss.spec.javax.transaction`, and artifactId
@@ -255,7 +255,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Changes to BOMs for Jakarta EE
       8'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#changes-to-boms-for-jakarta-ee
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#changes-to-boms-for-jakarta-ee
   message: If you migrate your application to JBoss EAP 7.3 (or later), and want to
     ensure its Maven building, running or testing works as expected, use instead the
     JBoss EAP Jakarta EE BOM with groupId `org.jboss.bom`, and artifactId `jboss-eap-jakartaee8`.
@@ -279,7 +279,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Changes to BOMs for Jakarta EE
       8'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#changes-to-boms-for-jakarta-ee
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#changes-to-boms-for-jakarta-ee
   message: If you migrate your application to JBoss EAP 7.3 (or later), and want to
     ensure its Maven building, running or testing works as expected, use instead the
     JBoss EAP Jakarta EE BOM with groupId `org.jboss.bom`, and artifactId `jboss-eap-jakartaee8-with-spring4`.
@@ -303,7 +303,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Changes to BOMs for Jakarta EE
       8'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#changes-to-boms-for-jakarta-ee
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#changes-to-boms-for-jakarta-ee
   message: If you migrate your application to JBoss EAP 7.3 (or later), and want to
     ensure its Maven building, running or testing works as expected, use instead the
     JBoss EAP Jakarta EE BOM with groupId `org.jboss.bom`, and artifactId `jboss-eap-jakartaee8-with-tools`.
@@ -327,7 +327,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Changes to BOMs for Jakarta EE
       8'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#changes-to-boms-for-jakarta-ee
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#changes-to-boms-for-jakarta-ee
   message: If you migrate your application to JBoss EAP 7.3 (or later), and want to
     ensure its Maven building, running or testing works as expected, use instead the
     JBoss Jakarta EE BOM with groupId `org.jboss.spec`, and artifactId `jboss-jakartaee-8.0`.
@@ -351,7 +351,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Changes to BOMs for Jakarta EE
       8'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#changes-to-boms-for-jakarta-ee
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#changes-to-boms-for-jakarta-ee
   message: If you migrate your application to JBoss EAP 7.3 (or later), and want to
     ensure its Maven building, running or testing works as expected, use instead the
     JBoss Jakarta EE BOM with groupId `org.jboss.spec`, and artifactId `jboss-jakartaee-web-8.0`.
@@ -375,7 +375,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Changes to BOMs for Jakarta EE
       8'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#changes-to-boms-for-jakarta-ee
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#changes-to-boms-for-jakarta-ee
   message: If you migrate your application to JBoss EAP 7.3 (or later), and want to
     ensure its Maven building, running or testing works as expected, use instead the
     JBoss Jakarta EE BOM with groupId `org.jboss.spec`, and artifactId `jboss-jakartaee-all-8.0`.

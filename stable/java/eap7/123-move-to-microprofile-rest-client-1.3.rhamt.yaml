@@ -9,7 +9,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.3 Migration Guide: Changes Required in MicroProfile
       Rest Client Code'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#changes_required_in_mprestclient_code
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/migration_guide/index#changes_required_in_mprestclient_code
   message: The application imports class `org.jboss.resteasy.client.microprofile.MicroprofileClientBuilderResolver`,
     and should be changed to use instead `org.eclipse.microprofile.rest.client.RestClientBuilder`,
     from Microprofile REST Client 1.3.
