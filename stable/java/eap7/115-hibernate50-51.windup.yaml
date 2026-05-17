@@ -15,7 +15,7 @@
   - Hibernate
   links:
   - title: Hibernate ORM 5.1 Features
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.1/html-single/migration_guide/application_migration_changes#hibernate_5_1_features
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.1/html-single/migration_guide/index#hibernate_5_1_features
   message: |-
     Previous releases of Hibernate interpreted all null column values for an `@Embeddable` to mean the `@Embeddable` itself should be null.
 
@@ -42,7 +42,7 @@
   - Hibernate
   links:
   - title: Schema Management Tooling Changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.1/html-single/migration_guide/application_migration_changes#schema_management_tooling_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.1/html-single/migration_guide/index#schema_management_tooling_changes
   message: |-
     The changes mainly focused on:
 

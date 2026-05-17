@@ -22,9 +22,9 @@
   - title: 'Red Hat JBoss EAP: Component Details'
     url: https://access.redhat.com/articles/112673
   - title: 'Red Hat JBoss EAP 6: Hibernate and JPA Migration Changes'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/#sect-Hibernate_and_JPA_Changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-Hibernate_and_JPA_Changes
   - title: 'Red Hat JBoss EAP 7: Hibernate and JPA Migration Changes'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html/migration_guide/application_migration_changes#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: "\n                        The application has a Hibernate library embedded.\n
     \                       Red Hat JBoss EAP includes Hibernate as a module with
     a version that has been tested and supported by Red Hat.\n                        There
@@ -66,11 +66,11 @@
   - title: 'Red Hat JBoss EAP: Component Details'
     url: https://access.redhat.com/articles/112673
   - title: 'Red Hat JBoss EAP 6: JavaServer Faces (JSF) Code Changes'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/#sect-JSF_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-JSF_changes
   - title: How to use JSF 1.2 with EAP 6
     url: https://access.redhat.com/solutions/690953
   - title: 'Red Hat JBoss EAP 7: JavaServer Faces (JSF) Code Changes'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html/migration_guide/application_migration_changes#migrate_jsf_code_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_jsf_code_changes
   - title: How to use JSF 1.2 with EAP 7?
     url: https://access.redhat.com/solutions/2773121
   message: "\n                        The application has a JSF library embedded.\n\n
@@ -101,11 +101,11 @@
   - konveyor.io/source
   links:
   - title: EAP 6 - Migrate Seam 2.2 applications
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-Migrate_Seam_2.2_Applications
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-Migrate_Seam_2.2_Applications
   - title: 'Red Hat JBoss EAP 6: Migration from 2.2 to 2.3'
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html-single/Seam_Guide/index.html#migration23
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#migration23
   - title: 'Red Hat JBoss EAP: Migration from Seam 2 to Java EE and alternatives'
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html-single/Seam_Guide/index.html#idm54350960
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#idm54350960
   - title: How to use JSF 1.2 with EAP 7?
     url: https://access.redhat.com/solutions/2773121
   message: "\n                        The application has a Seam library embedded.\n\n

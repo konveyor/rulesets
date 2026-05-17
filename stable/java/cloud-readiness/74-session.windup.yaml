@@ -9,17 +9,17 @@
   - clustering
   links:
   - title: 'JBoss EAP: Clustering in Web Applications'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html/development_guide/clustering_in_web_applications
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/development_guide/index#clustering_in_web_applications
   - title: 'Twelve-Factor App: Processes'
     url: https://12factor.net/processes
   - title: 'Getting Started with JBoss EAP for OpenShift Container Platform: Clustering'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/getting_started_with_jboss_eap_for_openshift_container_platform/index#reference_clustering
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/getting_started_with_jboss_eap_for_openshift_container_platform/index#reference_clustering
   - title: 'Twelve-Factor App: Backing services'
     url: https://12factor.net/backing-services
   - title: Running Data Grid on OpenShift
-    url: https://access.redhat.com/documentation/en-us/red_hat_data_grid/8.0/html-single/running_data_grid_on_openshift/index
+    url: https://docs.redhat.com/en/documentation/red_hat_data_grid/8.0/html-single/running_data_grid_on_openshift/index
   - title: 'JBoss EAP:  Externalize HTTP Sessions to Red Hat Data Grid'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/configuration_guide/index#jdg_externalize_http_sessions
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/configuration_guide/index#jdg_externalize_http_sessions
   message: |-
     Session replication ensures that client sessions are not disrupted by node failure. Each node in the cluster shares information about ongoing sessions and can take over sessions if another node disappears. In a cloud environment, however, data in the memory of a running container can be wiped out by a restart.
 
@@ -55,9 +55,9 @@
   - title: 'Twelve-Factor App: Backing services'
     url: https://12factor.net/backing-services
   - title: 'JBoss EAP:  Externalize HTTP Sessions to Red Hat Data Grid'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/configuration_guide/index#jdg_externalize_http_sessions
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/configuration_guide/index#jdg_externalize_http_sessions
   - title: Running Data Grid on OpenShift
-    url: https://access.redhat.com/documentation/en-us/red_hat_data_grid/8.0/html-single/running_data_grid_on_openshift/index
+    url: https://docs.redhat.com/en/documentation/red_hat_data_grid/8.0/html-single/running_data_grid_on_openshift/index
   message: |-
     In a cloud environment, a restart can wipe out HTTP session data in the memory of a running container.
 

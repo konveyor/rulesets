@@ -16,7 +16,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
       5.3'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/#hibernate_51_compatiblity_transformer
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/index#hibernate_51_compatiblity_transformer
   message: '`org.hibernate.engine.spi.SessionImplementor` parameter has to be changed
     to `org.hibernate.engine.spi.SharedSessionContractImplementor`.'
   ruleID: hibernate51-53-00001
@@ -140,7 +140,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
       5.3'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/#migrating_from_hibernate_5_1_to_5_3
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/index#migrating_from_hibernate_5_1_to_5_3
   message: Change reference to hibernate-java8 to hibernate-core (since hibernate-java8 has been merged into hibernate-core module)
   ruleID: hibernate51-53-00100
   when:
@@ -190,7 +190,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
       5.3'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/#exception_handling_changes_between_51_53
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/index#exception_handling_changes_between_51_53
   message: |-
     If the `SessionFactory` is built via Hibernate’s native bootstrapping and `org.hibernate.HibernateException` or a subclass is referenced by the application
      then set `hibernate.native_exception_handling_51_compliance` configuration property to `true`.
@@ -218,7 +218,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
       5.3'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/#migrating_from_hibernate_5_1_to_5_3
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/index#migrating_from_hibernate_5_1_to_5_3
   message: '`org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getDefaultQueryResultsCache()`
     should be used instead of `SessionFactoryImplementor.getQueryCache()` method.'
   ruleID: hibernate51-53-00400
@@ -242,7 +242,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
       5.3'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/#migrating_from_hibernate_5_1_to_5_3
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/index#migrating_from_hibernate_5_1_to_5_3
   message: '`org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getDefaultQueryResultsCache(String
     regionName)` should be used instead of `SessionFactoryImplementor.getQueryCache(String
     regionName)` method.'
@@ -267,7 +267,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
       5.3'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/#migrating_from_hibernate_5_1_to_5_3
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/index#migrating_from_hibernate_5_1_to_5_3
   message: '`org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getTimestampsCache()`
     should be used instead of `SessionFactoryImplementor.getUpdateTimestampsCache()`
     method.'
@@ -292,7 +292,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
       5.3'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/#migrating_from_hibernate_5_1_to_5_3
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/index#migrating_from_hibernate_5_1_to_5_3
   message: '`org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getRegion(String
     regionName)` should be used instead of `SessionFactoryImplementor.getSecondLevelCacheRegion(String
     regionName)` method.'
@@ -317,7 +317,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
       5.3'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/#migrating_from_hibernate_5_1_to_5_3
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/index#migrating_from_hibernate_5_1_to_5_3
   message: "Depending on the type of region, the appropriate method should be used
     instead: \n\n * For an entity cache region, `org.hibernate.engine.spi.SessionFactoryImplementor.getMetamodel().entityPersister(
     entityName ).getCacheAccessStrategy()` should be used instead\n * For a collection
@@ -346,7 +346,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
       5.3'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/#migrating_from_hibernate_5_1_to_5_3
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/index#migrating_from_hibernate_5_1_to_5_3
   message: '`org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getRegion(String
     regionName)` should be used instead of `SessionFactoryImplementor.getNaturalIdCacheRegion(String
     regionName)` method.'
@@ -371,7 +371,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
       5.3'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/#migrating_from_hibernate_5_1_to_5_3
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/index#migrating_from_hibernate_5_1_to_5_3
   message: '`org.hibernate.engine.spi.SessionFactoryImplementor.getMetamodel().entityPersister(
     entityName ).getNaturalIdCacheAccessStrategy()` should be used instead of `SessionFactoryImplementor.getNaturalIdCacheRegionAccessStrategy(String
     regionName)` method.'
@@ -396,7 +396,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
       5.3'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/#migrating_from_hibernate_5_1_to_5_3
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/index#migrating_from_hibernate_5_1_to_5_3
   message: '`org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getCacheRegionNames()`
     should be used to obtain all cache region names, then `org.hibernate.engine.spi.SessionFactoryImplementor.getCache().getRegion(String
     regionName)` should be used to look up each region.'
@@ -423,7 +423,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
       5.3'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/#migrating_from_hibernate_5_1_to_5_3
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/index#migrating_from_hibernate_5_1_to_5_3
   - title: Javadoc for org.hibernate.cache.spi.RegionFactory
     url: https://docs.jboss.org/hibernate/orm/5.3/javadocs/org/hibernate/cache/spi/RegionFactory.html
   message: "Review usage of classes in `org.hibernate.cache.spi.RegionFactory`, as
@@ -451,7 +451,7 @@
     url: https://github.com/hibernate/hibernate-orm/blob/5.3/migration-guide.adoc#second-level-cache-provider-spi-changes
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
       5.3'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/#hibernate_orm_5_3_features
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/index#hibernate_orm_5_3_features
   - title: 'HHH-11356: Adjust the 2nd-Cache SPIs to better reflect supported uses'
     url: https://hibernate.atlassian.net/browse/HHH-11356
   message: "One potential upgrade concern is any custom `org.hibernate.cache.spi.QueryCacheFactory`
@@ -487,7 +487,7 @@
     url: https://github.com/hibernate/hibernate-orm/blob/5.3/migration-guide.adoc#second-level-cache-provider-spi-changes
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
       5.3'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/#hibernate_orm_5_3_features
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/index#hibernate_orm_5_3_features
   - title: 'HHH-11356: Adjust the 2nd-Cache SPIs to better reflect supported uses'
     url: https://hibernate.atlassian.net/browse/HHH-11356
   message: "A change to be aware of is accessing cache entries via `SecondLevelCacheStatistics.getEntries()`
@@ -572,7 +572,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
       5.3'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/#migrating_from_hibernate_5_1_to_5_3
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/index#migrating_from_hibernate_5_1_to_5_3
   - title: Hibernate 5.3 JavaDoc
     url: http://docs.jboss.org/hibernate/orm/5.3/javadocs/
   message: "The SPIs in the `org.hibernate.{{packages}}` package have changed. \n
@@ -667,7 +667,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
       5.3'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/#hibernate_orm_5_3_features
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/index#hibernate_orm_5_3_features
   message: Applications using the `@TableGenerator` should set the `hibernate.id.generator.stored_last_used`
     configuration property to `false`.
   ruleID: hibernate51-53-01100
@@ -693,7 +693,7 @@
   links:
   - title: 'Red Hat JBoss EAP 7.2: Migrating from Hibernate ORM 5.1 to Hibernate ORM
       5.3'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/#migrating_from_hibernate_5_1_to_5_3
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/index#migrating_from_hibernate_5_1_to_5_3
   message: Any references to `org.hibernate.{{className}}.getType()` must be replaced
     with `org.hibernate.{{className}}.getHibernateType()`.
   ruleID: hibernate51-53-01200

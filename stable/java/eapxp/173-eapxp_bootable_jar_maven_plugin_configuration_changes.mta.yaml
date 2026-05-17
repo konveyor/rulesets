@@ -11,7 +11,7 @@
   - EAPXP
   links:
   - title: 'JBoss EAP XP upgrade and migration guide: Bootable JAR application migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#microprofile-application-migration-bootable-jar_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#microprofile-application-migration-bootable-jar_default
   message: If you migrate your application to JBoss EAP XP 3.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, rename the
     configuration element `extraServerContent` to `extraServerContentDirs`.
