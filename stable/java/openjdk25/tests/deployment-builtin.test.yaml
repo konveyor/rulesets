@@ -1,0 +1,10 @@
+rulesPath: ../rules/deployment.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/deployment-builtin
+tests:
+    - ruleID: openjdk25--to-openjdk25+-01020
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1

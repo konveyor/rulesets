@@ -1,0 +1,17 @@
+- ruleID: openjdk25--to-openjdk25+-00690
+  description: SensitivityWatchEventModifier deprecated for removal in JDK 21
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `com.sun.nio.file.SensitivityWatchEventModifier` enum is deprecated for removal. This was a proprietary API for tuning file watch sensitivity. Use the standard `java.nio.file.WatchService` API without sensitivity modifiers — the default polling interval is sufficient for most use cases.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/21-relnote-issues.html#JDK-8303175
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: com.sun.nio.file.SensitivityWatchEventModifier
+        location: IMPORT

@@ -1,0 +1,204 @@
+- ruleID: openjdk25--to-openjdk25+-00250
+  description: RMIIIOPServerImpl removed in Java SE 21
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `javax.management.remote.rmi.RMIIIOPServerImpl` class has been removed in Java SE 21. IIOP (Internet Inter-ORB Protocol) support for JMX remote connections is no longer available. Use JMXMP or standard RMI-based JMX connections instead.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: javax.management.remote.rmi.RMIIIOPServerImpl
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-00300
+  description: java.rmi.activation package removed in Java SE 17
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The entire `java.rmi.activation` package has been removed in Java SE 17. This includes `Activatable`, `ActivationDesc`, `ActivationGroup`, `ActivationGroupDesc`, `ActivationGroupID`, `ActivationID`, `ActivationInstantiator`, `ActivationMonitor`, `ActivationSystem`, `Activator`, and `ActivationGroup_Stub`. RMI Activation was a mechanism for starting remote objects on demand. Migrate to alternative remote service frameworks or restructure to avoid on-demand activation.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.rmi.activation*
+        location: PACKAGE
+- ruleID: openjdk25--to-openjdk25+-01140
+  description: Activatable removed with java.rmi.activation package in Java SE 17
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.rmi.activation.Activatable` class has been removed in Java SE 17 (JEP 407). RMI Activation was a mechanism for starting remote objects on demand. The entire `java.rmi.activation` package is gone. Migrate to alternative remote service frameworks such as standard RMI with `UnicastRemoteObject`, gRPC, or REST-based services.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.rmi.activation.Activatable
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-01150
+  description: ActivationDesc removed with java.rmi.activation package in Java SE 17
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.rmi.activation.ActivationDesc` class has been removed in Java SE 17. This class described the information needed to activate an object. Migrate away from RMI Activation to standard RMI, gRPC, or REST-based services.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.rmi.activation.ActivationDesc
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-01160
+  description: ActivationGroup removed with java.rmi.activation package in Java SE 17
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.rmi.activation.ActivationGroup` class has been removed in Java SE 17. This class provided the VM-level grouping for activatable objects. Migrate away from RMI Activation to standard RMI, gRPC, or REST-based services.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.rmi.activation.ActivationGroup
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-01170
+  description: ActivationGroupDesc removed with java.rmi.activation package in Java SE 17
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.rmi.activation.ActivationGroupDesc` class has been removed in Java SE 17. This class described the information needed to create or recreate an activation group. Migrate away from RMI Activation to standard RMI, gRPC, or REST-based services.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.rmi.activation.ActivationGroupDesc
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-01180
+  description: ActivationGroupID removed with java.rmi.activation package in Java SE 17
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.rmi.activation.ActivationGroupID` class has been removed in Java SE 17. This class identified an activation group within the activation system. Migrate away from RMI Activation to standard RMI, gRPC, or REST-based services.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.rmi.activation.ActivationGroupID
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-01190
+  description: ActivationID removed with java.rmi.activation package in Java SE 17
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.rmi.activation.ActivationID` class has been removed in Java SE 17. This class identified an activatable remote object. Migrate away from RMI Activation to standard RMI, gRPC, or REST-based services.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.rmi.activation.ActivationID
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-01200
+  description: ActivationInstantiator removed with java.rmi.activation package in Java SE 17
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.rmi.activation.ActivationInstantiator` interface has been removed in Java SE 17. This interface was used by `ActivationGroup` to create instances of activatable objects. Migrate away from RMI Activation to standard RMI, gRPC, or REST-based services.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.rmi.activation.ActivationInstantiator
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-01210
+  description: ActivationMonitor removed with java.rmi.activation package in Java SE 17
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.rmi.activation.ActivationMonitor` interface has been removed in Java SE 17. This interface was used to monitor activation group activity. Migrate away from RMI Activation to standard RMI, gRPC, or REST-based services.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.rmi.activation.ActivationMonitor
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-01220
+  description: ActivationSystem removed with java.rmi.activation package in Java SE 17
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.rmi.activation.ActivationSystem` interface has been removed in Java SE 17. This interface provided a way to register groups and activatable objects. Migrate away from RMI Activation to standard RMI, gRPC, or REST-based services.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.rmi.activation.ActivationSystem
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-01230
+  description: Activator removed with java.rmi.activation package in Java SE 17
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.rmi.activation.Activator` interface has been removed in Java SE 17. This interface was used to activate objects registered with the activation system. Migrate away from RMI Activation to standard RMI, gRPC, or REST-based services.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.rmi.activation.Activator
+        location: IMPORT

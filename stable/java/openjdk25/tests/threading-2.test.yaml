@@ -1,0 +1,12 @@
+rulesPath: ../rules/threading.yaml
+providers:
+    - name: java
+      dataPath: ./data/threading-2
+tests:
+    - ruleID: openjdk25--to-openjdk25+-00520
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

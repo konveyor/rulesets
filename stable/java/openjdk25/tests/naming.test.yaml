@@ -1,0 +1,10 @@
+rulesPath: ../rules/naming.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/naming
+tests:
+    - ruleID: openjdk25--to-openjdk25+-00130
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1

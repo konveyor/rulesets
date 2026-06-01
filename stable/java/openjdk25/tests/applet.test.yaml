@@ -1,0 +1,12 @@
+rulesPath: ../rules/applet.yaml
+providers:
+    - name: java
+      dataPath: ./data/applet
+tests:
+    - ruleID: openjdk25--to-openjdk25+-00770
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

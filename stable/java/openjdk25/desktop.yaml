@@ -1,0 +1,85 @@
+- ruleID: openjdk25--to-openjdk25+-00970
+  description: com.apple.eawt is encapsulated from JDK 9; use java.awt.Desktop instead
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The macOS-specific `com.apple.eawt` package is encapsulated starting in JDK 9 and cannot be compiled against. Use the platform-independent `java.awt.Desktop` class instead, which provides equivalent functionality (JEP 272).
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-D867DCCC-CEB5-4AFA-9D11-9C62B7A3FAB1
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: com.apple.eawt
+        location: PACKAGE
+- ruleID: openjdk25--to-openjdk25+-00980
+  description: com.apple.eio is encapsulated from JDK 9; use java.awt.Desktop instead
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The macOS-specific `com.apple.eio` package is encapsulated starting in JDK 9. Migrate to the platform-independent `java.awt.Desktop` class (JEP 272).
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-D867DCCC-CEB5-4AFA-9D11-9C62B7A3FAB1
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: com.apple.eio
+        location: PACKAGE
+- ruleID: openjdk25--to-openjdk25+-00990
+  description: com.apple.concurrent package removed in JDK 9 with no replacement
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `com.apple.concurrent` package was removed in JDK 9 with no replacement. You will need to find alternative approaches for any functionality you were using from this package.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-D867DCCC-CEB5-4AFA-9D11-9C62B7A3FAB1
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: com.apple.concurrent
+        location: PACKAGE
+- ruleID: openjdk25--to-openjdk25+-01000
+  description: apple.applescript package removed in JDK 9 with no replacement
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `apple.applescript` package was removed in JDK 9 with no replacement. The AppleScript engine has been removed from the JDK.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-D867DCCC-CEB5-4AFA-9D11-9C62B7A3FAB1
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: apple.applescript
+        location: PACKAGE
+- ruleID: openjdk25--to-openjdk25+-01010
+  description: AppleScript engine removed from JDK with no replacement
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The AppleScript engine, a platform-specific `javax.script` implementation, has been removed from the JDK with no replacement. Code that uses `ScriptEngineManager` to obtain an AppleScript engine will no longer work.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-D867DCCC-CEB5-4AFA-9D11-9C62B7A3FAB1
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: AppleScript
+        filePattern: .*\.java

@@ -1,0 +1,102 @@
+- ruleID: openjdk25--to-openjdk25+-00030
+  description: JNI native library loading now requires --enable-native-access (JEP 472)
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: Starting in JDK 24, calling `System.loadLibrary()` is a restricted operation under JEP 472. Without `--enable-native-access=ALL-UNNAMED` (or specifying the module), a warning is issued at runtime. In a future JDK release, this will throw `IllegalCallerException` by default. Add `--enable-native-access` to your application launch configuration.
+  links:
+    - url: https://openjdk.org/jeps/472
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.System.loadLibrary
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-00040
+  description: JNI native library loading now requires --enable-native-access (JEP 472)
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: Starting in JDK 24, calling `System.load()` is a restricted operation under JEP 472. Without `--enable-native-access=ALL-UNNAMED` (or specifying the module), a warning is issued at runtime. In a future JDK release, this will throw `IllegalCallerException` by default. Add `--enable-native-access` to your application launch configuration.
+  links:
+    - url: https://openjdk.org/jeps/472
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.System.load
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-00050
+  description: JNI native library loading now requires --enable-native-access (JEP 472)
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: Starting in JDK 24, calling `Runtime.loadLibrary()` is a restricted operation under JEP 472. Without `--enable-native-access=ALL-UNNAMED` (or specifying the module), a warning is issued at runtime. In a future JDK release, this will throw `IllegalCallerException` by default. Add `--enable-native-access` to your application launch configuration.
+  links:
+    - url: https://openjdk.org/jeps/472
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.Runtime.loadLibrary
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-00060
+  description: JNI native library loading now requires --enable-native-access (JEP 472)
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: Starting in JDK 24, calling `Runtime.load()` is a restricted operation under JEP 472. Without `--enable-native-access=ALL-UNNAMED` (or specifying the module), a warning is issued at runtime. In a future JDK release, this will throw `IllegalCallerException` by default. Add `--enable-native-access` to your application launch configuration.
+  links:
+    - url: https://openjdk.org/jeps/472
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.Runtime.load
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-01340
+  description: Enable-Native-Access JAR manifest attribute needed for native access in JDK 24+
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'Starting in JDK 24, native access restrictions require explicit enablement. If your application uses JNI or the FFM API, you can add `Enable-Native-Access: ALL-UNNAMED` to the JAR manifest file (MANIFEST.MF) as one way to enable native access. Other options include the `--enable-native-access` command-line flag. Without enablement, restricted native operations will issue warnings (JDK 24 default) and will throw `IllegalCallerException` in a future JDK release. Use `--illegal-native-access=deny` to test your code for native access violations.'
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/preparing-migration.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: Enable-Native-Access
+        filePattern: .*MANIFEST\.MF
+- ruleID: openjdk25--to-openjdk25+-01350
+  description: native method declarations are restricted operations in JDK 24+
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'Starting in JDK 24, declaring `native` methods is a restricted operation under JEP 472. When a `native` method is first called, it is automatically linked to a function in a native library, which is a restricted binding operation. Without `--enable-native-access=ALL-UNNAMED` (or specifying the module), a warning is issued at runtime. In a future JDK release, this will throw `IllegalCallerException` by default. Add `--enable-native-access` to your application launch configuration, or add `Enable-Native-Access: ALL-UNNAMED` to your JAR manifest.'
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/preparing-migration.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: \bnative\s+(void|int|long|short|byte|char|float|double|boolean|[A-Z])
+        filePattern: .*\.java

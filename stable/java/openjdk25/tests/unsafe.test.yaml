@@ -1,0 +1,19 @@
+rulesPath: ../rules/unsafe.yaml
+providers:
+    - name: java
+      dataPath: ./data/unsafe
+tests:
+    - ruleID: openjdk25--to-openjdk25+-00670
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: openjdk25--to-openjdk25+-00680
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

@@ -1,0 +1,85 @@
+- ruleID: openjdk25--to-openjdk25+-00920
+  description: Application class loader is no longer a URLClassLoader from JDK 9
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: Starting in JDK 9, the application class loader is no longer an instance of `URLClassLoader` but of an internal class. Code that casts `ClassLoader.getSystemClassLoader()` to `URLClassLoader` will throw a `ClassCastException` at runtime. Review usages to ensure you are not assuming the application or platform class loader is a `URLClassLoader`.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-D867DCCC-CEB5-4AFA-9D11-9C62B7A3FAB1
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.net.URLClassLoader
+        location: TYPE
+- ruleID: openjdk25--to-openjdk25+-00930
+  description: rt.jar was removed in JDK 9; references must be updated
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `rt.jar` file was removed in JDK 9. Class and resource files are now stored in a more efficient format in the `lib` directory. Remove any references to `rt.jar` from your build scripts, class paths, and code. Use the `jrt` URL scheme or the module system instead.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-D867DCCC-CEB5-4AFA-9D11-9C62B7A3FAB1
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: rt\.jar
+        filePattern: .*\.(java|xml|properties|gradle|kts|sh|bat|cmd)
+- ruleID: openjdk25--to-openjdk25+-00940
+  description: tools.jar was removed in JDK 9; references must be updated
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `tools.jar` file was removed in JDK 9. Tools previously in `tools.jar` are now available as modules. Remove references to `tools.jar` from your build scripts and class paths.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-D867DCCC-CEB5-4AFA-9D11-9C62B7A3FAB1
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: tools\.jar
+        filePattern: .*\.(java|xml|properties|gradle|kts|sh|bat|cmd)
+- ruleID: openjdk25--to-openjdk25+-00950
+  description: java.ext.dirs and the extension mechanism were removed in JDK 9
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The Java extension mechanism was removed starting in JDK 9. The JVM will exit with an error if the `java.ext.dirs` system property is set or the `lib/ext` directory exists. Move extension JARs to the classpath instead.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-D867DCCC-CEB5-4AFA-9D11-9C62B7A3FAB1
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: java\.ext\.dirs
+        filePattern: .*\.(java|xml|properties|sh|bat|cmd|conf|ya?ml|env)
+- ruleID: openjdk25--to-openjdk25+-00960
+  description: java.endorsed.dirs and endorsed standards override removed in JDK 9
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The endorsed standards override mechanism was removed starting in JDK 9. The JVM will exit with an error if the `java.endorsed.dirs` system property is set or the `lib/endorsed` directory exists. Use upgradeable modules or place JAR files on the classpath instead.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-D867DCCC-CEB5-4AFA-9D11-9C62B7A3FAB1
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: java\.endorsed\.dirs
+        filePattern: .*\.(java|xml|properties|sh|bat|cmd|conf|ya?ml|env)

@@ -1,0 +1,34 @@
+- ruleID: openjdk25--to-openjdk25+-00100
+  description: SynthLookAndFeel.load() removed in Java SE 25
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `SynthLookAndFeel.load()` method has been removed in Java SE 25. If your code calls this method to load a Synth Look and Feel XML file, you need to find an alternative approach to configure your Synth-based look and feel.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: javax.swing.plaf.synth.SynthLookAndFeel.load
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-00110
+  description: BasicSliderUI no-arg constructor removed in Java SE 25
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'The no-argument constructor `BasicSliderUI()` has been removed in Java SE 25. Use the constructor that takes a `JSlider` parameter instead: `new BasicSliderUI(JSlider slider)`.'
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: javax.swing.plaf.basic.BasicSliderUI
+        location: CONSTRUCTOR_CALL

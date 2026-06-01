@@ -1,0 +1,33 @@
+rulesPath: ../rules/i18n.yaml
+providers:
+    - name: java
+      dataPath: ./data/i18n
+tests:
+    - ruleID: openjdk25--to-openjdk25+-00710
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: openjdk25--to-openjdk25+-00880
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: openjdk25--to-openjdk25+-00890
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: openjdk25--to-openjdk25+-00900
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

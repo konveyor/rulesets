@@ -1,0 +1,19 @@
+rulesPath: ../rules/browser.yaml
+providers:
+    - name: java
+      dataPath: ./data/browser
+tests:
+    - ruleID: openjdk25--to-openjdk25+-00530
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: openjdk25--to-openjdk25+-00540
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

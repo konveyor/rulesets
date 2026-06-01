@@ -1,0 +1,321 @@
+- ruleID: openjdk25--to-openjdk25+-00010
+  description: Security Manager is permanently disabled in JDK 24 (JEP 486)
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The Security Manager has been permanently disabled in JDK 24 via JEP 486. Any code that relies on `java.lang.SecurityManager` will no longer function. There is no replacement for the Security Manager. You must remove all Security Manager usage and find alternative approaches for security controls. See JEP 486 for discussion and alternatives.
+  links:
+    - url: https://openjdk.org/jeps/486
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.SecurityManager
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-00070
+  description: java.security.manager system property default changed to disallow in JDK 18
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: Starting in JDK 18, the `java.security.manager` system property default value changed to `disallow`. Code that calls `System.setSecurityManager()` will throw an `UnsupportedOperationException` unless the application is launched with `-Djava.security.manager=allow`. Note that the Security Manager is deprecated for removal in later JDK versions — consider removing SecurityManager usage entirely.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/18-relnote-issues.html#JDK-8270380
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.System.setSecurityManager
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-00080
+  description: Duplicated RSA services removed from SunJSSE provider in JDK 13
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    In JDK 13, duplicated RSA services (KeyFactory, KeyPairGenerator, and Signature) were removed from the SunJSSE provider. If your code explicitly requests RSA operations from the `SunJSSE` provider (e.g., `KeyFactory.getInstance("RSA", "SunJSSE")`), switch to using the default provider or explicitly use `SunRsaSign` instead.
+
+    Before:
+    ```java
+    KeyFactory.getInstance("RSA", "SunJSSE");
+    ```
+
+    After:
+    ```java
+    KeyFactory.getInstance("RSA"); // uses default SunRsaSign provider
+    ```
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/13-relnote-issues.html#JDK-8220016
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: '"SunJSSE"'
+        filePattern: .*\.java
+- ruleID: openjdk25--to-openjdk25+-00090
+  description: Default keystore type changed from JKS to PKCS12 in JDK 9
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Starting in JDK 9, the default keystore type changed from JKS to PKCS12. Code that calls `KeyStore.getDefaultType()` will now receive `pkcs12` instead of `jks`. If your application creates new keystores using the default type and then shares them with older systems expecting JKS format, you may need to explicitly specify `KeyStore.getInstance("JKS")`. Oracle recommends migrating existing JKS keystores to PKCS12 format using:
+    ```bash
+    keytool -importkeystore -srckeystore keystore.jks -destkeystore keystore.p12 -deststoretype pkcs12
+    ```
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/security-updates.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.security.KeyStore.getDefaultType
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-00350
+  description: java.security.acl package removed in Java SE 14
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.security.acl` package has been removed in Java SE 14, including the `Acl`, `AclEntry`, `Group`, `Owner`, and `Permission` interfaces. Use `java.security.Policy` and related classes from the `java.security` package for access control instead.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.security.acl*
+        location: PACKAGE
+- ruleID: openjdk25--to-openjdk25+-00440
+  description: javax.security.auth.Policy removed in JDK 11
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `javax.security.auth.Policy` class has been removed in JDK 11. Use `java.security.Policy` instead.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: javax.security.auth.Policy
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-00460
+  description: SecurityManager.checkAwtEventQueueAccess() removed in JDK 11
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `SecurityManager.checkAwtEventQueueAccess()` method has been removed in JDK 11. The Security Manager is being phased out. Remove calls to this method.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.SecurityManager.checkAwtEventQueueAccess
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-00470
+  description: SecurityManager.checkMemberAccess() removed in JDK 11
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `SecurityManager.checkMemberAccess(Class, int)` method has been removed in JDK 11. The Security Manager is being phased out. Remove calls to this method.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.SecurityManager.checkMemberAccess
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-00480
+  description: SecurityManager.checkSystemClipboardAccess() removed in JDK 11
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `SecurityManager.checkSystemClipboardAccess()` method has been removed in JDK 11. The Security Manager is being phased out. Remove calls to this method.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.SecurityManager.checkSystemClipboardAccess
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-00490
+  description: SecurityManager.checkTopLevelWindow() removed in JDK 11
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `SecurityManager.checkTopLevelWindow(Object)` method has been removed in JDK 11. The Security Manager is being phased out. Remove calls to this method.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.SecurityManager.checkTopLevelWindow
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-00720
+  description: PSSParameterSpec(int) constructor deprecated in JDK 19
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `PSSParameterSpec(int saltLen)` single-argument constructor is deprecated in JDK 19. Use the full constructor `PSSParameterSpec(String mdName, String mgfName, AlgorithmParameterSpec mgfSpec, int saltLen, int trailerField)` instead to explicitly specify all PSS parameters.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/19-relnote-issues.html#JDK-8254935
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.security.spec.PSSParameterSpec
+        location: CONSTRUCTOR_CALL
+- ruleID: openjdk25--to-openjdk25+-00730
+  description: OAEPParameterSpec.DEFAULT constant deprecated in JDK 19
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `OAEPParameterSpec.DEFAULT` static constant is deprecated in JDK 19. Construct an `OAEPParameterSpec` explicitly with the desired parameters instead of relying on the default constant.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/19-relnote-issues.html#JDK-8284553
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: OAEPParameterSpec\.DEFAULT
+        filePattern: .*\.java
+- ruleID: openjdk25--to-openjdk25+-01120
+  description: System.getSecurityManager() permanently disabled in JDK 24
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `System.getSecurityManager()` method always returns `null` in JDK 24+ because the Security Manager is permanently disabled (JEP 486). Remove any Security Manager checks and related access control logic.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-C2BE0C3C-1EE4-4411-B112-9A360427D638
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.System.getSecurityManager
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-01240
+  description: Acl interface removed with java.security.acl package in Java SE 14
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.security.acl.Acl` interface has been removed in Java SE 14. The entire `java.security.acl` package is gone. Use `java.security.Policy` and related classes from the `java.security` package for access control instead.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.security.acl.Acl
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-01250
+  description: AclEntry interface removed with java.security.acl package in Java SE 14
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.security.acl.AclEntry` interface has been removed in Java SE 14. The entire `java.security.acl` package is gone. Use `java.security.Policy` and related classes from the `java.security` package for access control instead.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.security.acl.AclEntry
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-01260
+  description: Group interface removed with java.security.acl package in Java SE 14
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.security.acl.Group` interface has been removed in Java SE 14. The entire `java.security.acl` package is gone. Use `java.security.Policy` and related classes from the `java.security` package for access control instead.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.security.acl.Group
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-01270
+  description: Owner interface removed with java.security.acl package in Java SE 14
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.security.acl.Owner` interface has been removed in Java SE 14. The entire `java.security.acl` package is gone. Use `java.security.Policy` and related classes from the `java.security` package for access control instead.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.security.acl.Owner
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-01280
+  description: Permission interface removed with java.security.acl package in Java SE 14
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'The `java.security.acl.Permission` interface has been removed in Java SE 14. Note: this is `java.security.acl.Permission`, not `java.security.Permission` (which still exists). The entire `java.security.acl` package is gone. Use `java.security.Policy` and related classes for access control instead.'
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.security.acl.Permission
+        location: IMPORT

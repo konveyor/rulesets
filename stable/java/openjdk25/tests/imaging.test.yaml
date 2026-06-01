@@ -1,0 +1,12 @@
+rulesPath: ../rules/imaging.yaml
+providers:
+    - name: java
+      dataPath: ./data/imaging
+tests:
+    - ruleID: openjdk25--to-openjdk25+-00630
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

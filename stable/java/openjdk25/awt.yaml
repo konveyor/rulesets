@@ -1,0 +1,132 @@
+- ruleID: openjdk25--to-openjdk25+-00120
+  description: java.awt.Window.warningString field removed in Java SE 24
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `warningString` field of `java.awt.Window` has been removed in Java SE 24. Use `Window.getWarningString()` method if you need to access the warning string for untrusted windows.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: warningString
+        filePattern: .*\.java
+- ruleID: openjdk25--to-openjdk25+-00270
+  description: ICC_Profile.finalize() removed in Java SE 18
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `ICC_Profile.finalize()` method has been removed in Java SE 18. Use try-with-resources or explicit cleanup instead of relying on finalization.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.awt.color.ICC_Profile.finalize
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-00280
+  description: ColorModel.finalize() removed in Java SE 18
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `ColorModel.finalize()` method has been removed in Java SE 18. Use try-with-resources or explicit cleanup instead of relying on finalization.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.awt.image.ColorModel.finalize
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-00290
+  description: IndexColorModel.finalize() removed in Java SE 18
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `IndexColorModel.finalize()` method has been removed in Java SE 18. Use try-with-resources or explicit cleanup instead of relying on finalization.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.awt.image.IndexColorModel.finalize
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-00600
+  description: java.awt.peer package not accessible since JDK 9
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.awt.peer` package is not accessible starting in JDK 9. It was never part of the Java SE API. Code that references types from this package will no longer compile or run. Use `Component.isDisplayable()` instead of `component.getPeer() != null`, and `Component.isLightweight()` instead of `component.getPeer() instanceof LightweightPeer`.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.awt.peer
+        location: PACKAGE
+- ruleID: openjdk25--to-openjdk25+-00610
+  description: java.awt.dnd.peer package not accessible since JDK 9
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.awt.dnd.peer` package is not accessible starting in JDK 9. It was never part of the Java SE API. Code that references types from this package will no longer compile or run.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.awt.dnd.peer
+        location: PACKAGE
+- ruleID: openjdk25--to-openjdk25+-00620
+  description: Component.getPeer() removed in JDK 9
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `Component.getPeer()` method has been removed in JDK 9. Replace usages as follows:
+
+    ```java
+    // Before: checking if peer is set
+    if (component.getPeer() != null) { ... }
+    // After:
+    if (component.isDisplayable()) { ... }
+
+    // Before: checking if component is lightweight
+    if (component.getPeer() instanceof LightweightPeer) { ... }
+    // After:
+    if (component.isLightweight()) { ... }
+    ```
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.awt.Component.getPeer
+        location: METHOD_CALL

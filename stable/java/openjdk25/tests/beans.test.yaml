@@ -1,0 +1,12 @@
+rulesPath: ../rules/beans.yaml
+providers:
+    - name: java
+      dataPath: ./data/beans
+tests:
+    - ruleID: openjdk25--to-openjdk25+-00660
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

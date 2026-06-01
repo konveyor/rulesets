@@ -1,0 +1,10 @@
+rulesPath: ../rules/jmx.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/jmx-builtin
+tests:
+    - ruleID: openjdk25--to-openjdk25+-00320
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1

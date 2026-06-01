@@ -1,0 +1,10 @@
+rulesPath: ../rules/encapsulation.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/encapsulation
+tests:
+    - ruleID: openjdk25--to-openjdk25+-00910
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1

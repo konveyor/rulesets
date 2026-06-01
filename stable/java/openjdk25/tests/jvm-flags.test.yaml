@@ -1,0 +1,20 @@
+rulesPath: ../rules/jvm-flags.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/jvm-flags
+tests:
+    - ruleID: openjdk25--to-openjdk25+-00850
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: openjdk25--to-openjdk25+-00860
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: openjdk25--to-openjdk25+-00870
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1

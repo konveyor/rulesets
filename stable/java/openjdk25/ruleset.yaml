@@ -1,0 +1,6 @@
+name: openjdk25+/openjdk25-
+description: Rules for migrating from openjdk25- to openjdk25+
+labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+

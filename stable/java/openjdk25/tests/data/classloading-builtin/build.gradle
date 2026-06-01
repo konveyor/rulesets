@@ -1,0 +1,12 @@
+// Rule: openjdk25--to-openjdk25+-00930
+// Reference to rt.jar in build configuration
+def rtJarPath = "${System.getenv('JAVA_HOME')}/lib/rt.jar"
+
+// Rule: openjdk25--to-openjdk25+-00940
+// Reference to tools.jar in build configuration
+def toolsJarPath = "${System.getenv('JAVA_HOME')}/lib/tools.jar"
+
+dependencies {
+    implementation files(rtJarPath)
+    implementation files(toolsJarPath)
+}

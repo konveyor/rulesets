@@ -1,0 +1,119 @@
+- ruleID: openjdk25--to-openjdk25+-01030
+  description: CMS garbage collector removed in JDK 14 (JEP 363)
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The Concurrent Mark Sweep (CMS) garbage collector was removed in JDK 14 (JEP 363). Remove `-XX:+UseConcMarkSweepGC` and related CMS options from your JVM arguments. Consider using G1 GC (the default) or ZGC.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-1F270BDA-50B0-49C8-807E-0B727CCC5169
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: UseConcMarkSweepGC
+        filePattern: .*\.(sh|bat|cmd|properties|xml|ya?ml|env|conf|args)
+- ruleID: openjdk25--to-openjdk25+-01040
+  description: The -Xincgc option was removed in JDK 9
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `-Xincgc` option (incremental CMS) was removed in JDK 9. Remove this flag from your JVM arguments.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-1F270BDA-50B0-49C8-807E-0B727CCC5169
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: -Xincgc
+        filePattern: .*\.(sh|bat|cmd|properties|xml|ya?ml|env|conf|args)
+- ruleID: openjdk25--to-openjdk25+-01050
+  description: The -XX:+UseParNewGC option has no effect from JDK 9
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `-XX:+UseParNewGC` flag has no effect starting in JDK 9 and is deprecated for removal. ParNew can only be used with CMS, which itself was removed in JDK 14. Remove this flag from your JVM arguments.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-1F270BDA-50B0-49C8-807E-0B727CCC5169
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: UseParNewGC
+        filePattern: .*\.(sh|bat|cmd|properties|xml|ya?ml|env|conf|args)
+- ruleID: openjdk25--to-openjdk25+-01060
+  description: Permanent generation removed in JDK 8; MaxPermSize option ignored
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The permanent generation was removed in JDK 8 (JEP 122). The `-XX:MaxPermSize` and `-XX:PermSize` options are ignored and cause a warning. Remove these options from your JVM arguments.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-1F270BDA-50B0-49C8-807E-0B727CCC5169
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: MaxPermSize
+        filePattern: .*\.(sh|bat|cmd|properties|xml|ya?ml|env|conf|args)
+- ruleID: openjdk25--to-openjdk25+-01070
+  description: Permanent generation removed in JDK 8; PermSize option ignored
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The permanent generation was removed in JDK 8 (JEP 122). The `-XX:PermSize` option is ignored and causes a warning. Remove this option from your JVM arguments.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-1F270BDA-50B0-49C8-807E-0B727CCC5169
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: PermSize
+        filePattern: .*\.(sh|bat|cmd|properties|xml|ya?ml|env|conf|args)
+- ruleID: openjdk25--to-openjdk25+-01080
+  description: -XX:+PrintGCDetails is deprecated; use -Xlog:gc instead
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `-XX:+PrintGCDetails` option is deprecated starting in JDK 9. GC logging now uses the JVM unified logging framework. Replace with `-Xlog:gc*` for detailed GC logging.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-1F270BDA-50B0-49C8-807E-0B727CCC5169
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: PrintGCDetails
+        filePattern: .*\.(sh|bat|cmd|properties|xml|ya?ml|env|conf|args)
+- ruleID: openjdk25--to-openjdk25+-01090
+  description: -XX:+PrintGC is deprecated; use -Xlog:gc instead
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `-XX:+PrintGC` option is deprecated starting in JDK 9. GC logging now uses the JVM unified logging framework. Replace with `-Xlog:gc` for basic GC logging.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-1F270BDA-50B0-49C8-807E-0B727CCC5169
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: PrintGC
+        filePattern: .*\.(sh|bat|cmd|properties|xml|ya?ml|env|conf|args)

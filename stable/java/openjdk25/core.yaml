@@ -1,0 +1,322 @@
+- ruleID: openjdk25--to-openjdk25+-00020
+  description: sun.misc.Unsafe memory-access methods deprecated for removal (JEP 471)
+  category: potential
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'The memory-access methods in `sun.misc.Unsafe` have been deprecated for removal in JDK 23 (JEP 471). In JDK 24, invoking these methods causes a runtime warning (JEP 498). Migrate to the standard APIs: the VarHandle API (JEP 193, since JDK 9) or the Foreign Function & Memory API (JEP 454, since JDK 22).'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-00240
+  description: java.lang.Compiler class removed in Java SE 21
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.lang.Compiler` class has been removed in Java SE 21. This class provided an interface to JIT compilers that no longer exists. Remove references to `java.lang.Compiler` as modern JVMs handle JIT compilation automatically.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.Compiler
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-00330
+  description: ConstantBootstraps constructor removed in Java SE 15
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The no-argument constructor `ConstantBootstraps()` has been removed in Java SE 15. Use the static methods on `ConstantBootstraps` directly instead of instantiating the class.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.invoke.ConstantBootstraps
+        location: CONSTRUCTOR_CALL
+- ruleID: openjdk25--to-openjdk25+-00340
+  description: Modifier constructor removed in Java SE 15
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The no-argument constructor `Modifier()` has been removed in Java SE 15. `Modifier` is a utility class — use its static methods (e.g., `Modifier.isPublic()`, `Modifier.isStatic()`) directly without instantiation.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.reflect.Modifier
+        location: CONSTRUCTOR_CALL
+- ruleID: openjdk25--to-openjdk25+-00370
+  description: Runtime.traceInstructions() removed in Java SE 13
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `Runtime.traceInstructions(boolean)` method has been removed in Java SE 13. It was superseded by JVM-specific tracing mechanisms. Use the JVM Tool Interface (JVMTI) for instruction tracing.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.Runtime.traceInstructions
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-00380
+  description: Runtime.traceMethodCalls() removed in Java SE 13
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `Runtime.traceMethodCalls(boolean)` method has been removed in Java SE 13. It was superseded by JVM-specific tracing mechanisms. Use the JVM Tool Interface (JVMTI) for method call tracing.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.Runtime.traceMethodCalls
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-00450
+  description: Runtime.runFinalizersOnExit() removed in JDK 11
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `Runtime.runFinalizersOnExit(boolean)` method has been removed in JDK 11. Finalization-on-exit is inherently unsafe. Use shutdown hooks (`Runtime.addShutdownHook()`) for cleanup logic instead.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.Runtime.runFinalizersOnExit
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-00500
+  description: System.runFinalizersOnExit() removed in JDK 11
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `System.runFinalizersOnExit(boolean)` method has been removed in JDK 11. Finalization-on-exit is inherently unsafe. Use shutdown hooks (`Runtime.addShutdownHook()`) for cleanup logic instead.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.System.runFinalizersOnExit
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-00570
+  description: sun.misc.BASE64Encoder removed in JDK 9
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `sun.misc.BASE64Encoder` class has been removed in JDK 9. Use `java.util.Base64.getEncoder()` instead.
+
+    ```java
+    // Before
+    import sun.misc.BASE64Encoder;
+    BASE64Encoder encoder = new BASE64Encoder();
+    String encoded = encoder.encode(data);
+
+    // After
+    import java.util.Base64;
+    String encoded = Base64.getEncoder().encodeToString(data);
+    ```
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.BASE64Encoder
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-00580
+  description: sun.misc.BASE64Decoder removed in JDK 9
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `sun.misc.BASE64Decoder` class has been removed in JDK 9. Use `java.util.Base64.getDecoder()` instead.
+
+    ```java
+    // Before
+    import sun.misc.BASE64Decoder;
+    BASE64Decoder decoder = new BASE64Decoder();
+    byte[] decoded = decoder.decodeBuffer(encodedString);
+
+    // After
+    import java.util.Base64;
+    byte[] decoded = Base64.getDecoder().decode(encodedString);
+    ```
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.BASE64Decoder
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-00590
+  description: sun.reflect.Reflection is unsupported and may be removed
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `sun.reflect.Reflection.getCallerClass(int)` method is from an unsupported, JDK-internal API that may be removed. Use the Stack-Walking API (JEP 259) instead.
+
+    ```java
+    // Before
+    import sun.reflect.Reflection;
+    Class<?> caller = Reflection.getCallerClass(2);
+
+    // After
+    import java.lang.StackWalker;
+    Class<?> caller = StackWalker.getInstance(StackWalker.Option.RETAIN_CLASS_REFERENCE)
+        .getCallerClass();
+    ```
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.reflect.Reflection
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-00740
+  description: finalize() deprecated for removal in JDK 18 (JEP 421)
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `finalize()` method has been deprecated for removal in JDK 18 (JEP 421). Finalization is unreliable, slow, and dangerous. Migrate to `java.lang.ref.Cleaner` (JDK 9+) or `try-with-resources` for resource cleanup.
+
+    ```java
+    // Before
+    @Override
+    protected void finalize() throws Throwable {
+        closeResource();
+    }
+
+    // After — use Cleaner
+    private static final Cleaner cleaner = Cleaner.create();
+    // register cleanup action in constructor
+    cleaner.register(this, resource::close);
+    ```
+  links:
+    - url: https://openjdk.java.net/jeps/421
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: finalize\(\)
+        filePattern: .*\.java
+- ruleID: openjdk25--to-openjdk25+-00750
+  description: Runtime.runFinalization() deprecated for removal in JDK 18
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `Runtime.runFinalization()` method has been deprecated for removal in JDK 18 as part of JEP 421 (Deprecate Finalization for Removal). Remove calls to this method — forcing finalization is unreliable and will be removed in a future JDK release.
+  links:
+    - url: https://openjdk.java.net/jeps/421
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.Runtime.runFinalization
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-00760
+  description: System.runFinalization() deprecated for removal in JDK 18
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `System.runFinalization()` method has been deprecated for removal in JDK 18 as part of JEP 421 (Deprecate Finalization for Removal). Remove calls to this method — forcing finalization is unreliable and will be removed in a future JDK release.
+  links:
+    - url: https://openjdk.java.net/jeps/421
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.System.runFinalization
+        location: METHOD_CALL
+- ruleID: openjdk25--to-openjdk25+-01110
+  description: Negated character class behavior changed in JDK 9 regex engine
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'Starting in JDK 9, the `java.util.regex.Pattern` class changed how negated character classes with nesting and intersection are evaluated. In JDK 8, `[^a-b[c-d]e-f]` does not negate nested classes, but in JDK 9+ negation applies to all nested character classes. Also, `[^a-d&&c-f]` is interpreted differently: in JDK 8 negation is applied first, in JDK 9+ intersection (`&&`) is applied first. Review regular expressions that use character classes with negation, intersection, and nesting.'
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-7DACC239-E71D-4B89-B582-201EA7CEBC38
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.util.regex.Pattern
+        location: IMPORT
+- ruleID: openjdk25--to-openjdk25+-01130
+  description: Finalization deprecated for removal in JDK 18 (JEP 421)
+  category: potential
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk25-
+    - konveyor.io/source=openjdk
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: Finalization has been deprecated for removal in JDK 18 (JEP 421). Override of `finalize()` is discouraged as it can lead to problems with security, performance, and reliability. Use `java.lang.ref.Cleaner` or try-with-resources patterns instead. Use `jfr` events and the `--finalization=disabled` flag to detect and test without finalization.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/migrating-jdk-8-later-jdk-releases.html#GUID-AFD4BBA1-5DB4-4E5B-BEA5-A968C419D855
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.Object.finalize
+        location: METHOD
