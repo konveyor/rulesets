@@ -1,4 +1,4 @@
-rulesPath: ../rules/packaging.yaml
+rulesPath: ../packaging.yaml
 providers:
     - name: java
       dataPath: ./data/packaging

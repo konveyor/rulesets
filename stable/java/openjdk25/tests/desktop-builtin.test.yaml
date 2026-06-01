@@ -1,4 +1,4 @@
-rulesPath: ../rules/desktop.yaml
+rulesPath: ../desktop.yaml
 providers:
     - name: builtin
       dataPath: ./data/desktop-builtin

@@ -1,4 +1,4 @@
-rulesPath: ../rules/rmi.yaml
+rulesPath: ../rmi.yaml
 providers:
     - name: java
       dataPath: ./data/rmi-1

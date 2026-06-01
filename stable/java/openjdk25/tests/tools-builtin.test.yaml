@@ -1,4 +1,4 @@
-rulesPath: ../rules/tools.yaml
+rulesPath: ../tools.yaml
 providers:
     - name: builtin
       dataPath: ./data/tools-builtin

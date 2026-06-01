@@ -1,4 +1,4 @@
-rulesPath: ../rules/native-access.yaml
+rulesPath: ../native-access.yaml
 providers:
     - name: builtin
       dataPath: ./data/native-access-builtin

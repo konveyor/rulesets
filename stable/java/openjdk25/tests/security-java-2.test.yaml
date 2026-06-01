@@ -1,4 +1,4 @@
-rulesPath: ../rules/security.yaml
+rulesPath: ../security.yaml
 providers:
     - name: java
       dataPath: ./data/security-java-2

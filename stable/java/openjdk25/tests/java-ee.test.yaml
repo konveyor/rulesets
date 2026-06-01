@@ -1,4 +1,4 @@
-rulesPath: ../rules/java-ee.yaml
+rulesPath: ../java-ee.yaml
 providers:
     - name: java
       dataPath: ./data/java-ee

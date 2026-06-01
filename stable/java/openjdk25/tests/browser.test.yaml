@@ -1,4 +1,4 @@
-rulesPath: ../rules/browser.yaml
+rulesPath: ../browser.yaml
 providers:
     - name: java
       dataPath: ./data/browser

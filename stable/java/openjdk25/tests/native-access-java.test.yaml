@@ -1,4 +1,4 @@
-rulesPath: ../rules/native-access.yaml
+rulesPath: ../native-access.yaml
 providers:
     - name: java
       dataPath: ./data/native-access-java

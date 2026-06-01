@@ -1,4 +1,4 @@
-rulesPath: ../rules/imaging.yaml
+rulesPath: ../imaging.yaml
 providers:
     - name: java
       dataPath: ./data/imaging

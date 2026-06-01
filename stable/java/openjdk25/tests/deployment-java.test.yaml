@@ -1,4 +1,4 @@
-rulesPath: ../rules/deployment.yaml
+rulesPath: ../deployment.yaml
 providers:
     - name: java
       dataPath: ./data/deployment-java

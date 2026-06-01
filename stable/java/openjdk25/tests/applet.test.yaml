@@ -1,4 +1,4 @@
-rulesPath: ../rules/applet.yaml
+rulesPath: ../applet.yaml
 providers:
     - name: java
       dataPath: ./data/applet

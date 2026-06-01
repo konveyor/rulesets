@@ -1,4 +1,4 @@
-rulesPath: ../rules/logging.yaml
+rulesPath: ../logging.yaml
 providers:
     - name: java
       dataPath: ./data/logging

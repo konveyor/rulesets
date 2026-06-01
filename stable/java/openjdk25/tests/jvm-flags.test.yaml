@@ -1,4 +1,4 @@
-rulesPath: ../rules/jvm-flags.yaml
+rulesPath: ../jvm-flags.yaml
 providers:
     - name: builtin
       dataPath: ./data/jvm-flags

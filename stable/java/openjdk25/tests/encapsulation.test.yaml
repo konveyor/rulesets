@@ -1,4 +1,4 @@
-rulesPath: ../rules/encapsulation.yaml
+rulesPath: ../encapsulation.yaml
 providers:
     - name: builtin
       dataPath: ./data/encapsulation

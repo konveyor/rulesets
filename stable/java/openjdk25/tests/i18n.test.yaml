@@ -1,4 +1,4 @@
-rulesPath: ../rules/i18n.yaml
+rulesPath: ../i18n.yaml
 providers:
     - name: java
       dataPath: ./data/i18n

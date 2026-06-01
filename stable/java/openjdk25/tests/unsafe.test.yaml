@@ -1,4 +1,4 @@
-rulesPath: ../rules/unsafe.yaml
+rulesPath: ../unsafe.yaml
 providers:
     - name: java
       dataPath: ./data/unsafe

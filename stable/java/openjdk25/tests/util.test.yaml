@@ -1,4 +1,4 @@
-rulesPath: ../rules/util.yaml
+rulesPath: ../util.yaml
 providers:
     - name: java
       dataPath: ./data/util

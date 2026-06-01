@@ -1,4 +1,4 @@
-rulesPath: ../rules/security.yaml
+rulesPath: ../security.yaml
 providers:
     - name: builtin
       dataPath: ./data/security-builtin

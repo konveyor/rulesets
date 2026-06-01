@@ -1,4 +1,4 @@
-rulesPath: ../rules/core.yaml
+rulesPath: ../core.yaml
 providers:
     - name: builtin
       dataPath: ./data/core-builtin

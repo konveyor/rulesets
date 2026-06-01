@@ -1,4 +1,4 @@
-rulesPath: ../rules/beans.yaml
+rulesPath: ../beans.yaml
 providers:
     - name: java
       dataPath: ./data/beans

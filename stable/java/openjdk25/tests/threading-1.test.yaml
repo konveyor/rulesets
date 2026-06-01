@@ -1,4 +1,4 @@
-rulesPath: ../rules/threading.yaml
+rulesPath: ../threading.yaml
 providers:
     - name: java
       dataPath: ./data/threading-1

@@ -1,4 +1,4 @@
-rulesPath: ../rules/swing.yaml
+rulesPath: ../swing.yaml
 providers:
     - name: java
       dataPath: ./data/swing

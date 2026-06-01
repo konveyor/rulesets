@@ -1,4 +1,4 @@
-rulesPath: ../rules/scripting.yaml
+rulesPath: ../scripting.yaml
 providers:
     - name: java
       dataPath: ./data/scripting

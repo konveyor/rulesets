@@ -1,4 +1,4 @@
-rulesPath: ../rules/net.yaml
+rulesPath: ../net.yaml
 providers:
     - name: java
       dataPath: ./data/net

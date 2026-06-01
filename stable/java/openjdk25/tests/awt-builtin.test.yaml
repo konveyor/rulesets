@@ -1,4 +1,4 @@
-rulesPath: ../rules/awt.yaml
+rulesPath: ../awt.yaml
 providers:
     - name: builtin
       dataPath: ./data/awt-builtin

@@ -1,4 +1,4 @@
-rulesPath: ../rules/deployment.yaml
+rulesPath: ../deployment.yaml
 providers:
     - name: builtin
       dataPath: ./data/deployment-builtin

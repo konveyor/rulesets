@@ -1,4 +1,4 @@
-rulesPath: ../rules/gc.yaml
+rulesPath: ../gc.yaml
 providers:
     - name: builtin
       dataPath: ./data/gc

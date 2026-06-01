@@ -10,7 +10,6 @@ import sun.reflect.Reflection;
 import java.util.regex.Pattern;
 import java.lang.Runtime;
 import java.lang.System;
-import java.lang.Object;
 
 public class Application {
     @SuppressWarnings("deprecation")
@@ -21,11 +20,5 @@ public class Application {
 
         // Rule: openjdk25--to-openjdk25+-00760
         System.runFinalization();
-    }
-
-    // Rule: openjdk25--to-openjdk25+-01130
-    @Override
-    protected void finalize() throws Throwable {
-        super.finalize();
     }
 }

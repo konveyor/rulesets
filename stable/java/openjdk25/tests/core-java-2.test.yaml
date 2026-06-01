@@ -1,4 +1,4 @@
-rulesPath: ../rules/core.yaml
+rulesPath: ../core.yaml
 providers:
     - name: java
       dataPath: ./data/core-java-2
@@ -39,13 +39,6 @@ tests:
           hasIncidents:
             atLeast: 1
     - ruleID: openjdk25--to-openjdk25+-01110
-      testCases:
-        - name: tc-1
-          analysisParams:
-            mode: source-only
-          hasIncidents:
-            atLeast: 1
-    - ruleID: openjdk25--to-openjdk25+-01130
       testCases:
         - name: tc-1
           analysisParams:

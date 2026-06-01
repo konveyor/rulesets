@@ -1,4 +1,4 @@
-rulesPath: ../rules/desktop.yaml
+rulesPath: ../desktop.yaml
 providers:
     - name: java
       dataPath: ./data/desktop-java

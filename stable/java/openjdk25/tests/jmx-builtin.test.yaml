@@ -1,4 +1,4 @@
-rulesPath: ../rules/jmx.yaml
+rulesPath: ../jmx.yaml
 providers:
     - name: builtin
       dataPath: ./data/jmx-builtin

@@ -1,4 +1,4 @@
-rulesPath: ../rules/naming.yaml
+rulesPath: ../naming.yaml
 providers:
     - name: builtin
       dataPath: ./data/naming

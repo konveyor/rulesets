@@ -1,4 +1,4 @@
-rulesPath: ../rules/classloading.yaml
+rulesPath: ../classloading.yaml
 providers:
     - name: java
       dataPath: ./data/classloading-java

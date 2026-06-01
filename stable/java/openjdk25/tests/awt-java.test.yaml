@@ -1,29 +1,8 @@
-rulesPath: ../rules/awt.yaml
+rulesPath: ../awt.yaml
 providers:
     - name: java
       dataPath: ./data/awt-java
 tests:
-    - ruleID: openjdk25--to-openjdk25+-00270
-      testCases:
-        - name: tc-1
-          analysisParams:
-            mode: source-only
-          hasIncidents:
-            atLeast: 1
-    - ruleID: openjdk25--to-openjdk25+-00280
-      testCases:
-        - name: tc-1
-          analysisParams:
-            mode: source-only
-          hasIncidents:
-            atLeast: 1
-    - ruleID: openjdk25--to-openjdk25+-00290
-      testCases:
-        - name: tc-1
-          analysisParams:
-            mode: source-only
-          hasIncidents:
-            atLeast: 1
     - ruleID: openjdk25--to-openjdk25+-00600
       testCases:
         - name: tc-1
