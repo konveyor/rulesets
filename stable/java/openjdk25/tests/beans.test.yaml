@@ -3,7 +3,7 @@ providers:
     - name: java
       dataPath: ./data/beans
 tests:
-    - ruleID: openjdk25--to-openjdk25+-00660
+    - ruleID: beans-deprecation-00010
       testCases:
         - name: tc-1
           analysisParams:

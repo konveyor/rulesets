@@ -3,56 +3,56 @@ providers:
     - name: java
       dataPath: ./data/security-java-1
 tests:
-    - ruleID: openjdk25--to-openjdk25+-00010
+    - ruleID: security-removal-00020
       testCases:
         - name: tc-1
           analysisParams:
             mode: source-only
           hasIncidents:
             atLeast: 1
-    - ruleID: openjdk25--to-openjdk25+-00070
+    - ruleID: security-removal-00030
       testCases:
         - name: tc-1
           analysisParams:
             mode: source-only
           hasIncidents:
             atLeast: 1
-    - ruleID: openjdk25--to-openjdk25+-00090
+    - ruleID: security-removal-00040
       testCases:
         - name: tc-1
           analysisParams:
             mode: source-only
           hasIncidents:
             atLeast: 1
-    - ruleID: openjdk25--to-openjdk25+-00350
+    - ruleID: security-removal-00050
       testCases:
         - name: tc-1
           analysisParams:
             mode: source-only
           hasIncidents:
             atLeast: 1
-    - ruleID: openjdk25--to-openjdk25+-00440
+    - ruleID: security-removal-00060
       testCases:
         - name: tc-1
           analysisParams:
             mode: source-only
           hasIncidents:
             atLeast: 1
-    - ruleID: openjdk25--to-openjdk25+-00460
+    - ruleID: security-removal-00070
       testCases:
         - name: tc-1
           analysisParams:
             mode: source-only
           hasIncidents:
             atLeast: 1
-    - ruleID: openjdk25--to-openjdk25+-00470
+    - ruleID: security-removal-00080
       testCases:
         - name: tc-1
           analysisParams:
             mode: source-only
           hasIncidents:
             atLeast: 1
-    - ruleID: openjdk25--to-openjdk25+-00480
+    - ruleID: security-removal-00090
       testCases:
         - name: tc-1
           analysisParams:

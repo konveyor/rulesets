@@ -1,0 +1,12 @@
+rulesPath: ../language.yaml
+providers:
+    - name: java
+      dataPath: ./data/language
+tests:
+    - ruleID: language-removal-00010
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

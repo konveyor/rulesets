@@ -1,55 +1,31 @@
 package com.example;
 
-// Rule: openjdk25--to-openjdk25+-00490
-import java.lang.SecurityManager;
-import java.lang.System;
+// Rule: openjdk21-to-openjdk25+-00420
+import java.lang.RuntimePermission;
 
-// Rule: openjdk25--to-openjdk25+-00720
-import java.security.spec.PSSParameterSpec;
+// Rule: openjdk21-to-openjdk25+-00430
+import java.lang.reflect.ReflectPermission;
 
-// Rule: openjdk25--to-openjdk25+-01120
-// (System.getSecurityManager is a static method on java.lang.System)
+// Rule: openjdk21-to-openjdk25+-00440
+import java.util.PropertyPermission;
 
-// Rule: openjdk25--to-openjdk25+-01240
-import java.security.acl.Acl;
+// Rule: openjdk21-to-openjdk25+-00450
+import java.net.NetPermission;
 
-// Rule: openjdk25--to-openjdk25+-01250
-import java.security.acl.AclEntry;
+// Rule: openjdk21-to-openjdk25+-00460
+import java.io.SerializablePermission;
 
-// Rule: openjdk25--to-openjdk25+-01260
-import java.security.acl.Group;
+// Rule: openjdk21-to-openjdk25+-00470
+import javax.security.auth.AuthPermission;
 
-// Rule: openjdk25--to-openjdk25+-01270
-import java.security.acl.Owner;
+// Rule: openjdk21-to-openjdk25+-00480
+import javax.net.ssl.SSLPermission;
 
-// Rule: openjdk25--to-openjdk25+-01280
-import java.security.acl.Permission;
+// Rule: openjdk21-to-openjdk25+-00490
+import java.sql.SQLPermission;
 
 public class Application {
     public static void main(String[] args) {
-        // Rule: openjdk25--to-openjdk25+-00490
-        SecurityManager sm = new SecurityManager();
-        sm.checkTopLevelWindow(new Object());
-
-        // Rule: openjdk25--to-openjdk25+-00720
-        PSSParameterSpec pssSpec = new PSSParameterSpec(20);
-
-        // Rule: openjdk25--to-openjdk25+-01120
-        SecurityManager mgr = System.getSecurityManager();
-
-        // Rule: openjdk25--to-openjdk25+-01240
-        Acl acl = null;
-
-        // Rule: openjdk25--to-openjdk25+-01250
-        AclEntry entry = null;
-
-        // Rule: openjdk25--to-openjdk25+-01260
-        Group group = null;
-
-        // Rule: openjdk25--to-openjdk25+-01270
-        Owner owner = null;
-
-        // Rule: openjdk25--to-openjdk25+-01280
-        Permission permission = null;
+        // Imports above trigger the rules
     }
 }

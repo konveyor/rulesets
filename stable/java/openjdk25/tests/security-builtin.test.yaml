@@ -3,12 +3,12 @@ providers:
     - name: builtin
       dataPath: ./data/security-builtin
 tests:
-    - ruleID: openjdk25--to-openjdk25+-00080
+    - ruleID: security-removal-00010
       testCases:
         - name: tc-1
           hasIncidents:
             atLeast: 1
-    - ruleID: openjdk25--to-openjdk25+-00730
+    - ruleID: security-removal-00260
       testCases:
         - name: tc-1
           hasIncidents:

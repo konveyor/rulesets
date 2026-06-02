@@ -1,153 +1,90 @@
-- ruleID: openjdk25--to-openjdk25+-00180
-  description: Thread.resume() removed in Java SE 23
-  category: mandatory
-  effort: 7
-  labels:
-    - konveyor.io/source=openjdk25-
-    - konveyor.io/source=openjdk
-    - konveyor.io/target=openjdk25+
-    - konveyor.io/generated-by=ai-rule-gen
-  message: The `Thread.resume()` method has been removed in Java SE 23. Thread suspension/resumption via `suspend()`/`resume()` was inherently deadlock-prone. Use `java.util.concurrent` locks, conditions, or other synchronization mechanisms instead.
-  links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
-      title: Migration Documentation
-  when:
-    java.referenced:
-        pattern: java.lang.Thread.resume
-        location: METHOD_CALL
-- ruleID: openjdk25--to-openjdk25+-00190
-  description: Thread.suspend() removed in Java SE 23
-  category: mandatory
-  effort: 7
-  labels:
-    - konveyor.io/source=openjdk25-
-    - konveyor.io/source=openjdk
-    - konveyor.io/target=openjdk25+
-    - konveyor.io/generated-by=ai-rule-gen
-  message: The `Thread.suspend()` method has been removed in Java SE 23. Thread suspension/resumption via `suspend()`/`resume()` was inherently deadlock-prone. Use `java.util.concurrent` locks, conditions, or other synchronization mechanisms instead.
-  links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
-      title: Migration Documentation
-  when:
-    java.referenced:
-        pattern: java.lang.Thread.suspend
-        location: METHOD_CALL
-- ruleID: openjdk25--to-openjdk25+-00200
-  description: ThreadGroup.resume() removed in Java SE 23
-  category: mandatory
-  effort: 7
-  labels:
-    - konveyor.io/source=openjdk25-
-    - konveyor.io/source=openjdk
-    - konveyor.io/target=openjdk25+
-    - konveyor.io/generated-by=ai-rule-gen
-  message: The `ThreadGroup.resume()` method has been removed in Java SE 23. Use `java.util.concurrent` mechanisms for thread coordination instead of ThreadGroup-based suspension.
-  links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
-      title: Migration Documentation
-  when:
-    java.referenced:
-        pattern: java.lang.ThreadGroup.resume
-        location: METHOD_CALL
-- ruleID: openjdk25--to-openjdk25+-00210
-  description: ThreadGroup.stop() removed in Java SE 23
-  category: mandatory
-  effort: 7
-  labels:
-    - konveyor.io/source=openjdk25-
-    - konveyor.io/source=openjdk
-    - konveyor.io/target=openjdk25+
-    - konveyor.io/generated-by=ai-rule-gen
-  message: The `ThreadGroup.stop()` method has been removed in Java SE 23. Use cooperative thread cancellation patterns with `Thread.interrupt()` and `java.util.concurrent` instead.
-  links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
-      title: Migration Documentation
-  when:
-    java.referenced:
-        pattern: java.lang.ThreadGroup.stop
-        location: METHOD_CALL
-- ruleID: openjdk25--to-openjdk25+-00220
-  description: ThreadGroup.suspend() removed in Java SE 23
-  category: mandatory
-  effort: 7
-  labels:
-    - konveyor.io/source=openjdk25-
-    - konveyor.io/source=openjdk
-    - konveyor.io/target=openjdk25+
-    - konveyor.io/generated-by=ai-rule-gen
-  message: The `ThreadGroup.suspend()` method has been removed in Java SE 23. Use `java.util.concurrent` mechanisms for thread coordination instead of ThreadGroup-based suspension.
-  links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
-      title: Migration Documentation
-  when:
-    java.referenced:
-        pattern: java.lang.ThreadGroup.suspend
-        location: METHOD_CALL
-- ruleID: openjdk25--to-openjdk25+-00230
-  description: Thread.countStackFrames() removed in Java SE 22
+- ruleID: threading-removal-00010
+  description: Thread.countStackFrames removed in JDK 22
   category: mandatory
   effort: 5
   labels:
-    - konveyor.io/source=openjdk25-
-    - konveyor.io/source=openjdk
     - konveyor.io/target=openjdk25+
     - konveyor.io/generated-by=ai-rule-gen
-  message: The `Thread.countStackFrames()` method has been removed in Java SE 22. Use `Thread.getStackTrace()` to get stack trace information instead.
+  message: The `Thread.countStackFrames()` method has been removed in JDK 22. This method was deprecated since JDK 1.2 and always threw `UnsupportedOperationException`. Remove calls to this method. If you need stack frame information, use `Thread.getStackTrace()` or `StackWalker` API instead.
   links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-release.html
       title: Migration Documentation
   when:
     java.referenced:
         pattern: java.lang.Thread.countStackFrames
         location: METHOD_CALL
-- ruleID: openjdk25--to-openjdk25+-00260
-  description: ThreadGroup.allowThreadSuspension() removed in Java SE 21
-  category: mandatory
-  effort: 3
-  labels:
-    - konveyor.io/source=openjdk25-
-    - konveyor.io/source=openjdk
-    - konveyor.io/target=openjdk25+
-    - konveyor.io/generated-by=ai-rule-gen
-  message: The `ThreadGroup.allowThreadSuspension(boolean)` method has been removed in Java SE 21. Thread suspension mechanisms have been removed from the JDK. Remove calls to this method.
-  links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
-      title: Migration Documentation
-  when:
-    java.referenced:
-        pattern: java.lang.ThreadGroup.allowThreadSuspension
-        location: METHOD_CALL
-- ruleID: openjdk25--to-openjdk25+-00510
-  description: Thread.destroy() removed in JDK 11
+- ruleID: threading-removal-00020
+  description: Thread.suspend() removed in JDK 23, now throws UnsupportedOperationException
   category: mandatory
   effort: 7
   labels:
-    - konveyor.io/source=openjdk25-
-    - konveyor.io/source=openjdk
     - konveyor.io/target=openjdk25+
     - konveyor.io/generated-by=ai-rule-gen
-  message: The `Thread.destroy()` method has been removed in JDK 11. It was never implemented and always threw `NoSuchMethodError`. Remove calls to this method and use cooperative thread cancellation via `Thread.interrupt()` instead.
+  message: The `Thread.suspend()` method has been removed in JDK 23 and now throws `UnsupportedOperationException`. Refactor code to use safer thread coordination mechanisms such as `java.util.concurrent.locks.LockSupport.park()` or explicit synchronization with `wait()`/`notify()`.
   links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+    - url: https://www.oracle.com/java/technologies/javase/23-relnote-issues.html
       title: Migration Documentation
   when:
     java.referenced:
-        pattern: java.lang.Thread.destroy
+        pattern: java.lang.Thread.suspend
         location: METHOD_CALL
-- ruleID: openjdk25--to-openjdk25+-00520
-  description: Thread.stop(Throwable) removed in JDK 11
+- ruleID: threading-removal-00030
+  description: Thread.resume() removed in JDK 23, now throws UnsupportedOperationException
   category: mandatory
   effort: 7
   labels:
-    - konveyor.io/source=openjdk25-
-    - konveyor.io/source=openjdk
     - konveyor.io/target=openjdk25+
     - konveyor.io/generated-by=ai-rule-gen
-  message: The `Thread.stop(Throwable)` method has been removed in JDK 11. Stopping a thread by throwing an arbitrary exception is unsafe and can leave objects in inconsistent states. Use cooperative thread cancellation via `Thread.interrupt()` instead.
+  message: The `Thread.resume()` method has been removed in JDK 23 and now throws `UnsupportedOperationException`. Refactor code to use safer thread coordination mechanisms such as `java.util.concurrent.locks.LockSupport.unpark()` or explicit synchronization with `wait()`/`notify()`.
   links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+    - url: https://www.oracle.com/java/technologies/javase/23-relnote-issues.html
       title: Migration Documentation
   when:
     java.referenced:
-        pattern: java.lang.Thread.stop
+        pattern: java.lang.Thread.resume
+        location: METHOD_CALL
+- ruleID: threading-removal-00040
+  description: ThreadGroup.suspend() removed in JDK 23, now throws UnsupportedOperationException
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `ThreadGroup.suspend()` method has been removed in JDK 23 and now throws `UnsupportedOperationException`. Refactor code to manage individual threads directly using safer thread coordination mechanisms.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/23-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.ThreadGroup.suspend
+        location: METHOD_CALL
+- ruleID: threading-removal-00050
+  description: ThreadGroup.resume() removed in JDK 23, now throws UnsupportedOperationException
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `ThreadGroup.resume()` method has been removed in JDK 23 and now throws `UnsupportedOperationException`. Refactor code to manage individual threads directly using safer thread coordination mechanisms.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/23-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.ThreadGroup.resume
+        location: METHOD_CALL
+- ruleID: threading-removal-00060
+  description: ThreadGroup.stop() removed in JDK 23, now throws UnsupportedOperationException
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `ThreadGroup.stop()` method has been removed in JDK 23 and now throws `UnsupportedOperationException`. Refactor code to manage thread lifecycle using interrupt-based patterns (`Thread.interrupt()` and checking `Thread.isInterrupted()`).
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/23-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.ThreadGroup.stop
         location: METHOD_CALL

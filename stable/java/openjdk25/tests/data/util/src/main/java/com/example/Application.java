@@ -1,11 +1,10 @@
 package com.example;
 
-// Rule: openjdk25--to-openjdk25+-00640
+// Rule: openjdk21-to-openjdk25+-00340
 import java.util.zip.ZipError;
 
 public class Application {
     public static void main(String[] args) {
-        // Reference ZipError to ensure the import is used
-        ZipError error = new ZipError("test");
+        System.out.println("ZipError import test");
     }
 }

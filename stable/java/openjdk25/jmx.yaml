@@ -1,119 +1,45 @@
-- ruleID: openjdk25--to-openjdk25+-00140
-  description: MLet class removed in Java SE 23
+- ruleID: jmx-removal-00010
+  description: Only toXMLString() and constructor-from-XML are affected.
+  category: optional
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The XML interchange functionality of `javax.management.modelmbean.DescriptorSupport` is deprecated for removal in JDK 25. If your code uses `DescriptorSupport` for XML serialization/deserialization of JMX descriptors, migrate to an alternative serialization approach.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: javax.management.modelmbean.DescriptorSupport.toXMLString
+        location: METHOD_CALL
+- ruleID: jmx-removal-00020
+  description: Only the getMBeanServerConnection(Subject) overload is affected by JMX Subject Delegation removal.
   category: mandatory
   effort: 7
   labels:
-    - konveyor.io/source=openjdk25-
-    - konveyor.io/source=openjdk
     - konveyor.io/target=openjdk25+
     - konveyor.io/generated-by=ai-rule-gen
-  message: The `javax.management.loading.MLet` class has been removed in Java SE 23, along with `MLetContent`, `MLetMBean`, and `PrivateMLet`. The MLet (Management appLET) mechanism for loading MBeans from remote URLs is no longer available. Use standard class loading and MBean registration instead.
+  message: 'JMX Subject Delegation getMBeanServerConnection(Subject) removed in JDK 23: Only the getMBeanServerConnection(Subject) overload is affected by JMX Subject Delegation removal.'
   links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
+    - url: https://www.oracle.com/java/technologies/javase/23-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: javax.management.remote.JMXConnector.getMBeanServerConnection
+        location: METHOD_CALL
+- ruleID: jmx-removal-00030
+  description: The JMX Management Applet (m-let) feature has been removed in JDK 23.
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'JMX Management Applet (m-let) removed in JDK 23: The JMX Management Applet (m-let) feature has been removed in JDK 23.'
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/23-relnote-issues.html
       title: Migration Documentation
   when:
     java.referenced:
         pattern: javax.management.loading.MLet
-        location: IMPORT
-- ruleID: openjdk25--to-openjdk25+-00150
-  description: MLetContent class removed in Java SE 23
-  category: mandatory
-  effort: 7
-  labels:
-    - konveyor.io/source=openjdk25-
-    - konveyor.io/source=openjdk
-    - konveyor.io/target=openjdk25+
-    - konveyor.io/generated-by=ai-rule-gen
-  message: The `javax.management.loading.MLetContent` class has been removed in Java SE 23. The MLet mechanism for remote MBean loading is no longer available.
-  links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
-      title: Migration Documentation
-  when:
-    java.referenced:
-        pattern: javax.management.loading.MLetContent
-        location: IMPORT
-- ruleID: openjdk25--to-openjdk25+-00160
-  description: MLetMBean interface removed in Java SE 23
-  category: mandatory
-  effort: 7
-  labels:
-    - konveyor.io/source=openjdk25-
-    - konveyor.io/source=openjdk
-    - konveyor.io/target=openjdk25+
-    - konveyor.io/generated-by=ai-rule-gen
-  message: The `javax.management.loading.MLetMBean` interface has been removed in Java SE 23. The MLet mechanism for remote MBean loading is no longer available.
-  links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
-      title: Migration Documentation
-  when:
-    java.referenced:
-        pattern: javax.management.loading.MLetMBean
-        location: IMPORT
-- ruleID: openjdk25--to-openjdk25+-00170
-  description: PrivateMLet class removed in Java SE 23
-  category: mandatory
-  effort: 7
-  labels:
-    - konveyor.io/source=openjdk25-
-    - konveyor.io/source=openjdk
-    - konveyor.io/target=openjdk25+
-    - konveyor.io/generated-by=ai-rule-gen
-  message: The `javax.management.loading.PrivateMLet` class has been removed in Java SE 23. The MLet mechanism for remote MBean loading is no longer available.
-  links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
-      title: Migration Documentation
-  when:
-    java.referenced:
-        pattern: javax.management.loading.PrivateMLet
-        location: IMPORT
-- ruleID: openjdk25--to-openjdk25+-00320
-  description: RMIConnectorServer.CREDENTIAL_TYPES removed in Java SE 15
-  category: mandatory
-  effort: 5
-  labels:
-    - konveyor.io/source=openjdk25-
-    - konveyor.io/source=openjdk
-    - konveyor.io/target=openjdk25+
-    - konveyor.io/generated-by=ai-rule-gen
-  message: The `RMIConnectorServer.CREDENTIAL_TYPES` field has been removed in Java SE 15. If your code references this field for JMX connector credential type configuration, you need to use an alternative approach for configuring JMX authentication.
-  links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-apis.html
-      title: Migration Documentation
-  when:
-    builtin.filecontent:
-        pattern: CREDENTIAL_TYPES
-        filePattern: .*\.java
-- ruleID: openjdk25--to-openjdk25+-01320
-  description: _RMIConnection_Stub IIOP class removed with CORBA in JDK 9+
-  category: mandatory
-  effort: 7
-  labels:
-    - konveyor.io/source=openjdk25-
-    - konveyor.io/source=openjdk
-    - konveyor.io/target=openjdk25+
-    - konveyor.io/generated-by=ai-rule-gen
-  message: The `org.omg.stub.javax.management.rmi._RMIConnection_Stub` class has been removed. IIOP transport support was removed from the JMX RMI Connector starting in JDK 9 and the CORBA module was fully removed in JDK 11. Use standard RMI-based (JRMP) JMX connections instead of IIOP.
-  links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-tools-and-components.html
-      title: Migration Documentation
-  when:
-    java.referenced:
-        pattern: org.omg.stub.javax.management.rmi._RMIConnection_Stub
-        location: IMPORT
-- ruleID: openjdk25--to-openjdk25+-01330
-  description: _RMIConnection_Tie IIOP class removed with CORBA in JDK 9+
-  category: mandatory
-  effort: 7
-  labels:
-    - konveyor.io/source=openjdk25-
-    - konveyor.io/source=openjdk
-    - konveyor.io/target=openjdk25+
-    - konveyor.io/generated-by=ai-rule-gen
-  message: The `org.omg.stub.javax.management.rmi._RMIConnection_Tie` class has been removed. IIOP transport support was removed from the JMX RMI Connector starting in JDK 9 and the CORBA module was fully removed in JDK 11. Use standard RMI-based (JRMP) JMX connections instead of IIOP.
-  links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/removed-tools-and-components.html
-      title: Migration Documentation
-  when:
-    java.referenced:
-        pattern: org.omg.stub.javax.management.rmi._RMIConnection_Tie
         location: IMPORT
