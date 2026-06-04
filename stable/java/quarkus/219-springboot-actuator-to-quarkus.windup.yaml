@@ -1,7 +1,6 @@
 - category: mandatory
   customVariables: []
-  description: Replace the Spring Boot Actuator dependency with Quarkus Smallrye Health
-    extension
+  description: Replace Spring Boot Actuator with Quarkus health, metrics, info and management interface capabilities
   effort: 5
   labels:
   - konveyor.io/source=springboot
@@ -9,8 +8,29 @@
   links:
   - title: Quarkus - Smallrye Health
     url: https://quarkus.io/guides/smallrye-health
-  message: "Replace the Spring Boot Actuator dependency with Quarkus Smallrye Health
-    extension. \n It has to be replaced by `io.quarkus:quarkus-smallrye-health` artifact."
+  - title: Quarkus - Micrometer and monitoring
+    url: https://quarkus.io/guides/telemetry-micrometer
+  - title: Quarkus - Management interface reference
+    url: https://quarkus.io/guides/management-interface-reference
+  - title: Spring Boot Actuator endpoints reference
+    url: https://docs.spring.io/spring-boot/reference/actuator/endpoints.html
+  message: |-
+    Spring Boot Actuator dependency detected. Replace Actuator usage with Quarkus operational extensions and management endpoints.
+
+    Recommended Quarkus baseline:
+    - Health: `io.quarkus:quarkus-smallrye-health`
+    - Metrics / Prometheus: `io.quarkus:quarkus-micrometer` (+ registry extension as needed)
+    - Info endpoint: `io.quarkus:quarkus-info`
+    - Dedicated management server/path (optional): `quarkus.management.*` and `/q` endpoints
+
+    Actuator endpoint mapping guidance:
+    - `health` -> `/q/health` (or management interface endpoint)
+    - `metrics` / `prometheus` -> Micrometer endpoint(s)
+    - `info` -> `/q/info` via `quarkus-info`
+    - `loggers`, `env`, `configprops`, `beans`, `conditions`, `mappings`, `scheduledtasks` -> reassess per use case; there is no single 1:1 Quarkus Actuator replacement for all of these
+    - `heapdump` / `threaddump` -> use JVM/container diagnostics and platform tooling rather than Actuator-specific endpoints
+
+    A migration usually requires both dependency changes and endpoint/configuration redesign.
   ruleID: springboot-actuator-to-quarkus-0100
   when:
     or:
@@ -42,3 +62,31 @@
     builtin.filecontent:
       filePattern: application.*\.(properties|yml|yaml)
       pattern: management.endpoints.web.exposure.include.*health
+- category: mandatory
+  customVariables: []
+  description: Review non-health Actuator endpoint exposure and map to Quarkus operational endpoints
+  effort: 3
+  labels:
+  - konveyor.io/source=springboot
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus - Micrometer and monitoring
+    url: https://quarkus.io/guides/telemetry-micrometer
+  - title: Quarkus - Management interface reference
+    url: https://quarkus.io/guides/management-interface-reference
+  - title: Spring Boot Actuator endpoints reference
+    url: https://docs.spring.io/spring-boot/reference/actuator/endpoints.html
+  message: |-
+    Spring Actuator non-health web endpoint exposure detected.
+
+    For endpoints like `metrics`, `prometheus`, `info`, `env`, `loggers`, `mappings`, `scheduledtasks`, or `threaddump`, map each need explicitly to Quarkus capabilities:
+    - metrics/prometheus -> Micrometer (+ registry)
+    - info -> `quarkus-info`
+    - operational endpoint isolation -> `quarkus.management.*`
+
+    Some Actuator endpoints have no direct 1:1 equivalent in Quarkus and require operational/process changes.
+  ruleID: springboot-actuator-to-quarkus-0210
+  when:
+    builtin.filecontent:
+      filePattern: application.*\.(properties|yml|yaml)
+      pattern: management.endpoints.web.exposure.include.*(metrics|prometheus|info|env|loggers|mappings|scheduledtasks|threaddump|heapdump|beans|conditions|configprops|caches)

@@ -1,16 +1,21 @@
 - category: mandatory
   customVariables: []
-  description: Spring JMX is not supported by Quarkus with GraalVM on a Native Image
+  description: Spring JMX export is not a supported Quarkus migration path; use Micrometer-based observability instead
   effort: 13
   labels:
   - konveyor.io/source=springboot
   - konveyor.io/target=quarkus
-  links: []
+  links:
+  - title: Quarkus - Micrometer metrics
+    url: https://quarkus.io/guides/telemetry-micrometer
+  - title: Quarkiverse - Micrometer registry reference
+    url: https://docs.quarkiverse.io/quarkus-micrometer-registry
   message: |-
     Spring JMX XML configuration detected:
 
-     Spring JMX is not supported by Quarkus with the GraalVM Native compilation.
-     Spring JMX can be used with the Quarkus Hotspot compilation however.
+     Spring JMX configuration (for example `org.springframework.jmx.export.MBeanExporter` in XML) does not translate to a supported operational model on Quarkus. Quarkus does not document carrying Spring JMX forward as part of a Spring Boot to Quarkus migration.
+
+     JMX is especially limited for Quarkus native image builds. Even on JVM mode, you should plan to replace JMX-centric management and Actuator-style introspection with Quarkus-native observability—metrics and health—typically using Micrometer (see links below).
   ruleID: springboot-jmx-to-quarkus-00000
   when:
     builtin.xml:
@@ -19,17 +24,22 @@
       xpath: //*/c:bean/@class[matches(self::node(), 'org.springframework.jmx.export.MBeanExporter')]
 - category: mandatory
   customVariables: []
-  description: Spring JMX is not supported by Quarkus with GraalVM on a Native Image
+  description: Spring JMX annotations are not a supported Quarkus migration path; use Micrometer-based observability instead
   effort: 13
   labels:
   - konveyor.io/source=springboot
   - konveyor.io/target=quarkus
-  links: []
+  links:
+  - title: Quarkus - Micrometer metrics
+    url: https://quarkus.io/guides/telemetry-micrometer
+  - title: Quarkiverse - Micrometer registry reference
+    url: https://docs.quarkiverse.io/quarkus-micrometer-registry
   message: |-
     Spring JMX annotation configuration detected:
 
-     Spring JMX is not supported by Quarkus with the GraalVM Native compilation.
-     Spring JMX can be used with the Quarkus Hotspot compilation however.
+     Spring JMX annotations (under `org.springframework.jmx`, for example `@ManagedResource`) do not have a direct Quarkus equivalent. Migrating from Spring Boot to Quarkus should treat JMX MBeans as legacy operational surface and redesign around Quarkus extensions.
+
+     Native image further restricts practical JMX usage; prefer Micrometer metrics, SmallRye Health, and related guides (see links below) rather than retaining Spring JMX.
   ruleID: springboot-jmx-to-quarkus-00001
   when:
     java.referenced:

@@ -1,0 +1,20 @@
+rulesPath: ../241-springboot-cloud-consul-to-quarkus-stork.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/241-springboot-cloud-consul-to-quarkus-stork
+- name: builtin
+  dataPath: ./data/241-springboot-cloud-consul-to-quarkus-stork
+tests:
+- ruleID: springboot-cloud-consul-to-quarkus-stork-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: Replace Spring Cloud Consul Discovery dependency with Quarkus
+        Stork-based service discovery
+- ruleID: springboot-cloud-consul-to-quarkus-stork-00001
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 3
+      messageMatches: Spring Cloud Consul discovery configuration detected

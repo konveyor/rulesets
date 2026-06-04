@@ -23,5 +23,17 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 5
-      messageMatches: Spring infrastructure classe.*
+      exactly: 12
+      messageMatches: Spring infrastructure extension points like.*
+- ruleID: springboot-di-to-quarkus-00003
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: Spring DI annotation usage detected.*
+- ruleID: springboot-di-to-quarkus-00004
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 2
+      messageMatches: Spring `ApplicationContext` usage detected.*

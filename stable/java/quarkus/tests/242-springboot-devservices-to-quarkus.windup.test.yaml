@@ -1,0 +1,13 @@
+rulesPath: ../242-springboot-devservices-to-quarkus.windup.yaml
+providers:
+- name: java
+  dataPath: ./data/242-springboot-devservices-to-quarkus
+- name: builtin
+  dataPath: ./data/242-springboot-devservices-to-quarkus
+tests:
+- ruleID: springboot-devservices-to-quarkus-00000
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 3
+      messageMatches: Spring dependency with local infrastructure expectations detected

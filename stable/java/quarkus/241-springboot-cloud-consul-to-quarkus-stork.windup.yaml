@@ -1,0 +1,55 @@
+- category: mandatory
+  customVariables: []
+  description: Replace Spring Cloud Consul Discovery with Quarkus Stork Consul service discovery
+  effort: 3
+  labels:
+  - konveyor.io/source=springboot
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus - Getting Started with SmallRye Stork
+    url: https://quarkus.io/guides/stork
+  - title: Quarkus - Stork reference guide
+    url: https://quarkus.io/guides/stork-reference
+  message: |-
+    Replace Spring Cloud Consul Discovery dependency with Quarkus Stork-based service discovery.
+
+    Spring Cloud Consul Discovery artifacts:
+    - `org.springframework.cloud:spring-cloud-starter-consul-discovery`
+    - `org.springframework.cloud:spring-cloud-consul-discovery`
+
+    Quarkus migration guidance:
+    - Add `io.quarkus:quarkus-smallrye-stork`
+    - Add `io.smallrye.stork:stork-service-discovery-consul`
+    - Configure service discovery and load balancing with `quarkus.stork.<service-name>.*` properties
+  ruleID: springboot-cloud-consul-to-quarkus-stork-00000
+  when:
+    or:
+    - java.dependency:
+        lowerbound: 0.0.0
+        name: org.springframework.cloud.spring-cloud-starter-consul-discovery
+    - java.dependency:
+        lowerbound: 0.0.0
+        name: org.springframework.cloud.spring-cloud-consul-discovery
+- category: mandatory
+  customVariables: []
+  description: Migrate Spring Cloud Consul configuration properties to Quarkus Stork configuration
+  effort: 2
+  labels:
+  - konveyor.io/source=springboot
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus - Getting Started with SmallRye Stork
+    url: https://quarkus.io/guides/stork
+  message: |-
+    Spring Cloud Consul discovery configuration detected.
+
+    Replace `spring.cloud.consul.discovery.*` configuration with Quarkus Stork properties, for example:
+    - `quarkus.stork.<service-name>.service-discovery.type=consul`
+    - `quarkus.stork.<service-name>.service-discovery.consul-host=<host>`
+    - `quarkus.stork.<service-name>.service-discovery.consul-port=<port>`
+    - `quarkus.stork.<service-name>.load-balancer.type=round-robin`
+  ruleID: springboot-cloud-consul-to-quarkus-stork-00001
+  when:
+    builtin.filecontent:
+      filePattern: application.*\.(properties|yml|yaml)
+      pattern: spring.cloud.consul.discovery\..*
