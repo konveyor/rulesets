@@ -7,7 +7,7 @@
     - konveyor.io/generated-by=ai-rule-gen
   message: The `jdk.crypto.ec` module is deprecated for removal in JDK 22. The elliptic curve cryptography functionality has been migrated to the `java.base` module. Remove the `requires jdk.crypto.ec` directive from your `module-info.java` file.
   links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-release.html
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
       title: Migration Documentation
   when:
     builtin.filecontent:

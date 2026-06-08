@@ -21,7 +21,7 @@
     MethodHandles.lookup().ensureInitialized(MyClass.class);
     ```
   links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-release.html
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
       title: Migration Documentation
   when:
     java.referenced:
@@ -50,7 +50,7 @@
     MethodHandles.lookup().ensureInitialized(MyClass.class);
     ```
   links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-release.html
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
       title: Migration Documentation
   when:
     java.referenced:
@@ -78,7 +78,7 @@
     LockSupport.park();
     ```
   links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-release.html
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
       title: Migration Documentation
   when:
     java.referenced:
@@ -106,7 +106,7 @@
     LockSupport.unpark(thread);
     ```
   links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-release.html
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
       title: Migration Documentation
   when:
     java.referenced:
@@ -137,7 +137,7 @@
     double loadAvg = osBean.getSystemLoadAverage();
     ```
   links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-release.html
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
       title: Migration Documentation
   when:
     java.referenced:
@@ -165,7 +165,7 @@
     VarHandle.loadFence();
     ```
   links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-release.html
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
       title: Migration Documentation
   when:
     java.referenced:
@@ -193,7 +193,7 @@
     VarHandle.storeFence();
     ```
   links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-release.html
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
       title: Migration Documentation
   when:
     java.referenced:
@@ -221,7 +221,7 @@
     VarHandle.fullFence();
     ```
   links:
-    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-release.html
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
       title: Migration Documentation
   when:
     java.referenced:

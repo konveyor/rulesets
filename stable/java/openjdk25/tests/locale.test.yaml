@@ -2,6 +2,8 @@ rulesPath: ../locale.yaml
 providers:
     - name: builtin
       dataPath: ./data/locale
+    - name: java
+      dataPath: ./data/locale
 tests:
     - ruleID: locale-removal-00010
       testCases:
@@ -16,5 +18,7 @@ tests:
     - ruleID: locale-removal-00030
       testCases:
         - name: tc-1
+          analysisParams:
+            mode: source-only
           hasIncidents:
             atLeast: 1

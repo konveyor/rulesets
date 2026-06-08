@@ -40,6 +40,16 @@
     - url: https://www.oracle.com/java/technologies/javase/23-relnote-issues.html
       title: Migration Documentation
   when:
-    java.referenced:
-        pattern: javax.management.loading.MLet
-        location: IMPORT
+    or:
+      - java.referenced:
+            pattern: javax.management.loading.MLet
+            location: IMPORT
+      - java.referenced:
+            pattern: javax.management.loading.MLetContent
+            location: IMPORT
+      - java.referenced:
+            pattern: javax.management.loading.PrivateMLet
+            location: IMPORT
+      - java.referenced:
+            pattern: javax.management.loading.MLetMBean
+            location: IMPORT

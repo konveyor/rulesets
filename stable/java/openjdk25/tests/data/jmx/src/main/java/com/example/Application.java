@@ -9,6 +9,9 @@ import javax.security.auth.Subject;
 
 // Rule: openjdk21-to-openjdk25+-00690
 import javax.management.loading.MLet;
+import javax.management.loading.MLetContent;
+import javax.management.loading.PrivateMLet;
+import javax.management.loading.MLetMBean;
 
 public class Application {
     public static void main(String[] args) throws Exception {
