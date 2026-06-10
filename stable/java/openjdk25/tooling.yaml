@@ -1,0 +1,15 @@
+- ruleID: tooling-removal-00010
+  description: jdeps -profile and -P options removed in JDK 22
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `jdeps -profile` and `-P` command-line options have been removed in JDK 22. Remove these options from your build scripts and tool invocations. Use `jdeps --print-module-deps` or module-based analysis instead.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: jdeps\s+.*(-profile|-P)\b
+        filePattern: .*\.(sh|bat|cmd|yml|yaml|xml|gradle|Dockerfile)

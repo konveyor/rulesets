@@ -1,0 +1,8 @@
+plugins {
+    id 'java'
+}
+
+// Rule: openjdk21-to-openjdk25+-00040
+task analyzeDeps(type: Exec) {
+    commandLine 'jdeps', '-P', 'build/libs/myapp.jar'
+}

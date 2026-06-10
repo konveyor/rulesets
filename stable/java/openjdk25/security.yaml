@@ -1,0 +1,405 @@
+- ruleID: security-removal-00010
+  description: jdk.crypto.ec module deprecated for removal in JDK 22
+  category: optional
+  effort: 3
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `jdk.crypto.ec` module is deprecated for removal in JDK 22. The elliptic curve cryptography functionality has been migrated to the `java.base` module. Remove the `requires jdk.crypto.ec` directive from your `module-info.java` file.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: requires\s+jdk\.crypto\.ec
+        filePattern: module-info\.java
+- ruleID: security-removal-00020
+  description: SecurityManager permanently disabled in JDK 24
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The Security Manager has been permanently disabled in JDK 24 (JEP 486). The Security Manager API will be removed in a future release. Code using `SecurityManager` should be migrated to alternative security mechanisms. Applications that call `System.setSecurityManager()` will receive an `UnsupportedOperationException`.
+
+    See [JEP 486: Permanently Disable the Security Manager](https://openjdk.org/jeps/486).
+  links:
+    - url: https://openjdk.org/jeps/486
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.SecurityManager
+        location: IMPORT
+- ruleID: security-removal-00030
+  description: AccessController permanently disabled with Security Manager in JDK 24
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The Security Manager has been permanently disabled in JDK 24 (JEP 486). `AccessController` and its `doPrivileged()` method are no longer functional. Remove `AccessController.doPrivileged()` calls and run the code directly, or use alternative security mechanisms.
+
+    See [JEP 486: Permanently Disable the Security Manager](https://openjdk.org/jeps/486).
+  links:
+    - url: https://openjdk.org/jeps/486
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.security.AccessController
+        location: IMPORT
+- ruleID: security-removal-00040
+  description: AccessControlContext permanently disabled with Security Manager in JDK 24
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The Security Manager has been permanently disabled in JDK 24 (JEP 486). `AccessControlContext` is no longer functional. Remove all usage and migrate to alternative security mechanisms.
+
+    See [JEP 486: Permanently Disable the Security Manager](https://openjdk.org/jeps/486).
+  links:
+    - url: https://openjdk.org/jeps/486
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.security.AccessControlContext
+        location: IMPORT
+- ruleID: security-removal-00050
+  description: Policy permanently disabled with Security Manager in JDK 24
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The Security Manager has been permanently disabled in JDK 24 (JEP 486). `java.security.Policy` is no longer functional. Remove all usage and migrate to alternative security mechanisms.
+
+    See [JEP 486: Permanently Disable the Security Manager](https://openjdk.org/jeps/486).
+  links:
+    - url: https://openjdk.org/jeps/486
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.security.Policy
+        location: IMPORT
+- ruleID: security-removal-00060
+  description: System.setSecurityManager() throws UnsupportedOperationException in JDK 24
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The Security Manager has been permanently disabled in JDK 24. `System.setSecurityManager()` now throws `UnsupportedOperationException`. Remove this call and any Security Manager configuration. Applications relying on Security Manager for sandboxing must migrate to alternative security mechanisms.
+
+    See [JEP 486: Permanently Disable the Security Manager](https://openjdk.org/jeps/486).
+  links:
+    - url: https://openjdk.org/jeps/486
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.System.setSecurityManager
+        location: METHOD_CALL
+- ruleID: security-removal-00070
+  description: AllPermission deprecated for removal with Security Manager in JDK 25
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.security.AllPermission` class is deprecated for removal in JDK 25 as part of the Security Manager removal. Remove all references to `AllPermission` and associated policy configurations.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.security.AllPermission
+        location: IMPORT
+- ruleID: security-removal-00080
+  description: FilePermission deprecated for removal with Security Manager in JDK 25
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.io.FilePermission` class is deprecated for removal in JDK 25 as part of the Security Manager removal. Remove all references to `FilePermission` and use application-level file access controls instead.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.io.FilePermission
+        location: IMPORT
+- ruleID: security-removal-00090
+  description: SocketPermission deprecated for removal with Security Manager in JDK 25
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.net.SocketPermission` class is deprecated for removal in JDK 25 as part of the Security Manager removal. Remove all references to `SocketPermission` and use application-level network access controls instead.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.net.SocketPermission
+        location: IMPORT
+- ruleID: security-removal-00100
+  description: RuntimePermission deprecated for removal with Security Manager in JDK 25
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.lang.RuntimePermission` class is deprecated for removal in JDK 25 as part of the Security Manager removal. Remove all references to `RuntimePermission`.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.RuntimePermission
+        location: IMPORT
+- ruleID: security-removal-00110
+  description: ReflectPermission deprecated for removal with Security Manager in JDK 25
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.lang.reflect.ReflectPermission` class is deprecated for removal in JDK 25 as part of the Security Manager removal. Remove all references to `ReflectPermission`.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.reflect.ReflectPermission
+        location: IMPORT
+- ruleID: security-removal-00120
+  description: PropertyPermission deprecated for removal with Security Manager in JDK 25
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.util.PropertyPermission` class is deprecated for removal in JDK 25 as part of the Security Manager removal. Remove all references to `PropertyPermission`.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.util.PropertyPermission
+        location: IMPORT
+- ruleID: security-removal-00130
+  description: NetPermission deprecated for removal with Security Manager in JDK 25
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.net.NetPermission` class is deprecated for removal in JDK 25 as part of the Security Manager removal. Remove all references to `NetPermission`.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.net.NetPermission
+        location: IMPORT
+- ruleID: security-removal-00140
+  description: SerializablePermission deprecated for removal with Security Manager in JDK 25
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.io.SerializablePermission` class is deprecated for removal in JDK 25 as part of the Security Manager removal. Remove all references to `SerializablePermission`.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.io.SerializablePermission
+        location: IMPORT
+- ruleID: security-removal-00150
+  description: AuthPermission deprecated for removal with Security Manager in JDK 25
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `javax.security.auth.AuthPermission` class is deprecated for removal in JDK 25 as part of the Security Manager removal. Remove all references to `AuthPermission`.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: javax.security.auth.AuthPermission
+        location: IMPORT
+- ruleID: security-removal-00160
+  description: SSLPermission deprecated for removal with Security Manager in JDK 25
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `javax.net.ssl.SSLPermission` class is deprecated for removal in JDK 25 as part of the Security Manager removal. Remove all references to `SSLPermission`.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: javax.net.ssl.SSLPermission
+        location: IMPORT
+- ruleID: security-removal-00170
+  description: SQLPermission deprecated for removal with Security Manager in JDK 25
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.sql.SQLPermission` class is deprecated for removal in JDK 25 as part of the Security Manager removal. Remove all references to `SQLPermission`.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.sql.SQLPermission
+        location: IMPORT
+- ruleID: security-removal-00180
+  description: LoggingPermission deprecated for removal with Security Manager in JDK 25
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.util.logging.LoggingPermission` class is deprecated for removal in JDK 25 as part of the Security Manager removal. Remove all references to `LoggingPermission`.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.util.logging.LoggingPermission
+        location: IMPORT
+- ruleID: security-removal-00190
+  description: MBeanPermission deprecated for removal with Security Manager in JDK 25
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `javax.management.MBeanPermission` class is deprecated for removal in JDK 25 as part of the Security Manager removal. Remove all references to `MBeanPermission`.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: javax.management.MBeanPermission
+        location: IMPORT
+- ruleID: security-removal-00200
+  description: MBeanServerPermission deprecated for removal with Security Manager in JDK 25
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `javax.management.MBeanServerPermission` class is deprecated for removal in JDK 25 as part of the Security Manager removal. Remove all references to `MBeanServerPermission`.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: javax.management.MBeanServerPermission
+        location: IMPORT
+- ruleID: security-removal-00210
+  description: MBeanTrustPermission deprecated for removal with Security Manager in JDK 25
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `javax.management.MBeanTrustPermission` class is deprecated for removal in JDK 25 as part of the Security Manager removal. Remove all references to `MBeanTrustPermission`.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: javax.management.MBeanTrustPermission
+        location: IMPORT
+- ruleID: security-removal-00220
+  description: SubjectDelegationPermission deprecated for removal with Security Manager in JDK 25
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `javax.management.remote.SubjectDelegationPermission` class is deprecated for removal in JDK 25 as part of the Security Manager removal. Remove all references to `SubjectDelegationPermission`.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: javax.management.remote.SubjectDelegationPermission
+        location: IMPORT
+- ruleID: security-removal-00230
+  description: UnresolvedPermission deprecated for removal with Security Manager in JDK 25
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.security.UnresolvedPermission` class is deprecated for removal in JDK 25 as part of the Security Manager removal. Remove all references to `UnresolvedPermission`.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.security.UnresolvedPermission
+        location: IMPORT
+- ruleID: security-removal-00240
+  description: DelegationPermission deprecated for removal with Security Manager in JDK 25
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `javax.security.auth.kerberos.DelegationPermission` class is deprecated for removal in JDK 25 as part of the Security Manager removal. Remove all references to `DelegationPermission`.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: javax.security.auth.kerberos.DelegationPermission
+        location: IMPORT
+- ruleID: security-removal-00250
+  description: ServicePermission deprecated for removal with Security Manager in JDK 25
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `javax.security.auth.kerberos.ServicePermission` class is deprecated for removal in JDK 25 as part of the Security Manager removal. Remove all references to `ServicePermission`.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: javax.security.auth.kerberos.ServicePermission
+        location: IMPORT
+- ruleID: security-removal-00260
+  description: The Security Manager is permanently disabled in JDK 24. Setting -Djava.security.manager will produce a warning.
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: '-Djava.security.manager system property in JDK 24: The Security Manager is permanently disabled in JDK 24. Setting -Djava.security.manager will produce a warning.'
+  links:
+    - url: https://openjdk.org/jeps/486
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: java\.security\.manager\s*=
+        filePattern: .*\.(sh|bat|cmd|conf|properties|ya?ml|xml|env|args|Dockerfile)

@@ -1,0 +1,15 @@
+rulesPath: ../runtime.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/runtime-builtin
+tests:
+    - ruleID: runtime-removal-00010
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: runtime-removal-00040
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1

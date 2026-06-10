@@ -1,0 +1,63 @@
+- ruleID: runtime-removal-00010
+  description: ZGC non-generational mode removed in JDK 24; -XX:-ZGenerational flag no longer accepted
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The non-generational mode of ZGC has been removed in JDK 24. The `-XX:-ZGenerational` flag is no longer accepted and will cause the JVM to fail on startup. Applications using `-XX:+UseZGC` will now automatically use generational mode. Remove any explicit `-XX:-ZGenerational` or `-XX:+ZGenerational` flags from your JVM configuration.
+
+    See [JEP 490: ZGC: Remove the Non-Generational Mode](https://openjdk.org/jeps/490).
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-24.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: -XX:-ZGenerational|-XX:\+ZGenerational
+        filePattern: .*\.(sh|bat|cmd|properties|conf|yml|yaml|xml|Dockerfile)
+- ruleID: runtime-removal-00020
+  description: Aligned access modes for byteArrayViewVarHandle removed in JDK 23
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: Aligned access modes for `MethodHandles::byteArrayViewVarHandle` and related methods have been removed in JDK 23. If your code obtains a VarHandle via `byteArrayViewVarHandle()` and uses aligned access modes, those access modes are no longer available. Review your VarHandle usage and switch to unaligned access modes or use `ByteBuffer` with appropriate alignment handling.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-23.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.invoke.MethodHandles.byteArrayViewVarHandle
+        location: METHOD_CALL
+- ruleID: runtime-removal-00030
+  description: Aligned access modes for byteBufferViewVarHandle removed in JDK 23
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: Aligned access modes for `MethodHandles::byteBufferViewVarHandle` and related methods have been removed in JDK 23. If your code obtains a VarHandle via `byteBufferViewVarHandle()` and uses aligned access modes, those access modes are no longer available. Review your VarHandle usage and switch to unaligned access modes.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-23.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.invoke.MethodHandles.byteBufferViewVarHandle
+        location: METHOD_CALL
+- ruleID: runtime-removal-00040
+  description: sun.rt._sync* performance counters removed in JDK 25
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `sun.rt._sync*` performance counters (e.g., `sun.rt._sync_Inflations`, `sun.rt._sync_Deflations`, `sun.rt._sync_ContendedLockAttempts`, etc.) have been removed in JDK 25 along with PerfData Sampling. Code or monitoring tools that read these counters via `jstat`, `sun.misc.Perf`, or the `sun.management` APIs will no longer find them. Migrate to JFR (Java Flight Recorder) events for synchronization monitoring.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-25.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: sun\.rt\._sync
+        filePattern: .*\.(java|properties|xml|ya?ml|sh|bat|cmd|conf)

@@ -1,0 +1,15 @@
+- ruleID: beans-deprecation-00010
+  description: java.beans.beancontext package deprecated for removal in JDK 23
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `java.beans.beancontext` package has been deprecated for removal in JDK 23. This includes all classes such as `BeanContext`, `BeanContextChild`, `BeanContextServices`, and related types. Migrate to alternative component composition patterns.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/23-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.beans.beancontext*
+        location: PACKAGE

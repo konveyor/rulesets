@@ -1,0 +1,15 @@
+- ruleID: language-removal-00010
+  description: String Templates preview feature withdrawn in JDK 23
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: String Templates were previewed in JDK 21 (JEP 430) and JDK 22 (JEP 459) but have been withdrawn in JDK 23. The `java.lang.StringTemplate` class and `STR` template processor are no longer available. Code relying on this preview feature must be updated to use standard string concatenation or `String.format()`.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/24/migrate/significant-changes-jdk-23.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.StringTemplate
+        location: IMPORT

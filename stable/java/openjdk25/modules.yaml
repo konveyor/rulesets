@@ -1,0 +1,30 @@
+- ruleID: modules-removal-00010
+  description: Module jdk.random removed in JDK 23
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `jdk.random` module has been removed in JDK 23. The random number generator implementations previously in this module have been moved to the `java.base` module. Remove `requires jdk.random;` from your `module-info.java` file.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/23-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: jdk.random*
+        location: PACKAGE
+- ruleID: modules-removal-00020
+  description: jdk.jsobject module deprecated for removal in JDK 24
+  category: optional
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `jdk.jsobject` module has been deprecated for removal in JDK 24. This module provided the `netscape.javascript.JSObject` API for Java Applet-to-JavaScript communication. Since Applets have been removed, this module is no longer needed. Remove `requires jdk.jsobject` from your `module-info.java` and any usage of `netscape.javascript.JSObject`.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-24.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: netscape.javascript.JSObject
+        location: IMPORT

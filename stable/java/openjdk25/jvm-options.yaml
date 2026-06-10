@@ -1,0 +1,198 @@
+- ruleID: jvm-options-deprecation-00010
+  description: -Xnoagent JVM option deprecated in JDK 22
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `-Xnoagent` JVM option is deprecated in JDK 22 and removed in JDK 23. Remove this option from your JVM launch arguments, build scripts, and configuration files.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: -Xnoagent
+        filePattern: .*\.(sh|bat|cmd|yml|yaml|xml|gradle|properties|Dockerfile)
+- ruleID: jvm-options-deprecation-00020
+  description: -Xdebug JVM option deprecated in JDK 22
+  category: optional
+  effort: 1
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `-Xdebug` JVM option is deprecated in JDK 22. This option has been a no-op for several releases. Remove it from your JVM launch arguments and build scripts. Use `-agentlib:jdwp` for debugging instead.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: -Xdebug
+        filePattern: .*\.(sh|bat|cmd|yml|yaml|xml|gradle|properties|Dockerfile)
+- ruleID: jvm-options-removal-00030
+  description: Experimental Graal JIT removed in JDK 25; remove -XX:+UseJVMCICompiler or -XX:+UseGraalJIT flag
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The experimental Graal JIT compiler has been removed in JDK 25. Applications using `-XX:+UseJVMCICompiler` or `-XX:+UseGraalJIT` must remove this flag. The JVM will fail to start if either flag is present.
+
+    Remove `-XX:+UseJVMCICompiler` (or `-XX:+UseGraalJIT`) and `-XX:+UnlockExperimentalVMOptions` (if only used for Graal JIT) from your JVM startup arguments.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-25.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: UseJVMCICompiler|UseGraalJIT
+        filePattern: .*\.(sh|bat|cmd|conf|properties|ya?ml|xml|env|args)
+- ruleID: jvm-options-deprecation-00040
+  description: UseCompressedClassPointers option deprecated in JDK 25
+  category: optional
+  effort: 1
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `-XX:+UseCompressedClassPointers` / `-XX:-UseCompressedClassPointers` JVM option is deprecated in JDK 25. With Compact Object Headers (JEP 519) now a product feature, compressed class pointers handling is managed automatically. Remove this flag from JVM arguments.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-25.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: UseCompressedClassPointers
+        filePattern: .*\.(sh|bat|cmd|conf|properties|ya?ml|xml|env|args)
+- ruleID: jvm-options-removal-00050
+  description: RegisterFinalizersAtInit JVM flag obsoleted in JDK 23
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `RegisterFinalizersAtInit` JVM flag has been obsoleted in JDK 23. The JVM will issue a warning if this flag is present. Remove `-XX:+RegisterFinalizersAtInit` or `-XX:-RegisterFinalizersAtInit` from your JVM launch arguments and configuration files.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-23.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: RegisterFinalizersAtInit
+        filePattern: .*\.(sh|bat|cmd|conf|properties|ya?ml|xml|env|args|Dockerfile)
+- ruleID: jvm-options-removal-00060
+  description: -Xfuture JVM option removed in JDK 24
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `-Xfuture` JVM option has been removed in JDK 24. This option previously enabled strict class-file format checks. Remove `-Xfuture` from your JVM launch arguments, build scripts, and configuration files. Use `-Xverify` or specific verification options if strict verification is needed.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-24.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: -Xfuture
+        filePattern: .*\.(sh|bat|cmd|conf|properties|ya?ml|xml|env|args|Dockerfile)
+- ruleID: jvm-options-removal-00070
+  description: LockingMode JVM flag deprecated for removal in JDK 24
+  category: optional
+  effort: 3
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `-XX:LockingMode` flag and `LM_LEGACY`/`LM_MONITOR` modes have been deprecated for removal in JDK 24. Remove `-XX:LockingMode=1` (LM_LEGACY) or `-XX:LockingMode=2` (LM_MONITOR) from your JVM arguments. The JVM now uses a single optimized locking implementation.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-24.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: LockingMode
+        filePattern: .*\.(sh|bat|cmd|conf|properties|ya?ml|xml|env|args|Dockerfile)
+- ruleID: jvm-options-removal-00080
+  description: -noclassgc JVM option deprecated for removal in JDK 24
+  category: optional
+  effort: 1
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `-noclassgc` JVM option has been deprecated for removal in JDK 24. Replace it with `-XX:+ClassUnloading` (to enable class GC) or `-XX:-ClassUnloading` (to disable class GC).
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-24.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: -noclassgc
+        filePattern: .*\.(sh|bat|cmd|conf|properties|ya?ml|xml|env|args|Dockerfile)
+- ruleID: jvm-options-removal-00090
+  description: -verify and -verifyremote JVM options deprecated for removal in JDK 24
+  category: optional
+  effort: 1
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `-verify` and `-verifyremote` JVM options have been deprecated for removal in JDK 24. Replace `-verify` or `-verifyremote` with `-Xverify` (which takes values `all`, `remote`, or `none`).
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-24.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: (^|\s)(-verify|-verifyremote)\b
+        filePattern: .*\.(sh|bat|cmd|conf|properties|ya?ml|xml|env|args|Dockerfile)
+- ruleID: jvm-options-removal-00100
+  description: -verbosegc JVM option deprecated for removal in JDK 24
+  category: optional
+  effort: 1
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `-verbosegc` JVM option has been deprecated for removal in JDK 24. Replace it with `-Xlog:gc` for GC logging.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-24.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: -verbosegc
+        filePattern: .*\.(sh|bat|cmd|conf|properties|ya?ml|xml|env|args|Dockerfile)
+- ruleID: jvm-options-change-00110
+  description: New security category added to -XshowSettings output in JDK 22
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: A new "Security" category has been added to the `-XshowSettings` launcher option output in JDK 22. If you have scripts or tools that parse the output of `-XshowSettings` or `-XshowSettings:all`, they may need to be updated to handle the new security category in the output.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: -XshowSettings
+        filePattern: .*\.(sh|bat|cmd|conf|properties|ya?ml|xml|Dockerfile)
+- ruleID: jvm-options-removal-00120
+  description: The -noasyncgc java command option was removed in JDK 24. The JVM will fail to start if this flag is present.
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: '-noasyncgc java command option removed in JDK 24: The -noasyncgc java command option was removed in JDK 24. The JVM will fail to start if this flag is present.'
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-24.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: -noasyncgc
+        filePattern: .*\.(sh|bat|cmd|conf|properties|ya?ml|xml|env|args|Dockerfile)
+- ruleID: jvm-options-removal-00130
+  description: The -checksource java command option was removed in JDK 24. The JVM will fail to start if this flag is present.
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: '-checksource java command option removed in JDK 24: The -checksource java command option was removed in JDK 24. The JVM will fail to start if this flag is present.'
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-24.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: -checksource
+        filePattern: .*\.(sh|bat|cmd|conf|properties|ya?ml|xml|env|args|Dockerfile)

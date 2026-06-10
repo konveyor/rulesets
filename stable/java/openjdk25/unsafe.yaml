@@ -1,0 +1,574 @@
+- ruleID: unsafe-removal-00010
+  description: sun.misc.Unsafe.shouldBeInitialized removed in JDK 22
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `sun.misc.Unsafe.shouldBeInitialized(Class)` method has been removed in JDK 22. Use `java.lang.invoke.MethodHandles.Lookup::ensureInitialized` as a replacement for class initialization checks.
+
+    ## Before
+    ```java
+    import sun.misc.Unsafe;
+    Unsafe unsafe = ...;
+    boolean initialized = unsafe.shouldBeInitialized(MyClass.class);
+    ```
+
+    ## After
+    ```java
+    import java.lang.invoke.MethodHandles;
+    MethodHandles.lookup().ensureInitialized(MyClass.class);
+    ```
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.shouldBeInitialized
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00020
+  description: sun.misc.Unsafe.ensureClassInitialized removed in JDK 22
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `sun.misc.Unsafe.ensureClassInitialized(Class)` method has been removed in JDK 22. Use `java.lang.invoke.MethodHandles.Lookup::ensureInitialized` instead.
+
+    ## Before
+    ```java
+    import sun.misc.Unsafe;
+    Unsafe unsafe = ...;
+    unsafe.ensureClassInitialized(MyClass.class);
+    ```
+
+    ## After
+    ```java
+    import java.lang.invoke.MethodHandles;
+    MethodHandles.lookup().ensureInitialized(MyClass.class);
+    ```
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.ensureClassInitialized
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00030
+  description: sun.misc.Unsafe.park deprecated for removal in JDK 22
+  category: optional
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `sun.misc.Unsafe.park()` method is deprecated for removal in JDK 22. Migrate to `java.util.concurrent.locks.LockSupport.park()` instead.
+
+    ## Before
+    ```java
+    import sun.misc.Unsafe;
+    unsafe.park(false, 0L);
+    ```
+
+    ## After
+    ```java
+    import java.util.concurrent.locks.LockSupport;
+    LockSupport.park();
+    ```
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.park
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00040
+  description: sun.misc.Unsafe.unpark deprecated for removal in JDK 22
+  category: optional
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `sun.misc.Unsafe.unpark(Thread)` method is deprecated for removal in JDK 22. Migrate to `java.util.concurrent.locks.LockSupport.unpark(Thread)` instead.
+
+    ## Before
+    ```java
+    import sun.misc.Unsafe;
+    unsafe.unpark(thread);
+    ```
+
+    ## After
+    ```java
+    import java.util.concurrent.locks.LockSupport;
+    LockSupport.unpark(thread);
+    ```
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.unpark
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00050
+  description: sun.misc.Unsafe.getLoadAverage deprecated for removal in JDK 22
+  category: optional
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `sun.misc.Unsafe.getLoadAverage(double[], int)` method is deprecated for removal in JDK 22. Use `java.lang.management.OperatingSystemMXBean.getSystemLoadAverage()` instead.
+
+    ## Before
+    ```java
+    import sun.misc.Unsafe;
+    double[] loadavg = new double[1];
+    unsafe.getLoadAverage(loadavg, 1);
+    ```
+
+    ## After
+    ```java
+    import java.lang.management.ManagementFactory;
+    import java.lang.management.OperatingSystemMXBean;
+    OperatingSystemMXBean osBean = ManagementFactory.getOperatingSystemMXBean();
+    double loadAvg = osBean.getSystemLoadAverage();
+    ```
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.getLoadAverage
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00060
+  description: sun.misc.Unsafe.loadFence deprecated for removal in JDK 22
+  category: optional
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `sun.misc.Unsafe.loadFence()` method is deprecated for removal in JDK 22. Use `java.lang.invoke.VarHandle.loadFence()` instead.
+
+    ## Before
+    ```java
+    import sun.misc.Unsafe;
+    unsafe.loadFence();
+    ```
+
+    ## After
+    ```java
+    import java.lang.invoke.VarHandle;
+    VarHandle.loadFence();
+    ```
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.loadFence
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00070
+  description: sun.misc.Unsafe.storeFence deprecated for removal in JDK 22
+  category: optional
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `sun.misc.Unsafe.storeFence()` method is deprecated for removal in JDK 22. Use `java.lang.invoke.VarHandle.storeFence()` instead.
+
+    ## Before
+    ```java
+    import sun.misc.Unsafe;
+    unsafe.storeFence();
+    ```
+
+    ## After
+    ```java
+    import java.lang.invoke.VarHandle;
+    VarHandle.storeFence();
+    ```
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.storeFence
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00080
+  description: sun.misc.Unsafe.fullFence deprecated for removal in JDK 22
+  category: optional
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `sun.misc.Unsafe.fullFence()` method is deprecated for removal in JDK 22. Use `java.lang.invoke.VarHandle.fullFence()` instead.
+
+    ## Before
+    ```java
+    import sun.misc.Unsafe;
+    unsafe.fullFence();
+    ```
+
+    ## After
+    ```java
+    import java.lang.invoke.VarHandle;
+    VarHandle.fullFence();
+    ```
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.fullFence
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00090
+  description: sun.misc.Unsafe.allocateMemory terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Allocates native memory. Migrate to `java.lang.foreign.Arena.allocate()` (JDK 22+).
+  category: potential
+  effort: 7
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.allocateMemory terminally deprecated in JDK 23: sun.misc.Unsafe.allocateMemory terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Allocates native memory. Migrate to `java.lang.foreign.Arena.allocate()` (JDK 22+).'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.allocateMemory
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00100
+  description: sun.misc.Unsafe.freeMemory terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Frees native memory. Migrate to `java.lang.foreign.Arena` (auto-managed) or `MemorySegment` lifecycle.
+  category: potential
+  effort: 7
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.freeMemory terminally deprecated in JDK 23: sun.misc.Unsafe.freeMemory terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Frees native memory. Migrate to `java.lang.foreign.Arena` (auto-managed) or `MemorySegment` lifecycle.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.freeMemory
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00110
+  description: sun.misc.Unsafe.reallocateMemory terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Resizes native memory. Migrate to `java.lang.foreign.Arena` and `MemorySegment.reinterpret()`.
+  category: potential
+  effort: 7
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.reallocateMemory terminally deprecated in JDK 23: sun.misc.Unsafe.reallocateMemory terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Resizes native memory. Migrate to `java.lang.foreign.Arena` and `MemorySegment.reinterpret()`.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.reallocateMemory
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00120
+  description: sun.misc.Unsafe.copyMemory terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Copies memory between addresses. Migrate to `MemorySegment.copy()` (JDK 22+).
+  category: potential
+  effort: 7
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.copyMemory terminally deprecated in JDK 23: sun.misc.Unsafe.copyMemory terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Copies memory between addresses. Migrate to `MemorySegment.copy()` (JDK 22+).'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.copyMemory
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00130
+  description: sun.misc.Unsafe.setMemory terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Fills memory with a value. Migrate to `MemorySegment.fill()` (JDK 22+).
+  category: potential
+  effort: 7
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.setMemory terminally deprecated in JDK 23: sun.misc.Unsafe.setMemory terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Fills memory with a value. Migrate to `MemorySegment.fill()` (JDK 22+).'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.setMemory
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00140
+  description: sun.misc.Unsafe.getInt terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Reads int at offset. Migrate to `VarHandle.get()` for heap access or `MemorySegment.get(ValueLayout.JAVA_INT, offset)` for off-heap.
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.getInt terminally deprecated in JDK 23: sun.misc.Unsafe.getInt terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Reads int at offset. Migrate to `VarHandle.get()` for heap access or `MemorySegment.get(ValueLayout.JAVA_INT, offset)` for off-heap.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.getInt
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00150
+  description: sun.misc.Unsafe.putInt terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Writes int at offset. Migrate to `VarHandle.set()` or `MemorySegment.set(ValueLayout.JAVA_INT, offset, value)`.
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.putInt terminally deprecated in JDK 23: sun.misc.Unsafe.putInt terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Writes int at offset. Migrate to `VarHandle.set()` or `MemorySegment.set(ValueLayout.JAVA_INT, offset, value)`.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.putInt
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00160
+  description: sun.misc.Unsafe.getLong terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Reads long at offset. Migrate to `VarHandle.get()` or `MemorySegment.get(ValueLayout.JAVA_LONG, offset)`.
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.getLong terminally deprecated in JDK 23: sun.misc.Unsafe.getLong terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Reads long at offset. Migrate to `VarHandle.get()` or `MemorySegment.get(ValueLayout.JAVA_LONG, offset)`.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.getLong
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00170
+  description: sun.misc.Unsafe.putLong terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Writes long at offset. Migrate to `VarHandle.set()` or `MemorySegment.set(ValueLayout.JAVA_LONG, offset, value)`.
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.putLong terminally deprecated in JDK 23: sun.misc.Unsafe.putLong terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Writes long at offset. Migrate to `VarHandle.set()` or `MemorySegment.set(ValueLayout.JAVA_LONG, offset, value)`.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.putLong
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00180
+  description: sun.misc.Unsafe.getObject terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Reads object reference at offset. Migrate to `VarHandle.get()`.
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.getObject terminally deprecated in JDK 23: sun.misc.Unsafe.getObject terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Reads object reference at offset. Migrate to `VarHandle.get()`.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.getObject
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00190
+  description: sun.misc.Unsafe.putObject terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Writes object reference at offset. Migrate to `VarHandle.set()`.
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.putObject terminally deprecated in JDK 23: sun.misc.Unsafe.putObject terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Writes object reference at offset. Migrate to `VarHandle.set()`.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.putObject
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00200
+  description: sun.misc.Unsafe.getByte terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Reads byte at offset. Migrate to `VarHandle.get()` or `MemorySegment.get(ValueLayout.JAVA_BYTE, offset)`.
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.getByte terminally deprecated in JDK 23: sun.misc.Unsafe.getByte terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Reads byte at offset. Migrate to `VarHandle.get()` or `MemorySegment.get(ValueLayout.JAVA_BYTE, offset)`.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.getByte
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00210
+  description: sun.misc.Unsafe.putByte terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Writes byte at offset. Migrate to `VarHandle.set()` or `MemorySegment.set(ValueLayout.JAVA_BYTE, offset, value)`.
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.putByte terminally deprecated in JDK 23: sun.misc.Unsafe.putByte terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Writes byte at offset. Migrate to `VarHandle.set()` or `MemorySegment.set(ValueLayout.JAVA_BYTE, offset, value)`.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.putByte
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00220
+  description: sun.misc.Unsafe.getShort terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Reads short at offset. Migrate to `VarHandle` or `MemorySegment`.
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.getShort terminally deprecated in JDK 23: sun.misc.Unsafe.getShort terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Reads short at offset. Migrate to `VarHandle` or `MemorySegment`.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.getShort
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00230
+  description: sun.misc.Unsafe.putShort terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Writes short at offset. Migrate to `VarHandle` or `MemorySegment`.
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.putShort terminally deprecated in JDK 23: sun.misc.Unsafe.putShort terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Writes short at offset. Migrate to `VarHandle` or `MemorySegment`.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.putShort
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00240
+  description: sun.misc.Unsafe.getChar terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Reads char at offset. Migrate to `VarHandle` or `MemorySegment`.
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.getChar terminally deprecated in JDK 23: sun.misc.Unsafe.getChar terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Reads char at offset. Migrate to `VarHandle` or `MemorySegment`.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.getChar
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00250
+  description: sun.misc.Unsafe.putChar terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Writes char at offset. Migrate to `VarHandle` or `MemorySegment`.
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.putChar terminally deprecated in JDK 23: sun.misc.Unsafe.putChar terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Writes char at offset. Migrate to `VarHandle` or `MemorySegment`.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.putChar
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00260
+  description: sun.misc.Unsafe.getFloat terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Reads float at offset. Migrate to `VarHandle` or `MemorySegment`.
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.getFloat terminally deprecated in JDK 23: sun.misc.Unsafe.getFloat terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Reads float at offset. Migrate to `VarHandle` or `MemorySegment`.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.getFloat
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00270
+  description: sun.misc.Unsafe.putFloat terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Writes float at offset. Migrate to `VarHandle` or `MemorySegment`.
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.putFloat terminally deprecated in JDK 23: sun.misc.Unsafe.putFloat terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Writes float at offset. Migrate to `VarHandle` or `MemorySegment`.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.putFloat
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00280
+  description: sun.misc.Unsafe.getDouble terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Reads double at offset. Migrate to `VarHandle` or `MemorySegment`.
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.getDouble terminally deprecated in JDK 23: sun.misc.Unsafe.getDouble terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Reads double at offset. Migrate to `VarHandle` or `MemorySegment`.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.getDouble
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00290
+  description: sun.misc.Unsafe.putDouble terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Writes double at offset. Migrate to `VarHandle` or `MemorySegment`.
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.putDouble terminally deprecated in JDK 23: sun.misc.Unsafe.putDouble terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Writes double at offset. Migrate to `VarHandle` or `MemorySegment`.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.putDouble
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00300
+  description: sun.misc.Unsafe.getAddress terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Reads native address. Migrate to `MemorySegment.get(ValueLayout.ADDRESS, offset)`.
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.getAddress terminally deprecated in JDK 23: sun.misc.Unsafe.getAddress terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Reads native address. Migrate to `MemorySegment.get(ValueLayout.ADDRESS, offset)`.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.getAddress
+        location: METHOD_CALL
+- ruleID: unsafe-removal-00310
+  description: sun.misc.Unsafe.putAddress terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Writes native address. Migrate to `MemorySegment.set(ValueLayout.ADDRESS, offset, value)`.
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'sun.misc.Unsafe.putAddress terminally deprecated in JDK 23: sun.misc.Unsafe.putAddress terminally deprecated for removal in JDK 23 (JEP 471). Runtime warnings in JDK 24 (JEP 498). Writes native address. Migrate to `MemorySegment.set(ValueLayout.ADDRESS, offset, value)`.'
+  links:
+    - url: https://openjdk.org/jeps/471
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: sun.misc.Unsafe.putAddress
+        location: METHOD_CALL

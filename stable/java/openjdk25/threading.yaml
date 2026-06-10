@@ -1,0 +1,90 @@
+- ruleID: threading-removal-00010
+  description: Thread.countStackFrames removed in JDK 22
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `Thread.countStackFrames()` method has been removed in JDK 22. This method was deprecated since JDK 1.2 and always threw `UnsupportedOperationException`. Remove calls to this method. If you need stack frame information, use `Thread.getStackTrace()` or `StackWalker` API instead.
+  links:
+    - url: https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-22.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.Thread.countStackFrames
+        location: METHOD_CALL
+- ruleID: threading-removal-00020
+  description: Thread.suspend() removed in JDK 23, now throws UnsupportedOperationException
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `Thread.suspend()` method has been removed in JDK 23 and now throws `UnsupportedOperationException`. Refactor code to use safer thread coordination mechanisms such as `java.util.concurrent.locks.LockSupport.park()` or explicit synchronization with `wait()`/`notify()`.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/23-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.Thread.suspend
+        location: METHOD_CALL
+- ruleID: threading-removal-00030
+  description: Thread.resume() removed in JDK 23, now throws UnsupportedOperationException
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `Thread.resume()` method has been removed in JDK 23 and now throws `UnsupportedOperationException`. Refactor code to use safer thread coordination mechanisms such as `java.util.concurrent.locks.LockSupport.unpark()` or explicit synchronization with `wait()`/`notify()`.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/23-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.Thread.resume
+        location: METHOD_CALL
+- ruleID: threading-removal-00040
+  description: ThreadGroup.suspend() removed in JDK 23, now throws UnsupportedOperationException
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `ThreadGroup.suspend()` method has been removed in JDK 23 and now throws `UnsupportedOperationException`. Refactor code to manage individual threads directly using safer thread coordination mechanisms.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/23-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.ThreadGroup.suspend
+        location: METHOD_CALL
+- ruleID: threading-removal-00050
+  description: ThreadGroup.resume() removed in JDK 23, now throws UnsupportedOperationException
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `ThreadGroup.resume()` method has been removed in JDK 23 and now throws `UnsupportedOperationException`. Refactor code to manage individual threads directly using safer thread coordination mechanisms.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/23-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.ThreadGroup.resume
+        location: METHOD_CALL
+- ruleID: threading-removal-00060
+  description: ThreadGroup.stop() removed in JDK 23, now throws UnsupportedOperationException
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `ThreadGroup.stop()` method has been removed in JDK 23 and now throws `UnsupportedOperationException`. Refactor code to manage thread lifecycle using interrupt-based patterns (`Thread.interrupt()` and checking `Thread.isInterrupted()`).
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/23-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.lang.ThreadGroup.stop
+        location: METHOD_CALL

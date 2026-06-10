@@ -1,0 +1,30 @@
+rulesPath: ../jvm-options.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/jvm-options-2
+tests:
+    - ruleID: jvm-options-removal-00090
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: jvm-options-removal-00100
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: jvm-options-change-00110
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: jvm-options-removal-00120
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: jvm-options-removal-00130
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
