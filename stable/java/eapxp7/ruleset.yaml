@@ -1,0 +1,6 @@
+name: eapxp7/eapxp6
+description: This ruleset provides analysis of Maven built applications when migrating from EAP XP 6 to 7.
+labels:
+  - konveyor.io/source=eapxp
+  - konveyor.io/target=eapxp7+
+
