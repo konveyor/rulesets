@@ -34,7 +34,7 @@
   - konveyor.io/target=discovery
   when:
     builtin.filecontent:
-      pattern: ([0-9]{1,3}\.){3}[0-9]{1,3}
+      pattern: \b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b
       filePattern: ".*\\.(java|properties)"
   category: mandatory
   effort: 1
