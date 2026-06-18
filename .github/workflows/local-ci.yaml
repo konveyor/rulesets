@@ -233,6 +233,9 @@ jobs:
             echo "$filtered"
           }
 
+          # Track if any errors occurred
+          HAS_ERROR=0
+
           # Determine what to test
           if [ "${{ steps.find-tests.outputs.run_all_tests }}" == "true" ]; then
             # Run all tests (for nightly runs or manual workflow_dispatch)
@@ -241,7 +244,11 @@ jobs:
             if [ -n "$all_tests" ]; then
               filtered_tests=$(filter_local_tests "$all_tests")
               if [ -n "$filtered_tests" ]; then
-                JVM_MAX_MEM=3072m ./kantra rules test $filtered_tests --log-level 50 --run-local=true | tee output.log || true
+                JVM_MAX_MEM=3072m ./kantra rules test $filtered_tests --log-level 50 --run-local=true | tee output.log
+                if [ ${PIPESTATUS[0]} -ne 0 ]; then
+                  echo "Error: kantra test command failed"
+                  HAS_ERROR=1
+                fi
               else
                 echo "No local-compatible tests found"
                 echo "Rules Summary: 0/0" > message.md
@@ -275,7 +282,11 @@ jobs:
             if [ -n "$adjusted_test_files" ]; then
               filtered_tests=$(filter_local_tests "$adjusted_test_files")
               if [ -n "$filtered_tests" ]; then
-                JVM_MAX_MEM=3072m ./kantra rules test $filtered_tests --log-level 50 --run-local=true | tee output.log || true
+                JVM_MAX_MEM=3072m ./kantra rules test $filtered_tests --log-level 50 --run-local=true | tee output.log
+                if [ ${PIPESTATUS[0]} -ne 0 ]; then
+                  echo "Error: kantra test command failed"
+                  HAS_ERROR=1
+                fi
               else
                 echo "No local-compatible tests in changed files"
                 echo "Rules Summary: 0/0" > message.md
@@ -312,9 +323,12 @@ jobs:
           echo ${tests_pass_rate} >> $GITHUB_OUTPUT
           echo 'EOF' >> $GITHUB_OUTPUT
 
-          if [[ ${some_test_failed} -eq 1 ]] || [[ ${some_tcs_failed} -eq 1 ]]; then
+          # Exit with error if: kantra command failed, OR any test failed, OR any test case failed
+          if [[ ${HAS_ERROR} -eq 1 ]] || [[ ${some_test_failed} -eq 1 ]] || [[ ${some_tcs_failed} -eq 1 ]]; then
+            echo "FAILED: HAS_ERROR=${HAS_ERROR}, some_test_failed=${some_test_failed}, some_tcs_failed=${some_tcs_failed}"
             exit 1
           else
+            echo "SUCCESS: All tests passed"
             exit 0
           fi
 
