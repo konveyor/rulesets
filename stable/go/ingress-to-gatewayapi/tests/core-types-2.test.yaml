@@ -1,0 +1,26 @@
+rulesPath: ../core-types.yaml
+providers:
+    - name: go
+      dataPath: ./data/core-types-2
+tests:
+    - ruleID: core-types-change-00090
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: core-types-change-00100
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: core-types-change-00110
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

@@ -1,0 +1,94 @@
+- ruleID: client-pattern-00010
+  description: NetworkingV1().Ingresses() replaced by GatewayV1().HTTPRoutes() in Gateway API
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `NetworkingV1().Ingresses()` client-go API must be migrated to the Gateway API typed client using `GatewayV1().HTTPRoutes()`.
+
+    This requires switching from the `k8s.io/client-go/kubernetes` clientset to the `sigs.k8s.io/gateway-api/pkg/client/clientset/versioned` typed client.
+
+    ## Before
+
+    ```go
+    import "k8s.io/client-go/kubernetes"
+
+    clientset, _ := kubernetes.NewForConfig(config)
+    ingresses, _ := clientset.NetworkingV1().Ingresses(namespace).List(ctx, metav1.ListOptions{})
+    clientset.NetworkingV1().Ingresses(namespace).Create(ctx, ingress, metav1.CreateOptions{})
+    clientset.NetworkingV1().Ingresses(namespace).Update(ctx, ingress, metav1.UpdateOptions{})
+    clientset.NetworkingV1().Ingresses(namespace).Delete(ctx, name, metav1.DeleteOptions{})
+    clientset.NetworkingV1().Ingresses(namespace).Get(ctx, name, metav1.GetOptions{})
+    ```
+
+    ## After
+
+    ```go
+    import gatewayv1client "sigs.k8s.io/gateway-api/pkg/client/clientset/versioned"
+
+    gwClient, _ := gatewayv1client.NewForConfig(config)
+    routes, _ := gwClient.GatewayV1().HTTPRoutes(namespace).List(ctx, metav1.ListOptions{})
+    gwClient.GatewayV1().HTTPRoutes(namespace).Create(ctx, httpRoute, metav1.CreateOptions{})
+    gwClient.GatewayV1().HTTPRoutes(namespace).Update(ctx, httpRoute, metav1.UpdateOptions{})
+    gwClient.GatewayV1().HTTPRoutes(namespace).Delete(ctx, name, metav1.DeleteOptions{})
+    gwClient.GatewayV1().HTTPRoutes(namespace).Get(ctx, name, metav1.GetOptions{})
+    ```
+
+    ## Additional Info
+
+    - All CRUD operations (List, Create, Update, Delete, Get) follow the same pattern change
+    - The Ingress object must be converted to an HTTPRoute object with the appropriate spec fields
+    - The Gateway API client requires installing the `sigs.k8s.io/gateway-api` module dependency
+    - A Gateway resource must exist in the cluster before HTTPRoutes can reference it
+    - The namespace parameter works the same way in both APIs
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: \.NetworkingV1\(\)\.Ingresses\(
+        filePattern: .*\.go
+- ruleID: client-pattern-00020
+  description: NetworkingV1().IngressClasses() replaced by GatewayV1().GatewayClasses() in Gateway API
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `NetworkingV1().IngressClasses()` client-go API must be migrated to the Gateway API typed client using `GatewayV1().GatewayClasses()`.
+
+    IngressClasses are cluster-scoped resources (no namespace parameter), and GatewayClasses follow the same pattern.
+
+    ## Before
+
+    ```go
+    clientset.NetworkingV1().IngressClasses().Create(ctx, ingressClass, metav1.CreateOptions{})
+    clientset.NetworkingV1().IngressClasses().Get(ctx, "nginx", metav1.GetOptions{})
+    ```
+
+    ## After
+
+    ```go
+    gwClient.GatewayV1().GatewayClasses().Create(ctx, gatewayClass, metav1.CreateOptions{})
+    gwClient.GatewayV1().GatewayClasses().Get(ctx, "my-class", metav1.GetOptions{})
+    ```
+
+    ## Additional Info
+
+    - GatewayClasses are cluster-scoped just like IngressClasses
+    - The IngressClass object must be converted to a GatewayClass object with the appropriate spec
+    - The GatewayClass controller name will differ from the IngressClass controller (e.g., no longer `k8s.io/ingress-nginx`)
+    - GatewayClasses define which Gateway implementations are available in the cluster
+    - The class name referenced by Gateways replaces the class name referenced by Ingresses
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: \.NetworkingV1\(\)\.IngressClasses\(
+        filePattern: .*\.go

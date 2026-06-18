@@ -1,0 +1,39 @@
+- ruleID: imports-change-00010
+  description: Kubernetes networking/v1 package replaced by Gateway API sigs.k8s.io/gateway-api/apis/v1
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `k8s.io/api/networking/v1` package for Ingress resources is replaced by the Gateway API module `sigs.k8s.io/gateway-api/apis/v1`. The Ingress NGINX controller reached End-of-Life on March 24, 2026. All Ingress types (Ingress, IngressRule, IngressTLS, IngressClass, etc.) have Gateway API equivalents (HTTPRoute, HTTPRouteRule, Gateway Listener TLS, GatewayClass, etc.).
+
+    ### Before
+    ```go
+    import (
+        networkingv1 "k8s.io/api/networking/v1"
+        metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+    )
+    ```
+
+    ### After
+    ```go
+    import (
+        gatewayv1 "sigs.k8s.io/gateway-api/apis/v1"
+        metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+    )
+    ```
+
+    ### Additional Info
+    - Add the Gateway API module to your go.mod: `go get sigs.k8s.io/gateway-api@latest`
+    - Gateway API splits Ingress's single-resource model into Gateway (entry points + TLS) and HTTPRoute (routing)
+    - The `k8s.io/apimachinery` import remains unchanged
+    - All types under `networkingv1` must be replaced with their Gateway API equivalents
+    - See individual type migration rules for specific type-to-type mappings
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: k8s.io/api/networking/v1
