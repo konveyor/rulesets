@@ -6,12 +6,14 @@ import java.io.StringReader;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 public class Main {
 
     public static void main(String[] args) throws URISyntaxException {
         RestTemplate rest = new RestTemplate();
+        new HttpComponentsClientHttpRequestFactory();
         rest.getForObject(new URI("http://www.example.com/"), Source.class);
         rest.getForObject("http://www.example.com/", Source.class);
         rest.getForObject("http://www.example.com/", Source.class, "Hey");
