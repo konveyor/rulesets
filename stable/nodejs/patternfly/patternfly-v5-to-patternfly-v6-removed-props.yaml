@@ -81,81 +81,112 @@
   customVariables: []
   migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-removed-props-00020
-  description: theme="dark" usage detected (removed API)
+  description: Nav theme="dark" prop has been removed
   effort: 3
   category: potential
   labels:
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    builtin.filecontent:
-      pattern: theme="dark"
-      filePattern: \.(j|t)sx?$
-  message: 'The theme prop is no longer supported in Nav. Use light/dark mode theming
+    and:
+    - nodejs.referenced:
+        pattern: Nav
+    - builtin.filecontent:
+        pattern: <Nav[^>]*\btheme=["']dark["']
+        filePattern: \.(j|t)sx?$
+  message: |
+    The `theme` prop has been removed from Nav. PatternFly 6 uses a global theming
+    approach instead of per-component theme props.
 
-    instead.
+    **How to migrate:**
 
-    Remove usage of `theme="dark"` (API has been removed).
-
+    1. Remove the `theme` prop from Nav
+    2. Use PatternFly's dark theme at the application level:
+       - Add the `.pf-v6-theme-dark` class to your root element, OR
+       - Use CSS custom properties to override colors, OR
+       - Wrap components in a dark theme context
 
     Before:
 
+    ```tsx
+    <Nav theme="dark">
+      <NavList>...</NavList>
+    </Nav>
     ```
-
-    <Nav theme="dark" />
-
-    ```
-
 
     After:
 
+    ```tsx
+    {/* Option 1: Remove theme prop (Nav inherits from page theme) */}
+    <Nav>
+      <NavList>...</NavList>
+    </Nav>
+
+    {/* Option 2: Wrap in dark theme context */}
+    <div className="pf-v6-theme-dark">
+      <Nav>
+        <NavList>...</NavList>
+      </Nav>
+    </div>
     ```
-
-    <Nav />
-
-    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/9948
     title: patternfly-v6 Documentation
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
-  migration_complexity: low
+  migration_complexity: medium
 - ruleID: patternfly-v5-to-patternfly-v6-removed-props-00030
-  description: theme="light" usage detected (removed API)
+  description: Nav theme="light" prop has been removed
   effort: 3
   category: potential
   labels:
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    builtin.filecontent:
-      pattern: theme="light"
-      filePattern: \.(j|t)sx?$
-  message: 'The theme prop is no longer supported in Nav. Use light/dark mode theming
+    and:
+    - nodejs.referenced:
+        pattern: Nav
+    - builtin.filecontent:
+        pattern: <Nav[^>]*\btheme=["']light["']
+        filePattern: \.(j|t)sx?$
+  message: |
+    The `theme` prop has been removed from Nav. PatternFly 6 uses a global theming
+    approach instead of per-component theme props.
 
-    instead.
+    **How to migrate:**
 
-    Remove usage of `theme="light"` (API has been removed).
-
+    Since `theme="light"` was the default behavior, simply remove the prop.
+    The Nav will inherit the theme from its parent context.
 
     Before:
 
+    ```tsx
+    <Nav theme="light">
+      <NavList>...</NavList>
+    </Nav>
     ```
-
-    <Nav theme="light" />
-
-    ```
-
 
     After:
 
+    ```tsx
+    <Nav>
+      <NavList>...</NavList>
+    </Nav>
     ```
 
-    <Nav />
+    If you need explicit light theme in a dark context, wrap in a light theme container:
 
-    ```'
+    ```tsx
+    <div className="pf-v6-theme-light">
+      <Nav>...</Nav>
+    </div>
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/9948
     title: patternfly-v6 Documentation
+  - url: https://www.patternfly.org/get-started/upgrade/
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
   migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-removed-props-00040
@@ -195,52 +226,65 @@
   customVariables: []
   migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-removed-props-00050
-  description: isSelected usage detected (removed API)
+  description: PageHeaderToolsItem isSelected prop has been removed
   effort: 3
   category: mandatory
   labels:
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    nodejs.referenced:
-      pattern: isSelected
-  message: 'The isSelected prop has been removed from PageHeaderToolsItem.
+    and:
+    - nodejs.referenced:
+        pattern: PageHeaderToolsItem
+    - builtin.filecontent:
+        pattern: <PageHeaderToolsItem[^>]*\bisSelected\b
+        filePattern: \.(j|t)sx?$
+  message: |
+    The `isSelected` prop has been removed from PageHeaderToolsItem.
 
-    Remove usage of `isSelected` (API has been removed).
-
+    This prop was used to visually indicate a selected state in the page header toolbar.
+    In PatternFly 6, selection state should be managed through other means such as
+    CSS classes or wrapper components.
 
     Before:
 
+    ```tsx
+    <PageHeaderToolsItem isSelected>
+      <Button>Selected Item</Button>
+    </PageHeaderToolsItem>
     ```
-
-    <PageHeaderToolsItem isSelected />
-
-    ```
-
 
     After:
 
+    ```tsx
+    <PageHeaderToolsItem>
+      <Button>Selected Item</Button>
+    </PageHeaderToolsItem>
     ```
 
-    <PageHeaderToolsItem />
-
-    ```'
+    If you need to indicate selection state, consider:
+    - Using the Button's `isActive` or styling props
+    - Adding a custom CSS class for selected state
+    - Using aria-pressed for toggle buttons
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/9774
     title: patternfly-v6 Documentation
   customVariables: []
   migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-removed-props-00060
-  description: type='nav' usage detected (removed API)
+  description: PageSection type='nav' has been removed
   effort: 3
   category: mandatory
   labels:
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    builtin.filecontent:
-      pattern: type='nav'
-      filePattern: \.(j|t)sx?$
+    and:
+    - nodejs.referenced:
+        pattern: PageSection
+    - builtin.filecontent:
+        pattern: <PageSection[^>]*\btype=["']nav["']
+        filePattern: \.(j|t)sx?$
   message: 'The "nav" type for PageSection has been removed.
 
     Remove usage of `type=''nav''` (API has been removed).
@@ -268,16 +312,19 @@
   customVariables: []
   migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-removed-props-00070
-  description: type={PageSectionTypes.nav} usage detected (removed API)
+  description: PageSection type={PageSectionTypes.nav} has been removed
   effort: 3
   category: mandatory
   labels:
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    builtin.filecontent:
-      pattern: type={PageSectionTypes.nav}
-      filePattern: \.(j|t)sx?$
+    and:
+    - nodejs.referenced:
+        pattern: PageSection
+    - builtin.filecontent:
+        pattern: <PageSection[^>]*\btype=\{PageSectionTypes\.nav\}
+        filePattern: \.(j|t)sx?$
   message: 'The "nav" type for PageSection has been removed.
 
     Remove usage of `type={PageSectionTypes.nav}` (API has been removed).
@@ -305,16 +352,19 @@
   customVariables: []
   migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-removed-props-00080
-  description: variant='dark' usage detected (removed API)
+  description: PageSection variant='dark' has been removed
   effort: 3
   category: mandatory
   labels:
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    builtin.filecontent:
-      pattern: variant='dark'
-      filePattern: \.(j|t)sx?$
+    and:
+    - nodejs.referenced:
+        pattern: PageSection
+    - builtin.filecontent:
+        pattern: <PageSection[^>]*\bvariant=["']dark["']
+        filePattern: \.(j|t)sx?$
   message: 'The variant prop for PageSection now only accepts ''default'' or ''secondary''.
 
     Other values are removed.
@@ -344,16 +394,19 @@
   customVariables: []
   migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-removed-props-00090
-  description: variant={PageSectionVariants.dark} usage detected (removed API)
+  description: PageSection variant={PageSectionVariants.dark} has been removed
   effort: 3
   category: mandatory
   labels:
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    builtin.filecontent:
-      pattern: variant={PageSectionVariants.dark}
-      filePattern: \.(j|t)sx?$
+    and:
+    - nodejs.referenced:
+        pattern: PageSection
+    - builtin.filecontent:
+        pattern: <PageSection[^>]*\bvariant=\{PageSectionVariants\.dark\}
+        filePattern: \.(j|t)sx?$
   message: 'The variant prop for PageSection now only accepts ''default'' or ''secondary''.
 
     Other values are removed.
@@ -383,16 +436,19 @@
   customVariables: []
   migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-removed-props-00100
-  description: theme='dark' usage detected (removed API)
+  description: PageSidebar theme='dark' prop has been removed
   effort: 3
   category: mandatory
   labels:
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    builtin.filecontent:
-      pattern: theme='dark'
-      filePattern: \.(j|t)sx?$
+    and:
+    - nodejs.referenced:
+        pattern: PageSidebar
+    - builtin.filecontent:
+        pattern: <PageSidebar[^>]*\btheme=["']dark["']
+        filePattern: \.(j|t)sx?$
   message: 'The theme prop has been removed from PageSidebar as theming is no longer
 
     handled React-side.

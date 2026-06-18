@@ -1,5 +1,5 @@
 - ruleID: patternfly-v5-to-patternfly-v6-empty-state-00000
-  description: Remove EmptyStateHeader export
+  description: EmptyStateHeader is no longer exported from PatternFly
   effort: 5
   category: potential
   labels:
@@ -9,20 +9,36 @@
     builtin.filecontent:
       pattern: export.*EmptyStateHeader.*from.*@patternfly/react-core
       filePattern: \.(j|t)sx?$
-  message: 'EmptyStateHeader and EmptyStateIcon are no longer exported by PatternFly.
+  message: |
+    EmptyStateHeader is no longer exported from PatternFly in v6.
 
-    Codemods will apply fixes for exports of these components.
+    In PatternFly 6, the header content is configured through props on EmptyState
+    instead of using a separate EmptyStateHeader component.
 
+    Remove the re-export of EmptyStateHeader and update consuming code to use
+    EmptyState's `titleText`, `headingLevel`, and `icon` props directly.
 
+    Before:
 
-    Replace `EmptyStateHeader export` with `Remove EmptyStateHeader export`.'
+    ```tsx
+    export { EmptyStateHeader } from "@patternfly/react-core";
+    ```
+
+    After:
+
+    ```tsx
+    // Remove this export - EmptyStateHeader no longer exists
+    // Update consumers to use EmptyState props instead
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10364
-    title: patternfly-v6 Documentation
+    title: EmptyState Restructuring PR
+  - url: https://www.patternfly.org/components/empty-state/
+    title: EmptyState Component
   customVariables: []
   migration_complexity: medium
 - ruleID: patternfly-v5-to-patternfly-v6-empty-state-00010
-  description: Remove EmptyStateIcon export
+  description: EmptyStateIcon is no longer exported from PatternFly
   effort: 5
   category: potential
   labels:
@@ -32,19 +48,36 @@
     builtin.filecontent:
       pattern: export.*EmptyStateIcon.*from.*@patternfly/react-core
       filePattern: \.(j|t)sx?$
-  message: 'EmptyStateHeader and EmptyStateIcon are no longer exported by PatternFly.
+  message: |
+    EmptyStateIcon is no longer exported from PatternFly in v6.
 
-    Codemods will apply fixes for exports of these components.
+    In PatternFly 6, the icon is passed directly to EmptyState's `icon` prop.
+    The wrapper styling is applied automatically.
 
+    Remove the re-export of EmptyStateIcon and update consuming code to pass
+    the icon component directly to EmptyState.
 
-    Replace `EmptyStateIcon export` with `Remove EmptyStateIcon export`.'
+    Before:
+
+    ```tsx
+    export { EmptyStateIcon } from "@patternfly/react-core";
+    ```
+
+    After:
+
+    ```tsx
+    // Remove this export - EmptyStateIcon no longer exists
+    // Update consumers to use EmptyState's icon prop instead
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10364
-    title: patternfly-v6 Documentation
+    title: EmptyState Restructuring PR
+  - url: https://www.patternfly.org/components/empty-state/
+    title: EmptyState Component
   customVariables: []
   migration_complexity: medium
 - ruleID: patternfly-v5-to-patternfly-v6-empty-state-00020
-  description: EmptyStateHeader should be replaced with EmptyState with props
+  description: EmptyStateHeader usage should be replaced with EmptyState props
   effort: 5
   category: potential
   labels:
@@ -53,51 +86,50 @@
   when:
     nodejs.referenced:
       pattern: EmptyStateHeader
-  message: 'EmptyStateHeader and EmptyStateIcon are now rendered internally within\
+  message: |
+    EmptyStateHeader is no longer a separate component in PatternFly 6.
 
-    \ EmptyState and should only be customized using props.
+    The header content (title, heading level, icon) should now be passed as props
+    directly to the EmptyState component.
 
-
-    Replace `EmptyStateHeader`\
-
-    \ with `EmptyState with props`.
-
+    **Prop mappings:**
+    - `EmptyStateHeader titleText` → `EmptyState titleText`
+    - `EmptyStateHeader headingLevel` → `EmptyState headingLevel`
+    - `EmptyStateHeader icon` → `EmptyState icon` (pass icon component directly)
 
     Before:
 
-    ```
-
+    ```tsx
     <EmptyState>
-
-    <EmptyStateHeader\
-
-    \ titleText="Empty state" headingLevel="h4" icon={<EmptyStateIcon icon={CubesIcon}\
-
-    \ />} />
-
+      <EmptyStateHeader
+        titleText="Empty state"
+        headingLevel="h4"
+        icon={<EmptyStateIcon icon={CubesIcon} />}
+      />
+      <EmptyStateBody>Body content</EmptyStateBody>
     </EmptyState>
-
     ```
-
 
     After:
 
-    ```
-
-    <EmptyState headingLevel="h4" icon={CubesIcon}\
-
-    \ titleText="Empty state">
-
+    ```tsx
+    <EmptyState
+      titleText="Empty state"
+      headingLevel="h4"
+      icon={CubesIcon}
+    >
+      <EmptyStateBody>Body content</EmptyStateBody>
     </EmptyState>
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/9947
-    title: patternfly-v6 Documentation
+    title: EmptyState API Changes PR
+  - url: https://www.patternfly.org/components/empty-state/
+    title: EmptyState Component
   customVariables: []
   migration_complexity: medium
 - ruleID: patternfly-v5-to-patternfly-v6-empty-state-00030
-  description: EmptyStateIcon should be replaced with EmptyState with icon prop
+  description: EmptyStateIcon usage should be replaced with EmptyState icon prop
   effort: 5
   category: potential
   labels:
@@ -106,52 +138,41 @@
   when:
     nodejs.referenced:
       pattern: EmptyStateIcon
-  message: 'EmptyStateHeader and EmptyStateIcon are now rendered internally within\
+  message: |
+    EmptyStateIcon is no longer a separate component in PatternFly 6.
 
-    \ EmptyState and should only be customized using props. Content passed to the\
+    The icon should now be passed directly to the EmptyState `icon` prop.
+    PatternFly will automatically wrap it with the appropriate styling.
 
-    \ icon prop on EmptyState will also be wrapped by EmptyStateIcon automatically.
-
-    \
-
-
-    Replace `EmptyStateIcon` with `EmptyState with icon prop`.
-
+    **Important:** Pass the icon component itself (e.g., `CubesIcon`), not a JSX
+    element (e.g., `<CubesIcon />`).
 
     Before:
 
-    ```
-
-    \
+    ```tsx
+    import { EmptyState, EmptyStateIcon, EmptyStateBody } from "@patternfly/react-core";
+    import { CubesIcon } from "@patternfly/react-icons";
 
     <EmptyState>
-
-    <EmptyStateIcon icon={CubesIcon} />
-
-    <EmptyStateBody>Body</EmptyStateBody>
-
-    \
-
+      <EmptyStateIcon icon={CubesIcon} />
+      <EmptyStateBody>No data available</EmptyStateBody>
     </EmptyState>
-
     ```
-
 
     After:
 
-    ```
+    ```tsx
+    import { EmptyState, EmptyStateBody } from "@patternfly/react-core";
+    import { CubesIcon } from "@patternfly/react-icons";
 
     <EmptyState icon={CubesIcon}>
-
-    <EmptyStateBody>Body</EmptyStateBody>
-
-    \
-
+      <EmptyStateBody>No data available</EmptyStateBody>
     </EmptyState>
-
-    ```'
+    ```
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/9947
-    title: patternfly-v6 Documentation
+    title: EmptyState API Changes PR
+  - url: https://www.patternfly.org/components/empty-state/
+    title: EmptyState Component
   customVariables: []
   migration_complexity: medium

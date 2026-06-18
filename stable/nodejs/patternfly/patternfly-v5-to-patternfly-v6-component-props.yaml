@@ -1109,73 +1109,77 @@
   customVariables: []
   migration_complexity: medium
 - ruleID: patternfly-v5-to-patternfly-v6-component-props-00270
-  description: alignLeft should be replaced with alignStart
+  description: PatternFly alignment prop value 'alignLeft' should be replaced with 'alignStart'
   effort: 5
   category: potential
   labels:
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    builtin.filecontent:
-      pattern: alignLeft
-      filePattern: \.(j|t)sx?$
-  message: 'alignLeft has been renamed to alignStart for better RTL support
+    and:
+    - nodejs.referenced:
+        pattern: (Flex|FlexItem|ToolbarGroup|ToolbarItem|ToolbarContent|ToolbarToggleGroup|Stack|Split|Gallery|Grid)
+    - builtin.filecontent:
+        pattern: \balignLeft\b
+        filePattern: \.(j|t)sx?$
+  message: |
+    The alignment value `alignLeft` has been renamed to `alignStart` in PatternFly 6 for better RTL (right-to-left) language support.
 
-
-    Replace `alignLeft` with `alignStart`.
-
+    Replace `alignLeft` with `alignStart` in your alignment props.
 
     Before:
 
+    ```jsx
+    <Flex align={{ default: 'alignLeft' }}>
+    <ToolbarGroup align={{ default: 'alignLeft' }}>
     ```
-
-    align={{ default: ''alignLeft'' }}
-
-    ```
-
 
     After:
 
+    ```jsx
+    <Flex align={{ default: 'alignStart' }}>
+    <ToolbarGroup align={{ default: 'alignStart' }}>
     ```
-
-    align={{ default: ''alignStart'' }}
-
-    ```'
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
   migration_complexity: medium
 - ruleID: patternfly-v5-to-patternfly-v6-component-props-00280
-  description: alignRight should be replaced with alignEnd
+  description: PatternFly alignment prop value 'alignRight' should be replaced with 'alignEnd'
   effort: 5
   category: potential
   labels:
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    builtin.filecontent:
-      pattern: alignRight
-      filePattern: \.(j|t)sx?$
-  message: 'alignRight has been renamed to alignEnd for better RTL support
+    and:
+    - nodejs.referenced:
+        pattern: (Flex|FlexItem|ToolbarGroup|ToolbarItem|ToolbarContent|ToolbarToggleGroup|Stack|Split|Gallery|Grid)
+    - builtin.filecontent:
+        pattern: \balignRight\b
+        filePattern: \.(j|t)sx?$
+  message: |
+    The alignment value `alignRight` has been renamed to `alignEnd` in PatternFly 6 for better RTL (right-to-left) language support.
 
-
-    Replace `alignRight` with `alignEnd`.
-
+    Replace `alignRight` with `alignEnd` in your alignment props.
 
     Before:
 
+    ```jsx
+    <Flex align={{ default: 'alignRight' }}>
+    <ToolbarGroup align={{ default: 'alignRight' }}>
     ```
-
-    align={{ default: ''alignRight'' }}
-
-    ```
-
 
     After:
 
+    ```jsx
+    <Flex align={{ default: 'alignEnd' }}>
+    <ToolbarGroup align={{ default: 'alignEnd' }}>
     ```
-
-    align={{ default: ''alignEnd'' }}
-
-    ```'
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade
+    title: PatternFly v6 Upgrade Guide
   customVariables: []
   migration_complexity: medium
 - ruleID: patternfly-v5-to-patternfly-v6-component-props-00290
@@ -1568,126 +1572,6 @@
     ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10097
-    title: patternfly-v6 Documentation
-  customVariables: []
-  migration_complexity: low
-- ruleID: patternfly-v5-to-patternfly-v6-component-props-00380
-  description: isDisabled should be replaced with disabled
-  effort: 3
-  category: potential
-  labels:
-  - konveyor.io/source=patternfly-v5
-  - konveyor.io/target=patternfly-v6
-  when:
-    builtin.filecontent:
-      pattern: isDisabled
-      filePattern: \.(j|t)sx?$
-  message: 'Boolean props have been renamed to remove ''is'' prefix in PatternFly
-
-    v6
-
-
-    Replace `isDisabled` with `disabled`.
-
-
-    Before:
-
-    ```
-
-    <Button isDisabled />
-
-    ```
-
-
-    After:
-
-    ```
-
-    <Button disabled />
-
-    ```'
-  links:
-  - url: https://github.com/patternfly/patternfly-react/pull/10536
-    title: patternfly-v6 Documentation
-  customVariables: []
-  migration_complexity: low
-- ruleID: patternfly-v5-to-patternfly-v6-component-props-00390
-  description: isExpanded should be replaced with expanded
-  effort: 3
-  category: potential
-  labels:
-  - konveyor.io/source=patternfly-v5
-  - konveyor.io/target=patternfly-v6
-  when:
-    builtin.filecontent:
-      pattern: isExpanded
-      filePattern: \.(j|t)sx?$
-  message: 'Boolean props have been renamed to remove ''is'' prefix in PatternFly
-
-    v6
-
-
-    Replace `isExpanded` with `expanded`.
-
-
-    Before:
-
-    ```
-
-    <Accordion isExpanded />
-
-    ```
-
-
-    After:
-
-    ```
-
-    <Accordion expanded />
-
-    ```'
-  links:
-  - url: https://github.com/patternfly/patternfly-react/pull/10536
-    title: patternfly-v6 Documentation
-  customVariables: []
-  migration_complexity: low
-- ruleID: patternfly-v5-to-patternfly-v6-component-props-00400
-  description: isOpen should be replaced with open
-  effort: 3
-  category: potential
-  labels:
-  - konveyor.io/source=patternfly-v5
-  - konveyor.io/target=patternfly-v6
-  when:
-    builtin.filecontent:
-      pattern: isOpen
-      filePattern: \.(j|t)sx?$
-  message: 'Boolean props have been renamed to remove ''is'' prefix in PatternFly
-
-    v6
-
-
-    Replace `isOpen` with `open`.
-
-
-    Before:
-
-    ```
-
-    <Modal isOpen />
-
-    ```
-
-
-    After:
-
-    ```
-
-    <Modal open />
-
-    ```'
-  links:
-  - url: https://github.com/patternfly/patternfly-react/pull/10536
     title: patternfly-v6 Documentation
   customVariables: []
   migration_complexity: low

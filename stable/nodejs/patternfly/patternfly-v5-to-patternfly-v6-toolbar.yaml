@@ -95,7 +95,7 @@
     <ToolbarItem align={{ default: "alignStart" }} />
 
 
-    ```'''
+    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10366
     title: patternfly-v6 Documentation
@@ -146,7 +146,7 @@
     <ToolbarToggleGroup alignment={{ default: "alignStart" }} />
 
 
-    ```'''
+    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10366
     title: patternfly-v6 Documentation
@@ -233,168 +233,155 @@
     defaultValue: Component
   migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-toolbar-00050
-  description: variant="chip-group" should be replaced with variant="label-group"
+  description: ToolbarItem variant="chip-group" renamed to variant="label-group"
   effort: 3
   category: potential
   labels:
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    builtin.filecontent:
-      pattern: variant="chip-group"
-      filePattern: \.(j|t)sx?$
-  message: 'The variant prop for ToolbarItem has been updated: ''chip-group'' was
-
-    renamed to ''label-group''
-
-
-    Replace `variant="chip-group"` with `variant="label-group"`.
-
-
+    and:
+    - nodejs.referenced:
+        pattern: ToolbarItem
+    - builtin.filecontent:
+        pattern: <ToolbarItem[^>]*\bvariant=['"]chip-group['"]
+        filePattern: \.(j|t)sx?$
+  message: |
+    The `variant="chip-group"` value on ToolbarItem has been renamed to `variant="label-group"`
+    in PatternFly 6 to align with the Chip → Label component renaming.
 
     Before:
 
-
+    ```tsx
+    <ToolbarItem variant="chip-group">
+      <LabelGroup />
+    </ToolbarItem>
     ```
-
-
-    <ToolbarItem variant="chip-group" />
-
-
-    ```
-
-
 
     After:
 
-
+    ```tsx
+    <ToolbarItem variant="label-group">
+      <LabelGroup />
+    </ToolbarItem>
     ```
-
-
-    <ToolbarItem variant="label-group" />
-
-
-    ```'''
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation
   customVariables: []
   migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-toolbar-00060
-  description: variant="bulk-select" should be replaced with variant removed
+  description: ToolbarItem variant="bulk-select" has been removed
   effort: 3
   category: mandatory
   labels:
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    builtin.filecontent:
-      pattern: variant="bulk-select"
-      filePattern: \.(j|t)sx?$
-  message: 'The variant prop for ToolbarItem has been updated: ''bulk-select'' was
+    and:
+    - nodejs.referenced:
+        pattern: ToolbarItem
+    - builtin.filecontent:
+        pattern: <ToolbarItem[^>]*\bvariant=['"]bulk-select['"]
+        filePattern: \.(j|t)sx?$
+  message: |
+    The `variant="bulk-select"` value has been removed from ToolbarItem in PatternFly 6.
 
-    removed
-
-
-    Replace `variant="bulk-select"` with `variant removed`.
-
+    Remove the `variant` prop entirely. The bulk-select styling is no longer needed.
 
     Before:
 
+    ```tsx
+    <ToolbarItem variant="bulk-select">
+      <BulkSelect />
+    </ToolbarItem>
     ```
-
-    <ToolbarItem variant="bulk-select" />
-
-    ```
-
 
     After:
 
+    ```tsx
+    <ToolbarItem>
+      <BulkSelect />
+    </ToolbarItem>
     ```
-
-    <ToolbarItem />
-
-    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation
   customVariables: []
   migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-toolbar-00070
-  description: variant="overflow-menu" should be replaced with variant removed
+  description: ToolbarItem variant="overflow-menu" has been removed
   effort: 3
   category: mandatory
   labels:
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    builtin.filecontent:
-      pattern: variant="overflow-menu"
-      filePattern: \.(j|t)sx?$
-  message: 'The variant prop for ToolbarItem has been updated: ''overflow-menu'' was
+    and:
+    - nodejs.referenced:
+        pattern: ToolbarItem
+    - builtin.filecontent:
+        pattern: <ToolbarItem[^>]*\bvariant=['"]overflow-menu['"]
+        filePattern: \.(j|t)sx?$
+  message: |
+    The `variant="overflow-menu"` value has been removed from ToolbarItem in PatternFly 6.
 
-    removed
-
-
-    Replace `variant="overflow-menu"` with `variant removed`.
-
+    Remove the `variant` prop entirely. The overflow-menu styling is no longer needed.
 
     Before:
 
+    ```tsx
+    <ToolbarItem variant="overflow-menu">
+      <OverflowMenu />
+    </ToolbarItem>
     ```
-
-    <ToolbarItem variant="overflow-menu" />
-
-    ```
-
 
     After:
 
+    ```tsx
+    <ToolbarItem>
+      <OverflowMenu />
+    </ToolbarItem>
     ```
-
-    <ToolbarItem />
-
-    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation
   customVariables: []
   migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-toolbar-00080
-  description: variant="search-filter" should be replaced with variant removed
+  description: ToolbarItem variant="search-filter" has been removed
   effort: 3
   category: mandatory
   labels:
   - konveyor.io/source=patternfly-v5
   - konveyor.io/target=patternfly-v6
   when:
-    builtin.filecontent:
-      pattern: variant="search-filter"
-      filePattern: \.(j|t)sx?$
-  message: 'The variant prop for ToolbarItem has been updated: ''search-filter'' was
+    and:
+    - nodejs.referenced:
+        pattern: ToolbarItem
+    - builtin.filecontent:
+        pattern: <ToolbarItem[^>]*\bvariant=['"]search-filter['"]
+        filePattern: \.(j|t)sx?$
+  message: |
+    The `variant="search-filter"` value has been removed from ToolbarItem in PatternFly 6.
 
-    removed
-
-
-    Replace `variant="search-filter"` with `variant removed`.
-
+    Remove the `variant` prop entirely. The search-filter styling is no longer needed.
 
     Before:
 
+    ```tsx
+    <ToolbarItem variant="search-filter">
+      <SearchInput />
+    </ToolbarItem>
     ```
-
-    <ToolbarItem variant="search-filter" />
-
-    ```
-
 
     After:
 
+    ```tsx
+    <ToolbarItem>
+      <SearchInput />
+    </ToolbarItem>
     ```
-
-    <ToolbarItem />
-
-    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/10649
     title: patternfly-v6 Documentation

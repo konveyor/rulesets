@@ -45,7 +45,7 @@
   customVariables: []
   migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-component-groups-00010
-  description: imports  from '@patternfly/react-component-groups'; should be replaced with imports from '@patternfly/react-component-groups';
+  description: ContentHeader import should be replaced with PageHeader import
   effort: 3
   category: potential
   labels:
@@ -55,36 +55,28 @@
     builtin.filecontent:
       pattern: import[\s\S]*ContentHeader[\s\S]*from[\s\S]*['"]@patternfly/react-component-groups['"]
       filePattern: \.(j|t)sx?$
-  message: 'In react-component-groups, we''ve renamed ContentHeader component to PageHeader
+  message: |
+    In react-component-groups, the ContentHeader component has been renamed to PageHeader.
 
-
-    Replace `import { {{ component }} } from "@patternfly/react-component-groups"` with `import { {{ component }} } from "@patternfly/react-component-groups"`.
-
+    Update your import statement to use the new component name.
 
     Before:
 
+    ```tsx
+    import { ContentHeader } from "@patternfly/react-component-groups";
     ```
-
-    import { {{ component }} } from "@patternfly/react-component-groups";
-
-    ```
-
 
     After:
 
+    ```tsx
+    import { PageHeader } from "@patternfly/react-component-groups";
     ```
 
-    import { {{ component }} } from "@patternfly/react-component-groups";
-
-    ```'
+    Also update all usages of `<ContentHeader />` to `<PageHeader />`.
   links:
   - url: https://github.com/patternfly/react-component-groups/pull/313
     title: patternfly-v6 Documentation
-  customVariables:
-  - pattern: import {(?P<imports>[A-Za-z,\s]+)}
-    name: component
-    nameOfCaptureGroup: imports
-    defaultValue: Component
+  customVariables: []
   migration_complexity: low
 - ruleID: patternfly-v5-to-patternfly-v6-component-groups-00020
   description: ErrorState errorTitle should be replaced with ErrorState titleText

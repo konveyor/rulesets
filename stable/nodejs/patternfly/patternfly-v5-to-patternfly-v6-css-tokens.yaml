@@ -9,32 +9,37 @@
     builtin.filecontent:
       pattern: --pf-v5-global--
       filePattern: \.(css|scss|js|jsx|ts|tsx)$
-  message: 'CSS tokens have been updated. Global non-color tokens have been replaced
+  message: |
+    CSS tokens have been updated in PatternFly 6. Global tokens now use semantic naming
+    with the `--pf-t--` prefix instead of `--pf-v5-global--`.
 
-    with newer ones.
+    **Note**: For specific token types (colors, spacing, fonts), check the dedicated
+    token rules which provide more precise mappings.
 
+    General pattern: Replace `--pf-v5-global--` with `--pf-t--global--` and convert
+    the token name to lowercase with dashes.
 
-    Replace `--pf-v5-global--` with `--pf-t--global--`.
-
+    Common mappings:
+    - `--pf-v5-global--BorderWidth--sm` → `--pf-t--global--border--width--regular`
+    - `--pf-v5-global--BorderWidth--lg` → `--pf-t--global--border--width--strong`
+    - `--pf-v5-global--BorderRadius--sm` → `--pf-t--global--border--radius--small`
+    - `--pf-v5-global--BorderRadius--lg` → `--pf-t--global--border--radius--large`
 
     Before:
 
-    ```
-
+    ```js
     borderWidth: "var(--pf-v5-global--BorderWidth--lg)"
-
     ```
-
 
     After:
 
+    ```js
+    borderWidth: "var(--pf-t--global--border--width--strong)"
     ```
-
-    borderWidth: "var(--pf-t--global--border--width--extra-strong)"
-
-    ```'
   links:
   - url: https://github.com/patternfly/patternfly-react/pull/11002
     title: patternfly-v6 Documentation
+  - url: https://www.patternfly.org/tokens/all-patternfly-tokens/
+    title: PatternFly v6 Token Reference
   customVariables: []
   migration_complexity: low
