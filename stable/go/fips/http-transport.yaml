@@ -1,0 +1,44 @@
+- ruleID: http-transport-pattern-00010
+  description: Plain HTTP service communication bypasses encryption; not FIPS compliant
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    ## Plain HTTP Service-to-Service Communication
+
+    Plain HTTP communication between services bypasses encryption. In FIPS environments, all network communication should use TLS.
+
+    ### Before
+
+    ```go
+    import "net/http"
+
+    resp, _ := http.Get("http://internal-service:8080/api/data")
+    http.Post("http://internal-service:8080/api/submit", "application/json", body)
+    ```
+
+    ### After
+
+    ```go
+    import "net/http"
+
+    resp, _ := http.Get("https://internal-service:8443/api/data")
+    ```
+
+    ### Additional Info
+
+    - All service-to-service communication should use HTTPS in FIPS environments
+    - Exceptions: localhost/127.0.0.1 connections, health check endpoints on localhost, and sidecar proxy communication
+    - Update all hardcoded HTTP URLs to HTTPS
+    - Ensure TLS certificates are properly provisioned for internal services
+    - Consider using a service mesh for automatic mTLS between services
+  links:
+    - url: https://pkg.go.dev/net/http
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: '"http://[a-zA-Z]'
+        filePattern: .*\.go

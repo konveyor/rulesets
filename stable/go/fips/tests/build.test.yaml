@@ -1,0 +1,25 @@
+rulesPath: ../build.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/build
+tests:
+    - ruleID: build-pattern-00010
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: build-pattern-00020
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: build-pattern-00030
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: build-pattern-00040
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1

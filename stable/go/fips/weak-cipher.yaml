@@ -1,0 +1,117 @@
+- ruleID: weak-cipher-change-00010
+  description: Single DES (56-bit key) is disallowed under FIPS 140; replace with AES
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `des.NewCipher` function creates a single DES cipher with a 56-bit effective key, which is disallowed under FIPS 140. Replace with AES (`crypto/aes`), which is the FIPS-approved symmetric block cipher.
+
+    ### Before
+    ```go
+    import "crypto/des"
+
+    block, _ := des.NewCipher(key) // 8-byte key, 56-bit effective
+    ```
+
+    ### After
+    ```go
+    import "crypto/aes"
+
+    block, _ := aes.NewCipher(key) // 16, 24, or 32-byte key (AES-128/192/256)
+    ```
+
+    ### Additional Info
+    - DES uses 8-byte (56-bit effective) keys; AES requires 16-byte (AES-128), 24-byte (AES-192), or 32-byte (AES-256) keys.
+    - AES-256 (32-byte key) is recommended for maximum security margin.
+    - DES has a 64-bit block size; AES has a 128-bit block size. Update any block-size-dependent logic.
+    - Ensure the cipher mode (CBC, GCM, etc.) is also FIPS-approved. AES-GCM is recommended for authenticated encryption.
+    - Key management must be updated to generate and store larger keys.
+  links:
+    - url: https://pkg.go.dev/crypto/aes
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: crypto/des.NewCipher
+- ruleID: weak-cipher-change-00020
+  description: Triple-DES is Legacy under FIPS 140-3; replace with AES for new encryption
+  category: optional
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `des.NewTripleDESCipher` function creates a Triple-DES cipher. Three-key Triple-DES encryption is Legacy (approved) since 2024 per FIPS 140-3 IG C.M. Two-key Triple-DES is Legacy (allowed) since 2011. While still permitted for existing systems, both should be replaced with AES for new encryption.
+
+    ### Before
+    ```go
+    import "crypto/des"
+
+    block, _ := des.NewTripleDESCipher(key) // 24-byte key
+    ```
+
+    ### After
+    ```go
+    import "crypto/aes"
+
+    block, _ := aes.NewCipher(key) // 16, 24, or 32-byte key
+    ```
+
+    ### Additional Info
+    - Per SP 800-67rev2, one Triple-DES key shall not encrypt more than 2^20 (approximately 1 million) 64-bit data blocks. AES has no such limitation.
+    - Triple-DES uses 24-byte keys; AES accepts 16, 24, or 32-byte keys. Key management must be updated.
+    - Triple-DES has a 64-bit block size; AES has a 128-bit block size, reducing susceptibility to birthday attacks.
+    - Three-key 3DES is still Legacy (approved) — migration is recommended but not strictly mandatory for existing deployments.
+    - Consider using AES-GCM for authenticated encryption to provide both confidentiality and integrity.
+  links:
+    - url: https://pkg.go.dev/crypto/aes
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: crypto/des.NewTripleDESCipher
+- ruleID: weak-cipher-change-00030
+  description: RC4 is not FIPS approved and has known biases; replace with AES-GCM
+  category: mandatory
+  effort: 8
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `crypto/rc4` package implements the RC4 stream cipher, which is not FIPS approved and has known statistical biases. Replace with AES-GCM, which provides authenticated encryption (confidentiality + integrity).
+
+    ### Before
+    ```go
+    import "crypto/rc4"
+
+    cipher, _ := rc4.NewCipher(key)
+    cipher.XORKeyStream(dst, src)
+    ```
+
+    ### After
+    ```go
+    import (
+        "crypto/aes"
+        "crypto/cipher"
+    )
+
+    block, _ := aes.NewCipher(key)
+    gcm, _ := cipher.NewGCM(block)
+    ciphertext := gcm.Seal(nil, nonce, plaintext, nil)
+    ```
+
+    ### Additional Info
+    - RC4 is a stream cipher providing only confidentiality. AES-GCM provides authenticated encryption (confidentiality + integrity).
+    - AES-GCM requires a 12-byte nonce. Each nonce must be unique per key — never reuse nonces. Use `crypto/rand` to generate nonces.
+    - The migration from RC4 (stream cipher) to AES-GCM (AEAD) changes the API surface significantly: Seal/Open replace XORKeyStream, and ciphertexts include an authentication tag.
+    - AES-GCM ciphertexts are larger than RC4 output by the size of the authentication tag (16 bytes by default).
+    - If the application protocol requires a streaming cipher interface, consider AES-CTR (`cipher.NewCTR`) with a separate HMAC for authentication, though AES-GCM is preferred.
+  links:
+    - url: https://pkg.go.dev/crypto/cipher#NewGCM
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: crypto/rc4

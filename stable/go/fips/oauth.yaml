@@ -1,0 +1,68 @@
+- ruleID: oauth-change-00010
+  description: OAuth 2.0 relies on asymmetric JWT signatures; inventory for PQC migration
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    OAuth 2.0 token flows rely on JWT tokens signed with asymmetric algorithms (typically RSA or ECDSA). These signing algorithms are quantum-vulnerable. Inventory your OAuth 2.0 infrastructure for post-quantum cryptography migration planning.
+
+    ### Before
+
+    ```go
+    import "golang.org/x/oauth2"
+
+    config := &oauth2.Config{
+        ClientID: "client-id",
+        Endpoint: provider.Endpoint(),
+    }
+    ```
+
+    ### Additional Info
+
+    - OAuth 2.0 tokens are typically signed by the identity provider, not the application
+    - Assess which signing algorithms your identity provider uses (RS256, ES256, etc.)
+    - Coordinate PQC migration timeline with your identity provider
+    - Token verification in your application uses the provider's public key — algorithm changes affect verification too
+    - Consider whether internal OAuth flows can use HMAC-based signing as an interim measure
+  links:
+    - url: https://csrc.nist.gov/pubs/fips/140-3/final
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: golang.org/x/oauth2
+- ruleID: oauth-change-00020
+  description: OIDC relies on asymmetric JWT signatures; inventory for PQC migration
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    OpenID Connect (OIDC) relies on JWT ID tokens signed with asymmetric algorithms. These signing algorithms are quantum-vulnerable. Inventory your OIDC infrastructure for post-quantum cryptography migration planning.
+
+    ### Before
+
+    ```go
+    import "github.com/coreos/go-oidc"
+
+    provider, _ := oidc.NewProvider(ctx, "https://issuer.example.com")
+    verifier := provider.Verifier(&oidc.Config{ClientID: "client-id"})
+    ```
+
+    ### Additional Info
+
+    - OIDC ID tokens are signed by the identity provider using asymmetric algorithms
+    - The `go-oidc` library verifies token signatures using the provider's JWKS endpoint
+    - Algorithm changes at the provider require corresponding updates in token verification
+    - Coordinate PQC migration timeline with your identity provider
+    - Review JWKS endpoint configuration for supported algorithms
+  links:
+    - url: https://csrc.nist.gov/pubs/fips/140-3/final
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: github.com/coreos/go-oidc

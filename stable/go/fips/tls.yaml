@@ -1,0 +1,151 @@
+- ruleID: tls-pattern-00010
+  description: InsecureSkipVerify disables TLS certificate verification, which is never FIPS 140-3 compliant
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Setting `InsecureSkipVerify: true` in `tls.Config` disables certificate verification entirely, which violates FIPS 140-3 requirements. TLS certificate verification must always be enabled in FIPS-compliant deployments.
+
+    ### Before
+
+    ```go
+    import "crypto/tls"
+
+    config := &tls.Config{
+        InsecureSkipVerify: true,
+    }
+    ```
+
+    ### After
+
+    ```go
+    import "crypto/tls"
+
+    config := &tls.Config{
+        InsecureSkipVerify: false,
+        MinVersion:         tls.VersionTLS12,
+    }
+    ```
+
+    ### Additional Info
+
+    - FIPS 140-3 mandates that TLS peers verify certificates to establish trust
+    - If custom certificate validation logic is needed, implement a `VerifyPeerCertificate` function instead of skipping verification
+    - In Go 1.24+ with `GODEBUG=fips140=on`, the runtime enforces FIPS-approved TLS settings automatically
+    - Review all test and development configurations that may set this field to `true`
+    - Consider using a custom certificate pool via `RootCAs` for environments with internal CAs
+  links:
+    - url: https://pkg.go.dev/crypto/tls#Config
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: InsecureSkipVerify\s*:\s*true
+        filePattern: .*\.go
+- ruleID: tls-change-00010
+  description: TLS versions below 1.2 are not FIPS 140-3 compliant
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    FIPS 140-3 requires TLS 1.2 or higher. Using `tls.VersionTLS10` or `tls.VersionTLS11` as `MinVersion` or `MaxVersion` in a `tls.Config` is non-compliant. Update all TLS version constraints to use TLS 1.2 as the minimum.
+
+    ### Before
+
+    ```go
+    import "crypto/tls"
+
+    config := &tls.Config{
+        MinVersion: tls.VersionTLS10,
+        MaxVersion: tls.VersionTLS11,
+    }
+    ```
+
+    ### After
+
+    ```go
+    import "crypto/tls"
+
+    config := &tls.Config{
+        MinVersion: tls.VersionTLS12,
+    }
+    ```
+
+    ### Additional Info
+
+    - TLS 1.0 and 1.1 have known vulnerabilities and are deprecated by RFC 8996
+    - In Go 1.24+ with `GODEBUG=fips140=on`, `crypto/tls` automatically restricts to FIPS-approved versions and cipher suites
+    - Remove any `MaxVersion` pinning below TLS 1.2; leaving `MaxVersion` unset lets Go negotiate the highest supported version
+    - If backward compatibility with older clients is needed, this is a FIPS compliance trade-off that must be documented
+    - Audit all `tls.Config` instantiations across the codebase, including test helpers and development configurations
+  links:
+    - url: https://pkg.go.dev/crypto/tls#pkg-constants
+      title: Migration Documentation
+  when:
+    or:
+        - go.referenced:
+            pattern: crypto/tls.VersionTLS10
+        - go.referenced:
+            pattern: crypto/tls.VersionTLS11
+- ruleID: tls-change-00020
+  description: RC4 and 3DES cipher suites are not FIPS 140-3 compliant
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Explicitly configuring weak cipher suites such as RC4-based (`TLS_RSA_WITH_RC4_128_SHA`) or DES-based (`TLS_RSA_WITH_3DES_EDE_CBC_SHA`) in `tls.Config.CipherSuites` violates FIPS 140-3 requirements. Replace with FIPS-approved cipher suites that use AES-GCM with ECDHE key exchange.
+
+    ### Before
+
+    ```go
+    import "crypto/tls"
+
+    config := &tls.Config{
+        CipherSuites: []uint16{
+            tls.TLS_RSA_WITH_RC4_128_SHA,
+            tls.TLS_RSA_WITH_3DES_EDE_CBC_SHA,
+        },
+    }
+    ```
+
+    ### After
+
+    ```go
+    import "crypto/tls"
+
+    config := &tls.Config{
+        MinVersion: tls.VersionTLS12,
+        CipherSuites: []uint16{
+            tls.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+            tls.TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+            tls.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+            tls.TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+        },
+    }
+    ```
+
+    ### Additional Info
+
+    - RC4 is prohibited due to known biases that can leak plaintext; it was removed from TLS 1.3 entirely
+    - 3DES (Triple-DES) has an effective key strength of only 112 bits and is vulnerable to Sweet32 birthday attacks
+    - FIPS-approved suites use AES-128 or AES-256 in GCM mode with ephemeral key exchange (ECDHE)
+    - With native FIPS mode enabled in Go 1.24+ (`GODEBUG=fips140=on`), `crypto/tls` handles cipher suite restriction automatically
+    - Consider omitting `CipherSuites` entirely and relying on Go's secure defaults, which prefer GCM suites
+    - Also check for other non-FIPS suites such as NULL ciphers, export-grade ciphers, and any suite not using AES-GCM
+  links:
+    - url: https://pkg.go.dev/crypto/tls#pkg-constants
+      title: Migration Documentation
+  when:
+    or:
+        - go.referenced:
+            pattern: crypto/tls.TLS_RSA_WITH_RC4_128_SHA
+        - go.referenced:
+            pattern: crypto/tls.TLS_RSA_WITH_3DES_EDE_CBC_SHA

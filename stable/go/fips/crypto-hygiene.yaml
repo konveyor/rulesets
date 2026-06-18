@@ -1,0 +1,251 @@
+- ruleID: crypto-hygiene-change-00010
+  description: math/rand is not cryptographically secure; replace with crypto/rand for FIPS compliance
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `math/rand` package uses a deterministic PRNG that is not cryptographically secure and is not FIPS 140-3 compliant. If `math/rand` is used for security-sensitive purposes (key generation, nonce generation, salt generation, token generation), replace with `crypto/rand`. Non-security uses (shuffling, load balancing jitter, test data) do not require changes.
+
+    In FIPS mode (Go 1.24+), `crypto/rand` uses a NIST SP 800-90A DRBG backed by kernel entropy.
+
+    ## Before
+    ```go
+    import "math/rand"
+
+    key := make([]byte, 32)
+    for i := range key {
+        key[i] = byte(rand.Intn(256))
+    }
+    ```
+
+    ## After
+    ```go
+    import "crypto/rand"
+
+    key := make([]byte, 32)
+    _, _ = rand.Read(key)
+    ```
+
+    ### Additional Info
+    - `math/rand` produces predictable output given the same seed, making it unsuitable for any security-sensitive operation
+    - `crypto/rand.Read` reads from the OS CSPRNG (`/dev/urandom` on Linux, `CryptGenRandom` on Windows)
+    - In FIPS mode, the DRBG is automatically seeded from kernel entropy
+    - Also check for `math/rand/v2` usage in cryptographic contexts
+    - See: https://pkg.go.dev/crypto/rand
+  links:
+    - url: https://pkg.go.dev/crypto/rand
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: math/rand
+- ruleID: crypto-hygiene-pattern-00010
+  description: Hardcoded cryptographic keys violate FIPS 140-3 key management requirements
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Hardcoded cryptographic keys in source code are a security vulnerability and violate FIPS 140-3 key management requirements (SP 800-131A Rev. 2). Keys must be generated using a FIPS-approved random number generator and stored securely.
+
+    ## Before
+    ```go
+    var encryptionKey = []byte("my-secret-key-1234567890123456")
+    var iv = []byte("1234567890123456")
+    ```
+
+    ## After
+    ```go
+    import "crypto/rand"
+
+    key := make([]byte, 32)
+    _, _ = rand.Read(key)
+
+    iv := make([]byte, 12) // for AES-GCM
+    _, _ = rand.Read(iv)
+    ```
+
+    ### Additional Info
+    - Keys should be loaded from environment variables, key management systems (KMS), or hardware security modules (HSMs)
+    - FIPS 140-3 requires keys to be generated using an approved DRBG (crypto/rand in Go FIPS mode)
+    - This also applies to initialization vectors (IVs) and nonces — they must not be hardcoded
+    - Consider using a secrets management solution like HashiCorp Vault or AWS KMS
+    - See NIST SP 800-131A Rev. 2 for key management requirements
+  links:
+    - url: https://csrc.nist.gov/pubs/sp/800-131/a/r2/final
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: (var|:=)\s*\w*(key|Key|iv|IV|nonce|Nonce|secret|Secret|aesKey|AESKey|encryptionKey|EncryptionKey)\s*=\s*\[\]byte\(
+        filePattern: .*\.go
+- ruleID: crypto-hygiene-pattern-00020
+  description: Static salts defeat the purpose of salting and violate FIPS key derivation requirements
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Using a static or hardcoded salt for password hashing defeats the purpose of salting. Each password must have a unique, randomly generated salt of at least 16 bytes. FIPS 140-3 requires salts to be generated using an approved DRBG.
+
+    ## Before
+    ```go
+    salt := []byte("static-salt")
+    hash := pbkdf2.Key(password, salt, 600000, 32, sha256.New)
+    ```
+
+    ## After
+    ```go
+    import "crypto/rand"
+
+    salt := make([]byte, 16)
+    _, _ = rand.Read(salt)
+    hash := pbkdf2.Key(password, salt, 600000, 32, sha256.New)
+    ```
+
+    ### Additional Info
+    - Salts must be at least 16 bytes (128 bits) per NIST SP 800-132
+    - Each password must have a unique salt — reusing salts enables rainbow table attacks
+    - Store the salt alongside the hash (it does not need to be secret)
+    - Generate salts using `crypto/rand.Read` (FIPS-approved DRBG in Go 1.24+ FIPS mode)
+    - See NIST SP 800-132 for password-based key derivation requirements
+  links:
+    - url: https://csrc.nist.gov/pubs/sp/800-132/final
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: salt\s*[:=]\s*\[\]byte\("
+        filePattern: .*\.go
+- ruleID: crypto-hygiene-change-00020
+  description: PBKDF2 usage requires at least 600,000 iterations per OWASP 2023 guidance for FIPS compliance
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    OWASP 2023 recommends at least 600,000 iterations for PBKDF2 with SHA-256. Lower iteration counts reduce resistance to brute-force attacks and may not meet FIPS 140-3 security strength requirements.
+
+    Review all `pbkdf2.Key` calls to ensure the iteration count parameter is at least 600,000.
+
+    ## Before
+    ```go
+    import "golang.org/x/crypto/pbkdf2"
+
+    hash := pbkdf2.Key(password, salt, 10000, 32, sha256.New)
+    hash := pbkdf2.Key(password, salt, 100000, 32, sha256.New)
+    ```
+
+    ## After
+    ```go
+    import "golang.org/x/crypto/pbkdf2"
+
+    hash := pbkdf2.Key(password, salt, 600000, 32, sha256.New)
+    ```
+
+    ### Additional Info
+    - The iteration count is the third argument to `pbkdf2.Key`
+    - 600,000 iterations is the minimum for SHA-256; use 210,000 for SHA-512
+    - Higher iteration counts increase computation time for both legitimate users and attackers
+    - Consider migrating to Argon2id if PBKDF2 performance is a concern (though Argon2 is not yet FIPS-approved)
+    - See OWASP Password Storage Cheat Sheet for current recommendations
+  links:
+    - url: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: golang.org/x/crypto/pbkdf2
+- ruleID: crypto-hygiene-change-00030
+  description: FIPS 140-3 requires HMAC keys of at least 112-bit security strength per IG C.M
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Per FIPS 140-3 Implementation Guidance C.M, HMAC verification with key lengths below 112 bits is classified as legacy use only (disallowed since 2011). HMAC keys must have a security strength that meets or exceeds the requirements of FIPS 198-1.
+
+    Review all `hmac.New` calls to ensure the key is at least 14 bytes (112 bits). Ideally, HMAC keys should match the hash output length (32 bytes for SHA-256).
+
+    ## Before
+    ```go
+    import "crypto/hmac"
+    import "crypto/sha256"
+
+    key := []byte("short") // < 14 bytes = < 112 bits
+    mac := hmac.New(sha256.New, key)
+    ```
+
+    ## After
+    ```go
+    import "crypto/hmac"
+    import "crypto/sha256"
+    import "crypto/rand"
+
+    key := make([]byte, 32) // 256 bits
+    _, _ = rand.Read(key)
+    mac := hmac.New(sha256.New, key)
+    ```
+
+    ### Additional Info
+    - Minimum key length is 14 bytes (112 bits) per FIPS 140-3 IG C.M
+    - Recommended key length matches the hash output: 32 bytes for SHA-256, 64 bytes for SHA-512
+    - Keys shorter than the hash block size are zero-padded; keys longer are hashed first
+    - Generate HMAC keys using `crypto/rand.Read` for FIPS compliance
+    - See FIPS 198-1 for HMAC specification and key requirements
+  links:
+    - url: https://csrc.nist.gov/pubs/fips/198-1/final
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: crypto/hmac
+- ruleID: crypto-hygiene-change-00040
+  description: AES-GCM nonces must never be reused; per SP 800-38D nonce reuse probability must be <= 2^-32
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    AES-GCM nonces must never be reused with the same key. Per NIST SP 800-38D and FIPS 140-3 IG C.H, the probability that the authenticated encryption function is invoked with the same IV and key on two or more distinct sets of input data shall be no greater than 2^-32.
+
+    This rule flags all GCM usage for nonce review. If your code already generates random nonces via `crypto/rand.Read` for each encryption operation, no change is needed. Verify nonce uniqueness guarantees.
+
+    ## Before
+    ```go
+    import "crypto/cipher"
+
+    var nonce = make([]byte, 12) // static zero nonce — NEVER DO THIS
+    ciphertext := gcm.Seal(nil, nonce, plaintext, nil)
+    ```
+
+    ## After
+    ```go
+    import "crypto/cipher"
+    import "crypto/rand"
+
+    nonce := make([]byte, gcm.NonceSize())
+    _, _ = rand.Read(nonce)
+    ciphertext := gcm.Seal(nonce, nonce, plaintext, nil)
+    ```
+
+    ### Additional Info
+    - Standard GCM nonces are 12 bytes (96 bits); with random nonces, expect collision after ~2^48 messages per key
+    - For high-volume encryption, consider a counter-based nonce scheme instead of random nonces
+    - Nonce reuse with GCM completely breaks authentication and leaks the authentication key
+    - The `gcm.Seal(nonce, nonce, plaintext, nil)` pattern prepends the nonce to ciphertext for easy retrieval during decryption
+    - See NIST SP 800-38D Section 8 for nonce generation recommendations
+  links:
+    - url: https://csrc.nist.gov/pubs/sp/800-38/d/final
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: crypto/cipher.NewGCM

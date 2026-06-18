@@ -1,0 +1,79 @@
+- ruleID: database-tls-pattern-00010
+  description: PostgreSQL connection string disables TLS; not FIPS compliant
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    ## PostgreSQL Connection with TLS Disabled
+
+    Using `sslmode=disable` in PostgreSQL connection strings bypasses TLS encryption. In FIPS environments, all database connections must use TLS.
+
+    ### Before
+
+    ```go
+    dsn := "host=db.example.com user=app dbname=mydb sslmode=disable"
+    ```
+
+    ### After
+
+    ```go
+    dsn := "host=db.example.com user=app dbname=mydb sslmode=verify-full sslrootcert=/path/to/ca.pem"
+    ```
+
+    ### Additional Info
+
+    - `sslmode=disable` completely disables TLS encryption for the database connection
+    - Use `sslmode=verify-full` to enable TLS with full certificate verification
+    - Provide the CA certificate path via `sslrootcert` for certificate chain validation
+    - Also check for `sslmode=allow` and `sslmode=prefer` which do not enforce TLS
+    - Ensure the database server is configured with a valid TLS certificate signed by a trusted CA
+  links:
+    - url: https://www.postgresql.org/docs/current/libpq-ssl.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: sslmode=disable
+        filePattern: .*\.go
+- ruleID: database-tls-pattern-00020
+  description: MySQL connection string disables TLS; not FIPS compliant
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    ## MySQL Connection with TLS Disabled
+
+    Using `tls=false` or `ssl=false` in MySQL connection strings bypasses TLS encryption. In FIPS environments, all database connections must use TLS.
+
+    ### Before
+
+    ```go
+    dsn := "user:pass@tcp(db.example.com:3306)/mydb?tls=false"
+    dsn := "user:pass@tcp(db.example.com:3306)/mydb?ssl=false"
+    ```
+
+    ### After
+
+    ```go
+    dsn := "user:pass@tcp(db.example.com:3306)/mydb?tls=true"
+    ```
+
+    ### Additional Info
+
+    - `tls=false` and `ssl=false` both disable TLS encryption for MySQL connections
+    - Use `tls=true` to enable TLS with the default TLS configuration
+    - For custom TLS configuration, register a custom TLS config with `mysql.RegisterTLSConfig()`
+    - Also check for `tls=skip-verify` which enables TLS but disables certificate verification
+    - Ensure the MySQL server is configured with valid TLS certificates
+  links:
+    - url: https://github.com/go-sql-driver/mysql#tls
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: tls=(false|skip-verify)|ssl=false
+        filePattern: .*\.go

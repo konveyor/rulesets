@@ -1,0 +1,26 @@
+rulesPath: ../pqc.yaml
+providers:
+    - name: go
+      dataPath: ./data/pqc
+tests:
+    - ruleID: pqc-change-00010
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: pqc-change-00020
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: pqc-change-00030
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

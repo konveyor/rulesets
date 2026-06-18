@@ -1,0 +1,10 @@
+rulesPath: ../key-strength.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/key-strength-builtin
+tests:
+    - ruleID: key-strength-pattern-00010
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
