@@ -216,11 +216,42 @@ jobs:
           podman rm kantra-download
           echo 'msg<<EOF' >> $GITHUB_OUTPUT
 
+          # Helper function to filter tests that support --run-local (java and builtin providers only)
+          filter_local_tests() {
+            local test_files="$1"
+            local filtered=""
+            for test_file in $test_files; do
+              # Skip if test requires nodejs, csharp, or other non-local providers
+              if grep -q 'name: nodejs' "$test_file" 2>/dev/null || \
+                 grep -q 'name: csharp' "$test_file" 2>/dev/null || \
+                 grep -q 'name: dotnet' "$test_file" 2>/dev/null; then
+                echo "Skipping non-local test: $test_file"
+                continue
+              fi
+              filtered="${filtered} ${test_file}"
+            done
+            echo "$filtered"
+          }
+
           # Determine what to test
           if [ "${{ steps.find-tests.outputs.run_all_tests }}" == "true" ]; then
             # Run all tests (for nightly runs or manual workflow_dispatch)
-            echo "Running all tests"
-            JVM_MAX_MEM=3072m ./kantra rules test ./rulesets --log-level 50 --run-local=true | tee output.log || true
+            echo "Running all java/builtin tests"
+            all_tests=$(find ./rulesets/stable ./rulesets/preview -name "*.test.yaml" 2>/dev/null || echo "")
+            if [ -n "$all_tests" ]; then
+              filtered_tests=$(filter_local_tests "$all_tests")
+              if [ -n "$filtered_tests" ]; then
+                JVM_MAX_MEM=3072m ./kantra rules test $filtered_tests --log-level 50 --run-local=true | tee output.log || true
+              else
+                echo "No local-compatible tests found"
+                echo "Rules Summary: 0/0" > message.md
+                echo "Test Cases Summary: 0/0" >> message.md
+              fi
+            else
+              echo "No test files found"
+              echo "Rules Summary: 0/0" > message.md
+              echo "Test Cases Summary: 0/0" >> message.md
+            fi
           elif [ "${{ steps.find-tests.outputs.has_tests }}" == "true" ]; then
             # Run tests for changed rules only
             # Test file paths are under stable/ or preview/; after move they are under ./rulesets/stable/ or ./rulesets/preview/
@@ -242,7 +273,14 @@ jobs:
               fi
             done
             if [ -n "$adjusted_test_files" ]; then
-              JVM_MAX_MEM=3072m ./kantra rules test $adjusted_test_files --log-level 50 --run-local=true | tee output.log || true
+              filtered_tests=$(filter_local_tests "$adjusted_test_files")
+              if [ -n "$filtered_tests" ]; then
+                JVM_MAX_MEM=3072m ./kantra rules test $filtered_tests --log-level 50 --run-local=true | tee output.log || true
+              else
+                echo "No local-compatible tests in changed files"
+                echo "Rules Summary: 0/0" > message.md
+                echo "Test Cases Summary: 0/0" >> message.md
+              fi
             else
               echo "Rules Summary: 0/0" > message.md
               echo "Test Cases Summary: 0/0" >> message.md
