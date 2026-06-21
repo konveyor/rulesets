@@ -83,7 +83,7 @@
   when:
     csharp.referenced:
       location: ALL
-      pattern: "*.(XslCompiledTransform.*EnableScript|msxsl:script)"
+      pattern: ".*\\.(XslCompiledTransform\\..*EnableScript|msxsl:script)"
 
 - category: mandatory
   customVariables: []
@@ -116,7 +116,7 @@
   when:
     csharp.referenced:
       location: METHOD
-      pattern: "*.(AssemblyBuilder.Save|ModuleBuilder.CreateGlobalFunctions)"
+      pattern: ".*\\.(AssemblyBuilder\\.Save|ModuleBuilder\\.CreateGlobalFunctions)"
 
 #- category: optional
 #  customVariables: []
@@ -174,7 +174,7 @@
   when:
     csharp.referenced:
       location: ALL
-      pattern: "*.(DefineDynamicModule.*fileName|Assembly.LoadModule)"
+      pattern: ".*\\.(DefineDynamicModule\\..*fileName|Assembly\\.LoadModule)"
 
 - category: optional
   customVariables: []
@@ -299,4 +299,4 @@
   when:
     csharp.referenced:
       location: ALL
-      pattern: "*.AssemblyBuilderAccess.(Save|RunAndSave|ReflectionOnly)"
+      pattern: ".*\\.AssemblyBuilderAccess\\.(Save|RunAndSave|ReflectionOnly)"
