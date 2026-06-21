@@ -264,4 +264,4 @@
   when:
     csharp.referenced:
       location: ALL
-      pattern: ".*\\.System\\.Configuration\\.Install"
+      pattern: "System\\.Configuration\\.Install.*"
