@@ -78,7 +78,7 @@ jobs:
       env:
         IMG: ttl.sh/konveyor-hub-${{ github.sha }}:4h
       run: |
-        podman build --build-arg SEED_ROOT=/opt/app-root/src/seed -t $IMG .
+        podman build --build-arg SEED_ROOT=/opt/app-root/src/tackle2-seed -t $IMG .
         podman push $IMG
 
   build-kantra:
