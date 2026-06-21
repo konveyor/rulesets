@@ -16,6 +16,21 @@ env:
   BRANCH: ${{ github.event_name == 'push' && github.ref_name || github.base_ref }}
 
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.get-tag.outputs.tag }}
+    steps:
+      - id: get-tag
+        run: |
+          echo "Get tag for quay.io/konveyor images"
+          if [[ "${{ env.BRANCH }}" == "main" ]]; then
+            echo "tag=latest" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag=${{ env.BRANCH }}" >> "$GITHUB_OUTPUT"
+          fi
+          echo "$(grep tag "$GITHUB_OUTPUT")"
+
   build-hub:
     name: Build tackle2-hub
     runs-on: ubuntu-24.04
@@ -51,12 +66,12 @@ jobs:
         fetch-depth: 0
         repository: konveyor/tackle2-seed
         ref: ${{ env.BRANCH }}
-        path: tackle2-seed
+        path: tackle2-hub/tackle2-seed
 
     - name: Update the seed repo
-      working-directory: tackle2-seed
+      working-directory: tackle2-hub/tackle2-seed
       run: |
-        RULESET_ARGS='-r ../rulesets --yes' make ruleset-patch
+        RULESET_ARGS='-r ../../rulesets --yes' make ruleset-patch
 
     - name: Build hub and save image
       working-directory: tackle2-hub
@@ -67,6 +82,7 @@ jobs:
         podman push $IMG
 
   build-kantra:
+    needs: [setup]
     name: Build kantra
     runs-on: ubuntu-24.04-arm
     strategy:
@@ -88,22 +104,23 @@ jobs:
         fetch-depth: 0
         repository: konveyor/tackle2-seed
         ref: ${{ env.BRANCH }}
-        path: tackle2-seed
+        path: kantra/tackle2-seed
 
     - name: Update the seed repo
-      working-directory: tackle2-seed
+      working-directory: kantra/tackle2-seed
       run: |
-        RULESET_ARGS='-r ../rulesets --yes' make ruleset-patch
+        RULESET_ARGS='-r ../../rulesets --yes' make ruleset-patch
 
     - name: Build kantra and save image
       working-directory: kantra
       env:
+        IMAGE_TAG: ${{ needs.setup.outputs.tag }}
         IMG: ttl.sh/konveyor-kantra-${{ github.sha }}
       run: |
-        podman build --build-arg IMAGE=$IMG --build-arg VERSION=latest -t $IMG:4h .
+        podman build --build-arg IMAGE=$IMG --build-arg VERSION=$IMAGE_TAG -t $IMG:4h .
         podman push $IMG:4h
-        podman tag $IMG:4h $IMG:latest
-        podman push $IMG:latest
+        podman tag $IMG:4h $IMG:$IMAGE_TAG
+        podman push $IMG:$IMAGE_TAG
 
   e2e:
     needs: [build-hub, build-kantra]
