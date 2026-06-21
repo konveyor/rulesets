@@ -71,7 +71,7 @@ jobs:
     - name: Update the seed repo
       working-directory: tackle2-hub/tackle2-seed
       run: |
-        RULESET_ARGS='-r ../../rulesets --yes' make ruleset-patch
+        GOWORK=off RULESET_ARGS='-r ../../rulesets --yes' make ruleset-patch
 
     - name: Build hub and save image
       working-directory: tackle2-hub
@@ -109,7 +109,7 @@ jobs:
     - name: Update the seed repo
       working-directory: kantra/tackle2-seed
       run: |
-        RULESET_ARGS='-r ../../rulesets --yes' make ruleset-patch
+        GOWORK=off RULESET_ARGS='-r ../../rulesets --yes' make ruleset-patch
 
     - name: Build kantra and save image
       working-directory: kantra
