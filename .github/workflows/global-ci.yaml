@@ -12,14 +12,32 @@ on:
     - main
     - 'release-*'
 
+env:
+  BRANCH: ${{ github.event_name == 'push' && github.ref_name || github.base_ref }}
+
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.get-tag.outputs.tag }}
+    steps:
+      - id: get-tag
+        run: |
+          echo "Get tag for quay.io/konveyor images"
+          if [[ "${{ env.BRANCH }}" == "main" ]]; then
+            echo "tag=latest" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag=${{ env.BRANCH }}" >> "$GITHUB_OUTPUT"
+          fi
+          echo "$(grep tag "$GITHUB_OUTPUT")"
+
   build-hub:
     name: Build tackle2-hub
     runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
       with:
         path: rulesets
 
@@ -36,35 +54,93 @@ jobs:
         done
         exit $rc
 
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
       with:
         fetch-depth: 0
         repository: konveyor/tackle2-hub
-        ref: ${{ github.event_name == 'push' && github.ref || github.base_ref }}
+        ref: ${{ env.BRANCH }}
         path: tackle2-hub
 
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
       with:
         fetch-depth: 0
         repository: konveyor/tackle2-seed
-        ref: ${{ github.event_name == 'push' && github.ref || github.base_ref }}
-        path: tackle2-seed
+        ref: ${{ env.BRANCH }}
+        path: tackle2-hub/tackle2-seed
 
     - name: Update the seed repo
-      working-directory: tackle2-seed
+      working-directory: tackle2-hub/tackle2-seed
       run: |
-        RULESET_ARGS='-r ../rulesets --yes' make ruleset-patch
+        GOWORK=off RULESET_ARGS='-r ../../rulesets --yes' make ruleset-patch
 
     - name: Build hub and save image
       working-directory: tackle2-hub
       env:
         IMG: ttl.sh/konveyor-hub-${{ github.sha }}:4h
       run: |
-        podman build --build-arg SEED_ROOT=/opt/app-root/src/seed -t $IMG .
+        podman build --build-arg SEED_ROOT=/opt/app-root/src/tackle2-seed -t $IMG .
         podman push $IMG
 
+  build-kantra:
+    needs: [setup]
+    name: Build kantra
+    runs-on: ubuntu-24.04-arm
+    strategy:
+      fail-fast: false
+    steps:
+    - uses: actions/checkout@v6
+      with:
+        path: rulesets
+
+    - uses: actions/checkout@v6
+      with:
+        fetch-depth: 0
+        repository: konveyor/kantra
+        ref: ${{ env.BRANCH }}
+        path: kantra
+
+    - uses: actions/checkout@v6
+      with:
+        fetch-depth: 0
+        repository: konveyor/tackle2-seed
+        ref: ${{ env.BRANCH }}
+        path: kantra/tackle2-seed
+
+    - name: Update the seed repo
+      working-directory: kantra/tackle2-seed
+      run: |
+        GOWORK=off RULESET_ARGS='-r ../../rulesets --yes' make ruleset-patch
+
+    - name: Build kantra and save image
+      working-directory: kantra
+      env:
+        IMAGE_TAG: ${{ needs.setup.outputs.tag }}
+        IMG: ttl.sh/konveyor-kantra-${{ github.sha }}
+      run: |
+        podman build --build-arg IMAGE=$IMG --build-arg VERSION=$IMAGE_TAG -t $IMG:4h .
+        podman push $IMG:4h
+        podman tag $IMG:4h $IMG:$IMAGE_TAG
+        podman push $IMG:$IMAGE_TAG
+
   e2e:
-    needs: build-hub
+    needs: [build-hub, build-kantra]
     uses: konveyor/ci/.github/workflows/global-ci-bundle.yml@main
     with:
-      tackle_hub: ttl.sh/konveyor-hub-${{ github.sha }}:4h
+      kantra: ttl.sh/konveyor-kantra-${{ github.sha }}:4h
+      run_api_tests: false
+      run_koncur_hub_tests: true
+      run_koncur_kantra_tests: true
+      run_windows_kantra_tests: false
+      koncur_ref: ${{ github.event_name == 'push' && github.ref_name || github.base_ref }}
+      tackle_cr: |
+        kind: Tackle
+        apiVersion: tackle.konveyor.io/v1alpha1
+        metadata:
+          name: tackle
+        spec:
+          image_pull_policy: IfNotPresent
+          analyzer_container_requests_cpu: 100m
+          provider_java_container_requests_cpu: 100m
+          provider_python_container_requests_cpu: 100m
+          feature_auth_required: false
+          hub_image_fqin: ttl.sh/konveyor-hub-${{ github.sha }}:4h
