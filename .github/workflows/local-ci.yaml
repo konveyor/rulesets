@@ -221,8 +221,9 @@ jobs:
             local test_files="$1"
             local filtered=""
             for test_file in $test_files; do
-              # Skip if test requires nodejs, csharp, or other non-local providers
-              if grep -q 'name: nodejs' "$test_file" 2>/dev/null || \
+              # Skip if test requires non-local providers (only java and builtin are supported)
+              if grep -q 'name: go' "$test_file" 2>/dev/null || \
+                 grep -q 'name: nodejs' "$test_file" 2>/dev/null || \
                  grep -q 'name: csharp' "$test_file" 2>/dev/null || \
                  grep -q 'name: dotnet' "$test_file" 2>/dev/null; then
                 echo "Skipping non-local test: $test_file"
