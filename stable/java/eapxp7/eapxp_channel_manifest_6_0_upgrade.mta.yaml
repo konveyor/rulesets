@@ -2,6 +2,9 @@
   description: "The JBoss EAP XP Channel Manifest 6.0 should be upgraded."
   category: mandatory
   effort: 1
+  labels:
+    - konveyor.io/source=eapxp
+    - konveyor.io/target=eap7+
   #links:
   #  - url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/8.2/html/jboss_eap_xp_7.0_upgrade_and_migration_guide/application_migration_default
   #    title: "JBoss EAP XP 7.0 upgrade and migration guide: Chapter 3. Application Migration"
