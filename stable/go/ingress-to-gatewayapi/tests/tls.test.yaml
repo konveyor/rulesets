@@ -1,0 +1,12 @@
+rulesPath: ../tls.yaml
+providers:
+    - name: go
+      dataPath: ./data/tls
+tests:
+    - ruleID: tls-change-00010
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

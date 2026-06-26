@@ -1,0 +1,48 @@
+- ruleID: tls-change-00010
+  description: IngressTLS replaced by Gateway Listener TLS configuration
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `networkingv1.IngressTLS` struct has no direct Gateway API route-level equivalent. TLS configuration moves from the route to the Gateway listener, reflecting Gateway API's separation of concerns: TLS is managed by infrastructure operators (Gateway) rather than application developers (HTTPRoute).
+
+    ### Before
+    ```go
+    tls := networkingv1.IngressTLS{
+        Hosts:      []string{"example.com"},
+        SecretName: "example-com-tls",
+    }
+    ```
+
+    ### After
+    ```go
+    // TLS moves to a Gateway listener
+    listener := gatewayv1.Listener{
+        Name:     "https",
+        Port:     443,
+        Protocol: gatewayv1.HTTPSProtocolType,
+        Hostname: ptr(gatewayv1.Hostname("example.com")),
+        TLS: &gatewayv1.GatewayTLSConfig{
+            Mode: ptr(gatewayv1.TLSModeTerminate),
+            CertificateRefs: []gatewayv1.SecretObjectReference{
+                {Name: "example-com-tls"},
+            },
+        },
+    }
+    ```
+
+    ### Additional Info
+    - TLS is no longer defined on routes; it belongs to the Gateway resource
+    - The `Hosts` field maps to `Listener.Hostname`
+    - The `SecretName` field maps to `GatewayTLSConfig.CertificateRefs`
+    - Gateway API supports multiple TLS modes: Terminate, Passthrough
+    - Application developers no longer manage TLS directly; coordinate with your infrastructure team
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: k8s.io/api/networking/v1.IngressTLS

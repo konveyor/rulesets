@@ -1,0 +1,15 @@
+rulesPath: ../client.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/client
+tests:
+    - ruleID: client-pattern-00010
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: client-pattern-00020
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1

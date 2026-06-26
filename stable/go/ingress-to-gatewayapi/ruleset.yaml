@@ -1,0 +1,5 @@
+name: gateway-api-go/k8s-ingress-go
+description: Rules for migrating from k8s-ingress-go to gateway-api-go
+labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go

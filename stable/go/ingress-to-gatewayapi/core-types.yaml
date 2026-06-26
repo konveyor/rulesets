@@ -1,0 +1,492 @@
+- ruleID: core-types-change-00010
+  description: Ingress type replaced by HTTPRoute in Gateway API
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `networkingv1.Ingress` resource type is replaced by `gatewayv1.HTTPRoute`. Gateway API splits the Ingress concept: entry points and TLS move to `Gateway`, while routing rules move to `HTTPRoute`. The HTTPRoute references a Gateway via `ParentRefs` instead of an IngressClass.
+
+    ### Before
+    ```go
+    import networkingv1 "k8s.io/api/networking/v1"
+
+    ingress := &networkingv1.Ingress{
+        ObjectMeta: metav1.ObjectMeta{
+            Name: "example-ingress",
+        },
+        Spec: networkingv1.IngressSpec{
+            IngressClassName: &className,
+            Rules: []networkingv1.IngressRule{...},
+        },
+    }
+    ```
+
+    ### After
+    ```go
+    import gatewayv1 "sigs.k8s.io/gateway-api/apis/v1"
+
+    route := &gatewayv1.HTTPRoute{
+        ObjectMeta: metav1.ObjectMeta{
+            Name: "foo",
+        },
+        Spec: gatewayv1.HTTPRouteSpec{
+            CommonRouteSpec: gatewayv1.CommonRouteSpec{
+                ParentRefs: []gatewayv1.ParentReference{
+                    {Name: gatewayv1.ObjectName("my-gateway")},
+                },
+            },
+            Hostnames: []gatewayv1.Hostname{"foo.example.com"},
+            Rules: []gatewayv1.HTTPRouteRule{...},
+        },
+    }
+    ```
+
+    ### Additional Info
+    - `IngressClassName` is replaced by `ParentRefs` referencing a Gateway
+    - `IngressRule.Host` moves to `HTTPRoute.Spec.Hostnames`
+    - TLS configuration moves entirely to the Gateway resource
+    - `DefaultBackend` has no direct equivalent; use a rule matching path prefix `/`
+    - The Gateway must exist before HTTPRoutes can reference it
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: k8s.io/api/networking/v1.Ingress
+- ruleID: core-types-change-00020
+  description: IngressSpec replaced by HTTPRouteSpec in Gateway API
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `networkingv1.IngressSpec` struct is replaced by `gatewayv1.HTTPRouteSpec`. Key field mappings:
+
+    - `IngressSpec.IngressClassName` maps to `HTTPRouteSpec.ParentRefs` (references a Gateway instead of a class)
+    - `IngressSpec.Rules` maps to `HTTPRouteSpec.Rules` (as `[]HTTPRouteRule`)
+    - `IngressSpec.TLS` moves to `Gateway.Spec.Listeners[].TLS` (owned by cluster operator, not app developer)
+    - `IngressSpec.DefaultBackend` has no direct equivalent; use a rule matching path prefix `/`
+
+    ### Before
+    ```go
+    spec := networkingv1.IngressSpec{
+        IngressClassName: &className,
+        Rules: []networkingv1.IngressRule{...},
+        TLS: []networkingv1.IngressTLS{...},
+        DefaultBackend: &networkingv1.IngressBackend{...},
+    }
+    ```
+
+    ### After
+    ```go
+    spec := gatewayv1.HTTPRouteSpec{
+        CommonRouteSpec: gatewayv1.CommonRouteSpec{
+            ParentRefs: []gatewayv1.ParentReference{
+                {Name: gatewayv1.ObjectName("my-gateway")},
+            },
+        },
+        Hostnames: []gatewayv1.Hostname{"example.com"},
+        Rules: []gatewayv1.HTTPRouteRule{...},
+    }
+    ```
+
+    ### Additional Info
+    - TLS is no longer part of the route spec; it belongs to the Gateway listener
+    - `DefaultBackend` should be replaced with a catch-all HTTPRouteRule matching prefix `/`
+    - `ParentRefs` can reference multiple Gateways, unlike IngressClassName which references one class
+    - The `CommonRouteSpec` wrapper is required for `ParentRefs`
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: k8s.io/api/networking/v1.IngressSpec
+- ruleID: core-types-change-00030
+  description: IngressRule replaced by HTTPRouteRule in Gateway API
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `networkingv1.IngressRule` struct is replaced by `gatewayv1.HTTPRouteRule`. The `Host` field moves to `HTTPRoute.Spec.Hostnames`, and `HTTP.Paths` becomes `HTTPRouteRule.Matches` + `HTTPRouteRule.BackendRefs`.
+
+    ### Before
+    ```go
+    rule := networkingv1.IngressRule{
+        Host: "foo.example.com",
+        IngressRuleValue: networkingv1.IngressRuleValue{
+            HTTP: &networkingv1.HTTPIngressRuleValue{
+                Paths: []networkingv1.HTTPIngressPath{
+                    {
+                        Path:     "/api",
+                        PathType: &pathTypePrefix,
+                        Backend:  networkingv1.IngressBackend{...},
+                    },
+                },
+            },
+        },
+    }
+    ```
+
+    ### After
+    ```go
+    // Host moves to HTTPRoute.Spec.Hostnames
+    rule := gatewayv1.HTTPRouteRule{
+        Matches: []gatewayv1.HTTPRouteMatch{
+            {Path: &gatewayv1.HTTPPathMatch{
+                Type:  ptr(gatewayv1.PathMatchPathPrefix),
+                Value: ptr("/api"),
+            }},
+        },
+        BackendRefs: []gatewayv1.HTTPBackendRef{...},
+    }
+    ```
+
+    ### Additional Info
+    - Host-based routing moves to the HTTPRoute level, not individual rules
+    - Path matching uses explicit `HTTPPathMatch` with `Type` and `Value` instead of `PathType` + `Path`
+    - Gateway API supports `PathMatchPathPrefix`, `PathMatchExact`, and `PathMatchRegularExpression`
+    - Multiple paths in a single IngressRule become multiple HTTPRouteRules or multiple Matches
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: k8s.io/api/networking/v1.IngressRule
+- ruleID: core-types-change-00040
+  description: IngressRuleValue has no direct equivalent; its HTTP paths become HTTPRouteRule entries
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `networkingv1.IngressRuleValue` struct has no direct Gateway API equivalent. In Ingress, `IngressRuleValue` wraps `HTTPIngressRuleValue` which contains the path list. In Gateway API, paths are defined directly as `HTTPRouteRule` entries on the HTTPRoute.
+
+    ### Before
+    ```go
+    rule := networkingv1.IngressRule{
+        IngressRuleValue: networkingv1.IngressRuleValue{
+            HTTP: &networkingv1.HTTPIngressRuleValue{
+                Paths: []networkingv1.HTTPIngressPath{...},
+            },
+        },
+    }
+    ```
+
+    ### After
+    ```go
+    // IngressRuleValue is eliminated; paths become HTTPRouteRule entries directly
+    rule := gatewayv1.HTTPRouteRule{
+        Matches: []gatewayv1.HTTPRouteMatch{...},
+        BackendRefs: []gatewayv1.HTTPBackendRef{...},
+    }
+    ```
+
+    ### Additional Info
+    - The `IngressRuleValue` wrapper layer is removed in Gateway API
+    - The `HTTP` field (which held `HTTPIngressRuleValue`) is also removed
+    - Path definitions move directly to `HTTPRouteRule.Matches`
+    - Backend references move to `HTTPRouteRule.BackendRefs`
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: k8s.io/api/networking/v1.IngressRuleValue
+- ruleID: core-types-change-00050
+  description: IngressClass replaced by GatewayClass in Gateway API
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `networkingv1.IngressClass` resource type is replaced by `gatewayv1.GatewayClass`. The `Spec.Controller` field maps to `Spec.ControllerName`.
+
+    ### Before
+    ```go
+    ingressClass := &networkingv1.IngressClass{
+        ObjectMeta: metav1.ObjectMeta{Name: "nginx"},
+        Spec: networkingv1.IngressClassSpec{
+            Controller: "k8s.io/ingress-nginx",
+        },
+    }
+    ```
+
+    ### After
+    ```go
+    gatewayClass := &gatewayv1.GatewayClass{
+        ObjectMeta: metav1.ObjectMeta{Name: "my-gateway-class"},
+        Spec: gatewayv1.GatewayClassSpec{
+            ControllerName: "example.com/gateway-controller",
+        },
+    }
+    ```
+
+    ### Additional Info
+    - The controller identifier changes from Ingress controller to Gateway controller
+    - Update the controller string to match your chosen Gateway API implementation
+    - GatewayClass is cluster-scoped, just like IngressClass
+    - The `Spec.Parameters` field in GatewayClass allows referencing implementation-specific configuration
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: k8s.io/api/networking/v1.IngressClass
+- ruleID: core-types-change-00060
+  description: IngressClassSpec replaced by GatewayClassSpec in Gateway API
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `networkingv1.IngressClassSpec` struct is replaced by `gatewayv1.GatewayClassSpec`. The `Controller` field is renamed to `ControllerName`.
+
+    ### Before
+    ```go
+    spec := networkingv1.IngressClassSpec{
+        Controller: "k8s.io/ingress-nginx",
+    }
+    ```
+
+    ### After
+    ```go
+    spec := gatewayv1.GatewayClassSpec{
+        ControllerName: "example.com/gateway-controller",
+    }
+    ```
+
+    ### Additional Info
+    - `Controller` is renamed to `ControllerName`
+    - The controller string value must change to your Gateway API implementation's controller name
+    - GatewayClassSpec also supports `ParametersRef` for implementation-specific configuration
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: k8s.io/api/networking/v1.IngressClassSpec
+- ruleID: core-types-change-00070
+  description: IngressBackend replaced by HTTPBackendRef in Gateway API
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `networkingv1.IngressBackend` struct is replaced by `gatewayv1.HTTPBackendRef`. Note the deeper nesting in Gateway API: `HTTPBackendRef` wraps `BackendRef` which wraps `BackendObjectReference`.
+
+    ### Before
+    ```go
+    backend := networkingv1.IngressBackend{
+        Service: &networkingv1.IngressServiceBackend{
+            Name: "my-service",
+            Port: networkingv1.ServiceBackendPort{Number: 8080},
+        },
+    }
+    ```
+
+    ### After
+    ```go
+    backendRef := gatewayv1.HTTPBackendRef{
+        BackendRef: gatewayv1.BackendRef{
+            BackendObjectReference: gatewayv1.BackendObjectReference{
+                Name: gatewayv1.ObjectName("my-service"),
+                Port: ptr(gatewayv1.PortNumber(8080)),
+            },
+        },
+    }
+    ```
+
+    ### Additional Info
+    - Service name requires wrapping with `gatewayv1.ObjectName()`
+    - Port requires wrapping with `gatewayv1.PortNumber()` and a pointer helper
+    - `BackendObjectReference` can reference non-Service backends (e.g., custom resources)
+    - Gateway API supports traffic weighting via the `Weight` field on `BackendRef`
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: k8s.io/api/networking/v1.IngressBackend
+- ruleID: core-types-change-00080
+  description: IngressServiceBackend replaced by BackendObjectReference in Gateway API
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `networkingv1.IngressServiceBackend` struct is replaced by `gatewayv1.BackendObjectReference`. The simple `Name` + `Port` structure changes to a more generic object reference.
+
+    ### Before
+    ```go
+    service := &networkingv1.IngressServiceBackend{
+        Name: "my-service",
+        Port: networkingv1.ServiceBackendPort{Number: 8080},
+    }
+    ```
+
+    ### After
+    ```go
+    backendRef := gatewayv1.BackendObjectReference{
+        Name: gatewayv1.ObjectName("my-service"),
+        Port: ptr(gatewayv1.PortNumber(8080)),
+    }
+    ```
+
+    ### Additional Info
+    - `BackendObjectReference` is more generic and can reference non-Service backends
+    - The `Name` field requires a `gatewayv1.ObjectName()` type conversion
+    - The `Port` field requires a `gatewayv1.PortNumber()` type conversion and a pointer
+    - Optional `Group` and `Kind` fields allow referencing custom resource backends
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: k8s.io/api/networking/v1.IngressServiceBackend
+- ruleID: core-types-change-00090
+  description: ServiceBackendPort replaced by PortNumber in Gateway API
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `networkingv1.ServiceBackendPort` struct (with `Number` and `Name` fields) is replaced by `gatewayv1.PortNumber`, a simple type alias for `int32`.
+
+    ### Before
+    ```go
+    port := networkingv1.ServiceBackendPort{Number: 8080}
+    // or by name:
+    port := networkingv1.ServiceBackendPort{Name: "http"}
+    ```
+
+    ### After
+    ```go
+    port := ptr(gatewayv1.PortNumber(8080))
+    ```
+
+    ### Additional Info
+    - `ServiceBackendPort` supported both numeric and named ports; `PortNumber` is numeric only
+    - Named port references are not directly supported in Gateway API `BackendObjectReference`
+    - The port value is used as a pointer in `BackendObjectReference.Port`
+    - A pointer helper function is typically needed: `func ptr[T any](v T) *T { return &v }`
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: k8s.io/api/networking/v1.ServiceBackendPort
+- ruleID: core-types-change-00100
+  description: HTTPIngressPath split into HTTPRouteMatch and HTTPBackendRef in Gateway API
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `networkingv1.HTTPIngressPath` struct combined path matching and backend in one struct. In Gateway API, these are separate fields on `HTTPRouteRule`: path matching goes to `Matches` and backend references go to `BackendRefs`.
+
+    ### Before
+    ```go
+    path := networkingv1.HTTPIngressPath{
+        Path:     "/api",
+        PathType: &pathTypePrefix,
+        Backend:  networkingv1.IngressBackend{...},
+    }
+    ```
+
+    ### After
+    ```go
+    rule := gatewayv1.HTTPRouteRule{
+        Matches: []gatewayv1.HTTPRouteMatch{
+            {Path: &gatewayv1.HTTPPathMatch{
+                Type:  ptr(gatewayv1.PathMatchPathPrefix),
+                Value: ptr("/api"),
+            }},
+        },
+        BackendRefs: []gatewayv1.HTTPBackendRef{...},
+    }
+    ```
+
+    ### Additional Info
+    - Path and backend are no longer combined in a single struct
+    - `PathType` constants change: `PathTypePrefix` becomes `PathMatchPathPrefix`, `PathTypeExact` becomes `PathMatchExact`
+    - Path matching uses `HTTPPathMatch` with explicit `Type` and `Value` pointer fields
+    - Multiple paths in a single IngressRule become multiple Matches or separate HTTPRouteRules
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: k8s.io/api/networking/v1.HTTPIngressPath
+- ruleID: core-types-change-00110
+  description: HTTPIngressRuleValue has no direct equivalent; HTTP paths become HTTPRouteRule entries
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `networkingv1.HTTPIngressRuleValue` struct has no direct Gateway API equivalent. Its `Paths` field (a list of `HTTPIngressPath`) becomes `HTTPRouteRule` entries directly on the HTTPRoute's `Rules` field.
+
+    ### Before
+    ```go
+    httpRuleValue := &networkingv1.HTTPIngressRuleValue{
+        Paths: []networkingv1.HTTPIngressPath{
+            {
+                Path:     "/",
+                PathType: &pathTypePrefix,
+                Backend:  networkingv1.IngressBackend{...},
+            },
+        },
+    }
+    ```
+
+    ### After
+    ```go
+    // HTTPIngressRuleValue is eliminated; paths become HTTPRouteRules
+    rules := []gatewayv1.HTTPRouteRule{
+        {
+            Matches: []gatewayv1.HTTPRouteMatch{
+                {Path: &gatewayv1.HTTPPathMatch{
+                    Type:  ptr(gatewayv1.PathMatchPathPrefix),
+                    Value: ptr("/"),
+                }},
+            },
+            BackendRefs: []gatewayv1.HTTPBackendRef{...},
+        },
+    }
+    ```
+
+    ### Additional Info
+    - The wrapper struct `HTTPIngressRuleValue` is completely removed in Gateway API
+    - The `Paths` list becomes individual `HTTPRouteRule` entries
+    - Each path+backend pair maps to a rule with `Matches` + `BackendRefs`
+    - Gateway API supports additional match types beyond path: headers, query parameters, and method
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: k8s.io/api/networking/v1.HTTPIngressRuleValue
