@@ -1,0 +1,10 @@
+rulesPath: ../http-transport.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/http-transport
+tests:
+    - ruleID: http-transport-pattern-00010
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1

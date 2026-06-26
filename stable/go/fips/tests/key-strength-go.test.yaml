@@ -1,0 +1,19 @@
+rulesPath: ../key-strength.yaml
+providers:
+    - name: go
+      dataPath: ./data/key-strength-go
+tests:
+    - ruleID: key-strength-change-00010
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: key-strength-change-00020
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

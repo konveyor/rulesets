@@ -1,0 +1,15 @@
+rulesPath: ../crypto-hygiene.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/crypto-hygiene-builtin
+tests:
+    - ruleID: crypto-hygiene-pattern-00010
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: crypto-hygiene-pattern-00020
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1

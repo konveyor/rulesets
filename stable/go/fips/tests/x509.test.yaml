@@ -1,0 +1,19 @@
+rulesPath: ../x509.yaml
+providers:
+    - name: go
+      dataPath: ./data/x509
+tests:
+    - ruleID: x509-change-00010
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: x509-change-00020
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

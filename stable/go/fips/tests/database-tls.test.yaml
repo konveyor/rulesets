@@ -1,0 +1,15 @@
+rulesPath: ../database-tls.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/database-tls
+tests:
+    - ruleID: database-tls-pattern-00010
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: database-tls-pattern-00020
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
