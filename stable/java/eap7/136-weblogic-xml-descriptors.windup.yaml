@@ -253,7 +253,7 @@
   - configuration
   links:
   - title: EAP 7 Overview of the Messaging subsystem configuration
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/configuring_messaging/#intro_messaging_config
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/configuring_messaging/index#intro_messaging_config
   message: "\n                        This file is a proprietary WebLogic JMS configuration
     and needs to be migrated.\n                        While there is no direct mapping
     of these descriptor elements, many of these features may be configured in the
@@ -286,7 +286,7 @@
   - title: Map weblogic.xml configurations to JBoss EAP
     url: https://access.redhat.com/articles/1327803
   - title: Configuration Guide for JBoss EAP 7
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/configuration_guide/
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/configuration_guide/index
   message: "\n                        The Oracle WebLogic Server deployment descriptor
     file (`weblogic.xml`) provides functionality that is not included in the standard
     Java EE specification.\n                        While there is no direct mapping
@@ -462,7 +462,7 @@
   - title: WebLogic Server Deployment Elements
     url: https://docs.oracle.com/middleware/1221/wls/WLMDB/summary.htm#r35c1-t4
   - title: JBoss EAP 6 - Session Bean Transaction Timeout
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/#Session_Bean_Transaction_Timeout
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#Session_Bean_Transaction_Timeout
   - title: How to set EJB transaction timeout in JBoss EAP 6
     url: https://access.redhat.com/solutions/90553
   message: "The WebLogic `<trans-timeout-seconds>` configuration element sets the

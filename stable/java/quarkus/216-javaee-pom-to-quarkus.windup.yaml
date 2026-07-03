@@ -228,7 +228,7 @@
   - title: Quarkus - Testing your application
     url: https://quarkus.io/guides/getting-started-testing
   - title: Testing your Quarkus application with JUnit
-    url: https://access.redhat.com/documentation/en-us/red_hat_build_of_quarkus/1.3/html/getting_started_with_quarkus/proc-quarkus-junit-testing_quarkus-getting-started
+    url: https://docs.redhat.com/en/documentation/red_hat_build_of_quarkus/1.3/html-single/getting_started_with_quarkus/index#proc-quarkus-junit-testing_quarkus-getting-started
   message: "Use Quarkus junit artifact: \n\n ```\n <!-- Quarkus junit specific dependency
     -->\n <dependency>\n <groupId>io.quarkus</groupId>\n <artifactId>quarkus-junit5</artifactId>\n
     <scope>test</scope>\n </dependency>\n ```"

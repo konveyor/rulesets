@@ -79,7 +79,7 @@
   - transactions
   links:
   - title: JBoss EAP - Java Transaction API (JTA)
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/development_guide/#java_transaction_api_jta
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/development_guide/index#java_transaction_api_jta
   - title: Java Enterprise Edition 7 - TransactionManager
     url: http://docs.oracle.com/javaee/7/api/javax/transaction/TransactionManager.html
   message: Replace with the Java EE standard [javax.transaction.TransactionManager](http://docs.oracle.com/javaee/7/api/javax/transaction/TransactionManager.html)
@@ -255,7 +255,7 @@
   - title: JDK Logging Documentation
     url: https://docs.oracle.com/javase/7/docs/technotes/guides/logging/overview.html
   - title: Logging with JBoss EAP
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/configuration_guide/logging_with_jboss_eap
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/configuration_guide/index#logging_with_jboss_eap
   message: |-
     The WebLogic `NonCatalogLogger` is not supported on JBoss EAP, and should be migrated to a supported logging framework,
      such as the JDK Logger or JBoss Logging:

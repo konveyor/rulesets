@@ -38,7 +38,7 @@
   - hibernate
   links:
   - title: Advanced Integrator Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_advanced_integrator_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_advanced_integrator_changes
   message: The class `org.hibernate.search.impl.SearchMappingBuilder` was replaced
     by `org.hibernate.search.engine.spi.SearchMappingHelper` class.
   ruleID: hsearch-00001
@@ -62,7 +62,7 @@
   - hibernate
   links:
   - title: Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_changes
   message: The class `org.hibernate.search.Environment` was replaced by `org.hibernate.search.cfg.Environment`
     class.
   ruleID: hsearch-00002
@@ -86,7 +86,7 @@
   - hibernate
   links:
   - title: Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_changes
   message: The class `org.hibernate.search.FullTextFilter` was replaced by `org.hibernate.search.filter.FullTextFilter`
     class.
   ruleID: hsearch-00003
@@ -110,7 +110,7 @@
   - hibernate
   links:
   - title: Advanced Integrator Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_advanced_integrator_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_advanced_integrator_changes
   message: The class `org.hibernate.search.indexes.impl.DirectoryBasedIndexManager`
     was replaced by `org.hibernate.search.indexes.spi.DirectoryBasedIndexManager`
     class.
@@ -135,7 +135,7 @@
   - hibernate
   links:
   - title: Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_changes
   message: The class `org.hibernate.search.infinispan.impl.InfinispanDirectoryProvider`
     was replaced by `org.hibernate.search.infinispan.spi.InfinispanDirectoryProvider`
     class.
@@ -160,7 +160,7 @@
   - hibernate
   links:
   - title: Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_changes
   message: The class `org.hibernate.search.ProjectionConstants` was replaced by `org.hibernate.search.engine.ProjectionConstants`
     class.
   ruleID: hsearch-00006
@@ -184,7 +184,7 @@
   - hibernate
   links:
   - title: Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_changes
   message: The class `org.hibernate.search.SearchException` was replaced by `org.hibernate.search.exception.SearchException`
     class.
   ruleID: hsearch-00007
@@ -208,7 +208,7 @@
   - hibernate
   links:
   - title: Advanced Integrator Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_advanced_integrator_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_advanced_integrator_changes
   message: The class `org.hibernate.search.spi.MassIndexerFactory` was replaced by
     `org.hibernate.search.batchindexing.spi.MassIndexerFactory` class.
   ruleID: hsearch-00008
@@ -232,7 +232,7 @@
   - hibernate
   links:
   - title: Advanced Integrator Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_advanced_integrator_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_advanced_integrator_changes
   - title: SearchIntegrationBuilder javadoc
     url: http://docs.jboss.org/hibernate/search/5.5/api/org/hibernate/search/spi/SearchIntegratorBuilder.html
   message: The class `org.hibernate.search.spi.SearchFactoryBuilder` was replaced
@@ -258,7 +258,7 @@
   - hibernate
   links:
   - title: Advanced Integrator Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_advanced_integrator_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_advanced_integrator_changes
   - title: Hibernate Search javadoc for SearchIntegrator
     url: https://docs.jboss.org/hibernate/search/5.5/api/org/hibernate/search/spi/SearchIntegrator.html
   message: |-
@@ -285,7 +285,7 @@
   - hibernate
   links:
   - title: Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_changes
   message: The class `org.hibernate.search.Version` was replaced by `org.hibernate.search.engine.Version`
     class.
   ruleID: hsearch-00011
@@ -309,7 +309,7 @@
   - hibernate
   links:
   - title: Hibernate Search 5.x Deprecated Constructors
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_deprecated_constructors
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_deprecated_constructors
   - title: Hibernate Search javadoc
     url: https://docs.jboss.org/hibernate/search/5.5/api/org/hibernate/search/cfg/NumericFieldMapping.html#NumericFieldMapping-org.hibernate.search.cfg.PropertyDescriptor-org.hibernate.search.cfg.EntityDescriptor-org.hibernate.search.cfg.SearchMapping-
   message: Use `NumericFieldMapping.NumericFieldMapping(String, PropertyDescriptor,
@@ -337,7 +337,7 @@
   - hibernate
   links:
   - title: Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_changes
   - title: Hibernate Search javadoc
     url: https://docs.jboss.org/hibernate/search/5.5/api/org/hibernate/search/store/ShardIdentifierProvider.html
   message: |-
@@ -364,7 +364,7 @@
   - hibernate
   links:
   - title: Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_changes
   message: '`org.hibernate.search.store.Workspace` interface will be moved and considered
     as non-public API.'
   ruleID: hsearch-00103
@@ -388,7 +388,7 @@
   - hibernate
   links:
   - title: Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_changes
   - title: Hibernate Search 5.1 API changes
     url: http://hibernate.org/search/documentation/migrate/5.1/#api-changes
   message: Custom filter keys are deprecated and are scheduled for removal in Hibernate
@@ -415,7 +415,7 @@
   - hibernate
   links:
   - title: Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_changes
   - title: Hibernate Search 5.1 API changes
     url: http://hibernate.org/search/documentation/migrate/5.1/#api-changes
   - title: hibernate Search javadoc
@@ -445,7 +445,7 @@
   - annotation
   links:
   - title: Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_changes
   - title: hibernate Search javadoc
     url: https://docs.jboss.org/hibernate/search/5.5/api/org/hibernate/search/annotations/FieldCacheType.html
   message: Remove the `@FieldCacheType` annotation. No alternative replacement necessary
@@ -471,7 +471,7 @@
   - hibernate
   links:
   - title: Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_changes
   - title: hibernate Search javadoc for @CacheFromIndex
     url: https://docs.jboss.org/hibernate/search/5.5/api/org/hibernate/search/annotations/CacheFromIndex.html
   message: Remove the `@CacheFromIndex` annotation. No alternative replacement necessary.
@@ -497,7 +497,7 @@
   - hibernate
   links:
   - title: Miscelanous Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_miscellaneous_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_miscellaneous_hibernate_search_changes
   - title: Hibernate Search 5.1 API changes
     url: http://hibernate.org/search/documentation/migrate/5.1/#api-changes
   - title: Hibernate Search javadoc for @Key
@@ -530,7 +530,7 @@
   - hibernate
   links:
   - title: Advanced Integrator Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_advanced_integrator_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_advanced_integrator_changes
   message: |-
     The `IndexWriterSetting.MAX_THREAD_STATES` and `IndexWriterSetting.TERM_INDEX_INTERVAL` enum constants are deprecated.
      They affect which properties are read from the configuration, so the fact they they are missing means that configuration properties such as `hibernate.search.Animals.2.indexwriter.term_index_interval = default` are now ignored.
@@ -567,7 +567,7 @@
   - hibernate
   links:
   - title: Miscelanous Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_miscellaneous_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_miscellaneous_hibernate_search_changes
   message: The enum value `SpatialMode.GRID` for `@Spatial` annotation was renamed
     to `SpatialMode.HASH`.
   ruleID: hsearch-00111
@@ -596,7 +596,7 @@
   - hibernate
   links:
   - title: Miscelanous Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_miscellaneous_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_miscellaneous_hibernate_search_changes
   - title: FullTextIndexEventListener now final
     url: http://hibernate.org/search/documentation/migrate/5.0/#fulltextindexeventlistener-now-final
   message: The class `FullTextIndexEventListener` is now a final class. If you currently
@@ -625,7 +625,7 @@
   - hibernate
   links:
   - title: Miscelanous Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_miscellaneous_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_miscellaneous_hibernate_search_changes
   - title: JMS Controller API changed
     url: http://hibernate.org/search/documentation/migrate/5.0/#jms-controller-api-changed
   message: |-
@@ -654,7 +654,7 @@
   - hibernate
   links:
   - title: Miscelanous Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_miscellaneous_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_miscellaneous_hibernate_search_changes
   - title: Hibernate Search javadoc for ServiceManager
     url: http://docs.jboss.org/hibernate/search/5.0/api/org/hibernate/search/engine/service/spi/ServiceManager.html
   - title: Hibernate Search javadoc for Service
@@ -688,7 +688,7 @@
   - hibernate
   links:
   - title: Miscelanous Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_miscellaneous_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_miscellaneous_hibernate_search_changes
   - title: Hibernate Search javadoc for IndexedEmbedded
     url: https://docs.jboss.org/hibernate/search/5.5/api/index.html?org/hibernate/search/annotations/IndexedEmbedded.html
   message: |-
@@ -722,7 +722,7 @@
   - hibernate
   links:
   - title: Number and Date Index Formatting Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_number_and_date_index_formatting_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_number_and_date_index_formatting_changes
   - title: Number and date index format
     url: http://hibernate.org/search/documentation/migrate/5.0/#number-and-date-index-format
   - title: Javadoc API for org.hibernate.search.bridge.builtin package
@@ -800,7 +800,7 @@
   - hibernate
   links:
   - title: Miscellaneous Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_miscellaneous_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_miscellaneous_hibernate_search_changes
   - title: Null value tokens for numeric fields
     url: http://hibernate.org/search/documentation/migrate/5.5/#null-value-tokens-for-numeric-fields
   message: |-
@@ -833,7 +833,7 @@
   - hibernate
   links:
   - title: Miscellaneous Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_miscellaneous_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_miscellaneous_hibernate_search_changes
   - title: Lucene native faceting
     url: https://in.relation.to/2015/05/11/hibernate-search-530-beta-1-with-native-lucene-faceting/
   - title: Query faceting
@@ -870,7 +870,7 @@
   - hibernate
   links:
   - title: Miscellaneous Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_miscellaneous_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_miscellaneous_hibernate_search_changes
   - title: Numeric and Date index format
     url: http://hibernate.org/search/documentation/migrate/5.5/#number-and-date-index-format
   message: |-
@@ -928,7 +928,7 @@
   - maven
   links:
   - title: Miscelanous Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_miscellaneous_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_miscellaneous_hibernate_search_changes
   message: |-
     The hibernate-search-analyzers module was removed. The recommended approach is to directly use the appropriate Lucene artifact,
      for example org.apache.lucene:lucene-analyzers-common.
@@ -959,7 +959,7 @@
   - title: Hibernate Search 5.4 to 5.5 migration
     url: http://hibernate.org/search/documentation/migrate/5.5/#sorting-options
   - title: Miscellaneous Hibernate Search Changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_miscellaneous_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_miscellaneous_hibernate_search_changes
   message: |-
     The Lucene SortField API requires the following application code change. In the previous release of JBoss EAP, you set the type of the sort field in the query as follows.
 
@@ -996,7 +996,7 @@
   - title: Hibernate Search 5.4 to 5.5 migration
     url: http://hibernate.org/search/documentation/migrate/5.5/#api-changes
   - title: Hibernate Search Deprecated Methods
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_deprecated_methods
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_deprecated_methods
   message: Method `ContainedInMapping#numericField()` has been deprecated and is scheduled
     for removal. Invoke `ContainedInMapping#field().numericField()` instead.
   ruleID: hsearch-00211
@@ -1023,7 +1023,7 @@
   - title: Hibernate Search 5.4 to 5.5 migration
     url: http://hibernate.org/search/documentation/migrate/5.5/#api-changes
   - title: Hibernate Search Deprecated Methods
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_deprecated_methods
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_deprecated_methods
   message: Don't use `FullTextSharedSessionBuilder#autoclose()` and `FullTextSharedSessionBuilder#autoclose(boolean)`
     method. There is no replacement.
   ruleID: hsearch-00213
@@ -1050,7 +1050,7 @@
   - title: Hibernate Search 5.4 to 5.5 migration
     url: http://hibernate.org/search/documentation/migrate/5.5/#api-changes
   - title: Hibernate Search Deprecated Methods
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_deprecated_methods
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_deprecated_methods
   message: This will be removed with no replacement.
   ruleID: hsearch-00214
   when:
@@ -1076,7 +1076,7 @@
   - title: Hibernate Search 5.4 to 5.5 migration
     url: http://hibernate.org/search/documentation/migrate/5.5/#api-changes
   - title: Hibernate Search Deprecated Methods
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_deprecated_methods
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_deprecated_methods
   message: This will be removed with no replacement.
   ruleID: hsearch-00215
   when:
@@ -1102,7 +1102,7 @@
   - title: Hibernate Search 5.4 to 5.5 migration
     url: http://hibernate.org/search/documentation/migrate/5.5/#api-changes
   - title: Advanced Integrator Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_advanced_integrator_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_advanced_integrator_changes
   message: should be at most SearchIntegrator, preferably removed altogether
   ruleID: hsearch-00216
   when:
@@ -1128,7 +1128,7 @@
   - title: Hibernate Search 5.4 to 5.5 migration
     url: http://hibernate.org/search/documentation/migrate/5.5/#api-changes
   - title: Advanced Integrator Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_advanced_integrator_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_advanced_integrator_changes
   message: The `DocumentBuilderIndexedEntity#getFieldCacheOption()` method has been
     deprecated. There is no replacement.
   ruleID: hsearch-00217
@@ -1153,7 +1153,7 @@
   - hibernate
   links:
   - title: Advanced Integrator Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_advanced_integrator_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_advanced_integrator_changes
   message: The `BuildContext#getIndexingStrategy()` method is deprecated. Use `BuildContext#getIndexingMode()`
     instead.
   ruleID: hsearch-00218
@@ -1178,7 +1178,7 @@
   - hibernate
   links:
   - title: Advanced Integrator Changes in Hibernate Search 5.x
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_advanced_integrator_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_advanced_integrator_changes
   message: The `DirectoryHelper#getVerifiedIndexDir(String, Properties, boolean)`
     method is deprecated. Use `DirectoryHelper#getVerifiedIndexPath(java.lang.String,
     java.util.Properties, boolean)` instead.
@@ -1206,7 +1206,7 @@
   - title: Hibernate Search 5.4 to 5.5 migration
     url: http://hibernate.org/search/documentation/migrate/5.5/#api-changes
   - title: Miscellaneous Hibernate Search Changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_miscellaneous_hibernate_search_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_miscellaneous_hibernate_search_changes
   message: Method `org.hibernate.search.cfg.EntityDescriptor.setCacheInMemory` is
     deprecated and there is no replacement.
   ruleID: hsearch-00220
@@ -1233,7 +1233,7 @@
   - title: Hibernate Search 5.4 to 5.5 migration
     url: http://hibernate.org/search/documentation/migrate/5.5/#api-changes
   - title: Hibernate Search Deprecated Methods
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_deprecated_methods
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_deprecated_methods
   message: Method `org.hibernate.search.MassIndexer.threadsForSubsequentFetching(int)`
     is deprecated and will be removed.
   ruleID: hsearch-00221
@@ -1260,7 +1260,7 @@
   - title: Hibernate Search 5.4 to 5.5 migration
     url: http://hibernate.org/search/documentation/migrate/5.5/#api-changes
   - title: Hibernate Search Deprecated Methods
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_deprecated_methods
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_deprecated_methods
   message: Use `FuzzyContext.withEditDistanceUpTo(int)` instead.
   ruleID: hsearch-00222
   when:
@@ -1292,7 +1292,7 @@
   - title: Renamed classes within Apache Lucene
     url: http://hibernate.org/search/documentation/migrate/5.0/#within-apache-lucene
   - title: Changes Impacting Advanced Integrators
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_advanced_integrator_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_advanced_integrator_changes
   message: Lucene's core `org.apache.lucene.queryParser.{{type}}` have been consolidated
     into lucene/queryparser, that results in changing package name so it is now named
     as `org.apache.lucene.queryparser.classic.{{type}}`.
@@ -1322,7 +1322,7 @@
   - title: Renamed classes within Apache Lucene
     url: http://hibernate.org/search/documentation/migrate/5.0/#within-apache-lucene
   - title: Changes Impacting Advanced Integrators
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_advanced_integrator_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_advanced_integrator_changes
   message: Lucene's core `org.apache.lucene.queryParser.QueryParserToken` have been
     consolidated into lucene/queryparser, that results in changing package name so
     it is now named as `org.apache.lucene.queryparser.classic.Token`.
@@ -1352,7 +1352,7 @@
   - title: Renamed classes within Apache Lucene
     url: http://hibernate.org/search/documentation/migrate/5.0/#within-apache-lucene
   - title: Changes Impacting Advanced Integrators
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_advanced_integrator_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_advanced_integrator_changes
   message: Lucene's core `org.apache.lucene.queryParser.QueryParserTokenMgrError`
     have been consolidated into lucene/queryparser, that results in changing package
     name so it is now named as `org.apache.lucene.queryparser.classic.TokenMgrError`.
@@ -1385,7 +1385,7 @@
   - title: Renamed classes within Apache Lucene
     url: http://hibernate.org/search/documentation/migrate/5.0/#within-apache-lucene
   - title: Lucene - Renamed and Repackaged Classes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_lucene_renamed_and_repackaged_classes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_lucene_renamed_and_repackaged_classes
   message: |-
     Lucene's core and contrib analyzers, along with Solr's analyzers, were consolidated into lucene/analysis module.
      During the refactoring package name have changed for `org.apache.lucene.analysis.{{type}}` to `org.apache.lucene.analysis.core.{{type}}`.
@@ -1415,7 +1415,7 @@
   - title: Renamed classes within Apache Lucene
     url: http://hibernate.org/search/documentation/migrate/5.0/#within-apache-lucene
   - title: Lucene - Renamed and Repackaged Classes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_lucene_renamed_and_repackaged_classes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_lucene_renamed_and_repackaged_classes
   message: |-
     Lucene's core and contrib analyzers, along with Solr's analyzers, were consolidated into lucene/analysis module.
      During the refactoring package name have changed for `org.apache.lucene.analysis.PorterStemFilter` to `org.apache.lucene.analysis.en.PorterStemFilter`.
@@ -1448,7 +1448,7 @@
   - title: Renamed classes within Apache Lucene
     url: http://hibernate.org/search/documentation/migrate/5.0/#within-apache-lucene
   - title: Lucene - Renamed and Repackaged Classes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_lucene_renamed_and_repackaged_classes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_lucene_renamed_and_repackaged_classes
   message: |-
     Lucene's core and contrib analyzers, along with Solr's analyzers, were consolidated into lucene/analysis module.
      During the refactoring package name have changed for `org.apache.lucene.analysis.{{type}}` to `org.apache.lucene.analysis.miscellaneous.{{type}}`.
@@ -1478,7 +1478,7 @@
   - title: Renamed classes within Apache Lucene
     url: http://hibernate.org/search/documentation/migrate/5.0/#within-apache-lucene
   - title: Lucene - Renamed and Repackaged Classes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_lucene_renamed_and_repackaged_classes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_lucene_renamed_and_repackaged_classes
   message: |-
     Lucene's core and contrib analyzers, along with Solr's analyzers, were consolidated into lucene/analysis module.
      During the refactoring package name have changed for `org.apache.lucene.analysis.TeeSinkTokenFilter` to `org.apache.lucene.analysis.sinks.TeeSinkTokenFilter`.
@@ -1511,7 +1511,7 @@
   - title: Renamed classes within Apache Lucene
     url: http://hibernate.org/search/documentation/migrate/5.0/#within-apache-lucene
   - title: Lucene - Renamed and Repackaged Classes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_lucene_renamed_and_repackaged_classes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_lucene_renamed_and_repackaged_classes
   message: |-
     Lucene's core and contrib analyzers, along with Solr's analyzers, were consolidated into lucene/analysis module.
      During the refactoring package name have changed for `org.apache.lucene.analysis.{{type}}` to `org.apache.lucene.analysis.charfilter.{{type}}`.
@@ -1544,7 +1544,7 @@
   - title: Renamed classes within Apache Lucene
     url: http://hibernate.org/search/documentation/migrate/5.0/#within-apache-lucene
   - title: Lucene - Renamed and Repackaged Classes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_lucene_renamed_and_repackaged_classes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_lucene_renamed_and_repackaged_classes
   message: |-
     Lucene's core and contrib analyzers, along with Solr's analyzers, were consolidated into lucene/analysis module.
      During the refactoring package name have changed for `org.apache.lucene.analysis.{{type}}` to `org.apache.lucene.analysis.util.{{type}}`.
@@ -1574,7 +1574,7 @@
   - title: Renamed classes within Apache Lucene
     url: http://hibernate.org/search/documentation/migrate/5.0/#within-apache-lucene
   - title: Lucene - Renamed and Repackaged Classes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_lucene_renamed_and_repackaged_classes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_lucene_renamed_and_repackaged_classes
   message: |-
     Lucene's core and contrib analyzers, along with Solr's analyzers, were consolidated into lucene/analysis module.
      During the refactoring class name have changed for `org.apache.lucene.analysis.ReusableAnalyzerBase` to `org.apache.lucene.analysis.Analyzer`.
@@ -1604,7 +1604,7 @@
   - title: Renamed classes within Apache Lucene
     url: http://hibernate.org/search/documentation/migrate/5.0/#within-apache-lucene
   - title: Lucene - Renamed and Repackaged Classes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_lucene_renamed_and_repackaged_classes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_lucene_renamed_and_repackaged_classes
   message: |-
     Lucene's core and contrib analyzers, along with Solr's analyzers, were consolidated into lucene/analysis module.
      During the refactoring package name have changed for `org.apache.lucene.util.CharacterUtils` to `org.apache.lucene.analysis.util.CharacterUtils`.
@@ -1637,7 +1637,7 @@
   - title: Renamed classes within Apache Lucene
     url: http://hibernate.org/search/documentation/migrate/5.0/#within-apache-lucene
   - title: Lucene - Renamed and Repackaged Classes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_lucene_renamed_and_repackaged_classes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_lucene_renamed_and_repackaged_classes
   message: |-
     Lucene's core and contrib analyzers, along with Solr's analyzers, were consolidated into lucene/analysis module.
      During the refactoring package name have changed for `org.apache.lucene.search.function.{{type}}` to `org.apache.lucene.queries.{{type}}`.
@@ -1667,7 +1667,7 @@
   - title: Renamed classes within Apache Lucene
     url: http://hibernate.org/search/documentation/migrate/5.0/#within-apache-lucene
   - title: Lucene - Renamed and Repackaged Classes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_lucene_renamed_and_repackaged_classes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_lucene_renamed_and_repackaged_classes
   message: |-
     Lucene's core and contrib analyzers, along with Solr's analyzers, were consolidated into lucene/analysis module.
      During the refactoring package name have changed for `org.apache.lucene.search.function.NumericIndexDocValueSource` to `org.apache.lucene.queries.function.valuesource.NumericIndexDocValueSource`.
@@ -1700,7 +1700,7 @@
   - title: Renamed classes within Apache Lucene
     url: http://hibernate.org/search/documentation/migrate/5.0/#within-apache-lucene
   - title: Lucene - Renamed and Repackaged Classes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_lucene_renamed_and_repackaged_classes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_lucene_renamed_and_repackaged_classes
   message: |-
     Lucene's core and contrib analyzers, along with Solr's analyzers, were consolidated into lucene/analysis module.
      During the refactoring package name have changed for `org.apache.lucene.search.function.{{type}}` to `org.apache.lucene.queries.function.{{type}}`.
@@ -1733,7 +1733,7 @@
   - title: Renamed classes within Apache Lucene
     url: http://hibernate.org/search/documentation/migrate/5.0/#within-apache-lucene
   - title: Lucene - Renamed and Repackaged Classes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_lucene_renamed_and_repackaged_classes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_lucene_renamed_and_repackaged_classes
   message: |-
     Lucene's core and contrib analyzers, along with Solr's analyzers, were consolidated into lucene/analysis module.
      During the refactoring package name have changed for `org.apache.lucene.search.function.{{type}}` to `org.apache.lucene.queries.function.valuesources.{{type}}`.
@@ -1766,7 +1766,7 @@
   - title: Renamed classes within Apache Lucene
     url: http://hibernate.org/search/documentation/migrate/5.0/#within-apache-lucene
   - title: Changes Impacting Advanced Integrators
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_advanced_integrator_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_advanced_integrator_changes
   message: Solr utilities class `org.apache.solr.analysis.{{type}}` was moved into
     Apache Lucene so you can use `org.apache.lucene.analysis.util.{{type}}`.
   ruleID: hsearch-00239
@@ -1790,7 +1790,7 @@
   - hibernate
   links:
   - title: Hibernate Search Removed Methods
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate_hibernate_search_deprecated_methods
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate_hibernate_search_deprecated_methods
   message: Method `org.hibernate.search.MassIndexer#threadsForIndexWriter(int)` was
     removed in Hibernate Search 5.
   ruleID: hsearch-00240

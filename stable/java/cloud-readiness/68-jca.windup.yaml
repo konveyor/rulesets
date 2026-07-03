@@ -11,7 +11,7 @@
   - title: Resource adapter compatibility with JBoss EAP
     url: https://access.redhat.com/solutions/2476751
   - title: Red Hat JBoss EAP 7 documentation - Deploying a Generic JMS Resource Adapter
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/configuring_messaging/index#deploy_configure_generic_jms_resource_adapter
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/configuring_messaging/index#deploy_configure_generic_jms_resource_adapter
   message: |-
     The application contains an embedded resource adapter descriptor ('ra.xml'), which implements the Java Connector Architecture (JCA) for certain Enterprise Information Systems (EIS).
 

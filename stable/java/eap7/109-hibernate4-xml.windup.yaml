@@ -16,7 +16,7 @@
   - transaction
   links:
   - title: Hibernate 5 redesigned Transactions SPI
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migration_hibernate_orm_changes_transactions
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migration_hibernate_orm_changes_transactions
   - title: Hibernate javadoc for org.hibernate.cfg.AvailableSettings.TRANSACTION_COORDINATOR_STRATEGY
     url: https://docs.jboss.org/hibernate/orm/5.1/javadocs/index.html?org/hibernate/cfg/AvailableSettings.html#TRANSACTION_COORDINATOR_STRATEGY
   message: |-
@@ -51,7 +51,7 @@
   - configuration
   links:
   - title: Hibernate 5 Removed and deprecated classes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migration_hibernate_orm_changes_deprecations
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migration_hibernate_orm_changes_deprecations
   message: Use `org.hibernate.id.enhanced.SequenceStyleGenerator` instead.
   ruleID: hibernate4-xml-00002
   when:
@@ -75,7 +75,7 @@
   - configuration
   links:
   - title: Hibernate 5 Removed and deprecated classes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migration_hibernate_orm_changes_deprecations
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migration_hibernate_orm_changes_deprecations
   message: Identifier generator {{generator}} was removed/deprecated in Hibernate
     5. You can use `sequence` generator instead.
   ruleID: hibernate4-xml-00003
