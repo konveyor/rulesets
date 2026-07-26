@@ -1,5 +1,5 @@
 - ruleID: patternfly-v5-to-patternfly-v6-css-classes-00000
-  description: pf-v5- should be replaced with pf-v6-
+  description: CSS class prefix pf-v5-c- should be replaced with pf-v6-c-
   effort: 3
   category: potential
   labels:
@@ -7,30 +7,95 @@
   - konveyor.io/target=patternfly-v6
   when:
     builtin.filecontent:
-      pattern: pf-v5-
+      pattern: \.pf-v5-c-|className=["'][^"']*pf-v5-c-|class=["'][^"']*pf-v5-c-
       filePattern: \.(css|scss|(j|t)sx?)$
-  message: 'CSS class prefixes have been updated from pf-v5- to pf-v6-
+  message: |
+    CSS class prefixes have been updated from `pf-v5-c-` to `pf-v6-c-` for component classes.
 
+    **IMPORTANT:** This applies to CSS CLASSES only, not CSS VARIABLES.
 
-    Replace `pf-v5-` with `pf-v6-`.
+    - CSS Classes: `pf-v5-c-*` → `pf-v6-c-*` (correct)
+    - CSS Variables: `--pf-v5-global--*` → `--pf-t--*` (semantic tokens, NOT `--pf-v6-global--`)
 
+    Replace CSS class prefix `pf-v5-c-` with `pf-v6-c-`.
 
     Before:
 
-    ```
-
+    ```tsx
     className="pf-v5-c-button"
-
     ```
-
 
     After:
 
+    ```tsx
+    className="pf-v6-c-button"
     ```
 
-    className="pf-v6-c-button"
+    For CSS variables, see the color-tokens and spacing-tokens rules for correct mappings.
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade
+    title: patternfly-v6 Documentation
+  customVariables: []
+  migration_complexity: low
+- ruleID: patternfly-v5-to-patternfly-v6-css-classes-00010
+  description: CSS layout class prefix pf-v5-l- should be replaced with pf-v6-l-
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=patternfly-v5
+  - konveyor.io/target=patternfly-v6
+  when:
+    builtin.filecontent:
+      pattern: \.pf-v5-l-|className=["'][^"']*pf-v5-l-|class=["'][^"']*pf-v5-l-
+      filePattern: \.(css|scss|(j|t)sx?)$
+  message: |
+    CSS layout class prefixes have been updated from `pf-v5-l-` to `pf-v6-l-`.
 
-    ```'
+    Replace layout class prefix `pf-v5-l-` with `pf-v6-l-`.
+
+    Before:
+
+    ```tsx
+    className="pf-v5-l-flex"
+    ```
+
+    After:
+
+    ```tsx
+    className="pf-v6-l-flex"
+    ```
+  links:
+  - url: https://www.patternfly.org/get-started/upgrade
+    title: patternfly-v6 Documentation
+  customVariables: []
+  migration_complexity: low
+- ruleID: patternfly-v5-to-patternfly-v6-css-classes-00020
+  description: CSS utility class prefix pf-v5-u- should be replaced with pf-v6-u-
+  effort: 3
+  category: potential
+  labels:
+  - konveyor.io/source=patternfly-v5
+  - konveyor.io/target=patternfly-v6
+  when:
+    builtin.filecontent:
+      pattern: \.pf-v5-u-|className=["'][^"']*pf-v5-u-|class=["'][^"']*pf-v5-u-
+      filePattern: \.(css|scss|(j|t)sx?)$
+  message: |
+    CSS utility class prefixes have been updated from `pf-v5-u-` to `pf-v6-u-`.
+
+    Replace utility class prefix `pf-v5-u-` with `pf-v6-u-`.
+
+    Before:
+
+    ```tsx
+    className="pf-v5-u-p-md"
+    ```
+
+    After:
+
+    ```tsx
+    className="pf-v6-u-p-md"
+    ```
   links:
   - url: https://www.patternfly.org/get-started/upgrade
     title: patternfly-v6 Documentation
