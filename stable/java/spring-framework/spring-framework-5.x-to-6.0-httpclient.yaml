@@ -1,0 +1,4 @@
+# RestTemplate / HttpComponentsClientHttpRequestFactory now requires Apache HttpClient 5.
+# That case is covered by spring-framework-5.x-to-6.0-web-applications-00020 in
+# spring-framework-5.x-to-6.0-web-applications.yaml (see PR #174).
+[]
