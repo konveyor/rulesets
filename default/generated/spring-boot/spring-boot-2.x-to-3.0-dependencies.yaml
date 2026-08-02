@@ -1,0 +1,302 @@
+- ruleID: spring-boot-2.x-to-3.0-dependencies-00001
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      name: org.springframework.cloud.spring-cloud-bus
+      upperbound: 3.99.999
+  description: Spring Boot 3.0 must use at least spring-cloud-bus 4.0.x
+  message: "In order to use spring-cloud-bus along with Spring Boot 3, spring-cloud-bus must be upgraded at least to version 4.0.x"
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Spring Cloud - Supported versions and releases'
+      url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions#supported-releases
+
+- ruleID: spring-boot-2.x-to-3.0-dependencies-00002
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      nameregex: org.springframework.cloud.spring-cloud-circuitbreaker*
+      upperbound: 2.99.999
+  description: Spring Boot 3.0 must use at least spring-cloud-circuitbreaker 3.0.x
+  message: |
+    In order to use spring-cloud-circuitbreaker along with Spring Boot 3, spring-cloud-circuitbreaker must be upgraded at least to version 3.0.x
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Spring Cloud - Supported versions and releases'
+      url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions#supported-releases
+
+- ruleID: spring-boot-2.x-to-3.0-dependencies-00003
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      nameregex: org.springframework.cloud.spring-cloud-commons
+      upperbound: 3.99.999
+  description: Spring Boot 3.0 must use at least spring-cloud-commons 4.0.x
+  message: |
+    In order to use spring-cloud-commons along with Spring Boot 3, spring-cloud-commons must be upgraded at least to version 4.0.x
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Spring Cloud - Supported versions and releases'
+      url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions#supported-releases
+
+- ruleID: spring-boot-2.x-to-3.0-dependencies-00004
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      nameregex: org.springframework.cloud.spring-cloud-config*
+      upperbound: 4.0.9999
+  description: Spring Boot 3.0 must use at least spring-cloud-config 4.1.x
+  message: |
+    In order to use spring-cloud-config along with Spring Boot 3, spring-cloud-config must be upgraded at least to version 4.1.x
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Spring Cloud - Supported versions and releases'
+      url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions#supported-releases
+
+- ruleID: spring-boot-2.x-to-3.0-dependencies-00005
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      nameregex: org.springframework.cloud.spring-cloud-consul*
+      upperbound: 3.99.999
+  description: Spring Boot 3.0 must use at least spring-cloud-consul 4.0.x
+  message: |
+    In order to use spring-cloud-consul along with Spring Boot 3, spring-cloud-consul must be upgraded at least to version 4.0.x
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Spring Cloud - Supported versions and releases'
+      url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions#supported-releases
+
+- ruleID: spring-boot-2.x-to-3.0-dependencies-00006
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      nameregex: org.springframework.cloud.spring-cloud-contract
+      upperbound: 3.99.999
+  description: Spring Boot 3.0 must use at least spring-cloud-contract 4.0.x
+  message: |
+    In order to use spring-cloud-contract along with Spring Boot 3, spring-cloud-contract must be upgraded at least to version 4.0.x
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Spring Cloud - Supported versions and releases'
+      url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions#supported-releases
+
+- ruleID: spring-boot-2.x-to-3.0-dependencies-00007
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      name: org.springframework.cloud.spring-cloud-function-core
+      upperbound: 3.99.999
+  description: Spring Boot 3.0 must use at least spring-cloud-function 4.0.x
+  message: |
+    In order to use spring-cloud-function along with Spring Boot 3, spring-cloud-function must be upgraded at least to version 4.0.x
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Spring Cloud - Supported versions and releases'
+      url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions#supported-releases
+
+- ruleID: spring-boot-2.x-to-3.0-dependencies-00008
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      nameregex: org.springframework.cloud.spring-cloud-gateway.*
+      upperbound: 3.99.999
+  description: Spring Boot 3.0 must use at least spring-cloud-gateway 4.0.x
+  message: |
+    In order to use spring-cloud-gateway along with Spring Boot 3, spring-cloud-gateway must be upgraded at least to version 4.0.x
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Spring Cloud - Supported versions and releases'
+      url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions#supported-releases
+
+- ruleID: spring-boot-2.x-to-3.0-dependencies-00009
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      nameregex: org.springframework.cloud.spring-cloud-kubernetes
+      upperbound: 2.99.999
+  description: Spring Boot 3.0 must use at least spring-cloud-kubernetes 3.0.x
+  message: |
+    In order to use spring-cloud-kubernetes along with Spring Boot 3, spring-cloud-kubernetes must be upgraded at least to version 3.0.x
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Spring Cloud - Supported versions and releases'
+      url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions#supported-releases
+
+- ruleID: spring-boot-2.x-to-3.0-dependencies-00010
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      nameregex: org.springframework.cloud.spring-cloud-netflix.*
+      upperbound: 3.99.999
+  description: Spring Boot 3.0 must use at least spring-cloud-netflix 4.0.x
+  message: |
+    In order to use spring-cloud-netflix along with Spring Boot 3, spring-cloud-netflix must be upgraded at least to version 4.0.x
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Spring Cloud - Supported versions and releases'
+      url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions#supported-releases
+
+- ruleID: spring-boot-2.x-to-3.0-dependencies-00011
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      nameregex: org.springframework.cloud.spring-cloud-openfeign
+      upperbound: 3.99.999
+  description: Spring Boot 3.0 must use at least spring-cloud-openfeign 4.0.x
+  message: |
+    In order to use spring-cloud-openfeign along with Spring Boot 3, spring-cloud-openfeign must be upgraded at least to version 4.0.x
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Spring Cloud - Supported versions and releases'
+      url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions#supported-releases
+
+- ruleID: spring-boot-2.x-to-3.0-dependencies-00012
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      nameregex: org.springframework.cloud.spring-cloud-stream
+      upperbound: 3.99.999
+  description: Spring Boot 3.0 must use at least spring-cloud-stream 4.0.x
+  message: |
+    In order to use spring-cloud-stream along with Spring Boot 3, spring-cloud-stream must be upgraded at least to version 4.0.x
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Spring Cloud - Supported versions and releases'
+      url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions#supported-releases
+
+- ruleID: spring-boot-2.x-to-3.0-dependencies-00013
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      nameregex: org.springframework.cloud.spring-cloud-task
+      upperbound: 2.99.999
+  description: Spring Boot 3.0 must use at least spring-cloud-task 3.0.x
+  message: |
+    In order to use spring-cloud-task along with Spring Boot 3, spring-cloud-task must be upgraded at least to version 3.0.x
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Spring Cloud - Supported versions and releases'
+      url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions#supported-releases
+
+- ruleID: spring-boot-2.x-to-3.0-dependencies-00014
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      nameregex: org.springframework.cloud.spring-cloud-vault
+      upperbound: 3.99.999
+  description: Spring Boot 3.0 must use at least spring-cloud-vault 4.0.x
+  message: |
+    In order to use spring-cloud-vault along with Spring Boot 3, spring-cloud-vault must be upgraded at least to version 4.0.x
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Spring Cloud - Supported versions and releases'
+      url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions#supported-releases
+
+- ruleID: spring-boot-2.x-to-3.0-dependencies-00015
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      nameregex: org.springframework.cloud.spring-cloud-zookeeper
+      upperbound: 3.99.999
+  description: Spring Boot 3.0 must use at least spring-cloud-zookeeper 4.0.x
+  message: |
+    In order to use spring-cloud-zookeeper along with Spring Boot 3, spring-cloud-zookeeper must be upgraded at least to version 4.0.x
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Spring Cloud - Supported versions and releases'
+      url: https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions#supported-releases
+
+- ruleID: spring-boot-2.x-to-3.0-dependencies-00016
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot2
+    - konveyor.io/target=spring-boot3+
+  when:
+    java.dependency:
+      name: org.springframework.cloud.spring-cloud-dependencies
+      upperbound: 2021.9999.9999
+  description: Spring Boot 3.0 must use at least Spring Cloud 2022
+  message: |
+    In order to use Spring Cloud along with Spring Boot 3, Spring Cloud must be upgraded at least to version 2022
+  links:
+    - title: 'Spring Boot 3.0 migration guide'
+      url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#review-dependencies
+    - title: 'Spring Cloud - Adding Spring Cloud to an existing Spring Cloud application'
+      url: https://spring.io/projects/spring-cloud
