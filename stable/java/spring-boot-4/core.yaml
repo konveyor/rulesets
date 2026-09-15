@@ -1,5 +1,5 @@
 - ruleID: core-import-00010
-  description: Moved to org.springframework.boot.bootstrap package
+  description: BootstrapRegistry moved to org.springframework.boot.bootstrap package
   category: mandatory
   effort: 1
   labels:
@@ -54,7 +54,7 @@
         pattern: org.springframework.boot.BootstrapRegistry
         location: IMPORT
 - ruleID: core-import-00020
-  description: Moved from org.springframework.boot.env to org.springframework.boot
+  description: EnvironmentPostProcessor moved from org.springframework.boot.env to org.springframework.boot
   category: mandatory
   effort: 3
   labels:
@@ -72,7 +72,7 @@
         pattern: org.springframework.boot.env.EnvironmentPostProcessor
         location: IMPORT
 - ruleID: core-method-00010
-  description: Method removed; use always() instead
+  description: alwaysApplyingWhenNonNull() method removed; use always() instead
   category: mandatory
   effort: 3
   labels:

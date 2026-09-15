@@ -45,7 +45,7 @@
         pattern: com.fasterxml.jackson*
         location: PACKAGE
 - ruleID: json-import-00020
-  description: Renamed to ObjectValueSerializer
+  description: JsonObjectSerializer renamed to ObjectValueSerializer
   category: mandatory
   effort: 1
   labels:
@@ -90,7 +90,7 @@
         pattern: org.springframework.boot.jackson.JsonObjectSerializer
         location: IMPORT
 - ruleID: json-import-00030
-  description: Renamed to ObjectValueDeserializer
+  description: JsonValueDeserializer renamed to ObjectValueDeserializer
   category: mandatory
   effort: 1
   labels:
@@ -135,7 +135,7 @@
         pattern: org.springframework.boot.jackson.JsonValueDeserializer
         location: IMPORT
 - ruleID: json-import-00040
-  description: Renamed to JsonMapperBuilderCustomizer
+  description: Jackson2ObjectMapperBuilderCustomizer renamed to JsonMapperBuilderCustomizer
   category: mandatory
   effort: 1
   labels:
@@ -188,7 +188,7 @@
         pattern: org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer
         location: IMPORT
 - ruleID: json-annotation-00010
-  description: Renamed to @JacksonComponent
+  description: "@JsonComponent renamed to @JacksonComponent"
   category: mandatory
   effort: 1
   labels:
@@ -235,7 +235,7 @@
         pattern: org.springframework.boot.jackson.JsonComponent
         location: ANNOTATION
 - ruleID: json-annotation-00020
-  description: Renamed to @JacksonMixin
+  description: "@JsonMixin renamed to @JacksonMixin"
   category: mandatory
   effort: 1
   labels:

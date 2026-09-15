@@ -1,5 +1,5 @@
 - ruleID: data-change-00010
-  description: Replaced by Rest5ClientBuilderCustomizer
+  description: RestClientBuilderCustomizer replaced by Rest5ClientBuilderCustomizer
   category: mandatory
   effort: 3
   labels:
@@ -458,7 +458,7 @@
         name: org.springframework.data.spring-data-mongodb
         upperbound: 5.0.0
 - ruleID: data-dependency-00040
-  description: Replaced by hibernate-processor
+  description: hibernate-jpamodelgen replaced by hibernate-processor
   category: mandatory
   effort: 1
   labels:

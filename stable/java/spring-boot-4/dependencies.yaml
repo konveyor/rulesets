@@ -1,5 +1,5 @@
 - ruleID: dependencies-dependency-00010
-  description: Renamed to spring-boot-starter-security-oauth2-authorization-server
+  description: spring-boot-starter-oauth2-authorization-server renamed to spring-boot-starter-security-oauth2-authorization-server
   category: mandatory
   effort: 1
   labels:
@@ -31,7 +31,7 @@
         name: org.springframework.boot.spring-boot-starter-oauth2-authorization-server
         lowerbound: 0.0.0
 - ruleID: dependencies-dependency-00020
-  description: Renamed to spring-boot-starter-security-oauth2-client
+  description: spring-boot-starter-oauth2-client renamed to spring-boot-starter-security-oauth2-client
   category: mandatory
   effort: 1
   labels:
@@ -62,7 +62,7 @@
         name: org.springframework.boot.spring-boot-starter-oauth2-client
         lowerbound: 0.0.0
 - ruleID: dependencies-dependency-00030
-  description: Renamed to spring-boot-starter-security-oauth2-resource-server
+  description: spring-boot-starter-oauth2-resource-server renamed to spring-boot-starter-security-oauth2-resource-server
   category: mandatory
   effort: 1
   labels:
@@ -93,7 +93,7 @@
         name: org.springframework.boot.spring-boot-starter-oauth2-resource-server
         lowerbound: 0.0.0
 - ruleID: dependencies-dependency-00040
-  description: Renamed to spring-boot-starter-webmvc
+  description: spring-boot-starter-web renamed to spring-boot-starter-webmvc
   category: mandatory
   effort: 1
   labels:
@@ -125,7 +125,7 @@
         name: org.springframework.boot.spring-boot-starter-web
         lowerbound: 0.0.0
 - ruleID: dependencies-dependency-00050
-  description: Renamed to spring-boot-starter-webservices
+  description: spring-boot-starter-web-services renamed to spring-boot-starter-webservices
   category: mandatory
   effort: 1
   labels:
@@ -156,7 +156,7 @@
         name: org.springframework.boot.spring-boot-starter-web-services
         lowerbound: 0.0.0
 - ruleID: dependencies-dependency-00060
-  description: Renamed to spring-boot-starter-aspectj
+  description: spring-boot-starter-aop renamed to spring-boot-starter-aspectj
   category: mandatory
   effort: 1
   labels:
@@ -195,7 +195,7 @@
         name: org.springframework.boot.spring-boot-starter-aop
         lowerbound: 0.0.0
 - ruleID: dependencies-dependency-00070
-  description: Dependency management removed; explicit version required
+  description: spring-retry dependency management removed; explicit version required
   category: mandatory
   effort: 3
   labels:
@@ -245,7 +245,7 @@
         name: org.springframework.retry.spring-retry
         upperbound: 4.0.0
 - ruleID: dependencies-pattern-00010
-  description: Property removed; use spring-security.version instead
+  description: spring-authorization-server.version property removed; use spring-security.version instead
   category: mandatory
   effort: 1
   labels:

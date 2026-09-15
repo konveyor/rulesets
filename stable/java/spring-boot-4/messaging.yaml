@@ -52,7 +52,7 @@
         pattern: spring\.kafka\.retry\.topic\.backoff\.random
         filePattern: application.*\.(properties|ya?ml)
 - ruleID: messaging-change-00020
-  description: Replaced by dedicated retry customizers
+  description: RabbitRetryTemplateCustomizer replaced by dedicated retry customizers
   category: mandatory
   effort: 3
   labels:
