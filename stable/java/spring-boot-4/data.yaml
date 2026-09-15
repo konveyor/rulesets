@@ -1,0 +1,555 @@
+- ruleID: data-change-00010
+  description: Replaced by Rest5ClientBuilderCustomizer
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The low-level Elasticsearch `RestClient` has been deprecated. Auto-configuration now uses the new `Rest5Client`.
+
+    ### Before
+    ```java
+    import org.springframework.boot.autoconfigure.elasticsearch.RestClientBuilderCustomizer;
+    import org.elasticsearch.client.RestClientBuilder;
+
+    @Bean
+    public RestClientBuilderCustomizer customizer() {
+        return builder -> builder.setRequestConfigCallback(
+            requestConfigBuilder -> requestConfigBuilder.setConnectTimeout(5000)
+        );
+    }
+    ```
+
+    ### After
+    ```java
+    import org.springframework.boot.autoconfigure.elasticsearch.Rest5ClientBuilderCustomizer;
+    import co.elastic.clients.transport.rest_client.RestClientBuilder;
+
+    @Bean
+    public Rest5ClientBuilderCustomizer customizer() {
+        return builder -> builder.setRequestConfigCallback(
+            requestConfigBuilder -> requestConfigBuilder.setConnectTimeout(5000)
+        );
+    }
+    ```
+
+    ### Additional Info
+    - Update imports to use `Rest5ClientBuilderCustomizer` instead of `RestClientBuilderCustomizer`
+    - The new client is part of Elasticsearch's consolidated client library
+    - Higher-level `ElasticsearchClient` and `ReactiveElasticsearchClient` remain supported
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#elasticsearch-client)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#elasticsearch-client
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.boot.autoconfigure.elasticsearch.RestClientBuilderCustomizer
+        location: TYPE
+- ruleID: data-dependency-00010
+  description: Removed in favor of consolidated co.elastic.clients module
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The Elasticsearch client code has been consolidated in the `co.elastic.clients:elasticsearch-java` module.
+
+    ### Before
+    ```xml
+    <dependency>
+        <groupId>org.elasticsearch.client</groupId>
+        <artifactId>elasticsearch-rest-client</artifactId>
+    </dependency>
+    ```
+
+    ### After
+    ```xml
+    <dependency>
+        <groupId>co.elastic.clients</groupId>
+        <artifactId>elasticsearch-java</artifactId>
+    </dependency>
+    ```
+
+    ### Additional Info
+    - `org.elasticsearch.client:elasticsearch-rest-client` is no longer required
+    - `org.elasticsearch.client:elasticsearch-rest-client-sniffer` is also no longer required
+    - The new consolidated module includes built-in sniffer support
+    - Spring Boot's dependency management has been updated accordingly
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#elasticsearch-client)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#elasticsearch-client
+      title: Migration Documentation
+  when:
+    java.dependency:
+        name: org.elasticsearch.client.elasticsearch-rest-client
+        lowerbound: 0.0.0
+- ruleID: data-dependency-00020
+  description: Removed in favor of consolidated co.elastic.clients module
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The Elasticsearch sniffer has been consolidated into the `co.elastic.clients:elasticsearch-java` module.
+
+    ### Before
+    ```xml
+    <dependency>
+        <groupId>org.elasticsearch.client</groupId>
+        <artifactId>elasticsearch-rest-client-sniffer</artifactId>
+    </dependency>
+    ```
+
+    ### After
+    ```xml
+    <dependency>
+        <groupId>co.elastic.clients</groupId>
+        <artifactId>elasticsearch-java</artifactId>
+    </dependency>
+    ```
+
+    ### Additional Info
+    - The new `elasticsearch-java` module includes built-in sniffer support
+    - No separate sniffer dependency is required
+    - Spring Boot's dependency management has been updated
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#elasticsearch-client)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#elasticsearch-client
+      title: Migration Documentation
+  when:
+    java.dependency:
+        name: org.elasticsearch.client.elasticsearch-rest-client-sniffer
+        lowerbound: 0.0.0
+- ruleID: data-annotation-00010
+  description: Moved to org.springframework.boot.persistence.autoconfigure
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `@EntityScan` annotation has been moved to a new persistence module.
+
+    ### Before
+    ```java
+    import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+    @EntityScan(basePackages = "com.example.entities")
+    public class MyConfiguration {
+    }
+    ```
+
+    ### After
+    ```java
+    import org.springframework.boot.persistence.autoconfigure.EntityScan;
+
+    @EntityScan(basePackages = "com.example.entities")
+    public class MyConfiguration {
+    }
+    ```
+
+    ### Additional Info
+    - Update imports from `org.springframework.boot.autoconfigure.domain` to `org.springframework.boot.persistence.autoconfigure`
+    - This is part of the new `spring-boot-persistence` module organization
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#persistence-modules)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#persistence-modules
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.boot.autoconfigure.domain.EntityScan
+        location: ANNOTATION
+- ruleID: data-pattern-00010
+  description: Property renamed to spring.persistence.exceptiontranslation.enabled
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The exception translation property has been renamed to align with the new persistence module.
+
+    ### Migration Steps
+    - Rename `spring.dao.exceptiontranslation.enabled` to `spring.persistence.exceptiontranslation.enabled`
+
+    ### Additional Info
+    - This change is part of the new `spring-boot-persistence` module organization
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#persistence-modules)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#persistence-modules
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: spring\.dao\.exceptiontranslation\.enabled
+        filePattern: application.*\.(properties|ya?ml)
+- ruleID: data-pattern-00020
+  description: Property renamed to spring.mongodb.host
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    MongoDB configuration properties have been reorganized to reflect whether Spring Data MongoDB is required.
+
+    ### Migration Steps
+    - Rename `spring.data.mongodb.host` to `spring.mongodb.host`
+
+    ### Additional Info
+    - Properties that don't require Spring Data MongoDB now use `spring.mongodb.*` prefix
+    - Properties that require Spring Data MongoDB continue to use `spring.data.mongodb.*` prefix
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: spring\.data\.mongodb\.host
+        filePattern: application.*\.(properties|ya?ml)
+- ruleID: data-pattern-00030
+  description: Property renamed to spring.mongodb.port
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    MongoDB configuration properties have been reorganized.
+
+    ### Migration Steps
+    - Rename `spring.data.mongodb.port` to `spring.mongodb.port`
+
+    ### Additional Info
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: spring\.data\.mongodb\.port
+        filePattern: application.*\.(properties|ya?ml)
+- ruleID: data-pattern-00040
+  description: Property renamed to spring.mongodb.database
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    MongoDB configuration properties have been reorganized.
+
+    ### Migration Steps
+    - Rename `spring.data.mongodb.database` to `spring.mongodb.database`
+
+    ### Additional Info
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: spring\.data\.mongodb\.database
+        filePattern: application.*\.(properties|ya?ml)
+- ruleID: data-pattern-00050
+  description: Property renamed to spring.mongodb.uri
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    MongoDB configuration properties have been reorganized.
+
+    ### Migration Steps
+    - Rename `spring.data.mongodb.uri` to `spring.mongodb.uri`
+
+    ### Additional Info
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: spring\.data\.mongodb\.uri
+        filePattern: application.*\.(properties|ya?ml)
+- ruleID: data-pattern-00060
+  description: Property renamed to spring.mongodb.username
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    MongoDB configuration properties have been reorganized.
+
+    ### Migration Steps
+    - Rename `spring.data.mongodb.username` to `spring.mongodb.username`
+
+    ### Additional Info
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: spring\.data\.mongodb\.username
+        filePattern: application.*\.(properties|ya?ml)
+- ruleID: data-pattern-00070
+  description: Property renamed to spring.mongodb.password
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    MongoDB configuration properties have been reorganized.
+
+    ### Migration Steps
+    - Rename `spring.data.mongodb.password` to `spring.mongodb.password`
+
+    ### Additional Info
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: spring\.data\.mongodb\.password
+        filePattern: application.*\.(properties|ya?ml)
+- ruleID: data-pattern-00080
+  description: Property renamed to spring.mongodb.authentication-database
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    MongoDB configuration properties have been reorganized.
+
+    ### Migration Steps
+    - Rename `spring.data.mongodb.authentication-database` to `spring.mongodb.authentication-database`
+
+    ### Additional Info
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: spring\.data\.mongodb\.authentication-database
+        filePattern: application.*\.(properties|ya?ml)
+- ruleID: data-pattern-00090
+  description: Property renamed to spring.mongodb.replica-set-name
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    MongoDB configuration properties have been reorganized.
+
+    ### Migration Steps
+    - Rename `spring.data.mongodb.replica-set-name` to `spring.mongodb.replica-set-name`
+
+    ### Additional Info
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: spring\.data\.mongodb\.replica-set-name
+        filePattern: application.*\.(properties|ya?ml)
+- ruleID: data-pattern-00100
+  description: Property renamed to spring.mongodb.ssl.enabled
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    MongoDB configuration properties have been reorganized.
+
+    ### Migration Steps
+    - Rename `spring.data.mongodb.ssl.enabled` to `spring.mongodb.ssl.enabled`
+
+    ### Additional Info
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: spring\.data\.mongodb\.ssl\.enabled
+        filePattern: application.*\.(properties|ya?ml)
+- ruleID: data-dependency-00030
+  description: No longer provides defaults for UUID and BigDecimal representations
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Spring Data MongoDB no longer provides defaults for `UUID` and `BigInteger`/`BigDecimal` representations.
+
+    ### Migration Steps
+    - Explicitly configure UUID representation using `spring.mongodb.representation.uuid` property
+    - Explicitly configure BigDecimal representation using `spring.data.mongodb.representation.big-decimal` property
+    - Choose appropriate representations for your use case
+
+    ### Additional Info
+    - This aligns with the MongoDB driver recommendation to not favor a particular representation
+    - Avoids representation changes caused by upgrades to newer Spring Data versions
+    - Explicit configuration ensures consistent behavior across versions
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb-uuid-and-bigdecimal-representations)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb-uuid-and-bigdecimal-representations
+      title: Migration Documentation
+  when:
+    java.dependency:
+        name: org.springframework.data.spring-data-mongodb
+        upperbound: 5.0.0
+- ruleID: data-dependency-00040
+  description: Replaced by hibernate-processor
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Hibernate dependency management has been updated to account for module relocations.
+
+    ### Before
+    ```xml
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-jpamodelgen</artifactId>
+    </dependency>
+    ```
+
+    ### After
+    ```xml
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-processor</artifactId>
+    </dependency>
+    ```
+
+    ### Additional Info
+    - `hibernate-jpamodelgen` has been replaced by `hibernate-processor`
+    - Update your dependencies to use the new artifact name
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#hibernate-dependency-management)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#hibernate-dependency-management
+      title: Migration Documentation
+  when:
+    java.dependency:
+        name: org.hibernate.hibernate-jpamodelgen
+        lowerbound: 0.0.0
+- ruleID: data-dependency-00050
+  description: No longer published by Hibernate
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    `hibernate-proxool` is no longer published by Hibernate.
+
+    ### Migration Steps
+    - Remove the dependency on `org.hibernate:hibernate-proxool`
+    - Migrate to a supported connection pool (HikariCP is recommended)
+
+    ### Additional Info
+    - Proxool connection pool support has been removed from Hibernate
+    - Spring Boot recommends using HikariCP as the connection pool
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#hibernate-dependency-management)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#hibernate-dependency-management
+      title: Migration Documentation
+  when:
+    java.dependency:
+        name: org.hibernate.hibernate-proxool
+        lowerbound: 0.0.0
+- ruleID: data-dependency-00060
+  description: No longer published by Hibernate
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    `hibernate-vibur` is no longer published by Hibernate.
+
+    ### Migration Steps
+    - Remove the dependency on `org.hibernate:hibernate-vibur`
+    - Migrate to a supported connection pool (HikariCP is recommended)
+
+    ### Additional Info
+    - Vibur connection pool support has been removed from Hibernate
+    - Spring Boot recommends using HikariCP as the connection pool
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#hibernate-dependency-management)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#hibernate-dependency-management
+      title: Migration Documentation
+  when:
+    java.dependency:
+        name: org.hibernate.hibernate-vibur
+        lowerbound: 0.0.0

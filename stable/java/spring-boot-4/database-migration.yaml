@@ -1,0 +1,82 @@
+- ruleID: database-migration-dependency-00010
+  description: Flyway now requires spring-boot-starter-flyway in Spring Boot 4
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Spring Boot 4 has a new modular design. Technologies like Flyway that previously only required the third-party dependency now need a Spring Boot starter for proper integration.
+
+    ### Migration Steps
+
+    1. Replace the direct `org.flywaydb:flyway-core` dependency with `spring-boot-starter-flyway` in your `pom.xml`:
+       ```xml
+       <dependency>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-flyway</artifactId>
+       </dependency>
+       ```
+
+    2. Or if using Gradle:
+       ```groovy
+       implementation 'org.springframework.boot:spring-boot-starter-flyway'
+       ```
+
+    ### Additional Info
+
+    - The starter brings `flyway-core` transitively, so you don't need both dependencies
+    - The starter also provides proper auto-configuration for Flyway in Spring Boot 4's modular architecture
+    - Your existing Flyway migration scripts and configuration should work without changes
+    - If you had a direct dependency only, you may have been relying on implicit auto-configuration that is now explicit through the starter
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#main-code
+      title: Migration Documentation
+  when:
+    java.dependency:
+        name: org.flywaydb.flyway-core
+        lowerbound: 0.0.0
+- ruleID: database-migration-dependency-00020
+  description: Liquibase now requires spring-boot-starter-liquibase in Spring Boot 4
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Spring Boot 4 has a new modular design. Technologies like Liquibase that previously only required the third-party dependency now need a Spring Boot starter for proper integration.
+
+    ### Migration Steps
+
+    1. Replace the direct `org.liquibase:liquibase-core` dependency with `spring-boot-starter-liquibase` in your `pom.xml`:
+       ```xml
+       <dependency>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-liquibase</artifactId>
+       </dependency>
+       ```
+
+    2. Or if using Gradle:
+       ```groovy
+       implementation 'org.springframework.boot:spring-boot-starter-liquibase'
+       ```
+
+    ### Additional Info
+
+    - The starter brings `liquibase-core` transitively, so you don't need both dependencies
+    - The starter also provides proper auto-configuration for Liquibase in Spring Boot 4's modular architecture
+    - Your existing Liquibase changelogs and configuration should work without changes
+    - If you had a direct dependency only, you may have been relying on implicit auto-configuration that is now explicit through the starter
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#main-code
+      title: Migration Documentation
+  when:
+    java.dependency:
+        name: org.liquibase.liquibase-core
+        lowerbound: 0.0.0

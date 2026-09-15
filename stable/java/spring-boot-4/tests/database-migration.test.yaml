@@ -1,0 +1,17 @@
+rulesPath: ../database-migration.yaml
+providers:
+- name: java
+  dataPath: ./data/database-migration
+- name: builtin
+  dataPath: ./data/database-migration
+tests:
+- ruleID: database-migration-dependency-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: database-migration-dependency-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

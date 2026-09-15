@@ -1,0 +1,235 @@
+- ruleID: core-import-00010
+  description: No longer supported in Spring Framework 7.0
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: "Annotations in the `javax.annotation` package are no longer supported in Spring Framework 7.0.\n\n### Before\n\n```java\nimport javax.annotation.Resource;\nimport javax.annotation.PostConstruct;\nimport javax.annotation.PreDestroy;\n\npublic class MyBean {\n    @Resource\n    private DataSource dataSource;\n    \n    @PostConstruct\n    public void init() { }\n    \n    @PreDestroy\n    public void cleanup() { }\n}\n```\n\n### After\n\n```java\nimport jakarta.annotation.Resource;\nimport jakarta.annotation.PostConstruct;\nimport jakarta.annotation.PreDestroy;\n\npublic class MyBean {\n    @Resource\n    private DataSource dataSource;\n    \n    @PostConstruct\n    public void init() { }\n    \n    @PreDestroy\n    public void cleanup() { }\n}\n```\n\n### Additional Info\n\n- Replace all imports from `javax.annotation` with `jakarta.annotation`\n- This includes `@Resource`, `@PostConstruct`, `@PreDestroy`, `@Generated`, etc.\n- The Jakarta EE 11 baseline requires this migration\n- Annotation semantics remain the same, only the package changes"
+  links:
+    - url: https://github.com/spring-projects/spring-framework/blob/main/framework-docs/modules/ROOT/pages/core/beans/annotation-config/postconstruct-and-predestroy-annotations.adoc
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: javax.annotation*
+        location: PACKAGE
+- ruleID: core-import-00020
+  description: No longer supported in Spring Framework 7.0
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: "Annotations in the `javax.inject` package are no longer supported in Spring Framework 7.0.\n\n### Before\n\n```java\nimport javax.inject.Inject;\nimport javax.inject.Named;\nimport javax.inject.Provider;\n\npublic class MyService {\n    @Inject\n    private MyRepository repository;\n    \n    @Inject\n    @Named(\"specialBean\")\n    private MyBean bean;\n}\n```\n\n### After\n\n```java\nimport jakarta.inject.Inject;\nimport jakarta.inject.Named;\nimport jakarta.inject.Provider;\n\npublic class MyService {\n    @Inject\n    private MyRepository repository;\n    \n    @Inject\n    @Named(\"specialBean\")\n    private MyBean bean;\n}\n```\n\n### Additional Info\n\n- Replace all imports from `javax.inject` with `jakarta.inject`\n- This includes `@Inject`, `@Named`, `@Qualifier`, `@Scope`, `@Singleton`, `Provider`, etc.\n- The Jakarta EE 11 baseline requires this migration\n- Annotation semantics remain the same, only the package changes"
+  links:
+    - url: https://jakarta.ee/specifications/dependency-injection/
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: javax.inject*
+        location: PACKAGE
+- ruleID: core-import-00030
+  description: Removed in favor of CompletableFuture
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: "`ListenableFuture` has been removed in Spring Framework 7.0 in favor of the standard `CompletableFuture`.\n\n### Before\n\n```java\nimport org.springframework.util.concurrent.ListenableFuture;\nimport org.springframework.util.concurrent.ListenableFutureCallback;\n\npublic class MyService {\n    public ListenableFuture<String> processAsync() {\n        // ...\n    }\n    \n    public void handleResult(ListenableFuture<String> future) {\n        future.addCallback(new ListenableFutureCallback<String>() {\n            @Override\n            public void onSuccess(String result) { }\n            \n            @Override\n            public void onFailure(Throwable ex) { }\n        });\n    }\n}\n```\n\n### After\n\n```java\nimport java.util.concurrent.CompletableFuture;\n\npublic class MyService {\n    public CompletableFuture<String> processAsync() {\n        // ...\n    }\n    \n    public void handleResult(CompletableFuture<String> future) {\n        future.whenComplete((result, ex) -> {\n            if (ex != null) {\n                // handle failure\n            } else {\n                // handle success\n            }\n        });\n    }\n}\n```\n\n### Additional Info\n\n- Replace all `ListenableFuture` usages with `CompletableFuture`\n- `CompletableFuture` is a standard Java class available since Java 8\n- Replace `ListenableFutureCallback` with `CompletableFuture.whenComplete()` or similar methods\n- See [#33809](https://github.com/spring-projects/spring-framework/issues/33809) for more details"
+  links:
+    - url: https://github.com/spring-projects/spring-framework/issues/33809
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.util.concurrent.ListenableFuture
+        location: IMPORT
+- ruleID: core-import-00040
+  description: Default 10,000 operation limit added in Spring Framework 7.0.8
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Since Spring Framework 7.0.8, the number of operations performed during SpEL expression evaluation cannot exceed 10,000 by default.
+
+    ### Migration Steps
+
+    If your application uses complex SpEL expressions that exceed this limit:
+
+    1. **Recommended:** Keep the default limit or reduce it to suit your use case
+
+    2. **If necessary:** Configure a custom limit programmatically:
+
+    ```java
+    SpelParserConfiguration config = new SpelParserConfiguration(SpelCompilerMode.OFF, null, true, true, Integer.MAX_VALUE, 20000);
+    SpelExpressionParser parser = new SpelExpressionParser(config);
+    ```
+
+    3. **Or** set a JVM system property or Spring property:
+
+    ```
+    -Dspring.expression.maxOperations=20000
+    ```
+
+    Or in `application.properties`:
+
+    ```properties
+    spring.expression.maxOperations=20000
+    ```
+
+    ### Additional Info
+
+    - Most applications will not be affected by the 10,000 operation limit
+    - The limit prevents potential denial-of-service through complex expressions
+    - If an exception is thrown during evaluation, it indicates the limit was exceeded
+    - Analyze whether your expressions can be simplified before increasing the limit
+  links:
+    - url: https://docs.spring.io/spring-framework/reference/core/expressions.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.expression.spel.standard.SpelExpressionParser
+        location: IMPORT
+- ruleID: core-import-00050
+  description: No longer supports compilation by default in Spring Framework 7.0.9
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    `SimpleEvaluationContext` no longer supports expression compilation by default in Spring Framework 7.0.9, regardless of compiler mode configuration.
+
+    ### Migration Steps
+
+    If your application intentionally uses `SimpleEvaluationContext` with trusted expressions and requires compilation for performance:
+
+    ```java
+    // Before (compilation was enabled based on SpelParserConfiguration)
+    SimpleEvaluationContext context = SimpleEvaluationContext.forReadOnlyDataBinding().build();
+
+    // After (explicitly opt in to compilation)
+    SimpleEvaluationContext context = SimpleEvaluationContext.forReadOnlyDataBinding()
+        .withCompilationSupported()
+        .build();
+    ```
+
+    ### Additional Info
+
+    - Compilation is disabled by default for safety reasons
+    - Compilation removes safety guards applied during interpreted evaluation
+    - Only enable compilation for trusted expressions where performance is critical
+    - Most applications do not need compilation and are not affected by this change
+    - See [#37035](https://github.com/spring-projects/spring-framework/issues/37035) for details
+  links:
+    - url: https://github.com/spring-projects/spring-framework/issues/37035
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.expression.spel.support.SimpleEvaluationContext
+        location: IMPORT
+- ruleID: core-method-00010
+  description: Behavior changed due to JSR 305 removal
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    `MethodParameter.isOptional()` behavior has changed slightly in Spring Framework 7.0 due to the removal of JSR 305 support.
+
+    ### Migration Steps
+
+    The pragmatic check on `@Nullable` annotations at parameter level now only checks local annotations, not inherited ones.
+
+    If your code relies on inherited `@Nullable` annotations:
+
+    1. Review parameter-level nullability declarations
+    2. Ensure `@Nullable` annotations are present locally on parameters where needed
+    3. Test parameter nullability validation in your application
+
+    ### Additional Info
+
+    - Spring has migrated from JSR 305 annotations to JSpecify annotations
+    - The nullability semantics are now more precise and aligned with JSpecify
+    - Java developers may need refinements when migrating from previous versions
+    - Kotlin developers may also need code changes due to nullability interpretation differences
+    - See [Null-safe applications with Spring Boot 4 blog post](https://spring.io/blog/2025/11/12/null-safe-applications-with-spring-boot-4) for more details
+  links:
+    - url: https://docs.spring.io/spring-framework/reference/core/null-safety.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.core.MethodParameter.isOptional
+        location: METHOD_CALL
+- ruleID: core-dependency-00010
+  description: Spring Framework 7.0 baseline requirements
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Spring Framework 7.0 introduces new baseline requirements that affect the entire application stack.
+
+    ### Baseline Requirements
+
+    Spring Framework 7.0 requires:
+
+    - **JDK**: Minimum JDK 17, recommended JDK 25 (latest LTS)
+    - **Servlet**: 6.1+ (Tomcat 11.0, Jetty 12.1)
+    - **JPA**: 3.2+ (Hibernate ORM 7.1/7.2)
+    - **Bean Validation**: 3.1+ (Hibernate Validator 9.0/9.1)
+    - **GraalVM**: 25+ with new "exact reachability metadata" format
+    - **Netty**: 4.2+
+    - **Kotlin**: 2.2+
+    - **JUnit**: 6+
+    - **Jakarta EE**: 11 baseline
+
+    ### Migration Steps
+
+    1. Upgrade to JDK 17 or later (JDK 25 recommended)
+    2. Update your servlet container to Tomcat 11+, Jetty 12.1+, or equivalent
+    3. Upgrade JPA provider to Hibernate ORM 7.1/7.2 or equivalent JPA 3.2 implementation
+    4. Update Hibernate Validator to 9.0/9.1 for Bean Validation 3.1
+    5. If using GraalVM native images, upgrade to GraalVM 25
+    6. Update Netty to 4.2+
+    7. If using Kotlin, upgrade to Kotlin 2.2+
+    8. Migrate from JUnit 4/5 to JUnit 6
+    9. Migrate all `javax.*` imports to `jakarta.*` for Jakarta EE 11 compliance
+
+    ### Additional Info
+
+    - All baseline upgrades are mandatory for Spring Framework 7.0
+    - The Jakarta EE 11 baseline requires migrating from `javax` to `jakarta` packages
+    - These changes affect dependencies throughout your application
+    - See the [Spring Framework 7.0 Release Notes](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-7.0-Release-Notes) for complete details
+  links:
+    - url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-7.0-Release-Notes
+      title: Migration Documentation
+  when:
+    java.dependency:
+        name: org.springframework.spring-core
+        upperbound: 6.2.999

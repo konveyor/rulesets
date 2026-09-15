@@ -1,0 +1,35 @@
+- ruleID: batch-dependency-00010
+  description: Now operates in memory by default
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Spring Batch can now operate without a database (in-memory mode), and the regular `spring-boot-starter-batch` uses this simplified mode by default.
+
+    ### Migration Steps
+    - If you need database-backed metadata storage, change to `spring-boot-starter-batch-jdbc`:
+    ```xml
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-batch-jdbc</artifactId>
+    </dependency>
+    ```
+    - If in-memory mode is acceptable, no changes are needed
+
+    ### Additional Info
+    - On upgrade, Spring Batch will no longer store metadata in your existing database
+    - The in-memory mode simplifies configuration for many use cases
+    - Use `-jdbc` variant to restore the previous database-backed arrangement
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#spring-batch)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#spring-batch
+      title: Migration Documentation
+  when:
+    java.dependency:
+      name: org.springframework.boot.spring-boot-starter-batch
+      upperbound: 4.0.0

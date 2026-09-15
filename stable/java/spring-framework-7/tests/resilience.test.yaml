@@ -1,0 +1,21 @@
+rulesPath: ../resilience.yaml
+providers:
+- name: java
+  dataPath: ./data/resilience
+- name: builtin
+  dataPath: ./data/resilience
+tests:
+- ruleID: resilience-import-00010
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1
+- ruleID: resilience-import-00020
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1

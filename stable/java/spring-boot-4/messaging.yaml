@@ -1,0 +1,117 @@
+- ruleID: messaging-change-00010
+  description: Removed in favor of StreamsBuilderFactoryBeanConfigurer
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: "Spring Boot's `StreamBuilderFactoryBeanCustomizer` has been removed in favor of Spring Kafka's `StreamsBuilderFactoryBeanConfigurer`.\n\n### Before\n```java\nimport org.springframework.boot.autoconfigure.kafka.StreamBuilderFactoryBeanCustomizer;\nimport org.springframework.kafka.config.StreamsBuilderFactoryBean;\n\n@Bean\npublic StreamBuilderFactoryBeanCustomizer customizer() {\n    return factoryBean -> {\n        // customize\n    };\n}\n```\n\n### After\n```java\nimport org.springframework.kafka.config.StreamsBuilderFactoryBeanConfigurer;\nimport org.springframework.kafka.config.StreamsBuilderFactoryBean;\n\n@Bean\npublic StreamsBuilderFactoryBeanConfigurer configurer() {\n    return new StreamsBuilderFactoryBeanConfigurer() {\n        @Override\n        public void configure(StreamsBuilderFactoryBean factoryBean) {\n            // customize\n        }\n        \n        @Override\n        public int getOrder() {\n            return 0; // default value\n        }\n    };\n}\n```\n\n### Additional Info\n- The new configurer implements `Ordered` with a default value of `0`\n- Consider the ordering if you have multiple configurers\n- See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#kafka-streams-customization)"
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#kafka-streams-customization
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.boot.autoconfigure.kafka.StreamBuilderFactoryBeanCustomizer
+        location: TYPE
+- ruleID: messaging-pattern-00010
+  description: Removed in favor of spring.kafka.retry.topic.backoff.jitter
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Spring Kafka has moved its retry capabilities to Spring Framework, and the backoff randomization property has been replaced.
+
+    ### Before
+    ```properties
+    spring.kafka.retry.topic.backoff.random=true
+    ```
+
+    ### After
+    ```properties
+    spring.kafka.retry.topic.backoff.jitter=0.5
+    ```
+
+    ### Additional Info
+    - The `jitter` property provides more flexibility than the binary `random` property
+    - `jitter` accepts a value between 0.0 and 1.0 representing the jitter factor
+    - See the [documentation](https://docs.spring.io/spring-boot/4.0-SNAPSHOT/appendix/application-properties/index.html#application-properties.integration.spring.kafka.retry.topic.backoff.jitter) for details
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#spring-kafka-retry-features)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#spring-kafka-retry-features
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: spring\.kafka\.retry\.topic\.backoff\.random
+        filePattern: application.*\.(properties|ya?ml)
+- ruleID: messaging-change-00020
+  description: Replaced by dedicated retry customizers
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Spring AMQP has moved its retry capabilities to Spring Framework, and Spring Boot now provides dedicated customizers.
+
+    ### Before
+    ```java
+    import org.springframework.boot.autoconfigure.amqp.RabbitRetryTemplateCustomizer;
+    import org.springframework.retry.support.RetryTemplate;
+
+    @Bean
+    public RabbitRetryTemplateCustomizer customizer() {
+        return (target, retryTemplate) -> {
+            // customize retry template
+        };
+    }
+    ```
+
+    ### After
+    For RabbitTemplate:
+    ```java
+    import org.springframework.boot.autoconfigure.amqp.RabbitTemplateRetrySettingsCustomizer;
+    import org.springframework.amqp.rabbit.retry.MessageRecoverer;
+
+    @Bean
+    public RabbitTemplateRetrySettingsCustomizer templateCustomizer() {
+        return settings -> {
+            // customize retry settings
+        };
+    }
+    ```
+
+    For message listeners:
+    ```java
+    import org.springframework.boot.autoconfigure.amqp.RabbitListenerRetrySettingsCustomizer;
+
+    @Bean
+    public RabbitListenerRetrySettingsCustomizer listenerCustomizer() {
+        return settings -> {
+            // customize retry settings
+        };
+    }
+    ```
+
+    ### Additional Info
+    - Use `RabbitTemplateRetrySettingsCustomizer` for `RetryTemplate` customization
+    - Use `RabbitListenerRetrySettingsCustomizer` for message listener retry customization
+    - This provides more explicit control over retry behavior
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#spring-amqp-retry-features)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#spring-amqp-retry-features
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.boot.autoconfigure.amqp.RabbitRetryTemplateCustomizer
+        location: TYPE

@@ -1,0 +1,134 @@
+- ruleID: graalvm-change-00010
+  description: Review MemberCategory enum usage for deprecated constants
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Spring Framework 7.0 deprecated `MemberCategory.DECLARED_FIELDS` and `MemberCategory.PUBLIC_FIELDS` in favor of new enum constants that align with the unified GraalVM reachability metadata format.
+
+    **Review your MemberCategory usage** to check if you're using these deprecated constants:
+    - `MemberCategory.DECLARED_FIELDS` → replace with `MemberCategory.INVOKE_DECLARED_FIELDS`
+    - `MemberCategory.PUBLIC_FIELDS` → replace with `MemberCategory.INVOKE_PUBLIC_FIELDS`
+
+    ### Before
+
+    ```java
+    import org.springframework.aot.hint.MemberCategory;
+
+    hints.reflection().registerType(MyType.class, MemberCategory.DECLARED_FIELDS);
+    ```
+
+    ### After
+
+    For reflection only (introspection without invocation):
+
+    ```java
+    import org.springframework.aot.hint.MemberCategory;
+
+    // Simple type hint is enough for introspection
+    hints.reflection().registerType(MyType.class);
+    ```
+
+    For field invocation (setting/getting field values):
+
+    ```java
+    import org.springframework.aot.hint.MemberCategory;
+
+    hints.reflection().registerType(MyType.class, MemberCategory.INVOKE_DECLARED_FIELDS);
+    ```
+
+    ### Additional Info
+
+    - Registering a type hint now implies methods, constructors, and fields introspection
+    - `MemberCategory.DECLARED_FIELDS` was used for both introspection and invocation — the intent is now clearer
+    - Use `INVOKE_DECLARED_FIELDS` only when you need to actually set or get field values at runtime
+    - For reflection-only use cases, a simple type hint is sufficient
+    - See [#33847](https://github.com/spring-projects/spring-framework/issues/33847) for more details
+  links:
+    - url: https://github.com/spring-projects/spring-framework/issues/33847
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.aot.hint.MemberCategory
+        location: IMPORT
+- ruleID: graalvm-change-00020
+  description: Review MemberCategory usage for PUBLIC_FIELDS
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Spring Framework 7.0 deprecated `MemberCategory.PUBLIC_FIELDS` in favor of `MemberCategory.INVOKE_PUBLIC_FIELDS` to align with the unified GraalVM reachability metadata format.
+
+    **Review your MemberCategory usage** - if using `PUBLIC_FIELDS`, replace with `INVOKE_PUBLIC_FIELDS` or use a simple type hint for introspection-only cases.
+
+    ### Before
+
+    ```java
+    hints.reflection().registerType(MyType.class, MemberCategory.PUBLIC_FIELDS);
+    ```
+
+    ### After
+
+    For field invocation:
+    ```java
+    hints.reflection().registerType(MyType.class, MemberCategory.INVOKE_PUBLIC_FIELDS);
+    ```
+
+    For introspection only:
+    ```java
+    hints.reflection().registerType(MyType.class);
+    ```
+  links:
+    - url: https://github.com/spring-projects/spring-framework/issues/33847
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.aot.hint.MemberCategory
+        location: IMPORT
+- ruleID: graalvm-change-00030
+  description: Review ExecutableMode usage for deprecated INTROSPECT
+  category: optional
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Spring Framework 7.0 deprecated `ExecutableMode.INTROSPECT` with no replacement needed.
+
+    **Review your ExecutableMode usage** - if using `INTROSPECT`, it can be removed as type hints now imply introspection automatically.
+
+    ### Before
+
+    ```java
+    hints.reflection().registerType(MyType.class)
+        .withMembers(memberCategory -> memberCategory
+            .withMode(ExecutableMode.INTROSPECT));
+    ```
+
+    ### After
+
+    ```java
+    hints.reflection().registerType(MyType.class);
+    ```
+
+    Registering a type hint now implies methods, constructors, and fields introspection by default. Use `ExecutableMode.INVOKE` only when you need to actually invoke methods/constructors.
+  links:
+    - url: https://github.com/spring-projects/spring-framework/issues/33847
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.aot.hint.ExecutableMode
+        location: IMPORT

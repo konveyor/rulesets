@@ -1,0 +1,13 @@
+plugins {
+    // Rule: build-pattern-00020
+    id 'org.cyclonedx.bom' version '2.9.0'
+    id 'org.springframework.boot' version '3.3.0'
+}
+
+// Rule: build-pattern-00010
+bootJar {
+    loaderImplementation = org.springframework.boot.loader.tools.LoaderImplementation.CLASSIC
+}
+
+group = 'com.example'
+version = '1.0.0'

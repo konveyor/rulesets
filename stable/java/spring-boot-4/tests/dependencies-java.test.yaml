@@ -1,0 +1,42 @@
+rulesPath: ../dependencies.yaml
+providers:
+- name: java
+  dataPath: ./data/dependencies-java
+- name: builtin
+  dataPath: ./data/dependencies-java
+tests:
+- ruleID: dependencies-dependency-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: dependencies-dependency-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: dependencies-dependency-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: dependencies-dependency-00040
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: dependencies-dependency-00050
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: dependencies-dependency-00060
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: dependencies-dependency-00070
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

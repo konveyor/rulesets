@@ -1,0 +1,283 @@
+- ruleID: json-import-00010
+  description: Package renamed from com.fasterxml.jackson to tools.jackson
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Spring Boot 4 uses Jackson 3, which uses new group IDs and package names. The package `com.fasterxml.jackson` becomes `tools.jackson`. An exception is `jackson-annotations`, which continues to use `com.fasterxml.jackson.core` group ID and `com.fasterxml.jackson.annotation` package.
+
+    ### Before
+
+    ```java
+    import com.fasterxml.jackson.databind.ObjectMapper;
+    import com.fasterxml.jackson.core.JsonProcessingException;
+    import com.fasterxml.jackson.databind.JsonNode;
+    ```
+
+    ### After
+
+    ```java
+    import tools.jackson.databind.ObjectMapper;
+    import tools.jackson.core.JsonProcessingException;
+    import tools.jackson.databind.JsonNode;
+
+    // Exception: annotations remain in com.fasterxml.jackson
+    import com.fasterxml.jackson.annotation.JsonProperty;
+    ```
+
+    ### Additional Info
+
+    - For libraries requiring Jackson 2, dependency management remains available
+    - A Jackson 2 `ObjectMapper` can coexist with Boot's Jackson 3 auto-configuration
+    - Spring Boot provides a `spring-boot-jackson2` compatibility module (deprecated, temporary)
+    - Review the [Jackson 3.0 release notes](https://github.com/FasterXML/jackson/wiki/Jackson-Release-3.0#major-changesfeatures-in-30)
+    - The `jackson-annotations` module is the only exception to the package rename
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#upgrading-jackson
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: com.fasterxml.jackson*
+        location: PACKAGE
+- ruleID: json-import-00020
+  description: Renamed to ObjectValueSerializer
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    `JsonObjectSerializer` has been renamed to `ObjectValueSerializer` for consistency with Jackson 3.
+
+    ### Before
+
+    ```java
+    import org.springframework.boot.jackson.JsonObjectSerializer;
+
+    public class MySerializer extends JsonObjectSerializer<MyType> {
+        // ...
+    }
+    ```
+
+    ### After
+
+    ```java
+    import org.springframework.boot.jackson.ObjectValueSerializer;
+
+    public class MySerializer extends ObjectValueSerializer<MyType> {
+        // ...
+    }
+    ```
+
+    ### Additional Info
+
+    - The class functionality remains the same
+    - This is part of Spring Boot's alignment with Jackson 3 naming conventions
+    - Update any custom serializers extending this class
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#upgrading-jackson
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.boot.jackson.JsonObjectSerializer
+        location: IMPORT
+- ruleID: json-import-00030
+  description: Renamed to ObjectValueDeserializer
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    `JsonValueDeserializer` has been renamed to `ObjectValueDeserializer` for consistency with Jackson 3.
+
+    ### Before
+
+    ```java
+    import org.springframework.boot.jackson.JsonValueDeserializer;
+
+    public class MyDeserializer extends JsonValueDeserializer<MyType> {
+        // ...
+    }
+    ```
+
+    ### After
+
+    ```java
+    import org.springframework.boot.jackson.ObjectValueDeserializer;
+
+    public class MyDeserializer extends ObjectValueDeserializer<MyType> {
+        // ...
+    }
+    ```
+
+    ### Additional Info
+
+    - The class functionality remains the same
+    - This is part of Spring Boot's alignment with Jackson 3 naming conventions
+    - Update any custom deserializers extending this class
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#upgrading-jackson
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.boot.jackson.JsonValueDeserializer
+        location: IMPORT
+- ruleID: json-import-00040
+  description: Renamed to JsonMapperBuilderCustomizer
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    `Jackson2ObjectMapperBuilderCustomizer` has been renamed to `JsonMapperBuilderCustomizer` for consistency with Jackson 3.
+
+    ### Before
+
+    ```java
+    import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
+    import org.springframework.context.annotation.Bean;
+
+    @Bean
+    public Jackson2ObjectMapperBuilderCustomizer customizer() {
+        return builder -> {
+            builder.featuresToEnable(SerializationFeature.INDENT_OUTPUT);
+        };
+    }
+    ```
+
+    ### After
+
+    ```java
+    import org.springframework.boot.autoconfigure.jackson.JsonMapperBuilderCustomizer;
+    import org.springframework.context.annotation.Bean;
+
+    @Bean
+    public JsonMapperBuilderCustomizer customizer() {
+        return builder -> {
+            builder.featuresToEnable(SerializationFeature.INDENT_OUTPUT);
+        };
+    }
+    ```
+
+    ### Additional Info
+
+    - The interface functionality remains the same
+    - This is part of Spring Boot's alignment with Jackson 3
+    - Update any bean definitions that customize the ObjectMapper builder
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#upgrading-jackson
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer
+        location: IMPORT
+- ruleID: json-annotation-00010
+  description: Renamed to @JacksonComponent
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    `@JsonComponent` has been renamed to `@JacksonComponent` to clarify that it's specific to Jackson and not necessarily limited to JSON.
+
+    ### Before
+
+    ```java
+    import org.springframework.boot.jackson.JsonComponent;
+
+    @JsonComponent
+    public class MySerializer extends JsonSerializer<MyType> {
+        // ...
+    }
+    ```
+
+    ### After
+
+    ```java
+    import org.springframework.boot.jackson.JacksonComponent;
+
+    @JacksonComponent
+    public class MySerializer extends JsonSerializer<MyType> {
+        // ...
+    }
+    ```
+
+    ### Additional Info
+
+    - The annotation functionality remains the same
+    - The new name clarifies this is Jackson-specific, not a generic JSON component
+    - Update all custom serializers and deserializers using this annotation
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#upgrading-jackson
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.boot.jackson.JsonComponent
+        location: ANNOTATION
+- ruleID: json-annotation-00020
+  description: Renamed to @JacksonMixin
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    `@JsonMixin` has been renamed to `@JacksonMixin` to clarify that it's specific to Jackson and not necessarily limited to JSON.
+
+    ### Before
+
+    ```java
+    import org.springframework.boot.jackson.JsonMixin;
+
+    @JsonMixin(type = MyType.class)
+    public abstract class MyTypeMixin {
+        // ...
+    }
+    ```
+
+    ### After
+
+    ```java
+    import org.springframework.boot.jackson.JacksonMixin;
+
+    @JacksonMixin(type = MyType.class)
+    public abstract class MyTypeMixin {
+        // ...
+    }
+    ```
+
+    ### Additional Info
+
+    - The annotation functionality remains the same
+    - The new name clarifies this is Jackson-specific
+    - Update all Jackson mixin classes using this annotation
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#upgrading-jackson
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.boot.jackson.JsonMixin
+        location: ANNOTATION
