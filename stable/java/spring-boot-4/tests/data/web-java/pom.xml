@@ -22,7 +22,7 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-jackson</artifactId>
-      <version>3.0.0</version>
+      <version>4.0.0</version>
     </dependency>
 
     <!-- Rule: web-dependency-00020 -->
@@ -30,7 +30,6 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-tomcat</artifactId>
       <version>3.5.3</version>
-      <scope>provided</scope>
     </dependency>
 
     <!-- For web-change-00010 TYPE reference -->
