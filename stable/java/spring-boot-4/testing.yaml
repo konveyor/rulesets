@@ -31,7 +31,7 @@
   when:
     java.dependency:
         name: org.spockframework.spock-spring
-        lowerbound: 0.0.0
+        upperbound: 99.0.0
 - ruleID: testing-annotation-00010
   description: '@WithMockUser now requires spring-boot-starter-security-test'
   category: mandatory

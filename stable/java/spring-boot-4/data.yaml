@@ -495,7 +495,7 @@
       title: Migration Documentation
   when:
     java.dependency:
-        name: org.hibernate.hibernate-jpamodelgen
+        name: org.hibernate.orm.hibernate-jpamodelgen
         lowerbound: 0.0.0
 - ruleID: data-dependency-00050
   description: No longer published by Hibernate
@@ -523,7 +523,7 @@
       title: Migration Documentation
   when:
     java.dependency:
-        name: org.hibernate.hibernate-proxool
+        name: org.hibernate.orm.hibernate-proxool
         lowerbound: 0.0.0
 - ruleID: data-dependency-00060
   description: No longer published by Hibernate
@@ -551,5 +551,5 @@
       title: Migration Documentation
   when:
     java.dependency:
-        name: org.hibernate.hibernate-vibur
+        name: org.hibernate.orm.hibernate-vibur
         lowerbound: 0.0.0
