@@ -102,7 +102,7 @@ jobs:
 
         # Check and add missing labels
         for label in $TARGET_LABELS; do
-          if grep -q "label: konveyor.io/target=$label" resources/targets.yaml; then
+          if grep -qF "label: konveyor.io/target=$label" resources/targets.yaml; then
             echo "  ✓ Label '$label' already exists"
             continue
           fi
@@ -111,13 +111,13 @@ jobs:
           base_pattern=$(get_base_pattern "$label")
 
           # Get all target groups and their existing labels
-          target_count=$(yq eval '.items | length' resources/targets.yaml)
+          target_count=$(yq eval '.items | length' resources/targets.yaml 2>/dev/null || echo "0")
           matched_index=""
           matched_target=""
 
           for ((i=0; i<target_count; i++)); do
             # Get existing labels for this target
-            existing_labels=$(yq eval ".items[$i].labels[].label" resources/targets.yaml | sed 's/konveyor.io\/target=//')
+            existing_labels=$(yq eval ".items[$i].labels[].label" resources/targets.yaml 2>/dev/null | sed 's/konveyor.io\/target=//' || echo "")
 
             # Check if any existing label shares the same base pattern
             for existing in $existing_labels; do
@@ -129,13 +129,13 @@ jobs:
               if [ "$existing_base" = "$base_pattern" ] && [ -n "$base_pattern" ]; then
                 # Exact match
                 matched_index=$i
-                matched_target=$(yq eval ".items[$i].name" resources/targets.yaml)
+                matched_target=$(yq eval ".items[$i].name" resources/targets.yaml 2>/dev/null || echo "")
                 break 2
               elif [ -n "$base_pattern" ] && [ -n "$existing_base" ]; then
                 # Check if one is a prefix of the other (handles spring-framework vs spring)
                 if [[ "$base_pattern" == "$existing_base"* ]] || [[ "$existing_base" == "$base_pattern"* ]]; then
                   matched_index=$i
-                  matched_target=$(yq eval ".items[$i].name" resources/targets.yaml)
+                  matched_target=$(yq eval ".items[$i].name" resources/targets.yaml 2>/dev/null || echo "")
                   break 2
                 fi
               fi
@@ -160,11 +160,15 @@ jobs:
           echo "  + Adding '$label' as '$label_name' to '$matched_target'"
 
           # Add the new label to the matched target group
-          yq eval -i ".items[$matched_index].labels += {\"name\": \"$label_name\", \"label\": \"konveyor.io/target=$label\"}" resources/targets.yaml
-          echo "    ✓ Successfully added"
+          if yq eval -i ".items[$matched_index].labels += {\"name\": \"$label_name\", \"label\": \"konveyor.io/target=$label\"}" resources/targets.yaml 2>/dev/null; then
+            echo "    ✓ Successfully added"
+          else
+            echo "    ✗ Failed to add label"
+          fi
         done
 
         echo "Target update complete"
+        exit 0
 
     - name: Build hub and save image
       working-directory: tackle2-hub
@@ -233,7 +237,7 @@ jobs:
 
         # Check and add missing labels
         for label in $TARGET_LABELS; do
-          if grep -q "label: konveyor.io/target=$label" resources/targets.yaml; then
+          if grep -qF "label: konveyor.io/target=$label" resources/targets.yaml; then
             echo "  ✓ Label '$label' already exists"
             continue
           fi
@@ -242,13 +246,13 @@ jobs:
           base_pattern=$(get_base_pattern "$label")
 
           # Get all target groups and their existing labels
-          target_count=$(yq eval '.items | length' resources/targets.yaml)
+          target_count=$(yq eval '.items | length' resources/targets.yaml 2>/dev/null || echo "0")
           matched_index=""
           matched_target=""
 
           for ((i=0; i<target_count; i++)); do
             # Get existing labels for this target
-            existing_labels=$(yq eval ".items[$i].labels[].label" resources/targets.yaml | sed 's/konveyor.io\/target=//')
+            existing_labels=$(yq eval ".items[$i].labels[].label" resources/targets.yaml 2>/dev/null | sed 's/konveyor.io\/target=//' || echo "")
 
             # Check if any existing label shares the same base pattern
             for existing in $existing_labels; do
@@ -260,13 +264,13 @@ jobs:
               if [ "$existing_base" = "$base_pattern" ] && [ -n "$base_pattern" ]; then
                 # Exact match
                 matched_index=$i
-                matched_target=$(yq eval ".items[$i].name" resources/targets.yaml)
+                matched_target=$(yq eval ".items[$i].name" resources/targets.yaml 2>/dev/null || echo "")
                 break 2
               elif [ -n "$base_pattern" ] && [ -n "$existing_base" ]; then
                 # Check if one is a prefix of the other (handles spring-framework vs spring)
                 if [[ "$base_pattern" == "$existing_base"* ]] || [[ "$existing_base" == "$base_pattern"* ]]; then
                   matched_index=$i
-                  matched_target=$(yq eval ".items[$i].name" resources/targets.yaml)
+                  matched_target=$(yq eval ".items[$i].name" resources/targets.yaml 2>/dev/null || echo "")
                   break 2
                 fi
               fi
@@ -291,8 +295,11 @@ jobs:
           echo "  + Adding '$label' as '$label_name' to '$matched_target'"
 
           # Add the new label to the matched target group
-          yq eval -i ".items[$matched_index].labels += {\"name\": \"$label_name\", \"label\": \"konveyor.io/target=$label\"}" resources/targets.yaml
-          echo "    ✓ Successfully added"
+          if yq eval -i ".items[$matched_index].labels += {\"name\": \"$label_name\", \"label\": \"konveyor.io/target=$label\"}" resources/targets.yaml 2>/dev/null; then
+            echo "    ✓ Successfully added"
+          else
+            echo "    ✗ Failed to add label"
+          fi
         done
 
         echo "Target update complete"
