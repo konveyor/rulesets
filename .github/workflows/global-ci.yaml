@@ -73,6 +73,99 @@ jobs:
       run: |
         GOWORK=off RULESET_ARGS='-r ../../rulesets --yes' make ruleset-patch
 
+    - name: Auto-update targets from rulesets
+      working-directory: tackle2-hub/tackle2-seed
+      run: |
+        echo "Scanning rulesets for new target labels..."
+
+        # Extract unique target labels from all ruleset files
+        TARGET_LABELS=$(find resources/rulesets -name "*.yaml" -exec grep -h "konveyor.io/target=" {} \; 2>/dev/null | \
+          sed 's/.*konveyor.io\/target=\([^ ]*\).*/\1/' | \
+          sort -u)
+
+        echo "Found target labels: $TARGET_LABELS"
+
+        # Function to extract base pattern by removing trailing version/number
+        get_base_pattern() {
+          echo "$1" | sed -E 's/[0-9]+(\.[0-9]+)*$//'
+        }
+
+        # Function to capitalize first letter of each word
+        capitalize() {
+          echo "$1" | sed 's/-/ /g' | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) tolower(substr($i,2))}1'
+        }
+
+        # Function to extract version from label
+        get_version() {
+          echo "$1" | grep -oE '[0-9]+(\.[0-9]+)*$'
+        }
+
+        # Check and add missing labels
+        for label in $TARGET_LABELS; do
+          if grep -q "label: konveyor.io/target=$label" resources/targets.yaml; then
+            echo "  ✓ Label '$label' already exists"
+            continue
+          fi
+
+          # Find matching target group by comparing base patterns with existing labels
+          base_pattern=$(get_base_pattern "$label")
+
+          # Get all target groups and their existing labels
+          target_count=$(yq eval '.items | length' resources/targets.yaml)
+          matched_index=""
+          matched_target=""
+
+          for ((i=0; i<target_count; i++)); do
+            # Get existing labels for this target
+            existing_labels=$(yq eval ".items[$i].labels[].label" resources/targets.yaml | sed 's/konveyor.io\/target=//')
+
+            # Check if any existing label shares the same base pattern
+            for existing in $existing_labels; do
+              existing_base=$(get_base_pattern "$existing")
+
+              # Try multiple matching strategies:
+              # 1. Exact base match: spring-boot = spring-boot
+              # 2. Prefix match: spring-framework starts with spring, or vice versa
+              if [ "$existing_base" = "$base_pattern" ] && [ -n "$base_pattern" ]; then
+                # Exact match
+                matched_index=$i
+                matched_target=$(yq eval ".items[$i].name" resources/targets.yaml)
+                break 2
+              elif [ -n "$base_pattern" ] && [ -n "$existing_base" ]; then
+                # Check if one is a prefix of the other (handles spring-framework vs spring)
+                if [[ "$base_pattern" == "$existing_base"* ]] || [[ "$existing_base" == "$base_pattern"* ]]; then
+                  matched_index=$i
+                  matched_target=$(yq eval ".items[$i].name" resources/targets.yaml)
+                  break 2
+                fi
+              fi
+            done
+          done
+
+          if [ -z "$matched_index" ]; then
+            echo "  ⚠ No matching target group found for '$label' (base: '$base_pattern'), skipping"
+            continue
+          fi
+
+          # Generate label name
+          version=$(get_version "$label")
+          if [ -n "$version" ]; then
+            # Use target name + version (e.g., "Spring Boot 4", "OpenJDK 21")
+            label_name="$matched_target $version"
+          else
+            # Capitalize the label itself (e.g., "cloud-readiness" → "Cloud Readiness")
+            label_name=$(capitalize "$label")
+          fi
+
+          echo "  + Adding '$label' as '$label_name' to '$matched_target'"
+
+          # Add the new label to the matched target group
+          yq eval -i ".items[$matched_index].labels += {\"name\": \"$label_name\", \"label\": \"konveyor.io/target=$label\"}" resources/targets.yaml
+          echo "    ✓ Successfully added"
+        done
+
+        echo "Target update complete"
+
     - name: Build hub and save image
       working-directory: tackle2-hub
       env:
@@ -110,6 +203,99 @@ jobs:
       working-directory: kantra/tackle2-seed
       run: |
         GOWORK=off RULESET_ARGS='-r ../../rulesets --yes' make ruleset-patch
+
+    - name: Auto-update targets from rulesets
+      working-directory: kantra/tackle2-seed
+      run: |
+        echo "Scanning rulesets for new target labels..."
+
+        # Extract unique target labels from all ruleset files
+        TARGET_LABELS=$(find resources/rulesets -name "*.yaml" -exec grep -h "konveyor.io/target=" {} \; 2>/dev/null | \
+          sed 's/.*konveyor.io\/target=\([^ ]*\).*/\1/' | \
+          sort -u)
+
+        echo "Found target labels: $TARGET_LABELS"
+
+        # Function to extract base pattern by removing trailing version/number
+        get_base_pattern() {
+          echo "$1" | sed -E 's/[0-9]+(\.[0-9]+)*$//'
+        }
+
+        # Function to capitalize first letter of each word
+        capitalize() {
+          echo "$1" | sed 's/-/ /g' | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) tolower(substr($i,2))}1'
+        }
+
+        # Function to extract version from label
+        get_version() {
+          echo "$1" | grep -oE '[0-9]+(\.[0-9]+)*$'
+        }
+
+        # Check and add missing labels
+        for label in $TARGET_LABELS; do
+          if grep -q "label: konveyor.io/target=$label" resources/targets.yaml; then
+            echo "  ✓ Label '$label' already exists"
+            continue
+          fi
+
+          # Find matching target group by comparing base patterns with existing labels
+          base_pattern=$(get_base_pattern "$label")
+
+          # Get all target groups and their existing labels
+          target_count=$(yq eval '.items | length' resources/targets.yaml)
+          matched_index=""
+          matched_target=""
+
+          for ((i=0; i<target_count; i++)); do
+            # Get existing labels for this target
+            existing_labels=$(yq eval ".items[$i].labels[].label" resources/targets.yaml | sed 's/konveyor.io\/target=//')
+
+            # Check if any existing label shares the same base pattern
+            for existing in $existing_labels; do
+              existing_base=$(get_base_pattern "$existing")
+
+              # Try multiple matching strategies:
+              # 1. Exact base match: spring-boot = spring-boot
+              # 2. Prefix match: spring-framework starts with spring, or vice versa
+              if [ "$existing_base" = "$base_pattern" ] && [ -n "$base_pattern" ]; then
+                # Exact match
+                matched_index=$i
+                matched_target=$(yq eval ".items[$i].name" resources/targets.yaml)
+                break 2
+              elif [ -n "$base_pattern" ] && [ -n "$existing_base" ]; then
+                # Check if one is a prefix of the other (handles spring-framework vs spring)
+                if [[ "$base_pattern" == "$existing_base"* ]] || [[ "$existing_base" == "$base_pattern"* ]]; then
+                  matched_index=$i
+                  matched_target=$(yq eval ".items[$i].name" resources/targets.yaml)
+                  break 2
+                fi
+              fi
+            done
+          done
+
+          if [ -z "$matched_index" ]; then
+            echo "  ⚠ No matching target group found for '$label' (base: '$base_pattern'), skipping"
+            continue
+          fi
+
+          # Generate label name
+          version=$(get_version "$label")
+          if [ -n "$version" ]; then
+            # Use target name + version (e.g., "Spring Boot 4", "OpenJDK 21")
+            label_name="$matched_target $version"
+          else
+            # Capitalize the label itself (e.g., "cloud-readiness" → "Cloud Readiness")
+            label_name=$(capitalize "$label")
+          fi
+
+          echo "  + Adding '$label' as '$label_name' to '$matched_target'"
+
+          # Add the new label to the matched target group
+          yq eval -i ".items[$matched_index].labels += {\"name\": \"$label_name\", \"label\": \"konveyor.io/target=$label\"}" resources/targets.yaml
+          echo "    ✓ Successfully added"
+        done
+
+        echo "Target update complete"
 
     - name: Build kantra and save image
       working-directory: kantra
