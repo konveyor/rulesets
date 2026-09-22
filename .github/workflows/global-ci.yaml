@@ -114,33 +114,40 @@ jobs:
           target_count=$(yq eval '.items | length' resources/targets.yaml 2>/dev/null || echo "0")
           matched_index=""
           matched_target=""
+          prefix_matched_index=""
+          prefix_matched_target=""
 
+          # First pass: look for exact match
           for ((i=0; i<target_count; i++)); do
-            # Get existing labels for this target
             existing_labels=$(yq eval ".items[$i].labels[].label" resources/targets.yaml 2>/dev/null | sed 's/konveyor.io\/target=//' || echo "")
-
-            # Check if any existing label shares the same base pattern
             for existing in $existing_labels; do
               existing_base=$(get_base_pattern "$existing")
-
-              # Try multiple matching strategies:
-              # 1. Exact base match: spring-boot = spring-boot
-              # 2. Prefix match: spring-framework starts with spring, or vice versa
               if [ "$existing_base" = "$base_pattern" ] && [ -n "$base_pattern" ]; then
-                # Exact match
+                # Exact match - use this and stop searching
                 matched_index=$i
                 matched_target=$(yq eval ".items[$i].name" resources/targets.yaml 2>/dev/null || echo "")
                 break 2
-              elif [ -n "$base_pattern" ] && [ -n "$existing_base" ]; then
-                # Check if one is a prefix of the other (handles spring-framework vs spring)
-                if [[ "$base_pattern" == "$existing_base"* ]] || [[ "$existing_base" == "$base_pattern"* ]]; then
-                  matched_index=$i
-                  matched_target=$(yq eval ".items[$i].name" resources/targets.yaml 2>/dev/null || echo "")
-                  break 2
-                fi
               fi
             done
           done
+
+          # Second pass: if no exact match, try prefix match
+          if [ -z "$matched_index" ]; then
+            for ((i=0; i<target_count; i++)); do
+              existing_labels=$(yq eval ".items[$i].labels[].label" resources/targets.yaml 2>/dev/null | sed 's/konveyor.io\/target=//' || echo "")
+              for existing in $existing_labels; do
+                existing_base=$(get_base_pattern "$existing")
+                if [ -n "$base_pattern" ] && [ -n "$existing_base" ]; then
+                  # Check if one is a prefix of the other
+                  if [[ "$base_pattern" == "$existing_base"* ]] || [[ "$existing_base" == "$base_pattern"* ]]; then
+                    matched_index=$i
+                    matched_target=$(yq eval ".items[$i].name" resources/targets.yaml 2>/dev/null || echo "")
+                    break 2
+                  fi
+                fi
+              done
+            done
+          fi
 
           if [ -z "$matched_index" ]; then
             echo "  ⚠ No matching target group found for '$label' (base: '$base_pattern'), skipping"
@@ -249,33 +256,40 @@ jobs:
           target_count=$(yq eval '.items | length' resources/targets.yaml 2>/dev/null || echo "0")
           matched_index=""
           matched_target=""
+          prefix_matched_index=""
+          prefix_matched_target=""
 
+          # First pass: look for exact match
           for ((i=0; i<target_count; i++)); do
-            # Get existing labels for this target
             existing_labels=$(yq eval ".items[$i].labels[].label" resources/targets.yaml 2>/dev/null | sed 's/konveyor.io\/target=//' || echo "")
-
-            # Check if any existing label shares the same base pattern
             for existing in $existing_labels; do
               existing_base=$(get_base_pattern "$existing")
-
-              # Try multiple matching strategies:
-              # 1. Exact base match: spring-boot = spring-boot
-              # 2. Prefix match: spring-framework starts with spring, or vice versa
               if [ "$existing_base" = "$base_pattern" ] && [ -n "$base_pattern" ]; then
-                # Exact match
+                # Exact match - use this and stop searching
                 matched_index=$i
                 matched_target=$(yq eval ".items[$i].name" resources/targets.yaml 2>/dev/null || echo "")
                 break 2
-              elif [ -n "$base_pattern" ] && [ -n "$existing_base" ]; then
-                # Check if one is a prefix of the other (handles spring-framework vs spring)
-                if [[ "$base_pattern" == "$existing_base"* ]] || [[ "$existing_base" == "$base_pattern"* ]]; then
-                  matched_index=$i
-                  matched_target=$(yq eval ".items[$i].name" resources/targets.yaml 2>/dev/null || echo "")
-                  break 2
-                fi
               fi
             done
           done
+
+          # Second pass: if no exact match, try prefix match
+          if [ -z "$matched_index" ]; then
+            for ((i=0; i<target_count; i++)); do
+              existing_labels=$(yq eval ".items[$i].labels[].label" resources/targets.yaml 2>/dev/null | sed 's/konveyor.io\/target=//' || echo "")
+              for existing in $existing_labels; do
+                existing_base=$(get_base_pattern "$existing")
+                if [ -n "$base_pattern" ] && [ -n "$existing_base" ]; then
+                  # Check if one is a prefix of the other
+                  if [[ "$base_pattern" == "$existing_base"* ]] || [[ "$existing_base" == "$base_pattern"* ]]; then
+                    matched_index=$i
+                    matched_target=$(yq eval ".items[$i].name" resources/targets.yaml 2>/dev/null || echo "")
+                    break 2
+                  fi
+                fi
+              done
+            done
+          fi
 
           if [ -z "$matched_index" ]; then
             echo "  ⚠ No matching target group found for '$label' (base: '$base_pattern'), skipping"
