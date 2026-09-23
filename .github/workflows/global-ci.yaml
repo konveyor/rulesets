@@ -76,14 +76,35 @@ jobs:
     - name: Verify seed update
       working-directory: tackle2-hub/tackle2-seed
       run: |
-        echo "=== New rulesets in manifest ==="
-        grep -A 5 "spring-boot-4\|spring-framework-7" resources/rulesets.yaml || echo "(not found in manifest)"
-        echo "=== spring-boot-4 rule files ==="
-        ls -la resources/rulesets/java/spring-boot-4/ 2>/dev/null || echo "(directory not found)"
-        echo "=== spring-framework-7 rule files ==="
-        ls -la resources/rulesets/java/spring-framework-7/ 2>/dev/null || echo "(directory not found)"
-        echo "=== spring-boot-4 ruleset.yaml ==="
-        cat resources/rulesets/java/spring-boot-4/ruleset.yaml 2>/dev/null || echo "(not found)"
+        echo "=== spring-boot-4 UUID in manifest ==="
+        python3 -c "
+        import yaml, sys
+        with open('resources/rulesets.yaml') as f:
+            data = yaml.safe_load(f)
+        for item in data.get('items', []):
+            if item.get('name') == 'spring-boot-4':
+                print('UUID:', item.get('uuid', '(MISSING!)'))
+                print('Name:', item.get('name'))
+                print('Directory:', item.get('directory'))
+                print('Dependencies:', item.get('dependencies'))
+                sys.exit(0)
+        print('spring-boot-4 NOT FOUND in manifest')
+        " || echo "(python3 error)"
+        echo "=== spring-framework-7 UUID in manifest ==="
+        python3 -c "
+        import yaml, sys
+        with open('resources/rulesets.yaml') as f:
+            data = yaml.safe_load(f)
+        for item in data.get('items', []):
+            if item.get('name') == 'spring-framework-7':
+                print('UUID:', item.get('uuid', '(MISSING!)'))
+                print('Name:', item.get('name'))
+                print('Dependencies:', item.get('dependencies'))
+                sys.exit(0)
+        print('spring-framework-7 NOT FOUND in manifest')
+        " || echo "(python3 error)"
+        echo "=== spring-boot-4 rule files count ==="
+        ls resources/rulesets/java/spring-boot-4/*.yaml 2>/dev/null | wc -l || echo "0"
         echo "=== Label check in spring-boot-4 rules ==="
         grep -c "konveyor.io/target" resources/rulesets/java/spring-boot-4/actuator.yaml 2>/dev/null || echo "(not found)"
 
