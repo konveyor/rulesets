@@ -1,7 +1,2 @@
 name: spring-framework-7
 description: Ruleset for migration from Spring Framework 6.x to Spring Framework 7.0
-labels:
-  - konveyor.io/source=spring-framework
-  - konveyor.io/source=spring-framework6
-  - konveyor.io/target=spring-framework
-  - konveyor.io/target=spring-framework7
