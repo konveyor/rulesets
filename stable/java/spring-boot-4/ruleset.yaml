@@ -1,2 +1,7 @@
 name: spring-boot-4
 description: Ruleset for migration from Spring Boot 3.x to Spring Boot 4.0
+labels:
+  - konveyor.io/source=spring-boot
+  - konveyor.io/source=spring-boot3
+  - konveyor.io/target=spring-boot
+  - konveyor.io/target=spring-boot4
