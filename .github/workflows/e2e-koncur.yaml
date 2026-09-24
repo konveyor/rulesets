@@ -14,7 +14,12 @@ on:
 jobs:
   e2e-koncur:
     if: github.repository == 'konveyor/rulesets'
-    # TODO: switch to konveyor/ci/.github/workflows/e2e-koncur.yaml@main once
-    # konveyor/ci#272 merges. Points at the fork branch for now so this PR can
-    # exercise the combined hub + kantra koncur workflow end to end.
+    # TODO: once konveyor/ci#272 merges, switch to
+    # konveyor/ci/.github/workflows/e2e-koncur.yaml@main and drop the ci_repo/
+    # ci_ref inputs below. They currently point the workflow AND its matrix
+    # config at the fork branch so this PR can exercise the combined hub +
+    # kantra koncur workflow (with rulesets overlaid) end to end.
     uses: mguetta1/ci/.github/workflows/e2e-koncur.yaml@support-rulesets-e2e-hub
+    with:
+      ci_repo: mguetta1/ci
+      ci_ref: support-rulesets-e2e-hub
