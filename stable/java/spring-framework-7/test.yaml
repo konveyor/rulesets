@@ -1,0 +1,174 @@
+- ruleID: test-change-00010
+  description: ExtensionContext scope changed to test-method in Spring Framework 7.0
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `SpringExtension` now uses a test-method scoped `ExtensionContext` in Spring Framework 7.0, which may affect custom `TestExecutionListener` implementations.
+
+    ### Migration Steps
+
+    1. If Spring-related tests in `@Nested` test class hierarchies fail, annotate the top-level class:
+
+    ```java
+    @SpringExtensionConfig(useTestClassScopedExtensionContext = true)
+    class MyNestedTestSuite {
+        @Nested
+        class NestedTests { }
+    }
+    ```
+
+    2. Or set a global default via JVM system property:
+
+    ```
+    -Dspring.test.extension.context.scope=test_class
+    ```
+
+    3. If you have a custom `TestExecutionListener` that overrides `prepareTestInstance(TestContext)`, modify it to look up the current test class via:
+
+    ```java
+    // Before
+    testContext.getTestClass()
+
+    // After
+    testContext.getTestInstance().getClass()
+    ```
+
+    ### Additional Info
+
+    - The change allows consistent dependency injection in `@Nested` test class hierarchies
+    - Most applications will not be affected unless using custom `TestExecutionListener` implementations
+    - See [#35697](https://github.com/spring-projects/spring-framework/issues/35697) for more details
+  links:
+    - url: https://github.com/spring-projects/spring-framework/issues/35697
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: prepareTestInstance
+        location: METHOD_CALL
+- ruleID: test-import-00010
+  description: Deprecated in favor of JUnit Jupiter SpringExtension
+  category: optional
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    JUnit 4 support in the Spring TestContext Framework has been deprecated in Spring Framework 7.0 in favor of JUnit Jupiter.
+
+    ### Before
+
+    ```java
+    import org.junit.runner.RunWith;
+    import org.springframework.test.context.junit4.SpringRunner;
+    import org.springframework.test.context.ContextConfiguration;
+
+    @RunWith(SpringRunner.class)
+    @ContextConfiguration(classes = TestConfig.class)
+    public class MyTest {
+        @Test
+        public void testSomething() { }
+    }
+    ```
+
+    ### After
+
+    ```java
+    import org.junit.jupiter.api.Test;
+    import org.springframework.test.context.junit.jupiter.SpringExtension;
+    import org.junit.jupiter.api.extension.ExtendWith;
+    import org.springframework.test.context.ContextConfiguration;
+
+    @ExtendWith(SpringExtension.class)
+    @ContextConfiguration(classes = TestConfig.class)
+    public class MyTest {
+        @Test
+        void testSomething() { }
+    }
+    ```
+
+    ### Additional Info
+
+    - Migrate from JUnit 4 to JUnit Jupiter (JUnit 5)
+    - Replace `@RunWith(SpringRunner.class)` with `@ExtendWith(SpringExtension.class)`
+    - Update JUnit annotations: `@Test`, `@Before` → `@BeforeEach`, `@After` → `@AfterEach`, etc.
+    - Deprecated classes include `SpringRunner`, `SpringClassRule`, `SpringMethodRule`, `AbstractJUnit4SpringContextTests`, `AbstractTransactionalJUnit4SpringContextTests`
+  links:
+    - url: https://docs.spring.io/spring-framework/reference/testing/testcontext-framework/support-classes.html#testcontext-junit-jupiter-extension
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.test.context.junit4.SpringRunner
+        location: IMPORT
+- ruleID: test-import-00020
+  description: Behavior updated to align with Servlet 6.1 API
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Spring Framework 7.0 updated `MockHttpServletRequest` and `MockHttpServletResponse` to better align with Jakarta Servlet 6.1 API behavior.
+
+    ### Migration Steps
+
+    1. Review test code that uses `MockHttpServletRequest` and `MockHttpServletResponse`
+    2. Pay special attention to handling of `null` names and values in HTTP headers
+    3. Update assertions if behavior changed due to Servlet API alignment
+
+    ### Additional Info
+
+    - Spring Framework 7.0 adopted Jakarta Servlet 6.1 as the baseline
+    - Applications should be deployed on Servlet 6.1 containers like Tomcat 11+ and Jetty 12.1+
+    - The mock classes now more accurately reflect actual Servlet container behavior
+    - This is especially relevant when using `null` names and values in HTTP headers
+  links:
+    - url: https://jakarta.ee/specifications/servlet/6.1/
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.mock.web.MockHttpServletRequest
+        location: IMPORT
+- ruleID: test-import-00030
+  description: Behavior updated to align with Servlet 6.1 API
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Spring Framework 7.0 updated `MockHttpServletRequest` and `MockHttpServletResponse` to better align with Jakarta Servlet 6.1 API behavior.
+
+    ### Migration Steps
+
+    1. Review test code that uses `MockHttpServletRequest` and `MockHttpServletResponse`
+    2. Pay special attention to handling of `null` names and values in HTTP headers
+    3. Update assertions if behavior changed due to Servlet API alignment
+
+    ### Additional Info
+
+    - Spring Framework 7.0 adopted Jakarta Servlet 6.1 as the baseline
+    - Applications should be deployed on Servlet 6.1 containers like Tomcat 11+ and Jetty 12.1+
+    - The mock classes now more accurately reflect actual Servlet container behavior
+    - This is especially relevant when using `null` names and values in HTTP headers
+  links:
+    - url: https://jakarta.ee/specifications/servlet/6.1/
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.mock.web.MockHttpServletResponse
+        location: IMPORT

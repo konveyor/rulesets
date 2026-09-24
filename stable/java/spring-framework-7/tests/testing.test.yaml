@@ -1,0 +1,14 @@
+rulesPath: ../testing.yaml
+providers:
+- name: java
+  dataPath: ./data/testing
+- name: builtin
+  dataPath: ./data/testing
+tests:
+- ruleID: testing-annotation-00010
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1

@@ -1,0 +1,36 @@
+- ruleID: resilience-import-00010
+  description: Spring Retry functionality merged into spring-core at org.springframework.core.retry
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: "Spring Framework 7.0 has merged core retry functionality from the Spring Retry project into the `spring-core` module. The retry support is now located in the `org.springframework.core.retry` package.\n\n### Before\n\n```java\nimport org.springframework.retry.support.RetryTemplate;\nimport org.springframework.retry.RetryPolicy;\n\npublic class MyService {\n    private final RetryTemplate retryTemplate;\n    \n    public MyService() {\n        this.retryTemplate = new RetryTemplate();\n    }\n}\n```\n\n### After\n\n```java\nimport org.springframework.core.retry.RetryTemplate;\nimport org.springframework.core.retry.RetryPolicy;\n\npublic class MyService {\n    private final RetryTemplate retryTemplate;\n    \n    public MyService() {\n        this.retryTemplate = new RetryTemplate();\n    }\n}\n```\n\n### Additional Info\n\n- Update all imports from `org.springframework.retry.*` to `org.springframework.core.retry.*`\n- Remove the external `spring-retry` dependency from your POM/Gradle file if you're only using the core retry features\n- The Spring team trimmed unnecessary features and revisited APIs during the merge, so some advanced Spring Retry features may not be available in the core framework version\n- The `@Retryable` annotation is now in `spring-context` module and can be enabled with `@EnableResilientMethods`\n- Reactive methods with reactive return types automatically adapt to use Reactor's retry capabilities\n- See the [resilience documentation](https://docs.spring.io/spring/reference/core/resilience.html) and [blog post](https://spring.io/blog/2025/09/09/core-spring-resilience-features)"
+  links:
+    - url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-7.0-Release-Notes#resilience-features-retrytemplate-retryable-concurrencylimit
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.retry.support.RetryTemplate
+        location: IMPORT
+- ruleID: resilience-import-00020
+  description: Spring Retry package relocated from org.springframework.retry to org.springframework.core.retry
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'Spring Retry package relocated to spring-core: Spring Retry package relocated from org.springframework.retry to org.springframework.core.retry'
+  links:
+    - url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-7.0-Release-Notes#resilience-features-retrytemplate-retryable-concurrencylimit
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.retry*
+        location: PACKAGE

@@ -1,0 +1,50 @@
+- ruleID: aop-annotation-00010
+  description: Global proxy type defaulting to CGLIB is consistently applied to all proxy processors including @Async
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    In Spring Framework 7.0, global proxy type defaulting to CGLIB - like in Spring Boot - is consistently applied to all proxy processors, including those triggered by `@Async` and similar annotations.
+
+    ### Behavioral Change
+
+    Previously, `@Async` and other proxy-creating annotations would default to JDK dynamic proxies (interface-based). In Spring Framework 7.0, the default has changed to CGLIB (class-based) proxies when global proxy type defaulting is enabled.
+
+    ### Migration Options
+
+    **Option 1: Accept CGLIB proxies (recommended)**
+    No changes needed if your application can work with CGLIB proxies. This is the new default behavior.
+
+    **Option 2: Opt out for specific beans**
+    Use the new `@Proxyable` annotation to specify interface-based proxies for individual beans:
+
+    ```java
+    @Async
+    @Proxyable(ProxyType.INTERFACES)
+    public class MyService {
+        // ...
+    }
+    ```
+
+    **Option 3: Configure default proxy settings**
+    Declare a bean of type `ProxyConfig` under the name `AutoProxyUtils.DEFAULT_PROXY_CONFIG_BEAN_NAME` to control default proxy settings for the entire application context.
+
+    ### Additional Info
+
+    - CGLIB proxies work by creating a subclass of the target class, so the target class and its methods cannot be final
+    - JDK dynamic proxies require the target class to implement at least one interface
+    - The `@Proxyable` annotation also supports `@Proxyable(TARGET_CLASS)` to explicitly request CGLIB proxies
+    - Bean-specific proxy interfaces can be suggested via `@Proxyable(interfaces=MyService.class)`
+    - See the [Spring Framework 7.0 Release Notes](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-7.0-Release-Notes#consistent-proxy-type-defaulting-and-consistent-opting-out-for-specific-beans)
+  links:
+    - url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-7.0-Release-Notes#consistent-proxy-type-defaulting-and-consistent-opting-out-for-specific-beans
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.scheduling.annotation.Async
+        location: ANNOTATION

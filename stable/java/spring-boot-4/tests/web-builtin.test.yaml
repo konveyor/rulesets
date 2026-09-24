@@ -1,0 +1,10 @@
+rulesPath: ../web.yaml
+providers:
+- name: builtin
+  dataPath: ./data/web-builtin
+tests:
+- ruleID: web-pattern-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
