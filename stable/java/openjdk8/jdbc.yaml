@@ -1,0 +1,182 @@
+- ruleID: jdbc-type-00010
+  description: JDBC 4.2 (JDK 8) adds new abstract methods to java.sql.Driver
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    JDK 8 introduces JDBC 4.2, which adds new abstract methods to `java.sql.Driver` (such as `getParentLogger()`). Custom classes that implement `java.sql.Driver` directly and compiled under JDK 7 may fail compilation under JDK 8 with 'does not override abstract method' errors.
+
+    ### Before
+
+    ```java
+    import java.sql.Driver;
+    import java.sql.Connection;
+    import java.util.Properties;
+
+    public class MyDriver implements Driver {
+        public Connection connect(String url, Properties info) throws SQLException { ... }
+        public boolean acceptsURL(String url) throws SQLException { ... }
+        // Missing getParentLogger() — not required before JDBC 4.1
+    }
+    ```
+
+    ### After
+
+    ```java
+    import java.sql.Driver;
+    import java.sql.Connection;
+    import java.sql.SQLFeatureNotSupportedException;
+    import java.util.Properties;
+    import java.util.logging.Logger;
+
+    public class MyDriver implements Driver {
+        public Connection connect(String url, Properties info) throws SQLException { ... }
+        public boolean acceptsURL(String url) throws SQLException { ... }
+
+        @Override
+        public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+            throw new SQLFeatureNotSupportedException();
+        }
+    }
+    ```
+
+    ### Additional Info
+
+    - If using a third-party JDBC driver (PostgreSQL, MySQL, Oracle), upgrade to a JDK 8-compatible version (PostgreSQL 9.3+ JDBC 4.1 driver, MySQL Connector/J 5.1.30+) rather than implementing the interface yourself.
+    - `getParentLogger()` is defined in `java.sql.CommonDataSource` (the root interface); implementing it with `throw new SQLFeatureNotSupportedException()` is the standard stub.
+    - Custom driver wrappers and DataSource decorators are most commonly affected.
+    - JDBC 4.2 also adds `getObject(int, Class<T>)` overloads to `ResultSet`; check `ResultSet` implementations too.
+  links:
+    - url: https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/jdbc_42.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.sql.Driver
+        location: IMPLEMENTS_TYPE
+- ruleID: jdbc-type-00020
+  description: JDBC 4.2 (JDK 8) adds new abstract methods to DataSource and related interfaces
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    JDK 8 introduces JDBC 4.2, which adds new abstract methods (via `java.sql.CommonDataSource`) to `java.sql.DataSource`, `java.sql.ConnectionPoolDataSource`, and `java.sql.XADataSource`. Custom implementations compiled under JDK 7 may fail compilation under JDK 8.
+
+    ### Before
+
+    ```java
+    import javax.sql.DataSource;
+
+    public class MyDataSource implements DataSource {
+        // JDBC 4.0/4.1 methods implemented
+        // Missing: getParentLogger() from CommonDataSource
+    }
+    ```
+
+    ### After
+
+    ```java
+    import javax.sql.DataSource;
+    import java.sql.SQLFeatureNotSupportedException;
+    import java.util.logging.Logger;
+
+    public class MyDataSource implements DataSource {
+        // Existing methods...
+
+        @Override
+        public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+            throw new SQLFeatureNotSupportedException();
+        }
+    }
+    ```
+
+    ### Additional Info
+
+    - `getParentLogger()` is defined in `java.sql.CommonDataSource`, the root interface for DataSource, ConnectionPoolDataSource, and XADataSource.
+    - Throwing `SQLFeatureNotSupportedException` is the standard stub implementation.
+    - If using a connection pool (HikariCP, c3p0, DBCP, BoneCP), upgrade to a version that supports JDBC 4.2 rather than maintaining a custom implementation.
+    - Third-party JDBC drivers (PostgreSQL JDBC, MySQL Connector/J) should be upgraded to their JDK 8-compatible releases to avoid this issue.
+  links:
+    - url: https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/jdbc_42.html
+      title: Migration Documentation
+  when:
+    or:
+        - java.referenced:
+            pattern: javax.sql.DataSource
+            location: IMPLEMENTS_TYPE
+        - java.referenced:
+            pattern: javax.sql.ConnectionPoolDataSource
+            location: IMPLEMENTS_TYPE
+        - java.referenced:
+            pattern: javax.sql.XADataSource
+            location: IMPLEMENTS_TYPE
+- ruleID: jdbc-type-00030
+  description: JDBC 4.2 (JDK 8) adds getObject(int/String, Class<T>) overloads to ResultSet and CallableStatement
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    JDK 8 introduces JDBC 4.2, which adds new `getObject(int columnIndex, Class<T> type)` and `getObject(String columnLabel, Class<T> type)` overloads to `java.sql.ResultSet` and `java.sql.CallableStatement`. Custom classes that implement these interfaces directly (e.g., result set wrappers, callable statement decorators) and were compiled under JDK 7 will fail compilation under JDK 8 with 'does not override abstract method' errors.
+
+    ### Before
+
+    ```java
+    import java.sql.ResultSet;
+    import java.sql.SQLException;
+
+    public class MyResultSetWrapper implements ResultSet {
+        // Existing JDBC 4.0/4.1 methods implemented
+        // Missing: getObject(int, Class<T>) and getObject(String, Class<T>) — not required before JDBC 4.2
+        public Object getObject(int columnIndex) throws SQLException { ... }
+        public Object getObject(String columnLabel) throws SQLException { ... }
+    }
+    ```
+
+    ### After
+
+    ```java
+    import java.sql.ResultSet;
+    import java.sql.SQLException;
+    import java.sql.SQLFeatureNotSupportedException;
+
+    public class MyResultSetWrapper implements ResultSet {
+        // Existing methods...
+
+        @Override
+        public <T> T getObject(int columnIndex, Class<T> type) throws SQLException {
+            throw new SQLFeatureNotSupportedException("getObject(int, Class) not supported");
+        }
+
+        @Override
+        public <T> T getObject(String columnLabel, Class<T> type) throws SQLException {
+            throw new SQLFeatureNotSupportedException("getObject(String, Class) not supported");
+        }
+    }
+    ```
+
+    ### Additional Info
+
+    - The new overloads allow type-safe retrieval of JDBC objects using a target Java type: `rs.getObject(1, LocalDate.class)` or `rs.getObject("col", BigDecimal.class)`.
+    - If using a third-party JDBC driver (PostgreSQL, MySQL, Oracle) rather than implementing ResultSet yourself, upgrade the driver to a JDK 8-compatible version instead.
+    - `java.sql.CallableStatement` extends `java.sql.PreparedStatement` which extends `java.sql.Statement` which extends `java.sql.Wrapper` and `java.sql.ResultSet`; the same overloads must be implemented for CallableStatement wrappers.
+    - Throwing `SQLFeatureNotSupportedException` is the standard stub when the full type-conversion logic is not needed.
+    - Check all `ResultSet`, `PreparedStatement`, and `CallableStatement` wrapper or decorator classes in the codebase for this compilation break.
+  links:
+    - url: https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/jdbc_42.html
+      title: Migration Documentation
+  when:
+    or:
+        - java.referenced:
+            pattern: java.sql.ResultSet
+            location: IMPLEMENTS_TYPE
+        - java.referenced:
+            pattern: java.sql.CallableStatement
+            location: IMPLEMENTS_TYPE

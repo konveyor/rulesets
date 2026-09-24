@@ -1,0 +1,82 @@
+- ruleID: datetime-change-00010
+  description: SimpleDateFormat is not thread-safe; Java 8 java.time classes are thread-safe but SimpleDateFormat is not
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    In Java 8, the new `java.time` package (`DateTimeFormatter`, `LocalDate`, `ZonedDateTime`) introduced thread-safe, immutable date/time classes. However, the legacy `java.text.SimpleDateFormat` remains **not thread-safe**. During migration to Java 8, developers often adopt `java.time` for new code while keeping `SimpleDateFormat` in legacy paths — creating a risk of concurrent usage or confusion between the two APIs.
+
+    ### Before
+    ```java
+    import java.text.SimpleDateFormat;
+    // Shared instance — NOT thread-safe
+    private static final SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd");
+    String formatted = SDF.format(new Date()); // Corrupts under concurrent access
+    ```
+
+    ### After
+    ```java
+    import java.time.LocalDate;
+    import java.time.format.DateTimeFormatter;
+    // Thread-safe and immutable
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    String formatted = LocalDate.now().format(FORMATTER);
+    ```
+
+    ### Additional Info
+    - `java.text.SimpleDateFormat` has always been non-thread-safe — shared or static instances cause data corruption under concurrent access
+    - Java 8's `DateTimeFormatter` is immutable and safe to share across threads
+    - If you cannot migrate to `java.time`, use `ThreadLocal<SimpleDateFormat>` as a workaround
+    - Review all static, instance, or shared `SimpleDateFormat` fields for concurrent access risks after migrating to Java 8
+    - Consider replacing `java.util.Date` + `SimpleDateFormat` with `java.time.LocalDate` + `DateTimeFormatter`
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/8-whats-new.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.text.SimpleDateFormat
+        location: TYPE
+- ruleID: datetime-change-00020
+  description: JDK 8 updates tzdata engine; historical DST calculations may differ from JDK 7 results
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    JDK 8 includes an updated timezone database (tzdata) compared to JDK 7. Historical date calculations, daylight saving time (DST) transition detection, and timezone parsing may produce slightly different results for certain countries and historical time periods where DST rules changed between JDK 7 and JDK 8.
+
+    ### Before
+    ```java
+    import java.util.TimeZone;
+    import java.util.Calendar;
+    TimeZone tz = TimeZone.getTimeZone("America/New_York");
+    Calendar cal = Calendar.getInstance(tz);
+    Date historicalDate = cal.getTime(); // May differ after JDK 8 tzdata update
+    ```
+
+    ### After
+    ```java
+    import java.time.ZoneId;
+    import java.time.ZonedDateTime;
+    ZoneId zone = ZoneId.of("America/New_York");
+    ZonedDateTime historicalDate = ZonedDateTime.of(1985, 10, 27, 2, 0, 0, 0, zone);
+    ```
+
+    ### Additional Info
+    - The JDK 8 tzdata update reflects newer DST rules for countries that modified their timezone legislation between JDK 7 and JDK 8 releases
+    - Historical date calculations (especially pre-2000 dates) are most likely to differ due to retroactive DST rule changes
+    - Verify date-sensitive tests and business logic after migration, particularly for timezone-aware historical data processing
+    - The `java.time.ZoneId` and `java.time.ZonedDateTime` APIs use the same underlying tzdata but provide a cleaner, immutable interface
+    - Run regression tests comparing JDK 7 and JDK 8 results for any code that processes dates in specific countries with known DST rule changes
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/8-whats-new.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.util.TimeZone
+        location: TYPE
