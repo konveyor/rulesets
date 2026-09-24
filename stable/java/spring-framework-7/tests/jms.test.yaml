@@ -1,0 +1,14 @@
+rulesPath: ../jms.yaml
+providers:
+- name: java
+  dataPath: ./data/jms
+- name: builtin
+  dataPath: ./data/jms
+tests:
+- ruleID: jms-import-00010
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1

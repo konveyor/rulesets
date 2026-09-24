@@ -1,0 +1,57 @@
+- ruleID: security-method-00010
+  description: Fonts location added to common static resource locations
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Spring Boot 4 adds `/fonts/**` to the common static resource locations returned by `PathRequest.toStaticResources()`. This location will inherit the same security settings as your other static resources.
+
+    ### Before
+    ```java
+    import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
+    import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.authorizeHttpRequests(auth -> auth
+            .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
+            .anyRequest().authenticated()
+        );
+        return http.build();
+    }
+    ```
+
+    ### After
+    If you don't want the `/fonts/**` location included:
+    ```java
+    import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
+    import org.springframework.boot.autoconfigure.security.StaticResourceLocation;
+    import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.authorizeHttpRequests(auth -> auth
+            .requestMatchers(PathRequest.toStaticResources()
+                .atCommonLocations()
+                .excluding(StaticResourceLocation.FONTS)).permitAll()
+            .anyRequest().authenticated()
+        );
+        return http.build();
+    }
+    ```
+
+    ### Additional Info
+    - By default, `/fonts/**` will have the same security configuration as other static resources
+    - Use `.excluding(StaticResourceLocation.FONTS)` if you need different security rules for fonts
+    - This change improves consistency in handling common static resources
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#fonts-added-to-common-static-locations)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#fonts-added-to-common-static-locations
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.boot.autoconfigure.security.servlet.PathRequest.toStaticResources
+        location: METHOD_CALL

@@ -1,0 +1,27 @@
+rulesPath: ../testing.yaml
+providers:
+- name: java
+  dataPath: ./data/testing
+- name: builtin
+  dataPath: ./data/testing
+tests:
+# TODO: Re-enable when kantra supports Maven version qualifiers like "-groovy-3.0"
+# - ruleID: testing-dependency-00010
+#   testCases:
+#   - name: tc-1
+#     hasIncidents:
+#       atLeast: 1
+- ruleID: testing-annotation-00010
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1
+- ruleID: testing-annotation-00020
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1

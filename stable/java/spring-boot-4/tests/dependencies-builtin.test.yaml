@@ -1,0 +1,10 @@
+rulesPath: ../dependencies.yaml
+providers:
+- name: builtin
+  dataPath: ./data/dependencies-builtin
+tests:
+- ruleID: dependencies-pattern-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

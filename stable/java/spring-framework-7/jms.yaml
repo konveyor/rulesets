@@ -1,0 +1,39 @@
+- ruleID: jms-import-00010
+  description: Default DestinationResolver changed to SimpleDestinationResolver
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The default `DestinationResolver` for `JmsTemplate` and listener containers has changed to `SimpleDestinationResolver` in Spring Framework 7.0.
+
+    ### Migration Steps
+
+    If you need to enforce fresh destination resolution on every call:
+
+    ```java
+    import org.springframework.jms.core.JmsTemplate;
+    import org.springframework.jms.support.destination.DynamicDestinationResolver;
+
+    JmsTemplate template = new JmsTemplate(connectionFactory);
+    template.setDestinationResolver(new DynamicDestinationResolver());
+    ```
+
+    ### Additional Info
+
+    - The new `SimpleDestinationResolver` caches `Session`-resolved `Queue` and `Topic` instances
+    - This improves performance for most use cases
+    - Fresh resolution on every call should not be necessary with common JMS brokers
+    - Explicitly configure `DynamicDestinationResolver` only if you have a specific requirement
+    - This change applies to `JmsTemplate`, `JmsClient`, and JMS listener containers
+  links:
+    - url: https://docs.spring.io/spring-framework/reference/integration/jms.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.jms.core.JmsTemplate
+        location: IMPORT
