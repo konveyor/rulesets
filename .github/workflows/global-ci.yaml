@@ -369,6 +369,7 @@ jobs:
     uses: konveyor/ci/.github/workflows/global-ci-bundle.yml@main
     with:
       kantra: ttl.sh/konveyor-kantra-${{ github.sha }}:4h
+      tackle_hub: ttl.sh/konveyor-hub-${{ github.sha }}:4h
       run_api_tests: false
       run_koncur_hub_tests: true
       run_koncur_kantra_tests: true
