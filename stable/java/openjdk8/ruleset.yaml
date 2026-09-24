@@ -1,0 +1,5 @@
+name: openjdk8/openjdk7
+description: Rules for migrating from openjdk7 to openjdk8
+labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8

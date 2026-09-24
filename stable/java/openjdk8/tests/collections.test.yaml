@@ -1,0 +1,26 @@
+rulesPath: ../collections.yaml
+providers:
+    - name: java
+      dataPath: ./data/collections
+tests:
+    - ruleID: collections-import-00010
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: collections-import-00020
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: collections-method-00010
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

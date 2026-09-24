@@ -1,0 +1,12 @@
+rulesPath: ../security.yaml
+providers:
+    - name: java
+      dataPath: ./data/security-java
+tests:
+    - ruleID: security-method-00010
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
