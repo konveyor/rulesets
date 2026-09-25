@@ -1,0 +1,15 @@
+rulesPath: ../session.yaml
+providers:
+- name: builtin
+  dataPath: ./data/session-builtin
+tests:
+- ruleID: session-pattern-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: session-pattern-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

@@ -1,0 +1,22 @@
+rulesPath: ../graalvm.yaml
+providers:
+- name: java
+  dataPath: ./data/graalvm
+- name: builtin
+  dataPath: ./data/graalvm
+tests:
+- ruleID: graalvm-change-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: graalvm-change-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: graalvm-change-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

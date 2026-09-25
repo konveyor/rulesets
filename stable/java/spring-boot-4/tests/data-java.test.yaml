@@ -1,0 +1,51 @@
+rulesPath: ../data.yaml
+providers:
+- name: java
+  dataPath: ./data/data-java
+- name: builtin
+  dataPath: ./data/data-java
+tests:
+- ruleID: data-change-00010
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1
+- ruleID: data-dependency-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: data-dependency-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: data-annotation-00010
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1
+- ruleID: data-dependency-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: data-dependency-00040
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: data-dependency-00050
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: data-dependency-00060
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

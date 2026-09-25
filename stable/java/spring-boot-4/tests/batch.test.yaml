@@ -1,0 +1,12 @@
+rulesPath: ../batch.yaml
+providers:
+- name: java
+  dataPath: ./data/batch
+- name: builtin
+  dataPath: ./data/batch
+tests:
+- ruleID: batch-dependency-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

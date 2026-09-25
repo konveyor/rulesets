@@ -1,0 +1,157 @@
+- ruleID: build-xml-00010
+  description: Classic uber-jar loader removed
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The classic uber-jar loader has been removed from Spring Boot 4. Remove any loader implementation configuration from your Maven build file.
+
+    ### Before
+
+    **pom.xml:**
+    ```xml
+    <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+            <loaderImplementation>CLASSIC</loaderImplementation>
+        </configuration>
+    </plugin>
+    ```
+
+    ### After
+
+    Remove the `<loaderImplementation>` element:
+
+    **pom.xml:**
+    ```xml
+    <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+            <!-- loaderImplementation removed -->
+        </configuration>
+    </plugin>
+    ```
+
+    ### Additional Info
+
+    - The classic loader was a legacy implementation from earlier Spring Boot versions
+    - Spring Boot 4 uses an improved loader implementation by default
+    - No functional changes are needed to your application code
+    - The new loader provides better performance and compatibility
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#classic-uber-jar-loader-support
+      title: Migration Documentation
+  when:
+    builtin.xml:
+        xpath: //*[local-name()='loaderImplementation' and text()='CLASSIC']
+        filepaths:
+            - pom.xml
+- ruleID: build-pattern-00010
+  description: Classic uber-jar loader removed
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The classic uber-jar loader has been removed from Spring Boot 4. Remove any loader implementation configuration from your Gradle build file.
+
+    ### Before
+
+    **build.gradle:**
+    ```groovy
+    bootJar {
+        loaderImplementation = org.springframework.boot.loader.tools.LoaderImplementation.CLASSIC
+    }
+    ```
+
+    **build.gradle.kts:**
+    ```kotlin
+    tasks.bootJar {
+        loaderImplementation.set(org.springframework.boot.loader.tools.LoaderImplementation.CLASSIC)
+    }
+    ```
+
+    ### After
+
+    Remove the `loaderImplementation` configuration:
+
+    **build.gradle:**
+    ```groovy
+    bootJar {
+        // loaderImplementation removed
+    }
+    ```
+
+    **build.gradle.kts:**
+    ```kotlin
+    tasks.bootJar {
+        // loaderImplementation removed
+    }
+    ```
+
+    ### Additional Info
+
+    - The classic loader was a legacy implementation from earlier Spring Boot versions
+    - Spring Boot 4 uses an improved loader implementation by default
+    - No functional changes are needed to your application code
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#classic-uber-jar-loader-support
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: loaderImplementation\s*=\s*org\.springframework\.boot\.loader\.tools\.LoaderImplementation\.CLASSIC
+        filePattern: .*\.gradle(\.kts)?
+- ruleID: build-pattern-00020
+  description: Minimum version 3.0.0 required
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The minimum supported version of the CycloneDX Gradle plugin is now 3.0.0 in Spring Boot 4.
+
+    ### Migration Steps
+
+    1. Update your Gradle build file to use CycloneDX plugin version 3.0.0 or higher:
+
+    **build.gradle:**
+    ```groovy
+    plugins {
+        id 'org.cyclonedx.bom' version '3.0.0'
+    }
+    ```
+
+    **build.gradle.kts:**
+    ```kotlin
+    plugins {
+        id("org.cyclonedx.bom") version "3.0.0"
+    }
+    ```
+
+    ### Additional Info
+
+    - Versions below 3.0.0 are not compatible with Spring Boot 4
+    - Check the [CycloneDX Gradle plugin releases](https://github.com/CycloneDX/cyclonedx-gradle-plugin/releases) for the latest version
+    - Review any CycloneDX configuration for compatibility with 3.x
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#cyclone-dx-gradle-plugin
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: org\.cyclonedx\.bom
+        filePattern: .*\.gradle(\.kts)?

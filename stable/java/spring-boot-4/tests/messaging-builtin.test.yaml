@@ -1,0 +1,10 @@
+rulesPath: ../messaging.yaml
+providers:
+- name: builtin
+  dataPath: ./data/messaging-builtin
+tests:
+- ruleID: messaging-pattern-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
