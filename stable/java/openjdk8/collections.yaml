@@ -1,0 +1,162 @@
+- ruleID: collections-import-00010
+  description: HashMap and HashSet iteration order can differ in JDK 8 due to treeification of hash buckets
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    In JDK 8, `HashMap` (and by extension `HashSet`) replaces linked-list buckets with Red-Black Trees when a bucket exceeds 8 entries with the same hash code. This changes the internal structure and can produce a different iteration order compared to JDK 7. Code that implicitly relies on a specific `HashMap` or `HashSet` iteration order may exhibit non-deterministic behavior after upgrading.
+
+    ### Before (relying on implicit iteration order — risky)
+
+    ```java
+    import java.util.HashMap;
+    import java.util.Map;
+
+    Map<String, Integer> map = new HashMap<>();
+    map.put("b", 2);
+    map.put("a", 1);
+    // In JDK 7, iteration order was consistent per JVM run for specific inputs
+    for (Map.Entry<String, Integer> e : map.entrySet()) {
+        process(e); // Assumed ordering may break in JDK 8
+    }
+    ```
+
+    ### After (use ordered collection when order matters)
+
+    ```java
+    import java.util.LinkedHashMap;
+    import java.util.Map;
+
+    Map<String, Integer> map = new LinkedHashMap<>(); // insertion-order guaranteed
+    map.put("b", 2);
+    map.put("a", 1);
+    for (Map.Entry<String, Integer> e : map.entrySet()) {
+        process(e); // Order is now deterministic
+    }
+    ```
+
+    ### Additional Info
+
+    - Treeification only occurs when a single bucket holds ≥ 8 entries with identical hash codes — most applications are NOT affected.
+    - Audit code where `HashMap`/`HashSet` iteration directly affects: business logic ordering, JSON/XML serialization output, test assertions comparing ordered results, and message or log formatting.
+    - Use `LinkedHashMap` for insertion-order preservation, `TreeMap`/`TreeSet` for natural or custom sort ordering.
+    - Unit tests that compare serialized map output (e.g., JSON string comparison without ignoring field order) are most likely to fail after upgrading.
+  links:
+    - url: https://www.oracle.com/java/technologies/migrate-to-java8.html
+      title: Migration Documentation
+  when:
+    or:
+        - java.referenced:
+            pattern: java.util.HashMap
+            location: IMPORT
+        - java.referenced:
+            pattern: java.util.HashSet
+            location: IMPORT
+- ruleID: collections-import-00020
+  description: ConcurrentHashMap rewritten in JDK 8; segment-based locking replaced with CAS operations
+  category: potential
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    In JDK 8, `ConcurrentHashMap` was completely rewritten using CAS (Compare-And-Swap) operations instead of segment-based locking (`Segment<K,V>[]`). This change has two key risks for code migrating from JDK 7:
+
+    1. **Reflection on internal structure breaks** — Code that accesses `ConcurrentHashMap` internals via reflection (e.g., monitoring agents, legacy serialization, or frameworks accessing segment count) will throw `NoSuchFieldException`.
+    2. **Recursive compute deadlock** — Calling `computeIfAbsent()` recursively on the *same map* within a compute callback causes a thread deadlock or `IllegalStateException` (fixed in JDK 9, but present in all JDK 8 releases).
+
+    ### Before (risky recursive pattern)
+
+    ```java
+    import java.util.concurrent.ConcurrentHashMap;
+
+    ConcurrentHashMap<String, List<String>> map = new ConcurrentHashMap<>();
+
+    // DEADLOCK in JDK 8: computeIfAbsent inside computeIfAbsent on the same map
+    map.computeIfAbsent("key", k -> {
+        map.computeIfAbsent("nested", k2 -> new ArrayList<>()); // Deadlock!
+        return new ArrayList<>();
+    });
+    ```
+
+    ### After (safe pattern)
+
+    ```java
+    // Pre-compute values outside of compute callbacks, or use a temporary map
+    map.computeIfAbsent("nested", k2 -> new ArrayList<>());
+    map.computeIfAbsent("key", k -> new ArrayList<>());
+    ```
+
+    ### Additional Info
+
+    - The `Segment<K,V>` inner class no longer exists in JDK 8; serialized ConcurrentHashMap instances from JDK 7 are not compatible.
+    - Avoid mutating a `ConcurrentHashMap` from within its own `compute*`, `merge`, or `replaceAll` callbacks.
+    - New bulk operations were added in JDK 8: `forEach`, `reduce`, `search`, `mappingCount` — these offer better alternatives to reflection-based introspection.
+    - JDK 8's `ConcurrentHashMap` generally provides better concurrent throughput than the JDK 7 segment-based version.
+  links:
+    - url: https://www.oracle.com/java/technologies/migrate-to-java8.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.util.concurrent.ConcurrentHashMap
+        location: IMPORT
+- ruleID: collections-method-00010
+  description: TimSort in JDK 8 strictly validates comparator transitivity; invalid comparators throw IllegalArgumentException
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    JDK 8's TimSort implementation strictly enforces mathematical comparator transitivity: if A > B and B > C, then A > C must hold. In JDK 7, comparators that violated this contract (e.g., returning 0 for null comparisons or breaking anti-symmetry) often passed silently. In JDK 8, such comparators throw `IllegalArgumentException: Comparison method violates its general contract!`.
+
+    ### Before (invalid comparator — may have silently passed in JDK 7)
+
+    ```java
+    import java.util.Collections;
+    import java.util.List;
+
+    Collections.sort(list, (a, b) -> {
+        if (a == null) return 0; // WRONG: violates transitivity and anti-symmetry
+        return a.compareTo(b);
+    });
+    ```
+
+    ### After (null-safe comparator using JDK 8 API)
+
+    ```java
+    import java.util.Arrays;
+    import java.util.Collections;
+    import java.util.Comparator;
+
+    // Collections.sort:
+    Collections.sort(list, Comparator.nullsFirst(Comparator.naturalOrder()));
+
+    // Arrays.sort:
+    Arrays.sort(array, Comparator.nullsFirst(Comparator.naturalOrder()));
+    ```
+
+    ### Additional Info
+
+    - The exception message is: `java.lang.IllegalArgumentException: Comparison method violates its general contract!`
+    - A valid comparator must obey: anti-symmetry (`compare(a,b) == -compare(b,a)`), transitivity (`a>b && b>c → a>c`), and consistency (`compare(a,b)==0 → compare(a,c)==compare(b,c)`).
+    - Use `Comparator.nullsFirst()` or `Comparator.nullsLast()` for null-safe comparisons.
+    - Use `Comparator.comparing()` with key extractors to build correct comparators declaratively.
+    - As a temporary workaround only, `-Djava.util.Arrays.useLegacyMergeSort=true` disables the strict check — fix the underlying comparator rather than relying on this flag.
+    - Test sort operations with edge case inputs (nulls, equal elements, reversed lists) before migrating.
+  links:
+    - url: https://www.oracle.com/java/technologies/migrate-to-java8.html
+      title: Migration Documentation
+  when:
+    or:
+        - java.referenced:
+            pattern: java.util.Collections.sort
+            location: METHOD_CALL
+        - java.referenced:
+            pattern: java.util.Arrays.sort
+            location: METHOD_CALL
