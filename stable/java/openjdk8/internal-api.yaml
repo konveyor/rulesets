@@ -1,0 +1,199 @@
+- ruleID: internal-api-import-00010
+  description: sun.misc and sun.reflect internal APIs restricted or refactored in JDK 8
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The internal packages `sun.misc.*` and `sun.reflect.*` were refactored and access-restricted in JDK 8. Direct usage of these APIs (e.g., `sun.misc.Unsafe`, `sun.misc.BASE64Decoder`) or transitive dependencies that rely on deep reflection (CGLIB, ByteBuddy, ASM <5.0, Spring 3.x, Jackson 1.x) may fail with `ClassNotFoundException` or `IllegalAccessException`.
+
+    ### Before
+
+    ```java
+    import sun.misc.Unsafe;
+    import sun.misc.BASE64Decoder; // Internal API
+
+    public class MyClass {
+        private static final Unsafe unsafe = Unsafe.getUnsafe();
+        private String decoded = new BASE64Decoder().decodeBuffer(encoded);
+    }
+    ```
+
+    ### After
+
+    ```java
+    import java.util.Base64; // JDK 8 standard API
+
+    public class MyClass {
+        // sun.misc.Unsafe: use java.util.concurrent.atomic.* or upgrade the library
+        private String decoded = new String(Base64.getDecoder().decode(encoded));
+    }
+    ```
+
+    ### Additional Info
+
+    - `sun.misc.BASE64Decoder` / `BASE64Encoder`: Replace with `java.util.Base64` (added in JDK 8).
+    - `sun.misc.Unsafe`: Some usages can be replaced with `java.util.concurrent.atomic.*` types or `LockSupport`. If the library uses Unsafe internally, upgrade the library instead.
+    - Spring Framework 3.x: Upgrade to 4.x+ for full JDK 8 compatibility.
+    - ASM: Upgrade to 5.0+ for JDK 8 class file format (version 52) support.
+    - Jackson 1.x (`org.codehaus.jackson`): Upgrade to Jackson 2.x (`com.fasterxml.jackson.core`).
+    - CGLIB and ByteBuddy: Upgrade to versions that support JDK 8 reflection restrictions.
+  links:
+    - url: https://openjdk.org/jeps/260
+      title: Migration Documentation
+  when:
+    or:
+        - java.referenced:
+            pattern: sun.misc*
+            location: PACKAGE
+        - java.referenced:
+            pattern: sun.reflect*
+            location: PACKAGE
+- ruleID: internal-api-dependency-00010
+  description: Spring Framework 3.x incompatible with JDK 8 due to internal sun.misc API usage
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Spring Framework 3.x uses internal APIs (`sun.misc.*`, `sun.reflect.*`) that were restricted in JDK 8. Running Spring 3.x on JDK 8 can result in `ClassNotFoundException`, `IllegalAccessException`, or `NoSuchMethodException` at startup or runtime.
+
+    ### Migration Steps
+
+    1. Upgrade Spring Framework from 3.x to 4.x+ in your `pom.xml` or `build.gradle`:
+
+    ```xml
+    <!-- Before (Spring 3.x) -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>3.2.18.RELEASE</version>
+    </dependency>
+
+    <!-- After (Spring 4.x — compatible with JDK 8) -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>4.3.30.RELEASE</version>
+    </dependency>
+    ```
+
+    2. Upgrade ALL Spring Framework artifacts consistently (spring-context, spring-web, spring-webmvc, spring-tx, spring-aop, etc.).
+
+    ### Additional Info
+
+    - Spring 4.3.x is the last 4.x release and provides full JDK 8 support, including lambda-friendly APIs.
+    - If upgrading directly to Spring 5.x, note that Spring 5 requires JDK 8 as a minimum and removes support for some older patterns.
+    - Spring Security, Spring Data, and Spring MVC versions must be upgraded alongside core Spring for compatibility.
+    - Spring Boot users: upgrade to Spring Boot 1.5.x (wraps Spring 4.x) or Spring Boot 2.x (wraps Spring 5.x).
+  links:
+    - url: https://www.oracle.com/java/technologies/migrate-to-java8.html
+      title: Migration Documentation
+  when:
+    java.dependency:
+        name: org.springframework.spring-core
+        upperbound: 4.0.0
+- ruleID: internal-api-dependency-00020
+  description: ASM < 5.0 cannot handle JDK 8 class file format (version 52)
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    ASM versions below 5.0 cannot parse or generate Java 8 class files (class file format version 52.0). Frameworks that use ASM internally (Spring, CGLIB, Mockito, Cobertura, JaCoCo) will fail at startup, during test execution, or when processing annotated classes if they depend on ASM < 5.0.
+
+    ### Migration Steps
+
+    1. If ASM is a direct dependency, upgrade to 5.0.4 or later:
+
+    ```xml
+    <!-- Before -->
+    <dependency>
+      <groupId>org.ow2.asm</groupId>
+      <artifactId>asm</artifactId>
+      <version>4.2</version>
+    </dependency>
+
+    <!-- After -->
+    <dependency>
+      <groupId>org.ow2.asm</groupId>
+      <artifactId>asm</artifactId>
+      <version>5.0.4</version>
+    </dependency>
+    ```
+
+    2. If ASM is a transitive dependency (via Spring, CGLIB, Hibernate, Mockito), upgrade those parent dependencies instead — they bundle compatible ASM versions.
+
+    ### Additional Info
+
+    - ASM 5.x added support for Java 8 class features: lambda bridge methods, default interface methods, and type annotations (JSR 308).
+    - CGLIB 3.1+ bundles ASM 5.0. Spring 4.1+ bundles ASM 5.0 internally.
+    - Mockito 1.10.x includes ASM 5.0-compatible versions.
+    - If multiple transitive dependencies pull in different ASM versions, use `<dependencyManagement>` in your POM to enforce the correct version and prevent Maven's dependency mediation from selecting an older one.
+  links:
+    - url: https://www.oracle.com/java/technologies/migrate-to-java8.html
+      title: Migration Documentation
+  when:
+    java.dependency:
+        name: org.ow2.asm.asm
+        upperbound: 5.0.0
+- ruleID: internal-api-dependency-00030
+  description: Jackson 1.x (org.codehaus.jackson) may be incompatible with JDK 8; upgrade to Jackson 2.x
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Jackson 1.x (groupId `org.codehaus.jackson`) uses internal reflection patterns that may fail on JDK 8. The Jackson project moved to groupId `com.fasterxml.jackson.core` (Jackson 2.x), which is fully compatible with JDK 8 and supports Java 8 types natively.
+
+    ### Migration Steps
+
+    1. Replace Jackson 1.x dependencies with Jackson 2.x:
+
+    ```xml
+    <!-- Before (Jackson 1.x) -->
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-core-asl</artifactId>
+      <version>1.9.13</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-mapper-asl</artifactId>
+      <version>1.9.13</version>
+    </dependency>
+
+    <!-- After (Jackson 2.x) -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.15.2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.15.2</version>
+    </dependency>
+    ```
+
+    ### Additional Info
+
+    - Jackson 2.x is NOT fully backward compatible with Jackson 1.x at the API level. Update import paths: `org.codehaus.jackson.map.*` → `com.fasterxml.jackson.databind.*`.
+    - If using Jackson via Spring MVC or REST frameworks, upgrade those frameworks too — they bundle a specific Jackson version.
+    - Jackson 2.x supports JDK 8 date/time types (`java.time.*`) via the `jackson-datatype-jsr310` module.
+    - Check for both `jackson-core-asl` and `jackson-mapper-asl` artifacts — both need to be replaced.
+  links:
+    - url: https://www.oracle.com/java/technologies/migrate-to-java8.html
+      title: Migration Documentation
+  when:
+    java.dependency:
+        name: org.codehaus.jackson.jackson-core-asl
+        lowerbound: 0.0.0

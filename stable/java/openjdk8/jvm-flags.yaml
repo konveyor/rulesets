@@ -1,0 +1,94 @@
+- ruleID: jvm-flags-pattern-00010
+  description: -Xverify:none is deprecated in JDK 8 and removed in later releases; bytecode verification is strictly enforced
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `-Xverify:none` JVM flag disables bytecode verification. JDK 8 deprecated this flag, and it is removed entirely in JDK 13+. JDK 8 also enforces Split Bytecode Verification (StackMapTable attributes) far more strictly than JDK 7, which can cause `java.lang.VerifyError` when bytecode manipulation libraries generate invalid bytecode.
+
+    ### Migration Steps
+    - Remove `-Xverify:none` from all JVM startup scripts, Dockerfiles, CI configurations, and application server configs
+    - Upgrade bytecode manipulation libraries to versions compatible with JDK 8's stricter verifier:
+      - **AspectJ**: upgrade to 1.8.x or later
+      - **Mockito**: upgrade to 1.10.x or later
+      - **PowerMock**: upgrade to 1.6.x or later
+      - **JaCoCo**: upgrade to 0.7.5 or later
+      - **Cobertura**: no maintained version supports JDK 8 — migrate to JaCoCo
+    - If `VerifyError` occurs after removing the flag, identify the offending library via the stack trace and upgrade it
+
+    ### Additional Info
+    - `-Xverify:none` was used as a workaround when instrumentation libraries generated invalid StackMapTable attributes (required since Java 7 class file format)
+    - JDK 8 strictly requires valid StackMapTable attributes in compiled classes
+    - The flag is permanently removed in JDK 13+; using it after that point causes a startup error
+    - Cobertura is effectively unmaintained and incompatible with JDK 8 — JaCoCo is the recommended replacement for code coverage
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/8-compatibility-guide.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: -Xverify:none
+        filePattern: .*
+- ruleID: jvm-flags-pattern-00020
+  description: -XX:+UseParNewGC without -XX:+UseConcMarkSweepGC is deprecated in JDK 8 and removed in later releases
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `-XX:+UseParNewGC` flag, when used without `-XX:+UseConcMarkSweepGC`, was deprecated in JDK 8. JDK 8 automatically enables `UseParNewGC` when `UseConcMarkSweepGC` is set, making the explicit standalone flag redundant. GC flags that were tuned specifically for JDK 7 PermGen issues or early G1GC bugs should be audited and removed.
+
+    ### Migration Steps
+    - Remove standalone `-XX:+UseParNewGC` from JVM startup scripts, Dockerfiles, and CI configurations
+    - If using CMS collector: ensure `-XX:+UseConcMarkSweepGC` is set — `UseParNewGC` is then automatically enabled by the JVM
+    - Benchmark with JDK 8's default GC (Parallel GC) before re-applying custom GC tuning
+    - Consider migrating to G1GC (`-XX:+UseG1GC`) which is production-stable and significantly improved in JDK 8
+
+    ### Additional Info
+    - In JDK 7, explicit `UseParNewGC` was common in CMS tuning configurations for parallel young-generation collection
+    - JDK 8 makes `UseParNewGC` implicit with CMS — the standalone explicit flag is a no-op at best, a deprecation warning at worst
+    - Also remove PermGen-related flags (`-XX:PermSize`, `-XX:MaxPermSize`) which have no effect in JDK 8 and generate warnings
+    - G1GC received major stability and performance improvements in JDK 8 and is recommended for most production workloads
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/8-compatibility-guide.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: -XX:\+UseParNewGC
+        filePattern: .*
+- ruleID: jvm-flags-pattern-00030
+  description: CMS foreground incremental mode (-XX:+CMSIncrementalMode) is deprecated in JDK 8 and removed in JDK 9
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    `-XX:+CMSIncrementalMode` (foreground CMS incremental mode) was deprecated in JDK 8 and removed in JDK 9. This mode was originally designed for single-CPU systems to reduce GC pauses, but modern multi-core systems with JDK 8's improved CMS or G1GC provide better alternatives without the incremental mode overhead.
+
+    ### Migration Steps
+    - Remove `-XX:+CMSIncrementalMode` and all related incremental CMS flags:
+      - `-XX:+CMSIncrementalPacing`
+      - `-XX:CMSIncrementalDutyCycle`
+      - `-XX:CMSIncrementalDutyCycleMin`
+      - `-XX:CMSIncrementalSafetyFactor`
+    - Test GC behavior without incremental mode — JDK 8's CMS is improved and typically does not need it
+    - For low-pause requirements, evaluate G1GC (`-XX:+UseG1GC`) with `MaxGCPauseMillis` tuning as a replacement
+
+    ### Additional Info
+    - `CMSIncrementalMode` was primarily useful on resource-constrained or single-CPU environments common in early Java deployments
+    - Modern JVM GC algorithms (G1GC, ZGC, Shenandoah) provide low-pause collection without this legacy flag
+    - This flag is permanently removed in JDK 9 — using it in later JDK releases may cause a startup warning or error
+    - G1GC in JDK 8 is production-stable and a suitable replacement for CMS with incremental mode in most workloads
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/8-compatibility-guide.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: -XX:\+CMSIncrementalMode
+        filePattern: .*

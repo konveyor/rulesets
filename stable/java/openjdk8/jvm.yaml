@@ -1,0 +1,62 @@
+- ruleID: jvm-pattern-00010
+  description: PermGen removed in JDK 8; PermSize/MaxPermSize flags are no longer valid
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    PermGen was removed in JDK 8 and replaced with Metaspace, which uses native OS memory. JVM flags `-XX:PermSize` and `-XX:MaxPermSize` are no longer recognized and will cause startup warnings or errors on JDK 8.
+
+    ### Migration Steps
+
+    1. Remove the following JVM flags from all startup scripts, Dockerfiles, CI configurations, and JVM argument files:
+       - `-XX:PermSize=<value>`
+       - `-XX:MaxPermSize=<value>`
+    2. Optionally replace them with Metaspace equivalents to limit native memory usage:
+       - `-XX:MetaspaceSize=<value>` (initial Metaspace size, equivalent to old PermSize)
+       - `-XX:MaxMetaspaceSize=<value>` (maximum Metaspace size, equivalent to old MaxPermSize)
+
+    ### Additional Info
+
+    - Metaspace grows dynamically by default (unlike PermGen which had a fixed upper bound). Without `-XX:MaxMetaspaceSize`, Metaspace can consume all available native memory.
+    - The PermGen removal is transparent at the application code level; only JVM startup flags are affected.
+    - Check all scripts that invoke `java`: start scripts, app server configs (JBoss, Tomcat), CI pipelines, and container ENTRYPOINT/CMD instructions.
+    - In containerized environments, not setting a Metaspace limit can cause the JVM to consume more native memory than expected, potentially triggering OOM kills.
+  links:
+    - url: https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/metaspace.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: -XX:(Max)?PermSize
+        filePattern: .*\.(sh|bat|cmd|conf|properties|ya?ml|xml|env|args|Dockerfile)
+- ruleID: jvm-pattern-00020
+  description: Default CodeCache size increased from 48MB (JDK 7) to ~240MB (JDK 8)
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The default CodeCache size increased from 48 MB in JDK 7 to approximately 240–256 MB in JDK 8. If `-XX:ReservedCodeCacheSize` is set explicitly in your startup configuration, review whether the value is still appropriate for JDK 8.
+
+    ### Migration Steps
+
+    1. Search for `-XX:ReservedCodeCacheSize` in startup scripts, Dockerfiles, and CI configs.
+    2. If the value is tuned for JDK 7's smaller default (e.g., less than 64m), consider increasing it or removing the flag to use the new JDK 8 default.
+    3. In constrained environments (containers, embedded systems), set an explicit limit to prevent unexpectedly high native memory usage.
+
+    ### Additional Info
+
+    - If you do NOT set this flag, JDK 8 will use its new default (~240 MB), which may exceed memory budgets in RAM-constrained environments.
+    - CodeCache stores JIT-compiled native code; too small a value causes the JIT compiler to stop compiling new methods, leading to performance degradation.
+    - Review your container memory resource limits if running in Docker/Kubernetes after upgrading to JDK 8.
+  links:
+    - url: https://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: -XX:ReservedCodeCacheSize
+        filePattern: .*\.(sh|bat|cmd|conf|properties|ya?ml|xml|env|args|Dockerfile)

@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>migration-test</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <dependencies>
+    <!-- Rule: internal-api-dependency-00010 - spring-core below 4.0.0 (Spring 3.x uses .RELEASE qualifier) -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>3.2.18.RELEASE</version>
+    </dependency>
+
+    <!-- Rule: internal-api-dependency-00020 - asm below 5.0.0, plain semver 4.2 -->
+    <dependency>
+      <groupId>org.ow2.asm</groupId>
+      <artifactId>asm</artifactId>
+      <version>4.2</version>
+    </dependency>
+
+    <!-- Rule: internal-api-dependency-00030 - jackson-core-asl any version (lowerbound 0.0.0) -->
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-core-asl</artifactId>
+      <version>1.9.13</version>
+    </dependency>
+  </dependencies>
+</project>

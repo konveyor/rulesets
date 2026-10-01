@@ -1,0 +1,12 @@
+rulesPath: ../compilation.yaml
+providers:
+    - name: java
+      dataPath: ./data/compilation
+tests:
+    - ruleID: compilation-annotation-00010
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
