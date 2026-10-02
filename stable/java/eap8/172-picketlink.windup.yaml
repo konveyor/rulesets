@@ -8,7 +8,7 @@
   - konveyor.io/source
   links:
   - title: 'Developing Jakarta XML Web Services: Apache CXF Support'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html-single/developing_web_services_applications/index#ws_trust_sts_apache_CXF_support
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/developing_web_services_applications/index#ws_trust_sts_apache_CXF_support
   message: |-
     The PicketLink subsystem has been removed. This legacy security system was deprecated in EAP6 and removed in EAP8. All related configuration must be removed.
      In case of Picketlink STS usage, migration to Apache CXF is required.

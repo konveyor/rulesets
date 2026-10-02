@@ -10,7 +10,7 @@
   - eap7
   links:
   - title: Migrate a Naming Client Configuration to Elytron
-    url: https://access.redhat.com/documentation/es-es/red_hat_jboss_enterprise_application_platform/7.2/html/migration_guide/migrating_to_elytron#migrate_naming_client_configuration_to_elytron
+    url: https://docs.redhat.com/es/documentation/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/index#migrate_naming_client_configuration_to_elytron
   message: Migrate a client application that performs a remote JNDI lookup using an
     `org.jboss.naming.remote.client.InitialContext` class, which is backed by an `org.jboss.naming.remote.client.InitialContextFactory`
     class, to Elytron.
@@ -31,7 +31,7 @@
   - eap7
   links:
   - title: Migrate an EJB Client to Elytron
-    url: https://access.redhat.com/documentation/es-es/red_hat_jboss_enterprise_application_platform/7.2/html/migration_guide/migrating_to_elytron#migrate_security_ejb_client_to_elytron
+    url: https://docs.redhat.com/es/documentation/red_hat_jboss_enterprise_application_platform/7.2/html-single/migration_guide/index#migrate_security_ejb_client_to_elytron
   message: Remote EJB client must be configured following one of the two options defined
     in the link below.
   ruleID: elytron-eap71-00010

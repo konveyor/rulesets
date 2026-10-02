@@ -12,7 +12,7 @@
   - asynchronous
   links:
   - title: Java Connector Architecture (JCA) Management
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/configuration_guide/#jca_management
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/configuration_guide/index#jca_management
   - title: Description of WebSphere Asynchronous Work
     url: http://www.javaworld.com/article/2077671/build-ci-sdlc/the-wise-work-manager-for-context-based-scoping.html
   - title: 'JSR 237: Work Manager for Application Servers'
@@ -20,7 +20,7 @@
   message: |-
     WebSphere Asynchronous Work is a Work Manager, whose purpose is to allow the user utilizing threads while letting the container manage them.
 
-     For migration to JBoss EAP 7, [replace with JCA Work Manager](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/configuration_guide/#jca_management).
+     For migration to JBoss EAP 7, [replace with JCA Work Manager](https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/configuration_guide/index#jca_management).
   ruleID: websphere-other-eap7-01000
   when:
     java.referenced:

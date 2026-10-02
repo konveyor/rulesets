@@ -86,7 +86,7 @@
   - configuration
   links:
   - title: Hibernate 3.5 to 4 - DTD
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#Migrate_Your_Hibernate_3.5.x_Application_to_Hibernate_4.x
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#Migrate_Your_Hibernate_3.5.x_Application_to_Hibernate_4.x
   message: " Hibernate 4.0 uses http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd
     instead.\n                     "
   ruleID: hibernate-xml-04000
@@ -109,7 +109,7 @@
   - configuration
   links:
   - title: Hibernate 3.5 to 4 - DTD
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#Migrate_Your_Hibernate_3.5.x_Application_to_Hibernate_4.x
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#Migrate_Your_Hibernate_3.5.x_Application_to_Hibernate_4.x
   message: " Hibernate 4.0 uses http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd
     instead.\n                     "
   ruleID: hibernate-xml-05000

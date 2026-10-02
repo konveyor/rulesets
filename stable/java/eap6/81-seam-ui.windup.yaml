@@ -13,9 +13,9 @@
   - jsf
   links:
   - title: Enable Applications To Use Older Versions of JSF
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-JSF_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-JSF_changes
   - title: JBoss EAP 5 Component Upgrade Reference
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate-eap5-component-upgrade-reference
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate-eap5-component-upgrade-reference
   - title: How to use JSF 1.2 with EAP 7?
     url: https://access.redhat.com/solutions/2773121
   ruleID: seam-ui-jsf-00001
@@ -43,7 +43,7 @@
   - jsf
   links:
   - title: JBoss EAP 5 Component Upgrade Reference
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate-eap5-component-upgrade-reference
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate-eap5-component-upgrade-reference
   ruleID: seam-ui-jsf-00002
   tag:
   - seam
@@ -70,7 +70,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: |-
     Seam UI's `<s:button>` JSF control should be replaced by `<h:button>`.
      There are differences in attributes, for example the _action_ attribute maps to _outcome_ and there is no _propagation_ attribute.
@@ -102,7 +102,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: |-
     Seam UI's `<s:link>` should be replaced by `<h:link>`.
      There are differences in attributes, for example the _action_ attribute maps to _outcome_ and there is no _propagation_ attribute.
@@ -134,7 +134,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: There is no direct mapping for `<s:conversationId>` in JSF UI controls.
   ruleID: seam-ui-jsf-01001
   when:
@@ -164,7 +164,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: There is no direct mapping for `<s:conversationPropagation>` in JSF UI
     controls
   ruleID: seam-ui-jsf-01002
@@ -195,7 +195,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: There is no direct mapping for `<s:taskId>` in JSF UI controls
   ruleID: seam-ui-jsf-01003
   when:
@@ -225,7 +225,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: There is no direct mapping for `<s:defaultAction>` in JSF UI controls
   ruleID: seam-ui-jsf-01004
   when:
@@ -255,7 +255,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: |-
     Seam UI's `<f:convertDateTime type="time" pattern="kk:mm:ss">` should be replaced by `<f:convertDateTime>`.
 
@@ -289,7 +289,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: Seam UI's `<s:convertEntity>` should be replaced by `<f:converter converterId="[yourConverterClass]">`.
   ruleID: seam-ui-jsf-01006
   when:
@@ -319,7 +319,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: There is no direct mapping for `<s:enumItem>` in JSF UI controls
   ruleID: seam-ui-jsf-01007
   when:
@@ -349,7 +349,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: There is no direct mapping for `<s:token>` in JSF UI controls
   ruleID: seam-ui-jsf-01008
   when:
@@ -379,7 +379,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: There is no direct mapping for `<s:formattedText>` in JSF UI controls
   ruleID: seam-ui-jsf-01009
   when:
@@ -409,7 +409,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: There is no direct mapping for `<s:cache>` in JSF UI controls
   ruleID: seam-ui-jsf-01010
   when:
@@ -439,7 +439,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: There is no direct mapping for `<s:resource>` in JSF UI controls
   ruleID: seam-ui-jsf-01011
   when:
@@ -469,7 +469,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: There is no direct mapping for `<s:download>` in JSF UI controls
   ruleID: seam-ui-jsf-01012
   when:
@@ -499,7 +499,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: There is no direct mapping for `<s:remote>` in JSF UI controls
   ruleID: seam-ui-jsf-01013
   when:
@@ -529,7 +529,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: Seam UI's `<s:selectItems>` should be replaced by `<h:selectItems>`.
   ruleID: seam-ui-jsf-01014
   when:
@@ -559,7 +559,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: Seam UI's `<s:validate>` should be replaced by `<f:validateBean>`.
   ruleID: seam-ui-jsf-01015
   when:
@@ -589,7 +589,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: Seam UI's `<s:fragment>` should be replaced by `<ui:fragment>`.
   ruleID: seam-ui-jsf-01016
   when:
@@ -619,7 +619,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   - title: Java EE javax.faces.convert.EnumConverter
     url: https://docs.oracle.com/javaee/6/api/javax/faces/convert/EnumConverter.html
   message: There is no direct mapping for `<s:convertEnum>` in JSF UI controls, but
@@ -652,7 +652,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   - title: Creating and Using a Custom Converter
     url: https://docs.oracle.com/javaee/6/tutorial/doc/bnaus.html
   message: There is no direct mapping for `<s:convertAtomicBoolean>` in JSF UI controls.
@@ -685,7 +685,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   - title: Creating and Using a Custom Converter
     url: https://docs.oracle.com/javaee/6/tutorial/doc/bnaus.html
   message: There is no direct mapping for `<s:convertAtomicInteger>` in JSF UI controls.
@@ -718,7 +718,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   - title: Creating and Using a Custom Converter
     url: https://docs.oracle.com/javaee/6/tutorial/doc/bnaus.html
   message: There is no direct mapping for `<s:convertAtomicLong>` in JSF UI controls.
@@ -751,7 +751,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: |-
     There is no direct mapping for `<s:validateEquality>` in JSF UI controls.
      Use respective `<f:validate[constraint]>` like:
@@ -788,7 +788,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: There is no direct mapping for `<s:validateAll>` in JSF UI controls, but
     you can achieve a similar effect by using `<f:validateBean>` or [Richfaces](http://richfaces.jboss.org/)
     `<rich:validator>`.
@@ -820,7 +820,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: |-
     There is no direct mapping for `<s:decorate>` in JSF UI controls, but you can achieve the same functionality by using the UIInputContainer and a composite container, both of which are demonstrated in the [Open18 migration example](https://github.com/seam/migration/blob/develop/open18_java_ee_6)
      [input.xhtml](https://raw.githubusercontent.com/seam/migration/develop/open18_java_ee_6/src/main/webapp/resources/components/input.xhtml) file.
@@ -852,7 +852,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: There is no direct mapping for `<s:div>` in JSF UI controls, but it could
     be done with an `<h:panelGroup layout="block">` or a `<ui:fragment>` containing
     a div.
@@ -884,7 +884,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: There is no direct mapping for `<s:span>` in JSF UI controls, but you can
     achieve a similar effect by using `<h:panelGroup>` or a `<ui:fragment>` with a
     span element.
@@ -916,7 +916,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: There is no direct mapping for `<s:label>` in JSF UI controls, but `<h:outputLabel>`
     is similar.
   ruleID: seam-ui-jsf-01026
@@ -947,7 +947,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: Use `<h:message for="name" errorClass="invalid">` or [Richfaces](http://richfaces.jboss.org/)
     `<rich:message>`.
   ruleID: seam-ui-jsf-01027
@@ -978,7 +978,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: There is no direct mapping for `<s:fileUpload>` in JSF UI controls. You
     can achieve similar functionality by using [Richfaces](http://richfaces.jboss.org/)
     `<rich:fileUpload>`
@@ -1010,7 +1010,7 @@
   - jsf
   links:
   - title: Seam 2 UI controls migration to JSF
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html/Seam_Guide/_seam_2_ui_controls_migration_to_jsf.html
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_ui_controls_migration_to_jsf
   message: There is no direct mapping for `<s:graphicImage>` in JSF UI controls, but
     you can use `<h:graphicImage>` as Seam extends that JSF UI control.
   ruleID: seam-ui-jsf-01029

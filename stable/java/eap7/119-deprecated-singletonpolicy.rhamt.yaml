@@ -8,7 +8,7 @@
   - konveyor.io/source
   links:
   - title: 'Red Hat JBoss EAP 7.3: HA Singleton Service'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html-single/development_guide/index#clustered_ha_singleton_service
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.3/html-single/development_guide/index#clustered_ha_singleton_service
   message: The application imports class `org.wildfly.clustering.singleton.SingletonPolicy`,
     from deprecated HA Singleton API.
   ruleID: deprecated-singletonpolicy-00001

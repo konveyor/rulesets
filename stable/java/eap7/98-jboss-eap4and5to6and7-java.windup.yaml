@@ -11,7 +11,7 @@
   - konveyor.io/target=eap
   links:
   - title: JBoss EAP 6 - Development Guide
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/development_guide/#Use_a_Security_Domain_in_Your_Application
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/development_guide/index#Use_a_Security_Domain_in_Your_Application
   - title: How to configure EJB3 Domain Security in JBoss EAP 6
     url: https://access.redhat.com/solutions/236113
   message: Annotation `org.jboss.security.annotation.SecurityDomain` should be replaced
