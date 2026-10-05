@@ -1,0 +1,95 @@
+
+command: /home/jmle/Dev/redhat/go/src/kantras/kantra.linux.amd64/java-external-provider --port 38719 --name java
+collections.test.yaml      3/3 PASSED
+  collections-import-00010 1/1 PASSED
+  collections-import-00020 1/1 PASSED
+  collections-method-00010 1/1 PASSED
+------------------------------------------------------------
+  Rules Summary:      3/3 (100.00%) PASSED
+  Test Cases Summary: 3/3 (100.00%) PASSED
+------------------------------------------------------------
+
+
+command: /home/jmle/Dev/redhat/go/src/kantras/kantra.linux.amd64/java-external-provider --port 35691 --name java
+compilation.test.yaml          1/1 PASSED
+  compilation-annotation-00010 1/1 PASSED
+------------------------------------------------------------
+  Rules Summary:      1/1 (100.00%) PASSED
+  Test Cases Summary: 1/1 (100.00%) PASSED
+------------------------------------------------------------
+
+
+command: /home/jmle/Dev/redhat/go/src/kantras/kantra.linux.amd64/java-external-provider --port 37807 --name java
+datetime.test.yaml      2/2 PASSED
+  datetime-change-00010 1/1 PASSED
+  datetime-change-00020 1/1 PASSED
+------------------------------------------------------------
+  Rules Summary:      2/2 (100.00%) PASSED
+  Test Cases Summary: 2/2 (100.00%) PASSED
+------------------------------------------------------------
+
+
+command: /home/jmle/Dev/redhat/go/src/kantras/kantra.linux.amd64/java-external-provider --port 45871 --name java
+
+command: /home/jmle/Dev/redhat/go/src/kantras/kantra.linux.amd64/java-external-provider --port 33787 --name java
+internal-api.test.yaml          4/4 PASSED
+  internal-api-import-00010     1/1 PASSED
+  internal-api-dependency-00010 1/1 PASSED
+  internal-api-dependency-00020 1/1 PASSED
+  internal-api-dependency-00030 1/1 PASSED
+------------------------------------------------------------
+  Rules Summary:      4/4 (100.00%) PASSED
+  Test Cases Summary: 4/4 (100.00%) PASSED
+------------------------------------------------------------
+
+
+command: /home/jmle/Dev/redhat/go/src/kantras/kantra.linux.amd64/java-external-provider --port 35797 --name java
+jdbc.test.yaml    3/3 PASSED
+  jdbc-type-00010 1/1 PASSED
+  jdbc-type-00020 1/1 PASSED
+  jdbc-type-00030 1/1 PASSED
+------------------------------------------------------------
+  Rules Summary:      3/3 (100.00%) PASSED
+  Test Cases Summary: 3/3 (100.00%) PASSED
+------------------------------------------------------------
+
+
+command: /home/jmle/Dev/redhat/go/src/kantras/kantra.linux.amd64/java-external-provider --port 41107 --name java
+jvm-flags.test.yaml       3/3 PASSED
+  jvm-flags-pattern-00020 1/1 PASSED
+  jvm-flags-pattern-00030 1/1 PASSED
+  jvm-flags-pattern-00010 1/1 PASSED
+------------------------------------------------------------
+  Rules Summary:      3/3 (100.00%) PASSED
+  Test Cases Summary: 3/3 (100.00%) PASSED
+------------------------------------------------------------
+
+
+command: /home/jmle/Dev/redhat/go/src/kantras/kantra.linux.amd64/java-external-provider --port 39227 --name java
+jvm.test.yaml       2/2 PASSED
+  jvm-pattern-00010 1/1 PASSED
+  jvm-pattern-00020 1/1 PASSED
+------------------------------------------------------------
+  Rules Summary:      2/2 (100.00%) PASSED
+  Test Cases Summary: 2/2 (100.00%) PASSED
+------------------------------------------------------------
+
+
+command: /home/jmle/Dev/redhat/go/src/kantras/kantra.linux.amd64/java-external-provider --port 36365 --name java
+security-builtin.test.yaml 2/2 PASSED
+  security-pattern-00020   1/1 PASSED
+  security-pattern-00010   1/1 PASSED
+------------------------------------------------------------
+  Rules Summary:      2/2 (100.00%) PASSED
+  Test Cases Summary: 2/2 (100.00%) PASSED
+------------------------------------------------------------
+
+
+command: /home/jmle/Dev/redhat/go/src/kantras/kantra.linux.amd64/java-external-provider --port 36221 --name java
+security-java.test.yaml 1/1 PASSED
+  security-method-00010 1/1 PASSED
+------------------------------------------------------------
+  Rules Summary:      1/1 (100.00%) PASSED
+  Test Cases Summary: 1/1 (100.00%) PASSED
+------------------------------------------------------------
+

@@ -1,0 +1,15 @@
+rulesPath: ../security.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/security-builtin
+tests:
+    - ruleID: security-pattern-00010
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: security-pattern-00020
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
