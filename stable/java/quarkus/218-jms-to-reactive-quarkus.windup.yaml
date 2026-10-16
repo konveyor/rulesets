@@ -6,15 +6,15 @@
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
   links:
-  - title: Quarkus - Guide
-    url: https://quarkus.io/guides
-  - title: Smallrye Reactive - Connectors
-    url: https://smallrye.io/smallrye-reactive-messaging/smallrye-reactive-messaging/3.4/connectors/connectors.html
+  - title: Quarkus - Messaging Guide
+    url: https://quarkus.io/guides/messaging
+  - title: SmallRye Reactive Messaging - Connectors
+    url: https://smallrye.io/smallrye-reactive-messaging/latest/
   message: "Usage of JMS is not supported in Quarkus. It is recommended to use Quarkus'
-    SmallRye Reactive Messaging instead of JMS.\n Replace the JavaEE/Jakarta JMS dependency
-    with Smallrye Reactive:\n \n ```\n <dependency>\n <groupId>io.quarkus</groupId>\n
-    <artifactId>quarkus-smallrye-reactive-messaging</artifactId>\n </dependency>\n
-    \n ```\n \n Take a look at the Smallrye Reactive Connectors link below to know
+    Messaging (SmallRye Reactive Messaging) instead of JMS.\n Replace the JavaEE/Jakarta JMS dependency
+    with Quarkus Messaging:\n \n ```\n <dependency>\n <groupId>io.quarkus</groupId>\n
+    <artifactId>quarkus-messaging</artifactId>\n </dependency>\n
+    \n ```\n \n Take a look at the SmallRye Reactive Messaging Connectors link below to know
     more about how to interact with different technologies (AMQP, Apache Camel, ...)"
   ruleID: jms-to-reactive-quarkus-00000
   when:
@@ -57,8 +57,8 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides
-  - title: Incoming (SmallRye Reactive Messaging API)
-    url: https://smallrye.io/smallrye-reactive-messaging/2.5.0/apidocs/org/eclipse/microprofile/reactive/messaging/Incoming.html
+  - title: Incoming (MicroProfile Reactive Messaging API)
+    url: https://javadoc.io/doc/org.eclipse.microprofile.reactive.messaging/microprofile-reactive-messaging-api/latest/org/eclipse/microprofile/reactive/messaging/Incoming.html
   message: "The `destinationLookup` property can be migrated by annotating a message
     handler method (potentially `onMessage`) with the\n `org.eclipse.microprofile.reactive.messaging.Incoming`
     annotation, indicating the name of the queue as a value:\n \n Before:\n ```\n
@@ -95,8 +95,8 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides
-  - title: Emitter (Microprofile Reactive Streams Messaging)
-    url: https://smallrye.io/smallrye-reactive-messaging/2.0.2/apidocs/org/eclipse/microprofile/reactive/messaging/Emitter.html
+  - title: Emitter (MicroProfile Reactive Messaging API)
+    url: https://javadoc.io/doc/org.eclipse.microprofile.reactive.messaging/microprofile-reactive-messaging-api/latest/org/eclipse/microprofile/reactive/messaging/Emitter.html
   message: "JMS `Queue`s should be replaced with MicroProfile `Emitter`s feeding a Channel.
     See the following example of migrating\n a Queue to an Emitter:\n \n Before:\n
     ```\n @Resource(lookup = \"java:/queue/HELLOWORLDMDBQueue\")\n private Queue queue;\n
@@ -121,8 +121,8 @@
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides
-  - title: Emitter (Microprofile Reactive Streams Messaging)
-    url: https://smallrye.io/smallrye-reactive-messaging/2.0.2/apidocs/org/eclipse/microprofile/reactive/messaging/Emitter.html
+  - title: Emitter (MicroProfile Reactive Messaging API)
+    url: https://javadoc.io/doc/org.eclipse.microprofile.reactive.messaging/microprofile-reactive-messaging-api/latest/org/eclipse/microprofile/reactive/messaging/Emitter.html
   message: "JMS `Topic`s should be replaced with MicroProfile `Emitter`s feeding a Channel.
     See the following example of migrating\n a Topic to an Emitter:\n \n Before:\n
     ```\n @Resource(lookup = \"java:/topic/HELLOWORLDMDBTopic\")\n private Topic topic;\n

@@ -1,0 +1,187 @@
+- category: mandatory
+  customVariables: []
+  description: Hibernate Session.save() was removed in Hibernate ORM 7
+  effort: 1
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: Hibernate ORM 7 on Quarkus
+    url: https://quarkus.io/blog/hibernate7-on-quarkus/
+  - title: Quarkus Hibernate ORM Guide
+    url: https://quarkus.io/guides/hibernate-orm
+  message: |-
+    Quarkus 3.40 ships Hibernate ORM 7, which removed the deprecated `Session.save()` method.
+    Replace `session.save(entity)` with the Jakarta Persistence `session.persist(entity)` method.
+  ruleID: hibernate-orm7-to-quarkus-00010
+  when:
+    java.referenced:
+      location: METHOD_CALL
+      pattern: org.hibernate.Session.save*
+- category: mandatory
+  customVariables: []
+  description: Hibernate Session.update() was removed in Hibernate ORM 7
+  effort: 1
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: Hibernate ORM 7 on Quarkus
+    url: https://quarkus.io/blog/hibernate7-on-quarkus/
+  - title: Quarkus Hibernate ORM Guide
+    url: https://quarkus.io/guides/hibernate-orm
+  message: |-
+    Quarkus 3.40 ships Hibernate ORM 7, which removed the deprecated `Session.update()` method.
+    Replace `session.update(entity)` with the Jakarta Persistence `session.merge(entity)` method.
+  ruleID: hibernate-orm7-to-quarkus-00020
+  when:
+    java.referenced:
+      location: METHOD_CALL
+      pattern: org.hibernate.Session.update*
+- category: mandatory
+  customVariables: []
+  description: Hibernate Session.delete() was removed in Hibernate ORM 7
+  effort: 1
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: Hibernate ORM 7 on Quarkus
+    url: https://quarkus.io/blog/hibernate7-on-quarkus/
+  - title: Quarkus Hibernate ORM Guide
+    url: https://quarkus.io/guides/hibernate-orm
+  message: |-
+    Quarkus 3.40 ships Hibernate ORM 7, which removed the deprecated `Session.delete()` method.
+    Replace `session.delete(entity)` with the Jakarta Persistence `session.remove(entity)` method.
+  ruleID: hibernate-orm7-to-quarkus-00030
+  when:
+    java.referenced:
+      location: METHOD_CALL
+      pattern: org.hibernate.Session.delete*
+- category: mandatory
+  customVariables: []
+  description: Hibernate Session.get() was deprecated in Hibernate ORM 7
+  effort: 1
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: Hibernate ORM 7 on Quarkus
+    url: https://quarkus.io/blog/hibernate7-on-quarkus/
+  - title: Quarkus Hibernate ORM Guide
+    url: https://quarkus.io/guides/hibernate-orm
+  message: |-
+    Quarkus 3.40 ships Hibernate ORM 7, which deprecated `Session.get()` in favour of the
+    Jakarta Persistence API. Replace `session.get(Entity.class, id)` with `session.find(Entity.class, id)`.
+  ruleID: hibernate-orm7-to-quarkus-00040
+  when:
+    java.referenced:
+      location: METHOD_CALL
+      pattern: org.hibernate.Session.get*
+- category: mandatory
+  customVariables: []
+  description: Hibernate Session.load() was deprecated in Hibernate ORM 7
+  effort: 1
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: Hibernate ORM 7 on Quarkus
+    url: https://quarkus.io/blog/hibernate7-on-quarkus/
+  - title: Quarkus Hibernate ORM Guide
+    url: https://quarkus.io/guides/hibernate-orm
+  message: |-
+    Quarkus 3.40 ships Hibernate ORM 7, which deprecated `Session.load()` in favour of the
+    Jakarta Persistence API. Replace `session.load(Entity.class, id)` with `session.getReference(Entity.class, id)`
+    (or `session.find(...)` when the entity must be initialized).
+  ruleID: hibernate-orm7-to-quarkus-00050
+  when:
+    java.referenced:
+      location: METHOD_CALL
+      pattern: org.hibernate.Session.load*
+- category: mandatory
+  customVariables: []
+  description: Hibernate @Where was replaced by @SQLRestriction in Hibernate ORM 7
+  effort: 1
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: Hibernate ORM 7 on Quarkus
+    url: https://quarkus.io/blog/hibernate7-on-quarkus/
+  message: |-
+    Quarkus 3.40 ships Hibernate ORM 7, which removed the `@org.hibernate.annotations.Where` annotation.
+    Replace `@Where(clause = "...")` with `@org.hibernate.annotations.SQLRestriction("...")`.
+  ruleID: hibernate-orm7-to-quarkus-00060
+  when:
+    java.referenced:
+      location: ANNOTATION
+      pattern: org.hibernate.annotations.Where
+- category: mandatory
+  customVariables: []
+  description: Hibernate @OrderBy was replaced by @SQLOrder in Hibernate ORM 7
+  effort: 1
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: Hibernate ORM 7 on Quarkus
+    url: https://quarkus.io/blog/hibernate7-on-quarkus/
+  message: |-
+    Quarkus 3.40 ships Hibernate ORM 7, which removed the Hibernate `@org.hibernate.annotations.OrderBy`
+    annotation. Replace it with `@org.hibernate.annotations.SQLOrder("...")`
+    (the standard `jakarta.persistence.@OrderBy` is unaffected).
+  ruleID: hibernate-orm7-to-quarkus-00070
+  when:
+    java.referenced:
+      location: ANNOTATION
+      pattern: org.hibernate.annotations.OrderBy
+- category: mandatory
+  customVariables: []
+  description: hibernate-jpamodelgen was renamed to hibernate-processor in Hibernate ORM 7
+  effort: 1
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: Hibernate ORM 7 on Quarkus
+    url: https://quarkus.io/blog/hibernate7-on-quarkus/
+  message: |-
+    In Hibernate ORM 7 (Quarkus 3.40) the static metamodel annotation processor artifact
+    `org.hibernate.orm:hibernate-jpamodelgen` was renamed to `org.hibernate.orm:hibernate-processor`,
+    and the processor class `org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor` was renamed to
+    `org.hibernate.processor.HibernateProcessor`. Update the dependency coordinates and any explicit
+    `annotationProcessor` configuration accordingly.
+  ruleID: hibernate-orm7-to-quarkus-00080
+  when:
+    java.dependency:
+      lowerbound: 0.0.0
+      name: org.hibernate.orm.hibernate-jpamodelgen
+- category: optional
+  customVariables: []
+  description: Panache Sort is being replaced by the Jakarta Data Order type
+  effort: 1
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus
+  links:
+  - title: Quarkus Hibernate ORM with Panache Guide
+    url: https://quarkus.io/guides/hibernate-orm-panache
+  message: |-
+    Quarkus 3.40 deprecates the Panache `io.quarkus.panache.common.Sort` type in favour of the
+    Jakarta Data `Order` type (`jakarta.data.Order`). Migrate paginated/sorted Panache queries to
+    the Jakarta Data `Order`/`Sort` API, which is the forward-compatible approach in Quarkus.
+  ruleID: hibernate-orm7-to-quarkus-00090
+  when:
+    java.referenced:
+      location: IMPORT
+      pattern: io.quarkus.panache.common.Sort
