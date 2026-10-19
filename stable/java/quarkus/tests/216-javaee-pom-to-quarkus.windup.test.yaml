@@ -57,7 +57,7 @@ tests:
   - name: tc-1
     hasIncidents:
       exactly: 1
-      messageMatches: Configure Quarkus 'hibernate-orm` and jakarta persistence
+      messageMatches: Configure Quarkus `hibernate-orm` and jakarta persistence
 - ruleID: javaee-pom-to-quarkus-00080
   testCases:
   - name: tc-1
