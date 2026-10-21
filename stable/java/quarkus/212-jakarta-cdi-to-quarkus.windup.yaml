@@ -5,6 +5,7 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/cdi-reference
@@ -27,6 +28,7 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/cdi-reference
@@ -49,6 +51,7 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links: []
   message: "The `beans.xml` descriptor content is ignored and it could be removed
     from the application. \n Refer to the guide referenced below to check the supported
@@ -69,6 +72,7 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus Simplified Producer Method Declaration
     url: https://quarkus.io/guides/cdi-reference#simplified-producer-method-declaration
@@ -87,6 +91,7 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus CDI reference
     url: https://quarkus.io/guides/cdi-reference

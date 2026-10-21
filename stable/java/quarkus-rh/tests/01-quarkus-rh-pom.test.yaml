@@ -1,0 +1,23 @@
+rulesPath: ../01-quarkus-rh-pom.yaml
+providers:
+- name: builtin
+  dataPath: ./data/01-quarkus-rh-pom
+tests:
+- ruleID: quarkus-rh-pom-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Use the Red Hat build of Quarkus BOM
+- ruleID: quarkus-rh-pom-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Use the Red Hat build of Quarkus Maven plugin
+- ruleID: quarkus-rh-pom-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      exactly: 1
+      messageMatches: Red Hat Maven repository

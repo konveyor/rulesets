@@ -6,6 +6,7 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=jakarta-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus Hibernate ORM Guide
     url: https://quarkus.io/guides/hibernate-orm
@@ -43,6 +44,7 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=jakarta-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus Hibernate ORM Guide
     url: https://quarkus.io/guides/hibernate-orm
@@ -80,6 +82,7 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=jakarta-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus Hibernate ORM Guide
     url: https://quarkus.io/guides/hibernate-orm
