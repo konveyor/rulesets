@@ -1,0 +1,7 @@
+rulesPath: ../spring-framework-5.x-to-6.0-httpclient.yaml
+providers:
+- name: java
+  dataPath: ./data/httpclient
+# RestTemplate/HttpComponentsClientHttpRequestFactory + HttpClient 4 is covered by
+# spring-framework-5.x-to-6.0-web-applications-00020 (see web-applications test file).
+tests: []
