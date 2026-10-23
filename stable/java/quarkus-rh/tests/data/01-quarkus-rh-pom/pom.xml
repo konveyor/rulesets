@@ -3,22 +3,42 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.konveyor.demo</groupId>
-    <artifactId>javaee-sample</artifactId>
+    <artifactId>upstream-quarkus-sample</artifactId>
     <version>1.0.0</version>
-    <packaging>war</packaging>
-    <name>Java EE sample (to Red Hat build of Quarkus)</name>
+    <name>Upstream Quarkus sample (migrating to Red Hat build of Quarkus)</name>
 
+    <!--
+      This project uses the UPSTREAM Quarkus platform (io.quarkus.platform) and does not
+      configure the Red Hat Maven repository, so the quarkus-rh overlay rules should flag
+      it to switch the BOM/plugin group id to com.redhat.quarkus.platform and add the RH repo.
+    -->
     <properties>
+        <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
+        <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
+        <quarkus.platform.version>3.40.1</quarkus.platform.version>
         <maven.compiler.release>17</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>jakarta.platform</groupId>
-            <artifactId>jakarta.jakartaee-api</artifactId>
-            <version>10.0.0</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.quarkus.platform</groupId>
+                <artifactId>quarkus-bom</artifactId>
+                <version>${quarkus.platform.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.quarkus.platform</groupId>
+                <artifactId>quarkus-maven-plugin</artifactId>
+                <version>${quarkus.platform.version}</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>

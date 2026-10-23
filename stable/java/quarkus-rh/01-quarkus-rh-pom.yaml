@@ -27,9 +27,10 @@
       - pom.xml
       namespaces:
         m: http://maven.apache.org/POM/4.0.0
-      xpath: /m:project[not(m:dependencyManagement/m:dependencies/m:dependency/m:artifactId/text()
-        = 'quarkus-bom') and not(m:dependencyManagement/m:dependencies/m:dependency/m:artifactId/text()
-        = '${quarkus.platform.artifact-id}')]
+      # Fire unless the Red Hat build of Quarkus BOM is already imported. This also
+      # flags projects that use the upstream io.quarkus.platform quarkus-bom, since
+      # switching the group id to com.redhat.quarkus.platform is the point of the overlay.
+      xpath: /m:project[not(m:dependencyManagement/m:dependencies/m:dependency[(m:artifactId/text() = 'quarkus-bom' or m:artifactId/text() = '${quarkus.platform.artifact-id}') and (m:groupId/text() = 'com.redhat.quarkus.platform' or m:groupId/text() = '${quarkus.platform.group-id}')])]
 - category: mandatory
   customVariables: []
   description: Adopt the Red Hat build of Quarkus Maven plugin
@@ -57,7 +58,9 @@
       - pom.xml
       namespaces:
         m: http://maven.apache.org/POM/4.0.0
-      xpath: /m:project[not(m:build/m:plugins/m:plugin/m:artifactId/text() = 'quarkus-maven-plugin')]
+      # Fire unless the Red Hat build of Quarkus Maven plugin is already used. This also
+      # flags projects using the upstream io.quarkus.platform quarkus-maven-plugin.
+      xpath: /m:project[not(m:build/m:plugins/m:plugin[m:artifactId/text() = 'quarkus-maven-plugin' and (m:groupId/text() = 'com.redhat.quarkus.platform' or m:groupId/text() = '${quarkus.platform.group-id}')])]
 - category: optional
   customVariables: []
   description: Configure the Red Hat Maven repository
@@ -83,4 +86,6 @@
       - pom.xml
       namespaces:
         m: http://maven.apache.org/POM/4.0.0
-      xpath: /m:project[not(m:repositories/m:repository/m:url[contains(text(), 'maven.repository.redhat.com')])]
+      # Fire when the Red Hat Maven repository is missing from either <repositories>
+      # or <pluginRepositories> (the RH quarkus-maven-plugin needs the plugin repository).
+      xpath: /m:project[not(m:repositories/m:repository/m:url[contains(text(), 'maven.repository.redhat.com')]) or not(m:pluginRepositories/m:pluginRepository/m:url[contains(text(), 'maven.repository.redhat.com')])]

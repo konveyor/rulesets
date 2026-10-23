@@ -40,7 +40,7 @@
         pattern: artifactId>jakarta.faces<
 - category: mandatory
   customVariables: []
-  description: JAX-WS / Jakarta XML Web Services (SOAP) is not a supported extension in Red Hat build of Quarkus
+  description: JAX-WS / Jakarta XML Web Services (SOAP) is not part of the Red Hat build of Quarkus platform
   effort: 7
   labels:
   - konveyor.io/source=java-ee
@@ -49,17 +49,19 @@
   links:
   - title: Red Hat build of Quarkus - Component Details (supported extensions)
     url: https://access.redhat.com/articles/7040491
+  - title: Camel Extensions for Quarkus (Quarkus CXF - supported SOAP)
+    url: https://docs.redhat.com/en/documentation/red_hat_build_of_apache_camel
   - title: Quarkus REST (supported)
     url: https://quarkus.io/guides/rest
   message: |-
-    JAX-WS / Jakarta XML Web Services (SOAP) has no supported (productized) extension in Red Hat build of Quarkus 3.33.
-    SOAP support on Quarkus is provided by the community `quarkus-cxf` (Quarkiverse) extension, which is NOT covered by Red Hat support.
+    JAX-WS / Jakarta XML Web Services (SOAP) is not part of the Red Hat build of Quarkus 3.33 platform (it is not in the product BOM or the supported-extensions list).
 
-    Recommended options:
-    - Re-architect SOAP endpoints as RESTful services using Quarkus REST (`io.quarkus:quarkus-rest`, supported), or
+    Supported options:
+    - Use Quarkus CXF, which is productized and supported as part of Red Hat build of Apache Camel (Camel Extensions for Quarkus), rather than the Red Hat build of Quarkus platform.
+    - Re-architect SOAP endpoints as RESTful services using Quarkus REST (`io.quarkus:quarkus-rest`, supported on Red Hat build of Quarkus).
     - Keep the SOAP components on a supported platform (for example JBoss EAP) and integrate over the network.
 
-    If the community `quarkus-cxf` extension is used, be aware it falls outside the Red Hat build of Quarkus support scope.
+    Note: Quarkus CXF is supported under Red Hat build of Apache Camel, not under the Red Hat build of Quarkus platform support scope.
   ruleID: quarkus-rh-unsupported-extensions-00020
   when:
     or:
@@ -77,7 +79,7 @@
         pattern: javax.xml.ws*
 - category: mandatory
   customVariables: []
-  description: Jakarta Batch (JSR-352) is not a supported extension in Red Hat build of Quarkus
+  description: Jakarta Batch (JSR-352) is not part of the Red Hat build of Quarkus platform
   effort: 7
   labels:
   - konveyor.io/source=java-ee
@@ -89,14 +91,12 @@
   - title: Quarkus Scheduler (supported)
     url: https://quarkus.io/guides/scheduler
   message: |-
-    Jakarta Batch (JSR-352) has no supported (productized) extension in Red Hat build of Quarkus 3.33.
-    Batch support on Quarkus is provided by the community `quarkus-jberet` (Quarkiverse) extension, which is NOT covered by Red Hat support.
+    Jakarta Batch (JSR-352) is not part of the Red Hat build of Quarkus 3.33 platform (it is not in the product BOM or the supported-extensions list).
+    The community `quarkus-jberet` (Quarkiverse) extension implements JSR-352 but is not part of the Red Hat build of Quarkus platform.
 
-    Recommended options:
-    - For scheduled or periodic work, use `io.quarkus:quarkus-scheduler` or `io.quarkus:quarkus-quartz` (both supported).
-    - For large-scale batch processing, consider an external batch solution (for example a dedicated batch service or a workflow engine) invoked from Quarkus.
-
-    If the community `quarkus-jberet` extension is used, be aware it falls outside the Red Hat build of Quarkus support scope.
+    Migration options:
+    - For true JSR-352 batch workloads (jobs/steps/chunks, reader-processor-writer, checkpoint/restart), plan a real batch migration — typically a dedicated/external batch solution or a workflow engine invoked from Quarkus. This is the primary path, as the semantics have no in-platform equivalent.
+    - For simple periodic or triggered work only, `io.quarkus:quarkus-scheduler` or `io.quarkus:quarkus-quartz` (both supported) may suffice, but they only provide scheduling/triggering — not JSR-352 batch semantics.
   ruleID: quarkus-rh-unsupported-extensions-00030
   when:
     or:
