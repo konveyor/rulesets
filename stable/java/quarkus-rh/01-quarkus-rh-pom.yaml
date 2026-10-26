@@ -1,0 +1,91 @@
+- category: mandatory
+  customVariables: []
+  description: Adopt the Red Hat build of Quarkus BOM
+  effort: 1
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus-rh
+  links:
+  - title: Red Hat build of Quarkus - Develop and compile applications with Apache Maven
+    url: https://docs.redhat.com/en/documentation/red_hat_build_of_quarkus/3.33/html-single/develop_and_compile_applications_with_apache_maven/index
+  message: "Use the Red Hat build of Quarkus BOM to omit the version of the different
+    Quarkus dependencies. \n Unlike upstream Quarkus (`io.quarkus.platform`), Red Hat
+    build of Quarkus uses the `com.redhat.quarkus.platform` group id. \n Add the following
+    sections to the `pom.xml` file: \n\n ```xml\n <properties> \n <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
+    \n <quarkus.platform.group-id>com.redhat.quarkus.platform</quarkus.platform.group-id>
+    \n <quarkus.platform.version>3.33.4.redhat-00003</quarkus.platform.version>\n </properties>
+    \n <dependencyManagement> \n <dependencies> \n <dependency> \n <groupId>${quarkus.platform.group-id}</groupId>
+    \n <artifactId>${quarkus.platform.artifact-id}</artifactId> \n <version>${quarkus.platform.version}</version>
+    \n <type>pom</type> \n <scope>import</scope> \n </dependency> \n </dependencies>
+    \n </dependencyManagement> \n ```\n The Red Hat build of Quarkus artifacts are served
+    from the Red Hat Maven repository (see the Red Hat Maven repository rule)."
+  ruleID: quarkus-rh-pom-00010
+  when:
+    builtin.xml:
+      filepaths:
+      - pom.xml
+      namespaces:
+        m: http://maven.apache.org/POM/4.0.0
+      # Fire unless the Red Hat build of Quarkus BOM is already imported. This also
+      # flags projects that use the upstream io.quarkus.platform quarkus-bom, since
+      # switching the group id to com.redhat.quarkus.platform is the point of the overlay.
+      xpath: /m:project[not(m:dependencyManagement/m:dependencies/m:dependency[(m:artifactId/text() = 'quarkus-bom' or m:artifactId/text() = '${quarkus.platform.artifact-id}') and (m:groupId/text() = 'com.redhat.quarkus.platform' or m:groupId/text() = '${quarkus.platform.group-id}')])]
+- category: mandatory
+  customVariables: []
+  description: Adopt the Red Hat build of Quarkus Maven plugin
+  effort: 1
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus-rh
+  links:
+  - title: Red Hat build of Quarkus - Develop and compile applications with Apache Maven
+    url: https://docs.redhat.com/en/documentation/red_hat_build_of_quarkus/3.33/html-single/develop_and_compile_applications_with_apache_maven/index
+  message: "Use the Red Hat build of Quarkus Maven plugin (`com.redhat.quarkus.platform`
+    group id) adding the following sections to the `pom.xml` file: \n\n ```xml\n <properties>
+    \n <quarkus.platform.group-id>com.redhat.quarkus.platform</quarkus.platform.group-id>
+    \n <quarkus.platform.version>3.33.4.redhat-00003</quarkus.platform.version>\n </properties>
+    \n <build>\n <plugins>\n <plugin>\n <groupId>${quarkus.platform.group-id}</groupId>\n
+    <artifactId>quarkus-maven-plugin</artifactId>\n <version>${quarkus.platform.version}</version>\n
+    <extensions>true</extensions>\n <executions>\n <execution>\n <goals>\n <goal>build</goal>\n
+    <goal>generate-code</goal>\n <goal>generate-code-tests</goal>\n </goals>\n </execution>\n
+    </executions>\n </plugin>\n </plugins>\n </build>\n ```"
+  ruleID: quarkus-rh-pom-00020
+  when:
+    builtin.xml:
+      filepaths:
+      - pom.xml
+      namespaces:
+        m: http://maven.apache.org/POM/4.0.0
+      # Fire unless the Red Hat build of Quarkus Maven plugin is already used. This also
+      # flags projects using the upstream io.quarkus.platform quarkus-maven-plugin.
+      xpath: /m:project[not(m:build/m:plugins/m:plugin[m:artifactId/text() = 'quarkus-maven-plugin' and (m:groupId/text() = 'com.redhat.quarkus.platform' or m:groupId/text() = '${quarkus.platform.group-id}')])]
+- category: optional
+  customVariables: []
+  description: Configure the Red Hat Maven repository
+  effort: 1
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus-rh
+  links:
+  - title: Red Hat build of Quarkus - Develop and compile applications with Apache Maven
+    url: https://docs.redhat.com/en/documentation/red_hat_build_of_quarkus/3.33/html-single/develop_and_compile_applications_with_apache_maven/index
+  message: "The Red Hat build of Quarkus artifacts (`com.redhat.quarkus.platform`) are
+    served from the Red Hat Maven repository. Configure it in your `~/.m2/settings.xml`
+    (or in the `pom.xml`) so the BOM and Maven plugin resolve: \n\n ```xml\n <repositories>\n
+    <repository>\n <id>redhat-ga</id>\n <url>https://maven.repository.redhat.com/ga</url>\n
+    </repository>\n </repositories>\n <pluginRepositories>\n <pluginRepository>\n <id>redhat-ga</id>\n
+    <url>https://maven.repository.redhat.com/ga</url>\n </pluginRepository>\n </pluginRepositories>\n
+    ```"
+  ruleID: quarkus-rh-pom-00030
+  when:
+    builtin.xml:
+      filepaths:
+      - pom.xml
+      namespaces:
+        m: http://maven.apache.org/POM/4.0.0
+      # Fire when the Red Hat Maven repository is missing from either <repositories>
+      # or <pluginRepositories> (the RH quarkus-maven-plugin needs the plugin repository).
+      xpath: /m:project[not(m:repositories/m:repository/m:url[contains(text(), 'maven.repository.redhat.com')]) or not(m:pluginRepositories/m:pluginRepository/m:url[contains(text(), 'maven.repository.redhat.com')])]

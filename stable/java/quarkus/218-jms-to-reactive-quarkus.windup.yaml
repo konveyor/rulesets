@@ -5,6 +5,7 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus - Messaging Guide
     url: https://quarkus.io/guides/messaging
@@ -32,6 +33,7 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides
@@ -54,6 +56,7 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides
@@ -92,6 +95,7 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides
@@ -118,6 +122,7 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides
@@ -144,6 +149,7 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides
