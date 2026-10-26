@@ -5,6 +5,7 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/maven-tooling#build-tool-maven
@@ -82,6 +83,7 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/maven-tooling#build-tool-maven
@@ -108,6 +110,7 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/maven-tooling#build-tool-maven
@@ -135,6 +138,7 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/maven-tooling#build-tool-maven
@@ -169,6 +173,7 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus - Guide
     url: https://quarkus.io/guides/maven-tooling#build-tool-maven
@@ -194,6 +199,7 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Using hibernate-orm and jakarta persistence
     url: https://quarkus.io/guides/hibernate-orm
@@ -225,6 +231,7 @@
   labels:
   - konveyor.io/source=java-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus - Testing your application
     url: https://quarkus.io/guides/getting-started-testing
