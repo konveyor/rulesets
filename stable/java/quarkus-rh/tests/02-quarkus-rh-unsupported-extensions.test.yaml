@@ -1,0 +1,25 @@
+rulesPath: ../02-quarkus-rh-unsupported-extensions.yaml
+providers:
+- name: builtin
+  dataPath: ./data/02-quarkus-rh-unsupported-extensions
+- name: java
+  dataPath: ./data/02-quarkus-rh-unsupported-extensions
+tests:
+- ruleID: quarkus-rh-unsupported-extensions-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: not a supported
+- ruleID: quarkus-rh-unsupported-extensions-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: JAX-WS
+- ruleID: quarkus-rh-unsupported-extensions-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+      messageMatches: Jakarta Batch

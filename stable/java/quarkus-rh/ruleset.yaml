@@ -1,0 +1,2 @@
+name: quarkus-rh
+description: This ruleset provides Red Hat build of Quarkus 3.33-specific hints that layer on top of the shared Java EE/Jakarta EE to Quarkus rules (which also carry the konveyor.io/target=quarkus-rh label). It covers the Red Hat build of Quarkus BOM/plugin coordinates, the Red Hat Maven repository, and extensions that are not productized/supported in Red Hat build of Quarkus.

@@ -6,6 +6,7 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=jakarta-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus CDI reference
     url: https://quarkus.io/guides/cdi-reference
@@ -28,6 +29,7 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=jakarta-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus CDI reference
     url: https://quarkus.io/guides/cdi-reference
@@ -55,6 +57,7 @@
   - konveyor.io/source=java-ee
   - konveyor.io/source=jakarta-ee
   - konveyor.io/target=quarkus
+  - konveyor.io/target=quarkus-rh
   links:
   - title: Quarkus CDI reference
     url: https://quarkus.io/guides/cdi-reference
