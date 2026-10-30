@@ -1,0 +1,24 @@
+rulesPath: ../web.yaml
+providers:
+- name: java
+  dataPath: ./data/web-java
+- name: builtin
+  dataPath: ./data/web-java
+tests:
+- ruleID: web-change-00010
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1
+- ruleID: web-dependency-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: web-dependency-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

@@ -1,0 +1,12 @@
+rulesPath: ../imports.yaml
+providers:
+    - name: go
+      dataPath: ./data/imports
+tests:
+    - ruleID: imports-change-00010
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

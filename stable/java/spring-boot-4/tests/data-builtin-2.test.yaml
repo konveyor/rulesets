@@ -1,0 +1,15 @@
+rulesPath: ../data.yaml
+providers:
+- name: builtin
+  dataPath: ./data/data-builtin-2
+tests:
+- ruleID: data-pattern-00090
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: data-pattern-00100
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

@@ -1,0 +1,49 @@
+- ruleID: kubernetes-tls-change-00010
+  description: Kubernetes client-go rest config may bypass certificate validation
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    ## Kubernetes Client TLS Configuration Review
+
+    The `k8s.io/client-go/rest` package may be configured with `Insecure: true` in `rest.TLSClientConfig`, which bypasses cluster certificate validation. This is not FIPS compliant.
+
+    ### Before
+
+    ```go
+    import "k8s.io/client-go/rest"
+
+    config := &rest.Config{
+        Host: "https://api-server:6443",
+        TLSClientConfig: rest.TLSClientConfig{
+            Insecure: true,
+        },
+    }
+    ```
+
+    ### After
+
+    ```go
+    import "k8s.io/client-go/rest"
+
+    config, _ := rest.InClusterConfig()
+    // Uses service account credentials and validates API server certificates
+    ```
+
+    ### Additional Info
+
+    - `Insecure: true` disables TLS certificate verification for the Kubernetes API server connection
+    - Use `rest.InClusterConfig()` for in-cluster workloads, which automatically uses the service account token and CA certificate
+    - For out-of-cluster usage, provide explicit CA certificates via `TLSClientConfig.CAFile` or `TLSClientConfig.CAData`
+    - Never set `Insecure: true` in production Kubernetes clients
+    - Review all `rest.Config` instantiations for TLS configuration
+  links:
+    - url: https://pkg.go.dev/k8s.io/client-go/rest
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: Insecure\s*:\s*true
+        filePattern: .*\.go

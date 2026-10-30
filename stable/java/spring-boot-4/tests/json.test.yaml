@@ -1,0 +1,49 @@
+rulesPath: ../json.yaml
+providers:
+- name: java
+  dataPath: ./data/json
+- name: builtin
+  dataPath: ./data/json
+tests:
+- ruleID: json-import-00010
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1
+- ruleID: json-import-00020
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1
+- ruleID: json-import-00030
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1
+- ruleID: json-import-00040
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1
+- ruleID: json-annotation-00010
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1
+- ruleID: json-annotation-00020
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1

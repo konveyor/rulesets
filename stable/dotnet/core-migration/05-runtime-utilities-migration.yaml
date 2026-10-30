@@ -21,7 +21,7 @@
   when:
     csharp.referenced:
       location: METHOD
-      pattern: "*.Thread.Abort"
+      pattern: ".*\\.Thread\\.Abort"
 
 - category: mandatory
   customVariables: []
@@ -47,7 +47,7 @@
   when:
     csharp.referenced:
       location: ALL
-      pattern: "*.BinaryFormatter"
+      pattern: ".*\\.BinaryFormatter"
 
 - category: mandatory
   customVariables: []
@@ -78,7 +78,7 @@
   when:
     csharp.referenced:
       location: METHOD
-      pattern: "*.AppDomain.CreateDomain"
+      pattern: ".*\\.AppDomain\\.CreateDomain"
 
 - category: mandatory
   customVariables: []
@@ -107,7 +107,7 @@
   when:
     csharp.referenced:
       location: METHOD
-      pattern: "*.AppDomain.Unload"
+      pattern: ".*\\.AppDomain\\.Unload"
 
 - category: optional
   customVariables: []
@@ -133,7 +133,7 @@
   when:
     csharp.referenced:
       location: ALL
-      pattern: "*.AppDomain"
+      pattern: ".*\\.AppDomain"
 
 - category: mandatory
   customVariables: []
@@ -182,7 +182,7 @@
   when:
     csharp.referenced:
       location: ALL
-      pattern: "*.Assembly.CodeBase"
+      pattern: ".*\\.Assembly\\.CodeBase"
 
 - category: optional
   customVariables: []
@@ -206,7 +206,7 @@
   when:
     csharp.referenced:
       location: METHOD
-      pattern: "*.ReflectionOnlyLoad"
+      pattern: ".*\\.ReflectionOnlyLoad"
 
 #- category: optional
 #  customVariables: []
@@ -258,7 +258,7 @@
   when:
     csharp.referenced:
       location: ALL
-      pattern: "*.ChildActionOnly"
+      pattern: ".*\\.ChildActionOnly"
 
 - category: optional
   customVariables: []
@@ -284,7 +284,7 @@
   when:
     csharp.referenced:
       location: ALL
-      pattern: "*.ModelBinderProviders"
+      pattern: ".*\\.ModelBinderProviders"
 
 #- category: mandatory
 #  customVariables: []

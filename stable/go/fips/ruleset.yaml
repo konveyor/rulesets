@@ -1,0 +1,5 @@
+name: go-fips-combined
+description: Go FIPS 140-3 compliance rules — weak algorithms, cipher modes, key strength, TLS, crypto hygiene, PQC readiness, build config, gRPC, K8s, database, HTTP, JWT, OAuth, X.509, SSH
+labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go

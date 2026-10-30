@@ -1,0 +1,21 @@
+rulesPath: ../orm.yaml
+providers:
+- name: java
+  dataPath: ./data/orm
+- name: builtin
+  dataPath: ./data/orm
+tests:
+- ruleID: orm-import-00010
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1
+- ruleID: orm-import-00020
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1

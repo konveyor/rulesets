@@ -1,0 +1,12 @@
+rulesPath: ../kubernetes-tls.yaml
+providers:
+    - name: go
+      dataPath: ./data/kubernetes-tls
+tests:
+    - ruleID: kubernetes-tls-change-00010
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

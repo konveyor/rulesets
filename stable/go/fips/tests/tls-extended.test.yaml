@@ -1,0 +1,15 @@
+rulesPath: ../tls-extended.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/tls
+tests:
+    - ruleID: tls-extended-pattern-00010
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: tls-extended-pattern-00020
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1

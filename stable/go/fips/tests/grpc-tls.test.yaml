@@ -1,0 +1,26 @@
+rulesPath: ../grpc-tls.yaml
+providers:
+    - name: go
+      dataPath: ./data/grpc-tls
+tests:
+    - ruleID: grpc-tls-change-00010
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: grpc-tls-change-00020
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: grpc-tls-change-00030
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

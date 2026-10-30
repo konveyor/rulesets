@@ -1,0 +1,131 @@
+- ruleID: key-strength-pattern-00010
+  description: RSA keys smaller than 2048 bits are non-compliant with FIPS 186-5
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Per FIPS 186-5 and SP 800-131Arev2, RSA signature generation requires a key modulus of at least 2048 bits. RSA keys with 1024 <= n < 2048 are legacy-only for signature verification (since 2011). Keys < 1024 bits are disallowed entirely.
+
+    ### Before
+
+    ```go
+    import "crypto/rsa"
+
+    privateKey, _ := rsa.GenerateKey(rand.Reader, 1024) // Too small for FIPS
+    privateKey, _ := rsa.GenerateKey(rand.Reader, 512)  // Disallowed
+    ```
+
+    ### After
+
+    ```go
+    import "crypto/rsa"
+
+    privateKey, _ := rsa.GenerateKey(rand.Reader, 2048) // Minimum for FIPS
+    privateKey, _ := rsa.GenerateKey(rand.Reader, 4096) // Recommended
+    ```
+
+    ### Additional Info
+
+    - 2048 bits is the minimum for FIPS compliance; 4096 bits is recommended for long-term security.
+    - Check for hardcoded key sizes in configuration files and constants.
+    - RSA key generation with compliant sizes uses the same API — only the size parameter changes.
+    - Keys < 1024 bits are disallowed for all purposes under FIPS 140-3.
+    - Verify all RSA key generation across the codebase, including test code and key rotation scripts.
+  links:
+    - url: https://pkg.go.dev/crypto/rsa#GenerateKey
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: rsa\.GenerateKey\(.*,\s*(512|768|1024|1536)\)
+        filePattern: .*\.go
+- ruleID: key-strength-change-00010
+  description: P-224 curve is legacy-only under FIPS 140-3; replace with P-256 or stronger
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    ECDSA with P-224 provides less than 112 bits of security strength and is legacy-only for signature verification since 2011 per FIPS 140-3 IG C.M. Replace with P-256 or a stronger curve (P-384, P-521).
+
+    ### Before
+
+    ```go
+    import "crypto/elliptic"
+    import "crypto/ecdsa"
+
+    privateKey, _ := ecdsa.GenerateKey(elliptic.P224(), rand.Reader)
+    ```
+
+    ### After
+
+    ```go
+    import "crypto/elliptic"
+    import "crypto/ecdsa"
+
+    privateKey, _ := ecdsa.GenerateKey(elliptic.P256(), rand.Reader)
+    ```
+
+    ### Additional Info
+
+    - P-256 provides 128-bit security strength and is the most widely supported FIPS-approved curve.
+    - P-384 and P-521 are also FIPS-approved for higher security requirements.
+    - FIPS 186-5 and SP 800-186 define the approved curves.
+    - Binary field curves (K-233, B-233, etc.) are deprecated under FIPS.
+    - The API change is minimal — only the curve parameter to `ecdsa.GenerateKey` changes.
+  links:
+    - url: https://pkg.go.dev/crypto/elliptic#P256
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: crypto/elliptic.P224
+- ruleID: key-strength-change-00020
+  description: DSA is deprecated in Go and removed from FIPS 186-5; replace with ECDSA
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    DSA (Digital Signature Algorithm) is no longer specified in FIPS 186-5 for signature generation. It is Legacy (approved) for verification only since February 2024. The Go `crypto/dsa` package is deprecated. Replace with ECDSA using P-256 or a stronger curve.
+
+    ### Before
+
+    ```go
+    import "crypto/dsa"
+
+    var params dsa.Parameters
+    dsa.GenerateParameters(&params, rand.Reader, dsa.L1024N160)
+    privateKey := new(dsa.PrivateKey)
+    privateKey.Parameters = params
+    dsa.GenerateKey(privateKey, rand.Reader)
+    ```
+
+    ### After
+
+    ```go
+    import "crypto/ecdsa"
+    import "crypto/elliptic"
+    import "crypto/rand"
+
+    privateKey, _ := ecdsa.GenerateKey(elliptic.P256(), rand.Reader)
+    ```
+
+    ### Additional Info
+
+    - ECDSA with P-256 provides equivalent or better security with shorter key sizes than DSA.
+    - The `crypto/dsa` package is deprecated in Go and may be removed in future versions.
+    - DSA signature verification remains legacy-approved, but new signatures must use ECDSA or EdDSA.
+    - Key generation, signing, and verification APIs all change when moving from DSA to ECDSA.
+    - Consider ECDSA with P-384 or P-521 for higher security requirements.
+  links:
+    - url: https://pkg.go.dev/crypto/ecdsa
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: crypto/dsa

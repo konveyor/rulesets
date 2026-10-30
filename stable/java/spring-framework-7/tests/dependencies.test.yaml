@@ -1,0 +1,22 @@
+rulesPath: ../dependencies.yaml
+providers:
+- name: java
+  dataPath: ./data/dependencies
+- name: builtin
+  dataPath: ./data/dependencies
+tests:
+- ruleID: dependencies-dependency-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: dependencies-dependency-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: dependencies-dependency-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

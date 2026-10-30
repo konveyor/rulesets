@@ -1,0 +1,56 @@
+- ruleID: compilation-annotation-00010
+  description: Spring MVC parameter binding without explicit names requires -parameters javac flag in JDK 8
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    JDK 8 introduced the ability to access method parameter names at runtime via `java.lang.reflect.Parameter.getName()`, but this requires the `-parameters` flag during `javac` compilation. Spring MVC controller methods that rely on implicit parameter name discovery (without explicit `@PathVariable("name")` or `@RequestParam("name")`) will receive `arg0`, `arg1`, etc. as parameter names if the flag is absent, breaking URL parameter binding.
+
+    ### Before
+    ```java
+    import org.springframework.web.bind.annotation.RequestMapping;
+    // Spring infers parameter name "userId" from debug bytecode (works in Java 7)
+    @RequestMapping("/users/{userId}")
+    public String getUser(String userId) {
+        return userService.find(userId);
+    }
+    ```
+
+    ### After
+    Option 1 — Add explicit parameter name annotations:
+    ```java
+    import org.springframework.web.bind.annotation.RequestMapping;
+    import org.springframework.web.bind.annotation.PathVariable;
+    @RequestMapping("/users/{userId}")
+    public String getUser(@PathVariable("userId") String userId) {
+        return userService.find(userId);
+    }
+    ```
+    Option 2 — Add `-parameters` flag to maven-compiler-plugin:
+    ```xml
+    <plugin>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <configuration>
+        <compilerArgs>
+          <arg>-parameters</arg>
+        </compilerArgs>
+      </configuration>
+    </plugin>
+    ```
+
+    ### Additional Info
+    - Without `-parameters`, `java.lang.reflect.Parameter.getName()` returns `arg0`, `arg1`, etc. instead of actual parameter names
+    - This affects any framework using reflection-based parameter name discovery: Spring MVC, JAX-RS, Jackson, and others
+    - Spring Boot 2.x and later configure `-parameters` automatically in their build plugin helpers
+    - In Gradle: add `compileJava.options.compilerArgs << '-parameters'` to `build.gradle`
+    - The `-parameters` flag slightly increases class file size (embeds parameter name metadata)
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/8-whats-new.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.web.bind.annotation.RequestMapping
+        location: ANNOTATION

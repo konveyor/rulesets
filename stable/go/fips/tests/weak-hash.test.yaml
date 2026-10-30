@@ -1,0 +1,19 @@
+rulesPath: ../weak-hash.yaml
+providers:
+    - name: go
+      dataPath: ./data/weak-hash
+tests:
+    - ruleID: weak-hash-change-00010
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: weak-hash-change-00020
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

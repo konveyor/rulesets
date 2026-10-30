@@ -1,0 +1,150 @@
+- ruleID: grpc-tls-change-00010
+  description: Deprecated gRPC dial option bypasses TLS; not FIPS compliant
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    ## grpc.WithInsecure() Bypasses TLS
+
+    `grpc.WithInsecure()` is deprecated and bypasses TLS entirely. This is never FIPS compliant and defeats service mesh mTLS policies.
+
+    ### Before
+
+    ```go
+    import "google.golang.org/grpc"
+
+    conn, _ := grpc.Dial("service:443", grpc.WithInsecure())
+    ```
+
+    ### After
+
+    ```go
+    import (
+        "crypto/tls"
+        "google.golang.org/grpc"
+        "google.golang.org/grpc/credentials"
+    )
+
+    creds := credentials.NewTLS(&tls.Config{MinVersion: tls.VersionTLS12})
+    conn, _ := grpc.Dial("service:443", grpc.WithTransportCredentials(creds))
+    ```
+
+    ### Additional Info
+
+    - `grpc.WithInsecure()` has been deprecated since gRPC-Go v1.40
+    - Replace with `grpc.WithTransportCredentials()` using a properly configured `tls.Config`
+    - Ensure `MinVersion` is set to at least `tls.VersionTLS12`
+    - Service mesh mTLS policies require proper TLS credentials
+    - See the [gRPC security documentation](https://grpc.io/docs/guides/auth/)
+  links:
+    - url: https://pkg.go.dev/google.golang.org/grpc#WithInsecure
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: google.golang.org/grpc.WithInsecure
+- ruleID: grpc-tls-change-00020
+  description: Insecure gRPC credentials package bypasses TLS; not FIPS compliant
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    ## insecure.NewCredentials() Bypasses TLS
+
+    The `google.golang.org/grpc/credentials/insecure` package provides credentials that bypass TLS entirely. This is never FIPS compliant.
+
+    ### Before
+
+    ```go
+    import (
+        "google.golang.org/grpc"
+        "google.golang.org/grpc/credentials/insecure"
+    )
+
+    conn, _ := grpc.Dial("service:443", grpc.WithTransportCredentials(insecure.NewCredentials()))
+    ```
+
+    ### After
+
+    ```go
+    import (
+        "crypto/tls"
+        "google.golang.org/grpc"
+        "google.golang.org/grpc/credentials"
+    )
+
+    creds := credentials.NewTLS(&tls.Config{MinVersion: tls.VersionTLS12})
+    conn, _ := grpc.Dial("service:443", grpc.WithTransportCredentials(creds))
+    ```
+
+    ### Additional Info
+
+    - The `insecure` package is the modern replacement for the deprecated `grpc.WithInsecure()` but is equally non-FIPS-compliant
+    - Replace with `credentials.NewTLS()` using a properly configured `tls.Config`
+    - Ensure TLS certificates are properly provisioned and trusted
+    - Service mesh environments typically require mTLS for all gRPC traffic
+  links:
+    - url: https://pkg.go.dev/google.golang.org/grpc/credentials/insecure
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: google.golang.org/grpc/credentials/insecure
+- ruleID: grpc-tls-change-00030
+  description: Custom TLS config may override platform TLS profile settings
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    ## Custom gRPC TLS Configuration May Override Platform Profile
+
+    Custom TLS configuration passed to `credentials.NewTLS()` may override platform TLS profile settings, such as blocking TLS 1.3 or post-quantum key exchange.
+
+    ### Before
+
+    ```go
+    import (
+        "crypto/tls"
+        "google.golang.org/grpc/credentials"
+    )
+
+    creds := credentials.NewTLS(&tls.Config{
+        MinVersion: tls.VersionTLS12,
+        MaxVersion: tls.VersionTLS12, // blocks TLS 1.3 and PQC
+    })
+    ```
+
+    ### After
+
+    ```go
+    import (
+        "crypto/tls"
+        "google.golang.org/grpc/credentials"
+    )
+
+    // Inherit from platform TLS profile; do not hardcode MaxVersion
+    creds := credentials.NewTLS(&tls.Config{
+        MinVersion: tls.VersionTLS12,
+    })
+    ```
+
+    ### Additional Info
+
+    - Hardcoding `MaxVersion: tls.VersionTLS12` blocks TLS 1.3 negotiation
+    - Hardcoded cipher suites may exclude FIPS-approved algorithms added in newer Go releases
+    - Review all `tls.Config` fields passed to `credentials.NewTLS` for compatibility with FIPS requirements
+    - Prefer inheriting from the platform's TLS profile rather than hardcoding values
+    - Go 1.24+ includes post-quantum key exchange support that hardcoded configs may block
+  links:
+    - url: https://pkg.go.dev/google.golang.org/grpc/credentials#NewTLS
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: google.golang.org/grpc/credentials.NewTLS

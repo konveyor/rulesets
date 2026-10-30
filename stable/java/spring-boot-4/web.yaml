@@ -1,0 +1,174 @@
+- ruleID: web-change-00010
+  description: HttpMessageConverters deprecated in favor of customizers
+  category: optional
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Spring Boot 4 deprecates `HttpMessageConverters` due to improvements in Spring Framework's converter configuration. The type conflates client and server converters.
+
+    ### Before
+    ```java
+    import org.springframework.boot.http.converter.autoconfigure.HttpMessageConverters;
+    import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+
+    @Bean
+    public HttpMessageConverters customConverters() {
+        return new HttpMessageConverters(new MappingJackson2HttpMessageConverter());
+    }
+    ```
+
+    ### After
+    ```java
+    import org.springframework.boot.autoconfigure.web.servlet.ClientHttpMessageConvertersCustomizer;
+    import org.springframework.boot.autoconfigure.web.servlet.ServerHttpMessageConvertersCustomizer;
+    import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+
+    @Bean
+    public ServerHttpMessageConvertersCustomizer serverConverterCustomizer() {
+        return converters -> converters.addCustomConverter(new MappingJackson2HttpMessageConverter());
+    }
+
+    @Bean
+    public ClientHttpMessageConvertersCustomizer clientConverterCustomizer() {
+        return converters -> converters.addCustomConverter(new MappingJackson2HttpMessageConverter());
+    }
+    ```
+
+    ### Additional Info
+    - Use `ClientHttpMessageConvertersCustomizer` for client-side converters
+    - Use `ServerHttpMessageConvertersCustomizer` for server-side converters
+    - Customizers can add converters as "custom" (considered before defaults) or replace default converters
+    - Declaring `HttpMessageConverters` beans is still supported but deprecated
+    - See [reference documentation](https://docs.spring.io/spring-boot/4.0-SNAPSHOT/reference/web/servlet.html#web.servlet.spring-mvc.message-converters) for more details
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#httpmessageconverters-deprecation)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#httpmessageconverters-deprecation
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.boot.http.converter.autoconfigure.HttpMessageConverters
+        location: TYPE
+- ruleID: web-pattern-00010
+  description: Property no longer effective in war deployments
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `server.forward-headers-strategy` property no longer has an effect when deploying a war file to an external container.
+
+    ### Before (war deployment)
+    ```properties
+    server.forward-headers-strategy=framework
+    ```
+
+    ### After (war deployment)
+    Define the bean yourself:
+    ```java
+    import org.springframework.boot.web.servlet.FilterRegistrationBean;
+    import org.springframework.core.Ordered;
+    import org.springframework.web.filter.ForwardedHeaderFilter;
+    import jakarta.servlet.DispatcherType;
+
+    @Bean
+    FilterRegistrationBean<ForwardedHeaderFilter> forwardedHeaderFilter() {
+        ForwardedHeaderFilter filter = new ForwardedHeaderFilter();
+        FilterRegistrationBean<ForwardedHeaderFilter> registration = new FilterRegistrationBean<>(filter);
+        registration.setDispatcherTypes(DispatcherType.REQUEST, DispatcherType.ASYNC, DispatcherType.ERROR);
+        registration.setOrder(Ordered.HIGHEST_PRECEDENCE);
+        return registration;
+    }
+    ```
+
+    ### Additional Info
+    - This change aligns with the property's place in the `server.*` namespace
+    - Only affects war file deployments to external containers
+    - Embedded server deployments continue to work with the property
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#forwarded-headers-strategy)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#forwarded-headers-strategy
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: server\.forward-headers-strategy
+        filePattern: application.*\.(properties|ya?ml)
+- ruleID: web-dependency-00010
+  description: Jersey 4.0 does not yet support Jackson 3
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Spring Boot 4.0 supports Jersey 4.0, which does not yet support Jackson 3.
+
+    ### Migration Steps
+    - If you're using Jersey with JSON processing, use `spring-boot-jackson2` either in place of or alongside `spring-boot-jackson`
+    - Add dependency: `org.springframework.boot:spring-boot-jackson2`
+
+    ### Additional Info
+    - This is a temporary workaround until Jersey adds Jackson 3 support
+    - Jackson 2 compatibility layer allows Jersey to process JSON
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#jersey)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#jersey
+      title: Migration Documentation
+  when:
+    java.dependency:
+        name: org.springframework.boot.spring-boot-jackson
+        lowerbound: 0.0.0
+- ruleID: web-dependency-00020
+  description: War deployments need spring-boot-starter-tomcat-runtime
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    If you're deploying a war file to Tomcat, you need to switch the dependency from `spring-boot-starter-tomcat` to `spring-boot-starter-tomcat-runtime`.
+
+    ### Before
+    ```xml
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-tomcat</artifactId>
+        <scope>provided</scope>
+    </dependency>
+    ```
+
+    ### After
+    ```xml
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-tomcat-runtime</artifactId>
+        <scope>provided</scope>
+    </dependency>
+    ```
+
+    ### Additional Info
+    - This change only affects war file deployments to Tomcat
+    - Embedded Tomcat deployments continue to use `spring-boot-starter-tomcat`
+    - The `-runtime` variant is optimized for external container deployment
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#tomcat)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#tomcat
+      title: Migration Documentation
+  when:
+    java.dependency:
+        name: org.springframework.boot.spring-boot-starter-tomcat
+        upperbound: 4.0.0

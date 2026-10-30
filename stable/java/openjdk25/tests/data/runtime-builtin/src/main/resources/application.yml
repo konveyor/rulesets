@@ -1,0 +1,3 @@
+# Rule: openjdk21-to-openjdk25+-00260
+jvm:
+  args: "-XX:+UseZGC -XX:-ZGenerational"

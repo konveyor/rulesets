@@ -1,0 +1,47 @@
+- ruleID: tls-config-pattern-00010
+  description: Empty ServerName in tls.Config disables hostname verification
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    ## Empty ServerName Disables Hostname Verification
+
+    Setting `ServerName` to an empty string in `tls.Config` disables TLS hostname verification, making the connection vulnerable to man-in-the-middle attacks.
+
+    ### Before
+
+    ```go
+    import "crypto/tls"
+
+    config := &tls.Config{
+        ServerName: "",
+    }
+    ```
+
+    ### After
+
+    ```go
+    import "crypto/tls"
+
+    config := &tls.Config{
+        ServerName: "expected-hostname.example.com",
+    }
+    ```
+
+    ### Additional Info
+
+    - An empty `ServerName` causes Go's TLS client to skip hostname verification
+    - Always set `ServerName` to the expected hostname of the server being connected to
+    - This is separate from `InsecureSkipVerify` — even with certificate verification enabled, an empty `ServerName` skips hostname matching
+    - If the hostname is dynamic, set it programmatically from the connection target
+    - This affects all TLS connections including HTTP, gRPC, database, and custom TCP connections
+  links:
+    - url: https://pkg.go.dev/crypto/tls#Config
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: ServerName:\s*""
+        filePattern: .*\.go

@@ -1,0 +1,103 @@
+- ruleID: ssh-change-00010
+  description: Default SSH config includes non-FIPS ciphers; configure FIPS-approved algorithms
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `golang.org/x/crypto/ssh` package can negotiate non-FIPS compliant cipher suites by default, including ChaCha20-Poly1305 and Curve25519. Explicitly configure FIPS-approved algorithms for all SSH connections.
+
+    ### Before
+
+    ```go
+    import "golang.org/x/crypto/ssh"
+
+    config := &ssh.ClientConfig{
+        User: "admin",
+        Auth: []ssh.AuthMethod{ssh.Password("password")},
+        HostKeyCallback: ssh.InsecureIgnoreHostKey(),
+    }
+    ```
+
+    ### After
+
+    ```go
+    import "golang.org/x/crypto/ssh"
+
+    config := &ssh.ClientConfig{
+        User: "admin",
+        Auth: []ssh.AuthMethod{ssh.PublicKeys(signer)},
+        HostKeyCallback: ssh.FixedHostKey(hostKey),
+        Config: ssh.Config{
+            Ciphers:      []string{"aes128-ctr", "aes256-ctr", "aes128-gcm@openssh.com", "aes256-gcm@openssh.com"},
+            KeyExchanges: []string{"ecdh-sha2-nistp256", "ecdh-sha2-nistp384"},
+            MACs:         []string{"hmac-sha2-256", "hmac-sha2-512"},
+        },
+    }
+    ```
+
+    ### Additional Info
+
+    - Default ciphers include ChaCha20-Poly1305 which is not FIPS approved
+    - Default key exchanges include Curve25519 which is not FIPS approved
+    - FIPS-approved ciphers: AES-128-CTR, AES-256-CTR, AES-128-GCM, AES-256-GCM
+    - FIPS-approved key exchanges: ecdh-sha2-nistp256, ecdh-sha2-nistp384
+    - FIPS-approved MACs: hmac-sha2-256, hmac-sha2-512
+    - Replace `ssh.InsecureIgnoreHostKey()` with proper host key verification
+    - Replace password authentication with public key authentication for better security
+  links:
+    - url: https://csrc.nist.gov/pubs/fips/140-3/final
+      title: Migration Documentation
+  when:
+    or:
+        - go.referenced:
+            pattern: golang.org/x/crypto/ssh.ClientConfig
+        - go.referenced:
+            pattern: golang.org/x/crypto/ssh.ServerConfig
+        - go.referenced:
+            pattern: golang.org/x/crypto/ssh.Dial
+- ruleID: ssh-change-00020
+  description: InsecureIgnoreHostKey disables SSH host key verification; use FixedHostKey
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Using `ssh.InsecureIgnoreHostKey()` disables SSH host key verification, making connections vulnerable to man-in-the-middle attacks. This is never FIPS compliant. Replace with proper host key verification.
+
+    ### Before
+
+    ```go
+    import "golang.org/x/crypto/ssh"
+
+    config := &ssh.ClientConfig{
+        HostKeyCallback: ssh.InsecureIgnoreHostKey(),
+    }
+    ```
+
+    ### After
+
+    ```go
+    import "golang.org/x/crypto/ssh"
+
+    config := &ssh.ClientConfig{
+        HostKeyCallback: ssh.FixedHostKey(hostKey),
+    }
+    ```
+
+    ### Additional Info
+
+    - `InsecureIgnoreHostKey` accepts any host key, enabling MITM attacks
+    - Use `ssh.FixedHostKey(hostKey)` for known hosts or implement a custom callback that verifies against a trusted key store
+    - In production, maintain a known_hosts file or equivalent trusted key registry
+    - Host key verification is required for FIPS 140-3 compliance
+  links:
+    - url: https://csrc.nist.gov/pubs/fips/140-3/final
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: golang.org/x/crypto/ssh.InsecureIgnoreHostKey

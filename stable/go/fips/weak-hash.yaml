@@ -1,0 +1,95 @@
+- ruleID: weak-hash-change-00010
+  description: MD5 is not FIPS 140 approved; replace with SHA-256 or SHA-512
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `crypto/md5` package implements the MD5 hash algorithm, which is not FIPS 140 approved and is vulnerable to collision attacks. Per NIST SP 800-131A Rev. 2, MD5 is disallowed for all cryptographic purposes. Replace with `crypto/sha256` or `crypto/sha512`.
+
+    ### Before
+    ```go
+    import "crypto/md5"
+
+    func hash(data []byte) []byte {
+        h := md5.New()
+        h.Write(data)
+        return h.Sum(nil)
+    }
+
+    sum := md5.Sum(data)
+    ```
+
+    ### After
+    ```go
+    import "crypto/sha256"
+
+    func hash(data []byte) []byte {
+        h := sha256.New()
+        h.Write(data)
+        return h.Sum(nil)
+    }
+
+    sum := sha256.Sum256(data)
+    ```
+
+    ### Additional Info
+    - MD5 produces 16-byte digests; SHA-256 produces 32-byte digests. Update any size-dependent logic.
+    - `md5.Sum()` returns `[16]byte`; `sha256.Sum256()` returns `[32]byte` — note the function name change.
+    - If MD5 is used for non-cryptographic purposes (e.g., checksums for caching), consider whether FIPS compliance requires replacing it in that context.
+    - SHA-512 (`crypto/sha512`) is also FIPS-approved and may be preferred for higher security margins.
+    - See NIST SP 800-131A Rev. 2 for the complete list of disallowed algorithms.
+  links:
+    - url: https://pkg.go.dev/crypto/sha256
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: crypto/md5
+- ruleID: weak-hash-change-00020
+  description: SHA-1 is disallowed for signature generation under FIPS 140-3
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `crypto/sha1` package implements SHA-1, which is disallowed for digital signature generation under FIPS 140-3. Per the FIPS 140-3 IG C.M Legacy Algorithms table, SHA-1 for signature verification is Legacy (approved) since 2011, but SHA-1 for signature generation is disallowed. Replace with `crypto/sha256` or `crypto/sha512` for all new signatures.
+
+    ### Before
+    ```go
+    import "crypto/sha1"
+
+    func signHash(data []byte) []byte {
+        h := sha1.New()
+        h.Write(data)
+        return h.Sum(nil)
+    }
+    ```
+
+    ### After
+    ```go
+    import "crypto/sha256"
+
+    func signHash(data []byte) []byte {
+        h := sha256.New()
+        h.Write(data)
+        return h.Sum(nil)
+    }
+    ```
+
+    ### Additional Info
+    - If SHA-1 is used only for verifying existing signatures (not generating new ones), it remains legacy-approved and no change is needed.
+    - SHA-1 signature verification is still allowed as Legacy, but new signatures must use SHA-256 or stronger.
+    - SHA-1 produces 20-byte digests; SHA-256 produces 32-byte digests. Update any size-dependent logic.
+    - If using `crypto.SHA1` as a `crypto.Hash` constant (e.g., in `rsa.SignPKCS1v15`), replace with `crypto.SHA256`.
+    - Review all call sites where SHA-1 hashes are fed into signature functions (`rsa.SignPKCS1v15`, `ecdsa.Sign`, etc.).
+    - See FIPS 180-4 and FIPS 186 series for approved hash functions.
+  links:
+    - url: https://pkg.go.dev/crypto/sha256
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: crypto/sha1

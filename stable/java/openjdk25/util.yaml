@@ -1,0 +1,34 @@
+- ruleID: util-deprecation-00010
+  description: ZipError deprecated for removal in JDK 24; use ZipException instead
+  category: optional
+  effort: 1
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    `java.util.zip.ZipError` has been deprecated for removal in JDK 24. Use `java.util.zip.ZipException` instead. Replace any catch blocks, throws declarations, or references to `ZipError` with `ZipException`.
+
+    ## Before
+    ```java
+    try {
+        // zip operations
+    } catch (ZipError e) {
+        // handle error
+    }
+    ```
+
+    ## After
+    ```java
+    try {
+        // zip operations
+    } catch (ZipException e) {
+        // handle error
+    }
+    ```
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/24-relnote-issues.html#JDK-8336843
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: java.util.zip.ZipError
+        location: IMPORT

@@ -1,0 +1,112 @@
+- ruleID: security-pattern-00010
+  description: SSLv3 is disabled by default in JDK 8; connections using SSLv3 will fail with a handshake exception
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    JDK 8 disables SSLv3 by default in response to the POODLE vulnerability. Applications that explicitly request SSLv3 connections via `SSLContext.getInstance("SSLv3")` or similar APIs will fail with a handshake exception. Additionally, RC4 cipher suites and MD5-signed certificates are disabled, and RSA key lengths shorter than 1024 bits are restricted.
+
+    ### Before
+    ```java
+    import javax.net.ssl.SSLContext;
+    // SSLv3 is disabled by default in JDK 8
+    SSLContext context = SSLContext.getInstance("SSLv3");
+    ```
+
+    ### After
+    ```java
+    import javax.net.ssl.SSLContext;
+    // Use TLS 1.2 or TLS 1.3
+    SSLContext context = SSLContext.getInstance("TLSv1.2");
+    ```
+
+    ### Additional Info
+    - Disabled by default in JDK 8: SSLv3, RC4 cipher suites, and MD5-signed certificates
+    - Restricted: RSA key sizes shorter than 1024 bits
+    - The restrictions are configured via `jdk.tls.disabledAlgorithms` in `$JAVA_HOME/jre/lib/security/java.security`
+    - To temporarily re-enable (not recommended for production): remove the algorithm from `jdk.tls.disabledAlgorithms` in `java.security`
+    - Legacy database JDBC connections and internal HTTPS endpoints are common sources of SSLv3 handshake failures
+    - Verify external endpoint compatibility using TLS scanning tools (e.g., `nmap --script ssl-enum-ciphers` or `openssl s_client`)
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/8-compatibility-guide.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: SSLv3
+        filePattern: .*\.java
+- ruleID: security-method-00010
+  description: JDK 8u161+ enables unlimited JCE crypto strength by default; getMaxAllowedKeyLength now returns Integer.MAX_VALUE
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    JDK 7 restricted encryption key sizes to 128 bits by default (AES-128 maximum) unless JCE Unlimited Strength Jurisdiction Policy files were manually installed in `jre/lib/security/`. JDK 8u161+ enables unlimited strength by default — `Cipher.getMaxAllowedKeyLength("AES")` now returns `Integer.MAX_VALUE` instead of 128.
+
+    Code that checks the key length limit to implement workarounds (e.g., falling back to 128-bit keys when 256 is unavailable) may behave unexpectedly now that unlimited strength is always available.
+
+    ### Before
+    ```java
+    import javax.crypto.Cipher;
+    // Was used to detect if unlimited JCE policy was installed
+    int maxKeyLength = Cipher.getMaxAllowedKeyLength("AES");
+    if (maxKeyLength < 256) {
+        // Workaround: truncate to 128-bit key
+        key = Arrays.copyOf(key, 16);
+    }
+    ```
+
+    ### After
+    ```java
+    // In JDK 8u161+: getMaxAllowedKeyLength("AES") returns Integer.MAX_VALUE
+    // Remove key-length workarounds; 256-bit keys work by default
+    import javax.crypto.Cipher;
+    byte[] key = generateKey(256); // 32 bytes — always valid in JDK 8u161+
+    ```
+
+    ### Additional Info
+    - Applies to JDK 8u161 and later; earlier JDK 8 releases (before 8u161) still require manual policy file installation
+    - Remove Dockerfile/script steps that copy `local_policy.jar` and `US_export_policy.jar` into `$JAVA_HOME/jre/lib/security/`
+    - Both Oracle JDK and OpenJDK distributions include unlimited strength by default from 8u161+
+    - JDK 9+ enables unlimited strength by default for all distributions regardless of update version
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/8u161-relnotes.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: javax.crypto.Cipher.getMaxAllowedKeyLength
+        location: METHOD_CALL
+- ruleID: security-pattern-00020
+  description: Manual JCE policy JAR installation no longer required in JDK 8u161+; unlimited strength is now the default
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/source=openjdk7
+    - konveyor.io/target=openjdk8
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Before JDK 8u161, enabling strong cryptography (AES-256, 3DES-168) required manually copying `local_policy.jar` and `US_export_policy.jar` from Oracle's JCE download into `$JAVA_HOME/jre/lib/security/`. In JDK 8u161+, unlimited cryptographic strength is enabled by default — these manual workarounds are no longer needed.
+
+    ### Migration Steps
+    - Remove any Dockerfile `COPY` or `RUN` steps that place `local_policy.jar` or `US_export_policy.jar` into `$JAVA_HOME/jre/lib/security/`
+    - Remove equivalent steps in shell deployment scripts
+    - Verify you are using JDK 8u161 or later — earlier JDK 8 releases still require the files
+    - If on an older JDK 8 release, upgrade to 8u161+ rather than maintaining the manual installation process
+
+    ### Additional Info
+    - JDK 8u161+ ships with unlimited strength enabled in the default `java.security` configuration
+    - Applications previously unable to use AES-256 or other strong algorithms will now work without code changes
+    - Existing `local_policy.jar` / `US_export_policy.jar` files in place are ignored (not read) in JDK 8u161+, so deployed applications will not break — but the copy steps are wasteful and can be removed
+    - OpenJDK 8 distributions from major vendors include unlimited strength by default from 8u161+
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/8u161-relnotes.html
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: local_policy\.jar|US_export_policy\.jar
+        filePattern: .*

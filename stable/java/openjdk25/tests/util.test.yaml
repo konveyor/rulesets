@@ -1,0 +1,12 @@
+rulesPath: ../util.yaml
+providers:
+    - name: java
+      dataPath: ./data/util
+tests:
+    - ruleID: util-deprecation-00010
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

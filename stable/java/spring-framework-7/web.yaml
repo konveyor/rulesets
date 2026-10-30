@@ -1,0 +1,390 @@
+- ruleID: web-import-00010
+  description: Removed in Spring Framework 7.0
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `PathExtensionContentNegotiationStrategy` class has been removed in Spring Framework 7.0 as part of the removal of deprecated path mapping options.
+
+    ### Migration Steps
+
+    1. Remove any explicit configuration of `PathExtensionContentNegotiationStrategy`
+    2. Remove `favorPathExtension` and `ignoreUnknownPathExtensions` configuration from `ContentNegotiationManagerFactoryBean`
+    3. Use other content negotiation strategies such as:
+       - `HeaderContentNegotiationStrategy` (Accept header)
+       - `ParameterContentNegotiationStrategy` (query parameter)
+       - `FixedContentNegotiationStrategy` (fixed media type)
+
+    ### Additional Info
+
+    - Path extension-based content negotiation was deprecated in Spring Framework 6.0
+    - This feature was considered a security risk and has been fully removed
+    - Use the `Accept` header or query parameter for content negotiation instead
+    - Related configuration options `suffixPatternMatch`, `registeredSuffixPatternMatch`, `trailingSlashMatch`, and `matchOptionalTrailingSeparator` have also been removed
+  links:
+    - url: https://github.com/spring-projects/spring-framework/blob/main/framework-docs/modules/ROOT/pages/web/webmvc/mvc-config/content-negotiation.adoc
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.web.accept.PathExtensionContentNegotiationStrategy
+        location: IMPORT
+- ruleID: web-import-00020
+  description: Removed in Spring Framework 7.0
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `ServletPathExtensionContentNegotiationStrategy` class has been removed in Spring Framework 7.0 as part of the removal of deprecated path mapping options.
+
+    ### Migration Steps
+
+    1. Remove any explicit configuration of `ServletPathExtensionContentNegotiationStrategy`
+    2. Remove `favorPathExtension` and `ignoreUnknownPathExtensions` configuration from `ContentNegotiationManagerFactoryBean`
+    3. Use other content negotiation strategies such as:
+       - `HeaderContentNegotiationStrategy` (Accept header)
+       - `ParameterContentNegotiationStrategy` (query parameter)
+       - `FixedContentNegotiationStrategy` (fixed media type)
+
+    ### Additional Info
+
+    - Path extension-based content negotiation was deprecated in Spring Framework 6.0
+    - This feature was considered a security risk and has been fully removed
+    - Use the `Accept` header or query parameter for content negotiation instead
+  links:
+    - url: https://github.com/spring-projects/spring-framework/blob/main/framework-docs/modules/ROOT/pages/web/webmvc/mvc-config/content-negotiation.adoc
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.web.accept.ServletPathExtensionContentNegotiationStrategy
+        location: IMPORT
+- ruleID: web-method-00010
+  description: Removed in Spring Framework 7.0
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: "The `HttpComponentsClientHttpRequestFactory.setConnectTimeout()` methods have been removed in Spring Framework 7.0.\n\n### Before\n\n```java\nimport org.springframework.http.client.HttpComponentsClientHttpRequestFactory;\n\nHttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();\nfactory.setConnectTimeout(5000);\n```\n\n### After\n\n```java\nimport org.springframework.http.client.HttpComponentsClientHttpRequestFactory;\nimport org.apache.hc.client5.http.config.RequestConfig;\nimport java.util.concurrent.TimeUnit;\n\nRequestConfig config = RequestConfig.custom()\n    .setConnectTimeout(5000, TimeUnit.MILLISECONDS)\n    .build();\n    \nHttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();\nfactory.setHttpClient(HttpClientBuilder.create()\n    .setDefaultRequestConfig(config)\n    .build());\n```\n\n### Additional Info\n\n- Configure timeouts directly on the HttpClient instance via `RequestConfig`\n- This aligns with the Apache HttpComponents 5.x configuration model\n- See [#35748](https://github.com/spring-projects/spring-framework/issues/35748) for more details"
+  links:
+    - url: https://github.com/spring-projects/spring-framework/issues/35748
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.http.client.HttpComponentsClientHttpRequestFactory.setConnectTimeout
+        location: METHOD_CALL
+- ruleID: web-import-00030
+  description: No longer extends MultiValueMap in Spring Framework 7.0
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `HttpHeaders` class has been revisited in Spring Framework 7.0 and no longer extends the `MultiValueMap` contract.
+
+    ### Migration Steps
+
+    1. If you were using `HttpHeaders` as a `MultiValueMap`, use the new `HttpHeaders.asMultiValueMap()` method (note: this method is immediately deprecated as a fallback)
+    2. Consider using other `HttpHeaders` methods instead of map-like operations:
+       - Use `add(String, String)` instead of map `put()` operations
+       - Use `get(String)` for header retrieval
+       - Use `set(String, String)` for setting headers
+
+    ### Additional Info
+
+    - Headers are case-insensitive, so map-like operations don't behave well
+    - Many map-like operations have been removed for performance and correctness
+    - The `asMultiValueMap()` fallback is deprecated and should only be used temporarily
+    - Underlying servers treat headers as collections of pairs, not as a traditional map
+    - See [#33913](https://github.com/spring-projects/spring-framework/issues/33913) for more details
+  links:
+    - url: https://github.com/spring-projects/spring-framework/issues/33913
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.http.HttpHeaders
+        location: IMPORT
+- ruleID: web-import-00040
+  description: Deprecated in Spring Framework 7.0 documentation
+  category: optional
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    `RestTemplate` has been deprecated in the Spring Framework 7.0 reference documentation and will be officially marked as `@Deprecated` in Spring Framework 7.1.
+
+    ### Migration Steps
+
+    Migrate to modern alternatives:
+
+    1. **For blocking HTTP clients:** Use `RestClient`
+
+    ```java
+    // Before
+    RestTemplate restTemplate = new RestTemplate();
+    String result = restTemplate.getForObject("https://api.example.com/data", String.class);
+
+    // After
+    RestClient restClient = RestClient.create();
+    String result = restClient.get()
+        .uri("https://api.example.com/data")
+        .retrieve()
+        .body(String.class);
+    ```
+
+    2. **For reactive HTTP clients:** Use `WebClient`
+
+    ```java
+    WebClient webClient = WebClient.create();
+    Mono<String> result = webClient.get()
+        .uri("https://api.example.com/data")
+        .retrieve()
+        .bodyToMono(String.class);
+    ```
+
+    ### Additional Info
+
+    - `RestTemplate` is now in maintenance mode and will not receive new features
+    - `RestClient` provides a modern, fluent API for blocking HTTP calls
+    - `WebClient` is the recommended option for reactive applications
+    - See [the state of HTTP clients blog post](https://spring.io/blog/2025/09/30/the-state-of-http-clients-in-spring) for more details
+  links:
+    - url: https://spring.io/blog/2025/09/30/the-state-of-http-clients-in-spring
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.web.client.RestTemplate
+        location: IMPORT
+- ruleID: web-import-00050
+  description: No Jackson 3.x equivalent; Jackson 2.x deprecated
+  category: optional
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    `Jackson2ObjectMapperBuilder` has no Jackson 3.x equivalent. Jackson 2.x support has been deprecated in Spring Framework 7.0.
+
+    ### Migration Steps
+
+    Migrate to Jackson 3.x native builders:
+
+    ### Before (Jackson 2.x with Spring builder)
+
+    ```java
+    import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+    import com.fasterxml.jackson.databind.ObjectMapper;
+
+    ObjectMapper mapper = Jackson2ObjectMapperBuilder.json()
+        .indentOutput(true)
+        .build();
+    ```
+
+    ### After (Jackson 3.x native builder)
+
+    ```java
+    import tools.jackson.databind.json.JsonMapper;
+
+    JsonMapper mapper = JsonMapper.builder()
+        .enable(SerializationFeature.INDENT_OUTPUT)
+        .build();
+    ```
+
+    ### Additional Info
+
+    - Jackson 3.x uses the `tools.jackson` package instead of `com.fasterxml.jackson`
+    - Annotation classes like `@JsonView` remain in `com.fasterxml.jackson` for easier migration
+    - Use `JsonMapper.builder()`, `CBORMapper.builder()`, and others as replacements
+    - Spring will disable Jackson 2.x auto-detection in 7.1 and remove support in 7.2
+    - See [Introducing Jackson 3 support in Spring blog post](https://spring.io/blog/2025/10/07/introducing-jackson-3-support-in-spring) for details
+  links:
+    - url: https://spring.io/blog/2025/10/07/introducing-jackson-3-support-in-spring
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.http.converter.json.Jackson2ObjectMapperBuilder
+        location: IMPORT
+- ruleID: web-import-00060
+  description: Deprecated in Spring MVC in Spring Framework 7.0
+  category: optional
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: "The use of `PathMatcher` in Spring MVC has been deprecated in Spring Framework 7.0.\n\n### Migration Steps\n\nMigrate to `PathPattern` for path matching in Spring MVC:\n\n```java\n// Before\nimport org.springframework.util.PathMatcher;\nimport org.springframework.util.AntPathMatcher;\n\nPathMatcher matcher = new AntPathMatcher();\nboolean matches = matcher.match(\"/api/**/users\", \"/api/v1/users\");\n\n// After  \nimport org.springframework.web.util.pattern.PathPattern;\nimport org.springframework.web.util.pattern.PathPatternParser;\n\nPathPatternParser parser = new PathPatternParser();\nPathPattern pattern = parser.parse(\"/api/**/users\");\nboolean matches = pattern.matches(PathContainer.parsePath(\"/api/v1/users\"));\n```\n\n### Additional Info\n\n- `PathPattern` is more efficient and provides better performance\n- Spring MVC now uses `PathPattern` by default for path matching\n- `PathMatcher` remains available for non-MVC use cases but is deprecated in MVC context\n- See [#34018](https://github.com/spring-projects/spring-framework/issues/34018) for more details"
+  links:
+    - url: https://github.com/spring-projects/spring-framework/issues/34018
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.util.PathMatcher
+        location: IMPORT
+- ruleID: web-import-00070
+  description: Deprecated in Spring Framework 7.0
+  category: optional
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `HandlerMappingIntrospector` SPI has been deprecated in Spring Framework 7.0.
+
+    ### Additional Info
+
+    - This SPI was primarily used for alignment between Spring Security and Spring MVC path matching
+    - Applications typically do not use this class directly
+    - If you are using this class, consult the Spring Security migration guide for alternative approaches
+    - See [#34019](https://github.com/spring-projects/spring-framework/issues/34019) and [spring-security/16886](https://github.com/spring-projects/spring-security/issues/16886) for more details
+  links:
+    - url: https://github.com/spring-projects/spring-framework/issues/34019
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.web.servlet.handler.HandlerMappingIntrospector
+        location: IMPORT
+- ruleID: web-import-00080
+  description: Auto-opts-in for system proxy properties in Spring Framework 7.0
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The Reactor client (when used with `WebClient`) now automatically opts in for system proxy configuration properties in Spring Framework 7.0.
+
+    ### Migration Steps
+
+    If your application uses `WebClient` with the Reactor client:
+
+    1. Review your proxy configuration
+    2. Be aware that `https.proxyHost` and `https.proxyPort` system properties are now automatically applied
+    3. If you need to override or disable this behavior, configure the client explicitly:
+
+    ```java
+    import org.springframework.web.reactive.function.client.WebClient;
+    import reactor.netty.http.client.HttpClient;
+
+    HttpClient httpClient = HttpClient.create()
+        .proxyWithSystemProperties(false); // Disable system proxy properties
+
+    WebClient webClient = WebClient.builder()
+        .clientConnector(new ReactorClientHttpConnector(httpClient))
+        .build();
+    ```
+
+    ### Additional Info
+
+    - The change applies specifically to the Reactor Netty client
+    - System properties `https.proxyHost` and `https.proxyPort` are now honored by default
+    - This improves out-of-the-box proxy support for most environments
+    - See [#34850](https://github.com/spring-projects/spring-framework/pull/34850) for more details
+  links:
+    - url: https://github.com/spring-projects/spring-framework/pull/34850
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.web.reactive.function.client.WebClient
+        location: IMPORT
+- ruleID: web-import-00090
+  description: AntPathMatcher is deprecated for HTTP request mappings; PathPattern is now the default
+  category: optional
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    As of Spring Framework 7.0, the legacy `AntPathMatcher` for matching HTTP request mappings is being deprecated. Spring Framework has been migrating to `PathPattern` since version 5.0, and it is now the default for HTTP request mapping.
+
+    ### Before
+
+    ```java
+    import org.springframework.util.AntPathMatcher;
+
+    public class PathMatchingConfig {
+        public AntPathMatcher pathMatcher() {
+            return new AntPathMatcher();
+        }
+    }
+    ```
+
+    ### After
+
+    ```java
+    import org.springframework.web.util.pattern.PathPattern;
+    import org.springframework.web.util.pattern.PathPatternParser;
+
+    public class PathMatchingConfig {
+        public PathPatternParser pathPatternParser() {
+            return new PathPatternParser();
+        }
+    }
+    ```
+
+    ### Additional Info
+
+    - `PathPattern` has been the default for HTTP request mappings since Spring Framework 5.0
+    - Spring Framework 7.0 adds support for matching many path segments at the beginning of the path (e.g., `"/**/pages/index.html"`), which was a missing feature that prevented some upgrades
+    - `PathPattern` provides better performance and more precise matching compared to `AntPathMatcher`
+    - If you're using `AntPathMatcher` explicitly in your code for HTTP request mapping, consider migrating to `PathPattern` and `PathPatternParser`
+    - For non-HTTP use cases (e.g., file path matching), `AntPathMatcher` remains valid
+    - See the [request mapping documentation](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-requestmapping.html#mvc-ann-requestmapping-uri-templates) for allowed patterns
+  links:
+    - url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-7.0-Release-Notes#pathpattern-matching-improved
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.util.AntPathMatcher
+        location: IMPORT
+- ruleID: web-import-00100
+  description: WebMvcConfigurer.configureMessageConverters method signature changed to use HttpMessageConverters.ServerBuilder
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: "Spring Framework 7.0 introduces the new `HttpMessageConverters` class for easier and centralized HTTP message converter configuration, similar to the codecs configuration on the reactive side.\n\n### Method Signature Change\n\nThe `WebMvcConfigurer.configureMessageConverters()` method signature has changed to accept an `HttpMessageConverters.ServerBuilder` parameter instead of a `List<HttpMessageConverter<?>>`. \n\n### Before\n\n```java\nimport org.springframework.context.annotation.Configuration;\nimport org.springframework.http.converter.HttpMessageConverter;\nimport org.springframework.web.servlet.config.annotation.WebMvcConfigurer;\nimport java.util.List;\n\n@Configuration\npublic class WebConfiguration implements WebMvcConfigurer {\n    @Override\n    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {\n        // Configure converters\n    }\n}\n```\n\n### After\n\n```java\nimport org.springframework.context.annotation.Configuration;\nimport org.springframework.http.converter.HttpMessageConverters;\nimport org.springframework.http.converter.json.JacksonJsonHttpMessageConverter;\nimport org.springframework.web.servlet.config.annotation.WebMvcConfigurer;\nimport com.fasterxml.jackson.databind.json.JsonMapper;\nimport com.fasterxml.jackson.databind.SerializationFeature;\nimport java.text.SimpleDateFormat;\n\n@Configuration\npublic class WebConfiguration implements WebMvcConfigurer {\n    @Override\n    public void configureMessageConverters(HttpMessageConverters.ServerBuilder builder) {\n        JsonMapper jsonMapper = JsonMapper.builder()\n                .findAndAddModules()\n                .enable(SerializationFeature.INDENT_OUTPUT)\n                .defaultDateFormat(new SimpleDateFormat(\"yyyy-MM-dd\"))\n                .build();\n        builder.jsonMessageConverter(new JacksonJsonHttpMessageConverter(jsonMapper));\n    }\n}\n```\n\n### Additional Info\n\n- The new `HttpMessageConverters.ServerBuilder` provides a fluent API for configuring message converters\n- Similar methods exist for `RestClient` and `RestTemplate` configuration\n- The new approach provides better classpath detection and global setup capabilities\n- Check the [WebMvcConfigurer JavaDoc](https://docs.spring.io/spring-framework/docs/7.0.0/javadoc-api/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.html#configureMessageConverters%28org.springframework.http.converter.HttpMessageConverters.ServerBuilder%29)"
+  links:
+    - url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-7.0-Release-Notes#easier-message-converters-configuration-with-httpmessageconverters
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.web.servlet.config.annotation.WebMvcConfigurer
+        location: IMPORT

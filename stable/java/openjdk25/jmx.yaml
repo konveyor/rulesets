@@ -1,0 +1,55 @@
+- ruleID: jmx-removal-00010
+  description: Only toXMLString() and constructor-from-XML are affected.
+  category: optional
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The XML interchange functionality of `javax.management.modelmbean.DescriptorSupport` is deprecated for removal in JDK 25. If your code uses `DescriptorSupport` for XML serialization/deserialization of JMX descriptors, migrate to an alternative serialization approach.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: javax.management.modelmbean.DescriptorSupport.toXMLString
+        location: METHOD_CALL
+- ruleID: jmx-removal-00020
+  description: Only the getMBeanServerConnection(Subject) overload is affected by JMX Subject Delegation removal.
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'JMX Subject Delegation getMBeanServerConnection(Subject) removed in JDK 23: Only the getMBeanServerConnection(Subject) overload is affected by JMX Subject Delegation removal.'
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/23-relnote-issues.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: javax.management.remote.JMXConnector.getMBeanServerConnection
+        location: METHOD_CALL
+- ruleID: jmx-removal-00030
+  description: The JMX Management Applet (m-let) feature has been removed in JDK 23.
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'JMX Management Applet (m-let) removed in JDK 23: The JMX Management Applet (m-let) feature has been removed in JDK 23.'
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/23-relnote-issues.html
+      title: Migration Documentation
+  when:
+    or:
+      - java.referenced:
+            pattern: javax.management.loading.MLet
+            location: IMPORT
+      - java.referenced:
+            pattern: javax.management.loading.MLetContent
+            location: IMPORT
+      - java.referenced:
+            pattern: javax.management.loading.PrivateMLet
+            location: IMPORT
+      - java.referenced:
+            pattern: javax.management.loading.MLetMBean
+            location: IMPORT

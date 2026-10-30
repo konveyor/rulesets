@@ -1,0 +1,45 @@
+- ruleID: jndi-removal-00010
+  description: javax.naming.Context.APPLET constant removed in JDK 24
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The `javax.naming.Context.APPLET` constant has been removed in JDK 24. This constant was used to pass an `Applet` instance to JNDI initial context factories. Since Applets have been removed, this constant is no longer needed. Remove any references to `Context.APPLET` from your code.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/24-relnote-issues.html#JDK-8340359
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: Context\.APPLET
+        filePattern: .*\.java
+- ruleID: jndi-removal-00020
+  description: JNDI java.naming.rmi.security.manager property removed in JDK 24
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: The JNDI `java.naming.rmi.security.manager` environment property has been removed in JDK 24, as the Security Manager has been permanently disabled. Remove any references to this property from your JNDI configuration.
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/24-relnote-issues.html#JDK-8344299
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: java\.naming\.rmi\.security\.manager
+        filePattern: .*\.(java|properties|xml)
+- ruleID: jndi-removal-00030
+  description: JNDI remote code downloading is permanently disabled in JDK 24. Setting com.sun.jndi.rmi.object.trustURLCodebase or com.sun.jndi.ldap.object.trustURLCodebase to true no longer has any effect.
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/target=openjdk25+
+    - konveyor.io/generated-by=ai-rule-gen
+  message: 'JNDI remote code downloading permanently disabled in JDK 24: JNDI remote code downloading is permanently disabled in JDK 24. Setting com.sun.jndi.rmi.object.trustURLCodebase or com.sun.jndi.ldap.object.trustURLCodebase to true no longer has any effect.'
+  links:
+    - url: https://www.oracle.com/java/technologies/javase/24-relnote-issues.html#JDK-8338536
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: trustURLCodebase\s*=\s*true
+        filePattern: .*\.(java|properties|xml|ya?ml|conf)

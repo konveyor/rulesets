@@ -1,0 +1,145 @@
+- ruleID: jwt-pattern-00010
+  description: RSA JWT signatures are quantum-vulnerable; inventory for PQC migration
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    RSA-PKCS#1 v1.5 JWT signatures (RS256/RS384/RS512) are currently FIPS 140-3 approved but are vulnerable to quantum computers via Shor's algorithm. Inventory all JWT signing infrastructure that uses RSA for post-quantum cryptography (PQC) migration planning.
+
+    ### Detection
+
+    This rule flags usage of `jwt.SigningMethodRS256`, `jwt.SigningMethodRS384`, or `jwt.SigningMethodRS512` signing methods.
+
+    ### Additional Info
+
+    - RSA signatures are approved under FIPS 186-5 but will need replacement when quantum computers become practical
+    - Begin cataloging all services that sign or verify JWT tokens with RSA
+    - Consider migration timeline to post-quantum signature algorithms when NIST standards are finalized
+    - HMAC-based JWT signing (HS256/HS384/HS512) is quantum-resistant and may be suitable for internal service-to-service tokens
+    - Coordinate with identity providers on their PQC migration timelines
+  links:
+    - url: https://csrc.nist.gov/pubs/fips/140-3/final
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: jwt\.SigningMethod(RS256|RS384|RS512)
+        filePattern: .*\.go
+- ruleID: jwt-pattern-00020
+  description: RSA-PSS JWT signatures are quantum-vulnerable; inventory for PQC migration
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    RSA-PSS JWT signatures (PS256/PS384/PS512) are currently FIPS 140-3 approved but are vulnerable to quantum computers. While PSS is more secure than PKCS#1 v1.5 against classical attacks, both are equally vulnerable to quantum attacks via Shor's algorithm.
+
+    ### Detection
+
+    This rule flags usage of `jwt.SigningMethodPS256`, `jwt.SigningMethodPS384`, or `jwt.SigningMethodPS512` signing methods.
+
+    ### Additional Info
+
+    - RSA-PSS provides better security margins against classical padding oracle attacks compared to PKCS#1 v1.5
+    - Both RSA signature schemes face the same quantum vulnerability — Shor's algorithm
+    - Inventory all PSS signing infrastructure for PQC migration planning
+    - Consider timeline alignment with RSA PKCS#1 v1.5 migration since both need PQC replacement
+    - HMAC-based JWT signing is quantum-resistant for symmetric use cases
+  links:
+    - url: https://csrc.nist.gov/pubs/fips/140-3/final
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: jwt\.SigningMethod(PS256|PS384|PS512)
+        filePattern: .*\.go
+- ruleID: jwt-pattern-00030
+  description: ECDSA JWT signatures are quantum-vulnerable; inventory for PQC migration
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    ECDSA JWT signatures (ES256/ES384/ES512) are currently FIPS 140-3 approved but are vulnerable to quantum computers. ECDSA relies on the elliptic curve discrete logarithm problem, which Shor's algorithm can solve efficiently.
+
+    ### Detection
+
+    This rule flags usage of `jwt.SigningMethodES256`, `jwt.SigningMethodES384`, or `jwt.SigningMethodES512` signing methods.
+
+    ### Additional Info
+
+    - ECDSA is widely used for JWT signing due to smaller key sizes compared to RSA
+    - Quantum vulnerability applies to all elliptic curve signature schemes
+    - Inventory all ECDSA signing infrastructure for PQC migration planning
+    - NIST post-quantum signature standards (ML-DSA/Dilithium) are designed as replacements
+    - HMAC-based JWT signing is quantum-resistant for symmetric use cases
+  links:
+    - url: https://csrc.nist.gov/pubs/fips/140-3/final
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: jwt\.SigningMethod(ES256|ES384|ES512)
+        filePattern: .*\.go
+- ruleID: jwt-pattern-00040
+  description: EdDSA JWT signatures are quantum-vulnerable; inventory for PQC migration
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    EdDSA (Ed25519) JWT signatures are FIPS approved under FIPS 186-5 but are vulnerable to quantum computers. EdDSA relies on elliptic curve cryptography, which Shor's algorithm can break.
+
+    ### Detection
+
+    This rule flags usage of `jwt.SigningMethodEdDSA` signing method.
+
+    ### Additional Info
+
+    - Ed25519 is approved in FIPS 186-5 for digital signatures
+    - Quantum vulnerability applies to all elliptic curve signature schemes including EdDSA
+    - EdDSA offers performance advantages over ECDSA but shares the same quantum risk
+    - Inventory all EdDSA signing infrastructure for PQC migration planning
+    - HMAC-based JWT signing is quantum-resistant for symmetric use cases
+  links:
+    - url: https://csrc.nist.gov/pubs/fips/140-3/final
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: jwt\.SigningMethodEdDSA
+        filePattern: .*\.go
+- ruleID: jwt-pattern-00050
+  description: HMAC JWT signatures are quantum-resistant; verify key sizes meet FIPS requirements
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    HMAC JWT signatures (HS256/HS384/HS512) are FIPS 140-3 approved and quantum-resistant with adequate key sizes. No PQC migration is required for symmetric JWT signing.
+
+    ### Detection
+
+    This rule flags usage of `jwt.SigningMethodHS256`, `jwt.SigningMethodHS384`, or `jwt.SigningMethodHS512` signing methods.
+
+    ### Additional Info
+
+    - HMAC-SHA256 with a 256-bit key provides 128-bit quantum security via Grover's algorithm
+    - Ensure HMAC keys are at least 256 bits for quantum resistance
+    - HMAC is only suitable for scenarios where signing and verification parties share a secret key
+    - Not suitable for public verification scenarios (use asymmetric signatures instead)
+    - Verify that HMAC key generation uses a FIPS-approved random number generator
+  links:
+    - url: https://csrc.nist.gov/pubs/fips/140-3/final
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: jwt\.SigningMethod(HS256|HS384|HS512)
+        filePattern: .*\.go

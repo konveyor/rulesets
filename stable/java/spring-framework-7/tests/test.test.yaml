@@ -1,0 +1,27 @@
+rulesPath: ../test.yaml
+providers:
+- name: java
+  dataPath: ./data/test
+- name: builtin
+  dataPath: ./data/test
+tests:
+- ruleID: test-change-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: test-import-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: test-import-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: test-import-00030
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

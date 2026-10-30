@@ -1,0 +1,34 @@
+- ruleID: fips-change-00010
+  description: crypto/tls/fipsonly is the legacy Go+BoringCrypto mechanism; remove in native FIPS mode
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `crypto/tls/fipsonly` import was the legacy Go+BoringCrypto mechanism for restricting TLS to FIPS-approved cipher suites. In native FIPS mode, TLS restriction is automatic — remove this import.
+
+    ### Before
+
+    ```go
+    import _ "crypto/tls/fipsonly"
+    ```
+
+    ### After
+
+    Remove the import entirely. Enable FIPS mode with `GOFIPS140=latest` at build time or `GODEBUG=fips140=on` at runtime. TLS cipher suite restriction is handled automatically by the native FIPS 140-3 module.
+
+    ### Additional Info
+
+    - The native FIPS 140-3 module automatically restricts TLS to approved cipher suites
+    - No blank import or init-side-effect mechanism is needed
+    - If you were using `crypto/tls/fipsonly` alongside `GOEXPERIMENT=boringcrypto`, remove both
+    - Ensure Go 1.24+ and `GOFIPS140=latest` are configured before removing this import
+    - Test TLS connections after migration to verify cipher suite compatibility
+  links:
+    - url: https://go.dev/doc/fips140
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: crypto/tls/fipsonly

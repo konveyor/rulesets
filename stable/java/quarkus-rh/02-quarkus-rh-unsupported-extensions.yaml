@@ -1,0 +1,108 @@
+- category: mandatory
+  customVariables: []
+  description: Jakarta Faces (JSF) is not a supported extension in Red Hat build of Quarkus
+  effort: 7
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus-rh
+  links:
+  - title: Red Hat build of Quarkus - Component Details (supported extensions)
+    url: https://access.redhat.com/articles/7040491
+  - title: Red Hat build of Quarkus - Supported Configurations
+    url: https://access.redhat.com/articles/4966181
+  message: |-
+    Jakarta Faces/JSF is not a supported (productized) extension in Red Hat build of Quarkus 3.33.
+    The MyFaces, PrimeFaces, and OmniFaces Quarkus extensions are community-only (Quarkiverse) and are not covered by Red Hat support.
+
+    Re-implement the view layer using a supported Red Hat build of Quarkus approach, for example:
+    - Quarkus REST (`io.quarkus:quarkus-rest`) with Qute server-side templates (`io.quarkus:quarkus-rest-qute`), or
+    - an external/SPA frontend consuming REST endpoints.
+
+    If Jakarta Faces is a hard requirement, remain on upstream Quarkus (target `quarkus`), where the community MyFaces/PrimeFaces/OmniFaces extensions are available.
+  ruleID: quarkus-rh-unsupported-extensions-00010
+  when:
+    or:
+    - builtin.xml:
+        filepaths:
+        - pom.xml
+        namespaces:
+          m: http://maven.apache.org/POM/4.0.0
+        xpath: /m:project/m:dependencies/m:dependency[m:groupId/text() = 'jakarta.faces']
+    - builtin.xml:
+        filepaths:
+        - pom.xml
+        namespaces:
+          m: http://maven.apache.org/POM/4.0.0
+        xpath: /m:project/m:dependencies/m:dependency[m:groupId/text() = 'org.jboss.spec.javax.faces']
+    - builtin.filecontent:
+        filePattern: pom\.xml
+        pattern: artifactId>jakarta.faces<
+- category: mandatory
+  customVariables: []
+  description: JAX-WS / Jakarta XML Web Services (SOAP) is not part of the Red Hat build of Quarkus platform
+  effort: 7
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus-rh
+  links:
+  - title: Red Hat build of Quarkus - Component Details (supported extensions)
+    url: https://access.redhat.com/articles/7040491
+  - title: Camel Extensions for Quarkus (Quarkus CXF - supported SOAP)
+    url: https://docs.redhat.com/en/documentation/red_hat_build_of_apache_camel
+  - title: Quarkus REST (supported)
+    url: https://quarkus.io/guides/rest
+  message: |-
+    JAX-WS / Jakarta XML Web Services (SOAP) is not part of the Red Hat build of Quarkus 3.33 platform (it is not in the product BOM or the supported-extensions list).
+
+    Supported options:
+    - Use Quarkus CXF, which is productized and supported as part of Red Hat build of Apache Camel (Camel Extensions for Quarkus), rather than the Red Hat build of Quarkus platform.
+    - Re-architect SOAP endpoints as RESTful services using Quarkus REST (`io.quarkus:quarkus-rest`, supported on Red Hat build of Quarkus).
+    - Keep the SOAP components on a supported platform (for example JBoss EAP) and integrate over the network.
+
+    Note: Quarkus CXF is supported under Red Hat build of Apache Camel, not under the Red Hat build of Quarkus platform support scope.
+  ruleID: quarkus-rh-unsupported-extensions-00020
+  when:
+    or:
+    - java.referenced:
+        location: ANNOTATION
+        pattern: jakarta.jws.WebService
+    - java.referenced:
+        location: ANNOTATION
+        pattern: javax.jws.WebService
+    - java.referenced:
+        location: PACKAGE
+        pattern: jakarta.xml.ws*
+    - java.referenced:
+        location: PACKAGE
+        pattern: javax.xml.ws*
+- category: mandatory
+  customVariables: []
+  description: Jakarta Batch (JSR-352) is not part of the Red Hat build of Quarkus platform
+  effort: 7
+  labels:
+  - konveyor.io/source=java-ee
+  - konveyor.io/source=jakarta-ee
+  - konveyor.io/target=quarkus-rh
+  links:
+  - title: Red Hat build of Quarkus - Component Details (supported extensions)
+    url: https://access.redhat.com/articles/7040491
+  - title: Quarkus Scheduler (supported)
+    url: https://quarkus.io/guides/scheduler
+  message: |-
+    Jakarta Batch (JSR-352) is not part of the Red Hat build of Quarkus 3.33 platform (it is not in the product BOM or the supported-extensions list).
+    The community `quarkus-jberet` (Quarkiverse) extension implements JSR-352 but is not part of the Red Hat build of Quarkus platform.
+
+    Migration options:
+    - For true JSR-352 batch workloads (jobs/steps/chunks, reader-processor-writer, checkpoint/restart), plan a real batch migration — typically a dedicated/external batch solution or a workflow engine invoked from Quarkus. This is the primary path, as the semantics have no in-platform equivalent.
+    - For simple periodic or triggered work only, `io.quarkus:quarkus-scheduler` or `io.quarkus:quarkus-quartz` (both supported) may suffice, but they only provide scheduling/triggering — not JSR-352 batch semantics.
+  ruleID: quarkus-rh-unsupported-extensions-00030
+  when:
+    or:
+    - java.referenced:
+        location: PACKAGE
+        pattern: jakarta.batch*
+    - java.referenced:
+        location: PACKAGE
+        pattern: javax.batch*

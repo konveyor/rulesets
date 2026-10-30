@@ -1,0 +1,33 @@
+rulesPath: ../crypto-hygiene.yaml
+providers:
+    - name: go
+      dataPath: ./data/crypto-hygiene-go
+tests:
+    - ruleID: crypto-hygiene-change-00010
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: crypto-hygiene-change-00020
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: crypto-hygiene-change-00030
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: crypto-hygiene-change-00040
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

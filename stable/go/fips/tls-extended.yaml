@@ -1,0 +1,98 @@
+- ruleID: tls-extended-pattern-00010
+  description: Custom certificate verification functions may bypass FIPS-compliant trust chain validation
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Custom `VerifyPeerCertificate` or `VerifyConnection` callbacks in `tls.Config` override Go's default certificate trust chain validation. In FIPS-compliant environments, custom verification functions may introduce vulnerabilities by bypassing standard certificate checks.
+
+    ### Before
+
+    ```go
+    import "crypto/tls"
+
+    config := &tls.Config{
+        VerifyPeerCertificate: func(rawCerts [][]byte, verifiedChains [][]*x509.Certificate) error {
+            return nil // Bypasses all validation
+        },
+    }
+    ```
+
+    ### After
+
+    ```go
+    import "crypto/tls"
+
+    // Use Go's secure defaults for certificate verification
+    config := &tls.Config{
+        MinVersion: tls.VersionTLS12,
+    }
+    ```
+
+    ### Additional Info
+
+    - Returning `nil` from `VerifyPeerCertificate` disables all certificate validation, making TLS connections vulnerable to MITM attacks
+    - If custom verification is necessary, ensure it supplements rather than replaces the default trust chain
+    - The same concern applies to `VerifyConnection` callbacks
+    - Review all `tls.Config` instances for custom verification that weakens security
+    - See [crypto/tls documentation](https://pkg.go.dev/crypto/tls#Config) for secure configuration guidance
+  links:
+    - url: https://pkg.go.dev/crypto/tls#Config
+      title: Migration Documentation
+  when:
+    or:
+        - builtin.filecontent:
+            pattern: VerifyPeerCertificate
+            filePattern: .*\.go
+        - builtin.filecontent:
+            pattern: VerifyConnection
+            filePattern: .*\.go
+- ruleID: tls-extended-pattern-00020
+  description: Explicit CurvePreferences blocks Go 1.24+ hybrid post-quantum key exchange (X25519MLKEM768)
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Setting explicit `CurvePreferences` in `tls.Config` without including `tls.X25519MLKEM768` blocks Go 1.24+ hybrid post-quantum key exchange. Go 1.24+ defaults now include the `X25519MLKEM768` curve (hybrid post-quantum cryptography), but explicitly setting `CurvePreferences` overrides these defaults.
+
+    ### Before
+
+    ```go
+    import "crypto/tls"
+
+    config := &tls.Config{
+        CurvePreferences: []tls.CurveID{tls.X25519, tls.CurveP256},
+    }
+    ```
+
+    ### After
+
+    ```go
+    import "crypto/tls"
+
+    // Remove CurvePreferences to use secure defaults including PQC
+    config := &tls.Config{
+        MinVersion: tls.VersionTLS12,
+    }
+    ```
+
+    ### Additional Info
+
+    - Go 1.24+ includes `X25519MLKEM768` in default curve preferences for hybrid post-quantum key exchange
+    - Explicitly listing curves without `X25519MLKEM768` opts out of post-quantum protection
+    - If you must set `CurvePreferences`, include `tls.X25519MLKEM768` as the first entry
+    - Removing `CurvePreferences` entirely is the recommended approach for forward-compatible TLS security
+    - See [Go 1.24 release notes](https://go.dev/doc/go1.24) for details on post-quantum cryptography support
+  links:
+    - url: https://pkg.go.dev/crypto/tls#Config
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: CurvePreferences
+        filePattern: .*\.go

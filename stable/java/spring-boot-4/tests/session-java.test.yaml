@@ -1,0 +1,17 @@
+rulesPath: ../session.yaml
+providers:
+- name: java
+  dataPath: ./data/session-java
+- name: builtin
+  dataPath: ./data/session-java
+tests:
+- ruleID: session-dependency-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1
+- ruleID: session-dependency-00020
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

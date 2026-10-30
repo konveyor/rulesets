@@ -1,0 +1,19 @@
+rulesPath: ../actuator.yaml
+providers:
+- name: java
+  dataPath: ./data/actuator-java
+- name: builtin
+  dataPath: ./data/actuator-java
+tests:
+- ruleID: actuator-annotation-00010
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1
+- ruleID: actuator-dependency-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

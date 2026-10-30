@@ -1,0 +1,12 @@
+rulesPath: ../beans.yaml
+providers:
+    - name: java
+      dataPath: ./data/beans
+tests:
+    - ruleID: beans-deprecation-00010
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

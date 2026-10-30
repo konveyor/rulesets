@@ -1,0 +1,68 @@
+- ruleID: x509-change-00010
+  description: X.509 certificates use quantum-vulnerable signatures; inventory for PQC migration
+  category: potential
+  effort: 8
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    X.509 certificates typically use RSA or ECDSA signatures, both of which are quantum-vulnerable. Inventory all certificate creation and parsing operations for post-quantum cryptography migration planning.
+
+    ### Before
+
+    ```go
+    import "crypto/x509"
+
+    cert, _ := x509.CreateCertificate(rand.Reader, template, parent, publicKey, privateKey)
+    cert, _ := x509.ParseCertificate(certDER)
+    ```
+
+    ### Additional Info
+
+    - X.509 certificates are foundational to TLS, code signing, and mutual authentication
+    - Both RSA and ECDSA certificate signatures are vulnerable to quantum attacks
+    - NIST post-quantum signature algorithms (ML-DSA) will eventually replace RSA/ECDSA in certificates
+    - Certificate infrastructure changes require coordination with CAs, load balancers, and all TLS endpoints
+    - Long-lived certificates (e.g., root CAs) should be prioritized in PQC migration planning
+  links:
+    - url: https://csrc.nist.gov/pubs/fips/140-3/final
+      title: Migration Documentation
+  when:
+    or:
+        - go.referenced:
+            pattern: crypto/x509.CreateCertificate
+        - go.referenced:
+            pattern: crypto/x509.ParseCertificate
+- ruleID: x509-change-00020
+  description: X.509 key pairs use quantum-vulnerable algorithms; inventory for PQC migration
+  category: potential
+  effort: 8
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Loading X.509 key pairs typically involves RSA or ECDSA keys, both of which are quantum-vulnerable. Inventory all key pair loading operations for post-quantum cryptography migration planning.
+
+    ### Before
+
+    ```go
+    import "crypto/tls"
+
+    cert, _ := tls.LoadX509KeyPair("cert.pem", "key.pem")
+    ```
+
+    ### Additional Info
+
+    - Key pairs loaded via `LoadX509KeyPair` are used for TLS server/client authentication
+    - The underlying key algorithm (RSA/ECDSA) determines quantum vulnerability
+    - Review the key type in your certificates to assess PQC migration scope
+    - Coordinate key pair replacement with certificate authority and deployment infrastructure
+    - Consider automating certificate rotation to ease future algorithm transitions
+  links:
+    - url: https://csrc.nist.gov/pubs/fips/140-3/final
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: crypto/tls.LoadX509KeyPair

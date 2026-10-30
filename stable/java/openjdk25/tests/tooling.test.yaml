@@ -1,0 +1,10 @@
+rulesPath: ../tooling.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/tooling
+tests:
+    - ruleID: tooling-removal-00010
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1

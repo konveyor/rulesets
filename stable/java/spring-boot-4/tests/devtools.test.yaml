@@ -1,0 +1,12 @@
+rulesPath: ../devtools.yaml
+providers:
+- name: java
+  dataPath: ./data/devtools
+- name: builtin
+  dataPath: ./data/devtools
+tests:
+- ruleID: devtools-dependency-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

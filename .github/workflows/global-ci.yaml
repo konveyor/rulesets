@@ -12,14 +12,32 @@ on:
     - main
     - 'release-*'
 
+env:
+  BRANCH: ${{ github.event_name == 'push' && github.ref_name || github.base_ref }}
+
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.get-tag.outputs.tag }}
+    steps:
+      - id: get-tag
+        run: |
+          echo "Get tag for quay.io/konveyor images"
+          if [[ "${{ env.BRANCH }}" == "main" ]]; then
+            echo "tag=latest" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag=${{ env.BRANCH }}" >> "$GITHUB_OUTPUT"
+          fi
+          echo "$(grep tag "$GITHUB_OUTPUT")"
+
   build-hub:
     name: Build tackle2-hub
     runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
       with:
         path: rulesets
 
@@ -36,35 +54,336 @@ jobs:
         done
         exit $rc
 
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
       with:
         fetch-depth: 0
         repository: konveyor/tackle2-hub
-        ref: ${{ github.event_name == 'push' && github.ref || github.base_ref }}
+        ref: ${{ env.BRANCH }}
         path: tackle2-hub
 
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
       with:
         fetch-depth: 0
         repository: konveyor/tackle2-seed
-        ref: ${{ github.event_name == 'push' && github.ref || github.base_ref }}
-        path: tackle2-seed
+        ref: ${{ env.BRANCH }}
+        path: tackle2-hub/tackle2-seed
 
     - name: Update the seed repo
-      working-directory: tackle2-seed
+      working-directory: tackle2-hub/tackle2-seed
       run: |
-        RULESET_ARGS='-r ../rulesets --yes' make ruleset-patch
+        GOWORK=off RULESET_ARGS='-r ../../rulesets --yes' make ruleset-patch
+
+    - name: Verify seed update
+      working-directory: tackle2-hub/tackle2-seed
+      run: |
+        echo "=== spring-boot-4 UUID in manifest ==="
+        python3 -c "
+        import yaml, sys
+        with open('resources/rulesets.yaml') as f:
+            data = yaml.safe_load(f)
+        for item in data.get('items', []):
+            if item.get('name') == 'spring-boot-4':
+                print('UUID:', item.get('uuid', '(MISSING!)'))
+                print('Name:', item.get('name'))
+                print('Directory:', item.get('directory'))
+                print('Dependencies:', item.get('dependencies'))
+                sys.exit(0)
+        print('spring-boot-4 NOT FOUND in manifest')
+        " || echo "(python3 error)"
+        echo "=== spring-framework-7 UUID in manifest ==="
+        python3 -c "
+        import yaml, sys
+        with open('resources/rulesets.yaml') as f:
+            data = yaml.safe_load(f)
+        for item in data.get('items', []):
+            if item.get('name') == 'spring-framework-7':
+                print('UUID:', item.get('uuid', '(MISSING!)'))
+                print('Name:', item.get('name'))
+                print('Dependencies:', item.get('dependencies'))
+                sys.exit(0)
+        print('spring-framework-7 NOT FOUND in manifest')
+        " || echo "(python3 error)"
+        echo "=== spring-boot-4 rule files count ==="
+        ls resources/rulesets/java/spring-boot-4/*.yaml 2>/dev/null | wc -l || echo "0"
+        echo "=== Label check in spring-boot-4 rules ==="
+        grep -c "konveyor.io/target" resources/rulesets/java/spring-boot-4/actuator.yaml 2>/dev/null || echo "(not found)"
+
+    - name: Auto-update targets from rulesets
+      working-directory: tackle2-hub/tackle2-seed
+      run: |
+        echo "Scanning rulesets for new target labels..."
+
+        # Extract unique target labels from all ruleset files
+        TARGET_LABELS=$(find resources/rulesets -name "*.yaml" -exec grep -h "konveyor.io/target=" {} \; 2>/dev/null | \
+          sed 's/.*konveyor.io\/target=\([^ ]*\).*/\1/' | \
+          sort -u)
+
+        echo "Found target labels: $TARGET_LABELS"
+
+        # Function to extract base pattern by removing trailing version/number
+        get_base_pattern() {
+          echo "$1" | sed -E 's/[0-9]+(\.[0-9]+)*$//' || echo "$1"
+        }
+
+        # Function to capitalize first letter of each word
+        capitalize() {
+          echo "$1" | sed 's/-/ /g' | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) tolower(substr($i,2))}1' || echo "$1"
+        }
+
+        # Function to extract version from label
+        get_version() {
+          echo "$1" | grep -oE '[0-9]+(\.[0-9]+)*$' || echo ""
+        }
+
+        # Check and add missing labels
+        for label in $TARGET_LABELS; do
+          if grep -qF "label: konveyor.io/target=$label" resources/targets.yaml; then
+            echo "  ✓ Label '$label' already exists"
+            continue
+          fi
+
+          # Find matching target group by comparing base patterns with existing labels
+          base_pattern=$(get_base_pattern "$label")
+
+          # Get all target groups and their existing labels
+          target_count=$(yq eval '.items | length' resources/targets.yaml 2>/dev/null || echo "0")
+          matched_index=""
+          matched_target=""
+          prefix_matched_index=""
+          prefix_matched_target=""
+
+          # First pass: look for exact match
+          for ((i=0; i<target_count; i++)); do
+            existing_labels=$(yq eval ".items[$i].labels[].label" resources/targets.yaml 2>/dev/null | sed 's/konveyor.io\/target=//' || echo "")
+            for existing in $existing_labels; do
+              existing_base=$(get_base_pattern "$existing")
+              if [ "$existing_base" = "$base_pattern" ] && [ -n "$base_pattern" ]; then
+                # Exact match - use this and stop searching
+                matched_index=$i
+                matched_target=$(yq eval ".items[$i].name" resources/targets.yaml 2>/dev/null || echo "")
+                break 2
+              fi
+            done
+          done
+
+          # Second pass: if no exact match, try prefix match
+          if [ -z "$matched_index" ]; then
+            for ((i=0; i<target_count; i++)); do
+              existing_labels=$(yq eval ".items[$i].labels[].label" resources/targets.yaml 2>/dev/null | sed 's/konveyor.io\/target=//' || echo "")
+              for existing in $existing_labels; do
+                existing_base=$(get_base_pattern "$existing")
+                if [ -n "$base_pattern" ] && [ -n "$existing_base" ]; then
+                  # Check if one is a prefix of the other
+                  if [[ "$base_pattern" == "$existing_base"* ]] || [[ "$existing_base" == "$base_pattern"* ]]; then
+                    matched_index=$i
+                    matched_target=$(yq eval ".items[$i].name" resources/targets.yaml 2>/dev/null || echo "")
+                    break 2
+                  fi
+                fi
+              done
+            done
+          fi
+
+          if [ -z "$matched_index" ]; then
+            echo "  ⚠ No matching target group found for '$label' (base: '$base_pattern'), skipping"
+            continue
+          fi
+
+          # Generate label name
+          version=$(get_version "$label")
+          if [ -n "$version" ]; then
+            # Use target name + version (e.g., "Spring Boot 4", "OpenJDK 21")
+            label_name="$matched_target $version"
+          else
+            # Capitalize the label itself (e.g., "cloud-readiness" → "Cloud Readiness")
+            label_name=$(capitalize "$label")
+          fi
+
+          echo "  + Adding '$label' as '$label_name' to '$matched_target'"
+
+          # Add the new label to the matched target group
+          if yq eval -i ".items[$matched_index].labels += {\"name\": \"$label_name\", \"label\": \"konveyor.io/target=$label\"}" resources/targets.yaml 2>/dev/null; then
+            echo "    ✓ Successfully added"
+          else
+            echo "    ✗ Failed to add label"
+          fi
+        done
+
+        echo "Target update complete"
+        exit 0
 
     - name: Build hub and save image
       working-directory: tackle2-hub
       env:
         IMG: ttl.sh/konveyor-hub-${{ github.sha }}:4h
       run: |
-        podman build --build-arg SEED_ROOT=/opt/app-root/src/seed -t $IMG .
+        podman build --build-arg SEED_ROOT=/opt/app-root/src/tackle2-seed -t $IMG .
         podman push $IMG
 
+  build-kantra:
+    needs: [setup]
+    name: Build kantra
+    runs-on: ubuntu-24.04-arm
+    strategy:
+      fail-fast: false
+    steps:
+    - uses: actions/checkout@v6
+      with:
+        path: rulesets
+
+    - uses: actions/checkout@v6
+      with:
+        fetch-depth: 0
+        repository: konveyor/kantra
+        ref: ${{ env.BRANCH }}
+        path: kantra
+
+    - uses: actions/checkout@v6
+      with:
+        fetch-depth: 0
+        repository: konveyor/tackle2-seed
+        ref: ${{ env.BRANCH }}
+        path: kantra/tackle2-seed
+
+    - name: Update the seed repo
+      working-directory: kantra/tackle2-seed
+      run: |
+        GOWORK=off RULESET_ARGS='-r ../../rulesets --yes' make ruleset-patch
+
+    - name: Auto-update targets from rulesets
+      working-directory: kantra/tackle2-seed
+      run: |
+        echo "Scanning rulesets for new target labels..."
+
+        # Extract unique target labels from all ruleset files
+        TARGET_LABELS=$(find resources/rulesets -name "*.yaml" -exec grep -h "konveyor.io/target=" {} \; 2>/dev/null | \
+          sed 's/.*konveyor.io\/target=\([^ ]*\).*/\1/' | \
+          sort -u)
+
+        echo "Found target labels: $TARGET_LABELS"
+
+        # Function to extract base pattern by removing trailing version/number
+        get_base_pattern() {
+          echo "$1" | sed -E 's/[0-9]+(\.[0-9]+)*$//' || echo "$1"
+        }
+
+        # Function to capitalize first letter of each word
+        capitalize() {
+          echo "$1" | sed 's/-/ /g' | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) tolower(substr($i,2))}1' || echo "$1"
+        }
+
+        # Function to extract version from label
+        get_version() {
+          echo "$1" | grep -oE '[0-9]+(\.[0-9]+)*$' || echo ""
+        }
+
+        # Check and add missing labels
+        for label in $TARGET_LABELS; do
+          if grep -qF "label: konveyor.io/target=$label" resources/targets.yaml; then
+            echo "  ✓ Label '$label' already exists"
+            continue
+          fi
+
+          # Find matching target group by comparing base patterns with existing labels
+          base_pattern=$(get_base_pattern "$label")
+
+          # Get all target groups and their existing labels
+          target_count=$(yq eval '.items | length' resources/targets.yaml 2>/dev/null || echo "0")
+          matched_index=""
+          matched_target=""
+          prefix_matched_index=""
+          prefix_matched_target=""
+
+          # First pass: look for exact match
+          for ((i=0; i<target_count; i++)); do
+            existing_labels=$(yq eval ".items[$i].labels[].label" resources/targets.yaml 2>/dev/null | sed 's/konveyor.io\/target=//' || echo "")
+            for existing in $existing_labels; do
+              existing_base=$(get_base_pattern "$existing")
+              if [ "$existing_base" = "$base_pattern" ] && [ -n "$base_pattern" ]; then
+                # Exact match - use this and stop searching
+                matched_index=$i
+                matched_target=$(yq eval ".items[$i].name" resources/targets.yaml 2>/dev/null || echo "")
+                break 2
+              fi
+            done
+          done
+
+          # Second pass: if no exact match, try prefix match
+          if [ -z "$matched_index" ]; then
+            for ((i=0; i<target_count; i++)); do
+              existing_labels=$(yq eval ".items[$i].labels[].label" resources/targets.yaml 2>/dev/null | sed 's/konveyor.io\/target=//' || echo "")
+              for existing in $existing_labels; do
+                existing_base=$(get_base_pattern "$existing")
+                if [ -n "$base_pattern" ] && [ -n "$existing_base" ]; then
+                  # Check if one is a prefix of the other
+                  if [[ "$base_pattern" == "$existing_base"* ]] || [[ "$existing_base" == "$base_pattern"* ]]; then
+                    matched_index=$i
+                    matched_target=$(yq eval ".items[$i].name" resources/targets.yaml 2>/dev/null || echo "")
+                    break 2
+                  fi
+                fi
+              done
+            done
+          fi
+
+          if [ -z "$matched_index" ]; then
+            echo "  ⚠ No matching target group found for '$label' (base: '$base_pattern'), skipping"
+            continue
+          fi
+
+          # Generate label name
+          version=$(get_version "$label")
+          if [ -n "$version" ]; then
+            # Use target name + version (e.g., "Spring Boot 4", "OpenJDK 21")
+            label_name="$matched_target $version"
+          else
+            # Capitalize the label itself (e.g., "cloud-readiness" → "Cloud Readiness")
+            label_name=$(capitalize "$label")
+          fi
+
+          echo "  + Adding '$label' as '$label_name' to '$matched_target'"
+
+          # Add the new label to the matched target group
+          if yq eval -i ".items[$matched_index].labels += {\"name\": \"$label_name\", \"label\": \"konveyor.io/target=$label\"}" resources/targets.yaml 2>/dev/null; then
+            echo "    ✓ Successfully added"
+          else
+            echo "    ✗ Failed to add label"
+          fi
+        done
+
+        echo "Target update complete"
+
+    - name: Build kantra and save image
+      working-directory: kantra
+      env:
+        IMAGE_TAG: ${{ needs.setup.outputs.tag }}
+        IMG: ttl.sh/konveyor-kantra-${{ github.sha }}
+      run: |
+        podman build --build-arg IMAGE=$IMG --build-arg VERSION=$IMAGE_TAG -t $IMG:4h .
+        podman push $IMG:4h
+        podman tag $IMG:4h $IMG:$IMAGE_TAG
+        podman push $IMG:$IMAGE_TAG
+
   e2e:
-    needs: build-hub
+    needs: [build-hub, build-kantra]
     uses: konveyor/ci/.github/workflows/global-ci-bundle.yml@main
     with:
+      kantra: ttl.sh/konveyor-kantra-${{ github.sha }}:4h
       tackle_hub: ttl.sh/konveyor-hub-${{ github.sha }}:4h
+      run_api_tests: false
+      run_koncur_hub_tests: true
+      run_koncur_kantra_tests: true
+      run_windows_kantra_tests: false
+      koncur_ref: ${{ github.event_name == 'push' && github.ref_name || github.base_ref }}
+      tackle_cr: |
+        kind: Tackle
+        apiVersion: tackle.konveyor.io/v1alpha1
+        metadata:
+          name: tackle
+        spec:
+          image_pull_policy: IfNotPresent
+          analyzer_container_requests_cpu: 100m
+          provider_java_container_requests_cpu: 100m
+          provider_python_container_requests_cpu: 100m
+          feature_auth_required: false
+          hub_image_fqin: ttl.sh/konveyor-hub-${{ github.sha }}:4h

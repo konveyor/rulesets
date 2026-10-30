@@ -1,0 +1,19 @@
+rulesPath: ../ssh.yaml
+providers:
+    - name: go
+      dataPath: ./data/ssh
+tests:
+    - ruleID: ssh-change-00010
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: ssh-change-00020
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

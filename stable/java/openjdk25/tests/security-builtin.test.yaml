@@ -1,0 +1,15 @@
+rulesPath: ../security.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/security-builtin
+tests:
+    - ruleID: security-removal-00010
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: security-removal-00260
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1

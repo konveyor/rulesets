@@ -1,0 +1,12 @@
+rulesPath: ../web-server.yaml
+providers:
+- name: java
+  dataPath: ./data/web-server
+- name: builtin
+  dataPath: ./data/web-server
+tests:
+- ruleID: web-server-dependency-00010
+  testCases:
+  - name: tc-1
+    hasIncidents:
+      atLeast: 1

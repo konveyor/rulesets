@@ -1,0 +1,28 @@
+rulesPath: ../web.yaml
+providers:
+- name: java
+  dataPath: ./data/web-2
+- name: builtin
+  dataPath: ./data/web-2
+tests:
+- ruleID: web-import-00080
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1
+- ruleID: web-import-00090
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1
+- ruleID: web-import-00100
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1

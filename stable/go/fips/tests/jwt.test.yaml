@@ -1,0 +1,30 @@
+rulesPath: ../jwt.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/jwt
+tests:
+    - ruleID: jwt-pattern-00010
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: jwt-pattern-00020
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: jwt-pattern-00030
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: jwt-pattern-00040
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: jwt-pattern-00050
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1

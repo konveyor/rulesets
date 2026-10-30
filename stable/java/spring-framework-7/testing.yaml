@@ -1,0 +1,40 @@
+- ruleID: testing-annotation-00010
+  description: '@Nested test class dependency injection now consistent with lifecycle methods, may cause breaking changes'
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Spring Framework 7.0 enhances the `SpringExtension` for JUnit Jupiter to support dependency injection into test class constructors and fields in `@Nested` test class hierarchies, using the same `ApplicationContext` as lifecycle and test methods.
+
+    ### Behavioral Change
+
+    Previously, dependency injection in `@Nested` test classes was inconsistent - it worked for lifecycle methods (`@BeforeEach`, `@AfterEach`) and test methods (`@Test`), but not for constructors and fields. Spring Framework 7.0 makes this consistent by enabling dependency injection into constructors and fields as well.
+
+    ### Potential Breaking Changes
+
+    If you encounter issues after upgrading, this may be due to changes in the SpringExtension's extension context scope. See the [SpringExtension extension context scope](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-7.0-Release-Notes#springextension-extension-context-scope) section in the release notes for details.
+
+    ### Migration Steps
+
+    1. Review your `@Nested` test classes for constructor and field injection
+    2. Ensure that injected dependencies are available in the ApplicationContext used by your tests
+    3. If you experience test failures, check the SpringExtension extension context scope documentation for potential breaking changes
+
+    ### Additional Info
+
+    - This change provides a more consistent programming model for `@Nested` tests
+    - The enhancement was implemented in response to [issue #35697](https://github.com/spring-projects/spring-framework/issues/35697)
+    - Constructor and field injection now use the same ApplicationContext as lifecycle and test methods
+    - See the [Spring Framework 7.0 Release Notes](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-7.0-Release-Notes#improved-dependency-injection-in-nested-test-class-hierarchies)
+  links:
+    - url: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-7.0-Release-Notes#improved-dependency-injection-in-nested-test-class-hierarchies
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.junit.jupiter.api.Nested
+        location: ANNOTATION

@@ -1,0 +1,190 @@
+- ruleID: cipher-modes-change-00010
+  description: CBC mode is vulnerable to padding oracle attacks; replace with AES-GCM
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    CBC mode (`cipher.NewCBCEncrypter`/`cipher.NewCBCDecrypter`) provides confidentiality but not integrity. It is vulnerable to padding oracle attacks and is not recommended for FIPS 140-3 compliant applications. Replace with AES-GCM, which provides authenticated encryption (confidentiality + integrity).
+
+    ### Before
+
+    ```go
+    import (
+        "crypto/aes"
+        "crypto/cipher"
+    )
+
+    block, _ := aes.NewCipher(key)
+    mode := cipher.NewCBCEncrypter(block, iv)
+    mode.CryptBlocks(ciphertext, plaintext)
+    ```
+
+    ### After
+
+    ```go
+    import (
+        "crypto/aes"
+        "crypto/cipher"
+    )
+
+    block, _ := aes.NewCipher(key)
+    gcm, _ := cipher.NewGCM(block)
+    nonce := make([]byte, gcm.NonceSize())
+    _, _ = rand.Read(nonce)
+    ciphertext := gcm.Seal(nil, nonce, plaintext, nil)
+    ```
+
+    ### Additional Info
+
+    - AES-GCM is the preferred AEAD mode for FIPS environments, providing both confidentiality and authenticity.
+    - CBC mode requires separate HMAC for integrity; AES-GCM handles both in one operation.
+    - AES-GCM uses a 12-byte nonce instead of a 16-byte IV; never reuse nonces with the same key.
+    - Decryption changes from `NewCBCDecrypter`/`CryptBlocks` to `gcm.Open`.
+    - See NIST SP 800-38D for GCM specification.
+  links:
+    - url: https://pkg.go.dev/crypto/cipher#NewGCM
+      title: Migration Documentation
+  when:
+    or:
+        - go.referenced:
+            pattern: crypto/cipher.NewCBCEncrypter
+        - go.referenced:
+            pattern: crypto/cipher.NewCBCDecrypter
+- ruleID: cipher-modes-change-00020
+  description: CFB mode provides no authentication; replace with AES-GCM for FIPS compliance
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    CFB mode (`cipher.NewCFBEncrypter`/`cipher.NewCFBDecrypter`) provides confidentiality without authentication. For FIPS 140-3 compliance, prefer authenticated encryption modes like AES-GCM.
+
+    ### Before
+
+    ```go
+    import "crypto/cipher"
+
+    stream := cipher.NewCFBEncrypter(block, iv)
+    stream.XORKeyStream(ciphertext, plaintext)
+    ```
+
+    ### After
+
+    ```go
+    import "crypto/cipher"
+
+    gcm, _ := cipher.NewGCM(block)
+    nonce := make([]byte, gcm.NonceSize())
+    _, _ = rand.Read(nonce)
+    ciphertext := gcm.Seal(nil, nonce, plaintext, nil)
+    ```
+
+    ### Additional Info
+
+    - CFB is a streaming mode that does not provide integrity or authenticity guarantees.
+    - AES-GCM provides authenticated encryption (confidentiality + integrity) in one operation.
+    - Switching from CFB to GCM changes the encryption interface from `XORKeyStream` to `Seal`/`Open`.
+    - Ensure nonces are unique per encryption operation when using GCM.
+    - See NIST SP 800-38A for CFB specification and SP 800-38D for GCM.
+  links:
+    - url: https://pkg.go.dev/crypto/cipher#NewGCM
+      title: Migration Documentation
+  when:
+    or:
+        - go.referenced:
+            pattern: crypto/cipher.NewCFBEncrypter
+        - go.referenced:
+            pattern: crypto/cipher.NewCFBDecrypter
+- ruleID: cipher-modes-change-00030
+  description: OFB mode provides no authentication; replace with AES-GCM for FIPS compliance
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    OFB mode (`cipher.NewOFB`) provides confidentiality without authentication. For FIPS 140-3 compliance, prefer authenticated encryption modes like AES-GCM.
+
+    ### Before
+
+    ```go
+    import "crypto/cipher"
+
+    stream := cipher.NewOFB(block, iv)
+    stream.XORKeyStream(ciphertext, plaintext)
+    ```
+
+    ### After
+
+    ```go
+    import "crypto/cipher"
+
+    gcm, _ := cipher.NewGCM(block)
+    nonce := make([]byte, gcm.NonceSize())
+    _, _ = rand.Read(nonce)
+    ciphertext := gcm.Seal(nil, nonce, plaintext, nil)
+    ```
+
+    ### Additional Info
+
+    - OFB is a streaming mode that does not provide integrity or authenticity guarantees.
+    - AES-GCM provides authenticated encryption (confidentiality + integrity) in one operation.
+    - Switching from OFB to GCM changes the encryption interface from `XORKeyStream` to `Seal`/`Open`.
+    - Ensure nonces are unique per encryption operation when using GCM.
+    - The guide refers to this as `cipher.NewOFBStream` but the Go standard library function is `cipher.NewOFB`.
+  links:
+    - url: https://pkg.go.dev/crypto/cipher#NewGCM
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: crypto/cipher.NewOFB
+- ruleID: cipher-modes-change-00040
+  description: CTR mode provides no authentication; replace with AES-GCM for FIPS compliance
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    CTR mode (`cipher.NewCTR`) provides confidentiality without authentication. For FIPS 140-3 compliance, prefer authenticated encryption modes like AES-GCM.
+
+    ### Before
+
+    ```go
+    import "crypto/cipher"
+
+    stream := cipher.NewCTR(block, iv)
+    stream.XORKeyStream(ciphertext, plaintext)
+    ```
+
+    ### After
+
+    ```go
+    import "crypto/cipher"
+
+    gcm, _ := cipher.NewGCM(block)
+    nonce := make([]byte, gcm.NonceSize())
+    _, _ = rand.Read(nonce)
+    ciphertext := gcm.Seal(nil, nonce, plaintext, nil)
+    ```
+
+    ### Additional Info
+
+    - CTR is a streaming mode that does not provide integrity or authenticity guarantees.
+    - AES-GCM provides authenticated encryption (confidentiality + integrity) in one operation.
+    - Switching from CTR to GCM changes the encryption interface from `XORKeyStream` to `Seal`/`Open`.
+    - Ensure nonces are unique per encryption operation when using GCM.
+    - AES-GCM internally uses CTR mode but adds authentication via GHASH.
+  links:
+    - url: https://pkg.go.dev/crypto/cipher#NewGCM
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: crypto/cipher.NewCTR

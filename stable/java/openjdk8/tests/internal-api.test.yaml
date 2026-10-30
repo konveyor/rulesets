@@ -1,0 +1,27 @@
+rulesPath: ../internal-api.yaml
+providers:
+    - name: java
+      dataPath: ./data/internal-api
+tests:
+    - ruleID: internal-api-import-00010
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: internal-api-dependency-00010
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: internal-api-dependency-00020
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: internal-api-dependency-00030
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1

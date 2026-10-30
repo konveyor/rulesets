@@ -1,0 +1,12 @@
+rulesPath: ../eapxp_wildfly_jar_maven_plugin_upgrade.mta.yaml
+providers:
+  - name: java
+    dataPath: ./data/eapxp_wildfly_jar_maven_plugin_upgrade
+  - name: builtin
+    dataPath: ./data/eapxp_wildfly_jar_maven_plugin_upgrade
+tests:
+  - ruleID: eapxp_wildfly_jar_maven_plugin_upgrade-00001
+    testCases:
+      - name: eapxp_wildfly_jar_maven_plugin_upgrade-1
+        hasIncidents:
+          exactly: 1

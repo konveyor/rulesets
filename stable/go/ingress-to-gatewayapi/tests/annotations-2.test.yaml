@@ -1,0 +1,35 @@
+rulesPath: ../annotations.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/annotations-2
+tests:
+    - ruleID: annotations-pattern-00090
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: annotations-pattern-00100
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: annotations-pattern-00110
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: annotations-pattern-00120
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: annotations-pattern-00130
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: annotations-pattern-00140
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1

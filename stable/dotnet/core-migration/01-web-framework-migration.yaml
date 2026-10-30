@@ -170,7 +170,7 @@
   when:
     csharp.referenced:
       location: METHOD
-      pattern: "*.AreaRegistration.RegisterAllAreas"
+      pattern: ".*\\.AreaRegistration\\.RegisterAllAreas"
 
 - category: mandatory
   customVariables: []
@@ -201,7 +201,7 @@
   when:
     csharp.referenced:
       location: ALL
-      pattern: "*.HttpContext.Current"
+      pattern: ".*\\.HttpContext\\.Current"
 
 - category: mandatory
   customVariables: []
@@ -229,7 +229,7 @@
   when:
     csharp.referenced:
       location: METHOD
-      pattern: "*.Server.MapPath"
+      pattern: ".*\\.Server\\.MapPath"
 
 - category: mandatory
   customVariables: []
@@ -311,4 +311,4 @@
   when:
     csharp.referenced:
       location: ALL
-      pattern: "*.HttpRuntime.*"
+      pattern: ".*\\.HttpRuntime\\..*"

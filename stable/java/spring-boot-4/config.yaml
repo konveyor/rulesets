@@ -1,0 +1,160 @@
+- ruleID: config-pattern-00010
+  description: Property moved to spring.jackson.json.read
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The JSON-specific Jackson read properties have moved from `spring.jackson.read.*` to `spring.jackson.json.read.*` in Spring Boot 4.
+
+    ### Before
+
+    **application.properties:**
+    ```properties
+    spring.jackson.read.accept-empty-string-as-null-object=true
+    spring.jackson.read.accept-empty-array-as-null-object=true
+    ```
+
+    **application.yml:**
+    ```yaml
+    spring:
+      jackson:
+        read:
+          accept-empty-string-as-null-object: true
+          accept-empty-array-as-null-object: true
+    ```
+
+    ### After
+
+    **application.properties:**
+    ```properties
+    spring.jackson.json.read.accept-empty-string-as-null-object=true
+    spring.jackson.json.read.accept-empty-array-as-null-object=true
+    ```
+
+    **application.yml:**
+    ```yaml
+    spring:
+      jackson:
+        json:
+          read:
+            accept-empty-string-as-null-object: true
+            accept-empty-array-as-null-object: true
+    ```
+
+    ### Additional Info
+
+    - This reorganization supports Jackson 3's format-specific configuration
+    - The properties control JSON reading behavior specifically
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#upgrading-jackson
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: spring\.jackson\.read\.
+        filePattern: application.*\.(properties|ya?ml)
+- ruleID: config-pattern-00020
+  description: Property moved to spring.jackson.json.write
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The JSON-specific Jackson write properties have moved from `spring.jackson.write.*` to `spring.jackson.json.write.*` in Spring Boot 4.
+
+    ### Before
+
+    **application.properties:**
+    ```properties
+    spring.jackson.write.write-dates-as-timestamps=false
+    spring.jackson.write.write-enums-using-to-string=true
+    ```
+
+    **application.yml:**
+    ```yaml
+    spring:
+      jackson:
+        write:
+          write-dates-as-timestamps: false
+          write-enums-using-to-string: true
+    ```
+
+    ### After
+
+    **application.properties:**
+    ```properties
+    spring.jackson.json.write.write-dates-as-timestamps=false
+    spring.jackson.json.write.write-enums-using-to-string=true
+    ```
+
+    **application.yml:**
+    ```yaml
+    spring:
+      jackson:
+        json:
+          write:
+            write-dates-as-timestamps: false
+            write-enums-using-to-string: true
+    ```
+
+    ### Additional Info
+
+    - This reorganization supports Jackson 3's format-specific configuration
+    - The properties control JSON writing behavior specifically
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#upgrading-jackson
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: spring\.jackson\.write\.
+        filePattern: application.*\.(properties|ya?ml)
+- ruleID: config-pattern-00030
+  description: Property replaced by spring.jackson.json.read
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Jackson 2 `JsonParser.Feature` properties at `spring.jackson.parser.*` have been replaced. Where a Jackson 2 `JsonParser.Feature` has an equivalent Jackson 3 `JsonReadFeature`, use `spring.jackson.json.read.*` properties instead.
+
+    ### Before
+
+    **application.properties:**
+    ```properties
+    spring.jackson.parser.allow-comments=true
+    spring.jackson.parser.allow-unquoted-field-names=true
+    ```
+
+    ### After
+
+    **application.properties:**
+    ```properties
+    spring.jackson.json.read.allow-java-comments=true
+    spring.jackson.json.read.allow-unquoted-field-names=true
+    ```
+
+    ### Additional Info
+
+    - Most Jackson 2 `JsonParser.Feature` properties have equivalent `JsonReadFeature` properties
+    - For features without a direct `JsonReadFeature` equivalent, use a `JsonMapperBuilderCustomizer` bean to apply configuration programmatically
+    - This change aligns with Jackson 3's reorganized feature system
+    - Review the Jackson 3 migration guide for feature mapping details
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#upgrading-jackson
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: spring\.jackson\.parser\.
+        filePattern: application.*\.(properties|ya?ml)

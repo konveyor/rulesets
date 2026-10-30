@@ -216,14 +216,86 @@ jobs:
           podman rm kantra-download
           echo 'msg<<EOF' >> $GITHUB_OUTPUT
 
+          # Split tests into local (java/builtin) and container (go/nodejs/etc.) groups
+          get_local_tests() {
+            local test_files="$1"
+            local filtered=""
+            for test_file in $test_files; do
+              if grep -q 'name: go' "$test_file" 2>/dev/null || \
+                 grep -q 'name: nodejs' "$test_file" 2>/dev/null || \
+                 grep -q 'name: csharp' "$test_file" 2>/dev/null || \
+                 grep -q 'name: dotnet' "$test_file" 2>/dev/null; then
+                continue
+              fi
+              filtered="${filtered} ${test_file}"
+            done
+            echo "$filtered"
+          }
+
+          get_container_tests() {
+            local test_files="$1"
+            local filtered=""
+            for test_file in $test_files; do
+              if grep -q 'name: go' "$test_file" 2>/dev/null || \
+                 grep -q 'name: nodejs' "$test_file" 2>/dev/null || \
+                 grep -q 'name: csharp' "$test_file" 2>/dev/null || \
+                 grep -q 'name: dotnet' "$test_file" 2>/dev/null; then
+                filtered="${filtered} ${test_file}"
+              fi
+            done
+            echo "$filtered"
+          }
+
+          run_tests() {
+            local test_files="$1"
+            local local_tests=$(get_local_tests "$test_files")
+            local container_tests=$(get_container_tests "$test_files")
+
+            if [ -n "$local_tests" ]; then
+              echo "Running local-mode tests (java/builtin)..."
+              JVM_MAX_MEM=3072m ./kantra rules test $local_tests --log-level 50 --run-local=true | tee output.log
+              if [ ${PIPESTATUS[0]} -ne 0 ]; then
+                echo "Error: kantra local test command failed"
+                HAS_ERROR=1
+              fi
+            fi
+
+            if [ -n "$container_tests" ]; then
+              echo "Running container-mode tests (go/nodejs/etc.)..."
+              ./kantra rules test $container_tests --log-level 50 | tee -a output.log
+              if [ ${PIPESTATUS[0]} -ne 0 ]; then
+                echo "Error: kantra container test command failed"
+                HAS_ERROR=1
+              fi
+            fi
+
+            if [ -z "$local_tests" ] && [ -z "$container_tests" ]; then
+              return 1
+            fi
+            return 0
+          }
+
+          # Track if any errors occurred
+          HAS_ERROR=0
+
           # Determine what to test
           if [ "${{ steps.find-tests.outputs.run_all_tests }}" == "true" ]; then
             # Run all tests (for nightly runs or manual workflow_dispatch)
             echo "Running all tests"
-            JVM_MAX_MEM=3072m ./kantra test ./rulesets --log-level 50 --run-local=true | tee output.log || true
+            all_tests=$(find ./rulesets/stable ./rulesets/preview -name "*.test.yaml" 2>/dev/null || echo "")
+            if [ -n "$all_tests" ]; then
+              if ! run_tests "$all_tests"; then
+                echo "No test files found"
+                echo "Rules Summary: 0/0" > message.md
+                echo "Test Cases Summary: 0/0" >> message.md
+              fi
+            else
+              echo "No test files found"
+              echo "Rules Summary: 0/0" > message.md
+              echo "Test Cases Summary: 0/0" >> message.md
+            fi
           elif [ "${{ steps.find-tests.outputs.has_tests }}" == "true" ]; then
             # Run tests for changed rules only
-            # Test file paths are under stable/ or preview/; after move they are under ./rulesets/stable/ or ./rulesets/preview/
             test_files="${{ steps.find-tests.outputs.test_files }}"
             echo "Running tests for changed rules: $test_files"
             adjusted_test_files=""
@@ -242,7 +314,11 @@ jobs:
               fi
             done
             if [ -n "$adjusted_test_files" ]; then
-              JVM_MAX_MEM=3072m ./kantra test $adjusted_test_files --log-level 50 --run-local=true | tee output.log || true
+              if ! run_tests "$adjusted_test_files"; then
+                echo "No tests to run in changed files"
+                echo "Rules Summary: 0/0" > message.md
+                echo "Test Cases Summary: 0/0" >> message.md
+              fi
             else
               echo "Rules Summary: 0/0" > message.md
               echo "Test Cases Summary: 0/0" >> message.md
@@ -274,9 +350,12 @@ jobs:
           echo ${tests_pass_rate} >> $GITHUB_OUTPUT
           echo 'EOF' >> $GITHUB_OUTPUT
 
-          if [[ ${some_test_failed} -eq 1 ]] || [[ ${some_tcs_failed} -eq 1 ]]; then
+          # Exit with error if: kantra command failed, OR any test failed, OR any test case failed
+          if [[ ${HAS_ERROR} -eq 1 ]] || [[ ${some_test_failed} -eq 1 ]] || [[ ${some_tcs_failed} -eq 1 ]]; then
+            echo "FAILED: HAS_ERROR=${HAS_ERROR}, some_test_failed=${some_test_failed}, some_tcs_failed=${some_tcs_failed}"
             exit 1
           else
+            echo "SUCCESS: All tests passed"
             exit 0
           fi
 

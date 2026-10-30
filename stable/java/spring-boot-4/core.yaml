@@ -1,0 +1,126 @@
+- ruleID: core-import-00010
+  description: BootstrapRegistry moved to org.springframework.boot.bootstrap package
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `BootstrapRegistry` and related classes have moved from `org.springframework.boot` to `org.springframework.boot.bootstrap` as part of Spring Boot 4's modularization effort.
+
+    ### Before
+
+    ```java
+    import org.springframework.boot.BootstrapRegistry;
+    import org.springframework.boot.BootstrapContext;
+    import org.springframework.boot.Bootstrapper;
+
+    public class MyBootstrapper implements Bootstrapper {
+        @Override
+        public void intitialize(BootstrapRegistry registry) {
+            // ...
+        }
+    }
+    ```
+
+    ### After
+
+    ```java
+    import org.springframework.boot.bootstrap.BootstrapRegistry;
+    import org.springframework.boot.bootstrap.BootstrapContext;
+    import org.springframework.boot.bootstrap.Bootstrapper;
+
+    public class MyBootstrapper implements Bootstrapper {
+        @Override
+        public void intitialize(BootstrapRegistry registry) {
+            // ...
+        }
+    }
+    ```
+
+    ### Additional Info
+
+    - If you have deep integrations with Spring Boot's bootstrap phase, update your imports
+    - Also update any references to `BootstrapContext`, `Bootstrapper`, and related classes
+    - If you register bootstrappers in `META-INF/spring.factories`, the file paths remain unchanged
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#bootstrapregistry-and-environmentpostprocessor-package-changes
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.boot.BootstrapRegistry
+        location: IMPORT
+- ruleID: core-import-00020
+  description: EnvironmentPostProcessor moved from org.springframework.boot.env to org.springframework.boot
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: "The `EnvironmentPostProcessor` interface has moved from `org.springframework.boot.env` to `org.springframework.boot` as part of Spring Boot 4's modularization effort.\n\n### Before\n\n```java\nimport org.springframework.boot.env.EnvironmentPostProcessor;\nimport org.springframework.core.env.ConfigurableEnvironment;\nimport org.springframework.boot.SpringApplication;\n\npublic class MyEnvPostProcessor implements EnvironmentPostProcessor {\n    @Override\n    public void postProcessEnvironment(ConfigurableEnvironment environment, \n                                      SpringApplication application) {\n        // ...\n    }\n}\n```\n\n### After\n\n```java\nimport org.springframework.boot.EnvironmentPostProcessor;\nimport org.springframework.core.env.ConfigurableEnvironment;\nimport org.springframework.boot.SpringApplication;\n\npublic class MyEnvPostProcessor implements EnvironmentPostProcessor {\n    @Override\n    public void postProcessEnvironment(ConfigurableEnvironment environment, \n                                      SpringApplication application) {\n        // ...\n    }\n}\n```\n\n### Additional Info\n\n- The deprecated form at the old location is still available in Spring Boot 4.0 but will be removed later\n- If you register `EnvironmentPostProcessor` implementations in `META-INF/spring.factories`, update the key to the new package\n- Deep integrations with Spring Boot may need to update both code and factory files"
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#bootstrapregistry-and-environmentpostprocessor-package-changes
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.boot.env.EnvironmentPostProcessor
+        location: IMPORT
+- ruleID: core-method-00010
+  description: alwaysApplyingWhenNonNull() method removed; use always() instead
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `PropertyMapper.alwaysApplyingWhenNonNull()` method has been removed in Spring Boot 4. The `PropertyMapper` class no longer calls adapter or predicate methods by default when the source value is null, eliminating the need for this method.
+
+    ### Before
+
+    ```java
+    PropertyMapper map = PropertyMapper.get();
+    map.from(source::getValue)
+       .alwaysApplyingWhenNonNull()
+       .to(destination::setValue);
+    ```
+
+    ### After
+
+    If you need to perform a mapping even for null values, use the new `always()` method:
+
+    ```java
+    PropertyMapper map = PropertyMapper.get();
+    map.from(source::getValue)
+       .always()
+       .to(destination::setValue);
+    ```
+
+    Or for the default behavior (skip null values), simply remove the call:
+
+    ```java
+    PropertyMapper map = PropertyMapper.get();
+    map.from(source::getValue)
+       .to(destination::setValue);
+    ```
+
+    ### Additional Info
+
+    - Default behavior: `destination.setValue()` is NOT called if `source.getValue()` returns null
+    - With `always()`: `destination.setValue(null)` IS called if `source.getValue()` returns null
+    - Review commit `239f384ac0` for examples of how Spring Boot itself adapted to this change
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#property-mapper-api-changes
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: alwaysApplyingWhenNonNull
+        location: METHOD_CALL

@@ -1,0 +1,10 @@
+rulesPath: ../tls.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/tls-builtin
+tests:
+    - ruleID: tls-pattern-00010
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1

@@ -1,0 +1,26 @@
+rulesPath: ../jmx.yaml
+providers:
+    - name: java
+      dataPath: ./data/jmx
+tests:
+    - ruleID: jmx-removal-00010
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: jmx-removal-00020
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1
+    - ruleID: jmx-removal-00030
+      testCases:
+        - name: tc-1
+          analysisParams:
+            mode: source-only
+          hasIncidents:
+            atLeast: 1

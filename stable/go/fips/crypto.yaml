@@ -1,0 +1,288 @@
+- ruleID: crypto-change-00010
+  description: x/crypto/hkdf bypasses FIPS module; use crypto/hkdf from stdlib with GODEBUG=fips140=on
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `golang.org/x/crypto/hkdf` package implements HKDF (SP 800-56C), which is FIPS-approved. However, this x/crypto implementation does not integrate with the FIPS-validated Go Cryptographic Module.
+
+    ### Before
+
+    ```go
+    import "golang.org/x/crypto/hkdf"
+
+    reader := hkdf.New(sha256.New, secret, salt, info)
+    key := make([]byte, 32)
+    io.ReadFull(reader, key)
+    ```
+
+    ### After
+
+    ```go
+    import "crypto/hkdf"
+
+    reader := hkdf.New(sha256.New, secret, salt, info)
+    key := make([]byte, 32)
+    io.ReadFull(reader, key)
+    ```
+
+    ### Additional Info
+
+    - The `crypto/hkdf` package is available in Go 1.24+ and integrates with the FIPS-validated Go Cryptographic Module
+    - Enable FIPS mode with `GODEBUG=fips140=on` to ensure the standard library crypto uses the validated module
+    - The API is the same — only the import path changes
+    - Both packages implement HKDF per SP 800-56C, but only the stdlib version participates in FIPS validation
+    - Review all transitive dependencies that may also import `golang.org/x/crypto/hkdf`
+  links:
+    - url: https://pkg.go.dev/crypto/hkdf
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: golang.org/x/crypto/hkdf
+- ruleID: crypto-change-00020
+  description: x/crypto/sha3 bypasses FIPS module; use crypto/sha3 from stdlib with GODEBUG=fips140=on
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `golang.org/x/crypto/sha3` package implements SHA-3 (FIPS 202), which is FIPS-approved. However, this x/crypto implementation does not integrate with the FIPS-validated Go Cryptographic Module.
+
+    ### Before
+
+    ```go
+    import "golang.org/x/crypto/sha3"
+
+    h := sha3.New256()
+    h.Write(data)
+    hash := h.Sum(nil)
+    ```
+
+    ### After
+
+    ```go
+    import "crypto/sha3"
+
+    h := sha3.New256()
+    h.Write(data)
+    hash := h.Sum(nil)
+    ```
+
+    ### Additional Info
+
+    - The `crypto/sha3` package is available in Go 1.24+ and integrates with the FIPS-validated Go Cryptographic Module
+    - Enable FIPS mode with `GODEBUG=fips140=on` to ensure the standard library crypto uses the validated module
+    - The API is the same — only the import path changes
+    - Both packages implement SHA-3 per FIPS 202, but only the stdlib version participates in FIPS validation
+    - SHA-3 variants (New224, New256, New384, New512, NewShake128, NewShake256) all move to the stdlib package
+  links:
+    - url: https://pkg.go.dev/crypto/sha3
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: golang.org/x/crypto/sha3
+- ruleID: crypto-change-00030
+  description: Deprecated x/crypto/openpgp may use non-FIPS algorithms; review algorithm choices
+  category: potential
+  effort: 8
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `golang.org/x/crypto/openpgp` package is a high-level protocol that can use various algorithms. In a FIPS environment, you must ensure only FIPS-approved algorithms are used. This package is also deprecated.
+
+    ### Before
+
+    ```go
+    import "golang.org/x/crypto/openpgp"
+
+    entity, _ := openpgp.NewEntity("name", "comment", "email@example.com", nil)
+    ```
+
+    ### Migration Steps
+
+    1. Audit all OpenPGP operations for algorithm usage — prefer AES over CAST5/Blowfish, SHA-256 over MD5/SHA-1
+    2. Configure entity creation to use only FIPS-approved algorithms (AES-128/256, SHA-256/384/512)
+    3. Consider migrating to a maintained alternative such as `github.com/ProtonMail/go-crypto/openpgp` for new development
+    4. Verify that key generation, encryption, and signing all use FIPS-approved algorithms
+
+    ### Additional Info
+
+    - This package is deprecated upstream — consider alternatives for new development
+    - Default algorithm choices may include non-FIPS algorithms like CAST5 or Blowfish
+    - SHA-1 is used by default for some operations and is not FIPS-approved for digital signatures
+    - Review `packet.Config` settings to ensure FIPS-approved cipher and hash selections
+    - MD5 usage in any OpenPGP operation is not FIPS compliant
+  links:
+    - url: https://pkg.go.dev/golang.org/x/crypto/openpgp
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: golang.org/x/crypto/openpgp
+- ruleID: crypto-change-00040
+  description: x/crypto/pkcs12 may use non-FIPS encryption algorithms internally; review algorithm choices
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `golang.org/x/crypto/pkcs12` package handles PKCS#12 certificate bundles which can use various encryption and MAC algorithms internally. In a FIPS environment, you must verify the algorithms used.
+
+    ### Before
+
+    ```go
+    import "golang.org/x/crypto/pkcs12"
+
+    privateKey, cert, _ := pkcs12.Decode(pfxData, password)
+    ```
+
+    ### Migration Steps
+
+    1. Review the encryption algorithms used in PKCS#12 files — prefer AES, avoid 3DES and RC2
+    2. Verify MAC algorithms used for integrity protection are FIPS-approved
+    3. When creating new PKCS#12 bundles, use `pkcs12.Modern.Encode` or `pkcs12.Modern2023.Encode` which default to AES and SHA-256
+    4. For existing PKCS#12 files using legacy algorithms, re-export with FIPS-approved algorithms
+
+    ### Additional Info
+
+    - Legacy PKCS#12 files commonly use 3DES for encryption and SHA-1 for MAC, neither of which is FIPS-approved
+    - The `pkcs12.Decode` function will process files regardless of the algorithms used
+    - RC2 encryption in PKCS#12 is not FIPS compliant
+    - Consider using the `Modern` or `Modern2023` encoder profiles for new certificate bundles
+    - Verify both the encryption algorithm and MAC algorithm when auditing existing .pfx/.p12 files
+  links:
+    - url: https://pkg.go.dev/golang.org/x/crypto/pkcs12
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: golang.org/x/crypto/pkcs12
+- ruleID: crypto-change-00050
+  description: x/crypto/acme certificate automation requires FIPS-approved TLS and key configuration
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `golang.org/x/crypto/acme` and `golang.org/x/crypto/acme/autocert` packages implement the ACME protocol for automatic certificate management. In a FIPS environment, ensure TLS configuration and key types are FIPS-approved.
+
+    ### Before
+
+    ```go
+    import "golang.org/x/crypto/acme"
+    import "golang.org/x/crypto/acme/autocert"
+
+    manager := &autocert.Manager{
+        Prompt:     autocert.AcceptTOS,
+        HostPolicy: autocert.HostWhitelist("example.com"),
+    }
+    ```
+
+    ### Migration Steps
+
+    1. Review TLS configuration to ensure only FIPS-approved cipher suites are used
+    2. Verify key types used for certificate requests — prefer RSA-2048+ or ECDSA P-256/P-384
+    3. Ensure the TLS listener created by `autocert.Manager` uses `tls.Config` with `MinVersion: tls.VersionTLS12`
+    4. Verify that the ACME client communicates over FIPS-compliant TLS connections
+
+    ### Additional Info
+
+    - ACME protocol itself is transport-level — the FIPS concern is about the TLS configuration and key algorithms
+    - RSA keys should be at least 2048 bits; ECDSA should use P-256 or P-384 curves
+    - Ed25519 keys are not FIPS-approved — avoid using them for ACME certificate requests
+    - Review `autocert.Manager.TLSConfig()` output to verify cipher suite restrictions
+    - The `HostWhitelist` and `HostPolicy` functions are not FIPS-relevant but should be configured for security
+  links:
+    - url: https://pkg.go.dev/golang.org/x/crypto/acme/autocert
+      title: Migration Documentation
+  when:
+    or:
+        - go.referenced:
+            pattern: golang.org/x/crypto/acme
+        - go.referenced:
+            pattern: golang.org/x/crypto/acme/autocert
+- ruleID: crypto-change-00060
+  description: x/crypto/ocsp signature and hash algorithms must be FIPS-approved
+  category: potential
+  effort: 3
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `golang.org/x/crypto/ocsp` package handles OCSP (Online Certificate Status Protocol) responses. In a FIPS environment, the signature algorithms and hash functions used in OCSP must be FIPS-approved.
+
+    ### Before
+
+    ```go
+    import "golang.org/x/crypto/ocsp"
+
+    resp, _ := ocsp.ParseResponse(responseBytes, issuer)
+    ```
+
+    ### Migration Steps
+
+    1. Review OCSP response signature algorithms — ensure they use FIPS-approved algorithms (RSA, ECDSA with approved curves)
+    2. Verify hash functions used in OCSP responses are FIPS-approved (SHA-256, SHA-384, SHA-512)
+    3. Ensure OCSP stapling configurations use FIPS-compliant TLS connections
+
+    ### Additional Info
+
+    - OCSP responses signed with SHA-1 are not FIPS-compliant for signature verification
+    - The `ocsp.ParseResponse` function processes responses regardless of the algorithms used — validation is the concern
+    - Review OCSP responder configuration to ensure it uses FIPS-approved signing algorithms
+    - Consider OCSP stapling in TLS configuration to reduce external OCSP lookups
+  links:
+    - url: https://pkg.go.dev/golang.org/x/crypto/ocsp
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: golang.org/x/crypto/ocsp
+- ruleID: crypto-change-00070
+  description: x/crypto/xts implements FIPS-approved XTS-AES but bypasses the FIPS-validated module
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `golang.org/x/crypto/xts` package implements XTS-AES (SP 800-38E), which is FIPS-approved for disk encryption. However, this x/crypto implementation does not integrate with the FIPS-validated Go Cryptographic Module.
+
+    ### Before
+
+    ```go
+    import "golang.org/x/crypto/xts"
+
+    cipher, _ := xts.NewCipher(aes.NewCipher, key)
+    ```
+
+    ### Migration Steps
+
+    1. Verify whether a FIPS-validated XTS-AES implementation is available in the Go standard library for your Go version
+    2. If no stdlib equivalent exists, document the use of x/crypto/xts as a deviation requiring risk acceptance
+    3. Ensure the underlying AES cipher used with XTS comes from the FIPS-validated module (`crypto/aes`)
+    4. Consider whether the disk encryption use case requires FIPS validation or if the algorithm approval (SP 800-38E) is sufficient for your compliance requirements
+
+    ### Additional Info
+
+    - XTS-AES is approved under NIST SP 800-38E specifically for storage device encryption
+    - The x/crypto implementation is algorithmically correct but not part of the FIPS-validated boundary
+    - Unlike hkdf and sha3, there is no `crypto/xts` in the Go standard library as of Go 1.24
+    - Ensure the AES key passed to `xts.NewCipher` is created via `crypto/aes.NewCipher` (the FIPS-validated path)
+    - XTS requires a key twice the normal AES key size (e.g., 64 bytes for AES-256-XTS)
+  links:
+    - url: https://pkg.go.dev/golang.org/x/crypto/xts
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: golang.org/x/crypto/xts

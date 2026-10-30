@@ -1,0 +1,20 @@
+rulesPath: ../jndi.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/jndi
+tests:
+    - ruleID: jndi-removal-00010
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: jndi-removal-00020
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: jndi-removal-00030
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1

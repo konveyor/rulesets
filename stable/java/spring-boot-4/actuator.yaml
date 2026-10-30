@@ -1,0 +1,157 @@
+- ruleID: actuator-annotation-00010
+  description: Actuator endpoint parameters should use org.jspecify.annotations.Nullable
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Spring Boot 4 no longer supports `org.springframework.lang.Nullable` for declaring optional Actuator endpoint parameters.
+
+    ### Before
+    ```java
+    import org.springframework.lang.Nullable;
+    import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
+
+    public class MyEndpoint {
+        @ReadOperation
+        public String read(@Nullable String param) {
+            return "value";
+        }
+    }
+    ```
+
+    ### After
+    ```java
+    import org.jspecify.annotations.Nullable;
+    import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
+
+    public class MyEndpoint {
+        @ReadOperation
+        public String read(@Nullable String param) {
+            return "value";
+        }
+    }
+    ```
+
+    ### Additional Info
+    - Update imports from `org.springframework.lang.Nullable` to `org.jspecify.annotations.Nullable`
+    - This change applies to Actuator endpoint parameters specifically
+    - The JSpecify annotations provide better nullability semantics
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#removed-support-for-javaxannotationsnonnull-and-orgspringframeworklangnullable)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#removed-support-for-javaxannotationsnonnull-and-orgspringframeworklangnullable
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.lang.Nullable
+        location: ANNOTATION
+- ruleID: actuator-dependency-00010
+  description: Liveness and readiness probes now enabled by default
+  category: potential
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    In Spring Boot 4, the liveness and readiness probes are now enabled by default. The health endpoint now exposes the `liveness` and `readiness` groups automatically.
+
+    ### Migration Steps
+    - If you do not need these probes, disable them by setting `management.endpoint.health.probes.enabled=false` in your application properties
+    - If you were previously enabling them explicitly, you can remove that configuration as it's now the default behavior
+    - The health endpoint will automatically expose `/actuator/health/liveness` and `/actuator/health/readiness` endpoints
+
+    ### Additional Info
+    - This is a behavioral change that may affect your monitoring and orchestration setup
+    - Kubernetes and other container orchestrators can now use these endpoints without additional configuration
+    - Review your health check configuration to ensure the new default behavior aligns with your requirements
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#liveness-and-readiness-probes)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#liveness-and-readiness-probes
+      title: Migration Documentation
+  when:
+    java.dependency:
+        name: org.springframework.boot.spring-boot-starter-actuator
+        upperbound: 4.0.0
+- ruleID: actuator-pattern-00010
+  description: Property renamed to management.health.mongodb.enabled
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Management properties for MongoDB have been renamed to use `mongodb` rather than `mongo`.
+
+    ### Migration Steps
+    - Rename `management.health.mongo.enabled` to `management.health.mongodb.enabled`
+
+    ### Additional Info
+    - This change improves naming consistency across MongoDB properties
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: management\.health\.mongo\.enabled
+        filePattern: application.*\.(properties|ya?ml)
+- ruleID: actuator-pattern-00020
+  description: Property renamed to management.metrics.mongodb.command.enabled
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Management properties for MongoDB have been renamed to use `mongodb` rather than `mongo`.
+
+    ### Migration Steps
+    - Rename `management.metrics.mongo.command.enabled` to `management.metrics.mongodb.command.enabled`
+
+    ### Additional Info
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: management\.metrics\.mongo\.command\.enabled
+        filePattern: application.*\.(properties|ya?ml)
+- ruleID: actuator-pattern-00030
+  description: Property renamed to management.metrics.mongodb.connectionpool.enabled
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=spring-boot3
+    - konveyor.io/source=spring-boot
+    - konveyor.io/target=spring-boot4
+    - konveyor.io/target=spring-boot
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Management properties for MongoDB have been renamed to use `mongodb` rather than `mongo`.
+
+    ### Migration Steps
+    - Rename `management.metrics.mongo.connectionpool.enabled` to `management.metrics.mongodb.connectionpool.enabled`
+
+    ### Additional Info
+    - See [Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb)
+  links:
+    - url: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#mongodb
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: management\.metrics\.mongo\.connectionpool\.enabled
+        filePattern: application.*\.(properties|ya?ml)

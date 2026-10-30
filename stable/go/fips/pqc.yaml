@@ -1,0 +1,121 @@
+- ruleID: pqc-change-00010
+  description: RSA key exchange is vulnerable to future quantum attacks; inventory for ML-KEM migration
+  category: potential
+  effort: 8
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    RSA-based key exchange and encryption are vulnerable to future quantum attacks. Inventory all `crypto/rsa` usage to plan migration to the NIST-approved post-quantum key encapsulation mechanism ML-KEM (FIPS 203).
+
+    ### Before
+
+    ```go
+    import "crypto/rsa"
+
+    ciphertext, _ := rsa.EncryptPKCS1v15(rand.Reader, publicKey, plaintext)
+    ciphertext, _ := rsa.EncryptOAEP(sha256.New(), rand.Reader, publicKey, plaintext, nil)
+    ```
+
+    ### After
+
+    For TLS, Go 1.24+ with FIPS mode supports post-quantum key exchange (X25519MLKEM768) automatically.
+
+    For non-TLS key encapsulation, use `crypto/mlkem` (Go 1.24+):
+
+    ```go
+    import "crypto/mlkem"
+
+    dk, _ := mlkem.GenerateKey768()
+    ek := dk.EncapsulationKey()
+    ciphertext, sharedKey := ek.Encapsulate()
+    ```
+
+    ### Additional Info
+
+    - ML-KEM (FIPS 203) approved parameter sets: ML-KEM-512, ML-KEM-768, ML-KEM-1024
+    - `crypto/mlkem` is available in Go 1.24+
+    - TLS post-quantum key exchange is automatic in FIPS mode — no code changes needed for TLS use cases
+    - RSA remains FIPS-approved for current use; this is a forward-looking inventory item
+    - Plan migration timeline based on organizational quantum-readiness requirements
+  links:
+    - url: https://pkg.go.dev/crypto/mlkem
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: crypto/rsa
+- ruleID: pqc-change-00020
+  description: ECDSA signatures are vulnerable to future quantum attacks; inventory for ML-DSA migration
+  category: potential
+  effort: 8
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    ECDSA signatures are vulnerable to future quantum attacks. Inventory all `crypto/ecdsa` usage to plan migration to ML-DSA (FIPS 204) when available.
+
+    ### Before
+
+    ```go
+    import "crypto/ecdsa"
+
+    signature, _ := ecdsa.SignASN1(rand.Reader, privateKey, hash)
+    valid := ecdsa.VerifyASN1(publicKey, hash, signature)
+    ```
+
+    ### After
+
+    ML-DSA (FIPS 204) will be available in Go 1.26+. For current FIPS compliance, ECDSA with P-256 or P-384 curves remains approved.
+
+    ### Additional Info
+
+    - ECDSA with P-256/P-384 remains FIPS-approved; this is a forward-looking inventory item
+    - ML-DSA (FIPS 204) is the NIST-approved post-quantum digital signature algorithm
+    - ML-DSA requires Go 1.26+ with module v1.26.0
+    - Plan for ML-DSA adoption as the module becomes validated
+    - Avoid P-224 curves which are not FIPS-approved
+  links:
+    - url: https://pkg.go.dev/crypto/ecdsa
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: crypto/ecdsa
+- ruleID: pqc-change-00030
+  description: Ed25519 signatures are vulnerable to future quantum attacks; inventory for ML-DSA migration
+  category: potential
+  effort: 8
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    Ed25519 signatures are vulnerable to future quantum attacks. Inventory all `crypto/ed25519` usage to plan migration to ML-DSA when available.
+
+    ### Before
+
+    ```go
+    import "crypto/ed25519"
+
+    signature := ed25519.Sign(privateKey, message)
+    valid := ed25519.Verify(publicKey, message, signature)
+    ```
+
+    ### After
+
+    Plan migration to ML-DSA when the module becomes available and validated.
+
+    ### Additional Info
+
+    - Ed25519 is currently approved under FIPS 186-5 (EdDSA with Edwards25519 curve)
+    - This is a forward-looking inventory item for post-quantum readiness
+    - ML-DSA (FIPS 204) is the NIST-approved replacement for post-quantum resistance
+    - Track upstream Go releases for ML-DSA module availability
+    - No immediate action required — document usage for migration planning
+  links:
+    - url: https://pkg.go.dev/crypto/ed25519
+      title: Migration Documentation
+  when:
+    go.referenced:
+        pattern: crypto/ed25519

@@ -1,0 +1,86 @@
+- ruleID: orm-import-00010
+  description: Migrated to org.springframework.orm.jpa.hibernate
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The native Hibernate support in Spring Framework has migrated from `org.springframework.orm.hibernate5` to `org.springframework.orm.jpa.hibernate` in Spring Framework 7.0.
+
+    ### Before
+
+    ```java
+    import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+    import org.springframework.orm.hibernate5.HibernateTransactionManager;
+    import org.springframework.orm.hibernate5.SpringBeanContainer;
+    import org.springframework.orm.hibernate5.SpringSessionContext;
+    ```
+
+    ### After
+
+    ```java
+    import org.springframework.orm.jpa.hibernate.LocalSessionFactoryBean;
+    import org.springframework.orm.jpa.hibernate.HibernateTransactionManager;
+    import org.springframework.orm.jpa.hibernate.SpringBeanContainer;
+    import org.springframework.orm.jpa.hibernate.SpringSessionContext;
+    ```
+
+    ### Additional Info
+
+    - This migration aligns with Hibernate ORM 7.1/7.2 support
+    - Only capabilities that make sense in addition to JPA are continued in the new package
+    - The new package serves as an alternative to standard JPA bootstrapping
+    - It also supports `SessionFactory.getCurrentSession()` based data access
+    - Update all imports from `org.springframework.orm.hibernate5` to `org.springframework.orm.jpa.hibernate`
+  links:
+    - url: https://docs.spring.io/spring-framework/reference/data-access/orm/hibernate.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.orm.hibernate5*
+        location: PACKAGE
+- ruleID: orm-import-00020
+  description: Decoupled from PersistenceUnitInfo interface
+  category: potential
+  effort: 5
+  labels:
+    - konveyor.io/source=spring-framework6
+    - konveyor.io/source=spring-framework
+    - konveyor.io/target=spring-framework7
+    - konveyor.io/target=spring-framework
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    `MutablePersistenceUnitInfo` has been decoupled from the `PersistenceUnitInfo` interface in Spring Framework 7.0 for JPA 3.2/4.0 compatibility.
+
+    ### Migration Steps
+
+    If you have custom bootstrapping code that uses `MutablePersistenceUnitInfo`:
+
+    ```java
+    // Before (MutablePersistenceUnitInfo implemented PersistenceUnitInfo)
+    MutablePersistenceUnitInfo info = new MutablePersistenceUnitInfo();
+    jakarta.persistence.spi.PersistenceUnitInfo standardInfo = info; // This no longer works
+
+    // After (use SpringPersistenceUnitInfo and adapt)
+    SpringPersistenceUnitInfo info = new SpringPersistenceUnitInfo();
+    jakarta.persistence.spi.PersistenceUnitInfo standardInfo = info.asStandardPersistenceUnitInfo();
+    ```
+
+    ### Additional Info
+
+    - `MutablePersistenceUnitInfo` is designed as the argument type for `PersistenceUnitPostProcessor` only
+    - It cannot be assigned to `jakarta.persistence.spi.PersistenceUnitInfo` anymore
+    - Use `SpringPersistenceUnitInfo` for custom bootstrapping purposes
+    - `SpringPersistenceUnitInfo.asStandardPersistenceUnitInfo()` automatically adapts to JPA 3.2/4.0 API
+    - This provides forward compatibility with JPA 4.0 without configuration changes
+  links:
+    - url: https://docs.spring.io/spring-framework/reference/data-access/orm/jpa.html
+      title: Migration Documentation
+  when:
+    java.referenced:
+        pattern: org.springframework.orm.jpa.persistenceunit.MutablePersistenceUnitInfo
+        location: IMPORT

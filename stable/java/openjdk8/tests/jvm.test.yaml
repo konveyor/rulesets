@@ -1,0 +1,15 @@
+rulesPath: ../jvm.yaml
+providers:
+    - name: builtin
+      dataPath: ./data/jvm
+tests:
+    - ruleID: jvm-pattern-00010
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1
+    - ruleID: jvm-pattern-00020
+      testCases:
+        - name: tc-1
+          hasIncidents:
+            atLeast: 1

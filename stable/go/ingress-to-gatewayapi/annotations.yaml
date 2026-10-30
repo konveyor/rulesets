@@ -1,0 +1,654 @@
+- ruleID: annotations-pattern-00010
+  description: Rewrite-target and use-regex annotations replaced by Gateway API URLRewrite filter
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `nginx.ingress.kubernetes.io/rewrite-target` and `nginx.ingress.kubernetes.io/use-regex` annotations are not supported in Gateway API. Replace with an `HTTPRouteFilter` of type `URLRewrite` using `HTTPURLRewriteFilter` with `HTTPPathModifier`.
+
+    ### Before
+
+    ```go
+    annotations := map[string]string{
+        "nginx.ingress.kubernetes.io/rewrite-target": "/$1",
+        "nginx.ingress.kubernetes.io/use-regex":      "true",
+    }
+    ```
+
+    ### After
+
+    ```go
+    filter := gatewayv1.HTTPRouteFilter{
+        Type: gatewayv1.HTTPRouteFilterURLRewrite,
+        URLRewrite: &gatewayv1.HTTPURLRewriteFilter{
+            Path: &gatewayv1.HTTPPathModifier{
+                Type:               gatewayv1.PrefixMatchHTTPPathModifier,
+                ReplacePrefixMatch: ptr("/"),
+            },
+        },
+    }
+    ```
+
+    ### Additional Info
+
+    - Gateway API uses `HTTPRouteFilter` with `URLRewrite` type instead of annotation-based rewrite
+    - Regex-based path matching uses `RegularExpression` path type in `HTTPRouteMatch` rather than a separate annotation
+    - The Gateway API path modifier supports `PrefixMatchHTTPPathModifier` and `FullPathHTTPPathModifier` types
+    - Complex rewrite rules may need multiple HTTPRoute rules or implementation-specific filters
+    - See: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    or:
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/rewrite-target
+            filePattern: .*\.go
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/use-regex
+            filePattern: .*\.go
+- ruleID: annotations-pattern-00020
+  description: SSL redirect annotations replaced by Gateway API RequestRedirect filter
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `nginx.ingress.kubernetes.io/ssl-redirect` and `nginx.ingress.kubernetes.io/force-ssl-redirect` annotations are not supported in Gateway API. Replace with an `HTTPRouteFilter` of type `RequestRedirect` that redirects HTTP traffic to HTTPS.
+
+    ### Before
+
+    ```go
+    annotations := map[string]string{
+        "nginx.ingress.kubernetes.io/ssl-redirect":       "true",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+    }
+    ```
+
+    ### After
+
+    ```go
+    redirectRule := gatewayv1.HTTPRouteRule{
+        Filters: []gatewayv1.HTTPRouteFilter{
+            {
+                Type: gatewayv1.HTTPRouteFilterRequestRedirect,
+                RequestRedirect: &gatewayv1.HTTPRequestRedirectFilter{
+                    Scheme: ptr("https"),
+                    Port:   ptr(gatewayv1.PortNumber(443)),
+                },
+            },
+        },
+    }
+    ```
+
+    ### Additional Info
+
+    - In Gateway API, SSL redirect is modeled as a separate HTTPRoute on the HTTP listener that redirects to HTTPS
+    - The Gateway itself handles TLS termination via listener configuration
+    - Both `ssl-redirect` and `force-ssl-redirect` map to the same Gateway API pattern
+    - Ensure your Gateway has both HTTP (port 80) and HTTPS (port 443) listeners configured
+    - See: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    or:
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/ssl-redirect
+            filePattern: .*\.go
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/force-ssl-redirect
+            filePattern: .*\.go
+- ruleID: annotations-pattern-00030
+  description: Configuration-snippet and server-snippet annotations removed (security risk CVE-2021-25742)
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `nginx.ingress.kubernetes.io/configuration-snippet` and `nginx.ingress.kubernetes.io/server-snippet` annotations are removed in Gateway API. These annotations were a known security risk (CVE-2021-25742). Replace with Gateway API-native features such as `HTTPRouteFilter` with `ResponseHeaderModifier` for header manipulation.
+
+    ### Before
+
+    ```go
+    annotations := map[string]string{
+        "nginx.ingress.kubernetes.io/configuration-snippet": `
+            more_set_headers "X-Frame-Options: DENY";
+            more_set_headers "X-Content-Type-Options: nosniff";
+        `,
+    }
+    ```
+
+    ### After
+
+    ```go
+    filter := gatewayv1.HTTPRouteFilter{
+        Type: gatewayv1.HTTPRouteFilterResponseHeaderModifier,
+        ResponseHeaderModifier: &gatewayv1.HTTPHeaderFilter{
+            Set: []gatewayv1.HTTPHeader{
+                {Name: "X-Frame-Options", Value: "DENY"},
+                {Name: "X-Content-Type-Options", Value: "nosniff"},
+            },
+        },
+    }
+    ```
+
+    ### Additional Info
+
+    - Configuration-snippet and server-snippet allowed arbitrary Nginx config injection, which was a security vulnerability (CVE-2021-25742)
+    - Gateway API does not support arbitrary server configuration injection by design
+    - For header manipulation, use `ResponseHeaderModifier` or `RequestHeaderModifier` filters
+    - For more complex Nginx-specific behavior, check your Gateway implementation's policy CRDs (e.g., Envoy Gateway BackendTrafficPolicy)
+    - See: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    or:
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/configuration-snippet
+            filePattern: .*\.go
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/server-snippet
+            filePattern: .*\.go
+- ruleID: annotations-pattern-00040
+  description: Canary annotations replaced by Gateway API weighted BackendRefs for traffic splitting
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `nginx.ingress.kubernetes.io/canary` and `nginx.ingress.kubernetes.io/canary-weight` annotations are not supported in Gateway API. Replace with `HTTPRouteRule` using weighted `BackendRef` entries to split traffic between stable and canary backends.
+
+    ### Before
+
+    ```go
+    annotations := map[string]string{
+        "nginx.ingress.kubernetes.io/canary":        "true",
+        "nginx.ingress.kubernetes.io/canary-weight": "20",
+    }
+    ```
+
+    ### After
+
+    ```go
+    rule := gatewayv1.HTTPRouteRule{
+        BackendRefs: []gatewayv1.HTTPBackendRef{
+            {BackendRef: gatewayv1.BackendRef{
+                BackendObjectReference: gatewayv1.BackendObjectReference{
+                    Name: "app-stable", Port: ptr(gatewayv1.PortNumber(80)),
+                },
+                Weight: ptr(int32(80)),
+            }},
+            {BackendRef: gatewayv1.BackendRef{
+                BackendObjectReference: gatewayv1.BackendObjectReference{
+                    Name: "app-canary", Port: ptr(gatewayv1.PortNumber(80)),
+                },
+                Weight: ptr(int32(20)),
+            }},
+        },
+    }
+    ```
+
+    ### Additional Info
+
+    - Gateway API supports traffic splitting natively via `Weight` on `BackendRef` entries
+    - Unlike Ingress canary annotations, Gateway API requires all backends in the same HTTPRouteRule
+    - Header-based and cookie-based canary routing (`canary-by-header`, `canary-by-cookie`) can use HTTPRoute `matches` with header conditions
+    - The weights must sum to a total that your Gateway implementation supports (typically 100)
+    - See: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    or:
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/canary["':\s]
+            filePattern: .*\.go
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/canary-weight
+            filePattern: .*\.go
+- ruleID: annotations-pattern-00050
+  description: Proxy timeout annotations replaced by Gateway API native HTTPRouteTimeouts
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `nginx.ingress.kubernetes.io/proxy-read-timeout`, `proxy-send-timeout`, and `proxy-connect-timeout` annotations are not supported in Gateway API. Replace with native `HTTPRouteTimeouts` on the `HTTPRouteRule`.
+
+    ### Before
+
+    ```go
+    annotations := map[string]string{
+        "nginx.ingress.kubernetes.io/proxy-read-timeout":    "60",
+        "nginx.ingress.kubernetes.io/proxy-send-timeout":    "60",
+        "nginx.ingress.kubernetes.io/proxy-connect-timeout": "10",
+    }
+    ```
+
+    ### After
+
+    ```go
+    rule := gatewayv1.HTTPRouteRule{
+        Timeouts: &gatewayv1.HTTPRouteTimeouts{
+            Request:        ptr(gatewayv1.Duration("60s")),
+            BackendRequest: ptr(gatewayv1.Duration("30s")),
+        },
+    }
+    ```
+
+    ### Additional Info
+
+    - Gateway API provides `Request` (total client-facing timeout) and `BackendRequest` (per-backend timeout) fields
+    - There is no direct `connect-timeout` equivalent in Gateway API core; check your implementation's policy CRDs
+    - Timeout values in Gateway API use Go duration strings (e.g., "60s", "5m") rather than bare integers
+    - The `proxy-send-timeout` has no direct equivalent in core Gateway API; consider implementation-specific BackendTrafficPolicy
+    - See: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    or:
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/proxy-read-timeout
+            filePattern: .*\.go
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/proxy-send-timeout
+            filePattern: .*\.go
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/proxy-connect-timeout
+            filePattern: .*\.go
+- ruleID: annotations-pattern-00060
+  description: Ingress class annotation replaced by Gateway API ParentReference
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `kubernetes.io/ingress.class` annotation is not used in Gateway API. Replace with `ParentReference` in the `HTTPRouteSpec.CommonRouteSpec.ParentRefs` field, which binds the route to a specific Gateway.
+
+    ### Before
+
+    ```go
+    annotations := map[string]string{
+        "kubernetes.io/ingress.class": "nginx",
+    }
+    ```
+
+    ### After
+
+    ```go
+    spec := gatewayv1.HTTPRouteSpec{
+        CommonRouteSpec: gatewayv1.CommonRouteSpec{
+            ParentRefs: []gatewayv1.ParentReference{
+                {Name: gatewayv1.ObjectName("my-gateway")},
+            },
+        },
+    }
+    ```
+
+    ### Additional Info
+
+    - In Gateway API, routes bind to Gateways via `ParentReference` instead of using ingress class annotations
+    - The `ParentReference` can also specify `SectionName` to bind to a specific Gateway listener
+    - GatewayClass replaces IngressClass as the cluster-scoped controller binding
+    - Multiple routes can reference the same Gateway, achieving similar multi-tenancy as IngressClass
+    - See: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: kubernetes\.io/ingress\.class
+        filePattern: .*\.go
+- ruleID: annotations-pattern-00070
+  description: Ingress-NGINX controller identifier replaced by Gateway API implementation controller name
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `k8s.io/ingress-nginx` controller identifier string is specific to the Ingress-NGINX controller. Replace with the controller name of your chosen Gateway API implementation in the `GatewayClassSpec.ControllerName` field.
+
+    ### Before
+
+    ```go
+    spec := networkingv1.IngressClassSpec{
+        Controller: "k8s.io/ingress-nginx",
+    }
+    ```
+
+    ### After
+
+    ```go
+    spec := gatewayv1.GatewayClassSpec{
+        ControllerName: "example.com/gateway-controller",
+    }
+    ```
+
+    ### Additional Info
+
+    - Each Gateway API implementation has its own controller name (e.g., `gateway.envoyproxy.io/gatewayclass-controller` for Envoy Gateway)
+    - The controller name is set on `GatewayClass` instead of `IngressClass`
+    - You must install a Gateway API implementation that provides a controller for the chosen `ControllerName`
+    - See your Gateway implementation's documentation for the correct controller name string
+    - See: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: k8s\.io/ingress-nginx
+        filePattern: .*\.go
+- ruleID: annotations-pattern-00080
+  description: CORS annotations removed; Gateway API has no standard CORS API yet (GEP-1767)
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `nginx.ingress.kubernetes.io/enable-cors`, `cors-allow-origin`, and `cors-allow-methods` annotations are not supported in Gateway API. Gateway API does not yet have a standard CORS API (GEP-1767 is experimental). Remove these annotations from Go code and use your Gateway implementation's policy CRDs instead.
+
+    ### Before
+
+    ```go
+    annotations := map[string]string{
+        "nginx.ingress.kubernetes.io/enable-cors":         "true",
+        "nginx.ingress.kubernetes.io/cors-allow-origin":   "https://example.com",
+        "nginx.ingress.kubernetes.io/cors-allow-methods":  "GET,POST",
+    }
+    ```
+
+    ### After
+
+    Use your Gateway implementation's policy CRDs. For example, Envoy Gateway provides a `SecurityPolicy` CRD for CORS configuration. Consult your Gateway implementation's documentation.
+
+    ### Additional Info
+
+    - Gateway API GEP-1767 proposes a standard CORS API but it is still experimental
+    - Envoy Gateway uses `SecurityPolicy`, Istio uses `VirtualService` CORS policy
+    - Additional CORS annotations (`cors-allow-headers`, `cors-max-age`, `cors-allow-credentials`) should also be removed
+    - Consider implementing CORS at the application level as an alternative
+    - See: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    or:
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/enable-cors
+            filePattern: .*\.go
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/cors-allow-origin
+            filePattern: .*\.go
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/cors-allow-methods
+            filePattern: .*\.go
+- ruleID: annotations-pattern-00090
+  description: Auth annotations removed; Gateway API has no standard auth API
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `nginx.ingress.kubernetes.io/auth-type` and `nginx.ingress.kubernetes.io/auth-secret` annotations are not supported in Gateway API. Gateway API does not have a standard authentication API. Remove these annotations and use your Gateway implementation's policy CRDs instead.
+
+    ### Before
+
+    ```go
+    annotations := map[string]string{
+        "nginx.ingress.kubernetes.io/auth-type":   "basic",
+        "nginx.ingress.kubernetes.io/auth-secret": "basic-auth",
+    }
+    ```
+
+    ### After
+
+    Use your Gateway implementation's auth policy CRDs. For example, Envoy Gateway provides `SecurityPolicy`, Istio provides `RequestAuthentication`. Consult your Gateway implementation's documentation.
+
+    ### Additional Info
+
+    - Gateway API has no standard auth mechanism; authentication is handled by implementation-specific policy CRDs
+    - Envoy Gateway uses `SecurityPolicy` for basic auth, JWT, and OIDC
+    - Istio uses `RequestAuthentication` and `AuthorizationPolicy`
+    - Additional auth annotations (`auth-url`, `auth-signin`, `auth-response-headers`) should also be removed
+    - See: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    or:
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/auth-type
+            filePattern: .*\.go
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/auth-secret
+            filePattern: .*\.go
+- ruleID: annotations-pattern-00100
+  description: Rate limiting annotation removed; Gateway API has no standard rate limiting API
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `nginx.ingress.kubernetes.io/limit-rps` annotation is not supported in Gateway API. Gateway API does not have a standard rate limiting API yet. Remove this annotation and use your Gateway implementation's policy CRDs instead.
+
+    ### Before
+
+    ```go
+    annotations := map[string]string{
+        "nginx.ingress.kubernetes.io/limit-rps": "10",
+    }
+    ```
+
+    ### After
+
+    Use your Gateway implementation's rate limiting policy CRDs. For example, Envoy Gateway provides `BackendTrafficPolicy` with rate limiting configuration. Consult your Gateway implementation's documentation.
+
+    ### Additional Info
+
+    - Gateway API does not yet have a standard rate limiting API
+    - Envoy Gateway uses `BackendTrafficPolicy` for rate limiting
+    - Istio uses `EnvoyFilter` or external rate limiting services
+    - Additional rate limiting annotations (`limit-rpm`, `limit-connections`, `limit-burst-multiplier`) should also be removed
+    - See: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: nginx\.ingress\.kubernetes\.io/limit-rps
+        filePattern: .*\.go
+- ruleID: annotations-pattern-00110
+  description: Session affinity annotations removed; Gateway API has no standard session persistence API
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `nginx.ingress.kubernetes.io/affinity` and `nginx.ingress.kubernetes.io/session-cookie-name` annotations are not supported in Gateway API. Gateway API does not have a standard session persistence API yet. Remove these annotations and use your Gateway implementation's policy CRDs instead.
+
+    ### Before
+
+    ```go
+    annotations := map[string]string{
+        "nginx.ingress.kubernetes.io/affinity":            "cookie",
+        "nginx.ingress.kubernetes.io/session-cookie-name": "my-session",
+    }
+    ```
+
+    ### After
+
+    Use your Gateway implementation's session persistence policy CRDs. For example, Envoy Gateway provides `BackendTrafficPolicy` with session persistence configuration. Consult your Gateway implementation's documentation.
+
+    ### Additional Info
+
+    - Gateway API does not yet have a standard session persistence API
+    - Envoy Gateway uses `BackendTrafficPolicy` for session persistence
+    - Additional session annotations (`session-cookie-path`, `session-cookie-max-age`, `session-cookie-change-on-failure`) should also be removed
+    - Consider whether session affinity is still needed in the target architecture
+    - See: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    or:
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/affinity["':\s]
+            filePattern: .*\.go
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/session-cookie-name
+            filePattern: .*\.go
+- ruleID: annotations-pattern-00120
+  description: Whitelist source range annotation removed; Gateway API has no standard IP allowlist API
+  category: mandatory
+  effort: 7
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `nginx.ingress.kubernetes.io/whitelist-source-range` annotation is not supported in Gateway API. Gateway API does not have a standard IP allowlist API. Remove this annotation and use your Gateway implementation's policy CRDs instead.
+
+    ### Before
+
+    ```go
+    annotations := map[string]string{
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "10.0.0.0/8",
+    }
+    ```
+
+    ### After
+
+    Use your Gateway implementation's IP allowlist policy CRDs. For example, Envoy Gateway provides `SecurityPolicy` with client IP filtering. Consult your Gateway implementation's documentation.
+
+    ### Additional Info
+
+    - Gateway API does not have a standard IP allowlist API
+    - Envoy Gateway uses `SecurityPolicy` for client IP filtering
+    - Istio uses `AuthorizationPolicy` with source IP conditions
+    - Consider using NetworkPolicy as a complementary layer for IP-based access control
+    - See: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: nginx\.ingress\.kubernetes\.io/whitelist-source-range
+        filePattern: .*\.go
+- ruleID: annotations-pattern-00130
+  description: HSTS annotations replaced by Gateway API ResponseHeaderModifier filter
+  category: mandatory
+  effort: 3
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `nginx.ingress.kubernetes.io/hsts`, `hsts-max-age`, and `hsts-include-subdomains` annotations are not supported in Gateway API. Replace with an `HTTPRouteFilter` of type `ResponseHeaderModifier` that sets the `Strict-Transport-Security` response header.
+
+    ### Before
+
+    ```go
+    annotations := map[string]string{
+        "nginx.ingress.kubernetes.io/hsts":                    "true",
+        "nginx.ingress.kubernetes.io/hsts-max-age":            "31536000",
+        "nginx.ingress.kubernetes.io/hsts-include-subdomains": "true",
+    }
+    ```
+
+    ### After
+
+    ```go
+    filter := gatewayv1.HTTPRouteFilter{
+        Type: gatewayv1.HTTPRouteFilterResponseHeaderModifier,
+        ResponseHeaderModifier: &gatewayv1.HTTPHeaderFilter{
+            Set: []gatewayv1.HTTPHeader{
+                {Name: "Strict-Transport-Security", Value: "max-age=31536000; includeSubDomains"},
+            },
+        },
+    }
+    ```
+
+    ### Additional Info
+
+    - Gateway API uses `ResponseHeaderModifier` to set HSTS headers directly
+    - Compose the `Strict-Transport-Security` header value from the individual annotation values (max-age, includeSubDomains, preload)
+    - If `hsts-preload` was also set, include `; preload` in the header value
+    - ResponseHeaderModifier can set multiple headers in a single filter
+    - See: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    or:
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/hsts["':\s]
+            filePattern: .*\.go
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/hsts-max-age
+            filePattern: .*\.go
+        - builtin.filecontent:
+            pattern: nginx\.ingress\.kubernetes\.io/hsts-include-subdomains
+            filePattern: .*\.go
+- ruleID: annotations-pattern-00140
+  description: Proxy body size annotation removed; Gateway API has no standard request body size limit
+  category: mandatory
+  effort: 5
+  labels:
+    - konveyor.io/source=go
+    - konveyor.io/target=go
+    - konveyor.io/generated-by=ai-rule-gen
+  message: |-
+    The `nginx.ingress.kubernetes.io/proxy-body-size` annotation is not supported in Gateway API. Gateway API does not have a standard request body size limit. Remove this annotation and use your Gateway implementation's policy CRDs instead.
+
+    ### Before
+
+    ```go
+    annotations := map[string]string{
+        "nginx.ingress.kubernetes.io/proxy-body-size": "10m",
+    }
+    ```
+
+    ### After
+
+    Use your Gateway implementation's policy CRDs for request body size limits. For example, Envoy Gateway provides `BackendTrafficPolicy` with request body size configuration. Consult your Gateway implementation's documentation.
+
+    ### Additional Info
+
+    - Gateway API does not have a standard request body size limit API
+    - Envoy Gateway uses `BackendTrafficPolicy` for request size limits
+    - Consider setting body size limits at the application level as an alternative
+    - The default body size limit may vary between Gateway implementations
+    - See: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+  links:
+    - url: https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress/
+      title: Migration Documentation
+  when:
+    builtin.filecontent:
+        pattern: nginx\.ingress\.kubernetes\.io/proxy-body-size
+        filePattern: .*\.go

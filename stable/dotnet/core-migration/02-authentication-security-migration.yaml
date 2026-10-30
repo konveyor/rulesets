@@ -134,7 +134,7 @@
   when:
     csharp.referenced:
       location: ALL
-      pattern: "*.DotNetOpenAuth.*"
+      pattern: ".*\\.DotNetOpenAuth\\..*"
 
 - category: mandatory
   customVariables: []
@@ -217,4 +217,4 @@
   when:
     csharp.referenced:
       location: ALL
-      pattern: "*.MachineKey.*"
+      pattern: ".*\\.MachineKey\\..*"

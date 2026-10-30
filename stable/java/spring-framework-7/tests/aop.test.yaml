@@ -1,0 +1,14 @@
+rulesPath: ../aop.yaml
+providers:
+- name: java
+  dataPath: ./data/aop
+- name: builtin
+  dataPath: ./data/aop
+tests:
+- ruleID: aop-annotation-00010
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1

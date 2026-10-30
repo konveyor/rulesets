@@ -1,0 +1,21 @@
+rulesPath: ../messaging.yaml
+providers:
+- name: java
+  dataPath: ./data/messaging-java
+- name: builtin
+  dataPath: ./data/messaging-java
+tests:
+- ruleID: messaging-change-00010
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1
+- ruleID: messaging-change-00020
+  testCases:
+  - name: tc-1
+    analysisParams:
+      mode: source-only
+    hasIncidents:
+      atLeast: 1
