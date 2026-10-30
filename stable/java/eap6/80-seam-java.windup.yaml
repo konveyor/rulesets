@@ -13,15 +13,15 @@
   - seam
   links:
   - title: Migration from Seam 2 to Java EE and Alternatives
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html-single/Seam_Guide/index.html#idm54350960
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#idm54350960
   - title: JSF Web Application Example
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html-single/Seam_Guide/index.html#booking
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#booking
   - title: JBoss EAP 6 - Contexts, Scopes, and Dependencies
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html/development_guide/sect-use_cdi#sect-Contexts_Scopes_and_Dependencies
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/development_guide/index#sect-Contexts_Scopes_and_Dependencies
   - title: Enable Applications To Use Older Versions of JSF
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-JSF_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-JSF_changes
   - title: JBoss EAP 5 Component Upgrade Reference
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migrate-eap5-component-upgrade-reference
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migrate-eap5-component-upgrade-reference
   - title: How to use JSF 1.2 with EAP 7?
     url: https://access.redhat.com/solutions/2773121
   message: "\n                        Seam 2.2 and earlier is not supported on JBoss
@@ -124,7 +124,7 @@
   - title: Java EE 7 tutorial - Giving Beans EL Name
     url: http://docs.oracle.com/javaee/7/tutorial/cdi-basic009.htm#GJBAK
   - title: Seam 2 Components
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html-single/Seam_Guide/index.html#_seam_2_components
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_seam_2_components
   message: "CDI supports static injection in comparison to Seam 2 dynamic injection.
     So you don't need to have `@Named` annotation on every Seam component you would
     like to migrate. \n Remove that annotation or change to `@javax.inject.Named`
@@ -152,7 +152,7 @@
   - cdi
   links:
   - title: Scopes and contexts
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html-single/Seam_Guide/index.html#_scopes_and_contexts
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_scopes_and_contexts
   - title: Java EE 7 Tutorial - Using Scopes
     url: http://docs.oracle.com/javaee/7/tutorial/cdi-basic008.htm#GJBBK
   message: |-
@@ -234,11 +234,11 @@
   - title: Java EE Tutorial - Producers
     url: http://docs.oracle.com/javaee/7/tutorial/cdi-adv003.htm#GKGKV
   - title: Seam Outjection
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html-single/Seam_Guide/index.html#_bijection
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_bijection
   - title: Java EE API - Annotation Type Produces
     url: http://docs.oracle.com/javaee/7/api/javax/enterprise/inject/Produces.html
   - title: JBoss EAP 6 - Use a Producer Method
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/development_guide/#Use_a_Producer_Method
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/development_guide/index#Use_a_Producer_Method
   message: "CDI does not support bijection and does a static injection in comparison
     to Seam 2, where it is performed dynamically \n via interceptor every time a component
     is invoked. \n CDI performs the static injection only once per component life
@@ -266,13 +266,13 @@
   - cdi
   links:
   - title: WFK Seam Guide - Seam Factory and Managers components
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html-single/Seam_Guide/index.html#idp227074592
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#idp227074592
   - title: Java EE Tutorial - Producers
     url: http://docs.oracle.com/javaee/7/tutorial/cdi-adv003.htm#GKGKV
   - title: Java EE API - Annotation Type Produces
     url: http://docs.oracle.com/javaee/7/api/javax/enterprise/inject/Produces.html
   - title: JBoss EAP 6 - Use a Producer Method
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/development_guide/#Use_a_Producer_Method
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/development_guide/index#Use_a_Producer_Method
   message: "Seam Factory annotation was used for binding non Seam component methods
     into Seam context life cycle.\n \n Replace it with `@javax.enterprise.inject.Produces`
     and add additional annotation for context scope if you used `scope = ScopeType.*`
@@ -304,7 +304,7 @@
   - title: Java EE 7 - Singleton annotation
     url: http://docs.oracle.com/javaee/7/api/javax/ejb/Singleton.html
   - title: WFK Seam Guide - Migration of @Install
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html-single/Seam_Guide/index.html#_startup
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_startup
   message: Java EE uses for such use case `@javax.ejb.Singleton` and `@javax.ejb.Startup`
     annotations.
   ruleID: seam-java-00080
@@ -464,7 +464,7 @@
   - cdi
   links:
   - title: WFK Seam Guide - Component installation
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html-single/Seam_Guide/index.html#_install
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_install
   - title: Java EE 7 - Vetoed Annotation
     url: http://docs.oracle.com/javaee/7/api/javax/enterprise/inject/Vetoed.html
   - title: Java EE 7 - Specializes annotation
@@ -549,7 +549,7 @@
   - seam
   links:
   - title: JBoss EAP 6 - Contexts, Scopes, and Dependencies
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html/development_guide/sect-use_cdi#sect-Contexts_Scopes_and_Dependencies
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/development_guide/index#sect-Contexts_Scopes_and_Dependencies
   message: Rework using CDI's injected concrete context.
   ruleID: seam-java-00160
   when:
@@ -570,7 +570,7 @@
   - seam
   links:
   - title: JBoss BPM Suite 6 - CDI integration
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_bpm_suite/6.4/html-single/development_guide/index#sect_cdi_integration
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_bpm_suite/6.4/html-single/development_guide/index#sect_cdi_integration
   message: Seam integration with jBPM should be migrated with help of CDI integration
     presented directly in Drools - jBPM
   ruleID: seam-java-00170
@@ -675,7 +675,7 @@
   - jsf
   links:
   - title: WFK Seam Guide - Migration of @RequestParam
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html-single/Seam_Guide/index.html#_requestparameter
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_requestparameter
   - title: JSF 2.2 VDL - Tag viewParam
     url: https://docs.oracle.com/javaee/7/javaserver-faces-2-2/vdldocs-facelets/toc.htm
   message: "The `@RequestParameter` annotation triggers injection of an HTTP request
@@ -706,7 +706,7 @@
   - cdi
   links:
   - title: WFK Seam Guide - Migration of @Logger
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html-single/Seam_Guide/index.html#_logger
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_logger
   - title: Java EE 7 - Produces annotation
     url: http://docs.oracle.com/javaee/7/api/javax/enterprise/inject/Produces.html
   message: "Seam 2 provides a built-in logger implementation. It is a thin wrapper
@@ -742,7 +742,7 @@
   - jsf
   links:
   - title: WFK Seam Guide - Annotations for use with dataTable
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html-single/Seam_Guide/index.html#idm40851856
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#idm40851856
   - title: Java EE - Binding Component Values and Instances to Managed Bean Properties
     url: http://docs.oracle.com/javaee/7/tutorial/jsf-custom012.htm#BNATI
   message: "In Java EE, the Expression Language Specification has evolved and allows
@@ -770,7 +770,7 @@
   - cdi
   links:
   - title: WFK Seam Guide - Migrating Events
-    url: https://access.redhat.com/documentation/en-us/Red_Hat_JBoss_Web_Framework_Kit/2.7/html-single/Seam_Guide/index.html#_events
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_web_framework_kit/2.7/html-single/seam_guide/index#_events
   - title: Java EE - Using Events in CDI Applications
     url: http://docs.oracle.com/javaee/7/tutorial/cdi-adv005.htm#GKHIC
   message: "Both Seam 2 and CDI beans may produce and consume events in order to communicate
