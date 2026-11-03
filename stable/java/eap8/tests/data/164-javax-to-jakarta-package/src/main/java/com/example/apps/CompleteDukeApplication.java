@@ -29,6 +29,11 @@ import javax.annotation.security.RolesAllowed;
 import javax.transaction.UserTransaction;
 import javax.security.enterprise.SecurityContext;
 
+// --- Should MATCH: wildcard/on-demand imports of fully-moved packages (3) ---
+import javax.ejb.*;
+import javax.jms.*;
+import javax.ws.rs.*;
+
 // --- Should NOT MATCH: JDK packages that stayed in javax (false positives) ---
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
