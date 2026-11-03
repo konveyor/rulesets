@@ -22,4 +22,4 @@
     as: javaClass
     java.referenced:
       location: IMPORT
-      pattern: javax.(activation|annotation|batch|decorator|ejb|el|enterprise|faces|inject|interceptor|jms|json|jws|mail|persistence|resource|security|servlet|transaction|validation|websocket|ws|xml)*
+      pattern: javax.(activation|batch|decorator|ejb|el|enterprise|faces|inject|interceptor|jms|json|jws|mail|persistence|resource|servlet|validation|websocket|ws.rs|xml.bind|xml.soap|xml.ws|annotation.Generated|annotation.ManagedBean|annotation.PostConstruct|annotation.PreDestroy|annotation.Priority|annotation.Resource|annotation.Resources|annotation.security|annotation.sql|security.auth.message|security.enterprise|security.jacc|transaction.Heuristic|transaction.InvalidTransactionException|transaction.NotSupportedException|transaction.RollbackException|transaction.Status|transaction.Synchronization|transaction.SystemException|transaction.Transaction|transaction.UserTransaction)*

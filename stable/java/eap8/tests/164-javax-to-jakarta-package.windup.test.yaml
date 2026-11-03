@@ -9,5 +9,5 @@ tests:
   testCases:
   - name: tc-1
     hasIncidents:
-      exactly: 25
+      exactly: 27
       messageMatches: Replace the `javax.
