@@ -3,6 +3,8 @@ package com.example;
 // Rule: core-import-00010
 import javax.annotation.Resource;
 import javax.annotation.PostConstruct;
+// JDK java.compiler annotation — must NOT be flagged (false positive)
+import javax.annotation.processing.Generated;
 
 // Rule: core-import-00020
 import javax.inject.Inject;

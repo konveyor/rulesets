@@ -14,8 +14,7 @@
       title: Migration Documentation
   when:
     java.referenced:
-        pattern: javax.annotation*
-        location: PACKAGE
+        pattern: javax.annotation.(Generated|ManagedBean|PostConstruct|PreDestroy|Priority|Resource|Resources|security|sql)*
 - ruleID: core-import-00020
   description: No longer supported in Spring Framework 7.0
   category: mandatory
