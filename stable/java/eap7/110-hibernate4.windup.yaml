@@ -17,7 +17,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: Use `org.hibernate.boot.MetadataSources#addFile` instead.
   ruleID: hibernate4-00001
   when:
@@ -43,7 +43,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: There is no direct replacement for method `org.hibernate.cfg.Configuration#add()`.
   ruleID: hibernate4-00002
   when:
@@ -69,7 +69,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: There is no direct replacement for method `org.hibernate.cfg.Configuration#addXML`.
   ruleID: hibernate4-00003
   when:
@@ -95,7 +95,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: Use `org.hibernate.boot.MetadataSources#addCacheableFile` instead.
   ruleID: hibernate4-00004
   when:
@@ -121,7 +121,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: Use `org.hibernate.boot.MetadataSources#addURL` instead.
   ruleID: hibernate4-00005
   when:
@@ -147,7 +147,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: Use `org.hibernate.boot.MetadataSources#addInputStream` instead.
   ruleID: hibernate4-00006
   when:
@@ -173,7 +173,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: Use `org.hibernate.boot.MetadataSources#addResource` instead.
   ruleID: hibernate4-00007
   when:
@@ -199,7 +199,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: Use `org.hibernate.boot.MetadataSources#addClass` instead.
   ruleID: hibernate4-00008
   when:
@@ -225,7 +225,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: Use `org.hibernate.boot.MetadataSources#addAnnotatedClass` instead.
   ruleID: hibernate4-00009
   when:
@@ -251,7 +251,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: Use `org.hibernate.boot.MetadataSources#addPackage` instead.
   ruleID: hibernate4-00010
   when:
@@ -277,7 +277,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: Use `org.hibernate.boot.MetadataSources#addJar` instead.
   ruleID: hibernate4-00011
   when:
@@ -303,7 +303,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: Use `org.hibernate.boot.MetadataSources#addDirectory` instead.
   ruleID: hibernate4-00012
   when:
@@ -329,7 +329,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: Use `org.hibernate.boot.MetadataBuilder#applyTypes` instead.
   ruleID: hibernate4-00013
   when:
@@ -355,7 +355,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: Use `org.hibernate.boot.MetadataBuilder#applyBasicType` instead.
   ruleID: hibernate4-00014
   when:
@@ -381,7 +381,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: Use `org.hibernate.boot.registry.StandardServiceRegistryBuilder#applySetting`
     instead.
   ruleID: hibernate4-00015
@@ -408,7 +408,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: There is no direct replacement.
   ruleID: hibernate4-00016
   when:
@@ -434,7 +434,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: Use `org.hibernate.boot.registry.StandardServiceRegistryBuilder#applySettings`
     instead.
   ruleID: hibernate4-00017
@@ -461,7 +461,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: |-
     Historically Hibernate provided just a singular contract for applying a "naming strategy".
      Starting in 5.0 this has been split into 2 distinct contracts:
@@ -499,7 +499,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: Use `org.hibernate.boot.registry.StandardServiceRegistryBuilder#configure`
     instead.
   ruleID: hibernate4-00021
@@ -526,7 +526,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: Use `org.hibernate.boot.SessionFactoryBuilder#applyInterceptor` instead.
   ruleID: hibernate4-00022
   when:
@@ -552,7 +552,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: Use `org.hibernate.boot.SessionFactoryBuilder#applyEntityNotFoundDelegate`
     instead.
   ruleID: hibernate4-00023
@@ -579,7 +579,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: Use `org.hibernate.boot.SessionFactoryBuilder#addSessionFactoryObservers`
     instead.
   ruleID: hibernate4-00024
@@ -606,7 +606,7 @@
   - title: Changes in Configuration for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#re-purposing-of-configuration
   - title: Hibernate and JPA migration changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#hibernate_and_jpa_migration_changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#hibernate_and_jpa_migration_changes
   message: Use `org.hibernate.boot.SessionFactoryBuilder#applyCurrentTenantIdentifierResolver`
     instead.
   ruleID: hibernate4-00025
@@ -634,7 +634,7 @@
   - configuration
   links:
   - title: Hibernate 5 - Other changes to classes/packages
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migration_hibernate_orm_changes_other_classes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migration_hibernate_orm_changes_other_classes
   - title: Changes in Type handling for Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#type-handling
   message: Use `org.hibernate.boot.model.{{type}}` instead.
@@ -661,7 +661,7 @@
   - title: Removed or deprecated types in Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#deprecations
   - title: Removed and Deprecated Classes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migration_hibernate_orm_changes_deprecations
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migration_hibernate_orm_changes_deprecations
   message: All functionality from `org.hibernate.cfg.AnnotationConfiguration` has
     been moved to `org.hibernate.cfg.Configuration`.
   ruleID: hibernate4-00027
@@ -688,7 +688,7 @@
   - configuration
   links:
   - title: Removed and Deprecated Classes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migration_hibernate_orm_changes_deprecations
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migration_hibernate_orm_changes_deprecations
   - title: Removed or deprecated types in Hibernate 5
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#deprecations
   message: Use `org.hibernate.id.enhanced.SequenceStyleGenerator` instead.
@@ -740,7 +740,7 @@
   - configuration
   links:
   - title: Other Hibernate ORM 5 changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migration_hibernate_orm_changes_miscellaneous
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migration_hibernate_orm_changes_miscellaneous
   message: Hibernate 5 moved `org.hibernate.hql.spi.PersistentTableBulkIdStrategy`
     class to new `org.hibernate.hql.spi.id.persistent` package.
   ruleID: hibernate4-00031
@@ -764,7 +764,7 @@
   - configuration
   links:
   - title: Other Hibernate ORM 5 changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migration_hibernate_orm_changes_miscellaneous
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migration_hibernate_orm_changes_miscellaneous
   message: Hibernate 5 replaced `org.hibernate.hql.spi.TemporaryTableBulkIdStrategy`
     class with `org.hibernate.hql.spi.id.global.GlobalTemporaryTableBulkIdStrategy`
     and `org.hibernate.hql.spi.id.local.LocalTemporaryTableBulkIdStrategy`.
@@ -789,7 +789,7 @@
   - configuration
   links:
   - title: Hibernate 5 - Other changes to classes/packages
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migration_hibernate_orm_changes_other_classes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migration_hibernate_orm_changes_other_classes
   - title: Hibernate 5 Changed or Moved Contracts
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#changedmoved-contracts
   message: |-
@@ -817,7 +817,7 @@
   - configuration
   links:
   - title: Hibernate 5 - Other changes to classes/packages
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migration_hibernate_orm_changes_other_classes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migration_hibernate_orm_changes_other_classes
   - title: Hibernate 5 Changed or Moved Contracts
     url: https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc#changedmoved-contracts
   - title: Hibernate 5 JdbcEnvironment new API
@@ -845,7 +845,7 @@
   - configuration
   links:
   - title: Hibernate 5 - Other changes to classes/packages
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migration_hibernate_orm_changes_other_classes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migration_hibernate_orm_changes_other_classes
   - title: Hibernate 5 Configurable API
     url: https://docs.jboss.org/hibernate/orm/5.0/javadocs/org/hibernate/id/Configurable.html#configure-org.hibernate.type.Type-java.util.Properties-org.hibernate.service.ServiceRegistry-
   message: Hibernate 5 changed the signature of `org.hibernate.id.Configurable#configure`
@@ -873,9 +873,9 @@
   - configuration
   links:
   - title: HIbernate 5 - Other changes to classes/packages
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migration_hibernate_orm_changes_other_classes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migration_hibernate_orm_changes_other_classes
   - title: Hibernate 5 Changed or Moved Contracts
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migration_hibernate_orm_changes_miscellaneous
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migration_hibernate_orm_changes_miscellaneous
   - title: Hibernate 5 ExportableProducer API
     url: https://docs.jboss.org/hibernate/orm/5.0/javadocs/org/hibernate/boot/model/relational/ExportableProducer.html#registerExportables-org.hibernate.boot.model.relational.Database-
   message: |-
@@ -903,7 +903,7 @@
   - configuration
   links:
   - title: Other Hibernate ORM 5 changes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migration_hibernate_orm_changes_miscellaneous
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migration_hibernate_orm_changes_miscellaneous
   - title: Hibernate 5 EnversService API
     url: https://docs.jboss.org/hibernate/orm/5.0/javadocs/index.html?org/hibernate/envers/boot/internal/EnversService.html
   message: Hibernate 5 removed `AuditConfiguration` in preference for new `org.hibernate.envers.boot.internal.EnversService`.
@@ -928,7 +928,7 @@
   - configuration
   links:
   - title: Hibernate 5 Type Handling
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/#migration_hibernate_orm_changes_type_handling
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/migration_guide/index#migration_hibernate_orm_changes_type_handling
   - title: Hibernate 5 javadoc for SqlTypeDescriptorRegistry#addDescriptor
     url: https://docs.jboss.org/hibernate/orm/5.0/javadocs/index.html?org/hibernate/type/descriptor/sql/SqlTypeDescriptorRegistry.html
   - title: Hibernate 5 javadoc for JavaTypeDescriptorRegistry#addDescriptor

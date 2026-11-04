@@ -10,7 +10,7 @@
   - jta
   links:
   - title: JBoss EAP 7.1. JTA documentation
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.1/html/development_guide/java_transaction_api_jta
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.1/html-single/development_guide/index#java_transaction_api_jta
   - title: Using transaction services by JTOM on EAP 6
     url: https://access.redhat.com/solutions/1217863
   message: "The modules required by JOTM's JTA implementation are not loaded by default

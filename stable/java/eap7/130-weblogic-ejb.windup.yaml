@@ -35,7 +35,7 @@
   - title: WebLogic Server EJB 3.0 Metadata Annotations
     url: https://docs.oracle.com/cd/E17904_01/web.1111/e13720/annotations.htm#EJBAD359
   - title: JBoss EAP 6 - Session Bean Transaction Timeout
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/#Session_Bean_Transaction_Timeout
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#Session_Bean_Transaction_Timeout
   - title: How to set EJB transaction timeout in JBoss EAP 6
     url: https://access.redhat.com/solutions/90553
   message: This application contains WebLogic proprietary `weblogic.javaee.TransactionTimeoutSeconds`
@@ -59,7 +59,7 @@
   - title: WebLogic EJBGen Annotation Reference
     url: https://docs.oracle.com/cd/E13222_01/wls/docs92/ejb/EJBGen_reference.html#wp1070171
   - title: JBoss EAP 7 - Configuring MDBs Using Annotations
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/developing_ejb_applications/#configuring_mdbs_using_annotations
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/developing_ejb_applications/index#configuring_mdbs_using_annotations
   message: This application contains WebLogic proprietary `weblogic.ejbgen.MessageDriven`
     annotation.
   ruleID: weblogic-ejb-03000
@@ -88,9 +88,9 @@
   - title: WebLogic Server - Javadoc
     url: https://docs.oracle.com/cd/E11035_01/wls100/javadocs/weblogic/ejb/GenericSessionBean.html
   - title: JBoss EAP 6 - Enterprise JavaBeans
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/development_guide/#chap-Enterprise_JavaBeans
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/development_guide/index#chap-Enterprise_JavaBeans
   - title: JBoss EAP 7 - Developing EJB Applications
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/developing_ejb_applications/
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/developing_ejb_applications/index
   message: This class extends `weblogic.ejb.{{type}}` that needs to be removed.
   ruleID: weblogic-ejb-04000
   when:

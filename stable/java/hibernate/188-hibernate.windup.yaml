@@ -12,7 +12,7 @@
   - hibernate
   links:
   - title: Hibernate 4 java @Type migration.
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#Migrate_Your_Hibernate_33x_Application_to_Hibernate_4x
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#Migrate_Your_Hibernate_33x_Application_to_Hibernate_4x
   message: In versions of Hibernate prior to 3.5, text type was mapped to JDBC CLOB.
     A new Hibernate type, materialized_clob, was added in Hibernate 4 to map Java
     String properties to JDBC CLOB. Therefore, Hibernate 4 text LOB type definitions
@@ -38,7 +38,7 @@
   - hibernate
   links:
   - title: Hibernate 4 projections return type change.
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#Migrate_Your_Hibernate_33x_Application_to_Hibernate_4x
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#Migrate_Your_Hibernate_33x_Application_to_Hibernate_4x
   message: The return types of the numeric aggregate criteria projections has changed
     to Long in hibernate 4. This change may introduce conflicts in the code.
   ruleID: hibernate-02000
@@ -61,7 +61,7 @@
   - hibernate
   links:
   - title: Hibernate 4 naming strategy change documentation.
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#Migrate_Your_Hibernate_3.5.x_Application_to_Hibernate_4.x
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#Migrate_Your_Hibernate_3.5.x_Application_to_Hibernate_4.x
   message: The initial/default naming strategy in Hibernate 4 was changed from DefaultNamingStrategy
     to EJB3NamingStrategy. This can result in naming mismatches. If you rely on the
     naming strategy, call Configuration#setNamingStrategy.
@@ -84,7 +84,7 @@
   - hibernate
   links:
   - title: 'JBoss EAP - Migration Guide: Hibernate and JPA Changes'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/#sect-Hibernate_and_JPA_Changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-Hibernate_and_JPA_Changes
   message: The deprecated classes in org.hibernate.classic package were removed in
     Hibernate 4.
   ruleID: hibernate-04000

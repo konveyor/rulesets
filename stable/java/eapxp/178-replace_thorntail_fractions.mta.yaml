@@ -11,7 +11,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:bean-validation` with the related Eclipse MicroProfile
@@ -34,7 +34,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:cdi-config` with the related Eclipse MicroProfile and/or
@@ -57,7 +57,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:cdi` with the related Eclipse MicroProfile and/or Jakarta
@@ -80,7 +80,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:config-api-runtime` with the related Eclipse MicroProfile
@@ -103,7 +103,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:datasources` with the related Eclipse MicroProfile and/or
@@ -126,7 +126,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:ee-security` with the related Eclipse MicroProfile and/or
@@ -149,7 +149,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:ejb-mdb` with the related Eclipse MicroProfile and/or Jakarta
@@ -172,7 +172,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:ejb` with the related Eclipse MicroProfile and/or Jakarta
@@ -195,7 +195,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:elytron` with the related Eclipse MicroProfile and/or Jakarta
@@ -218,7 +218,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:fraction-metadata` with the related Eclipse MicroProfile
@@ -241,7 +241,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:hibernate-validator` with the related Eclipse MicroProfile
@@ -264,7 +264,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:hibernate` with the related Eclipse MicroProfile and/or
@@ -287,7 +287,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:hystrix` with the related Eclipse MicroProfile and/or Jakarta
@@ -310,7 +310,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:infinispan` with the related Eclipse MicroProfile and/or
@@ -333,7 +333,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:jaeger` with the related Eclipse MicroProfile and/or Jakarta
@@ -356,7 +356,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:jaxrs-jaxb` with the related Eclipse MicroProfile and/or
@@ -379,7 +379,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:jaxrs-jsonb` with the related Eclipse MicroProfile and/or
@@ -402,7 +402,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:jaxrs-jsonp` with the related Eclipse MicroProfile and/or
@@ -425,7 +425,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:jaxrs-multipart` with the related Eclipse MicroProfile
@@ -448,7 +448,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:jaxrs-validator` with the related Eclipse MicroProfile
@@ -471,7 +471,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:jaxrs` with the related Eclipse MicroProfile and/or Jakarta
@@ -494,7 +494,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:jca` with the related Eclipse MicroProfile and/or Jakarta
@@ -517,7 +517,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:jmx` with the related Eclipse MicroProfile and/or Jakarta
@@ -540,7 +540,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:jpa` with the related Eclipse MicroProfile and/or Jakarta
@@ -563,7 +563,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:jsf` with the related Eclipse MicroProfile and/or Jakarta
@@ -586,7 +586,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:jsonb` with the related Eclipse MicroProfile and/or Jakarta
@@ -609,7 +609,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:jsonp` with the related Eclipse MicroProfile and/or Jakarta
@@ -632,7 +632,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:keycloak` with the related Eclipse MicroProfile and/or
@@ -655,7 +655,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:logging` with the related Eclipse MicroProfile and/or Jakarta
@@ -678,7 +678,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:management` with the related Eclipse MicroProfile and/or
@@ -701,7 +701,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:microprofile-config` with the related Eclipse MicroProfile
@@ -724,7 +724,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:microprofile-fault-tolerance` with the related Eclipse
@@ -747,7 +747,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:microprofile-health` with the related Eclipse MicroProfile
@@ -770,7 +770,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:microprofile-jwt` with the related Eclipse MicroProfile
@@ -793,7 +793,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:microprofile-metrics` with the related Eclipse MicroProfile
@@ -816,7 +816,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:microprofile-openapi` with the related Eclipse MicroProfile
@@ -839,7 +839,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:microprofile-opentracing` with the related Eclipse MicroProfile
@@ -862,7 +862,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:microprofile-restclient` with the related Eclipse MicroProfile
@@ -885,7 +885,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:microprofile` with the related Eclipse MicroProfile and/or
@@ -908,7 +908,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:opentracing` with the related Eclipse MicroProfile and/or
@@ -931,7 +931,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:remoting` with the related Eclipse MicroProfile and/or
@@ -954,7 +954,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:resource-adapters` with the related Eclipse MicroProfile
@@ -977,7 +977,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:spi` with the related Eclipse MicroProfile and/or Jakarta
@@ -1000,7 +1000,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:topology-openshift` with the related Eclipse MicroProfile
@@ -1023,7 +1023,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:topology-webapp` with the related Eclipse MicroProfile
@@ -1046,7 +1046,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:transactions` with the related Eclipse MicroProfile and/or
@@ -1069,7 +1069,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:undertow` with the related Eclipse MicroProfile and/or
@@ -1092,7 +1092,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:web` with the related Eclipse MicroProfile and/or Jakarta
@@ -1115,7 +1115,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:archaius` with the related Eclipse MicroProfile and/or
@@ -1138,7 +1138,7 @@
   links:
   - title: 'Red Hat JBoss EAP XP Migration Guide: Thorntail Application Maven Project
       Migration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/jboss_eap_xp_upgrade_and_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/7.4/html-single/jboss_eap_xp_upgrade_and_migration_guide/index#migrating-a-thorntail-application-maven-project-into-eap-xp_default
   message: If you migrate your application to JBoss EAP XP 2.0 (or later), and want
     to ensure its Maven building, running or testing works as expected, replace Thorntail
     Fraction `io.thorntail:monitor` with the related Eclipse MicroProfile and/or Jakarta

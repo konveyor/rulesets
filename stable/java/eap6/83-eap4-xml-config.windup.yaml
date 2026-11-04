@@ -13,9 +13,9 @@
   - postgresql
   links:
   - title: 'JBoss EAP 6 Migration: Update the DataSource Configuration'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#Update_the_DataSource_Configuration
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#Update_the_DataSource_Configuration
   - title: JBoss EAP 6 Datasource Configuration
-    url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html-single/Administration_and_Configuration_Guide/index.html#sect-Datasource_Configuration
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#sect-Datasource_Configuration
   message: |-
     This is a JDBC URL, which describes the basic information about
      where and how to connect to the database.
@@ -59,7 +59,7 @@
   - oracle
   links:
   - title: JBoss EAP 6 Datasource Configuration
-    url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html-single/Administration_and_Configuration_Guide/index.html#sect-Datasource_Configuration
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#sect-Datasource_Configuration
   message: |-
     This is a JDBC URL, which describes the basic information about
      where and how to connect to the database.
@@ -106,7 +106,7 @@
   - ejb
   links:
   - title: JBoss EAP 6 Datasource Configuration
-    url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html-single/Administration_and_Configuration_Guide/index.html#sect-Datasource_Configuration
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#sect-Datasource_Configuration
   message: |-
     This is a JDBC URL, which describes the basic information about
      where and how to connect to the database.
@@ -156,9 +156,9 @@
   - web
   links:
   - title: JBoss EAP 6 - Socket Binding Groups
-    url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html-single/Administration_and_Configuration_Guide/index.html#sect-Socket_Binding_Groups
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#sect-Socket_Binding_Groups
   - title: JBoss EAP 6 - Interfaces
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/#sect-Interfaces
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#sect-Interfaces
   message: |-
     The `<Connector port="..."/>` attribute specifies the port
      on which JBoss Web listens for requests.
@@ -194,7 +194,7 @@
   - web
   links:
   - title: Setup a thread pool for an HTTP Connector
-    url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html-single/Administration_and_Configuration_Guide/index.html#Define_Thread_Pools_for_HTTP_Connector_in_JBoss_Enterprise_Application_Platform
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#Define_Thread_Pools_for_HTTP_Connector_in_JBoss_Enterprise_Application_Platform
   message: |-
     The `<Connector protocol="..."/>` attribute specifies the protocol
      of the particular JBoss Web connector.
@@ -229,9 +229,9 @@
   - web
   links:
   - title: Setup a thread pool for an HTTP Connector
-    url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html-single/Administration_and_Configuration_Guide/index.html#Define_Thread_Pools_for_HTTP_Connector_in_JBoss_Enterprise_Application_Platform
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#Define_Thread_Pools_for_HTTP_Connector_in_JBoss_Enterprise_Application_Platform
   - title: Define Thread Pools for HTTP Connector in JBoss EAP 6
-    url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html-single/Administration_and_Configuration_Guide/index.html#Define_Thread_Pools_for_HTTP_Connector_in_JBoss_Enterprise_Application_Platform
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#Define_Thread_Pools_for_HTTP_Connector_in_JBoss_Enterprise_Application_Platform
   message: |-
     The `<Connector maxThreads="..."/>` attribute specifies the
      maximum number of JBoss Web Connector threads.
@@ -279,7 +279,7 @@
   - web
   links:
   - title: Map HTTP/HTTPS/AJP Connector Attributes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-JBoss_Web_Component_Changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-JBoss_Web_Component_Changes
   message: |-
     The `<Connector connectionTimeout="..."/>` attribute specifies the connection timeout
      of the particular JBoss Web connector.
@@ -311,7 +311,7 @@
   - web
   links:
   - title: JBoss EAP 6 Web Subsystem
-    url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html-single/Administration_and_Configuration_Guide/index.html#chap-Web_Subsystem
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#chap-Web_Subsystem
   message: |-
     JBoss Web's `emptySessionPath` option sets the path of a session cookie to '/'.
      In JBoss EAP 6, the path is set in a web framework, or in `web.xml`:
@@ -349,9 +349,9 @@
   - web
   links:
   - title: Map HTTP/HTTPS/AJP Connector Attributes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-JBoss_Web_Component_Changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-JBoss_Web_Component_Changes
   - title: JBoss EAP 6 Web Subsystem
-    url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html-single/Administration_and_Configuration_Guide/index.html#chap-Web_Subsystem
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#chap-Web_Subsystem
   message: |-
     The `<Connector enableLookups="..."/>` attribute
      enables DNS lookup through `request.getRemoteHost()`.
@@ -382,7 +382,7 @@
   - web
   links:
   - title: Map HTTP/HTTPS/AJP Connector Attributes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-JBoss_Web_Component_Changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-JBoss_Web_Component_Changes
   message: |-
     The `<Connector redirectPort="..."/>` attribute
      specifies a port number to be used in cases of redirection; the common ones being redirection to secure (HTTPS) or AJP connector.
@@ -414,7 +414,7 @@
   - web
   links:
   - title: Map HTTP/HTTPS/AJP Connector Attributes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-JBoss_Web_Component_Changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-JBoss_Web_Component_Changes
   message: |-
     The `<Connector scheme="..."/>` attribute
      specifies the web connector scheme, such as HTTP or HTTPS.
@@ -446,7 +446,7 @@
   - web
   links:
   - title: Map HTTP/HTTPS/AJP Connector Attributes
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-JBoss_Web_Component_Changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-JBoss_Web_Component_Changes
   message: |-
     The `secure` option tells the browser (or other HTTP clients) to only send the cookie over SSL connections.
      This means the cookie will not be available to any part of the site that is not secure.
@@ -481,9 +481,9 @@
   - web
   links:
   - title: JBoss EAP 6 HTTP Clustering and Load Balancing
-    url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html-single/Administration_and_Configuration_Guide/index.html#Configure_the_Enterprise_Application_Platform_to_Accept_Requests_From_an_External_HTTPD1
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#Configure_the_Enterprise_Application_Platform_to_Accept_Requests_From_an_External_HTTPD1
   - title: JBoss EAP 6 System properties
-    url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html-single/Administration_and_Configuration_Guide/index.html#System_Properties
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#System_Properties
   message: |-
     In JBoss Web, the `jvmRoute` attribute of the Engine element allows the load balancer to match requests
      to the JVM currently responsible for updating the relevant session.
@@ -525,13 +525,13 @@
   - web
   links:
   - title: 'JBoss EAP 6 Migration Guide: Replace the jboss.xml File'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-EJB_Changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-EJB_Changes
   - title: Assign Bean Pools for Session and Message-Driven Beans
-    url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html-single/Administration_and_Configuration_Guide/index.html#Assign_Bean_Pools_for_Session_and_Message-Driven_Beans
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#Assign_Bean_Pools_for_Session_and_Message-Driven_Beans
   - title: jboss.xml DTD
     url: http://www.jboss.org/j2ee/dtd/jboss_5_0.dtd
   - title: The EJB Container
-    url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/administration_and_configuration_guide/index#EJBs_on_JBoss-The_EJB_Container
+    url: https://docs.redhat.com/en/documentation/jboss_enterprise_application_platform/5/html-single/administration_and_configuration_guide/index#EJBs_on_JBoss-The_EJB_Container
   message: |-
     JBoss EAP 4 and 5 allow overriding the container settings in `jboss.xml` files.
      Extending `"Standard Stateless SessionBean"` allows configuring the instance pool.
@@ -559,13 +559,13 @@
   - pool
   links:
   - title: 'JBoss EAP 6 Migration Guide: Replace the jboss.xml File'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-EJB_Changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-EJB_Changes
   - title: Assign Bean Pools for Session and Message-Driven Beans
-    url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html-single/Administration_and_Configuration_Guide/index.html#Assign_Bean_Pools_for_Session_and_Message-Driven_Beans
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#Assign_Bean_Pools_for_Session_and_Message-Driven_Beans
   - title: jboss.xml DTD
     url: http://www.jboss.org/j2ee/dtd/jboss_5_0.dtd
   - title: The EJB Container
-    url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/administration_and_configuration_guide/index#EJBs_on_JBoss-The_EJB_Container
+    url: https://docs.redhat.com/en/documentation/jboss_enterprise_application_platform/5/html-single/administration_and_configuration_guide/index#EJBs_on_JBoss-The_EJB_Container
   message: |-
     JBoss EAP 4 allows overriding the container settings in `jboss.xml` files.
      Extending `"Clustered Stateless SessionBean"` allows configuring the instance pool.
@@ -593,13 +593,13 @@
   - pool
   links:
   - title: 'JBoss EAP 6 Migration Guide: Replace the jboss.xml File'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-EJB_Changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-EJB_Changes
   - title: Assign Bean Pools for Session and Message-Driven Beans
-    url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html-single/Administration_and_Configuration_Guide/index.html#Assign_Bean_Pools_for_Session_and_Message-Driven_Beans
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#Assign_Bean_Pools_for_Session_and_Message-Driven_Beans
   - title: jboss.xml DTD
     url: http://www.jboss.org/j2ee/dtd/jboss_5_0.dtd
   - title: The EJB Container
-    url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/administration_and_configuration_guide/index#EJBs_on_JBoss-The_EJB_Container
+    url: https://docs.redhat.com/en/documentation/jboss_enterprise_application_platform/5/html-single/administration_and_configuration_guide/index#EJBs_on_JBoss-The_EJB_Container
   message: |-
     JBoss EAP 4 and 5 allow overriding the container settings in `jboss.xml` files.
      Extending `"Standard Message Driven Bean"` allows configuring the instance pool.
@@ -628,13 +628,13 @@
   - pool
   links:
   - title: 'JBoss EAP 6 Migration Guide: Replace the jboss.xml File'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-EJB_Changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-EJB_Changes
   - title: Assign Bean Pools for Session and Message-Driven Beans
-    url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html-single/Administration_and_Configuration_Guide/index.html#Assign_Bean_Pools_for_Session_and_Message-Driven_Beans
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#Assign_Bean_Pools_for_Session_and_Message-Driven_Beans
   - title: jboss.xml DTD
     url: http://www.jboss.org/j2ee/dtd/jboss_5_0.dtd
   - title: The EJB Container
-    url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/administration_and_configuration_guide/index#EJBs_on_JBoss-The_EJB_Container
+    url: https://docs.redhat.com/en/documentation/jboss_enterprise_application_platform/5/html-single/administration_and_configuration_guide/index#EJBs_on_JBoss-The_EJB_Container
   message: |-
     JBoss EAP 4 and 5 allow overriding the container settings in `jboss.xml` files.
      Extending `"Singleton Message Driven Bean"` allows configuring the instance pool.
@@ -663,13 +663,13 @@
   - pool
   links:
   - title: 'JBoss EAP 6 Migration Guide: Replace the jboss.xml File'
-    url: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-EJB_Changes
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/migration_guide/index#sect-EJB_Changes
   - title: Assign Bean Pools for Session and Message-Driven Beans
-    url: https://access.redhat.com/documentation/en-us/JBoss_Enterprise_Application_Platform/6.4/html-single/Administration_and_Configuration_Guide/index.html#Assign_Bean_Pools_for_Session_and_Message-Driven_Beans
+    url: https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html-single/administration_and_configuration_guide/index#Assign_Bean_Pools_for_Session_and_Message-Driven_Beans
   - title: jboss.xml DTD
     url: http://www.jboss.org/j2ee/dtd/jboss_5_0.dtd
   - title: The EJB Container
-    url: https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/5/html-single/administration_and_configuration_guide/index#EJBs_on_JBoss-The_EJB_Container
+    url: https://docs.redhat.com/en/documentation/jboss_enterprise_application_platform/5/html-single/administration_and_configuration_guide/index#EJBs_on_JBoss-The_EJB_Container
   message: |-
     JBoss EAP 4 and 5 allow overriding the container settings in `jboss.xml` files.
      Extending `"Standard Message Inflow Driven Bean"` allows configuring the instance pool.
