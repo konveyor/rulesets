@@ -20,6 +20,17 @@
   ruleID: javax-to-jakarta-import-00001
   when:
     as: javaClass
-    java.referenced:
-      location: IMPORT
-      pattern: javax.(activation|annotation|batch|decorator|ejb|el|enterprise|faces|inject|interceptor|jms|json|jws|mail|persistence|resource|security|servlet|transaction|validation|websocket|ws|xml)*
+    or:
+    # Fully-moved packages: single-segment tokens match both specific and
+    # wildcard/on-demand imports (e.g. `import javax.jms.*;`). Kept in their own
+    # condition because mixing them with dotted tokens below breaks on-demand
+    # import matching for the whole alternation.
+    - java.referenced:
+        location: IMPORT
+        pattern: javax.(activation|batch|decorator|ejb|el|enterprise|faces|inject|interceptor|jms|json|jws|mail|persistence|resource|servlet|validation|websocket|ws)*
+    # Partially-moved roots: only the sub-packages/types that moved to jakarta,
+    # so JDK packages sharing the root are excluded (javax.xml.datatype,
+    # javax.annotation.processing, javax.security.auth.*, javax.transaction.xa).
+    - java.referenced:
+        location: IMPORT
+        pattern: javax.(xml.bind|xml.soap|xml.ws|annotation.Generated|annotation.ManagedBean|annotation.PostConstruct|annotation.PreDestroy|annotation.Priority|annotation.Resource|annotation.Resources|annotation.security|annotation.sql|security.auth.message|security.enterprise|security.jacc|transaction.Heuristic|transaction.InvalidTransactionException|transaction.NotSupportedException|transaction.RollbackException|transaction.Status|transaction.Synchronization|transaction.SystemException|transaction.Transaction|transaction.UserTransaction)*
