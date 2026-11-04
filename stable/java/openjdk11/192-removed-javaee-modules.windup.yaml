@@ -72,5 +72,4 @@
   ruleID: removed-javaee-modules-00020
   when:
     java.referenced:
-      location: PACKAGE
-      pattern: javax.annotation*
+      pattern: javax.annotation.(Generated|ManagedBean|PostConstruct|PreDestroy|Priority|Resource|Resources|security|sql)*
